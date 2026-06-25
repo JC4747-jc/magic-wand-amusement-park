@@ -186,25 +186,29 @@ Unity 顶部菜单 **Magic Wand**：
 
 ### 第一次：负责人创建远程仓库
 
-1. 在 [GitHub](https://github.com/new) 新建 **Private** 仓库（例如 `magic-wand-amusement-park`）
-2. **不要**勾选 "Add a README"（本地已有）
-3. 在本项目根目录执行：
+远程仓库：**https://github.com/JC4747-jc/magic-wand-amusement-park**（Private）
+
+本地已完成 `git init`、首次 commit 和 `origin` 配置。若你还没 push，在本项目根目录执行：
 
 ```bash
 cd "/Users/shensiqi/Magic Wand Amusement Park"
+git push -u origin main
+```
 
-git init
-git add .
-git commit -m "Initial commit: Magic Wand Amusement Park Unity project"
+首次 push 时 GitHub 会要求登录（浏览器或 Personal Access Token）。
+
+若需重新配置远程：
+
+```bash
+git remote set-url origin https://github.com/JC4747-jc/magic-wand-amusement-park.git
 git branch -M main
-git remote add origin https://github.com/你的用户名/仓库名.git
 git push -u origin main
 ```
 
 ### 队友加入
 
 ```bash
-git clone https://github.com/你的用户名/仓库名.git
+git clone https://github.com/JC4747-jc/magic-wand-amusement-park.git
 ```
 
 Unity Hub → **Add** → 选择克隆下来的文件夹 → 用 **Unity 6000.0.26f1** 打开。
