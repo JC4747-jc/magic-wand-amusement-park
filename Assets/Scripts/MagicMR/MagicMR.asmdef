@@ -1,0 +1,25 @@
+{
+    "name": "MagicMR",
+    "rootNamespace": "MagicMR",
+    "references": [
+        "Unity.XR.CoreUtils",
+        "Unity.XR.Hands",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.RenderPipelines.Core.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.xr.hands",
+            "expression": "1.1.0",
+            "define": "XR_HANDS_1_1_OR_NEWER"
+        }
+    ],
+    "noEngineReferences": false
+}

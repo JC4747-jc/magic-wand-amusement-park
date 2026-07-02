@@ -12,16 +12,18 @@ namespace MagicMR
     public class CircleGestureDetector : HandGestureDetectorBase
     {
         [SerializeField]
-        float m_WindowSeconds = 1.5f;
+        float m_WindowSeconds = StudySpec.CircleWindowSeconds;
 
         [SerializeField]
-        float m_MinPathLength = 0.25f;
+        float m_MinPathLength = StudySpec.CircleMinPathLength;
 
         [SerializeField]
-        float m_MaxAspectRatio = 1.5f;
+        float m_MaxAspectRatio = StudySpec.CircleMaxAspectRatio;
 
         [SerializeField]
         UnityEvent m_CircleDetected;
+
+        public UnityEvent DetectedEvent => m_CircleDetected;
 
 #if XR_HANDS_1_1_OR_NEWER
         float m_WindowStartTime;

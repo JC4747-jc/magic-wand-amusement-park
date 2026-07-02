@@ -12,13 +12,15 @@ namespace MagicMR
     public class SwipeGestureDetector : HandGestureDetectorBase
     {
         [SerializeField]
-        float m_SwipeSpeedThreshold = 1.5f;
+        float m_SwipeSpeedThreshold = StudySpec.SwipeSpeedThreshold;
 
         [SerializeField]
-        float m_CooldownSeconds = 0.5f;
+        float m_CooldownSeconds = StudySpec.SwipeCooldownSeconds;
 
         [SerializeField]
         UnityEvent m_SwipeDetected;
+
+        public UnityEvent DetectedEvent => m_SwipeDetected;
 
 #if XR_HANDS_1_1_OR_NEWER
         Vector3 m_LastPalmPosition;

@@ -12,13 +12,15 @@ namespace MagicMR
     public class PinchGestureDetector : HandGestureDetectorBase
     {
         [SerializeField]
-        float m_PinchDistanceThreshold = 0.025f;
+        float m_PinchDistanceThreshold = StudySpec.PinchDistanceThreshold;
 
         [SerializeField]
         UnityEvent m_PinchStarted;
 
         [SerializeField]
         UnityEvent m_PinchEnded;
+
+        public UnityEvent DetectedEvent => m_PinchStarted;
 
 #if XR_HANDS_1_1_OR_NEWER
         bool m_IsPinching;
