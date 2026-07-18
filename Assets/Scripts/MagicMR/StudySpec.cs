@@ -12,7 +12,7 @@ namespace MagicMR
         public const float CoyoteTimeSeconds = 0.4f;
         public const float LeftResetHoldSeconds = 0.4f;
         public const float LeftPalmFacingDot = 0.6f;
-        public const float RequireReleasePinchStrength = 0.2f;
+        public const float RequireReleasePinchStrength = 0.35f;
         public const float FollowPinchStrengthMin = 0.9f;
         public const float CalibrationPinchStrengthMin = 0.45f;
         public const float CalibrationProximityMeters = 0.18f;
@@ -43,11 +43,13 @@ namespace MagicMR
         public const float SnapOpenDistanceThreshold = 0.08f;
         public const float SnapMinCloseSpeed = 0.55f;
 
-        // Fist → open burst (Deconstruction). Tip-to-palm averages.
-        public const float FistMaxTipDistance = 0.07f;
-        public const float FistOpenMinTipDistance = 0.11f;
-        public const float FistMinHoldSeconds = 0.08f;
-        public const float FistMaxBurstSeconds = 0.3f;
+        // Fist → open burst (Deconstruction). Tip-to-palm averages — loosened for PICO.
+        public const float FistMaxTipDistance = 0.095f;
+        public const float FistOpenMinTipDistance = 0.10f;
+        public const float FistMinHoldSeconds = 0.04f;
+        public const float FistMaxBurstSeconds = 0.55f;
+        public const float ResetButtonPinchDistance = 0.35f;
+        public const float ResetButtonHoldSeconds = 0.3f;
         // Held (not tapped) pinch duration that triggers real-world anchor
         // calibration instead of the Appearance dimension.
         public const float PinchHoldSeconds = 1.0f;

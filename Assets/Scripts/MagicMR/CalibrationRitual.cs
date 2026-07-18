@@ -3,8 +3,9 @@ using UnityEngine;
 namespace MagicMR
 {
     /// <summary>
-    /// Embodied registration: semi-transparent lighter-shaped wireframe ghost
-    /// pinned at the desk preset (not a floating camera billboard).
+    /// Embodied registration: semi-transparent lighter ghost floats in view
+    /// (follows HMD) so the user can overlay it on the real lighter, then
+    /// pinch-and-hold ~1s to pin to the desk plane.
     /// </summary>
     public class CalibrationRitual : MonoBehaviour
     {
@@ -17,6 +18,12 @@ namespace MagicMR
         [SerializeField]
         Camera m_Camera;
 
+        [SerializeField]
+        float m_ViewDistance = 0.52f;
+
+        [SerializeField]
+        float m_ViewHeightOffset = -0.28f;
+
         GameObject m_Ghost;
         TextMesh m_Prompt;
         AudioSource m_Audio;
@@ -25,9 +32,6 @@ namespace MagicMR
         Renderer[] m_LighterRenderers;
         bool[] m_LighterRendererWasEnabled;
         Vector3 m_GhostBaseScale = Vector3.one * 0.08f;
-        Vector3 m_WireframePosition;
-        Quaternion m_WireframeRotation = Quaternion.identity;
-        bool m_HasWireframePose;
 
         public bool IsComplete => m_Completed;
 
@@ -53,8 +57,6 @@ namespace MagicMR
             if (m_Anchor != null)
                 m_Anchor.Calibrated += OnCalibrated;
 
-            CapturePoseFromLighter();
-
             if (m_Anchor != null && m_Anchor.IsCalibrated)
             {
                 m_Completed = true;
@@ -71,18 +73,9 @@ namespace MagicMR
                 m_Anchor.Calibrated -= OnCalibrated;
         }
 
+        /// <summary>Desk fallback used after reset — ghost still follows camera during ritual.</summary>
         public void SetWireframeWorldPose(Vector3 position, Quaternion rotation)
         {
-            m_WireframePosition = position;
-            m_WireframeRotation = rotation;
-            m_HasWireframePose = true;
-
-            if (m_Ghost != null)
-            {
-                m_Ghost.transform.SetPositionAndRotation(position, rotation);
-                m_Ghost.transform.localScale = m_GhostBaseScale;
-            }
-
             m_Anchor?.SetDeskReferenceHeight(position.y);
         }
 
@@ -94,14 +87,8 @@ namespace MagicMR
                 return true;
             }
 
-            if (m_HasWireframePose)
-            {
-                position = m_WireframePosition;
-                return true;
-            }
-
-            position = default;
-            return false;
+            position = ComputeViewPose().position;
+            return true;
         }
 
         void LateUpdate()
@@ -109,29 +96,22 @@ namespace MagicMR
             if (m_Completed || m_Ghost == null)
                 return;
 
-            if (!m_HasWireframePose)
-                CapturePoseFromLighter();
+            if (m_Camera == null)
+                m_Camera = Camera.main;
+            if (m_Camera == null)
+                return;
 
-            if (m_HasWireframePose)
-            {
-                m_Ghost.transform.SetPositionAndRotation(m_WireframePosition, m_WireframeRotation);
-                m_Ghost.transform.localScale = m_GhostBaseScale;
-                m_Anchor?.SetDeskReferenceHeight(m_WireframePosition.y);
-            }
+            var pose = ComputeViewPose();
+            m_Ghost.transform.SetPositionAndRotation(pose.position, pose.rotation);
+            m_Ghost.transform.localScale = m_GhostBaseScale;
+            m_Anchor?.SetDeskReferenceHeight(pose.position.y);
 
             if (m_Prompt == null)
                 return;
 
-            if (m_Camera == null)
-                m_Camera = Camera.main;
-
-            var promptPos = m_Ghost.transform.position + Vector3.up * 0.11f;
-            m_Prompt.transform.position = promptPos;
-            if (m_Camera != null)
-            {
-                m_Prompt.transform.rotation = Quaternion.LookRotation(
-                    m_Prompt.transform.position - m_Camera.transform.position);
-            }
+            m_Prompt.transform.position = pose.position + Vector3.up * 0.11f;
+            m_Prompt.transform.rotation = Quaternion.LookRotation(
+                m_Prompt.transform.position - m_Camera.transform.position);
 
             var fsm = MRGestureController.Instance;
             var progress = fsm != null
@@ -158,19 +138,23 @@ namespace MagicMR
             }
         }
 
-        void CapturePoseFromLighter()
+        (Vector3 position, Quaternion rotation) ComputeViewPose()
         {
-            var fsm = MRGestureController.Instance;
-            if (fsm != null && fsm.HasDeskPreset)
-            {
-                SetWireframeWorldPose(fsm.DeskPresetPosition, fsm.DeskPresetRotation);
-                return;
-            }
+            var cam = m_Camera != null ? m_Camera : Camera.main;
+            if (cam == null)
+                return (Vector3.zero, Quaternion.identity);
 
-            if (m_Lighter == null)
-                return;
+            var pos = cam.transform.position
+                      + cam.transform.forward * m_ViewDistance
+                      + Vector3.up * m_ViewHeightOffset;
 
-            SetWireframeWorldPose(m_Lighter.position, m_Lighter.rotation);
+            var forward = cam.transform.forward;
+            forward.y = 0f;
+            if (forward.sqrMagnitude < 0.001f)
+                forward = Vector3.forward;
+            forward.Normalize();
+
+            return (pos, Quaternion.LookRotation(-forward, Vector3.up));
         }
 
         void SpawnGhostAndPrompt()
@@ -199,6 +183,8 @@ namespace MagicMR
                 m_GhostBaseScale = Vector3.one * 0.08f;
             }
 
+            var pose = ComputeViewPose();
+            m_Ghost.transform.SetPositionAndRotation(pose.position, pose.rotation);
             m_Ghost.transform.localScale = m_GhostBaseScale;
 
             var ghostMat = new Material(Shader.Find("Universal Render Pipeline/Unlit") ?? Shader.Find("Unlit/Color"));
@@ -217,9 +203,6 @@ namespace MagicMR
                 renderer.enabled = true;
             }
 
-            if (m_HasWireframePose)
-                m_Ghost.transform.SetPositionAndRotation(m_WireframePosition, m_WireframeRotation);
-
             var promptGo = new GameObject("CalibrationPrompt");
             promptGo.transform.SetParent(transform, false);
             m_Prompt = promptGo.AddComponent<TextMesh>();
@@ -230,7 +213,7 @@ namespace MagicMR
             m_Prompt.alignment = TextAlignment.Center;
             m_Prompt.color = new Color(0.85f, 0.95f, 1f, 0.95f);
 
-            Debug.Log("[MagicMR] Ghost lighter wireframe spawned at desk preset.", this);
+            Debug.Log("[MagicMR] Ghost lighter spawned (camera-follow wireframe).", this);
         }
 
         void CacheAndDimLighter()
@@ -313,10 +296,9 @@ namespace MagicMR
 
             FindFirstObjectByType<PinchGestureDetector>()?.ResetForNewTrial();
 
-            CapturePoseFromLighter();
             CacheAndDimLighter();
             SpawnGhostAndPrompt();
-            Debug.Log("[MagicMR] Calibration ritual restarted (desk wireframe).", this);
+            Debug.Log("[MagicMR] Calibration ritual restarted (camera-follow wireframe).", this);
         }
 
         static void SetMaterialTransparent(Material mat)

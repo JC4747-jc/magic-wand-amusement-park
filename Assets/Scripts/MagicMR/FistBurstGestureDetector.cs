@@ -7,8 +7,7 @@ using UnityEngine.XR.Hands;
 namespace MagicMR
 {
     /// <summary>
-    /// Deconstruction: right fist then burst-open within 0.3s. Snap disabled.
-    /// Left hand ignored (Reset-exclusive).
+    /// Deconstruction: right fist then burst-open. Snap disabled.
     /// </summary>
     public class FistBurstGestureDetector : HandGestureDetectorBase
     {
@@ -35,6 +34,7 @@ namespace MagicMR
             public bool InFist;
             public float FistStartTime;
             public float LastAvgTipDistance;
+            public float NextDiagLogTime;
         }
 
         BurstState m_Right;
@@ -66,12 +66,20 @@ namespace MagicMR
 
         void UpdateBurst(XRHand hand, ref BurstState state)
         {
-            if (!hand.isTracked || !TryAverageTipDistance(hand, out var avgDist))
+            if (!hand.isTracked || !TryHandMetrics(hand, out var avgDist, out var maxDist))
                 return;
 
             var now = Time.time;
-            var isFist = avgDist <= m_FistMaxTipDistance;
+            var isFist = avgDist <= m_FistMaxTipDistance || maxDist <= m_FistMaxTipDistance + 0.015f;
             var isOpen = avgDist >= m_OpenMinTipDistance;
+
+            if (now >= state.NextDiagLogTime && (state.InFist || isFist))
+            {
+                state.NextDiagLogTime = now + 0.6f;
+                Debug.Log(
+                    $"[MagicMR] Fist-burst watch avg={avgDist:F3} max={maxDist:F3} " +
+                    $"fist={isFist} open={isOpen} inFist={state.InFist}");
+            }
 
             if (isFist)
             {
@@ -80,34 +88,48 @@ namespace MagicMR
                     state.InFist = true;
                     state.FistStartTime = now;
                 }
-            }
-            else if (state.InFist && isOpen)
-            {
-                var held = now - state.FistStartTime;
-                if (held >= m_MinFistHoldSeconds &&
-                    held <= m_MaxBurstSeconds &&
-                    now - m_LastFireTime > 0.8f)
-                {
-                    m_LastFireTime = now;
-                    Debug.Log(
-                        $"[MagicMR] Fist-burst detected avgTip={avgDist:F3} held={held:F2}s.");
-                    m_FistBurstDetected?.Invoke();
-                    GestureManager.Notify(EditDimension.Deconstruction, "fist_burst");
-                }
 
-                state.InFist = false;
-            }
-            else if (!isFist)
-            {
-                state.InFist = false;
+                state.LastAvgTipDistance = avgDist;
+                return;
             }
 
+            if (!state.InFist)
+            {
+                state.LastAvgTipDistance = avgDist;
+                return;
+            }
+
+            // InFist — allow intermediate frames between closed and open.
+            var held = now - state.FistStartTime;
+            if (held > m_MaxBurstSeconds)
+            {
+                state.InFist = false;
+                return;
+            }
+
+            if (!isOpen)
+            {
+                state.LastAvgTipDistance = avgDist;
+                return;
+            }
+
+            if (held >= m_MinFistHoldSeconds && now - m_LastFireTime > 0.65f)
+            {
+                m_LastFireTime = now;
+                Debug.Log(
+                    $"[MagicMR] Fist-burst detected avgTip={avgDist:F3} held={held:F2}s.");
+                m_FistBurstDetected?.Invoke();
+                GestureManager.Notify(EditDimension.Deconstruction, "fist_burst");
+            }
+
+            state.InFist = false;
             state.LastAvgTipDistance = avgDist;
         }
 
-        static bool TryAverageTipDistance(XRHand hand, out float average)
+        static bool TryHandMetrics(XRHand hand, out float average, out float maxDist)
         {
             average = 0f;
+            maxDist = 0f;
             if (!hand.GetJoint(XRHandJointID.Palm).TryGetPose(out var palm))
                 return false;
 
@@ -116,7 +138,8 @@ namespace MagicMR
                 XRHandJointID.IndexTip,
                 XRHandJointID.MiddleTip,
                 XRHandJointID.RingTip,
-                XRHandJointID.LittleTip
+                XRHandJointID.LittleTip,
+                XRHandJointID.ThumbTip
             };
 
             var sum = 0f;
@@ -125,8 +148,11 @@ namespace MagicMR
             {
                 if (!hand.GetJoint(tipId).TryGetPose(out var tip))
                     continue;
-                sum += Vector3.Distance(tip.position, palm.position);
+                var d = Vector3.Distance(tip.position, palm.position);
+                sum += d;
                 count++;
+                if (d > maxDist)
+                    maxDist = d;
             }
 
             if (count < 3)

@@ -185,6 +185,14 @@ namespace MagicMR
             if (m_RequireRightHandRelease)
                 return false;
 
+            // Deconstruction can fire again after flower (restore then shatter again).
+            if (dimension == EditDimension.Deconstruction &&
+                m_RealityEditor != null &&
+                m_RealityEditor.IsDeconstructed)
+            {
+                return m_State == MRState.PinnedIdle;
+            }
+
             // Mutual exclusion window: one 4D gesture at a time (no overlap).
             if (Time.unscaledTime < m_EditExclusiveUntil)
                 return false;
@@ -521,8 +529,11 @@ namespace MagicMR
             if (cam == null)
                 return pinching;
 
-            // Palm.up toward HMD forward ≈ "watch" / glance-at-wrist pose.
-            palmFacingHmd = Vector3.Dot(palm.up, cam.transform.forward) > m_LeftPalmFacingDot;
+            var hmdForward = cam.transform.forward;
+            var watchDot = Mathf.Max(
+                Vector3.Dot(palm.up, hmdForward),
+                Vector3.Dot(-palm.forward, hmdForward));
+            palmFacingHmd = watchDot > m_LeftPalmFacingDot * 0.75f;
             return true;
         }
 
