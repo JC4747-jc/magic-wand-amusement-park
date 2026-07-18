@@ -7,8 +7,7 @@ using UnityEngine.XR.Hands;
 namespace MagicMR
 {
     /// <summary>
-    /// Gesture D: thumb + middle finger snap (fast close).
-    /// MVP fallback: use double pinch on PinchGestureDetector instead.
+    /// Gesture D: thumb + middle finger snap (fast close). Both hands.
     /// </summary>
     public class SnapGestureDetector : HandGestureDetectorBase
     {
@@ -22,18 +21,57 @@ namespace MagicMR
         float m_MinCloseSpeed = StudySpec.SnapMinCloseSpeed;
 
         [SerializeField]
-        UnityEvent m_SnapDetected;
+        UnityEvent m_SnapDetected = new UnityEvent();
 
-        public UnityEvent DetectedEvent => m_SnapDetected;
+        public UnityEvent DetectedEvent => m_SnapDetected ??= new UnityEvent();
 
 #if XR_HANDS_1_1_OR_NEWER
-        bool m_WasOpen = true;
-        bool m_FiredThisAttempt;
-        float m_LastDistance;
-        float m_MinDistanceThisAttempt = float.MaxValue;
-        float m_MaxSpeedThisAttempt;
+        struct SnapState
+        {
+            public bool WasOpen;
+            public bool FiredThisAttempt;
+            public float LastDistance;
+            public float MinDistanceThisAttempt;
+            public float MaxSpeedThisAttempt;
+            public bool HasLast;
+        }
+
+        SnapState m_Left = new SnapState { WasOpen = true, MinDistanceThisAttempt = float.MaxValue };
+        SnapState m_Right = new SnapState { WasOpen = true, MinDistanceThisAttempt = float.MaxValue };
+        float m_LastFireTime;
+
+        void Awake()
+        {
+            m_CloseDistanceThreshold = StudySpec.SnapCloseDistanceThreshold;
+            m_OpenDistanceThreshold = StudySpec.SnapOpenDistanceThreshold;
+            m_MinCloseSpeed = StudySpec.SnapMinCloseSpeed;
+            // Snap conflicts with pinch — keep disabled; use fist-burst instead.
+            enabled = false;
+        }
+
+        protected override void OnEnable()
+        {
+            // Never subscribe / run — fist-burst replaces snap.
+            enabled = false;
+        }
+
+        protected override void OnUpdatedHands(
+            XRHandSubsystem subsystem,
+            XRHandSubsystem.UpdateSuccessFlags updateSuccessFlags,
+            XRHandSubsystem.UpdateType updateType)
+        {
+            if ((updateSuccessFlags & XRHandSubsystem.UpdateSuccessFlags.LeftHandJoints) != 0)
+                UpdateSnap(subsystem.leftHand, ref m_Left);
+            if ((updateSuccessFlags & XRHandSubsystem.UpdateSuccessFlags.RightHandJoints) != 0)
+                UpdateSnap(subsystem.rightHand, ref m_Right);
+        }
 
         protected override void ProcessHand(XRHand hand)
+        {
+            UpdateSnap(hand, ref m_Right);
+        }
+
+        void UpdateSnap(XRHand hand, ref SnapState state)
         {
             if (!TryGetJointPose(hand, XRHandJointID.ThumbTip, out var thumbTip) ||
                 !TryGetJointPose(hand, XRHandJointID.MiddleTip, out var middleTip))
@@ -42,34 +80,42 @@ namespace MagicMR
             }
 
             var distance = Vector3.Distance(thumbTip.position, middleTip.position);
-            var speed = (m_LastDistance - distance) / Mathf.Max(Time.deltaTime, 0.0001f);
-            m_LastDistance = distance;
-            m_MinDistanceThisAttempt = Mathf.Min(m_MinDistanceThisAttempt, distance);
-            m_MaxSpeedThisAttempt = Mathf.Max(m_MaxSpeedThisAttempt, speed);
+            var speed = 0f;
+            if (state.HasLast)
+                speed = (state.LastDistance - distance) / Mathf.Max(Time.deltaTime, 0.0001f);
 
-            if (m_WasOpen && distance <= m_CloseDistanceThreshold && speed >= m_MinCloseSpeed)
+            state.LastDistance = distance;
+            state.HasLast = true;
+            state.MinDistanceThisAttempt = Mathf.Min(state.MinDistanceThisAttempt, distance);
+            state.MaxSpeedThisAttempt = Mathf.Max(state.MaxSpeedThisAttempt, speed);
+
+            if (state.WasOpen &&
+                distance <= m_CloseDistanceThreshold &&
+                speed >= m_MinCloseSpeed &&
+                Time.time - m_LastFireTime > 0.6f)
             {
+                m_LastFireTime = Time.time;
+                state.WasOpen = false;
+                state.FiredThisAttempt = true;
+                Debug.Log(
+                    $"[MagicMR] Snap detected dist={distance:F3} speed={speed:F2} hand={hand.handedness}.");
                 m_SnapDetected.Invoke();
-                m_WasOpen = false;
-                m_FiredThisAttempt = true;
             }
             else if (distance >= m_OpenDistanceThreshold)
             {
-                // Diagnostic: if the hand closed near the thresholds without
-                // triggering, log the closest approach so thresholds can be
-                // tuned from real on-device data.
-                if (!m_WasOpen && !m_FiredThisAttempt && m_MinDistanceThisAttempt < m_OpenDistanceThreshold * 0.9f)
+                if (!state.WasOpen && !state.FiredThisAttempt &&
+                    state.MinDistanceThisAttempt < m_OpenDistanceThreshold * 0.9f)
                 {
                     Debug.Log(
-                        $"[MagicMR] Snap attempt missed: minDist={m_MinDistanceThisAttempt:F3} " +
-                        $"(need<= {m_CloseDistanceThreshold:F3}) maxSpeed={m_MaxSpeedThisAttempt:F2} " +
+                        $"[MagicMR] Snap attempt missed: minDist={state.MinDistanceThisAttempt:F3} " +
+                        $"(need<= {m_CloseDistanceThreshold:F3}) maxSpeed={state.MaxSpeedThisAttempt:F2} " +
                         $"(need>= {m_MinCloseSpeed:F2})");
                 }
 
-                m_WasOpen = true;
-                m_FiredThisAttempt = false;
-                m_MinDistanceThisAttempt = float.MaxValue;
-                m_MaxSpeedThisAttempt = 0f;
+                state.WasOpen = true;
+                state.FiredThisAttempt = false;
+                state.MinDistanceThisAttempt = float.MaxValue;
+                state.MaxSpeedThisAttempt = 0f;
             }
         }
 #else

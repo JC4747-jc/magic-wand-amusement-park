@@ -71,6 +71,9 @@ namespace MagicMR.Editor
             {
                 var so = new SerializedObject(pinch);
                 so.FindProperty("m_PinchDistanceThreshold").floatValue = StudySpec.PinchDistanceThreshold;
+                so.FindProperty("m_HoldPinchDistanceThreshold").floatValue = StudySpec.HoldPinchDistanceThreshold;
+                so.FindProperty("m_HoldDurationSeconds").floatValue = StudySpec.PinchHoldSeconds;
+                so.FindProperty("m_HoldDropoutGraceSeconds").floatValue = StudySpec.HoldDropoutGraceSeconds;
                 so.ApplyModifiedPropertiesWithoutUndo();
             }
 

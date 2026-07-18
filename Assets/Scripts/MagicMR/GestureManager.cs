@@ -5,11 +5,14 @@ using UnityEngine.XR.Hands;
 namespace MagicMR
 {
     /// <summary>
-    /// Central gesture dispatch, experiment condition gating, and hand sampling for logging.
+    /// Central gesture dispatch. Detectors call <see cref="Notify"/> directly
+    /// (UnityEvent wiring was silently dropping events on device).
     /// </summary>
     [DefaultExecutionOrder(-50)]
     public class GestureManager : MonoBehaviour
     {
+        public static GestureManager Instance { get; private set; }
+
         [Header("Study Session")]
         [SerializeField]
         string m_SubjectId = StudySpec.DefaultSubjectId;
@@ -47,9 +50,13 @@ namespace MagicMR
         SnapGestureDetector m_SnapDetector;
 
         [SerializeField]
+        FistBurstGestureDetector m_FistBurstDetector;
+
+        [SerializeField]
         RealityEditor m_RealityEditor;
 
         float m_LastGestureTime = -999f;
+        float m_BlockGesturesUntil;
         Vector3 m_LastHandPosition;
         bool m_HasHandPosition;
 
@@ -64,11 +71,14 @@ namespace MagicMR
 
         void Awake()
         {
+            Instance = this;
             ResolveReferences();
+            Debug.Log("[MagicMR] GestureManager awake (direct Notify dispatch).", this);
         }
 
         void OnEnable()
         {
+            Instance = this;
             BindDetectors();
 #if XR_HANDS_1_1_OR_NEWER
             SubsystemManager.GetSubsystems(s_HandSubsystems);
@@ -79,38 +89,82 @@ namespace MagicMR
 
         void Start()
         {
+            ResolveReferences();
+            BindDetectors();
+            FindFirstObjectByType<LighterAnchorManager>()?.BindPinchHoldListener();
+
             if (m_AutoStartSession && DataLogger.Instance != null)
                 DataLogger.Instance.StartSession(m_SubjectId, m_Condition, m_TrialId);
+
+            Debug.Log(
+                $"[MagicMR] GestureManager ready editor={(m_RealityEditor != null)} " +
+                $"pinch={(m_PinchDetector != null)} circle={(m_CircleDetector != null)} " +
+                $"swipe={(m_SwipeDetector != null)} fist={(m_FistBurstDetector != null)} dims={m_EnabledDimensions}",
+                this);
         }
 
         void OnDisable()
         {
             UnbindDetectors();
+            if (Instance == this)
+                Instance = null;
         }
 
         void OnDestroy()
         {
             if (m_AutoStartSession && DataLogger.Instance != null && DataLogger.Instance.SessionActive)
                 DataLogger.Instance.EndSession();
+            if (Instance == this)
+                Instance = null;
         }
 
         void Update()
         {
+#if XR_HANDS_1_1_OR_NEWER
+            if (m_HandSubsystem == null)
+            {
+                SubsystemManager.GetSubsystems(s_HandSubsystems);
+                if (s_HandSubsystems.Count > 0)
+                {
+                    m_HandSubsystem = s_HandSubsystems[0];
+                    if (!m_HandSubsystem.running)
+                        m_HandSubsystem.Start();
+                }
+            }
+#endif
             SampleHandForLogging();
+        }
+
+        /// <summary>Called directly by gesture detectors (preferred over UnityEvent).</summary>
+        public static void Notify(EditDimension dimension, string gestureName)
+        {
+            if (Instance == null)
+                Instance = FindFirstObjectByType<GestureManager>();
+            if (Instance == null)
+            {
+                Debug.LogWarning($"[MagicMR] GestureManager missing; dropped {gestureName}.");
+                // Last-resort: apply on RealityEditor directly.
+                var lighter = GameObject.Find("Lighter");
+                var editor = lighter != null ? lighter.GetComponent<RealityEditor>() : null;
+                editor?.ApplyDimension(dimension, Vector3.zero, false);
+                return;
+            }
+
+            Instance.HandleGesture(dimension, gestureName);
         }
 
         void ResolveReferences()
         {
-            if (m_PinchDetector == null || m_CircleDetector == null || m_SwipeDetector == null || m_SnapDetector == null)
+            var root = GameObject.Find("GestureDetectors");
+            if (root != null)
             {
-                var root = GameObject.Find("GestureDetectors");
-                if (root != null)
-                {
-                    m_PinchDetector ??= root.GetComponent<PinchGestureDetector>();
-                    m_CircleDetector ??= root.GetComponent<CircleGestureDetector>();
-                    m_SwipeDetector ??= root.GetComponent<SwipeGestureDetector>();
-                    m_SnapDetector ??= root.GetComponent<SnapGestureDetector>();
-                }
+                m_PinchDetector ??= root.GetComponent<PinchGestureDetector>();
+                m_CircleDetector ??= root.GetComponent<CircleGestureDetector>();
+                m_SwipeDetector ??= root.GetComponent<SwipeGestureDetector>();
+                m_SnapDetector ??= root.GetComponent<SnapGestureDetector>();
+                m_FistBurstDetector ??= root.GetComponent<FistBurstGestureDetector>();
+                if (m_FistBurstDetector == null)
+                    m_FistBurstDetector = root.AddComponent<FistBurstGestureDetector>();
             }
 
             if (m_RealityEditor == null)
@@ -121,43 +175,106 @@ namespace MagicMR
             }
         }
 
+        public void RebindDetectors()
+        {
+            UnbindDetectors();
+            ResolveReferences();
+            BindDetectors();
+            FindFirstObjectByType<LighterAnchorManager>()?.BindPinchHoldListener();
+            Debug.Log("[MagicMR] GestureManager rebound.", this);
+        }
+
         void BindDetectors()
         {
+            // Detectors call Notify() directly. Clear stale UnityEvent wiring so
+            // scene leftovers cannot double-fire. Calibration is FSM-owned.
             if (m_PinchDetector != null)
             {
-                m_PinchDetector.DetectedEvent.RemoveAllListeners();
-                m_PinchDetector.DetectedEvent.AddListener(() => HandleGesture(EditDimension.Appearance, "pinch"));
+                SafeClear(m_PinchDetector.DetectedEvent);
+                SafeClear(m_PinchDetector.HeldEvent);
             }
 
             if (m_CircleDetector != null)
-            {
-                m_CircleDetector.DetectedEvent.RemoveAllListeners();
-                m_CircleDetector.DetectedEvent.AddListener(() => HandleGesture(EditDimension.Agency, "circle"));
-            }
+                SafeClear(m_CircleDetector.DetectedEvent);
 
             if (m_SwipeDetector != null)
-            {
-                m_SwipeDetector.DetectedEvent.RemoveAllListeners();
-                m_SwipeDetector.DetectedEvent.AddListener(() => HandleGesture(EditDimension.Rule, "swipe"));
-            }
+                SafeClear(m_SwipeDetector.DetectedEvent);
 
             if (m_SnapDetector != null)
             {
-                m_SnapDetector.DetectedEvent.RemoveAllListeners();
-                m_SnapDetector.DetectedEvent.AddListener(() => HandleGesture(EditDimension.Deconstruction, "snap"));
+                SafeClear(m_SnapDetector.DetectedEvent);
+                m_SnapDetector.enabled = false;
+            }
+
+            if (m_FistBurstDetector != null)
+            {
+                m_FistBurstDetector.enabled = true;
+                SafeClear(m_FistBurstDetector.DetectedEvent);
             }
         }
 
         void UnbindDetectors()
         {
-            m_PinchDetector?.DetectedEvent.RemoveAllListeners();
-            m_CircleDetector?.DetectedEvent.RemoveAllListeners();
-            m_SwipeDetector?.DetectedEvent.RemoveAllListeners();
-            m_SnapDetector?.DetectedEvent.RemoveAllListeners();
+            SafeClear(m_PinchDetector != null ? m_PinchDetector.DetectedEvent : null);
+            SafeClear(m_PinchDetector != null ? m_PinchDetector.HeldEvent : null);
+            SafeClear(m_CircleDetector != null ? m_CircleDetector.DetectedEvent : null);
+            SafeClear(m_SwipeDetector != null ? m_SwipeDetector.DetectedEvent : null);
+            SafeClear(m_SnapDetector != null ? m_SnapDetector.DetectedEvent : null);
+            SafeClear(m_FistBurstDetector != null ? m_FistBurstDetector.DetectedEvent : null);
+        }
+
+        static void SafeClear(UnityEngine.Events.UnityEvent evt)
+        {
+            evt?.RemoveAllListeners();
         }
 
         void HandleGesture(EditDimension dimension, string gestureName)
         {
+            if (Time.time < m_BlockGesturesUntil)
+            {
+                Debug.Log($"[MagicMR] Gesture {gestureName} blocked (guard).");
+                return;
+            }
+
+            // Strict FSM gating — Cooldown / CalibrationReady / FollowingHand /
+            // requireRightHandRelease all drop 4D edits here.
+            var fsm = MRGestureController.Instance;
+            if (fsm != null && !fsm.CanAcceptEditGesture(dimension))
+            {
+                Debug.Log(
+                    $"[MagicMR] Gesture {gestureName} blocked (FSM state={fsm.State}, " +
+                    $"requireRelease={fsm.RequireRightHandRelease}).");
+                return;
+            }
+
+            if (fsm == null)
+            {
+                // Legacy fallback when FSM is missing from the scene.
+                if (dimension == EditDimension.Appearance)
+                {
+                    var anchor = m_RealityEditor != null
+                        ? m_RealityEditor.GetComponent<LighterAnchorManager>()
+                        : FindFirstObjectByType<LighterAnchorManager>();
+                    if (anchor != null && !anchor.IsCalibrated)
+                    {
+                        Debug.Log("[MagicMR] Appearance blocked (not calibrated yet).");
+                        return;
+                    }
+                }
+
+                if (dimension == EditDimension.Rule)
+                {
+                    var anchor = m_RealityEditor != null
+                        ? m_RealityEditor.GetComponent<LighterAnchorManager>()
+                        : null;
+                    if (anchor != null && anchor.IsFollowingHand)
+                    {
+                        Debug.Log($"[MagicMR] Gesture {gestureName} blocked (following hand).");
+                        return;
+                    }
+                }
+            }
+
             Debug.Log($"[MagicMR] Gesture detected: {gestureName} -> {dimension}");
 
             if (!IsDimensionEnabled(dimension))
@@ -174,11 +291,24 @@ namespace MagicMR
 
             if (m_RealityEditor == null)
             {
-                Debug.LogWarning("[GestureManager] RealityEditor not found.", this);
-                return;
+                ResolveReferences();
+                if (m_RealityEditor == null)
+                {
+                    Debug.LogWarning("[GestureManager] RealityEditor not found.", this);
+                    return;
+                }
             }
 
             m_LastGestureTime = Time.time;
+
+            if (dimension == EditDimension.Deconstruction)
+            {
+                m_PinchDetector?.SuppressTapFor(1.0f);
+                m_BlockGesturesUntil = Time.time + 0.5f;
+            }
+
+            fsm?.NotifyEditAccepted(dimension);
+
             var distance = m_RealityEditor.GetHandDistance(m_LastHandPosition, m_HasHandPosition);
             m_RealityEditor.ApplyDimension(dimension, m_LastHandPosition, m_HasHandPosition);
             LogGesture($"{gestureName}_triggered", dimension, distance: distance);
@@ -235,6 +365,22 @@ namespace MagicMR
             m_Condition = condition;
             m_TrialId = trialId;
             m_EnabledDimensions = enabledDimensions;
+        }
+
+        public void SetEnabledDimensions(EnabledDimensions enabledDimensions)
+        {
+            m_EnabledDimensions = enabledDimensions;
+        }
+
+        public void SetConditionLabel(string condition)
+        {
+            m_Condition = condition;
+        }
+
+        public void NotifyStudyReset()
+        {
+            m_BlockGesturesUntil = Time.time + 0.75f;
+            m_LastGestureTime = Time.time;
         }
 
         public void BeginTrial(int trialId)

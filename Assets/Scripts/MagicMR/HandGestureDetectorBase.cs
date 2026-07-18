@@ -23,18 +23,41 @@ namespace MagicMR
 
         protected virtual void OnEnable()
         {
-            SubsystemManager.GetSubsystems(s_Subsystems);
-            if (s_Subsystems.Count == 0)
-            {
-                Debug.LogWarning("XR Hand Subsystem not found. Enable Hand Tracking on PXR_Manager.", this);
-                return;
-            }
-
-            m_Subsystem = s_Subsystems[0];
-            m_Subsystem.updatedHands += OnUpdatedHands;
+            TrySubscribeToHands();
         }
 
         protected virtual void OnDisable()
+        {
+            UnsubscribeFromHands();
+        }
+
+        void Update()
+        {
+            // XR Hand Subsystem often appears a frame or two after scene
+            // load (after XR init). If we only subscribe in OnEnable we can
+            // miss it entirely and gestures never fire — VstTest doesn't
+            // use detectors so this race only shows up in MagicMR.
+            if (m_Subsystem == null)
+                TrySubscribeToHands();
+        }
+
+        void TrySubscribeToHands()
+        {
+            if (m_Subsystem != null)
+                return;
+
+            SubsystemManager.GetSubsystems(s_Subsystems);
+            if (s_Subsystems.Count == 0)
+                return;
+
+            m_Subsystem = s_Subsystems[0];
+            if (!m_Subsystem.running)
+                m_Subsystem.Start();
+
+            m_Subsystem.updatedHands += OnUpdatedHands;
+        }
+
+        void UnsubscribeFromHands()
         {
             if (m_Subsystem == null)
                 return;
@@ -43,7 +66,19 @@ namespace MagicMR
             m_Subsystem = null;
         }
 
-        void OnUpdatedHands(
+        /// <summary>Called after bootstrap starts the hand subsystem.</summary>
+        public void EnsureHandTrackingSubscribed()
+        {
+            TrySubscribeToHands();
+        }
+
+        public static void EnsureAllSubscribed()
+        {
+            foreach (var detector in FindObjectsByType<HandGestureDetectorBase>(FindObjectsSortMode.None))
+                detector.EnsureHandTrackingSubscribed();
+        }
+
+        protected virtual void OnUpdatedHands(
             XRHandSubsystem subsystem,
             XRHandSubsystem.UpdateSuccessFlags updateSuccessFlags,
             XRHandSubsystem.UpdateType updateType)

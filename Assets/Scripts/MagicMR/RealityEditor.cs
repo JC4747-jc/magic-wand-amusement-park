@@ -25,7 +25,7 @@ namespace MagicMR
 
     /// <summary>
     /// Four-dimensional reality editing controller for MR study targets.
-    /// Appearance (Pinch), Agency (Circle), Rule (Swipe), Deconstruction (Snap).
+    /// Appearance (Pinch), Agency (Circle), Rule (Swipe), Deconstruction (Fist→Open).
     /// </summary>
     public class RealityEditor : MonoBehaviour
     {
@@ -68,6 +68,9 @@ namespace MagicMR
         [SerializeField]
         bool m_ConstrainEvadeToXZ = StudySpec.ConstrainEvadeToXZ;
 
+        [SerializeField]
+        float m_GhostTrailLifetime = 0.5f;
+
         [Header("Deconstruction")]
         [SerializeField]
         ParticleSystem m_DeconstructionVfx;
@@ -79,31 +82,42 @@ namespace MagicMR
         float m_DeconstructionDelay = StudySpec.DeconstructionDelay;
 
         Material m_OriginalMaterial;
+        Material[] m_OriginalChildMaterials;
+        Renderer[] m_AllRenderers;
         Vector3 m_BaseScale;
         Vector3 m_InitialPosition;
         Rigidbody m_Rigidbody;
         EditDimension m_ActiveDimension = EditDimension.None;
         float m_StateEnterTime;
         int m_EvadeCount;
+        int m_EvasionFailureCount;
         Coroutine m_DeconstructionCoroutine;
+        GameObject m_SpawnedFlower;
+        bool m_IsDeconstructed;
+        ParticleSystem m_SmokeParticles;
+        float m_LastGrowlTime;
+        float m_LastEvasionFailureLogTime;
+        float m_LastGhostTrailTime;
 
-        // Without damping the object would drift forever at a constant velocity
-        // (no gravity, no friction); this keeps the "evade" hop short and bounded
-        // to a small leash around its spawn point instead of flying across the room.
         const float k_EvadeLinearDamping = 10f;
         const float k_EvadeLeashMultiplier = 2f;
+        const float k_EvadeCooldown = 0.35f;
+        const float k_EvasionFailureDistance = 0.10f;
+        const float k_EvasionFailureMinFlee = 0.12f;
+        float m_LastEvadeTime;
 
         public EditDimension ActiveDimension => m_ActiveDimension;
+        public bool IsDeconstructed => m_IsDeconstructed;
         public float CurrentStateDuration => m_ActiveDimension == EditDimension.None ? 0f : Time.time - m_StateEnterTime;
         public float CurrentVelocity =>
             m_Rigidbody != null ? m_Rigidbody.linearVelocity.magnitude : 0f;
 
         public int EvadeCount => m_EvadeCount;
+        public int EvasionFailureCount => m_EvasionFailureCount;
 
         void Awake()
         {
-            if (m_TargetRenderer == null)
-                m_TargetRenderer = GetComponentInChildren<Renderer>();
+            CacheRenderers();
 
             if (m_TargetRenderer != null)
                 m_OriginalMaterial = m_TargetRenderer.sharedMaterial;
@@ -120,15 +134,119 @@ namespace MagicMR
             }
 
             m_Rigidbody.linearDamping = k_EvadeLinearDamping;
+
+            EnsureAudioSource();
+            EnsureAgencyEyes();
+            m_IdlePulseSpeed = StudySpec.IdlePulseSpeed;
+            m_IdlePulseScale = StudySpec.IdlePulseScale;
+            if (m_BurnSfx == null)
+                m_BurnSfx = Resources.Load<AudioClip>("MagicMR/BurnSizzle");
+
+            if (m_EyesObject != null)
+                m_EyesObject.SetActive(false);
+        }
+
+        void EnsureAudioSource()
+        {
+            if (m_AudioSource == null)
+                m_AudioSource = GetComponent<AudioSource>();
+            if (m_AudioSource == null)
+                m_AudioSource = gameObject.AddComponent<AudioSource>();
+            m_AudioSource.playOnAwake = false;
+            m_AudioSource.loop = false;
+            m_AudioSource.spatialBlend = 0.6f;
+            if (m_AudioSource.isPlaying)
+                m_AudioSource.Stop();
+        }
+
+        void EnsureAgencyEyes()
+        {
+            if (m_EyesObject == null)
+            {
+                var existing = transform.Find("AgencyEyes");
+                if (existing != null)
+                    m_EyesObject = existing.gameObject;
+            }
+
+            if (m_EyesObject != null)
+                return;
+
+            m_EyesObject = new GameObject("AgencyEyes");
+            m_EyesObject.transform.SetParent(transform, false);
+            m_EyesObject.transform.localPosition = new Vector3(0f, 0.55f, 0.35f);
+
+            CreateEyeQuad(m_EyesObject.transform, "Eye_L", new Vector3(-0.1f, 0f, 0f));
+            CreateEyeQuad(m_EyesObject.transform, "Eye_R", new Vector3(0.1f, 0f, 0f));
+            m_EyesObject.SetActive(false);
+        }
+
+        static void CreateEyeQuad(Transform parent, string name, Vector3 localPos)
+        {
+            var go = GameObject.CreatePrimitive(PrimitiveType.Quad);
+            go.name = name;
+            go.transform.SetParent(parent, false);
+            go.transform.localPosition = localPos;
+            go.transform.localScale = new Vector3(0.1f, 0.075f, 1f);
+            Destroy(go.GetComponent<Collider>());
+
+            var mat = new Material(Shader.Find("Universal Render Pipeline/Unlit") ?? Shader.Find("Unlit/Color"));
+            var color = new Color(1f, 0.12f, 0.05f, 1f);
+            if (mat.HasProperty("_BaseColor"))
+                mat.SetColor("_BaseColor", color);
+            if (mat.HasProperty("_Color"))
+                mat.SetColor("_Color", color);
+            go.GetComponent<Renderer>().sharedMaterial = mat;
+        }
+
+        void CacheRenderers()
+        {
+            if (m_TargetRenderer == null)
+                m_TargetRenderer = GetComponentInChildren<Renderer>();
+
+            m_AllRenderers = GetComponentsInChildren<Renderer>(true);
+            m_OriginalChildMaterials = new Material[m_AllRenderers.Length];
+            for (var i = 0; i < m_AllRenderers.Length; i++)
+                m_OriginalChildMaterials[i] = m_AllRenderers[i] != null ? m_AllRenderers[i].sharedMaterial : null;
         }
 
         void Update()
         {
-            if (m_ActiveDimension == EditDimension.Agency && m_AgencyAnimator == null)
+            if (m_ActiveDimension == EditDimension.Agency)
+            {
                 ApplyIdlePulse();
+                MaybePlayGrowl();
+            }
 
             if (m_ActiveDimension == EditDimension.Rule)
+            {
                 UpdateRuleEvade();
+                UpdateEvasionFailures();
+            }
+
+            if (m_SpawnedFlower != null)
+                FloatFlower();
+        }
+
+        void MaybePlayGrowl()
+        {
+            if (m_AudioSource == null || Time.time - m_LastGrowlTime < 2.2f)
+                return;
+
+            // Growl near pulse peaks for "alive" feel.
+            var phase = Mathf.Sin(Time.time * m_IdlePulseSpeed);
+            if (phase < 0.85f)
+                return;
+
+            m_LastGrowlTime = Time.time;
+            m_AudioSource.PlayOneShot(MagicMRAudioFactory.Growl, 0.28f);
+        }
+
+        void FloatFlower()
+        {
+            var basePos = m_InitialPosition;
+            var bob = Mathf.Sin(Time.time * 1.6f) * 0.015f;
+            m_SpawnedFlower.transform.position = basePos + Vector3.up * (0.02f + bob);
+            m_SpawnedFlower.transform.Rotate(0f, 18f * Time.deltaTime, 0f, Space.World);
         }
 
         void FixedUpdate()
@@ -138,7 +256,11 @@ namespace MagicMR
 
         void ClampToLeash()
         {
-            if (m_Rigidbody == null)
+            if (m_Rigidbody == null || m_IsDeconstructed)
+                return;
+
+            var anchor = GetComponent<LighterAnchorManager>();
+            if (anchor != null && anchor.IsFollowingHand)
                 return;
 
             var offset = transform.position - m_InitialPosition;
@@ -153,6 +275,11 @@ namespace MagicMR
 
         public void ApplyDimension(EditDimension dimension, Vector3 handPosition, bool hasHandPosition)
         {
+            // Coming back from flower: destroy flower and restore lighter before
+            // applying a new dimension (except another deconstruction).
+            if (m_IsDeconstructed && dimension != EditDimension.Deconstruction)
+                RestoreFromDeconstruction();
+
             switch (dimension)
             {
                 case EditDimension.Appearance:
@@ -185,31 +312,127 @@ namespace MagicMR
             return hasHandPosition ? Vector3.Distance(handPosition, transform.position) : -1f;
         }
 
+        public void SyncWorldAnchor(Vector3 worldPosition)
+        {
+            m_InitialPosition = worldPosition;
+            if (m_SpawnedFlower != null)
+                m_SpawnedFlower.transform.position = worldPosition;
+        }
+
+        /// <summary>
+        /// Re-show the lighter only if it was not intentionally deconstructed.
+        /// Calibration must not resurrect a flower+lighter double state.
+        /// </summary>
+        public void EnsureVisible()
+        {
+            if (m_IsDeconstructed)
+            {
+                Debug.Log("[MagicMR] EnsureVisible skipped (deconstructed / flower active).", this);
+                return;
+            }
+
+            SetAllRenderersEnabled(true);
+            gameObject.SetActive(true);
+        }
+
         public void TriggerAppearance()
         {
             EnterState(EditDimension.Appearance);
+            SetAllRenderersEnabled(true);
 
-            if (m_TargetRenderer != null && m_BurntMaterial != null)
-                m_TargetRenderer.sharedMaterial = m_BurntMaterial;
+            if (m_BurntMaterial != null)
+            {
+                foreach (var renderer in m_AllRenderers)
+                {
+                    if (renderer != null)
+                        renderer.sharedMaterial = m_BurntMaterial;
+                }
 
-            if (m_AudioSource != null && m_BurnSfx != null)
-                m_AudioSource.PlayOneShot(m_BurnSfx);
+                Debug.Log("[MagicMR] Appearance: burnt material applied.", this);
+            }
+            else
+            {
+                Debug.LogWarning("[MagicMR] Appearance: burnt material missing.", this);
+            }
+
+            PlayAppearanceVfx();
+
+            if (m_AudioSource != null)
+            {
+                if (m_BurnSfx != null)
+                    m_AudioSource.PlayOneShot(m_BurnSfx);
+                else
+                    m_AudioSource.PlayOneShot(MagicMRAudioFactory.Whoosh, 0.35f);
+            }
+        }
+
+        void PlayAppearanceVfx()
+        {
+            if (m_SmokeParticles == null)
+                m_SmokeParticles = MagicMRVfxFactory.CreateSmoke(transform);
+
+            m_SmokeParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            m_SmokeParticles.Play();
         }
 
         public void TriggerAgency()
         {
             EnterState(EditDimension.Agency);
+            SetAllRenderersEnabled(true);
+            EnsureAgencyEyes();
 
             if (m_EyesObject != null)
                 m_EyesObject.SetActive(true);
 
             if (m_AgencyAnimator != null && !string.IsNullOrEmpty(m_AliveBoolParameter))
                 m_AgencyAnimator.SetBool(m_AliveBoolParameter, true);
+
+            if (m_AudioSource != null)
+                m_AudioSource.PlayOneShot(MagicMRAudioFactory.Growl, 0.4f);
+
+            Debug.Log("[MagicMR] Agency: alive / pulse + eyes.", this);
         }
 
         public void TriggerRule()
         {
             EnterState(EditDimension.Rule);
+            SetAllRenderersEnabled(true);
+
+            // One-shot lateral dodge (20cm) + ghost trail for virtual/physical mismatch.
+            ApplyRuleDodge();
+            Debug.Log("[MagicMR] Rule: 20cm lateral dodge + ghost trail.", this);
+        }
+
+        void ApplyRuleDodge()
+        {
+            var cam = Camera.main;
+            var right = cam != null ? cam.transform.right : Vector3.right;
+            right.y = 0f;
+            if (right.sqrMagnitude < 0.0001f)
+                right = Vector3.right;
+            right.Normalize();
+
+            // Alternate side each Rule trigger for clearer mismatch.
+            var side = (m_EvadeCount % 2 == 0) ? 1f : -1f;
+            var target = transform.position + right * (StudySpec.RuleDodgeMeters * side);
+            target.y = transform.position.y;
+
+            SpawnEvadeGhostTrail();
+            if (m_Rigidbody != null)
+            {
+                m_Rigidbody.MovePosition(target);
+                m_Rigidbody.linearVelocity = Vector3.zero;
+            }
+            else
+            {
+                transform.position = target;
+            }
+
+            m_EvadeCount++;
+            m_LastEvadeTime = Time.time;
+
+            if (m_AudioSource != null)
+                m_AudioSource.PlayOneShot(MagicMRAudioFactory.Whoosh, 0.55f);
         }
 
         public void TriggerDeconstruction()
@@ -223,19 +446,101 @@ namespace MagicMR
 
         IEnumerator DeconstructionRoutine()
         {
+            if (m_AudioSource != null)
+                m_AudioSource.PlayOneShot(MagicMRAudioFactory.Shatter, 0.85f);
+
             if (m_DeconstructionVfx != null)
             {
                 var vfx = Instantiate(m_DeconstructionVfx, transform.position, transform.rotation);
                 Destroy(vfx.gameObject, m_DeconstructionDelay + 1f);
             }
 
-            if (m_TargetRenderer != null)
-                m_TargetRenderer.enabled = false;
+            // Hide body + cap + wheel so only the flower remains.
+            SetAllRenderersEnabled(false);
+            if (m_EyesObject != null)
+                m_EyesObject.SetActive(false);
+
+            m_IsDeconstructed = true;
 
             yield return new WaitForSeconds(m_DeconstructionDelay);
 
-            if (m_FlowerPrefab != null)
-                Instantiate(m_FlowerPrefab, transform.position, transform.rotation);
+            SpawnFlower();
+            Debug.Log("[MagicMR] Deconstruction: flower spawned, lighter hidden.", this);
+        }
+
+        void SpawnFlower()
+        {
+            if (m_FlowerPrefab == null)
+            {
+                Debug.LogWarning("[MagicMR] Flower prefab missing.", this);
+                return;
+            }
+
+            if (m_SpawnedFlower != null)
+                Destroy(m_SpawnedFlower);
+
+            m_SpawnedFlower = Instantiate(m_FlowerPrefab, transform.position, transform.rotation);
+            MagicMRVfxFactory.CreateGoldDust(m_SpawnedFlower.transform);
+        }
+
+        void ClearFlower()
+        {
+            if (m_SpawnedFlower == null)
+                return;
+
+            Destroy(m_SpawnedFlower);
+            m_SpawnedFlower = null;
+        }
+
+        void RestoreFromDeconstruction()
+        {
+            if (m_DeconstructionCoroutine != null)
+            {
+                StopCoroutine(m_DeconstructionCoroutine);
+                m_DeconstructionCoroutine = null;
+            }
+
+            ClearFlower();
+            m_IsDeconstructed = false;
+            SetAllRenderersEnabled(true);
+            RestoreOriginalMaterials();
+            transform.localScale = m_BaseScale;
+            Debug.Log("[MagicMR] Restored lighter from deconstruction (flower cleared).", this);
+        }
+
+        void SetAllRenderersEnabled(bool enabled)
+        {
+            if (m_AllRenderers == null || m_AllRenderers.Length == 0)
+                CacheRenderers();
+
+            foreach (var renderer in m_AllRenderers)
+            {
+                if (renderer != null)
+                    renderer.enabled = enabled;
+            }
+        }
+
+        void RestoreOriginalMaterials()
+        {
+            if (m_AllRenderers == null)
+                return;
+
+            for (var i = 0; i < m_AllRenderers.Length; i++)
+            {
+                if (m_AllRenderers[i] == null)
+                    continue;
+
+                if (m_OriginalChildMaterials != null &&
+                    i < m_OriginalChildMaterials.Length &&
+                    m_OriginalChildMaterials[i] != null)
+                {
+                    m_AllRenderers[i].sharedMaterial = m_OriginalChildMaterials[i];
+                }
+                else if (m_OriginalMaterial != null)
+                {
+                    m_AllRenderers[i].sharedMaterial = m_OriginalMaterial;
+                }
+            }
         }
 
         void EnterState(EditDimension dimension)
@@ -251,6 +556,16 @@ namespace MagicMR
                     -1f,
                     CurrentVelocity,
                     CurrentStateDuration);
+            }
+
+            // Leaving Agency: stop eyes.
+            if (m_ActiveDimension == EditDimension.Agency && dimension != EditDimension.Agency)
+            {
+                if (m_EyesObject != null)
+                    m_EyesObject.SetActive(false);
+                if (m_AgencyAnimator != null && !string.IsNullOrEmpty(m_AliveBoolParameter))
+                    m_AgencyAnimator.SetBool(m_AliveBoolParameter, false);
+                transform.localScale = m_BaseScale;
             }
 
             m_ActiveDimension = dimension;
@@ -275,12 +590,21 @@ namespace MagicMR
 
         void UpdateRuleEvade()
         {
-            var hand = FindTrackedHand();
-            if (!hand.HasValue)
+            if (m_IsDeconstructed || m_Rigidbody == null)
                 return;
 
-            var handPos = hand.Value;
-            var distance = Vector3.Distance(transform.position, handPos);
+            // While pseudo-dynamic hand attachment is active, do not fight the
+            // hand pose with evade impulses (hybrid tracking Mode B).
+            var anchor = GetComponent<LighterAnchorManager>();
+            if (anchor != null && anchor.IsFollowingHand)
+                return;
+
+            if (Time.time - m_LastEvadeTime < k_EvadeCooldown)
+                return;
+
+            if (!TryGetNearestHand(out var handPos, out var distance))
+                return;
+
             if (distance >= m_EvadeDistance)
                 return;
 
@@ -293,6 +617,11 @@ namespace MagicMR
 
             m_Rigidbody.AddForce(evadeDir.normalized * m_EvadeImpulse, ForceMode.Impulse);
             m_EvadeCount++;
+            m_LastEvadeTime = Time.time;
+
+            SpawnEvadeGhostTrail();
+            if (m_AudioSource != null)
+                m_AudioSource.PlayOneShot(MagicMRAudioFactory.Whoosh, 0.55f);
 
             if (DataLogger.Instance != null)
             {
@@ -307,35 +636,114 @@ namespace MagicMR
             }
         }
 
-        Vector3? FindTrackedHand()
+        void SpawnEvadeGhostTrail()
         {
+            if (Time.time - m_LastGhostTrailTime < 0.2f)
+                return;
+
+            m_LastGhostTrailTime = Time.time;
+            MagicMRVfxFactory.CreateGhostTrailClone(transform, m_GhostTrailLifetime);
+        }
+
+        void UpdateEvasionFailures()
+        {
+            if (m_IsDeconstructed)
+                return;
+
+            var anchor = GetComponent<LighterAnchorManager>();
+            var pin = anchor != null && anchor.IsCalibrated ? anchor.PinnedPosition : m_InitialPosition;
+            var fled = Vector3.Distance(transform.position, pin) >= k_EvasionFailureMinFlee;
+            if (!fled)
+                return;
+
+            if (!TryGetNearestHand(out var handPos, out var distanceToVirtual))
+                return;
+
+            var distanceToPin = Vector3.Distance(handPos, pin);
+            // Hand reaches the registration / habit point while the virtual target has fled.
+            if (distanceToPin >= k_EvasionFailureDistance)
+                return;
+
+            if (Time.time - m_LastEvasionFailureLogTime < 0.6f)
+                return;
+
+            m_LastEvasionFailureLogTime = Time.time;
+            m_EvasionFailureCount++;
+
+            DataLogger.Instance?.LogEvent(
+                "evasion_failure",
+                EditDimension.Rule,
+                distanceToPin,
+                CurrentVelocity,
+                CurrentStateDuration,
+                handPos,
+                $"failures={m_EvasionFailureCount};virtual_d={distanceToVirtual:F3}");
+        }
+
+        bool TryGetNearestHand(out Vector3 handPos, out float distance)
+        {
+            handPos = default;
+            distance = float.MaxValue;
+
 #if XR_HANDS_1_1_OR_NEWER
             var subsystems = new System.Collections.Generic.List<UnityEngine.XR.Hands.XRHandSubsystem>();
             SubsystemManager.GetSubsystems(subsystems);
             if (subsystems.Count == 0)
-                return null;
+                return false;
 
-            var hand = subsystems[0].rightHand;
-            if (!hand.isTracked || !hand.GetJoint(UnityEngine.XR.Hands.XRHandJointID.Palm).TryGetPose(out var pose))
-                return null;
+            var subsystem = subsystems[0];
+            var found = false;
 
-            return pose.position;
+            if (TryHandPalm(subsystem.leftHand, out var leftPos))
+            {
+                var d = Vector3.Distance(transform.position, leftPos);
+                if (d < distance)
+                {
+                    distance = d;
+                    handPos = leftPos;
+                    found = true;
+                }
+            }
+
+            if (TryHandPalm(subsystem.rightHand, out var rightPos))
+            {
+                var d = Vector3.Distance(transform.position, rightPos);
+                if (d < distance)
+                {
+                    distance = d;
+                    handPos = rightPos;
+                    found = true;
+                }
+            }
+
+            return found;
 #else
-            return null;
+            return false;
 #endif
         }
+
+#if XR_HANDS_1_1_OR_NEWER
+        static bool TryHandPalm(UnityEngine.XR.Hands.XRHand hand, out Vector3 position)
+        {
+            position = default;
+            if (!hand.isTracked)
+                return false;
+            if (!hand.GetJoint(UnityEngine.XR.Hands.XRHandJointID.Palm).TryGetPose(out var pose))
+                return false;
+            position = pose.position;
+            return true;
+        }
+#endif
 
         public void ResetTarget()
         {
             StopAllCoroutines();
             m_DeconstructionCoroutine = null;
+            ClearFlower();
+            m_IsDeconstructed = false;
 
-            if (m_TargetRenderer != null)
-            {
-                m_TargetRenderer.enabled = true;
-                if (m_OriginalMaterial != null)
-                    m_TargetRenderer.sharedMaterial = m_OriginalMaterial;
-            }
+            SetAllRenderersEnabled(true);
+            RestoreOriginalMaterials();
 
             if (m_EyesObject != null)
                 m_EyesObject.SetActive(false);
@@ -352,15 +760,19 @@ namespace MagicMR
                 m_Rigidbody.angularVelocity = Vector3.zero;
             }
 
+            if (m_SmokeParticles != null)
+                m_SmokeParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+
             m_EvadeCount = 0;
+            m_EvasionFailureCount = 0;
             m_ActiveDimension = EditDimension.None;
             m_StateEnterTime = Time.time;
         }
 
-        // Legacy hooks for old Inspector wiring (no-op redirects).
         public void OnGestureA_Pinch() => ApplyDimension(EditDimension.Appearance, Vector3.zero, false);
         public void OnGestureB_Swipe() => ApplyDimension(EditDimension.Rule, Vector3.zero, false);
         public void OnGestureC_Circle() => ApplyDimension(EditDimension.Agency, Vector3.zero, false);
         public void OnGestureD_Snap() => ApplyDimension(EditDimension.Deconstruction, Vector3.zero, false);
+        public void OnGestureD_FistBurst() => ApplyDimension(EditDimension.Deconstruction, Vector3.zero, false);
     }
 }

@@ -27,7 +27,7 @@ namespace MagicMR
         bool m_PlaceLighterInFront = true;
 
         [SerializeField]
-        bool m_ShowHandVisualizer = true;
+        bool m_ShowHandVisualizer = false;
 
         [SerializeField]
         float m_LighterDistance = StudySpec.LighterDistance;
@@ -50,20 +50,28 @@ namespace MagicMR
 
         // Bump this string on every build-affecting fix. Logged (not rendered
         // in-headset) so we can confirm on-device which build is running via adb.
-        const string k_BuildTag = "MagicMR build: vst-fix-05 (layer-blend)";
+        const string k_BuildTag = "MagicMR build: vst-fix-49 layerBlend=0 match VstTest + skybox off";
+
+        LighterAnchorManager m_LighterAnchorManager;
 
         void Awake()
         {
             EnsureStudySystem();
             EnsureRealityEditorOnLighter();
+            EnsureLighterAnchorManager();
             EnsureLighterDefaultAppearance();
+            EnsurePolishSystems();
             if (m_ShowHandVisualizer)
                 EnsureHandVisualizer();
+            else
+                StripHandVisuals();
+            EnsureHandVisualSuppressor();
             if (m_DisableOrphanCameras)
                 DisableOrphanMainCameras();
             if (m_ConfigureVstCamera)
             {
                 DisableSceneVolumesForVst();
+                PicoVideoSeeThrough.ConfigurePxrManagerForVst();
                 ConfigureXrCameraForVst();
             }
 
@@ -86,6 +94,67 @@ namespace MagicMR
             }
 
             RenderSettings.fog = false;
+            PicoVideoSeeThrough.DisableOpaqueEnvironment();
+        }
+
+        static void StripHandVisuals()
+        {
+            foreach (var name in new[] { "LeftHandTracking", "RightHandTracking", "HandVisualizer" })
+            {
+                var existing = GameObject.Find(name);
+                if (existing != null)
+                {
+                    Debug.Log($"[MagicMR] Removing hand visual object: {name}");
+                    UnityEngine.Object.DestroyImmediate(existing);
+                }
+            }
+
+            foreach (var viz in FindObjectsByType<HandJointVisualizer>(FindObjectsSortMode.None))
+            {
+                Debug.Log("[MagicMR] Removing HandJointVisualizer.", viz);
+                UnityEngine.Object.DestroyImmediate(viz.gameObject);
+            }
+
+            HandVisualSuppressor.Sweep();
+        }
+
+        static void EnsureHandVisualSuppressor()
+        {
+            if (FindFirstObjectByType<HandVisualSuppressor>() != null)
+                return;
+
+            var go = new GameObject("HandVisualSuppressor");
+            go.AddComponent<HandVisualSuppressor>();
+        }
+
+        static void DisableRuntimeHandMeshes()
+        {
+            foreach (var renderer in FindObjectsByType<Renderer>(FindObjectsSortMode.None))
+            {
+                if (renderer == null)
+                    continue;
+
+                var rootName = renderer.transform.root.name;
+                if (rootName.Contains("HandTracking") || rootName.Contains("Hand Visual"))
+                {
+                    renderer.enabled = false;
+                    Debug.Log($"[MagicMR] Disabled hand renderer on {renderer.name}.", renderer);
+                }
+            }
+
+            foreach (var behaviour in FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None))
+            {
+                if (behaviour == null)
+                    continue;
+
+                var typeName = behaviour.GetType().FullName;
+                if (typeName == "UnityEngine.XR.Hands.XRHandMeshController" ||
+                    typeName == "UnityEngine.XR.Hands.Samples.VisualizerSample.HandVisualizer")
+                {
+                    behaviour.enabled = false;
+                    Debug.Log($"[MagicMR] Disabled {typeName}.", behaviour);
+                }
+            }
         }
 
         static void EnsureHandVisualizer()
@@ -94,6 +163,12 @@ namespace MagicMR
 
             var leftPrefab = Resources.Load<GameObject>("MagicMR/LeftHandTracking");
             var rightPrefab = Resources.Load<GameObject>("MagicMR/RightHandTracking");
+
+            if (leftPrefab == null || rightPrefab == null)
+            {
+                Debug.LogWarning("[MagicMR] Hand prefabs removed from Resources; hand visuals disabled.");
+                return;
+            }
 
             if (leftPrefab != null && rightPrefab != null)
             {
@@ -201,32 +276,71 @@ namespace MagicMR
 
             if (m_ConfigureVstCamera)
             {
+                PicoVideoSeeThrough.DisableOpaqueEnvironment();
                 ConfigureXrCameraForVst();
+                PicoVideoSeeThrough.ConfigurePxrManagerForVst();
                 StartCoroutine(PicoVideoSeeThrough.EnableWithRetry(0.15f, 8, 0.35f));
             }
 
             yield return new WaitUntil(() => XRSettings.isDeviceActive);
 
-            if (m_PlaceLighterInFront)
+            // Only use the fixed virtual placement as a starting point/fallback;
+            // once the user calibrates onto the real lighter (pinch-and-hold),
+            // that anchored position takes over and must not be overwritten.
+            if (m_PlaceLighterInFront && (m_LighterAnchorManager == null || !m_LighterAnchorManager.IsCalibrated))
                 PlaceLighterInFrontOfUser();
 
+            var fsm = FindFirstObjectByType<MRGestureController>();
+            var lighter = GameObject.Find("Lighter");
+            if (fsm != null && lighter != null)
+                fsm.SetDeskPreset(lighter.transform.position, lighter.transform.rotation);
+
             LogHandTrackingStatus();
+            HandGestureDetectorBase.EnsureAllSubscribed();
+
+            var manager = FindFirstObjectByType<GestureManager>();
+            if (manager != null)
+                manager.RebindDetectors();
+
+            if (m_LighterAnchorManager == null)
+                m_LighterAnchorManager = FindFirstObjectByType<LighterAnchorManager>();
+            // FSM owns calibration; BindPinchHoldListener is a no-op when FSM exists.
+            m_LighterAnchorManager?.BindPinchHoldListener();
+
+            EnsurePicoVstKeeper();
+
+            if (!m_ShowHandVisualizer)
+                HandVisualSuppressor.Sweep();
+        }
+
+        static void EnsurePicoVstKeeper()
+        {
+            if (FindFirstObjectByType<PicoVstKeeper>() != null)
+                return;
+
+            var go = new GameObject("PicoVstKeeper");
+            go.AddComponent<PicoVstKeeper>();
+            Debug.Log("[MagicMR] PicoVstKeeper spawned for passthrough keep-alive.");
         }
 
         void EnsureStudySystem()
         {
             var logger = FindFirstObjectByType<DataLogger>();
             var manager = FindFirstObjectByType<GestureManager>();
+            var fsm = FindFirstObjectByType<MRGestureController>();
 
-            if (logger == null || manager == null)
-            {
-                var go = new GameObject("StudySystem");
-                logger ??= go.AddComponent<DataLogger>();
-                manager ??= go.AddComponent<GestureManager>();
-            }
+            // Prefer attaching to GestureDetectors so Find/GetComponent always works.
+            var root = GameObject.Find("GestureDetectors");
+            var go = root != null ? root : new GameObject("StudySystem");
+
+            logger ??= go.GetComponent<DataLogger>() ?? go.AddComponent<DataLogger>();
+            manager ??= go.GetComponent<GestureManager>() ?? go.AddComponent<GestureManager>();
+            fsm ??= go.GetComponent<MRGestureController>() ?? go.AddComponent<MRGestureController>();
 
             logger.ConfigureLogging(StudySpec.LogHandTrajectory, StudySpec.TrajectorySampleInterval);
             manager.ConfigureSession(m_SubjectId, m_Condition, m_TrialId, m_EnabledDimensions);
+            manager.RebindDetectors();
+            Debug.Log($"[MagicMR] Study system ready (FSM={fsm != null}).", go);
         }
 
         static void EnsureRealityEditorOnLighter()
@@ -238,14 +352,49 @@ namespace MagicMR
             lighter.AddComponent<RealityEditor>();
         }
 
+        void EnsureLighterAnchorManager()
+        {
+            m_LighterAnchorManager = FindFirstObjectByType<LighterAnchorManager>();
+            if (m_LighterAnchorManager == null)
+            {
+                var lighter = GameObject.Find("Lighter");
+                if (lighter != null)
+                    m_LighterAnchorManager = lighter.AddComponent<LighterAnchorManager>();
+            }
+        }
+
+        static void EnsurePolishSystems()
+        {
+            if (FindFirstObjectByType<CalibrationRitual>() == null)
+            {
+                var ritual = new GameObject("CalibrationRitual");
+                ritual.AddComponent<CalibrationRitual>();
+            }
+
+            if (FindFirstObjectByType<StudyResetWristUi>() == null)
+            {
+                var reset = new GameObject("StudyResetWristUi");
+                reset.AddComponent<StudyResetWristUi>();
+            }
+
+            if (FindFirstObjectByType<ExperimentConditionSwitcher>() == null)
+            {
+                var conditions = new GameObject("ExperimentConditionSwitcher");
+                conditions.AddComponent<ExperimentConditionSwitcher>();
+            }
+
+            Debug.Log("[MagicMR] Polish systems ready (ritual + reset + conditions).");
+        }
+
         static void DisableOrphanMainCameras()
         {
-            var xrOrigin = GameObject.Find("XR Origin (VR)");
             Camera xrCamera = null;
-            if (xrOrigin != null)
+            var buildingBlock = GameObject.Find("[Building Block] PICO Video Seethrough XR Origin (XR Rig)");
+            var xrOriginGo = buildingBlock != null ? buildingBlock : GameObject.Find("XR Origin (VR)");
+            if (xrOriginGo != null)
             {
-                var origin = xrOrigin.GetComponent<Unity.XR.CoreUtils.XROrigin>();
-                xrCamera = origin != null ? origin.Camera : xrOrigin.GetComponentInChildren<Camera>();
+                var origin = xrOriginGo.GetComponent<Unity.XR.CoreUtils.XROrigin>();
+                xrCamera = origin != null ? origin.Camera : xrOriginGo.GetComponentInChildren<Camera>();
             }
 
             foreach (var cam in FindObjectsByType<Camera>(FindObjectsSortMode.None))
@@ -276,17 +425,9 @@ namespace MagicMR
             }
 
             PicoVideoSeeThrough.ConfigureCamera(cam);
-
-            // RGBA8 (HDR off) buffer is required for URP alpha output to reach
-            // the eye swapchain; HDR would switch to a format that can drop alpha.
             cam.allowHDR = false;
+            cam.allowMSAA = false;
 
-            // URP requires this component to route the camera through its render
-            // passes (post-processing, alpha output, etc). Without it the camera
-            // falls back to a plain/optimized path that discards alpha, which
-            // silently defeats every alpha-based VST fix regardless of URP Asset
-            // settings. Cameras created purely via script/prefab (never opened in
-            // the Inspector while URP was active) can be missing it.
             var cameraData = cam.GetComponent<UniversalAdditionalCameraData>();
             if (cameraData == null)
             {
@@ -296,12 +437,11 @@ namespace MagicMR
                     cam);
             }
 
-            // Post-processing must stay on so URP's alpha-output pass runs
-            // (URP Asset "Alpha Processing" enabled) and preserves the
-            // transparent background PICO needs for passthrough.
-            cameraData.renderPostProcessing = true;
+            // Match VstTest isolation path: opaque post/fog hides passthrough.
+            cameraData.renderPostProcessing = false;
             cameraData.antialiasing = AntialiasingMode.None;
             cameraData.renderShadows = false;
+            cameraData.allowHDROutput = false;
 
             Debug.Log(
                 $"[MagicMR] VST camera '{cam.name}': clear={cam.clearFlags} bgA={cam.backgroundColor.a:F2} " +
@@ -341,7 +481,8 @@ namespace MagicMR
 
         static Camera FindXrCamera()
         {
-            var xrOrigin = GameObject.Find("XR Origin (VR)");
+            var buildingBlock = GameObject.Find("[Building Block] PICO Video Seethrough XR Origin (XR Rig)");
+            var xrOrigin = buildingBlock != null ? buildingBlock : GameObject.Find("XR Origin (VR)");
             if (xrOrigin != null)
             {
                 var origin = xrOrigin.GetComponent<Unity.XR.CoreUtils.XROrigin>();
@@ -384,6 +525,9 @@ namespace MagicMR
             lighter.transform.position = targetPos;
             lighter.transform.rotation = Quaternion.LookRotation(-forward, Vector3.up);
             Debug.Log($"[MagicMR] Placed Lighter at {targetPos} scale {lighter.transform.localScale.x}", lighter);
+
+            if (m_LighterAnchorManager != null)
+                m_LighterAnchorManager.SetDeskReferenceHeight(targetPos.y);
         }
 
         static void LogHandTrackingStatus()

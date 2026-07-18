@@ -14,10 +14,10 @@ namespace MagicMR
         public static DataLogger Instance { get; private set; }
 
         const string EventHeader =
-            "timestamp,subject_id,condition,trial_id,event_type,dimension,hand_distance,object_velocity,state_duration,hand_x,hand_y,hand_z,notes";
+            "timestamp,subject_id,condition,condition_id,trial_id,event_type,dimension,hand_distance,object_velocity,state_duration,hand_x,hand_y,hand_z,notes";
 
         const string TrajectoryHeader =
-            "timestamp,subject_id,condition,trial_id,hand_x,hand_y,hand_z,target_x,target_y,target_z,distance";
+            "timestamp,subject_id,condition,condition_id,trial_id,hand_x,hand_y,hand_z,target_x,target_y,target_z,distance";
 
         [SerializeField]
         string m_FilePrefix = "study";
@@ -30,6 +30,7 @@ namespace MagicMR
 
         string m_SubjectId = "S00";
         string m_Condition = "All";
+        int m_ConditionId = 4;
         int m_TrialId;
         string m_EventFilePath;
         string m_TrajectoryFilePath;
@@ -38,6 +39,8 @@ namespace MagicMR
 
         public string EventFilePath => m_EventFilePath;
         public bool SessionActive => m_SessionActive;
+        public string Condition => m_Condition;
+        public int ConditionId => m_ConditionId;
 
         void Awake()
         {
@@ -67,6 +70,7 @@ namespace MagicMR
         {
             m_SubjectId = string.IsNullOrWhiteSpace(subjectId) ? "S00" : subjectId.Trim();
             m_Condition = string.IsNullOrWhiteSpace(condition) ? "All" : condition.Trim();
+            m_ConditionId = InferConditionId(m_Condition);
             m_TrialId = Mathf.Max(1, trialId);
 
             var stamp = DateTime.Now.ToString("yyyyMMdd_HHmmss", CultureInfo.InvariantCulture);
@@ -103,6 +107,14 @@ namespace MagicMR
             LogEvent("trial_start", EditDimension.None, -1f, 0f, 0f, notes: $"trial={m_TrialId}");
         }
 
+        public void SetCondition(string condition, int conditionId)
+        {
+            m_Condition = string.IsNullOrWhiteSpace(condition) ? "All" : condition.Trim();
+            m_ConditionId = Mathf.Clamp(conditionId, 1, 4);
+            if (m_SessionActive)
+                LogEvent("condition_change", EditDimension.None, -1f, 0f, 0f, notes: $"id={m_ConditionId}");
+        }
+
         public void LogEvent(
             string eventType,
             EditDimension dimension,
@@ -121,6 +133,7 @@ namespace MagicMR
                 Format(Time.time),
                 Escape(m_SubjectId),
                 Escape(m_Condition),
+                m_ConditionId.ToString(CultureInfo.InvariantCulture),
                 m_TrialId.ToString(CultureInfo.InvariantCulture),
                 Escape(eventType),
                 dimension.ToString(),
@@ -149,6 +162,7 @@ namespace MagicMR
                 Format(Time.time),
                 Escape(m_SubjectId),
                 Escape(m_Condition),
+                m_ConditionId.ToString(CultureInfo.InvariantCulture),
                 m_TrialId.ToString(CultureInfo.InvariantCulture),
                 Format(handPosition.x),
                 Format(handPosition.y),
@@ -175,6 +189,19 @@ namespace MagicMR
                 return "\"" + value.Replace("\"", "\"\"") + "\"";
 
             return value;
+        }
+
+        static int InferConditionId(string condition)
+        {
+            if (string.IsNullOrEmpty(condition))
+                return 4;
+            if (condition.StartsWith("C1") || condition.IndexOf("Baseline", System.StringComparison.OrdinalIgnoreCase) >= 0)
+                return 1;
+            if (condition.StartsWith("C2") || condition.Equals("Appearance", System.StringComparison.OrdinalIgnoreCase))
+                return 2;
+            if (condition.StartsWith("C3") || condition.IndexOf("Agency", System.StringComparison.OrdinalIgnoreCase) >= 0)
+                return 3;
+            return 4;
         }
     }
 }
