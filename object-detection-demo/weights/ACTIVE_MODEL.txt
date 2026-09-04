@@ -1,0 +1,10 @@
+Active runtime detector for Unity Bridge (via tcp_server.py):
+
+  File: object-detection-demo/weights/best.pt
+  Source: Find lighter/runs/detect/runs/find-lighter-yolo26n/weights/best.pt
+  Architecture: YOLO26n (train_args.model = yolo26n.pt)
+  Class in checkpoint: lighter
+  Class sent to Unity: Lighter  (normalized in tcp_server.py)
+
+Previous YOLOv8n weights backed up as:
+  object-detection-demo/weights/best_yolov8n_Lighter_backup.pt

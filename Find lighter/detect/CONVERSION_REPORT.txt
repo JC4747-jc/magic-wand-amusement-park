@@ -1,0 +1,33 @@
+Find Lighter -> detect/ conversion report
+Original polygon dataset left untouched under Find Lighter/{train,valid,test}/
+
+Images copied: {'train': 97, 'valid': 26, 'test': 14}
+Labels written: {'train': 97, 'valid': 26, 'test': 14}
+Polygon lines converted: 134
+BBox lines passthrough/clamped: 4
+Empty label files preserved: 1
+Output annotation lines: 138
+Conversion errors: 0
+
+=== Validation ===
+train: images=97 labels=97
+valid: images=26 labels=26
+test: images=14 labels=14
+empty_labels=1
+detection_annotations=138
+every_annotation_exactly_5_tokens=True
+every_class_id_is_0=True
+every_coordinate_in_[0,1]=True
+images_missing_label=0 []
+labels_missing_image=0 []
+malformed_remaining=0 []
+oob=0 bad_class=0 non_five=0
+
+data.yaml:
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 1
+names: ['lighter']
+

@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['lighter']
+
+roboflow:
+  workspace: siqi-shen
+  project: find-lighter-bnpbk
+  version: dataset
+  license: Public Domain
+  url: https://universe.roboflow.com/siqi-shen/find-lighter-bnpbk/dataset/dataset

@@ -64,3 +64,14 @@ sysinfo.txt
 
 # PICO screen recordings pulled from device (large binary files, not project assets)
 /Recordings/
+
+# Python virtual environments
+/object-detection-demo/.venv-gpu/
+.venv/
+venv/
+
+# Python generated caches
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/

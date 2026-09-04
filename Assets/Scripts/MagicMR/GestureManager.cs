@@ -299,6 +299,33 @@ namespace MagicMR
                 }
             }
 
+            // Optional proximity / targeting gate (BridgeTest). Absent in MagicMR → no-op.
+            // Prefer pinch index tip (Appearance / recent pinch samples), else tracked palm.
+            var queryPos = m_LastHandPosition;
+            var hasQuery = m_HasHandPosition;
+            if (m_PinchDetector != null)
+            {
+                var tip = m_PinchDetector.LastIndexTipPosition;
+                var pinch = m_PinchDetector.LastPinchPosition;
+                if (tip.sqrMagnitude > 0.0001f)
+                {
+                    queryPos = tip;
+                    hasQuery = true;
+                }
+                else if (pinch.sqrMagnitude > 0.0001f)
+                {
+                    queryPos = pinch;
+                    hasQuery = true;
+                }
+            }
+
+            var gate = FindFirstObjectByType<GestureTargetGateBase>();
+            if (gate != null && !gate.Allow(dimension, gestureName, queryPos, hasQuery))
+            {
+                LogGesture($"{gestureName}_blocked", dimension, "target_gate");
+                return;
+            }
+
             m_LastGestureTime = Time.time;
 
             if (dimension == EditDimension.Deconstruction)
@@ -309,8 +336,8 @@ namespace MagicMR
 
             fsm?.NotifyEditAccepted(dimension);
 
-            var distance = m_RealityEditor.GetHandDistance(m_LastHandPosition, m_HasHandPosition);
-            m_RealityEditor.ApplyDimension(dimension, m_LastHandPosition, m_HasHandPosition);
+            var distance = m_RealityEditor.GetHandDistance(queryPos, hasQuery);
+            m_RealityEditor.ApplyDimension(dimension, queryPos, hasQuery);
             LogGesture($"{gestureName}_triggered", dimension, distance: distance);
         }
 
@@ -340,7 +367,9 @@ namespace MagicMR
         void SampleHandForLogging()
         {
 #if XR_HANDS_1_1_OR_NEWER
-            if (m_HandSubsystem == null || m_RealityEditor == null || DataLogger.Instance == null)
+            // Always keep a world-space palm sample for targeting gates / ApplyDimension,
+            // even when DataLogger is absent (BridgeTest).
+            if (m_HandSubsystem == null)
                 return;
 
             var hand = m_TrackedHand == Handedness.Left ? m_HandSubsystem.leftHand : m_HandSubsystem.rightHand;
@@ -355,7 +384,9 @@ namespace MagicMR
 
             m_LastHandPosition = palmPose.position;
             m_HasHandPosition = true;
-            DataLogger.Instance.LogHandTrajectory(m_LastHandPosition, m_RealityEditor.transform.position);
+
+            if (DataLogger.Instance != null && m_RealityEditor != null)
+                DataLogger.Instance.LogHandTrajectory(m_LastHandPosition, m_RealityEditor.transform.position);
 #endif
         }
 

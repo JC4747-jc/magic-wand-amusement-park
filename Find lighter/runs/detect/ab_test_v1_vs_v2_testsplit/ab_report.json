@@ -1,0 +1,96 @@
+{
+  "summary_official_ultralytics_val_split_test": {
+    "v1": {
+      "weights": "D:\\Unity\\Project\\magic-wand-amusement-park\\object-detection-demo\\weights\\best.pt",
+      "precision": 0.7058823529411765,
+      "recall": 0.46153846153846156,
+      "f1_calculated": 0.558139534883721,
+      "f1_ultralytics_mean": 0.558139534883721,
+      "mAP50": 0.4366923076923077,
+      "mAP50-95": 0.3758007326007326,
+      "conf_threshold_for_PR_curve_peak_note": "Ultralytics box.mp/mr are from PR curve (confidence-optimized), not fixed conf",
+      "val_save_dir": "D:\\Unity\\Project\\magic-wand-amusement-park\\Find lighter\\runs\\detect\\ab_test_v1_vs_v2_testsplit\\v1_val_test"
+    },
+    "v2": {
+      "weights": "D:\\Unity\\Project\\magic-wand-amusement-park\\Find Lighter\\runs\\detect\\find-lighter-yolo26n-v2\\weights\\best.pt",
+      "precision": 0.8214285714285714,
+      "recall": 0.8846153846153846,
+      "f1_calculated": 0.8518518518518519,
+      "f1_ultralytics_mean": 0.8518518518518519,
+      "mAP50": 0.8563981481481482,
+      "mAP50-95": 0.7132871162865442,
+      "conf_threshold_for_PR_curve_peak_note": "Ultralytics box.mp/mr are from PR curve (confidence-optimized), not fixed conf",
+      "val_save_dir": "D:\\Unity\\Project\\magic-wand-amusement-park\\Find lighter\\runs\\detect\\ab_test_v1_vs_v2_testsplit\\v2_val_test"
+    }
+  },
+  "per_image_analysis_fixed_conf": {
+    "test_images": 24,
+    "images_with_targets": 24,
+    "empty_gt_images": 0,
+    "per_image_conf_threshold": 0.25,
+    "match_iou_threshold": 0.5,
+    "v1_missed_images": [
+      "new_-4-_jpg.rf.ee20ada288c542d1aea52d6d95f7b67c.jpg",
+      "new_images-19-_jpg.rf.7e1f9395e2dc09c5db3a3020a494b5a6.jpg",
+      "new_images-2-_png.rf.95081c471ae6283691682a049387e8ac.jpg",
+      "new_images-27-_jpg.rf.ce031edc8fd2b141bf38f60d890a8d65.jpg",
+      "new_images-32-_jpg.rf.e51459b7c9f3c2a6c12aa68d21a67ade.jpg",
+      "new_images-37-_jpg.rf.e05f428e5d871bee52972abaec55f3e1.jpg",
+      "new_images-4-_jpg.rf.39289dc655dd5f598f75aef810088d2e.jpg",
+      "new_images-46-_jpg.rf.c51ba91d016d6a878956457cc30ea297.jpg",
+      "new_images-52-_jpg.rf.f30a1a00b9593876b22a31a192466f06.jpg",
+      "new_images_jpg.rf.353d83efdc1c9690279d7b51b11abda9.jpg",
+      "old_pico_frame_0019_jpg.rf.EZebZE0gN7xYDbKHRmyb.jpg",
+      "old_pico_frame_0108_jpg.rf.Q5cbw4tmD5gZFDpU5kbE.jpg"
+    ],
+    "v2_missed_images": [
+      "new_images-46-_jpg.rf.c51ba91d016d6a878956457cc30ea297.jpg",
+      "old_pico_frame_0014_jpg.rf.R4lznm2L53PXRINkH6rp.jpg",
+      "old_pico_frame_0093_jpg.rf.WiDGVtoK6yja7W9YsCao.jpg"
+    ],
+    "v1_miss_v2_hit": [
+      "new_-4-_jpg.rf.ee20ada288c542d1aea52d6d95f7b67c.jpg",
+      "new_images-19-_jpg.rf.7e1f9395e2dc09c5db3a3020a494b5a6.jpg",
+      "new_images-2-_png.rf.95081c471ae6283691682a049387e8ac.jpg",
+      "new_images-27-_jpg.rf.ce031edc8fd2b141bf38f60d890a8d65.jpg",
+      "new_images-32-_jpg.rf.e51459b7c9f3c2a6c12aa68d21a67ade.jpg",
+      "new_images-37-_jpg.rf.e05f428e5d871bee52972abaec55f3e1.jpg",
+      "new_images-4-_jpg.rf.39289dc655dd5f598f75aef810088d2e.jpg",
+      "new_images-52-_jpg.rf.f30a1a00b9593876b22a31a192466f06.jpg",
+      "new_images_jpg.rf.353d83efdc1c9690279d7b51b11abda9.jpg",
+      "old_pico_frame_0019_jpg.rf.EZebZE0gN7xYDbKHRmyb.jpg",
+      "old_pico_frame_0108_jpg.rf.Q5cbw4tmD5gZFDpU5kbE.jpg"
+    ],
+    "v2_miss_v1_hit": [
+      "old_pico_frame_0014_jpg.rf.R4lznm2L53PXRINkH6rp.jpg",
+      "old_pico_frame_0093_jpg.rf.WiDGVtoK6yja7W9YsCao.jpg"
+    ],
+    "both_miss": [
+      "new_images-46-_jpg.rf.c51ba91d016d6a878956457cc30ea297.jpg"
+    ],
+    "v1_false_positive_images": [
+      "old_pico_frame_0010-jpg-274076-1785600775000-0_jpg.rf.pCU1MAaTCJtt9IM6qTjW.jpg",
+      "old_pico_frame_0036_jpg.rf.aR1jPGriTNu0yMEN4kGP.jpg",
+      "old_pico_frame_0056_jpg.rf.fgpTdryPDUJ0lc9mg6e9.jpg",
+      "old_pico_frame_0093_jpg.rf.WiDGVtoK6yja7W9YsCao.jpg",
+      "old_pico_frame_0123_jpg.rf.fcyPdO9BPNcLv0FIQuUO.jpg"
+    ],
+    "v2_false_positive_images": [
+      "new_images-37-_jpg.rf.e05f428e5d871bee52972abaec55f3e1.jpg",
+      "new_images-4-_jpg.rf.39289dc655dd5f598f75aef810088d2e.jpg",
+      "new_images_jpg.rf.353d83efdc1c9690279d7b51b11abda9.jpg",
+      "old_pico_frame_0019_jpg.rf.EZebZE0gN7xYDbKHRmyb.jpg",
+      "old_pico_frame_0056_jpg.rf.fgpTdryPDUJ0lc9mg6e9.jpg",
+      "old_pico_frame_0121_jpg.rf.lpWBtduLwBneHV2YHxWM.jpg"
+    ],
+    "v1_miss_count": 12,
+    "v2_miss_count": 3,
+    "v1_fp_image_count": 5,
+    "v2_fp_image_count": 6
+  },
+  "notes": [
+    "Official P/R/mAP from model.val(split=test). Ultralytics Precision/Recall are typically confidence-swept (PR-curve), F1 reported both as calculated from those P/R and Ultralytics box.f1 mean if available.",
+    "Per-image miss/FP analysis uses fixed conf=0.25, IoU match=0.5.",
+    "No weights or datasets were modified."
+  ]
+}

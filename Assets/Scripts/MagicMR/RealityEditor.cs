@@ -275,6 +275,9 @@ namespace MagicMR
 
         public void ApplyDimension(EditDimension dimension, Vector3 handPosition, bool hasHandPosition)
         {
+            // Phase 2 gesture-pipeline validation: confirms gate did not block this call.
+            Debug.Log($"[Phase2] RealityEditor.ApplyDimension: dimension={dimension}", this);
+
             // Coming back from flower: destroy flower and restore lighter before
             // applying a new dimension (except another deconstruction).
             if (m_IsDeconstructed && dimension != EditDimension.Deconstruction)
@@ -401,6 +404,7 @@ namespace MagicMR
             // One-shot lateral dodge (20cm) + ghost trail for virtual/physical mismatch.
             ApplyRuleDodge();
             Debug.Log("[MagicMR] Rule: 20cm lateral dodge + ghost trail.", this);
+            Debug.Log("[Phase2] Rule effect executed (lateral dodge).", this);
         }
 
         void ApplyRuleDodge()
