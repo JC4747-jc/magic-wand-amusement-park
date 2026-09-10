@@ -30,9 +30,9 @@ namespace MagicMR
         [SerializeField]
         bool m_OwnFistBurst = true;
 
-        [Tooltip("When on, FSM left-hand reset polling is replaced by HandPose_LeftReset.")]
+        [Tooltip("Off by default: palm-towards-face + pinch can click PICO system UI and quit the app.")]
         [SerializeField]
-        bool m_OwnLeftReset = true;
+        bool m_OwnLeftReset = false;
 
         [Header("PXR_HandPoseConfig assets (optional, documentation)")]
         [SerializeField]
