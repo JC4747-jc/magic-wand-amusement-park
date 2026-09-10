@@ -208,7 +208,9 @@ namespace MagicMR
 
             if (m_FistBurstDetector != null)
             {
-                m_FistBurstDetector.enabled = true;
+                var poseBridge = PicoHandPoseGestureBridge.Instance ??
+                                 FindFirstObjectByType<PicoHandPoseGestureBridge>();
+                m_FistBurstDetector.enabled = poseBridge == null || !poseBridge.OwnsFistBurst;
                 SafeClear(m_FistBurstDetector.DetectedEvent);
             }
         }

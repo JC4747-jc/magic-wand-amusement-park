@@ -66,6 +66,10 @@ namespace MagicMR
 
         void UpdateBurst(XRHand hand, ref BurstState state)
         {
+            if (PicoHandPoseGestureBridge.Instance != null &&
+                PicoHandPoseGestureBridge.Instance.OwnsFistBurst)
+                return;
+
             if (!hand.isTracked || !TryHandMetrics(hand, out var avgDist, out var maxDist))
                 return;
 

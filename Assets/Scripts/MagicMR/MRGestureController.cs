@@ -441,6 +441,10 @@ namespace MagicMR
         void PollLeftHandReset()
         {
 #if XR_HANDS_1_1_OR_NEWER
+            if (PicoHandPoseGestureBridge.Instance != null &&
+                PicoHandPoseGestureBridge.Instance.OwnsLeftReset)
+                return;
+
             if (!TrySampleLeftResetPose(out var pinching, out var palmFacingHmd))
             {
                 m_LeftResetAccumulated = 0f;
