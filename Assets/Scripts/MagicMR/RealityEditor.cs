@@ -69,7 +69,7 @@ namespace MagicMR
         bool m_ConstrainEvadeToXZ = StudySpec.ConstrainEvadeToXZ;
 
         [SerializeField]
-        float m_GhostTrailLifetime = 0.5f;
+        float m_GhostTrailLifetime = StudySpec.GhostTrailLifetime;
 
         [Header("Deconstruction")]
         [SerializeField]
@@ -87,17 +87,31 @@ namespace MagicMR
         Vector3 m_BaseScale;
         Vector3 m_InitialPosition;
         Rigidbody m_Rigidbody;
+        LighterAnchorManager m_Anchor;
         EditDimension m_ActiveDimension = EditDimension.None;
         float m_StateEnterTime;
         int m_EvadeCount;
         int m_EvasionFailureCount;
         Coroutine m_DeconstructionCoroutine;
+        Coroutine m_AppearanceBlendCoroutine;
         GameObject m_SpawnedFlower;
+        Vector3 m_FlowerBaseScale = Vector3.one;
+        float m_FlowerAge;
+        bool m_FlowerGrowing;
         bool m_IsDeconstructed;
+        bool m_AppearanceBurnt;
         ParticleSystem m_SmokeParticles;
         float m_LastGrowlTime;
         float m_LastEvasionFailureLogTime;
         float m_LastGhostTrailTime;
+        float m_PulsePhase;
+        float m_AgencyAge;
+        float m_EyesFade;
+        Vector3 m_HopStart;
+        Vector3 m_HopEnd;
+        float m_HopElapsed;
+        float m_HopDuration;
+        bool m_Hopping;
 
         const float k_EvadeLinearDamping = 10f;
         const float k_EvadeLeashMultiplier = 2f;
@@ -105,6 +119,11 @@ namespace MagicMR
         const float k_EvasionFailureDistance = 0.10f;
         const float k_EvasionFailureMinFlee = 0.12f;
         float m_LastEvadeTime;
+
+#if XR_HANDS_1_1_OR_NEWER
+        readonly System.Collections.Generic.List<UnityEngine.XR.Hands.XRHandSubsystem> m_HandSubsystems =
+            new System.Collections.Generic.List<UnityEngine.XR.Hands.XRHandSubsystem>(2);
+#endif
 
         public EditDimension ActiveDimension => m_ActiveDimension;
         public bool IsDeconstructed => m_IsDeconstructed;
@@ -124,6 +143,7 @@ namespace MagicMR
 
             m_BaseScale = transform.localScale;
             m_InitialPosition = transform.position;
+            m_Anchor = GetComponent<LighterAnchorManager>();
 
             m_Rigidbody = GetComponent<Rigidbody>();
             if (m_Rigidbody == null)
@@ -139,6 +159,10 @@ namespace MagicMR
             EnsureAgencyEyes();
             m_IdlePulseSpeed = StudySpec.IdlePulseSpeed;
             m_IdlePulseScale = StudySpec.IdlePulseScale;
+            m_EvadeDistance = StudySpec.EvadeDistance;
+            m_EvadeImpulse = m_EvadeImpulse > 0f ? m_EvadeImpulse : StudySpec.EvadeImpulse;
+            m_DeconstructionDelay = StudySpec.DeconstructionDelay;
+            m_GhostTrailLifetime = StudySpec.GhostTrailLifetime;
             if (m_BurnSfx == null)
                 m_BurnSfx = Resources.Load<AudioClip>("MagicMR/BurnSizzle");
 
@@ -211,9 +235,10 @@ namespace MagicMR
 
         void Update()
         {
-            if (m_ActiveDimension == EditDimension.Agency)
+            if (m_ActiveDimension == EditDimension.Agency && !m_IsDeconstructed)
             {
                 ApplyIdlePulse();
+                UpdateAgencyEyes();
                 MaybePlayGrowl();
             }
 
@@ -224,7 +249,7 @@ namespace MagicMR
             }
 
             if (m_SpawnedFlower != null)
-                FloatFlower();
+                UpdateFlowerMotion();
         }
 
         void MaybePlayGrowl()
@@ -233,7 +258,7 @@ namespace MagicMR
                 return;
 
             // Growl near pulse peaks for "alive" feel.
-            var phase = Mathf.Sin(Time.time * m_IdlePulseSpeed);
+            var phase = Mathf.Sin(m_PulsePhase);
             if (phase < 0.85f)
                 return;
 
@@ -241,26 +266,97 @@ namespace MagicMR
             m_AudioSource.PlayOneShot(MagicMRAudioFactory.Growl, 0.28f);
         }
 
-        void FloatFlower()
+        void UpdateFlowerMotion()
         {
-            var basePos = m_InitialPosition;
-            var bob = Mathf.Sin(Time.time * 1.6f) * 0.015f;
-            m_SpawnedFlower.transform.position = basePos + Vector3.up * (0.02f + bob);
-            m_SpawnedFlower.transform.Rotate(0f, 18f * Time.deltaTime, 0f, Space.World);
+            if (m_FlowerGrowing)
+            {
+                m_FlowerAge += Time.deltaTime;
+                var t = MagicMRAnim.EaseOutBack(m_FlowerAge / StudySpec.FlowerGrowSeconds);
+                m_SpawnedFlower.transform.localScale = m_FlowerBaseScale * t;
+                if (m_FlowerAge >= StudySpec.FlowerGrowSeconds)
+                {
+                    m_SpawnedFlower.transform.localScale = m_FlowerBaseScale;
+                    m_FlowerGrowing = false;
+                    m_FlowerAge = 0f;
+                }
+            }
+
+            if (!m_FlowerGrowing)
+                m_FlowerAge += Time.deltaTime;
+            var bob = m_FlowerGrowing ? 0f : Mathf.Sin(m_FlowerAge * 1.35f) * 0.012f;
+
+            m_SpawnedFlower.transform.position = m_InitialPosition + Vector3.up * (0.02f + bob);
+            m_SpawnedFlower.transform.Rotate(0f, 14f * Time.deltaTime, 0f, Space.World);
         }
 
         void FixedUpdate()
         {
+            StepHop();
             ClampToLeash();
+        }
+
+        void StepHop()
+        {
+            if (!m_Hopping)
+                return;
+
+            if (m_Anchor != null && m_Anchor.IsFollowingHand)
+            {
+                CancelHop();
+                return;
+            }
+
+            m_HopElapsed += Time.fixedDeltaTime;
+            var t = MagicMRAnim.EaseOutCubic(m_HopElapsed / Mathf.Max(0.01f, m_HopDuration));
+            var pos = Vector3.LerpUnclamped(m_HopStart, m_HopEnd, t);
+            if (m_Rigidbody != null)
+            {
+                m_Rigidbody.MovePosition(pos);
+                m_Rigidbody.linearVelocity = Vector3.zero;
+            }
+            else
+            {
+                transform.position = pos;
+            }
+
+            if (m_HopElapsed >= m_HopDuration)
+            {
+                if (m_Rigidbody != null)
+                {
+                    m_Rigidbody.position = m_HopEnd;
+                    m_Rigidbody.linearVelocity = Vector3.zero;
+                }
+                else
+                {
+                    transform.position = m_HopEnd;
+                }
+
+                m_Hopping = false;
+            }
+        }
+
+        void BeginHop(Vector3 target, float duration)
+        {
+            m_HopStart = transform.position;
+            m_HopEnd = target;
+            m_HopElapsed = 0f;
+            m_HopDuration = Mathf.Max(0.05f, duration);
+            m_Hopping = true;
+            if (m_Rigidbody != null)
+                m_Rigidbody.linearVelocity = Vector3.zero;
+        }
+
+        void CancelHop()
+        {
+            m_Hopping = false;
         }
 
         void ClampToLeash()
         {
-            if (m_Rigidbody == null || m_IsDeconstructed)
+            if (m_Rigidbody == null || m_IsDeconstructed || m_Hopping)
                 return;
 
-            var anchor = GetComponent<LighterAnchorManager>();
-            if (anchor != null && anchor.IsFollowingHand)
+            if (m_Anchor != null && m_Anchor.IsFollowingHand)
                 return;
 
             var offset = transform.position - m_InitialPosition;
@@ -318,8 +414,8 @@ namespace MagicMR
         public void SyncWorldAnchor(Vector3 worldPosition)
         {
             m_InitialPosition = worldPosition;
-            if (m_SpawnedFlower != null)
-                m_SpawnedFlower.transform.position = worldPosition;
+            if (m_SpawnedFlower != null && !m_FlowerGrowing)
+                m_SpawnedFlower.transform.position = worldPosition + Vector3.up * 0.02f;
         }
 
         /// <summary>
@@ -343,20 +439,9 @@ namespace MagicMR
             EnterState(EditDimension.Appearance);
             SetAllRenderersEnabled(true);
 
-            if (m_BurntMaterial != null)
-            {
-                foreach (var renderer in m_AllRenderers)
-                {
-                    if (renderer != null)
-                        renderer.sharedMaterial = m_BurntMaterial;
-                }
-
-                Debug.Log("[MagicMR] Appearance: burnt material applied.", this);
-            }
-            else
-            {
-                Debug.LogWarning("[MagicMR] Appearance: burnt material missing.", this);
-            }
+            if (m_AppearanceBlendCoroutine != null)
+                StopCoroutine(m_AppearanceBlendCoroutine);
+            m_AppearanceBlendCoroutine = StartCoroutine(BlendToBurntRoutine());
 
             PlayAppearanceVfx();
 
@@ -369,13 +454,102 @@ namespace MagicMR
             }
         }
 
+        IEnumerator BlendToBurntRoutine()
+        {
+            if (m_BurntMaterial == null)
+            {
+                Debug.LogWarning("[MagicMR] Appearance: burnt material missing.", this);
+                yield break;
+            }
+
+            if (m_AllRenderers == null || m_AllRenderers.Length == 0)
+                CacheRenderers();
+
+            if (m_AppearanceBurnt)
+            {
+                ApplyBurntShared();
+                yield break;
+            }
+
+            var count = m_AllRenderers.Length;
+            var startMats = new Material[count];
+            var blendMats = new Material[count];
+            for (var i = 0; i < count; i++)
+            {
+                var renderer = m_AllRenderers[i];
+                if (!IsBodyRenderer(renderer))
+                    continue;
+
+                startMats[i] = renderer.sharedMaterial != null ? renderer.sharedMaterial : m_OriginalMaterial;
+                if (startMats[i] == null)
+                    startMats[i] = m_BurntMaterial;
+                blendMats[i] = new Material(startMats[i]);
+                renderer.sharedMaterial = blendMats[i];
+            }
+
+            var elapsed = 0f;
+            var duration = StudySpec.AppearanceBlendSeconds;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                var t = MagicMRAnim.SmoothStep(elapsed / duration);
+                for (var i = 0; i < count; i++)
+                {
+                    if (blendMats[i] != null)
+                        blendMats[i].Lerp(startMats[i], m_BurntMaterial, t);
+                }
+
+                yield return null;
+            }
+
+            ApplyBurntShared();
+            for (var i = 0; i < count; i++)
+            {
+                if (blendMats[i] != null)
+                    Destroy(blendMats[i]);
+            }
+
+            m_AppearanceBurnt = true;
+            m_AppearanceBlendCoroutine = null;
+            Debug.Log("[MagicMR] Appearance: burnt material applied.", this);
+        }
+
+        void ApplyBurntShared()
+        {
+            if (m_AllRenderers == null)
+                return;
+
+            foreach (var renderer in m_AllRenderers)
+            {
+                if (IsBodyRenderer(renderer))
+                    renderer.sharedMaterial = m_BurntMaterial;
+            }
+        }
+
+        static bool IsBodyRenderer(Renderer renderer)
+        {
+            if (renderer == null || renderer is ParticleSystemRenderer)
+                return false;
+
+            var t = renderer.transform;
+            while (t != null)
+            {
+                var n = t.name;
+                if (n == "AgencyEyes" || n.StartsWith("Appearance_smoke") || n.StartsWith("flower_") ||
+                    n.StartsWith("deconstruction_") || n.StartsWith("evade_ghost"))
+                    return false;
+                t = t.parent;
+            }
+
+            return true;
+        }
+
         void PlayAppearanceVfx()
         {
             if (m_SmokeParticles == null)
                 m_SmokeParticles = MagicMRVfxFactory.CreateSmoke(transform);
 
-            m_SmokeParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-            m_SmokeParticles.Play();
+            MagicMRVfxFactory.EmitSmokeBurst(m_SmokeParticles);
         }
 
         public void TriggerAgency()
@@ -384,8 +558,15 @@ namespace MagicMR
             SetAllRenderersEnabled(true);
             EnsureAgencyEyes();
 
+            m_PulsePhase = 0f;
+            m_AgencyAge = 0f;
+            m_EyesFade = 0f;
+
             if (m_EyesObject != null)
+            {
+                m_EyesObject.transform.localScale = Vector3.zero;
                 m_EyesObject.SetActive(true);
+            }
 
             if (m_AgencyAnimator != null && !string.IsNullOrEmpty(m_AliveBoolParameter))
                 m_AgencyAnimator.SetBool(m_AliveBoolParameter, true);
@@ -422,15 +603,7 @@ namespace MagicMR
             target.y = transform.position.y;
 
             SpawnEvadeGhostTrail();
-            if (m_Rigidbody != null)
-            {
-                m_Rigidbody.MovePosition(target);
-                m_Rigidbody.linearVelocity = Vector3.zero;
-            }
-            else
-            {
-                transform.position = target;
-            }
+            BeginHop(target, StudySpec.RuleDodgeDuration);
 
             m_EvadeCount++;
             m_LastEvadeTime = Time.time;
@@ -459,16 +632,36 @@ namespace MagicMR
                 Destroy(vfx.gameObject, m_DeconstructionDelay + 1f);
             }
 
+            MagicMRVfxFactory.CreateShatterBurst(transform);
+            if (m_SmokeParticles != null)
+                m_SmokeParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+
+            var startScale = transform.localScale;
+            var shrinkDur = Mathf.Min(Mathf.Max(0.08f, m_DeconstructionDelay), StudySpec.ShatterShrinkSeconds);
+            var elapsed = 0f;
+            while (elapsed < shrinkDur)
+            {
+                elapsed += Time.deltaTime;
+                var t = MagicMRAnim.EaseInCubic(elapsed / shrinkDur);
+                transform.localScale = Vector3.Lerp(startScale, m_BaseScale * 0.04f, t);
+                yield return null;
+            }
+
             // Hide body + cap + wheel so only the flower remains.
             SetAllRenderersEnabled(false);
             if (m_EyesObject != null)
                 m_EyesObject.SetActive(false);
 
+            transform.localScale = m_BaseScale;
             m_IsDeconstructed = true;
+            CancelHop();
 
-            yield return new WaitForSeconds(m_DeconstructionDelay);
+            var remain = m_DeconstructionDelay - shrinkDur;
+            if (remain > 0f)
+                yield return new WaitForSeconds(remain);
 
             SpawnFlower();
+            m_DeconstructionCoroutine = null;
             Debug.Log("[MagicMR] Deconstruction: flower spawned, lighter hidden.", this);
         }
 
@@ -484,6 +677,12 @@ namespace MagicMR
                 Destroy(m_SpawnedFlower);
 
             m_SpawnedFlower = Instantiate(m_FlowerPrefab, transform.position, transform.rotation);
+            m_FlowerBaseScale = m_SpawnedFlower.transform.localScale;
+            if (m_FlowerBaseScale.sqrMagnitude < 1e-6f)
+                m_FlowerBaseScale = Vector3.one;
+            m_SpawnedFlower.transform.localScale = Vector3.zero;
+            m_FlowerAge = 0f;
+            m_FlowerGrowing = true;
             MagicMRVfxFactory.CreateGoldDust(m_SpawnedFlower.transform);
         }
 
@@ -494,6 +693,8 @@ namespace MagicMR
 
             Destroy(m_SpawnedFlower);
             m_SpawnedFlower = null;
+            m_FlowerGrowing = false;
+            m_FlowerAge = 0f;
         }
 
         void RestoreFromDeconstruction()
@@ -519,7 +720,7 @@ namespace MagicMR
 
             foreach (var renderer in m_AllRenderers)
             {
-                if (renderer != null)
+                if (renderer != null && IsBodyRenderer(renderer))
                     renderer.enabled = enabled;
             }
         }
@@ -531,7 +732,7 @@ namespace MagicMR
 
             for (var i = 0; i < m_AllRenderers.Length; i++)
             {
-                if (m_AllRenderers[i] == null)
+                if (!IsBodyRenderer(m_AllRenderers[i]))
                     continue;
 
                 if (m_OriginalChildMaterials != null &&
@@ -545,6 +746,8 @@ namespace MagicMR
                     m_AllRenderers[i].sharedMaterial = m_OriginalMaterial;
                 }
             }
+
+            m_AppearanceBurnt = false;
         }
 
         void EnterState(EditDimension dimension)
@@ -566,10 +769,15 @@ namespace MagicMR
             if (m_ActiveDimension == EditDimension.Agency && dimension != EditDimension.Agency)
             {
                 if (m_EyesObject != null)
+                {
                     m_EyesObject.SetActive(false);
+                    m_EyesObject.transform.localScale = Vector3.one;
+                }
+
                 if (m_AgencyAnimator != null && !string.IsNullOrEmpty(m_AliveBoolParameter))
                     m_AgencyAnimator.SetBool(m_AliveBoolParameter, false);
                 transform.localScale = m_BaseScale;
+                m_EyesFade = 0f;
             }
 
             m_ActiveDimension = dimension;
@@ -588,19 +796,38 @@ namespace MagicMR
 
         void ApplyIdlePulse()
         {
-            var pulse = 1f + Mathf.Sin(Time.time * m_IdlePulseSpeed) * m_IdlePulseScale;
+            m_AgencyAge += Time.deltaTime;
+            m_PulsePhase += Time.deltaTime * m_IdlePulseSpeed;
+            var fade = MagicMRAnim.SmoothStep(m_AgencyAge / StudySpec.AgencyPulseFadeInSeconds);
+            var pulse = 1f + Mathf.Sin(m_PulsePhase) * m_IdlePulseScale * fade;
             transform.localScale = m_BaseScale * pulse;
+        }
+
+        void UpdateAgencyEyes()
+        {
+            if (m_EyesObject == null || !m_EyesObject.activeSelf)
+                return;
+
+            m_EyesFade = Mathf.MoveTowards(m_EyesFade, 1f, Time.deltaTime / StudySpec.AgencyEyesFadeInSeconds);
+            m_EyesObject.transform.localScale = Vector3.one * MagicMRAnim.SmoothStep(m_EyesFade);
+
+            var cam = Camera.main;
+            if (cam == null)
+                return;
+
+            var toCam = cam.transform.position - m_EyesObject.transform.position;
+            if (toCam.sqrMagnitude > 0.0001f)
+                m_EyesObject.transform.rotation = Quaternion.LookRotation(toCam, Vector3.up);
         }
 
         void UpdateRuleEvade()
         {
-            if (m_IsDeconstructed || m_Rigidbody == null)
+            if (m_IsDeconstructed || m_Rigidbody == null || m_Hopping)
                 return;
 
             // While pseudo-dynamic hand attachment is active, do not fight the
             // hand pose with evade impulses (hybrid tracking Mode B).
-            var anchor = GetComponent<LighterAnchorManager>();
-            if (anchor != null && anchor.IsFollowingHand)
+            if (m_Anchor != null && m_Anchor.IsFollowingHand)
                 return;
 
             if (Time.time - m_LastEvadeTime < k_EvadeCooldown)
@@ -618,12 +845,16 @@ namespace MagicMR
 
             if (evadeDir.sqrMagnitude < 0.0001f)
                 evadeDir = Vector3.forward;
+            evadeDir.Normalize();
 
-            m_Rigidbody.AddForce(evadeDir.normalized * m_EvadeImpulse, ForceMode.Impulse);
+            var target = transform.position + evadeDir * StudySpec.RuleDodgeMeters;
+            target.y = transform.position.y;
+            SpawnEvadeGhostTrail();
+            BeginHop(target, StudySpec.RuleDodgeDuration);
+
             m_EvadeCount++;
             m_LastEvadeTime = Time.time;
 
-            SpawnEvadeGhostTrail();
             if (m_AudioSource != null)
                 m_AudioSource.PlayOneShot(MagicMRAudioFactory.Whoosh, 0.55f);
 
@@ -654,8 +885,7 @@ namespace MagicMR
             if (m_IsDeconstructed)
                 return;
 
-            var anchor = GetComponent<LighterAnchorManager>();
-            var pin = anchor != null && anchor.IsCalibrated ? anchor.PinnedPosition : m_InitialPosition;
+            var pin = m_Anchor != null && m_Anchor.IsCalibrated ? m_Anchor.PinnedPosition : m_InitialPosition;
             var fled = Vector3.Distance(transform.position, pin) >= k_EvasionFailureMinFlee;
             if (!fled)
                 return;
@@ -690,12 +920,12 @@ namespace MagicMR
             distance = float.MaxValue;
 
 #if XR_HANDS_1_1_OR_NEWER
-            var subsystems = new System.Collections.Generic.List<UnityEngine.XR.Hands.XRHandSubsystem>();
-            SubsystemManager.GetSubsystems(subsystems);
-            if (subsystems.Count == 0)
+            m_HandSubsystems.Clear();
+            SubsystemManager.GetSubsystems(m_HandSubsystems);
+            if (m_HandSubsystems.Count == 0)
                 return false;
 
-            var subsystem = subsystems[0];
+            var subsystem = m_HandSubsystems[0];
             var found = false;
 
             if (TryHandPalm(subsystem.leftHand, out var leftPos))
@@ -743,6 +973,8 @@ namespace MagicMR
         {
             StopAllCoroutines();
             m_DeconstructionCoroutine = null;
+            m_AppearanceBlendCoroutine = null;
+            CancelHop();
             ClearFlower();
             m_IsDeconstructed = false;
 
@@ -750,7 +982,10 @@ namespace MagicMR
             RestoreOriginalMaterials();
 
             if (m_EyesObject != null)
+            {
                 m_EyesObject.SetActive(false);
+                m_EyesObject.transform.localScale = Vector3.one;
+            }
 
             if (m_AgencyAnimator != null && !string.IsNullOrEmpty(m_AliveBoolParameter))
                 m_AgencyAnimator.SetBool(m_AliveBoolParameter, false);
@@ -771,6 +1006,10 @@ namespace MagicMR
             m_EvasionFailureCount = 0;
             m_ActiveDimension = EditDimension.None;
             m_StateEnterTime = Time.time;
+            m_PulsePhase = 0f;
+            m_AgencyAge = 0f;
+            m_EyesFade = 0f;
+            m_AppearanceBurnt = false;
         }
 
         public void OnGestureA_Pinch() => ApplyDimension(EditDimension.Appearance, Vector3.zero, false);

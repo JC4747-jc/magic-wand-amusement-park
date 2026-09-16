@@ -70,6 +70,17 @@ namespace MagicMR
         public const float IdlePulseScale = 0.14f;
         public const string AliveBoolParameter = "IsAlive";
 
+        // Visual timing for 4D effects only. Gesture / FSM / 20cm hop distance stay unchanged.
+        public const float FollowHandSmoothTime = 0.07f;
+        public const float FollowHandRotationHz = 16f;
+        public const float RuleDodgeDuration = 0.22f;
+        public const float AgencyPulseFadeInSeconds = 0.45f;
+        public const float AgencyEyesFadeInSeconds = 0.3f;
+        public const float AppearanceBlendSeconds = 0.28f;
+        public const float ShatterShrinkSeconds = 0.34f;
+        public const float FlowerGrowSeconds = 0.48f;
+        public const float GhostTrailLifetime = 0.45f;
+
         // Study session / logging
         public const float GlobalCooldownSeconds = 0.5f;
         public const float TrajectorySampleInterval = 0.1f;

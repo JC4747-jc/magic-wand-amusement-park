@@ -79,6 +79,12 @@ namespace MagicMR
         float m_ReleaseTimer;
         float m_AttachDwellTimer;
         bool m_WasGripping;
+        Vector3 m_FollowVelocity;
+        bool m_FollowPosePrimed;
+#if XR_HANDS_1_1_OR_NEWER
+        readonly System.Collections.Generic.List<XRHandSubsystem> m_HandSubsystems =
+            new System.Collections.Generic.List<XRHandSubsystem>(2);
+#endif
         /// <summary>
         /// After embodied registration, ignore FollowHand until the calibration
         /// grip is fully released — otherwise the lighter sticks to the hand
@@ -296,6 +302,8 @@ namespace MagicMR
                 return;
 
             Mode = TrackingMode.Pinned;
+            m_FollowPosePrimed = false;
+            m_FollowVelocity = Vector3.zero;
             SetBodyKinematic(false);
             m_Target.SetPositionAndRotation(m_PinnedPosition, m_PinnedRotation);
             m_RealityEditor?.SyncWorldAnchor(m_PinnedPosition);
@@ -311,6 +319,8 @@ namespace MagicMR
             m_LoadedAnchorSource = null;
             PicoSpatialAnchor.RemoveAnchor(m_Target.gameObject);
             SetBodyKinematic(true);
+            m_FollowPosePrimed = false;
+            m_FollowVelocity = Vector3.zero;
             ApplyFollowPose(position, rotation);
             m_WasGripping = true;
             m_ReleaseTimer = 0f;
@@ -319,8 +329,35 @@ namespace MagicMR
 
         void ApplyFollowPose(Vector3 position, Quaternion rotation)
         {
-            m_Target.SetPositionAndRotation(position, rotation);
-            m_RealityEditor?.SyncWorldAnchor(position);
+            if (m_Target == null)
+                return;
+
+            Vector3 posePos;
+            Quaternion poseRot;
+            if (!m_FollowPosePrimed)
+            {
+                posePos = position;
+                poseRot = rotation;
+                m_FollowVelocity = Vector3.zero;
+                m_FollowPosePrimed = true;
+            }
+            else
+            {
+                posePos = Vector3.SmoothDamp(
+                    m_Target.position,
+                    position,
+                    ref m_FollowVelocity,
+                    StudySpec.FollowHandSmoothTime,
+                    Mathf.Infinity,
+                    Time.deltaTime);
+                poseRot = Quaternion.Slerp(
+                    m_Target.rotation,
+                    rotation,
+                    MagicMRAnim.ExpLerp(StudySpec.FollowHandRotationHz, Time.deltaTime));
+            }
+
+            m_Target.SetPositionAndRotation(posePos, poseRot);
+            m_RealityEditor?.SyncWorldAnchor(posePos);
             if (m_TargetBody != null)
             {
                 m_TargetBody.linearVelocity = Vector3.zero;
@@ -335,6 +372,8 @@ namespace MagicMR
 
             var position = m_Target.position;
             var rotation = m_Target.rotation;
+            m_FollowPosePrimed = false;
+            m_FollowVelocity = Vector3.zero;
             SetBodyKinematic(false);
             ApplyCalibrationPose(position, rotation, attachNativeAnchor: false, setModePinned: true);
             m_WasGripping = false;
@@ -351,11 +390,11 @@ namespace MagicMR
             rotation = m_Target != null ? m_Target.rotation : Quaternion.identity;
 
 #if XR_HANDS_1_1_OR_NEWER
-            var subsystems = new System.Collections.Generic.List<XRHandSubsystem>();
-            SubsystemManager.GetSubsystems(subsystems);
-            if (subsystems.Count > 0)
+            m_HandSubsystems.Clear();
+            SubsystemManager.GetSubsystems(m_HandSubsystems);
+            if (m_HandSubsystems.Count > 0)
             {
-                var subsystem = subsystems[0];
+                var subsystem = m_HandSubsystems[0];
                 if (TryPalm(subsystem.rightHand, out var rightPalm) &&
                     Vector3.Distance(rightPalm.position, position) < 0.2f)
                 {
@@ -725,6 +764,8 @@ namespace MagicMR
             m_ReleaseTimer = 0f;
             m_AttachDwellTimer = 0f;
             m_AwaitingGripReleaseAfterCalibrate = false;
+            m_FollowPosePrimed = false;
+            m_FollowVelocity = Vector3.zero;
             SetBodyKinematic(false);
             m_Target.SetPositionAndRotation(m_PinnedPosition, m_PinnedRotation);
             m_LastGoodPosition = m_PinnedPosition;
@@ -745,6 +786,8 @@ namespace MagicMR
             m_AwaitingGripReleaseAfterCalibrate = false;
             m_AttachDwellTimer = 0f;
             m_ReleaseTimer = 0f;
+            m_FollowPosePrimed = false;
+            m_FollowVelocity = Vector3.zero;
             m_NextCalibrationTime = 0f;
             SetBodyKinematic(false);
             PicoSpatialAnchor.RemoveAnchor(m_Target.gameObject);
