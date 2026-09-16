@@ -50,7 +50,7 @@ namespace MagicMR
 
         // Bump this string on every build-affecting fix. Logged (not rendered
         // in-headset) so we can confirm on-device which build is running via adb.
-        const string k_BuildTag = "MagicMR build: vst-fix-49 layerBlend=0 match VstTest + skybox off";
+        const string k_BuildTag = "MagicMR build: yolo-auto-pin-B + 4d-anim";
 
         LighterAnchorManager m_LighterAnchorManager;
 

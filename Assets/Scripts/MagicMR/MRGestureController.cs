@@ -98,6 +98,9 @@ namespace MagicMR
         Quaternion m_DeskPresetRotation = Quaternion.identity;
         bool m_HasDeskPreset;
 
+        Vector3 m_PendingYoloAim;
+        bool m_HasPendingYoloAim;
+
         Vector3 m_LastRightHandPosition;
         bool m_HasRightHandPosition;
 
@@ -220,6 +223,7 @@ namespace MagicMR
             m_LeftResetAccumulated = 0f;
             m_EditExclusiveUntil = 0f;
             m_LastAcceptedEdit = EditDimension.None;
+            m_HasPendingYoloAim = false;
 
             m_PinchDetector?.ResetForNewTrial();
             m_PinchDetector?.SuppressTapFor(1.0f);
@@ -269,7 +273,14 @@ namespace MagicMR
             m_CalibAccumulated = 0f;
             m_CalibCoyoteActive = false;
             m_RequireRightHandRelease = false;
-            Debug.Log("[MagicMR] FSM → CalibrationReady (right pinch near wireframe).", this);
+            Debug.Log("[MagicMR] FSM → CalibrationReady (right pinch near wireframe, or YOLO auto-pin).", this);
+
+            if (m_HasPendingYoloAim)
+            {
+                var aim = m_PendingYoloAim;
+                m_HasPendingYoloAim = false;
+                CompleteCalibration(aim, requireRightHandRelease: false, reason: "yolo_auto_pin");
+            }
         }
 
         void EnterPinnedIdle(string reason)
@@ -351,21 +362,77 @@ namespace MagicMR
             // else: still within coyote — keep accumulated time
         }
 
-        void CompleteCalibration(Vector3 aimPoint)
+        /// <summary>
+        /// Track B mode B: accept one YOLO desk hit as calibration. Pinch is not required.
+        /// Ignored after pin; lost detections do not unpin. Cooldown detections are latched.
+        /// </summary>
+        public bool TryAcceptYoloAutoPin(Vector3 worldAimPoint)
+        {
+            if (!StudySpec.YoloAutoPinEnabled)
+                return false;
+
+            if (m_State == MRState.PinnedIdle || m_State == MRState.FollowingHand)
+                return false;
+
+            if (m_Anchor != null && m_Anchor.IsCalibrated)
+                return false;
+
+            if (m_State == MRState.Cooldown)
+            {
+                m_PendingYoloAim = worldAimPoint;
+                m_HasPendingYoloAim = true;
+                Debug.Log("[MagicMR] YOLO auto-pin latched until CalibrationReady.", this);
+                return true;
+            }
+
+            if (m_State != MRState.CalibrationReady)
+                return false;
+
+            return CompleteCalibration(worldAimPoint, requireRightHandRelease: false, reason: "yolo_auto_pin");
+        }
+
+        bool CompleteCalibration(Vector3 aimPoint, bool requireRightHandRelease = true, string reason = "calibrated")
         {
             m_CalibAccumulated = 0f;
             m_CalibCoyoteActive = false;
+            m_HasPendingYoloAim = false;
 
             if (m_Anchor == null)
                 m_Anchor = FindFirstObjectByType<LighterAnchorManager>();
 
             m_Anchor?.CalibrateAt(aimPoint);
-            m_PinchDetector?.ResetForNewTrial();
-            m_PinchDetector?.SuppressTapFor(0.8f);
 
-            m_RequireRightHandRelease = true;
-            EnterPinnedIdle("calibrated");
-            Debug.Log("[MagicMR] Calibration OK — requireRightHandRelease until open hand.", this);
+            if (!requireRightHandRelease && (m_Anchor == null || !m_Anchor.IsCalibrated))
+            {
+                Debug.LogWarning($"[MagicMR] YOLO auto-pin did not pin ({reason}).", this);
+                return false;
+            }
+
+            if (requireRightHandRelease)
+            {
+                m_PinchDetector?.ResetForNewTrial();
+                m_PinchDetector?.SuppressTapFor(0.8f);
+                m_RequireRightHandRelease = true;
+            }
+            else
+            {
+                m_RequireRightHandRelease = false;
+            }
+
+            EnterPinnedIdle(reason);
+            Debug.Log(
+                $"[MagicMR] Calibration OK ({reason}) — requireRightHandRelease={m_RequireRightHandRelease}.",
+                this);
+
+            DataLogger.Instance?.LogEvent(
+                reason == "yolo_auto_pin" ? "yolo_auto_pin" : "calibrated",
+                EditDimension.None,
+                -1f,
+                0f,
+                0f,
+                notes: reason);
+
+            return true;
         }
 
         void UpdatePinnedIdle()

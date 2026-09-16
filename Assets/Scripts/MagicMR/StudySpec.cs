@@ -70,6 +70,15 @@ namespace MagicMR
         public const float IdlePulseScale = 0.14f;
         public const string AliveBoolParameter = "IsAlive";
 
+        // Track B join mode B: one-shot YOLO auto-pin (not per-frame tracking, not 4D).
+        public const bool YoloAutoPinEnabled = true;
+        public const string YoloBridgeHost = "127.0.0.1";
+        public const int YoloBridgePort = 5005;
+        public const float YoloAutoPinMinConfidence = 0.35f;
+        public const int YoloAutoPinStableFrames = 2;
+        public const string YoloLighterClass = "Lighter";
+        public const string YoloHostPlayerPrefsKey = "MagicMR_YoloHost";
+
         // Visual timing for 4D effects only. Gesture / FSM / 20cm hop distance stay unchanged.
         public const float FollowHandSmoothTime = 0.07f;
         public const float FollowHandRotationHz = 16f;

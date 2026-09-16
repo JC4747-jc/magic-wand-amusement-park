@@ -131,6 +131,11 @@ namespace MagicMR
                     new Color(0.4f, 1f, 0.55f, 1f),
                     progress);
             }
+            else if (StudySpec.YoloAutoPinEnabled)
+            {
+                m_Prompt.text = "对准真实火机… 检测后自动钉住，或右手捏合约1秒";
+                m_Prompt.color = new Color(0.85f, 0.95f, 1f, 0.95f);
+            }
             else
             {
                 m_Prompt.text = "对齐半透明火机，右手捏合并保持约1秒";
@@ -206,7 +211,9 @@ namespace MagicMR
             var promptGo = new GameObject("CalibrationPrompt");
             promptGo.transform.SetParent(transform, false);
             m_Prompt = promptGo.AddComponent<TextMesh>();
-            m_Prompt.text = "对齐半透明火机，右手捏合并保持约1秒";
+            m_Prompt.text = StudySpec.YoloAutoPinEnabled
+                ? "对准真实火机… 检测后自动钉住，或右手捏合约1秒"
+                : "对齐半透明火机，右手捏合并保持约1秒";
             m_Prompt.fontSize = 32;
             m_Prompt.characterSize = 0.008f;
             m_Prompt.anchor = TextAnchor.MiddleCenter;

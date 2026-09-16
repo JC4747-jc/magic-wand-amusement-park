@@ -54,6 +54,8 @@ namespace Perception
         public bool FlipVerticallyBeforeEncode => m_FlipVerticallyBeforeEncode;
         public int MaxLongEdge => m_MaxLongEdge;
 
+        public void SetVerboseLogging(bool enabled) => m_LogEveryFrame = enabled;
+
         /// <summary>Orientation notes recorded once for Phase 2.</summary>
         public static string OrientationAuditNotes { get; private set; } =
             "PXR raw RGBA copied row0→texture without flip; Unity EncodeToJPG uses Texture2D storage; " +

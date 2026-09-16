@@ -37,6 +37,8 @@ namespace Perception
         public int LastFrameWidth { get; private set; }
         public int LastFrameHeight { get; private set; }
 
+        public void SetMinConfidence(float value) => m_MinConfidence = Mathf.Max(0f, value);
+
         void Awake()
         {
             if (m_TcpClient == null)

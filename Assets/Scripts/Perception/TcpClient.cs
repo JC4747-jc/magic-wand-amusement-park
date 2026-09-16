@@ -40,6 +40,15 @@ namespace Perception
             set => m_AutoConnect = value;
         }
 
+        public void Configure(string host, int port, bool autoConnect = true)
+        {
+            if (!string.IsNullOrWhiteSpace(host))
+                m_Host = host;
+            if (port > 0)
+                m_Port = port;
+            m_AutoConnect = autoConnect;
+        }
+
         void Start()
         {
             if (m_AutoConnect)

@@ -97,6 +97,7 @@ namespace MagicMR
         public bool IsFollowingHand => Mode == TrackingMode.FollowHandWhileGripping;
         public Vector3 PinnedPosition => m_PinnedPosition;
         public Quaternion PinnedRotation => m_PinnedRotation;
+        public float DeskPlaneY => m_DeskPlaneY;
 
         /// <summary>Fired when the lighter is pinned (embodied registration ritual).</summary>
         public event System.Action Calibrated;
