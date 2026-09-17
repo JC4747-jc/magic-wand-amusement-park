@@ -1,0 +1,181 @@
+using UnityEngine;
+#if UNITY_EDITOR
+using System.Collections;
+using UnityEngine.InputSystem;
+#endif
+
+namespace MagicMR
+{
+    /// <summary>
+    /// Editor Play-only 4D preview. Keys are compiled out of player / PICO builds.
+    /// </summary>
+    [DefaultExecutionOrder(80)]
+    public class MagicMREditorDebugKeys : MonoBehaviour
+    {
+#if UNITY_EDITOR
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        static void SpawnInEditorPlay()
+        {
+            if (!Application.isPlaying)
+                return;
+            if (FindFirstObjectByType<MagicMRStudyBootstrap>() == null)
+                return;
+            if (FindFirstObjectByType<MagicMREditorDebugKeys>() != null)
+                return;
+
+            var go = new GameObject("MagicMREditorDebugKeys");
+            go.AddComponent<MagicMREditorDebugKeys>();
+        }
+
+        RealityEditor m_Editor;
+        bool m_HintVisible = true;
+
+        IEnumerator Start()
+        {
+            yield return null;
+            PreparePreviewTarget();
+        }
+
+        void Update()
+        {
+            if (m_Editor == null)
+                m_Editor = ResolveEditor();
+            if (m_Editor == null)
+                return;
+
+            var kb = Keyboard.current;
+            if (kb == null)
+                return;
+
+            if (Pressed(kb.digit1Key, kb.numpad1Key))
+                m_Editor.OnGestureA_Pinch();
+            else if (Pressed(kb.digit2Key, kb.numpad2Key))
+                m_Editor.OnGestureC_Circle();
+            else if (Pressed(kb.digit3Key, kb.numpad3Key))
+                m_Editor.OnGestureB_Swipe();
+            else if (Pressed(kb.digit4Key, kb.numpad4Key))
+                m_Editor.OnGestureD_FistBurst();
+            else if (kb.hKey.wasPressedThisFrame)
+                m_HintVisible = !m_HintVisible;
+        }
+
+        void OnGUI()
+        {
+            if (!m_HintVisible)
+                return;
+
+            const int pad = 12;
+            var rect = new Rect(pad, pad, 420, 108);
+            GUI.color = new Color(0f, 0f, 0f, 0.55f);
+            GUI.DrawTexture(rect, Texture2D.whiteTexture);
+            GUI.color = Color.white;
+            GUI.Label(
+                new Rect(rect.x + 10, rect.y + 8, rect.width - 16, rect.height - 12),
+                "Editor 4D preview (PICO keys off in player builds)\n" +
+                "1  burnt + smoke\n" +
+                "2  eyes + breathing\n" +
+                "3  swipe side-hop\n" +
+                "4  shatter → flower     H hide hint");
+        }
+
+        static bool Pressed(UnityEngine.InputSystem.Controls.KeyControl a, UnityEngine.InputSystem.Controls.KeyControl b)
+        {
+            return (a != null && a.wasPressedThisFrame) || (b != null && b.wasPressedThisFrame);
+        }
+
+        void PreparePreviewTarget()
+        {
+            var lighterGo = GameObject.Find("Lighter");
+            if (lighterGo == null)
+            {
+                Debug.LogWarning("[MagicMR] Editor debug keys: no Lighter in the scene.");
+                return;
+            }
+
+            lighterGo.SetActive(true);
+            EnsureLighterInView(lighterGo.transform);
+
+            var anchor = lighterGo.GetComponent<LighterAnchorManager>() ??
+                         FindFirstObjectByType<LighterAnchorManager>();
+            if (anchor != null && !anchor.IsCalibrated)
+                anchor.CalibrateAt(lighterGo.transform.position);
+
+            m_Editor = lighterGo.GetComponent<RealityEditor>() ?? ResolveEditor();
+            m_Editor?.EnsureVisible();
+            ForceRenderersOn(lighterGo);
+
+            var ghost = GameObject.Find("GhostLighter_Calibration");
+            if (ghost != null)
+                Destroy(ghost);
+            var prompt = GameObject.Find("CalibrationPrompt");
+            if (prompt != null)
+                Destroy(prompt);
+
+            Debug.Log(
+                "[MagicMR] Editor Play 4D keys ready: 1 burnt+smoke, 2 eyes+breath, " +
+                "3 hop, 4 shatter→flower (bypasses FSM / pinch / YOLO).",
+                this);
+        }
+
+        static RealityEditor ResolveEditor()
+        {
+            var lighter = GameObject.Find("Lighter");
+            if (lighter != null)
+            {
+                var editor = lighter.GetComponent<RealityEditor>();
+                if (editor != null)
+                    return editor;
+            }
+
+            return FindFirstObjectByType<RealityEditor>();
+        }
+
+        static void EnsureLighterInView(Transform lighter)
+        {
+            var cam = Camera.main;
+            if (cam == null || !cam.isActiveAndEnabled)
+            {
+                foreach (var candidate in FindObjectsByType<Camera>(FindObjectsSortMode.None))
+                {
+                    if (candidate != null && candidate.enabled && candidate.gameObject.activeInHierarchy)
+                    {
+                        cam = candidate;
+                        break;
+                    }
+                }
+            }
+
+            if (cam == null)
+                return;
+
+            var dist = Vector3.Distance(cam.transform.position, lighter.position);
+            if (dist >= 0.25f && dist <= 1.8f)
+                return;
+
+            var forward = cam.transform.forward;
+            forward.y = 0f;
+            if (forward.sqrMagnitude < 0.001f)
+                forward = Vector3.forward;
+            forward.Normalize();
+            lighter.position = cam.transform.position
+                               + forward * StudySpec.LighterDistance
+                               + Vector3.up * StudySpec.LighterHeightOffset;
+        }
+
+        static void ForceRenderersOn(GameObject lighter)
+        {
+            foreach (var renderer in lighter.GetComponentsInChildren<Renderer>(true))
+            {
+                if (renderer == null || renderer is ParticleSystemRenderer)
+                    continue;
+                renderer.enabled = true;
+            }
+        }
+#else
+        void Awake()
+        {
+            Destroy(this);
+        }
+#endif
+    }
+}
