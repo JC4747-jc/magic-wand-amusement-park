@@ -17,7 +17,10 @@ namespace MagicMR
         public static AudioClip Whoosh => s_Whoosh ??= MakeNoiseSweep(0.22f, 0.35f);
         public static AudioClip Growl => s_Growl ??= MakeTone(0.35f, 90f, 0.4f, fadeOut: true, harmonics: 3, tremolo: 12f);
         public static AudioClip Shatter => s_Shatter ??= MakeNoiseBurst(0.28f, 0.5f);
+        public static AudioClip Scream => s_Scream ??= MakeFallingScream();
         public static AudioClip ResetChime => s_ResetChime ??= MakeTone(0.25f, 660f, 0.45f, fadeOut: true, harmonics: 1);
+
+        static AudioClip s_Scream;
 
         static AudioClip MakeTone(
             float duration,
@@ -83,6 +86,28 @@ namespace MagicMR
             }
 
             var clip = AudioClip.Create("MagicMRShatter", sampleCount, 1, sampleRate, false);
+            clip.SetData(data, 0);
+            return clip;
+        }
+
+        static AudioClip MakeFallingScream()
+        {
+            const float duration = 0.55f;
+            var sampleRate = 22050;
+            var sampleCount = Mathf.CeilToInt(duration * sampleRate);
+            var data = new float[sampleCount];
+            for (var i = 0; i < sampleCount; i++)
+            {
+                var t = i / (float)sampleRate;
+                var u = t / duration;
+                var freq = Mathf.Lerp(1650f, 380f, u * u);
+                var env = (1f - u) * (0.55f + 0.45f * Mathf.Sin(2f * Mathf.PI * 22f * t));
+                var sample = Mathf.Sin(2f * Mathf.PI * freq * t)
+                             + 0.35f * Mathf.Sin(2f * Mathf.PI * freq * 2f * t);
+                data[i] = sample * 0.28f * env;
+            }
+
+            var clip = AudioClip.Create("MagicMRScream", sampleCount, 1, sampleRate, false);
             clip.SetData(data, 0);
             return clip;
         }

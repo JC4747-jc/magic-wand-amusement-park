@@ -38,6 +38,17 @@ namespace MagicMR
             if (keyboard == null)
                 return;
 
+#if UNITY_EDITOR
+            // 1–4 are MagicMR 4D / HCI preview keys in the Editor. Conditions use F1–F4.
+            if (keyboard.f1Key.wasPressedThisFrame)
+                SetCondition(1);
+            else if (keyboard.f2Key.wasPressedThisFrame)
+                SetCondition(2);
+            else if (keyboard.f3Key.wasPressedThisFrame)
+                SetCondition(3);
+            else if (keyboard.f4Key.wasPressedThisFrame)
+                SetCondition(4);
+#else
             if (keyboard.digit1Key.wasPressedThisFrame || keyboard.numpad1Key.wasPressedThisFrame)
                 SetCondition(1);
             else if (keyboard.digit2Key.wasPressedThisFrame || keyboard.numpad2Key.wasPressedThisFrame)
@@ -46,6 +57,7 @@ namespace MagicMR
                 SetCondition(3);
             else if (keyboard.digit4Key.wasPressedThisFrame || keyboard.numpad4Key.wasPressedThisFrame)
                 SetCondition(4);
+#endif
             else if (keyboard.rKey.wasPressedThisFrame)
             {
                 // Keyboard only — does not use the floating UI path.

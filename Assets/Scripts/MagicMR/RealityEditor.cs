@@ -96,6 +96,7 @@ namespace MagicMR
         Coroutine m_AppearanceBlendCoroutine;
         GameObject m_SpawnedFlower;
         Vector3 m_FlowerBaseScale = Vector3.one;
+        Vector3 m_FlowerAnchor;
         float m_FlowerAge;
         bool m_FlowerGrowing;
         bool m_IsDeconstructed;
@@ -285,7 +286,7 @@ namespace MagicMR
                 m_FlowerAge += Time.deltaTime;
             var bob = m_FlowerGrowing ? 0f : Mathf.Sin(m_FlowerAge * 1.35f) * 0.012f;
 
-            m_SpawnedFlower.transform.position = m_InitialPosition + Vector3.up * (0.02f + bob);
+            m_SpawnedFlower.transform.position = m_FlowerAnchor + Vector3.up * (0.02f + bob);
             m_SpawnedFlower.transform.Rotate(0f, 14f * Time.deltaTime, 0f, Space.World);
         }
 
@@ -369,31 +370,45 @@ namespace MagicMR
             m_Rigidbody.linearVelocity *= 0.1f;
         }
 
+        bool UsesLighterVisuals()
+        {
+            var director = HciMeetingDirector.Instance ?? FindFirstObjectByType<HciMeetingDirector>();
+            return director == null || director.Scenario == HciMeetingScenario.LighterDemon;
+        }
+
         public void ApplyDimension(EditDimension dimension, Vector3 handPosition, bool hasHandPosition)
         {
             // Phase 2 gesture-pipeline validation: confirms gate did not block this call.
             Debug.Log($"[Phase2] RealityEditor.ApplyDimension: dimension={dimension}", this);
 
+            var driveLighter = UsesLighterVisuals();
+
             // Coming back from flower: destroy flower and restore lighter before
             // applying a new dimension (except another deconstruction).
-            if (m_IsDeconstructed && dimension != EditDimension.Deconstruction)
+            if (driveLighter && m_IsDeconstructed && dimension != EditDimension.Deconstruction)
                 RestoreFromDeconstruction();
 
-            switch (dimension)
+            if (driveLighter)
             {
-                case EditDimension.Appearance:
-                    TriggerAppearance();
-                    break;
-                case EditDimension.Agency:
-                    TriggerAgency();
-                    break;
-                case EditDimension.Rule:
-                    TriggerRule();
-                    break;
-                case EditDimension.Deconstruction:
-                    TriggerDeconstruction();
-                    break;
+                switch (dimension)
+                {
+                    case EditDimension.Appearance:
+                        TriggerAppearance();
+                        break;
+                    case EditDimension.Agency:
+                        TriggerAgency();
+                        break;
+                    case EditDimension.Rule:
+                        TriggerRule();
+                        break;
+                    case EditDimension.Deconstruction:
+                        TriggerDeconstruction();
+                        break;
+                }
             }
+
+            var director = HciMeetingDirector.Instance ?? FindFirstObjectByType<HciMeetingDirector>();
+            director?.Play(dimension);
 
             if (hasHandPosition && DataLogger.Instance != null)
             {
@@ -413,9 +428,14 @@ namespace MagicMR
 
         public void SyncWorldAnchor(Vector3 worldPosition)
         {
-            m_InitialPosition = worldPosition;
             if (m_SpawnedFlower != null && !m_FlowerGrowing)
-                m_SpawnedFlower.transform.position = worldPosition + Vector3.up * 0.02f;
+            {
+                var offset = m_FlowerAnchor - m_InitialPosition;
+                m_FlowerAnchor = worldPosition + offset;
+                m_SpawnedFlower.transform.position = m_FlowerAnchor + Vector3.up * 0.02f;
+            }
+
+            m_InitialPosition = worldPosition;
         }
 
         /// <summary>
@@ -484,6 +504,7 @@ namespace MagicMR
                 if (startMats[i] == null)
                     startMats[i] = m_BurntMaterial;
                 blendMats[i] = new Material(startMats[i]);
+                blendMats[i].EnableKeyword("_EMISSION");
                 renderer.sharedMaterial = blendMats[i];
             }
 
@@ -496,7 +517,11 @@ namespace MagicMR
                 for (var i = 0; i < count; i++)
                 {
                     if (blendMats[i] != null)
+                    {
                         blendMats[i].Lerp(startMats[i], m_BurntMaterial, t);
+                        if (blendMats[i].HasProperty("_EmissionColor"))
+                            blendMats[i].SetColor("_EmissionColor", new Color(1.7f, 0.22f, 0.03f) * t);
+                    }
                 }
 
                 yield return null;
@@ -514,15 +539,32 @@ namespace MagicMR
             Debug.Log("[MagicMR] Appearance: burnt material applied.", this);
         }
 
+        Material m_BurntInstance;
+
+        Material BurntInstance()
+        {
+            if (m_BurntMaterial == null)
+                return null;
+            if (m_BurntInstance == null)
+                m_BurntInstance = new Material(m_BurntMaterial);
+
+            // Magma cracks: keep burnt albedo, add red-hot emission (do not dirty the asset).
+            m_BurntInstance.EnableKeyword("_EMISSION");
+            if (m_BurntInstance.HasProperty("_EmissionColor"))
+                m_BurntInstance.SetColor("_EmissionColor", new Color(1.7f, 0.22f, 0.03f));
+            return m_BurntInstance;
+        }
+
         void ApplyBurntShared()
         {
             if (m_AllRenderers == null)
                 return;
 
+            var burnt = BurntInstance() ?? m_BurntMaterial;
             foreach (var renderer in m_AllRenderers)
             {
                 if (IsBodyRenderer(renderer))
-                    renderer.sharedMaterial = m_BurntMaterial;
+                    renderer.sharedMaterial = burnt;
             }
         }
 
@@ -535,7 +577,8 @@ namespace MagicMR
             while (t != null)
             {
                 var n = t.name;
-                if (n == "AgencyEyes" || n.StartsWith("Appearance_smoke") || n.StartsWith("flower_") ||
+                if (n == "AgencyEyes" || n == "HciScenarioRig" || n == "HciScenarioHud" ||
+                    n.StartsWith("Hci") || n.StartsWith("Appearance_smoke") || n.StartsWith("flower_") ||
                     n.StartsWith("deconstruction_") || n.StartsWith("evade_ghost"))
                     return false;
                 t = t.parent;
@@ -623,8 +666,12 @@ namespace MagicMR
 
         IEnumerator DeconstructionRoutine()
         {
+            // HCI p.3: scream + golden purify. Lighter resets; holographic flower is the reward.
             if (m_AudioSource != null)
-                m_AudioSource.PlayOneShot(MagicMRAudioFactory.Shatter, 0.85f);
+            {
+                m_AudioSource.PlayOneShot(MagicMRAudioFactory.Scream, 0.85f);
+                m_AudioSource.PlayOneShot(MagicMRAudioFactory.Shatter, 0.45f);
+            }
 
             if (m_DeconstructionVfx != null)
             {
@@ -634,7 +681,7 @@ namespace MagicMR
 
             MagicMRVfxFactory.CreateShatterBurst(transform);
             if (m_SmokeParticles != null)
-                m_SmokeParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                m_SmokeParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
 
             var startScale = transform.localScale;
             var shrinkDur = Mathf.Min(Mathf.Max(0.08f, m_DeconstructionDelay), StudySpec.ShatterShrinkSeconds);
@@ -647,22 +694,22 @@ namespace MagicMR
                 yield return null;
             }
 
-            // Hide body + cap + wheel so only the flower remains.
-            SetAllRenderersEnabled(false);
             if (m_EyesObject != null)
                 m_EyesObject.SetActive(false);
 
+            RestoreOriginalMaterials();
+            SetAllRenderersEnabled(true);
             transform.localScale = m_BaseScale;
-            m_IsDeconstructed = true;
+            m_IsDeconstructed = false;
             CancelHop();
+            SpawnFlower();
 
             var remain = m_DeconstructionDelay - shrinkDur;
             if (remain > 0f)
                 yield return new WaitForSeconds(remain);
 
-            SpawnFlower();
             m_DeconstructionCoroutine = null;
-            Debug.Log("[MagicMR] Deconstruction: flower spawned, lighter hidden.", this);
+            Debug.Log("[MagicMR] Deconstruction: purify scream → flower, lighter reset.", this);
         }
 
         void SpawnFlower()
@@ -676,7 +723,13 @@ namespace MagicMR
             if (m_SpawnedFlower != null)
                 Destroy(m_SpawnedFlower);
 
-            m_SpawnedFlower = Instantiate(m_FlowerPrefab, transform.position, transform.rotation);
+            var right = Camera.main != null ? Camera.main.transform.right : Vector3.right;
+            right.y = 0f;
+            if (right.sqrMagnitude < 0.0001f)
+                right = Vector3.right;
+            right.Normalize();
+            m_FlowerAnchor = transform.position + right * 0.1f;
+            m_SpawnedFlower = Instantiate(m_FlowerPrefab, m_FlowerAnchor, transform.rotation);
             m_FlowerBaseScale = m_SpawnedFlower.transform.localScale;
             if (m_FlowerBaseScale.sqrMagnitude < 1e-6f)
                 m_FlowerBaseScale = Vector3.one;
@@ -1010,6 +1063,9 @@ namespace MagicMR
             m_AgencyAge = 0f;
             m_EyesFade = 0f;
             m_AppearanceBurnt = false;
+
+            var director = HciMeetingDirector.Instance ?? FindFirstObjectByType<HciMeetingDirector>();
+            director?.ResetVisuals();
         }
 
         public void OnGestureA_Pinch() => ApplyDimension(EditDimension.Appearance, Vector3.zero, false);

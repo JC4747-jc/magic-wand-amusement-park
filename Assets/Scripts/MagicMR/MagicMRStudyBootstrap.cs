@@ -50,7 +50,7 @@ namespace MagicMR
 
         // Bump this string on every build-affecting fix. Logged (not rendered
         // in-headset) so we can confirm on-device which build is running via adb.
-        const string k_BuildTag = "MagicMR build: yolo-auto-pin-B + 4d-anim";
+        const string k_BuildTag = "MagicMR build: hci-meeting-4 charcoal-demon";
 
         LighterAnchorManager m_LighterAnchorManager;
 
@@ -387,7 +387,18 @@ namespace MagicMR
                 conditions.AddComponent<ExperimentConditionSwitcher>();
             }
 
-            Debug.Log("[MagicMR] Polish systems ready (ritual + reset + conditions).");
+            var lighter = GameObject.Find("Lighter");
+            if (lighter != null && lighter.GetComponent<HciMeetingDirector>() == null)
+                lighter.AddComponent<HciMeetingDirector>();
+#if UNITY_EDITOR
+            if (FindFirstObjectByType<HciMeetingPreviewInput>() == null)
+            {
+                var preview = new GameObject("HciMeetingPreviewInput");
+                preview.AddComponent<HciMeetingPreviewInput>();
+            }
+#endif
+
+            Debug.Log("[MagicMR] Polish systems ready (ritual + reset + conditions + HCI scenes).");
         }
 
         static void DisableOrphanMainCameras()

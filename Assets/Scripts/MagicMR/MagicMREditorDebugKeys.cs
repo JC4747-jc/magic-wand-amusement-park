@@ -34,6 +34,36 @@ namespace MagicMR
         {
             yield return null;
             PreparePreviewTarget();
+            if (ShouldAutoVerifyKeys())
+                yield return VerifyKeysRoutine();
+        }
+
+        static bool ShouldAutoVerifyKeys()
+        {
+            var flag = System.IO.Path.Combine(
+                System.IO.Directory.GetParent(Application.dataPath)?.FullName ?? ".",
+                "Temp",
+                "MagicMRVerifyKeys.flag");
+            if (!System.IO.File.Exists(flag))
+                return false;
+            System.IO.File.Delete(flag);
+            return true;
+        }
+
+        IEnumerator VerifyKeysRoutine()
+        {
+            yield return new WaitForSeconds(0.4f);
+            Debug.Log("[MagicMR] Verify 1 charcoal/magma", this);
+            m_Editor?.OnGestureA_Pinch();
+            yield return new WaitForSeconds(1.1f);
+            Debug.Log("[MagicMR] Verify 2 wings/cough", this);
+            m_Editor?.OnGestureC_Circle();
+            yield return new WaitForSeconds(1.1f);
+            Debug.Log("[MagicMR] Verify 3 dodge/wind", this);
+            m_Editor?.OnGestureB_Swipe();
+            yield return new WaitForSeconds(0.8f);
+            Debug.Log("[MagicMR] Verify 4 purify/flower", this);
+            m_Editor?.OnGestureD_FistBurst();
         }
 
         void Update()
@@ -65,17 +95,16 @@ namespace MagicMR
                 return;
 
             const int pad = 12;
-            var rect = new Rect(pad, pad, 420, 108);
+            var rect = new Rect(pad, pad, 460, 118);
             GUI.color = new Color(0f, 0f, 0f, 0.55f);
             GUI.DrawTexture(rect, Texture2D.whiteTexture);
             GUI.color = Color.white;
             GUI.Label(
                 new Rect(rect.x + 10, rect.y + 8, rect.width - 16, rect.height - 12),
-                "Editor 4D preview (PICO keys off in player builds)\n" +
-                "1  burnt + smoke\n" +
-                "2  eyes + breathing\n" +
-                "3  swipe side-hop\n" +
-                "4  shatter → flower     H hide hint");
+                "Editor 4D — MagicMR 焦炭小恶魔 (off in player builds)\n" +
+                "1  charcoal + magma   2  wings + cough/ash\n" +
+                "3  dodge / wind       4  scream → flower, lighter resets\n" +
+                "N / P  HCI scene      H hide hint");
         }
 
         static bool Pressed(UnityEngine.InputSystem.Controls.KeyControl a, UnityEngine.InputSystem.Controls.KeyControl b)
