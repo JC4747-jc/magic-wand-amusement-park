@@ -1,6 +1,7 @@
 using UnityEngine;
 #if XR_HANDS_1_1_OR_NEWER
 using UnityEngine.XR.Hands;
+using HandFinger = UnityEngine.XR.Hands.XRHandFingerID;
 #endif
 
 namespace MagicMR

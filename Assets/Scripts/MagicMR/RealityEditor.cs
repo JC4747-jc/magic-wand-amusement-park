@@ -917,6 +917,8 @@ namespace MagicMR
 
         public void ResetTarget()
         {
+            if (GestureManager.Instance != null)
+                GestureManager.Instance.GetComponent<RightHandSpellVfx>()?.Clear();
             m_InteriorView?.Hide();
             StopDodge();
             StopAllCoroutines();

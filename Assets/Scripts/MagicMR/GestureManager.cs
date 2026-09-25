@@ -398,6 +398,8 @@ namespace MagicMR
 
             var distance = m_RealityEditor.GetHandDistance(queryPos, hasQuery);
             m_RealityEditor.ApplyDimension(dimension, queryPos, hasQuery);
+            RightHandSpellVfx.GetOrCreate(gameObject).Cast(dimension,
+                m_RealityEditor.transform.position, queryPos, hasQuery);
             LastGestureFeedback = "Applied: " + dimension;
             if (dimension == EditDimension.Scale && m_RealityEditor.InteriorVisible)
                 LastGestureFeedback = "Internal view: schematic";
@@ -473,6 +475,7 @@ namespace MagicMR
 
         public void NotifyStudyReset()
         {
+            GetComponent<RightHandSpellVfx>()?.Clear();
             FindFirstObjectByType<TabletopGestureRecognizer>()?.ResetRecognition();
             LastGestureFeedback = "Reset - wait for READY";
             m_BlockGesturesUntil = Time.time + 0.75f;

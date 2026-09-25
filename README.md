@@ -104,6 +104,27 @@ adb install -r Builds/Android/BridgeStereoFusion.apk
 
 右手施法需要先进入目标附近约 20 cm 的范围；外圈容差用于衔接动作，不代表可从远处开始施法。统一手势冷却为 0.35 秒，复位和双手放大另有各自保护条件。当前变花使用“握拳后张开”，不是旧 README 中的响指。
 
+### 手部施法特效（当前工作区新增）
+
+`RightHandSpellVfx` 为召唤和五种变换提供手部反馈，由手势识别与调度代码自动创建，无需手工挂载到场景。当前工作区包含以下效果：
+
+| 动作 | 手部与目标反馈 |
+| --- | --- |
+| 点赞召唤 | 拇指处金色进度光环，召唤成功后播放传递光脉冲和目标光环 |
+| 捏合施法 | 指尖橙红火星，接受施法后播放传递光效与目标光环 |
+| 食指画圈 | 青绿色指尖光轨，接受施法后释放生命化光效 |
+| 张掌横挥 | 淡蓝风痕，接受施法后沿挥动方向释放笔画 |
+| 握拳后张开 | 握拳时金色蓄力火星，接受变花后释放花瓣轮廓与传递光效 |
+| 双手拉开放大 | 金色光丝连接到目标；左手关节可用时补充左手光丝 |
+
+预览只反馈手型和运动，不触发物体变化，也不表示施法已被接受。完整施法特效在 `GestureManager` 通过状态、距离和冷却检查，并调用物体效果后播放；召唤光效则在召唤成功后播放。
+
+特效采用世界坐标，最多复用 80 条效果笔画，另有一条指尖轨迹。超过约 0.15 秒没有有效手部采样时清除画圈轨迹，已发射笔画按各自寿命消退；复位或禁用特效组件时清除全部笔画。
+
+当前花瓣是发光轮廓。物体变化流程与传递光效在同次施法中启动，**尚未实现光点抵达目标后才触发变化**。PICO 上的亮度、真实物体遮挡、双眼一致性和帧率仍需实机验证。
+
+编辑器检查入口：**MagicMR → Checks → Right Hand Spell VFX**。检查内容包括 shader 编译、无有效手部输入时不释放、五种效果、笔画池上限、复位清理、召唤和组件禁用，并调用手势回归检查。检查通过不代表已完成实机画质或性能验收。
+
 ## 状态与排查
 
 | 状态或现象 | 检查方向 |
@@ -145,8 +166,9 @@ adb pull /storage/emulated/0/Android/data/com.yn.picmagicmr.stereo/files/StudyLo
 | `Assets/Scripts/Perception/Stereo/` | 双目采集、几何投影、视觉位置平均、历史手部跟随 |
 | `Assets/Scripts/Perception/` | TCP 通信、识别结果处理、锚点与目标绑定 |
 | `Assets/Scripts/MagicMR/` | 手势规则、召唤、效果、复位和实验日志 |
-| `Assets/Editor/` | 场景构建、模型生成与编辑器回归检查 |
+| `Assets/Editor/` | 场景构建、模型生成与编辑器回归检查（含 `RightHandSpellVfxChecks`） |
 | `Assets/MagicMR/` | 花朵 prefab、模型网格、材质、shader 和音效 |
+| `Assets/Resources/MagicMR/HandSpell.shader` | 手部施法特效使用的 URP 加法混合 shader |
 | `object-detection-demo/` | PC 检测服务与部署权重 |
 | `Tools/` | 数据审查、标注整理、模型训练与报告脚本 |
 | `STEREO_YOLO.md` | 双目主线实现说明与历史验证记录 |
@@ -156,6 +178,8 @@ adb pull /storage/emulated/0/Android/data/com.yn.picmagicmr.stereo/files/StudyLo
 ## Git 提交范围
 
 提交源代码、场景、所需模型和材质、对应 `.meta`、项目配置、文档及 `.gitignore`。生成的模型网格只要被场景或 prefab 引用，也属于需要保留的项目资源。
+
+本次手部特效需配套提交 `RightHandSpellVfx.cs`、`HandSpell.shader`、`RightHandSpellVfxChecks.cs` 及各自 `.meta`，同时保留手势识别、调度和复位代码的接入改动。只提交 README 不会让已有版本获得这些效果。
 
 `.gitignore` 已排除：
 

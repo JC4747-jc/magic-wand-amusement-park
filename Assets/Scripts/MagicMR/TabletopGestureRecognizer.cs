@@ -14,6 +14,9 @@ namespace MagicMR
         float sampledAt = -100;
         float nextDiagnostic;
         string feedback = "Show right hand";
+        RightHandSpellVfx spellVfx;
+        RightHandSpellVfx SpellVfx => spellVfx != null ? spellVfx :
+            (spellVfx = RightHandSpellVfx.GetOrCreate(GestureManager.Instance != null ? GestureManager.Instance.gameObject : gameObject));
         public float TargetDistance { get; private set; }
         public Vector3 QueryPosition { get; private set; }
         public bool HasFreshHand => Time.unscaledTime - sampledAt <= .15f;
@@ -25,7 +28,7 @@ namespace MagicMR
             tabletop != null && !tabletop.InteractionReady ? "Right thumbs-up within 60 cm" :
             $"Hand: {TargetDistance * 100:F0} cm / enter 20 cm" + (CanReach ? " [IN RANGE]" : " [MOVE CLOSER]") : "Hand: not tracked";
 
-        public void ResetRecognition() { rules.Reset(); reach.Reset(); summon.CancelDwell(); sampledAt = -100; }
+        public void ResetRecognition() { rules.Reset(); reach.Reset(); summon.CancelDwell(); sampledAt = -100; if (spellVfx != null) spellVfx.Clear(); }
         public void ResetSummoning() { ResetRecognition(); summon.Reset(); visionHoldUntil = 0; }
         void OnApplicationPause(bool paused) { ResetRecognition(); }
 #if XR_HANDS_1_1_OR_NEWER
@@ -82,6 +85,7 @@ namespace MagicMR
                 {
                     if (tabletop.TrySummon())
                     {
+                        SpellVfx.Summon(worldThumb, tabletop.VisualPosition);
                         feedback = "Summoned! Open hand to continue";
                         Debug.Log("[TabletopGesture] Summon: right thumbs-up");
                     }
@@ -91,6 +95,7 @@ namespace MagicMR
                     !eligible ? "Move hand within 60 cm" :
                     !thumbsUp ? "Thumb up, curl four fingers" :
                     $"Thumbs-up - hold: {summon.Progress * 100:F0}%";
+                SpellVfx.SummonPreview(worldThumb, summon.Progress);
                 if (sampledAt >= nextDiagnostic)
                 {
                     nextDiagnostic = sampledAt + 2f;
@@ -111,6 +116,8 @@ namespace MagicMR
                 open = extended >= 3, pointing = i > .82f && othersCurled >= 2
             };
             var dimension = rules.Step(sample);
+            SpellVfx.Preview(worldPalm, worldIndex, root != null ? root.TransformPoint(thumb) : thumb,
+                sample.pointing, sample.fist, sample.pinch <= .035f, sample.open);
             feedback = rules.Status;
             if (sampledAt >= nextDiagnostic)
             {
