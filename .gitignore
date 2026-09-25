@@ -75,3 +75,24 @@ __pycache__/
 *.pyc
 *.pyo
 .pytest_cache/
+
+# Local experiments, diagnostics and preview images
+/.codex-tmp/
+/tmp/
+/Assets/XR/Temp.meta
+
+# Local training exports and generated review datasets (keep source tools)
+/Find lighter/*.zip
+/Find lighter/audit_assgn2/
+/Find lighter/audit_korek/
+/Find lighter/audit_lighter_v2/
+/Find lighter/audit_lighter_v3/
+/Find lighter/detect_merged_v5_freeze/
+/Find lighter/detect_merged_v6_assgn2/
+/Find lighter/detect_merged_v7_korek/
+/Find lighter/lighter_v2_annotation_handoff/
+/Find lighter/lighter_v2_review/
+/Find lighter/lighter_v3_bbox_review/
+
+# Generated training checkpoints, plots and result archives
+/Find lighter/runs/

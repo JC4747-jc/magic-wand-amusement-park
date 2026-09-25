@@ -36,6 +36,7 @@ namespace Perception
         public long LastFrameId { get; private set; }
         public int LastFrameWidth { get; private set; }
         public int LastFrameHeight { get; private set; }
+        public Func<DetectionFrame, bool> AcceptFrame { get; set; }
 
         void Awake()
         {
@@ -94,6 +95,8 @@ namespace Perception
                 TryAdd(dto, timestamp, events);
             }
 
+            var frame = new DetectionFrame(events, timestamp, frameId, width, height);
+            if (AcceptFrame != null && !AcceptFrame(frame)) return;
             if (width > 0 && height > 0)
             {
                 LastFrameWidth = width;
@@ -103,7 +106,6 @@ namespace Perception
             }
 
             LastFrameId = frameId;
-            var frame = new DetectionFrame(events, timestamp, frameId, width, height);
             DetectionFrameReceived?.Invoke(frame);
 
             if (m_LogEveryFrame)

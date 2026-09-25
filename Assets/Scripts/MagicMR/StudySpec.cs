@@ -48,6 +48,13 @@ namespace MagicMR
         public const float FistOpenMinTipDistance = 0.10f;
         public const float FistMinHoldSeconds = 0.04f;
         public const float FistMaxBurstSeconds = 0.55f;
+        // Two open hands pull apart to grow the target. Closing them only rearms;
+        // it never applies a smaller scale.
+        public const float ScaleGesturePullMeters = 0.12f;
+        public const float ScaleGestureRearmMeters = 0.20f;
+        public const float ScaleGestureMaxSeconds = 1.2f;
+        public const float ScaleStepMultiplier = 1.35f;
+        public const float ScaleMaxMultiplier = 3.0f;
         public const float ResetButtonPinchDistance = 0.35f;
         public const float ResetButtonHoldSeconds = 0.3f;
         // Held (not tapped) pinch duration that triggers real-world anchor

@@ -23,6 +23,10 @@ namespace Perception
 
         bool m_Bound;
         MagicMR.RealityEditor m_RealityEditor;
+        int m_RegisteredRevision = -1;
+        Vector3 m_RegisteredLocalPosition;
+        bool m_HasRegistration;
+        StereoYoloLocator m_Stereo;
 
         void Awake()
         {
@@ -38,6 +42,7 @@ namespace Perception
 
             if (m_Lighter != null)
                 m_RealityEditor = m_Lighter.GetComponent<MagicMR.RealityEditor>();
+            m_Stereo = FindFirstObjectByType<StereoYoloLocator>();
         }
 
         void OnEnable()
@@ -68,8 +73,38 @@ namespace Perception
             if (!m_Bound || m_Lighter.parent != evt.anchor)
                 BindToAnchor(evt.anchor);
 
+            var stereo = FindFirstObjectByType<StereoYoloLocator>();
+            if (stereo != null && stereo.TargetLocated && m_RegisteredRevision != stereo.RegistrationRevision)
+            {
+                m_RealityEditor?.RegisterVisualBounds(stereo.RegisteredBottom, stereo.RegisteredHeight);
+                m_RegisteredRevision = stereo.RegistrationRevision;
+                m_RegisteredLocalPosition = m_Lighter.localPosition;
+                m_HasRegistration = true;
+            }
+
             // Keep RealityEditor leash origin aligned with YOLO pose (public API only).
-            m_RealityEditor?.SyncWorldAnchor(evt.anchor.position);
+            if (stereo == null) m_RealityEditor?.SyncWorldAnchor(m_Lighter.position);
+        }
+
+        void LateUpdate()
+        {
+            if (m_HasRegistration && m_Stereo != null && m_Stereo.TargetLocated && m_Lighter != null && m_Lighter.parent != null)
+                m_RealityEditor?.SyncWorldAnchor(m_Lighter.parent.TransformPoint(m_RegisteredLocalPosition));
+        }
+        public void RefreshFollowingEffects() { LateUpdate(); }
+
+        public bool PrepareSummon(StereoYoloLocator stereo)
+        {
+            if (!m_HasRegistration || m_RegisteredRevision != stereo.RegistrationRevision ||
+                m_Lighter == null || m_RealityEditor == null || stereo.trackedCamera == null) return false;
+            // Broad face is local +Z (the model is wider in X than in Z). Set yaw once, not a billboard.
+            m_Lighter.rotation = StereoFusionGeometry.UprightFacing(stereo.InteractionPosition,
+                stereo.trackedCamera.position, m_Lighter.rotation);
+            m_RealityEditor.RegisterVisualBounds(stereo.CurrentBottom, stereo.RegisteredHeight);
+            m_RegisteredLocalPosition = m_Lighter.localPosition;
+            Debug.Log($"[SummonPose] Registered bottom={stereo.CurrentBottom:F4} height={stereo.RegisteredHeight:F4} " +
+                $"yaw={m_Lighter.eulerAngles.y:F1} camera={stereo.trackedCamera.position:F4}");
+            return true;
         }
 
         void BindToAnchor(Transform anchor)

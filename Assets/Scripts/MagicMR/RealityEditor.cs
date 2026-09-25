@@ -9,7 +9,8 @@ namespace MagicMR
         Appearance = 1,
         Agency = 2,
         Rule = 4,
-        Deconstruction = 8
+        Deconstruction = 8,
+        Scale = 16
     }
 
     [System.Flags]
@@ -20,7 +21,8 @@ namespace MagicMR
         Agency = EditDimension.Agency,
         Rule = EditDimension.Rule,
         Deconstruction = EditDimension.Deconstruction,
-        All = Appearance | Agency | Rule | Deconstruction
+        Scale = EditDimension.Scale,
+        All = Appearance | Agency | Rule | Deconstruction | Scale
     }
 
     /// <summary>
@@ -85,7 +87,11 @@ namespace MagicMR
         Material[] m_OriginalChildMaterials;
         Renderer[] m_AllRenderers;
         Vector3 m_BaseScale;
+        float m_CurrentScaleMultiplier = 1f;
+        LighterInteriorView m_InteriorView;
+        public bool InteriorVisible => m_InteriorView != null && m_InteriorView.Visible;
         Vector3 m_InitialPosition;
+        Coroutine m_DodgeReturn;
         Rigidbody m_Rigidbody;
         EditDimension m_ActiveDimension = EditDimension.None;
         float m_StateEnterTime;
@@ -93,6 +99,9 @@ namespace MagicMR
         int m_EvasionFailureCount;
         Coroutine m_DeconstructionCoroutine;
         GameObject m_SpawnedFlower;
+        Vector3 m_FlowerSupportPoint;
+        float m_FlowerHeight = .11f;
+        Vector3 m_FlowerLighterSize = new Vector3(.025f,.08f,.012f);
         bool m_IsDeconstructed;
         ParticleSystem m_SmokeParticles;
         float m_LastGrowlTime;
@@ -224,7 +233,7 @@ namespace MagicMR
             }
 
             if (m_SpawnedFlower != null)
-                FloatFlower();
+                UpdateFlowerPose();
         }
 
         void MaybePlayGrowl()
@@ -241,12 +250,10 @@ namespace MagicMR
             m_AudioSource.PlayOneShot(MagicMRAudioFactory.Growl, 0.28f);
         }
 
-        void FloatFlower()
+        void UpdateFlowerPose()
         {
-            var basePos = m_InitialPosition;
-            var bob = Mathf.Sin(Time.time * 1.6f) * 0.015f;
-            m_SpawnedFlower.transform.position = basePos + Vector3.up * (0.02f + bob);
-            m_SpawnedFlower.transform.Rotate(0f, 18f * Time.deltaTime, 0f, Space.World);
+            // Rotate about the grounded stem, without lifting it off the former lighter base.
+            m_SpawnedFlower.transform.RotateAround(m_FlowerSupportPoint, Vector3.up, 18f * Time.deltaTime);
         }
 
         void FixedUpdate()
@@ -297,6 +304,9 @@ namespace MagicMR
                 case EditDimension.Deconstruction:
                     TriggerDeconstruction();
                     break;
+                case EditDimension.Scale:
+                    TriggerScale();
+                    break;
             }
 
             if (hasHandPosition && DataLogger.Instance != null)
@@ -317,9 +327,13 @@ namespace MagicMR
 
         public void SyncWorldAnchor(Vector3 worldPosition)
         {
+            var delta = worldPosition - m_InitialPosition;
             m_InitialPosition = worldPosition;
+            if (m_IsDeconstructed) m_FlowerSupportPoint += delta;
             if (m_SpawnedFlower != null)
-                m_SpawnedFlower.transform.position = worldPosition;
+            {
+                m_SpawnedFlower.transform.position += delta;
+            }
         }
 
         /// <summary>
@@ -328,6 +342,7 @@ namespace MagicMR
         /// </summary>
         public void EnsureVisible()
         {
+            if (InteriorVisible) return;
             if (m_IsDeconstructed)
             {
                 Debug.Log("[MagicMR] EnsureVisible skipped (deconstructed / flower active).", this);
@@ -401,9 +416,9 @@ namespace MagicMR
             EnterState(EditDimension.Rule);
             SetAllRenderersEnabled(true);
 
-            // One-shot lateral dodge (20cm) + ghost trail for virtual/physical mismatch.
+            // Explicit swipe gives a brief dodge, then returns to the moving real-object anchor.
             ApplyRuleDodge();
-            Debug.Log("[MagicMR] Rule: 20cm lateral dodge + ghost trail.", this);
+            Debug.Log("[MagicMR] Rule: brief lateral dodge and return to real-object anchor.", this);
             Debug.Log("[Phase2] Rule effect executed (lateral dodge).", this);
         }
 
@@ -418,19 +433,9 @@ namespace MagicMR
 
             // Alternate side each Rule trigger for clearer mismatch.
             var side = (m_EvadeCount % 2 == 0) ? 1f : -1f;
-            var target = transform.position + right * (StudySpec.RuleDodgeMeters * side);
-            target.y = transform.position.y;
-
             SpawnEvadeGhostTrail();
-            if (m_Rigidbody != null)
-            {
-                m_Rigidbody.MovePosition(target);
-                m_Rigidbody.linearVelocity = Vector3.zero;
-            }
-            else
-            {
-                transform.position = target;
-            }
+            if(m_DodgeReturn!=null)StopCoroutine(m_DodgeReturn);
+            m_DodgeReturn=StartCoroutine(DodgeAndReturn(right*(StudySpec.RuleDodgeMeters*side)));
 
             m_EvadeCount++;
             m_LastEvadeTime = Time.time;
@@ -442,6 +447,13 @@ namespace MagicMR
         public void TriggerDeconstruction()
         {
             EnterState(EditDimension.Deconstruction);
+            // Cached body renderers exclude subsequently created eyes, smoke and dust.
+            m_FlowerSupportPoint = MeshBottomCenter(m_AllRenderers, transform.position);
+            if (TryMeshBounds(m_AllRenderers, out var lighterBounds))
+            {
+                m_FlowerLighterSize = lighterBounds.size;
+                m_FlowerHeight = Mathf.Clamp(lighterBounds.size.y * 1.4f, .10f, .12f);
+            }
 
             if (m_DeconstructionCoroutine != null)
                 StopCoroutine(m_DeconstructionCoroutine);
@@ -483,8 +495,166 @@ namespace MagicMR
             if (m_SpawnedFlower != null)
                 Destroy(m_SpawnedFlower);
 
-            m_SpawnedFlower = Instantiate(m_FlowerPrefab, transform.position, transform.rotation);
+            m_SpawnedFlower = Instantiate(m_FlowerPrefab, m_FlowerSupportPoint,
+                Quaternion.Euler(0f, transform.eulerAngles.y, 0f));
+            FitFlowerHeight(m_SpawnedFlower.transform, m_FlowerHeight);
+            CoverLighterWithStem(m_SpawnedFlower.transform, m_FlowerLighterSize);
+            AlignFlowerBase(m_SpawnedFlower.transform, m_FlowerSupportPoint);
             MagicMRVfxFactory.CreateGoldDust(m_SpawnedFlower.transform);
+            Debug.Log($"[MagicMR] Flower base aligned to lighter bottom={m_FlowerSupportPoint:F4} (no vertical bob).");
+        }
+
+        public void TriggerScale()
+        {
+            EnterState(EditDimension.Scale);
+            // Reaching the cap and opening the interior are separate actions.
+            if (m_CurrentScaleMultiplier >= StudySpec.ScaleMaxMultiplier - .0001f)
+            {
+                if (InteriorVisible) return;
+                m_InteriorView ??= new LighterInteriorView(transform, m_AllRenderers);
+                m_InteriorView.Show();
+                SetAllRenderersEnabled(false);
+                DataLogger.Instance?.LogEvent("interior_revealed", EditDimension.Scale,
+                    -1f, CurrentVelocity, CurrentStateDuration, notes: "schematic;scale=3");
+                if (m_AudioSource != null)
+                    m_AudioSource.PlayOneShot(MagicMRAudioFactory.Whoosh, .45f);
+                return;
+            }
+            SetAllRenderersEnabled(true);
+
+            var previous = m_CurrentScaleMultiplier;
+            m_CurrentScaleMultiplier = Mathf.Min(
+                StudySpec.ScaleMaxMultiplier,
+                previous * StudySpec.ScaleStepMultiplier);
+
+            // Monotonic by construction: Scale can increase or remain capped, never shrink.
+            var target = Vector3.Scale(m_BaseScale, Vector3.one * m_CurrentScaleMultiplier);
+            transform.localScale = new Vector3(
+                Mathf.Max(transform.localScale.x, target.x),
+                Mathf.Max(transform.localScale.y, target.y),
+                Mathf.Max(transform.localScale.z, target.z));
+
+            if (m_AudioSource != null)
+                m_AudioSource.PlayOneShot(MagicMRAudioFactory.Whoosh, 0.45f);
+
+            Debug.Log($"[MagicMR] Scale: grew from {previous:F2}x to {m_CurrentScaleMultiplier:F2}x.", this);
+        }
+        IEnumerator DodgeAndReturn(Vector3 displacement)
+        {
+            float began=Time.time;
+            while(Time.time-began<.5f)
+            {
+                transform.position=m_InitialPosition+displacement*Mathf.Sin((Time.time-began)/.5f*Mathf.PI);
+                yield return null;
+            }
+            transform.position=m_InitialPosition;m_DodgeReturn=null;
+        }
+        void StopDodge()
+        {
+            if(m_DodgeReturn==null)return;
+            StopCoroutine(m_DodgeReturn);m_DodgeReturn=null;transform.position=m_InitialPosition;
+        }
+
+        public void RegisterVisualBounds(Vector3 bottom, float height)
+        {
+            if (m_AllRenderers == null || m_AllRenderers.Length == 0) CacheRenderers();
+            if (!TryMeshBounds(m_AllRenderers, out var bounds) || bounds.size.y < .0001f) return;
+            transform.localScale *= height / bounds.size.y;
+            transform.position += bottom - MeshBottomCenter(m_AllRenderers, transform.position);
+            // Reset/Agency must restore the registered size and root offset, not the authored placeholder.
+            m_BaseScale = transform.localScale;
+            m_InitialPosition = transform.position;
+            Debug.Log($"[Registration] virtual bottom={MeshBottomCenter(m_AllRenderers, transform.position):F4} root={transform.position:F4} scale={m_BaseScale:F4}");
+        }
+
+        public static void AlignFlowerBase(Transform flower, Vector3 supportPoint)
+        {
+            var basePoint = flower.Find("Base");
+            if (basePoint != null) { flower.position += supportPoint - basePoint.position; return; }
+            // The stem is the contact point; asymmetric petals must not shift the base sideways.
+            var stem = flower.Find("Stem");
+            var source = stem != null ? stem : flower;
+            var bottom = MeshBottomCenter(source.GetComponentsInChildren<Renderer>(true), flower.position);
+            flower.position += supportPoint - bottom;
+        }
+
+        public static void FitFlowerHeight(Transform flower, float height)
+        {
+            if (TryMeshBounds(flower.GetComponentsInChildren<Renderer>(true), out var bounds) && bounds.size.y > .0001f)
+                flower.localScale *= Mathf.Clamp(height, .10f, .12f) / bounds.size.y;
+        }
+
+        public static void CoverLighterWithStem(Transform flower, Vector3 lighterSize)
+        {
+            var stem = flower.Find("Stem");
+            if (stem == null) return;
+            var filter = stem.GetComponent<MeshFilter>();
+            if (filter == null || filter.sharedMesh == null) return;
+            // Preserve coverage for every yaw of the rotating flower. Enlarge the bloom
+            // and leaves together with the stem, rather than inflating only the stem.
+            float diameter = Mathf.Max(.018f,new Vector2(lighterSize.x,lighterSize.z).magnitude + .004f);
+            Vector3 size = filter.sharedMesh.bounds.size;
+            Vector3 parentScale = flower.lossyScale;
+            var scale = stem.localScale;
+            scale.x = diameter / Mathf.Max(.0001f,size.x*Mathf.Abs(parentScale.x));
+            scale.z = diameter / Mathf.Max(.0001f,size.z*Mathf.Abs(parentScale.z));
+            float newHeight = Mathf.Max(.05f,lighterSize.y+.006f);
+            scale.y = newHeight / Mathf.Max(.0001f,size.y*Mathf.Abs(parentScale.y));
+            stem.localScale = scale;
+            var leaves = flower.Find("Leaves");
+            if (leaves != null) leaves.localScale = scale;
+            var blossom = flower.Find("Blossom");
+            if (blossom != null)
+            {
+                blossom.localPosition = Vector3.up*newHeight/Mathf.Max(.0001f,Mathf.Abs(parentScale.y));
+                float currentDiameter=0;
+                foreach(var part in blossom.GetComponentsInChildren<MeshFilter>(true))
+                {
+                    if(part.sharedMesh==null)continue;
+                    foreach(var vertex in part.sharedMesh.vertices)
+                    {
+                        Vector3 p=part.transform.TransformPoint(vertex)-blossom.position;
+                        currentDiameter=Mathf.Max(currentDiameter,2*new Vector2(p.x,p.z).magnitude);
+                    }
+                }
+                // Vertex radius is independent of the summon yaw; a rotated bounding
+                // box would make identical flowers shrink at diagonal viewing angles.
+                if(currentDiameter>.0001f)blossom.localScale*=Mathf.Max(.085f,diameter*4.5f)/currentDiameter;
+            }
+        }
+
+        static Vector3 MeshBottomCenter(Renderer[] renderers, Vector3 fallback)
+        {
+            return TryMeshBounds(renderers, out var bounds)
+                ? new Vector3(bounds.center.x, bounds.min.y, bounds.center.z) : fallback;
+        }
+
+        static bool TryMeshBounds(Renderer[] renderers, out Bounds bounds)
+        {
+            bounds = default;
+            bool found = false;
+            if (renderers != null) foreach (var renderer in renderers)
+            {
+                if (renderer == null || !(renderer is MeshRenderer || renderer is SkinnedMeshRenderer)) continue;
+                // Hidden renderers may retain world bounds until Unity's renderer update.
+                // Registration scales and queries again in the same frame: transform local bounds explicitly.
+                Bounds local;
+                if (renderer is SkinnedMeshRenderer skinned) local = skinned.localBounds;
+                else
+                {
+                    var filter = renderer.GetComponent<MeshFilter>();
+                    if (filter == null || filter.sharedMesh == null) continue;
+                    local = filter.sharedMesh.bounds;
+                }
+                for (int corner = 0; corner < 8; corner++)
+                {
+                    Vector3 sign = new Vector3((corner & 1) == 0 ? -1 : 1, (corner & 2) == 0 ? -1 : 1, (corner & 4) == 0 ? -1 : 1);
+                    Vector3 point = renderer.transform.TransformPoint(local.center + Vector3.Scale(local.extents, sign));
+                    if (!found) { bounds = new Bounds(point, Vector3.zero); found = true; }
+                    else bounds.Encapsulate(point);
+                }
+            }
+            return found;
         }
 
         void ClearFlower()
@@ -508,7 +678,7 @@ namespace MagicMR
             m_IsDeconstructed = false;
             SetAllRenderersEnabled(true);
             RestoreOriginalMaterials();
-            transform.localScale = m_BaseScale;
+            transform.localScale = m_BaseScale * m_CurrentScaleMultiplier;
             Debug.Log("[MagicMR] Restored lighter from deconstruction (flower cleared).", this);
         }
 
@@ -549,6 +719,12 @@ namespace MagicMR
 
         void EnterState(EditDimension dimension)
         {
+            if (dimension != EditDimension.Scale && InteriorVisible)
+            {
+                m_InteriorView.Hide();
+                SetAllRenderersEnabled(true);
+            }
+            if(dimension!=EditDimension.Rule)StopDodge();
             if (m_ActiveDimension == dimension)
                 return;
 
@@ -569,7 +745,7 @@ namespace MagicMR
                     m_EyesObject.SetActive(false);
                 if (m_AgencyAnimator != null && !string.IsNullOrEmpty(m_AliveBoolParameter))
                     m_AgencyAnimator.SetBool(m_AliveBoolParameter, false);
-                transform.localScale = m_BaseScale;
+                transform.localScale = m_BaseScale * m_CurrentScaleMultiplier;
             }
 
             m_ActiveDimension = dimension;
@@ -589,12 +765,12 @@ namespace MagicMR
         void ApplyIdlePulse()
         {
             var pulse = 1f + Mathf.Sin(Time.time * m_IdlePulseSpeed) * m_IdlePulseScale;
-            transform.localScale = m_BaseScale * pulse;
+            transform.localScale = m_BaseScale * (m_CurrentScaleMultiplier * pulse);
         }
 
         void UpdateRuleEvade()
         {
-            if (m_IsDeconstructed || m_Rigidbody == null)
+            if (m_IsDeconstructed || m_Rigidbody == null || m_Rigidbody.isKinematic)
                 return;
 
             // While pseudo-dynamic hand attachment is active, do not fight the
@@ -741,6 +917,8 @@ namespace MagicMR
 
         public void ResetTarget()
         {
+            m_InteriorView?.Hide();
+            StopDodge();
             StopAllCoroutines();
             m_DeconstructionCoroutine = null;
             ClearFlower();
@@ -756,6 +934,7 @@ namespace MagicMR
                 m_AgencyAnimator.SetBool(m_AliveBoolParameter, false);
 
             transform.localScale = m_BaseScale;
+            m_CurrentScaleMultiplier = 1f;
             transform.position = m_InitialPosition;
 
             if (m_Rigidbody != null)
@@ -778,5 +957,115 @@ namespace MagicMR
         public void OnGestureC_Circle() => ApplyDimension(EditDimension.Agency, Vector3.zero, false);
         public void OnGestureD_Snap() => ApplyDimension(EditDimension.Deconstruction, Vector3.zero, false);
         public void OnGestureD_FistBurst() => ApplyDimension(EditDimension.Deconstruction, Vector3.zero, false);
+        public void OnGestureE_Scale() => ApplyDimension(EditDimension.Scale, Vector3.zero, false);
+
+        void OnDestroy()
+        {
+            m_InteriorView?.Dispose();
+        }
+    }
+
+    // Runtime schematic: dimensions follow the authored mesh, with no claims of
+    // measured fuel level or scanned internal geometry. Opaque wire casing avoids
+    // transparent-material sorting and shader variant issues on standalone MR.
+    internal sealed class LighterInteriorView
+    {
+        readonly GameObject root;
+        readonly System.Collections.Generic.List<Material> materials = new System.Collections.Generic.List<Material>();
+        public bool Visible => root != null && root.activeSelf;
+
+        public LighterInteriorView(Transform owner, Renderer[] body)
+        {
+            root = new GameObject("LighterInterior_Schematic");
+            root.transform.SetParent(owner, false);
+            var bounds = new Bounds(Vector3.zero, Vector3.one);
+            bool found = false;
+            foreach (var renderer in body)
+            {
+                if (renderer == null) continue;
+                var mesh = renderer.GetComponent<MeshFilter>();
+                if (mesh == null || mesh.sharedMesh == null) continue;
+                var local = mesh.sharedMesh.bounds;
+                for (int i = 0; i < 8; i++)
+                {
+                    var sign = new Vector3((i & 1) == 0 ? -1 : 1,
+                        (i & 2) == 0 ? -1 : 1, (i & 4) == 0 ? -1 : 1);
+                    var p = owner.InverseTransformPoint(renderer.transform.TransformPoint(
+                        local.center + Vector3.Scale(local.extents, sign)));
+                    if (!found) { bounds = new Bounds(p, Vector3.zero); found = true; }
+                    else bounds.Encapsulate(p);
+                }
+            }
+            root.transform.localPosition = bounds.center;
+            root.transform.localScale = bounds.size;
+            var cyan = MakeMaterial(new Color(.12f, .8f, 1f));
+            var fuel = MakeMaterial(new Color(.1f, .55f, .9f));
+            var metal = MakeMaterial(new Color(.75f, .8f, .88f));
+            var orange = MakeMaterial(new Color(1f, .45f, .06f));
+            // Twelve casing edges retain the silhouette while exposing the interior.
+            for (int axis = 0; axis < 3; axis++)
+                for (int a = -1; a <= 1; a += 2)
+                    for (int b = -1; b <= 1; b += 2)
+                    {
+                        var center = Vector3.zero;
+                        center[(axis + 1) % 3] = a * .5f;
+                        center[(axis + 2) % 3] = b * .5f;
+                        var size = Vector3.one * .012f; size[axis] = 1f;
+                        Part("CasingEdge", PrimitiveType.Cube, center, size, cyan);
+                    }
+            Part("FuelReservoir", PrimitiveType.Cube, new Vector3(-.10f,-.12f,0), new Vector3(.56f,.62f,.55f), fuel);
+            Part("Flint", PrimitiveType.Cylinder, new Vector3(.27f,.12f,0), new Vector3(.09f,.16f,.14f), metal);
+            var wheel = Part("IgnitionWheel", PrimitiveType.Cylinder, new Vector3(.27f,.34f,0), new Vector3(.23f,.10f,.23f), metal);
+            wheel.localRotation = Quaternion.Euler(90,0,0);
+            Part("Nozzle", PrimitiveType.Cylinder, new Vector3(-.12f,.32f,0), new Vector3(.09f,.06f,.14f), metal);
+            Part("FuelPath", PrimitiveType.Cube, new Vector3(-.12f,.22f,-.32f), new Vector3(.025f,.42f,.025f), orange);
+            Part("FlamePath", PrimitiveType.Capsule, new Vector3(-.12f,.52f,0), new Vector3(.08f,.1f,.1f), orange);
+            Label("INTERNAL VIEW (SCHEMATIC)", new Vector3(.65f,.60f,0), cyan.color);
+            Label("Ignition wheel", new Vector3(.65f,.34f,0), metal.color);
+            Label("Flint / nozzle", new Vector3(.65f,.15f,0), metal.color);
+            Label("Fuel reservoir", new Vector3(.65f,-.12f,0), fuel.color);
+            Label("Orange: fuel / flame path", new Vector3(.65f,-.39f,0), orange.color);
+            root.SetActive(false);
+        }
+
+        Material MakeMaterial(Color color)
+        {
+            var shader = Shader.Find("Universal Render Pipeline/Unlit") ?? Shader.Find("Unlit/Color");
+            var material = new Material(shader); material.color = color;
+            materials.Add(material); return material;
+        }
+
+        Transform Part(string name, PrimitiveType primitive, Vector3 position, Vector3 scale, Material material)
+        {
+            var part = GameObject.CreatePrimitive(primitive); part.name = name;
+            part.transform.SetParent(root.transform, false);
+            part.transform.localPosition = position; part.transform.localScale = scale;
+            var collider = part.GetComponent<Collider>(); collider.enabled = false;
+            Object.Destroy(collider);
+            part.GetComponent<Renderer>().sharedMaterial = material;
+            return part.transform;
+        }
+
+        void Label(string caption, Vector3 position, Color color)
+        {
+            var label = new GameObject(caption); label.transform.SetParent(root.transform, false);
+            label.transform.localPosition = position;
+            // Compensate for the lighter's nonuniform dimensions to keep text legible.
+            var s = root.transform.lossyScale;
+            float height = Mathf.Abs(s.y) * .045f;
+            label.transform.localScale = new Vector3(height / Mathf.Max(.00001f, Mathf.Abs(s.x)),
+                height / Mathf.Max(.00001f, Mathf.Abs(s.y)), height / Mathf.Max(.00001f, Mathf.Abs(s.z)));
+            var text = label.AddComponent<TextMesh>(); text.text = caption;
+            text.fontSize = 64; text.characterSize = .15f; text.color = color;
+            text.anchor = TextAnchor.MiddleLeft;
+        }
+
+        public void Show() { root.SetActive(true); }
+        public void Hide() { root.SetActive(false); }
+        public void Dispose()
+        {
+            if (root != null) Object.Destroy(root);
+            foreach (var material in materials) Object.Destroy(material);
+        }
     }
 }

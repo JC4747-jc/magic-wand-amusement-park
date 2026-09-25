@@ -53,12 +53,16 @@ namespace MagicMR
         FistBurstGestureDetector m_FistBurstDetector;
 
         [SerializeField]
+        TwoHandScaleGestureDetector m_ScaleDetector;
+
+        [SerializeField]
         RealityEditor m_RealityEditor;
 
         float m_LastGestureTime = -999f;
         float m_BlockGesturesUntil;
         Vector3 m_LastHandPosition;
         bool m_HasHandPosition;
+        public string LastGestureFeedback { get; private set; } = "No action yet";
 
 #if XR_HANDS_1_1_OR_NEWER
         XRHandSubsystem m_HandSubsystem;
@@ -150,6 +154,9 @@ namespace MagicMR
                 return;
             }
 
+            var unified = FindFirstObjectByType<TabletopGestureRecognizer>();
+            if (unified != null && unified.isActiveAndEnabled &&
+                !gestureName.StartsWith("tabletop_") && gestureName != "two_hand_spread") return;
             Instance.HandleGesture(dimension, gestureName);
         }
 
@@ -165,6 +172,9 @@ namespace MagicMR
                 m_FistBurstDetector ??= root.GetComponent<FistBurstGestureDetector>();
                 if (m_FistBurstDetector == null)
                     m_FistBurstDetector = root.AddComponent<FistBurstGestureDetector>();
+                m_ScaleDetector ??= root.GetComponent<TwoHandScaleGestureDetector>();
+                if (m_ScaleDetector == null)
+                    m_ScaleDetector = root.AddComponent<TwoHandScaleGestureDetector>();
             }
 
             if (m_RealityEditor == null)
@@ -186,6 +196,19 @@ namespace MagicMR
 
         void BindDetectors()
         {
+            if (FindFirstObjectByType<TabletopGestureRecognizer>() != null)
+            {
+                UnbindDetectors();
+                if (m_PinchDetector != null) m_PinchDetector.enabled = false;
+                if (m_CircleDetector != null) m_CircleDetector.enabled = false;
+                if (m_SwipeDetector != null) m_SwipeDetector.enabled = false;
+                if (m_SnapDetector != null) m_SnapDetector.enabled = false;
+                if (m_FistBurstDetector != null) m_FistBurstDetector.enabled = false;
+                // Scale is bimanual and intentionally remains separate from the
+                // mutually-exclusive right-hand tabletop recognizer.
+                if (m_ScaleDetector != null) m_ScaleDetector.enabled = true;
+                return;
+            }
             // Detectors call Notify() directly. Clear stale UnityEvent wiring so
             // scene leftovers cannot double-fire. Calibration is FSM-owned.
             if (m_PinchDetector != null)
@@ -211,6 +234,9 @@ namespace MagicMR
                 m_FistBurstDetector.enabled = true;
                 SafeClear(m_FistBurstDetector.DetectedEvent);
             }
+
+            if (m_ScaleDetector != null)
+                m_ScaleDetector.enabled = true;
         }
 
         void UnbindDetectors()
@@ -232,6 +258,7 @@ namespace MagicMR
         {
             if (Time.time < m_BlockGesturesUntil)
             {
+                LastGestureFeedback = "Blocked: reset / action guard";
                 Debug.Log($"[MagicMR] Gesture {gestureName} blocked (guard).");
                 return;
             }
@@ -279,12 +306,17 @@ namespace MagicMR
 
             if (!IsDimensionEnabled(dimension))
             {
+                LastGestureFeedback = "Disabled: " + dimension;
                 LogGesture($"{gestureName}_blocked", dimension, "dimension_disabled");
                 return;
             }
 
-            if (Time.time - m_LastGestureTime < m_GlobalCooldownSeconds)
+            bool tabletopMode = FindFirstObjectByType<TabletopInteractionBase>() != null;
+            float cooldown = tabletopMode ? TabletopGestureRules.RepeatCooldownSeconds : m_GlobalCooldownSeconds;
+            if (Time.time - m_LastGestureTime < cooldown)
             {
+                LastGestureFeedback = "Cooldown: " + dimension;
+                Debug.Log($"[MagicMR] {gestureName} blocked: cooldown");
                 LogGesture($"{gestureName}_blocked", dimension, "cooldown");
                 return;
             }
@@ -310,6 +342,9 @@ namespace MagicMR
                 if (tip.sqrMagnitude > 0.0001f)
                 {
                     queryPos = tip;
+                    var camera = Camera.main;
+                    if (camera != null && camera.transform.parent != null)
+                        queryPos = camera.transform.parent.TransformPoint(queryPos);
                     hasQuery = true;
                 }
                 else if (pinch.sqrMagnitude > 0.0001f)
@@ -320,8 +355,31 @@ namespace MagicMR
             }
 
             var gate = FindFirstObjectByType<GestureTargetGateBase>();
+#if XR_HANDS_1_1_OR_NEWER
+            if (FindFirstObjectByType<TabletopInteractionBase>() != null)
+            {
+                // A cached pinch sample can survive lost tracking. Tabletop casts
+                // require a currently tracked right index in world coordinates.
+                hasQuery = false;
+                if (m_HandSubsystem != null && m_HandSubsystem.rightHand.isTracked &&
+                    m_HandSubsystem.rightHand.GetJoint(XRHandJointID.IndexTip).TryGetPose(out var tipPose))
+                {
+                    var camera = Camera.main;
+                    var root = camera != null ? camera.transform.parent : null;
+                    queryPos = root != null ? root.TransformPoint(tipPose.position) : tipPose.position;
+                    hasQuery = true;
+                }
+            }
+#endif
+            var tabletopRecognizer = FindFirstObjectByType<TabletopGestureRecognizer>();
+            if (tabletopRecognizer != null)
+            {
+                queryPos = tabletopRecognizer.QueryPosition;
+                hasQuery = tabletopRecognizer.HasFreshHand;
+            }
             if (gate != null && !gate.Allow(dimension, gestureName, queryPos, hasQuery))
             {
+                LastGestureFeedback = "Blocked: target / hand distance";
                 LogGesture($"{gestureName}_blocked", dimension, "target_gate");
                 return;
             }
@@ -330,14 +388,17 @@ namespace MagicMR
 
             if (dimension == EditDimension.Deconstruction)
             {
-                m_PinchDetector?.SuppressTapFor(1.0f);
-                m_BlockGesturesUntil = Time.time + 0.5f;
+                m_PinchDetector?.SuppressTapFor(tabletopMode ? TabletopGestureRules.RepeatCooldownSeconds : 1.0f);
+                m_BlockGesturesUntil = Time.time + (tabletopMode ? TabletopGestureRules.RepeatCooldownSeconds : 0.5f);
             }
 
             fsm?.NotifyEditAccepted(dimension);
 
             var distance = m_RealityEditor.GetHandDistance(queryPos, hasQuery);
             m_RealityEditor.ApplyDimension(dimension, queryPos, hasQuery);
+            LastGestureFeedback = "Applied: " + dimension;
+            if (dimension == EditDimension.Scale && m_RealityEditor.InteriorVisible)
+                LastGestureFeedback = "Internal view: schematic";
             LogGesture($"{gestureName}_triggered", dimension, distance: distance);
         }
 
@@ -410,6 +471,8 @@ namespace MagicMR
 
         public void NotifyStudyReset()
         {
+            FindFirstObjectByType<TabletopGestureRecognizer>()?.ResetRecognition();
+            LastGestureFeedback = "Reset - wait for READY";
             m_BlockGesturesUntil = Time.time + 0.75f;
             m_LastGestureTime = Time.time;
         }

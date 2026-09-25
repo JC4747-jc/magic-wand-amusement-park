@@ -18,7 +18,8 @@ namespace Perception
         /// Phase 3 optional: enable UsePhysicsDepth on AnchorManager for Physics.Raycast hit.
         /// Falls back to FixedDistance if ray unavailable (Editor / API fail).
         /// </summary>
-        PicoCameraRay = 1
+        PicoCameraRay = 1,
+        StereoDepth = 2
     }
 
     /// <summary>
@@ -38,6 +39,8 @@ namespace Perception
 
         [SerializeField]
         PicoCameraRayProvider m_RayProvider;
+
+        [SerializeField] StereoYoloLocator m_StereoLocator;
 
         [Header("Webcam / YOLO frame size (must match detection source)")]
         [SerializeField]
@@ -131,6 +134,15 @@ namespace Perception
         public float DistanceMeters => m_DistanceMeters;
         public string LastProjectionPath => m_LastProjectionPath;
 
+        public void ResetPlacement()
+        {
+            m_HandDriven = false;
+            m_HasTarget = false;
+            m_LastProcessedFrameTimestamp = 0;
+            m_HasStableMeshPoint = false;
+            ClearPendingMeshPoint();
+        }
+
         public IReadOnlyDictionary<string, Transform> Anchors
         {
             get
@@ -210,12 +222,27 @@ namespace Perception
             }
         }
 
+        public Vector3 PlacementPosition => m_Anchor != null ? m_Anchor.position : m_TargetPosition;
+        public void HoldPlacement() { if (m_Anchor != null) m_TargetPosition = m_Anchor.position; }
+        bool m_HandDriven;
+        public void SetHandPlacement(Vector3 position)
+        { if (m_HasTarget) { m_TargetPosition = position; m_HandDriven = true; } }
+        public void EndHandPlacement() { m_HandDriven = false; HoldPlacement(); }
+        public void RenderHandPlacement(Vector3 position)
+        { if(m_HandDriven && m_HasTarget && m_Anchor!=null) m_Anchor.position=position; }
+
         void Update()
         {
             if (!m_HasTarget || m_Anchor == null)
                 return;
 
-            float t = 1f - Mathf.Exp(-m_SmoothSpeed * Time.deltaTime);
+            float speed=m_SmoothSpeed;
+            if(m_ProjectionMode==AnchorProjectionMode.StereoDepth)
+                speed+=Mathf.Min(50f,Vector3.Distance(m_Anchor.position,m_TargetPosition)*500f);
+            // VisualAverage already filters independent camera measurements; do not add a second lag.
+            bool averagedVision = m_ProjectionMode == AnchorProjectionMode.StereoDepth &&
+                m_StereoLocator != null && m_StereoLocator.UsesVisualAverage;
+            float t = m_HandDriven || averagedVision ? 1f : 1f - Mathf.Exp(-speed * Time.deltaTime);
             m_Anchor.position = Vector3.Lerp(m_Anchor.position, m_TargetPosition, t);
         }
 
@@ -248,7 +275,8 @@ namespace Perception
             if (!TryProjectToWorld(det, out Vector3 worldPosition, out string path))
             {
                 ClearPendingMeshPoint();
-                m_LastProjectionPath = path + (m_HasStableMeshPoint ? "+StableMeshHold" : "+WaitingForMesh");
+                m_LastProjectionPath = m_ProjectionMode == AnchorProjectionMode.StereoDepth
+                    ? path : path + (m_HasStableMeshPoint ? "+StableMeshHold" : "+WaitingForMesh");
                 LogPhase3Throttled("hold:" + path, $"[Phase3] {m_LastProjectionPath}");
                 return;
             }
@@ -287,6 +315,12 @@ namespace Perception
         {
             worldPosition = default;
             path = "none";
+
+            if (m_ProjectionMode == AnchorProjectionMode.StereoDepth)
+            {
+                path = "StereoUnavailable";
+                return m_StereoLocator != null && m_StereoLocator.TryLocate(det, out worldPosition, out path);
+            }
 
             if (m_ProjectionMode == AnchorProjectionMode.PicoCameraRay &&
                 m_RayProvider != null &&
@@ -355,7 +389,7 @@ namespace Perception
 
         bool TryStabilizeMeshProjection(ref Vector3 worldPosition, ref string path)
         {
-            if (!m_UsePhysicsDepth)
+            if (!m_UsePhysicsDepth || m_ProjectionMode == AnchorProjectionMode.StereoDepth)
                 return true;
 
             bool isMeshHit =

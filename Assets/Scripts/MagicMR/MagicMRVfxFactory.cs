@@ -79,25 +79,26 @@ namespace MagicMR
         {
             var go = new GameObject("flower_gold_dust");
             go.transform.SetParent(parent, false);
+            go.transform.localPosition = Vector3.up * .06f;
             var ps = go.AddComponent<ParticleSystem>();
             ConfigureCommon(ps);
 
             var main = ps.main;
             main.startLifetime = 1.8f;
-            main.startSize = new ParticleSystem.MinMaxCurve(0.004f, 0.01f);
+            main.startSize = new ParticleSystem.MinMaxCurve(0.001f, 0.0025f);
             main.startColor = new Color(1f, 0.85f, 0.35f, 0.8f);
-            main.startSpeed = 0.03f;
-            main.maxParticles = 30;
+            main.startSpeed = 0.008f;
+            main.maxParticles = 18;
             main.loop = true;
             main.playOnAwake = true;
             main.simulationSpace = ParticleSystemSimulationSpace.World;
 
             var emission = ps.emission;
-            emission.rateOverTime = 8f;
+            emission.rateOverTime = 5f;
 
             var shape = ps.shape;
             shape.shapeType = ParticleSystemShapeType.Sphere;
-            shape.radius = 0.05f;
+            shape.radius = 0.025f;
 
             ApplyUnlitMaterial(ps, new Color(1f, 0.85f, 0.3f, 0.75f));
             return ps;

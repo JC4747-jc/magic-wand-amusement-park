@@ -48,6 +48,20 @@ namespace Perception
             Vector3 queryWorldPosition,
             bool hasQueryPosition)
         {
+            var tabletop = FindFirstObjectByType<StereoYoloLocator>();
+            if (tabletop != null && !tabletop.InteractionReady)
+            {
+                Debug.Log($"[GestureTargetGate] {gestureName} rejected: tabletop target not ready.");
+                return false;
+            }
+            var recognizer = FindFirstObjectByType<TabletopGestureRecognizer>();
+            if (tabletop != null && recognizer != null)
+            {
+                bool allowed = recognizer.CanReach;
+                Debug.Log($"[GestureTargetGate] {gestureName} {(allowed ? "accepted" : "rejected")}: " +
+                    $"nearestHand={recognizer.TargetDistance:F3} fresh={recognizer.HasFreshHand} reachWindow={allowed}");
+                return allowed;
+            }
             if (m_Lighter == null)
             {
                 var go = GameObject.Find("Lighter");
@@ -74,7 +88,8 @@ namespace Perception
                 return true;
             }
 
-            var distance = Vector3.Distance(queryWorldPosition, m_Lighter.position);
+            var distance = Vector3.Distance(queryWorldPosition,
+                tabletop != null ? tabletop.InteractionPosition : m_Lighter.position);
             if (distance <= m_GestureTargetDistance)
             {
                 Debug.Log(

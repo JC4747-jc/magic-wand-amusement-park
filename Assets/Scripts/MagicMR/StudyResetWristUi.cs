@@ -86,6 +86,9 @@ namespace MagicMR
 
         void UpdatePinchActivation()
         {
+            var heldTarget = FindFirstObjectByType<TabletopInteractionBase>();
+            if (heldTarget != null && heldTarget.IsHeld)
+            { m_HoldTimer = 0; m_EarliestActivateTime = Time.time + .5f; ResetChargeVisual(); return; }
             if (m_Button == null || Time.time < m_CooldownUntil || Time.time < m_EarliestActivateTime)
             {
                 ResetChargeVisual();
@@ -101,7 +104,7 @@ namespace MagicMR
             var subsystem = subsystems[0];
             var near =
                 IsPinchNearButton(subsystem.leftHand) ||
-                IsPinchNearButton(subsystem.rightHand);
+                (FindFirstObjectByType<TabletopInteractionBase>() == null && IsPinchNearButton(subsystem.rightHand));
 
             if (!near)
             {
@@ -140,7 +143,11 @@ namespace MagicMR
                 return false;
 
             var pinchPoint = (thumb.position + index.position) * 0.5f;
-            return Vector3.Distance(pinchPoint, m_Button.position) < m_PinchActivateDistance;
+            var camera = Camera.main;
+            var root = camera != null ? camera.transform.parent : null;
+            if (root != null) pinchPoint = root.TransformPoint(pinchPoint);
+            float radius = FindFirstObjectByType<TabletopInteractionBase>() != null ? 0.1f : m_PinchActivateDistance;
+            return Vector3.Distance(pinchPoint, m_Button.position) < radius;
         }
 #endif
 
@@ -185,6 +192,14 @@ namespace MagicMR
 
         static void LegacyReset()
         {
+            var tabletop = FindFirstObjectByType<TabletopInteractionBase>();
+            if (tabletop != null)
+            {
+                tabletop.ResetInteraction();
+                FindFirstObjectByType<PinchGestureDetector>()?.ResetForNewTrial();
+                FindFirstObjectByType<GestureManager>()?.NotifyStudyReset();
+                return;
+            }
             var lighter = GameObject.Find("Lighter");
             var editor = lighter != null ? lighter.GetComponent<RealityEditor>() : null;
             editor?.ResetTarget();

@@ -69,7 +69,7 @@ namespace MagicMR
         /// <summary>Called after bootstrap starts the hand subsystem.</summary>
         public void EnsureHandTrackingSubscribed()
         {
-            TrySubscribeToHands();
+            if (isActiveAndEnabled) TrySubscribeToHands();
         }
 
         public static void EnsureAllSubscribed()

@@ -1,6 +1,7 @@
 using System;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Perception
@@ -20,6 +21,11 @@ namespace Perception
         [SerializeField]
         [Tooltip("When false, Start() skips connect. Used by InferenceBackendSwitcher for Remote mode.")]
         bool m_AutoConnect = true;
+
+        [SerializeField] bool m_AutoReconnect;
+        bool m_Connecting;
+        int m_ConnectionRevision;
+        float m_NextConnectTime;
 
         System.Net.Sockets.TcpClient m_Client;
         NetworkStream m_Stream;
@@ -46,19 +52,32 @@ namespace Perception
                 ConnectIfNeeded();
         }
 
-        /// <summary>Legacy sync connect on the calling thread (usually main). Unchanged behavior.</summary>
-        public void ConnectIfNeeded()
+        /// <summary>Connect without blocking the XR rendering thread; stale attempts cannot replace a newer socket.</summary>
+        public async void ConnectIfNeeded()
         {
-            if (IsConnected)
+            if (IsConnected || m_Connecting)
                 return;
-
+            DisconnectSocket();
+            int revision = m_ConnectionRevision;
+            m_Connecting = true;
+            var candidate = new System.Net.Sockets.TcpClient { NoDelay = true };
+            bool adopted = false;
             try
             {
-                DisconnectSocket();
-                m_Client = new System.Net.Sockets.TcpClient();
-                m_Client.NoDelay = true;
-                m_Client.Connect(m_Host, m_Port);
+                var connect = candidate.ConnectAsync(m_Host, m_Port);
+                if (await Task.WhenAny(connect, Task.Delay(1500)) != connect)
+                {
+                    candidate.Close();
+                    try { await connect; } catch { }
+                    throw new TimeoutException("PC connection timed out");
+                }
+                await connect;
+                if (revision != m_ConnectionRevision || this == null) return;
+                m_Client = candidate;
                 m_Stream = m_Client.GetStream();
+                m_Stream.WriteTimeout = 500;
+                m_Stream.ReadTimeout = 500;
+                adopted = true;
                 m_Buffer.Clear();
                 Debug.Log(
                     $"[Bridge] Connected to {m_Host}:{m_Port} " +
@@ -66,13 +85,24 @@ namespace Perception
             }
             catch (Exception e)
             {
-                Debug.LogError($"[Bridge] Connect failed: {e.Message}");
-                DisconnectSocket();
+                if (revision == m_ConnectionRevision)
+                {
+                    Debug.LogWarning($"[Bridge] Connect failed: {e.Message}");
+                    DisconnectSocket();
+                }
+            }
+            finally
+            {
+                if (!adopted) candidate.Close();
+                if (revision == m_ConnectionRevision) m_Connecting = false;
             }
         }
 
         public void DisconnectSocket()
         {
+            m_ConnectionRevision++;
+            m_Connecting = false;
+            m_NextConnectTime = Time.unscaledTime + 2f;
             try
             {
                 m_Stream?.Close();
@@ -99,15 +129,20 @@ namespace Perception
         void Update()
         {
             if (m_Stream == null)
+            {
+                if (m_AutoReconnect && !m_Connecting && Time.unscaledTime >= m_NextConnectTime)
+                    ConnectIfNeeded();
                 return;
+            }
 
             try
             {
+                if (m_Client.Client.Poll(0, SelectMode.SelectRead) && m_Client.Available == 0)
+                { DisconnectSocket(); return; }
                 while (m_Stream.DataAvailable)
                 {
                     int count = m_Stream.Read(m_ReadBuf, 0, m_ReadBuf.Length);
-                    if (count <= 0)
-                        break;
+                    if (count <= 0) { DisconnectSocket(); return; }
 
                     m_Buffer.Append(Encoding.UTF8.GetString(m_ReadBuf, 0, count));
 
@@ -129,6 +164,7 @@ namespace Perception
             catch (Exception e)
             {
                 Debug.LogWarning($"[Bridge] Read error: {e.Message}");
+                DisconnectSocket();
             }
         }
 
@@ -149,6 +185,7 @@ namespace Perception
                 catch (Exception e)
                 {
                     Debug.LogWarning($"[Bridge] Send failed: {e.Message}");
+                    DisconnectSocket();
                     return false;
                 }
             }

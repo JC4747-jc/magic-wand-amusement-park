@@ -1372,7 +1372,7 @@ MonoBehaviour:
   m_Condition: Bridge
   m_TrialId: 1
   m_AutoStartSession: 0
-  m_EnabledDimensions: 0
+  m_EnabledDimensions: -1
   m_GlobalCooldownSeconds: 0.5
   m_TrackedHand: 2
   m_PinchDetector: {fileID: 830000003}
@@ -1642,6 +1642,7 @@ MonoBehaviour:
   m_Host: 192.168.1.5
   m_Port: 5005
   m_AutoConnect: 1
+  m_AutoReconnect: 0
 --- !u!4 &881570802
 Transform:
   m_ObjectHideFlags: 0
@@ -1685,6 +1686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SingleTargetManager: {fileID: 881570806}
   m_RayProvider: {fileID: 840000007}
+  m_StereoLocator: {fileID: 0}
   m_FrameWidth: 1280
   m_FrameHeight: 720
   m_ProjectionMode: 1
