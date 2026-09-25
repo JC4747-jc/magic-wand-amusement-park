@@ -1,267 +1,167 @@
 # Magic Wand Amusement Park
 
-Unity AR / MR 互动项目：在场景中识别 3D 目标，将其「拍扁」成 2D 卡牌飞入背包；在 PICO 头显上通过手部手势对魔法目标施法。
+基于 Unity 和 PICO 的 MR 手势交互项目。当前主线通过 **YOLO 检测真实打火机 + 双目图像估计三维位置**，将虚拟打火机叠加到实物上，再用手势触发碳化、生命化、躲闪、变花和放大效果。
 
-项目包含 **3 个自有场景**（`Assets/Scenes/`），分别对应桌面捕捉 Demo、AR 图像追踪、PICO MR 手势魔法三条开发线。
+当前默认场景为 `Assets/Scenes/BridgeStereoFusion.unity`，默认跟随模式为 **VisualAverage（1.10.0，最近三帧视觉位置加权平均）**。仓库同时保留桌面卡牌捕捉、AR 图像追踪和早期 MR 场景。
 
-## 技术栈
+## 当前功能与限制
 
+- PICO 采集双目图像，PC 端 YOLO 返回打火机检测框，Unity 使用对应帧的双目结果与拍摄姿态计算世界位置。
+- 首次让直立打火机完整可见并保持静止，完成位置、底部和高度标定；右手点赞确认后显示虚拟模型。
+- 默认只跟随实物的三维平移，保留首次标定尺寸与召唤朝向，**不估计实物旋转**。
+- 最近三次可靠测量按 `0.2 / 0.3 / 0.5` 加权；仅保留最近 0.3 秒的数据，并拒绝过期、重复、乱序及不可靠深度结果。静止死区与跳变确认用于减少抖动。
+- 视觉模式下，左手不会接管模型位置。漏检或遮挡导致测量不可靠时保持最后位置；完全遮挡时不会继续追踪实物移动。
+- Inspector 中可选择 `HybridGrip` 使用历史手部接续模式；它不是当前默认模式。
+- 已有编辑器合成回归检查；定位精度、延迟和遮挡恢复效果仍需 PICO 实机验证，不能把滤波参数或内部误差指标当成实测精度。
 
-| 项目    | 版本 / 说明                            |
-| ----- | ---------------------------------- |
-| Unity | `6000.0.26f1`                      |
-| 渲染管线  | URP（Universal Render Pipeline）     |
-| AR    | AR Foundation `6.0.7`、ARCore、ARKit |
-| XR    | OpenXR、PICO SDK（PXR）、XR Hands      |
-| UI    | uGUI、新 Input System                |
+详细实现和历史记录见 [STEREO_YOLO.md](STEREO_YOLO.md)。该文件包含多个历史版本，当前行为以顶部 1.10.0 说明和代码为准。
 
+## 环境
 
-## 环境要求
+| 项目 | 当前配置 |
+| --- | --- |
+| Unity | `6000.0.26f1`，安装 Android Build Support |
+| 渲染 | URP `17.0.3` |
+| 手部与 XR | XR Hands `1.5.1`、OpenXR `1.13.2`、PICO SDK |
+| AR 场景 | AR Foundation / ARCore / ARKit `6.0.7` |
+| PC 检测 | Python、Ultralytics、OpenCV、PyTorch |
+| 设备连接 | 支持所用 PICO 相机接口的头显，开启手部追踪、USB 调试及相机相关权限 |
 
-- [Unity Hub](https://unity.com/download) + Unity **6000.0.26f1**
-- 桌面端：`DesktopCaptureDemo`、`SampleScene` 编辑器预览 — Mac / Windows
-- AR 真机：`SampleScene` — 支持 ARCore / ARKit 的 Android / iPhone
-- MR 真机：`MagicMR` — PICO 头显 + 本机 PICO SDK + 手部追踪
+`Packages/manifest.json` 中的 PICO SDK 当前引用本地路径 `file:D:/Unity/PICO`，首次打开前需要改为自己的 SDK 位置。
 
-> **注意**：`Packages/manifest.json` 中 `com.unity.xr.picoxr` 为本地路径，每人需改成本机 SDK 目录，否则 Package Manager 可能报错。
+## 快速运行当前 MR 场景
 
-## 场景总览
+### 1. 启动 PC 检测服务
 
+在项目根目录执行：
 
-| 场景                   | 路径                                       | 用途                     | 运行环境            | Build Settings       |
-| -------------------- | ---------------------------------------- | ---------------------- | --------------- | -------------------- |
-| DesktopCaptureDemo   | `Assets/Scenes/DesktopCaptureDemo.unity` | 3D → 2D 卡牌 → 飞背包（核心逻辑） | 电脑 Play，鼠标左键    | 未勾选                  |
-| AR Image Tracking    | `Assets/Scenes/SampleScene.unity`        | AR 参考图追踪 + 捕捉交互        | 编辑器预览 / AR 手机真机 | 未勾选                  |
-| PICO MR GestureMagic | `Assets/Scenes/MagicMR.unity`            | 手部手势驱动魔法目标             | PICO 头显         | **已勾选（Android 主场景）** |
-
-
-Android 包名：`com.yn.picmagicmr`
-
----
-
-## 场景一：DesktopCaptureDemo
-
-**路径**：`Assets/Scenes/DesktopCaptureDemo.unity`
-
-纯桌面演示，不依赖 AR 设备或 PICO 头显，用于最快验证「点击 3D → 变 2D 卡牌 → 飞背包」全流程。
-
-### 场景内容
-
-
-| 对象                  | 说明                                                                |
-| ------------------- | ----------------------------------------------------------------- |
-| `GameManager`       | 挂载 `CaptureDemoBootstrap` + `CaptureTo2D`，自动创建 UI 与 CaptureCamera |
-| `Cube`              | 可捕捉的 3D 目标，图层 `3D_Target`，标签 `CaptureTarget`                      |
-| `Main Camera`       | 场景主相机，用于射线检测                                                      |
-| `Directional Light` | 场景光照                                                              |
-
-
-### 操作步骤
-
-1. 打开 `DesktopCaptureDemo.unity`
-2. 点击 **Play**
-3. 在 **Game 窗口**用鼠标**左键**点击 `Cube`
-
-### 预期效果
-
-- `Cube` 消失
-- 屏幕中央弹出带 Cube 图像的 2D 卡牌
-- 停顿 0.5 秒
-- 卡牌缩小并飞向右下角背包
-
----
-
-## 场景二：SampleScene
-
-**路径**：`Assets/Scenes/SampleScene.unity`
-
-AR Foundation 图像追踪场景，同时集成了与桌面 Demo 相同的捕捉逻辑。
-
-### 场景内容
-
-
-| 对象                      | 说明                                                                   |
-| ----------------------- | -------------------------------------------------------------------- |
-| `AR Session`            | AR Foundation 会话                                                     |
-| `XR Origin`             | AR 相机 rig，含 `ARTrackedImageManager`                                  |
-| `ReferenceImageLibrary` | 参考图库（标记图 `i`）                                                        |
-| `GameManager`           | `CaptureDemoBootstrap` + `CaptureTo2D` + `SampleSceneDesktopPreview` |
-| `CaptureCamera`         | 虚拟摄影棚，渲染 `3D_Target` 图层到 `CardTexture`                               |
-| `Canvas`                | `2D_Card_UI`（卡牌）+ `Backpack_Icon`（背包）                                |
-| `Cube`（预制体）             | 标签 `CaptureTarget`，图层 `3D_Target`                                    |
-
-
-### 编辑器预览（无 AR 设备）
-
-1. 打开 `SampleScene.unity`，点击 **Play**
-2. `SampleSceneDesktopPreview` 自动：关闭 AR Session、禁用 AR 组件、切换 Skybox 背景，避免黑屏
-3. 用鼠标左键点击 `Cube`，效果与桌面 Demo 相同
-
-### AR 真机测试
-
-1. Build 到支持 ARCore / ARKit 的手机
-2. 将摄像头对准参考图 `i`（`Assets/ReferenceImageLibrary`）
-3. 识别成功后，点击场景中的 `Cube` 触发捕捉
-
----
-
-## 场景三：MagicMR
-
-**路径**：`Assets/Scenes/MagicMR.unity`
-
-PICO MR 主场景，通过 XR Hands 手部追踪识别手势，驱动魔法目标状态变化。当前为 **Android 打包默认场景**。
-
-### 场景内容
-
-
-| 对象                  | 说明                                      |
-| ------------------- | --------------------------------------- |
-| `XR Origin (VR)`    | PICO VR rig，含 `PXR_Manager`（手部追踪、MRC 等） |
-| `StudySystem`       | `DataLogger` + `GestureManager`（实验会话与 CSV 记录） |
-| `GestureDetectors`  | 四个手势检测器 + `MagicMRStudyBootstrap`（VST 相机配置） |
-| `Lighter`           | 魔法目标，挂载 `RealityEditor`（四维现实编辑）          |
-| `Directional Light` | 场景光照                                    |
-
-
-### 手势与四维编辑
-
-| 手势 | 维度 | 效果 |
-|------|------|------|
-| 捏合 Pinch | 外观 Appearance | 打火机材质变为烧焦 |
-| 画圈 Circle | 生命 Agency | 物体「活过来」（动画或呼吸缩放） |
-| 挥动 Swipe | 规则 Rule | 进入躲闪模式，手靠近时物体逃离 |
-| 响指 Snap | 解构 Deconstruction | 粒子特效 → 隐藏目标 → 生成花朵 |
-
-`GestureManager` 统一调度手势，支持实验条件（`EnabledDimensions`）与全局冷却。`DataLogger` 自动写入 CSV 到设备存储。
-
-### 实验数据导出
-
-实验结束后，从头显导出日志：
-
-```bash
-adb pull /storage/emulated/0/Android/data/com.yn.picmagicmr/files/StudyLogs/ ./
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r object-detection-demo/requirements.txt
+.\.venv\Scripts\python.exe object-detection-demo/tcp_server.py
 ```
 
-或在 Unity Log 中查看 `[DataLogger] Session started` 输出的完整路径。
+无需预览窗口时，可给最后一条命令加 `--headless`。服务接收的是 **PICO 相机图像**，不是电脑摄像头。
 
-### 应标技术参数（StudySpec）
+当前 `tcp_server.py` 实际加载的权重为：
 
-手势阈值、四维编辑行为、日志采样与资源路径统一在 `Assets/Scripts/MagicMR/StudySpec.cs`。上传资源或改场景前，请与此文件对照：
-
-| 类别 | 参数 | 值 |
-|------|------|-----|
-| 捏合 Pinch | 拇指食指距离阈值 | 0.02 m |
-| 挥动 Swipe | 手掌速度阈值 | 1.5 m/s |
-| 规则 Rule | 躲闪触发距离 / 冲量 | 0.3 m / 5 |
-| 解构 | 粒子后生成花延迟 | 0.5 s |
-| 日志 | 手部轨迹采样 | 10 Hz（0.1 s） |
-| 手势映射 | Pinch / Circle / Swipe / Snap | 外观 / 生命 / 规则 / 解构 |
-
-资源包路径（`Assets/MagicMR/`）：
-
-| 用途 | 路径 |
-|------|------|
-| 燃烧音效 | `Audio/BurnSizzle.wav` |
-| 默认打火机材质 | `Materials/LighterDefault.mat` |
-| 眼睛发光材质 | `Materials/EyeGlow.mat` |
-| 花朵预制体 | `Prefabs/Flower.prefab` |
-| 响指粒子（引用） | XRI 样例 `Confetti.prefab` |
-
-Unity 菜单 **Magic Wand → Apply MagicMR StudySpec Parameters** 可将场景 Inspector 数值一键同步为应标默认值。
-
-### 运行步骤
-
-1. 确认 `Packages/manifest.json` 中 PICO SDK 路径正确
-2. 打开 `MagicMR.unity`，在 `StudySystem` 上设置 `Subject Id`、`Condition`
-3. Build And Run 到 PICO 头显（需开启手部追踪）
-4. 对着 `Lighter` 做对应手势；日志自动记录
-
----
-
-## 核心功能：3D → 2D 捕捉
-
-适用于 `DesktopCaptureDemo` 与 `SampleScene`。
-
-### RenderTexture 虚拟摄影棚
-
-1. 3D 目标放在图层 `**3D_Target`**
-2. `**CaptureCamera**` 只渲染该图层，输出到 `**CardTexture**`（RenderTexture）
-3. UI 上的 `**2D_Card_UI`（RawImage）** 显示纹理，即「拍扁」后的卡牌
-
-### 交互流程
-
-```
-点击 Cube（鼠标 / 后续可换为 Touch / 手势）
-    ↓
-Physics.Raycast 检测命中（标签 CaptureTarget）
-    ↓
-隐藏 3D 物体 → 显示 2D 卡牌
-    ↓
-等待 0.5 秒
-    ↓
-卡牌 Lerp 飞向背包并缩小
-    ↓
-隐藏卡牌
+```text
+object-detection-demo/weights/best_yolo26n_quad_v4_50e.pt
 ```
 
-`CaptureAndFlyRoutine()` 协程负责动画；接入 AR 时主要替换输入层（`Mouse.current` → Touch / 手势），动画逻辑可复用。
+本地 v5 / v6 / v7 训练结果不会自动替换部署模型。启动时检查控制台输出的权重名称；训练资料与检测工具另见 [object-detection-demo](object-detection-demo/README.md)，服务的实际配置以 `tcp_server.py` 为准。
 
----
+### 2. 连接头显
 
-## 项目结构
+通过 USB 连接并授权调试，在已安装 Android Platform Tools 的终端执行：
 
-```
-Assets/
-├── CaptureTo2D.cs                 # 点击检测 + 卡牌飞背包动画
-├── CaptureDemoBootstrap.cs        # 自动装配 CaptureCamera / Canvas / UI
-├── SampleSceneDesktopPreview.cs   # SampleScene 编辑器预览（防黑屏）
-├── Editor/
-│   └── CaptureDemoSetup.cs        # Unity 菜单：一键生成 / 补全场景
-├── Scenes/
-│   ├── DesktopCaptureDemo.unity   # 桌面捕捉 Demo
-│   ├── SampleScene.unity          # AR 图像追踪 + 捕捉
-│   └── MagicMR.unity              # PICO MR 手势魔法（Android 主场景）
-├── Scripts/MagicMR/
-│   ├── RealityEditor.cs           # 四维现实编辑控制器
-│   ├── GestureManager.cs          # 手势调度 + 实验条件
-│   ├── DataLogger.cs              # CSV 实验数据记录
-│   ├── MagicMRStudyBootstrap.cs   # 场景启动装配
-│   ├── StudySpec.cs               # 应标技术参数（单一来源）
-│   ├── HandGestureDetectorBase.cs # XR Hands 基类
-│   ├── PinchGestureDetector.cs    # 捏合 → 外观
-│   ├── SwipeGestureDetector.cs    # 挥动 → 规则
-│   ├── CircleGestureDetector.cs   # 画圈 → 生命
-│   └── SnapGestureDetector.cs     # 响指 → 解构
-├── Cube.prefab                    # 可捕捉的 3D 目标预制体
-├── CardTexture.renderTexture      # 卡牌渲染纹理
-├── ReferenceImageLibrary.asset    # AR 参考图库
-├── Backage_icon.png               # 背包图标
-└── Resources/                     # 运行时备用资源
+```powershell
+adb devices
+adb reverse tcp:5005 tcp:5005
 ```
 
-## 编辑器菜单
+当前场景的连接地址为 `127.0.0.1:5005`，通过 USB 反向转发访问 PC 服务。重新连接设备后如无法连接，请重新执行转发命令。
 
-Unity 顶部菜单 **Magic Wand**：
+### 3. 构建与安装
 
+在 Unity 中确认 PICO SDK 和 Android 环境可用，然后选择：
 
-| 菜单项                               | 作用                           |
-| --------------------------------- | ---------------------------- |
-| **Setup Desktop Capture Demo**    | 重新生成 `DesktopCaptureDemo` 场景 |
-| **Add GameManager To Open Scene** | 给当前打开的场景补上 GameManager       |
-| **Setup MagicMR VFX Assets**    | 装配 Lighter 上 RealityEditor 资源引用 |
-| **Apply MagicMR StudySpec Parameters** | 将场景手势/启动参数同步为应标默认值 |
+**Bridge → Build Stereo YOLO APK**
 
+该菜单会生成花朵资源、执行集成检查，并从 `BridgeTest` 重新配置和保存双目场景；它会覆盖生成场景，请先保存需要保留的手工场景调整。
 
-## 手动装配捕捉系统（可选）
+| 项目 | 菜单构建结果 |
+| --- | --- |
+| APK | `Builds/Android/BridgeStereoFusion.apk` |
+| 应用名 | `Magic MR Stereo YOLO` |
+| Android 包名 | `com.yn.picmagicmr.stereo` |
+| 版本 / versionCode | `1.10.0` / `22` |
+| 构建类型 | Development，关闭自定义签名 |
 
-1. **3D 目标**：创建 Cube，加 `BoxCollider`，图层 `3D_Target`，标签 `CaptureTarget`
-2. **RenderTexture**：创建 `CardTexture`，新建 `CaptureCamera`，Culling Mask 只勾选 `3D_Target`，Target Texture 指向 `CardTexture`
-3. **UI**：Canvas → `RawImage`（绑定 `CardTexture`）+ 右下角背包 `Image`
-4. **脚本**：空物体 `GameManager` 挂载 `CaptureDemoBootstrap` + `CaptureTo2D`
+菜单结束后恢复原来的应用标识、名称、版本和签名选项，因此 Project Settings 中保存的版本号可能与上述 APK 版本不同。菜单也会关闭 Spatial Mesh，当前双目定位不依赖场景网格。
 
-## 推荐开发顺序
+```powershell
+adb install -r Builds/Android/BridgeStereoFusion.apk
+```
 
-1. `**DesktopCaptureDemo`** — 电脑上跑通捕捉核心逻辑
-2. `**SampleScene**` — 编辑器预览或 AR 手机测图像追踪 + 捕捉
-3. `**MagicMR**` — PICO 头显测手势魔法与 MR 完整流程
+先启动 PC 服务，再在头显中打开应用。
 
+### 4. 标定、召唤与施法
+
+1. 让直立打火机完整进入视野，保持静止，等待定位和标定就绪。
+2. 右手在目标附近做点赞并停稳约 0.3 秒，确认召唤。
+3. 按提示张开手掌约 0.15 秒，再开始施法。
+4. 缓慢移动实物，观察模型平移跟随；短暂遮挡后重新露出机身，检查定位恢复。
+
+| 操作 | 效果 |
+| --- | --- |
+| 右手快速捏合后松开 | 外观：烧焦材质与烟雾 |
+| 右手伸食指画闭合小圈 | 生命：眼睛、呼吸等生命化效果 |
+| 右手张掌快速横挥 | 规则：短暂侧向躲闪，再回到实物锚点 |
+| 右手握拳后张开 | 解构：隐藏打火机并生成花朵 |
+| 双手张开并向两侧拉开 | 放大：逐次增大，达到 3 倍上限后再次触发展示内部示意结构 |
+| 左手靠近 Reset 按钮并捏合保持约 0.3 秒 | 清除效果，重新定位和召唤 |
+
+右手施法需要先进入目标附近约 20 cm 的范围；外圈容差用于衔接动作，不代表可从远处开始施法。统一手势冷却为 0.35 秒，复位和双手放大另有各自保护条件。当前变花使用“握拳后张开”，不是旧 README 中的响指。
+
+## 状态与排查
+
+| 状态或现象 | 检查方向 |
+| --- | --- |
+| `PC_DISCONNECTED` | PC 服务、USB 授权及 `adb reverse`；客户端会自动重连 |
+| `NO_LIGHTER` | 目标是否完整可见、尺寸是否足够、当前模型是否能识别 |
+| `LighterTooSmall` | 检测框太小，无法可靠进行双目纹理采样 |
+| `NoReliableLighterDepth` | 当前双目匹配未通过，检查纹理、遮挡和图像质量 |
+| 遮挡时模型停住 | 默认视觉模式保持最后位置；露出实物以恢复测量 |
+| 手势被阻止 | 查看面板反馈，检查召唤状态、手部追踪、距离和动作冷却 |
+
+日志标签包括 `[StereoCapture]`、`[StereoYOLO]`、`[Registration]`、`[FollowMetrics]` 和 `[MagicMR]`。`Distance` 表示拍摄时头部中心到测量点的直线距离，`Z` 表示左相机光轴深度，两者含义不同。
+
+启用实验会话并生成日志后，可导出：
+
+```powershell
+adb pull /storage/emulated/0/Android/data/com.yn.picmagicmr.stereo/files/StudyLogs/ ./StudyLogs/
+```
+
+实际日志位置也可从 `[DataLogger] Session started` 输出中确认。
+
+## 场景入口
+
+| 场景 | 用途 | 当前构建状态 |
+| --- | --- | --- |
+| `BridgeStereoFusion` | YOLO + 双目定位、视觉跟随与手势魔法 | 默认启用 |
+| `BridgeTest` | 原始识别桥接场景，也是双目场景生成源 | 未启用 |
+| `MagicMR` | 早期 MR 手势场景 | 未启用 |
+| `VstTest` | 透视测试场景 | 未启用 |
+| `SampleScene` | AR 参考图追踪与卡牌捕捉 | 未启用 |
+| `DesktopCaptureDemo` | 电脑点击 Cube，转换为卡牌并飞入背包 | 不在当前构建列表 |
+
+以上场景均位于 `Assets/Scenes/`。桌面 Demo 可直接在编辑器 Play；AR 与 MR 功能需要对应设备和配置。恢复旧桥接版本时需切换构建场景，并按需恢复 Spatial Mesh 设置。
+
+## 代码与资源
+
+| 目录 / 文件 | 内容 |
+| --- | --- |
+| `Assets/Scripts/Perception/Stereo/` | 双目采集、几何投影、视觉位置平均、历史手部跟随 |
+| `Assets/Scripts/Perception/` | TCP 通信、识别结果处理、锚点与目标绑定 |
+| `Assets/Scripts/MagicMR/` | 手势规则、召唤、效果、复位和实验日志 |
+| `Assets/Editor/` | 场景构建、模型生成与编辑器回归检查 |
+| `Assets/MagicMR/` | 花朵 prefab、模型网格、材质、shader 和音效 |
+| `object-detection-demo/` | PC 检测服务与部署权重 |
+| `Tools/` | 数据审查、标注整理、模型训练与报告脚本 |
+| `STEREO_YOLO.md` | 双目主线实现说明与历史验证记录 |
+
+`VisualAverageChecks`、`StereoIntegrationChecks`、`TabletopGestureChecks` 等提供合成检查入口。它们用于验证算法和集成行为，不替代头显上的实际叠加测试。
+
+## Git 提交范围
+
+提交源代码、场景、所需模型和材质、对应 `.meta`、项目配置、文档及 `.gitignore`。生成的模型网格只要被场景或 prefab 引用，也属于需要保留的项目资源。
+
+`.gitignore` 已排除：
+
+- Unity 缓存、构建目录、APK、Python 虚拟环境和缓存。
+- `.codex-tmp/`、`tmp/` 和 `Assets/XR/Temp.meta`。
+- `Find lighter/` 根目录的 ZIP、列出的新增审查及标注副本、v5 / v6 / v7 合并数据集。
+- `Find lighter/runs/` 下未跟踪的训练输出、检查点、图表和结果归档。
+
+忽略规则保留本地文件，但这些文件不会随克隆下载；复现实验需要另外准备原始数据与相关产物。已被 Git 跟踪的历史训练文件不会因为新增规则而自动移除。不要整体忽略 `Assets/` 或所有 `.meta`，也不要将训练输出目录与实际部署权重目录混淆。
