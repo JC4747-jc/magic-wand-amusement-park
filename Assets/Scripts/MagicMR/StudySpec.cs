@@ -87,7 +87,7 @@ namespace MagicMR
         public const float AgencyEyesFadeInSeconds = 0.3f;
         public const float AppearanceBlendSeconds = 0.28f;
         public const float ShatterShrinkSeconds = 0.34f;
-        public const float FlowerGrowSeconds = 0.48f;
+        public const float FlowerGrowSeconds = 0.9f;
         public const float GhostTrailLifetime = 0.45f;
 
         // Study session / logging

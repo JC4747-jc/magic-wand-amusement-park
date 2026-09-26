@@ -272,8 +272,10 @@ namespace MagicMR
             if (m_FlowerGrowing)
             {
                 m_FlowerAge += Time.deltaTime;
-                var t = MagicMRAnim.EaseOutBack(m_FlowerAge / StudySpec.FlowerGrowSeconds);
+                var k = Mathf.Clamp01(m_FlowerAge / StudySpec.FlowerGrowSeconds);
+                var t = MagicMRAnim.EaseOutBack(k);
                 m_SpawnedFlower.transform.localScale = m_FlowerBaseScale * t;
+                m_SpawnedFlower.transform.Rotate(0f, 220f * Time.deltaTime, 0f, Space.World);
                 if (m_FlowerAge >= StudySpec.FlowerGrowSeconds)
                 {
                     m_SpawnedFlower.transform.localScale = m_FlowerBaseScale;
@@ -281,13 +283,16 @@ namespace MagicMR
                     m_FlowerAge = 0f;
                 }
             }
-
-            if (!m_FlowerGrowing)
+            else
+            {
                 m_FlowerAge += Time.deltaTime;
-            var bob = m_FlowerGrowing ? 0f : Mathf.Sin(m_FlowerAge * 1.35f) * 0.012f;
+                var pulse = 1f + 0.07f * Mathf.Sin(m_FlowerAge * 2.6f);
+                m_SpawnedFlower.transform.localScale = m_FlowerBaseScale * pulse;
+                m_SpawnedFlower.transform.Rotate(0f, 28f * Time.deltaTime, 0f, Space.World);
+            }
 
-            m_SpawnedFlower.transform.position = m_FlowerAnchor + Vector3.up * (0.02f + bob);
-            m_SpawnedFlower.transform.Rotate(0f, 14f * Time.deltaTime, 0f, Space.World);
+            var bob = m_FlowerGrowing ? m_FlowerAge * 0.08f : 0.06f + 0.028f * Mathf.Sin(m_FlowerAge * 1.8f);
+            m_SpawnedFlower.transform.position = m_FlowerAnchor + Vector3.up * bob;
         }
 
         void FixedUpdate()
@@ -381,7 +386,8 @@ namespace MagicMR
             // Phase 2 gesture-pipeline validation: confirms gate did not block this call.
             Debug.Log($"[Phase2] RealityEditor.ApplyDimension: dimension={dimension}", this);
 
-            var driveLighter = UsesLighterVisuals();
+            var director = HciMeetingDirector.Instance ?? FindFirstObjectByType<HciMeetingDirector>();
+            var driveLighter = director == null || director.Scenario == HciMeetingScenario.LighterDemon;
 
             // Coming back from flower: destroy flower and restore lighter before
             // applying a new dimension (except another deconstruction).
@@ -407,7 +413,6 @@ namespace MagicMR
                 }
             }
 
-            var director = HciMeetingDirector.Instance ?? FindFirstObjectByType<HciMeetingDirector>();
             director?.Play(dimension);
 
             if (hasHandPosition && DataLogger.Instance != null)
@@ -714,12 +719,6 @@ namespace MagicMR
 
         void SpawnFlower()
         {
-            if (m_FlowerPrefab == null)
-            {
-                Debug.LogWarning("[MagicMR] Flower prefab missing.", this);
-                return;
-            }
-
             if (m_SpawnedFlower != null)
                 Destroy(m_SpawnedFlower);
 
@@ -728,15 +727,15 @@ namespace MagicMR
             if (right.sqrMagnitude < 0.0001f)
                 right = Vector3.right;
             right.Normalize();
-            m_FlowerAnchor = transform.position + right * 0.1f;
-            m_SpawnedFlower = Instantiate(m_FlowerPrefab, m_FlowerAnchor, transform.rotation);
-            m_FlowerBaseScale = m_SpawnedFlower.transform.localScale;
-            if (m_FlowerBaseScale.sqrMagnitude < 1e-6f)
-                m_FlowerBaseScale = Vector3.one;
+            m_FlowerAnchor = transform.position + Vector3.up * 0.02f + right * 0.03f;
+            m_SpawnedFlower = HciMeetingStore.CreateRewardFlower();
+            m_SpawnedFlower.transform.SetPositionAndRotation(m_FlowerAnchor, Quaternion.identity);
+            m_FlowerBaseScale = Vector3.one;
             m_SpawnedFlower.transform.localScale = Vector3.zero;
             m_FlowerAge = 0f;
             m_FlowerGrowing = true;
             MagicMRVfxFactory.CreateGoldDust(m_SpawnedFlower.transform);
+            HciMeetingStore.BloomReward(m_SpawnedFlower.transform, m_FlowerAnchor + Vector3.up * 0.16f);
         }
 
         void ClearFlower()
@@ -764,6 +763,11 @@ namespace MagicMR
             RestoreOriginalMaterials();
             transform.localScale = m_BaseScale;
             Debug.Log("[MagicMR] Restored lighter from deconstruction (flower cleared).", this);
+        }
+
+        public void DismissStudyRewards()
+        {
+            RestoreFromDeconstruction();
         }
 
         void SetAllRenderersEnabled(bool enabled)

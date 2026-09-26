@@ -39,7 +39,7 @@ namespace MagicMR
             switch (scenario)
             {
                 case HciMeetingScenario.LighterDemon:
-                    return "A焦炭  B翅膀咳嗽  C躲闪/吹飞  D净化开花";
+                    return "A焦炭火  B翅膀咳嗽烟  C躲闪  D爆炸净化开花";
                 case HciMeetingScenario.WhompingWillow:
                     return "A黑暗风  B枝条抽打  C树疤呼吸  D封印宝箱";
                 case HciMeetingScenario.PixelCritter:

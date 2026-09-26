@@ -85,8 +85,18 @@ namespace MagicMR
                 m_Editor.OnGestureB_Swipe();
             else if (Pressed(kb.digit4Key, kb.numpad4Key))
                 m_Editor.OnGestureD_FistBurst();
+            else if (kb.nKey.wasPressedThisFrame || kb.rightArrowKey.wasPressedThisFrame || kb.rightBracketKey.wasPressedThisFrame)
+                CycleHci(1);
+            else if (kb.pKey.wasPressedThisFrame || kb.leftArrowKey.wasPressedThisFrame || kb.leftBracketKey.wasPressedThisFrame)
+                CycleHci(-1);
             else if (kb.hKey.wasPressedThisFrame)
                 m_HintVisible = !m_HintVisible;
+        }
+
+        static void CycleHci(int delta)
+        {
+            var director = HciMeetingDirector.Instance ?? FindFirstObjectByType<HciMeetingDirector>();
+            director?.CycleScenario(delta);
         }
 
         void OnGUI()
@@ -94,17 +104,23 @@ namespace MagicMR
             if (!m_HintVisible)
                 return;
 
+            var director = HciMeetingDirector.Instance ?? FindFirstObjectByType<HciMeetingDirector>();
+            var scene = director != null
+                ? HciMeetingScenarioNames.DisplayName(director.Scenario)
+                : "（无 HCI Director）";
+            var hint = director != null ? HciMeetingScenarioNames.Hint(director.Scenario) : "";
+
             const int pad = 12;
-            var rect = new Rect(pad, pad, 460, 118);
-            GUI.color = new Color(0f, 0f, 0f, 0.55f);
+            var rect = new Rect(pad, pad, 520, 148);
+            GUI.color = new Color(0f, 0f, 0f, 0.62f);
             GUI.DrawTexture(rect, Texture2D.whiteTexture);
             GUI.color = Color.white;
             GUI.Label(
                 new Rect(rect.x + 10, rect.y + 8, rect.width - 16, rect.height - 12),
-                "Editor 4D — MagicMR 焦炭小恶魔 (off in player builds)\n" +
-                "1  charcoal + magma   2  wings + cough/ash\n" +
-                "3  dodge / wind       4  scream → flower, lighter resets\n" +
-                "N / P  HCI scene      H hide hint");
+                "当前场景  " + scene + "\n" +
+                hint + "\n" +
+                "1 外观   2 生命   3 规则   4 净化绽放（开花奖励）\n" +
+                "N / → 下一场景    P / ← 上一场景    H 隐藏");
         }
 
         static bool Pressed(UnityEngine.InputSystem.Controls.KeyControl a, UnityEngine.InputSystem.Controls.KeyControl b)

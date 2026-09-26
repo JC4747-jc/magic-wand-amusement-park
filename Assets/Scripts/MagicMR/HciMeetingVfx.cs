@@ -55,16 +55,41 @@ namespace MagicMR
             return mat;
         }
 
+        public static Material LitGlow(Color albedo, Color emission)
+        {
+            var shader = Shader.Find("Universal Render Pipeline/Lit")
+                         ?? Shader.Find("Universal Render Pipeline/Unlit")
+                         ?? Shader.Find("Unlit/Color");
+            var mat = new Material(shader);
+            if (mat.HasProperty("_BaseColor"))
+                mat.SetColor("_BaseColor", albedo);
+            if (mat.HasProperty("_Color"))
+                mat.SetColor("_Color", albedo);
+            mat.EnableKeyword("_EMISSION");
+            if (mat.HasProperty("_EmissionColor"))
+                mat.SetColor("_EmissionColor", emission);
+            if (mat.HasProperty("_Smoothness"))
+                mat.SetFloat("_Smoothness", 0.72f);
+            if (mat.HasProperty("_Metallic"))
+                mat.SetFloat("_Metallic", 0.15f);
+            return mat;
+        }
+
         public static GameObject Primitive(PrimitiveType type, Transform parent, string name, Vector3 localPos, Vector3 localScale, Color color, bool transparent = false)
+        {
+            return Primitive(type, parent, name, localPos, Quaternion.identity, localScale, Unlit(color, transparent));
+        }
+
+        public static GameObject Primitive(PrimitiveType type, Transform parent, string name, Vector3 localPos, Quaternion localRot, Vector3 localScale, Material mat)
         {
             var go = GameObject.CreatePrimitive(type);
             go.name = name;
             go.transform.SetParent(parent, false);
             go.transform.localPosition = localPos;
-            go.transform.localRotation = Quaternion.identity;
+            go.transform.localRotation = localRot;
             go.transform.localScale = localScale;
             Object.Destroy(go.GetComponent<Collider>());
-            go.GetComponent<Renderer>().sharedMaterial = Unlit(color, transparent);
+            go.GetComponent<Renderer>().sharedMaterial = mat;
             return go;
         }
 

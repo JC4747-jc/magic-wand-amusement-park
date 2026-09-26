@@ -269,12 +269,7 @@ namespace MagicMR
 
                 go.name = "HciGoldCoin";
                 go.transform.localScale = Vector3.one * 0.04f;
-                if (go.GetComponent<Collider>() == null)
-                    go.AddComponent<SphereCollider>();
-
-                var rb = go.GetComponent<Rigidbody>() ?? go.AddComponent<Rigidbody>();
-                rb.mass = 0.05f;
-                rb.interpolation = RigidbodyInterpolation.Interpolate;
+                var rb = EnsurePhysics(go);
                 var dir = Vector3.up * 1.35f + Random.insideUnitSphere * 0.7f;
                 rb.AddForce(dir, ForceMode.VelocityChange);
                 rb.AddTorque(Random.insideUnitSphere * 10f, ForceMode.VelocityChange);
@@ -307,13 +302,355 @@ namespace MagicMR
                 parent,
                 "CandyRain",
                 new Color(1.4f, 0.45f, 0.85f, 1f),
-                42,
-                0.045f,
-                1.8f,
+                56,
+                0.05f,
+                2.2f,
                 Tex("StarFlame") ?? Tex("FlameSheet") ?? Tex("GlowCircle"),
-                0.55f);
+                0.62f);
             Object.Destroy(rain.gameObject, 5.5f);
+
+            var origin = parent != null ? parent.TransformPoint(new Vector3(0f, 0.55f, 0f)) : Vector3.up * 0.4f;
+            var candy = new[]
+            {
+                new Color(1f, 0.25f, 0.45f),
+                new Color(0.25f, 0.85f, 1f),
+                new Color(1f, 0.85f, 0.2f),
+                new Color(0.55f, 1f, 0.35f),
+                new Color(0.85f, 0.4f, 1f)
+            };
+            for (var i = 0; i < 14; i++)
+            {
+                var go = GameObject.CreatePrimitive(i % 2 == 0 ? PrimitiveType.Sphere : PrimitiveType.Cube);
+                Object.Destroy(go.GetComponent<Collider>());
+                go.name = "CandyDrop";
+                go.transform.position = origin + new Vector3(Random.Range(-0.18f, 0.18f), Random.Range(0f, 0.08f), Random.Range(-0.12f, 0.12f));
+                go.transform.localScale = Vector3.one * Random.Range(0.028f, 0.05f);
+                go.GetComponent<Renderer>().sharedMaterial = HciMeetingVfx.LitGlow(candy[i % candy.Length], candy[i % candy.Length] * 1.4f);
+                var rb = EnsurePhysics(go);
+                rb.AddForce(Vector3.down * 0.4f + Random.insideUnitSphere * 0.25f, ForceMode.VelocityChange);
+                Object.Destroy(go, 4.2f);
+            }
+
             return rain;
+        }
+
+        public static void ImpactBurst(Vector3 worldPos)
+        {
+            PlayWorld("ExplosiveSmokeSmall", worldPos, 0.16f, 2.2f);
+            var hit = HciMeetingVfx.Make(
+                null,
+                "Impact",
+                new Color(1.7f, 0.85f, 0.2f, 1f),
+                28,
+                0.45f,
+                0.045f,
+                0.4f,
+                false,
+                Tex("GlowCircle") ?? Tex("Sparks"),
+                true,
+                0.15f,
+                0.03f,
+                false,
+                0,
+                worldPos);
+            Object.Destroy(hit.gameObject, 1.5f);
+        }
+
+        public static ParticleSystem Fireflies(Transform parent, Vector3 localPos)
+        {
+            var ps = HciMeetingVfx.Make(
+                parent,
+                "Fireflies",
+                new Color(1.7f, 1.35f, 0.35f, 1f),
+                8,
+                0.035f,
+                0.016f,
+                2.2f,
+                true,
+                Tex("GlowCircle"),
+                true,
+                -0.04f,
+                0.2f,
+                false,
+                0);
+            ps.transform.localPosition = localPos;
+            return ps;
+        }
+
+        public static ParticleSystem Sakura(Transform parent)
+        {
+            var rain = HciMeetingVfx.Rain(
+                parent,
+                "Sakura",
+                new Color(1.5f, 0.55f, 0.85f, 1f),
+                32,
+                0.038f,
+                2.4f,
+                Tex("StarFlame") ?? Tex("GlowCircle"),
+                0.48f);
+            var main = rain.main;
+            main.gravityModifier = 0.22f;
+            return rain;
+        }
+
+        public static ParticleSystem Snow(Transform parent)
+        {
+            var rain = HciMeetingVfx.Rain(
+                parent,
+                "Snow",
+                new Color(0.92f, 0.96f, 1.2f, 1f),
+                40,
+                0.028f,
+                3.2f,
+                Tex("GlowCircle"),
+                0.52f);
+            var main = rain.main;
+            main.gravityModifier = 0.12f;
+            return rain;
+        }
+
+        public static ParticleSystem InkSplash(Vector3 worldPos)
+        {
+            PlayWorld("SmokeWhite", worldPos, 0.2f, 2.4f);
+            var ink = HciMeetingVfx.Make(
+                null,
+                "Ink",
+                new Color(0.05f, 0.05f, 0.08f, 0.95f),
+                36,
+                0.32f,
+                0.07f,
+                0.7f,
+                false,
+                Tex("SmokeNoise") ?? Tex("SmokeLoop"),
+                false,
+                0.05f,
+                0.04f,
+                false,
+                0,
+                worldPos);
+            Object.Destroy(ink.gameObject, 2.2f);
+            return ink;
+        }
+
+        public static GameObject AuraRing(Transform parent, Vector3 localPos, Color color)
+        {
+            var ring = HciMeetingVfx.Primitive(
+                PrimitiveType.Cylinder,
+                parent,
+                "Aura",
+                localPos,
+                Quaternion.identity,
+                new Vector3(0.32f, 0.006f, 0.32f),
+                HciMeetingVfx.Unlit(new Color(color.r, color.g, color.b, 0.55f), true));
+            var spark = HciMeetingVfx.Make(
+                parent,
+                "AuraSpark",
+                color,
+                22,
+                0.05f,
+                0.028f,
+                0.9f,
+                true,
+                Tex("GlowCircle") ?? Tex("Sparks"),
+                true,
+                0f,
+                0.16f,
+                false,
+                0);
+            spark.transform.localPosition = localPos + Vector3.up * 0.02f;
+            return ring;
+        }
+
+        public static GameObject CreateRewardFlower()
+        {
+            var root = new GameObject("HciRewardLotus");
+            var stemMat = HciMeetingVfx.LitGlow(new Color(0.12f, 0.38f, 0.2f), new Color(0.05f, 0.4f, 0.18f));
+            HciMeetingVfx.Primitive(
+                PrimitiveType.Cylinder,
+                root.transform,
+                "Stem",
+                new Vector3(0f, 0.11f, 0f),
+                Quaternion.identity,
+                new Vector3(0.018f, 0.11f, 0.018f),
+                stemMat);
+
+            var head = new GameObject("Head").transform;
+            head.SetParent(root.transform, false);
+            head.localPosition = new Vector3(0f, 0.24f, 0f);
+
+            var inner = HciMeetingVfx.LitGlow(new Color(1f, 0.28f, 0.62f), new Color(2.2f, 0.25f, 1.1f));
+            var mid = HciMeetingVfx.LitGlow(new Color(1f, 0.62f, 0.82f), new Color(1.6f, 0.4f, 0.9f));
+            var outer = HciMeetingVfx.Unlit(new Color(1f, 0.92f, 1f, 0.72f), true);
+            var gold = HciMeetingVfx.LitGlow(new Color(1f, 0.82f, 0.25f), new Color(2.4f, 1.4f, 0.2f));
+
+            AddPetalRing(head, 8, 0.038f, -22f, new Vector3(0.055f, 0.016f, 0.032f), inner);
+            AddPetalRing(head, 10, 0.062f, -34f, new Vector3(0.07f, 0.014f, 0.038f), mid);
+            AddPetalRing(head, 12, 0.09f, -46f, new Vector3(0.08f, 0.012f, 0.042f), outer);
+
+            HciMeetingVfx.Primitive(
+                PrimitiveType.Sphere,
+                head,
+                "Center",
+                Vector3.zero,
+                Quaternion.identity,
+                Vector3.one * 0.045f,
+                gold);
+
+            var cardTex = Tex("StarFlame") ?? Tex("GlowCircle");
+            if (cardTex != null)
+            {
+                var cardMat = HciMeetingVfx.ParticleMat(new Color(1.5f, 0.7f, 1.3f, 1f), cardTex, true);
+                for (var i = 0; i < 6; i++)
+                {
+                    var a = i / 6f * Mathf.PI * 2f;
+                    var dir = new Vector3(Mathf.Sin(a), 0.15f, Mathf.Cos(a));
+                    var rot = Quaternion.LookRotation(dir) * Quaternion.Euler(0f, 180f, 0f);
+                    HciMeetingVfx.Primitive(
+                        PrimitiveType.Quad,
+                        head,
+                        "HaloPetal" + i,
+                        dir.normalized * 0.05f,
+                        rot,
+                        new Vector3(0.11f, 0.14f, 1f),
+                        cardMat);
+                }
+            }
+
+            return root;
+        }
+
+        static void AddPetalRing(Transform head, int count, float radius, float tilt, Vector3 scale, Material mat)
+        {
+            for (var i = 0; i < count; i++)
+            {
+                var yaw = i * (360f / count);
+                var rot = Quaternion.Euler(tilt, yaw, 0f);
+                var pos = rot * Vector3.forward * radius;
+                HciMeetingVfx.Primitive(PrimitiveType.Sphere, head, "Petal" + count + "_" + i, pos, rot, scale, mat);
+            }
+        }
+
+        public static void BloomReward(Transform flower, Vector3 worldPos)
+        {
+            PlayWorld("ExplosionSmall", worldPos, 0.24f, 2.8f);
+            PlayWorld("MagicFirePurple", worldPos, 0.2f, 3.2f);
+
+            var petals = HciMeetingVfx.Make(
+                null,
+                "BloomPetals",
+                new Color(1.7f, 0.55f, 1.1f, 1f),
+                72,
+                0.55f,
+                0.07f,
+                1.35f,
+                false,
+                Tex("StarFlame") ?? Tex("GlowCircle"),
+                true,
+                0.18f,
+                0.05f,
+                false,
+                0,
+                worldPos);
+            Object.Destroy(petals.gameObject, 2.8f);
+
+            var gold = HciMeetingVfx.Make(
+                null,
+                "BloomGold",
+                new Color(1.8f, 1.2f, 0.25f, 1f),
+                56,
+                0.42f,
+                0.055f,
+                1.1f,
+                false,
+                Tex("GlowCircle") ?? Tex("GlowPalet"),
+                true,
+                -0.12f,
+                0.04f,
+                true,
+                0,
+                worldPos);
+            Object.Destroy(gold.gameObject, 2.4f);
+
+            var ring = HciMeetingVfx.Make(
+                null,
+                "BloomRing",
+                new Color(1.5f, 0.95f, 1.6f, 1f),
+                28,
+                0.08f,
+                0.16f,
+                0.85f,
+                false,
+                Tex("GlowCircle"),
+                true,
+                0f,
+                0.02f,
+                false,
+                0,
+                worldPos);
+            var ringMain = ring.main;
+            ringMain.startSpeed = 0.02f;
+            ringMain.gravityModifier = 0f;
+            Object.Destroy(ring.gameObject, 1.6f);
+
+            if (flower != null)
+            {
+                var halo = HciMeetingVfx.Make(
+                    flower,
+                    "BloomHalo",
+                    new Color(1.6f, 0.9f, 1.4f, 1f),
+                    26,
+                    0.06f,
+                    0.045f,
+                    1.2f,
+                    true,
+                    Tex("GlowCircle") ?? Tex("Sparks"),
+                    true,
+                    -0.02f,
+                    0.06f,
+                    false,
+                    0);
+                halo.transform.localPosition = new Vector3(0f, 0.22f, 0f);
+            }
+
+            var prefab = Resources.Load<GameObject>(Root + "GoldCoinMesh")
+                         ?? Resources.Load<GameObject>(Root + "GoldCoin");
+            var coinMat = CoinMaterial();
+            for (var i = 0; i < 8; i++)
+            {
+                GameObject go;
+                if (prefab != null)
+                {
+                    go = Object.Instantiate(prefab, worldPos + Vector3.up * 0.08f, Random.rotation);
+                    RemapMeshesToUrp(go, coinMat);
+                }
+                else
+                {
+                    go = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+                    Object.Destroy(go.GetComponent<Collider>());
+                    go.GetComponent<Renderer>().sharedMaterial = coinMat;
+                    go.transform.SetPositionAndRotation(worldPos, Random.rotation);
+                }
+
+                go.name = "BloomCoin";
+                go.transform.localScale = Vector3.one * 0.028f;
+                var rb = EnsurePhysics(go);
+                rb.AddForce(Vector3.up * 1.1f + Random.insideUnitSphere * 0.45f, ForceMode.VelocityChange);
+                rb.AddTorque(Random.insideUnitSphere * 8f, ForceMode.VelocityChange);
+                Object.Destroy(go, 2.8f);
+            }
+        }
+
+        static Rigidbody EnsurePhysics(GameObject go)
+        {
+            if (go.GetComponentInChildren<Collider>() == null)
+                go.AddComponent<SphereCollider>();
+
+            var rb = go.GetComponent<Rigidbody>();
+            if (rb == null)
+                rb = go.AddComponent<Rigidbody>();
+            rb.mass = 0.04f;
+            rb.interpolation = RigidbodyInterpolation.Interpolate;
+            return rb;
         }
 
         static void RemapParticlesToUrp(GameObject go, Texture fallbackTex, Color tint)

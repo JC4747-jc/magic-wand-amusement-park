@@ -137,22 +137,22 @@ namespace MagicMR
 
             var main = ps.main;
             main.startLifetime = new ParticleSystem.MinMaxCurve(1.1f, 2.0f);
-            main.startSize = new ParticleSystem.MinMaxCurve(0.004f, 0.01f);
-            main.startColor = new Color(1f, 0.85f, 0.35f, 0.8f);
-            main.startSpeed = new ParticleSystem.MinMaxCurve(0.02f, 0.05f);
-            main.maxParticles = 36;
+            main.startSize = new ParticleSystem.MinMaxCurve(0.012f, 0.032f);
+            main.startColor = new Color(1.6f, 1.1f, 0.35f, 1f);
+            main.startSpeed = new ParticleSystem.MinMaxCurve(0.05f, 0.14f);
+            main.maxParticles = 80;
             main.loop = true;
             main.playOnAwake = false;
             main.simulationSpace = ParticleSystemSimulationSpace.World;
-            main.gravityModifier = -0.01f;
+            main.gravityModifier = -0.04f;
 
             var emission = ps.emission;
-            emission.rateOverTime = 6f;
-            emission.SetBursts(new[] { new ParticleSystem.Burst(0f, 14) });
+            emission.rateOverTime = 22f;
+            emission.SetBursts(new[] { new ParticleSystem.Burst(0f, 36) });
 
             var shape = ps.shape;
             shape.shapeType = ParticleSystemShapeType.Sphere;
-            shape.radius = 0.04f;
+            shape.radius = 0.09f;
 
             var sizeOverLifetime = ps.sizeOverLifetime;
             sizeOverLifetime.enabled = true;
