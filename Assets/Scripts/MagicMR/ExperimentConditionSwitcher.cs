@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 namespace MagicMR
 {
     /// <summary>
-    /// Keyboard (or remote) condition presets for study automation.
-    /// 1 Baseline, 2 Appearance, 3 Appearance+Agency, 4 All.
+    /// Legacy keyboard condition presets. Affective-narrative mode ignores
+    /// them so accidental keys cannot add gesture conditions to the study.
     /// </summary>
     public class ExperimentConditionSwitcher : MonoBehaviour
     {
@@ -25,14 +25,33 @@ namespace MagicMR
                 m_GestureManager = FindFirstObjectByType<GestureManager>();
             if (m_RealityEditor == null)
             {
+                m_RealityEditor = RealityScenarioDirector.Instance != null
+                    ? RealityScenarioDirector.Instance.CurrentEditor
+                    : null;
                 var lighter = GameObject.Find("Lighter");
-                if (lighter != null)
+                if (m_RealityEditor == null && lighter != null)
                     m_RealityEditor = lighter.GetComponent<RealityEditor>();
+                m_RealityEditor ??= FindFirstObjectByType<RealityEditor>();
             }
         }
 
         void Update()
         {
+            // This component remains in legacy scenes, but experimental
+            // conditions must never re-enable Circle/Swipe/Fist in the
+            // single-trigger affective-animation study.
+            if (RealityScenarioDirector.Instance != null &&
+                RealityScenarioDirector.Instance.IsAffectiveNarrativeMode)
+            {
+#if ENABLE_INPUT_SYSTEM
+                if (Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame)
+                    FindFirstObjectByType<StudyResetWristUi>()?.TriggerReset();
+#else
+                if (Input.GetKeyDown(KeyCode.R))
+                    FindFirstObjectByType<StudyResetWristUi>()?.TriggerReset();
+#endif
+                return;
+            }
 #if ENABLE_INPUT_SYSTEM
             var keyboard = Keyboard.current;
             if (keyboard == null)
@@ -71,13 +90,27 @@ namespace MagicMR
 
         public void SetCondition(int conditionId)
         {
+            if (RealityScenarioDirector.Instance != null &&
+                RealityScenarioDirector.Instance.IsAffectiveNarrativeMode)
+            {
+                CurrentConditionId = 1;
+                m_GestureManager?.SetEnabledDimensions(EnabledDimensions.All);
+                m_GestureManager?.SetConditionLabel("AffectiveNarrative");
+                DataLogger.Instance?.SetCondition("AffectiveNarrative", 1);
+                RealityScenarioDirector.Instance.ResetNarrative();
+                return;
+            }
+
             CurrentConditionId = Mathf.Clamp(conditionId, 1, 4);
             var (name, dims) = Resolve(CurrentConditionId);
 
             m_GestureManager?.SetEnabledDimensions(dims);
             m_GestureManager?.SetConditionLabel(name);
             DataLogger.Instance?.SetCondition(name, CurrentConditionId);
-            m_RealityEditor?.ResetTarget();
+            // A condition change resets the current subject, rather than assuming
+            // every experiment subject is a lighter.
+            var director = RealityScenarioDirector.Instance;
+            (director != null ? director.CurrentEditor : m_RealityEditor)?.ResetTarget();
             FindFirstObjectByType<LighterAnchorManager>()?.ReturnToPinned();
 
             Debug.Log($"[MagicMR] Condition -> {CurrentConditionId} ({name}, {dims})", this);

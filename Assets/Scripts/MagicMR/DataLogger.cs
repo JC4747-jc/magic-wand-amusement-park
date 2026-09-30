@@ -14,10 +14,10 @@ namespace MagicMR
         public static DataLogger Instance { get; private set; }
 
         const string EventHeader =
-            "timestamp,subject_id,condition,condition_id,trial_id,event_type,dimension,hand_distance,object_velocity,state_duration,hand_x,hand_y,hand_z,notes";
+            "timestamp,subject_id,condition,condition_id,scenario_id,scenario_name,trial_id,event_type,dimension,hand_distance,object_velocity,state_duration,hand_x,hand_y,hand_z,notes";
 
         const string TrajectoryHeader =
-            "timestamp,subject_id,condition,condition_id,trial_id,hand_x,hand_y,hand_z,target_x,target_y,target_z,distance";
+            "timestamp,subject_id,condition,condition_id,scenario_id,scenario_name,trial_id,hand_x,hand_y,hand_z,target_x,target_y,target_z,distance";
 
         [SerializeField]
         string m_FilePrefix = "study";
@@ -32,6 +32,8 @@ namespace MagicMR
         string m_Condition = "All";
         int m_ConditionId = 4;
         int m_TrialId;
+        int m_ScenarioId = 1;
+        string m_ScenarioName = "Lighter";
         string m_EventFilePath;
         string m_TrajectoryFilePath;
         float m_NextTrajectorySampleTime;
@@ -41,6 +43,7 @@ namespace MagicMR
         public bool SessionActive => m_SessionActive;
         public string Condition => m_Condition;
         public int ConditionId => m_ConditionId;
+        public int ScenarioId => m_ScenarioId;
 
         void Awake()
         {
@@ -68,12 +71,13 @@ namespace MagicMR
 
         public void StartSession(string subjectId, string condition, int trialId = 1)
         {
+            if (m_SessionActive) EndSession();
             m_SubjectId = string.IsNullOrWhiteSpace(subjectId) ? "S00" : subjectId.Trim();
             m_Condition = string.IsNullOrWhiteSpace(condition) ? "All" : condition.Trim();
             m_ConditionId = InferConditionId(m_Condition);
             m_TrialId = Mathf.Max(1, trialId);
 
-            var stamp = DateTime.Now.ToString("yyyyMMdd_HHmmss", CultureInfo.InvariantCulture);
+            var stamp = DateTime.UtcNow.ToString("yyyyMMdd_HHmmss_fff", CultureInfo.InvariantCulture) + "_" + Guid.NewGuid().ToString("N");
             var folder = Path.Combine(Application.persistentDataPath, "StudyLogs");
             Directory.CreateDirectory(folder);
 
@@ -107,6 +111,16 @@ namespace MagicMR
             LogEvent("trial_start", EditDimension.None, -1f, 0f, 0f, notes: $"trial={m_TrialId}");
         }
 
+        /// <summary>Records which real-world subject received the active animated narrative.</summary>
+        public void SetScenario(int scenarioId, string scenarioName)
+        {
+            m_ScenarioId = Mathf.Clamp(scenarioId, 1, RealityScenarioDirector.ScenarioCount);
+            m_ScenarioName = string.IsNullOrWhiteSpace(scenarioName) ? "Unnamed" : scenarioName.Trim();
+            if (m_SessionActive)
+                LogEvent("scenario_change", EditDimension.None, -1f, 0f, 0f,
+                    notes: $"scenario={m_ScenarioId};name={m_ScenarioName}");
+        }
+
         public void SetCondition(string condition, int conditionId)
         {
             m_Condition = string.IsNullOrWhiteSpace(condition) ? "All" : condition.Trim();
@@ -134,6 +148,8 @@ namespace MagicMR
                 Escape(m_SubjectId),
                 Escape(m_Condition),
                 m_ConditionId.ToString(CultureInfo.InvariantCulture),
+                m_ScenarioId.ToString(CultureInfo.InvariantCulture),
+                Escape(m_ScenarioName),
                 m_TrialId.ToString(CultureInfo.InvariantCulture),
                 Escape(eventType),
                 dimension.ToString(),
@@ -163,6 +179,8 @@ namespace MagicMR
                 Escape(m_SubjectId),
                 Escape(m_Condition),
                 m_ConditionId.ToString(CultureInfo.InvariantCulture),
+                m_ScenarioId.ToString(CultureInfo.InvariantCulture),
+                Escape(m_ScenarioName),
                 m_TrialId.ToString(CultureInfo.InvariantCulture),
                 Format(handPosition.x),
                 Format(handPosition.y),
@@ -185,7 +203,7 @@ namespace MagicMR
             if (string.IsNullOrEmpty(value))
                 return "";
 
-            if (value.Contains(",") || value.Contains("\""))
+            if (value.Contains(",") || value.Contains("\"") || value.Contains("\n") || value.Contains("\r"))
                 return "\"" + value.Replace("\"", "\"\"") + "\"";
 
             return value;

@@ -75,6 +75,18 @@ public static class TabletopGestureChecks
         Require(rapid.Step(new TabletopGestureRules.Sample {time=.86f,pinch=.08f,open=true})==EditDimension.Deconstruction,
             "Next gesture stayed blocked after 0.35 seconds");
         Debug.Log("TABLETOP_RAPID_TRANSITION_CHECKS_PASS");
+        var narrative = new AffectivePinchRelease();
+        Require(!narrative.Step(0f, .02f), "Narrative pinch fired while closed");
+        Require(!narrative.Step(.10f, .02f), "Narrative pinch fired before release");
+        Require(narrative.Step(.20f, .08f), "Narrative pinch-release failed");
+        Require(!narrative.Step(.21f, .08f), "Narrative release fired twice");
+        narrative.Reset();
+        narrative.Step(0f, .02f);
+        Require(!narrative.Step(.50f, .08f), "Tracking gap falsely completed narrative pinch");
+        narrative.Reset();
+        narrative.Step(0f, .02f);
+        Require(!narrative.Step(.95f, .08f), "Long narrative pinch was accepted");
+        Debug.Log("AFFECTIVE_PINCH_RELEASE_CHECKS_PASS");
         Require(TabletopGestureRules.IsClosedCircle(Circle()), "Vertical circle rejected");
         Require(TabletopGestureRules.IsClosedCircle(Circle(360,true)), "Horizontal circle rejected");
         Require(!TabletopGestureRules.IsClosedCircle(Circle(200)), "Open arc recognized as circle");
@@ -129,4 +141,3 @@ public static class TabletopGestureChecks
         Debug.Log("TABLETOP_GESTURE_CHECKS_PASS");
     }
 }
-

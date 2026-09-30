@@ -18,8 +18,21 @@ namespace Perception
         [SerializeField]
         bool m_DisableOrphanCameras = true;
 
+        [Header("Optional affective animation study")]
+        [Tooltip("Optional 2D narrative overlay. Disabled by default so the scene uses the original 4D lighter grammar.")]
+        [SerializeField]
+        bool m_EnableAffectiveNarrative = false;
+
+        [SerializeField]
+        string m_SubjectId = StudySpec.DefaultSubjectId;
+
+        [SerializeField]
+        int m_TrialId = StudySpec.DefaultTrialId;
+
         void Awake()
         {
+            if (m_EnableAffectiveNarrative)
+                EnsureAffectiveNarrativeSystem();
             EnsureFistBurstDetector();
             if (m_DisableOrphanCameras)
                 DisableOrphanMainCameras();
@@ -41,8 +54,32 @@ namespace Perception
 
             AssertNoSpatialOwnershipSystems();
             Debug.Log(
-                "[BridgeGesture] Ready: hands+gestures only. YOLO remains spatial owner.",
+                "[BridgeGesture] Ready: hands + 4D lighter gestures. YOLO remains spatial owner.",
                 this);
+        }
+
+        void EnsureAffectiveNarrativeSystem()
+        {
+            var root = GameObject.Find("GestureDetectors");
+            var loggerHost = root != null ? root : gameObject;
+            var logger = FindFirstObjectByType<DataLogger>();
+            if (logger == null)
+                logger = loggerHost.GetComponent<DataLogger>() ?? loggerHost.AddComponent<DataLogger>();
+
+            // BridgeStereoFusion deliberately has GestureManager auto-start off,
+            // so the affective study owns exactly one session here.
+            if (!logger.SessionActive)
+                logger.StartSession(m_SubjectId, "AffectiveNarrative", m_TrialId);
+
+            var director = FindFirstObjectByType<RealityScenarioDirector>();
+            if (director == null)
+            {
+                var host = new GameObject("AffectiveNarrativeSystem");
+                director = host.AddComponent<RealityScenarioDirector>();
+            }
+
+            FindFirstObjectByType<GestureManager>()?.SetEnabledDimensions(EnabledDimensions.All);
+            Debug.Log("[BridgeGesture] Affective narrative system ready: pinch-release → anchored 2D animation.", director);
         }
 
         static void EnsureFistBurstDetector()

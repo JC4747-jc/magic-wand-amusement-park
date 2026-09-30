@@ -113,6 +113,10 @@ namespace Perception
             positionGuard.Reset();
             waiting = false; left = null; validAt = -100;
             lighter.GetComponent<MagicMR.RealityEditor>()?.ResetTarget();
+            // The affective overlay lives outside the detected target's
+            // hierarchy so it keeps a world-scale illustrated size. Clear it
+            // explicitly when a trial reacquires the physical object.
+            FindFirstObjectByType<MagicMR.RealityScenarioDirector>()?.ResetNarrative();
             if (lighter.parent != null && lighter.parent.name == "Anchor_Lighter")
                 lighter.localPosition = Vector3.zero;
             FindFirstObjectByType<AnchorManager>()?.ResetPlacement();

@@ -123,6 +123,13 @@ namespace MagicMR
                 default: return;
             }
             ClearTrace();
+            // A compact aura at the casting hand makes the input-to-animation
+            // transition visible even when the illustrated result is spatially
+            // offset from the user's fingers. It is shared by every scenario.
+            Emit(source, source, color, 1, .36f, .028f, Vector3.zero);
+            for (int i = 0; i < 6; i++)
+                Emit(source + Random.insideUnitSphere * .009f, source, color, 0,
+                    Random.Range(.18f, .36f), .0025f, Random.onUnitSphere * .035f);
             Emit(source, target, color, dimension == EditDimension.Scale ? 4 : 3, .32f, .003f, Vector3.zero);
             Emit(target, target, color, 1, .48f, .045f, Vector3.zero);
             if (dimension == EditDimension.Scale)

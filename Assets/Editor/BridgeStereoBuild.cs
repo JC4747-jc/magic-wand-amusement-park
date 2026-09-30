@@ -2,14 +2,25 @@ using System;
 using System.IO;
 using Perception;
 using UnityEditor;
+using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 using Unity.XR.PXR;
 
 public static class BridgeStereoBuild
 {
+    // Unity occasionally fails to refresh a newly-added top-level menu while
+    // the editor is open. Keep an Assets-menu entry as a stable in-editor
+    // fallback; both entries execute the same build pipeline.
+    [MenuItem("Assets/Magic Wand/Configure Stereo YOLO Scene", false, 2000)]
+    static void ConfigureFromAssetsMenu() => Configure();
+
+    [MenuItem("Assets/Magic Wand/Build Stereo YOLO APK", false, 2001)]
+    static void BuildFromAssetsMenu() => Build();
+
     [MenuItem("Bridge/Configure Stereo YOLO Scene")]
     public static void Configure()
     {
@@ -101,6 +112,14 @@ public static class BridgeStereoBuild
     [MenuItem("Bridge/Build Stereo YOLO APK")]
     public static void Build()
     {
+        // PICO's build processor reads EditorUserBuildSettings.activeBuildTarget
+        // (rather than the BuildPipeline target). Make Android active first so
+        // it cannot see the macOS Metal API during a direct APK build.
+        if (EditorUserBuildSettings.activeBuildTarget != BuildTarget.Android &&
+            !EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Android, BuildTarget.Android))
+            throw new Exception("Could not switch Unity to the Android build target.");
+        PlayerSettings.SetGraphicsAPIs(BuildTarget.Android,
+            new[] { GraphicsDeviceType.OpenGLES3 });
         FlowerModelBuilder.Generate();
         StereoIntegrationChecks.Run();
         Configure();
@@ -108,11 +127,26 @@ public static class BridgeStereoBuild
         string originalId = PlayerSettings.GetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android);
         string originalName = PlayerSettings.productName;
         bool originalSigning = PlayerSettings.Android.useCustomKeystore;
+        string originalKeystoreName = PlayerSettings.Android.keystoreName;
+        string originalKeystorePass = PlayerSettings.Android.keystorePass;
+        string originalKeyAlias = PlayerSettings.Android.keyaliasName;
+        string originalKeyAliasPass = PlayerSettings.Android.keyaliasPass;
         string originalVersion = PlayerSettings.bundleVersion;
         int originalCode = PlayerSettings.Android.bundleVersionCode;
         try
         {
-        PlayerSettings.Android.useCustomKeystore = false;
+        // PICO's Unity 6 validation requires all four signing fields, even for
+        // a local Development build. Use Android's conventional debug key
+        // temporarily; it is only for installing the APK on a test headset.
+        string debugKeystore = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+            ".android", "debug.keystore");
+        if (!File.Exists(debugKeystore))
+            throw new FileNotFoundException("Android debug keystore was not found.", debugKeystore);
+        PlayerSettings.Android.useCustomKeystore = true;
+        PlayerSettings.Android.keystoreName = debugKeystore;
+        PlayerSettings.Android.keystorePass = "android";
+        PlayerSettings.Android.keyaliasName = "androiddebugkey";
+        PlayerSettings.Android.keyaliasPass = "android";
         PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android,"com.yn.picmagicmr.stereo");
         PlayerSettings.productName = "Magic MR Stereo YOLO";
         PlayerSettings.bundleVersion = "1.10.0";
@@ -129,8 +163,40 @@ public static class BridgeStereoBuild
             PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android,originalId);
             PlayerSettings.productName = originalName;
             PlayerSettings.Android.useCustomKeystore = originalSigning;
+            PlayerSettings.Android.keystoreName = originalKeystoreName;
+            PlayerSettings.Android.keystorePass = originalKeystorePass;
+            PlayerSettings.Android.keyaliasName = originalKeyAlias;
+            PlayerSettings.Android.keyaliasPass = originalKeyAliasPass;
             PlayerSettings.bundleVersion = originalVersion;
             PlayerSettings.Android.bundleVersionCode = originalCode;
         }
+    }
+}
+
+/// <summary>
+/// PICO's build validation requires explicit signing fields even for an APK
+/// installed only on a local headset. This makes Unity's ordinary Build / Build
+/// And Run button work on a developer Mac as well as the custom Bridge menu.
+/// </summary>
+public sealed class PicoDevelopmentSigning : IPreprocessBuildWithReport
+{
+    public int callbackOrder => -10000;
+
+    public void OnPreprocessBuild(BuildReport report)
+    {
+        if (report.summary.platform != BuildTarget.Android)
+            return;
+
+        string debugKeystore = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+            ".android", "debug.keystore");
+        if (!File.Exists(debugKeystore))
+            throw new FileNotFoundException("Android debug keystore was not found.", debugKeystore);
+
+        PlayerSettings.Android.useCustomKeystore = true;
+        PlayerSettings.Android.keystoreName = debugKeystore;
+        PlayerSettings.Android.keystorePass = "android";
+        PlayerSettings.Android.keyaliasName = "androiddebugkey";
+        PlayerSettings.Android.keyaliasPass = "android";
     }
 }

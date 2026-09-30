@@ -200,9 +200,11 @@ namespace MagicMR
                 FindFirstObjectByType<GestureManager>()?.NotifyStudyReset();
                 return;
             }
-            var lighter = GameObject.Find("Lighter");
-            var editor = lighter != null ? lighter.GetComponent<RealityEditor>() : null;
+            var editor = RealityScenarioDirector.Instance != null
+                ? RealityScenarioDirector.Instance.CurrentEditor
+                : FindFirstObjectByType<RealityEditor>();
             editor?.ResetTarget();
+            RealityScenarioDirector.Instance?.ResetNarrative();
             FindFirstObjectByType<LighterAnchorManager>()?.BeginRecalibration();
             FindFirstObjectByType<CalibrationRitual>()?.RestartRitual();
             FindFirstObjectByType<PinchGestureDetector>()?.ResetForNewTrial();

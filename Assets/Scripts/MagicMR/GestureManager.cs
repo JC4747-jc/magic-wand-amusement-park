@@ -147,6 +147,7 @@ namespace MagicMR
             if (Instance == null)
             {
                 Debug.LogWarning($"[MagicMR] GestureManager missing; dropped {gestureName}.");
+                if (RealityScenarioDirector.Instance != null) return;
                 // Last-resort: apply on RealityEditor directly.
                 var lighter = GameObject.Find("Lighter");
                 var editor = lighter != null ? lighter.GetComponent<RealityEditor>() : null;
@@ -179,9 +180,13 @@ namespace MagicMR
 
             if (m_RealityEditor == null)
             {
+                m_RealityEditor = RealityScenarioDirector.Instance != null
+                    ? RealityScenarioDirector.Instance.CurrentEditor
+                    : null;
                 var lighter = GameObject.Find("Lighter");
-                if (lighter != null)
+                if (m_RealityEditor == null && lighter != null)
                     m_RealityEditor = lighter.GetComponent<RealityEditor>();
+                m_RealityEditor ??= FindFirstObjectByType<RealityEditor>();
             }
         }
 
@@ -204,8 +209,8 @@ namespace MagicMR
                 if (m_SwipeDetector != null) m_SwipeDetector.enabled = false;
                 if (m_SnapDetector != null) m_SnapDetector.enabled = false;
                 if (m_FistBurstDetector != null) m_FistBurstDetector.enabled = false;
-                // Scale is bimanual and intentionally remains separate from the
-                // mutually-exclusive right-hand tabletop recognizer.
+                // Scale is bimanual, so it remains active alongside the
+                // tabletop recognizer's right-hand 4D grammar.
                 if (m_ScaleDetector != null) m_ScaleDetector.enabled = true;
                 return;
             }
@@ -237,6 +242,7 @@ namespace MagicMR
                 SafeClear(m_FistBurstDetector.DetectedEvent);
             }
 
+            // Scale is a separate bimanual extension of the original scene.
             if (m_ScaleDetector != null)
                 m_ScaleDetector.enabled = true;
         }
@@ -258,6 +264,8 @@ namespace MagicMR
 
         void HandleGesture(EditDimension dimension, string gestureName)
         {
+            var affectiveDirector = RealityScenarioDirector.Instance;
+            var affectiveMode = affectiveDirector != null && affectiveDirector.IsAffectiveNarrativeMode;
             if (Time.time < m_BlockGesturesUntil)
             {
                 LastGestureFeedback = "Blocked: reset / action guard";
@@ -306,6 +314,16 @@ namespace MagicMR
 
             Debug.Log($"[MagicMR] Gesture detected: {gestureName} -> {dimension}");
 
+            // The study keeps the fixed four-gesture grammar. Each accepted
+            // gesture selects its stage, but the presentation pipeline remains
+            // identical across the eight subjects.
+            if (affectiveMode && !affectiveDirector.AcceptsGesture(dimension))
+            {
+                LastGestureFeedback = "This gesture has no animated stage.";
+                LogGesture($"{gestureName}_blocked", dimension, "affective_stage_unavailable");
+                return;
+            }
+
             if (!IsDimensionEnabled(dimension))
             {
                 LastGestureFeedback = "Disabled: " + dimension;
@@ -326,12 +344,18 @@ namespace MagicMR
             if (m_RealityEditor == null)
             {
                 ResolveReferences();
-                if (m_RealityEditor == null)
+                if (m_RealityEditor == null && (!affectiveMode || affectiveDirector.CurrentAnchor == null))
                 {
                     Debug.LogWarning("[GestureManager] RealityEditor not found.", this);
                     return;
                 }
             }
+
+            // Scenario selection can change the anchor between trials. The
+            // affective branch resolves it on every accepted trigger rather
+            // than keeping a stale lighter/editor reference.
+            if (affectiveMode && affectiveDirector.CurrentEditor != null)
+                m_RealityEditor = affectiveDirector.CurrentEditor;
 
             // Optional proximity / targeting gate (BridgeTest). Absent in MagicMR → no-op.
             // Prefer pinch index tip (Appearance / recent pinch samples), else tracked palm.
@@ -388,6 +412,32 @@ namespace MagicMR
 
             m_LastGestureTime = Time.time;
 
+            if (affectiveMode)
+            {
+                fsm?.NotifyEditAccepted(dimension);
+                var anchor = affectiveDirector.CurrentAnchor;
+                var narrativeDistance = hasQuery && anchor != null
+                    ? Vector3.Distance(queryPos, anchor.position)
+                    : -1f;
+
+                if (!affectiveDirector.TryActivateNarrative(dimension, queryPos, hasQuery))
+                {
+                    LastGestureFeedback = affectiveDirector.LastFeedback;
+                    LogGesture($"{gestureName}_blocked", dimension, "affective_target_unavailable", narrativeDistance);
+                    return;
+                }
+
+                // Keep the physical object unchanged. The cast glow is a brief,
+                // identical acknowledgement at the hand (not a scene-specific
+                // transformation) and makes the causal moment legible in MR.
+                RightHandSpellVfx.GetOrCreate(gameObject).Cast(dimension, anchor.position,
+                    queryPos, hasQuery);
+                LastGestureFeedback = affectiveDirector.LastFeedback;
+                LogGesture("affective_narrative_triggered", dimension,
+                    "presentation=anchored_animation", narrativeDistance);
+                return;
+            }
+
             if (dimension == EditDimension.Deconstruction)
             {
                 m_PinchDetector?.SuppressTapFor(tabletopMode ? TabletopGestureRules.RepeatCooldownSeconds : 1.0f);
@@ -398,6 +448,7 @@ namespace MagicMR
 
             var distance = m_RealityEditor.GetHandDistance(queryPos, hasQuery);
             m_RealityEditor.ApplyDimension(dimension, queryPos, hasQuery);
+            RealityScenarioDirector.Instance?.RecordSpell(dimension);
             RightHandSpellVfx.GetOrCreate(gameObject).Cast(dimension,
                 m_RealityEditor.transform.position, queryPos, hasQuery);
             LastGestureFeedback = "Applied: " + dimension;
