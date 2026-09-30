@@ -1,5 +1,9 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+#if XR_HANDS_1_1_OR_NEWER
+using UnityEngine.XR.Hands;
+#endif
 
 namespace MagicMR
 {
@@ -39,6 +43,8 @@ namespace MagicMR
         Vector3 m_AnchorHiddenScale = Vector3.one;
         bool m_SuppressRebuild;
         bool m_Whipping;
+        bool m_LeftWasPinching;
+        float m_LeftSceneCycleLock;
 
         public HciMeetingScenario Scenario => m_Scenario;
 
@@ -82,6 +88,50 @@ namespace MagicMR
             }
 
             AnimateIdle();
+            PollLeftHandSceneCycle();
+        }
+
+        void PollLeftHandSceneCycle()
+        {
+#if XR_HANDS_1_1_OR_NEWER
+            if (Time.unscaledTime < m_LeftSceneCycleLock)
+                return;
+
+            var systems = new List<XRHandSubsystem>();
+            SubsystemManager.GetSubsystems(systems);
+            for (var i = 0; i < systems.Count; i++)
+            {
+                var system = systems[i];
+                if (system == null || !system.running)
+                    continue;
+
+                var hand = system.leftHand;
+                if (!hand.isTracked)
+                    continue;
+                if (!hand.GetJoint(XRHandJointID.ThumbTip).TryGetPose(out var thumb))
+                    continue;
+                if (!hand.GetJoint(XRHandJointID.IndexTip).TryGetPose(out var index))
+                    continue;
+                if (!hand.GetJoint(XRHandJointID.Palm).TryGetPose(out var palm))
+                    continue;
+
+                var cam = Camera.main;
+                if (cam != null && Vector3.Dot(palm.up, -cam.transform.forward) > StudySpec.LeftPalmFacingDot)
+                    continue;
+
+                var pinching = Vector3.Distance(thumb.position, index.position) < StudySpec.PinchDistanceThreshold;
+                if (pinching && !m_LeftWasPinching)
+                {
+                    CycleScenario(1);
+                    m_LeftSceneCycleLock = Time.unscaledTime + 0.7f;
+                }
+
+                m_LeftWasPinching = pinching;
+                return;
+            }
+
+            m_LeftWasPinching = false;
+#endif
         }
 
         public void CycleScenario(int delta)
@@ -258,7 +308,7 @@ namespace MagicMR
             m_Hud.text =
                 HciMeetingScenarioNames.DisplayName(m_Scenario) + "\n" +
                 HciMeetingScenarioNames.Hint(m_Scenario) + "\n" +
-                "1-4 施法   N 下一场景   P 上一场景";
+                "1-4 施法   N/P 或左手轻捏 切场景";
         }
 
         void AnimateIdle()

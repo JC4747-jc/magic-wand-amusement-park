@@ -28,6 +28,9 @@ namespace Perception
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void SpawnForMagicMR()
         {
+            // Stereo capture owns the PICO RGB camera on MagicMR; skip 2D auto-pin.
+            if (StudySpec.StereoYoloPipelineEnabled)
+                return;
             if (!StudySpec.YoloAutoPinEnabled)
                 return;
             if (FindFirstObjectByType<MagicMRStudyBootstrap>() == null)

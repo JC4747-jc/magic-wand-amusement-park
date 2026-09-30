@@ -68,6 +68,7 @@ namespace MagicMR
         public string SubjectId => m_SubjectId;
         public string Condition => m_Condition;
         public int TrialId => m_TrialId;
+        public string LastGestureFeedback { get; private set; } = "No action yet";
 
         void Awake()
         {
@@ -325,6 +326,7 @@ namespace MagicMR
             if (gate != null && !gate.Allow(dimension, gestureName, queryPos, hasQuery))
             {
                 LogGesture($"{gestureName}_blocked", dimension, "target_gate");
+                LastGestureFeedback = "Blocked: target / hand distance";
                 return;
             }
 
@@ -340,6 +342,12 @@ namespace MagicMR
 
             var distance = m_RealityEditor.GetHandDistance(queryPos, hasQuery);
             m_RealityEditor.ApplyDimension(dimension, queryPos, hasQuery);
+            RightHandSpellVfx.GetOrCreate(gameObject).Cast(
+                dimension,
+                m_RealityEditor.transform.position,
+                queryPos,
+                hasQuery);
+            LastGestureFeedback = "Applied: " + dimension;
             LogGesture($"{gestureName}_triggered", dimension, distance: distance);
         }
 
@@ -414,6 +422,8 @@ namespace MagicMR
         {
             m_BlockGesturesUntil = Time.time + 0.75f;
             m_LastGestureTime = Time.time;
+            LastGestureFeedback = "Reset - wait for READY";
+            GetComponent<RightHandSpellVfx>()?.Clear();
         }
 
         public void BeginTrial(int trialId)

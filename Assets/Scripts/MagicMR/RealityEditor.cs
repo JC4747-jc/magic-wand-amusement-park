@@ -1070,6 +1070,7 @@ namespace MagicMR
 
             var director = HciMeetingDirector.Instance ?? FindFirstObjectByType<HciMeetingDirector>();
             director?.ResetVisuals();
+            GestureManager.Instance?.GetComponent<RightHandSpellVfx>()?.Clear();
         }
 
         public void OnGestureA_Pinch() => ApplyDimension(EditDimension.Appearance, Vector3.zero, false);

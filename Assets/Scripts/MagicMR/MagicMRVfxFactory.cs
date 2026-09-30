@@ -23,11 +23,11 @@ namespace MagicMR
             ConfigureCommon(ps);
 
             var main = ps.main;
-            main.startLifetime = new ParticleSystem.MinMaxCurve(0.9f, 1.7f);
-            main.startSize = new ParticleSystem.MinMaxCurve(0.012f, 0.038f);
-            main.startColor = new Color(0.18f, 0.14f, 0.11f, 0.5f);
-            main.startSpeed = new ParticleSystem.MinMaxCurve(0.04f, 0.11f);
-            main.maxParticles = 48;
+            main.startLifetime = new ParticleSystem.MinMaxCurve(1.4f, 2.6f);
+            main.startSize = new ParticleSystem.MinMaxCurve(0.04f, 0.11f);
+            main.startColor = new Color(0.18f, 0.14f, 0.11f, 0.72f);
+            main.startSpeed = new ParticleSystem.MinMaxCurve(0.08f, 0.2f);
+            main.maxParticles = 160;
             main.simulationSpace = ParticleSystemSimulationSpace.World;
             main.loop = false;
             main.playOnAwake = false;
@@ -76,12 +76,12 @@ namespace MagicMR
             velocity.z = new ParticleSystem.MinMaxCurve(-0.02f, 0.02f);
 
             var renderer = ps.GetComponent<ParticleSystemRenderer>();
-            renderer.maxParticleSize = 0.09f;
+            renderer.maxParticleSize = 0.22f;
             ApplyCachedMaterial(ps, ref s_SmokeMaterial, new Color(0.12f, 0.11f, 0.1f, 0.45f));
             return ps;
         }
 
-        public static void EmitSmokeBurst(ParticleSystem ps, short count = 20)
+        public static void EmitSmokeBurst(ParticleSystem ps, short count = 56)
         {
             if (ps == null)
                 return;
@@ -136,19 +136,19 @@ namespace MagicMR
             ConfigureCommon(ps);
 
             var main = ps.main;
-            main.startLifetime = new ParticleSystem.MinMaxCurve(1.1f, 2.0f);
-            main.startSize = new ParticleSystem.MinMaxCurve(0.012f, 0.032f);
+            main.startLifetime = new ParticleSystem.MinMaxCurve(1.4f, 2.4f);
+            main.startSize = new ParticleSystem.MinMaxCurve(0.028f, 0.07f);
             main.startColor = new Color(1.6f, 1.1f, 0.35f, 1f);
-            main.startSpeed = new ParticleSystem.MinMaxCurve(0.05f, 0.14f);
-            main.maxParticles = 80;
+            main.startSpeed = new ParticleSystem.MinMaxCurve(0.08f, 0.2f);
+            main.maxParticles = 160;
             main.loop = true;
             main.playOnAwake = false;
             main.simulationSpace = ParticleSystemSimulationSpace.World;
             main.gravityModifier = -0.04f;
 
             var emission = ps.emission;
-            emission.rateOverTime = 22f;
-            emission.SetBursts(new[] { new ParticleSystem.Burst(0f, 36) });
+            emission.rateOverTime = 48f;
+            emission.SetBursts(new[] { new ParticleSystem.Burst(0f, 64) });
 
             var shape = ps.shape;
             shape.shapeType = ParticleSystemShapeType.Sphere;
@@ -186,11 +186,11 @@ namespace MagicMR
             ConfigureCommon(ps);
 
             var main = ps.main;
-            main.startLifetime = new ParticleSystem.MinMaxCurve(0.22f, 0.45f);
-            main.startSize = new ParticleSystem.MinMaxCurve(0.006f, 0.018f);
+            main.startLifetime = new ParticleSystem.MinMaxCurve(0.55f, 1.15f);
+            main.startSize = new ParticleSystem.MinMaxCurve(0.016f, 0.045f);
             main.startColor = new Color(0.95f, 0.82f, 0.55f, 0.95f);
-            main.startSpeed = new ParticleSystem.MinMaxCurve(0.35f, 0.9f);
-            main.maxParticles = 40;
+            main.startSpeed = new ParticleSystem.MinMaxCurve(0.55f, 1.4f);
+            main.maxParticles = 100;
             main.loop = false;
             main.playOnAwake = false;
             main.simulationSpace = ParticleSystemSimulationSpace.World;
@@ -198,7 +198,7 @@ namespace MagicMR
 
             var emission = ps.emission;
             emission.rateOverTime = 0f;
-            emission.SetBursts(new[] { new ParticleSystem.Burst(0f, 28) });
+            emission.SetBursts(new[] { new ParticleSystem.Burst(0f, 70) });
 
             var shape = ps.shape;
             shape.shapeType = ParticleSystemShapeType.Sphere;
@@ -213,10 +213,10 @@ namespace MagicMR
             colorOverLifetime.color = grad;
 
             var renderer = ps.GetComponent<ParticleSystemRenderer>();
-            renderer.maxParticleSize = 0.05f;
+            renderer.maxParticleSize = 0.12f;
             ApplyCachedMaterial(ps, ref s_ShatterMaterial, new Color(1f, 0.85f, 0.45f, 0.9f));
             ps.Play(true);
-            Object.Destroy(go, 1.2f);
+            Object.Destroy(go, 2.6f);
             return ps;
         }
 
@@ -234,7 +234,7 @@ namespace MagicMR
                 return null;
 
             var ghostMat = new Material(shader);
-            var color = new Color(0.35f, 0.75f, 1f, 0.32f);
+            var color = new Color(0.45f, 0.9f, 1f, 0.7f);
             if (ghostMat.HasProperty("_BaseColor"))
                 ghostMat.SetColor("_BaseColor", color);
             if (ghostMat.HasProperty("_Color"))

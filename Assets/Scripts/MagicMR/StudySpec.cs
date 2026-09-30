@@ -71,7 +71,9 @@ namespace MagicMR
         public const string AliveBoolParameter = "IsAlive";
 
         // Track B join mode B: one-shot YOLO auto-pin (not per-frame tracking, not 4D).
-        public const bool YoloAutoPinEnabled = true;
+        // Off while StereoYoloPipelineEnabled so PicoStereoCapture is the only camera client.
+        public const bool YoloAutoPinEnabled = false;
+        public const bool StereoYoloPipelineEnabled = true;
         public const string YoloBridgeHost = "127.0.0.1";
         public const int YoloBridgePort = 5005;
         public const float YoloAutoPinMinConfidence = 0.35f;

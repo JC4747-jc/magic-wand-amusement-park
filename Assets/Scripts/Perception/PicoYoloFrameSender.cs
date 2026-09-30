@@ -54,6 +54,17 @@ namespace Perception
         public bool FlipVerticallyBeforeEncode => m_FlipVerticallyBeforeEncode;
         public int MaxLongEdge => m_MaxLongEdge;
 
+        /// <summary>Applies the calibrated stereo-bridge JPEG contract.</summary>
+        public void ConfigureStereoSender(int maxLongEdge = 640, float maxSendFps = 10f,
+            int jpegQuality = 90, bool flipVerticallyBeforeEncode = true)
+        {
+            m_MaxLongEdge = Mathf.Max(1, maxLongEdge);
+            m_MaxSendFps = Mathf.Max(.1f, maxSendFps);
+            m_JpegQuality = Mathf.Clamp(jpegQuality, 30, 95);
+            m_FlipVerticallyBeforeEncode = flipVerticallyBeforeEncode;
+            m_LogEveryFrame = false;
+        }
+
         public void SetVerboseLogging(bool enabled) => m_LogEveryFrame = enabled;
 
         /// <summary>Orientation notes recorded once for Phase 2.</summary>
