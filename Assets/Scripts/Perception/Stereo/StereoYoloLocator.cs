@@ -285,9 +285,11 @@ namespace Perception
             // The fixed template is optional evidence, never a prerequisite for YOLO following.
             // Partial occlusion and a changed crop rejected the real lighter in 1.9.2.
             int u = Mathf.RoundToInt((x1 + x2) * .5f), v = Mathf.RoundToInt((y1 + y2) * .5f);
-            // Keep complete 9x7 patches in the middle 60% of the detected object.
-            int sx = Mathf.Min(24, Mathf.FloorToInt((x2 - x1) * .3f) - 5);
-            int sy = Mathf.Min(16, Mathf.FloorToInt((y2 - y1) * .3f) - 4);
+            // Permit a lighter at typical arm's length while retaining a centered
+            // 5x5 stereo patch.  The later depth-confidence and physical-size
+            // checks remain in force, so a smaller candidate cannot anchor alone.
+            int sx = Mathf.Min(20, Mathf.FloorToInt((x2 - x1) * .35f) - 3);
+            int sy = Mathf.Min(14, Mathf.FloorToInt((y2 - y1) * .35f) - 3);
             if (sx < 2 || sy < 2) { reason = "LighterTooSmall"; Invalidate(reason); return false; }
             var estimate = StereoPatchMatcher.EstimateDepth(left, right, 640, 480, u, v,
                 intrinsics.x, baseline, sx, sy);
