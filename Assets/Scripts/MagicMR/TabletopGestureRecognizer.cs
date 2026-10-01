@@ -8,7 +8,6 @@ namespace MagicMR
     public sealed class TabletopGestureRecognizer : HandGestureDetectorBase
     {
         readonly TabletopGestureRules rules = new TabletopGestureRules();
-        readonly AffectivePinchRelease narrativePinch = new AffectivePinchRelease();
         readonly GestureReachWindow reach = new GestureReachWindow();
         readonly TabletopSummonGesture summon = new TabletopSummonGesture();
         TabletopInteractionBase tabletop;
@@ -29,7 +28,7 @@ namespace MagicMR
             tabletop != null && !tabletop.InteractionReady ? "Right thumbs-up within 60 cm" :
             $"Hand: {TargetDistance * 100:F0} cm / enter 20 cm" + (CanReach ? " [IN RANGE]" : " [MOVE CLOSER]") : "Hand: not tracked";
 
-        public void ResetRecognition() { rules.Reset(); narrativePinch.Reset(); reach.Reset(); summon.CancelDwell(); sampledAt = -100; if (spellVfx != null) spellVfx.Clear(); }
+        public void ResetRecognition() { rules.Reset(); reach.Reset(); summon.CancelDwell(); sampledAt = -100; if (spellVfx != null) spellVfx.Clear(); }
         public void ResetSummoning() { ResetRecognition(); summon.Reset(); visionHoldUntil = 0; }
         void OnApplicationPause(bool paused) { ResetRecognition(); }
 #if XR_HANDS_1_1_OR_NEWER
@@ -58,27 +57,22 @@ namespace MagicMR
                 !Extension(hand, XRHandJointID.LittleProximal, XRHandJointID.LittleIntermediate, XRHandJointID.LittleDistal, XRHandJointID.LittleTip, out float l))
             { ResetRecognition(); return; }
             sampledAt = Time.unscaledTime;
-            var director = RealityScenarioDirector.Instance;
-            bool explicitAnchor = director != null && director.HasExplicitAnchor;
-            if (!explicitAnchor && (tabletop == null || !tabletop.TargetLocated))
+            if (tabletop == null || !tabletop.TargetLocated)
             { rules.Reset(); reach.Reset(); summon.Reset(); feedback = "Keep real lighter visible and still"; return; }
-            Vector3 targetPosition = explicitAnchor ? director.CurrentAnchor.position : tabletop.InteractionPosition;
             var root = Camera.main != null ? Camera.main.transform.parent : null;
             Vector3 worldPalm = root != null ? root.TransformPoint(palm) : palm;
             Vector3 worldIndex = root != null ? root.TransformPoint(index) : index;
             Vector3 pinch = (index + thumb) * .5f;
             Vector3 worldPinch = root != null ? root.TransformPoint(pinch) : pinch;
             QueryPosition = worldPalm;
-            if (Vector3.Distance(worldIndex, targetPosition) < Vector3.Distance(QueryPosition, targetPosition)) QueryPosition = worldIndex;
-            if (Vector3.Distance(worldPinch, targetPosition) < Vector3.Distance(QueryPosition, targetPosition)) QueryPosition = worldPinch;
-            TargetDistance = Vector3.Distance(QueryPosition, targetPosition);
+            if (Vector3.Distance(worldIndex, tabletop.InteractionPosition) < Vector3.Distance(QueryPosition, tabletop.InteractionPosition)) QueryPosition = worldIndex;
+            if (Vector3.Distance(worldPinch, tabletop.InteractionPosition) < Vector3.Distance(QueryPosition, tabletop.InteractionPosition)) QueryPosition = worldPinch;
+            TargetDistance = Vector3.Distance(QueryPosition, tabletop.InteractionPosition);
             int extended = (i > .82f ? 1 : 0) + (m > .82f ? 1 : 0) + (r > .82f ? 1 : 0) + (l > .82f ? 1 : 0);
             bool openHand = extended >= 3 && Vector3.Distance(index, thumb) > .06f;
-            if (!explicitAnchor && !tabletop.InteractionReady)
+            if (!tabletop.InteractionReady)
             {
                 rules.Reset(); reach.Reset();
-                var affectiveMode = RealityScenarioDirector.Instance != null &&
-                                    RealityScenarioDirector.Instance.IsAffectiveNarrativeMode;
                 if (!Read(hand, XRHandJointID.ThumbProximal, out var thumbBase) ||
                     !Read(hand, XRHandJointID.ThumbDistal, out var thumbJoint))
                 { ResetRecognition(); return; }
@@ -91,11 +85,7 @@ namespace MagicMR
                 {
                     if (tabletop.TrySummon())
                     {
-                        // Summoning remains a spatial-registration step. Do not
-                        // add a magic emotional pre-cue before the study's
-                        // actual illustrated narrative begins.
-                        if (!affectiveMode)
-                            SpellVfx.Summon(worldThumb, tabletop.VisualPosition);
+                        SpellVfx.Summon(worldThumb, tabletop.VisualPosition);
                         feedback = "Summoned! Open hand to continue";
                         Debug.Log("[TabletopGesture] Summon: right thumbs-up");
                     }
@@ -105,8 +95,7 @@ namespace MagicMR
                     !eligible ? "Move hand within 60 cm" :
                     !thumbsUp ? "Thumb up, curl four fingers" :
                     $"Thumbs-up - hold: {summon.Progress * 100:F0}%";
-                if (!affectiveMode)
-                    SpellVfx.SummonPreview(worldThumb, summon.Progress);
+                SpellVfx.SummonPreview(worldThumb, summon.Progress);
                 if (sampledAt >= nextDiagnostic)
                 {
                     nextDiagnostic = sampledAt + 2f;
@@ -126,14 +115,9 @@ namespace MagicMR
                 fist = i < .68f && othersCurled == 3,
                 open = extended >= 3, pointing = i > .82f && othersCurled >= 2
             };
-
-            // In the affective-animation build, a single pinch/release is the
-            // stable activation verb. The old 4D recognizer remains available
-            // for legacy scenes but is not allowed to introduce extra actions.
             var dimension = rules.Step(sample);
-            if (RealityScenarioDirector.Instance == null || !RealityScenarioDirector.Instance.IsAffectiveNarrativeMode)
-                SpellVfx.Preview(worldPalm, worldIndex, root != null ? root.TransformPoint(thumb) : thumb,
-                    sample.pointing, sample.fist, sample.pinch <= .035f, sample.open);
+            SpellVfx.Preview(worldPalm, worldIndex, root != null ? root.TransformPoint(thumb) : thumb,
+                sample.pointing, sample.fist, sample.pinch <= .035f, sample.open);
             feedback = rules.Status;
             if (sampledAt >= nextDiagnostic)
             {
@@ -146,13 +130,6 @@ namespace MagicMR
                 Debug.Log($"[TabletopGesture] {dimension} distance={TargetDistance:F3} extension={i:F2},{m:F2},{r:F2},{l:F2}");
                 GestureManager.Notify(dimension, "tabletop_" + dimension);
             }
-        }
-
-        void StepNarrativePinch(TabletopGestureRules.Sample sample)
-        {
-            if (narrativePinch.Step(sample.time, sample.pinch))
-                GestureManager.Notify(EditDimension.Appearance, "tabletop_narrative_pinch");
-            feedback = narrativePinch.Status;
         }
         static bool Read(XRHand hand, XRHandJointID id, out Vector3 p)
         { bool valid = hand.GetJoint(id).TryGetPose(out var pose); p = pose.position; return valid; }

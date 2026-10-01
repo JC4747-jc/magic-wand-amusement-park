@@ -48,13 +48,6 @@ namespace Perception
             Vector3 queryWorldPosition,
             bool hasQueryPosition)
         {
-            var director = RealityScenarioDirector.Instance;
-            if (director != null && director.IsAffectiveNarrativeMode && director.HasExplicitAnchor)
-            {
-                var input = FindFirstObjectByType<TabletopGestureRecognizer>();
-                return hasQueryPosition && input != null && input.CanReach &&
-                    Vector3.Distance(queryWorldPosition, director.CurrentAnchor.position) <= GestureReachWindow.ExitMeters;
-            }
             var tabletop = FindFirstObjectByType<StereoYoloLocator>();
             if (tabletop != null && !tabletop.InteractionReady)
             {

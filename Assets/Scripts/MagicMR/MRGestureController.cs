@@ -567,14 +567,12 @@ namespace MagicMR
 
         void CaptureDeskPresetFromScene()
         {
-            var editor = RealityScenarioDirector.Instance != null
-                ? RealityScenarioDirector.Instance.CurrentEditor
-                : FindFirstObjectByType<RealityEditor>();
-            if (editor == null)
+            var lighter = GameObject.Find("Lighter");
+            if (lighter == null)
                 return;
 
-            m_DeskPresetPosition = editor.transform.position;
-            m_DeskPresetRotation = editor.transform.rotation;
+            m_DeskPresetPosition = lighter.transform.position;
+            m_DeskPresetRotation = lighter.transform.rotation;
             m_HasDeskPreset = true;
             m_Ritual?.SetWireframeWorldPose(m_DeskPresetPosition, m_DeskPresetRotation);
         }
@@ -585,9 +583,9 @@ namespace MagicMR
                 m_Anchor = FindFirstObjectByType<LighterAnchorManager>();
             if (m_RealityEditor == null)
             {
-                m_RealityEditor = RealityScenarioDirector.Instance != null
-                    ? RealityScenarioDirector.Instance.CurrentEditor
-                    : FindFirstObjectByType<RealityEditor>();
+                var lighter = GameObject.Find("Lighter");
+                if (lighter != null)
+                    m_RealityEditor = lighter.GetComponent<RealityEditor>();
             }
 
             if (m_Ritual == null)
