@@ -5,9 +5,11 @@ using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEditor.SceneManagement;
+using UnityEditor.XR.Management;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
+using UnityEngine.XR.Management;
 using Unity.XR.PXR;
 
 public static class BridgeStereoBuild
@@ -24,6 +26,7 @@ public static class BridgeStereoBuild
     [MenuItem("Bridge/Configure Stereo YOLO Scene")]
     public static void Configure()
     {
+        EnsurePicoRuntime();
         EditorSceneManager.OpenScene("Assets/Scenes/BridgeTest.unity");
         LighterModelBuilder.Apply(GameObject.Find("Lighter"));
         foreach (var c in UnityEngine.Object.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None))
@@ -109,6 +112,40 @@ public static class BridgeStereoBuild
         EditorBuildSettings.scenes = scenes.ToArray();
         AssetDatabase.SaveAssets();
     }
+
+    // A successful Android build can still be a flat app if XR Plug-in
+    // Management lost its Android loader. This scene uses PXR APIs directly,
+    // so always build it with the PICO loader and hand tracking enabled.
+    static void EnsurePicoRuntime()
+    {
+        var settings = AssetDatabase.LoadAssetAtPath<XRGeneralSettingsPerBuildTarget>(
+            "Assets/XR/XRGeneralSettingsPerBuildTarget.asset");
+        var loader = AssetDatabase.LoadAssetAtPath<PXR_Loader>("Assets/XR/Loaders/PXR_Loader.asset");
+        if (settings == null || loader == null)
+            throw new BuildFailedException("PICO XR settings or PXR_Loader asset is missing; cannot build a headset APK.");
+
+        EditorBuildSettings.AddConfigObject(XRGeneralSettings.k_SettingsKey, settings, true);
+        if (!settings.HasManagerSettingsForBuildTarget(BuildTargetGroup.Android))
+            settings.CreateDefaultManagerSettingsForBuildTarget(BuildTargetGroup.Android);
+        var android = settings.SettingsForBuildTarget(BuildTargetGroup.Android);
+        // Only Android is changed; desktop Editor simulation remains untouched.
+        if (!android.Manager.TrySetLoaders(new System.Collections.Generic.List<XRLoader> { loader }))
+            throw new BuildFailedException("Could not enable the Android PICO XR loader.");
+        android.InitManagerOnStart = true;
+        EditorUtility.SetDirty(android.Manager);
+        EditorUtility.SetDirty(android);
+        EditorUtility.SetDirty(settings);
+
+        var pico = PXR_ProjectSetting.GetProjectConfig();
+        pico.handTracking = true;
+        pico.handTrackingSupportType = HandTrackingSupport.ControllersAndHands;
+        EditorUtility.SetDirty(pico);
+        AssetDatabase.SaveAssets();
+        if (!Unity.XR.PXR.Editor.PXR_BuildProcessor.IsLoaderExists())
+            throw new BuildFailedException("PICO SDK cannot find its Android XR loader; refusing to produce a flat APK.");
+        Debug.Log("PICO_RUNTIME_CHECK_PASS: Android PXR loader, startup initialization, controllers and hands");
+    }
+
     [MenuItem("Bridge/Build Stereo YOLO APK")]
     public static void Build()
     {
@@ -121,6 +158,7 @@ public static class BridgeStereoBuild
         PlayerSettings.SetGraphicsAPIs(BuildTarget.Android,
             new[] { GraphicsDeviceType.OpenGLES3 });
         FlowerModelBuilder.Generate();
+        RightHandSpellVfxChecks.Run();
         StereoIntegrationChecks.Run();
         Configure();
         Directory.CreateDirectory("Builds/Android");
@@ -149,8 +187,8 @@ public static class BridgeStereoBuild
         PlayerSettings.Android.keyaliasPass = "android";
         PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android,"com.yn.picmagicmr.stereo");
         PlayerSettings.productName = "Magic MR Stereo YOLO";
-        PlayerSettings.bundleVersion = "1.10.0";
-        PlayerSettings.Android.bundleVersionCode = 22;
+        PlayerSettings.bundleVersion = "1.10.1";
+        PlayerSettings.Android.bundleVersionCode = 23;
         var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions {
             scenes = new[] { "Assets/Scenes/BridgeStereoFusion.unity" },
             locationPathName = "Builds/Android/BridgeStereoFusion.apk",
