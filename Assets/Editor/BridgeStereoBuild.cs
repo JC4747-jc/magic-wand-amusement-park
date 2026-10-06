@@ -176,8 +176,8 @@ public static class BridgeStereoBuild
         PlayerSettings.Android.keystorePass = "android";
         PlayerSettings.Android.keyaliasName = "androiddebugkey";
         PlayerSettings.Android.keyaliasPass = "android";
-        PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android,"com.yn.picmagicmr.stereo");
-        PlayerSettings.productName = "Magic MR Stereo YOLO";
+        PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android,"com.yn.picmagicmr.stereo.optimized");
+        PlayerSettings.productName = "Magic MR 优化版";
         PlayerSettings.bundleVersion = "1.11.0";
         PlayerSettings.Android.bundleVersionCode = 24;
         var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions {

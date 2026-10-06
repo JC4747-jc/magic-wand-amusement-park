@@ -73,8 +73,8 @@ adb reverse tcp:5005 tcp:5005
 | 项目 | 菜单构建结果 |
 | --- | --- |
 | APK | `Builds/Android/BridgeStereoFusion.apk` |
-| 应用名 | `Magic MR Stereo YOLO` |
-| Android 包名 | `com.yn.picmagicmr.stereo` |
+| 应用名 | `Magic MR 优化版` |
+| Android 包名 | `com.yn.picmagicmr.stereo.optimized` |
 | 版本 / versionCode | `1.11.0` / `24` |
 | 构建类型 | Development，关闭自定义签名 |
 
@@ -141,7 +141,7 @@ adb install -r Builds/Android/BridgeStereoFusion.apk
 启用实验会话并生成日志后，可导出：
 
 ```powershell
-adb pull /storage/emulated/0/Android/data/com.yn.picmagicmr.stereo/files/StudyLogs/ ./StudyLogs/
+adb pull /storage/emulated/0/Android/data/com.yn.picmagicmr.stereo.optimized/files/StudyLogs/ ./StudyLogs/
 ```
 
 实际日志位置也可从 `[DataLogger] Session started` 输出中确认。
@@ -215,3 +215,5 @@ adb pull /storage/emulated/0/Android/data/com.yn.picmagicmr.stereo/files/StudyLo
 ### 验证
 
 构建运行 RightHandSpellVfxChecks、StereoIntegrationChecks 和 RequestedInteractionChecks，覆盖手势、光效池、首次完整标定、视觉位置/遮挡恢复、模型底部注册、3 倍放大和内部结构复位。这些是合成回归，不是实测精度报告。实机请测试不同距离与视角，缓慢移动、遮挡后恢复，并观察调试面板状态及 StudyLogs；不可靠深度会保持锚点而非伪造位置。
+
+优化版包名为 `com.yn.picmagicmr.stereo.optimized`，显示名为 `Magic MR 优化版`。可与包名 `com.yn.picmagicmr.stereo` 的 `Magic MR 原版` 同时安装。
