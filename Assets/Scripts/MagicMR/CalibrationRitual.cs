@@ -39,11 +39,9 @@ namespace MagicMR
         {
             if (m_Lighter == null)
             {
-                var editor = RealityScenarioDirector.Instance != null
-                    ? RealityScenarioDirector.Instance.CurrentEditor
-                    : FindFirstObjectByType<RealityEditor>();
-                if (editor != null)
-                    m_Lighter = editor.transform;
+                var go = GameObject.Find("Lighter");
+                if (go != null)
+                    m_Lighter = go.transform;
             }
 
             if (m_Anchor == null)

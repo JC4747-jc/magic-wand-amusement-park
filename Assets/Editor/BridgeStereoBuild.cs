@@ -1,32 +1,22 @@
+using UnityEngine.XR.Management;
+using UnityEngine.Rendering;
+using UnityEditor.Build;
+using UnityEditor.XR.Management;
 using System;
 using System.IO;
 using Perception;
 using UnityEditor;
-using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEditor.SceneManagement;
-using UnityEditor.XR.Management;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
-using UnityEngine.XR.Management;
 using Unity.XR.PXR;
 
 public static class BridgeStereoBuild
 {
-    // Unity occasionally fails to refresh a newly-added top-level menu while
-    // the editor is open. Keep an Assets-menu entry as a stable in-editor
-    // fallback; both entries execute the same build pipeline.
-    [MenuItem("Assets/Magic Wand/Configure Stereo YOLO Scene", false, 2000)]
-    static void ConfigureFromAssetsMenu() => Configure();
-
-    [MenuItem("Assets/Magic Wand/Build Stereo YOLO APK", false, 2001)]
-    static void BuildFromAssetsMenu() => Build();
-
     [MenuItem("Bridge/Configure Stereo YOLO Scene")]
     public static void Configure()
     {
-        EnsurePicoRuntime();
         EditorSceneManager.OpenScene("Assets/Scenes/BridgeTest.unity");
         LighterModelBuilder.Apply(GameObject.Find("Lighter"));
         foreach (var c in UnityEngine.Object.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None))
@@ -99,6 +89,7 @@ public static class BridgeStereoBuild
         crossText.font = text.font; crossText.text = "+"; crossText.color = Color.yellow;
         crossText.fontSize = 36; crossText.alignment = TextAnchor.MiddleCenter;
         crossText.rectTransform.sizeDelta = new Vector2(50,50);
+        EnsurePicoRuntime();
         var settings = PXR_ProjectSetting.GetProjectConfig();
         settings.videoSeeThrough = true; settings.spatialMesh = false; settings.secureMR = false;
         EditorUtility.SetDirty(settings);
@@ -112,7 +103,6 @@ public static class BridgeStereoBuild
         EditorBuildSettings.scenes = scenes.ToArray();
         AssetDatabase.SaveAssets();
     }
-
     // A successful Android build can still be a flat app if XR Plug-in
     // Management lost its Android loader. This scene uses PXR APIs directly,
     // so always build it with the PICO loader and hand tracking enabled.
@@ -160,6 +150,7 @@ public static class BridgeStereoBuild
         FlowerModelBuilder.Generate();
         RightHandSpellVfxChecks.Run();
         StereoIntegrationChecks.Run();
+        RequestedInteractionChecks.Run();
         Configure();
         Directory.CreateDirectory("Builds/Android");
         string originalId = PlayerSettings.GetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android);
@@ -187,8 +178,8 @@ public static class BridgeStereoBuild
         PlayerSettings.Android.keyaliasPass = "android";
         PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android,"com.yn.picmagicmr.stereo");
         PlayerSettings.productName = "Magic MR Stereo YOLO";
-        PlayerSettings.bundleVersion = "1.10.1";
-        PlayerSettings.Android.bundleVersionCode = 23;
+        PlayerSettings.bundleVersion = "1.11.0";
+        PlayerSettings.Android.bundleVersionCode = 24;
         var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions {
             scenes = new[] { "Assets/Scenes/BridgeStereoFusion.unity" },
             locationPathName = "Builds/Android/BridgeStereoFusion.apk",

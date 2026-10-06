@@ -98,8 +98,8 @@ namespace MagicMR
 #if XR_HANDS_1_1_OR_NEWER
             var subsystems = new System.Collections.Generic.List<XRHandSubsystem>();
             SubsystemManager.GetSubsystems(subsystems);
-            if (subsystems.Count == 0)
-                return;
+            if (subsystems.Count == 0 || !subsystems[0].running)
+            { m_HoldTimer = 0; ResetChargeVisual(); return; }
 
             var subsystem = subsystems[0];
             var near =
@@ -139,7 +139,7 @@ namespace MagicMR
                 return false;
 
             var pinchDist = Vector3.Distance(thumb.position, index.position);
-            if (pinchDist > StudySpec.HoldPinchDistanceThreshold)
+            if (!float.IsFinite(pinchDist) || pinchDist > .035f)
                 return false;
 
             var pinchPoint = (thumb.position + index.position) * 0.5f;
@@ -200,11 +200,9 @@ namespace MagicMR
                 FindFirstObjectByType<GestureManager>()?.NotifyStudyReset();
                 return;
             }
-            var editor = RealityScenarioDirector.Instance != null
-                ? RealityScenarioDirector.Instance.CurrentEditor
-                : FindFirstObjectByType<RealityEditor>();
+            var lighter = GameObject.Find("Lighter");
+            var editor = lighter != null ? lighter.GetComponent<RealityEditor>() : null;
             editor?.ResetTarget();
-            RealityScenarioDirector.Instance?.ResetNarrative();
             FindFirstObjectByType<LighterAnchorManager>()?.BeginRecalibration();
             FindFirstObjectByType<CalibrationRitual>()?.RestartRitual();
             FindFirstObjectByType<PinchGestureDetector>()?.ResetForNewTrial();

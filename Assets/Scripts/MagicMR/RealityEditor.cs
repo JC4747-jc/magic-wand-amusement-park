@@ -178,7 +178,7 @@ namespace MagicMR
             }
 
             if (m_EyesObject != null)
-                return;
+            { FitEyesToReplacement(); return; }
 
             m_EyesObject = new GameObject("AgencyEyes");
             m_EyesObject.transform.SetParent(transform, false);
@@ -186,7 +186,35 @@ namespace MagicMR
 
             CreateEyeQuad(m_EyesObject.transform, "Eye_L", new Vector3(-0.1f, 0f, 0f));
             CreateEyeQuad(m_EyesObject.transform, "Eye_R", new Vector3(0.1f, 0f, 0f));
+            FitEyesToReplacement();
             m_EyesObject.SetActive(false);
+        }
+
+        void FitEyesToReplacement()
+        {
+            var visual = transform.Find("VisualModel");
+            if (visual == null || m_EyesObject == null) return;
+            Bounds bounds = default; bool first = true;
+            foreach (var renderer in visual.GetComponentsInChildren<Renderer>(true))
+            {
+                if (!(renderer is MeshRenderer || renderer is SkinnedMeshRenderer)) continue;
+                Bounds local = renderer.localBounds;
+                for (int n = 0; n < 8; n++)
+                {
+                    var sign = new Vector3((n & 1) == 0 ? -1 : 1, (n & 2) == 0 ? -1 : 1, (n & 4) == 0 ? -1 : 1);
+                    Vector3 point = transform.InverseTransformPoint(renderer.transform.TransformPoint(local.center + Vector3.Scale(local.extents, sign)));
+                    if (first) { bounds = new Bounds(point, Vector3.zero); first = false; } else bounds.Encapsulate(point);
+                }
+            }
+            if (first) return;
+            m_EyesObject.transform.localPosition = new Vector3(bounds.center.x, bounds.min.y + bounds.size.y * .7f,
+                bounds.max.z + bounds.size.y * .01f);
+            foreach (Transform eye in m_EyesObject.transform)
+            {
+                if (eye.name != "Eye_L" && eye.name != "Eye_R") continue;
+                eye.localPosition = Vector3.right * bounds.size.x * (eye.name == "Eye_L" ? -.18f : .18f);
+                eye.localScale = new Vector3(bounds.size.x * .15f, bounds.size.y * .06f, 1);
+            }
         }
 
         static void CreateEyeQuad(Transform parent, string name, Vector3 localPos)

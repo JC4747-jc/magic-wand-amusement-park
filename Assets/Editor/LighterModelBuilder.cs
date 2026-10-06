@@ -74,9 +74,14 @@ public static class LighterModelBuilder
         go.AddComponent<MeshFilter>().sharedMesh=mesh;go.AddComponent<MeshRenderer>().sharedMaterial=material;
     }
     public static void Apply(GameObject root)
+        => Apply(root, Resources.Load<MagicMR.LighterModelSettings>("MagicMR/LighterModelSettings"));
+
+    public static void Apply(GameObject root, MagicMR.LighterModelSettings settings)
     {
+        if (settings != null && settings.modelPrefab != null)
+        { ApplyReplacement(root, settings); return; }
         Directory.CreateDirectory(Folder);AssetDatabase.Refresh();
-        foreach(string old in new[]{"LighterCap","LighterWheel","RealisticDetails"})
+        foreach(string old in new[]{"LighterCap","LighterWheel","RealisticDetails","VisualModel"})
         {var child=root.transform.Find(old);if(child!=null)UnityEngine.Object.DestroyImmediate(child.gameObject);}
         var blue=Material("BlueGlossPlastic",new Color(.045f,.12f,.30f),0,.65f);
         var metal=Material("BrushedSteel",new Color(.64f,.67f,.70f),.72f,.58f);
@@ -96,6 +101,66 @@ public static class LighterModelBuilder
         if(collider!=null){collider.center=Vector3.zero;collider.size=Vector3.one;}
         AssetDatabase.SaveAssets();
     }
+    [MenuItem("Bridge/Use Selected Lighter Model")]
+    public static void SelectReplacement()
+    {
+        var prefab = Selection.activeObject as GameObject;
+        if (prefab == null || !EditorUtility.IsPersistent(prefab))
+            throw new InvalidOperationException("Select an imported model or prefab in the Project window first.");
+        const string path = "Assets/Resources/MagicMR/LighterModelSettings.asset";
+        var settings = AssetDatabase.LoadAssetAtPath<MagicMR.LighterModelSettings>(path);
+        if (settings == null)
+        { settings = ScriptableObject.CreateInstance<MagicMR.LighterModelSettings>(); AssetDatabase.CreateAsset(settings, path); }
+        settings.modelPrefab = prefab;
+        EditorUtility.SetDirty(settings); AssetDatabase.SaveAssets();
+        Selection.activeObject = settings;
+        Debug.Log("Model selected. Set rotation/units in LighterModelSettings, then Bridge/Build Stereo YOLO APK.");
+    }
+
+    static void ApplyReplacement(GameObject root, MagicMR.LighterModelSettings settings)
+    {
+        if (!float.IsFinite(settings.metersPerUnit) || settings.metersPerUnit <= 0 ||
+            root.transform.localScale.x <= 0 || root.transform.localScale.y <= 0 || root.transform.localScale.z <= 0)
+            throw new InvalidOperationException("Replacement model requires positive finite units and root scale.");
+        foreach (string old in new[]{"LighterCap","LighterWheel","RealisticDetails","VisualModel"})
+        { var child = root.transform.Find(old); if (child != null) UnityEngine.Object.DestroyImmediate(child.gameObject); }
+        // Keep the Lighter shell, RealityEditor, anchor and colliders. Replace only visual geometry.
+        root.GetComponent<MeshFilter>().sharedMesh = null;
+        var wrapper = new GameObject("VisualModel").transform; wrapper.SetParent(root.transform, false);
+        var scale = root.transform.localScale;
+        wrapper.localScale = new Vector3(1 / scale.x, 1 / scale.y, 1 / scale.z);
+        var visual = UnityEngine.Object.Instantiate(settings.modelPrefab, wrapper, false);
+        visual.name = settings.modelPrefab.name;
+        visual.transform.localPosition = Vector3.zero;
+        visual.transform.localRotation = Quaternion.Euler(settings.rotationDegrees) * visual.transform.localRotation;
+        visual.transform.localScale *= settings.metersPerUnit;
+        // Source prefab scripts/physics must not drive the registered real-object anchor.
+        foreach (var script in visual.GetComponentsInChildren<MonoBehaviour>(true)) script.enabled = false;
+        foreach (var collider in visual.GetComponentsInChildren<Collider>(true)) collider.enabled = false;
+        foreach (var body in visual.GetComponentsInChildren<Rigidbody>(true)) body.isKinematic = true;
+        bool hasMesh = false;
+        foreach (var renderer in visual.GetComponentsInChildren<Renderer>(true))
+            if (renderer is MeshRenderer || renderer is SkinnedMeshRenderer) hasMesh = true;
+        if (!hasMesh) throw new InvalidOperationException("Replacement prefab has no mesh renderer.");
+        var box = root.GetComponent<BoxCollider>();
+        if (box != null)
+        {
+            Bounds bounds = default; bool first = true;
+            foreach (var renderer in visual.GetComponentsInChildren<Renderer>(true))
+            {
+                if (!(renderer is MeshRenderer || renderer is SkinnedMeshRenderer)) continue;
+                Bounds local = renderer.localBounds;
+                for (int n = 0; n < 8; n++)
+                {
+                    var sign = new Vector3((n & 1) == 0 ? -1 : 1, (n & 2) == 0 ? -1 : 1, (n & 4) == 0 ? -1 : 1);
+                    Vector3 point = root.transform.InverseTransformPoint(renderer.transform.TransformPoint(local.center + Vector3.Scale(local.extents, sign)));
+                    if (first) { bounds = new Bounds(point, Vector3.zero); first = false; } else bounds.Encapsulate(point);
+                }
+            }
+            box.center = bounds.center; box.size = bounds.size;
+        }
+    }
+
     public static void Preview()
     {
         FlowerModelBuilder.Preview();

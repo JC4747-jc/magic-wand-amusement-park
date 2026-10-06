@@ -156,7 +156,7 @@ namespace MagicMR
 
             var unified = FindFirstObjectByType<TabletopGestureRecognizer>();
             if (unified != null && unified.isActiveAndEnabled &&
-                !gestureName.StartsWith("tabletop_") && gestureName != "two_hand_spread") return;
+                !gestureName.StartsWith("tabletop_")) return;
             Instance.HandleGesture(dimension, gestureName);
         }
 
@@ -204,9 +204,8 @@ namespace MagicMR
                 if (m_SwipeDetector != null) m_SwipeDetector.enabled = false;
                 if (m_SnapDetector != null) m_SnapDetector.enabled = false;
                 if (m_FistBurstDetector != null) m_FistBurstDetector.enabled = false;
-                // Scale is bimanual and intentionally remains separate from the
-                // mutually-exclusive right-hand tabletop recognizer.
-                if (m_ScaleDetector != null) m_ScaleDetector.enabled = true;
+                // The unified recognizer owns bimanual scaling before checking a right-hand swipe.
+                if (m_ScaleDetector != null) m_ScaleDetector.enabled = false;
                 return;
             }
             // Detectors call Notify() directly. Clear stale UnityEvent wiring so

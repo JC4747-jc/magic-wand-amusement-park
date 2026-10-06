@@ -10,6 +10,9 @@ namespace MagicMR
         readonly TabletopGestureRules rules = new TabletopGestureRules();
         readonly GestureReachWindow reach = new GestureReachWindow();
         readonly TabletopSummonGesture summon = new TabletopSummonGesture();
+        readonly BimanualScaleGesture scale = new BimanualScaleGesture();
+        bool leftOpen;
+        Vector3 leftWorldPalm;
         TabletopInteractionBase tabletop;
         float sampledAt = -100;
         float nextDiagnostic;
@@ -20,7 +23,7 @@ namespace MagicMR
         public float TargetDistance { get; private set; }
         public Vector3 QueryPosition { get; private set; }
         public bool HasFreshHand => Time.unscaledTime - sampledAt <= .15f;
-        public bool CanReach => HasFreshHand && reach.Allowed;
+        public bool CanReach => HasFreshHand && (reach.Allowed || scale.OwnsGesture);
         float visionHoldUntil;
         public bool HoldVisualFollowing => Time.unscaledTime < visionHoldUntil;
         public string Feedback => HasFreshHand ? feedback : "Show right hand to headset";
@@ -28,7 +31,7 @@ namespace MagicMR
             tabletop != null && !tabletop.InteractionReady ? "Right thumbs-up within 60 cm" :
             $"Hand: {TargetDistance * 100:F0} cm / enter 20 cm" + (CanReach ? " [IN RANGE]" : " [MOVE CLOSER]") : "Hand: not tracked";
 
-        public void ResetRecognition() { rules.Reset(); reach.Reset(); summon.CancelDwell(); sampledAt = -100; if (spellVfx != null) spellVfx.Clear(); }
+        public void ResetRecognition() { rules.Reset(); scale.Reset(); reach.Reset(); summon.CancelDwell(); sampledAt = -100; if (spellVfx != null) spellVfx.Clear(); }
         public void ResetSummoning() { ResetRecognition(); summon.Reset(); visionHoldUntil = 0; }
         void OnApplicationPause(bool paused) { ResetRecognition(); }
 #if XR_HANDS_1_1_OR_NEWER
@@ -44,6 +47,8 @@ namespace MagicMR
             if (type != XRHandSubsystem.UpdateType.Dynamic) return;
             if ((flags & XRHandSubsystem.UpdateSuccessFlags.RightHandJoints) == 0)
             { ResetRecognition(); return; }
+            leftOpen = (flags & XRHandSubsystem.UpdateSuccessFlags.LeftHandJoints) != 0 &&
+                TryOpenPalm(subsystem.leftHand, out leftWorldPalm);
             ProcessHand(subsystem.rightHand);
         }
         protected override void ProcessHand(XRHand hand)
@@ -58,7 +63,7 @@ namespace MagicMR
             { ResetRecognition(); return; }
             sampledAt = Time.unscaledTime;
             if (tabletop == null || !tabletop.TargetLocated)
-            { rules.Reset(); reach.Reset(); summon.Reset(); feedback = "Keep real lighter visible and still"; return; }
+            { rules.Reset(); scale.Reset(); reach.Reset(); summon.Reset(); feedback = "Keep real lighter visible and still"; return; }
             var root = Camera.main != null ? Camera.main.transform.parent : null;
             Vector3 worldPalm = root != null ? root.TransformPoint(palm) : palm;
             Vector3 worldIndex = root != null ? root.TransformPoint(index) : index;
@@ -105,7 +110,22 @@ namespace MagicMR
                 return;
             }
             if (summon.BlockTransforms(!openHand, sampledAt))
-            { rules.Reset(); reach.Reset(); feedback = "Summoned! Open hand to continue"; return; }
+            { rules.Reset(); scale.Reset(); reach.Reset(); feedback = "Summoned! Open hand to continue"; return; }
+            Vector3 horizontal = Camera.main != null ? Camera.main.transform.right : Vector3.right;
+            horizontal.y = 0;
+            bool canStartScale = TargetDistance <= GestureReachWindow.EnterMeters &&
+                Vector3.Distance(leftWorldPalm, tabletop.InteractionPosition) <= .35f;
+            bool didScale = scale.Step(leftOpen && extended == 4 && openHand, canStartScale,
+                leftWorldPalm, worldPalm, horizontal, sampledAt);
+            if (scale.OwnsGesture)
+            {
+                rules.Reset();
+                SpellVfx.Preview(worldPalm, worldIndex, root != null ? root.TransformPoint(thumb) : thumb,
+                    false, false, false, true);
+                feedback = didScale ? "Grown - bring hands back to repeat" : "Both palms open - pull outward";
+                if (didScale) GestureManager.Notify(EditDimension.Scale, "tabletop_Scale");
+                return;
+            }
             if (!reach.Observe(true, TargetDistance, sampledAt))
             { rules.Reset(); feedback = "Move hand closer to real lighter"; return; }
             int othersCurled = (m < .68f ? 1 : 0) + (r < .68f ? 1 : 0) + (l < .68f ? 1 : 0);
@@ -153,6 +173,20 @@ namespace MagicMR
                 root!=null?root.TransformPoint(index):index,Time.realtimeSinceStartup);
             bool closed=tipsValid&&Vector3.Distance(index,thumb)<(tabletop.HasGripCandidate?.07f:.055f);
             tabletop.UpdatePinchHand(true,worldPalm,tipsValid,closed,pinch,Time.realtimeSinceStartup,beforeRender);
+        }
+        static bool TryOpenPalm(XRHand hand, out Vector3 worldPalm)
+        {
+            worldPalm = default;
+            if (!hand.isTracked || !Read(hand, XRHandJointID.Palm, out var palm) ||
+                !Read(hand, XRHandJointID.IndexTip, out var index) || !Read(hand, XRHandJointID.ThumbTip, out var thumb) ||
+                !Extension(hand, XRHandJointID.IndexProximal, XRHandJointID.IndexIntermediate, XRHandJointID.IndexDistal, XRHandJointID.IndexTip, out var i) ||
+                !Extension(hand, XRHandJointID.MiddleProximal, XRHandJointID.MiddleIntermediate, XRHandJointID.MiddleDistal, XRHandJointID.MiddleTip, out var m) ||
+                !Extension(hand, XRHandJointID.RingProximal, XRHandJointID.RingIntermediate, XRHandJointID.RingDistal, XRHandJointID.RingTip, out var r) ||
+                !Extension(hand, XRHandJointID.LittleProximal, XRHandJointID.LittleIntermediate, XRHandJointID.LittleDistal, XRHandJointID.LittleTip, out var l) ||
+                i <= .82f || m <= .82f || r <= .82f || l <= .82f || Vector3.Distance(index, thumb) <= .06f) return false;
+            var root = Camera.main != null ? Camera.main.transform.parent : null;
+            worldPalm = root != null ? root.TransformPoint(palm) : palm;
+            return true;
         }
         bool NearTarget(XRHand hand)
         {
