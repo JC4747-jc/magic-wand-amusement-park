@@ -1,0 +1,12 @@
+{
+  "files": {
+    "object-detection-demo/weights/candidates/common-yolov8m-official-v1/best.pt": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+    "object-detection-demo/weights/best_yolo26n_quad_v4_50e.pt": "fd4a31001feb66127a8c527ffb1e0ba32bfe9f72566cfde4f2f9b5fc0c3e7ca7",
+    "Datasets/jumping-spider-reviewed-v1/audit.json": "fc0d4a3e5a71c4f27ac7de29fe0066ca8c23f5c31477f604907ed920b77b316e",
+    "Reports/jumping-spider-v1-original-exception-review.json": "b7d33dd260238a53696cfd4f31d702b4894f2085198193e553d0575db27b8f32",
+    "Tools/MultiScene/train_eval.py": "c51ee1249ea8c8a220aebdc51aeeadc14c7f4450f7d732c183a5996b077a6a9d"
+  },
+  "source_review_scope": "Raw source manifest reviewed=false is intentionally retained as original download metadata; per-image original and overlay approval is in the pinned review record and derived dataset audit.",
+  "training_command": "./.venv/Scripts/python.exe Tools/MultiScene/train_eval.py train --data Datasets/jumping-spider-reviewed-v1/data.yaml --model object-detection-demo/weights/candidates/common-yolov8m-official-v1/best.pt --out Reports/jumping-spider-v1-yolov8m-training --baseline-report Reports/jumping-spider-v1-official-baseline/report.json --epochs 60 --imgsz 640 --batch 4 --workers 0 --seed 20261023 --learning-rate 0.0001 --allow-public-pilot",
+  "deployment_accepted": false
+}

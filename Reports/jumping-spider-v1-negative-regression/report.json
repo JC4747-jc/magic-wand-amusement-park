@@ -1,0 +1,347 @@
+{
+  "mode": "test",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    },
+    {
+      "id": "inaturalist",
+      "license": "Per-photo CC BY or CC0, attribution retained",
+      "url": "https://www.inaturalist.org",
+      "reviewed": false
+    },
+    {
+      "id": "pico",
+      "license": "User-authorized private device captures; internal evaluation only, no redistribution license asserted",
+      "url": "local:Reports/pico-shared-ui-live-v1",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated",
+    "JumpingSpider covers Salticidae family only; scores do not establish recognition of all spiders or identification of one biological species"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\jumping-spider-v1-yolov8m-training\\train\\weights\\best.pt",
+  "architecture": "DetectionModel",
+  "sha256": "7b8df63aadfd51dbd05199cb39713180a220806d31928ed95a17fe7700ba5ecb",
+  "dataset_version": "d6d7ebe458e08118f7c8f4b6e6438b51f841cb70fdbad1cb8e27d60d76d492f7",
+  "split": "test",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.174",
+  "model_names": {
+    "0": "JumpingSpider"
+  },
+  "per_class": [],
+  "images": 52,
+  "excluded_samples": [],
+  "ground_truth_instances": 0,
+  "false_positive_images": 31,
+  "ap_scope": "NOT_APPLICABLE: negative-only evaluation",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "JumpingSpider",
+      "true_positive": 0,
+      "false_positive": 39,
+      "false_negative": 0,
+      "precision": 0.0,
+      "recall": null
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 223.99746922802967,
+  "p95_inference_ms": 224.5970000338275,
+  "cold_first_image_ms": 1302.2995000937954,
+  "warm_mean_ms": 202.85429215223036,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images/test/ad1f84b9fe86797fac3ed37e.jpg",
+      "example": "error-ad1f84b9fe86797fac3ed37e.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/e46d84394ec9feb5a94591ca.jpg",
+      "example": "error-e46d84394ec9feb5a94591ca.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/8c1ace0837925cd44df27bf9.jpg",
+      "example": "error-8c1ace0837925cd44df27bf9.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/770ef4b00b30514a0d06cf14.jpg",
+      "example": "error-770ef4b00b30514a0d06cf14.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 2,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/85b4180d70f32b3702b192c3.jpg",
+      "example": "error-85b4180d70f32b3702b192c3.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/7f1e28223660576f31f1dea5.jpg",
+      "example": "error-7f1e28223660576f31f1dea5.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/e4fb023f0b945513b0efd0df.jpg",
+      "example": "error-e4fb023f0b945513b0efd0df.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/deaee509240ec1db7575f4bd.jpg",
+      "example": "error-deaee509240ec1db7575f4bd.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/faba6754b1388665e49e3f20.jpg",
+      "example": "error-faba6754b1388665e49e3f20.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/3d9c037d7899a1330db11d70.jpg",
+      "example": "error-3d9c037d7899a1330db11d70.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/fb84b0eedf5564a8d92826e2.jpg",
+      "example": "error-fb84b0eedf5564a8d92826e2.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 3,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/95ef9792e5065b199c3dfd30.jpg",
+      "example": "error-95ef9792e5065b199c3dfd30.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 4,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/4c4a9d9bb087bbfd18c6b093.jpg",
+      "example": "error-4c4a9d9bb087bbfd18c6b093.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/68203f912cc586e5b7ee932b.jpg",
+      "example": "error-68203f912cc586e5b7ee932b.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/c5794b838cbb6d5995f60baf.jpg",
+      "example": "error-c5794b838cbb6d5995f60baf.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/c01a21a99a49856d42e90388.jpg",
+      "example": "error-c01a21a99a49856d42e90388.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/86341b8a768616fb2fd15a82.jpg",
+      "example": "error-86341b8a768616fb2fd15a82.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/44f253e977d13abd94a6c5c9.jpg",
+      "example": "error-44f253e977d13abd94a6c5c9.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/a4a38dff772410e8f9c9b26f.jpg",
+      "example": "error-a4a38dff772410e8f9c9b26f.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/3caa1180e578667e7c3cfb99.jpg",
+      "example": "error-3caa1180e578667e7c3cfb99.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/95a1478ce3e99921d608d1b3.jpg",
+      "example": "error-95a1478ce3e99921d608d1b3.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 2,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/84cca97ac50120a4396c72e7.jpg",
+      "example": "error-84cca97ac50120a4396c72e7.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/2ebe1ecd4d7c31d2fe6063f8.jpg",
+      "example": "error-2ebe1ecd4d7c31d2fe6063f8.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/512054b66c82bbb11d2246c0.jpg",
+      "example": "error-512054b66c82bbb11d2246c0.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/2289321b04eb740b16065dbc.jpg",
+      "example": "error-2289321b04eb740b16065dbc.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/cc7911122a30efb3d17053a8.jpg",
+      "example": "error-cc7911122a30efb3d17053a8.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/1a579bb5b5d3752d9361a184.jpg",
+      "example": "error-1a579bb5b5d3752d9361a184.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/28c1a48ad095d9a55914c5b2.jpg",
+      "example": "error-28c1a48ad095d9a55914c5b2.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 2,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/a32a2d2d4f2dda994fa49eff.jpg",
+      "example": "error-a32a2d2d4f2dda994fa49eff.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/c454df4dec8664cb313138b7.jpg",
+      "example": "error-c454df4dec8664cb313138b7.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    }
+  ],
+  "allowed_classes": [
+    "JumpingSpider"
+  ],
+  "max_det": 300,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}

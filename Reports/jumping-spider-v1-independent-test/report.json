@@ -1,0 +1,93 @@
+{
+  "mode": "test",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "inaturalist",
+      "url": "https://www.inaturalist.org",
+      "license": "Per-photo CC BY or CC0; attribution retained",
+      "reviewed": false
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated",
+    "JumpingSpider covers Salticidae family only; scores do not establish recognition of all spiders or identification of one biological species"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\jumping-spider-v1-yolov8m-training\\train\\weights\\best.pt",
+  "architecture": "DetectionModel",
+  "sha256": "7b8df63aadfd51dbd05199cb39713180a220806d31928ed95a17fe7700ba5ecb",
+  "dataset_version": "fc0d4a3e5a71c4f27ac7de29fe0066ca8c23f5c31477f604907ed920b77b316e",
+  "split": "test",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.174",
+  "model_names": {
+    "0": "JumpingSpider"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "JumpingSpider",
+      "precision": 1.0,
+      "recall": 0.9164799851610774,
+      "mAP50": 0.9663636363636362,
+      "mAP50_95": 0.711402041530448,
+      "labels": 13
+    }
+  ],
+  "images": 13,
+  "excluded_samples": [],
+  "ground_truth_instances": 13,
+  "false_positive_images": 0,
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "JumpingSpider",
+      "true_positive": 11,
+      "false_positive": 0,
+      "false_negative": 2,
+      "precision": 1.0,
+      "recall": 0.8461538461538461
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 291.1391307671483,
+  "p95_inference_ms": 683.2827599719152,
+  "cold_first_image_ms": 1306.6055999370292,
+  "warm_mean_ms": 206.51692500299154,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images/test/2664105-2994498.jpg",
+      "example": "error-2664105-2994498.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/4286336-5137976.jpg",
+      "example": "error-4286336-5137976.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    }
+  ],
+  "allowed_classes": [
+    "JumpingSpider"
+  ],
+  "max_det": 300,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}

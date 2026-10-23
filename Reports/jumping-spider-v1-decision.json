@@ -1,0 +1,90 @@
+{
+  "status": "REJECTED_NEGATIVE_REGRESSION",
+  "deployment_accepted": false,
+  "service_routed": false,
+  "training_completed": true,
+  "epochs": 60,
+  "elapsed_seconds": 4045.2,
+  "weight": "object-detection-demo\\weights\\candidates\\jumping-spider-v1-yolov8m\\best.pt",
+  "sha256": "7b8df63aadfd51dbd05199cb39713180a220806d31928ed95a17fe7700ba5ecb",
+  "operating_confidence": 0.65,
+  "results": {
+    "final-validation": {
+      "images": 13,
+      "operating": [
+        {
+          "name": "JumpingSpider",
+          "true_positive": 12,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.9230769230769231,
+          "recall": 0.9230769230769231
+        }
+      ],
+      "AP": [
+        {
+          "class_id": 0,
+          "name": "JumpingSpider",
+          "precision": 0.9192434729611894,
+          "recall": 0.9230769230769231,
+          "mAP50": 0.8773076923076923,
+          "mAP50_95": 0.7386161338661339,
+          "labels": 13
+        }
+      ],
+      "false_positive_images": 1,
+      "warm_mean_inference_ms": 201.93053333787248
+    },
+    "independent-test": {
+      "images": 13,
+      "operating": [
+        {
+          "name": "JumpingSpider",
+          "true_positive": 11,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": 1.0,
+          "recall": 0.8461538461538461
+        }
+      ],
+      "AP": [
+        {
+          "class_id": 0,
+          "name": "JumpingSpider",
+          "precision": 1.0,
+          "recall": 0.9164799851610774,
+          "mAP50": 0.9663636363636362,
+          "mAP50_95": 0.711402041530448,
+          "labels": 13
+        }
+      ],
+      "false_positive_images": 0,
+      "warm_mean_inference_ms": 206.51692500299154
+    },
+    "negative-regression": {
+      "images": 52,
+      "operating": [
+        {
+          "name": "JumpingSpider",
+          "true_positive": 0,
+          "false_positive": 39,
+          "false_negative": 0,
+          "precision": 0.0,
+          "recall": null
+        }
+      ],
+      "AP": [],
+      "false_positive_images": 31,
+      "warm_mean_inference_ms": 202.85429215223036
+    }
+  },
+  "reason": "Positive-only fine-tuning retains broad object responses; 39 false detections on 52 negative regression images. Dog false positive and glove false positive visually confirmed. No deployment.",
+  "cause_scope": "Observed failure consistent with missing hard negatives; causal improvement not yet validated.",
+  "next_work": "Add separately sourced reviewed training negatives without reusing observed validation/test or regression backgrounds; preserve existing folds and test history.",
+  "pico_validation": "No positive PICO targets; historical negative frames are regression only",
+  "reports": {
+    "final-validation": "Reports/jumping-spider-v1-final-validation/report.json",
+    "independent-test": "Reports/jumping-spider-v1-independent-test/report.json",
+    "negative-regression": "Reports/jumping-spider-v1-negative-regression/report.json"
+  }
+}
