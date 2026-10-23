@@ -93,6 +93,7 @@ public static class BridgeStereoBuild
         var settings = PXR_ProjectSetting.GetProjectConfig();
         settings.videoSeeThrough = true; settings.spatialMesh = false; settings.secureMR = false;
         EditorUtility.SetDirty(settings);
+        new GameObject("Park Scene Entry").AddComponent<MagicMR.ParkLobby>();
         EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(), "Assets/Scenes/BridgeStereoFusion.unity");
         // The ordinary Unity Build/Build And Run must now run the integrated main scene.
         var scenes = new System.Collections.Generic.List<EditorBuildSettingsScene>();
@@ -102,6 +103,7 @@ public static class BridgeStereoBuild
         scenes.Add(new EditorBuildSettingsScene("Assets/Scenes/BridgeStereoFusion.unity", true));
         EditorBuildSettings.scenes = scenes.ToArray();
         AssetDatabase.SaveAssets();
+        ParkContentBuilder.GenerateAll();
     }
     // A successful Android build can still be a flat app if XR Plug-in
     // Management lost its Android loader. This scene uses PXR APIs directly,
@@ -148,10 +150,9 @@ public static class BridgeStereoBuild
         PlayerSettings.SetGraphicsAPIs(BuildTarget.Android,
             new[] { GraphicsDeviceType.OpenGLES3 });
         FlowerModelBuilder.Generate();
-        RightHandSpellVfxChecks.Run();
         StereoIntegrationChecks.Run();
-        RequestedInteractionChecks.Run();
         Configure();
+        ParkSharedInteractionChecks.Run();
         Directory.CreateDirectory("Builds/Android");
         string originalId = PlayerSettings.GetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android);
         string originalName = PlayerSettings.productName;
@@ -176,13 +177,13 @@ public static class BridgeStereoBuild
         PlayerSettings.Android.keystorePass = "android";
         PlayerSettings.Android.keyaliasName = "androiddebugkey";
         PlayerSettings.Android.keyaliasPass = "android";
-        PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android,"com.yn.picmagicmr.stereo.optimized");
-        PlayerSettings.productName = "Magic MR 优化版";
-        PlayerSettings.bundleVersion = "1.11.0";
-        PlayerSettings.Android.bundleVersionCode = 24;
+        PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android,"com.yn.picmagicmr.park");
+        PlayerSettings.productName = "Magic MR Park";
+        PlayerSettings.bundleVersion = "1.13.13";
+        PlayerSettings.Android.bundleVersionCode = 51;
         var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions {
-            scenes = new[] { "Assets/Scenes/BridgeStereoFusion.unity" },
-            locationPathName = "Builds/Android/BridgeStereoFusion.apk",
+            scenes = System.Array.ConvertAll(System.Array.FindAll(EditorBuildSettings.scenes, scene => scene.enabled), scene => scene.path),
+            locationPathName = "Builds/Android/MagicMRPark.apk",
             target = BuildTarget.Android, options = BuildOptions.Development });
         Debug.Log("BRIDGE_STEREO_BUILD=" + report.summary.result);
         if (report.summary.result != BuildResult.Succeeded) throw new Exception("Stereo integration build failed");

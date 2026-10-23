@@ -96,12 +96,12 @@ namespace MagicMR
             }
 
 #if XR_HANDS_1_1_OR_NEWER
-            var subsystems = new System.Collections.Generic.List<XRHandSubsystem>();
-            SubsystemManager.GetSubsystems(subsystems);
-            if (subsystems.Count == 0 || !subsystems[0].running)
-            { m_HoldTimer = 0; ResetChargeVisual(); return; }
-
-            var subsystem = subsystems[0];
+            var subsystem = ParkHandTracking.Current;
+            if (subsystem == null) {
+                m_HoldTimer=0f;
+                ResetChargeVisual();
+                return;
+            }
             var near =
                 IsPinchNearButton(subsystem.leftHand) ||
                 (FindFirstObjectByType<TabletopInteractionBase>() == null && IsPinchNearButton(subsystem.rightHand));
@@ -139,7 +139,7 @@ namespace MagicMR
                 return false;
 
             var pinchDist = Vector3.Distance(thumb.position, index.position);
-            if (!float.IsFinite(pinchDist) || pinchDist > .035f)
+            if (pinchDist > StudySpec.HoldPinchDistanceThreshold)
                 return false;
 
             var pinchPoint = (thumb.position + index.position) * 0.5f;

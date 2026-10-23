@@ -117,10 +117,10 @@ public static class StereoPatchMatcher
         return result;
     }
 
-    static Match MatchPoint(byte[] left, byte[] right, int width, int height, int x, int y)
+    static Match MatchPoint(byte[] left, byte[] right, int width, int height, int x, int y, bool reverse = false)
     {
         var result = new Match();
-        int maxDisparity = Math.Min(MaxDisparity, x - PatchRadiusX - 1);
+        int maxDisparity = Math.Min(MaxDisparity, reverse ? width-x-PatchRadiusX-2 : x - PatchRadiusX - 1);
         if (x - PatchRadiusX < 0 || x + PatchRadiusX >= width ||
             maxDisparity <= MinDisparity || y - PatchRadiusY - MaxVerticalOffset < 0 ||
             y + PatchRadiusY + MaxVerticalOffset >= height)
@@ -144,8 +144,8 @@ public static class StereoPatchMatcher
 
         for (int disparity = MinDisparity; disparity <= maxDisparity; disparity++)
         {
-            int rightX = x - disparity;
-            if (rightX - PatchRadiusX < 0) continue;
+            int rightX = reverse ? x + disparity : x - disparity;
+            if (rightX - PatchRadiusX < 0 || rightX + PatchRadiusX >= width) continue;
             for (int dy = -MaxVerticalOffset; dy <= MaxVerticalOffset; dy++)
             {
                 int rightY = y + dy;
@@ -205,6 +205,12 @@ public static class StereoPatchMatcher
             if (subpixel > 1f) subpixel = 1f;
         }
 
+        if (!reverse)
+        {
+            var back = MatchPoint(right,left,width,height,x-bestDisparity,y+offsets[bestDisparity],true);
+            if (!back.valid || Math.Abs(back.disparity-(bestDisparity+subpixel))>1.5f ||
+                Math.Abs(back.verticalOffset+offsets[bestDisparity])>1) return result;
+        }
         result.valid = true;
         result.disparity = bestDisparity + subpixel;
         result.confidence = confidence;

@@ -1,0 +1,422 @@
+{
+  "architecture": "YOLO detection",
+  "task": "detect",
+  "classes": {
+    "0": "Cockroach",
+    "1": "Spider"
+  },
+  "allowed_classes": [
+    "Spider"
+  ],
+  "unity": {
+    "0": null,
+    "1": "ParkBugs"
+  },
+  "sha256": "67261d273375834b509cdf4b314c897c491d7f092f295d9e608f7f38b6af9e1d",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.174",
+  "dataset": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\bugs-joint-public-v3",
+  "dataset_sha256": "c98ce9ef439c980e9dfbd3de54907e022466b16e874b5f1c5245b9c313be168e",
+  "data_sources": [
+    {
+      "id": "inaturalist",
+      "inherited_records": [
+        {
+          "id": "inaturalist",
+          "license": "Per-photo CC BY or CC0; attribution in samples",
+          "url": "https://www.inaturalist.org",
+          "reviewed": true
+        },
+        {
+          "id": "inaturalist",
+          "license": "Per-photo CC BY or CC0, attribution retained",
+          "url": "https://www.inaturalist.org",
+          "reviewed": false
+        }
+      ]
+    },
+    {
+      "id": "openimages-v7",
+      "inherited_records": [
+        {
+          "id": "openimages-v7",
+          "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+          "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+          "reviewed": true
+        },
+        {
+          "id": "openimages-v7",
+          "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+          "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+          "reviewed": true
+        }
+      ]
+    }
+  ],
+  "parameters": {
+    "python": "3.13.15",
+    "torch": "2.13.0+cu126",
+    "ultralytics": "8.4.173",
+    "device": "0",
+    "args": {
+      "mode": "train",
+      "data": "Datasets/bugs-joint-public-v3/data.yaml",
+      "model": "object-detection-demo/weights/candidates/bugs-joint-yolov8m-v1/best.pt",
+      "out": "Reports/bugs-joint-v3-yolov8m-finetune",
+      "baseline_report": "Reports/bugs-joint-v3-parent-baseline/report.json",
+      "resume": null,
+      "epochs": 60,
+      "seed": 4747,
+      "imgsz": 640,
+      "task": "detect",
+      "batch": 4,
+      "workers": 0,
+      "text_cache": null,
+      "learning_rate": 0.0003,
+      "allow_public_pilot": true
+    },
+    "dataset_sources": [
+      {
+        "id": "inaturalist",
+        "inherited_records": [
+          {
+            "id": "inaturalist",
+            "license": "Per-photo CC BY or CC0; attribution in samples",
+            "url": "https://www.inaturalist.org",
+            "reviewed": true
+          },
+          {
+            "id": "inaturalist",
+            "license": "Per-photo CC BY or CC0, attribution retained",
+            "url": "https://www.inaturalist.org",
+            "reviewed": false
+          }
+        ]
+      },
+      {
+        "id": "openimages-v7",
+        "inherited_records": [
+          {
+            "id": "openimages-v7",
+            "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+            "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+            "reviewed": true
+          },
+          {
+            "id": "openimages-v7",
+            "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+            "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+            "reviewed": true
+          }
+        ]
+      }
+    ],
+    "deployment_accepted": false,
+    "pico_validation": "PENDING: requires independent annotated PICO captures and end-to-end device verification",
+    "dataset_version": "c98ce9ef439c980e9dfbd3de54907e022466b16e874b5f1c5245b9c313be168e"
+  },
+  "validation": {
+    "mode": "baseline",
+    "domain": "public-source-pilot",
+    "deployment_accepted": false,
+    "dataset_sources": [
+      {
+        "id": "inaturalist",
+        "inherited_records": [
+          {
+            "id": "inaturalist",
+            "license": "Per-photo CC BY or CC0; attribution in samples",
+            "url": "https://www.inaturalist.org",
+            "reviewed": true
+          },
+          {
+            "id": "inaturalist",
+            "license": "Per-photo CC BY or CC0, attribution retained",
+            "url": "https://www.inaturalist.org",
+            "reviewed": false
+          }
+        ]
+      },
+      {
+        "id": "openimages-v7",
+        "inherited_records": [
+          {
+            "id": "openimages-v7",
+            "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+            "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+            "reviewed": true
+          },
+          {
+            "id": "openimages-v7",
+            "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+            "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+            "reviewed": true
+          }
+        ]
+      }
+    ],
+    "limitations": [
+      "Small source-grouped subset; not an official benchmark score",
+      "No PICO targets evaluated"
+    ],
+    "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\bugs-joint-v3-yolov8m-finetune\\train\\weights\\best.pt",
+    "architecture": "DetectionModel",
+    "sha256": "67261d273375834b509cdf4b314c897c491d7f092f295d9e608f7f38b6af9e1d",
+    "dataset_version": "c98ce9ef439c980e9dfbd3de54907e022466b16e874b5f1c5245b9c313be168e",
+    "split": "val",
+    "torch": "2.14.1+cpu",
+    "ultralytics": "8.4.174",
+    "model_names": {
+      "0": "Cockroach",
+      "1": "Spider"
+    },
+    "per_class": [
+      {
+        "class_id": 1,
+        "name": "Spider",
+        "precision": 0.8514389014921795,
+        "recall": 0.8229191232387912,
+        "mAP50": 0.835,
+        "mAP50_95": 0.6011249999999999,
+        "labels": 7
+      }
+    ],
+    "images": 65,
+    "excluded_samples": [],
+    "ground_truth_instances": 7,
+    "false_positive_images": 0,
+    "ap_scope": "Positive target instances",
+    "operating_confidence": 0.65,
+    "operating_iou": 0.5,
+    "operating_per_class": [
+      {
+        "name": "Cockroach",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "Spider",
+        "true_positive": 5,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": 1.0,
+        "recall": 0.7142857142857143
+      }
+    ],
+    "operating_confidence_curve": [],
+    "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+    "mean_inference_ms": 222.1782061529946,
+    "p95_inference_ms": 272.04899999924237,
+    "cold_first_image_ms": 1401.69109999988,
+    "warm_mean_ms": 203.748317186637,
+    "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+    "imgsz": 640,
+    "rect": true,
+    "device": "cpu",
+    "errors": [
+      {
+        "image": "images/val/6cfbfd48b78b672a6bd6c180.jpg",
+        "example": "error-6cfbfd48b78b672a6bd6c180.jpg",
+        "ground_truth": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.65
+      },
+      {
+        "image": "images/val/f776bf288143605e649e82d2.jpg",
+        "example": "error-f776bf288143605e649e82d2.jpg",
+        "ground_truth": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.65
+      }
+    ],
+    "allowed_classes": [
+      "Spider"
+    ],
+    "max_det": 8,
+    "nms_iou": 0.7,
+    "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+    "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+  },
+  "test": {
+    "mode": "test",
+    "domain": "public-source-pilot",
+    "deployment_accepted": false,
+    "dataset_sources": [
+      {
+        "id": "inaturalist",
+        "inherited_records": [
+          {
+            "id": "inaturalist",
+            "license": "Per-photo CC BY or CC0; attribution in samples",
+            "url": "https://www.inaturalist.org",
+            "reviewed": true
+          },
+          {
+            "id": "inaturalist",
+            "license": "Per-photo CC BY or CC0, attribution retained",
+            "url": "https://www.inaturalist.org",
+            "reviewed": false
+          }
+        ]
+      },
+      {
+        "id": "openimages-v7",
+        "inherited_records": [
+          {
+            "id": "openimages-v7",
+            "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+            "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+            "reviewed": true
+          },
+          {
+            "id": "openimages-v7",
+            "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+            "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+            "reviewed": true
+          }
+        ]
+      }
+    ],
+    "limitations": [
+      "Small source-grouped subset; not an official benchmark score",
+      "No PICO targets evaluated"
+    ],
+    "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\bugs-joint-v3-yolov8m-finetune\\train\\weights\\best.pt",
+    "architecture": "DetectionModel",
+    "sha256": "67261d273375834b509cdf4b314c897c491d7f092f295d9e608f7f38b6af9e1d",
+    "dataset_version": "c98ce9ef439c980e9dfbd3de54907e022466b16e874b5f1c5245b9c313be168e",
+    "split": "test",
+    "torch": "2.14.1+cpu",
+    "ultralytics": "8.4.174",
+    "model_names": {
+      "0": "Cockroach",
+      "1": "Spider"
+    },
+    "per_class": [
+      {
+        "class_id": 1,
+        "name": "Spider",
+        "precision": 0.8568437585779733,
+        "recall": 0.9,
+        "mAP50": 0.905,
+        "mAP50_95": 0.70375,
+        "labels": 10
+      }
+    ],
+    "images": 63,
+    "excluded_samples": [],
+    "ground_truth_instances": 10,
+    "false_positive_images": 1,
+    "ap_scope": "Positive target instances",
+    "operating_confidence": 0.65,
+    "operating_iou": 0.5,
+    "operating_per_class": [
+      {
+        "name": "Cockroach",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "Spider",
+        "true_positive": 9,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.9,
+        "recall": 0.9
+      }
+    ],
+    "operating_confidence_curve": [],
+    "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+    "mean_inference_ms": 203.74667142910073,
+    "p95_inference_ms": 262.26134000316955,
+    "cold_first_image_ms": 277.43999999802327,
+    "warm_mean_ms": 202.55806935540843,
+    "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+    "imgsz": 640,
+    "rect": true,
+    "device": "cpu",
+    "errors": [
+      {
+        "image": "images/test/97537dab9ee464168331552b.jpg",
+        "example": "error-97537dab9ee464168331552b.jpg",
+        "ground_truth": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.65
+      },
+      {
+        "image": "images/test/0ff5f8fc76a7b520d3930140.jpg",
+        "example": "error-0ff5f8fc76a7b520d3930140.jpg",
+        "ground_truth": 1,
+        "true_positives": 1,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "confidence": 0.65
+      }
+    ],
+    "allowed_classes": [
+      "Spider"
+    ],
+    "max_det": 8,
+    "nms_iou": 0.7,
+    "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+    "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+  },
+  "status": "REJECTED_INDEPENDENT_TEST",
+  "service_routed": false,
+  "pico_validation": "NOT_PERFORMED for this model",
+  "training_outputs": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\bugs-joint-v3-yolov8m-finetune\\train",
+  "resume_weight": null,
+  "last_weight": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\bugs-joint-v3-yolov8m-finetune\\train\\weights\\last.pt",
+  "optimizer_resume_available": false,
+  "last_weight_usage": "Fine-tuning initializer only; optimizer state stripped or unavailable",
+  "validation_report": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\bugs-joint-v3-spider-only-val\\report.json",
+  "test_report": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\bugs-joint-v3-spider-only-test\\report.json",
+  "inference_timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "warm_mean_inference_ms": 203.748317186637,
+  "limitations": [
+    "Candidate packaging does not authorize deployment or prove PICO performance",
+    "New observer-disjoint public test: 7/19 true positives at 0.65; insufficient recall"
+  ],
+  "research_service_routed": true,
+  "decision_report": "Reports/bugs-joint-v3-class-selection-decision.json",
+  "tcp_verification": "Reports/spider-joint-v3-cuda-tcp.json",
+  "tcp_accuracy": "Reports/spider-joint-v3-cuda-tcp-accuracy.json",
+  "research_profile": "object-detection-demo/scene_profiles.spider_yolov8m_v3_research.json",
+  "service_confidence": 0.65,
+  "independent_test_report": "Reports\\spider-joint-v3-independent-observer-test-v6\\report.json",
+  "independent_test_dataset": "Datasets/spider-independent-observer-test-v6",
+  "independent_test_operating": [
+    {
+      "name": "Spider",
+      "true_positive": 7,
+      "false_positive": 0,
+      "false_negative": 12,
+      "precision": 1.0,
+      "recall": 0.3684210526315789
+    }
+  ],
+  "independent_test_metrics": [
+    {
+      "class_id": 0,
+      "name": "Spider",
+      "precision": 0.9589093949529568,
+      "recall": 0.5263157894736842,
+      "mAP50": 0.6491051472387633,
+      "mAP50_95": 0.4369973677259468,
+      "labels": 19
+    }
+  ],
+  "deployment_accepted": false
+}

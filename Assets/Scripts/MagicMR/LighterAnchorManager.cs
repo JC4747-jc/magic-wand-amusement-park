@@ -351,11 +351,9 @@ namespace MagicMR
             rotation = m_Target != null ? m_Target.rotation : Quaternion.identity;
 
 #if XR_HANDS_1_1_OR_NEWER
-            var subsystems = new System.Collections.Generic.List<XRHandSubsystem>();
-            SubsystemManager.GetSubsystems(subsystems);
-            if (subsystems.Count > 0)
+            var subsystem = ParkHandTracking.Current;
+            if (subsystem != null)
             {
-                var subsystem = subsystems[0];
                 if (TryPalm(subsystem.rightHand, out var rightPalm) &&
                     Vector3.Distance(rightPalm.position, position) < 0.2f)
                 {

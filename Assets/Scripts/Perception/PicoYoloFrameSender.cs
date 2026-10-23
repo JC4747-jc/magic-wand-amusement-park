@@ -48,10 +48,13 @@ namespace Perception
         byte[] m_PicfPacketBuffer;
 
         public uint LastSentFrameId { get; private set; }
+        public event Action<uint,byte[]> EncodedFrameSent;
         public int LastSentWidth { get; private set; }
         public int LastSentHeight { get; private set; }
         public int LastJpegBytes { get; private set; }
         public bool FlipVerticallyBeforeEncode => m_FlipVerticallyBeforeEncode;
+        // Zero preserves the main lighter v1 wire protocol. Park scenes use v2.
+        public byte SceneProfile { get; set; }
         public int MaxLongEdge => m_MaxLongEdge;
 
         /// <summary>Orientation notes recorded once for Phase 2.</summary>
@@ -168,12 +171,13 @@ namespace Perception
             uint frameId = m_NextFrameId++;
             long timestampMs = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
 
-            int packetLen = PicfHeaderSize + jpeg.Length;
+            int packetLen = PicfHeaderSize + (SceneProfile>0?1:0) + jpeg.Length;
             byte[] packet = RentPicfPacketBuffer(packetLen);
             int o = 0;
             Buffer.BlockCopy(Magic, 0, packet, o, 4);
             o += 4;
-            packet[o++] = (byte)ProtocolVersion;
+            packet[o++] = SceneProfile>0?(byte)2:(byte)ProtocolVersion;
+            if(SceneProfile>0)packet[o++]=SceneProfile;
             WriteU32LE(packet, ref o, frameId);
             WriteI64LE(packet, ref o, timestampMs);
             WriteU32LE(packet, ref o, (uint)width);
@@ -188,6 +192,9 @@ namespace Perception
             LastSentWidth = width;
             LastSentHeight = height;
             LastJpegBytes = jpeg.Length;
+            // JPEG owns its buffer; subscribers may retain a bounded preview cache.
+            try { EncodedFrameSent?.Invoke(frameId,jpeg); }
+            catch(Exception error) { Debug.LogWarning("Sent-frame preview listener: "+error.Message); }
 
             if (m_LogEveryFrame)
             {

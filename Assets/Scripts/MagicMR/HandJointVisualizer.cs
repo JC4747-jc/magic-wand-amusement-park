@@ -20,7 +20,6 @@ namespace MagicMR
 
 #if XR_HANDS_1_1_OR_NEWER
         XRHandSubsystem m_Subsystem;
-        static readonly List<XRHandSubsystem> s_Subsystems = new List<XRHandSubsystem>();
 
         readonly List<Transform> m_LeftJoints = new List<Transform>();
         readonly List<Transform> m_RightJoints = new List<Transform>();
@@ -30,9 +29,7 @@ namespace MagicMR
 
         void OnEnable()
         {
-            SubsystemManager.GetSubsystems(s_Subsystems);
-            if (s_Subsystems.Count > 0)
-                m_Subsystem = s_Subsystems[0];
+            m_Subsystem = ParkHandTracking.Current;
 
             m_JointCount = XRHandJointID.EndMarker.ToIndex();
             CreateMaterial();
@@ -78,13 +75,10 @@ namespace MagicMR
 
         void Update()
         {
-            if (m_Subsystem == null)
-            {
-                SubsystemManager.GetSubsystems(s_Subsystems);
-                if (s_Subsystems.Count > 0)
-                    m_Subsystem = s_Subsystems[0];
-                if (m_Subsystem == null)
-                    return;
+            m_Subsystem = ParkHandTracking.Current;
+            if (m_Subsystem == null) {
+                SetActive(m_LeftJoints,false);SetActive(m_RightJoints,false);
+                return;
             }
 
             UpdateHand(m_Subsystem.leftHand, m_LeftJoints);

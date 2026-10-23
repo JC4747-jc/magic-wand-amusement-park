@@ -26,6 +26,43 @@ public sealed class PicoStereoCapture : MonoBehaviour
     }
 
     public Perception.StereoYoloLocator locator;
+    public Perception.ParkStereoReceiver parkReceiver;
+    public bool recordStereo;
+    public int maxRecordPairs=120;
+    int recordedPairs;
+    public static PicoStereoCapture Active { get; private set; }
+    void Awake() { Active=this; }
+    [Serializable] sealed class ReplayPose { public long frame_id,capture_ns; public Pose head,camera; }
+    ReplayPair pendingRecord;
+    byte[] pendingLeftGray,pendingRightGray,pendingLeftRgba;
+    long lastRecordedFrame=-1;
+    public void RecordAcceptedPose(long frameId,long ns,Pose head,Pose camera) {
+        if(!recordStereo || recordDirectory==null || pendingRecord==null || pendingRecord.left_ns!=ns ||
+            recordedPairs>=maxRecordPairs || Time.unscaledTime<nextRecord || frameId==lastRecordedFrame)return;
+        try {
+            string stem=ns.ToString(invariant);
+            pendingRecord.left=stem+"-left.gray";pendingRecord.right=stem+"-right.gray";pendingRecord.left_rgba=stem+"-left.rgba";
+            File.WriteAllBytes(Path.Combine(recordDirectory,pendingRecord.left),pendingLeftGray);
+            File.WriteAllBytes(Path.Combine(recordDirectory,pendingRecord.right),pendingRightGray);
+            File.WriteAllBytes(Path.Combine(recordDirectory,pendingRecord.left_rgba),pendingLeftRgba);
+            File.AppendAllText(Path.Combine(recordDirectory,"pairs.jsonl"),JsonUtility.ToJson(pendingRecord)+"\n");
+            File.AppendAllText(Path.Combine(recordDirectory,"poses.jsonl"),JsonUtility.ToJson(new ReplayPose { frame_id=frameId,capture_ns=ns,head=head,camera=camera })+"\n");
+            recordedPairs++;lastRecordedFrame=frameId;nextRecord=Time.unscaledTime+1;
+        } catch(Exception error) {
+            recordStereo=false;
+            Debug.LogError("[StereoReplay] RECORDING_FAILED: "+error.Message+"; camera processing continues, incomplete journal must be rejected");
+        }
+    }
+    float nextRecord;
+    string recordDirectory;
+    [Serializable] sealed class ReplayPair {
+        public long left_ns,right_ns;
+        public int width=Width,height=Height;
+        public Vector4 intrinsics;
+        public Pose cameraPose;
+        public float baseline;
+        public string left,right,left_rgba;
+    }
 
     static readonly XrCameraIdPICO Left = XrCameraIdPICO.XR_CAMERA_ID_RGB_LEFT_PICO;
     static readonly XrCameraIdPICO Right = XrCameraIdPICO.XR_CAMERA_ID_RGB_RIGHT_PICO;
@@ -66,6 +103,8 @@ public sealed class PicoStereoCapture : MonoBehaviour
             }
 
             string id = DateTime.UtcNow.ToString("yyyyMMdd-HHmmss", invariant);
+            recordStereo |= File.Exists(Path.Combine(Application.persistentDataPath,"record-stereo.enabled"));
+            if(recordStereo) { recordDirectory=Path.Combine(Application.persistentDataPath,"stereo-replay-"+id); Directory.CreateDirectory(recordDirectory); }
             journal?.Dispose();
             journal = new StreamWriter(Path.Combine(Application.persistentDataPath,
                 "stereo-depth-" + id + ".log")) { AutoFlush = true };
@@ -112,7 +151,23 @@ public sealed class PicoStereoCapture : MonoBehaviour
                 }
 
                 pairCount++;
-                locator?.AcceptPair(leftFrame.rgba, ToGray(leftFrame.rgba), ToGray(rightFrame.rgba), leftK, leftE, baselineMeters, leftFrame.captureTime);
+                byte[] leftGray=ToGray(leftFrame.rgba),rightGray=ToGray(rightFrame.rgba);
+                // Recording cadence is evaluated only after a successful PICF send.
+                // AcceptPair synchronously reports the exact sent capture timestamp.
+                if(recordStereo && recordedPairs<maxRecordPairs) {
+                    pendingRecord=new ReplayPair {left_ns=leftFrame.captureTime,right_ns=rightFrame.captureTime,baseline=baselineMeters,
+                        intrinsics=new Vector4(leftK.focalLength.X,leftK.focalLength.Y,leftK.principalPoint.X,leftK.principalPoint.Y),
+                        cameraPose=new Pose(new Vector3(leftE.pose.Position.X,leftE.pose.Position.Y,leftE.pose.Position.Z),new Quaternion(leftE.pose.Orientation.X,leftE.pose.Orientation.Y,leftE.pose.Orientation.Z,leftE.pose.Orientation.W))};
+                    pendingLeftGray=leftGray;pendingRightGray=rightGray;pendingLeftRgba=leftFrame.rgba;
+                }
+                try {
+                    if (parkReceiver != null && parkReceiver.isActiveAndEnabled)
+                        parkReceiver.AcceptPair(leftFrame.rgba,leftGray,rightGray, leftK, leftE, baselineMeters, leftFrame.captureTime);
+                    else
+                        locator?.AcceptPair(leftFrame.rgba,leftGray,rightGray, leftK, leftE, baselineMeters, leftFrame.captureTime);
+                } finally {
+                    pendingRecord=null;pendingLeftGray=null;pendingRightGray=null;pendingLeftRgba=null;
+                }
             }
         }
         catch (Exception e)
@@ -237,6 +292,27 @@ public sealed class PicoStereoCapture : MonoBehaviour
         if (stopping) throw new OperationCanceledException();
     }
 
+    [Serializable] sealed class CalibrationSnapshot
+    {
+        public string captured_utc, device_model, device_id, operating_system;
+        public string parameter_source="PXR_CameraImage device calibration";
+        public string units="focal/principal: pixels; camera translation/baseline: meters";
+        public string camera_pose_frame="SDK camera pose relative to XR device; optical conversion applied separately";
+        public string distortion_status="UNKNOWN: SDK XrCameraIntrinsics exposes no distortion coefficients";
+        public string rectification_status="UNVERIFIED: PINHOLE session requested; epipolar residual measurement required";
+        public int width=Width,height=Height;
+        public Vector4 left_intrinsics,right_intrinsics;
+        public Vector2 left_fov_degrees,right_fov_degrees;
+        public Pose left_camera_to_headset,right_camera_to_headset;
+        public float baseline_m;
+    }
+
+    static Pose CalibrationPose(XrCameraExtrinsics extrinsics)
+    {
+        var p=extrinsics.pose.Position;var q=extrinsics.pose.Orientation;
+        return new Pose(new Vector3(p.X,p.Y,p.Z),new Quaternion(q.X,q.Y,q.Z,q.W));
+    }
+
     void ReadCalibration()
     {
         phase = "READING_CALIBRATION";
@@ -254,6 +330,23 @@ public sealed class PicoStereoCapture : MonoBehaviour
               " baseline_m=" + baselineMeters.ToString("F6", invariant) +
               " left_q=" + QuaternionText(leftE.pose.Orientation) +
               " right_q=" + QuaternionText(rightE.pose.Orientation));
+        var snapshot=new CalibrationSnapshot {
+            captured_utc=DateTime.UtcNow.ToString("O",invariant),
+            device_model=SystemInfo.deviceModel,device_id=SystemInfo.deviceUniqueIdentifier,
+            operating_system=SystemInfo.operatingSystem,
+            left_intrinsics=new Vector4(leftK.focalLength.X,leftK.focalLength.Y,leftK.principalPoint.X,leftK.principalPoint.Y),
+            right_intrinsics=new Vector4(rightK.focalLength.X,rightK.focalLength.Y,rightK.principalPoint.X,rightK.principalPoint.Y),
+            left_fov_degrees=new Vector2(leftK.fov.X,leftK.fov.Y),right_fov_degrees=new Vector2(rightK.fov.X,rightK.fov.Y),
+            left_camera_to_headset=CalibrationPose(leftE),right_camera_to_headset=CalibrationPose(rightE),
+            baseline_m=baselineMeters
+        };
+        try {
+            string calibrationPath=Path.Combine(recordDirectory??Application.persistentDataPath,"device-calibration.json");
+            File.WriteAllText(calibrationPath,JsonUtility.ToJson(snapshot,true));
+            Trace("CALIBRATION_SNAPSHOT "+calibrationPath+" distortion=UNKNOWN rectification=UNVERIFIED");
+        } catch(Exception error) {
+            Debug.LogWarning("[StereoCapture] Calibration snapshot save failed: "+error.Message);
+        }
     }
 
     PxrResult TryAcquire(XrCameraIdPICO id, long lastTime, out FrameCopy frame)
@@ -338,6 +431,7 @@ public sealed class PicoStereoCapture : MonoBehaviour
 
     void OnDestroy()
     {
+        if(Active==this)Active=null;
         destroyed = true;
         stopping = true;
         StopAndDestroyCameras();

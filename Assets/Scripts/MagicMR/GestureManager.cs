@@ -66,7 +66,6 @@ namespace MagicMR
 
 #if XR_HANDS_1_1_OR_NEWER
         XRHandSubsystem m_HandSubsystem;
-        static readonly List<XRHandSubsystem> s_HandSubsystems = new List<XRHandSubsystem>();
 #endif
 
         public string SubjectId => m_SubjectId;
@@ -85,9 +84,7 @@ namespace MagicMR
             Instance = this;
             BindDetectors();
 #if XR_HANDS_1_1_OR_NEWER
-            SubsystemManager.GetSubsystems(s_HandSubsystems);
-            if (s_HandSubsystems.Count > 0)
-                m_HandSubsystem = s_HandSubsystems[0];
+            m_HandSubsystem = ParkHandTracking.Current;
 #endif
         }
 
@@ -125,16 +122,7 @@ namespace MagicMR
         void Update()
         {
 #if XR_HANDS_1_1_OR_NEWER
-            if (m_HandSubsystem == null)
-            {
-                SubsystemManager.GetSubsystems(s_HandSubsystems);
-                if (s_HandSubsystems.Count > 0)
-                {
-                    m_HandSubsystem = s_HandSubsystems[0];
-                    if (!m_HandSubsystem.running)
-                        m_HandSubsystem.Start();
-                }
-            }
+            m_HandSubsystem = ParkHandTracking.EnsureRunning();
 #endif
             SampleHandForLogging();
         }
@@ -156,7 +144,7 @@ namespace MagicMR
 
             var unified = FindFirstObjectByType<TabletopGestureRecognizer>();
             if (unified != null && unified.isActiveAndEnabled &&
-                !gestureName.StartsWith("tabletop_")) return;
+                !gestureName.StartsWith("tabletop_") && gestureName != "two_hand_spread") return;
             Instance.HandleGesture(dimension, gestureName);
         }
 
@@ -204,8 +192,9 @@ namespace MagicMR
                 if (m_SwipeDetector != null) m_SwipeDetector.enabled = false;
                 if (m_SnapDetector != null) m_SnapDetector.enabled = false;
                 if (m_FistBurstDetector != null) m_FistBurstDetector.enabled = false;
-                // The unified recognizer owns bimanual scaling before checking a right-hand swipe.
-                if (m_ScaleDetector != null) m_ScaleDetector.enabled = false;
+                // Scale is bimanual and intentionally remains separate from the
+                // mutually-exclusive right-hand tabletop recognizer.
+                if (m_ScaleDetector != null) m_ScaleDetector.enabled = true;
                 return;
             }
             // Detectors call Notify() directly. Clear stale UnityEvent wiring so

@@ -187,7 +187,7 @@ namespace Perception
             foreach (var r in renderers) if (r != null) r.forceRenderingOff = !InteractionReady;
             var gesture = FindFirstObjectByType<MagicMR.TabletopGestureRecognizer>();
             RecordTrackingDiagnostics();
-            if (debugText != null) debugText.text = (UsesVisualAverage ? "VISUAL FOLLOW 1.11.0 (3 frames)\n" : "HYBRID GRIP 1.11.0\n") +
+            if (debugText != null) debugText.text = (UsesVisualAverage ? "VISUAL FOLLOW 1.10.0 (3 frames)\n" : "HYBRID GRIP 1.10.0\n") +
                 (TargetLocated && !summoned ? (CanSummon ? "READY - thumbs-up to summon" : "WAIT TO SUMMON - " + state) :
                 InteractionReady ? (IsHeld ? (grip.UsingPalmFallback ? "FOLLOW - brief palm fallback" : !ObjectRecent ? "FOLLOW LEFT GRIP - vision pending" : "FOLLOW LEFT GRIP + vision") : grip.IsHolding ? "VERIFY PICKUP - keep lighter visible" : holdFollowing ? "HOLD - right hand casting" :
                     Time.realtimeSinceStartup - validAt < 1f ? "FOLLOW - right hand to cast" : "HOLD - " + state) : state) +
@@ -245,6 +245,7 @@ namespace Perception
             baseline = separation;
             capturedAt = captureTime;
             pendingId = sender.LastSentFrameId; sentAt = Time.realtimeSinceStartup; waiting = true;
+            PicoStereoCapture.Active?.RecordAcceptedPose(pendingId,timestamp,capturePose,cameraPose);
         }
         void OnDetection(DetectionFrame frame)
         {
@@ -281,9 +282,9 @@ namespace Perception
             // The fixed template is optional evidence, never a prerequisite for YOLO following.
             // Partial occlusion and a changed crop rejected the real lighter in 1.9.2.
             int u = Mathf.RoundToInt((x1 + x2) * .5f), v = Mathf.RoundToInt((y1 + y2) * .5f);
-            // Centered 5x5 patches also cover a lighter seen at typical arm's length.
-            int sx = Mathf.Min(20, Mathf.FloorToInt((x2 - x1) * .35f) - 3);
-            int sy = Mathf.Min(14, Mathf.FloorToInt((y2 - y1) * .35f) - 3);
+            // Keep complete 9x7 patches in the middle 60% of the detected object.
+            int sx = Mathf.Min(24, Mathf.FloorToInt((x2 - x1) * .3f) - 5);
+            int sy = Mathf.Min(16, Mathf.FloorToInt((y2 - y1) * .3f) - 4);
             if (sx < 2 || sy < 2) { reason = "LighterTooSmall"; Invalidate(reason); return false; }
             var estimate = StereoPatchMatcher.EstimateDepth(left, right, 640, 480, u, v,
                 intrinsics.x, baseline, sx, sy);
@@ -294,11 +295,10 @@ namespace Perception
                 (v - intrinsics.w) * depth / intrinsics.y, depth);
             position = capturePose.position + capturePose.rotation * StereoFusionGeometry.OpticalToHead(optical, cameraPose);
             float measuredWidth=(x2-x1)*depth/intrinsics.x;
-            bool upright = TryMeasureUpright(position, u, y1, y2, out var measuredBottom, out float measuredHeight);
-            float objectHeight = upright ? measuredHeight : (y2-y1)*depth/intrinsics.y;
+            float objectHeight=(y2-y1)*depth/intrinsics.y;
             bool objectReliable=detection.confidence>=.5f && quality>=.04f && estimate.acceptedSamples>=5 &&
                 measuredWidth>registeredWidth*.6f && measuredWidth<registeredWidth*1.5f &&
-                upright && objectHeight>registeredHeight*.80f && objectHeight<registeredHeight*1.25f &&
+                objectHeight>registeredHeight*.65f && objectHeight<registeredHeight*1.35f &&
                 x1>4 && x2<636 && y1>4 && y2<476;
             if(!UsesVisualAverage && grip.IsHolding && grip.TryPredictAt(capturedAt,out var predicted))
             {
@@ -351,14 +351,16 @@ namespace Perception
                 return true;
             }
             Vector3 cameraOrigin = capturePose.position + capturePose.rotation * cameraPose.position;
-            if (!CompleteRegistration(detection.confidence, quality, estimate.acceptedSamples, box) ||
-                Time.realtimeSinceStartup - capturedAt > .3f)
-            { reason = "WAITING_FOR_COMPLETE_LIGHTER"; Invalidate(reason); return false; }
-            if (!upright)
+            Vector3 topOptical = new Vector3((u - intrinsics.z) / intrinsics.x, (y1 - intrinsics.w) / intrinsics.y, 1);
+            Vector3 bottomOptical = new Vector3((u - intrinsics.z) / intrinsics.x, (y2 - intrinsics.w) / intrinsics.y, 1);
+            Vector3 topRay = capturePose.rotation * (StereoFusionGeometry.OpticalToHead(topOptical, cameraPose) - cameraPose.position);
+            Vector3 bottomRay = capturePose.rotation * (StereoFusionGeometry.OpticalToHead(bottomOptical, cameraPose) - cameraPose.position);
+            if (!StereoFusionGeometry.TryUprightExtent(position, cameraOrigin, topRay.normalized, bottomRay.normalized,
+                out Vector3 measuredBottom, out float measuredHeight))
             { reason = "WAITING_FOR_UPRIGHT_LIGHTER"; Invalidate(reason); return false; }
             if (!positionGuard.Accept(position, Time.realtimeSinceStartup))
             { reason = "CONFIRMING_POSITION_CHANGE"; Invalidate(reason); return false; }
-            bool locked = tabletopLock.Observe(position, capturedAt, measuredHeight, measuredWidth, measuredBottom.y - position.y);
+            bool locked = tabletopLock.Observe(position, Time.realtimeSinceStartup);
             float blend = 1f / Mathf.Max(1, tabletopLock.SampleCount);
             registeredHeight = Mathf.Lerp(registeredHeight, measuredHeight, blend);
             registeredWidth = Mathf.Lerp(registeredWidth, (x2-x1)*depth/intrinsics.x, blend);
@@ -379,21 +381,6 @@ namespace Perception
             Debug.Log($"[StereoYOLO] frame={pendingId} pixel=({u},{v}) z={depth:F4} world={world:F4} quality={quality:F3}");
             return true;
         }
-        public static bool CompleteRegistration(float confidence, float stereoQuality, int samples, Rect box)
-            => float.IsFinite(confidence) && float.IsFinite(stereoQuality) &&
-                confidence >= .6f && stereoQuality >= .05f && samples >= 6 &&
-                box.width > 0 && box.height > 0 && box.xMin > 4 && box.xMax < 636 && box.yMin > 4 && box.yMax < 476;
-
-        bool TryMeasureUpright(Vector3 center, int u, float y1, float y2, out Vector3 bottom, out float height)
-        {
-            Vector3 origin = capturePose.position + capturePose.rotation * cameraPose.position;
-            Vector3 top = new Vector3((u - intrinsics.z) / intrinsics.x, (y1 - intrinsics.w) / intrinsics.y, 1);
-            Vector3 low = new Vector3((u - intrinsics.z) / intrinsics.x, (y2 - intrinsics.w) / intrinsics.y, 1);
-            Vector3 topRay = capturePose.rotation * (StereoFusionGeometry.OpticalToHead(top, cameraPose) - cameraPose.position);
-            Vector3 bottomRay = capturePose.rotation * (StereoFusionGeometry.OpticalToHead(low, cameraPose) - cameraPose.position);
-            return StereoFusionGeometry.TryUprightExtent(center, origin, topRay.normalized, bottomRay.normalized, out bottom, out height);
-        }
-
         public void Invalidate(string reason)
         {
             if (state != reason || Time.realtimeSinceStartup - lastLogAt > 2f)

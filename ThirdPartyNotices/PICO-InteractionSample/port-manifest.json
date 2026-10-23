@@ -1,0 +1,24 @@
+{
+  "source_repository": "https://github.com/Pico-Developer/InteractionSample-Unity",
+  "source_commit": "a30ba657553fb485b072664b0af874e9cefbd048",
+  "source_file": "Assets/Scripts/CustomGesturesSceneScripts/SimpleStaticHandGesture.cs",
+  "source_sha256": "78838c260c70c34bdb9ac5957e8c71fb2bd7930dd1a60597fbfe0afbe9f07413",
+  "license": "ThirdPartyNotices/PICO-InteractionSample/License.md",
+  "adapted_file": "Assets/Scripts/MagicMR/ParkStaticGestureLatch.cs",
+  "integration_file": "Assets/Scripts/MagicMR/ParkStableHold.cs",
+  "changes": [
+    "Pure condition lifecycle driven by existing shared hand source; no extra XRHandTrackingEvents or XR Rig",
+    "Retain finite pose/time validation, maximum sample gap, drift restart, UI capture cancellation and release requirement",
+    "One Ready per stable hold, explicit reset on interruption; unscaled caller clock"
+  ],
+  "status": "EDITOR_AND_ANDROID_BUILD_PASS_PICO_PENDING",
+  "not_imported": [
+    "PICO sample scenes, rigs, settings and dependencies",
+    "XRI Examples rigs/UI/grab modules",
+    "LitMotion",
+    "ParticleEffectForUGUI"
+  ],
+  "verification_log": "Reports/unity-pico-static-gesture-port-final.log",
+  "android_artifact": "Builds\\Android\\MagicMRPark-1.13.0-plant-sample-candidate.apk",
+  "android_verification": "Reports/plant-sample-v1.13.0-apk-verification.json"
+}

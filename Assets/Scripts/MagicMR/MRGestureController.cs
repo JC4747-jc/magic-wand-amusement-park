@@ -103,7 +103,6 @@ namespace MagicMR
 
 #if XR_HANDS_1_1_OR_NEWER
         XRHandSubsystem m_HandSubsystem;
-        static readonly List<XRHandSubsystem> s_Subsystems = new List<XRHandSubsystem>();
 #endif
 
         public MRState State => m_State;
@@ -601,16 +600,7 @@ namespace MagicMR
         void EnsureHandSubsystem()
         {
 #if XR_HANDS_1_1_OR_NEWER
-            if (m_HandSubsystem != null)
-                return;
-
-            SubsystemManager.GetSubsystems(s_Subsystems);
-            if (s_Subsystems.Count == 0)
-                return;
-
-            m_HandSubsystem = s_Subsystems[0];
-            if (!m_HandSubsystem.running)
-                m_HandSubsystem.Start();
+            m_HandSubsystem = ParkHandTracking.EnsureRunning();
 #endif
         }
     }

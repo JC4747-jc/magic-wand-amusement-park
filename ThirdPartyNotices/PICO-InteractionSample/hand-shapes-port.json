@@ -1,0 +1,35 @@
+{
+  "repository": "Pico-Developer/InteractionSample-Unity",
+  "commit": "a30ba657553fb485b072664b0af874e9cefbd048",
+  "files": [
+    {
+      "source": "Assets/Samples/XR Hands/1.4.1/Gestures/Examples/Hand Shapes/Open Hand Shape.asset",
+      "destination": "Assets\\Resources\\MagicMR\\HandShapes\\Open Hand Shape.asset",
+      "sha256": "1af3d27c044b000c726e05cadcd475b1b85a14fbf18e7ca035e79ba4e1e22313"
+    },
+    {
+      "source": "Assets/Samples/XR Hands/1.4.1/Gestures/Examples/Hand Shapes/Fist Hand Shape.asset",
+      "destination": "Assets\\Resources\\MagicMR\\HandShapes\\Fist Hand Shape.asset",
+      "sha256": "76fe4c95b15aae159f74d141f14fc088f3a07304878ab9a1333728c2daa7c4b9"
+    }
+  ],
+  "upstream_type": "Unity XR Hands sample assets vendored by PICO; Unity Package Distribution License",
+  "license": "ThirdPartyNotices\\PICO-InteractionSample\\XRHands-License.md",
+  "status": "EDITOR_AND_ANDROID_BUILD_PASS_PICO_PENDING",
+  "runtime_integration": [
+    "Assets/Scripts/MagicMR/ParkHandTracking.cs",
+    "Assets/Scripts/MagicMR/ParkController.cs"
+  ],
+  "scene_scope": "Plant only; lighter and other scene classifiers unchanged",
+  "tracking": "Existing shared XRHandSubsystem; XRHandShape evaluates provided hand, no second tracking events component",
+  "editor_log": "Reports/unity-plant-shape-consistency-safety.log",
+  "android_build": "Builds/Android/MagicMRPark-1.13.5-plant-shapes-candidate.apk",
+  "pico_validation": "NOT_PERFORMED",
+  "ui": "Shape availability / PICO-pending message appended to existing common gesture hint; no new panel",
+  "runtime_sha256": {
+    "Assets/Scripts/MagicMR/ParkHandTracking.cs": "89ae2da49395771599c7e5d98608b44799a682d83145f041f1846e13a20e6c0a",
+    "Assets/Scripts/MagicMR/ParkController.cs": "b76fd1868411d9a33fbf06e1ff4d64b376d4099b1abfe92341a31ee2367b0db0"
+  },
+  "android_verification": "Reports/plant-sample-v1.13.5-apk-verification.json",
+  "android_build_note": "Includes shared authored open-hand predicate for plant static and motion actions; PICO unverified."
+}

@@ -87,7 +87,7 @@ namespace Perception
                 return;
 
             string texInfo = m_Capture.PreviewTexture != null
-                ? $"tex={m_Capture.PreviewTexture.width}x{m_Capture.PreviewTexture.height} id={m_Capture.PreviewTexture.GetInstanceID()}"
+                ? $"tex={m_Capture.PreviewTexture.width}x{m_Capture.PreviewTexture.height} name={m_Capture.PreviewTexture.name}"
                 : "tex=(none)";
             var sender = GetComponent<PicoYoloFrameSender>();
             string yoloSend = sender != null
