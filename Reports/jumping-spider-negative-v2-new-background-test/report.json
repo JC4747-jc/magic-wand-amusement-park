@@ -1,0 +1,64 @@
+{
+  "mode": "test",
+  "domain": "public-openimages-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated",
+    "JumpingSpider covers Salticidae family only; scores do not establish recognition of all spiders or identification of one biological species"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\jumping-spider-negative-v2-training\\train\\weights\\best.pt",
+  "architecture": "DetectionModel",
+  "sha256": "b36094c770679c446c40c170b3e5cd45ef275d5b0c62d8939887220628507686",
+  "dataset_version": "9eec7da4971e6d93b5b63497a27e1aea1c1094d234e3ac4c47309a38ad34aa88",
+  "split": "test",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.174",
+  "model_names": {
+    "0": "JumpingSpider"
+  },
+  "per_class": [],
+  "images": 11,
+  "excluded_samples": [],
+  "ground_truth_instances": 0,
+  "false_positive_images": 0,
+  "ap_scope": "NOT_APPLICABLE: negative-only evaluation",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "JumpingSpider",
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": null,
+      "recall": null
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 296.7654636363684,
+  "p95_inference_ms": 808.168749999993,
+  "cold_first_image_ms": 1403.8455999999542,
+  "warm_mean_ms": 186.0574500000098,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [],
+  "allowed_classes": [
+    "JumpingSpider"
+  ],
+  "max_det": 300,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}

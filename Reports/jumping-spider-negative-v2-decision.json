@@ -1,0 +1,119 @@
+{
+  "status": "REJECTED_VALIDATION",
+  "also_failed": [
+    "INDEPENDENT_POSITIVE_RECALL",
+    "INDEPENDENT_MAP50_95",
+    "BACKGROUND_REGRESSION"
+  ],
+  "deployment_accepted": false,
+  "service_routed": false,
+  "epochs_recorded": 40,
+  "elapsed_seconds": 5111.1,
+  "process_evidence": "Old session handle missing; no matching Python training process returned; stripped 52MB best.pt successfully loaded and evaluated. Original exit code unavailable.",
+  "weight": "object-detection-demo\\weights\\candidates\\jumping-spider-negative-v2-yolov8m\\best.pt",
+  "sha256": "b36094c770679c446c40c170b3e5cd45ef275d5b0c62d8939887220628507686",
+  "operating_confidence": 0.65,
+  "results": {
+    "final-validation": {
+      "images": 63,
+      "operating": [
+        {
+          "name": "JumpingSpider",
+          "true_positive": 10,
+          "false_positive": 2,
+          "false_negative": 3,
+          "precision": 0.8333333333333334,
+          "recall": 0.7692307692307693
+        }
+      ],
+      "AP": [
+        {
+          "class_id": 0,
+          "name": "JumpingSpider",
+          "precision": 0.7942265044375407,
+          "recall": 0.9230769230769231,
+          "mAP50": 0.8313931623931623,
+          "mAP50_95": 0.6988511004868145,
+          "labels": 13
+        }
+      ],
+      "false_positive_images": 2,
+      "warm_mean_inference_ms": 191.285238709676
+    },
+    "fresh-independent-test": {
+      "images": 16,
+      "operating": [
+        {
+          "name": "JumpingSpider",
+          "true_positive": 9,
+          "false_positive": 0,
+          "false_negative": 7,
+          "precision": 1.0,
+          "recall": 0.5625
+        }
+      ],
+      "AP": [
+        {
+          "class_id": 0,
+          "name": "JumpingSpider",
+          "precision": 1.0,
+          "recall": 0.6767748701363461,
+          "mAP50": 0.8030485829959515,
+          "mAP50_95": 0.5102100988178057,
+          "labels": 16
+        }
+      ],
+      "false_positive_images": 0,
+      "warm_mean_inference_ms": 178.16723999997825
+    },
+    "background-regression": {
+      "images": 52,
+      "operating": [
+        {
+          "name": "JumpingSpider",
+          "true_positive": 0,
+          "false_positive": 2,
+          "false_negative": 0,
+          "precision": 0.0,
+          "recall": null
+        }
+      ],
+      "AP": [],
+      "false_positive_images": 1,
+      "warm_mean_inference_ms": 196.62591960784587
+    },
+    "new-background-test": {
+      "images": 11,
+      "operating": [
+        {
+          "name": "JumpingSpider",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "AP": [],
+      "false_positive_images": 0,
+      "warm_mean_inference_ms": 186.0574500000098
+    }
+  },
+  "compared_with_v1": "Old 52-image background regression: false detections reduced from 39 to 2; still fails zero-background-FP gate.",
+  "examples_reviewed": [
+    "Small bark spider missed in fresh test",
+    "Red fruit and dried flower misclassified in background regression"
+  ],
+  "limitations": [
+    "Fresh independent positive test now observed; never use it for training or threshold selection",
+    "11-image new negative test is plant-dominated and previously used for plant research, not an all-project unseen benchmark",
+    "No positive PICO or end-to-end headset evaluation"
+  ],
+  "next_action": "Collect more source-disjoint varied-scale positives and independently sourced confusing fruit/flower training negatives; do not train on failed test or regression frames",
+  "reports": {
+    "final-validation": "Reports/jumping-spider-negative-v2-final-validation/report.json",
+    "fresh-independent-test": "Reports/jumping-spider-negative-v2-fresh-independent-test/report.json",
+    "background-regression": "Reports/jumping-spider-negative-v2-background-regression/report.json",
+    "new-background-test": "Reports/jumping-spider-negative-v2-new-background-test/report.json"
+  }
+}

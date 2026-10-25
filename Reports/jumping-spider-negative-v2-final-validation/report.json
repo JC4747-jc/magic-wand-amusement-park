@@ -1,0 +1,126 @@
+{
+  "mode": "baseline",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "inaturalist",
+      "url": "https://www.inaturalist.org",
+      "license": "Per-photo CC BY or CC0; attribution retained",
+      "reviewed": false
+    },
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated",
+    "JumpingSpider covers Salticidae family only; scores do not establish recognition of all spiders or identification of one biological species"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\jumping-spider-negative-v2-training\\train\\weights\\best.pt",
+  "architecture": "DetectionModel",
+  "sha256": "b36094c770679c446c40c170b3e5cd45ef275d5b0c62d8939887220628507686",
+  "dataset_version": "eda2b3d4a54e795262069d3aabc07a14e89526e829c457940bb934b80906c373",
+  "split": "val",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.174",
+  "model_names": {
+    "0": "JumpingSpider"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "JumpingSpider",
+      "precision": 0.7942265044375407,
+      "recall": 0.9230769230769231,
+      "mAP50": 0.8313931623931623,
+      "mAP50_95": 0.6988511004868145,
+      "labels": 13
+    }
+  ],
+  "images": 63,
+  "excluded_samples": [],
+  "ground_truth_instances": 13,
+  "false_positive_images": 2,
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "JumpingSpider",
+      "true_positive": 10,
+      "false_positive": 2,
+      "false_negative": 3,
+      "precision": 0.8333333333333334,
+      "recall": 0.7692307692307693
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 244.05553333333273,
+  "p95_inference_ms": 250.3003599999829,
+  "cold_first_image_ms": 3515.8138000000463,
+  "warm_mean_ms": 191.285238709676,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images/val/2011842-2450034.jpg",
+      "example": "error-2011842-2450034.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/2163916-2537620.jpg",
+      "example": "error-2163916-2537620.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/3671149-4252208.jpg",
+      "example": "error-3671149-4252208.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/97574878a74355658f258501.jpg",
+      "example": "error-97574878a74355658f258501.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/06242aea552d61966150402f.jpg",
+      "example": "error-06242aea552d61966150402f.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    }
+  ],
+  "allowed_classes": [
+    "JumpingSpider"
+  ],
+  "max_det": 300,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}

@@ -1,0 +1,33 @@
+{
+  "inputs": {
+    "training_data": {
+      "path": "Datasets/jumping-spider-negative-v2/audit.json",
+      "sha256": "eda2b3d4a54e795262069d3aabc07a14e89526e829c457940bb934b80906c373"
+    },
+    "fresh_independent_test": {
+      "path": "Datasets/jumping-spider-independent-test-v2/audit.json",
+      "sha256": "687bbe9e3c8a7bdf4b6cc2db08ec5ae947c19412362e5c2e2b545ce74f8efb61"
+    },
+    "negative_regression": {
+      "path": "Datasets/jumping-spider-negative-regression-v1/audit.json",
+      "sha256": "d6d7ebe458e08118f7c8f4b6e6438b51f841cb70fdbad1cb8e27d60d76d492f7"
+    }
+  },
+  "selection": "Only validation mAP50-95 selects best.pt; old 13 positives and 52 backgrounds are observed regression; fresh 16 positives evaluated after terminal training only",
+  "runtime": {
+    "imgsz": 640,
+    "operating_confidence": 0.65,
+    "nms_iou": 0.7,
+    "max_det": 300
+  },
+  "minimum_positive_metrics": {
+    "precision": 0.9,
+    "recall": 0.8,
+    "mAP50": 0.8,
+    "mAP50_95": 0.6
+  },
+  "negative_regression_max_false_positive_images": 0,
+  "decision": "Any gate failure keeps candidate rejected; positive/negative public gates do not establish PICO acceptance",
+  "fresh_test_inference_performed": false,
+  "deployment_accepted": false
+}
