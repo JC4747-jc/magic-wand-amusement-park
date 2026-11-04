@@ -1,0 +1,34 @@
+{
+  "python": "3.13.15",
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "device": "0",
+  "args": {
+    "mode": "train",
+    "data": "Datasets/room-native-pilot-v10/data.yaml",
+    "model": "object-detection-demo/weights/candidates/room-native-pilot-v5/best.pt",
+    "out": "Reports/room-native-pilot-v10-finetune",
+    "baseline_report": "Reports/room-native-pilot-v10-parent-baseline/report.json",
+    "resume": null,
+    "epochs": 40,
+    "seed": 4747,
+    "imgsz": 640,
+    "task": "detect",
+    "batch": 4,
+    "workers": 0,
+    "text_cache": null,
+    "learning_rate": 0.0001,
+    "allow_public_pilot": true
+  },
+  "dataset_sources": [
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    }
+  ],
+  "deployment_accepted": false,
+  "pico_validation": "PENDING: requires independent annotated PICO captures and end-to-end device verification",
+  "dataset_version": "edbebb88210040ecc63430ffa25f6c664766e85239c5c051775a08bf223e12d9"
+}

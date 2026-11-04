@@ -1,0 +1,323 @@
+{
+  "architecture": "yolov8s-worldv2.yaml",
+  "task": "detect",
+  "classes": {
+    "0": "Statue"
+  },
+  "allowed_classes": [
+    "Statue"
+  ],
+  "unity": {
+    "0": "ParkStatue"
+  },
+  "sha256": "57111a621e785e7d41d086220790c46b661f0ab7d0c57d7205978ae2c671f51d",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "dataset": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\statue-commons-positives-v14",
+  "dataset_sha256": "3139db9919eb13e358c5e0e9ddf974b1fab9181af19269f365cfe6e9c306155e",
+  "annotation_review_hold": null,
+  "data_sources": [
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    },
+    {
+      "id": "lvis-v1-train-statue",
+      "license": "LVIS annotations CC BY 4.0; images verified CC BY 2.0",
+      "url": "https://www.lvisdataset.org/",
+      "reviewed": true,
+      "review_scope": "Only explicitly selected samples in this revision"
+    },
+    {
+      "id": "lvis-v1-val-statue",
+      "license": "LVIS annotations CC BY 4.0; images verified CC BY 2.0",
+      "url": "https://www.lvisdataset.org/",
+      "reviewed": true,
+      "review_scope": "Only explicitly selected samples in this revision"
+    },
+    {
+      "id": "commons-equipment-negative-v1",
+      "license": "Per-image CC BY 2.0 or CC BY-SA 4.0; retain attribution and applicable ShareAlike",
+      "url": "https://commons.wikimedia.org/wiki/Category:Virtual_reality_headsets",
+      "reviewed": true
+    },
+    {
+      "id": "commons-statue-positive-v1",
+      "reviewed": true,
+      "license": "Per-image CC BY 3.0 or CC BY-SA 4.0; manual visible-figure annotations, attribution and applicable ShareAlike retained",
+      "url": "https://commons.wikimedia.org/wiki/Category:Statues_of_children"
+    }
+  ],
+  "parameters": {
+    "python": "3.13.15",
+    "torch": "2.14.1+cpu",
+    "ultralytics": "8.4.173",
+    "device": "cpu",
+    "args": {
+      "mode": "train",
+      "data": "Datasets/statue-commons-positives-v14/data.yaml",
+      "model": "object-detection-demo/weights/candidates/statue-reviewed-v7/best.pt",
+      "out": "Reports/statue-unfrozen-v14-training",
+      "baseline_report": "Reports/statue-commons-v14-baseline/report.json",
+      "resume": null,
+      "epochs": 20,
+      "seed": 4747,
+      "imgsz": 640,
+      "task": "detect",
+      "batch": 4,
+      "workers": 0,
+      "freeze": 0,
+      "text_cache": "Reports/pretrained-yoloworld",
+      "sampling_plan": "Reports/statue-v14-commons-sampling-plan.json",
+      "learning_rate": 1e-05,
+      "conservative_augmentation": true,
+      "augmentation_scale": null,
+      "allow_public_pilot": true
+    },
+    "dataset_sources": [
+      {
+        "id": "openimages-v7",
+        "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+        "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+        "reviewed": true
+      },
+      {
+        "id": "lvis-v1-train-statue",
+        "license": "LVIS annotations CC BY 4.0; images verified CC BY 2.0",
+        "url": "https://www.lvisdataset.org/",
+        "reviewed": true,
+        "review_scope": "Only explicitly selected samples in this revision"
+      },
+      {
+        "id": "lvis-v1-val-statue",
+        "license": "LVIS annotations CC BY 4.0; images verified CC BY 2.0",
+        "url": "https://www.lvisdataset.org/",
+        "reviewed": true,
+        "review_scope": "Only explicitly selected samples in this revision"
+      },
+      {
+        "id": "commons-equipment-negative-v1",
+        "license": "Per-image CC BY 2.0 or CC BY-SA 4.0; retain attribution and applicable ShareAlike",
+        "url": "https://commons.wikimedia.org/wiki/Category:Virtual_reality_headsets",
+        "reviewed": true
+      },
+      {
+        "id": "commons-statue-positive-v1",
+        "reviewed": true,
+        "license": "Per-image CC BY 3.0 or CC BY-SA 4.0; manual visible-figure annotations, attribution and applicable ShareAlike retained",
+        "url": "https://commons.wikimedia.org/wiki/Category:Statues_of_children"
+      }
+    ],
+    "domain": "public-source-pilot",
+    "deployment_accepted": false,
+    "pico_validation": "PENDING: requires independent annotated PICO captures and end-to-end device verification",
+    "dataset_version": "3139db9919eb13e358c5e0e9ddf974b1fab9181af19269f365cfe6e9c306155e",
+    "sampling_plan_sha256": "d5ee5f5ea8683f82ee18605b3bf39032fd3d6e27a6187a7d2c18552a864f8d90"
+  },
+  "validation": {
+    "mode": "baseline",
+    "domain": "public-source-pilot",
+    "deployment_accepted": false,
+    "dataset_sources": [
+      {
+        "id": "openimages-v7",
+        "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+        "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+        "reviewed": true
+      },
+      {
+        "id": "lvis-v1-train-statue",
+        "license": "LVIS annotations CC BY 4.0; images verified CC BY 2.0",
+        "url": "https://www.lvisdataset.org/",
+        "reviewed": true,
+        "review_scope": "Only explicitly selected samples in this revision"
+      },
+      {
+        "id": "lvis-v1-val-statue",
+        "license": "LVIS annotations CC BY 4.0; images verified CC BY 2.0",
+        "url": "https://www.lvisdataset.org/",
+        "reviewed": true,
+        "review_scope": "Only explicitly selected samples in this revision"
+      },
+      {
+        "id": "commons-equipment-negative-v1",
+        "license": "Per-image CC BY 2.0 or CC BY-SA 4.0; retain attribution and applicable ShareAlike",
+        "url": "https://commons.wikimedia.org/wiki/Category:Virtual_reality_headsets",
+        "reviewed": true
+      },
+      {
+        "id": "commons-statue-positive-v1",
+        "reviewed": true,
+        "license": "Per-image CC BY 3.0 or CC BY-SA 4.0; manual visible-figure annotations, attribution and applicable ShareAlike retained",
+        "url": "https://commons.wikimedia.org/wiki/Category:Statues_of_children"
+      }
+    ],
+    "limitations": [
+      "Small source-grouped subset; not an official benchmark score",
+      "No PICO targets evaluated",
+      "Statue class does not establish historical identity, age or full 3D pose"
+    ],
+    "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-unfrozen-v14-training\\train\\weights\\best.pt",
+    "architecture": "WorldModel",
+    "sha256": "57111a621e785e7d41d086220790c46b661f0ab7d0c57d7205978ae2c671f51d",
+    "dataset_version": "3139db9919eb13e358c5e0e9ddf974b1fab9181af19269f365cfe6e9c306155e",
+    "split": "val",
+    "torch": "2.14.1+cpu",
+    "ultralytics": "8.4.173",
+    "model_names": {
+      "0": "Statue"
+    },
+    "per_class": [
+      {
+        "class_id": 0,
+        "name": "Statue",
+        "precision": 0.8497264517375539,
+        "recall": 0.8078738358773095,
+        "mAP50": 0.8426285261579379,
+        "mAP50_95": 0.6481132482985423,
+        "labels": 21
+      }
+    ],
+    "images": 7,
+    "excluded_samples": [],
+    "ground_truth_instances": 21,
+    "false_positive_images": 1,
+    "per_image": [
+      {
+        "image": "images\\val\\a5bc5fc3ae440046596e0a54.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 1192.5506000000041
+      },
+      {
+        "image": "images\\val\\1bb4847d6fdd0c2f6bf87e22.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 108.51690000004055
+      },
+      {
+        "image": "images\\val\\aeb65d65f8b99d393ce4ae1e.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 2,
+        "false_negative": 0,
+        "inference_ms": 134.19150000004265
+      },
+      {
+        "image": "images\\val\\1b81a10a874a5ad6c110968c.jpg",
+        "ground_truth": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "inference_ms": 92.70379999998113
+      },
+      {
+        "image": "images\\val\\e2ce7aaa49ea84334e86ffb9.jpg",
+        "ground_truth": 14,
+        "true_positive": 4,
+        "false_positive": 0,
+        "false_negative": 10,
+        "inference_ms": 90.57800000005045
+      },
+      {
+        "image": "images\\val\\4ab3df40f3490a06ef4998b5.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 95.37040000009256
+      },
+      {
+        "image": "images/val/108fa4288e5b91c1668841ab.jpg",
+        "ground_truth": 2,
+        "true_positive": 2,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 146.0437999999158
+      }
+    ],
+    "ap_scope": "Positive target instances",
+    "operating_confidence": 0.65,
+    "operating_iou": 0.5,
+    "operating_per_class": [
+      {
+        "name": "Statue",
+        "true_positive": 10,
+        "false_positive": 2,
+        "false_negative": 11,
+        "precision": 0.8333333333333334,
+        "recall": 0.47619047619047616
+      }
+    ],
+    "operating_confidence_curve": [],
+    "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+    "mean_inference_ms": 265.7078571428753,
+    "p95_inference_ms": 878.5985599999769,
+    "cold_first_image_ms": 1192.5506000000041,
+    "warm_mean_ms": 111.23406666668718,
+    "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+    "imgsz": 640,
+    "rect": true,
+    "device": "cpu",
+    "errors": [
+      {
+        "image": "images\\val\\aeb65d65f8b99d393ce4ae1e.jpg",
+        "example": "error-aeb65d65f8b99d393ce4ae1e.jpg",
+        "ground_truth": 1,
+        "true_positives": 1,
+        "false_positives": 2,
+        "false_negatives": 0,
+        "confidence": 0.65
+      },
+      {
+        "image": "images\\val\\1b81a10a874a5ad6c110968c.jpg",
+        "example": "error-1b81a10a874a5ad6c110968c.jpg",
+        "ground_truth": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.65
+      },
+      {
+        "image": "images\\val\\e2ce7aaa49ea84334e86ffb9.jpg",
+        "example": "error-e2ce7aaa49ea84334e86ffb9.jpg",
+        "ground_truth": 14,
+        "true_positives": 4,
+        "false_positives": 0,
+        "false_negatives": 10,
+        "confidence": 0.65
+      }
+    ],
+    "allowed_classes": [
+      "Statue"
+    ],
+    "max_det": 32,
+    "nms_iou": 0.7,
+    "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+    "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+  },
+  "test": null,
+  "status": "REJECTED_VALIDATION",
+  "negative_regression": null,
+  "service_routed": false,
+  "pico_validation": "NOT_PERFORMED for this model",
+  "training_outputs": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-unfrozen-v14-training\\train",
+  "resume_weight": null,
+  "last_weight": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-unfrozen-v14-training\\train\\weights\\last.pt",
+  "optimizer_resume_available": false,
+  "last_weight_usage": "Fine-tuning initializer only; optimizer state stripped or unavailable",
+  "validation_report": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-unfrozen-v14-runtime-val\\report.json",
+  "test_report": null,
+  "test_dataset": null,
+  "inference_timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "warm_mean_inference_ms": 111.23406666668718,
+  "limitations": [
+    "Candidate packaging does not authorize deployment or prove PICO performance"
+  ]
+}

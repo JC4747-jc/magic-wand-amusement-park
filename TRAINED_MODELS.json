@@ -1,0 +1,69 @@
+{
+  "scope": "Trained candidate archive; not a deployment release",
+  "branch": "4d",
+  "models": [
+    {
+      "name": "cockroach-expanded-v3",
+      "path": "object-detection-demo/weights/candidates/cockroach-expanded-v3/best.pt",
+      "sha256": "cb7262e883d7787a2ba30434807ea94768ec545836f6055b9a7f4aa36af96da0",
+      "bytes": 25802632,
+      "status": "LOCAL_TEST_PENDING",
+      "deployment_accepted": false
+    },
+    {
+      "name": "jumping-spider-confusers-v10-yolov8m",
+      "path": "object-detection-demo/weights/candidates/jumping-spider-confusers-v10-yolov8m/best.pt",
+      "sha256": "38bee669cb278b1ac8c3f2d3e5646ab466768053022773e075a21eff3eb9a119",
+      "bytes": 52009426,
+      "status": "REJECTED_VALIDATION",
+      "deployment_accepted": false
+    },
+    {
+      "name": "plant-expanded-v9-freeze10",
+      "path": "object-detection-demo/weights/candidates/plant-expanded-v9-freeze10/best.pt",
+      "sha256": "d2499c2073319f8897812d2faa8e8cf185070460244398d9dd99566f1c95dc22",
+      "bytes": 52108754,
+      "status": "REJECTED_VALIDATION",
+      "deployment_accepted": false
+    },
+    {
+      "name": "room-native-pilot-v10",
+      "path": "object-detection-demo/weights/candidates/room-native-pilot-v10/best.pt",
+      "sha256": "88643a80077d1dbfed9eac03d7b96684a5c183ca2f35f6c6128f7be747154931",
+      "bytes": 6544618,
+      "status": "REJECTED_VALIDATION",
+      "deployment_accepted": false
+    },
+    {
+      "name": "tree-qualified-public-pilot-v6-scale07-lr1e4",
+      "path": "object-detection-demo/weights/candidates/tree-qualified-public-pilot-v6-scale07-lr1e4/best.pt",
+      "sha256": "deb3cc47cd7f219d2c01fbbbabe20dfa527a65145ff46279cb68a2ae5ab36613",
+      "bytes": 25779208,
+      "status": "REJECTED_VALIDATION",
+      "deployment_accepted": false
+    },
+    {
+      "name": "statue-world-medium-v14",
+      "path": "object-detection-demo/weights/candidates/statue-world-medium-v14/best.pt",
+      "sha256": "e7931be9e81caec2f62cbae39cacd736777c02f616e1fa87fcb88d8a67f40dd9",
+      "bytes": 57098096,
+      "status": "REJECTED_VALIDATION",
+      "deployment_accepted": false
+    },
+    {
+      "name": "statue-unfrozen-v14",
+      "path": "object-detection-demo/weights/candidates/statue-unfrozen-v14/best.pt",
+      "sha256": "57111a621e785e7d41d086220790c46b661f0ab7d0c57d7205978ae2c671f51d",
+      "bytes": 25795016,
+      "status": "REJECTED_VALIDATION",
+      "deployment_accepted": false
+    }
+  ],
+  "datasets_included": false,
+  "pico_validation": "NOT_PERFORMED",
+  "notes": [
+    "Rejected and pending candidates retain their original status.",
+    "No runtime configuration or Unity animation changes included in this upload.",
+    "last.pt omitted; these completed runs have stripped optimizer state."
+  ]
+}

@@ -1,0 +1,8 @@
+Trained model archive on branch 4d
+
+Use TRAINED_MODELS.json for paths, SHA-256 and validation status.
+Seven actual best.pt files are stored with Git LFS. Run git lfs install, then git lfs pull after cloning.
+These are research candidates, not approved deployment weights. Several failed validation; see model.json in each directory.
+model.json includes class IDs, Unity mapping, data sources, package versions and available evaluation metrics.
+training-records includes actual training arguments/results where available. Dataset images and last.pt are not included.
+No PICO acceptance is claimed. Original lighter weights and runtime model configuration are unchanged.

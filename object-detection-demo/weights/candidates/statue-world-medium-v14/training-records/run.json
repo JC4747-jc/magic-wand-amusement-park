@@ -1,0 +1,66 @@
+{
+  "python": "3.13.15",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "device": "cpu",
+  "args": {
+    "mode": "train",
+    "data": "Datasets/statue-commons-positives-v14/data.yaml",
+    "model": "Reports/statue-world-medium-initializer-v1/initializer.pt",
+    "out": "Reports/statue-world-medium-v14-training",
+    "baseline_report": "Reports/statue-world-medium-v14-baseline/report.json",
+    "resume": null,
+    "epochs": 20,
+    "seed": 4747,
+    "imgsz": 640,
+    "task": "detect",
+    "batch": 4,
+    "workers": 0,
+    "freeze": 10,
+    "text_cache": "Reports/pretrained-yoloworld",
+    "sampling_plan": "Reports/statue-v14-commons-sampling-plan.json",
+    "learning_rate": 0.0001,
+    "conservative_augmentation": true,
+    "augmentation_scale": null,
+    "allow_public_pilot": true
+  },
+  "dataset_sources": [
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    },
+    {
+      "id": "lvis-v1-train-statue",
+      "license": "LVIS annotations CC BY 4.0; images verified CC BY 2.0",
+      "url": "https://www.lvisdataset.org/",
+      "reviewed": true,
+      "review_scope": "Only explicitly selected samples in this revision"
+    },
+    {
+      "id": "lvis-v1-val-statue",
+      "license": "LVIS annotations CC BY 4.0; images verified CC BY 2.0",
+      "url": "https://www.lvisdataset.org/",
+      "reviewed": true,
+      "review_scope": "Only explicitly selected samples in this revision"
+    },
+    {
+      "id": "commons-equipment-negative-v1",
+      "license": "Per-image CC BY 2.0 or CC BY-SA 4.0; retain attribution and applicable ShareAlike",
+      "url": "https://commons.wikimedia.org/wiki/Category:Virtual_reality_headsets",
+      "reviewed": true
+    },
+    {
+      "id": "commons-statue-positive-v1",
+      "reviewed": true,
+      "license": "Per-image CC BY 3.0 or CC BY-SA 4.0; manual visible-figure annotations, attribution and applicable ShareAlike retained",
+      "url": "https://commons.wikimedia.org/wiki/Category:Statues_of_children"
+    }
+  ],
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "pico_validation": "PENDING: requires independent annotated PICO captures and end-to-end device verification",
+  "dataset_version": "3139db9919eb13e358c5e0e9ddf974b1fab9181af19269f365cfe6e9c306155e",
+  "sampling_plan_sha256": "d5ee5f5ea8683f82ee18605b3bf39032fd3d6e27a6187a7d2c18552a864f8d90"
+}

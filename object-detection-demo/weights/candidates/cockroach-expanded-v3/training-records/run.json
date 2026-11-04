@@ -1,0 +1,40 @@
+{
+  "python": "3.13.15",
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "device": "0",
+  "args": {
+    "mode": "train",
+    "data": "Datasets/inaturalist-cockroach-expanded-v3/data.yaml",
+    "model": "object-detection-demo/weights/candidates/world-cockroach-baseline-v1/pretrained-vocabulary.pt",
+    "out": "Reports/cockroach-expanded-v3-finetune",
+    "baseline_report": "Reports/cockroach-expanded-v3-pretrained-baseline/report.json",
+    "resume": null,
+    "epochs": 80,
+    "seed": 4747,
+    "imgsz": 640,
+    "task": "detect",
+    "batch": 4,
+    "workers": 0,
+    "text_cache": "Reports/pretrained-yoloworld",
+    "learning_rate": 0.0001,
+    "allow_public_pilot": true
+  },
+  "dataset_sources": [
+    {
+      "id": "inaturalist",
+      "license": "Per-photo CC BY or CC0; attribution in samples",
+      "url": "https://www.inaturalist.org",
+      "reviewed": true
+    },
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    }
+  ],
+  "deployment_accepted": false,
+  "pico_validation": "PENDING: requires independent annotated PICO captures and end-to-end device verification",
+  "dataset_version": "ab24a4c016a24a1f71c471e33e9ac3b7fe5b7a3f56b9c3c148975ec0dc11d700"
+}

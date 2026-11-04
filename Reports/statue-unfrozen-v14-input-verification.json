@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "input_sha256": {
+    "object-detection-demo/weights/candidates/statue-reviewed-v7/best.pt": "cb3ce0a15eb9c0d9723cdb74658f3caf98ecae7c5de2736d52246ec1e3ab2a8d",
+    "Reports/statue-commons-v14-baseline/report.json": "0aa3f73a3257947d64112dad9acda86a91904784a3275b2c65c32615c2a6f8e5",
+    "Datasets/statue-commons-positives-v14/audit.json": "3139db9919eb13e358c5e0e9ddf974b1fab9181af19269f365cfe6e9c306155e",
+    "Reports/statue-v14-commons-sampling-plan.json": "d5ee5f5ea8683f82ee18605b3bf39032fd3d6e27a6187a7d2c18552a864f8d90",
+    "Tools/MultiScene/train_eval.py": "3c4ebb8d0ebaa7c1825a6595fcc131d3e603fb7122075c0ffa46616c1da6380b",
+    "Tools/MultiScene/hard_positive_world_trainer.py": "8d74fd5264f9a542a240cfd3d377972e17b5d20649213044e5c8707893a66461"
+  },
+  "cli_differences": {
+    "freeze": [
+      10,
+      0
+    ],
+    "out": [
+      "Reports/statue-commons-v14-training",
+      "Reports/statue-unfrozen-v14-training"
+    ]
+  },
+  "effective_differences": {
+    "project": [
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-commons-v14-training",
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-unfrozen-v14-training"
+    ],
+    "freeze": [
+      10,
+      0
+    ],
+    "save_dir": [
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-commons-v14-training\\train",
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-unfrozen-v14-training\\train"
+    ]
+  },
+  "training_complete": false,
+  "scope": "Input and configuration verification only; does not prove optimizer updates or model quality"
+}

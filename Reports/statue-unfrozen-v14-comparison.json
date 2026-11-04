@@ -1,0 +1,369 @@
+{
+  "results": {
+    "frozen": {
+      "weight_sha256": "3ae7a1e329f45d3111b9a8ddac53e938c4462da1c79d057680408c425c80348f",
+      "reports": {
+        "runtime-val": [
+          {
+            "name": "Statue",
+            "true_positive": 11,
+            "false_positive": 1,
+            "false_negative": 10,
+            "precision": 0.9166666666666666,
+            "recall": 0.5238095238095238
+          }
+        ],
+        "max8-val-comparison": [
+          {
+            "name": "Statue",
+            "true_positive": 11,
+            "false_positive": 1,
+            "false_negative": 10,
+            "precision": 0.9166666666666666,
+            "recall": 0.5238095238095238
+          }
+        ],
+        "train-diagnostic": [
+          {
+            "name": "Statue",
+            "true_positive": 64,
+            "false_positive": 4,
+            "false_negative": 29,
+            "precision": 0.9411764705882353,
+            "recall": 0.6881720430107527
+          }
+        ],
+        "office": {
+          "scope": "Repeated observed office negative regression, not fresh independent test",
+          "sha256": "3ae7a1e329f45d3111b9a8ddac53e938c4462da1c79d057680408c425c80348f",
+          "prior_evidence_sha256": "cc0f80d48e8714690725b9ebdf146136c6eebd44ffd66ab5a9aae29251f83180",
+          "images": 8,
+          "operating_conf": 0.65,
+          "imgsz": 640,
+          "rect": true,
+          "max_det": 8,
+          "nms_iou": 0.7,
+          "rows": [
+            {
+              "image": "images\\test\\242b71fd8d524ed8b38b955e954bbd5a-frame-0000000001.jpg",
+              "sha256": "5a822f6789f14db7f78fd0fb13f1c9e6c2891c6a9026ec52ac51e7394748dd50",
+              "confidence": [
+                0.03488437086343765,
+                0.018592875450849533,
+                0.017218222841620445,
+                0.009202980436384678,
+                0.0049313451163470745,
+                0.00471069710329175,
+                0.0036876092199236155,
+                0.002471880055963993
+              ],
+              "false_positives": 0
+            },
+            {
+              "image": "images\\test\\242b71fd8d524ed8b38b955e954bbd5a-frame-0000000103.jpg",
+              "sha256": "b1e37e4214a60ad726d1e5c1083ec70fb06884b09a922bb7eef014b27f3bfbe6",
+              "confidence": [
+                0.05706074461340904,
+                0.0518311932682991,
+                0.012653547339141369,
+                0.010619359090924263,
+                0.0070702433586120605,
+                0.002543362323194742,
+                0.0016096399631351233,
+                0.0014538855757564306
+              ],
+              "false_positives": 0
+            },
+            {
+              "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000106.jpg",
+              "sha256": "5faa9c73ce31e20d44890d4792fc4eafa8c03b54ad68d40a25b999b5760701d3",
+              "confidence": [
+                0.473678857088089,
+                0.40648046135902405,
+                0.28959372639656067,
+                0.09852337092161179,
+                0.09575198590755463,
+                0.020829148590564728,
+                0.01292392797768116,
+                0.007703020703047514
+              ],
+              "false_positives": 0
+            },
+            {
+              "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000211.jpg",
+              "sha256": "6df5e50da3364377bc0a9e10a74e358e1fd14255865079dfe4d5532de058aa5e",
+              "confidence": [
+                0.01879836618900299,
+                0.005044090561568737,
+                0.002301883650943637,
+                0.0016583232209086418,
+                0.0015616086311638355,
+                0.001028040423989296,
+                0.001025554840452969,
+                0.00102057377807796
+              ],
+              "false_positives": 0
+            },
+            {
+              "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000320.jpg",
+              "sha256": "8a99a64fa73001bc338e3bcfaece948d483be07c2795d509b34bef614fa2296c",
+              "confidence": [
+                0.679009735584259,
+                0.17982448637485504,
+                0.013941032811999321,
+                0.003801621962338686,
+                0.003409164259210229,
+                0.0028885905630886555,
+                0.0019837163854390383,
+                0.001880469499155879
+              ],
+              "false_positives": 1
+            },
+            {
+              "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000425.jpg",
+              "sha256": "ba48312aa3c80cc4157d7d992328a488a5cf745f8cbb23c973639bbe0c70c77d",
+              "confidence": [
+                0.028078196570277214,
+                0.014505460858345032,
+                0.00873609259724617,
+                0.00668721366673708,
+                0.0037204765249043703,
+                0.003327862359583378,
+                0.002961289370432496,
+                0.0026679388247430325
+              ],
+              "false_positives": 0
+            },
+            {
+              "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000536.jpg",
+              "sha256": "7cb0f0041613cab898c2da7d3c7245f90f773fcf402a0805d7ca4d519d8763cd",
+              "confidence": [
+                0.04025934636592865,
+                0.018590716645121574,
+                0.007942423224449158,
+                0.006832216400653124,
+                0.004447758663445711,
+                0.004073583520948887,
+                0.004014805890619755,
+                0.003965427167713642
+              ],
+              "false_positives": 0
+            },
+            {
+              "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000641.jpg",
+              "sha256": "ff7cd3e4a72e0e623e1144c76696ed307407460c4afe483cb98846c4aa90487f",
+              "confidence": [
+                0.005675822496414185,
+                0.004440600518137217,
+                0.004137685988098383,
+                0.0036689687985926867,
+                0.003639835864305496,
+                0.002989535452798009,
+                0.002431771019473672,
+                0.0022080368362367153
+              ],
+              "false_positives": 0
+            }
+          ],
+          "false_positives": 1,
+          "native_target_classes": {
+            "0": "Statue"
+          },
+          "independent_test_evaluated": false,
+          "service_routed": false
+        }
+      }
+    },
+    "unfrozen": {
+      "weight_sha256": "57111a621e785e7d41d086220790c46b661f0ab7d0c57d7205978ae2c671f51d",
+      "reports": {
+        "runtime-val": [
+          {
+            "name": "Statue",
+            "true_positive": 10,
+            "false_positive": 2,
+            "false_negative": 11,
+            "precision": 0.8333333333333334,
+            "recall": 0.47619047619047616
+          }
+        ],
+        "max8-val-comparison": [
+          {
+            "name": "Statue",
+            "true_positive": 10,
+            "false_positive": 2,
+            "false_negative": 11,
+            "precision": 0.8333333333333334,
+            "recall": 0.47619047619047616
+          }
+        ],
+        "train-diagnostic": [
+          {
+            "name": "Statue",
+            "true_positive": 67,
+            "false_positive": 2,
+            "false_negative": 26,
+            "precision": 0.9710144927536232,
+            "recall": 0.7204301075268817
+          }
+        ],
+        "office": {
+          "scope": "Repeated observed office negative regression, not fresh independent test",
+          "sha256": "57111a621e785e7d41d086220790c46b661f0ab7d0c57d7205978ae2c671f51d",
+          "prior_evidence_sha256": "cc0f80d48e8714690725b9ebdf146136c6eebd44ffd66ab5a9aae29251f83180",
+          "images": 8,
+          "operating_conf": 0.65,
+          "imgsz": 640,
+          "rect": true,
+          "max_det": 8,
+          "nms_iou": 0.7,
+          "rows": [
+            {
+              "image": "images\\test\\242b71fd8d524ed8b38b955e954bbd5a-frame-0000000001.jpg",
+              "sha256": "5a822f6789f14db7f78fd0fb13f1c9e6c2891c6a9026ec52ac51e7394748dd50",
+              "confidence": [
+                0.07211223989725113,
+                0.030520053580403328,
+                0.01502083521336317,
+                0.01097098458558321,
+                0.006744746584445238,
+                0.005582740996032953,
+                0.00458031240850687,
+                0.004515332169830799
+              ],
+              "false_positives": 0
+            },
+            {
+              "image": "images\\test\\242b71fd8d524ed8b38b955e954bbd5a-frame-0000000103.jpg",
+              "sha256": "b1e37e4214a60ad726d1e5c1083ec70fb06884b09a922bb7eef014b27f3bfbe6",
+              "confidence": [
+                0.11274927109479904,
+                0.06675882637500763,
+                0.04550826922059059,
+                0.012752462178468704,
+                0.007345778401941061,
+                0.003929908387362957,
+                0.003128501819446683,
+                0.0015303021064028144
+              ],
+              "false_positives": 0
+            },
+            {
+              "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000106.jpg",
+              "sha256": "5faa9c73ce31e20d44890d4792fc4eafa8c03b54ad68d40a25b999b5760701d3",
+              "confidence": [
+                0.6659371852874756,
+                0.4033588767051697,
+                0.2204492688179016,
+                0.090011365711689,
+                0.06447800993919373,
+                0.03350263833999634,
+                0.014256004244089127,
+                0.00980466790497303
+              ],
+              "false_positives": 1
+            },
+            {
+              "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000211.jpg",
+              "sha256": "6df5e50da3364377bc0a9e10a74e358e1fd14255865079dfe4d5532de058aa5e",
+              "confidence": [
+                0.019811104983091354,
+                0.00949803739786148,
+                0.0026340442709624767,
+                0.002377058146521449,
+                0.002164228353649378,
+                0.002051936462521553,
+                0.002047895919531584,
+                0.0018422716530039907
+              ],
+              "false_positives": 0
+            },
+            {
+              "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000320.jpg",
+              "sha256": "8a99a64fa73001bc338e3bcfaece948d483be07c2795d509b34bef614fa2296c",
+              "confidence": [
+                0.7354692816734314,
+                0.1432311236858368,
+                0.010012988932430744,
+                0.009511580690741539,
+                0.0061208633705973625,
+                0.00517364963889122,
+                0.005059367045760155,
+                0.002512509934604168
+              ],
+              "false_positives": 1
+            },
+            {
+              "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000425.jpg",
+              "sha256": "ba48312aa3c80cc4157d7d992328a488a5cf745f8cbb23c973639bbe0c70c77d",
+              "confidence": [
+                0.05944880098104477,
+                0.02846260368824005,
+                0.008973822928965092,
+                0.005672290455549955,
+                0.004702697973698378,
+                0.004255895968526602,
+                0.0037216609343886375,
+                0.0036204331554472446
+              ],
+              "false_positives": 0
+            },
+            {
+              "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000536.jpg",
+              "sha256": "7cb0f0041613cab898c2da7d3c7245f90f773fcf402a0805d7ca4d519d8763cd",
+              "confidence": [
+                0.1541980504989624,
+                0.03895535692572594,
+                0.03508419916033745,
+                0.013189067132771015,
+                0.009095736779272556,
+                0.007294054608792067,
+                0.007219699677079916,
+                0.005801184102892876
+              ],
+              "false_positives": 0
+            },
+            {
+              "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000641.jpg",
+              "sha256": "ff7cd3e4a72e0e623e1144c76696ed307407460c4afe483cb98846c4aa90487f",
+              "confidence": [
+                0.007575176190584898,
+                0.005129062104970217,
+                0.004516676068305969,
+                0.004500763490796089,
+                0.004448804073035717,
+                0.0040924400091171265,
+                0.0028461450710892677,
+                0.0023772032000124454
+              ],
+              "false_positives": 0
+            }
+          ],
+          "false_positives": 2,
+          "native_target_classes": {
+            "0": "Statue"
+          },
+          "independent_test_evaluated": false,
+          "service_routed": false
+        }
+      }
+    }
+  },
+  "evidence_sha256": {
+    "Reports\\statue-commons-v14-runtime-val\\report.json": "c18a8df78cb6385b604da7904f6e9ab9d299ff1d043d6c346ec0d45517872846",
+    "Reports\\statue-commons-v14-max8-val-comparison\\report.json": "9e7b834a8df3665bcb10b7484507b49159dddb3e8e18472b7556be2e232f02d7",
+    "Reports\\statue-commons-v14-train-diagnostic\\report.json": "3e326dda4b5515017dbffddf4af5509e8616fdc110fdd7418ee430755ad610af",
+    "Reports\\statue-commons-v14-office-negatives.json": "2e337fa168d4ed8568a25f42efd450a61d5fb6bb630e1f97fe230ca7ea06b656",
+    "Reports\\statue-unfrozen-v14-runtime-val\\report.json": "f9041f16525fa9ef10e379e34cce8a5efa20ff705bf95a947339b8ea7ed27db2",
+    "Reports\\statue-unfrozen-v14-max8-val-comparison\\report.json": "afbe34013882148bd36f24ecf5adc5557f0659199d16c84ac44486d6444cbb56",
+    "Reports\\statue-unfrozen-v14-train-diagnostic\\report.json": "20b33672d2254b155226cfdb02920fedda7ac5526cdc83d3e830770d2cf1eb59",
+    "Reports\\statue-unfrozen-v14-office-negatives.json": "0a57328d08dcc8df21bcb2316d0a6cbdc883496df2b678842170bf644aaed672"
+  },
+  "status": "REJECTED_VALIDATION",
+  "deployment_accepted": false,
+  "independent_test_evaluated": false,
+  "limitations": [
+    "Small repeatedly observed VAL and office regression; not fresh TEST",
+    "Single seed public-data experiment, PICO not verified"
+  ]
+}

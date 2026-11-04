@@ -1,0 +1,42 @@
+{
+  "python": "3.13.15",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.174",
+  "device": "cpu",
+  "args": {
+    "mode": "train",
+    "data": "Datasets/tree-qualified-public-pilot-v6/data.yaml",
+    "model": "object-detection-demo/weights/candidates/tree-new-sources-freeze10-v3/best.pt",
+    "out": "Reports/tree-qualified-public-pilot-v6-scale07-lr1e4-training",
+    "baseline_report": "Reports/tree-qualified-public-pilot-v6-baseline/report.json",
+    "resume": null,
+    "epochs": 20,
+    "seed": 20261103,
+    "imgsz": 640,
+    "task": "detect",
+    "batch": 4,
+    "workers": 0,
+    "freeze": 10,
+    "text_cache": "Reports/pretrained-yoloworld",
+    "learning_rate": 0.0001,
+    "conservative_augmentation": true,
+    "augmentation_scale": 0.7,
+    "allow_public_pilot": true
+  },
+  "dataset_sources": [
+    {
+      "id": "commons",
+      "license": "Per-photo CC BY/CC BY-SA/CC0 retained in samples",
+      "reviewed": true
+    },
+    {
+      "id": "openimages-v7",
+      "license": "Per-photo CC BY2 attribution retained",
+      "reviewed": true
+    }
+  ],
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "pico_validation": "PENDING: requires independent annotated PICO captures and end-to-end device verification",
+  "dataset_version": "8865d290ee9b5473b1008f4bf194717679795021af90d86bbbf10c8e0a62343a"
+}

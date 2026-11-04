@@ -1,0 +1,353 @@
+{
+  "architecture": "yolov8s-worldv2.yaml",
+  "task": "detect",
+  "classes": {
+    "0": "Cockroach"
+  },
+  "unity": {
+    "0": "ParkBugs"
+  },
+  "sha256": "cb7262e883d7787a2ba30434807ea94768ec545836f6055b9a7f4aa36af96da0",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "dataset": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\inaturalist-cockroach-expanded-v3",
+  "dataset_sha256": "ab24a4c016a24a1f71c471e33e9ac3b7fe5b7a3f56b9c3c148975ec0dc11d700",
+  "data_sources": [
+    {
+      "id": "inaturalist",
+      "license": "Per-photo CC BY or CC0; attribution in samples",
+      "url": "https://www.inaturalist.org",
+      "reviewed": true
+    },
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    }
+  ],
+  "parameters": {
+    "python": "3.13.15",
+    "torch": "2.13.0+cu126",
+    "ultralytics": "8.4.173",
+    "device": "0",
+    "args": {
+      "mode": "train",
+      "data": "Datasets/inaturalist-cockroach-expanded-v3/data.yaml",
+      "model": "object-detection-demo/weights/candidates/world-cockroach-baseline-v1/pretrained-vocabulary.pt",
+      "out": "Reports/cockroach-expanded-v3-finetune",
+      "baseline_report": "Reports/cockroach-expanded-v3-pretrained-baseline/report.json",
+      "resume": null,
+      "epochs": 80,
+      "seed": 4747,
+      "imgsz": 640,
+      "task": "detect",
+      "batch": 4,
+      "workers": 0,
+      "text_cache": "Reports/pretrained-yoloworld",
+      "learning_rate": 0.0001,
+      "allow_public_pilot": true
+    },
+    "dataset_sources": [
+      {
+        "id": "inaturalist",
+        "license": "Per-photo CC BY or CC0; attribution in samples",
+        "url": "https://www.inaturalist.org",
+        "reviewed": true
+      },
+      {
+        "id": "openimages-v7",
+        "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+        "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+        "reviewed": true
+      }
+    ],
+    "deployment_accepted": false,
+    "pico_validation": "PENDING: requires independent annotated PICO captures and end-to-end device verification",
+    "dataset_version": "ab24a4c016a24a1f71c471e33e9ac3b7fe5b7a3f56b9c3c148975ec0dc11d700"
+  },
+  "validation": {
+    "mode": "baseline",
+    "domain": "public-source-pilot",
+    "deployment_accepted": false,
+    "dataset_sources": [
+      {
+        "id": "inaturalist",
+        "license": "Per-photo CC BY or CC0; attribution in samples",
+        "url": "https://www.inaturalist.org",
+        "reviewed": true
+      },
+      {
+        "id": "openimages-v7",
+        "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+        "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+        "reviewed": true
+      }
+    ],
+    "limitations": [
+      "Small source-grouped subset; not an official benchmark score",
+      "No PICO targets evaluated"
+    ],
+    "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-expanded-v3-finetune\\train\\weights\\best.pt",
+    "architecture": "WorldModel",
+    "sha256": "cb7262e883d7787a2ba30434807ea94768ec545836f6055b9a7f4aa36af96da0",
+    "dataset_version": "ab24a4c016a24a1f71c471e33e9ac3b7fe5b7a3f56b9c3c148975ec0dc11d700",
+    "split": "val",
+    "torch": "2.14.1+cpu",
+    "ultralytics": "8.4.173",
+    "model_names": {
+      "0": "Cockroach"
+    },
+    "per_class": [
+      {
+        "class_id": 0,
+        "name": "Cockroach",
+        "precision": 0.9909817716842151,
+        "recall": 1.0,
+        "mAP50": 0.995,
+        "mAP50_95": 0.8557499999999999,
+        "labels": 8
+      }
+    ],
+    "images": 8,
+    "ground_truth_instances": 8,
+    "false_positive_images": 0,
+    "ap_scope": "Positive target instances",
+    "operating_confidence": 0.65,
+    "operating_iou": 0.5,
+    "operating_per_class": [
+      {
+        "name": "Cockroach",
+        "true_positive": 6,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": 1.0,
+        "recall": 0.75
+      }
+    ],
+    "mean_inference_ms": 239.42111249925802,
+    "p95_inference_ms": 853.467794999596,
+    "cold_first_image_ms": 1248.814599995967,
+    "warm_mean_ms": 95.22204285687101,
+    "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+    "imgsz": 640,
+    "rect": true,
+    "device": "cpu",
+    "errors": [
+      {
+        "image": "images/val/2471649-2767233.jpg",
+        "example": "error-2471649-2767233.jpg",
+        "ground_truth": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.65
+      },
+      {
+        "image": "images/val/14158501-20987090.jpg",
+        "example": "error-14158501-20987090.jpg",
+        "ground_truth": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.65
+      }
+    ]
+  },
+  "test": null,
+  "status": "LOCAL_TEST_PENDING",
+  "service_routed": false,
+  "pico_validation": "NOT_PERFORMED for this model",
+  "training_outputs": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-expanded-v3-finetune\\train",
+  "resume_weight": null,
+  "last_weight": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-expanded-v3-finetune\\train\\weights\\last.pt",
+  "optimizer_resume_available": false,
+  "last_weight_usage": "Fine-tuning initializer only; optimizer state stripped or unavailable",
+  "validation_report": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-expanded-v3-runtime-val\\report.json",
+  "test_report": null,
+  "inference_timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "warm_mean_inference_ms": 95.22204285687101,
+  "limitations": [
+    "Candidate packaging does not authorize deployment or prove PICO performance"
+  ],
+  "new_observer_test": {
+    "mode": "test",
+    "domain": "public-source-pilot",
+    "deployment_accepted": false,
+    "dataset_sources": [
+      {
+        "id": "inaturalist",
+        "license": "Per-photo CC BY or CC0; attribution in samples",
+        "url": "https://www.inaturalist.org",
+        "reviewed": true
+      },
+      {
+        "id": "openimages-v7",
+        "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+        "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+        "reviewed": true
+      }
+    ],
+    "limitations": [
+      "Small source-grouped subset; not an official benchmark score",
+      "No PICO targets evaluated"
+    ],
+    "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-expanded-v3-finetune\\train\\weights\\best.pt",
+    "architecture": "WorldModel",
+    "sha256": "cb7262e883d7787a2ba30434807ea94768ec545836f6055b9a7f4aa36af96da0",
+    "dataset_version": "fe17e3f491da80ffb1724f5343fd7ca19a18f4eb70e5d4a7377c6bd4f809146a",
+    "split": "test",
+    "torch": "2.14.1+cpu",
+    "ultralytics": "8.4.173",
+    "model_names": {
+      "0": "Cockroach"
+    },
+    "per_class": [
+      {
+        "class_id": 0,
+        "name": "Cockroach",
+        "precision": 0.9905229808006082,
+        "recall": 1.0,
+        "mAP50": 0.995,
+        "mAP50_95": 0.9349999999999999,
+        "labels": 5
+      }
+    ],
+    "images": 5,
+    "ground_truth_instances": 5,
+    "false_positive_images": 0,
+    "ap_scope": "Positive target instances",
+    "operating_confidence": 0.65,
+    "operating_iou": 0.5,
+    "operating_per_class": [
+      {
+        "name": "Cockroach",
+        "true_positive": 5,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    ],
+    "mean_inference_ms": 326.91308000066783,
+    "p95_inference_ms": 1012.7300999971337,
+    "cold_first_image_ms": 1238.0110999947647,
+    "warm_mean_ms": 99.13857500214363,
+    "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+    "imgsz": 640,
+    "rect": true,
+    "device": "cpu",
+    "errors": []
+  },
+  "pico_negative_evaluation": {
+    "mode": "test",
+    "domain": "pico-negative-only-heldout",
+    "deployment_accepted": false,
+    "dataset_sources": [
+      {
+        "id": "pico",
+        "license": "User-authorized private device captures; internal evaluation only, no redistribution license asserted",
+        "url": "local:Reports/pico-shared-ui-live-v1",
+        "reviewed": true
+      }
+    ],
+    "limitations": [
+      "Small source-grouped subset; not an official benchmark score",
+      "No positive PICO targets: cannot establish precision, recall or AP for target recognition"
+    ],
+    "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-expanded-v3-finetune\\train\\weights\\best.pt",
+    "architecture": "WorldModel",
+    "sha256": "cb7262e883d7787a2ba30434807ea94768ec545836f6055b9a7f4aa36af96da0",
+    "dataset_version": "50526b41c13ca7fd799c6825a52268e41d76acdf5fd5ec6c59ea0d52678df57e",
+    "split": "test",
+    "torch": "2.14.1+cpu",
+    "ultralytics": "8.4.173",
+    "model_names": {
+      "0": "Cockroach"
+    },
+    "per_class": [],
+    "images": 8,
+    "ground_truth_instances": 0,
+    "false_positive_images": 0,
+    "ap_scope": "NOT_APPLICABLE: negative-only evaluation",
+    "operating_confidence": 0.65,
+    "operating_iou": 0.5,
+    "operating_per_class": [
+      {
+        "name": "Cockroach",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      }
+    ],
+    "mean_inference_ms": 242.60417500408948,
+    "p95_inference_ms": 881.1496900096238,
+    "cold_first_image_ms": 1305.315600009635,
+    "warm_mean_ms": 90.7882571461544,
+    "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+    "imgsz": 640,
+    "rect": true,
+    "device": "cpu",
+    "errors": []
+  },
+  "remaining_validation": [
+    "Two missed targets among eight validation positives at conf 0.65.",
+    "No independent PICO cockroach-positive test or Unity end-to-end device verification.",
+    "Fresh positive test has only five images; validation recall is 0.75 at conf 0.65."
+  ],
+  "public_negative_evaluation": {
+    "mode": "test",
+    "domain": "public-openimages-pilot",
+    "deployment_accepted": false,
+    "dataset_sources": [
+      {
+        "id": "openimages-v7",
+        "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+        "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+        "reviewed": true
+      }
+    ],
+    "limitations": [
+      "Small source-grouped subset; not an official benchmark score",
+      "No PICO targets evaluated"
+    ],
+    "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\candidates\\cockroach-expanded-v3\\best.pt",
+    "architecture": "WorldModel",
+    "sha256": "cb7262e883d7787a2ba30434807ea94768ec545836f6055b9a7f4aa36af96da0",
+    "dataset_version": "bbc170cf9bbcbe607328ac44b82978a0edd7fa12f413199442d76a8d2b84c5ad",
+    "split": "test",
+    "torch": "2.14.1+cpu",
+    "ultralytics": "8.4.173",
+    "model_names": {
+      "0": "Cockroach"
+    },
+    "per_class": [],
+    "images": 44,
+    "ground_truth_instances": 0,
+    "false_positive_images": 0,
+    "ap_scope": "NOT_APPLICABLE: negative-only evaluation",
+    "operating_confidence": 0.65,
+    "operating_iou": 0.5,
+    "operating_per_class": [
+      {
+        "name": "Cockroach",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      }
+    ],
+    "mean_inference_ms": 116.41892499954503,
+    "p95_inference_ms": 104.89892500481801,
+    "cold_first_image_ms": 1292.3491999972612,
+    "warm_mean_ms": 89.07170930192373,
+    "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+    "imgsz": 640,
+    "rect": true,
+    "device": "cpu",
+    "errors": []
+  }
+}
