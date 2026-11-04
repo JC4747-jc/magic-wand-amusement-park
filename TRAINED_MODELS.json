@@ -1,6 +1,6 @@
 {
   "scope": "Trained candidate archive; not a deployment release",
-  "branch": "4d",
+  "branch": "restore-4d-lighter",
   "models": [
     {
       "name": "cockroach-expanded-v3",
@@ -65,5 +65,6 @@
     "Rejected and pending candidates retain their original status.",
     "No runtime configuration or Unity animation changes included in this upload.",
     "last.pt omitted; these completed runs have stripped optimizer state."
-  ]
+  ],
+  "also_archived_on": "4d"
 }
