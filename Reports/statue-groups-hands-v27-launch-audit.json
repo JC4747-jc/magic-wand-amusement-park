@@ -1,0 +1,18 @@
+{
+  "status": "PASS_PRETRAIN_COMPARISON",
+  "frozen_inputs": 220,
+  "parameters_differ_only_in_paths": {
+    "data": [
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\statue-figure-labels-v23\\data.yaml",
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\statue-hands-v26\\data.yaml"
+    ],
+    "project": [
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-oiv7m-figure-labels-v24-training",
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-oiv7m-groups-hands-v27-training"
+    ]
+  },
+  "initializer_equal": true,
+  "training_budget": "20epochs;80base+2rotatingextra=82exposures versusv24 76base+2extra=78,not equalcompute",
+  "selection": "Samefull7VAL21GT .65/640rect/.7/max32, noTESTcheckpointselection",
+  "completed": false
+}

@@ -1,0 +1,79 @@
+{
+  "status": "TWO_TRAIN_ONLY_REAL_HAND_NEGATIVES_VISUALLY_APPROVED",
+  "source_manifest_sha256": "3a4ef75911ef0512867aa34cc690b78469729de0e83e91e3b2d40aa813b0fe76",
+  "samples": [
+    {
+      "page_id": 151301401,
+      "image": "images/151301401.jpg",
+      "image_sha256": "bc45e7785d5373c6dce307077076400747baa806d833fabc4d26681e8a663dc4",
+      "artist": "Mercedes Xavier dM",
+      "group": "commons:artist:3475343bf94dcfe646af2260e7a4db27fb1f807ba2c94e5704c04f35d4161f91",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "publisher_linkage_verified": true,
+      "original_actually_viewed": true,
+      "physical_statue_instances": 0,
+      "empty_label_approved": true,
+      "basis": "Real hand texture and anatomy, photograph background, no represented physical sculpture. Not based solely on model output."
+    },
+    {
+      "page_id": 133904055,
+      "image": "images/133904055.jpg",
+      "image_sha256": "ab76b973aae15a0e9c3f121d47a8115810793fe524ee104e4781faef9c89be12",
+      "artist": "些細な日常",
+      "group": "commons:artist:cfe17cceabbf4e7be827a15d1e02e756670cf7ba9ba54772240dfdfafdef2473",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "publisher_linkage_verified": true,
+      "original_actually_viewed": true,
+      "physical_statue_instances": 0,
+      "empty_label_approved": true,
+      "basis": "Real hand texture and anatomy, photograph background, no represented physical sculpture. Not based solely on model output."
+    }
+  ],
+  "inputs": [
+    {
+      "path": "Datasets/statue-hand-train-source-v26/manifest.json",
+      "sha256": "3a4ef75911ef0512867aa34cc690b78469729de0e83e91e3b2d40aa813b0fe76"
+    },
+    {
+      "path": "Datasets/statue-hand-train-source-v26/train-reservation.json",
+      "sha256": "0209c0b636ea01118fad9b8cea2f910edd417480632af513b4e7fe59f8834a88"
+    },
+    {
+      "path": "Reports/statue-hand-train-v26-original-review.json",
+      "sha256": "f49f4690b06efbc0772c07a731032b25cd45cae903742d8142339ae3c8ea20a8"
+    },
+    {
+      "path": "Reports/statue-hand-train-v26-model-screen.json",
+      "sha256": "d5e7f64d4f271e29ebcc282a3f07994f87a472f5425d928915ac30fae34a4fe4"
+    },
+    {
+      "path": "Reports/statue-hand-train-v26-identity-history.json",
+      "sha256": "b1bd01bda30ece8a8d919d7956ed023cb15eaca3cf73615aca4b68e35879672d"
+    },
+    {
+      "path": "Reports/statue-hand-train-v26-creator-links.json",
+      "sha256": "f1986490da4b59ffe0efd2277087fd181c6ed7e6d69c3d4f6a755148c2911c00"
+    },
+    {
+      "path": "Reports/statue-hand-train-v26-pixel-history.json",
+      "sha256": "cad1161e84e3382bd9a26a3f83bc3448c50d94c0d37da72f07d916b054b13a85"
+    }
+  ],
+  "split": "train",
+  "training_approved": true,
+  "applied_to_dataset": false,
+  "fp_overlay_review": {
+    "page_id": 151301401,
+    "actually_viewed": true,
+    "confirmed_false_positives": 2
+  },
+  "other_fp_hold": {
+    "page_id": 121492817,
+    "actually_viewed": true,
+    "confirmed_false_positives": 1,
+    "hold": "Missing Artist creator URL; explicit photographer identity must be verified before adoption."
+  },
+  "policy": "All8 TRAIN-only forever, independent of heldout PICO frames. This approves source annotations only, not a model improvement or deployment."
+}

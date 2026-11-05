@@ -1,0 +1,237 @@
+{
+  "mode": "baseline",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    },
+    {
+      "id": "lvis-v1-train-statue",
+      "license": "LVIS annotations CC BY 4.0; images verified CC BY 2.0",
+      "url": "https://www.lvisdataset.org/",
+      "reviewed": true,
+      "review_scope": "Only explicitly selected samples in this revision"
+    },
+    {
+      "id": "lvis-v1-val-statue",
+      "license": "LVIS annotations CC BY 4.0; images verified CC BY 2.0",
+      "url": "https://www.lvisdataset.org/",
+      "reviewed": true,
+      "review_scope": "Only explicitly selected samples in this revision"
+    },
+    {
+      "id": "commons-equipment-negative-v1",
+      "license": "Per-image CC BY 2.0 or CC BY-SA 4.0; retain attribution and applicable ShareAlike",
+      "url": "https://commons.wikimedia.org/wiki/Category:Virtual_reality_headsets",
+      "reviewed": true
+    },
+    {
+      "id": "commons-statue-positive-v1",
+      "reviewed": true,
+      "license": "Per-image CC BY 3.0 or CC BY-SA 4.0; manual visible-figure annotations, attribution and applicable ShareAlike retained",
+      "url": "https://commons.wikimedia.org/wiki/Category:Statues_of_children"
+    },
+    {
+      "id": "commons-statue-rear-v17",
+      "reviewed": true,
+      "license": "Per-photo CC BY 2/4, CC BY-SA4 or CC0; credit and ShareAlike retained",
+      "url": "https://commons.wikimedia.org/wiki/Category:Rear_views_of_statues"
+    },
+    {
+      "id": "commons-statue-vr-negatives-v20",
+      "reviewed": true,
+      "license": "Per-photo CC BY 2/4, CC BY-SA4 or CC0; credit and ShareAlike retained",
+      "url": "https://commons.wikimedia.org/wiki/Category:People_wearing_virtual_reality_headsets"
+    },
+    {
+      "id": "commons-statue-groups-v25",
+      "url": "https://commons.wikimedia.org/wiki/Category:Sculptural_groups",
+      "license": "Per-photo CC BY / CC BY-SA metadata; retain individual attribution and ShareAlike",
+      "reviewed": true
+    },
+    {
+      "id": "commons-statue-hand-negatives-v26",
+      "url": "https://commons.wikimedia.org/wiki/Category:Male_hands",
+      "license": "CC BY-SA4, per-image author and license retained; ShareAlike applies to distributed adaptations",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated",
+    "Statue class does not establish historical identity, age or full 3D pose"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-oiv7m-groups-hands-v27-training\\train\\weights\\last.pt",
+  "architecture": "DetectionModel",
+  "sha256": "67f5f12585f871c597bd23d806aa3fd516bab51a14fbe8bf3c2168ce0be4a69b",
+  "dataset_version": "5c7a826d47ce7873f7b723a0ada898e5a67abdfb43a48be7330b79b7ad2d35f4",
+  "split": "val",
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "Statue"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "Statue",
+      "precision": 0.8450230075461324,
+      "recall": 0.7795038550401633,
+      "mAP50": 0.9386675191815859,
+      "mAP50_95": 0.8008320395528374,
+      "labels": 21
+    }
+  ],
+  "images": 7,
+  "excluded_samples": [],
+  "ground_truth_instances": 21,
+  "false_positive_images": 0,
+  "per_image": [
+    {
+      "image": "images\\val\\a5bc5fc3ae440046596e0a54.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 1235.6910999951651
+    },
+    {
+      "image": "images\\val\\1bb4847d6fdd0c2f6bf87e22.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 180.73930000537075
+    },
+    {
+      "image": "images\\val\\aeb65d65f8b99d393ce4ae1e.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 239.35059999348596
+    },
+    {
+      "image": "images\\val\\1b81a10a874a5ad6c110968c.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 177.87570001382846
+    },
+    {
+      "image": "images\\val\\e2ce7aaa49ea84334e86ffb9.jpg",
+      "ground_truth": 14,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 14,
+      "inference_ms": 176.0431000002427
+    },
+    {
+      "image": "images\\val\\4ab3df40f3490a06ef4998b5.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 207.45960000203922
+    },
+    {
+      "image": "images/val/108fa4288e5b91c1668841ab.jpg",
+      "ground_truth": 2,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 2,
+      "inference_ms": 215.28229999239556
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "Statue",
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 20,
+      "precision": 1.0,
+      "recall": 0.047619047619047616
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 347.49167142893253,
+  "p95_inference_ms": 936.7889499946607,
+  "cold_first_image_ms": 1235.6910999951651,
+  "warm_mean_ms": 199.45843333456045,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images\\val\\a5bc5fc3ae440046596e0a54.jpg",
+      "example": "error-a5bc5fc3ae440046596e0a54.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images\\val\\1bb4847d6fdd0c2f6bf87e22.jpg",
+      "example": "error-1bb4847d6fdd0c2f6bf87e22.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images\\val\\1b81a10a874a5ad6c110968c.jpg",
+      "example": "error-1b81a10a874a5ad6c110968c.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images\\val\\e2ce7aaa49ea84334e86ffb9.jpg",
+      "example": "error-e2ce7aaa49ea84334e86ffb9.jpg",
+      "ground_truth": 14,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 14,
+      "confidence": 0.65
+    },
+    {
+      "image": "images\\val\\4ab3df40f3490a06ef4998b5.jpg",
+      "example": "error-4ab3df40f3490a06ef4998b5.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/108fa4288e5b91c1668841ab.jpg",
+      "example": "error-108fa4288e5b91c1668841ab.jpg",
+      "ground_truth": 2,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 2,
+      "confidence": 0.65
+    }
+  ],
+  "allowed_classes": [
+    "Statue"
+  ],
+  "max_det": 32,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}

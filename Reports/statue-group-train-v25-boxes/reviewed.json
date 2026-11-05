@@ -1,0 +1,93 @@
+{
+  "samples": [
+    {
+      "page_id": 185483057,
+      "image": "Datasets/statue-group-train-source-v25/images/185483057.jpg",
+      "sha256": "7b9d2b303a8d7378836cbe0ed5c87aad490a25a9922b3977802743a0cf5d7369",
+      "dimensions": [
+        768,
+        1024
+      ],
+      "group": "commons:artist:7ab3a52c97f5a278181290104122a389897c658692198209aee46106bba04e9e",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "artist": "Namwanje Sauyah",
+      "note": "Three physical represented figures: standing Jesus, foreground kneeling Samaritan, reclining injured person. Visible extents only.",
+      "original_reviewed": true,
+      "split": "train",
+      "status": "ORIGINAL_AND_OVERLAY_REVIEWED_BOX_APPROVED",
+      "training_approved": true,
+      "boxes": [
+        [
+          110,
+          40,
+          380,
+          546
+        ],
+        [
+          110,
+          424,
+          559,
+          1024
+        ],
+        [
+          63,
+          566,
+          310,
+          1001
+        ]
+      ],
+      "overlay": "Reports/statue-group-train-v25-boxes/185483057-corrected.jpg",
+      "overlay_sha256": "53c49c4b6395b9764d56ddf60f13b59992545b4559910bb9643756beb7605db6",
+      "overlay_reviewed": true,
+      "correction_note": "Extended reclining injured figure to include visible lower leg/foot; no invented occluded extent."
+    },
+    {
+      "page_id": 66956474,
+      "image": "Datasets/statue-group-train-source-v25/images/66956474.jpg",
+      "sha256": "f8285cd1fbf6d86da2e90821ed05cad1382bdaa6e28ab29695e33d7e9466fb8e",
+      "dimensions": [
+        960,
+        720
+      ],
+      "group": "commons:artist:b2e71c539a67060c3b1a60885505bb445a7e4ccd0027976a2073eb0cc1583996",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Yoshihirootz",
+      "note": "Three represented standing sculptures with integral decorative faces; retain whole fused figure as one instance each, exclude plain plinths.",
+      "original_reviewed": true,
+      "split": "train",
+      "status": "ORIGINAL_AND_OVERLAY_REVIEWED_BOX_APPROVED",
+      "training_approved": true,
+      "boxes": [
+        [
+          360,
+          130,
+          605,
+          634
+        ],
+        [
+          650,
+          300,
+          719,
+          500
+        ],
+        [
+          833,
+          232,
+          960,
+          531
+        ]
+      ],
+      "overlay": "Reports/statue-group-train-v25-boxes/66956474.jpg",
+      "overlay_sha256": "b1e7cef8ea5cd207aab1263245cf93a374a9f72305339384e0c70cb660122ba5",
+      "overlay_reviewed": true
+    }
+  ],
+  "training_approved": true,
+  "source_manifest_sha256": "78773885c26caca3ee2a1317dc6315897829828ca9255cbae84d8765a2035ac7",
+  "parent_draft_sha256": "6c399a646ee7bea8c1594166c4ddec894bb0bf5271de44587196e1e68961eaf8",
+  "split": "train",
+  "publisher_linkage_all9_verified": true,
+  "limitation": "Single assistant original and overlay review. Two selected source creators differ from recorded historical creators; exact pixel and dHash audits do not prove every physical-subject alias or pretraining independence. Other7 acquired sources remain outside dataset and TRAIN-only."
+}

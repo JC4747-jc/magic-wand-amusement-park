@@ -1,0 +1,131 @@
+{
+  "status": "REJECTED_OBSERVED_REGRESSION",
+  "weight_sha256": "2b68386cf179a5f3e39018415b9b2a1400a39987a6cf8bc4bd1cd4841d111b58",
+  "selected_epoch": 11,
+  "training_seconds": 196.716,
+  "frozen_inputs": 220,
+  "validation_operating": [
+    {
+      "name": "Statue",
+      "true_positive": 19,
+      "false_positive": 2,
+      "false_negative": 2,
+      "precision": 0.9047619047619048,
+      "recall": 0.9047619047619048
+    }
+  ],
+  "office_images": 8,
+  "office_false_positives": 0,
+  "observed_test_operating": [
+    {
+      "name": "Statue",
+      "true_positive": 12,
+      "false_positive": 2,
+      "false_negative": 11,
+      "precision": 0.8571428571428571,
+      "recall": 0.5217391304347826
+    }
+  ],
+  "observed_test_AP": [
+    {
+      "class_id": 0,
+      "name": "Statue",
+      "precision": 0.8380801114279465,
+      "recall": 0.5217391304347826,
+      "mAP50": 0.670714760964729,
+      "mAP50_95": 0.5002286971086088,
+      "labels": 23
+    }
+  ],
+  "prior_v21_same_observed_data": [
+    {
+      "name": "Statue",
+      "true_positive": 15,
+      "false_positive": 3,
+      "false_negative": 8,
+      "precision": 0.8333333333333334,
+      "recall": 0.6521739130434783
+    }
+  ],
+  "error_review": [
+    {
+      "image": "images/test/75908598.jpg",
+      "example": "Reports/statue-oiv7m-groups-hands-v27-observed-v22-regression/error-75908598.jpg",
+      "sha256": "4aeeca5581fb5642e6d8c6cbb2c32a283eec3777a25563b1ac189c515f2d8619",
+      "actually_viewed": true,
+      "note": "Mother matched, all3 sculpted children missed; previous balusterFP removed."
+    },
+    {
+      "image": "images/test/45374298.jpg",
+      "example": "Reports/statue-oiv7m-groups-hands-v27-observed-v22-regression/error-45374298.jpg",
+      "sha256": "0024c1c1a5d52bd4052a357af07fb0521c6707068fadf3d0de7ff3280a4b0e85",
+      "actually_viewed": true,
+      "note": "Abstract physical bust missed."
+    },
+    {
+      "image": "images/test/45105771.jpg",
+      "example": "Reports/statue-oiv7m-groups-hands-v27-observed-v22-regression/error-45105771.jpg",
+      "sha256": "7b57dd219fc72616509289fb7d1836a5225a5a71813a21df669b00a7301291a6",
+      "actually_viewed": true,
+      "note": "Second abstract physical bust missed."
+    },
+    {
+      "image": "images/test/68506694.jpg",
+      "example": "Reports/statue-oiv7m-groups-hands-v27-observed-v22-regression/error-68506694.jpg",
+      "sha256": "1b72d48b63956c5122ce1f558f29c963f24294ded96d6666ca007c9cd36e9128",
+      "actually_viewed": true,
+      "note": "Main figure matched plus duplicate/partial knee/hand FP."
+    },
+    {
+      "image": "images/test/39354795.jpg",
+      "example": "Reports/statue-oiv7m-groups-hands-v27-observed-v22-regression/error-39354795.jpg",
+      "sha256": "eaf6bc6ae0034b4b0e601f780dad32dfea2cf637a9a67e50b10c8dc5104d1711",
+      "actually_viewed": true,
+      "note": "Oversized support/base prediction still fails figure-only IoU."
+    },
+    {
+      "image": "images/test/34609639.jpg",
+      "example": "Reports/statue-oiv7m-groups-hands-v27-observed-v22-regression/error-34609639.jpg",
+      "sha256": "a53cf92faaf5990ccf89323f94f76a15fa587eeb009201445c5d6aef0470aa43",
+      "actually_viewed": true,
+      "note": "Six visible annotated heads, only one matched; five missed."
+    }
+  ],
+  "evidence": [
+    {
+      "path": "Reports/statue-oiv7m-groups-hands-v27-final-val/report.json",
+      "sha256": "a7190b1a5ca14b3ba193b4ebdab057dbd6041f1fef5a7936935a9f5a3d08a216"
+    },
+    {
+      "path": "Reports/statue-oiv7m-groups-hands-v27-observed-v22-regression/report.json",
+      "sha256": "259ee30d4e21c0b543f766d508441adadd013670160d70efb809445729c39566"
+    },
+    {
+      "path": "Reports/statue-oiv7m-groups-hands-v27-office-regression-counted.json",
+      "sha256": "e2b5637f1c1bea3a5bd9ef36ae85d21cb61f6ec88c0cc88efec3e571a82d3b75"
+    },
+    {
+      "path": "Reports/statue-oiv7m-groups-hands-v27-completed-audit.json",
+      "sha256": "5b54ea91871f9feaba1350a700f7b497203888dc913766547cc11092a0bc957c"
+    },
+    {
+      "path": "Reports/statue-groups-hands-v27-launch-audit.json",
+      "sha256": "78c86b1054112ffab7862e81ca21e3454991381a263e3d51e7586a5c67ceaab8"
+    },
+    {
+      "path": "Reports/statue-v27-observed-v22-post-audit.json",
+      "sha256": "39d9e83e912c67138d4a9f68696afa917bf5ea19919ca7918b88694e235b973e"
+    }
+  ],
+  "fresh_independent_test_evaluated": false,
+  "service_routed": false,
+  "deployment_accepted": false,
+  "pico_validation": "NOT_PERFORMED",
+  "conclusion": "Observed office background improvement did not generalize to existing positive regression: worse12TP versusv21 15TP. Small reused7-image VAL is dominated by one14-instance museum frame; passing it cannot establish recognition across styles or dense groups.",
+  "next_action": "Archive actual rejected weight and new group/hand source evidence. Finish complete census of existing TRAIN-reserved dense groups and broaden independently grouped positive/style coverage; strengthen future VAL breadth without moving historical TEST into selection or relabeling to match model output. Do not tune confidence/NMS on observed TEST.",
+  "limitations": [
+    "Combined two group positives plus two hand negatives,82versus78exposures: not an isolated causal ablation.",
+    "No fresh TEST for v27, observedv22neverTRAIN/checkpoint selection.",
+    "Single-annotator public pilot, unknown pretraining overlap, no target-positive PICO acceptance."
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "scope": "Repeated observed office negative regression, not fresh independent test",
+  "sha256": "2b68386cf179a5f3e39018415b9b2a1400a39987a6cf8bc4bd1cd4841d111b58",
+  "prior_evidence_sha256": "cc0f80d48e8714690725b9ebdf146136c6eebd44ffd66ab5a9aae29251f83180",
+  "images": 8,
+  "operating_conf": 0.65,
+  "imgsz": 640,
+  "rect": true,
+  "max_det": 32,
+  "nms_iou": 0.7,
+  "rows": [
+    {
+      "image": "images\\test\\242b71fd8d524ed8b38b955e954bbd5a-frame-0000000001.jpg",
+      "sha256": "5a822f6789f14db7f78fd0fb13f1c9e6c2891c6a9026ec52ac51e7394748dd50",
+      "confidence": [
+        0.027850698679685593
+      ],
+      "false_positives": 0
+    },
+    {
+      "image": "images\\test\\242b71fd8d524ed8b38b955e954bbd5a-frame-0000000103.jpg",
+      "sha256": "b1e37e4214a60ad726d1e5c1083ec70fb06884b09a922bb7eef014b27f3bfbe6",
+      "confidence": [
+        0.02495323307812214,
+        0.016709286719560623,
+        0.001462924643419683,
+        0.0012347155716270208
+      ],
+      "false_positives": 0
+    },
+    {
+      "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000106.jpg",
+      "sha256": "5faa9c73ce31e20d44890d4792fc4eafa8c03b54ad68d40a25b999b5760701d3",
+      "confidence": [
+        0.013584163039922714,
+        0.004421788267791271
+      ],
+      "false_positives": 0
+    },
+    {
+      "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000211.jpg",
+      "sha256": "6df5e50da3364377bc0a9e10a74e358e1fd14255865079dfe4d5532de058aa5e",
+      "confidence": [
+        0.006651788484305143,
+        0.0041833859868347645,
+        0.003850983688607812,
+        0.0028161550872027874,
+        0.0016884594224393368,
+        0.0010722577571868896
+      ],
+      "false_positives": 0
+    },
+    {
+      "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000320.jpg",
+      "sha256": "8a99a64fa73001bc338e3bcfaece948d483be07c2795d509b34bef614fa2296c",
+      "confidence": [
+        0.007968837395310402,
+        0.0011263657361268997
+      ],
+      "false_positives": 0
+    },
+    {
+      "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000425.jpg",
+      "sha256": "ba48312aa3c80cc4157d7d992328a488a5cf745f8cbb23c973639bbe0c70c77d",
+      "confidence": [
+        0.004895481280982494,
+        0.0039178053848445415,
+        0.0028908837120980024,
+        0.0014619686407968402
+      ],
+      "false_positives": 0
+    },
+    {
+      "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000536.jpg",
+      "sha256": "7cb0f0041613cab898c2da7d3c7245f90f773fcf402a0805d7ca4d519d8763cd",
+      "confidence": [
+        0.044554829597473145,
+        0.006326238624751568,
+        0.0026047888677567244,
+        0.001459956867620349,
+        0.0010594436898827553
+      ],
+      "false_positives": 0
+    },
+    {
+      "image": "images\\test\\337df26c67aa40e69252e5b49ec74663-frame-0000000641.jpg",
+      "sha256": "ff7cd3e4a72e0e623e1144c76696ed307407460c4afe483cb98846c4aa90487f",
+      "confidence": [
+        0.005453051533550024,
+        0.004801408387720585
+      ],
+      "false_positives": 0
+    }
+  ],
+  "false_positives": 0,
+  "ground_truth_instances": 0,
+  "native_target_classes": {
+    "0": "Statue"
+  },
+  "independent_test_evaluated": false,
+  "service_routed": false,
+  "false_positive_images": 0,
+  "raw_report_sha256": "336d135f887115f919063a9532865044e6ab907006e500238142ab572ae350bd"
+}

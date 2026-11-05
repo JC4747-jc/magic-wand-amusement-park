@@ -1,0 +1,307 @@
+{
+  "mode": "test",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "commons-statue-independent-v22",
+      "url": "https://commons.wikimedia.org/",
+      "license": "Per-image CC BY / CC BY-SA; preserve attribution and ShareAlike",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated",
+    "Statue class does not establish historical identity, age or full 3D pose"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-oiv7m-groups-hands-v27-training\\train\\weights\\best.pt",
+  "architecture": "DetectionModel",
+  "sha256": "2b68386cf179a5f3e39018415b9b2a1400a39987a6cf8bc4bd1cd4841d111b58",
+  "dataset_version": "bc8607b8d85ed6478bb9cd393cc47285985d6756e94313981d0a6b01f4b822a3",
+  "split": "test",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "Statue"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "Statue",
+      "precision": 0.8380801114279465,
+      "recall": 0.5217391304347826,
+      "mAP50": 0.670714760964729,
+      "mAP50_95": 0.5002286971086088,
+      "labels": 23
+    }
+  ],
+  "images": 22,
+  "excluded_samples": [],
+  "ground_truth_instances": 23,
+  "false_positive_images": 2,
+  "per_image": [
+    {
+      "image": "images/test/46472562.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 1481.5913000056753
+    },
+    {
+      "image": "images/test/75908598.jpg",
+      "ground_truth": 4,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 3,
+      "inference_ms": 222.67999999166932
+    },
+    {
+      "image": "images/test/113009697.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 163.70929998811334
+    },
+    {
+      "image": "images/test/179100901.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 206.2858999997843
+    },
+    {
+      "image": "images/test/45374298.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 227.07800001080614
+    },
+    {
+      "image": "images/test/45756467.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 208.89059999899473
+    },
+    {
+      "image": "images/test/45105771.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 281.0559999925317
+    },
+    {
+      "image": "images/test/123655719.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 281.19920000608545
+    },
+    {
+      "image": "images/test/82534150.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 192.65129999257624
+    },
+    {
+      "image": "images/test/68506694.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 268.12280000012834
+    },
+    {
+      "image": "images/test/80080423.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 196.71509999898262
+    },
+    {
+      "image": "images/test/39354795.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 1,
+      "inference_ms": 212.76120000402443
+    },
+    {
+      "image": "images/test/15001683.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 199.16380000358913
+    },
+    {
+      "image": "images/test/2273236.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 189.12100000306964
+    },
+    {
+      "image": "images/test/34609639.jpg",
+      "ground_truth": 6,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 5,
+      "inference_ms": 210.20600000338163
+    },
+    {
+      "image": "images/test/148524760.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 187.14969999564346
+    },
+    {
+      "image": "images/test/159433287.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 165.2384000044549
+    },
+    {
+      "image": "images/test/153964930.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 191.1473000072874
+    },
+    {
+      "image": "images/test/147733852.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 269.16179999534506
+    },
+    {
+      "image": "images/test/179649522.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 196.74539999687113
+    },
+    {
+      "image": "images/test/33399267.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 193.4388000081526
+    },
+    {
+      "image": "images/test/149607354.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 187.50070000533015
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "Statue",
+      "true_positive": 12,
+      "false_positive": 2,
+      "false_negative": 11,
+      "precision": 0.8571428571428571,
+      "recall": 0.5217391304347826
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 269.61880000056806,
+  "p95_inference_ms": 281.19204000540776,
+  "cold_first_image_ms": 1481.5913000056753,
+  "warm_mean_ms": 211.90582380984864,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images/test/75908598.jpg",
+      "example": "error-75908598.jpg",
+      "ground_truth": 4,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/45374298.jpg",
+      "example": "error-45374298.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/45105771.jpg",
+      "example": "error-45105771.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/68506694.jpg",
+      "example": "error-68506694.jpg",
+      "ground_truth": 1,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/39354795.jpg",
+      "example": "error-39354795.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/34609639.jpg",
+      "example": "error-34609639.jpg",
+      "ground_truth": 6,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 5,
+      "confidence": 0.65
+    }
+  ],
+  "allowed_classes": [
+    "Statue"
+  ],
+  "max_det": 32,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}
