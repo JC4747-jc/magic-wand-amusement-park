@@ -1,0 +1,23 @@
+{
+  "status": "REJECTED_FRESH_TEST",
+  "operating": {
+    "name": "Cockroach",
+    "true_positive": 13,
+    "false_positive": 6,
+    "false_negative": 4,
+    "precision": 0.6842105263157895,
+    "recall": 0.7647058823529411
+  },
+  "negative_images": 16,
+  "negative_false_positives": 6,
+  "model_sha256": "fd057af587c598d79a66fe1a6a10ee4e642a95ab68be3b041503722695f2d663",
+  "plan_sha256": "2df5954c5bcd818e957e5571c199a48048569781c7ced027017ee240e2dffa11",
+  "report_sha256": "735240ce67526574a0e6033843a2c61b7aa75fdecef494fac651e0472a31f447",
+  "deployment_changed": false,
+  "pico_test": "NOT_PERFORMED",
+  "limitations": [
+    "32 public photos, 32 publisher observers; not a household or PICO benchmark",
+    "Beetles mostly ladybirds/leaf beetles with some specimen images",
+    "Publisher taxonomy not independently expert verified"
+  ]
+}
