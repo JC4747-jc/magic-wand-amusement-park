@@ -1,0 +1,34 @@
+{
+  "scope": "Paired TRAIN-only diagnostic, not checkpoint selection, TEST or acceptance. Same frozen selectedv41weight/dataset/confidence/IoU/maxdet; only letterbox shape changes.",
+  "weight_sha256": "a6b1c95fd1e047499cdb8bdd41ef9ec8eac45ea038f49e00fa16356f46808eb7",
+  "rect_operating": [
+    {
+      "name": "Statue",
+      "true_positive": 77,
+      "false_positive": 26,
+      "false_negative": 29,
+      "precision": 0.7475728155339806,
+      "recall": 0.7264150943396226
+    }
+  ],
+  "square_operating": [
+    {
+      "name": "Statue",
+      "true_positive": 75,
+      "false_positive": 30,
+      "false_negative": 31,
+      "precision": 0.7142857142857143,
+      "recall": 0.7075471698113207
+    }
+  ],
+  "rect_images": 88,
+  "square_images": 88,
+  "ground_truth_instances": 106,
+  "conclusion": "Both operating reports must be examined; do not assume letterbox change or longer training alone solves generalization. No production preprocessing changed.",
+  "evidence": {
+    "Reports\\statue-v41-train-diagnostic\\report.json": "af0bd738b4764be3342b92b0bc9ba243006704f10cdf2400db0ef6fba30079d9",
+    "Reports\\statue-v41-train-square-diagnostic\\report.json": "c3a342c5496ecf3a5dc2c8324df14fe819a3a6cdd1ec821b7d3af0a0c87ec5c6",
+    "Reports\\statue-v41-epoch-diagnostic.json": "4f170fb285104e27f1583ac7c777b998731c91d9cc519b6fd041ec9ea8530d7d"
+  },
+  "deployment_accepted": false
+}

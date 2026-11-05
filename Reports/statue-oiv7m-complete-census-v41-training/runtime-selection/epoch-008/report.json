@@ -1,0 +1,361 @@
+{
+  "mode": "baseline",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    },
+    {
+      "id": "lvis-v1-train-statue",
+      "license": "LVIS annotations CC BY 4.0; images verified CC BY 2.0",
+      "url": "https://www.lvisdataset.org/",
+      "reviewed": true,
+      "review_scope": "Only explicitly selected samples in this revision"
+    },
+    {
+      "id": "lvis-v1-val-statue",
+      "license": "LVIS annotations CC BY 4.0; images verified CC BY 2.0",
+      "url": "https://www.lvisdataset.org/",
+      "reviewed": true,
+      "review_scope": "Only explicitly selected samples in this revision"
+    },
+    {
+      "id": "commons-equipment-negative-v1",
+      "license": "Per-image CC BY 2.0 or CC BY-SA 4.0; retain attribution and applicable ShareAlike",
+      "url": "https://commons.wikimedia.org/wiki/Category:Virtual_reality_headsets",
+      "reviewed": true
+    },
+    {
+      "id": "commons-statue-positive-v1",
+      "reviewed": true,
+      "license": "Per-image CC BY 3.0 or CC BY-SA 4.0; manual visible-figure annotations, attribution and applicable ShareAlike retained",
+      "url": "https://commons.wikimedia.org/wiki/Category:Statues_of_children"
+    },
+    {
+      "id": "commons-statue-rear-v17",
+      "reviewed": true,
+      "license": "Per-photo CC BY 2/4, CC BY-SA4 or CC0; credit and ShareAlike retained",
+      "url": "https://commons.wikimedia.org/wiki/Category:Rear_views_of_statues"
+    },
+    {
+      "id": "commons-statue-vr-negatives-v20",
+      "reviewed": true,
+      "license": "Per-photo CC BY 2/4, CC BY-SA4 or CC0; credit and ShareAlike retained",
+      "url": "https://commons.wikimedia.org/wiki/Category:People_wearing_virtual_reality_headsets"
+    },
+    {
+      "id": "commons-statue-groups-v25",
+      "url": "https://commons.wikimedia.org/wiki/Category:Sculptural_groups",
+      "license": "Per-photo CC BY / CC BY-SA metadata; retain individual attribution and ShareAlike",
+      "reviewed": true
+    },
+    {
+      "id": "commons-statue-hand-negatives-v26",
+      "url": "https://commons.wikimedia.org/wiki/Category:Male_hands",
+      "license": "CC BY-SA4, per-image author and license retained; ShareAlike applies to distributed adaptations",
+      "reviewed": true
+    },
+    {
+      "id": "commons-statue-validation-v29",
+      "url": "https://commons.wikimedia.org/wiki/Category:Statues_of_men",
+      "license": "Per-photo recorded CC licenses; photographer and sculptor roles kept separate",
+      "reviewed": true
+    },
+    {
+      "id": "commons-statue-articulated-v35",
+      "url": "https://commons.wikimedia.org/wiki/Category:Sculptural_groups",
+      "license": "Per-photo CC BY / CC BY-SA metadata; retain individual attribution and ShareAlike",
+      "reviewed": true
+    },
+    {
+      "id": "commons-flat-confusers-v37",
+      "url": "https://commons.wikimedia.org/wiki/Category:Cardboard_cutouts",
+      "license": "Per-image CC licenses and photographer attribution retained",
+      "reviewed": true,
+      "review_scope": "Seven explicitly reviewed complete-image negatives only"
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated",
+    "Statue class does not establish historical identity, age or full 3D pose"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-oiv7m-complete-census-v41-training\\train\\weights\\last.pt",
+  "architecture": "DetectionModel",
+  "sha256": "49a193e4751838021a0306bf66d73c0f5c0f0b541ed71d851150be3b765fbef8",
+  "dataset_version": "458b5c0f0c4d420979b877368e6a11887c8069645d6ef209c7ed9e6dc2c3ee59",
+  "split": "val",
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "Statue"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "Statue",
+      "precision": 0.8991266030176752,
+      "recall": 0.775,
+      "mAP50": 0.8623775069810532,
+      "mAP50_95": 0.6703453303028444,
+      "labels": 40
+    }
+  ],
+  "images": 19,
+  "excluded_samples": [],
+  "ground_truth_instances": 40,
+  "false_positive_images": 2,
+  "per_image": [
+    {
+      "image": "images\\val\\a5bc5fc3ae440046596e0a54.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 1267.7143999899272
+    },
+    {
+      "image": "images\\val\\1bb4847d6fdd0c2f6bf87e22.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 218.17180000653025
+    },
+    {
+      "image": "images\\val\\aeb65d65f8b99d393ce4ae1e.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 286.267699993914
+    },
+    {
+      "image": "images\\val\\1b81a10a874a5ad6c110968c.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 214.40609999990556
+    },
+    {
+      "image": "images\\val\\e2ce7aaa49ea84334e86ffb9.jpg",
+      "ground_truth": 21,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 20,
+      "inference_ms": 202.1281000052113
+    },
+    {
+      "image": "images\\val\\4ab3df40f3490a06ef4998b5.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 223.8772999990033
+    },
+    {
+      "image": "images/val/108fa4288e5b91c1668841ab.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 229.51849999662954
+    },
+    {
+      "image": "images/val/14893574.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 210.34430000872817
+    },
+    {
+      "image": "images/val/114339567.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 185.00879999191966
+    },
+    {
+      "image": "images/val/46427714.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 204.6293000021251
+    },
+    {
+      "image": "images/val/46776234.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 262.82310001261067
+    },
+    {
+      "image": "images/val/144453435.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 182.24510000436567
+    },
+    {
+      "image": "images/val/15217428.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 202.50089999171905
+    },
+    {
+      "image": "images/val/51785467.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 185.7594000030076
+    },
+    {
+      "image": "images/val/18393147.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 209.44900000176858
+    },
+    {
+      "image": "images/val/127981389.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 214.70310000586323
+    },
+    {
+      "image": "images/val/115921045.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 182.64040000212844
+    },
+    {
+      "image": "images/val/11134547.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 210.8589999988908
+    },
+    {
+      "image": "images/val/23367767.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 252.9581999988295
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "Statue",
+      "true_positive": 16,
+      "false_positive": 2,
+      "false_negative": 24,
+      "precision": 0.8888888888888888,
+      "recall": 0.4
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 270.84234210595145,
+  "p95_inference_ms": 384.4123699935132,
+  "cold_first_image_ms": 1267.7143999899272,
+  "warm_mean_ms": 215.46056111239724,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images\\val\\e2ce7aaa49ea84334e86ffb9.jpg",
+      "example": "error-e2ce7aaa49ea84334e86ffb9.jpg",
+      "ground_truth": 21,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 20,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/114339567.jpg",
+      "example": "error-114339567.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/46427714.jpg",
+      "example": "error-46427714.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/18393147.jpg",
+      "example": "error-18393147.jpg",
+      "ground_truth": 1,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/115921045.jpg",
+      "example": "error-115921045.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/11134547.jpg",
+      "example": "error-11134547.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/23367767.jpg",
+      "example": "error-23367767.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    }
+  ],
+  "allowed_classes": [
+    "Statue"
+  ],
+  "max_det": 32,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}

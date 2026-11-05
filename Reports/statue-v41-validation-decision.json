@@ -1,0 +1,82 @@
+{
+  "status": "REJECTED_VALIDATION",
+  "deployment_accepted": false,
+  "service_routed": false,
+  "operating_per_class": [
+    {
+      "name": "Statue",
+      "true_positive": 32,
+      "false_positive": 2,
+      "false_negative": 8,
+      "precision": 0.9411764705882353,
+      "recall": 0.8
+    }
+  ],
+  "cohorts": {
+    "prior": {
+      "tp": 21,
+      "fp": 0,
+      "fn": 7,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571428571428571
+    },
+    "extension": {
+      "tp": 11,
+      "fp": 2,
+      "fn": 1,
+      "precision": 0.8461538461538461,
+      "recall": 0.9166666666666666,
+      "f1": 0.8799999999999999
+    }
+  },
+  "rank": [
+    0,
+    0.8685714285714285,
+    0.75,
+    0.8461538461538461,
+    0.7289095121505935
+  ],
+  "report_sha256": "44b821fb04c04071ea296b28be468951ef86c134e16b6210c9f274dd1d7f587b",
+  "errors": [
+    {
+      "image": "images\\val\\e2ce7aaa49ea84334e86ffb9.jpg",
+      "example": "error-e2ce7aaa49ea84334e86ffb9.jpg",
+      "ground_truth": 21,
+      "true_positives": 14,
+      "false_positives": 0,
+      "false_negatives": 7,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/46427714.jpg",
+      "example": "error-46427714.jpg",
+      "ground_truth": 1,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/46776234.jpg",
+      "example": "error-46776234.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/23367767.jpg",
+      "example": "error-23367767.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    }
+  ],
+  "test_performed": false,
+  "scope": "New corrected40GT prospective experiment, not numerically comparable to historical33GT scores. No retrospective historical checkpoint selection.",
+  "next_action": "Inspect remaining false positive and missed figures; stop declaring short retraining sufficient. No automatic deployment."
+}

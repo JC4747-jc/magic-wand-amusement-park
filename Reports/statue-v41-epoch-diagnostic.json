@@ -1,0 +1,649 @@
+{
+  "scope": "Frozen VAL diagnostic only, not new checkpoint selection or acceptance.",
+  "rows": [
+    {
+      "epoch": 1,
+      "cohorts": {
+        "prior": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 27,
+          "precision": 1.0,
+          "recall": 0.03571428571428571,
+          "f1": 0.0689655172413793
+        },
+        "extension": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 10,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "f1": 0.2857142857142857
+        }
+      },
+      "flat_cutout_fp": 0,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 3,
+          "false_positive": 0,
+          "false_negative": 37,
+          "precision": 1.0,
+          "recall": 0.075
+        }
+      ]
+    },
+    {
+      "epoch": 2,
+      "cohorts": {
+        "prior": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 21,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4
+        },
+        "extension": {
+          "tp": 6,
+          "fp": 2,
+          "fn": 6,
+          "precision": 0.75,
+          "recall": 0.5,
+          "f1": 0.6
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 13,
+          "false_positive": 2,
+          "false_negative": 27,
+          "precision": 0.8666666666666667,
+          "recall": 0.325
+        }
+      ]
+    },
+    {
+      "epoch": 3,
+      "cohorts": {
+        "prior": {
+          "tp": 21,
+          "fp": 0,
+          "fn": 7,
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571428571428571
+        },
+        "extension": {
+          "tp": 11,
+          "fp": 2,
+          "fn": 1,
+          "precision": 0.8461538461538461,
+          "recall": 0.9166666666666666,
+          "f1": 0.8799999999999999
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 32,
+          "false_positive": 2,
+          "false_negative": 8,
+          "precision": 0.9411764705882353,
+          "recall": 0.8
+        }
+      ]
+    },
+    {
+      "epoch": 4,
+      "cohorts": {
+        "prior": {
+          "tp": 26,
+          "fp": 2,
+          "fn": 2,
+          "precision": 0.9285714285714286,
+          "recall": 0.9285714285714286,
+          "f1": 0.9285714285714286
+        },
+        "extension": {
+          "tp": 10,
+          "fp": 7,
+          "fn": 2,
+          "precision": 0.5882352941176471,
+          "recall": 0.8333333333333334,
+          "f1": 0.6896551724137931
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 36,
+          "false_positive": 9,
+          "false_negative": 4,
+          "precision": 0.8,
+          "recall": 0.9
+        }
+      ]
+    },
+    {
+      "epoch": 5,
+      "cohorts": {
+        "prior": {
+          "tp": 26,
+          "fp": 1,
+          "fn": 2,
+          "precision": 0.9629629629629629,
+          "recall": 0.9285714285714286,
+          "f1": 0.9454545454545454
+        },
+        "extension": {
+          "tp": 9,
+          "fp": 15,
+          "fn": 3,
+          "precision": 0.375,
+          "recall": 0.75,
+          "f1": 0.5
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 35,
+          "false_positive": 16,
+          "false_negative": 5,
+          "precision": 0.6862745098039216,
+          "recall": 0.875
+        }
+      ]
+    },
+    {
+      "epoch": 6,
+      "cohorts": {
+        "prior": {
+          "tp": 20,
+          "fp": 0,
+          "fn": 8,
+          "precision": 1.0,
+          "recall": 0.7142857142857143,
+          "f1": 0.8333333333333333
+        },
+        "extension": {
+          "tp": 6,
+          "fp": 2,
+          "fn": 6,
+          "precision": 0.75,
+          "recall": 0.5,
+          "f1": 0.6
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 26,
+          "false_positive": 2,
+          "false_negative": 14,
+          "precision": 0.9285714285714286,
+          "recall": 0.65
+        }
+      ]
+    },
+    {
+      "epoch": 7,
+      "cohorts": {
+        "prior": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 21,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4
+        },
+        "extension": {
+          "tp": 5,
+          "fp": 1,
+          "fn": 7,
+          "precision": 0.8333333333333334,
+          "recall": 0.4166666666666667,
+          "f1": 0.5555555555555556
+        }
+      },
+      "flat_cutout_fp": 0,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 12,
+          "false_positive": 1,
+          "false_negative": 28,
+          "precision": 0.9230769230769231,
+          "recall": 0.3
+        }
+      ]
+    },
+    {
+      "epoch": 8,
+      "cohorts": {
+        "prior": {
+          "tp": 8,
+          "fp": 0,
+          "fn": 20,
+          "precision": 1.0,
+          "recall": 0.2857142857142857,
+          "f1": 0.4444444444444445
+        },
+        "extension": {
+          "tp": 8,
+          "fp": 2,
+          "fn": 4,
+          "precision": 0.8,
+          "recall": 0.6666666666666666,
+          "f1": 0.7272727272727272
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 16,
+          "false_positive": 2,
+          "false_negative": 24,
+          "precision": 0.8888888888888888,
+          "recall": 0.4
+        }
+      ]
+    },
+    {
+      "epoch": 9,
+      "cohorts": {
+        "prior": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 19,
+          "precision": 1.0,
+          "recall": 0.32142857142857145,
+          "f1": 0.4864864864864865
+        },
+        "extension": {
+          "tp": 8,
+          "fp": 3,
+          "fn": 4,
+          "precision": 0.7272727272727273,
+          "recall": 0.6666666666666666,
+          "f1": 0.6956521739130435
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 17,
+          "false_positive": 3,
+          "false_negative": 23,
+          "precision": 0.85,
+          "recall": 0.425
+        }
+      ]
+    },
+    {
+      "epoch": 10,
+      "cohorts": {
+        "prior": {
+          "tp": 13,
+          "fp": 0,
+          "fn": 15,
+          "precision": 1.0,
+          "recall": 0.4642857142857143,
+          "f1": 0.6341463414634146
+        },
+        "extension": {
+          "tp": 9,
+          "fp": 3,
+          "fn": 3,
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 22,
+          "false_positive": 3,
+          "false_negative": 18,
+          "precision": 0.88,
+          "recall": 0.55
+        }
+      ]
+    },
+    {
+      "epoch": 11,
+      "cohorts": {
+        "prior": {
+          "tp": 16,
+          "fp": 0,
+          "fn": 12,
+          "precision": 1.0,
+          "recall": 0.5714285714285714,
+          "f1": 0.7272727272727273
+        },
+        "extension": {
+          "tp": 9,
+          "fp": 3,
+          "fn": 3,
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 25,
+          "false_positive": 3,
+          "false_negative": 15,
+          "precision": 0.8928571428571429,
+          "recall": 0.625
+        }
+      ]
+    },
+    {
+      "epoch": 12,
+      "cohorts": {
+        "prior": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 13,
+          "precision": 1.0,
+          "recall": 0.5357142857142857,
+          "f1": 0.6976744186046512
+        },
+        "extension": {
+          "tp": 9,
+          "fp": 2,
+          "fn": 3,
+          "precision": 0.8181818181818182,
+          "recall": 0.75,
+          "f1": 0.7826086956521738
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 24,
+          "false_positive": 2,
+          "false_negative": 16,
+          "precision": 0.9230769230769231,
+          "recall": 0.6
+        }
+      ]
+    },
+    {
+      "epoch": 13,
+      "cohorts": {
+        "prior": {
+          "tp": 10,
+          "fp": 0,
+          "fn": 18,
+          "precision": 1.0,
+          "recall": 0.35714285714285715,
+          "f1": 0.5263157894736842
+        },
+        "extension": {
+          "tp": 8,
+          "fp": 1,
+          "fn": 4,
+          "precision": 0.8888888888888888,
+          "recall": 0.6666666666666666,
+          "f1": 0.761904761904762
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 18,
+          "false_positive": 1,
+          "false_negative": 22,
+          "precision": 0.9473684210526315,
+          "recall": 0.45
+        }
+      ]
+    },
+    {
+      "epoch": 14,
+      "cohorts": {
+        "prior": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 19,
+          "precision": 1.0,
+          "recall": 0.32142857142857145,
+          "f1": 0.4864864864864865
+        },
+        "extension": {
+          "tp": 8,
+          "fp": 1,
+          "fn": 4,
+          "precision": 0.8888888888888888,
+          "recall": 0.6666666666666666,
+          "f1": 0.761904761904762
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 17,
+          "false_positive": 1,
+          "false_negative": 23,
+          "precision": 0.9444444444444444,
+          "recall": 0.425
+        }
+      ]
+    },
+    {
+      "epoch": 15,
+      "cohorts": {
+        "prior": {
+          "tp": 8,
+          "fp": 0,
+          "fn": 20,
+          "precision": 1.0,
+          "recall": 0.2857142857142857,
+          "f1": 0.4444444444444445
+        },
+        "extension": {
+          "tp": 8,
+          "fp": 1,
+          "fn": 4,
+          "precision": 0.8888888888888888,
+          "recall": 0.6666666666666666,
+          "f1": 0.761904761904762
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 16,
+          "false_positive": 1,
+          "false_negative": 24,
+          "precision": 0.9411764705882353,
+          "recall": 0.4
+        }
+      ]
+    },
+    {
+      "epoch": 16,
+      "cohorts": {
+        "prior": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 22,
+          "precision": 1.0,
+          "recall": 0.21428571428571427,
+          "f1": 0.35294117647058826
+        },
+        "extension": {
+          "tp": 8,
+          "fp": 1,
+          "fn": 4,
+          "precision": 0.8888888888888888,
+          "recall": 0.6666666666666666,
+          "f1": 0.761904761904762
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 14,
+          "false_positive": 1,
+          "false_negative": 26,
+          "precision": 0.9333333333333333,
+          "recall": 0.35
+        }
+      ]
+    },
+    {
+      "epoch": 17,
+      "cohorts": {
+        "prior": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 22,
+          "precision": 1.0,
+          "recall": 0.21428571428571427,
+          "f1": 0.35294117647058826
+        },
+        "extension": {
+          "tp": 8,
+          "fp": 1,
+          "fn": 4,
+          "precision": 0.8888888888888888,
+          "recall": 0.6666666666666666,
+          "f1": 0.761904761904762
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 14,
+          "false_positive": 1,
+          "false_negative": 26,
+          "precision": 0.9333333333333333,
+          "recall": 0.35
+        }
+      ]
+    },
+    {
+      "epoch": 18,
+      "cohorts": {
+        "prior": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 21,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4
+        },
+        "extension": {
+          "tp": 9,
+          "fp": 1,
+          "fn": 3,
+          "precision": 0.9,
+          "recall": 0.75,
+          "f1": 0.8181818181818182
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 16,
+          "false_positive": 1,
+          "false_negative": 24,
+          "precision": 0.9411764705882353,
+          "recall": 0.4
+        }
+      ]
+    },
+    {
+      "epoch": 19,
+      "cohorts": {
+        "prior": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 21,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4
+        },
+        "extension": {
+          "tp": 9,
+          "fp": 1,
+          "fn": 3,
+          "precision": 0.9,
+          "recall": 0.75,
+          "f1": 0.8181818181818182
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 16,
+          "false_positive": 1,
+          "false_negative": 24,
+          "precision": 0.9411764705882353,
+          "recall": 0.4
+        }
+      ]
+    },
+    {
+      "epoch": 20,
+      "cohorts": {
+        "prior": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 21,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4
+        },
+        "extension": {
+          "tp": 9,
+          "fp": 1,
+          "fn": 3,
+          "precision": 0.9,
+          "recall": 0.75,
+          "f1": 0.8181818181818182
+        }
+      },
+      "flat_cutout_fp": 1,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 16,
+          "false_positive": 1,
+          "false_negative": 24,
+          "precision": 0.9411764705882353,
+          "recall": 0.4
+        }
+      ]
+    }
+  ],
+  "epochs_with_zero_flat_cutout_fp": [
+    1,
+    7
+  ]
+}
