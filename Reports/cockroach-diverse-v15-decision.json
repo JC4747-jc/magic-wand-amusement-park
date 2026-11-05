@@ -1,0 +1,152 @@
+{
+  "status": "REJECTED_VALIDATION_OR_NEGATIVE_REGRESSION",
+  "model_sha256": "088e0fc7f65fb8e157f10178dde6af0fa9946be51b722886d9eaed12124ea901",
+  "training_seconds": 280.415,
+  "results": {
+    "runtime-val": {
+      "images": 39,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 24,
+          "false_positive": 0,
+          "false_negative": 5,
+          "precision": 1.0,
+          "recall": 0.8275862068965517
+        },
+        {
+          "name": "Beetle",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "ap": [
+        {
+          "class_id": 0,
+          "name": "Cockroach",
+          "precision": 0.9628069894871077,
+          "recall": 0.8927760903430928,
+          "mAP50": 0.9817271241830066,
+          "mAP50_95": 0.7815001633986929,
+          "labels": 29
+        }
+      ],
+      "mean_inference_ms": 236.95964871895296
+    },
+    "two-class-val": {
+      "images": 39,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 24,
+          "false_positive": 0,
+          "false_negative": 5,
+          "precision": 1.0,
+          "recall": 0.8275862068965517
+        },
+        {
+          "name": "Beetle",
+          "true_positive": 5,
+          "false_positive": 0,
+          "false_negative": 8,
+          "precision": 1.0,
+          "recall": 0.38461538461538464
+        }
+      ],
+      "ap": [
+        {
+          "class_id": 0,
+          "name": "Cockroach",
+          "precision": 0.8565735811999017,
+          "recall": 0.9655172413793104,
+          "mAP50": 0.9817271241830066,
+          "mAP50_95": 0.7815001633986929,
+          "labels": 29
+        },
+        {
+          "class_id": 1,
+          "name": "Beetle",
+          "precision": 0.778690782860576,
+          "recall": 0.5416219406712247,
+          "mAP50": 0.7853333333333334,
+          "mAP50_95": 0.5373922077922078,
+          "labels": 13
+        }
+      ],
+      "mean_inference_ms": 232.33189230776566
+    },
+    "train-diagnostic": {
+      "images": 177,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 98,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "name": "Beetle",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "ap": [
+        {
+          "class_id": 0,
+          "name": "Cockroach",
+          "precision": 0.9989275924355684,
+          "recall": 1.0,
+          "mAP50": 0.995,
+          "mAP50_95": 0.9657132697063476,
+          "labels": 98
+        }
+      ],
+      "mean_inference_ms": 209.18175932213975
+    },
+    "observed-public-negative": {
+      "images": 44,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 0,
+          "precision": 0.0,
+          "recall": null
+        }
+      ],
+      "ap": [],
+      "mean_inference_ms": 230.93022727185928
+    },
+    "observed-pico-negative": {
+      "images": 8,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "ap": [],
+      "mean_inference_ms": 325.7550500011348
+    }
+  },
+  "service_routed": false,
+  "fresh_test_performed": false,
+  "pico_positive_test": "NOT_PERFORMED",
+  "limitations": [
+    "Observed negative regressions are not fresh TEST; VAL has29Cockroach and13Beetle instances in39images; Beetle is auxiliary and never routed",
+    "Historical/fresh-v4/v6/v9/v12 TEST not accessed for checkpoint or threshold selection"
+  ]
+}

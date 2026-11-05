@@ -1,0 +1,61 @@
+{
+  "dataset_version": "1e46824a3e2abf55ae0ec7f1530e79e9a9662956facde7c6256cdf12085255e3",
+  "initializer_sha256": "64b6721bb7715f9d36e80913f60d03366091fd8e526c2d41e4e82f65bc46b349",
+  "script_sha256": "2adaad5ad36990b81a82c74c29b89bb6a3cff9ca1b0ba2e5d074df3631ff3063",
+  "background_release_sha256": "6778f655f5161b49b50405c750942fd0de640a14e76e922b1973a140f7b2048c",
+  "parameters": {
+    "data": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\cockroach-diverse-v15\\data.yaml",
+    "device": 0,
+    "epochs": 30,
+    "imgsz": 640,
+    "batch": 4,
+    "workers": 0,
+    "seed": 20261105,
+    "deterministic": true,
+    "freeze": 0,
+    "optimizer": "AdamW",
+    "lr0": 0.0001,
+    "lrf": 0.1,
+    "warmup_bias_lr": 0.0001,
+    "mosaic": 0.0,
+    "mixup": 0.0,
+    "cutmix": 0.0,
+    "scale": 0.3,
+    "translate": 0.05,
+    "hsv_h": 0.01,
+    "hsv_s": 0.3,
+    "hsv_v": 0.2,
+    "close_mosaic": 0,
+    "project": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-diverse-v15-training",
+    "name": "train",
+    "plots": true
+  },
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "cuda_device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "scope": "Two-class public-photo pilot; 18 existing TRAIN-source diverse backgrounds added",
+  "hypothesis": "Additional non-insect backgrounds may reduce false detections; recall may regress and must be measured",
+  "unity_mapping": {
+    "Cockroach": "ParkBugs",
+    "Beetle": null
+  },
+  "service_routed": false,
+  "pico_validated": false,
+  "selection": "Ultralytics validation fitness only; not an isolated data-only ablation",
+  "evaluation_protocol": {
+    "confidence": 0.65,
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 8,
+    "allowed_classes": [
+      "Cockroach"
+    ]
+  },
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8,
+    "negative_false_positives_max": 0
+  },
+  "test_policy": "No observed TEST threshold tuning; fresh independent acceptance required after validation gates pass"
+}
