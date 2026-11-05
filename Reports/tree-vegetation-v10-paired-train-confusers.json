@@ -1,0 +1,37 @@
+{
+  "scope": "TRAIN-reserved confuser fitting check, not independent TEST",
+  "rows": [
+    {
+      "arm": "control",
+      "weight_sha256": "3798fe347feb62b58d04b72b4544446cbf28ae579d87d537ee713bf7c918b209",
+      "bank": "tree-shrub-crop-bank-v1",
+      "source_manifest_sha256": "3751cb1e1ce9e64cf72e979cb664d3dd04881e8af7b2fbc5ffc9c85be93a59b7",
+      "max_score": 0.8678194284439087,
+      "false_positives_065": 1
+    },
+    {
+      "arm": "control",
+      "weight_sha256": "3798fe347feb62b58d04b72b4544446cbf28ae579d87d537ee713bf7c918b209",
+      "bank": "tree-vegetation-confuser-bank-v1",
+      "source_manifest_sha256": "491b590373c0ff0282ebe0a7b54f240c92057232b6f375739eb993be2a7d4829",
+      "max_score": 0.9544240832328796,
+      "false_positives_065": 1
+    },
+    {
+      "arm": "vegetation",
+      "weight_sha256": "e62cabfe568e699b9d88fe935f4eb017ae50faa556c09a45495d0635c1d8fe6e",
+      "bank": "tree-shrub-crop-bank-v1",
+      "source_manifest_sha256": "3751cb1e1ce9e64cf72e979cb664d3dd04881e8af7b2fbc5ffc9c85be93a59b7",
+      "max_score": 0.39129871129989624,
+      "false_positives_065": 0
+    },
+    {
+      "arm": "vegetation",
+      "weight_sha256": "e62cabfe568e699b9d88fe935f4eb017ae50faa556c09a45495d0635c1d8fe6e",
+      "bank": "tree-vegetation-confuser-bank-v1",
+      "source_manifest_sha256": "491b590373c0ff0282ebe0a7b54f240c92057232b6f375739eb993be2a7d4829",
+      "max_score": 0.46349382400512695,
+      "false_positives_065": 0
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "status": "REJECTED_VALIDATION",
+  "results": {
+    "control": {
+      "sha256": "3798fe347feb62b58d04b72b4544446cbf28ae579d87d537ee713bf7c918b209",
+      "seconds": 269.64,
+      "metrics": {
+        "runtime-val": [
+          {
+            "name": "Tree",
+            "true_positive": 3,
+            "false_positive": 0,
+            "false_negative": 2,
+            "precision": 1.0,
+            "recall": 0.6
+          }
+        ],
+        "train-diagnostic": [
+          {
+            "name": "Tree",
+            "true_positive": 25,
+            "false_positive": 0,
+            "false_negative": 3,
+            "precision": 1.0,
+            "recall": 0.8928571428571429
+          }
+        ]
+      }
+    },
+    "vegetation": {
+      "sha256": "e62cabfe568e699b9d88fe935f4eb017ae50faa556c09a45495d0635c1d8fe6e",
+      "seconds": 290.436,
+      "metrics": {
+        "runtime-val": [
+          {
+            "name": "Tree",
+            "true_positive": 3,
+            "false_positive": 0,
+            "false_negative": 2,
+            "precision": 1.0,
+            "recall": 0.6
+          }
+        ],
+        "train-diagnostic": [
+          {
+            "name": "Tree",
+            "true_positive": 25,
+            "false_positive": 0,
+            "false_negative": 3,
+            "precision": 1.0,
+            "recall": 0.8928571428571429
+          }
+        ]
+      }
+    }
+  },
+  "evidence_sha256": {
+    "Reports\\tree-vegetation-v10-control-runtime-val\\report.json": "57b6b90ed35c784591b802fe7fa98ec1523fa3a976905bbec88428ccb8782890",
+    "Reports\\tree-vegetation-v10-control-train-diagnostic\\report.json": "16364ee1adf7ae01e3f1adc73d9ea891a14ef9e624358f30ea7498274ef34520",
+    "Reports\\tree-vegetation-v10-runtime-val\\report.json": "5aea6f0d0907799e5201c4a9abc019537e4100c17595f1a05e511abf15cfd56f",
+    "Reports\\tree-vegetation-v10-train-diagnostic\\report.json": "5ca8d440c4d95c10c17021bd6ebf30dfc7114afcb03288cdc5af93dd844ff9f2"
+  },
+  "confuser_fit_report": "Reports/tree-vegetation-v10-paired-train-confusers.json",
+  "service_routed": false,
+  "independent_test_performed": false,
+  "pico_validation": "NOT_PERFORMED",
+  "limitations": [
+    "Only5VALGT; repeated public development",
+    "Suppression of two TRAINnegatives is fitting, not generalization",
+    "33vs35TRAIN changes exposures and RNG alignment"
+  ]
+}

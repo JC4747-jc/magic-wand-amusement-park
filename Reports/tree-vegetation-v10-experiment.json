@@ -1,0 +1,43 @@
+{
+  "hypothesis": "Two previously TRAIN-reserved vegetation negatives may suppress observed shrub/cactus false positives while preserving arboreal recall.",
+  "arms": {
+    "control": "Datasets/tree-qualified-public-pilot-v6",
+    "vegetation": "Datasets/tree-vegetation-negatives-v10"
+  },
+  "inputs_sha256": {
+    "Datasets/tree-qualified-public-pilot-v6/audit.json": "8865d290ee9b5473b1008f4bf194717679795021af90d86bbbf10c8e0a62343a",
+    "Datasets/tree-vegetation-negatives-v10/audit.json": "a64334c702369eacacfb180deb641ff2003aaef02b3d7206b33083182f88b03d",
+    "object-detection-demo/weights/candidates/tree-new-sources-freeze10-v3/best.pt": "5337fe1648703a274315afdd75bb88556a723a65e1030639124e22abaaf73138",
+    "Tools/MultiScene/train_eval.py": "3c4ebb8d0ebaa7c1825a6595fcc131d3e603fb7122075c0ffa46616c1da6380b"
+  },
+  "settings": {
+    "epochs": 20,
+    "seed": 20261103,
+    "imgsz": 640,
+    "batch": 4,
+    "workers": 0,
+    "freeze": 10,
+    "learning_rate": 0.0001,
+    "conservative_augmentation": true,
+    "augmentation_scale": 0.7,
+    "ultralytics": "8.4.173"
+  },
+  "gates": {
+    "conf": 0.65,
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 8,
+    "val_recall_min": 0.8,
+    "val_precision_min": 0.9,
+    "val_background_fp_images_max": 0
+  },
+  "limitations": [
+    "Both arms rerun on same current environment; old8.4.174run contextual only",
+    "33vs35TRAINimages changes exposures; compare data intervention not equal per-image RNG",
+    "Only5positiveVALGT, repeated public VAL insufficient for deployment",
+    "Two new negatives reservedTRAIN, suppression on them is training fit not independent accuracy",
+    "No PICO or fresh TEST acceptance"
+  ],
+  "deployed": false
+}
