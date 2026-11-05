@@ -1,0 +1,145 @@
+{
+  "mode": "baseline",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "inaturalist",
+      "license": "Per-photo CC BY or CC0; attribution in samples",
+      "url": "https://www.inaturalist.org",
+      "reviewed": true
+    },
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-expanded-v5-training\\train\\weights\\best.pt",
+  "architecture": "WorldModel",
+  "sha256": "fd057af587c598d79a66fe1a6a10ee4e642a95ab68be3b041503722695f2d663",
+  "dataset_version": "d5ca262af780deba4969794c8ca60ca6eb2e9d07047e3e02e11a66c821eaf572",
+  "split": "val",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "Cockroach"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "Cockroach",
+      "precision": 0.9924394750134407,
+      "recall": 1.0,
+      "mAP50": 0.995,
+      "mAP50_95": 0.8501249999999999,
+      "labels": 8
+    }
+  ],
+  "images": 8,
+  "excluded_samples": [],
+  "ground_truth_instances": 8,
+  "false_positive_images": 0,
+  "per_image": [
+    {
+      "image": "images/val/1083013-1360186.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 1052.2064000033424
+    },
+    {
+      "image": "images/val/2471649-2767233.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 88.77890000439947
+    },
+    {
+      "image": "images/val/2759662-3122339.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 102.05779999523656
+    },
+    {
+      "image": "images/val/9098444-12290041.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 94.81570000207284
+    },
+    {
+      "image": "images/val/7754390-10182401.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 83.80490000126883
+    },
+    {
+      "image": "images/val/14158501-20987090.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 110.90689999400638
+    },
+    {
+      "image": "images/val/13279091-19439388.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 90.83980000286829
+    },
+    {
+      "image": "images/val/10639022-17960218.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 104.97480000049109
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.55,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "Cockroach",
+      "true_positive": 8,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 216.04815000046074,
+  "p95_inference_ms": 722.7515750000744,
+  "cold_first_image_ms": 1052.2064000033424,
+  "warm_mean_ms": 96.59697142862049,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [],
+  "allowed_classes": [
+    "Cockroach"
+  ],
+  "max_det": 8,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}
