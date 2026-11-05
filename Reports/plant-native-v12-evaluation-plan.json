@@ -1,0 +1,16 @@
+{
+  "model": "plant-native-v12",
+  "dataset_sha256": "3e64d1787a8677d316e396a230d1ca727ebe8166bad3b3dad66f98394c7aedcf",
+  "evaluator_sha256": "afb601206c2fafd3573600b155a0194ee7b4c37beab1934c57d27ee3740b0948",
+  "confidence": 0.35,
+  "threshold_source": "Previous v11 VAL-only selection; no retuning on observed v5 TEST",
+  "imgsz": 640,
+  "rect": true,
+  "nms_iou": 0.7,
+  "max_det": 8,
+  "precision_min": 0.9,
+  "recall_min": 0.8,
+  "observed_negative_false_positives_max": 0,
+  "service_routed": false,
+  "fresh_test": "Required after VAL and observed regressions pass"
+}

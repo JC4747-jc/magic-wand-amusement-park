@@ -1,0 +1,75 @@
+{
+  "samples": [
+    {
+      "original_id": "a0893025c69a4ee8",
+      "source_image": "Datasets\\openimages-plant-expansion\\images\\a0893025c69a4ee8.jpg",
+      "source_sha256": "c0702af413383252d4d0fbca4b829228c8937950d919231f4e7897e4335fad1c",
+      "group": "https://www.flickr.com/people/clotee_allochuku/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Clotee Allochuku",
+        "AuthorProfileURL": "https://www.flickr.com/people/clotee_allochuku/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/clotee_allochuku/20215395290",
+        "Title": "Fisherman's Wharf"
+      },
+      "label": "Reports\\plant-flowering-v12-label-review\\a0893025c69a4ee8.txt",
+      "label_sha256": "e8f0a2b56894da7a30302ad387c0ea3d9ad470c0939835e650129532ee52c300",
+      "boxes": [
+        [
+          60,
+          0,
+          948,
+          768
+        ],
+        [
+          0,
+          0,
+          226,
+          429
+        ]
+      ],
+      "overlay_sha256": "b6de047e9ad9b6551ad23db9edd5d9653e73f0a8ce17452c50200e714689965c",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "training_approved": false
+    },
+    {
+      "original_id": "c343032a7e25c932",
+      "source_image": "Datasets\\openimages-plant-expansion\\images\\c343032a7e25c932.jpg",
+      "source_sha256": "ed385f1b99d192df7e4ae3cb63629b50c7efe48e0f1c5814aa3bb1fa00130328",
+      "group": "https://www.flickr.com/people/46183897@N00/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Robert Nunnally",
+        "AuthorProfileURL": "https://www.flickr.com/people/46183897@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/46183897@N00/5618255618",
+        "Title": "happy birthday Container flowers"
+      },
+      "label": "Reports/plant-flowering-v12-label-review/c343032a7e25c932-corrected.txt",
+      "label_sha256": "5037a5f95b122dd77ebf37bbaf4a93db296db32c1ea1cc75d9b62757ac635308",
+      "boxes": [
+        [
+          0,
+          0,
+          847,
+          768
+        ],
+        [
+          880,
+          153,
+          1024,
+          768
+        ]
+      ],
+      "overlay_sha256": "2f6ad82564b54abe9930b8b24b9a2ccee24b4587b6fcba98d841f9728d17dbf5",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "training_approved": false
+    }
+  ],
+  "source_manifest_sha256": "9e20dff89efefccf2f58b2f0a98f8aa7d1f28ab08ad26c3e451365abd6dd1ece",
+  "scope": "Visible rooted-container instances including border-clipped pots; individual flowers are not separate targets",
+  "training_approved": false,
+  "reservation_clearance_pending": true,
+  "annotation_review": "Both originals and both overlays visually inspected; right-edge foliage extent corrected in separate artifact. Four visible rooted-container instances across two images. No inference used."
+}

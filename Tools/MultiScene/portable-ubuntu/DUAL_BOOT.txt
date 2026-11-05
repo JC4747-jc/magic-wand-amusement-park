@@ -1,0 +1,22 @@
+独立 Ubuntu 双系统训练
+
+Windows 导出位置见 workspace.json；原 Unity 项目没有移动。
+1. 重启进入 Ubuntu，在“文件”的其他位置打开 Windows 分区。
+2. 将整个 @FOLDER@ 文件夹复制到 ~/，不要复制 Windows 虚拟环境。
+3. 打开终端执行：
+   cd ~/@FOLDER@
+   bash setup-ubuntu.sh
+   bash train-ubuntu.sh --dataset @DATASET@ --weight @WEIGHT@ --check
+   bash train-ubuntu.sh --dataset @DATASET@ --weight @WEIGHT@ --device auto --epochs 20 --name ubuntu-first
+
+其他可用数据和权重名称见 workspace.json。候选权重可能未通过部署验证，仅作训练初始化。
+入口启动新的训练，并非 Windows 优化器/RNG 的精确断点恢复；参数默认值可能不同于专项训练脚本。
+初始化权重与数据集类别一致时运行原生基线；不一致时记录 baseline-skipped.json，需要另做类别映射评估。
+native-val.txt 若存在，将保留其已审核的验证子集；完整目标验收仍须按 audit.json 的完整 VAL 范围进行。
+
+Linux 环境使用 .venv-linux；如创建失败，检查 python3-venv 是否已安装。
+NVIDIA GPU 的 PyTorch 安装方式见 https://pytorch.org/get-started/locally/ 。
+检查：.venv-linux/bin/python -c "import torch; print(torch.cuda.is_available())"
+训练产物：Runs/<name>/train/weights/best.pt。使用不同 --name 保留旧结果。
+
+导出文件校验或 Windows 检查不代表 Ubuntu 训练、独立测试或 PICO 实机验证已完成。

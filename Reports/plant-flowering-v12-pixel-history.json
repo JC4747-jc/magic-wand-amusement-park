@@ -1,0 +1,37 @@
+{
+  "source": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\plant-flowering-v12-staging",
+  "datasets": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets",
+  "source_manifest_sha256": "6367db2907b491ea33f38ffaf9dfb929e93fcf5dcef1e87aabbf3229c57cd58f",
+  "tool_sha256": "2cc4d5c2fef3e3df32af967006a679ff534f30e2dce453d1b1ae1fc73107f954",
+  "candidates": 2,
+  "enumerated_paths": 15101,
+  "scanned_paths": 15101,
+  "unique_encoded": 5314,
+  "errors": [],
+  "matches": [
+    {
+      "candidate_id": "images/a0893025c69a4ee8.jpg",
+      "historical_image": "openimages-plant-expansion\\images\\a0893025c69a4ee8.jpg",
+      "historical_sha256": "c0702af413383252d4d0fbca4b829228c8937950d919231f4e7897e4335fad1c",
+      "encoded_exact": true,
+      "decoded_exact": true,
+      "dhash_distance": 0
+    },
+    {
+      "candidate_id": "images/c343032a7e25c932.jpg",
+      "historical_image": "openimages-plant-expansion\\images\\c343032a7e25c932.jpg",
+      "historical_sha256": "ed385f1b99d192df7e4ae3cb63629b50c7efe48e0f1c5814aa3bb1fa00130328",
+      "encoded_exact": true,
+      "decoded_exact": true,
+      "dhash_distance": 0
+    }
+  ],
+  "internal_pair_comparisons": 1,
+  "internal_matches": [],
+  "training_approved": false,
+  "method": "Current files: encoded SHA256, decoded RGB SHA256, horizontal64bit dHash distance<=4",
+  "limitations": [
+    "Near matches need visual review; crops/viewpoint/physical-instance aliases may escape detection.",
+    "Missing historical files and Reports-only reservations require separate metadata audit."
+  ]
+}

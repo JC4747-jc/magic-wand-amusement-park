@@ -1,0 +1,48 @@
+{
+  "dataset_version": "3e64d1787a8677d316e396a230d1ca727ebe8166bad3b3dad66f98394c7aedcf",
+  "initializer_sha256": "0f91ac17fc3966a3185447181c80e6cc7e700fe0176f6e0d3cc9e377580baa1f",
+  "parameters": {
+    "data": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\plant-native-v12\\data.yaml",
+    "device": 0,
+    "epochs": 30,
+    "imgsz": 640,
+    "batch": 4,
+    "workers": 0,
+    "seed": 20261105,
+    "deterministic": true,
+    "freeze": 0,
+    "optimizer": "AdamW",
+    "lr0": 0.0001,
+    "lrf": 0.1,
+    "warmup_bias_lr": 0.0001,
+    "mosaic": 0.0,
+    "mixup": 0.0,
+    "cutmix": 0.0,
+    "scale": 0.3,
+    "translate": 0.05,
+    "hsv_h": 0.01,
+    "hsv_s": 0.3,
+    "hsv_v": 0.2,
+    "close_mosaic": 0,
+    "project": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-native-v12-training",
+    "name": "train",
+    "plots": true
+  },
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "hypothesis": "Two new reviewed flowering-container TRAIN images/four boxes may improve positive recall; fixed .35 inherited from previous VAL selection",
+  "protocol": {
+    "confidence": 0.35,
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 8
+  },
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8
+  },
+  "test_policy": "VAL selection only; fresh independent TEST required after validation/negative gates",
+  "service_routed": false,
+  "pico_validated": false
+}

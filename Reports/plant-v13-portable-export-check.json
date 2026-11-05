@@ -1,0 +1,18 @@
+{
+  "status": "EXPORTED_AND_PAYLOAD_VERIFIED_ON_WINDOWS",
+  "workspace": "C:/magic-training-plant-v13",
+  "payload_files": 180,
+  "native_two_class_validation_images": 12,
+  "full_target_validation_images": 13,
+  "initializer_sha256": "fe706e1763a8ffa5924c849d9798bb1083d416df6c8c6720cb6ffcdb3780177a",
+  "initializer_status": "REJECTED_VALIDATION; training initializer only",
+  "new_training_run_required": true,
+  "optimizer_resume": false,
+  "actual_ubuntu_run": false,
+  "tests": "3 split-list tests passed; exported train.py --check passed",
+  "limitations": [
+    "Exported README predates conditional-baseline wording correction; runner writes baseline-skipped.json when class schemas differ",
+    "Generic portable runner defaults differ from v13 specialized trainer; not exact reproduction",
+    "Existing live Windows v13 process remains running; no duplicate training launched"
+  ]
+}
