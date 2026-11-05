@@ -1,0 +1,614 @@
+{
+  "mode": "baseline",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "inaturalist",
+      "url": "https://www.inaturalist.org",
+      "license": "Per-photo CC BY or CC0; attribution retained",
+      "reviewed": false
+    },
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated",
+    "JumpingSpider covers Salticidae family only; scores do not establish recognition of all spiders or identification of one biological species"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\jumping-spider-runtime-v11-training\\train\\weights\\last.pt",
+  "architecture": "DetectionModel",
+  "sha256": "99d288d7db8d62800b51a06b7e7dc703643080b56e04e7f29a296f2d9afd9418",
+  "dataset_version": "1cffbf88636061a9f515b9ca8f02f7667e1893b0ec8aa8e89e87c1c21722510e",
+  "split": "val",
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "JumpingSpider"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "JumpingSpider",
+      "precision": 0.9184381136131716,
+      "recall": 0.9230769230769231,
+      "mAP50": 0.9073076923076924,
+      "mAP50_95": 0.7955851379013144,
+      "labels": 13
+    }
+  ],
+  "images": 63,
+  "excluded_samples": [],
+  "ground_truth_instances": 13,
+  "false_positive_images": 2,
+  "per_image": [
+    {
+      "image": "images/val/1832728-2225158.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 1325.78420000209
+    },
+    {
+      "image": "images/val/2011842-2450034.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 237.49540001153946
+    },
+    {
+      "image": "images/val/2117716-2536944.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 255.11859999096487
+    },
+    {
+      "image": "images/val/2163916-2537620.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 210.65959999396
+    },
+    {
+      "image": "images/val/2784272-3157209.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 244.15790000057314
+    },
+    {
+      "image": "images/val/2917781-3340342.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 226.58129999763332
+    },
+    {
+      "image": "images/val/3387172-3915307.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 247.85669999255333
+    },
+    {
+      "image": "images/val/3671149-4252208.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 211.31810000224505
+    },
+    {
+      "image": "images/val/4025295-4757656.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 210.09680000133812
+    },
+    {
+      "image": "images/val/4233808-5057623.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 188.32679999468382
+    },
+    {
+      "image": "images/val/4312873-5182351.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 220.34060000441968
+    },
+    {
+      "image": "images/val/4329289-5196380.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 183.00499999895692
+    },
+    {
+      "image": "images/val/4435470-5337773.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 217.4319000041578
+    },
+    {
+      "image": "images/val/9effb77dba0bec889086d830.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 214.9991000042064
+    },
+    {
+      "image": "images/val/1d11cf949cde2374ea478f48.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 232.19300000346266
+    },
+    {
+      "image": "images/val/080b588d7294d9f5394cd0f2.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 207.9604000027757
+    },
+    {
+      "image": "images/val/60e59b23b83502804f482685.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 222.19239998958074
+    },
+    {
+      "image": "images/val/a5a06b4b77eb1e70e7bb5adb.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 248.38849999650847
+    },
+    {
+      "image": "images/val/dd407578974b814626342889.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 215.30939999502152
+    },
+    {
+      "image": "images/val/a623ae7452716bc364bd2678.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 232.73519999929704
+    },
+    {
+      "image": "images/val/401e63c494de6409e8bfd5b2.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 163.23299999930896
+    },
+    {
+      "image": "images/val/f5623481f3e929ac9a88f351.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 161.11559999990277
+    },
+    {
+      "image": "images/val/f483fb7a81c61436806608a5.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 213.55009998660535
+    },
+    {
+      "image": "images/val/f753904712148974a7e631af.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 194.4188000052236
+    },
+    {
+      "image": "images/val/7c04e2b6c375513493ab08de.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 219.08080000139307
+    },
+    {
+      "image": "images/val/c0f366a4f651d973d0bd263a.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 270.154800004093
+    },
+    {
+      "image": "images/val/ac5555ae2cf13ac45809aac4.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 193.03779999609105
+    },
+    {
+      "image": "images/val/c006846fd059926d5b307b71.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 192.25920000462793
+    },
+    {
+      "image": "images/val/729b03a19e513140d1d3dc6a.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 193.75120000040624
+    },
+    {
+      "image": "images/val/9c7ef060bcb0d5ef6de9b4ed.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 206.64089999627322
+    },
+    {
+      "image": "images/val/97574878a74355658f258501.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 209.72110000730027
+    },
+    {
+      "image": "images/val/1ca8921e9e21bd08168b1c35.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 222.9729000100633
+    },
+    {
+      "image": "images/val/4e0fdaaa2b9b1888c1023660.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 202.05480000004172
+    },
+    {
+      "image": "images/val/7d96c95d167ce430bce5fe54.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 176.89740000059828
+    },
+    {
+      "image": "images/val/db1bb4a1919c286220d7ae31.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 208.6278999922797
+    },
+    {
+      "image": "images/val/0e34ae37c0e6544d23ac0361.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 210.5775999953039
+    },
+    {
+      "image": "images/val/709c2002b98e3a3656dd9607.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 325.78149999608286
+    },
+    {
+      "image": "images/val/085374c7c9283f5950ed1ae6.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 203.38530000299215
+    },
+    {
+      "image": "images/val/554b7c23660b8ebd613dfc30.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 236.78540000400972
+    },
+    {
+      "image": "images/val/cd507d578e35ba1afc9e427e.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 206.56659999804106
+    },
+    {
+      "image": "images/val/5eeccf30e06d3e703a7020ac.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 203.46150000113994
+    },
+    {
+      "image": "images/val/638332e4fa549dfa0dca88b5.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 230.78199999872595
+    },
+    {
+      "image": "images/val/ffe4535daede829e65ce4a51.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 210.9420000051614
+    },
+    {
+      "image": "images/val/32d341ce004fc3d3f5069f4b.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 220.04590000142343
+    },
+    {
+      "image": "images/val/e2a9a35b551060c2ea0f4f14.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 174.38520000723656
+    },
+    {
+      "image": "images/val/c16ed1ade9c20052f35913f8.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 231.82210000231862
+    },
+    {
+      "image": "images/val/61eb9e18f48749cb7a871b1b.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 201.7411999986507
+    },
+    {
+      "image": "images/val/9891ecda3570dc8571aef4ef.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 204.42629999888595
+    },
+    {
+      "image": "images/val/3cfefd1b807cdb77806d1326.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 216.24470000097062
+    },
+    {
+      "image": "images/val/3db90ee2612e5cddb499441c.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 242.4855999997817
+    },
+    {
+      "image": "images/val/ed0ebc46176636addabe8361.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 200.3736999904504
+    },
+    {
+      "image": "images/val/06242aea552d61966150402f.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 202.69530000223313
+    },
+    {
+      "image": "images/val/883851e9007bbc8f8057515f.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 243.18740000308026
+    },
+    {
+      "image": "images/val/4335c6245e659a1fbcb603d8.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 204.78459999139886
+    },
+    {
+      "image": "images/val/a0e412398dca20812fd61961.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 208.11189999221824
+    },
+    {
+      "image": "images/val/e136093c2de70feba5e6e0bf.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 212.68630000122357
+    },
+    {
+      "image": "images/val/66446199149762125403129e.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 293.77950000343844
+    },
+    {
+      "image": "images/val/0306a500a64afc2bfb4b724a.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 316.07669999357313
+    },
+    {
+      "image": "images/val/ae773d79284c1170cc719c00.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 214.05670000240207
+    },
+    {
+      "image": "images/val/027ad9ad4f3719173f8d12d1.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 219.32500001275912
+    },
+    {
+      "image": "images/val/e8bf1025de2e955b4d6ee860.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 202.20319999498315
+    },
+    {
+      "image": "images/val/1d85fee70b51c20f0c0ddb13.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 196.39760001155082
+    },
+    {
+      "image": "images/val/86c8cd21c0277d70069b2849.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 302.7099000028102
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "JumpingSpider",
+      "true_positive": 12,
+      "false_positive": 2,
+      "false_negative": 1,
+      "precision": 0.8571428571428571,
+      "recall": 0.9230769230769231
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 236.75060158734956,
+  "p95_inference_ms": 301.816860002873,
+  "cold_first_image_ms": 1325.78420000209,
+  "warm_mean_ms": 219.18554354840214,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images/val/3671149-4252208.jpg",
+      "example": "error-3671149-4252208.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/97574878a74355658f258501.jpg",
+      "example": "error-97574878a74355658f258501.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/06242aea552d61966150402f.jpg",
+      "example": "error-06242aea552d61966150402f.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    }
+  ],
+  "allowed_classes": [
+    "JumpingSpider"
+  ],
+  "max_det": 8,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}

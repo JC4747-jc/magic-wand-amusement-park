@@ -1,0 +1,2064 @@
+{
+  "dataset_version": "1cffbf88636061a9f515b9ca8f02f7667e1893b0ec8aa8e89e87c1c21722510e",
+  "initializer": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\candidates\\jumping-spider-context-v7-yolov8m\\best.pt",
+  "initializer_sha256": "bb0cb0e680c51f8695974b42f92e7eaca2db90ef0ae7be23874894287fc241c1",
+  "parameters": {
+    "data": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\jumping-spider-confusers-v10\\data.yaml",
+    "device": 0,
+    "epochs": 20,
+    "batch": 4,
+    "workers": 0,
+    "imgsz": 640,
+    "seed": 20261103,
+    "deterministic": true,
+    "freeze": 0,
+    "optimizer": "AdamW",
+    "lr0": 1e-05,
+    "lrf": 0.1,
+    "warmup_bias_lr": 1e-05,
+    "mosaic": 0.0,
+    "mixup": 0.0,
+    "cutmix": 0.0,
+    "scale": 0.1,
+    "translate": 0.05,
+    "hsv_h": 0.01,
+    "hsv_s": 0.3,
+    "hsv_v": 0.2,
+    "close_mosaic": 0,
+    "project": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\jumping-spider-runtime-v11-training",
+    "name": "train",
+    "plots": true
+  },
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "frozen_inputs": [
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/audit.json",
+      "sha256": "1cffbf88636061a9f515b9ca8f02f7667e1893b0ec8aa8e89e87c1c21722510e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/data.yaml",
+      "sha256": "134e23aeba238dd68fc5420bd17803214c89407dd35b824f752fcbb380bf7c42"
+    },
+    {
+      "path": "object-detection-demo/weights/candidates/jumping-spider-context-v7-yolov8m/best.pt",
+      "sha256": "bb0cb0e680c51f8695974b42f92e7eaca2db90ef0ae7be23874894287fc241c1"
+    },
+    {
+      "path": "Tools/MultiScene/train_jumping_spider_runtime_v11.py",
+      "sha256": "a475f0257aef51ea258b96e7df88085801da67a3cf10dda6910bd1b26d23d708"
+    },
+    {
+      "path": "Tools/MultiScene/jumping_spider_runtime_checkpoint_selection.py",
+      "sha256": "6a0b246038a1fbc14419d8b6a7e2f3e49f77ab230f45481344a8f4b1fc0b7ed5"
+    },
+    {
+      "path": "Tools/MultiScene/evaluate_mapped.py",
+      "sha256": "e583e11b503d07f81159149a1f40826d6dc0cffc4197384f770586e47d3a103c"
+    },
+    {
+      "path": "Tools/MultiScene/dataset_paths.py",
+      "sha256": "aa476afeadd9d689d9629265365022d7212f2d909fb678f46d71b4050cd206c0"
+    },
+    {
+      "path": "object-detection-demo/weights/best_yolo26n_quad_v4_50e.pt",
+      "sha256": "fd4a31001feb66127a8c527ffb1e0ba32bfe9f72566cfde4f2f9b5fc0c3e7ca7"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/739257-929213.jpg",
+      "sha256": "173eae50c42aacc289f22fa863ff5658afc33e5ab11dab61b01f5dee43a28ee0"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/739257-929213.txt",
+      "sha256": "78faebb2cf82360746ebd963d05290e487b9ea9e65194d4e3a47db032e8f43bf"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1291918-1620596.jpg",
+      "sha256": "2fc1571f1bb886068e0d3816b2266609e7bd066078b6791f5cdc08d50dc21b99"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1291918-1620596.txt",
+      "sha256": "9dd296ca0063803d54d08ce43efadd0478914f9fbbd9ed045bfeda72493213b6"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1299577-1631082.jpg",
+      "sha256": "7cdd9bed075938358c97cd3117105875ed0e71112cdd4555a161f2a9febdd45f"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1299577-1631082.txt",
+      "sha256": "25bb6d4e83386f243b93c58a630ededca531ff2c06753cb944dd7d8880f9a7fd"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1301440-1633225.jpg",
+      "sha256": "efc5d4ecfba4424a60607619671a0aa161f78e7076c01db412cd8beaf3890c4e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1301440-1633225.txt",
+      "sha256": "dd45a7ffee870ac44dba3b6f1fc0d072c0b8ff315a58c35c2cfbb052a02c31d5"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/test/1401282-1733414.jpg",
+      "sha256": "952b3e9067ed8eee7faee92e2042e55103b1d5b5ec10537c7d434cd7c47af99d"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/test/1401282-1733414.txt",
+      "sha256": "6a224224f44e1746003b63e9ef31a9fb507eee69dfe9cbc7de5cbaabca84cf1a"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1404769-1737901.jpg",
+      "sha256": "1d006b486d0a135cf4e82fefead77aea2a3295cd849ccb5ade07b3d9e8d8efbc"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1404769-1737901.txt",
+      "sha256": "09d005b08d1acdf65502052e31b9a9069b7d32c9d1ffc11d8f667ed0a9ab56b4"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1410976-1745938.jpg",
+      "sha256": "7498dd526e9370b5c7b2123730bf496efa8dcbe6271a39f80f5013dfaee09dbf"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1410976-1745938.txt",
+      "sha256": "83b1110a1ad6faa515164b0ee215e94027144d46a4cca66fe476ab99b21e5fdd"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/test/1437439-1778753.jpg",
+      "sha256": "cd35b80dd746b51130bcebee39125e7a580b9af456acfd4965498fcea7b972ec"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/test/1437439-1778753.txt",
+      "sha256": "2f08d6debed7ac34a4fa6a0202d2e4f7400fbba6d0b3f8b4708da68dec6685e1"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1451607-1798709.jpg",
+      "sha256": "fe7af0ac398e8e69c8ad8e2a13ca8542f0332798a79f85b67255184cb517a454"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1451607-1798709.txt",
+      "sha256": "6f74cf6a4ff9bc233cf1b4c479c69eef6850b26a9aff2b64332417a7c1eff6b8"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1478932-1833424.jpg",
+      "sha256": "f6b7e639535ffa92003dfe685e7cacf6b2b92e797d0916ad2395c47c6edf3a61"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1478932-1833424.txt",
+      "sha256": "e3cef355a172191f17bc4ecf8d15ec886c4ed370143b63ed58253f21347c81f2"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/test/1486314-1841854.jpg",
+      "sha256": "8707301014f78df08117da65861d55c22379675bb6f7b0d1a5cbe1d09ef11a40"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/test/1486314-1841854.txt",
+      "sha256": "e984d224dd4bff0e7a5ceebeab79927a35e49a501eb58897dddda387bbc150a9"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1500324-1858264.jpg",
+      "sha256": "2d0d655e7c6260acade51e9e6124c330d17df2a70467887fd5983b7bae40b277"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1500324-1858264.txt",
+      "sha256": "9555cde9b7a94a01ee70618ff284d430f83799a38771bb5bf13fd281624dde35"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1519935-1883246.jpg",
+      "sha256": "aecc675448d944dba41dc4aeb3cd2fb369b4c9fc0925ec571f552671e7a8d574"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1519935-1883246.txt",
+      "sha256": "27f3262c3d2133ad162d325f4686e032524ed559b04d7f6fd57cd1ac0111f832"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1528228-1893532.jpg",
+      "sha256": "da5743ff3864fd0db94b747f9e95f31c644c02f3841509bca7f2b170ae787c2d"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1528228-1893532.txt",
+      "sha256": "903255a15e4f3be78d87037796781cd62989dcb594a3e68fd267cd208440b6c3"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/test/1569044-1942243.jpg",
+      "sha256": "04c0884e1692322b60fe8e459d534b5032235540855f05ff5b664cdfd2d1df17"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/test/1569044-1942243.txt",
+      "sha256": "d9eefa91ee1d96f7c928d61c108bdd29c1809bb749573c392c6e4e05d7f805ff"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1608462-1977904.jpg",
+      "sha256": "3dc477868b6541d1d084281c90df99484b714dc06c288f444e6a15099ac2be14"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1608462-1977904.txt",
+      "sha256": "25ad7ccf754ea170f661902de0c4669e7c3651feb8b282d5f1bd718b4b5c0fc0"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1626565-1995783.jpg",
+      "sha256": "b7df6755c0b52ee36d251ef49611a0ed4f50f3ae5d6dee1a1f9bffb04050a73b"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1626565-1995783.txt",
+      "sha256": "a9211e977cc82c16ed5a2d13480c9b7597f904bfa62264b86ca244e310f46966"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1641360-2013501.jpg",
+      "sha256": "c88f04cfe05d7e7a4f6f93b234843c5ff29283672fea9ceef304059a36804f47"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1641360-2013501.txt",
+      "sha256": "d48db47513580166fde18c882de2f619c6d277c2bdb372e2423a561f2fbf043a"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1717197-2080153.jpg",
+      "sha256": "4d498ec57a0826324a94eb8d4018ac75d862106999dce7a0609343c75f6ea75a"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1717197-2080153.txt",
+      "sha256": "6a1060e25223ba78b9c9c5c95775a5f74b27c49a446675939344f539804db725"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1755091-2130856.jpg",
+      "sha256": "50f622c216c3baeb32a78709e2aa587d084403aaa406a0ad3b8b9509e2b83ff5"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1755091-2130856.txt",
+      "sha256": "de8bbf88a38270566ddb2997f6a9cdb2f45d2f2d3726f7e9c809db3ab0b62667"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1808883-2192880.jpg",
+      "sha256": "25e17b930cc26a67f9cfa6941a8b5fc29c5106c4f6995f7acbc0d367ff56d4fb"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1808883-2192880.txt",
+      "sha256": "caed3a3f50fe66e79fafc929d6d899c7a2528a735d3dd1ac6672918520eb9d47"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/1832728-2225158.jpg",
+      "sha256": "d07d40de47361552a903220940260e6f0916524c4837da0798a1a66f4f9872f6"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/1832728-2225158.txt",
+      "sha256": "fb54a5ac8230017da8d0f8364a1018c21945505cdaf6b5ddfa71f3c9ab7e7596"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1906191-2326490.jpg",
+      "sha256": "2798d5861ee62a7b985d634ae2b7756bb29625852130e988b24d9d51f6eb6c76"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1906191-2326490.txt",
+      "sha256": "d042ae0e60a671a3661baff21ff698ad3649bfb468dbee0e7ed306f4556eebe8"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1962099-2404093.jpg",
+      "sha256": "5693102af7d34f9227138a150b194bab3ea8c0a926884f9da129695ff634b121"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1962099-2404093.txt",
+      "sha256": "33af48f8bf948a5bec1596acc976fd9361e9b92aada00f2ed1b89839699e00ce"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/2000308-2433579.jpg",
+      "sha256": "b012e2226355b1a93c60965ee8b4c91381ec623b842925c85fc8e753fa249ab8"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/2000308-2433579.txt",
+      "sha256": "96b58d75b33cd48f3c1a70d97b4299f84bf7f9af9c39cf444f94220d19e4ff46"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/2011842-2450034.jpg",
+      "sha256": "711ff30e953986dbad6f70084aa5b57c8594025198902d4e5727d350365a1743"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/2011842-2450034.txt",
+      "sha256": "da7918f56096e3bf6308830f1938af10aa2177f49c677c98fdfba6ea00a3662b"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/2115180-2527373.jpg",
+      "sha256": "495ea330a91d1fa1dd10ee21974fd41ec30a16df0ae20c97d62653700963d72e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/2115180-2527373.txt",
+      "sha256": "cd82e3ab8615110c430cee8c771c37a0bb4318edc48a93a655cc6884ac37f56c"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/2117716-2536944.jpg",
+      "sha256": "6210ad23286b09c425e41fdc63a3afad17e4c0c7f3ffd353bb0e17fda1e4ac37"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/2117716-2536944.txt",
+      "sha256": "ac8d849d2656d64ee0a8824d55161ef3e2a02e95c727c9abb99652a7e630c8e7"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/2163916-2537620.jpg",
+      "sha256": "1f0812725bf5952e3946599de5c84ec90c249f37a28d2b17fbfa39ea83284f33"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/2163916-2537620.txt",
+      "sha256": "06fc3aa6f1faa31819ccd84fea43cecfe31090c035053e64ac2ae261e2614b82"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/test/2345494-2604705.jpg",
+      "sha256": "17914847bcd394bd565fbf5a27bcabc285eeadf8ba246540d3c35c35f4706930"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/test/2345494-2604705.txt",
+      "sha256": "1c06fbd456686b9c7335e2bd1d735f50af5d03a882cc7f40ed958473c00efa81"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/test/2429402-47904017.jpg",
+      "sha256": "e985b4042504c7c47705745ffbb26e915239f0da6e8597cd9d0e2fc3522ce908"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/test/2429402-47904017.txt",
+      "sha256": "df8c705ada7d03e9fa6096968d845c2966531e066d5356afa6cb68ff359efafe"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/2432226-2709940.jpg",
+      "sha256": "04b3c3f3f9bf401975970e381909d8d39bcfe642a2649b0643554210e185fe56"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/2432226-2709940.txt",
+      "sha256": "1827366eca007681120563d2b7823baa2a4d49c220ddeeeb8b80c525a27b4a40"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/2518526-2827511.jpg",
+      "sha256": "86119953988d31818539bff1ea3eb4b46a322d9998e2a36085696b6b9c0212d4"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/2518526-2827511.txt",
+      "sha256": "288d7220079dfe9ee5ba14a239fdc2a304c4681eb050bcff033614b4e3d494dd"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/2563619-2856567.jpg",
+      "sha256": "75ed4cdad96826cebfc836ef5b66749afa474c14eb0a8f31196c7fd70d5a0a9c"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/2563619-2856567.txt",
+      "sha256": "793338d0f691940085fcb88bd5e89ff0d9d380d8160c8719fad104d6fa1113bb"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/test/2664105-2994498.jpg",
+      "sha256": "5b22d7414b21121c72a18bd58abbc46d8025e6b0ee870c1961754af28c73db89"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/test/2664105-2994498.txt",
+      "sha256": "1fd7f0ba3f75884f78805e7d989943455df0b4d9f4d0f9d782e4c6b4f0b9dd7e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/test/2697944-3036941.jpg",
+      "sha256": "8d561c1393241d7f39e6f303454aed2c7197526beb6b1769b0c5943121cca0e1"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/test/2697944-3036941.txt",
+      "sha256": "4d21b3a8b6eabd39e11a95651f42c55cf5ef3879a60657154ddeb2a663bf9200"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/2729017-3078091.jpg",
+      "sha256": "c122e30256957e171eda0c1643488a8153ac2148674f7973282e255f4ac9b2b6"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/2729017-3078091.txt",
+      "sha256": "fc93616a9540b2836ae2d3458df63bede13d80568de011705fd1abbe9eba53ab"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/2784272-3157209.jpg",
+      "sha256": "4017ad486933117e7b0f4fed8ca9223bb6310b61e78bcc5fbff8f5d5341e22cb"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/2784272-3157209.txt",
+      "sha256": "2b41795fbcd8a8d1b3637742e04f191a317791b9a54dd5853144d76ab615fde7"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/2800612-3179509.jpg",
+      "sha256": "64f9afe6e093ef9f24c88157d77b62f3e4181ace924a1949570f8b42a1041e05"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/2800612-3179509.txt",
+      "sha256": "9aa2d73b5224b6e51afc5260546a3f2603d212716c6324835c7a82ce6f538807"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/2830486-3223245.jpg",
+      "sha256": "b347528cd65f4afa992d7eeaeb78e961a3fa41c2823754e01b681553336c0d6e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/2830486-3223245.txt",
+      "sha256": "bcfb79fbae080ed11d5eb5868fa0a69bd5c248813b595cedb1a7fa7d651263fc"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/2863288-3268300.jpg",
+      "sha256": "1f7e631b408c4156130f168bb641ee5feeab0426c8c0d8fef803600c66d83329"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/2863288-3268300.txt",
+      "sha256": "7f4adc1e61d923550fa8a048c4c55379a1608a1bb636bd58a6570d0251cc1b9f"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/2863620-19029414.jpg",
+      "sha256": "ff1f0f24e4a60ed723a6f0f405b2d20470ef84c036aadc80ee5da61f5bc525ea"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/2863620-19029414.txt",
+      "sha256": "9c00bb1800d5c36ac3887194b0fcc33ef1c73416bcf3c322a71967bb1c5d6545"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/2867911-3274740.jpg",
+      "sha256": "c44cac0fd6be58d5ec74cb5abcb75785ca26962fe9e7c2ecb604c410fd1ac4c1"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/2867911-3274740.txt",
+      "sha256": "11e720ff94e9eb603c734c23d27a89b624e2841d31d50e317ee869e05e088751"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/2917781-3340342.jpg",
+      "sha256": "1eee9608efe6a94e274b4fad40a191b67fcab7d9ce5c3cd26297fb7d5155987f"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/2917781-3340342.txt",
+      "sha256": "a53607d4a2aab39e21c419ad008c0bf68d928e887066bf549f38136f1185f351"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/2974328-3417888.jpg",
+      "sha256": "e61b310004b09e67a877fb21b8a2ecb01ba7ef106ad2708c2ebccbc720e302a5"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/2974328-3417888.txt",
+      "sha256": "d5e979ec9f7dea458bfde52d4e2e892447434d8fe0b15b69d154703471ffe057"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/test/3150709-3641772.jpg",
+      "sha256": "c426259d6a3a000b4d702b2d5cef28dc93bc925468a2a08f88ad13fc7d82b530"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/test/3150709-3641772.txt",
+      "sha256": "2ad44fa5d4f925418ac79b278d4e3471c572e050f8b8289f7d4c895b9992bf2d"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/3160617-3653927.jpg",
+      "sha256": "6ed230c546281b65148995d1f0a3664439c453a3e9f13a2987a46719d06fb88b"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/3160617-3653927.txt",
+      "sha256": "9a7145110508ab9d1ea287a7f48ff488786ee3c40aaa371be019c4b680077c25"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/3231245-3739978.jpg",
+      "sha256": "b95543888528f04f3120d6a6cc20357dbe5f8eee02538b59499638044dc059bd"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/3231245-3739978.txt",
+      "sha256": "e7f271936c2eec8077edbc7198c6753487c653e93125ed09c99ebb574194b962"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/3341442-3858615.jpg",
+      "sha256": "9e59977bbffc30207eca3ea3cd726d938a33e403b3342f8ecf5758d83e086ace"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/3341442-3858615.txt",
+      "sha256": "1f412cf49c2afb3a1155724e044e992849c89e7187a3bc4abb2e757ef46a014c"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/3387172-3915307.jpg",
+      "sha256": "65fed1b8594e3f2da46b1293c3040cef8006d70b05250b10765e6acc7be4d959"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/3387172-3915307.txt",
+      "sha256": "36d2660a2a1af70045dd630751ccc710970ab3043ed433ff3e1689a0cc6f9257"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/3671149-4252208.jpg",
+      "sha256": "f44afd697066f1d19904e0eb9ad2df58a4761aa8b339e361cfd17977477418a3"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/3671149-4252208.txt",
+      "sha256": "cf84556bf88f44a5c1155131b948829af4f4bb021711fdade5d31e10c2bd45df"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/3692407-4283699.jpg",
+      "sha256": "294e28f35069259f77f9db0de28b41c2d3812434092a670b3532c1b517c90446"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/3692407-4283699.txt",
+      "sha256": "7fd8a62dfd6ba024f160258df42180c3f6b79589e6c5d8a88a610e79a26f11eb"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/3747966-4360131.jpg",
+      "sha256": "8ada74bae49f48c10c98d5ef79f60dea49486328b0ece16f868395a14ce9642e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/3747966-4360131.txt",
+      "sha256": "02c91932935abec8e5db9788bf875c69291447135b0357aea07c553fe6e865d0"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/3754214-4370229.jpg",
+      "sha256": "e03500ff4091fe497b30ae5dac2bb516f4ea8ba73131a370b577a2944cce4244"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/3754214-4370229.txt",
+      "sha256": "9e9a53f027a517a03ddb667425d3209a44c0ade1975db231fa1a9a4d5cd8d939"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/3814995-4459724.jpg",
+      "sha256": "69f05a399d65f861a09029f1f9ed196c43a104ec4910b2c984a6f1f66ccf1635"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/3814995-4459724.txt",
+      "sha256": "698acfd21dba4ea5fc89d56b55cbccb57ee4598e3fc9db540aec35e6e952b616"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/3821225-4468101.jpg",
+      "sha256": "8c08bed0a01ada3f355743e5f056e572db35ea35eac8f3a8422af21b7ba9b146"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/3821225-4468101.txt",
+      "sha256": "21f5bd6e6939c137ead6111c5a78fc1da6e8e2dadfcb1f6bb34d624d9054227f"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/3825057-4472994.jpg",
+      "sha256": "83278efe8c79f51ffa53b351767d095b908435ca46d789eb1e35cfdcb4bee044"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/3825057-4472994.txt",
+      "sha256": "90b0ec188fc49ca7ca2bba60fa0eab6b09d51fe24cd03ea88c8aa61d96c1fa7b"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/3827094-4474921.jpg",
+      "sha256": "578f538114966345a2fed24bfd24e20cfe27084814dc741f57c57616880762f8"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/3827094-4474921.txt",
+      "sha256": "5acd244502d5c390be96a30a15ffad14c821d69dc2544cefca4e0a91693aa9b2"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/3897808-4579569.jpg",
+      "sha256": "2f567e182bb8dec3d7dab036374937ca2dea4c4e9ee6e404eacf9de7c8a873f5"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/3897808-4579569.txt",
+      "sha256": "11d4eef14a92b7bcadd9f8d1441ffb34a88c8562bf2170d5bf086d155d3cce33"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/3922189-4614696.jpg",
+      "sha256": "28f448bd67b7aa9a665cdd62463353aa402907b79dad3ef95b13e15138b36134"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/3922189-4614696.txt",
+      "sha256": "2f22ed67f2160ef6a0ac7453dff4ea1d9d92253696a3997a796211351b48dedb"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/3959697-4667926.jpg",
+      "sha256": "5a62ce839edae857b56f58ce0b99c66a7ca0c70c4c9a35d91f4eff5e29a4d51e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/3959697-4667926.txt",
+      "sha256": "8fba420029b1a4c87e1c61d880f6bcee859a11936313a15e5edf293d5142a18e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/3961842-4670883.jpg",
+      "sha256": "ccf037c1fcbf4ee12c9c2400d353b26aa39e9b0f81230198442779e41cf4af35"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/3961842-4670883.txt",
+      "sha256": "bea4d47953f8e655b21a9b32e6a3d852f3736ab3cac92d492e1337e344335d34"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/3967615-4677806.jpg",
+      "sha256": "153d7debbaf17d1a8c2ef7a4f4c0ccf5d99a68bb4535870479bfdbd45f9e66cc"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/3967615-4677806.txt",
+      "sha256": "9a801096e96d6c3fd2d9dda1994c443c3d9d4068d7aa49e4d77303bca24f76d5"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/test/3979697-4695459.jpg",
+      "sha256": "a50bb24ee2ee3b2e84d937353091d1850c4ddf6dabf47bbf2b21b3bce55b4927"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/test/3979697-4695459.txt",
+      "sha256": "6919a8f05fdcce4f3cf834b224a27325564175bde10415e6c5c23cb15e6658b3"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4019967-4749149.jpg",
+      "sha256": "0e26e51091741715634d87ae2aac20d130530b167e9d6b1aad32ff58e8063e27"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4019967-4749149.txt",
+      "sha256": "e6cd56f74543bf7a3620c85243c7c6a14fa4ac4d7428706f8695e84e09fc6dac"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/4025295-4757656.jpg",
+      "sha256": "481ca4ef63f7de2a3718e8b24b5e683ae9128f432595dd6d07935c953eb98ff1"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/4025295-4757656.txt",
+      "sha256": "de4717beccb468fa5b8c07e3458a73e5978a06bf1749f53ad8cd7ae393a13c50"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4033140-4769426.jpg",
+      "sha256": "068d70e0f5d61074d59cbcfc1dfdb879e39c8272afb30097061809fb51f7188d"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4033140-4769426.txt",
+      "sha256": "81f3fa222bae4c11c995eb81abe53aa6e70d1ff02f95485df8efaf080b1bc0f5"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4035145-4771820.jpg",
+      "sha256": "c585aa0f29b65de96882a02d5f733ff732bceb7a0b5b0810460235e313eae48f"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4035145-4771820.txt",
+      "sha256": "79640ac6385a9c55bd516d8989a28b40eeefc1378e200edf0d3599ea11e2a35e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4060797-4811100.jpg",
+      "sha256": "d3c18d2f81367ff59a1fd73e701848602c6a0e0c529a2967f9a37752714187bc"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4060797-4811100.txt",
+      "sha256": "763151cc62b1b3a1ff6ff04cf708f5380809ef9e30634b893e8798689e2fd7f2"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4068084-4821686.jpg",
+      "sha256": "e1ca334c1c1c1ffe97c24abfa771ea6c5df008d77510b1d3913a8d6f1dcb5e04"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4068084-4821686.txt",
+      "sha256": "58f1e8b2573a008966cc24a270cb1a81e85d1d7dcf90b6e90e09dee2ac2eb92b"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/test/4068446-4822053.jpg",
+      "sha256": "f3d7b806bb9795e1daac803f8491e2235f37777e72dc7aafad5340183200bf21"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/test/4068446-4822053.txt",
+      "sha256": "ef3365724f3f4f05e88cdf3b04b5eecc5f1f48be7523d6b18ac2349f335edc91"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4074002-4830752.jpg",
+      "sha256": "5ff5895f60af39eac878a3bbdadc41efcd11f9dc4812502bf727e59d61aa2d94"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4074002-4830752.txt",
+      "sha256": "cc17d303aab3bf2abab4e633727bd7b195024f1d6618af9ebd94242045d437f1"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4149606-4940822.jpg",
+      "sha256": "e0cc4f24064f566b044187af7ad0c852d60fc15362e3e5e9adcda98bc4d695c9"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4149606-4940822.txt",
+      "sha256": "5f5067732da36fd845146476904c18c80f25619b349bc043a99ee393392d925d"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4150828-4942797.jpg",
+      "sha256": "b0405a5db6ca4147cf86d322cbc097c36d3fe14231f2de00dc7fed5aa8c9b850"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4150828-4942797.txt",
+      "sha256": "f1e128fc77f94147f65e8f45bc6d5d6fa73cf4ee8eb8ab7133f1f1a9136e87e2"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4195610-4998669.jpg",
+      "sha256": "47166d7268b80dea72551d16cf69f1dcc631527852851e427ca12171c0e5fa0d"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4195610-4998669.txt",
+      "sha256": "3e2665157483255c8723a3793b9cdc56573add906f9b1dc14b465bf697501c9e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/test/4217734-5033426.jpg",
+      "sha256": "3a6c19a4709a57faa16416e3402ea7256ebd23cbe98471a19398b2649e5e562d"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/test/4217734-5033426.txt",
+      "sha256": "54cf5c82b950023bac57ff990954067f86ba12546b397c619a2884ca62bbf873"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/4233808-5057623.jpg",
+      "sha256": "a5799b4a0491c31c3d1a36a26155716ffd0954617a9a96ed1dbf4a61a06b3a3c"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/4233808-5057623.txt",
+      "sha256": "67a695d6031c586d7d683354f2c717137668363bb8f06ae395fcf5af56a59ea1"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/test/4286336-5137976.jpg",
+      "sha256": "65fc85a93189278d1ee10239bfaedf2789c12a971b636b5548bf6abf07a79c65"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/test/4286336-5137976.txt",
+      "sha256": "6ad89a07a9fca3fede752552f1a0d25b000057fcb6a3a61e8c387af42d094558"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/4312873-5182351.jpg",
+      "sha256": "56e6e044865a53f3262eb8248382e55d03a39c2a6c4bb3b69ce0048a3f2663ae"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/4312873-5182351.txt",
+      "sha256": "b2ec05c278e014098f5c9dc70312f3a6a1ac8f3385268a591078d314f90ab117"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/4329289-5196380.jpg",
+      "sha256": "ef82d787e86679d9ea09f906be9224666396414b80299f58a75fcfeb34ad0381"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/4329289-5196380.txt",
+      "sha256": "2dce455526f5301a4b8c49a7b73fccc22d0a529e16272dd275320f4e9c99c497"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4386553-5263889.jpg",
+      "sha256": "c45e55a3e01989f4515c7a88b344b264f308402d05abc59ab5077bbd36e5f896"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4386553-5263889.txt",
+      "sha256": "924d557a0f24313987c9524fda455a014c1894f970a9550363253bef31c6296c"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4409631-5298142.jpg",
+      "sha256": "ccd7f1358d49df39ae4df1ee5499260a02f2419c9822edb5ffa4660e1333431d"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4409631-5298142.txt",
+      "sha256": "f0d9c0d638b4a8b927b13c199dfc033d24ac92a6eb26070a3c8b3b4481c42aba"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/4435470-5337773.jpg",
+      "sha256": "dd40b37f35065a3de89ac518b98e9aff07c0202caf97842ff79f6440d857f673"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/4435470-5337773.txt",
+      "sha256": "717eb9f168f5a2b864d1d6713d2f9453cc8bb6343f33b14336a523c2b3c24fed"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4482046-5411182.jpg",
+      "sha256": "cc453f53456a3a7fb1700d1128bc07d49a6b29d6fa7c7b21d5b0e432f8d77278"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4482046-5411182.txt",
+      "sha256": "be513352d3bfd63e9ada6967e36496d4387556bd7a8d28b4877400395bd44f73"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4486098-5417223.jpg",
+      "sha256": "1399f62d5e5642b414ad0ae40d15c4991c237673628e0b3df49f145dc234b2b2"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4486098-5417223.txt",
+      "sha256": "45fae16b83b7c67b911f9124bde03fc1f99cb53b57c4de9bea67531194861e4d"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/ce877cb28e446cc28d5cfe2f.jpg",
+      "sha256": "ce877cb28e446cc28d5cfe2fd7d50075acc152908b946b1925ba6ab767d3d38e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/ce877cb28e446cc28d5cfe2f.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/9effb77dba0bec889086d830.jpg",
+      "sha256": "9effb77dba0bec889086d830ad8bdd65e4e059a09425254d1cc67753ff4a1e4b"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/9effb77dba0bec889086d830.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/6d4ecc9eb4140f73b0e796b4.jpg",
+      "sha256": "6d4ecc9eb4140f73b0e796b49b7b66f25bd89d7ba05cf9fe1531e2c371d6ed12"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/6d4ecc9eb4140f73b0e796b4.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/21369ff0f3936dd0f4624cd3.jpg",
+      "sha256": "21369ff0f3936dd0f4624cd389be0c03a3f969a9db27b2ec4d750de24ce66c87"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/21369ff0f3936dd0f4624cd3.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/1d11cf949cde2374ea478f48.jpg",
+      "sha256": "1d11cf949cde2374ea478f48e5cd01a3db36787edb2c48adb0f53ab10f48dce6"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/1d11cf949cde2374ea478f48.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/50d6cbf541df80f8b6132d7c.jpg",
+      "sha256": "50d6cbf541df80f8b6132d7c80d4eee48c14ddcf5d68c8738114b974efc3b439"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/50d6cbf541df80f8b6132d7c.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/18176a19880eaf41c26fd473.jpg",
+      "sha256": "18176a19880eaf41c26fd4738acfa4b5fc71c3e813e6fcc8f1e04216e86c3e02"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/18176a19880eaf41c26fd473.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/610c67392f3bb41fcf0120d6.jpg",
+      "sha256": "610c67392f3bb41fcf0120d63cdf30d4cc7c5694101802f6c15ba5d45e71df33"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/610c67392f3bb41fcf0120d6.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/080b588d7294d9f5394cd0f2.jpg",
+      "sha256": "080b588d7294d9f5394cd0f290a91d2981ea6bde07400dad24152dab76d88ca5"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/080b588d7294d9f5394cd0f2.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/244d7c56702ad448658382ec.jpg",
+      "sha256": "244d7c56702ad448658382ec89a70560ac5715bdde06bc1d78a6f49ee7741b06"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/244d7c56702ad448658382ec.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/cb3fc4e345c9528973b44ace.jpg",
+      "sha256": "cb3fc4e345c9528973b44ace863f61ed9b38207446e6f33b92ab6543951baf5a"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/cb3fc4e345c9528973b44ace.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/60e59b23b83502804f482685.jpg",
+      "sha256": "60e59b23b83502804f4826856b9ca1ed6b7cfbb87b769d9e42411dd3e7e1050c"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/60e59b23b83502804f482685.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/b3fce764f5681d5271feebb8.jpg",
+      "sha256": "b3fce764f5681d5271feebb84515efc03ba3028d574c4398684e50dd2be73933"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/b3fce764f5681d5271feebb8.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/c1456454932f2077c760878e.jpg",
+      "sha256": "c1456454932f2077c760878e65b1af8ee99df9800021edb2ed9c31367b37da31"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/c1456454932f2077c760878e.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/adfcf1b99338d3a4a1cdc5da.jpg",
+      "sha256": "adfcf1b99338d3a4a1cdc5da465029836ffb361ca04691311b463eb976f48b38"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/adfcf1b99338d3a4a1cdc5da.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/a1475f88f6a793a6bf432d5b.jpg",
+      "sha256": "a1475f88f6a793a6bf432d5b8b131b0f8932b4f2c925a3dbddea83d8c06b5937"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/a1475f88f6a793a6bf432d5b.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/a5a06b4b77eb1e70e7bb5adb.jpg",
+      "sha256": "a5a06b4b77eb1e70e7bb5adb4c49f39f75ba83293903604b8ef8e731f91dfa04"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/a5a06b4b77eb1e70e7bb5adb.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/b59343bae8cca93d73d3b878.jpg",
+      "sha256": "b59343bae8cca93d73d3b878ee52678a0ba2062d650a3c301e5b18bdb9eafa0a"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/b59343bae8cca93d73d3b878.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1df7684d4201f5022e944315.jpg",
+      "sha256": "1df7684d4201f5022e944315294a5cee7e82284684d0da1d795ef9955025718d"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1df7684d4201f5022e944315.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/e3bc094825dac1a431639783.jpg",
+      "sha256": "e3bc094825dac1a431639783af0bcd8b8aedba4aed934beeb32e24130e70a23b"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/e3bc094825dac1a431639783.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/dd407578974b814626342889.jpg",
+      "sha256": "dd407578974b8146263428892a9856b8b0bc4f314bdc7ed9baf47a1416facf8f"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/dd407578974b814626342889.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/08168c6d4889bcb8fa772efa.jpg",
+      "sha256": "08168c6d4889bcb8fa772efa36d08ef478c2647c4ceb084a2d80ca4c369dd871"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/08168c6d4889bcb8fa772efa.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/9d7ad8ee8de1753413b1c9ea.jpg",
+      "sha256": "9d7ad8ee8de1753413b1c9ea729fcbb144019fb62f8d0d1bd57fc3752e36b4c6"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/9d7ad8ee8de1753413b1c9ea.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/a623ae7452716bc364bd2678.jpg",
+      "sha256": "a623ae7452716bc364bd267876f325013fe68de7b4f576e0c2ac297502927cee"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/a623ae7452716bc364bd2678.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/61801453d7a64e42857c0ab6.jpg",
+      "sha256": "61801453d7a64e42857c0ab655b2e37e9922d7bfb90f6ecf02fbb59e65df5f19"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/61801453d7a64e42857c0ab6.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/8fc8ecec74fa45bee577e3da.jpg",
+      "sha256": "8fc8ecec74fa45bee577e3dabe14a6810b533f38add23891dbb45fd96d4851b5"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/8fc8ecec74fa45bee577e3da.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/6b05cd33f873f07c61a2c622.jpg",
+      "sha256": "6b05cd33f873f07c61a2c622be3b966134841427b6d7730198d9d4879e1447be"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/6b05cd33f873f07c61a2c622.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/5ec12b8af9abe0d364b5cc7e.jpg",
+      "sha256": "5ec12b8af9abe0d364b5cc7e25811c0245f5c106cad76c24b9b108b1e90238f1"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/5ec12b8af9abe0d364b5cc7e.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/a4b9de39540198074bf9ce9b.jpg",
+      "sha256": "a4b9de39540198074bf9ce9bbe1841fc74049444af07970dd0724b7e4f88b59d"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/a4b9de39540198074bf9ce9b.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4fcd23a0f2b96afee6163e89.jpg",
+      "sha256": "4fcd23a0f2b96afee6163e890c243f8fdaca7b1885a5e2d58a5be44394edc529"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4fcd23a0f2b96afee6163e89.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/72340fab3264e28c57a8a201.jpg",
+      "sha256": "72340fab3264e28c57a8a201b5ad7b657d6c5f10c69fea07fb3ee5d75de9a21d"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/72340fab3264e28c57a8a201.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/e5efe780f24b0463c9718608.jpg",
+      "sha256": "e5efe780f24b0463c971860800731f360f4bd85d31f50346921fe8bc9027a5e3"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/e5efe780f24b0463c9718608.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/b9d7cd0e614831613ef72488.jpg",
+      "sha256": "b9d7cd0e614831613ef72488c8aba60c9ab7c1e1ca3472a13178671185ff8457"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/b9d7cd0e614831613ef72488.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/401e63c494de6409e8bfd5b2.jpg",
+      "sha256": "401e63c494de6409e8bfd5b27abb1ea0be7ac45441c92e5faebc4d8e38c75208"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/401e63c494de6409e8bfd5b2.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/0bbe927293aa1d8186447ec4.jpg",
+      "sha256": "0bbe927293aa1d8186447ec485cfff86cd13a47f10c9122271573d3f7dbd8463"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/0bbe927293aa1d8186447ec4.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/498cb208750fba5472964fc0.jpg",
+      "sha256": "498cb208750fba5472964fc05cf169b05ca6d7ea9b535dfce8ba74b17e08d5b7"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/498cb208750fba5472964fc0.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/d7631d7ee3335dd01e60b281.jpg",
+      "sha256": "d7631d7ee3335dd01e60b2819fac8928b097f308cafc181ce226f4d8096d9c43"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/d7631d7ee3335dd01e60b281.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/f5623481f3e929ac9a88f351.jpg",
+      "sha256": "f5623481f3e929ac9a88f351c7043f7ee600e7fed0b432e6f892b98cc6f4f5b5"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/f5623481f3e929ac9a88f351.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/f483fb7a81c61436806608a5.jpg",
+      "sha256": "f483fb7a81c61436806608a59361a291eb654f1e349da37548a6b42168322614"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/f483fb7a81c61436806608a5.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/f753904712148974a7e631af.jpg",
+      "sha256": "f753904712148974a7e631af07d12d55af35c693409ca6bd48d41d37dd31cb14"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/f753904712148974a7e631af.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/7c04e2b6c375513493ab08de.jpg",
+      "sha256": "7c04e2b6c375513493ab08defa6f5f0027e209421b96c4728f8824d82c44b454"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/7c04e2b6c375513493ab08de.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/11ad33169492d0f6afe2969a.jpg",
+      "sha256": "11ad33169492d0f6afe2969a7a9ca90a2fc92ac7503194cea187e5ec7512ebb1"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/11ad33169492d0f6afe2969a.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1441b2b9a507fb86dd2ef813.jpg",
+      "sha256": "1441b2b9a507fb86dd2ef813dd98a592e5b5a4d656f7d2e961620f3be1265d27"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1441b2b9a507fb86dd2ef813.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/278d01854af3f4df4ac91152.jpg",
+      "sha256": "278d01854af3f4df4ac911527504f59b57f5591e343752493b056c9c3efdbff8"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/278d01854af3f4df4ac91152.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/c0f366a4f651d973d0bd263a.jpg",
+      "sha256": "c0f366a4f651d973d0bd263a6d813fb3b3b796e4960fe49682e7ed538eb8a997"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/c0f366a4f651d973d0bd263a.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/ac5555ae2cf13ac45809aac4.jpg",
+      "sha256": "ac5555ae2cf13ac45809aac4178386e04b93bb97ce911a32ba514132355c1f1f"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/ac5555ae2cf13ac45809aac4.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/c006846fd059926d5b307b71.jpg",
+      "sha256": "c006846fd059926d5b307b71f7014a435e05f6b5df85b4c93e68850439bfa9b9"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/c006846fd059926d5b307b71.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/729b03a19e513140d1d3dc6a.jpg",
+      "sha256": "729b03a19e513140d1d3dc6a651c64d3a65ba12ada4e11539bd3349bb18a97c6"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/729b03a19e513140d1d3dc6a.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/50a6e0541502464dd8d14e68.jpg",
+      "sha256": "50a6e0541502464dd8d14e6812151c9c8f11b990705c988ef1985c77b530f1f5"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/50a6e0541502464dd8d14e68.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/9c7ef060bcb0d5ef6de9b4ed.jpg",
+      "sha256": "9c7ef060bcb0d5ef6de9b4ed5e41379237241184c456f54d35acb88999bef6b4"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/9c7ef060bcb0d5ef6de9b4ed.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/a4825186bf3340e36b8063f2.jpg",
+      "sha256": "a4825186bf3340e36b8063f2fe6581578ad7a6da3611a5d58cb298671734ca13"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/a4825186bf3340e36b8063f2.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/97574878a74355658f258501.jpg",
+      "sha256": "97574878a74355658f25850156c4d36d4aebccadf427124b5e52c9e38ff68d59"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/97574878a74355658f258501.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/1ca8921e9e21bd08168b1c35.jpg",
+      "sha256": "1ca8921e9e21bd08168b1c354680b720afc33da4a29e484981e5b0d393bff6ed"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/1ca8921e9e21bd08168b1c35.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/4e0fdaaa2b9b1888c1023660.jpg",
+      "sha256": "4e0fdaaa2b9b1888c1023660d6c85871a6b33af8d735ce1a333562386cbce61f"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/4e0fdaaa2b9b1888c1023660.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/a7c4a6a86ca53c1ee56f422b.jpg",
+      "sha256": "a7c4a6a86ca53c1ee56f422b6a4088cd0d8fd928902bd074cce1dc0a321f2d84"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/a7c4a6a86ca53c1ee56f422b.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/7d96c95d167ce430bce5fe54.jpg",
+      "sha256": "7d96c95d167ce430bce5fe540d1498cd6dfb51a201bfb0e77750a60e508215e5"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/7d96c95d167ce430bce5fe54.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/db1bb4a1919c286220d7ae31.jpg",
+      "sha256": "db1bb4a1919c286220d7ae318e18a3264613ac6241fc65d95da5d9f32577ad75"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/db1bb4a1919c286220d7ae31.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/47133561abbcb6c84e971ab1.jpg",
+      "sha256": "47133561abbcb6c84e971ab16c576f3e2ce41a9f869e51e7f4ef2605fa2384f1"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/47133561abbcb6c84e971ab1.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4992ba27b6e7930cd493d452.jpg",
+      "sha256": "4992ba27b6e7930cd493d452843669be47e59db4c4248239cef3035cc49670e2"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4992ba27b6e7930cd493d452.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/0e34ae37c0e6544d23ac0361.jpg",
+      "sha256": "0e34ae37c0e6544d23ac036117fb46036ff61bedaf908736cbb68e6200595687"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/0e34ae37c0e6544d23ac0361.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/709c2002b98e3a3656dd9607.jpg",
+      "sha256": "709c2002b98e3a3656dd960712ec80dddf21dae4a7c67d15b300571d6d9f5d46"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/709c2002b98e3a3656dd9607.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/085374c7c9283f5950ed1ae6.jpg",
+      "sha256": "085374c7c9283f5950ed1ae65c462cd5a51054e0de7d67bf377b8a7b7b2c75ad"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/085374c7c9283f5950ed1ae6.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/554b7c23660b8ebd613dfc30.jpg",
+      "sha256": "554b7c23660b8ebd613dfc304d3fcb0d06498435ca762e3187782b231ab7e8a0"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/554b7c23660b8ebd613dfc30.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/cd507d578e35ba1afc9e427e.jpg",
+      "sha256": "cd507d578e35ba1afc9e427e679e5e1c65a8bafd7212fade94b2111c5aa159eb"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/cd507d578e35ba1afc9e427e.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/32d4a5d13a9da8b9aaa76061.jpg",
+      "sha256": "32d4a5d13a9da8b9aaa760616da90049e51b51200044e8ca9ee0f757f957167a"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/32d4a5d13a9da8b9aaa76061.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4bd02bb729dcbfada1d0115b.jpg",
+      "sha256": "4bd02bb729dcbfada1d0115b510661c404766dcc8695cb25364a8bcf5ca86c03"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4bd02bb729dcbfada1d0115b.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/5eeccf30e06d3e703a7020ac.jpg",
+      "sha256": "5eeccf30e06d3e703a7020ac1b71a0c4c6cc396f1dad15e8eead1b02d9743b81"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/5eeccf30e06d3e703a7020ac.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/6f2e72dcae9c0bb6a33b612b.jpg",
+      "sha256": "6f2e72dcae9c0bb6a33b612b70234379a12999cc69661fda6beab0daf6bff0df"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/6f2e72dcae9c0bb6a33b612b.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/bcdbb7a0a17365a5f20930f7.jpg",
+      "sha256": "bcdbb7a0a17365a5f20930f718508184b376061ab419aae9bec0e8e7d5706072"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/bcdbb7a0a17365a5f20930f7.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/539ca4938d77df94e385c7e0.jpg",
+      "sha256": "539ca4938d77df94e385c7e0b92b6e74890f161f66ce2010fccac38bbdd57f77"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/539ca4938d77df94e385c7e0.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/75f46c6b1cc935af084bb18e.jpg",
+      "sha256": "75f46c6b1cc935af084bb18e5dc64a26981c6991cfe841edea47fe67e21e3fca"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/75f46c6b1cc935af084bb18e.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/0d192586be487b8f6cf04ed1.jpg",
+      "sha256": "0d192586be487b8f6cf04ed16a6ca79057e80d4e570516921d50272bb63baf66"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/0d192586be487b8f6cf04ed1.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/7d0ea5d334cc0a483f8b30e4.jpg",
+      "sha256": "7d0ea5d334cc0a483f8b30e4799ba573af9e666d49f08a092121362e8206265b"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/7d0ea5d334cc0a483f8b30e4.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/2fc0e37f179632478308eec1.jpg",
+      "sha256": "2fc0e37f179632478308eec1c7f22e7b08ca7da68aa6bf21ab7192c0717655c9"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/2fc0e37f179632478308eec1.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/b6ebebd3985293ce3df21801.jpg",
+      "sha256": "b6ebebd3985293ce3df2180198536a0a26c2d95e51f8931c08e22139cb340898"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/b6ebebd3985293ce3df21801.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/2803d07f11f0257e08d38b81.jpg",
+      "sha256": "2803d07f11f0257e08d38b81498c3d66571ef23d7fd8af02beb74418be2d7418"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/2803d07f11f0257e08d38b81.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/c9200343d4bf163d87adf255.jpg",
+      "sha256": "c9200343d4bf163d87adf2556dfe291537b2ab7caa11f68eeec837e7a3df1523"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/c9200343d4bf163d87adf255.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/de940b1365cfd492c8cf850d.jpg",
+      "sha256": "de940b1365cfd492c8cf850dafff9376f6eba616a41c10252f56add2be338e9d"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/de940b1365cfd492c8cf850d.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/9b9a4ebdcb3b3e05ec605255.jpg",
+      "sha256": "9b9a4ebdcb3b3e05ec605255cd166320d619dda02e90ec4097bd4b806a2d0a4b"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/9b9a4ebdcb3b3e05ec605255.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4ec56cb0185f5f2bd41ef068.jpg",
+      "sha256": "4ec56cb0185f5f2bd41ef0680654054602b7956af33e22acc335996fb074d328"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4ec56cb0185f5f2bd41ef068.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/f71c72724b723614ed2453a7.jpg",
+      "sha256": "f71c72724b723614ed2453a732f085f336aa244cbbae8df3b881354f219a66bd"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/f71c72724b723614ed2453a7.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4374340717ed77a58e33186f.jpg",
+      "sha256": "4374340717ed77a58e33186f21d4586e648430cf82a70f5d89f0e05269fc8806"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4374340717ed77a58e33186f.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/638332e4fa549dfa0dca88b5.jpg",
+      "sha256": "638332e4fa549dfa0dca88b594e4b6ec712aacb977fcc8f84db1b30ab6f5cc55"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/638332e4fa549dfa0dca88b5.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/ffe4535daede829e65ce4a51.jpg",
+      "sha256": "ffe4535daede829e65ce4a515f0423a1ffe96ec925d7b2549543eaed7f9e35b0"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/ffe4535daede829e65ce4a51.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/32d341ce004fc3d3f5069f4b.jpg",
+      "sha256": "32d341ce004fc3d3f5069f4b69612f029182e48ee7d55a803fe6ebf0ff112b54"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/32d341ce004fc3d3f5069f4b.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/cd46a414bb934aa9736f019b.jpg",
+      "sha256": "cd46a414bb934aa9736f019b9cff6a2fe576987fd6d95a3788814c24813cc99a"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/cd46a414bb934aa9736f019b.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/5dd4ca5c9ba2d2beb8114bde.jpg",
+      "sha256": "5dd4ca5c9ba2d2beb8114bdece917dda428694ed5de896d7beabce40c54d3272"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/5dd4ca5c9ba2d2beb8114bde.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/b880fcdac9ea612f0d8cd4b1.jpg",
+      "sha256": "b880fcdac9ea612f0d8cd4b18e4105c2316e639afb30225a85026d8f9b161877"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/b880fcdac9ea612f0d8cd4b1.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/1d0dd4ba6466cae500e793e8.jpg",
+      "sha256": "1d0dd4ba6466cae500e793e846afcb9fe60a2d440a0f2d4ac5c18449c2c043a3"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/1d0dd4ba6466cae500e793e8.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/7eac35863b743aac763fa8ed.jpg",
+      "sha256": "7eac35863b743aac763fa8edeb4c71745e75fac60d8a398682d34cf52d234969"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/7eac35863b743aac763fa8ed.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/c704543f61f5212e3f742d8b.jpg",
+      "sha256": "c704543f61f5212e3f742d8b2057538d6c118f26534d85668ad2b0b156b7c55a"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/c704543f61f5212e3f742d8b.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/e2a9a35b551060c2ea0f4f14.jpg",
+      "sha256": "e2a9a35b551060c2ea0f4f14526835fe1fb00b621d772dc20cbfd34b42917c9f"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/e2a9a35b551060c2ea0f4f14.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/c16ed1ade9c20052f35913f8.jpg",
+      "sha256": "c16ed1ade9c20052f35913f8e25da6075c9a35ac3af4819cb7f0e4785248acb6"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/c16ed1ade9c20052f35913f8.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/61eb9e18f48749cb7a871b1b.jpg",
+      "sha256": "61eb9e18f48749cb7a871b1bb3a8fea1724facd321b3a82265d356f4c4597698"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/61eb9e18f48749cb7a871b1b.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/9891ecda3570dc8571aef4ef.jpg",
+      "sha256": "9891ecda3570dc8571aef4efc689c75bf77ed2068f82e5d90e46e210f8ea5bd3"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/9891ecda3570dc8571aef4ef.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/3cfefd1b807cdb77806d1326.jpg",
+      "sha256": "3cfefd1b807cdb77806d13264d51c19cf528acac30183fded910093d2aa10332"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/3cfefd1b807cdb77806d1326.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/3db90ee2612e5cddb499441c.jpg",
+      "sha256": "3db90ee2612e5cddb499441cff48fedb084da361c6f200f4e2d407d2e3084b37"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/3db90ee2612e5cddb499441c.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/ed0ebc46176636addabe8361.jpg",
+      "sha256": "ed0ebc46176636addabe836105cdfef281a4907f83ae48df6e48bbf833139b3d"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/ed0ebc46176636addabe8361.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/06242aea552d61966150402f.jpg",
+      "sha256": "06242aea552d61966150402f8db76d93f8b2ee0c6e1a101b49f7a0a4a1facacb"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/06242aea552d61966150402f.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/883851e9007bbc8f8057515f.jpg",
+      "sha256": "883851e9007bbc8f8057515f07028cd988a86617cd10d609a5f00de3f4adebb3"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/883851e9007bbc8f8057515f.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/4335c6245e659a1fbcb603d8.jpg",
+      "sha256": "4335c6245e659a1fbcb603d8e72d05f5e8748937270a664faffa6402600fd8ae"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/4335c6245e659a1fbcb603d8.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/a0e412398dca20812fd61961.jpg",
+      "sha256": "a0e412398dca20812fd61961b5df2cf6f94e6dbacde38eeffc2a39a60af6925e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/a0e412398dca20812fd61961.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/e136093c2de70feba5e6e0bf.jpg",
+      "sha256": "e136093c2de70feba5e6e0bfb1e2d2615271dbfc55ea66ac866795c67ee6e9af"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/e136093c2de70feba5e6e0bf.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/66446199149762125403129e.jpg",
+      "sha256": "66446199149762125403129e7a8714c23b52d5194ddcbafa61137bcd892686d7"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/66446199149762125403129e.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/0306a500a64afc2bfb4b724a.jpg",
+      "sha256": "0306a500a64afc2bfb4b724a38abb46c4b401ad5b58a36fb9479465137c1ca0b"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/0306a500a64afc2bfb4b724a.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/ae773d79284c1170cc719c00.jpg",
+      "sha256": "ae773d79284c1170cc719c006331a535b22549b446174be08bd0272345ad4510"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/ae773d79284c1170cc719c00.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/027ad9ad4f3719173f8d12d1.jpg",
+      "sha256": "027ad9ad4f3719173f8d12d17b7e10fae9653763efa594feade6b71321248a7f"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/027ad9ad4f3719173f8d12d1.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/e8bf1025de2e955b4d6ee860.jpg",
+      "sha256": "e8bf1025de2e955b4d6ee860b54c4555a8ad99103d76efaa20ac23d4dba34da5"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/e8bf1025de2e955b4d6ee860.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/1d85fee70b51c20f0c0ddb13.jpg",
+      "sha256": "1d85fee70b51c20f0c0ddb13b96b0155491811ee01e214701ced0fd006d73870"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/1d85fee70b51c20f0c0ddb13.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/val/86c8cd21c0277d70069b2849.jpg",
+      "sha256": "86c8cd21c0277d70069b28494c3aa6f02b04ae314ec845767427f436b83ca392"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/val/86c8cd21c0277d70069b2849.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/8198195-10859130.jpg",
+      "sha256": "425819068f17c5c61d990bcf7c1ac9f70396e86fe2f9c64a6edb4914b17f65cd"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/8198195-10859130.txt",
+      "sha256": "47809aabc197391cd565bb623fbc634388930abb54dc5b42de2e616ab999a1a0"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/8202526-10865337.jpg",
+      "sha256": "8468f003f141b4ad0284c779a7cb11ada6ff047e64836ec7431dd256b2550325"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/8202526-10865337.txt",
+      "sha256": "01ea9cd81cf35cd314bd94b322ffec909a811f378e9303ecc412736f63160fa2"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/8210659-10879318.jpg",
+      "sha256": "87105cb756f0de4b8aa6a242f9220a8b05be966e33509ba6b06c501fc0415d9e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/8210659-10879318.txt",
+      "sha256": "125556c2ec4d4493a927ee82da431c0e8b5933f26d5aceb4d26edb2d3b1a0e75"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/8213726-10884638.jpg",
+      "sha256": "7b5ec39b41b0bb6c4bdbddbce36007609ea78c2d79e5db225d3ae1a0a29ca5f9"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/8213726-10884638.txt",
+      "sha256": "d33f6d52aaa5af7998faef2122473113fc07ad5f3192434c95eaa5d2fc9361b4"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/8214212-10886027.jpg",
+      "sha256": "1828af20653c9b2f0946222f95cb70b3fb05d5039c2c399b5d6353ff44f6c405"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/8214212-10886027.txt",
+      "sha256": "e4e3b176fdc294e082182c1956a88cc1c1c2dff66b5ca3167805763aa2a99c4e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/8242704-10930909.jpg",
+      "sha256": "731dfa3af2df0f2826d38a06dec6b4f24a22c7e2f8a496243347af33952ce06f"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/8242704-10930909.txt",
+      "sha256": "b807696b50db58376afd2dd6ffbc3dc252916d3452de73c2801f51de99246c20"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/8244933-10935255.jpg",
+      "sha256": "b6e7e87c9d4501e211358049c54af7c019951167e4e95c13b4e8f02dd07d5dff"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/8244933-10935255.txt",
+      "sha256": "5999412c5b8a07f97b3777b43bba7d13896d1d3a1e1c3b2f31cd24a817da3e73"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/77b3115d47b9df3119b7275d.jpg",
+      "sha256": "77b3115d47b9df3119b7275d63aee5a52489fdfd1b785e2032d3354dbe6060bd"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/77b3115d47b9df3119b7275d.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/5ea0dcec9faac7a00f14ca1c.jpg",
+      "sha256": "5ea0dcec9faac7a00f14ca1ce7437779511c70ce5a1dce5e5a514c9917d7ed16"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/5ea0dcec9faac7a00f14ca1c.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/48e9816f70d6de4c21eb5aad.jpg",
+      "sha256": "48e9816f70d6de4c21eb5aad43ece282e039e5f5d8a3ab382c9d07de1b112a77"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/48e9816f70d6de4c21eb5aad.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/d5a4b7c4c71745b3d4f94bd1.jpg",
+      "sha256": "d5a4b7c4c71745b3d4f94bd1b979c0d7eaa5520740c1c43254348a136647f1ad"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/d5a4b7c4c71745b3d4f94bd1.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/00e9084d1bc8e0ea.jpg",
+      "sha256": "7f9027ac3310baa8c05f553178a116eb6192518836d70f35472819a7ea2b2416"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/00e9084d1bc8e0ea.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/049b2fae5ca8aa8b.jpg",
+      "sha256": "84e893a43360b5b49f0934d48fa372b81264aee3050476f01e992fe368bca7d0"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/049b2fae5ca8aa8b.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/06070528d72660ea.jpg",
+      "sha256": "b2cda07b459dd7d172d27d5dc2adb800c3583246ebb0e710c2d239f1b1789488"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/06070528d72660ea.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/0668a217b33e5a36.jpg",
+      "sha256": "6073e3553bdb3d840360001ae9ff404b436434c9b4a99a89bcee40cb40eb0f93"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/0668a217b33e5a36.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/5e088860d71c945b87bc0d9c.jpg",
+      "sha256": "5e088860d71c945b87bc0d9c7f2f5d9afbcaab2af996527bbe91592fb218c8f5"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/5e088860d71c945b87bc0d9c.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/a4c79da55d1b8a9f06ba1181.jpg",
+      "sha256": "a4c79da55d1b8a9f06ba1181f881ee484f29ef41602a38debc0b0cbb60822d65"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/a4c79da55d1b8a9f06ba1181.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/4166c29c814ece66e102410a.jpg",
+      "sha256": "4166c29c814ece66e102410a51535b23dd5a98d96b005964e400ecf01489de33"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/4166c29c814ece66e102410a.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/543916-691539.jpg",
+      "sha256": "7a951b95a26d58784c8f4560e334f506e7237b66e664dd1cf5aac19abdab1bdf"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/543916-691539.txt",
+      "sha256": "890f227175b050ca68e8584ca94a96281bc3089116b0ea0ee39382c53a526bda"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/641717-808839.jpg",
+      "sha256": "3fe81f9c9586884b6eea7d36a33068e7ce5dc60ae60f76834461ade9eeeea53d"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/641717-808839.txt",
+      "sha256": "4211dd23986e7600e26e051835fd6129ad89d73c16884169bd3fd6576a4dd9cc"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12364734-17811585.jpg",
+      "sha256": "29dc4a99974badc7a603240f67c4b65b200d76a57df6536f71f492212fedad62"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12364734-17811585.txt",
+      "sha256": "d2ccce56d9637f02ef58499e8d6792c00c01a45f9441fb84651b53b700996048"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12365972-17813535.jpg",
+      "sha256": "7e618b2c10c68f513d15770396113e8dfc4b9a67d23e84a63b7859ad5158fb45"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12365972-17813535.txt",
+      "sha256": "7af85df44afb14a1a2bb36a06a7126cef0e5460e94e0324058f6b6ff16b834d1"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12370220-17821476.jpg",
+      "sha256": "5446beeffcdb90c64080ae27edb548a05c6b4cdf26428c1c2bc89dd334676934"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12370220-17821476.txt",
+      "sha256": "58b6043219104fefd99976e04779b481770fdac41207a0899c4286b39c403036"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12393136-17860508.jpg",
+      "sha256": "abffd278916a7f3ef3b83380feff37dd7b26e764666860158c85238f0696324e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12393136-17860508.txt",
+      "sha256": "0deb2419d602e55d090a3f947017ff387583e0d1b8c165e2a285851991844088"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12536692-18106822.jpg",
+      "sha256": "7284605fe30047df5e69458f8ac9a44097cbd865f555f1d1d85e35a861bca340"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12536692-18106822.txt",
+      "sha256": "6662c0ffa32109eb5e3613a2e5520d08ac899fa58cda716aa0e3074f3aa2b843"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12635018-18276386.jpg",
+      "sha256": "4cf3bdc8658f34e442d2c15cab52e3209e89a619577ba7680c8388924d8780b5"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12635018-18276386.txt",
+      "sha256": "114841f8dccee91bc974c0b559fdefcbed03f39a3215bf7471aa1134ca907b97"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12367584-17816872.jpg",
+      "sha256": "3fcd519e993d27b3a20945a651b7b9b1eead2ed05c962dac1377a06d7248b2a5"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12367584-17816872.txt",
+      "sha256": "756e389d147d82ef6462858bd95fda628398f3568e14af38d2e0b36c06bcb31c"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12378361-17835746.jpg",
+      "sha256": "ca35d10d44b28e6b74b244b84846ffeafba977c0c3fca0fa5d9e4266293abc5a"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12378361-17835746.txt",
+      "sha256": "667dd0a2a8d029e2f88a5a1a451e768003bc1965d29fc1e1c866fbd1ad82c927"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12402194-52466982.jpg",
+      "sha256": "5c5c046931437cb5643398f86dfada2b84adc1e17c94e4e974d05b5dfb57904e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12402194-52466982.txt",
+      "sha256": "7f56732e27aedcfac736bcd05e05ec1451dd20c80309be0c6d32bfcd8f15e29d"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12442600-17947170.jpg",
+      "sha256": "804113f73ac501041692ca6c50d10d5d9540e192d02f05d037a208fc3b2601ba"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12442600-17947170.txt",
+      "sha256": "2fbe1278cd06b994f74fb925f9c1e3a8dfbb9d4f66f2811e5f492b195ea8c5e5"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12444370-17950430.jpg",
+      "sha256": "b34e9b43f5f9dac1b34a1bbbb20d9eedfc950984cdee6be93e0209dc19d5247b"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12444370-17950430.txt",
+      "sha256": "10390a6c66b5f63661a30e7c4342b0acc749002cb48ac5c94d1687e739264a3c"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12536770-18107420.jpg",
+      "sha256": "02b7afb2f3656fb16fadcbf18d38dbb7c1b4185fee4ff944cd5fe060361a6f8a"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12536770-18107420.txt",
+      "sha256": "0d1c99860d108df4707fdf6208b5489b7fde946f51a7d152bb1478dd835be84b"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12565125-18152860.jpg",
+      "sha256": "d5a15d367432d691e02712c44dd0e603ea74e7d46eb60ac271b70f27ccb30c06"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12565125-18152860.txt",
+      "sha256": "90bc751c22fe9a493d79c151eac0c3a444b7d42e9f6fce04066dadcb3f042463"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12604318-18222608.jpg",
+      "sha256": "5153273693c0da07ca886718518bc7ab7d0a46b881c6fe5e2fc623c2211c92ac"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12604318-18222608.txt",
+      "sha256": "c727b73c43c1eb0ba0dcf393b1b4be9ec937754e052c5c9e4eb94cd4b80d82c7"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12414666-17898270.jpg",
+      "sha256": "605f40c9567aff06eea5e06d1390bba52043b6e0513a45e72f74bd7ab2475b42"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12414666-17898270.txt",
+      "sha256": "fa87e73077a8b4d2fc5d676f5bc50e39e9847faae1d643758150e674fab1c5dc"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12442568-17947132.jpg",
+      "sha256": "b6e8fe61518c7337d792976405372e825fb59da90b235b8799ed1d3cf896db12"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12442568-17947132.txt",
+      "sha256": "eae38ce6494b936cd7a82ee94aea206ffe1f878b5191bddf58d768cb53017a21"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12430673-17926131.jpg",
+      "sha256": "ca175ba0084293128dd6178914726a8be1ef1c52318c76470caea15fe17b4702"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12430673-17926131.txt",
+      "sha256": "c40977dd09373753d7dcfe7e9c8139594f34e4140fbeb3e0d1a19387033a66c0"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/12626718-18262917.jpg",
+      "sha256": "3f72ab58fc9f7fdd3d2f7996c7ce138368d0faa1b8ba65a1bc58a0b17c11be3f"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/12626718-18262917.txt",
+      "sha256": "b2528107511d88c4ca2c6bdba5097c33fbe44655f3d4826877a2b61d400471e6"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/957e3ed066e0bcb1.jpg",
+      "sha256": "a556d01ac5c9f2230d693aea1d46cd5bff1a07d749ecb230a0116346157af968"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/957e3ed066e0bcb1.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/9614be29640e8027.jpg",
+      "sha256": "2e7e958669e36ea51e3d4a0d2788a0dd1e9e29e86f676539f419f43a934e9ca9"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/9614be29640e8027.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/b1607ca77bd11c84.jpg",
+      "sha256": "ae48052ad859d46b84ca2221f69f4ce4b43ee5198f63b5bdbefa1a6e7e6b293b"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/b1607ca77bd11c84.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/b26a5ae2342d3bd3.jpg",
+      "sha256": "2751fcb96bea2cda551301e02a211c8b4ca776b0b7b2f4f169dee115733a6d7b"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/b26a5ae2342d3bd3.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/b85fffa652ba79fc.jpg",
+      "sha256": "e4297c78c32dfb18cbfc7637bcf62fc39b6e1502d18198334b61638433c21450"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/b85fffa652ba79fc.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/bcad33919b9ea92a.jpg",
+      "sha256": "8a092a52f7e96c99a724e8231465cdcb07d8b8ff50712e3e9d80c2d33ae0c5de"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/bcad33919b9ea92a.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/bdac854c142bd6b2.jpg",
+      "sha256": "91587283ee69469cd87ec9403ba29bb1822ab9ebdf70cb368ae60f449b9b1cd7"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/bdac854c142bd6b2.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/c278bc9bd734dbf0.jpg",
+      "sha256": "3d62dd434b45f0196613bc4dbc94c4ac0073d1dd2518e7daf97ed04d9750fd60"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/c278bc9bd734dbf0.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/cd0f2b7ac455df74.jpg",
+      "sha256": "f525adb3fde3cb5fa4a2ff48c8ebf7ad9e0dc00cf551e73430ab581761e8af64"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/cd0f2b7ac455df74.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/dc4b1f2806e832fb.jpg",
+      "sha256": "79614cbf661cad1ca9399d7b37a0d086a340472f0e48e1f6e2deeaf0147a6245"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/dc4b1f2806e832fb.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/dd129ab17ac9a6ef.jpg",
+      "sha256": "a30d4429a233a5603b038b361a7d670532703b7f5681fd5221baed9dfee913a4"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/dd129ab17ac9a6ef.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/e6c312897b118a3b.jpg",
+      "sha256": "a4c7d9ca256ec261b63afc944620f665803f67dca316b450a4d8f3b5dc800dca"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/e6c312897b118a3b.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/e7976049fda69bd6.jpg",
+      "sha256": "15c0626cb46abe1a0c25460055f2f6d6a0343331c6aae9cb9d7d96fc5d9f85d4"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/e7976049fda69bd6.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/e7fd558800b042c6.jpg",
+      "sha256": "6a8e3351b2f0bfdcef82109a825b744095e7bf6e665d8f2a35e79c2701583018"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/e7fd558800b042c6.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/eef6108b4d6ab116.jpg",
+      "sha256": "4aa4c62ff0b24b89ce625bda6ae1301056ff6bdb8b04014ad609b3ceaf21d6b6"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/eef6108b4d6ab116.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/images/train/fb2ad01c19312ed6.jpg",
+      "sha256": "279b42a5ac642bddce46add243a0ffcb8f9a52b7dcedb2009a32e35574449ad1"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/labels/train/fb2ad01c19312ed6.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "Salticidae family only, not all spiders or a biological species.",
+  "comparability": "Fresh v7 initialization; CUDA and current library version versus old CPU/resumed v10. Not an equal-compute selector-only ablation.",
+  "service_routed": false,
+  "deployment_accepted": false
+}
