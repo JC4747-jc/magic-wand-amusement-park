@@ -1,0 +1,307 @@
+{
+  "status": "APPROVED_VISIBLE_INSTANCE_CENSUS",
+  "source_sha256": "e2ce7aaa49ea84334e86ffb9a4ab20124499df5ce0492fd7cc5d12181149c2ae",
+  "label_sha256": "7d6bcc8283bf3d356bac329b1f2309fe96670b5bfc07ad692c6d081a32b0088f",
+  "historical_gt": 14,
+  "manually_identified_visible_head_points": [
+    [
+      85,
+      233
+    ],
+    [
+      112,
+      210
+    ],
+    [
+      145,
+      236
+    ],
+    [
+      245,
+      238
+    ],
+    [
+      264,
+      228
+    ],
+    [
+      312,
+      211
+    ],
+    [
+      360,
+      240
+    ],
+    [
+      379,
+      251
+    ],
+    [
+      415,
+      250
+    ],
+    [
+      448,
+      251
+    ],
+    [
+      479,
+      227
+    ],
+    [
+      522,
+      254
+    ],
+    [
+      569,
+      249
+    ],
+    [
+      619,
+      255
+    ],
+    [
+      650,
+      248
+    ],
+    [
+      692,
+      235
+    ],
+    [
+      714,
+      241
+    ],
+    [
+      760,
+      212
+    ],
+    [
+      791,
+      229
+    ],
+    [
+      818,
+      228
+    ],
+    [
+      944,
+      228
+    ]
+  ],
+  "proposed_extra_instances": [
+    {
+      "head_id": 1,
+      "box": [
+        78,
+        225,
+        98,
+        249
+      ],
+      "note": "Visible partial head behind foreground figure; body extent unresolved."
+    },
+    {
+      "head_id": 7,
+      "box": [
+        345,
+        230,
+        383,
+        409
+      ]
+    },
+    {
+      "head_id": 8,
+      "box": [
+        367,
+        240,
+        401,
+        388
+      ]
+    },
+    {
+      "head_id": 9,
+      "box": [
+        390,
+        241,
+        443,
+        389
+      ]
+    },
+    {
+      "head_id": 10,
+      "box": [
+        431,
+        241,
+        460,
+        378
+      ]
+    },
+    {
+      "head_id": 12,
+      "box": [
+        510,
+        246,
+        535,
+        378
+      ]
+    },
+    {
+      "head_id": 17,
+      "box": [
+        702,
+        230,
+        735,
+        410
+      ]
+    }
+  ],
+  "original_actually_viewed": true,
+  "overlay_reviewed": true,
+  "labels_changed": false,
+  "training_approved": true,
+  "deployment_accepted": false,
+  "method": "Manual original-image census; inherited boxes shown only for correspondence. Predictions not used as annotation coordinates. Seven proposed absent instances include heavily occluded visible head, whose label policy needs explicit review.",
+  "limitations": "Heavy occlusion and source resolution limit visible extent accuracy. Historical inference informed the need to audit, but no prediction boxes were used as annotation coordinates. No retrospective model acceptance.",
+  "new_boxes": [
+    [
+      55.79970560000001,
+      189.83628186,
+      144.7776256,
+      512.2566444
+    ],
+    [
+      129.6966144,
+      225.9955704,
+      177.95580927999998,
+      453.4977852
+    ],
+    [
+      215.65832192,
+      227.5022148,
+      251.85271808,
+      420.35177184
+    ],
+    [
+      224.70692864,
+      212.43583890000005,
+      278.998528,
+      477.60398664
+    ],
+    [
+      245.82032384000001,
+      189.83628186000004,
+      374.00885248,
+      528.8296647
+    ],
+    [
+      428.3004416,
+      207.91593294,
+      521.8026496,
+      477.60398664
+    ],
+    [
+      542.916096,
+      238.04867111999997,
+      594.1914624,
+      382.6858389
+    ],
+    [
+      594.1914624,
+      247.08849666,
+      636.4182528,
+      370.63275179999994
+    ],
+    [
+      630.3858688,
+      239.55531551999997,
+      672.6126592,
+      381.1791945
+    ],
+    [
+      668.08838144,
+      218.46238925999995,
+      719.3637888,
+      421.85842305
+    ],
+    [
+      714.8394496,
+      189.83628186000004,
+      808.34167808,
+      492.67033530000003
+    ],
+    [
+      778.1796864,
+      209.42256372,
+      803.8173696000001,
+      241.0619463
+    ],
+    [
+      802.30926336,
+      209.42256372,
+      886.7629056,
+      470.0708055
+    ],
+    [
+      922.95727104,
+      212.43583890000002,
+      996.8541696,
+      447.47123483999997
+    ],
+    [
+      78,
+      225,
+      98,
+      249
+    ],
+    [
+      345,
+      230,
+      383,
+      409
+    ],
+    [
+      367,
+      240,
+      401,
+      388
+    ],
+    [
+      390,
+      241,
+      443,
+      389
+    ],
+    [
+      431,
+      241,
+      460,
+      378
+    ],
+    [
+      510,
+      246,
+      535,
+      378
+    ],
+    [
+      702,
+      230,
+      735,
+      410
+    ]
+  ],
+  "dimensions": [
+    1024,
+    681
+  ],
+  "overlay": "Reports/statue-dense-val-v40-census/complete-21-overlay.png",
+  "overlay_sha256": "e32c5e471a911e57d8432cb002158402f4de2c46bb700a37299c46ba3855fd07",
+  "occlusion_policy": "Visible extents only; heavily occluded recognizable sculpted head retained as instance, consistent with existing tiny head-only instance. No hidden body extrapolation. Head17 lower visible leg/foot extended to y410 after detail-crop review.",
+  "detail_crops_actually_viewed": [
+    "left",
+    "center",
+    "right"
+  ],
+  "annotation_approved": true,
+  "review_scope": "One assistant review of original, numbered census, three detail crops and complete overlay; not independent dual annotation."
+}

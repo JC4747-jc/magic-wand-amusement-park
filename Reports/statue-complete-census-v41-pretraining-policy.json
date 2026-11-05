@@ -1,0 +1,13 @@
+{
+  "status": "FROZEN_BEFORE_TRAINING",
+  "trials": 1,
+  "epochs": 20,
+  "unique_train": 88,
+  "exposures_per_epoch": 90,
+  "dataset_audit_sha256": "458b5c0f0c4d420979b877368e6a11887c8069645d6ef209c7ed9e6dc2c3ee59",
+  "sampling_plan_sha256": "f2b610a7d4b059e41750d43ce841c69a107355507635a1b56ab602be5b4c5f03",
+  "initializer": "Same raw preserved192hiddenOIV7m initializer as v39",
+  "changes": "One VAL label gains seven manually reviewed visible instances,33->40GT. TRAIN images/labels, sampling options and thresholds unchanged. Validation feedback/checkpoint policy uses corrected labels, so entire training execution need not equal v39.",
+  "selection": "New dedicated40GT selector, unchanged cohort gates/rank/tie/.65/640rect/.7/max32; future training only, no historical reselection.",
+  "deployment_accepted": false
+}

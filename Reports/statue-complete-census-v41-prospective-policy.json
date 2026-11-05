@@ -1,0 +1,13 @@
+{
+  "status": "FROZEN_BEFORE_FUTURE_EXPERIMENT",
+  "dataset_audit_sha256": "458b5c0f0c4d420979b877368e6a11887c8069645d6ef209c7ed9e6dc2c3ee59",
+  "scope": "Prospective new training only; never reselect historical checkpoints against corrected VAL.",
+  "val_images": 19,
+  "val_instances": 40,
+  "prior_cohort_instances": 28,
+  "extension_instances": 12,
+  "gate": "Both cohorts P>=.9/R>=.8 and zero negative-image FP; unchanged .65/640rect/.7/max32 and earliest tie.",
+  "selection_code_sha256": "de7bf7f5ef09f353a18371a3e580d47930f2fd19c527a29fd43c5550e3c7f518",
+  "historical_model_acceptance_unchanged": true,
+  "deployment_accepted": false
+}
