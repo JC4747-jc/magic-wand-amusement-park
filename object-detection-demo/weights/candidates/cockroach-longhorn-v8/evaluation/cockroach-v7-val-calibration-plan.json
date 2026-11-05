@@ -1,0 +1,18 @@
+{
+  "model_sha256": "236201f0cf8919af14d6860b82a2aa4e97ca5384f1fb2a6d167a24b2e5a55347",
+  "dataset_sha256": "09d9573cf1123d7d2b2351c72394159c42f4f756239df330148c10dd47c6d8de",
+  "split": "val",
+  "confidence_grid": [
+    0.55,
+    0.65,
+    0.75,
+    0.85
+  ],
+  "imgsz": 640,
+  "rect": true,
+  "nms_iou": 0.7,
+  "max_det": 8,
+  "selection": "Among thresholds with precision>=.9, recall>=.8 and zero false positives, select highest recall then lowest confidence; otherwise select none",
+  "test_policy": "No historical or fresh TEST inference/selection; independent new acceptance required after selection",
+  "deployment_changed": false
+}

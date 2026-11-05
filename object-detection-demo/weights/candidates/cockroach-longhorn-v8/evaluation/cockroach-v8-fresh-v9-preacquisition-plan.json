@@ -1,0 +1,22 @@
+{
+  "model_sha256": "c5fb74c4e09a9217c805ff23ad1385be3840daf45f70f5778a873b8174e2fbd5",
+  "calibration_decision_sha256": "dff7c326860279b9ae9a037aa09698b1082bcfea9db12aec68f453f8464f6fee",
+  "protocol": {
+    "confidence": 0.65,
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 8
+  },
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8,
+    "negative_false_positives_max": 0
+  },
+  "policy": "Freeze one model/threshold before acquisition; all acquired TEST reserved before inference, no fold reassignment or TEST model/threshold selection",
+  "planned_images": {
+    "positive": 16,
+    "beetle_negative": 16
+  },
+  "deployment_changed": false
+}

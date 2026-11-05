@@ -1,0 +1,62 @@
+{
+  "status": "VAL_CALIBRATED_FRESH_TEST_PENDING",
+  "selected_confidence": 0.65,
+  "curve": [
+    {
+      "confidence": 0.55,
+      "per_class": [
+        {
+          "name": "Cockroach",
+          "true_positive": 8,
+          "false_positive": 1,
+          "false_negative": 0,
+          "precision": 0.8888888888888888,
+          "recall": 1.0
+        }
+      ]
+    },
+    {
+      "confidence": 0.65,
+      "per_class": [
+        {
+          "name": "Cockroach",
+          "true_positive": 8,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0
+        }
+      ]
+    },
+    {
+      "confidence": 0.75,
+      "per_class": [
+        {
+          "name": "Cockroach",
+          "true_positive": 5,
+          "false_positive": 0,
+          "false_negative": 3,
+          "precision": 1.0,
+          "recall": 0.625
+        }
+      ]
+    },
+    {
+      "confidence": 0.85,
+      "per_class": [
+        {
+          "name": "Cockroach",
+          "true_positive": 4,
+          "false_positive": 0,
+          "false_negative": 4,
+          "precision": 1.0,
+          "recall": 0.5
+        }
+      ]
+    }
+  ],
+  "model_sha256": "c5fb74c4e09a9217c805ff23ad1385be3840daf45f70f5778a873b8174e2fbd5",
+  "plan_sha256": "f1b12738115415ee2d748352e501bf62a80057380de3d110626683c2c8a2e993",
+  "deployment_changed": false,
+  "pico_test": "NOT_PERFORMED"
+}
