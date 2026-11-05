@@ -1,0 +1,105 @@
+{
+  "source_manifest_sha256": "be66ff165f4c01d523f9b24b7f6308f3f7143e4bc3f9d94ba21ab0a6e1ffc547",
+  "samples": [
+    {
+      "original_id": "412867256",
+      "source_sha256": "80607047c00e04be1403eb4f4059681586b45ab6bf6f1436efbba22279ad3bac",
+      "boxes_xyxy": [
+        [
+          215,
+          292,
+          532,
+          654
+        ]
+      ],
+      "class_id": 1,
+      "class_name": "Beetle",
+      "original_viewed": true,
+      "overlay_reviewed": false,
+      "label": "Reports/beetle-confusers-v14-label-review-batch2/412867256.txt",
+      "label_sha256": "c19fa1c2499d84e843a441ec6dd96c862f5bd11952152d26adbc9c5f3f782675",
+      "overlay_sha256": "fa4afc06a2a5239bd10080f9437cb7cd1ea461f52e3a5151c8975f27f09bfe6c",
+      "reserved_split": "train",
+      "training_approved": false
+    },
+    {
+      "original_id": "412864850",
+      "source_sha256": "97e46bdf85e18b307b45042c9e49d673be984777d932ee7f991ba9351435cb58",
+      "boxes_xyxy": [
+        [
+          320,
+          190,
+          681,
+          566
+        ]
+      ],
+      "class_id": 1,
+      "class_name": "Beetle",
+      "original_viewed": true,
+      "overlay_reviewed": false,
+      "label": "Reports/beetle-confusers-v14-label-review-batch2/412864850.txt",
+      "label_sha256": "de115b624235ae639797bcde770b408e0d844b9273245ccb5715ce1d9da2e914",
+      "overlay_sha256": "307965cb1bf6ab7c1c65eb8e72a82d9dd7ba4fceae370dfb3ac89ee3b7cd18a0",
+      "reserved_split": "train",
+      "training_approved": false
+    },
+    {
+      "original_id": "412864476",
+      "source_sha256": "3b542a8b232ae533467d6bd5c002e41672c2d79900933c0e60d5e63b7029ad06",
+      "boxes_xyxy": [
+        [
+          174,
+          470,
+          391,
+          612
+        ]
+      ],
+      "class_id": 1,
+      "class_name": "Beetle",
+      "original_viewed": true,
+      "overlay_reviewed": false,
+      "label": "Reports/beetle-confusers-v14-label-review-batch2/412864476.txt",
+      "label_sha256": "5dab273900af8473b95f0c5d5df63326b40733005309982a6565f716a71c4c07",
+      "overlay_sha256": "bb28f4393e2b8d624dc287438a80fb0561becf26c9a607c4f6969ee044571762",
+      "reserved_split": "train",
+      "training_approved": false
+    },
+    {
+      "original_id": "412864147",
+      "source_sha256": "562e2d566702070450c51d91e2b82ba2fa7ebe3cd7d4ead661eff100f128cfd8",
+      "boxes_xyxy": [
+        [
+          101,
+          324,
+          326,
+          597
+        ]
+      ],
+      "class_id": 1,
+      "class_name": "Beetle",
+      "original_viewed": true,
+      "overlay_reviewed": false,
+      "label": "Reports/beetle-confusers-v14-label-review-batch2/412864147.txt",
+      "label_sha256": "498c65ff974f29979bd12524f0dea56f07c4125063ccd99dcac5246fbbd1995c",
+      "overlay_sha256": "9b63bc5148b018133446a8bc11cc46c9ac98b274a4d41f5d07d5ea92c4d133ad",
+      "reserved_split": "train",
+      "training_approved": false
+    }
+  ],
+  "proposed_names": [
+    "Cockroach",
+    "Beetle"
+  ],
+  "unity_mapping": {
+    "Cockroach": "ParkBugs",
+    "Beetle": null
+  },
+  "annotation_convention": "Visible body, legs and unfolded wings; exclude long antennae and shadows",
+  "limitations": [
+    "Publisher taxonomy, no independent expert biological verification",
+    "Visible instance extent reviewed; original source provenance and licenses retained in manifest",
+    "This batch is not a released dataset or a trained model"
+  ],
+  "training_approved": false,
+  "inference_performed": false
+}

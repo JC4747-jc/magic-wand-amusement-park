@@ -1,0 +1,58 @@
+{
+  "dataset_version": "a64c75fa07304b27fac7ea87f0a1f39bbe8c466387b8ea02335838ea7abc560b",
+  "release_sha256": "d06cfe06daba2e3224e90886537c3a38dbadcfc8e0808f9e044bf64959cf2f99",
+  "initializer_sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+  "script_sha256": "daa310dc243aba565bcf823aab91a6709ab82d3d7ef9c07c16b303e1e9e6852b",
+  "parameters": {
+    "data": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\cockroach-beetle-v14\\data.yaml",
+    "device": 0,
+    "epochs": 60,
+    "imgsz": 640,
+    "batch": 4,
+    "workers": 0,
+    "seed": 20261105,
+    "deterministic": true,
+    "freeze": 0,
+    "optimizer": "AdamW",
+    "lr0": 0.0005,
+    "lrf": 0.1,
+    "warmup_bias_lr": 0.0005,
+    "mosaic": 0.3,
+    "mixup": 0.0,
+    "cutmix": 0.0,
+    "scale": 0.3,
+    "translate": 0.05,
+    "hsv_h": 0.01,
+    "hsv_s": 0.3,
+    "hsv_v": 0.2,
+    "close_mosaic": 10,
+    "project": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-beetle-v14-training",
+    "name": "train",
+    "plots": true
+  },
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "cuda_device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "scope": "Periplaneta americana target with auxiliary Beetle including reviewed larval VAL forms",
+  "unity_mapping": {
+    "Cockroach": "ParkBugs",
+    "Beetle": null
+  },
+  "service_routed": false,
+  "pico_validated": false,
+  "selection": "Ultralytics best validation fitness across both classes; separately gate Cockroach runtime metrics",
+  "evaluation_protocol": {
+    "target_class": "Cockroach",
+    "confidence": 0.65,
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 8
+  },
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8,
+    "negative_false_positives_max": 0
+  },
+  "test_policy": "Historical TEST is regression only; no TEST threshold tuning; fresh independent acceptance required"
+}

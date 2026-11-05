@@ -1,0 +1,25 @@
+{
+  "dataset_audit_sha256": "a64c75fa07304b27fac7ea87f0a1f39bbe8c466387b8ea02335838ea7abc560b",
+  "script_sha256": "30c768e326db71903a76c5e1385028f4145fd0749828c878b512069d2e2ae583",
+  "selection": "Finalized Ultralytics best.pt selected by validation fitness; no intermediate checkpoint evaluation",
+  "operating_confidence": 0.65,
+  "imgsz": 640,
+  "rect": true,
+  "nms_iou": 0.7,
+  "max_det": 8,
+  "cases": [
+    "Cockroach-only VAL39",
+    "Two-class VAL39",
+    "Cockroach-only TRAIN159 diagnostic",
+    "Observed public negative44",
+    "Observed PICO negative8"
+  ],
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8,
+    "negative_false_positives_max": 0
+  },
+  "test_policy": "No observed TEST threshold tuning; fresh independent test only after VAL and negative gates pass",
+  "pico_positive_available": false,
+  "service_routed": false
+}

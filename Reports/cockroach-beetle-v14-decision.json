@@ -1,0 +1,152 @@
+{
+  "status": "REJECTED_VALIDATION_OR_NEGATIVE_REGRESSION",
+  "model_sha256": "64b6721bb7715f9d36e80913f60d03366091fd8e526c2d41e4e82f65bc46b349",
+  "training_seconds": 513.824,
+  "results": {
+    "runtime-val": {
+      "images": 39,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 22,
+          "false_positive": 2,
+          "false_negative": 7,
+          "precision": 0.9166666666666666,
+          "recall": 0.7586206896551724
+        },
+        {
+          "name": "Beetle",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "ap": [
+        {
+          "class_id": 0,
+          "name": "Cockroach",
+          "precision": 0.8701771457287144,
+          "recall": 0.9655172413793104,
+          "mAP50": 0.9586866883116885,
+          "mAP50_95": 0.6959305199555119,
+          "labels": 29
+        }
+      ],
+      "mean_inference_ms": 241.68039230780545
+    },
+    "two-class-val": {
+      "images": 39,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 22,
+          "false_positive": 2,
+          "false_negative": 7,
+          "precision": 0.9166666666666666,
+          "recall": 0.7586206896551724
+        },
+        {
+          "name": "Beetle",
+          "true_positive": 6,
+          "false_positive": 0,
+          "false_negative": 7,
+          "precision": 1.0,
+          "recall": 0.46153846153846156
+        }
+      ],
+      "ap": [
+        {
+          "class_id": 0,
+          "name": "Cockroach",
+          "precision": 0.8316054528085854,
+          "recall": 0.9655172413793104,
+          "mAP50": 0.9586866883116885,
+          "mAP50_95": 0.6960785719035639,
+          "labels": 29
+        },
+        {
+          "class_id": 1,
+          "name": "Beetle",
+          "precision": 0.7547150107386761,
+          "recall": 0.7111677352623964,
+          "mAP50": 0.8048754578754578,
+          "mAP50_95": 0.5632328754578755,
+          "labels": 13
+        }
+      ],
+      "mean_inference_ms": 232.83780000015096
+    },
+    "train-diagnostic": {
+      "images": 159,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 98,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "name": "Beetle",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "ap": [
+        {
+          "class_id": 0,
+          "name": "Cockroach",
+          "precision": 0.998020302587915,
+          "recall": 1.0,
+          "mAP50": 0.995,
+          "mAP50_95": 0.8755078491070254,
+          "labels": 98
+        }
+      ],
+      "mean_inference_ms": 212.3015320757071
+    },
+    "observed-public-negative": {
+      "images": 44,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 0,
+          "false_positive": 4,
+          "false_negative": 0,
+          "precision": 0.0,
+          "recall": null
+        }
+      ],
+      "ap": [],
+      "mean_inference_ms": 221.78183636341683
+    },
+    "observed-pico-negative": {
+      "images": 8,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "ap": [],
+      "mean_inference_ms": 339.0778249995492
+    }
+  },
+  "service_routed": false,
+  "fresh_test_performed": false,
+  "pico_positive_test": "NOT_PERFORMED",
+  "limitations": [
+    "Observed negative regressions are not fresh TEST; VAL has29Cockroach and13Beetle instances in39images; Beetle is auxiliary and never routed",
+    "Historical/fresh-v4/v6/v9/v12 TEST not accessed for checkpoint or threshold selection"
+  ]
+}
