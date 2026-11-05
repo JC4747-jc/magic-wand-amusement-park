@@ -1,0 +1,70 @@
+{
+  "status": "REJECTED_VALIDATION",
+  "deployment_accepted": false,
+  "service_routed": false,
+  "operating_per_class": [
+    {
+      "name": "Statue",
+      "true_positive": 30,
+      "false_positive": 4,
+      "false_negative": 3,
+      "precision": 0.8823529411764706,
+      "recall": 0.9090909090909091
+    }
+  ],
+  "cohorts": {
+    "prior": {
+      "tp": 19,
+      "fp": 2,
+      "fn": 2,
+      "precision": 0.9047619047619048,
+      "recall": 0.9047619047619048,
+      "f1": 0.9047619047619048
+    },
+    "extension": {
+      "tp": 11,
+      "fp": 2,
+      "fn": 1,
+      "precision": 0.8461538461538461,
+      "recall": 0.9166666666666666,
+      "f1": 0.8799999999999999
+    }
+  },
+  "rank": [
+    0,
+    0.8923809523809523,
+    0.9047619047619048,
+    0.8461538461538461,
+    0.7598981108803478
+  ],
+  "report_sha256": "de656528a08b940316ea44685713bb8a378f73821f4638ec3a5756dd0f8953bb",
+  "test_performed": false,
+  "visual_review": [
+    {
+      "stem": "46427714",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "0fa34ff42cf0391b00da68d0c171c054904697f6345c73f7c3675712d5f7cdd1",
+      "observation": "Correct torso detection plus false Statue prediction on real sculptor."
+    },
+    {
+      "stem": "46776234",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "456093ab58eba07956893f8ffb8b306c79ffd17e37184207af8305e9684cadc5",
+      "observation": "One of two individually annotated boxers missed."
+    },
+    {
+      "stem": "23367767",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "201ee474912e740d7027d695cc0e23b7ab726635ae917204cc530ae0bb6ea03a",
+      "observation": "Flat painted figure remains high-confidence Statue false positive."
+    },
+    {
+      "stem": "e2ce7aaa49ea84334e86ffb9",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "4aae18db93ec5727c96b01444e116145cb08220867d3375849a2dfab1483b200",
+      "observation": "Frozen annotations yield12TP2FP2FN. Two unmatched predictions appear on background figure-like forms: complete visible-instance census requires independent review before interpreting all unmatched predictions as true background mistakes."
+    }
+  ],
+  "annotation_warning": "Possible inherited incomplete dense-museum VAL census. No labels altered or checkpoints reselected. Audit all visible figures by ontology in a separate version; do not modify labels simply to match predictions. Flat-cutout and real-person false positives independently prevent deployment.",
+  "comparison": "Same total30TP4FP3FN as v33, different per-image errors; no claim this data intervention solved recognition."
+}

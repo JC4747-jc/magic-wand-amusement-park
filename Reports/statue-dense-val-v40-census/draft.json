@@ -1,0 +1,165 @@
+{
+  "status": "DRAFT_CENSUS_REQUIRES_BOUNDARY_REVIEW",
+  "source_sha256": "e2ce7aaa49ea84334e86ffb9a4ab20124499df5ce0492fd7cc5d12181149c2ae",
+  "label_sha256": "7d6bcc8283bf3d356bac329b1f2309fe96670b5bfc07ad692c6d081a32b0088f",
+  "historical_gt": 14,
+  "manually_identified_visible_head_points": [
+    [
+      85,
+      233
+    ],
+    [
+      112,
+      210
+    ],
+    [
+      145,
+      236
+    ],
+    [
+      245,
+      238
+    ],
+    [
+      264,
+      228
+    ],
+    [
+      312,
+      211
+    ],
+    [
+      360,
+      240
+    ],
+    [
+      379,
+      251
+    ],
+    [
+      415,
+      250
+    ],
+    [
+      448,
+      251
+    ],
+    [
+      479,
+      227
+    ],
+    [
+      522,
+      254
+    ],
+    [
+      569,
+      249
+    ],
+    [
+      619,
+      255
+    ],
+    [
+      650,
+      248
+    ],
+    [
+      692,
+      235
+    ],
+    [
+      714,
+      241
+    ],
+    [
+      760,
+      212
+    ],
+    [
+      791,
+      229
+    ],
+    [
+      818,
+      228
+    ],
+    [
+      944,
+      228
+    ]
+  ],
+  "proposed_extra_instances": [
+    {
+      "head_id": 1,
+      "box": [
+        78,
+        225,
+        98,
+        249
+      ],
+      "note": "Visible partial head behind foreground figure; body extent unresolved."
+    },
+    {
+      "head_id": 7,
+      "box": [
+        345,
+        230,
+        383,
+        409
+      ]
+    },
+    {
+      "head_id": 8,
+      "box": [
+        367,
+        240,
+        401,
+        388
+      ]
+    },
+    {
+      "head_id": 9,
+      "box": [
+        390,
+        241,
+        443,
+        389
+      ]
+    },
+    {
+      "head_id": 10,
+      "box": [
+        431,
+        241,
+        460,
+        378
+      ]
+    },
+    {
+      "head_id": 12,
+      "box": [
+        510,
+        246,
+        535,
+        378
+      ]
+    },
+    {
+      "head_id": 17,
+      "box": [
+        701,
+        230,
+        732,
+        392
+      ]
+    }
+  ],
+  "original_actually_viewed": true,
+  "overlay_reviewed": false,
+  "labels_changed": false,
+  "training_approved": false,
+  "deployment_accepted": false,
+  "method": "Manual original-image census; inherited boxes shown only for correspondence. Predictions not used as annotation coordinates. Seven proposed absent instances include heavily occluded visible head, whose label policy needs explicit review.",
+  "limitations": "One assistant review, no independent annotator; no claim that all21 boundaries are finalized."
+}
