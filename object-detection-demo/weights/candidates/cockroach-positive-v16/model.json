@@ -1,0 +1,1351 @@
+{
+  "architecture": "YOLO detection",
+  "task": "detect",
+  "classes": {
+    "0": "Cockroach",
+    "1": "Beetle"
+  },
+  "allowed_classes": [
+    "Cockroach"
+  ],
+  "unity": {
+    "0": "ParkBugs",
+    "1": null
+  },
+  "sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "dataset": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\cockroach-positive-train-v16",
+  "dataset_sha256": "ea5662758384ef064c530f0d1b0b1a4abdc48e1d3d458aa2d17d82ce9724795a",
+  "annotation_review_hold": null,
+  "data_sources": [
+    {
+      "id": "inaturalist",
+      "license": "Per-photo CC BY or CC0; attribution in samples",
+      "url": "https://www.inaturalist.org",
+      "reviewed": true
+    },
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    }
+  ],
+  "parameters": {
+    "dataset_version": "ea5662758384ef064c530f0d1b0b1a4abdc48e1d3d458aa2d17d82ce9724795a",
+    "initializer_sha256": "088e0fc7f65fb8e157f10178dde6af0fa9946be51b722886d9eaed12124ea901",
+    "script_sha256": "519e850d0e40fc74284d00444229a83866f617ff58e3c030eac0b7a986742227",
+    "background_release_sha256": "6778f655f5161b49b50405c750942fd0de640a14e76e922b1973a140f7b2048c",
+    "parameters": {
+      "data": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\cockroach-positive-train-v16\\data.yaml",
+      "device": 0,
+      "epochs": 30,
+      "imgsz": 640,
+      "batch": 4,
+      "workers": 0,
+      "seed": 20261105,
+      "deterministic": true,
+      "freeze": 0,
+      "optimizer": "AdamW",
+      "lr0": 0.0001,
+      "lrf": 0.1,
+      "warmup_bias_lr": 0.0001,
+      "mosaic": 0.0,
+      "mixup": 0.0,
+      "cutmix": 0.0,
+      "scale": 0.3,
+      "translate": 0.05,
+      "hsv_h": 0.01,
+      "hsv_s": 0.3,
+      "hsv_v": 0.2,
+      "close_mosaic": 0,
+      "project": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-positive-train-v16-training",
+      "name": "train",
+      "plots": true
+    },
+    "torch": "2.13.0+cu126",
+    "ultralytics": "8.4.173",
+    "cuda_device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "scope": "Two-class public-photo pilot; 23 new observer-separated reviewed TRAIN positives added",
+    "hypothesis": "Additional real positive views may improve generalization; fixed runtime recall and negative regression must be measured",
+    "unity_mapping": {
+      "Cockroach": "ParkBugs",
+      "Beetle": null
+    },
+    "service_routed": false,
+    "pico_validated": false,
+    "selection": "Ultralytics validation fitness only; not an isolated data-only ablation",
+    "evaluation_protocol": {
+      "confidence": 0.65,
+      "imgsz": 640,
+      "rect": true,
+      "nms_iou": 0.7,
+      "max_det": 8,
+      "allowed_classes": [
+        "Cockroach"
+      ]
+    },
+    "gates": {
+      "precision_min": 0.9,
+      "recall_min": 0.8,
+      "negative_false_positives_max": 0
+    },
+    "test_policy": "No observed TEST threshold tuning; fresh independent acceptance required after validation gates pass"
+  },
+  "validation": {
+    "mode": "baseline",
+    "domain": "public-source-pilot",
+    "deployment_accepted": false,
+    "dataset_sources": [
+      {
+        "id": "inaturalist",
+        "license": "Per-photo CC BY or CC0; attribution in samples",
+        "url": "https://www.inaturalist.org",
+        "reviewed": true
+      },
+      {
+        "id": "openimages-v7",
+        "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+        "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+        "reviewed": true
+      }
+    ],
+    "limitations": [
+      "Small source-grouped subset; not an official benchmark score",
+      "No PICO targets evaluated"
+    ],
+    "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-positive-train-v16-training\\train\\weights\\best.pt",
+    "architecture": "DetectionModel",
+    "sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+    "dataset_version": "ea5662758384ef064c530f0d1b0b1a4abdc48e1d3d458aa2d17d82ce9724795a",
+    "split": "val",
+    "torch": "2.14.1+cpu",
+    "ultralytics": "8.4.173",
+    "model_names": {
+      "0": "Cockroach",
+      "1": "Beetle"
+    },
+    "per_class": [
+      {
+        "class_id": 0,
+        "name": "Cockroach",
+        "precision": 0.9336769923420549,
+        "recall": 0.9710276358295022,
+        "mAP50": 0.9866129032258065,
+        "mAP50_95": 0.79434802779102,
+        "labels": 29
+      }
+    ],
+    "images": 39,
+    "excluded_samples": [],
+    "ground_truth_instances": 29,
+    "false_positive_images": 0,
+    "per_image": [
+      {
+        "image": "images/val/1083013-1360186.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 2119.015899996157
+      },
+      {
+        "image": "images/val/2471649-2767233.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 238.08499998995103
+      },
+      {
+        "image": "images/val/2759662-3122339.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 237.86930000642315
+      },
+      {
+        "image": "images/val/9098444-12290041.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 227.28599999391008
+      },
+      {
+        "image": "images/val/7754390-10182401.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 240.84600000060163
+      },
+      {
+        "image": "images/val/14158501-20987090.jpg",
+        "ground_truth": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "inference_ms": 265.2331999997841
+      },
+      {
+        "image": "images/val/13279091-19439388.jpg",
+        "ground_truth": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "inference_ms": 212.3804000002565
+      },
+      {
+        "image": "images/val/10639022-17960218.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 214.78199999546632
+      },
+      {
+        "image": "images/val/beetle-412827126-759685184.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 253.69700000737794
+      },
+      {
+        "image": "images/val/beetle-412824889-759687809.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 239.07539999345317
+      },
+      {
+        "image": "images/val/beetle-412819302-759676584.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 332.1350999904098
+      },
+      {
+        "image": "images/val/beetle-412813020-759663639.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 232.0698999974411
+      },
+      {
+        "image": "images/val/beetle-412810133-759658288.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 205.47840000654105
+      },
+      {
+        "image": "images/val/beetle-412805427-759649306.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 214.46229999128263
+      },
+      {
+        "image": "images/val/beetle-412802464-759643146.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 195.39660000009462
+      },
+      {
+        "image": "images/val/beetle-412801341-759641974.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 198.84430000092834
+      },
+      {
+        "image": "images/val/beetle-412799738-759638790.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 160.4871000017738
+      },
+      {
+        "image": "images/val/beetle-412798974-759637566.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 209.46299999195617
+      },
+      {
+        "image": "images/val/beetle-412789394-759615708.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 212.8769000119064
+      },
+      {
+        "image": "images/val/beetle-412788983-759614546.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 230.55449999810662
+      },
+      {
+        "image": "images/val/new-positive-394667350-723561165.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 207.88879999599885
+      },
+      {
+        "image": "images/val/new-positive-394596555-723424650.jpg",
+        "ground_truth": 2,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 1,
+        "inference_ms": 271.6750999970827
+      },
+      {
+        "image": "images/val/new-positive-394545119-723318473.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 154.71709999837913
+      },
+      {
+        "image": "images/val/new-positive-394189172-722623514.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 214.0802999929292
+      },
+      {
+        "image": "images/val/new-positive-394126699-722501812.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 205.74219999252819
+      },
+      {
+        "image": "images/val/new-positive-393829078-721912275.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 201.61810000718106
+      },
+      {
+        "image": "images/val/new-positive-393607957-721473094.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 151.94009999686386
+      },
+      {
+        "image": "images/val/new-positive-393079475-720447109.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 222.11679999600165
+      },
+      {
+        "image": "images/val/new-positive-392934945-720161930.jpg",
+        "ground_truth": 2,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 1,
+        "inference_ms": 183.94840000837576
+      },
+      {
+        "image": "images/val/new-positive-392804359-719908539.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 231.8788999982644
+      },
+      {
+        "image": "images/val/new-positive-392652023-719612073.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 167.37589999684133
+      },
+      {
+        "image": "images/val/new-positive-392623709-719560042.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 242.13389999931678
+      },
+      {
+        "image": "images/val/new-positive-391709224-717768885.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 229.28480000700802
+      },
+      {
+        "image": "images/val/new-positive-391650793-717668810.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 239.8246999946423
+      },
+      {
+        "image": "images/val/new-positive-391301148-716985483.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 230.31400000036228
+      },
+      {
+        "image": "images/val/new-positive-391239146-716861596.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 223.45479999785312
+      },
+      {
+        "image": "images/val/new-positive-391165463-716717484.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 242.6182999915909
+      },
+      {
+        "image": "images/val/new-positive-391134628-716659258.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 220.21070000482723
+      },
+      {
+        "image": "images/val/new-positive-391020436-716422588.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 189.61629999103025
+      }
+    ],
+    "ap_scope": "Positive target instances",
+    "operating_confidence": 0.65,
+    "operating_iou": 0.5,
+    "operating_per_class": [
+      {
+        "name": "Cockroach",
+        "true_positive": 25,
+        "false_positive": 0,
+        "false_negative": 4,
+        "precision": 1.0,
+        "recall": 0.8620689655172413
+      },
+      {
+        "name": "Beetle",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      }
+    ],
+    "operating_confidence_curve": [],
+    "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+    "mean_inference_ms": 268.4737820497666,
+    "p95_inference_ms": 277.72109999641555,
+    "cold_first_image_ms": 2119.015899996157,
+    "warm_mean_ms": 219.77530526170372,
+    "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+    "imgsz": 640,
+    "rect": true,
+    "device": "cpu",
+    "errors": [
+      {
+        "image": "images/val/14158501-20987090.jpg",
+        "example": "error-14158501-20987090.jpg",
+        "ground_truth": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.65
+      },
+      {
+        "image": "images/val/13279091-19439388.jpg",
+        "example": "error-13279091-19439388.jpg",
+        "ground_truth": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.65
+      },
+      {
+        "image": "images/val/new-positive-394596555-723424650.jpg",
+        "example": "error-new-positive-394596555-723424650.jpg",
+        "ground_truth": 2,
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.65
+      },
+      {
+        "image": "images/val/new-positive-392934945-720161930.jpg",
+        "example": "error-new-positive-392934945-720161930.jpg",
+        "ground_truth": 2,
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.65
+      }
+    ],
+    "allowed_classes": [
+      "Cockroach"
+    ],
+    "max_det": 8,
+    "nms_iou": 0.7,
+    "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+    "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+  },
+  "test": {
+    "mode": "test",
+    "domain": "public-source-pilot",
+    "deployment_accepted": false,
+    "dataset_sources": [
+      {
+        "id": "inaturalist",
+        "license": "Per-photo CC BY or CC0; attribution retained in samples",
+        "reviewed": true
+      }
+    ],
+    "limitations": [
+      "Small source-grouped subset; not an official benchmark score",
+      "No PICO targets evaluated"
+    ],
+    "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\candidates\\cockroach-positive-v16\\best.pt",
+    "architecture": "DetectionModel",
+    "sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+    "dataset_version": "3483800ec121d6b2a709e8d3d2aff4e3b1ad95b552b2c1c270d1d444164ebe0f",
+    "split": "test",
+    "torch": "2.14.1+cpu",
+    "ultralytics": "8.4.173",
+    "model_names": {
+      "0": "Cockroach",
+      "1": "Beetle"
+    },
+    "per_class": [
+      {
+        "class_id": 0,
+        "name": "Cockroach",
+        "precision": 1.0,
+        "recall": 0.8658361034053248,
+        "mAP50": 0.875,
+        "mAP50_95": 0.4845150793650794,
+        "labels": 16
+      }
+    ],
+    "images": 32,
+    "excluded_samples": [],
+    "ground_truth_instances": 16,
+    "false_positive_images": 0,
+    "per_image": [
+      {
+        "image": "images/test/364760827-665902477.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 1716.7539999936707
+      },
+      {
+        "image": "images/test/364691237-665777609.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 227.49029999249615
+      },
+      {
+        "image": "images/test/363856984-664212773.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 333.2379000057699
+      },
+      {
+        "image": "images/test/363681808-663880818.jpg",
+        "ground_truth": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "inference_ms": 255.57779999508057
+      },
+      {
+        "image": "images/test/363572209-663679023.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 242.85009999584872
+      },
+      {
+        "image": "images/test/363264793-662565189.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 223.0480999860447
+      },
+      {
+        "image": "images/test/363181216-663131225.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 214.22270000039134
+      },
+      {
+        "image": "images/test/363068501-662713829.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 228.97519999241922
+      },
+      {
+        "image": "images/test/362209002-661079469.jpg",
+        "ground_truth": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "inference_ms": 294.3435000051977
+      },
+      {
+        "image": "images/test/362125988-660919599.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 219.41259999584872
+      },
+      {
+        "image": "images/test/361917678-660536574.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 206.20500000950415
+      },
+      {
+        "image": "images/test/361587133-659911414.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 217.58860000409186
+      },
+      {
+        "image": "images/test/360865787-658528390.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 294.69099998823367
+      },
+      {
+        "image": "images/test/360135616-657139581.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 212.64129999326542
+      },
+      {
+        "image": "images/test/360117949-657106298.jpg",
+        "ground_truth": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "inference_ms": 218.30169999157079
+      },
+      {
+        "image": "images/test/359518271-655955069.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 302.81409999588504
+      },
+      {
+        "image": "images/test/412947181-759942365.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 221.1304999946151
+      },
+      {
+        "image": "images/test/412945985-759938731.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 227.8080999967642
+      },
+      {
+        "image": "images/test/412942918-759925696.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 209.208000000217
+      },
+      {
+        "image": "images/test/412942004-759929342.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 225.08829999424051
+      },
+      {
+        "image": "images/test/412859106-759757024.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 223.969999991823
+      },
+      {
+        "image": "images/test/412788193-759615510.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 222.59149998717476
+      },
+      {
+        "image": "images/test/412693252-759428369.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 217.23730000667274
+      },
+      {
+        "image": "images/test/412693122-759428144.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 228.172099989024
+      },
+      {
+        "image": "images/test/412692624-759424124.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 305.8225999993738
+      },
+      {
+        "image": "images/test/412686248-759413026.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 325.13090000429656
+      },
+      {
+        "image": "images/test/412682745-759408393.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 228.07430000102613
+      },
+      {
+        "image": "images/test/412682122-759405953.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 254.9725999997463
+      },
+      {
+        "image": "images/test/412680411-759402542.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 222.77269999904092
+      },
+      {
+        "image": "images/test/412679139-759399405.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 286.5411000093445
+      },
+      {
+        "image": "images/test/412676420-759394756.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 223.7058999889996
+      },
+      {
+        "image": "images/test/412676117-759394296.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 220.4831999988528
+      }
+    ],
+    "ap_scope": "Positive target instances",
+    "operating_confidence": 0.65,
+    "operating_iou": 0.5,
+    "operating_per_class": [
+      {
+        "name": "Cockroach",
+        "true_positive": 13,
+        "false_positive": 0,
+        "false_negative": 3,
+        "precision": 1.0,
+        "recall": 0.8125
+      }
+    ],
+    "operating_confidence_curve": [],
+    "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+    "mean_inference_ms": 289.0894687470791,
+    "p95_inference_ms": 328.7790500049596,
+    "cold_first_image_ms": 1716.7539999936707,
+    "warm_mean_ms": 243.0357741907374,
+    "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+    "imgsz": 640,
+    "rect": true,
+    "device": "cpu",
+    "errors": [
+      {
+        "image": "images/test/363681808-663880818.jpg",
+        "example": "error-363681808-663880818.jpg",
+        "ground_truth": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.65
+      },
+      {
+        "image": "images/test/362209002-661079469.jpg",
+        "example": "error-362209002-661079469.jpg",
+        "ground_truth": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.65
+      },
+      {
+        "image": "images/test/360117949-657106298.jpg",
+        "example": "error-360117949-657106298.jpg",
+        "ground_truth": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.65
+      }
+    ],
+    "allowed_classes": [
+      "Cockroach"
+    ],
+    "max_det": 8,
+    "nms_iou": 0.7,
+    "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+    "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+  },
+  "status": "LOCAL_TEST_PASSED_PICO_PENDING",
+  "negative_regression": {
+    "mode": "test",
+    "domain": "public-openimages-pilot",
+    "deployment_accepted": false,
+    "dataset_sources": [
+      {
+        "id": "openimages-v7",
+        "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+        "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+        "reviewed": true
+      }
+    ],
+    "limitations": [
+      "Small source-grouped subset; not an official benchmark score",
+      "No PICO targets evaluated"
+    ],
+    "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-positive-train-v16-training\\train\\weights\\best.pt",
+    "architecture": "DetectionModel",
+    "sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+    "dataset_version": "bbc170cf9bbcbe607328ac44b82978a0edd7fa12f413199442d76a8d2b84c5ad",
+    "split": "test",
+    "torch": "2.14.1+cpu",
+    "ultralytics": "8.4.173",
+    "model_names": {
+      "0": "Cockroach",
+      "1": "Beetle"
+    },
+    "per_class": [],
+    "images": 44,
+    "excluded_samples": [],
+    "ground_truth_instances": 0,
+    "false_positive_images": 0,
+    "per_image": [
+      {
+        "image": "images\\test\\ad1f84b9fe86797fac3ed37e.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 1324.6051000023726
+      },
+      {
+        "image": "images\\test\\e46d84394ec9feb5a94591ca.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 247.91569999069907
+      },
+      {
+        "image": "images\\test\\8c1ace0837925cd44df27bf9.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 234.8139999958221
+      },
+      {
+        "image": "images\\test\\770ef4b00b30514a0d06cf14.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 236.44370000693016
+      },
+      {
+        "image": "images\\test\\7686579db530f9129b33b292.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 232.46129999461118
+      },
+      {
+        "image": "images\\test\\c0bf86a3f18718d60f66e4ff.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 215.7291999901645
+      },
+      {
+        "image": "images\\test\\85b4180d70f32b3702b192c3.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 240.83989999780897
+      },
+      {
+        "image": "images\\test\\7f1e28223660576f31f1dea5.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 237.73769999388605
+      },
+      {
+        "image": "images\\test\\e4fb023f0b945513b0efd0df.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 237.77190000691917
+      },
+      {
+        "image": "images\\test\\deaee509240ec1db7575f4bd.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 219.23039999091998
+      },
+      {
+        "image": "images\\test\\faba6754b1388665e49e3f20.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 224.57809999468736
+      },
+      {
+        "image": "images\\test\\3d9c037d7899a1330db11d70.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 240.54749999777414
+      },
+      {
+        "image": "images\\test\\fb84b0eedf5564a8d92826e2.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 289.8293000034755
+      },
+      {
+        "image": "images\\test\\95ef9792e5065b199c3dfd30.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 237.41800000425428
+      },
+      {
+        "image": "images\\test\\4c4a9d9bb087bbfd18c6b093.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 215.41579999029636
+      },
+      {
+        "image": "images\\test\\68203f912cc586e5b7ee932b.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 207.0058999961475
+      },
+      {
+        "image": "images\\test\\c5794b838cbb6d5995f60baf.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 220.10779999254737
+      },
+      {
+        "image": "images\\test\\c01a21a99a49856d42e90388.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 216.22699999716133
+      },
+      {
+        "image": "images\\test\\86341b8a768616fb2fd15a82.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 223.48789998795837
+      },
+      {
+        "image": "images\\test\\bdf656aa788b8b49eec20c7c.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 199.89129999885336
+      },
+      {
+        "image": "images\\test\\44f253e977d13abd94a6c5c9.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 192.55510000220966
+      },
+      {
+        "image": "images\\test\\a4a38dff772410e8f9c9b26f.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 212.61470000899862
+      },
+      {
+        "image": "images\\test\\d29da7c190fcba897e35b910.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 218.37220000452362
+      },
+      {
+        "image": "images\\test\\3caa1180e578667e7c3cfb99.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 210.34019999206066
+      },
+      {
+        "image": "images\\test\\95a1478ce3e99921d608d1b3.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 302.7702999970643
+      },
+      {
+        "image": "images\\test\\715bc1165298e80c99c6c043.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 208.6559000017587
+      },
+      {
+        "image": "images\\test\\84cca97ac50120a4396c72e7.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 191.79040000017267
+      },
+      {
+        "image": "images\\test\\4a14496fc2222bdd68d3b2ac.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 199.8061000049347
+      },
+      {
+        "image": "images\\test\\2ebe1ecd4d7c31d2fe6063f8.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 207.99070000066422
+      },
+      {
+        "image": "images\\test\\06a3932cec39d8aba07a8451.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 164.3983000103617
+      },
+      {
+        "image": "images\\test\\e06fea0bf1d6e81b9f4a40bc.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 202.00320000003558
+      },
+      {
+        "image": "images\\test\\512054b66c82bbb11d2246c0.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 210.3785999934189
+      },
+      {
+        "image": "images\\test\\ba73b2253bd843a90b46928e.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 193.83750000270084
+      },
+      {
+        "image": "images\\test\\2289321b04eb740b16065dbc.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 190.84669998846948
+      },
+      {
+        "image": "images\\test\\8006160165a3431c01163325.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 201.83829999587033
+      },
+      {
+        "image": "images\\test\\cc7911122a30efb3d17053a8.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 235.10790000727866
+      },
+      {
+        "image": "images\\test\\1a579bb5b5d3752d9361a184.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 207.8892999998061
+      },
+      {
+        "image": "images\\test\\9f8dc6ef598d7f60d17ca520.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 212.33959999517538
+      },
+      {
+        "image": "images\\test\\3ce72278f33f0debf122d622.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 218.94370000518393
+      },
+      {
+        "image": "images\\test\\0508c589abc9b3451c4cfb6b.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 231.31889999785926
+      },
+      {
+        "image": "images\\test\\28c1a48ad095d9a55914c5b2.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 212.03339999192394
+      },
+      {
+        "image": "images\\test\\a32a2d2d4f2dda994fa49eff.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 197.92400000733323
+      },
+      {
+        "image": "images\\test\\c454df4dec8664cb313138b7.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 210.62280000478495
+      },
+      {
+        "image": "images\\test\\8626b4c280876c0ccc4166a1.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 214.08819999487605
+      }
+    ],
+    "ap_scope": "NOT_APPLICABLE: negative-only evaluation",
+    "operating_confidence": 0.65,
+    "operating_iou": 0.5,
+    "operating_per_class": [
+      {
+        "name": "Cockroach",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      }
+    ],
+    "operating_confidence_curve": [],
+    "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+    "mean_inference_ms": 244.33007954410806,
+    "p95_inference_ms": 283.5422600015591,
+    "cold_first_image_ms": 1324.6051000023726,
+    "warm_mean_ms": 219.20740464972982,
+    "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+    "imgsz": 640,
+    "rect": true,
+    "device": "cpu",
+    "errors": [],
+    "allowed_classes": [
+      "Cockroach"
+    ],
+    "max_det": 8,
+    "nms_iou": 0.7,
+    "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+    "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+  },
+  "service_routed": false,
+  "pico_validation": "NOT_PERFORMED for this model",
+  "training_outputs": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-positive-train-v16-training\\train",
+  "resume_weight": null,
+  "last_weight": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-positive-train-v16-training\\train\\weights\\last.pt",
+  "optimizer_resume_available": false,
+  "last_weight_usage": "Fine-tuning initializer only; optimizer state stripped or unavailable",
+  "validation_report": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-positive-train-v16-runtime-val\\report.json",
+  "test_report": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-v16-conf065-fresh-test-v17\\report.json",
+  "test_dataset": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\cockroach-fresh-test-v17",
+  "inference_timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "warm_mean_inference_ms": 219.77530526170372,
+  "limitations": [
+    "Candidate packaging does not authorize deployment or prove PICO performance"
+  ],
+  "test_decision": {
+    "status": "PUBLIC_PILOT_TEST_PASSED_PICO_PENDING",
+    "operating": {
+      "name": "Cockroach",
+      "true_positive": 13,
+      "false_positive": 0,
+      "false_negative": 3,
+      "precision": 1.0,
+      "recall": 0.8125
+    },
+    "negative_images": 16,
+    "negative_false_positives": 0,
+    "model_sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+    "plan_sha256": "8c78c1eb979399fd041fa5c40e9f4fe837900685209bb2cb2acc38b4e80aefd0",
+    "report_sha256": "fe3593c2978343658cfd4016c7c08667badcd5d70362ea1ec7bd3d0e37048750",
+    "deployment_changed": false,
+    "pico_test": "NOT_PERFORMED",
+    "limitations": [
+      "32 public photos, 32 publisher observers; not a household or PICO benchmark",
+      "Diverse beetle confusers including ladybirds, longhorn, dung, ground and small larval forms; publisher taxonomy not expert-confirmed",
+      "Publisher taxonomy not independently expert verified"
+    ]
+  }
+}

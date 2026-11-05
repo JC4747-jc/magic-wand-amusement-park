@@ -1,0 +1,28 @@
+{
+  "model_sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+  "reserved_split": "test",
+  "positive_query_taxon": 82231,
+  "negative_query_taxon": 47208,
+  "positive_images": 16,
+  "negative_images": 16,
+  "one_photo_per_observer": true,
+  "protocol": {
+    "confidence": 0.65,
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 8,
+    "allowed_classes": [
+      "Cockroach"
+    ]
+  },
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8,
+    "negative_false_positives_max": 0
+  },
+  "annotation_policy": "Review all visible individuals before inference; uncertain instance count/taxon held with reason before predictions; no performance-based exclusions or replacements",
+  "acceptance_scope": "Small public-photo independent source-grouped pilot only; PICO positive test remains required",
+  "selection_policy": "Immutable weight and operating threshold; no TEST model/threshold tuning",
+  "promotion": "No runtime activation merely for VAL/regression success"
+}

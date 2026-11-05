@@ -1,0 +1,23 @@
+{
+  "status": "PUBLIC_PILOT_TEST_PASSED_PICO_PENDING",
+  "operating": {
+    "name": "Cockroach",
+    "true_positive": 13,
+    "false_positive": 0,
+    "false_negative": 3,
+    "precision": 1.0,
+    "recall": 0.8125
+  },
+  "negative_images": 16,
+  "negative_false_positives": 0,
+  "model_sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+  "plan_sha256": "8c78c1eb979399fd041fa5c40e9f4fe837900685209bb2cb2acc38b4e80aefd0",
+  "report_sha256": "fe3593c2978343658cfd4016c7c08667badcd5d70362ea1ec7bd3d0e37048750",
+  "deployment_changed": false,
+  "pico_test": "NOT_PERFORMED",
+  "limitations": [
+    "32 public photos, 32 publisher observers; not a household or PICO benchmark",
+    "Diverse beetle confusers including ladybirds, longhorn, dung, ground and small larval forms; publisher taxonomy not expert-confirmed",
+    "Publisher taxonomy not independently expert verified"
+  ]
+}

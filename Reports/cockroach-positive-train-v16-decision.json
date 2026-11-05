@@ -1,0 +1,152 @@
+{
+  "status": "VAL_AND_OBSERVED_NEGATIVES_PASSED_FRESH_TEST_PENDING",
+  "model_sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+  "training_seconds": 335.478,
+  "results": {
+    "runtime-val": {
+      "images": 39,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 25,
+          "false_positive": 0,
+          "false_negative": 4,
+          "precision": 1.0,
+          "recall": 0.8620689655172413
+        },
+        {
+          "name": "Beetle",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "ap": [
+        {
+          "class_id": 0,
+          "name": "Cockroach",
+          "precision": 0.9336769923420549,
+          "recall": 0.9710276358295022,
+          "mAP50": 0.9866129032258065,
+          "mAP50_95": 0.79434802779102,
+          "labels": 29
+        }
+      ],
+      "mean_inference_ms": 268.4737820497666
+    },
+    "two-class-val": {
+      "images": 39,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 25,
+          "false_positive": 0,
+          "false_negative": 4,
+          "precision": 1.0,
+          "recall": 0.8620689655172413
+        },
+        {
+          "name": "Beetle",
+          "true_positive": 5,
+          "false_positive": 0,
+          "false_negative": 8,
+          "precision": 1.0,
+          "recall": 0.38461538461538464
+        }
+      ],
+      "ap": [
+        {
+          "class_id": 0,
+          "name": "Cockroach",
+          "precision": 0.934766705420411,
+          "recall": 0.9885006213962447,
+          "mAP50": 0.9866129032258065,
+          "mAP50_95": 0.79434802779102,
+          "labels": 29
+        },
+        {
+          "class_id": 1,
+          "name": "Beetle",
+          "precision": 0.8109438225909521,
+          "recall": 0.7692307692307693,
+          "mAP50": 0.8584545454545454,
+          "mAP50_95": 0.5874587662337662,
+          "labels": 13
+        }
+      ],
+      "mean_inference_ms": 252.49957179431266
+    },
+    "train-diagnostic": {
+      "images": 200,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 119,
+          "false_positive": 1,
+          "false_negative": 2,
+          "precision": 0.9916666666666667,
+          "recall": 0.9834710743801653
+        },
+        {
+          "name": "Beetle",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "ap": [
+        {
+          "class_id": 0,
+          "name": "Cockroach",
+          "precision": 0.9902765651380973,
+          "recall": 0.9834710743801653,
+          "mAP50": 0.9942916666666666,
+          "mAP50_95": 0.9081664292677669,
+          "labels": 121
+        }
+      ],
+      "mean_inference_ms": 231.73193650007306
+    },
+    "observed-public-negative": {
+      "images": 44,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "ap": [],
+      "mean_inference_ms": 244.33007954410806
+    },
+    "observed-pico-negative": {
+      "images": 8,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "ap": [],
+      "mean_inference_ms": 365.39711249861284
+    }
+  },
+  "service_routed": false,
+  "fresh_test_performed": false,
+  "pico_positive_test": "NOT_PERFORMED",
+  "limitations": [
+    "Observed negative regressions are not fresh TEST; VAL has29Cockroach and13Beetle instances in39images; Beetle is auxiliary and never routed",
+    "Historical/fresh-v4/v6/v9/v12 TEST not accessed for checkpoint or threshold selection"
+  ]
+}

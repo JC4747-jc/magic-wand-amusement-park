@@ -1,0 +1,23 @@
+{
+  "preannotation_plan_sha256": "b349402d892efd5961ebf27432cb1488df0114813f598a2f232f51fd4b7ab367",
+  "model_sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+  "data_sha256": "3483800ec121d6b2a709e8d3d2aff4e3b1ad95b552b2c1c270d1d444164ebe0f",
+  "protocol": {
+    "confidence": 0.65,
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 8
+  },
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8,
+    "negative_false_positives_max": 0
+  },
+  "policy": "Immutable weight and operating threshold; no TEST model/threshold tuning",
+  "limitations": [
+    "32 public photos, 32 publisher observers; not a household or PICO benchmark",
+    "Diverse beetle confusers including ladybirds, longhorn, dung, ground and small larval forms; publisher taxonomy not expert-confirmed",
+    "Publisher taxonomy not independently expert verified"
+  ]
+}

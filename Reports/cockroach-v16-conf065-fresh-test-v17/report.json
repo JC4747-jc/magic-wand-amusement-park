@@ -1,0 +1,359 @@
+{
+  "mode": "test",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "inaturalist",
+      "license": "Per-photo CC BY or CC0; attribution retained in samples",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\candidates\\cockroach-positive-v16\\best.pt",
+  "architecture": "DetectionModel",
+  "sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+  "dataset_version": "3483800ec121d6b2a709e8d3d2aff4e3b1ad95b552b2c1c270d1d444164ebe0f",
+  "split": "test",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "Cockroach",
+    "1": "Beetle"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "Cockroach",
+      "precision": 1.0,
+      "recall": 0.8658361034053248,
+      "mAP50": 0.875,
+      "mAP50_95": 0.4845150793650794,
+      "labels": 16
+    }
+  ],
+  "images": 32,
+  "excluded_samples": [],
+  "ground_truth_instances": 16,
+  "false_positive_images": 0,
+  "per_image": [
+    {
+      "image": "images/test/364760827-665902477.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 1716.7539999936707
+    },
+    {
+      "image": "images/test/364691237-665777609.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 227.49029999249615
+    },
+    {
+      "image": "images/test/363856984-664212773.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 333.2379000057699
+    },
+    {
+      "image": "images/test/363681808-663880818.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 255.57779999508057
+    },
+    {
+      "image": "images/test/363572209-663679023.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 242.85009999584872
+    },
+    {
+      "image": "images/test/363264793-662565189.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 223.0480999860447
+    },
+    {
+      "image": "images/test/363181216-663131225.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 214.22270000039134
+    },
+    {
+      "image": "images/test/363068501-662713829.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 228.97519999241922
+    },
+    {
+      "image": "images/test/362209002-661079469.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 294.3435000051977
+    },
+    {
+      "image": "images/test/362125988-660919599.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 219.41259999584872
+    },
+    {
+      "image": "images/test/361917678-660536574.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 206.20500000950415
+    },
+    {
+      "image": "images/test/361587133-659911414.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 217.58860000409186
+    },
+    {
+      "image": "images/test/360865787-658528390.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 294.69099998823367
+    },
+    {
+      "image": "images/test/360135616-657139581.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 212.64129999326542
+    },
+    {
+      "image": "images/test/360117949-657106298.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 218.30169999157079
+    },
+    {
+      "image": "images/test/359518271-655955069.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 302.81409999588504
+    },
+    {
+      "image": "images/test/412947181-759942365.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 221.1304999946151
+    },
+    {
+      "image": "images/test/412945985-759938731.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 227.8080999967642
+    },
+    {
+      "image": "images/test/412942918-759925696.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 209.208000000217
+    },
+    {
+      "image": "images/test/412942004-759929342.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 225.08829999424051
+    },
+    {
+      "image": "images/test/412859106-759757024.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 223.969999991823
+    },
+    {
+      "image": "images/test/412788193-759615510.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 222.59149998717476
+    },
+    {
+      "image": "images/test/412693252-759428369.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 217.23730000667274
+    },
+    {
+      "image": "images/test/412693122-759428144.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 228.172099989024
+    },
+    {
+      "image": "images/test/412692624-759424124.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 305.8225999993738
+    },
+    {
+      "image": "images/test/412686248-759413026.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 325.13090000429656
+    },
+    {
+      "image": "images/test/412682745-759408393.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 228.07430000102613
+    },
+    {
+      "image": "images/test/412682122-759405953.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 254.9725999997463
+    },
+    {
+      "image": "images/test/412680411-759402542.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 222.77269999904092
+    },
+    {
+      "image": "images/test/412679139-759399405.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 286.5411000093445
+    },
+    {
+      "image": "images/test/412676420-759394756.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 223.7058999889996
+    },
+    {
+      "image": "images/test/412676117-759394296.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 220.4831999988528
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "Cockroach",
+      "true_positive": 13,
+      "false_positive": 0,
+      "false_negative": 3,
+      "precision": 1.0,
+      "recall": 0.8125
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 289.0894687470791,
+  "p95_inference_ms": 328.7790500049596,
+  "cold_first_image_ms": 1716.7539999936707,
+  "warm_mean_ms": 243.0357741907374,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images/test/363681808-663880818.jpg",
+      "example": "error-363681808-663880818.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/362209002-661079469.jpg",
+      "example": "error-362209002-661079469.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/360117949-657106298.jpg",
+      "example": "error-360117949-657106298.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    }
+  ],
+  "allowed_classes": [
+    "Cockroach"
+  ],
+  "max_det": 8,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}

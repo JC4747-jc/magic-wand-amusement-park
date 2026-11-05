@@ -1,0 +1,1718 @@
+{
+  "mode": "training-diagnostic",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "inaturalist",
+      "license": "Per-photo CC BY or CC0; attribution in samples",
+      "url": "https://www.inaturalist.org",
+      "reviewed": true
+    },
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-positive-train-v16-training\\train\\weights\\best.pt",
+  "architecture": "DetectionModel",
+  "sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+  "dataset_version": "ea5662758384ef064c530f0d1b0b1a4abdc48e1d3d458aa2d17d82ce9724795a",
+  "split": "train",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "Cockroach",
+    "1": "Beetle"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "Cockroach",
+      "precision": 0.9902765651380973,
+      "recall": 0.9834710743801653,
+      "mAP50": 0.9942916666666666,
+      "mAP50_95": 0.9081664292677669,
+      "labels": 121
+    }
+  ],
+  "images": 200,
+  "excluded_samples": [],
+  "ground_truth_instances": 121,
+  "false_positive_images": 1,
+  "per_image": [
+    {
+      "image": "images/train/893720-1136439.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 1344.6004000143148
+    },
+    {
+      "image": "images/train/1099638-1381979.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 232.45209999731742
+    },
+    {
+      "image": "images/train/1160968-1463283.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 220.8524000016041
+    },
+    {
+      "image": "images/train/1398861-1729980.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 232.52599999250378
+    },
+    {
+      "image": "images/train/1491183-1847989.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 225.1923000003444
+    },
+    {
+      "image": "images/train/1562868-1934963.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 218.46370000275783
+    },
+    {
+      "image": "images/train/1587914-1958012.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 315.2772999892477
+    },
+    {
+      "image": "images/train/1648823-2022796.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 206.85930000036024
+    },
+    {
+      "image": "images/train/2447846-2733103.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 231.1356000136584
+    },
+    {
+      "image": "images/train/2924104-3348881.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 183.34540000068955
+    },
+    {
+      "image": "images/train/4132471-5197444.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 183.74550000589807
+    },
+    {
+      "image": "images/train/4467022-5388318.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 172.87700000451878
+    },
+    {
+      "image": "images/train/5027365-6154080.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 232.89610000210814
+    },
+    {
+      "image": "images/train/5229456-6464040.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 278.42129999771714
+    },
+    {
+      "image": "images/train/negative-ce877cb28e446cc28d5cfe2f.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 198.24850000441074
+    },
+    {
+      "image": "images/train/negative-6d4ecc9eb4140f73b0e796b4.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 298.46060001000296
+    },
+    {
+      "image": "images/train/negative-21369ff0f3936dd0f4624cd3.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 301.5268000017386
+    },
+    {
+      "image": "images/train/negative-50d6cbf541df80f8b6132d7c.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 230.45360000105575
+    },
+    {
+      "image": "images/train/negative-610c67392f3bb41fcf0120d6.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 217.1412000025157
+    },
+    {
+      "image": "images/train/negative-a1475f88f6a793a6bf432d5b.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 220.02639999845996
+    },
+    {
+      "image": "images/train/negative-b59343bae8cca93d73d3b878.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 228.0546999973012
+    },
+    {
+      "image": "images/train/negative-1df7684d4201f5022e944315.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 260.8239999972284
+    },
+    {
+      "image": "images/train/negative-08168c6d4889bcb8fa772efa.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 256.8106999970041
+    },
+    {
+      "image": "images/train/negative-9d7ad8ee8de1753413b1c9ea.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 231.97959999379236
+    },
+    {
+      "image": "images/train/negative-61801453d7a64e42857c0ab6.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 264.6303000074113
+    },
+    {
+      "image": "images/train/negative-5ec12b8af9abe0d364b5cc7e.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 313.43480000214186
+    },
+    {
+      "image": "images/train/negative-0bbe927293aa1d8186447ec4.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 231.42700000607874
+    },
+    {
+      "image": "images/train/negative-498cb208750fba5472964fc0.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 214.26910000445787
+    },
+    {
+      "image": "images/train/negative-d7631d7ee3335dd01e60b281.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 199.03219999105204
+    },
+    {
+      "image": "images/train/negative-11ad33169492d0f6afe2969a.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 211.54469999601133
+    },
+    {
+      "image": "images/train/negative-1441b2b9a507fb86dd2ef813.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 295.84890000114683
+    },
+    {
+      "image": "images/train/negative-278d01854af3f4df4ac91152.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 214.14360000926536
+    },
+    {
+      "image": "images/train/negative-a7c4a6a86ca53c1ee56f422b.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 200.04330000665504
+    },
+    {
+      "image": "images/train/negative-47133561abbcb6c84e971ab1.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 198.3122999954503
+    },
+    {
+      "image": "images/train/negative-4992ba27b6e7930cd493d452.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 272.5085999991279
+    },
+    {
+      "image": "images/train/negative-32d4a5d13a9da8b9aaa76061.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 210.9414000005927
+    },
+    {
+      "image": "images/train/negative-4bd02bb729dcbfada1d0115b.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 200.43110000551678
+    },
+    {
+      "image": "images/train/negative-6f2e72dcae9c0bb6a33b612b.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 231.91319999750704
+    },
+    {
+      "image": "images/train/10828778-15173884.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 239.95459999423474
+    },
+    {
+      "image": "images/train/7517541-9800037.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 235.9137000021292
+    },
+    {
+      "image": "images/train/8117334-10762543.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 234.17880000488367
+    },
+    {
+      "image": "images/train/8409749-11192081.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 312.6444000081392
+    },
+    {
+      "image": "images/train/8148410-10787037.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 217.38649999315385
+    },
+    {
+      "image": "images/train/9217462-12469500.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 205.83890000125393
+    },
+    {
+      "image": "images/train/11115499-15713012.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 221.71410000009928
+    },
+    {
+      "image": "images/train/8927613-12023979.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 225.7958999980474
+    },
+    {
+      "image": "images/train/7939692-10484595.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 207.15269999345765
+    },
+    {
+      "image": "images/train/13657274-20108440.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 308.1322999933036
+    },
+    {
+      "image": "images/train/11469254-16366578.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 209.1828999982681
+    },
+    {
+      "image": "images/train/6550964-8304934.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 185.51170000864659
+    },
+    {
+      "image": "images/train/6029637-7548277.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 297.71299999265466
+    },
+    {
+      "image": "images/train/11568336-16521678.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 208.21019999857526
+    },
+    {
+      "image": "images/train/14535981-21648656.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 238.65299999306444
+    },
+    {
+      "image": "images/train/9560637-13048376.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 224.68189999926835
+    },
+    {
+      "image": "images/train/9415145-12790691.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 226.82090000307653
+    },
+    {
+      "image": "images/train/15174340-22691699.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 224.8020999977598
+    },
+    {
+      "image": "images/train/11697046-16719791.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 190.01489999936894
+    },
+    {
+      "image": "images/train/11915789-17057668.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 218.9751999976579
+    },
+    {
+      "image": "images/train/new-410658585-755312446.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 235.70200000540353
+    },
+    {
+      "image": "images/train/new-410643638-755279132.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 301.97909999697004
+    },
+    {
+      "image": "images/train/new-410469672-754923974.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 242.04280000412837
+    },
+    {
+      "image": "images/train/new-410365084-754699088.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 233.58129999542143
+    },
+    {
+      "image": "images/train/new-409988183-753943293.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 300.48879999958444
+    },
+    {
+      "image": "images/train/new-408234951-750377289.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 175.5267999978969
+    },
+    {
+      "image": "images/train/new-410079690-754130541.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 219.70309999596793
+    },
+    {
+      "image": "images/train/new-410064442-754100137.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 236.6599000088172
+    },
+    {
+      "image": "images/train/new-409911775-753787529.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 191.50669999362435
+    },
+    {
+      "image": "images/train/new-409902863-753769757.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 272.4618000065675
+    },
+    {
+      "image": "images/train/new-409563843-753078708.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 299.0681999945082
+    },
+    {
+      "image": "images/train/new-409461958-752870467.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 139.36900001135655
+    },
+    {
+      "image": "images/train/new-409241084-752415359.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 234.09490000631195
+    },
+    {
+      "image": "images/train/new-409098468-752125517.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 181.61880000843666
+    },
+    {
+      "image": "images/train/new-408896323-751716133.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 252.4647999962326
+    },
+    {
+      "image": "images/train/new-408866713-751656947.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 224.01289999834262
+    },
+    {
+      "image": "images/train/new-408865776-751653624.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 216.48440000717528
+    },
+    {
+      "image": "images/train/new-408543531-751004235.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 178.54609999631066
+    },
+    {
+      "image": "images/train/new-408490113-750899304.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 184.2154999903869
+    },
+    {
+      "image": "images/train/new-408392657-750698102.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 221.36280000268016
+    },
+    {
+      "image": "images/train/new-408328117-750563880.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 245.27149999630637
+    },
+    {
+      "image": "images/train/new-408307625-750521759.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 237.3163000011118
+    },
+    {
+      "image": "images/train/new-408124064-750139620.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 303.81040000065695
+    },
+    {
+      "image": "images/train/new-407520904-748907293.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 173.81620001106057
+    },
+    {
+      "image": "images/train/new-406999733-747857726.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 299.7687000024598
+    },
+    {
+      "image": "images/train/new-406953593-747767322.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 256.8102999939583
+    },
+    {
+      "image": "images/train/new-406793002-747442400.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 227.51320000679698
+    },
+    {
+      "image": "images/train/new-406726896-747318246.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 237.3459000082221
+    },
+    {
+      "image": "images/train/new-406618941-747092511.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 227.4310999928275
+    },
+    {
+      "image": "images/train/new-406477470-746811660.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 270.5072999960976
+    },
+    {
+      "image": "images/train/new-406151538-746151331.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 238.95559999800753
+    },
+    {
+      "image": "images/train/new-406097201-746042772.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 290.3148000041256
+    },
+    {
+      "image": "images/train/new-406001250-745847632.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 233.14700000628363
+    },
+    {
+      "image": "images/train/new-405767597-745371657.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 208.19309999933466
+    },
+    {
+      "image": "images/train/new-405428083-744693548.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 310.7665999996243
+    },
+    {
+      "image": "images/train/new-405351579-744537208.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 303.30899999535177
+    },
+    {
+      "image": "images/train/new-404840197-743514869.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 216.71079999941867
+    },
+    {
+      "image": "images/train/new-404770820-743377285.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 145.47550000133924
+    },
+    {
+      "image": "images/train/new-404703599-743249603.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 211.9416000059573
+    },
+    {
+      "image": "images/train/beetle-412932780-759911461.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 229.32719999516848
+    },
+    {
+      "image": "images/train/beetle-412881228-759802161.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 228.81060000509024
+    },
+    {
+      "image": "images/train/beetle-412878061-759795126.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 306.0164999915287
+    },
+    {
+      "image": "images/train/beetle-412874236-759784205.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 224.6296999946935
+    },
+    {
+      "image": "images/train/beetle-412873254-759784967.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 228.44170000462327
+    },
+    {
+      "image": "images/train/beetle-412869931-759769725.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 223.16379999392666
+    },
+    {
+      "image": "images/train/beetle-412868056-759761476.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 256.40099999145605
+    },
+    {
+      "image": "images/train/beetle-412867256-759773113.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 241.22330000682268
+    },
+    {
+      "image": "images/train/beetle-412864850-759767023.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 238.65679999289569
+    },
+    {
+      "image": "images/train/beetle-412864476-759767777.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 160.70740000577644
+    },
+    {
+      "image": "images/train/beetle-412864147-759763620.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 191.47930000326596
+    },
+    {
+      "image": "images/train/beetle-412862889-759764142.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 289.7464999987278
+    },
+    {
+      "image": "images/train/beetle-412862645-759763787.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 226.0452000045916
+    },
+    {
+      "image": "images/train/beetle-412860163-759758704.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 213.50460000394378
+    },
+    {
+      "image": "images/train/beetle-412858118-759754894.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 208.44830000714865
+    },
+    {
+      "image": "images/train/beetle-412852712-759743725.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 175.92059999878984
+    },
+    {
+      "image": "images/train/beetle-412845308-759728222.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 213.19320000475273
+    },
+    {
+      "image": "images/train/beetle-412843790-759724942.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 145.57219999551307
+    },
+    {
+      "image": "images/train/beetle-412841096-759698477.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 158.87539999675937
+    },
+    {
+      "image": "images/train/beetle-412839560-759716311.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 221.75449998758268
+    },
+    {
+      "image": "images/train/beetle-412832763-759703692.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 213.9683999994304
+    },
+    {
+      "image": "images/train/beetle-412830639-759699442.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 215.00809999997728
+    },
+    {
+      "image": "images/train/longhorn-412787120-759613779.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 222.36300000804476
+    },
+    {
+      "image": "images/train/longhorn-412755696-759553756.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 210.25589999044314
+    },
+    {
+      "image": "images/train/longhorn-412748930-759539900.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 228.11099998943973
+    },
+    {
+      "image": "images/train/longhorn-412736781-759515084.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 226.28699999768287
+    },
+    {
+      "image": "images/train/longhorn-412678067-759398106.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 208.73030000075232
+    },
+    {
+      "image": "images/train/longhorn-412659497-759362805.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 301.1895999952685
+    },
+    {
+      "image": "images/train/longhorn-412653578-759347498.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 228.05580000567716
+    },
+    {
+      "image": "images/train/longhorn-412634846-759308786.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 239.28320000413805
+    },
+    {
+      "image": "images/train/longhorn-412563331-759164657.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 210.67200000106823
+    },
+    {
+      "image": "images/train/longhorn-412542104-759118266.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 235.2379999938421
+    },
+    {
+      "image": "images/train/longhorn-412513016-759062138.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 227.4941000068793
+    },
+    {
+      "image": "images/train/longhorn-412501140-759038192.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 233.2703000138281
+    },
+    {
+      "image": "images/train/longhorn-412476767-758981778.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 210.7034999935422
+    },
+    {
+      "image": "images/train/longhorn-412469855-758974228.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 209.6824999898672
+    },
+    {
+      "image": "images/train/longhorn-412459108-758953061.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 295.69650000485126
+    },
+    {
+      "image": "images/train/longhorn-412427553-758889387.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 217.8657999902498
+    },
+    {
+      "image": "images/train/new-positive-391014790-716417832.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 301.2769000051776
+    },
+    {
+      "image": "images/train/new-positive-390761080-715933786.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 220.74180000345223
+    },
+    {
+      "image": "images/train/new-positive-390406012-715238478.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 155.75890000036452
+    },
+    {
+      "image": "images/train/new-positive-390370068-715168419.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 220.18669999670237
+    },
+    {
+      "image": "images/train/new-positive-390367155-715162949.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 227.81110000505578
+    },
+    {
+      "image": "images/train/new-positive-390141759-714720049.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 202.10340000630822
+    },
+    {
+      "image": "images/train/new-positive-389910643-714267855.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 182.82849999377504
+    },
+    {
+      "image": "images/train/new-positive-389711616-713875585.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 272.06209998985287
+    },
+    {
+      "image": "images/train/new-positive-389103795-712690637.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 227.89529999135993
+    },
+    {
+      "image": "images/train/new-positive-388511711-711561809.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 234.55429999739863
+    },
+    {
+      "image": "images/train/new-positive-388442060-711428100.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 204.73840000340715
+    },
+    {
+      "image": "images/train/new-positive-388380786-711308057.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 214.64530000230297
+    },
+    {
+      "image": "images/train/new-positive-388359058-711264077.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 229.71810000308324
+    },
+    {
+      "image": "images/train/new-positive-387424508-709440848.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 311.6296000080183
+    },
+    {
+      "image": "images/train/new-positive-387208486-709021114.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 226.83329999563284
+    },
+    {
+      "image": "images/train/new-positive-387168090-708944451.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 232.8070000075968
+    },
+    {
+      "image": "images/train/new-positive-387131913-708875938.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 222.62239998963196
+    },
+    {
+      "image": "images/train/new-positive-387028177-708666579.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 202.06180000968743
+    },
+    {
+      "image": "images/train/new-positive-386594944-707851199.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 300.1644999894779
+    },
+    {
+      "image": "images/train/new-positive-386483452-707635931.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 227.10620000725612
+    },
+    {
+      "image": "images/train/new-positive-386405931-707502270.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 231.12330000731163
+    },
+    {
+      "image": "images/train/new-positive-386153790-707006983.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 220.75979999499395
+    },
+    {
+      "image": "images/train/new-positive-385845425-706410408.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 288.24290000193287
+    },
+    {
+      "image": "images/train/new-positive-385054435-704907549.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 271.0325000080047
+    },
+    {
+      "image": "images/train/diverse-bcdbb7a0a17365a5f20930f7.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 178.0644999962533
+    },
+    {
+      "image": "images/train/diverse-75f46c6b1cc935af084bb18e.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 196.15520001389086
+    },
+    {
+      "image": "images/train/diverse-0d192586be487b8f6cf04ed1.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 257.88019999163225
+    },
+    {
+      "image": "images/train/diverse-2fc0e37f179632478308eec1.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 217.49429999908898
+    },
+    {
+      "image": "images/train/diverse-b6ebebd3985293ce3df21801.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 195.60560000536498
+    },
+    {
+      "image": "images/train/diverse-2803d07f11f0257e08d38b81.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 198.8205000088783
+    },
+    {
+      "image": "images/train/diverse-c9200343d4bf163d87adf255.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 240.0630999909481
+    },
+    {
+      "image": "images/train/diverse-de940b1365cfd492c8cf850d.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 200.3781999956118
+    },
+    {
+      "image": "images/train/diverse-9b9a4ebdcb3b3e05ec605255.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 213.96369999274611
+    },
+    {
+      "image": "images/train/diverse-4ec56cb0185f5f2bd41ef068.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 222.08630001114216
+    },
+    {
+      "image": "images/train/diverse-f71c72724b723614ed2453a7.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 212.5201000017114
+    },
+    {
+      "image": "images/train/diverse-4374340717ed77a58e33186f.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 190.893099992536
+    },
+    {
+      "image": "images/train/diverse-cd46a414bb934aa9736f019b.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 195.67109999479726
+    },
+    {
+      "image": "images/train/diverse-5dd4ca5c9ba2d2beb8114bde.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 230.02940000151284
+    },
+    {
+      "image": "images/train/diverse-b880fcdac9ea612f0d8cd4b1.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 225.7065000012517
+    },
+    {
+      "image": "images/train/diverse-1d0dd4ba6466cae500e793e8.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 171.80510000616778
+    },
+    {
+      "image": "images/train/diverse-7eac35863b743aac763fa8ed.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 217.11369999684393
+    },
+    {
+      "image": "images/train/diverse-c704543f61f5212e3f742d8b.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 227.8024999977788
+    },
+    {
+      "image": "images/train/v16-positive-377165928-689679349.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 162.91729999647941
+    },
+    {
+      "image": "images/train/v16-positive-377065225-689486340.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 217.32370000972878
+    },
+    {
+      "image": "images/train/v16-positive-376616084-688618562.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 151.80960000725463
+    },
+    {
+      "image": "images/train/v16-positive-376482057-688360912.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 202.42859999416396
+    },
+    {
+      "image": "images/train/v16-positive-374955641-685401228.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 169.39450000063516
+    },
+    {
+      "image": "images/train/v16-positive-374733411-684970656.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 213.24420000019018
+    },
+    {
+      "image": "images/train/v16-positive-372977730-681590508.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 228.4075999923516
+    },
+    {
+      "image": "images/train/v16-positive-372869306-681390367.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 175.24379999667872
+    },
+    {
+      "image": "images/train/v16-positive-372770647-681200050.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 201.7199999972945
+    },
+    {
+      "image": "images/train/v16-positive-372704090-681062104.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 210.96630000101868
+    },
+    {
+      "image": "images/train/v16-positive-372339698-680372726.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 171.29369999747723
+    },
+    {
+      "image": "images/train/v16-positive-371218251-678230133.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 173.24219999136403
+    },
+    {
+      "image": "images/train/v16-positive-370757940-677349381.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 199.33089999540243
+    },
+    {
+      "image": "images/train/v16-positive-370716756-677267097.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 212.4748000060208
+    },
+    {
+      "image": "images/train/v16-positive-370056242-676007467.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 217.1812000015052
+    },
+    {
+      "image": "images/train/v16-positive-369807348-675532580.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 220.4531000024872
+    },
+    {
+      "image": "images/train/v16-positive-369627114-675179981.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 216.2281999917468
+    },
+    {
+      "image": "images/train/v16-positive-369133343-673940844.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 279.57109999260865
+    },
+    {
+      "image": "images/train/v16-positive-368879683-673780039.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 203.8306000031298
+    },
+    {
+      "image": "images/train/v16-positive-368646996-673333549.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 221.1608000070555
+    },
+    {
+      "image": "images/train/v16-positive-367991669-672082325.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 224.18999999354128
+    },
+    {
+      "image": "images/train/v16-positive-367759807-671632984.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 161.17680000024848
+    },
+    {
+      "image": "images/train/v16-positive-367574489-671278419.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 183.02499999117572
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "Cockroach",
+      "true_positive": 119,
+      "false_positive": 1,
+      "false_negative": 2,
+      "precision": 0.9916666666666667,
+      "recall": 0.9834710743801653
+    },
+    {
+      "name": "Beetle",
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": null,
+      "recall": null
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 231.73193650007306,
+  "p95_inference_ms": 302.0455949968891,
+  "cold_first_image_ms": 1344.6004000143148,
+  "warm_mean_ms": 226.13963266331808,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images/train/v16-positive-377165928-689679349.jpg",
+      "example": "error-v16-positive-377165928-689679349.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/v16-positive-369807348-675532580.jpg",
+      "example": "error-v16-positive-369807348-675532580.jpg",
+      "ground_truth": 1,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/v16-positive-367991669-672082325.jpg",
+      "example": "error-v16-positive-367991669-672082325.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    }
+  ],
+  "allowed_classes": [
+    "Cockroach"
+  ],
+  "max_det": 8,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}

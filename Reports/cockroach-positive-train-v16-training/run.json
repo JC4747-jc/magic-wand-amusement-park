@@ -1,0 +1,61 @@
+{
+  "dataset_version": "ea5662758384ef064c530f0d1b0b1a4abdc48e1d3d458aa2d17d82ce9724795a",
+  "initializer_sha256": "088e0fc7f65fb8e157f10178dde6af0fa9946be51b722886d9eaed12124ea901",
+  "script_sha256": "519e850d0e40fc74284d00444229a83866f617ff58e3c030eac0b7a986742227",
+  "background_release_sha256": "6778f655f5161b49b50405c750942fd0de640a14e76e922b1973a140f7b2048c",
+  "parameters": {
+    "data": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\cockroach-positive-train-v16\\data.yaml",
+    "device": 0,
+    "epochs": 30,
+    "imgsz": 640,
+    "batch": 4,
+    "workers": 0,
+    "seed": 20261105,
+    "deterministic": true,
+    "freeze": 0,
+    "optimizer": "AdamW",
+    "lr0": 0.0001,
+    "lrf": 0.1,
+    "warmup_bias_lr": 0.0001,
+    "mosaic": 0.0,
+    "mixup": 0.0,
+    "cutmix": 0.0,
+    "scale": 0.3,
+    "translate": 0.05,
+    "hsv_h": 0.01,
+    "hsv_s": 0.3,
+    "hsv_v": 0.2,
+    "close_mosaic": 0,
+    "project": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\cockroach-positive-train-v16-training",
+    "name": "train",
+    "plots": true
+  },
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "cuda_device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "scope": "Two-class public-photo pilot; 23 new observer-separated reviewed TRAIN positives added",
+  "hypothesis": "Additional real positive views may improve generalization; fixed runtime recall and negative regression must be measured",
+  "unity_mapping": {
+    "Cockroach": "ParkBugs",
+    "Beetle": null
+  },
+  "service_routed": false,
+  "pico_validated": false,
+  "selection": "Ultralytics validation fitness only; not an isolated data-only ablation",
+  "evaluation_protocol": {
+    "confidence": 0.65,
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 8,
+    "allowed_classes": [
+      "Cockroach"
+    ]
+  },
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8,
+    "negative_false_positives_max": 0
+  },
+  "test_policy": "No observed TEST threshold tuning; fresh independent acceptance required after validation gates pass"
+}
