@@ -1,0 +1,45 @@
+{
+  "status": "ACTUAL_MODEL_INSPECTION",
+  "rows": [
+    {
+      "path": "object-detection-demo/weights/candidates/common-yolov8m-official-v1/best.pt",
+      "sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+      "parameters": 25902640,
+      "native_classes": 80,
+      "head_class": "Detect",
+      "classifier_widths": [
+        192,
+        192,
+        192
+      ],
+      "yaml_file": "None"
+    },
+    {
+      "path": "object-detection-demo/weights/candidates/plant-native-v12/best.pt",
+      "sha256": "fe706e1763a8ffa5924c849d9798bb1083d416df6c8c6720cb6ffcdb3780177a",
+      "parameters": 25856899,
+      "native_classes": 1,
+      "head_class": "Detect",
+      "classifier_widths": [
+        192,
+        192,
+        192
+      ],
+      "yaml_file": "None"
+    },
+    {
+      "path": "object-detection-demo/weights/candidates/plant-reviewed-v26/best.pt",
+      "sha256": "7e6d70d509278250f89057503aa9181a9bd70986d2b06f7d074b067ae2441209",
+      "parameters": 25857478,
+      "native_classes": 2,
+      "head_class": "Detect",
+      "classifier_widths": [
+        192,
+        192,
+        192
+      ],
+      "yaml_file": "None"
+    }
+  ],
+  "deployment_accepted": false
+}

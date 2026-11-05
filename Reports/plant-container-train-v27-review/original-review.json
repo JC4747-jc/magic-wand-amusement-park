@@ -1,0 +1,72 @@
+{
+  "source_manifest_sha256": "b8167e6bc7f704d72805294f59a975ee0436a49729bb9dae1e6fdd21fbfb427a",
+  "samples": [
+    {
+      "original_id": "82ea27fe418454b8",
+      "source_sha256": "e8dcfa5eca732d0f69744d6b1fc076bbd99759ad084aef6763ee9639fa544076",
+      "original_actually_viewed": true,
+      "observation": "Two large shrubs in visible containers at doorway; wall wreath is floral decoration rather than automatically rooted plant. Outdoor container targets remain within inherited rooted-container class; size is not inferred from image.",
+      "split": "train",
+      "training_approved": false,
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Briget Murphy",
+        "AuthorProfileURL": "https://www.flickr.com/people/124229118@N04/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/124229118@N04/14402773071/",
+        "Title": "front door"
+      }
+    },
+    {
+      "original_id": "845d0d2554ac5e8d",
+      "source_sha256": "d954937189dd4143ed5d9ccda8681748941cfccc55e5efea787bc72a12923ba4",
+      "original_actually_viewed": true,
+      "observation": "Leafy herb in container, apparent liquid/inner vessel; rooting versus cut stems needs source/visible-substrate review before label approval.",
+      "split": "train",
+      "training_approved": false,
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Tim Sheerman-Chase",
+        "AuthorProfileURL": "https://www.flickr.com/people/tim_uk/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/tim_uk/6472592111",
+        "Title": "Window Plant"
+      }
+    },
+    {
+      "original_id": "84e70dc787a0981f",
+      "source_sha256": "ccf8bb593980e586927cad56ce67e564ce04bf0d4df218a7a407385dff3912fc",
+      "original_actually_viewed": true,
+      "observation": "Two cropped soil-filled containers with rose-like stems and decorative figures. Potential two plants, overlapping foliage/visible extents need per-container review.",
+      "split": "train",
+      "training_approved": false,
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Wind&amp;Wuthering",
+        "AuthorProfileURL": "https://www.flickr.com/people/38508395@N08/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/38508395@N08/4735848331",
+        "Title": "Il vaso del vicino..."
+      }
+    }
+  ],
+  "draft": {
+    "original_id": "82ea27fe418454b8",
+    "boxes": [
+      [
+        0,
+        201,
+        230,
+        1008
+      ],
+      [
+        460,
+        372,
+        808,
+        1008
+      ]
+    ],
+    "overlay": "Reports/plant-container-train-v27-review/doorway-container-draft.png",
+    "overlay_sha256": "d0268a58585bcc5a9d95c8e94bbeb266ceecf9340003c389c55c35becd735e60",
+    "overlay_reviewed": false
+  },
+  "training_approved": false,
+  "scope": "Three previously TRAIN-reserved source originals reviewed; no VAL/TEST transfer or prediction-based labels. No dataset changed."
+}

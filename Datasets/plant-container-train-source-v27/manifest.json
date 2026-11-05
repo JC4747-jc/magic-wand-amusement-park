@@ -1,0 +1,88 @@
+{
+  "samples": [
+    {
+      "original_id": "84e70dc787a0981f",
+      "group": "https://www.flickr.com/people/38508395@N08/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Wind&amp;Wuthering",
+        "AuthorProfileURL": "https://www.flickr.com/people/38508395@N08/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/38508395@N08/4735848331",
+        "Title": "Il vaso del vicino..."
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/test/84e70dc787a0981f.jpg",
+      "reserved_split": "train",
+      "selection_keyword": "upstream-container-annotation",
+      "annotation_status": "NOT_REVIEWED",
+      "image": "images/84e70dc787a0981f.jpg",
+      "sha256": "ccf8bb593980e586927cad56ce67e564ce04bf0d4df218a7a407385dff3912fc",
+      "image_sha256": "ccf8bb593980e586927cad56ce67e564ce04bf0d4df218a7a407385dff3912fc",
+      "original_reviewed": true,
+      "overlay": "Reports/plant-container-train-v27-review/84e70dc787a0981f-draft.png",
+      "overlay_sha256": "b8191627fdc8f39ec68b953a3a40c5a1c6a157a11ad039d3fa0525fd89b46fea",
+      "label": "Reports/plant-container-train-v27-review/84e70dc787a0981f.txt",
+      "label_sha256": "0df07da087aa036aa5fe5880951ced32b505b42eeb28c26b0d72397945c23670",
+      "boxes_class_xyxy": [
+        [
+          0,
+          0,
+          0,
+          739,
+          681
+        ],
+        [
+          0,
+          589,
+          0,
+          1024,
+          681
+        ]
+      ],
+      "notes": "Two cropped rooted containers: each stem enters visible soil in its separate pot. Decorative figures are not separate plant targets. Crossing foliage causes overlapping visible-extent boxes; no hidden leaves extrapolated.",
+      "overlay_reviewed": true,
+      "review_approved": true,
+      "source": "openimages-v7"
+    },
+    {
+      "original_id": "86f6b82a8bd69b53",
+      "group": "https://www.flickr.com/people/dmclear/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Dave McLear",
+        "AuthorProfileURL": "https://www.flickr.com/people/dmclear/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/dmclear/3857485794",
+        "Title": "Portugal 2009 415"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/test/86f6b82a8bd69b53.jpg",
+      "reserved_split": "train",
+      "selection_keyword": "upstream-container-annotation",
+      "annotation_status": "NOT_REVIEWED",
+      "image": "images/86f6b82a8bd69b53.jpg",
+      "sha256": "dbeb642775f27e243d77d405de1545949aca6a27c9760ae95c3301ecaede2a99",
+      "image_sha256": "dbeb642775f27e243d77d405de1545949aca6a27c9760ae95c3301ecaede2a99",
+      "original_reviewed": true,
+      "overlay": "Reports/plant-container-train-v27-review/86f6b82a8bd69b53-draft.png",
+      "overlay_sha256": "7cc4723b6673ec8001a8cd7058fa8962bc9bf3b236271c70bfda8691a1f07c6e",
+      "label": "Reports/plant-container-train-v27-review/86f6b82a8bd69b53.txt",
+      "label_sha256": "4f68a6a822b3a8d45d2216c37e7d3595394fc768d8ff068b45ebd54bc12dbbba",
+      "boxes_class_xyxy": [
+        [
+          0,
+          99,
+          0,
+          768,
+          1024
+        ]
+      ],
+      "notes": "One cropped flowering woody plant immediately above and within the visible white container. Keep visible foliage and container, no hidden lower extent. No species or physical size inferred.",
+      "overlay_reviewed": true,
+      "review_approved": true,
+      "source": "openimages-v7"
+    }
+  ],
+  "project_reserved_split": "train",
+  "source_manifest_sha256": "b8167e6bc7f704d72805294f59a975ee0436a49729bb9dae1e6fdd21fbfb427a",
+  "training_approved": false,
+  "deployment_accepted": false,
+  "scope": "Selected two previously TRAIN-reserved photos; original source and all old holds preserved. Fresh source/pixel checks pending, not dataset release."
+}

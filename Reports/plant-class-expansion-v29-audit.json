@@ -1,0 +1,62 @@
+{
+  "status": "PASS_CLASS0_PRESERVED_NEW_AUXILIARY_INITIALIZED",
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "source_sha256": "fe706e1763a8ffa5924c849d9798bb1083d416df6c8c6720cb6ffcdb3780177a",
+  "actual_trainer_method": "DetectionTrainer.get_model with target names before BaseModel.load",
+  "dataset_names": {
+    "0": "PottedPlant",
+    "1": "CutArrangement"
+  },
+  "classification_hidden_widths": [
+    192,
+    192,
+    192
+  ],
+  "unchanged_other_tensors": 469,
+  "expanded_classification_tensors": [
+    {
+      "key": "model.22.cv3.0.2.weight",
+      "plant_row_exact": true,
+      "new_auxiliary_row_distinct": true
+    },
+    {
+      "key": "model.22.cv3.0.2.bias",
+      "plant_row_exact": true,
+      "new_auxiliary_row_distinct": true
+    },
+    {
+      "key": "model.22.cv3.1.2.weight",
+      "plant_row_exact": true,
+      "new_auxiliary_row_distinct": true
+    },
+    {
+      "key": "model.22.cv3.1.2.bias",
+      "plant_row_exact": true,
+      "new_auxiliary_row_distinct": true
+    },
+    {
+      "key": "model.22.cv3.2.2.weight",
+      "plant_row_exact": true,
+      "new_auxiliary_row_distinct": true
+    },
+    {
+      "key": "model.22.cv3.2.2.bias",
+      "plant_row_exact": true,
+      "new_auxiliary_row_distinct": true
+    }
+  ],
+  "implementation_files": [
+    {
+      "path": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\.venv-cuda\\Lib\\site-packages\\ultralytics\\models\\yolo\\detect\\train.py",
+      "sha256": "a045142cebae53ff94af9144fa108cd413904c27f085d58dc4ade2e83343c93a"
+    },
+    {
+      "path": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\.venv-cuda\\Lib\\site-packages\\ultralytics\\nn\\tasks.py",
+      "sha256": "c2465c97a13a1e3bb0ebd5ec7c531aa912122d59281e61677af376411c7d448a"
+    }
+  ],
+  "scope": "Actual model construction only, not an optimizer step, full training reproduction, accuracy or PICO acceptance.",
+  "conclusion": "Installed class-name remapping preserves plant class0; no evidence of this proposed initialization bug. Do not modify initializer/head merely based on nc1->2 log.",
+  "deployment_accepted": false
+}

@@ -1,0 +1,26 @@
+{
+  "status": "VAL_GATE_PASSED_OBSERVED_REGRESSION_AND_FRESH_TEST_REQUIRED",
+  "deployment_accepted": false,
+  "service_changed": false,
+  "model_source": "Existing protected archive common-yolov8m-official-v1, official COCO model class58 mapped toPottedPlant",
+  "weight_sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+  "report_sha256": "147554c8c549b9febb781275f4621bd63e85ae562db7720a3ae362ad15b452b6",
+  "operating_metrics": {
+    "name": "PottedPlant",
+    "true_positive": 11,
+    "false_positive": 1,
+    "false_negative": 2,
+    "precision": 0.9166666666666666,
+    "recall": 0.8461538461538461
+  },
+  "operating_confidence": 0.65,
+  "imgsz": 640,
+  "rect": true,
+  "nms_iou": 0.7,
+  "max_det": 8,
+  "precision_recall_gate_passed": true,
+  "negative_error_remaining": "Cut-floral image581cedc885d26e10455cf980 predicted asPottedPlant. Not a claim of zero background FP.",
+  "comparability": "Prior v26 custom report used.35, so do not claim isolated model improvement from comparing those scores. Current official baseline uses existing common runtime operating point.",
+  "test_performed_this_record": false,
+  "next_action": "Evaluate frozen official weight and point on previously observed plant v23/v25 regression datasets, then source-separated fresh TEST and PICO if gates hold. Do not choose parameters on observed TEST."
+}

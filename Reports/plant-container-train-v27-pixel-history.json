@@ -1,0 +1,37 @@
+{
+  "source": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\plant-container-train-source-v27",
+  "datasets": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets",
+  "source_manifest_sha256": "4f93d1bae0d67dc59417b3289629302dafb7f0a4559da4e30414963c0d5d8e30",
+  "tool_sha256": "2cc4d5c2fef3e3df32af967006a679ff534f30e2dce453d1b1ae1fc73107f954",
+  "candidates": 2,
+  "enumerated_paths": 18052,
+  "scanned_paths": 18052,
+  "unique_encoded": 5625,
+  "errors": [],
+  "matches": [
+    {
+      "candidate_id": "images/84e70dc787a0981f.jpg",
+      "historical_image": "plant-container-train-source-v26\\images\\84e70dc787a0981f.jpg",
+      "historical_sha256": "ccf8bb593980e586927cad56ce67e564ce04bf0d4df218a7a407385dff3912fc",
+      "encoded_exact": true,
+      "decoded_exact": true,
+      "dhash_distance": 0
+    },
+    {
+      "candidate_id": "images/86f6b82a8bd69b53.jpg",
+      "historical_image": "plant-container-train-source-v26\\images\\86f6b82a8bd69b53.jpg",
+      "historical_sha256": "dbeb642775f27e243d77d405de1545949aca6a27c9760ae95c3301ecaede2a99",
+      "encoded_exact": true,
+      "decoded_exact": true,
+      "dhash_distance": 0
+    }
+  ],
+  "internal_pair_comparisons": 1,
+  "internal_matches": [],
+  "training_approved": false,
+  "method": "Current files: encoded SHA256, decoded RGB SHA256, horizontal64bit dHash distance<=4",
+  "limitations": [
+    "Near matches need visual review; crops/viewpoint/physical-instance aliases may escape detection.",
+    "Missing historical files and Reports-only reservations require separate metadata audit."
+  ]
+}

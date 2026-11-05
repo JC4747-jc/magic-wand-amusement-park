@@ -1,0 +1,86 @@
+{
+  "status": "REJECTED_OBSERVED_REGRESSION_FOR_PLANT_SCENE",
+  "deployment_accepted": false,
+  "service_changed": false,
+  "weight_sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+  "parameters": {
+    "operating_confidence": 0.65,
+    "imgsz": 640,
+    "rect": true,
+    "max_det": 8,
+    "nms_iou": 0.7
+  },
+  "reports": [
+    {
+      "dataset": "v23",
+      "report_sha256": "836ab0a218d848c85d8dd245b46e324ce6e9d6f8bacccdf58cfbba63a1b5ef00",
+      "dataset_sha256": "f8342528c8441b885ea758361adacca576fa5249bdde28eb05e4b38d0521b806",
+      "operating": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 4,
+          "precision": 1.0,
+          "recall": 0.3333333333333333
+        },
+        {
+          "name": "CutArrangement",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "images": 11,
+      "scope": "PREVIOUSLY_OBSERVED_REGRESSION_NOT_FRESH_TEST",
+      "error_overlays_actually_viewed": [
+        {
+          "image": "images/test/a58480cec90b3c4d2a8f8dd7.jpg",
+          "overlay_sha256": "2697ef53e56337e2a8d899fc6cc0aafaad44924c570230c5961627e1ca96f4bb"
+        },
+        {
+          "image": "images/test/bf48c57259aaea3248b64ee8.jpg",
+          "overlay_sha256": "9b94540a8b4b8fdbc4235eed9e3cb5207d5c8c5a7d56e5fb7868c964938d5f38"
+        }
+      ]
+    },
+    {
+      "dataset": "v25",
+      "report_sha256": "9d80debb0b0601ca730a17a01432cd8178823158ce6a60b5d2e708a4d07df9b1",
+      "dataset_sha256": "59d38e64a49d6289d936b7a28d7536ef5cf0aa2bbe52ce425244464437ed1250",
+      "operating": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 3,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": 1.0,
+          "recall": 0.75
+        },
+        {
+          "name": "CutArrangement",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "images": 17,
+      "scope": "PREVIOUSLY_OBSERVED_REGRESSION_NOT_FRESH_TEST",
+      "error_overlays_actually_viewed": [
+        {
+          "image": "images/test/575dc428696ca3d057ee245b.jpg",
+          "overlay_sha256": "b271a2f62ed55f0a8b26b3a2d96543ef7e34230b704df2c712ac699ac53506d3"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    "v23: three hanging upcycled-can planted containers missed; one background pot behind rabbit missed.",
+    "v25: pine-like bonsai in visible shallow container missed. This differs from the prior custom-v24 basil failure; do not conflate error images."
+  ],
+  "policy": "No threshold/checkpoint choice from these observed sets, no fresh-test or PICO claim. Original common model metadata and other scene status unchanged; this rejection concerns current plant deployment only."
+}
