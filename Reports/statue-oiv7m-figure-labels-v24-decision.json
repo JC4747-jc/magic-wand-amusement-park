@@ -1,0 +1,50 @@
+{
+  "status": "REJECTED_NEGATIVE_REGRESSION",
+  "weight_sha256": "df431f4b8c4f578456319731b97f9bc48c778a89e84bbddf4925e55d2fef8676",
+  "operating": [
+    {
+      "name": "Statue",
+      "true_positive": 19,
+      "false_positive": 0,
+      "false_negative": 2,
+      "precision": 1.0,
+      "recall": 0.9047619047619048
+    }
+  ],
+  "observed_office_false_positives": 1,
+  "observed_office_false_positive_images": 1,
+  "private_error_review": "Actually viewed private overlay: real wrist/white sleeve near image edge misdetected at .678904. Raw private image must not be published or enter training.",
+  "evidence": [
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-final-val/report.json",
+      "sha256": "0ca7b5aa1ebb9b61377bdcf7fb13b1906f52e10965e353c237a8b8ff5a2514e9"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-office-regression-counted.json",
+      "sha256": "e014a621f755a630170f7f531c8a1b1315181087a6d4482ebe23893d9d959755"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-completed-audit.json",
+      "sha256": "f1a2d4fd57ad984ba912488393bf61f588623db9b70f5a5ca43b1598c6cd8da6"
+    },
+    {
+      "path": "Reports/statue-figure-labels-v24-launch-audit.json",
+      "sha256": "5d0055b6cc64bd7fff0f8babca30975e37cf1305afb8b0a3bbecffedf3d4da3e"
+    },
+    {
+      "path": "Reports/statue-train-label-policy-v23/corrections-reviewed.json",
+      "sha256": "67ffd6e30100a07598ff18bce04bc121236e957c92f365b2eda2ff032802e832"
+    }
+  ],
+  "service_routed": false,
+  "deployment_accepted": false,
+  "independent_test_evaluated": false,
+  "observed_v22_test_evaluated": false,
+  "conclusion": "Three TRAIN figure-boundary corrections improve repeated VAL by one FP, but previously observed PICO background regression loses v21 zero-FP behavior. No deployment. Do not tune on private held-out images or reuse v22TEST for selection.",
+  "next_action": "Review nine newly acquired TRAIN-only sculptural-group sources for complete figure census, license/creator/physical subject separation and pixel duplicates; add only reviewed examples. Need independent TRAIN wrist/sleeve coverage, never use heldout office frame.",
+  "limitations": [
+    "Single-annotator boundary corrections, not a complete reannotation of all61 positives.",
+    "Public VAL reused across trials; no positive PICO target acceptance.",
+    "No new TEST run for rejected v24 candidate."
+  ]
+}

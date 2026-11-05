@@ -1,0 +1,106 @@
+{
+  "parent_inventory_sha256": "a52188b5682819e12c702196394ee9d5911fc108ceb7d2b7b650fb737728d68e",
+  "policy": "Visible physical figure extent; exclude independent plain support/base, never invent occluded body. Preserve fused abstract composition as one existing instance for this bounded correction; do not change census/ontology in this experiment.",
+  "split": "train",
+  "training_approved": true,
+  "samples": [
+    {
+      "image": "images\\train\\a4c79da55d1b8a9f06ba1181.jpg",
+      "label": "labels/train/a4c79da55d1b8a9f06ba1181.txt",
+      "source": "openimages-v7",
+      "image_sha256": "a4c79da55d1b8a9f06ba1181f881ee484f29ef41602a38debc0b0cbb60822d65",
+      "label_sha256": "db726297620f56231dcb236d419726d5b259f2d70dc3dfa84ac7c897042894c0",
+      "overlay": "Reports/statue-train-label-policy-v23/a4c79da55d1b8a9f06ba1181.jpg",
+      "boxes": [
+        [
+          0.0,
+          238.63127039999995,
+          683.0,
+          1024.0
+        ]
+      ],
+      "dimensions": [
+        683,
+        1024
+      ],
+      "new_boxes": [
+        [
+          20,
+          244,
+          542,
+          891
+        ]
+      ],
+      "new_overlay": "Reports/statue-train-label-policy-v23/a4c79da55d1b8a9f06ba1181-figure-only-draft.jpg",
+      "new_overlay_sha256": "de550de5ee4fac844a3eee21c306a1966633ff5c633586cbc0ea7595f4341a03",
+      "original_and_existing_overlay_reviewed": true,
+      "new_overlay_reviewed": true
+    },
+    {
+      "image": "images\\train\\2751fcb96bea2cda551301e0.jpg",
+      "label": "labels/train/2751fcb96bea2cda551301e0.txt",
+      "source": "openimages-v7",
+      "image_sha256": "2751fcb96bea2cda551301e02a211c8b4ca776b0b7b2f4f169dee115733a6d7b",
+      "label_sha256": "c16ec5b3e2f88ec20447c0741a1065cb5f4b0496c083a7ec2c61eff9f2cf6b31",
+      "overlay": "Reports/statue-train-label-policy-v23/2751fcb96bea2cda551301e0.jpg",
+      "boxes": [
+        [
+          96.0,
+          156.80000000000007,
+          728.0000256,
+          881.6
+        ]
+      ],
+      "dimensions": [
+        768,
+        1024
+      ],
+      "new_boxes": [
+        [
+          215,
+          162,
+          725,
+          713
+        ]
+      ],
+      "new_overlay": "Reports/statue-train-label-policy-v23/2751fcb96bea2cda551301e0-figure-only-draft.jpg",
+      "new_overlay_sha256": "3dd055a047438de148831e3efb883d777abeb3f7eaf9d96c011deef71a5697d0",
+      "original_and_existing_overlay_reviewed": true,
+      "new_overlay_reviewed": true
+    },
+    {
+      "image": "images\\train\\79614cbf661cad1ca9399d7b.jpg",
+      "label": "labels/train/79614cbf661cad1ca9399d7b.txt",
+      "source": "openimages-v7",
+      "image_sha256": "79614cbf661cad1ca9399d7b37a0d086a340472f0e48e1f6e2deeaf0147a6245",
+      "label_sha256": "22474f659e1ee876b7c6c148c6d23b814223e07884ddbc4c13a46c4153340d3b",
+      "overlay": "Reports/statue-train-label-policy-v23/79614cbf661cad1ca9399d7b.jpg",
+      "boxes": [
+        [
+          105.54488795999997,
+          16.0,
+          721.2233934,
+          1016.0
+        ]
+      ],
+      "dimensions": [
+        766,
+        1024
+      ],
+      "new_boxes": [
+        [
+          130,
+          20,
+          693,
+          925
+        ]
+      ],
+      "new_overlay": "Reports/statue-train-label-policy-v23/79614cbf661cad1ca9399d7b-figure-only-draft.jpg",
+      "new_overlay_sha256": "2a5948250720490f7e24ba558416b403c1f897ed4e2309c7473259f7f2380129",
+      "original_and_existing_overlay_reviewed": true,
+      "new_overlay_reviewed": true
+    }
+  ],
+  "draft_sha256": "85577d2a1390c34f9e5f4c8af41a3805b51ae6fbec7ec4e150f90d1f3771a8d5",
+  "review_scope": "Seven TRAIN overview sheets actually viewed; four original-resolution existing overlays viewed; all three corrected overlays viewed. This is not proof every existing box is precise."
+}

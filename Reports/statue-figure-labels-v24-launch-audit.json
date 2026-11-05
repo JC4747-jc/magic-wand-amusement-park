@@ -1,0 +1,33 @@
+{
+  "status": "PASS_PRETRAIN_COMPARISON",
+  "frozen_inputs": 197,
+  "parameter_differences": {
+    "data": [
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\statue-vr-negatives-v20\\data.yaml",
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\statue-figure-labels-v23\\data.yaml"
+    ],
+    "project": [
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-oiv7m-vr-negatives-v21-training",
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-oiv7m-figure-labels-v24-training"
+    ]
+  },
+  "initializer_equal": true,
+  "only_changed_train_labels": [
+    {
+      "image": "images\\train\\a4c79da55d1b8a9f06ba1181.jpg",
+      "split": "train"
+    },
+    {
+      "image": "images\\train\\2751fcb96bea2cda551301e0.jpg",
+      "split": "train"
+    },
+    {
+      "image": "images\\train\\79614cbf661cad1ca9399d7b.jpg",
+      "split": "train"
+    }
+  ],
+  "all_images_groups_folds_other_labels_unchanged": true,
+  "launch": "python -X utf8 Tools/MultiScene/train_statue_oiv7m_figure_labels_v24.py",
+  "preflight_failure": "Windows GBK decode before any model training; preserved in Reports/statue-oiv7m-figure-labels-v24-preflight-encoding-failed and .log",
+  "completion": false
+}

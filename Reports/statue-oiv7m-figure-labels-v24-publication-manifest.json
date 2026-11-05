@@ -1,0 +1,531 @@
+{
+  "files": [
+    {
+      "path": "Datasets/statue-figure-labels-v23/audit.json",
+      "sha256": "281fc8b941cdbbc24e12d08cc6539278777a0618c46285af7374af087076b775"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/data.yaml",
+      "sha256": "d4b89333b303d7a83be346850acf1ed5b22c7d331349404a898fef2c88d28638"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/test/15e9d6f6f56843621264fdf4.txt",
+      "sha256": "8a7d422d157db6db5275b69377ff11bd7ef6dee8287d522125f439d35e8ddb77"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/test/e86bc3f63f6196bf2bad02d4.txt",
+      "sha256": "f9c66a4eec773cf94c0d9ba4e9fbd017dc0e1c8af701e28a3fce68e6dfc049dd"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/test/fd7fe9e831b97c31d2996209.txt",
+      "sha256": "fe07571eec69a2ebff7030e75c05d251dd006fa4f76bd059d6b35d75a5a8175a"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/122737833.txt",
+      "sha256": "b781890fb68a2b12da436b5e8b28cea151bb3fba2fb91679d9540e01670b99c0"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/147897.txt",
+      "sha256": "12a7ac69827d2d0ed3f0e26496aced58ec3e541304ffb6bdcadf95b7be8dbfa5"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/153279586.txt",
+      "sha256": "504499b78034b7d8ec14ca86e21ead3ea54c50d1646b2434c1273e15c21c4fb4"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/15c0626cb46abe1a0c254600.txt",
+      "sha256": "254a9bd76f2b4dc30af5284e0506c5c0462ca9891af1971fc0f7b354445269fa"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/166565.txt",
+      "sha256": "34bb5307d28d360f059241d40d10b1bf5be4e0557a6241998421ae1837dee9ad"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/176571.txt",
+      "sha256": "0d23f311e9aaf439207d8f179a301e032715d60b3aeeadd7a5a9c398aef43189"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/184830.txt",
+      "sha256": "9924981302d8b5f4a90ed09ebecd29e14c057fb009a3ec824f63cdd53bf8ad1e"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/245560.txt",
+      "sha256": "22e6e95f7afa5cda259d02196480ea219bd20d564fddc4dc2f33a6a84a18ffb8"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/2751fcb96bea2cda551301e0.txt",
+      "sha256": "a1e82fea65b825163aa7af347446ba352c6b01bdbfc69340fc0aa0c27e2cc98c"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/279b42a5ac642bddce46add2.txt",
+      "sha256": "466e4b591352c4ecb131202aa28f715a35b5746c431062af6123ffcfa912850b"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/27b2edf2d8ae3b9dd4e47172.txt",
+      "sha256": "96ca22536143d74c47dc538b8fae731ec677d7de5ba073c6e19fd3d30cbee128"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/2e7e958669e36ea51e3d4a0d.txt",
+      "sha256": "6e66279e4a4b49a9707b65e61b9b84a4c10f07651e96990d99f9770e91f00233"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/2edd1cec479cd7231ba147a9.txt",
+      "sha256": "3f33d7d5daf045f43560d2d1e021a8e4f70527d3a6bf27052eafdcf649eb933a"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/2f127a083042ec0f4c69f00e.txt",
+      "sha256": "9a0e6b45afacddf2d035bf0f347da378a4cbc55b44192fffd2aefba11e834f64"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/30abc9852461cc7c316247e5.txt",
+      "sha256": "e9166b8fba4ca5a4a587d0d656312047bcbe85f25a446018234ffaf60356ca73"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/321517.txt",
+      "sha256": "a21f22b4e15aabd32c2226c02c94c2f65bafda9b8ca9747f71f5419296950442"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/35110e58e1e12f2dba3a9e76.txt",
+      "sha256": "5e0b63cf3bd8f223b41a34211795a30ddb15b941b589a2913d4a532b8e612206"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/3d62dd434b45f0196613bc4d.txt",
+      "sha256": "05a5197b0a3fc6adc015689b1180a020ed56012279afac3efc45f883dd8fb4b3"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/4049ad165330924d19c30ec0.txt",
+      "sha256": "be43e03ae83e5b210df816d0035dd90883564118bb4f4b3437dc232818207607"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/4166c29c814ece66e102410a.txt",
+      "sha256": "801dd5d8e490f828f3c7b0b33b12589ec39dc6dcc3fde2f9c76bf5a1509dac21"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/430522.txt",
+      "sha256": "5d5a0d8813046470718d15081c85145856cacaed33c50d311d248d56ef9000aa"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/43851215.txt",
+      "sha256": "ee43ab2bb43f975e3507501081061401bcd67f790b91c283e4c798fff96c8408"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/44abaf8f8d08ac95af1ed7e1.txt",
+      "sha256": "9068376f3550e1e7ebcbbf0139e7494634fe2f8f069564396cbca4cf2627d68c"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/48e9816f70d6de4c21eb5aad.txt",
+      "sha256": "8b35e959e81b32247c843dd67c301ae0abaaafa099887b621963dcacc69c7846"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/4aa4c62ff0b24b89ce625bda.txt",
+      "sha256": "55e5fb58e724d7ce5b52ce28b1b63c0d9866e8edf96eb6e84f6df46b048d8457"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/50605a2af61552ce1b1fc54a.txt",
+      "sha256": "84b83a4efd88eddce48714afe66381f261910b3ac9e0ad66dba0d7738fcd2af4"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/513692.txt",
+      "sha256": "d796afc8f6008d65917a08a2ce865f8abdfe5d3a6a83dfaced61da852f9761e8"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/578344.txt",
+      "sha256": "e691f1a439e68b122586033f751f3ef57aec64ab2706a10a9cc3991c3c5e6a6f"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/5e088860d71c945b87bc0d9c.txt",
+      "sha256": "6c4a01e1ba0291922655191327a8c47975f8b7d7cf69b3a3aaf9eb04f140a087"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/5ea0dcec9faac7a00f14ca1c.txt",
+      "sha256": "53ce475b6e879ce9e2726f64db77c3873257b809de5245ce252a65cb54335998"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/62250.txt",
+      "sha256": "380dfef9771a2efc467c238c9e9b75e4a5c01ebffa7bf5ea2af2b4b09ff87030"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/63124099a1e6567fe0fe17ca.txt",
+      "sha256": "e345d17d536d09634b7e49c988eb3aeb783d4ea111a5f4fce99bf0c8cc48db0d"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/6820057.txt",
+      "sha256": "aa5467455200912f4a0dcaf903bd83df624bf026ce4c41e22cc9f7f4d52f4ce1"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/6a8e3351b2f0bfdcef82109a.txt",
+      "sha256": "a54b9d3ecb77f4144a4e9a605c3bcb954e652adf7018ff12bce569775e1f8bdc"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/6e86e224c7e36481.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/77b3115d47b9df3119b7275d.txt",
+      "sha256": "807bf3ec3817a500381d44f8964c8b7694136364b658e22222cde5b86f320df7"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/783ed5b8d7b104a9bbbba79c.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/79614cbf661cad1ca9399d7b.txt",
+      "sha256": "7fd1af0f0b013374f30c3b1b02b7a886e6acd735b9d1453aadd9f11e222e879d"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/7d8d18e81d9c6f391dbbd419.txt",
+      "sha256": "fcf1ef5049ecf5d135a5a0306d04211b1640913d224dfa80c78191c9c052491b"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/81562196.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/8a092a52f7e96c99a724e823.txt",
+      "sha256": "5c4868e02507219c20c8c506f303f48770a12b009683050d6ef75d4b7b868ff3"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/91587283ee69469cd87ec940.txt",
+      "sha256": "a086807901f0a0b515cd652f5363d64fb9fb5dae2da1de8da77e83ec370571be"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/9295ab265fafd8e5.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/95264673.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/9d4595838cd3c60558347921.txt",
+      "sha256": "d2ff59272da248da11c002859feceacb3dcff0ca87c312dd7f27f1e52f6d3eaa"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/a068c56528d4d0c9dd9ed54c.txt",
+      "sha256": "e294e14181f1637e939701c30f235950752af1ff2d5718e4c0403f0debd439bd"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/a30d4429a233a5603b038b36.txt",
+      "sha256": "a3f7a8a0cd39e01d4eb9ddbd8a0cfd1396f8dcd7ac2039607bcc4632fc74e295"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/a4c79da55d1b8a9f06ba1181.txt",
+      "sha256": "1c4d3300e2d9e4a58325467aebfa7afea560fe9976fec6a6af4312008318039f"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/a4c7d9ca256ec261b63afc94.txt",
+      "sha256": "0393dd582c467db91e658ca04c6396dd48606997c27996b178b18176c1271b66"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/a556d01ac5c9f2230d693aea.txt",
+      "sha256": "c1fe3e6af8b642857391c4cf8aef06c0e219b8c77746094fd4fef27a98e435be"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/a948f98bb3c22bb2090eb66b.txt",
+      "sha256": "edbd8d91909f3aa377435c4937f106c1f82865e2bae208ec9492bebf13463633"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/aca8d0b6a7aec6e39575a034.txt",
+      "sha256": "97edf7126ee1f089704bc96c0ba22a18a6af065b9ca63394d374d0a068f1d0a1"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/ae48052ad859d46b84ca2221.txt",
+      "sha256": "fa8882d20dff8f04c8cb0792711891dc47ea30de914e62a1ff2551127d68c30c"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/ae48c173ae773288ecbbc799.txt",
+      "sha256": "38a1525894812e7115b0cb58fd48c85f387311546d60ea388e57f939ff4405de"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/c1dcd6878ef9599bf30d2367.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/c61e971746177c249ae72410.txt",
+      "sha256": "d5b4c13dca526981e8cca2ba63db342f760115ac30fe12cb0de7ec0677f58fc1"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/c95caefa483cad49fdf8f291.txt",
+      "sha256": "850d963bd084b0e36e889f2ee947b4b8a2bbd98076e791a9d0967c55003d2781"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/ceb66349f26461cada96e6c1.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/commons-equipment-162865375.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/commons-equipment-163433632.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/commons-equipment-184859567.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/commons-equipment-188666894.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/commons-equipment-199111918.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/commons-equipment-51016430.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/commons-equipment-87607266.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/commons-statue-10546900.txt",
+      "sha256": "29ae022127dcafaa0b808fbc1f0bd6b55732a0abc906b27c8c1846ccaeecb716"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/commons-statue-136068441.txt",
+      "sha256": "a97d82c8977e4af72cde3ca0a43a89f9f0678b71ceac8a71d2fc4271177925c7"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/commons-statue-66942186.txt",
+      "sha256": "e5ea15779d3d373e75326ebbd5dae895aaf07193e2d79b380464ed3a48e5f01d"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/commons-statue-92099021.txt",
+      "sha256": "7eb2fae1fc8a55c028a2fa3d1218e6890bad3c7a33d235df770cbcbe713f9e99"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/d5a4b7c4c71745b3d4f94bd1.txt",
+      "sha256": "839b7dcf20acf2fe9f33d01f974fe7b69c8075d851be76722e7e163ba554ff15"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/e2ce4903da8ab6bb9449a6a9.txt",
+      "sha256": "3ce8e7a49d6d1b75f067c0e39261a48243a6bf542e5bdada72a81124261415cf"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/e4297c78c32dfb18cbfc7637.txt",
+      "sha256": "597d3a30afafd978ca0ae6ecaed2f96b4be072229f02baeaf5f32cf7c6d09d6c"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/f0ad160c9f68d961c16920bb.txt",
+      "sha256": "276373c582a4c689e2e06b463c7f8885fa6e82dc3428038d120d5c652fbf89ac"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/f525adb3fde3cb5fa4a2ff48.txt",
+      "sha256": "be003a3ff73b89625bca71636e3a9b9f919a936fde9fec14d9ebc9a485bac448"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/fd8ef8de02d8ce06e7f5ce79.txt",
+      "sha256": "d625788b08828183068fcd7f9949a20cb4e53a990442a0d0e646a041441a79b9"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/train/laptop-human-crop.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/val/108fa4288e5b91c1668841ab.txt",
+      "sha256": "96415cc6557da883cb4bcbadbfa30d86c952fd65a8abbf9370dafe108593ed32"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/val/1b81a10a874a5ad6c110968c.txt",
+      "sha256": "55b7828e233e283f9a1c5182a787ff5016a74d07c7528a982beb890817ffac98"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/val/1bb4847d6fdd0c2f6bf87e22.txt",
+      "sha256": "2fa789d10a7080db463e61e28dfefad8fd773609ba69880c5b6c85e7c8c601cb"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/val/4ab3df40f3490a06ef4998b5.txt",
+      "sha256": "34c7107ce88ae14f305b0d26631ab3fea1970de13b3d8f3f299393a1740e56b1"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/val/a5bc5fc3ae440046596e0a54.txt",
+      "sha256": "90f6c81918097086ab7fc992d3a01df23b6fb319669331d26ba910e656db382f"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/val/aeb65d65f8b99d393ce4ae1e.txt",
+      "sha256": "d1e4c6d2598bbddf625016478080750f22922c304f605036f8a32c3d5c7e4cf3"
+    },
+    {
+      "path": "Datasets/statue-figure-labels-v23/labels/val/e2ce7aaa49ea84334e86ffb9.txt",
+      "sha256": "7d6bcc8283bf3d356bac329b1f2309fe96670b5bfc07ad692c6d081a32b0088f"
+    },
+    {
+      "path": "Reports/statue-figure-labels-v24-launch-audit.json",
+      "sha256": "5d0055b6cc64bd7fff0f8babca30975e37cf1305afb8b0a3bbecffedf3d4da3e"
+    },
+    {
+      "path": "Reports/statue-figure-labels-v24-sampling-plan.json",
+      "sha256": "3fda0a0c1a89d216c9c98cc6935dc9804e2c599c9e4010d4d90426a9525996bb"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-completed-audit.json",
+      "sha256": "f1a2d4fd57ad984ba912488393bf61f588623db9b70f5a5ca43b1598c6cd8da6"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-decision.json",
+      "sha256": "0c81fdb82b03436b56a52f6a2fc376263d1f91951a326bb9d77d756d2101f4f6"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-final-val/report.json",
+      "sha256": "0ca7b5aa1ebb9b61377bdcf7fb13b1906f52e10965e353c237a8b8ff5a2514e9"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-office-regression-counted.json",
+      "sha256": "e014a621f755a630170f7f531c8a1b1315181087a6d4482ebe23893d9d959755"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-office-regression.json",
+      "sha256": "f9edb303fa1344e6ff959a4385d9fd0baa9500d483e2a0d761aa0a14dfca9bc9"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/completion.json",
+      "sha256": "f2bc838d352887031ba7a7ef8d2361a6ded8ed0de005eb31846ffac48da9c40d"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/run.json",
+      "sha256": "0582b96e8c468498596b2c34c9afc03d1d7a3cbedd9e7be9a3518c5ddf21e6dd"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-001/report.json",
+      "sha256": "215b6d536edfa84b73726c52b7f3988b2750bc122bca9af7bdda96de97931b5c"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-002/report.json",
+      "sha256": "4377078a243c14cc208268cb5eaabaffeaebed7d309b56e738b33fa746a49d9a"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-003/report.json",
+      "sha256": "7240359eb4fdff8a5c546f41738659d633384d4fba3f3654732011536fdd236d"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-004/report.json",
+      "sha256": "3b0d11f7985c20c5a3a72768265e3360de5b43c4ad8c0bf32875ac0187a5208d"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-005/report.json",
+      "sha256": "7a40db8c579f63d3adbfa354bbb1428956025043080f541708a78d597bfb717c"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-006/report.json",
+      "sha256": "7cae009dbd69cde036a5b86fdaaeec15096c4ca7fd53254606fb815b2a2f6b32"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-007/report.json",
+      "sha256": "ba4ba68a6617c302c87df3fc06ddee2b3def40953935c091e98866b9c9590e7f"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-008/report.json",
+      "sha256": "8054de825336684952d0e41b6ab75b2f2de492c0132fd6ad8e7f1ffa907a0c6e"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-009/report.json",
+      "sha256": "2db26e89488cd916e9d1d96e88dd090f7a48b0b849ce95109cfce7e729f0f504"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-010/report.json",
+      "sha256": "6fb74f5097c62d2c339333e3683c117daefd5a819f6a4d4c205173c62f848cec"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-011/report.json",
+      "sha256": "30b8208874c40094ffadbad87e843cb9c0fb4e548bbeb5b7d46b15d8d748ca32"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-012/report.json",
+      "sha256": "45f1034a432412459391d17fcf31ee1477d0b87fa816ff9868dbdc64180c6097"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-013/report.json",
+      "sha256": "c821a48ce5e05a23ffbd19940088b05e49636dfae9f93aedb29c1c20db6dbcc9"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-014/report.json",
+      "sha256": "eae71e34855b1b0ffad268db5dcabe0130fb3cd4c6a578a208c8c3deb3416725"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-015/report.json",
+      "sha256": "38a3b2ae5f1e30aa5bd2df181b60b8a48d87b4fa290ebbe766216bf3da50f4dc"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-016/report.json",
+      "sha256": "37201f065cfc4fa7ac6eab518e395274a31a6f817584a3412246a55f31161b4c"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-017/report.json",
+      "sha256": "1af5281468c9a3154896887f5ca53d3fd3f007ba5deec250ccb529d9994df817"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-018/report.json",
+      "sha256": "8e47d9bbfe19eef6f70eb845bfabab8074e72f1307da2c792a07b6504cdff808"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-019/report.json",
+      "sha256": "2c09e10f1312ac8d7fc0dee5bba8323cba32809b8d510d8b6b5336e74531be03"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/epoch-020/report.json",
+      "sha256": "9b4c34cadb736ce764e0ca2b5df9efcae43f52f1ea543aea062d39264e5267fa"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/runtime-selection/selection.json",
+      "sha256": "681c899166125373a5d44330aa705f706eaea18b85e51ff47de4694eb2bce404"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/train/args.yaml",
+      "sha256": "acdbaab67544275f5d6bc2d143aa17257ed2878927db15bc87bfafc65c979114"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/train/results.csv",
+      "sha256": "76da347392bd38da3fe41af47bf36049803f90d73cc5d59713fc30b937769933"
+    },
+    {
+      "path": "Reports/statue-oiv7m-figure-labels-v24-training/trainer-initializer-verification.json",
+      "sha256": "52f230e545d2ca23f24c05d4da4451adcaa8688ea0c6eb490cb505a2fe3a6008"
+    },
+    {
+      "path": "Reports/statue-train-label-policy-v23/correction-draft.json",
+      "sha256": "85577d2a1390c34f9e5f4c8af41a3805b51ae6fbec7ec4e150f90d1f3771a8d5"
+    },
+    {
+      "path": "Reports/statue-train-label-policy-v23/corrections-reviewed.json",
+      "sha256": "67ffd6e30100a07598ff18bce04bc121236e957c92f365b2eda2ff032802e832"
+    },
+    {
+      "path": "Reports/statue-train-label-policy-v23/inventory.json",
+      "sha256": "a52188b5682819e12c702196394ee9d5911fc108ceb7d2b7b650fb737728d68e"
+    },
+    {
+      "path": "Tools/MultiScene/audit_statue_oiv7m_figure_labels_v24.py",
+      "sha256": "0b1c536720fd570f29499b4b4e6216cf0166e2c3a5affc9314dfacd531d04c63"
+    },
+    {
+      "path": "Tools/MultiScene/prepare_statue_figure_labels_v23.py",
+      "sha256": "e033e7b8ae3512b61e70fab34545ba2857344d97847b5247a0aed96259f50c9f"
+    },
+    {
+      "path": "Tools/MultiScene/preserved_medium_statue_v24_trainer.py",
+      "sha256": "a65582ccbb3fc8f2511aa69c05d7e11a77e398ff7333084d8747213b0347eafe"
+    },
+    {
+      "path": "Tools/MultiScene/train_statue_oiv7m_figure_labels_v24.py",
+      "sha256": "9143c39f523ad6862f129e67b45d165f493db5ab838203213fe958b546dbef96"
+    },
+    {
+      "path": "object-detection-demo/weights/candidates/statue-oiv7m-figure-labels-v24/best.pt",
+      "sha256": "df431f4b8c4f578456319731b97f9bc48c778a89e84bbddf4925e55d2fef8676"
+    },
+    {
+      "path": "object-detection-demo/weights/candidates/statue-oiv7m-figure-labels-v24/model.json",
+      "sha256": "7a02f70a82a949d82f4fe259eb747a3e746a3b6d4e3a4c117463dcb3d14a06c8"
+    },
+    {
+      "path": "object-detection-demo/weights/candidates/statue-oiv7m-figure-labels-v24/train-args.yaml",
+      "sha256": "acdbaab67544275f5d6bc2d143aa17257ed2878927db15bc87bfafc65c979114"
+    }
+  ],
+  "scope": "Actual CUDA twenty-epoch training, three TRAIN figure-boundary corrections and observed-office negative regression rejection. VAL19TP0FP2FN; office8photos1FP. No fresh TEST, production routing or PICO device acceptance. Private office overlays/source photos and intermediate weights omitted.",
+  "training_command": "python -X utf8 Tools/MultiScene/train_statue_oiv7m_figure_labels_v24.py",
+  "reproduction_limitation": "Training output immutable; use isolated checkout/output. data.yaml absolute paths require regeneration on target OS. No TEST or private heldout frame may select checkpoint/threshold or enter TRAIN."
+}

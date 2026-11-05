@@ -1,0 +1,180 @@
+{
+  "mode": "baseline",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    },
+    {
+      "id": "lvis-v1-train-statue",
+      "license": "LVIS annotations CC BY 4.0; images verified CC BY 2.0",
+      "url": "https://www.lvisdataset.org/",
+      "reviewed": true,
+      "review_scope": "Only explicitly selected samples in this revision"
+    },
+    {
+      "id": "lvis-v1-val-statue",
+      "license": "LVIS annotations CC BY 4.0; images verified CC BY 2.0",
+      "url": "https://www.lvisdataset.org/",
+      "reviewed": true,
+      "review_scope": "Only explicitly selected samples in this revision"
+    },
+    {
+      "id": "commons-equipment-negative-v1",
+      "license": "Per-image CC BY 2.0 or CC BY-SA 4.0; retain attribution and applicable ShareAlike",
+      "url": "https://commons.wikimedia.org/wiki/Category:Virtual_reality_headsets",
+      "reviewed": true
+    },
+    {
+      "id": "commons-statue-positive-v1",
+      "reviewed": true,
+      "license": "Per-image CC BY 3.0 or CC BY-SA 4.0; manual visible-figure annotations, attribution and applicable ShareAlike retained",
+      "url": "https://commons.wikimedia.org/wiki/Category:Statues_of_children"
+    },
+    {
+      "id": "commons-statue-rear-v17",
+      "reviewed": true,
+      "license": "Per-photo CC BY 2/4, CC BY-SA4 or CC0; credit and ShareAlike retained",
+      "url": "https://commons.wikimedia.org/wiki/Category:Rear_views_of_statues"
+    },
+    {
+      "id": "commons-statue-vr-negatives-v20",
+      "reviewed": true,
+      "license": "Per-photo CC BY 2/4, CC BY-SA4 or CC0; credit and ShareAlike retained",
+      "url": "https://commons.wikimedia.org/wiki/Category:People_wearing_virtual_reality_headsets"
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated",
+    "Statue class does not establish historical identity, age or full 3D pose"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-oiv7m-figure-labels-v24-training\\train\\weights\\last.pt",
+  "architecture": "DetectionModel",
+  "sha256": "39946890a597212b0b0f1d659783874aed018691b4fae86c1598c73ade1139b1",
+  "dataset_version": "281fc8b941cdbbc24e12d08cc6539278777a0618c46285af7374af087076b775",
+  "split": "val",
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "Statue"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "Statue",
+      "precision": 0.7870151386531067,
+      "recall": 0.9047619047619048,
+      "mAP50": 0.8349239350912778,
+      "mAP50_95": 0.6770809568080105,
+      "labels": 21
+    }
+  ],
+  "images": 7,
+  "excluded_samples": [],
+  "ground_truth_instances": 21,
+  "false_positive_images": 1,
+  "per_image": [
+    {
+      "image": "images\\val\\a5bc5fc3ae440046596e0a54.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 1293.237500009127
+    },
+    {
+      "image": "images\\val\\1bb4847d6fdd0c2f6bf87e22.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 215.9553999954369
+    },
+    {
+      "image": "images\\val\\aeb65d65f8b99d393ce4ae1e.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 285.2164000069024
+    },
+    {
+      "image": "images\\val\\1b81a10a874a5ad6c110968c.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 206.73960000567604
+    },
+    {
+      "image": "images\\val\\e2ce7aaa49ea84334e86ffb9.jpg",
+      "ground_truth": 14,
+      "true_positive": 10,
+      "false_positive": 5,
+      "false_negative": 4,
+      "inference_ms": 202.62860000366345
+    },
+    {
+      "image": "images\\val\\4ab3df40f3490a06ef4998b5.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 212.74730000004638
+    },
+    {
+      "image": "images/val/108fa4288e5b91c1668841ab.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 212.47420000145212
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "Statue",
+      "true_positive": 17,
+      "false_positive": 5,
+      "false_negative": 4,
+      "precision": 0.7727272727272727,
+      "recall": 0.8095238095238095
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 375.57128571747205,
+  "p95_inference_ms": 990.8311700084589,
+  "cold_first_image_ms": 1293.237500009127,
+  "warm_mean_ms": 222.6269166688629,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images\\val\\e2ce7aaa49ea84334e86ffb9.jpg",
+      "example": "error-e2ce7aaa49ea84334e86ffb9.jpg",
+      "ground_truth": 14,
+      "true_positives": 10,
+      "false_positives": 5,
+      "false_negatives": 4,
+      "confidence": 0.65
+    }
+  ],
+  "allowed_classes": [
+    "Statue"
+  ],
+  "max_det": 32,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}

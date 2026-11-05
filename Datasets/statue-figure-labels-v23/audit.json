@@ -1,0 +1,3303 @@
+{
+  "task": "detect",
+  "seed": 4747,
+  "sources": [
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    },
+    {
+      "id": "lvis-v1-train-statue",
+      "license": "LVIS annotations CC BY 4.0; images verified CC BY 2.0",
+      "url": "https://www.lvisdataset.org/",
+      "reviewed": true,
+      "review_scope": "Only explicitly selected samples in this revision"
+    },
+    {
+      "id": "lvis-v1-val-statue",
+      "license": "LVIS annotations CC BY 4.0; images verified CC BY 2.0",
+      "url": "https://www.lvisdataset.org/",
+      "reviewed": true,
+      "review_scope": "Only explicitly selected samples in this revision"
+    },
+    {
+      "id": "commons-equipment-negative-v1",
+      "license": "Per-image CC BY 2.0 or CC BY-SA 4.0; retain attribution and applicable ShareAlike",
+      "url": "https://commons.wikimedia.org/wiki/Category:Virtual_reality_headsets",
+      "reviewed": true
+    },
+    {
+      "id": "commons-statue-positive-v1",
+      "reviewed": true,
+      "license": "Per-image CC BY 3.0 or CC BY-SA 4.0; manual visible-figure annotations, attribution and applicable ShareAlike retained",
+      "url": "https://commons.wikimedia.org/wiki/Category:Statues_of_children"
+    },
+    {
+      "id": "commons-statue-rear-v17",
+      "reviewed": true,
+      "license": "Per-photo CC BY 2/4, CC BY-SA4 or CC0; credit and ShareAlike retained",
+      "url": "https://commons.wikimedia.org/wiki/Category:Rear_views_of_statues"
+    },
+    {
+      "id": "commons-statue-vr-negatives-v20",
+      "reviewed": true,
+      "license": "Per-photo CC BY 2/4, CC BY-SA4 or CC0; credit and ShareAlike retained",
+      "url": "https://commons.wikimedia.org/wiki/Category:People_wearing_virtual_reality_headsets"
+    }
+  ],
+  "unique_images": 86,
+  "duplicates_removed": 0,
+  "samples": [
+    {
+      "image": "images\\train\\aca8d0b6a7aec6e39575a034.jpg",
+      "sha256": "aca8d0b6a7aec6e39575a034c45993de5be07d617ae6c321141fac7e970b01b5",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/mathplourde/",
+      "original_id": "6dbcd715a2aae68c",
+      "decoded_rgb_sha256": "246c73a28db861cb648e10d202dc04df027e8326e18c245df53b75547f5bb97b",
+      "label": "labels/train/aca8d0b6a7aec6e39575a034.txt",
+      "label_sha256": "97edf7126ee1f089704bc96c0ba22a18a6af065b9ca63394d374d0a068f1d0a1"
+    },
+    {
+      "image": "images\\val\\a5bc5fc3ae440046596e0a54.jpg",
+      "sha256": "a5bc5fc3ae440046596e0a543d34a834b97088598e59a2b2f0b1f216bd2c99ed",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/veritatem/",
+      "original_id": "77aa05f37f9322d0",
+      "decoded_rgb_sha256": "b5527b494ca301b5a35aeeeea550e6cb01c39c8a8229da23c0e6d00bf8469985",
+      "label": "labels/val/a5bc5fc3ae440046596e0a54.txt",
+      "label_sha256": "90f6c81918097086ab7fc992d3a01df23b6fb319669331d26ba910e656db382f"
+    },
+    {
+      "image": "images\\train\\77b3115d47b9df3119b7275d.jpg",
+      "sha256": "77b3115d47b9df3119b7275d63aee5a52489fdfd1b785e2032d3354dbe6060bd",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/jimmyg/",
+      "original_id": "7953df9f00a3d067",
+      "decoded_rgb_sha256": "40da07fef8fb79a7cf80220ce5f87bf022517c7186de579c4106da8eca3fa646",
+      "label": "labels/train/77b3115d47b9df3119b7275d.txt",
+      "label_sha256": "807bf3ec3817a500381d44f8964c8b7694136364b658e22222cde5b86f320df7"
+    },
+    {
+      "image": "images\\train\\5ea0dcec9faac7a00f14ca1c.jpg",
+      "sha256": "5ea0dcec9faac7a00f14ca1ce7437779511c70ce5a1dce5e5a514c9917d7ed16",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/gatz125/",
+      "original_id": "7b3c99d0ae458835",
+      "decoded_rgb_sha256": "3899e5f31384cf486d928a3a5b3f57505ea0934a5554ad380feb7fa30d22940c",
+      "label": "labels/train/5ea0dcec9faac7a00f14ca1c.txt",
+      "label_sha256": "53ce475b6e879ce9e2726f64db77c3873257b809de5245ce252a65cb54335998"
+    },
+    {
+      "image": "images\\train\\48e9816f70d6de4c21eb5aad.jpg",
+      "sha256": "48e9816f70d6de4c21eb5aad43ece282e039e5f5d8a3ab382c9d07de1b112a77",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/iphoneshoot/",
+      "original_id": "7d1cb6eec3e2d13f",
+      "decoded_rgb_sha256": "b49ce47fd8d7a0387c9876e99f3b7361c5f08f441b156c13d64a413b5319b6e9",
+      "label": "labels/train/48e9816f70d6de4c21eb5aad.txt",
+      "label_sha256": "8b35e959e81b32247c843dd67c301ae0abaaafa099887b621963dcacc69c7846"
+    },
+    {
+      "image": "images\\train\\d5a4b7c4c71745b3d4f94bd1.jpg",
+      "sha256": "d5a4b7c4c71745b3d4f94bd1b979c0d7eaa5520740c1c43254348a136647f1ad",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/darrelbirkett/",
+      "original_id": "806d0711b8225f61",
+      "decoded_rgb_sha256": "6aa38d6d4cecc378f62b66bda07a8b7caabd91ddfae167c0bc41f62d61ce6a14",
+      "label": "labels/train/d5a4b7c4c71745b3d4f94bd1.txt",
+      "label_sha256": "839b7dcf20acf2fe9f33d01f974fe7b69c8075d851be76722e7e163ba554ff15"
+    },
+    {
+      "image": "images\\train\\2f127a083042ec0f4c69f00e.jpg",
+      "sha256": "2f127a083042ec0f4c69f00e52f69886ecddb4faee131ed79165f32a4f6e0b17",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/tekniskamuseet/",
+      "original_id": "8432dd3a078f6a44",
+      "decoded_rgb_sha256": "6cc637bde37ba28fbaabaf5b57f57f99ea6356b95a71923e06080e05bb856bd8",
+      "label": "labels/train/2f127a083042ec0f4c69f00e.txt",
+      "label_sha256": "9a0e6b45afacddf2d035bf0f347da378a4cbc55b44192fffd2aefba11e834f64"
+    },
+    {
+      "image": "images\\train\\5e088860d71c945b87bc0d9c.jpg",
+      "sha256": "5e088860d71c945b87bc0d9c7f2f5d9afbcaab2af996527bbe91592fb218c8f5",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/franciscoantunes/",
+      "original_id": "8a1acbd94021367c",
+      "decoded_rgb_sha256": "e815d1d815568d73b16a01f61563d1b0a75e187a3c589eb30c5d6798207bf612",
+      "label": "labels/train/5e088860d71c945b87bc0d9c.txt",
+      "label_sha256": "6c4a01e1ba0291922655191327a8c47975f8b7d7cf69b3a3aaf9eb04f140a087"
+    },
+    {
+      "image": "images\\train\\a4c79da55d1b8a9f06ba1181.jpg",
+      "sha256": "a4c79da55d1b8a9f06ba1181f881ee484f29ef41602a38debc0b0cbb60822d65",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/puffjet/",
+      "original_id": "8d619d61c4482c2e",
+      "decoded_rgb_sha256": "0924f0009375bfb9d4a6bfbebe1477771dc90923ac46a34a0bd8b63b6b9ec73f",
+      "label": "labels/train/a4c79da55d1b8a9f06ba1181.txt",
+      "label_sha256": "1c4d3300e2d9e4a58325467aebfa7afea560fe9976fec6a6af4312008318039f",
+      "review": "Reports/statue-train-label-policy-v23/corrections-reviewed.json",
+      "annotation_status": "TRAIN_FIGURE_BOUNDARY_CORRECTED"
+    },
+    {
+      "image": "images\\val\\1bb4847d6fdd0c2f6bf87e22.jpg",
+      "sha256": "1bb4847d6fdd0c2f6bf87e22ee8de11f9e90040e339d7e3add207612b6367f5d",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/therealdavidfrancis/",
+      "original_id": "8d8a4c7f721a53c6",
+      "decoded_rgb_sha256": "7fd6f887dd2caa46111aa4b9932a34cad507f9a5c2fcfbc45b51eb3bf87ba401",
+      "label": "labels/val/1bb4847d6fdd0c2f6bf87e22.txt",
+      "label_sha256": "2fa789d10a7080db463e61e28dfefad8fd773609ba69880c5b6c85e7c8c601cb"
+    },
+    {
+      "image": "images\\train\\4166c29c814ece66e102410a.jpg",
+      "sha256": "4166c29c814ece66e102410a51535b23dd5a98d96b005964e400ecf01489de33",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/alicepopkorn/",
+      "original_id": "8ff9c2dbfaf2608d",
+      "decoded_rgb_sha256": "c8e4a5906a3a6065a9d694b54ad759a2a49f0d276ed8548dee84c838b7e4af3f",
+      "label": "labels/train/4166c29c814ece66e102410a.txt",
+      "label_sha256": "801dd5d8e490f828f3c7b0b33b12589ec39dc6dcc3fde2f9c76bf5a1509dac21"
+    },
+    {
+      "image": "images\\train\\a556d01ac5c9f2230d693aea.jpg",
+      "sha256": "a556d01ac5c9f2230d693aea1d46cd5bff1a07d749ecb230a0116346157af968",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/helenzhang/",
+      "original_id": "957e3ed066e0bcb1",
+      "decoded_rgb_sha256": "5751f6214a004bd7b8ef2417fe7b44f26b900a351c4bbb1462fb8c823fa80836",
+      "label": "labels/train/a556d01ac5c9f2230d693aea.txt",
+      "label_sha256": "c1fe3e6af8b642857391c4cf8aef06c0e219b8c77746094fd4fef27a98e435be"
+    },
+    {
+      "image": "images\\train\\2e7e958669e36ea51e3d4a0d.jpg",
+      "sha256": "2e7e958669e36ea51e3d4a0d2788a0dd1e9e29e86f676539f419f43a934e9ca9",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/irene2005/",
+      "original_id": "9614be29640e8027",
+      "decoded_rgb_sha256": "cba9c44bd83a64681d4015d714ef01eb43ecbf81ef43b4e2d9976c32535e2705",
+      "label": "labels/train/2e7e958669e36ea51e3d4a0d.txt",
+      "label_sha256": "6e66279e4a4b49a9707b65e61b9b84a4c10f07651e96990d99f9770e91f00233"
+    },
+    {
+      "image": "images\\val\\aeb65d65f8b99d393ce4ae1e.jpg",
+      "sha256": "aeb65d65f8b99d393ce4ae1e084fd87abff9fd8ef2913303a6c7fc9d8149b178",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/the-o/",
+      "original_id": "a5a409909e3f720c",
+      "decoded_rgb_sha256": "db149c904c0285c4bbb9faea685cdb805df56950897367245202d0fcea4390fd",
+      "label": "labels/val/aeb65d65f8b99d393ce4ae1e.txt",
+      "label_sha256": "d1e4c6d2598bbddf625016478080750f22922c304f605036f8a32c3d5c7e4cf3"
+    },
+    {
+      "image": "images\\train\\ae48052ad859d46b84ca2221.jpg",
+      "sha256": "ae48052ad859d46b84ca2221f69f4ce4b43ee5198f63b5bdbefa1a6e7e6b293b",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/ptwo/",
+      "original_id": "b1607ca77bd11c84",
+      "decoded_rgb_sha256": "f802918295aba2616f7ad08bda01ffd1141c4ada2fbb2e32c8adcdff77828b5a",
+      "label": "labels/train/ae48052ad859d46b84ca2221.txt",
+      "label_sha256": "fa8882d20dff8f04c8cb0792711891dc47ea30de914e62a1ff2551127d68c30c"
+    },
+    {
+      "image": "images\\train\\2751fcb96bea2cda551301e0.jpg",
+      "sha256": "2751fcb96bea2cda551301e02a211c8b4ca776b0b7b2f4f169dee115733a6d7b",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/meagankieffer/",
+      "original_id": "b26a5ae2342d3bd3",
+      "decoded_rgb_sha256": "a1236869c014a5ef21c3974bc50a7362436ba4c95e0c9c1e621661a383a4878d",
+      "label": "labels/train/2751fcb96bea2cda551301e0.txt",
+      "label_sha256": "a1e82fea65b825163aa7af347446ba352c6b01bdbfc69340fc0aa0c27e2cc98c",
+      "review": "Reports/statue-train-label-policy-v23/corrections-reviewed.json",
+      "annotation_status": "TRAIN_FIGURE_BOUNDARY_CORRECTED"
+    },
+    {
+      "image": "images\\train\\fd8ef8de02d8ce06e7f5ce79.jpg",
+      "sha256": "fd8ef8de02d8ce06e7f5ce799bc4ae216a9502681b360aab500577d6d71dbcaf",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/26211269@N05/",
+      "original_id": "b3ceb593a122f4d6",
+      "decoded_rgb_sha256": "9e82e97f4e54a4e79d18c3b883834a9367ae3cecc33542a75da2072ea3918837",
+      "label": "labels/train/fd8ef8de02d8ce06e7f5ce79.txt",
+      "label_sha256": "d625788b08828183068fcd7f9949a20cb4e53a990442a0d0e646a041441a79b9"
+    },
+    {
+      "image": "images\\val\\1b81a10a874a5ad6c110968c.jpg",
+      "sha256": "1b81a10a874a5ad6c110968ce12aa3bfe9a9f44988a487642c5a0bbae5b368f1",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/antmoose/",
+      "original_id": "b3d471ee33c7d403",
+      "decoded_rgb_sha256": "6b6405545e049e4720b90890b83b21c329e42b53294aec51ca53bc345297bd96",
+      "label": "labels/val/1b81a10a874a5ad6c110968c.txt",
+      "label_sha256": "55b7828e233e283f9a1c5182a787ff5016a74d07c7528a982beb890817ffac98"
+    },
+    {
+      "image": "images\\train\\e4297c78c32dfb18cbfc7637.jpg",
+      "sha256": "e4297c78c32dfb18cbfc7637bcf62fc39b6e1502d18198334b61638433c21450",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/rayandbee/",
+      "original_id": "b85fffa652ba79fc",
+      "decoded_rgb_sha256": "804d09d994c6feb75abeb9689f85ac23fa6f2da97df5eea750a2825973ac0b9c",
+      "label": "labels/train/e4297c78c32dfb18cbfc7637.txt",
+      "label_sha256": "597d3a30afafd978ca0ae6ecaed2f96b4be072229f02baeaf5f32cf7c6d09d6c"
+    },
+    {
+      "image": "images\\val\\e2ce7aaa49ea84334e86ffb9.jpg",
+      "sha256": "e2ce7aaa49ea84334e86ffb9a4ab20124499df5ce0492fd7cc5d12181149c2ae",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/otosphotos/",
+      "original_id": "b9463f248c92d540",
+      "decoded_rgb_sha256": "121659660d7c0d602ca6903219a10ad121840d56f0fdc615713f18cbb2a21d0f",
+      "label": "labels/val/e2ce7aaa49ea84334e86ffb9.txt",
+      "label_sha256": "7d6bcc8283bf3d356bac329b1f2309fe96670b5bfc07ad692c6d081a32b0088f"
+    },
+    {
+      "image": "images\\train\\8a092a52f7e96c99a724e823.jpg",
+      "sha256": "8a092a52f7e96c99a724e8231465cdcb07d8b8ff50712e3e9d80c2d33ae0c5de",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/kyletaylor/",
+      "original_id": "bcad33919b9ea92a",
+      "decoded_rgb_sha256": "39bd27469bc3817bc8c99aec8ac197be53a63bacfdf7d37c5aca3b742f01e901",
+      "label": "labels/train/8a092a52f7e96c99a724e823.txt",
+      "label_sha256": "5c4868e02507219c20c8c506f303f48770a12b009683050d6ef75d4b7b868ff3"
+    },
+    {
+      "image": "images\\train\\91587283ee69469cd87ec940.jpg",
+      "sha256": "91587283ee69469cd87ec9403ba29bb1822ab9ebdf70cb368ae60f449b9b1cd7",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/codepo8/",
+      "original_id": "bdac854c142bd6b2",
+      "decoded_rgb_sha256": "1f999d08c4f16e53eae1c78e97431292c274febbb917a4b40d7e22d9d4eb56fe",
+      "label": "labels/train/91587283ee69469cd87ec940.txt",
+      "label_sha256": "a086807901f0a0b515cd652f5363d64fb9fb5dae2da1de8da77e83ec370571be"
+    },
+    {
+      "image": "images\\train\\3d62dd434b45f0196613bc4d.jpg",
+      "sha256": "3d62dd434b45f0196613bc4dbc94c4ac0073d1dd2518e7daf97ed04d9750fd60",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/elias_daniel/",
+      "original_id": "c278bc9bd734dbf0",
+      "decoded_rgb_sha256": "02440814258f47a2006dc151538d0ce9c3a4a8e4efd3da6962043adad1dc9986",
+      "label": "labels/train/3d62dd434b45f0196613bc4d.txt",
+      "label_sha256": "05a5197b0a3fc6adc015689b1180a020ed56012279afac3efc45f883dd8fb4b3"
+    },
+    {
+      "image": "images\\train\\7d8d18e81d9c6f391dbbd419.jpg",
+      "sha256": "7d8d18e81d9c6f391dbbd41940af31044f50a908abed5224998a586fb4bae537",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/vitike/",
+      "original_id": "c99de50488916ffd",
+      "decoded_rgb_sha256": "0b9ae0fdce481d486ab47500ffcbf2d73405a1585a950740911c4950b86e50c9",
+      "label": "labels/train/7d8d18e81d9c6f391dbbd419.txt",
+      "label_sha256": "fcf1ef5049ecf5d135a5a0306d04211b1640913d224dfa80c78191c9c052491b"
+    },
+    {
+      "image": "images\\train\\f525adb3fde3cb5fa4a2ff48.jpg",
+      "sha256": "f525adb3fde3cb5fa4a2ff48c8ebf7ad9e0dc00cf551e73430ab581761e8af64",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/gareth1953/",
+      "original_id": "cd0f2b7ac455df74",
+      "decoded_rgb_sha256": "2bd04e6f60d2d3fe59633a4fa1a5060ddefa3e28e77acf4735c01e653ef88450",
+      "label": "labels/train/f525adb3fde3cb5fa4a2ff48.txt",
+      "label_sha256": "be003a3ff73b89625bca71636e3a9b9f919a936fde9fec14d9ebc9a485bac448"
+    },
+    {
+      "image": "images\\train\\27b2edf2d8ae3b9dd4e47172.jpg",
+      "sha256": "27b2edf2d8ae3b9dd4e47172853695b3ca52478efe31199563bef1f3809bce5a",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/mathplourde/",
+      "original_id": "dba4fe6a809fc7c2",
+      "decoded_rgb_sha256": "657417c0e599e90b4747a9d26902bd9cd3ffdf4081fb0994c4a94391412fcef8",
+      "label": "labels/train/27b2edf2d8ae3b9dd4e47172.txt",
+      "label_sha256": "96ca22536143d74c47dc538b8fae731ec677d7de5ba073c6e19fd3d30cbee128"
+    },
+    {
+      "image": "images\\train\\79614cbf661cad1ca9399d7b.jpg",
+      "sha256": "79614cbf661cad1ca9399d7b37a0d086a340472f0e48e1f6e2deeaf0147a6245",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/woodcarvinglovers/",
+      "original_id": "dc4b1f2806e832fb",
+      "decoded_rgb_sha256": "f5ac17b94b49563d6ade610d037b6c5cc7cd76214ff491433fba8fefb8fda8f0",
+      "label": "labels/train/79614cbf661cad1ca9399d7b.txt",
+      "label_sha256": "7fd1af0f0b013374f30c3b1b02b7a886e6acd735b9d1453aadd9f11e222e879d",
+      "review": "Reports/statue-train-label-policy-v23/corrections-reviewed.json",
+      "annotation_status": "TRAIN_FIGURE_BOUNDARY_CORRECTED"
+    },
+    {
+      "image": "images\\train\\a30d4429a233a5603b038b36.jpg",
+      "sha256": "a30d4429a233a5603b038b361a7d670532703b7f5681fd5221baed9dfee913a4",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/davidht/",
+      "original_id": "dd129ab17ac9a6ef",
+      "decoded_rgb_sha256": "733059fb09ef85ca9e07db4acf512cee9665964f6bf778473c05c93d840597cd",
+      "label": "labels/train/a30d4429a233a5603b038b36.txt",
+      "label_sha256": "a3f7a8a0cd39e01d4eb9ddbd8a0cfd1396f8dcd7ac2039607bcc4632fc74e295"
+    },
+    {
+      "image": "images\\train\\a4c7d9ca256ec261b63afc94.jpg",
+      "sha256": "a4c7d9ca256ec261b63afc944620f665803f67dca316b450a4d8f3b5dc800dca",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/charlesroper/",
+      "original_id": "e6c312897b118a3b",
+      "decoded_rgb_sha256": "66159b1c00d6741fc6800e632e09ea5793a02e90e90b2ddace7fd8b169acf2f3",
+      "label": "labels/train/a4c7d9ca256ec261b63afc94.txt",
+      "label_sha256": "0393dd582c467db91e658ca04c6396dd48606997c27996b178b18176c1271b66"
+    },
+    {
+      "image": "images\\train\\15c0626cb46abe1a0c254600.jpg",
+      "sha256": "15c0626cb46abe1a0c25460055f2f6d6a0343331c6aae9cb9d7d96fc5d9f85d4",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/tammys_world/",
+      "original_id": "e7976049fda69bd6",
+      "decoded_rgb_sha256": "dd3e090cdf239d1b430f1749b596dcb566e5c45870e57d1999123da6e3f099d4",
+      "label": "labels/train/15c0626cb46abe1a0c254600.txt",
+      "label_sha256": "254a9bd76f2b4dc30af5284e0506c5c0462ca9891af1971fc0f7b354445269fa"
+    },
+    {
+      "image": "images\\train\\6a8e3351b2f0bfdcef82109a.jpg",
+      "sha256": "6a8e3351b2f0bfdcef82109a825b744095e7bf6e665d8f2a35e79c2701583018",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/smemon/",
+      "original_id": "e7fd558800b042c6",
+      "decoded_rgb_sha256": "222f60de347cba81b1cdf75c33d2cef44ce1e1fe30d8e4fb0aaa267ad9b8ded1",
+      "label": "labels/train/6a8e3351b2f0bfdcef82109a.txt",
+      "label_sha256": "a54b9d3ecb77f4144a4e9a605c3bcb954e652adf7018ff12bce569775e1f8bdc"
+    },
+    {
+      "image": "images\\val\\4ab3df40f3490a06ef4998b5.jpg",
+      "sha256": "4ab3df40f3490a06ef4998b5e05b59378ce57a9966ff072d8e6c5317eefed0a3",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/wscottheath/",
+      "original_id": "ea2ae6d58fcae323",
+      "decoded_rgb_sha256": "2526d5ee03c4ffa25e5565b08044d9faac705db142b90ab33de8b25a6eff7b42",
+      "label": "labels/val/4ab3df40f3490a06ef4998b5.txt",
+      "label_sha256": "34c7107ce88ae14f305b0d26631ab3fea1970de13b3d8f3f299393a1740e56b1"
+    },
+    {
+      "image": "images\\train\\4aa4c62ff0b24b89ce625bda.jpg",
+      "sha256": "4aa4c62ff0b24b89ce625bda6ae1301056ff6bdb8b04014ad609b3ceaf21d6b6",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/votebrian/",
+      "original_id": "eef6108b4d6ab116",
+      "decoded_rgb_sha256": "cd490440b346ba55fda7c91cc60d8d0297c7937438623b724f54f640d91a36b6",
+      "label": "labels/train/4aa4c62ff0b24b89ce625bda.txt",
+      "label_sha256": "55e5fb58e724d7ce5b52ce28b1b63c0d9866e8edf96eb6e84f6df46b048d8457"
+    },
+    {
+      "image": "images\\train\\30abc9852461cc7c316247e5.jpg",
+      "sha256": "30abc9852461cc7c316247e566ad512282d3a45598850480cebb61f26914706a",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/praxinoscope/",
+      "original_id": "f155450940bdb30c",
+      "decoded_rgb_sha256": "a2d078b207ab8fa6cf233820f3bcea49d406efab2edd3e7bb08b6987fbb460e4",
+      "label": "labels/train/30abc9852461cc7c316247e5.txt",
+      "label_sha256": "e9166b8fba4ca5a4a587d0d656312047bcbe85f25a446018234ffaf60356ca73"
+    },
+    {
+      "image": "images\\train\\279b42a5ac642bddce46add2.jpg",
+      "sha256": "279b42a5ac642bddce46add243a0ffcb8f9a52b7dcedb2009a32e35574449ad1",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/nesposit/",
+      "original_id": "fb2ad01c19312ed6",
+      "decoded_rgb_sha256": "f9330624f890b1cd67ef0c0e0917248116c38712582dd05113ba38151c8ae795",
+      "label": "labels/train/279b42a5ac642bddce46add2.txt",
+      "label_sha256": "466e4b591352c4ecb131202aa28f715a35b5746c431062af6123ffcfa912850b"
+    },
+    {
+      "image": "images\\train\\63124099a1e6567fe0fe17ca.jpg",
+      "label": "labels/train/63124099a1e6567fe0fe17ca.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:7496428954",
+      "group": "shared:flickr-owner:13286453@N00",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/13286453@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/zoetnet/7496428954/"
+      },
+      "annotation_ids": [
+        138447
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000338607.jpg",
+      "annotation_visual_review": "PENDING",
+      "provenance_sha256": "7ad8b24a3d5f296027081a590e9adc19f0d91da534a942ad1e0ed2b150351109",
+      "review_index": 1,
+      "review_source": "Datasets\\lvis-statue-training-expansion-v1",
+      "review": "Original image and bbox overlay manually inspected",
+      "split": "train",
+      "sha256": "63124099a1e6567fe0fe17caab809cbba10f4f5fb2308b0c6859d67c5fcbf9d6",
+      "decoded_rgb_sha256": "5532eedbee03e2ab63b42e72732a0e6334e9166361171c9925b930b1e5928265",
+      "label_sha256": "e345d17d536d09634b7e49c988eb3aeb783d4ea111a5f4fce99bf0c8cc48db0d"
+    },
+    {
+      "image": "images\\train\\a068c56528d4d0c9dd9ed54c.jpg",
+      "label": "labels/train/a068c56528d4d0c9dd9ed54c.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:10095270333",
+      "group": "shared:flickr-owner:67973535@N00",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/67973535@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/gialiat/10095270333/"
+      },
+      "annotation_ids": [
+        170076
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000209763.jpg",
+      "annotation_visual_review": "PENDING",
+      "provenance_sha256": "663129ed3023cc77a96ddf67e5a72e47808b5e57f0a5868572965e63d92e016d",
+      "review_index": 17,
+      "review_source": "Datasets\\lvis-statue-training-expansion-v1",
+      "review": "Original image and bbox overlay manually inspected",
+      "split": "train",
+      "sha256": "a068c56528d4d0c9dd9ed54c4df9bab93aa611d0b55f453631b0c49cb381ba94",
+      "decoded_rgb_sha256": "2fdd114ba0620d9aa7e1e608279b0f906124acfd8a6ab9c3341380114dd6e66a",
+      "label_sha256": "e294e14181f1637e939701c30f235950752af1ff2d5718e4c0403f0debd439bd"
+    },
+    {
+      "image": "images\\train\\f0ad160c9f68d961c16920bb.jpg",
+      "label": "labels/train/f0ad160c9f68d961c16920bb.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:10095232766",
+      "group": "shared:flickr-owner:67973535@N00",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/67973535@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/gialiat/10095232766/"
+      },
+      "annotation_ids": [
+        68618
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000492025.jpg",
+      "annotation_visual_review": "PENDING",
+      "provenance_sha256": "58d8ad9e53fec12234dec4829a50693122ac9aaa540f08ab304977a9d8dd09d9",
+      "review_index": 18,
+      "review_source": "Datasets\\lvis-statue-training-expansion-v1",
+      "review": "Original image and bbox overlay manually inspected",
+      "split": "train",
+      "sha256": "f0ad160c9f68d961c16920bb47755553742a139454de595357558d9d2758d287",
+      "decoded_rgb_sha256": "eca2c8bebaf4a801bc2507d54c15eea24b2b83592cdf3b7bebd7adc59077c188",
+      "label_sha256": "276373c582a4c689e2e06b463c7f8885fa6e82dc3428038d120d5c652fbf89ac"
+    },
+    {
+      "image": "images\\train\\ae48c173ae773288ecbbc799.jpg",
+      "label": "labels/train/ae48c173ae773288ecbbc799.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:8654276676",
+      "group": "shared:flickr-owner:10779920@N05",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/10779920@N05/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/mshehan/8654276676/"
+      },
+      "annotation_ids": [
+        350950
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000211810.jpg",
+      "annotation_visual_review": "PENDING",
+      "provenance_sha256": "916e5949c87b28983294831fbd18bae2c555eb226c4b34b839858ac907758171",
+      "review_index": 27,
+      "review_source": "Datasets\\lvis-statue-training-expansion-v1",
+      "review": "Original image and bbox overlay manually inspected",
+      "split": "train",
+      "sha256": "ae48c173ae773288ecbbc7992369cd05b9fb2a5fcaf71d419ecaf0a5668878fe",
+      "decoded_rgb_sha256": "7c0329c6d1a5967cc1a8453bc85446a576dc74baa5527ce70a8234c81536db9b",
+      "label_sha256": "38a1525894812e7115b0cb58fd48c85f387311546d60ea388e57f939ff4405de"
+    },
+    {
+      "image": "images\\train\\50605a2af61552ce1b1fc54a.jpg",
+      "label": "labels/train/50605a2af61552ce1b1fc54a.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:3195527578",
+      "group": "shared:flickr-owner:12567713@N00",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/12567713@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/12567713@N00/3195527578/"
+      },
+      "annotation_ids": [
+        614429
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000560923.jpg",
+      "annotation_visual_review": "PENDING",
+      "provenance_sha256": "65b5bf2a38be6735aeae4295828cb87c19c1305ff113847070caf56912fba8ce",
+      "review_index": 30,
+      "review_source": "Datasets\\lvis-statue-training-expansion-v1",
+      "review": "Original image and bbox overlay manually inspected",
+      "split": "train",
+      "sha256": "50605a2af61552ce1b1fc54aa914b41a2f8ddbe03ff229da9fcd2fccfdb2cb4a",
+      "decoded_rgb_sha256": "8717aef19e3c97a60327c88f9d26d763ad1adbb4aa5cea2bbeb84e9b1740d707",
+      "label_sha256": "84b83a4efd88eddce48714afe66381f261910b3ac9e0ad66dba0d7738fcd2af4"
+    },
+    {
+      "image": "images\\train\\c95caefa483cad49fdf8f291.jpg",
+      "label": "labels/train/c95caefa483cad49fdf8f291.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:7170473275",
+      "group": "shared:flickr-owner:51590881@N06",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/51590881@N06/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/lapatia/7170473275/"
+      },
+      "annotation_ids": [
+        848764
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000146954.jpg",
+      "annotation_visual_review": "PENDING",
+      "provenance_sha256": "cb7c68019dc206ab08b239a5e70da3c8c7fae8dbf31efbb776062325d2b1d482",
+      "review_index": 39,
+      "review_source": "Datasets\\lvis-statue-training-expansion-v1",
+      "review": "Original image and bbox overlay manually inspected",
+      "split": "train",
+      "sha256": "c95caefa483cad49fdf8f291e9b667d96e0f90aebcfce7761e4d6d8081abfafc",
+      "decoded_rgb_sha256": "ca9928a1ab235a97389ae620050f808e41d50b7bddfe541dc9e313bcd90c73f8",
+      "label_sha256": "850d963bd084b0e36e889f2ee947b4b8a2bbd98076e791a9d0967c55003d2781"
+    },
+    {
+      "image": "images\\train\\a948f98bb3c22bb2090eb66b.jpg",
+      "label": "labels/train/a948f98bb3c22bb2090eb66b.txt",
+      "source": "lvis-v1-val-statue",
+      "original_id": "flickr:5469036230",
+      "group": "shared:flickr-owner:80044857@N00",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/80044857@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/khouri/5469036230/"
+      },
+      "annotation_ids": [
+        64369,
+        64370
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000244215.jpg",
+      "annotation_visual_review": "PENDING",
+      "provenance_sha256": "7937f2510b34582d6a9886ad2774ae09a2387a1f3475b277021c76fc5cccce49",
+      "review_index": 5,
+      "review_source": "Datasets\\lvis-statue-expansion-v2",
+      "review": "Original image and bbox overlay manually inspected",
+      "split": "train",
+      "sha256": "a948f98bb3c22bb2090eb66bad105b6ebdefc39b167555a0a96d27721f626aa2",
+      "decoded_rgb_sha256": "b6ceb583b6b34200fa21ee5fe2e0fa6653226ae17375415c6ed1fee24fef2d0a",
+      "label_sha256": "edbd8d91909f3aa377435c4937f106c1f82865e2bae208ec9492bebf13463633"
+    },
+    {
+      "image": "images\\train\\9d4595838cd3c60558347921.jpg",
+      "label": "labels/train/9d4595838cd3c60558347921.txt",
+      "source": "lvis-v1-val-statue",
+      "original_id": "flickr:206161738",
+      "group": "shared:flickr-owner:88386304@N00",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/88386304@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/jehervey/206161738/"
+      },
+      "annotation_ids": [
+        234803
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000552244.jpg",
+      "annotation_visual_review": "PENDING",
+      "provenance_sha256": "9b046780a8e5a3427dc445d5cfcb489ac308535e2cdf6733fc651a2cc1cd4ba0",
+      "review_index": 13,
+      "review_source": "Datasets\\lvis-statue-expansion-v2",
+      "review": "Original image and bbox overlay manually inspected",
+      "split": "train",
+      "sha256": "9d4595838cd3c605583479214849e65c067d7b968995884ebe7e42fdb5b6fee3",
+      "decoded_rgb_sha256": "7c288b889fc866de1b626ba651a1fcf79364108c8c857c363ecf96dbff8bed53",
+      "label_sha256": "d2ff59272da248da11c002859feceacb3dcff0ca87c312dd7f27f1e52f6d3eaa"
+    },
+    {
+      "image": "images\\test\\e86bc3f63f6196bf2bad02d4.jpg",
+      "label": "labels/test/e86bc3f63f6196bf2bad02d4.txt",
+      "source": "lvis-v1-val-statue",
+      "original_id": "flickr:2493497923",
+      "group": "shared:flickr-owner:32662631@N00",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/32662631@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/herry/2493497923/"
+      },
+      "annotation_ids": [
+        13170
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000061584.jpg",
+      "annotation_visual_review": "PENDING",
+      "provenance_sha256": "3c6f18d43c0b2e6739a29a6fc3d05a0766724402b44ec8d07570869ac7cd8d32",
+      "review_index": 1,
+      "review_source": "Datasets\\lvis-statue-expansion-v2",
+      "review": "Original image and bbox overlay manually inspected",
+      "split": "test",
+      "sha256": "e86bc3f63f6196bf2bad02d494af460ea8ae183cc6893af23d3c9888b5c4adbe",
+      "decoded_rgb_sha256": "1aaa8418d473941ea3d3692c3721175d3e24ca53ed2419591f36360944cb3ec6",
+      "label_sha256": "f9c66a4eec773cf94c0d9ba4e9fbd017dc0e1c8af701e28a3fce68e6dfc049dd"
+    },
+    {
+      "image": "images\\test\\fd7fe9e831b97c31d2996209.jpg",
+      "label": "labels/test/fd7fe9e831b97c31d2996209.txt",
+      "source": "lvis-v1-val-statue",
+      "original_id": "flickr:7978704233",
+      "group": "shared:flickr-owner:40370408@N06",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/40370408@N06/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/darakero/7978704233/"
+      },
+      "annotation_ids": [
+        4835
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000181816.jpg",
+      "annotation_visual_review": "PENDING",
+      "provenance_sha256": "133f6c0a02690bce9c53421cb228d1e17ff1f0a347fb06da37b68023aa2f0a95",
+      "review_index": 2,
+      "review_source": "Datasets\\lvis-statue-expansion-v2",
+      "review": "Original image and bbox overlay manually inspected",
+      "split": "test",
+      "sha256": "fd7fe9e831b97c31d2996209d4eb152558e46d752089d3a2b1b5e0cb21f343fe",
+      "decoded_rgb_sha256": "e01b9404560639d730b1c88c3e13265db24255ab1f45451478f7eb473d36c704",
+      "label_sha256": "fe07571eec69a2ebff7030e75c05d251dd006fa4f76bd059d6b35d75a5a8175a"
+    },
+    {
+      "image": "images/train/513692.jpg",
+      "label": "labels/train/513692.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:5837212097",
+      "group": "https://www.flickr.com/people/23206546@N04/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/23206546@N04/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/rusty_clark/5837212097/"
+      },
+      "annotation_ids": [
+        226691
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000513692.jpg",
+      "annotation_visual_review": "INDIVIDUAL_ORIGINAL_IMAGE_REVIEWED",
+      "provenance_sha256": "072dbfd4614970cffa47722d788f9beebec1a52e6ddc7ab563b72990b854ab6f",
+      "split": "train",
+      "sha256": "17bb2e219def3097eabc490e6234960013d51ad7818a8b89e3ba685a8b413edd",
+      "decoded_rgb_sha256": "3c35c84439d792926f2925d62ae8794b0c695f83a0dbc606146c4939f018822b",
+      "label_sha256": "d796afc8f6008d65917a08a2ce865f8abdfe5d3a6a83dfaced61da852f9761e8"
+    },
+    {
+      "image": "images/train/578344.jpg",
+      "label": "labels/train/578344.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:7529821578",
+      "group": "https://www.flickr.com/people/39415781@N06/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/39415781@N06/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/ell-r-brown/7529821578/"
+      },
+      "annotation_ids": [
+        38173
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000578344.jpg",
+      "annotation_visual_review": "INDIVIDUAL_ORIGINAL_IMAGE_REVIEWED",
+      "provenance_sha256": "15733faac8ce12897a6536325b826aa0c5f0e2e56ac06d9511d1f19092905200",
+      "split": "train",
+      "sha256": "1a94956c9d4a69c3a6eb544bfcdc8fb1e28ff46fa4195398066a50705eb9a210",
+      "decoded_rgb_sha256": "c6131cb768e6885f4f149b321df8131dbfbf6deb84bd3d081e61b1cec0558981",
+      "label_sha256": "e691f1a439e68b122586033f751f3ef57aec64ab2706a10a9cc3991c3c5e6a6f"
+    },
+    {
+      "image": "images/train/62250.jpg",
+      "label": "labels/train/62250.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:4612200681",
+      "group": "https://www.flickr.com/people/65226395@N00/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/65226395@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/asw909/4612200681/"
+      },
+      "annotation_ids": [
+        103629,
+        103630,
+        103631,
+        103632,
+        103633,
+        103634
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000062250.jpg",
+      "annotation_visual_review": "ORIGINAL_SIX_SOURCE_BOXES_REVIEWED",
+      "provenance_sha256": "f376bb22a2731caf9ed68907d81399266028d3d9a9a2adf30c7c897e6952c27e",
+      "split": "train",
+      "sha256": "79dcf494b549f0c6aeb11d5852fac0a3fc69cd6ed401b0ac73b42e31e2d714c1",
+      "decoded_rgb_sha256": "918a80511eb22dfb86969e8a6595261c8b9be71a609694d87ced436f8c809e3c",
+      "label_sha256": "380dfef9771a2efc467c238c9e9b75e4a5c01ebffa7bf5ea2af2b4b09ff87030"
+    },
+    {
+      "image": "images/val/108fa4288e5b91c1668841ab.jpg",
+      "label": "labels/val/108fa4288e5b91c1668841ab.txt",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/wandering_angel/",
+      "original_id": "7a9b3835e404042f",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "The Wandering Angel",
+        "AuthorProfileURL": "https://www.flickr.com/people/wandering_angel/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/wandering_angel/15764392279",
+        "Title": "Sentinels"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/7a9b3835e404042f.jpg",
+      "split": "val",
+      "sha256": "108fa4288e5b91c1668841ab68e502035030cad24d1a49fa5ecda37bd4ba0e60",
+      "label_sha256": "96415cc6557da883cb4bcbadbfa30d86c952fd65a8abbf9370dafe108593ed32",
+      "review_evidence": "Reports/statue-expansion-unused-original-review-v4.json",
+      "decoded_rgb_sha256": "ccff9a74ff163f3685131cbcf61ec5a70abc809f87a22e17578950650c4bc14e"
+    },
+    {
+      "image": "images/train/c61e971746177c249ae72410.jpg",
+      "label": "labels/train/c61e971746177c249ae72410.txt",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/kanegen/",
+      "original_id": "84cce9c3ad013790",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "kanegen",
+        "AuthorProfileURL": "https://www.flickr.com/people/kanegen/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/kanegen/3129198957",
+        "Title": "Shibamata Taishakuten"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/84cce9c3ad013790.jpg",
+      "split": "train",
+      "sha256": "c61e971746177c249ae724106acc2eb3ac3fd6a05585a44677e22e63719d20c7",
+      "label_sha256": "d5b4c13dca526981e8cca2ba63db342f760115ac30fe12cb0de7ec0677f58fc1",
+      "review_evidence": "Reports/statue-expansion-unused-original-review-v4.json",
+      "decoded_rgb_sha256": "4f2ce033d8567447e7db92ae6ba7aeb0eebc5ea4790d450068d722cf5f645c13"
+    },
+    {
+      "image": "images/train/e2ce4903da8ab6bb9449a6a9.jpg",
+      "label": "labels/train/e2ce4903da8ab6bb9449a6a9.txt",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/zigazou76/",
+      "original_id": "c9f3d21199fffa69",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Frédéric BISSON",
+        "AuthorProfileURL": "https://www.flickr.com/people/zigazou76/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/zigazou76/5707393333",
+        "Title": "Statue de Saint Maclou"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/c9f3d21199fffa69.jpg",
+      "split": "train",
+      "sha256": "e2ce4903da8ab6bb9449a6a9e37e9035d5a045e327d5b2970c4866c497c7e19c",
+      "label_sha256": "3ce8e7a49d6d1b75f067c0e39261a48243a6bf542e5bdada72a81124261415cf",
+      "review_evidence": "Reports/statue-expansion-unused-original-review-v4.json",
+      "decoded_rgb_sha256": "5b6fb0d4ce94b55e0a395715de06d9dcd75c6fd86b0ab8859bd2bb9dea84ca38"
+    },
+    {
+      "image": "images/train/35110e58e1e12f2dba3a9e76.jpg",
+      "label": "labels/train/35110e58e1e12f2dba3a9e76.txt",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/burgermac/",
+      "original_id": "eef1ecbc31d2e5c2",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Burgermac",
+        "AuthorProfileURL": "https://www.flickr.com/people/burgermac/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/burgermac/1589960665",
+        "Title": "DSC02453.JPG"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/eef1ecbc31d2e5c2.jpg",
+      "split": "train",
+      "sha256": "35110e58e1e12f2dba3a9e761809f5e972f7416ce47f309dc68f15f313f9546f",
+      "label_sha256": "5e0b63cf3bd8f223b41a34211795a30ddb15b941b589a2913d4a532b8e612206",
+      "review_evidence": "Reports/statue-expansion-unused-original-review-v4.json",
+      "decoded_rgb_sha256": "10f56e0614c437b5b56c923d3bccaab7623bba02c87c2b509e1523f0f355b346"
+    },
+    {
+      "image": "images/test/15e9d6f6f56843621264fdf4.jpg",
+      "label": "labels/test/15e9d6f6f56843621264fdf4.txt",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/16782093@N03/",
+      "original_id": "f528bfab06e67f5f",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Metro Centric",
+        "AuthorProfileURL": "https://www.flickr.com/people/16782093@N03/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/16782093@N03/3396845526",
+        "Title": "Stockholm"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/f528bfab06e67f5f.jpg",
+      "split": "test",
+      "sha256": "15e9d6f6f56843621264fdf4090560b66541b0a00926c37f1bc87128cfec5af2",
+      "label_sha256": "8a7d422d157db6db5275b69377ff11bd7ef6dee8287d522125f439d35e8ddb77",
+      "review_evidence": "Reports/statue-expansion-unused-original-review-v4.json",
+      "decoded_rgb_sha256": "a636d57867df3cad1bc3a6482af1929dcb3dbbfd9fdc949d22255f4154acb765"
+    },
+    {
+      "image": "images/train/4049ad165330924d19c30ec0.jpg",
+      "label": "labels/train/4049ad165330924d19c30ec0.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:7243241386",
+      "group": "lvis-v1-train-statue:https://www.flickr.com/people/10142860@N07/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/10142860@N07/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/apbutterfield/7243241386/"
+      },
+      "annotation_ids": [
+        137428,
+        137429
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000239448.jpg",
+      "annotation_visual_review": "PENDING",
+      "provenance_sha256": "a9e93337144842f216447c5b9863b49dfed3687f0140635a4df0731d310ddb2f",
+      "split": "train",
+      "sha256": "4049ad165330924d19c30ec0767b8addfc1a81b9fd80dbf5f07f7f8a83d7db7d",
+      "label_sha256": "be43e03ae83e5b210df816d0035dd90883564118bb4f4b3437dc232818207607",
+      "review_evidence": "Reports/statue-unused-multi-instance-review-v1.json",
+      "decoded_rgb_sha256": "0c333ffe22431c24c895a46af2f47075106922049b16c0b1c40be89db2750c52"
+    },
+    {
+      "image": "images/train/2edd1cec479cd7231ba147a9.jpg",
+      "label": "labels/train/2edd1cec479cd7231ba147a9.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:7480800578",
+      "group": "lvis-v1-train-statue:https://www.flickr.com/people/17876710@N00/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/17876710@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/ymmat/7480800578/"
+      },
+      "annotation_ids": [
+        416949,
+        416950
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000109835.jpg",
+      "annotation_visual_review": "PENDING",
+      "provenance_sha256": "14f35b3e203e1c1dcc241b398df8b90391dd5efcf89f341d89a39b020b55dc4d",
+      "split": "train",
+      "sha256": "2edd1cec479cd7231ba147a901c9ac230e97066359e08ddcc52e922493a7b308",
+      "label_sha256": "3f33d7d5daf045f43560d2d1e021a8e4f70527d3a6bf27052eafdcf649eb933a",
+      "review_evidence": "Reports/statue-unused-multi-instance-review-v1.json",
+      "decoded_rgb_sha256": "202c2e7f8ce4d055df10ae0e435c766fd55c9319670fa09e86c84d4b884a6ced"
+    },
+    {
+      "image": "images/train/44abaf8f8d08ac95af1ed7e1.png",
+      "label": "labels/train/44abaf8f8d08ac95af1ed7e1.txt",
+      "source": "lvis-v1-val-statue",
+      "original_id": "flickr:2301955232:crop-0-210-480-520",
+      "group": "lvis-v1-val-statue:https://www.flickr.com/people/23192747@N02/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/23192747@N02/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/hellolapomme/2301955232/"
+      },
+      "annotation_ids": [
+        119514,
+        119515,
+        119516,
+        119517,
+        119518,
+        119519,
+        119520,
+        119521,
+        119522,
+        119523,
+        119524,
+        119525,
+        119526,
+        119527,
+        119528,
+        119529,
+        119530,
+        119531,
+        119532,
+        119533,
+        119534,
+        119535
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000157076.jpg",
+      "annotation_visual_review": "PENDING",
+      "provenance_sha256": "4f7560b2cba114fcfb190f39e17e5426c52530913fdb6a3f6bafb6e50e33d438",
+      "split": "train",
+      "sha256": "44abaf8f8d08ac95af1ed7e172b6f300e713ca40999d92b904c6f6c0834e4fb3",
+      "label_sha256": "9068376f3550e1e7ebcbbf0139e7494634fe2f8f069564396cbca4cf2627d68c",
+      "parent_original_id": "flickr:2301955232",
+      "crop_xyxy": [
+        0,
+        210,
+        480,
+        520
+      ],
+      "review_evidence": "Datasets/statue-dense-manual-crop-v1/review.json",
+      "decoded_rgb_sha256": "884473985851c5ec86c64df7f039cfd2cf1e810e57d6ebc544c503992464cd9e"
+    },
+    {
+      "image": "images/train/783ed5b8d7b104a9bbbba79c.jpg",
+      "label": "labels/train/783ed5b8d7b104a9bbbba79c.txt",
+      "source": "openimages-v7",
+      "group": "https://www.flickr.com/people/95499292@N07/",
+      "original_id": "0b6227bb06345402",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Craftsman Court Ceramics",
+        "AuthorProfileURL": "https://www.flickr.com/people/95499292@N07/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/95499292@N07/20436257976",
+        "Title": "VIZ Install 9"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/0b6227bb06345402.jpg",
+      "split": "train",
+      "sha256": "783ed5b8d7b104a9bbbba79c9a8e9293f9fd6984ec15df8cd2b4799c9a719b7d",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "730c7f1c82b805175d4771d176cf02eec95d67fb995195b3e0567388b04bcb21",
+      "annotation_status": "ORIGINAL_SIZE_REVIEWED_PUBLIC_PILOT",
+      "review": "Reports/room-source-v1-original-5.png",
+      "negative": true,
+      "review_evidence": "Reports/statue-public-negative-review-v1.json"
+    },
+    {
+      "image": "images/train/c1dcd6878ef9599bf30d2367.jpg",
+      "label": "labels/train/c1dcd6878ef9599bf30d2367.txt",
+      "source": "openimages-v7",
+      "group": "https://www.flickr.com/people/66457415@N04/",
+      "original_id": "1050b3c3f36090a3",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "leatherlady 1",
+        "AuthorProfileURL": "https://www.flickr.com/people/66457415@N04/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/66457415@N04/8057673513",
+        "Title": "005"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1050b3c3f36090a3.jpg",
+      "split": "train",
+      "sha256": "c1dcd6878ef9599bf30d2367c283a24414809447eb56992f148ce710bbac69dc",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "52c88d970098284279c402e021a37fa89d2121262368f9634f29909ac0aa467a",
+      "annotation_status": "ORIGINAL_SIZE_REVIEWED_PUBLIC_PILOT",
+      "review": "Reports/room-source-v1-original-10.png",
+      "negative": true,
+      "review_evidence": "Reports/statue-public-negative-review-v1.json"
+    },
+    {
+      "image": "images/train/ceb66349f26461cada96e6c1.jpg",
+      "label": "labels/train/ceb66349f26461cada96e6c1.txt",
+      "source": "openimages-v7",
+      "group": "https://www.flickr.com/people/antmoose/",
+      "original_id": "15e9f230f8f0609f",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Anthony Majanlahti",
+        "AuthorProfileURL": "https://www.flickr.com/people/antmoose/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/antmoose/12113983",
+        "Title": "zanzariera"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/15e9f230f8f0609f.jpg",
+      "split": "train",
+      "sha256": "ceb66349f26461cada96e6c14b496687aceaf11b3969b723b99570f7cca07133",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "3d106eb5114931c569e12aa6aa3bd67917242fb3d4abcbbd6ff6ac7a69508e1a",
+      "annotation_status": "ORIGINAL_SIZE_REVIEWED_PUBLIC_PILOT",
+      "review": "Reports/room-source-v1-original-17.png",
+      "negative": true,
+      "review_evidence": "Reports/statue-public-negative-review-v1.json"
+    },
+    {
+      "image": "images/train/laptop-human-crop.png",
+      "label": "labels/train/laptop-human-crop.txt",
+      "source": "openimages-v7",
+      "group": "https://www.flickr.com/people/la-mirry/",
+      "original_id": "46afaf945caee54c",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Mirry",
+        "AuthorProfileURL": "https://www.flickr.com/people/la-mirry/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/la-mirry/2294746810",
+        "Title": "madre"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/46afaf945caee54c.jpg",
+      "split": "train",
+      "sha256": "217ad92abbe682d54a40a842bd84ad21cd82e25444d46c61455ad25e53a9cf1c",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "f728850bb9fc48f78ca8a678fdce076780ceeee6d7b6b9aaa1b75f65940c04df",
+      "annotation_status": "ORIGINAL_SIZE_REVIEWED_PUBLIC_PILOT",
+      "review_note": "Occupied couch; visible extent clipped at sides and bottom.",
+      "parent_image_sha256": "cedcdafb55aba1366fbed29154082726f5ac8253d68a95ebeb73af08f39303f4",
+      "crop_xyxy": [
+        0,
+        0,
+        940,
+        685
+      ],
+      "negative": true,
+      "negative_class": "Statue",
+      "review": "Reports\\statue-office-negative-screen-v1\\laptop-crop-review.json",
+      "review_sha256": "33a23df7022d12b45039ceefc4684ba40b598741d33ae91b4f9f8f1dfe1754e3"
+    },
+    {
+      "image": "images/train/6e86e224c7e36481.jpg",
+      "label": "labels/train/6e86e224c7e36481.txt",
+      "source": "openimages-v7",
+      "group": "https://www.flickr.com/people/ya5sara/",
+      "original_id": "6e86e224c7e36481",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "°ஐ[ßÜ.ĴŔå7]ஐ° &amp; ๑ Ψå5ςÅΓà  ๑",
+        "AuthorProfileURL": "https://www.flickr.com/people/ya5sara/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/ya5sara/1845509689",
+        "Title": "Prince Of Melbourne & Ya5SaRa"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/6e86e224c7e36481.jpg",
+      "split": "train",
+      "sha256": "e18700cc290920901385281a1b10cbfb72c673d039ad87a05bcd5aab7cc48282",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "588c41f8d73db49fc6a1aec1629aba53f2fa6f7a565494be44aacdffdcf0ea7d",
+      "annotation_status": "ORIGINAL_SIZE_REVIEWED_PUBLIC_PILOT",
+      "review_note": "Two people on couch; visible couch extent labelled.",
+      "negative": true,
+      "negative_class": "Statue",
+      "review": "Reports\\statue-office-negative-screen-v1\\human-batch2-review.json",
+      "review_sha256": "cb9d1ed6c89b7550e4aafc5d3ef741fef1054a9b4e1d51d324535c77b8ba76b0"
+    },
+    {
+      "image": "images/train/9295ab265fafd8e5.jpg",
+      "label": "labels/train/9295ab265fafd8e5.txt",
+      "source": "openimages-v7",
+      "group": "https://www.flickr.com/people/orsorama/",
+      "original_id": "9295ab265fafd8e5",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Franco Dal Molin",
+        "AuthorProfileURL": "https://www.flickr.com/people/orsorama/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/orsorama/9176313286",
+        "Title": "Valium B"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/9295ab265fafd8e5.jpg",
+      "split": "train",
+      "sha256": "b3c62f4f9ccbfea418c3e007fce952339ffe6a44b635b888e5457845508aba6a",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "2528f39641a1255f6389167bfc61f379db93e6f251a61008cc6ecbd626250ef7",
+      "annotation_status": "ORIGINAL_SIZE_REVIEWED_PUBLIC_PILOT",
+      "review_note": "Hospital bed with rail and headboard, occupied and bottom clipped.",
+      "negative": true,
+      "negative_class": "Statue",
+      "review": "Reports\\statue-office-negative-screen-v1\\human-batch2-review.json",
+      "review_sha256": "cb9d1ed6c89b7550e4aafc5d3ef741fef1054a9b4e1d51d324535c77b8ba76b0"
+    },
+    {
+      "image": "images\\train\\166565.jpg",
+      "label": "labels\\train\\166565.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:3623232778",
+      "group": "https://www.flickr.com/people/57166722@N00/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/57166722@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/diomedenet/3623232778/"
+      },
+      "annotation_ids": [
+        146593,
+        146594,
+        146595
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000166565.jpg",
+      "annotation_visual_review": "PASSED_ORIGINAL_AND_OVERLAY",
+      "provenance_sha256": "8bda6b96eb2477ba23c445b8bd2dc2551a7603a0e55808baebd8c2a79830ee7c",
+      "sha256": "07b5cf3f6ee427dc9b3a3bd6c9959e19570223dfcb068ffce50126f20352ba94",
+      "image_sha256": "07b5cf3f6ee427dc9b3a3bd6c9959e19570223dfcb068ffce50126f20352ba94",
+      "label_sha256": "34bb5307d28d360f059241d40d10b1bf5be4e0557a6241998421ae1837dee9ad",
+      "split": "train",
+      "global_group": "flickr-owner:57166722@N00",
+      "original_identity": "flickr-photo:3623232778"
+    },
+    {
+      "image": "images\\train\\147897.jpg",
+      "label": "labels\\train\\147897.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:4073646542",
+      "group": "https://www.flickr.com/people/22404965@N08/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/22404965@N08/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/22404965@N08/4073646542/"
+      },
+      "annotation_ids": [
+        67684
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000147897.jpg",
+      "annotation_visual_review": "Original, source overlay and magnified detail viewed; single physical bust; no other conspicuous sculpture. Pedestal not part of head sculpture.",
+      "provenance_sha256": "e36f5eb545956e73aa292270c362308b285d929e2d62b7dd886437a43fffccb3",
+      "sha256": "6fe2b3104989dfb6b26ddca7f8a6052bc4e3c8f60d000df2af00847ea6ee1339",
+      "detail_sha256": "62702e34bb3cc9ef662984d13b0176432bd53425b79f5638b6fcc919dd361531",
+      "image_sha256": "6fe2b3104989dfb6b26ddca7f8a6052bc4e3c8f60d000df2af00847ea6ee1339",
+      "label_sha256": "12a7ac69827d2d0ed3f0e26496aced58ec3e541304ffb6bdcadf95b7be8dbfa5",
+      "split": "train"
+    },
+    {
+      "image": "images\\train\\184830.jpg",
+      "label": "labels\\train\\184830.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:5648040482",
+      "group": "https://www.flickr.com/people/78362459@N00/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/78362459@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/hansnyc/5648040482/"
+      },
+      "annotation_ids": [
+        100507
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000184830.jpg",
+      "annotation_visual_review": "Original, source overlay and magnified detail viewed; single physical bust; no other conspicuous sculpture. Pedestal not part of head sculpture.",
+      "provenance_sha256": "3071d8bb9d07f68f4f54d87cf49c90f33f3bfc9de416649d5f9fb8a71c2dfb19",
+      "sha256": "d41289aff45eb4faea14d57b1937e4e11991c522d9a4737328085cd12de5c56e",
+      "detail_sha256": "25aa0b0570f5e9b7f657c7ecc4b43a7f22fbded80ed12f430c54e06a238103c6",
+      "image_sha256": "d41289aff45eb4faea14d57b1937e4e11991c522d9a4737328085cd12de5c56e",
+      "label_sha256": "9924981302d8b5f4a90ed09ebecd29e14c057fb009a3ec824f63cdd53bf8ad1e",
+      "split": "train"
+    },
+    {
+      "image": "images\\train\\245560.jpg",
+      "label": "labels\\train\\245560.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:8400605739",
+      "group": "https://www.flickr.com/people/79538530@N06/",
+      "global_group": "flickr-owner:79538530@N06",
+      "original_identity": "flickr-photo:8400605739",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/79538530@N06/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/celestial_troupe2012/8400605739/"
+      },
+      "annotation_ids": [
+        1046341,
+        1046342,
+        1046343,
+        1046344,
+        1046345,
+        1046346,
+        1046347
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000245560.jpg",
+      "annotation_visual_review": "PASSED_ORIGINAL_OVERLAY_NATIVE_DETAILS",
+      "provenance_sha256": "c86f62261f55c2383c6ec1bf6de92b682a10b44d9021103aa7e1b8d6984a5e28",
+      "sha256": "04498dd20e0b5ea609367fb0f9b045090b2e8607494250abaa0ac9a89f006405",
+      "label_sha256": "22e6e95f7afa5cda259d02196480ea219bd20d564fddc4dc2f33a6a84a18ffb8",
+      "split": "train",
+      "image_sha256": "04498dd20e0b5ea609367fb0f9b045090b2e8607494250abaa0ac9a89f006405",
+      "release_status": "REVIEWED_TRAIN_ADDITION"
+    },
+    {
+      "image": "images/train/176571.jpg",
+      "label": "labels/train/176571.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:9949851724",
+      "group": "https://www.flickr.com/people/39926655@N04/",
+      "global_group": "flickr-owner:39926655@N04",
+      "original_identity": "flickr-photo:9949851724",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/39926655@N04/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/drabikpany/9949851724/"
+      },
+      "annotation_ids": [
+        684861,
+        684862,
+        684863,
+        684864,
+        684865,
+        684866,
+        684867,
+        684868
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000176571.jpg",
+      "annotation_visual_review": "REVIEWED",
+      "provenance_sha256": "7ad068059aef0f1dd64129fad4a3ec98500e364fb02cd961e80810ab84c434d8",
+      "split": "train",
+      "sha256": "11dd605fcd06e06768022df12927893788b2f842654ac5138e4db5ef2b1bc825",
+      "label_sha256": "0d23f311e9aaf439207d8f179a301e032715d60b3aeeadd7a5a9c398aef43189",
+      "release_status": "REVIEWED_TRAIN_ADDITION"
+    },
+    {
+      "image": "images/train/430522.jpg",
+      "label": "labels/train/430522.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:450195305",
+      "group": "https://www.flickr.com/people/42339726@N00/",
+      "global_group": "flickr-owner:42339726@N00",
+      "original_identity": "flickr-photo:450195305",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/42339726@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/radder86/450195305/"
+      },
+      "annotation_ids": [
+        792459
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000430522.jpg",
+      "annotation_visual_review": "REVIEWED",
+      "provenance_sha256": "ca7fbf42cca880a2d1f15c0885266af5290233c9b6307a6bc3833f1b4ad72705",
+      "split": "train",
+      "sha256": "1989abefaf8f57f4b5acc467ba5fcf2f8c7f24228fb8b3c4069515d71168e4ab",
+      "label_sha256": "5d5a0d8813046470718d15081c85145856cacaed33c50d311d248d56ef9000aa",
+      "release_status": "REVIEWED_TRAIN_ADDITION"
+    },
+    {
+      "image": "images/train/321517.jpg",
+      "label": "labels/train/321517.txt",
+      "source": "lvis-v1-train-statue",
+      "original_id": "flickr:6933046784",
+      "group": "https://www.flickr.com/people/47778386@N00/",
+      "global_group": "flickr-owner:47778386@N00",
+      "original_identity": "flickr-photo:6933046784",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "AuthorProfileURL": "https://www.flickr.com/people/47778386@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/kiwanja/6933046784/"
+      },
+      "annotation_ids": [
+        750206
+      ],
+      "download_url": "https://s3.amazonaws.com/images.cocodataset.org/train2017/000000321517.jpg",
+      "annotation_visual_review": "REVIEWED",
+      "provenance_sha256": "db9111c6b1f3ba7b83951bc762cb3ca9d460e24b1be6ec345f2b32c494398677",
+      "split": "train",
+      "sha256": "0191191ea1c5be9faa01d6b0170bcda5419f53da51878f61ef69e23973f42e24",
+      "label_sha256": "a21f22b4e15aabd32c2226c02c94c2f65bafda9b8ca9747f71f5419296950442",
+      "release_status": "REVIEWED_TRAIN_ADDITION"
+    },
+    {
+      "image": "images/train/commons-equipment-199111918.jpg",
+      "source": "commons-equipment-negative-v1",
+      "group": "commons:artist:ccf1f93a73cbb21989de4b32707af4c575d73c72889a1af7c7ef9094f9d01ca5",
+      "artist": "Gpkp",
+      "title": "File:9th Bengaluru Space Expo 2026, Bangalore International Exhibition Centre 129.jpg",
+      "page_id": 199111918,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2026-09-08 13:16:49",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "9th Bengaluru Space Expo 2026, Bangalore International Exhibition Centre 129",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Virtual reality headsets|Self-published work|Files with coordinates missing SDC location of creation|9th Bengaluru Space Expo 2026",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "GPSLatitude": {
+          "value": "13.062348",
+          "source": "commons-desc-page"
+        },
+        "GPSLongitude": {
+          "value": "77.473403",
+          "source": "commons-desc-page"
+        },
+        "GPSMapDatum": {
+          "value": "WGS-84",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "9th Bengaluru Space Expo 2026 (7 to 9 September), Bangalore International Exhibition Centre",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2026-09-07 14:28:04",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:Gpkp\" title=\"User:Gpkp\">Gpkp</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:9th_Bengaluru_Space_Expo_2026,_Bangalore_International_Exhibition_Centre_129.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/9th_Bengaluru_Space_Expo_2026%2C_Bangalore_International_Exhibition_Centre_129.jpg/960px-9th_Bengaluru_Space_Expo_2026%2C_Bangalore_International_Exhibition_Centre_129.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "448050bc8e03aa8259f50644759b329fbf0a03d8b856df1e3eabdcc3a7b7c5b0",
+      "decoded_rgb_sha256": "888fe5a446a1cf1fe3e48cec01b9357819a04cf5db29426bdfd7949694acea74",
+      "dimensions": [
+        960,
+        723
+      ],
+      "annotation_status": "REVIEWED_PHYSICAL_STATUE_ABSENT",
+      "label": "labels/train/commons-equipment-199111918.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_identity_evidence": {
+        "page_id": 199111918,
+        "flickr_nsids": [],
+        "flickr_aliases": [],
+        "commons_users": [
+          "Gpkp"
+        ],
+        "historical_hits": []
+      },
+      "reserved_split": "train",
+      "target_instances": 0,
+      "visual_review": "Actually viewed original full image and contact sheet; living people and displayed game scenes are not physical statues",
+      "split": "train"
+    },
+    {
+      "image": "images/train/commons-equipment-188666894.jpg",
+      "source": "commons-equipment-negative-v1",
+      "group": "commons:artist:d4641e5e222e55c9ea3790fd7a8020dd4856dc5e0277a2ccc8c4a7ea7def2e8d",
+      "artist": "Kyu3a",
+      "title": "File:DELLのWIn MR HMD「Visor with Controllers VRP100」 - 1.jpg",
+      "page_id": 188666894,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2026-04-10 14:30:40",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "DELLのWIn MR HMD「Visor with Controllers VRP100」 - 1",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Virtual reality headsets|Windows Mixed Reality|Self-published work|Virtual reality in Japan|Dell products",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "DELLのWindows Mixed Reality ヘッドセット「Visor with Controllers VRP100」。",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2017-12-17 17:59:28",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:Kyu3a\" title=\"User:Kyu3a\">Kyu3a</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:DELL%E3%81%AEWIn_MR_HMD%E3%80%8CVisor_with_Controllers_VRP100%E3%80%8D_-_1.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/DELL%E3%81%AEWIn_MR_HMD%E3%80%8CVisor_with_Controllers_VRP100%E3%80%8D_-_1.jpg/960px-DELL%E3%81%AEWIn_MR_HMD%E3%80%8CVisor_with_Controllers_VRP100%E3%80%8D_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "448478f34b98eed084266ecf2e0a139a251fbf9c9c3a49fe0df9d8769232f6f8",
+      "decoded_rgb_sha256": "df28e0427d7ebd2e2060b5b253455c7dd07b7f5093dc23eea5097cee402d559e",
+      "dimensions": [
+        960,
+        720
+      ],
+      "annotation_status": "REVIEWED_PHYSICAL_STATUE_ABSENT",
+      "label": "labels/train/commons-equipment-188666894.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_identity_evidence": {
+        "page_id": 188666894,
+        "flickr_nsids": [],
+        "flickr_aliases": [],
+        "commons_users": [
+          "Kyu3a"
+        ],
+        "historical_hits": []
+      },
+      "reserved_split": "train",
+      "target_instances": 0,
+      "visual_review": "Actually viewed original full image and contact sheet; living people and displayed game scenes are not physical statues",
+      "split": "train"
+    },
+    {
+      "image": "images/train/commons-equipment-87607266.jpg",
+      "source": "commons-equipment-negative-v1",
+      "group": "commons:artist:2863de4c3f5bfe8563f9b483244dbe05ab7a92effa16111ab7751197002c5d8e",
+      "artist": "Chris Gunn",
+      "title": "File:Exploring the Universe in Virtual Reality.jpg",
+      "page_id": 87607266,
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2020-03-01 23:49:29",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Exploring the Universe in Virtual Reality",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Virtual reality|Virtual reality headsets|Flickr images reviewed by FlickreviewR 2|Photographs by Chris Gunn|Uploads by Killarnee|Taken with Hasselblad XCD 2,8/135",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Goddard engineer Tom Grubb manipulates a 3D simulation that animated the speed and direction of four million stars in the local Milky Way neighborhood. Goddard astronomer Marc Kuchner and researcher Susan Higashio used the virtual reality program, PointCloudsVR, designed by primary software developer Matthew Brandt, to obtain a new perspective on the stars' motions. The simulation helped them classify star groupings.\n<p>Another application developed under Goddard and NASA research and development programs makes designing spacecraft, instruments and repair missions easier, allowing engineers to experience the space before they start to build it.\n</p><p>Credits: NASA/Chris Gunn\n</p><p><a rel=\"nofollow\" class=\"external free\" href=\"https://go.nasa.gov/2RFSOLw\">https://go.nasa.gov/2RFSOLw</a>\n</p><p>NASA image use policy.\n</p><p>NASA Goddard Space Flight Center enables NASA’s mission through four scientific endeavors: Earth Science, Heliophysics, Solar System Exploration, and Astrophysics. Goddard plays a leading role in NASA’s accomplishments by contributing compelling scientific knowledge to advance the Agency’s mission.\n</p><p>Follow us on Twitter\n</p><p>Like us on Facebook\n</p>\nFind us on Instagram",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2019-12-19 08:07:35",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/24662369@N07/49467767318/\">https://www.flickr.com/photos/24662369@N07/49467767318/</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q110278636\" class=\"extiw\" title=\"d:Q110278636\"><span title=\"American photographer\">Chris Gunn</span></a></bdi>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY 2.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution 2.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by/2.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-2.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:Exploring_the_Universe_in_Virtual_Reality.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Exploring_the_Universe_in_Virtual_Reality.jpg/960px-Exploring_the_Universe_in_Virtual_Reality.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "0eb2cc2098e879ccf9f1b926fd1e44dbde008d59d9b70e01e1d7467509752262",
+      "decoded_rgb_sha256": "73b8cb4b7479f0466e0800af9ef82c4363cc1259af7490358f74ede5b0148b14",
+      "dimensions": [
+        960,
+        1170
+      ],
+      "annotation_status": "REVIEWED_PHYSICAL_STATUE_ABSENT",
+      "label": "labels/train/commons-equipment-87607266.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_identity_evidence": {
+        "page_id": 87607266,
+        "flickr_nsids": [
+          "24662369@N07"
+        ],
+        "flickr_aliases": [
+          "24662369@N07"
+        ],
+        "commons_users": [],
+        "historical_hits": []
+      },
+      "reserved_split": "train",
+      "target_instances": 0,
+      "visual_review": "Actually viewed original full image and contact sheet; living people and displayed game scenes are not physical statues",
+      "split": "train"
+    },
+    {
+      "image": "images/train/commons-equipment-184859567.jpg",
+      "source": "commons-equipment-negative-v1",
+      "group": "commons:artist:518a7b148a79b4ae8dc3882fedd8161754e9e51b1550b1e582f673e6ca1b99be",
+      "artist": "InclusiveGameLab",
+      "title": "File:InclusiveGameLab Person-Playing-Virtual-Reality 1 CC-BY-SA.jpg",
+      "page_id": 184859567,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2026-02-23 17:34:12",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "InclusiveGameLab Person-Playing-Virtual-Reality 1 CC-BY-SA",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Virtual reality|Gaming|Virtual reality headsets|Virtual reality games|Inclusion|Self-published work|Beat Saber",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "A young man is standing in front of a large screen. He is wearing a virtual reality headset and holding a controller in his right hand. The young man is positioned on the left side of the image, so only the right side of his upper body, his head, and his right arm are visible. He is playing the virtual reality rhyhtm video game Beat Saber. In the center of the screen, the music track and some lasers are visible.",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "23.02.2026",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:InclusiveGameLab&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:InclusiveGameLab (page does not exist)\">InclusiveGameLab</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:InclusiveGameLab_Person-Playing-Virtual-Reality_1_CC-BY-SA.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/InclusiveGameLab_Person-Playing-Virtual-Reality_1_CC-BY-SA.jpg/960px-InclusiveGameLab_Person-Playing-Virtual-Reality_1_CC-BY-SA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "2a98b8d198196dddab72ba41503b81fac8e0bec0e9810e75852f29816e5ca8e5",
+      "decoded_rgb_sha256": "cb7f35f9a37dfe0e5c53af4d5421364c1bdcff0fff8b17814c4ded94357010c2",
+      "dimensions": [
+        960,
+        720
+      ],
+      "annotation_status": "REVIEWED_PHYSICAL_STATUE_ABSENT",
+      "label": "labels/train/commons-equipment-184859567.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_identity_evidence": {
+        "page_id": 184859567,
+        "flickr_nsids": [],
+        "flickr_aliases": [],
+        "commons_users": [
+          "InclusiveGameLab",
+          "InclusiveGameLab (page does not exist)"
+        ],
+        "historical_hits": []
+      },
+      "reserved_split": "train",
+      "target_instances": 0,
+      "visual_review": "Actually viewed original full image and contact sheet; living people and displayed game scenes are not physical statues",
+      "split": "train"
+    },
+    {
+      "image": "images/train/commons-equipment-162865375.jpg",
+      "source": "commons-equipment-negative-v1",
+      "group": "commons:artist:d449619badb8fb3828cc3084eec61c8f863013341a691f31beb6040ce15a711a",
+      "artist": "Matti Blume",
+      "title": "File:ITB 2025, Berlin (ITB56557).jpg",
+      "page_id": 162865375,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2025-03-27 14:19:50",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "ITB 2025, Berlin (ITB56557)",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "GFDL|Virtual reality headsets|License migration redundant|Taken with Canon EOS 5D Mark IV and Canon EF 24-70mm F2.8L II USM|Self-published work|CC-BY-SA-2.0+|Uploaded with LrMediaWiki|Files with coordinates missing SDC location of creation|Berlin photographs taken on 2025-03-04|Pictures by MB-one rejected|ITB Berlin 2025 (supported by WMDE)",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "GPSLatitude": {
+          "value": "52.503192",
+          "source": "commons-desc-page"
+        },
+        "GPSLongitude": {
+          "value": "13.271978",
+          "source": "commons-desc-page"
+        },
+        "GPSMapDatum": {
+          "value": "WGS-84",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "ITB Berlin 2025 <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:ITB_2025,_Berlin_(ITB56557).jpg#ooui-php-4\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2025-03-04",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:MB-one\" title=\"User:MB-one\">Matti Blume</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:ITB_2025,_Berlin_(ITB56557).jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/ITB_2025%2C_Berlin_%28ITB56557%29.jpg/960px-ITB_2025%2C_Berlin_%28ITB56557%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "76d43701d0f05c38218c70294d50e4fcac9d5df0d24308e6f639fe6ffbf00ba3",
+      "decoded_rgb_sha256": "cd01aff0712753fb5de2ab05e27da1b0245842b6e2cc1caada04c851387ee75d",
+      "dimensions": [
+        960,
+        1200
+      ],
+      "annotation_status": "REVIEWED_PHYSICAL_STATUE_ABSENT",
+      "label": "labels/train/commons-equipment-162865375.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_identity_evidence": {
+        "page_id": 162865375,
+        "flickr_nsids": [],
+        "flickr_aliases": [],
+        "commons_users": [
+          "MB-one"
+        ],
+        "historical_hits": []
+      },
+      "reserved_split": "train",
+      "target_instances": 0,
+      "visual_review": "Actually viewed original full image and contact sheet; living people and displayed game scenes are not physical statues",
+      "split": "train"
+    },
+    {
+      "image": "images/train/commons-equipment-163433632.jpg",
+      "source": "commons-equipment-negative-v1",
+      "group": "commons:artist:3e20cc6aa0f139cf405f14b447af9457887d6014d70c1197d9962999b2ffe21b",
+      "artist": "Ministério da Defesa",
+      "title": "File:LAAD 2025 - Hisaac Gomes-MD (54442826607).jpg",
+      "page_id": 163433632,
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2025-04-11 15:54:12",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "LAAD 2025 - Hisaac Gomes-MD (54442826607)",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Virtual reality headsets|Flight simulators|Photographs by the Brazilian Ministry of Defence|Flickr images reviewed by FlickreviewR 2|LAAD 2025|Flickr images missing SDC published in",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "LAAD 2025 - Hisaac Gomes-MD",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2025-04-03 15:16",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/ministreiodadefesa/54442826607/\">LAAD 2025 - Hisaac Gomes-MD</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/77712181@N07\">Ministério da Defesa</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY 2.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution 2.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by/2.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-2.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:LAAD_2025_-_Hisaac_Gomes-MD_(54442826607).jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/LAAD_2025_-_Hisaac_Gomes-MD_%2854442826607%29.jpg/960px-LAAD_2025_-_Hisaac_Gomes-MD_%2854442826607%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "dd035abf12787c652f9680a186ba7b8f6306024db4936e594541302df3178a3f",
+      "decoded_rgb_sha256": "a116d6aff5a3f2387069be1407b7ce562cc71b5f543340a89ad571272f3da50b",
+      "dimensions": [
+        960,
+        640
+      ],
+      "annotation_status": "REVIEWED_PHYSICAL_STATUE_ABSENT",
+      "label": "labels/train/commons-equipment-163433632.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_identity_evidence": {
+        "page_id": 163433632,
+        "flickr_nsids": [
+          "77712181@N07"
+        ],
+        "flickr_aliases": [
+          "77712181@N07",
+          "ministreiodadefesa"
+        ],
+        "commons_users": [],
+        "historical_hits": []
+      },
+      "reserved_split": "train",
+      "target_instances": 0,
+      "visual_review": "Actually viewed original full image and contact sheet; living people and displayed game scenes are not physical statues",
+      "split": "train"
+    },
+    {
+      "image": "images/train/commons-equipment-51016430.jpg",
+      "source": "commons-equipment-negative-v1",
+      "group": "commons:artist:790c6c94076b4112cb1397ecb83f97ea50ff3f317142d990d594003f4c03b616",
+      "artist": "Maurizio Pesce from Milan, Italia",
+      "title": "File:LG 360 VR (26693418085).jpg",
+      "page_id": 51016430,
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2016-09-01 01:10:53",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "LG 360 VR (26693418085)",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Virtual reality headsets|Flickr images reviewed by FlickreviewR|Files by Maurizio Pesce",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "LG 360 VR",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2016-02-24 13:43",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/pestoverde/26693418085/\">LG 360 VR</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/30364433@N05\">Maurizio Pesce</a> from Milan, Italia",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY 2.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution 2.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by/2.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-2.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:LG_360_VR_(26693418085).jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/LG_360_VR_%2826693418085%29.jpg/960px-LG_360_VR_%2826693418085%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "05c0c59bcca8b7749f9e4b487fe08ac07f85fee64d475e96ec6d9810111ad6be",
+      "decoded_rgb_sha256": "852779850b6e7f25c152014ecef6a8a81d13308f4f3953162f137f31c4c41aef",
+      "dimensions": [
+        960,
+        640
+      ],
+      "annotation_status": "REVIEWED_PHYSICAL_STATUE_ABSENT",
+      "label": "labels/train/commons-equipment-51016430.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_identity_evidence": {
+        "page_id": 51016430,
+        "flickr_nsids": [
+          "30364433@N05"
+        ],
+        "flickr_aliases": [
+          "30364433@N05",
+          "pestoverde"
+        ],
+        "commons_users": [],
+        "historical_hits": []
+      },
+      "reserved_split": "train",
+      "target_instances": 0,
+      "visual_review": "Actually viewed original full image and contact sheet; living people and displayed game scenes are not physical statues",
+      "split": "train"
+    },
+    {
+      "image": "images/train/commons-statue-92099021.jpg",
+      "source": "commons-statue-positive-v1",
+      "group": "commons:artist:3e7f654ed95c91f956d0c46d6ba968d8f33d5408a44a3e18ca5b45990d8f9767",
+      "artist": "Jperep",
+      "title": "File:Bañolas.jpg",
+      "page_id": 92099021,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2020-07-10 21:11:21",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Bañolas",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Estany de Banyoles|Self-published work|Sunlight reflections from water|Statues of children|Uploaded via Campaign:wle-es|Images from Wiki Loves Earth 2020|Images from Wiki Loves Earth 2020 in Spain|Images from Wiki Loves Earth missing SDC location of creation|All media supported by Wikimedia España in 2020",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Atardecer en Bañolas",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2012-07-24 17:45:42",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Jperep&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Jperep (page does not exist)\">Jperep</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:Ba%C3%B1olas.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Ba%C3%B1olas.jpg/960px-Ba%C3%B1olas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "20fefef73f955bac517f8a3203c4f6b7b555d398677f2157286d8407f9c6f43a",
+      "decoded_rgb_sha256": "cbc52e26fbf21709f66e6d3ac0d2d781f584a75ab1efd343f9a3c7b92a6c2aef",
+      "dimensions": [
+        960,
+        640
+      ],
+      "annotation_status": "REVIEWED_VISIBLE_PHYSICAL_STATUE_FIGURES",
+      "label": "labels/train/commons-statue-92099021.txt",
+      "label_sha256": "7eb2fae1fc8a55c028a2fa3d1218e6890bad3c7a33d235df770cbcbe713f9e99",
+      "reserved_split": "train",
+      "boxes_xyxy": [
+        [
+          144,
+          150,
+          213,
+          226
+        ]
+      ],
+      "target_instances": 1,
+      "source_identity_evidence": {
+        "page_id": 92099021,
+        "artist": "Jperep",
+        "group": "commons:artist:3e7f654ed95c91f956d0c46d6ba968d8f33d5408a44a3e18ca5b45990d8f9767",
+        "flickr_nsids": [],
+        "flickr_aliases": [],
+        "commons_users": [
+          "Jperep",
+          "Jperep (page does not exist)"
+        ],
+        "historical_hits": []
+      },
+      "split": "train"
+    },
+    {
+      "image": "images/train/commons-statue-10546900.jpg",
+      "source": "commons-statue-positive-v1",
+      "group": "commons:artist:13144406317f01d4c1550902e835274f3a6440e508cc0b9ef507e5af96d73ac2",
+      "artist": "Dwight Burdette",
+      "title": "File:Bronze statue Cherry Hill School.JPG",
+      "page_id": 10546900,
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2010-06-04 14:46:21",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Bronze statue Cherry Hill School",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Taken with Canon EOS 500D|Outdoor sculptures in Michigan|Self-published work|Statues of children|Cherry Hill School",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Bronze statue, Cherry Hill School, Canton Township, Michigan",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2010-06-04",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:Deedeebee\" class=\"mw-redirect\" title=\"User:Deedeebee\">Dwight Burdette</a>",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by/3.0/deed.en\" class=\"extiw\" title=\"creativecommons:by/3.0/deed.en\">Attribution 3.0 Unported</a> license.</div><div class=\"rlicense-desc\" style=\"text-align:start;\" dir=\"ltr\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li></ul></dd></dl>\n</div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by/3.0</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY 3.0 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution 3.0 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "CC BY 3.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution 3.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by/3.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-3.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:Bronze_statue_Cherry_Hill_School.JPG",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Bronze_statue_Cherry_Hill_School.JPG/960px-Bronze_statue_Cherry_Hill_School.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "c56c6c914de8175eb9be0305c9e3b77a16357e6d87c9394ede41e3165be74d17",
+      "decoded_rgb_sha256": "39a3d67fb639b3fe4d75b5970b43b36fd234bf77d0be3de78e01aa26d00d5a21",
+      "dimensions": [
+        960,
+        640
+      ],
+      "annotation_status": "REVIEWED_VISIBLE_PHYSICAL_STATUE_FIGURES",
+      "label": "labels/train/commons-statue-10546900.txt",
+      "label_sha256": "29ae022127dcafaa0b808fbc1f0bd6b55732a0abc906b27c8c1846ccaeecb716",
+      "reserved_split": "train",
+      "boxes_xyxy": [
+        [
+          238,
+          194,
+          480,
+          480
+        ],
+        [
+          410,
+          153,
+          520,
+          491
+        ],
+        [
+          450,
+          176,
+          644,
+          496
+        ]
+      ],
+      "target_instances": 3,
+      "source_identity_evidence": {
+        "page_id": 10546900,
+        "artist": "Dwight Burdette",
+        "group": "commons:artist:13144406317f01d4c1550902e835274f3a6440e508cc0b9ef507e5af96d73ac2",
+        "flickr_nsids": [],
+        "flickr_aliases": [],
+        "commons_users": [
+          "Deedeebee"
+        ],
+        "historical_hits": []
+      },
+      "split": "train"
+    },
+    {
+      "image": "images/train/commons-statue-66942186.jpg",
+      "source": "commons-statue-positive-v1",
+      "group": "commons:artist:ffaef9d58135a9573c286c575f89530799a7ce807b5d8381b9542e2de10363d4",
+      "artist": "Chris Light",
+      "title": "File:Day in the Park 2017-06-09 042.jpg",
+      "page_id": 66942186,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2018-03-01 17:18:05",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Day in the Park 2017-06-09 042",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "St. Joseph, Michigan|Statues in Michigan|Self-published work|Bronze statues in the United States|Statues of children|St Joe Image by Chris Light",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Day in the Park, 2007 Statue in Lake Bluff Park, St. Joseph, Michigan.",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2017-06-09 11:44:10",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:Chris_Light\" title=\"User:Chris Light\">Chris Light</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:Day_in_the_Park_2017-06-09_042.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Day_in_the_Park_2017-06-09_042.jpg/960px-Day_in_the_Park_2017-06-09_042.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "a6cf9274e379985ea17aec52537a9d3e4905fc962dc5aa5bdc72cc713654f5cc",
+      "decoded_rgb_sha256": "86256e295dd541f7345ec7111869ecd490df6454c7d2a24f545bbd24f8a33345",
+      "dimensions": [
+        960,
+        1440
+      ],
+      "annotation_status": "REVIEWED_VISIBLE_PHYSICAL_STATUE_FIGURES",
+      "label": "labels/train/commons-statue-66942186.txt",
+      "label_sha256": "e5ea15779d3d373e75326ebbd5dae895aaf07193e2d79b380464ed3a48e5f01d",
+      "reserved_split": "train",
+      "boxes_xyxy": [
+        [
+          317,
+          339,
+          499,
+          825
+        ],
+        [
+          463,
+          325,
+          651,
+          841
+        ]
+      ],
+      "target_instances": 2,
+      "source_identity_evidence": {
+        "page_id": 66942186,
+        "artist": "Chris Light",
+        "group": "commons:artist:ffaef9d58135a9573c286c575f89530799a7ce807b5d8381b9542e2de10363d4",
+        "flickr_nsids": [],
+        "flickr_aliases": [],
+        "commons_users": [
+          "Chris Light",
+          "Chris_Light"
+        ],
+        "historical_hits": []
+      },
+      "split": "train"
+    },
+    {
+      "image": "images/train/commons-statue-136068441.jpg",
+      "source": "commons-statue-positive-v1",
+      "group": "commons:artist:5383a1ad7a28d5905a7c1da5e0a755676e0359e6d9ab48b58cd15c407703a513",
+      "artist": "EgorovaSvetlana",
+      "title": "File:Edith C Baker School Sculpture.jpg",
+      "page_id": 136068441,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2023-08-16 16:30:58",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Edith C Baker School Sculpture",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Elementary schools in Massachusetts|Outdoor sculptures in Massachusetts|Self-published work|Statues of children|Statues of boys in the United States|Statues of girls in the United States|Schools in Brookline, Massachusetts|Statues of two children in North America|Statues in schools|Edith C. Baker School",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Edith C. Baker School Public Schools of Brookline (PSB)",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2008-08-30 21:04:33",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:EgorovaSvetlana\" title=\"User:EgorovaSvetlana\">EgorovaSvetlana</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:Edith_C_Baker_School_Sculpture.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Edith_C_Baker_School_Sculpture.jpg/960px-Edith_C_Baker_School_Sculpture.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "e40a19f8547cf0b3162d18df82a0f187745a5d1860e5628144617ef0ed6cbb2b",
+      "decoded_rgb_sha256": "b01d818d62ae326c5958d9db7893f2de538c2df18eb9be660090299b4824d278",
+      "dimensions": [
+        960,
+        720
+      ],
+      "annotation_status": "REVIEWED_VISIBLE_PHYSICAL_STATUE_FIGURES",
+      "label": "labels/train/commons-statue-136068441.txt",
+      "label_sha256": "a97d82c8977e4af72cde3ca0a43a89f9f0678b71ceac8a71d2fc4271177925c7",
+      "reserved_split": "train",
+      "boxes_xyxy": [
+        [
+          190,
+          182,
+          423,
+          505
+        ],
+        [
+          350,
+          165,
+          793,
+          556
+        ]
+      ],
+      "target_instances": 2,
+      "source_identity_evidence": {
+        "page_id": 136068441,
+        "artist": "EgorovaSvetlana",
+        "group": "commons:artist:5383a1ad7a28d5905a7c1da5e0a755676e0359e6d9ab48b58cd15c407703a513",
+        "flickr_nsids": [],
+        "flickr_aliases": [],
+        "commons_users": [
+          "EgorovaSvetlana"
+        ],
+        "historical_hits": []
+      },
+      "split": "train"
+    },
+    {
+      "image": "images/train/153279586.jpg",
+      "source": "commons",
+      "group": "commons:artist:ad005e39acaef87f53f16946409c96adf1256ac17928dd78ecda0110974b8b76",
+      "artist": "Mahmudova Maftunaxon",
+      "title": "File:Alisher Navoiy haykali 2024.jpg",
+      "page_id": 153279586,
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "attribution_required": "false",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2024-09-28 14:33:57",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Alisher Navoiy haykali 2024",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "CC-Zero|Self-published work|Rear views of statues|Uzbekistan photographs taken on 2024-09-23|Statue of Alisher Navoiy in Samarkand",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Alisher Navoiy statue 2024",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "Taken on 23 September 2024, 10:23:45",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Mahmudova_Maftunaxon&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Mahmudova Maftunaxon (page does not exist)\">Mahmudova Maftunaxon</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Zero, Public Domain Dedication",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:Alisher_Navoiy_haykali_2024.jpg",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Alisher_Navoiy_haykali_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "sha256": "2f8f68550476f6b36ab1842f51a8895b0f0b53fdcb60a449b4ff27aa21366347",
+      "decoded_rgb_sha256": "465929c3e4622bfac28511be58ed34c66b89ba5cf2e192034887c385a822fda0",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "annotation_status": "REVIEWED",
+      "label": "labels/train/153279586.txt",
+      "label_sha256": "504499b78034b7d8ec14ca86e21ead3ea54c50d1646b2434c1273e15c21c4fb4",
+      "split": "train",
+      "review_approved": true,
+      "training_approved": true,
+      "review": "Reports/statue-rear-train-v17-boxes/reviewed.json"
+    },
+    {
+      "image": "images/train/6820057.jpg",
+      "source": "commons",
+      "group": "commons:artist:72b5534cb280a91e3aa90568cd698223ce7b3e1277eac140e98d23586775c344",
+      "artist": "Paul Simpson",
+      "title": "File:Ataturk's statue over looking the Bosphorous.jpg",
+      "page_id": 6820057,
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2009-05-19 19:16:43",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Ataturk's statue over looking the Bosphorous",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Statue of Atatürk in Sarayburnu|Taken with Fujifilm FinePix S5700|Flickr images uploaded by Flickr upload bot|Files by User:Dsmurat from tr.wikipedia|Rear views of statues",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "<a href=\"https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk\" class=\"extiw\" title=\"en:Mustafa Kemal Atatürk\">Atatürk</a>'s statue over looking the Bosphorous",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2008-10-02 14:44:53",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "originally posted to <b><a href=\"//commons.wikimedia.org/wiki/Flickr\" class=\"mw-redirect\" title=\"Flickr\">Flickr</a></b> as <a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/10422465@N00/2931672995\">Ataturk's statue over looking the Bosphorous</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/10422465@N00\">Paul Simpson</a>",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "<table id=\"FlickrReview\" style=\"width:100%; margin:0.3em auto; text-align:start; background-color:var(--background-color-success-subtle,#d5fdf4); padding: 3px; border:1px solid var(--border-color-base,#a2a9b1); color:inherit;\" dir=\"ltr\" lang=\"en\">\n\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/60px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"48\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/120px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"160\" data-file-height=\"153\"></span></span>\n</td>\n<td>This image, which was originally posted to <b><a href=\"https://en.wikipedia.org/wiki/Flickr\" class=\"extiw\" title=\"en:Flickr\">Flickr</a></b>, was uploaded to Commons using <b><a href=\"//commons.wikimedia.org/wiki/User:Flickr_upload_bot\" title=\"User:Flickr upload bot\">Flickr upload bot</a></b> on 19 May 2009, 19:16 by <span id=\"flickr_upload_bot_reviewer\"><b><a href=\"//commons.wikimedia.org/wiki/User:Dsmurat\" title=\"User:Dsmurat\">Dsmurat</a></b></span>. On that date, it was confirmed to be licensed under the terms of the license indicated.\n</td>\n<td><span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Flickr_dots.svg/60px-Flickr_dots.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"50\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Flickr_dots.svg/120px-Flickr_dots.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"512\" data-file-height=\"512\"></span></span>\n</td></tr></tbody></table>\n<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by/2.0/deed.en\" class=\"extiw\" title=\"creativecommons:by/2.0/deed.en\">Attribution 2.0 Generic</a> license.</div><div class=\"rlicense-desc\" style=\"text-align:start;\" dir=\"ltr\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li></ul></dd></dl>\n</div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by/2.0</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY 2.0 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution 2.0 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "CC BY 2.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution 2.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by/2.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-2.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:Ataturk%27s_statue_over_looking_the_Bosphorous.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Ataturk%27s_statue_over_looking_the_Bosphorous.jpg/960px-Ataturk%27s_statue_over_looking_the_Bosphorous.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "6ed4c9b804c2a0933e84a9023ec2c4b1f77303b62ad37135a2f977195c627419",
+      "decoded_rgb_sha256": "c12deecada48159f702f4ed685be2db30804406b83d096611c565f300e4d5be3",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "annotation_status": "REVIEWED",
+      "label": "labels/train/6820057.txt",
+      "label_sha256": "aa5467455200912f4a0dcaf903bd83df624bf026ce4c41e22cc9f7f4d52f4ce1",
+      "split": "train",
+      "review_approved": true,
+      "training_approved": true,
+      "review": "Reports/statue-rear-train-v17-boxes/reviewed.json"
+    },
+    {
+      "image": "images/train/43851215.jpg",
+      "source": "commons",
+      "group": "commons:artist:a5459e44abfe1ab42e614a3a4fd6b0ad377fb7b2f45980e056785095426473e6",
+      "artist": "Md mackinnon",
+      "title": "File:Backview of Monument to Brazil´s footballers.JPG",
+      "page_id": 43851215,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2015-09-30 14:55:59",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Backview of Monument to Brazil´s footballers",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Monument to Hilderaldo Bellini (Rio de Janeiro city)|Self-published work|Images from Wiki Loves Monuments 2015|Images from Wiki Loves Monuments 2015 in Brazil|Uploaded via Campaign:wlm-br|Images from Wiki Loves Monuments 2015 in Brazil - Rio de Janeiro|Brazil photographs taken on 2015-09-29|Images from Wiki Loves Monuments missing SDC location of creation|Rear views of statues",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "This is a photo of a monument in Brazil identified by the ID",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2015-09-29 15:39:57",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Md_mackinnon&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Md mackinnon (page does not exist)\">Md mackinnon</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:Backview_of_Monument_to_Brazil%C2%B4s_footballers.JPG",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Backview_of_Monument_to_Brazil%C2%B4s_footballers.JPG/960px-Backview_of_Monument_to_Brazil%C2%B4s_footballers.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "04c901923e63141f21c9f992990dc8f35f6779ea16e0e00b5ab3aa14bd413f0f",
+      "decoded_rgb_sha256": "4c3bfdffaf8201a25660e163ac4af9978751211cc16e8b9ce9376daf2f7b44ac",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "annotation_status": "REVIEWED",
+      "label": "labels/train/43851215.txt",
+      "label_sha256": "ee43ab2bb43f975e3507501081061401bcd67f790b91c283e4c798fff96c8408",
+      "split": "train",
+      "review_approved": true,
+      "training_approved": true,
+      "review": "Reports/statue-rear-train-v17-boxes/reviewed.json"
+    },
+    {
+      "image": "images/train/122737833.jpg",
+      "source": "commons",
+      "group": "commons:artist:2ddb818ca6fe411296085b359f3510da8442319eb3341c952363adb787db2a03",
+      "artist": "Tomcorengia",
+      "title": "File:Bellagio - monumento a Dante e Beatrice - 202209062223.jpeg",
+      "page_id": 122737833,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2022-09-06 20:23:07",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Bellagio - monumento a Dante e Beatrice - 202209062223",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Dante and Beatrice (Bellagio)|Self-published work|Cultural heritage monuments in Italy with known IDs|Images from Wiki Loves Monuments 2022 in Italy|Images from Wiki Loves Monuments 2022 in Italy - Lombardy|Images from Wiki Loves Monuments 2022 in Italy - Lake Como|Images from Wiki Loves Monuments 2022 in Italy - traditional contest|Images from Wiki Loves Monuments 2022|Files uploaded via app Wiki Loves Monuments Italia in 2022|Rear views of statues",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Bellagio - monumento a Dante e Beatrice",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2022-09-06",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:Tomcorengia\" title=\"User:Tomcorengia\">Tomcorengia</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:Bellagio_-_monumento_a_Dante_e_Beatrice_-_202209062223.jpeg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Bellagio_-_monumento_a_Dante_e_Beatrice_-_202209062223.jpeg/960px-Bellagio_-_monumento_a_Dante_e_Beatrice_-_202209062223.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "15391ff2e8406333280eacd194e045ea5bb71a3f902a416a183f3001d5ca829e",
+      "decoded_rgb_sha256": "b06e94501a3e481fded6c1f69e1a1bf5ae7fa5de86b49ac4db9908f795bf8b37",
+      "dimensions": [
+        960,
+        668
+      ],
+      "annotation_status": "REVIEWED",
+      "label": "labels/train/122737833.txt",
+      "label_sha256": "b781890fb68a2b12da436b5e8b28cea151bb3fba2fb91679d9540e01670b99c0",
+      "split": "train",
+      "review_approved": true,
+      "training_approved": true,
+      "review": "Reports/statue-rear-train-v17-boxes/reviewed.json"
+    },
+    {
+      "image": "images/train/95264673.jpg",
+      "source": "commons",
+      "group": "commons:artist:68846681460e47e4f1a1c4d43656f8025979b309c80cb117219590d11a48d034",
+      "artist": "Ehighway",
+      "title": "File:Adaptive VR Boy.jpg",
+      "page_id": 95264673,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2020-10-20 17:54:11",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Adaptive VR Boy",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "HTC Vive|HTC Vive controllers|Self-published work|People wearing virtual reality headsets|Boys in wheelchairs",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Adaptive VR Boy",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2019-09-22",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ehighway&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ehighway (page does not exist)\">Ehighway</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:Adaptive_VR_Boy.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Adaptive_VR_Boy.jpg/960px-Adaptive_VR_Boy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "af0a2ff499dcc8ad6543555bb1bb3e17424bcd30eb31eadb4db5823db415d69c",
+      "decoded_rgb_sha256": "b3e1aa0ca46f4385f5a6d98d76a385d5c2ea5bccf6563dffb74a8cae667f650d",
+      "dimensions": [
+        960,
+        1281
+      ],
+      "annotation_status": "REVIEWED",
+      "label": "labels/train/95264673.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "split": "train",
+      "review_approved": true,
+      "training_approved": true,
+      "review": "Reports/statue-vr-confuser-train-v20-empty-label-review.json"
+    },
+    {
+      "image": "images/train/81562196.jpg",
+      "source": "commons",
+      "group": "commons:artist:06b00428d06f0491dc2f8772c3448e4e288c67cfb5319486231fae192684376a",
+      "artist": "dronepicr",
+      "title": "File:AORUS VR racing simulator Gamescom 2019 (48605696576).jpg",
+      "page_id": 81562196,
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2019-08-23 17:58:22",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "AORUS VR racing simulator Gamescom 2019 (48605696576)",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Germany photographs taken on 2019-08-20|Gamescom 2019|People playing video games|Flickr images reviewed by FlickreviewR 2|Files with coordinates missing SDC location of creation (50° N, 6° E)|Gigabyte Technology products|People wearing virtual reality headsets|Files from dronepicr Flickr stream|Flickr images missing SDC published in",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "GPSLatitude": {
+          "value": "50.946661",
+          "source": "commons-desc-page"
+        },
+        "GPSLongitude": {
+          "value": "6.983288",
+          "source": "commons-desc-page"
+        },
+        "GPSMapDatum": {
+          "value": "WGS-84",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "AORUS VR racing simulator Gamescom 2019",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2019-08-20 11:09",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/132646954@N02/48605696576/\">AORUS VR racing simulator Gamescom 2019</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/132646954@N02\">dronepicr</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY 2.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution 2.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by/2.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-2.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:AORUS_VR_racing_simulator_Gamescom_2019_(48605696576).jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/AORUS_VR_racing_simulator_Gamescom_2019_%2848605696576%29.jpg/960px-AORUS_VR_racing_simulator_Gamescom_2019_%2848605696576%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "2449a94daa255d1480699137491b383d9928e0c51d4da3e3d90e808dbc2878ec",
+      "decoded_rgb_sha256": "16acddf5ebbf0f2c553cbe9c0f0706536390ebf3b019aac2e3f7756f269298a2",
+      "dimensions": [
+        960,
+        640
+      ],
+      "annotation_status": "REVIEWED",
+      "label": "labels/train/81562196.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "split": "train",
+      "review_approved": true,
+      "training_approved": true,
+      "review": "Reports/statue-vr-confuser-train-v20-empty-label-review.json"
+    }
+  ],
+  "prior_audit_sha256": "73478f1c563c067d70a963d0eb58499abf43c1596f6595b2eef02cff896c2d6d",
+  "revision": "Three TRAIN figure-boundary label corrections only; all86 photos/groups/folds and other83 labels unchanged. VAL and historical TEST unchanged.",
+  "review_evidence": [
+    "Reports/lvis-statue-review-0.png",
+    "Reports/lvis-statue-review-1.png",
+    "Reports/lvis-statue-training-review-0.png",
+    "Reports/lvis-statue-training-review-1.png",
+    "Reports/lvis-statue-training-review-2.png",
+    "Reports/lvis-statue-training-review-3.png",
+    "Reports/lvis-statue-training-review-4.png"
+  ],
+  "limitations": [
+    "Two new test images are insufficient for deployment acceptance",
+    "Generic physical sculptures; no historical identity or material guarantee",
+    "No PICO imagery; source usernames checked against prior author aliases",
+    "New Flickr NSIDs verified from current publisher pages; old folds preserved",
+    "Two additional training images only; dense-instance and relief class policy unresolved.",
+    "Previously inspected validation/test remain diagnostic; no new independent acceptance set.",
+    "One additional six-instance training image; old observed folds retained, fresh acceptance still pending",
+    "Five newly original-reviewed public images; no PICO positive test; public pretraining overlap unknown. Existing holdouts preserved; no deployment acceptance implied."
+  ],
+  "training_approved": true,
+  "parent_audit_sha256": "b42a570e527567225c760fe427201c74957ab1567e8dd1b69f66415222f5f328",
+  "additional_review_sha256": "afb8ddaf335e4b44822945d784f741713746a0f731c980011d9efbc045767b27",
+  "additional_review": "Reports/statue-dense-source-review-v3.json",
+  "names": [
+    "Statue"
+  ],
+  "ontology_clarification": "Figurative volumetric human/animal sculpture includes projecting architectural animal sculptures; flat relief, costume, real animals and abstract furniture excluded. Do not infer historical identity or material.",
+  "negative_bank_sha256": "8d0d6ea6e211053f4fdf65ab59e3f0275f7e723799d0804aaff57f6810c6e82e",
+  "deployment_accepted": false,
+  "positive_bank_sha256": "8cd7ee5cea468fda89e6411680dccfe4e187f21bd913a3c8a623ae481e50a356",
+  "release_review_sha256": "cf85ddd3dc60710b72ba28fb3718e5d2d6d42b28198d9d342f3e947222249d3a",
+  "split_counts": {
+    "train": 76,
+    "val": 7,
+    "test": 3
+  },
+  "context_evidence": {
+    "Reports/statue-vr-confuser-train-v20-empty-label-review.json": "de042a4606bc46d22d651b27365f227f1ab2da639386b81fefdb605078d54f96",
+    "Reports/statue-vr-confuser-train-v20-publisher-linkage.json": "f90e72b4a9ae6b4abfccd6359bce003a50648eb6bb4ce1302f9b362a1ae6cf24",
+    "Reports/statue-vr-confuser-train-v20-pixel-history.json": "4d9cc1e8be532557376c1bf29280a1aafe61c5fd57e4d96dfcea88258d94d803",
+    "Datasets/statue-vr-confuser-train-source-v20/manifest.json": "7768004803a79f91596aacd607a223e0ad00bb5c4ca71eae97764a37e9a36160",
+    "Datasets/statue-vr-confuser-train-source-v20/train-reservation.json": "55b60bafea3752f6ac05bad0174a02fbdace4d16ae20e99a1c783b23703e140a",
+    "Reports/statue-vr-confuser-train-v20-identity-history.json": "9969af21af67e091b41d5d63cf8723d7499b9fae18624e9732a51c53d1de150f",
+    "Reports/statue-vr-confuser-train-v20-creator-links.json": "cc13df370428fc72aefa348a6bafaf3c88601bf7f4c8caec5754805a05aabda7",
+    "Reports/statue-train-label-policy-v23/corrections-reviewed.json": "67ffd6e30100a07598ff18bce04bc121236e957c92f365b2eda2ff032802e832"
+  },
+  "label_corrections": [
+    {
+      "label": "labels/train/a4c79da55d1b8a9f06ba1181.txt",
+      "old_sha256": "db726297620f56231dcb236d419726d5b259f2d70dc3dfa84ac7c897042894c0",
+      "new_sha256": "1c4d3300e2d9e4a58325467aebfa7afea560fe9976fec6a6af4312008318039f",
+      "split": "train"
+    },
+    {
+      "label": "labels/train/2751fcb96bea2cda551301e0.txt",
+      "old_sha256": "c16ec5b3e2f88ec20447c0741a1065cb5f4b0496c083a7ec2c61eff9f2cf6b31",
+      "new_sha256": "a1e82fea65b825163aa7af347446ba352c6b01bdbfc69340fc0aa0c27e2cc98c",
+      "split": "train"
+    },
+    {
+      "label": "labels/train/79614cbf661cad1ca9399d7b.txt",
+      "old_sha256": "22474f659e1ee876b7c6c148c6d23b814223e07884ddbc4c13a46c4153340d3b",
+      "new_sha256": "7fd1af0f0b013374f30c3b1b02b7a886e6acd735b9d1453aadd9f11e222e879d",
+      "split": "train"
+    }
+  ]
+}
