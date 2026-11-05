@@ -1,0 +1,27 @@
+{
+  "status": "SOURCE_QUALITY_AUDIT_FINDING_NOT_DEPLOYMENT",
+  "all21_multi_box_train_contacts_actually_viewed": true,
+  "full_resolution_train_overlays_viewed": [
+    "9c0088e9dc85152e",
+    "a0893025c69a4ee8"
+  ],
+  "full_resolution_unannotated_source_viewed": [
+    "9c0088e9dc85152e"
+  ],
+  "source_red_border": "Exact upstream HTTP200 bytes match local source and TRAIN image; border exists upstream. Do not claim local overlay corruption.",
+  "heuristic_scan": {
+    "images": 109,
+    "flagged": 2,
+    "verified_source_border": 1,
+    "known_false_positive": "34012c59c928d625 VAL orange wall/container scene; red edges are natural scene content"
+  },
+  "instance_findings": {
+    "9c0088e9dc85152e": "Two visible plant containers; image decorative border is separate from labels. Broad left ivy extent includes both plants partially; closer instance boundary review still needed.",
+    "a0893025c69a4ee8": "Large foreground shared planted barrel plus separate clipped left-background planted barrel; nested box positions correspond to two distinct visible containers, not automatic duplicate-label deletion."
+  },
+  "labels_modified": false,
+  "images_modified": false,
+  "threshold_retuned": false,
+  "causal_explanation_of_failed_model": "Not established; source-border shortcut is a hypothesis, not verified cause.",
+  "next_action": "Continue full-original TRAIN boundary audit; preserve historical datasets/reports. If source-quality exclusions are justified, create a new TRAIN-only version and predeclare policy, retaining all held-out rows unchanged."
+}

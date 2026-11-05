@@ -1,0 +1,69 @@
+{
+  "dataset_version": "e15191e0e50572c0f02206b14f11416e91df08192322fb02e06987e9f215de31",
+  "initializer_sha256": "fe706e1763a8ffa5924c849d9798bb1083d416df6c8c6720cb6ffcdb3780177a",
+  "parameters": {
+    "data": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\plant-reviewed-v20\\data.yaml",
+    "device": 0,
+    "epochs": 50,
+    "imgsz": 640,
+    "batch": 4,
+    "workers": 0,
+    "seed": 20261105,
+    "deterministic": true,
+    "freeze": 0,
+    "optimizer": "AdamW",
+    "lr0": 0.0001,
+    "lrf": 0.1,
+    "warmup_bias_lr": 0.0001,
+    "mosaic": 0.0,
+    "mixup": 0.0,
+    "cutmix": 0.0,
+    "scale": 0.3,
+    "translate": 0.05,
+    "hsv_h": 0.01,
+    "hsv_s": 0.3,
+    "hsv_v": 0.2,
+    "close_mosaic": 0,
+    "project": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-reviewed-v20-training",
+    "name": "train",
+    "plots": true
+  },
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "hypothesis": "Reviewed TRAIN instance corrections and one ambiguous TRAIN group hold; select best by full13 target service-shaped validation, not native12 two-class fitness. Same initializer and optimization settings as v18.",
+  "unity_mapping": {
+    "PottedPlant": "ParkPlant",
+    "CutArrangement": null
+  },
+  "evaluation_protocol": {
+    "confidence": 0.35,
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 8,
+    "allowed_classes": [
+      "PottedPlant"
+    ]
+  },
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8
+  },
+  "mandatory_runtime_val_images": 13,
+  "native_two_class_fitness_images": 12,
+  "limitations": [
+    "One unresolved auxiliary VAL image excluded only from native two-class fitness; must remain in complete13-image target acceptance",
+    "One unresolved border-flower TRAIN image held before inference; no fold reassignment",
+    "Tiny public-photo pilot; fresh independent TEST/PICO positive validation required"
+  ],
+  "service_routed": false,
+  "pico_validated": false,
+  "test_policy": "No observed TEST selection/tuning",
+  "checkpoint_selection": {
+    "policy": "Gate pass then F1,precision,recall,AP50-95; earliest exact tie",
+    "split": "val",
+    "images": 13,
+    "operating_confidence": 0.35,
+    "never_test": true
+  }
+}

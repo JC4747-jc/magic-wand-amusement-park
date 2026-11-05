@@ -1,0 +1,15 @@
+{
+  "status": "ALL92_TRAIN_ORIGINALS_VISUALLY_REVIEWED_THIS_PASS",
+  "dataset_audit_sha256": "12ff87b047fedb6a1985475d3a33ad006dc6f0ff1bc7a20e35cb98d14e713838",
+  "single_box": 64,
+  "multi_box": 21,
+  "empty": 7,
+  "unresolved_train_instance_hold": [
+    "d4457bb0551265a6"
+  ],
+  "model_acceptance": false,
+  "limitations": [
+    "Review preserves stated uncertainties; visual coverage does not prove every hidden root or instance association.",
+    "Two multi-box label patches already applied in v19; no held-out labels changed."
+  ]
+}

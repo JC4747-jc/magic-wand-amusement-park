@@ -1,0 +1,46 @@
+{
+  "dataset_audit_sha256": "12ff87b047fedb6a1985475d3a33ad006dc6f0ff1bc7a20e35cb98d14e713838",
+  "samples": [
+    {
+      "original_id": "00e20fa6098f2577",
+      "image": "images\\train\\f30aeff0bee4c4e52c4ff917.jpg",
+      "source_sha256": "f30aeff0bee4c4e52c4ff9176189a03a45b8823d69551f9ea32af6c1b3b6a37f",
+      "label_sha256": "ac48b1109208ef62b78e4ab40c3c54a5fdac0a063aeafd534b49d50781dd4e54",
+      "full_original_actually_viewed": true,
+      "observation": "Clipped white planted-container appearance with flowering stems and broad hairy basal leaves. Soil/root detail occluded; no positive evidence of cut arrangement. Retain existing label, do not claim botanical proof.",
+      "decision": "RETAIN_EXISTING_LABEL_NO_CONFIRMED_CORRECTION"
+    },
+    {
+      "original_id": "05fe0725636fe840",
+      "image": "images\\train\\0f1123f2852da5625804b23a.jpg",
+      "source_sha256": "0f1123f2852da5625804b23a8253ab93439e9c25a62c1ed98e73db6580a96d05",
+      "label_sha256": "8bad06e6a42f3b5825e5e0937af327a9724c8a1da7790ab0dd7720fdcb10304b",
+      "full_original_actually_viewed": true,
+      "observation": "Woody branching stems visibly enter soil-filled ceramic pot; one rooted container, retain label.",
+      "decision": "RETAIN_EXISTING_LABEL_NO_CONFIRMED_CORRECTION"
+    },
+    {
+      "original_id": "51a0f477a6c8d97f",
+      "image": "images\\train\\5d16bf6235912264ef8a20e1.jpg",
+      "source_sha256": "5d16bf6235912264ef8a20e1a410fb6a2a51d84a360afec50206a5274fd94a9c",
+      "label_sha256": "a20b88b8395dc4d0e63753dce5d62c8e3426d41acca5beae5e4193c72e259687",
+      "full_original_actually_viewed": true,
+      "observation": "Several herbs share one repurposed Xbox casing filled as planter; count one planted-container instance, not one per species.",
+      "decision": "RETAIN_EXISTING_LABEL_NO_CONFIRMED_CORRECTION"
+    },
+    {
+      "original_id": "92b99b81715472df",
+      "image": "images\\train\\2c567e0dc21235cfde3f95e5.jpg",
+      "source_sha256": "2c567e0dc21235cfde3f95e5d5fcf0122ee900cfe11973342184dc05c5a35eea",
+      "label_sha256": "41875d67369369b45f87192c46c80c5abbdb37a1968940dd1b5b7ede06c374af",
+      "full_original_actually_viewed": true,
+      "observation": "Tall palm stems and low foliage share one visible outer floor planter; retain one container instance, no species-based splitting.",
+      "decision": "RETAIN_EXISTING_LABEL_NO_CONFIRMED_CORRECTION"
+    }
+  ],
+  "labels_modified": false,
+  "images_modified": false,
+  "full_single_originals_reviewed_this_pass": 4,
+  "remaining_single_originals": 60,
+  "training_started": false
+}

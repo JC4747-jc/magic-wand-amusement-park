@@ -1,0 +1,39 @@
+{
+  "status": "PASS_REVIEWED_TRAIN_ONLY_PATCHES",
+  "dataset_sha256": "12ff87b047fedb6a1985475d3a33ad006dc6f0ff1bc7a20e35cb98d14e713838",
+  "images": 109,
+  "counts": {
+    "train": 92,
+    "val": 13,
+    "test": 4
+  },
+  "instances": {
+    "('train', 'PottedPlant')": 96,
+    "('val', 'PottedPlant')": 13,
+    "('train', 'CutArrangement')": 24,
+    "('val', 'CutArrangement')": 3,
+    "('test', 'PottedPlant')": 5
+  },
+  "changes": [
+    {
+      "original_id": "6f30db47a5308f81",
+      "old_label_sha256": "f2acf64ff4120b7b28c7df243bef2c9e8a54590e7aa51118302a978747b8723a",
+      "new_label_sha256": "501ee37469ad212c8ee58526d1cb7e1f104afbe06aaa512a2b6563dc084d9cd2",
+      "old_instances": 2,
+      "new_instances": 2
+    },
+    {
+      "original_id": "bf66f91af557ad59",
+      "old_label_sha256": "4fb2c0d582cdc71d29a9cd54d49f87488428292ab4ddf199a57a003955b9bff7",
+      "new_label_sha256": "11354280b46623cb426f160e2420b18570269bf8d945b34b8c3ef23271fae163",
+      "old_instances": 5,
+      "new_instances": 7
+    }
+  ],
+  "all_image_bytes_retained": true,
+  "all_folds_retained": true,
+  "all_val_test_labels_retained": true,
+  "native_val_list_unchanged": true,
+  "training_started": false,
+  "model_accepted": false
+}

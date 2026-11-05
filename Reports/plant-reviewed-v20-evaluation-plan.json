@@ -1,0 +1,27 @@
+{
+  "dataset_sha256": "e15191e0e50572c0f02206b14f11416e91df08192322fb02e06987e9f215de31",
+  "selection_tool_sha256": "5a7705fb7f60d4c59e67531bd5d854bd481458e0c864970d3cd337e58863e84e",
+  "training_tool_sha256": "1840bd75cc9686b11505d047ac9a0aa3f150c11df2181b54d06ba50be06119e6",
+  "policy": "Predeclared before training: evaluate all13VAL after each saved epoch; lexicographic gate pass,F1,precision,recall,AP50-95; retain earliest exact tie; native12fitness is diagnostic only.",
+  "frozen": {
+    "confidence": 0.35,
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 8,
+    "allowed_classes": [
+      "PottedPlant"
+    ]
+  },
+  "epochs": 50,
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8
+  },
+  "test_selection": false,
+  "completion": "Strip selected checkpoint then independently rerun fullVAL, observed negative/regression gates; fresh independent TEST/PICO required for acceptance.",
+  "limitations": [
+    "Training data supervision and checkpoint-selection policy both change relative to v18, so no single-factor causal claim.",
+    "Repeated VAL model selection is development use and cannot establish fresh TEST generalization."
+  ]
+}

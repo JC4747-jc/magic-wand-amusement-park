@@ -1,0 +1,22 @@
+{
+  "full_resolution_five_train_overlays_actually_viewed": [
+    "6f30db47a5308f81",
+    "bf66f91af557ad59",
+    "e249a613de089b78",
+    "40d9260ee6bfecc5",
+    "268207aae05bd6a8"
+  ],
+  "tower_detail_crop_actually_viewed": true,
+  "confirmed_train_corrections": 2,
+  "instance_count_change": 2,
+  "unchanged_findings": {
+    "e249a613de089b78": "Two foreground containers plus small background pot are three separate instances; no automatic merge.",
+    "40d9260ee6bfecc5": "Three distinct pots including partially occluded orchid; pot boundary association still deserves close review, no correction inferred solely from overlap.",
+    "268207aae05bd6a8": "Two balcony/foreground potted targets; large right tree is ground-grown and excluded from PottedPlant."
+  },
+  "parent_audit_sha256": "f3eefa042dd1ea24acc10213dfb4eb15aeab4887ee5f52e21b71e91a486f6616",
+  "parent_unchanged": true,
+  "held_out_labels_changed": false,
+  "training_started": false,
+  "next_action": "Continue remaining multi-box TRAIN original review before new release; corrections alone do not establish model acceptance."
+}

@@ -1,0 +1,36 @@
+{
+  "dataset_sha256": "f3eefa042dd1ea24acc10213dfb4eb15aeab4887ee5f52e21b71e91a486f6616",
+  "scanned_images": 109,
+  "method": "At least two image edges have >=80% saturated red pixels; heuristic flag only, not proof of annotation overlay or rejection",
+  "candidates": [
+    {
+      "original_id": "9c0088e9dc85152e",
+      "split": "train",
+      "image": "images\\train\\d8c93d4204faeb177c00a385.jpg",
+      "sha256": "d8c93d4204faeb177c00a3851690e0f84f47c243f545db85b84cfd042c053226",
+      "red_edge_fractions": {
+        "top": 1.0,
+        "bottom": 1.0,
+        "left": 1.0,
+        "right": 1.0
+      },
+      "status": "VISUAL_SOURCE_REVIEW_REQUIRED"
+    },
+    {
+      "original_id": "34012c59c928d625",
+      "split": "val",
+      "image": "images\\val\\9fbc2444b8acf1398deaddd3.jpg",
+      "sha256": "9fbc2444b8acf1398deaddd3364bfd2d670888d6fce13c3c43dbec0ee350da04",
+      "red_edge_fractions": {
+        "top": 0.8125,
+        "bottom": 0.0,
+        "left": 0.16536458333333334,
+        "right": 0.8424479166666666
+      },
+      "status": "VISUAL_SOURCE_REVIEW_REQUIRED"
+    }
+  ],
+  "labels_modified": false,
+  "images_modified": false,
+  "training_approved": false
+}

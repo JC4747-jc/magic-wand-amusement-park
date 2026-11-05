@@ -1,0 +1,658 @@
+{
+  "policy": "Gate pass, F1, precision, recall, AP50-95; strict greater only retains earliest exact tie. VAL only, no confidence search.",
+  "dataset_sha256": "e15191e0e50572c0f02206b14f11416e91df08192322fb02e06987e9f215de31",
+  "records": [
+    {
+      "epoch": 1,
+      "checkpoint_sha256": "a434089e00d86fcbfa1f3684fafcdbcb928d4a6d6366a8983f65214335ebe1dd",
+      "report_sha256": "5e98e08e363014fd6ce5290535ce6058338e29decd6b4993ef97e178cff5045d",
+      "rank": [
+        0,
+        0.896551724137931,
+        0.8125,
+        1.0,
+        0.8132825757575757
+      ],
+      "selected": true
+    },
+    {
+      "epoch": 2,
+      "checkpoint_sha256": "fe4447b30718dde9eb642e30aa4530fc42c52febb7bfb918b666541b491c7c74",
+      "report_sha256": "48fab5681b60de6f3696756a34c82e0b0e09fab54de67e6420396e747afd88ef",
+      "rank": [
+        0,
+        0.9285714285714286,
+        0.8666666666666667,
+        1.0,
+        0.8215333333333333
+      ],
+      "selected": true
+    },
+    {
+      "epoch": 3,
+      "checkpoint_sha256": "7c1d37783850984f01525a2eb4b3ca63ad776227f2c46c30a496b5522b04d611",
+      "report_sha256": "6bfde94dffb216315f08fb9a498ace22654ba7daa0a0a2ba031a95dae1110a79",
+      "rank": [
+        0,
+        0.8571428571428571,
+        0.8,
+        0.9230769230769231,
+        0.7865053571428573
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 4,
+      "checkpoint_sha256": "4fb321b7150a60cbeb7146ff98f4d2a59dac476b1ee0716421c4c8e1a4f51da5",
+      "report_sha256": "03a7de88374981bb46ac1069ea54a1b035e701b9bf4c6245c7a9be9360033a2b",
+      "rank": [
+        0,
+        0.7857142857142856,
+        0.7333333333333333,
+        0.8461538461538461,
+        0.7283013499940918
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 5,
+      "checkpoint_sha256": "1d6e63122ad071d5f82a4e4b7ab83ecc931a5897912e00cea50e0a883d91e239",
+      "report_sha256": "6fca760dc9af3384a72e22433c9ae96f509839074e2b6052b38a713d9db0bcb4",
+      "rank": [
+        0,
+        0.8571428571428571,
+        0.8,
+        0.9230769230769231,
+        0.7269191464091463
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 6,
+      "checkpoint_sha256": "9e5eeb51963831e7d24c054082a795a2a27c30a9dba45140b3a3d6adcf14365a",
+      "report_sha256": "3f17536ec2f573e4d7aaab8a3ec17f885767fec4578038ee1489391663be6957",
+      "rank": [
+        0,
+        0.8,
+        0.8333333333333334,
+        0.7692307692307693,
+        0.7129136904761906
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 7,
+      "checkpoint_sha256": "e0409fce7e732ff1bb7c90d55f8e280943a504127fb6e8be93103a905611cde9",
+      "report_sha256": "1af1c596b5c51e58d8eea81ab94b256964bc997ab5bedbeab949f4ba5bcb46ef",
+      "rank": [
+        0,
+        0.8275862068965517,
+        0.75,
+        0.9230769230769231,
+        0.7244901706137001
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 8,
+      "checkpoint_sha256": "e8b5eaaf4d2623b99671e31f42f0478366e8ec860bce0af6066c4ef20e13444e",
+      "report_sha256": "07647f8a90ddfd90b6ca88a216aee3e3cac8cf64f2615ca6153e3366304b434f",
+      "rank": [
+        0,
+        0.8275862068965517,
+        0.75,
+        0.9230769230769231,
+        0.7234972222222222
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 9,
+      "checkpoint_sha256": "b18e07fef195923c31f2f7a374070272c753a20f75f4c81901e9dc369912f9f8",
+      "report_sha256": "fcebec6b19f6da935ed2ac23e017408c72fc0e4c2d88f7ca48516f2bfa7fade8",
+      "rank": [
+        0,
+        0.8000000000000002,
+        0.7058823529411765,
+        0.9230769230769231,
+        0.7147933732933732
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 10,
+      "checkpoint_sha256": "4194159dd46aa84d182bbbfde370f74bcb577f940df3cd57f2344962421f0f91",
+      "report_sha256": "e12048e79d163560fce344b1361c0d104b8e2d154e78ea8f96004552b2b064de",
+      "rank": [
+        0,
+        0.7586206896551724,
+        0.6875,
+        0.8461538461538461,
+        0.7358038850038852
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 11,
+      "checkpoint_sha256": "f93b20f00d8adfa7554c0f2d562ffde9ff64ed024d1f14c223ef15cc0f2672ef",
+      "report_sha256": "a5ea5aa0174455085782ef4c1ddc28d3d018c4064bd348160528dd7cff0e8039",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.7303239492391665
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 12,
+      "checkpoint_sha256": "a9c56f156ce6e7e4de4b3a3002a50381aefcb41e2841bf0203fd50c378580c6c",
+      "report_sha256": "2fe3a3c836d343412c26cb8a2c605659a9ac11194d380619586d256faf723f6d",
+      "rank": [
+        0,
+        0.8461538461538461,
+        0.8461538461538461,
+        0.8461538461538461,
+        0.7400325199310491
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 13,
+      "checkpoint_sha256": "fe0eae440cfad91f0d17f9272849f8329fea7d738166d3656fcecd6eb1c0fd7d",
+      "report_sha256": "50654d39c448f819c2c71f68fac8f9101c9c93ff63779e3290e4a21afb30071e",
+      "rank": [
+        0,
+        0.8275862068965517,
+        0.75,
+        0.9230769230769231,
+        0.8154590659340657
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 14,
+      "checkpoint_sha256": "d2606d2b6512b30353d0e87c02f305c41895b3760442a84ebdd5a7c5bf89ca21",
+      "report_sha256": "3246b960d84ee30d5de91005552254b95c4b3a8c5743d0f7fe97a2c0ef3665da",
+      "rank": [
+        0,
+        0.7741935483870968,
+        0.6666666666666666,
+        0.9230769230769231,
+        0.829302797202797
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 15,
+      "checkpoint_sha256": "54165392c3be4b07f316e89a4bf7496e0b7d7f691109eb1b2769bc9dc9c4ba4d",
+      "report_sha256": "f90b33b7ef0fefde7230d9038def6df80ccf47ceda2333ae6c962dd77080c0bc",
+      "rank": [
+        0,
+        0.8275862068965517,
+        0.75,
+        0.9230769230769231,
+        0.8281550116550115
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 16,
+      "checkpoint_sha256": "a48ab002b9ff0579c9ed37ff0077df6ef47f41de94d2c84d97f596a90b5b2773",
+      "report_sha256": "cfd54d71dd726f62abffc5fb4bfc929f2866a3f466b765cf8f44f92e34f38026",
+      "rank": [
+        0,
+        0.8571428571428571,
+        0.8,
+        0.9230769230769231,
+        0.8265212121212121
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 17,
+      "checkpoint_sha256": "70cde9987ad62c1ed937eb928147f69539b3b13b6795f552660fc1d6af619714",
+      "report_sha256": "76fb003dadc5cac76160926f511477acec4a2b91de589bbf93da369e755b9ed6",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.8276329004329005
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 18,
+      "checkpoint_sha256": "f0fee1409e689ea4b24485cd942d9533dc8557cebd15a1f9c5f6344b1ff4e38c",
+      "report_sha256": "007cf39d41c66dbf44c3199a721ad0ef723a6aa3171d7135f0477c6933b25eb4",
+      "rank": [
+        0,
+        0.7407407407407408,
+        0.7142857142857143,
+        0.7692307692307693,
+        0.8102990813108459
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 19,
+      "checkpoint_sha256": "6331be6092d5a27f78463614938b190553dcbaba8aa9fbc1df101248d0336e1f",
+      "report_sha256": "270ef873990c1a3c190b2d7565f4f561771cd8576d008ab840fe7211c73a887d",
+      "rank": [
+        0,
+        0.7142857142857142,
+        0.6666666666666666,
+        0.7692307692307693,
+        0.7947583333333331
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 20,
+      "checkpoint_sha256": "32bb3a841dc13796c84f4dc2a6e3ba4c05b4d7c49f1f4f9309605ef19c70a202",
+      "report_sha256": "f0a36e1a103e9e7f842fa31d90e6dc5c269c0db1ba609527c6354df784648bfa",
+      "rank": [
+        0,
+        0.7407407407407408,
+        0.7142857142857143,
+        0.7692307692307693,
+        0.7901111482471775
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 21,
+      "checkpoint_sha256": "90398619fde5cc802d8d0af4e2b62bdc5300e478b08026ea49ebac378ff5ff0a",
+      "report_sha256": "4d27179d009524d07da6140844f766f341cbe0d8b9e990b8439c6611381dbc78",
+      "rank": [
+        0,
+        0.6923076923076923,
+        0.6923076923076923,
+        0.6923076923076923,
+        0.8018961084529505
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 22,
+      "checkpoint_sha256": "47963db1f90ec53a05663413d3262d039fd9d8a0746102a3deee1c37cdd6bc80",
+      "report_sha256": "9d6d2e296aca0ebb14a1c91b1bfa399bdf26596e1cb16d504ffb475a240a1627",
+      "rank": [
+        0,
+        0.6923076923076923,
+        0.6923076923076923,
+        0.6923076923076923,
+        0.7991668686868688
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 23,
+      "checkpoint_sha256": "7fd3d3b7ceb8c4a3a0adc946080e26b77a4a0069919cc47991a8badccab4b775",
+      "report_sha256": "b257e3f114526fad2005767068ef72bdc7908ef9b2c604c1a0086f6de2ec6ebb",
+      "rank": [
+        0,
+        0.7407407407407408,
+        0.7142857142857143,
+        0.7692307692307693,
+        0.8127949439307495
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 24,
+      "checkpoint_sha256": "4ff779aad2d1a67b44eb7892907a84cbb12de23346596407cfb1a4f3a7bb7579",
+      "report_sha256": "a7f7e982b0d47a7f1e3302d04189db24fd20ee8327b06cd0e88fef785b30dd1e",
+      "rank": [
+        0,
+        0.7692307692307693,
+        0.7692307692307693,
+        0.7692307692307693,
+        0.8109397093102974
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 25,
+      "checkpoint_sha256": "92ffe704efa4d7dcce9e788480e6fb88f45cb2410c18d42c210fd9aef2faa78a",
+      "report_sha256": "efe01c82a13af7555f5c8cd4f3bb4e0608b12e82ecee4becfc4e2dbf679d08d4",
+      "rank": [
+        0,
+        0.7692307692307693,
+        0.7692307692307693,
+        0.7692307692307693,
+        0.7919800273256156
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 26,
+      "checkpoint_sha256": "4adc9b4a86cdf133f407e0b96a016bed8c2ba4031274a5c2aee9442618058d12",
+      "report_sha256": "2c0f0e167371dd875a3821876d13964127dc1160b366ea817ed7d0e753de962b",
+      "rank": [
+        0,
+        0.7692307692307693,
+        0.7692307692307693,
+        0.7692307692307693,
+        0.8162960030165912
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 27,
+      "checkpoint_sha256": "061b3795529fa02dc74a6e7d6c621afe6cd9be1c70be63bb8e5e0967c1bbcca6",
+      "report_sha256": "e94b4f59b67bb02bb1a29758cc1ca8dda1608514b7bc600a01829342cd8fe851",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.8011001587301587
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 28,
+      "checkpoint_sha256": "cc40f8518852084660e7f91211a7fbe0be47719cffb90eb2453ef2b8d6d82217",
+      "report_sha256": "43cd56b4e92fa790ae4108ab98e95e00fbb4da0520b21ddcaec602ef04d63dce",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.7803308874458874
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 29,
+      "checkpoint_sha256": "720b66ce852ddd913290d80994922419583d35aed6a4d345b9cd92fec4951d05",
+      "report_sha256": "673c45e8a328155a65a1fbf8d196dd0780b89049ad570327b4322eb0c910f788",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.8134390476190477
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 30,
+      "checkpoint_sha256": "3ca14ce60c38f935407cfbb2678cbaa9d0ea60b001673d59af6e899e2a90532b",
+      "report_sha256": "73d935b6a304532bc72e4d74d5c61a18bfc2ebd896bb233adc4a3e1120849c2e",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.7991483773823184
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 31,
+      "checkpoint_sha256": "4733c934f23b1fb2c0553b3c16c235b47659d6c90436be3fe3e8fe2951ce82ae",
+      "report_sha256": "a6c455faeb62e7c8787b860c199be14fa69f47f224f793286e19a939e3176414",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.7899602845430433
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 32,
+      "checkpoint_sha256": "3ab3ec128d8f59d8bcf71d388be9a2532f4a61666a5160e3874acefdbf7f3002",
+      "report_sha256": "e6aa861fda90c2eeb58fe32c10b3a92c22fc8ca5908539e0af7d3c3f15ad0438",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.7967891478891481
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 33,
+      "checkpoint_sha256": "340379596bcebe84ea47db5f6e4b3b71528ef0d2d68e59f4e0c8f1a39aada075",
+      "report_sha256": "141ecf9012e25b6253cc3876dcb164d4d5dd93b8eb80c920ad4a26a3494f244e",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.7919617295747731
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 34,
+      "checkpoint_sha256": "ed30853f22a726a3ea768990b42e2cac0e166d652554661f8b9afa77de46145e",
+      "report_sha256": "b7776298a66d6ed1fe3068545ae76a755cadfe4ef480716d2d4f1a3a70a1ac5b",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.7909150060465848
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 35,
+      "checkpoint_sha256": "94e595a496a96a1c91588edc8123afc9b0c4db400d6fa910e12d48d852976365",
+      "report_sha256": "cb05eaca77ed694a41ba185d1214e8870dd5fdfba91431a81625e0771a0fae8d",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.8212343840370154
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 36,
+      "checkpoint_sha256": "e31c736195113026b7dd7a7fe02cfb2bf3277cd5dc48e4b3c55b65ff5b987d96",
+      "report_sha256": "166103871c2ecca3990c2b06e86bacbc45fa2be7d354aea4189099958dc727dd",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.8168553113553113
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 37,
+      "checkpoint_sha256": "5a8820bbe41aac8ad3bf2860affdb5ee29ff7cc743aee344396eec7002f3964c",
+      "report_sha256": "4b9337f2bd3eea8839dd946e49aef76bd6aecfb986eabaafc4d6fba4af63f22a",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.8218372044622045
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 38,
+      "checkpoint_sha256": "6d46ddb192a8b971743ed9950fdf28a70003cb9066afa23f8121d10eedd7f8ef",
+      "report_sha256": "5bbbc282a0784815b696f079aab11843e398a5137f1c4a0d5dd63c305a0f560b",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.8339959706959708
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 39,
+      "checkpoint_sha256": "58bd90cfa18a67a4386b4f67f4e674ffab30239cac65e1e1aeb3940975d885d7",
+      "report_sha256": "0c7197fb95168470fa4925f430745d01e69a5717c58c7360bdbbcc0d5039c5da",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.8224350649350649
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 40,
+      "checkpoint_sha256": "f24059ce54fcfd7396c9e206fdf637f45b56011d821a022b929ee4b2bf0a956d",
+      "report_sha256": "373516fc58e4d88cd4fe9cb2a5b4c90c9c58d9a0a438ec18b2c439023d033506",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.8342190476190476
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 41,
+      "checkpoint_sha256": "7925791c348d00e0b7a02a2e38c8f624e3fa460e08b9d08fbd7e9c38c10679b2",
+      "report_sha256": "ee37444d89e8a51deec85c3605e12d22e64559b79ae1cc6ce9bce1bd08a12a63",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.8487005602240894
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 42,
+      "checkpoint_sha256": "4b95081f8cc59cd8af1fb0352894a18deb4cea0b6946aa324ca968a429ec08ee",
+      "report_sha256": "dafadac965faf2b17ef7bb91008fc89cfe79cb75d8607ee63319a95ec69b1007",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.8510452970661948
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 43,
+      "checkpoint_sha256": "22a7b3dbb854c16d1e8d2fa6b6723a33e01195ad18f069b3bb03eb475712e56c",
+      "report_sha256": "377183f0b7953346a3e34b5f9d62e66f12cf063f46895886a19b77bb5833decf",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.8339242296918767
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 44,
+      "checkpoint_sha256": "5011f7ca94e04f4931b3b1a5eb514dc2370d32443d0bbb53bad31416cb00487e",
+      "report_sha256": "ceec85868d5dce529a315bce4a38fb5c59d3ccc7427431681eb562a2d8da9342",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.8260492296918768
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 45,
+      "checkpoint_sha256": "21878e64613cfe6d470f852d4b299d22ebfee860d131c663770f57a933aa1faf",
+      "report_sha256": "7d50bc4e4e9f95342caf3029d6018ef965b3ba944b28009904d025b59a0eec15",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.7929778613199663
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 46,
+      "checkpoint_sha256": "2ad7fae984becb863388839d354030a074d550b472571131169d65e93e68f75d",
+      "report_sha256": "b47a6a1ae55eab71ae2c044cfcfd96b12c95b7404f8fbc63b83dbf21f4fe06d6",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.7841166666666665
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 47,
+      "checkpoint_sha256": "c53304c98f6a995cf0b2d1179544d3c2f4d04e9870202b6750d1aa4f7cfd06f6",
+      "report_sha256": "099d6259a7ccb1fa19f0ab8fbb7dee68857823b5663d85794c15dee7831c7cbb",
+      "rank": [
+        0,
+        0.7692307692307693,
+        0.7692307692307693,
+        0.7692307692307693,
+        0.7927595238095237
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 48,
+      "checkpoint_sha256": "ddfeef0b4294d52e2f940fd40b84d3df42eb106403edb08ab2b781e7c1713278",
+      "report_sha256": "a37645ff63c78763d5f26df466829cd87edb0fb320f4a4d4da4d87883e039f0d",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.7927595238095237
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 49,
+      "checkpoint_sha256": "af31a08b530403b198f69b1c5b12161469b6643b49d772a6631930fb18baf6c0",
+      "report_sha256": "b0dc9aeb9ec4ddb8122eb154da6a22c4e0b42b9fbfcb3fbcb0027adb23ec87d5",
+      "rank": [
+        0,
+        0.8148148148148148,
+        0.7857142857142857,
+        0.8461538461538461,
+        0.7964457983193276
+      ],
+      "selected": false
+    },
+    {
+      "epoch": 50,
+      "checkpoint_sha256": "97cee6b053754b10df6b4f071ea523af98dad2e3723ceb8f6bb93702c341188b",
+      "report_sha256": "8b06f4df7599f7fd45196f45b08d087a5b866afa5ac81a8a7103626430c2c0e3",
+      "rank": [
+        0,
+        0.7692307692307693,
+        0.7692307692307693,
+        0.7692307692307693,
+        0.8158862155388473
+      ],
+      "selected": false
+    }
+  ],
+  "best_sha256": "fe4447b30718dde9eb642e30aa4530fc42c52febb7bfb918b666541b491c7c74",
+  "deployment_accepted": false
+}

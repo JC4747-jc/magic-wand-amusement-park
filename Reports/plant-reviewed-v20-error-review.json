@@ -1,0 +1,23 @@
+{
+  "status": "REJECTED_VALIDATION",
+  "model_sha256": "defb23432cc01d9907efc0d0a6245f32004d8321993334e39d32d182ed7003e7",
+  "selected_epoch": 2,
+  "operating": {
+    "name": "PottedPlant",
+    "true_positive": 13,
+    "false_positive": 2,
+    "false_negative": 0,
+    "precision": 0.8666666666666667,
+    "recall": 1.0
+  },
+  "all_two_full_resolution_error_overlays_actually_viewed": true,
+  "observations": {
+    "581cedc885d26e10455cf980": "Decorative mixed cut flowers in opaque vase misclassified PottedPlant confidence .99.",
+    "e5fde1c97f0f71710eb2c497": "Cut lilies with visible stems in transparent water vase misclassified PottedPlant confidence .81."
+  },
+  "auxiliary_val_operating": "0TP0FP3FN for CutArrangement at fixed .35; auxiliary is not routed",
+  "threshold_retuned": false,
+  "labels_changed": false,
+  "fresh_test_performed": false,
+  "service_routed": false
+}

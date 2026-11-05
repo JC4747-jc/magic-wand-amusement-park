@@ -1,0 +1,27 @@
+{
+  "status": "COMPLETED_REJECTED_BASELINE",
+  "scope": "Existing50epoch run; not directly comparable to a future15epoch or5minute search budget",
+  "model_sha256": "defb23432cc01d9907efc0d0a6245f32004d8321993334e39d32d182ed7003e7",
+  "contract_sha256": "b8acec0d2b3cef7d16582e22f9650ffc13863bde5cd9a24b38dc04c0e41534d6",
+  "frozen_input_files": 242,
+  "post_training_input_check": "PASS",
+  "validation_report_sha256": "7e7967dc0fd4df51854578df8170adb332516e7aacd010ec81515636621e0795",
+  "selected_epoch": 2,
+  "epochs": 50,
+  "training_plus_epoch_validation_seconds": 704.926,
+  "operating": {
+    "name": "PottedPlant",
+    "true_positive": 13,
+    "false_positive": 2,
+    "false_negative": 0,
+    "precision": 0.8666666666666667,
+    "recall": 1.0
+  },
+  "mAP50": 0.9299999999999998,
+  "mAP50_95": 0.8215333333333333,
+  "inference_mean_cpu_ms": 382.63965384752595,
+  "deployment_accepted": false,
+  "fresh_test_performed": false,
+  "retained_failed_weight": true,
+  "autonomous_search_loop_implemented": false
+}

@@ -1,0 +1,940 @@
+{
+  "mode": "training-diagnostic",
+  "domain": "public-openimages-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated",
+    "Houseplant labels are broader than potted tabletop plants; domain validation required"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-reviewed-v20-training\\train\\weights\\best.pt",
+  "architecture": "DetectionModel",
+  "sha256": "defb23432cc01d9907efc0d0a6245f32004d8321993334e39d32d182ed7003e7",
+  "dataset_version": "e15191e0e50572c0f02206b14f11416e91df08192322fb02e06987e9f215de31",
+  "split": "train",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "PottedPlant",
+    "1": "CutArrangement"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "PottedPlant",
+      "precision": 0.9641614593641044,
+      "recall": 0.84074199543936,
+      "mAP50": 0.9017306595268797,
+      "mAP50_95": 0.8149614248565495,
+      "labels": 96
+    }
+  ],
+  "images": 91,
+  "excluded_samples": [],
+  "ground_truth_instances": 96,
+  "false_positive_images": 7,
+  "per_image": [
+    {
+      "image": "images\\train\\d5ae91276f1fdbd4f446fcdf.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 1259.0393999998923
+    },
+    {
+      "image": "images\\train\\58311aabeebc59977b3a8193.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 194.20300000638235
+    },
+    {
+      "image": "images\\train\\525096ef346596e8a38f1e51.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 198.2408000039868
+    },
+    {
+      "image": "images\\train\\eda16401b87513348f920e8b.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 235.79310000059195
+    },
+    {
+      "image": "images\\train\\9c25d9b7c84b0f79e63418b7.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 176.16129999805707
+    },
+    {
+      "image": "images\\train\\b0021d4e0c3f579be1122a80.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 197.04259998979978
+    },
+    {
+      "image": "images\\train\\4b3fcbaa79507b5681e97bf0.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 304.0545999974711
+    },
+    {
+      "image": "images\\train\\2c567e0dc21235cfde3f95e5.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 178.16779999702703
+    },
+    {
+      "image": "images\\train\\1fd1253c18994fdf6745ffa4.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 228.56439999304712
+    },
+    {
+      "image": "images\\train\\d8c93d4204faeb177c00a385.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 152.8805999987526
+    },
+    {
+      "image": "images\\train\\47dd9b9cdf9cb4d38be8e37b.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 211.56189999601338
+    },
+    {
+      "image": "images\\train\\551f81bf7a94b9ea88710e2b.jpg",
+      "ground_truth": 7,
+      "true_positive": 4,
+      "false_positive": 1,
+      "false_negative": 3,
+      "inference_ms": 211.91620000172406
+    },
+    {
+      "image": "images\\train\\fa9352ccbc6b9d9f9cf39852.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 245.40840000554454
+    },
+    {
+      "image": "images\\train\\f46d64842a89e166725a14d4.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 207.07290001155343
+    },
+    {
+      "image": "images\\train\\176a555fd0c55c7908d2d495.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 206.42200000293087
+    },
+    {
+      "image": "images\\train\\b357e7f17134fea1ef600b72.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 484.21230001258664
+    },
+    {
+      "image": "images\\train\\37787ad13b82bf8a93c3df0b.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 239.250999991782
+    },
+    {
+      "image": "images\\train\\72b14f90f50a5a29f131a3b4.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 210.08200000505894
+    },
+    {
+      "image": "images\\train\\d4cd77ca29f2cb85e70b5010.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 305.1895999960834
+    },
+    {
+      "image": "images\\train\\819aee773660d9e86671374e.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 216.44439999363385
+    },
+    {
+      "image": "images\\train\\93338060ed1641146cc4445e.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 207.054500002414
+    },
+    {
+      "image": "images\\train\\06e386ee50c0d6c83ed28564.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 340.75790000497364
+    },
+    {
+      "image": "images\\train\\19b432f27c390a614c97f3f1.jpg",
+      "ground_truth": 3,
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 288.9874999964377
+    },
+    {
+      "image": "images\\train\\ec84cb871e7996d28091f53d.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 311.0733999928925
+    },
+    {
+      "image": "images\\train\\0aa49670c89c7b85d1b5e7d0.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 185.31650000659283
+    },
+    {
+      "image": "images\\train\\dca1904ead0155c3e5f35b28.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 206.72810000542086
+    },
+    {
+      "image": "images\\train\\8ed1ce46775b2afeb4ec664b.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 291.39759999816306
+    },
+    {
+      "image": "images\\train\\7931206e21aa136688adff50.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 203.8371999951778
+    },
+    {
+      "image": "images\\train\\a04f02043be61d131ddc9826.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 212.91760000167415
+    },
+    {
+      "image": "images\\train\\490ac15b7f67d75be1ba64dc.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 231.01969998970162
+    },
+    {
+      "image": "images\\train\\7ffe9881b55006578f1f2246.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 339.84099999361206
+    },
+    {
+      "image": "images\\train\\1d18851e595653a8c3277865.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 218.1103000039002
+    },
+    {
+      "image": "images\\train\\766b43dc70a7679b02060f35.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 220.10079999745358
+    },
+    {
+      "image": "images\\train\\ef75d6d240987fb45894d0ce.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 229.45339999569114
+    },
+    {
+      "image": "images\\train\\f30aeff0bee4c4e52c4ff917.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 240.919899995788
+    },
+    {
+      "image": "images\\train\\acf8ad6e3194aa83cade2a16.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 215.02950000285637
+    },
+    {
+      "image": "images\\train\\cc43ab36d3e43adafc7e8521.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 231.01460000907537
+    },
+    {
+      "image": "images\\train\\0f1123f2852da5625804b23a.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 299.7134999895934
+    },
+    {
+      "image": "images\\train\\5c592396f98c4f25e96ba9b5.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 308.46410000231117
+    },
+    {
+      "image": "images\\train\\1e43dcf21c471383c0e39fa3.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 231.51409999991301
+    },
+    {
+      "image": "images\\train\\72ef13844a03393525afc44d.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 235.6528999953298
+    },
+    {
+      "image": "images\\train\\5ea6d6bb80b0e3089d6031c5.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 349.6807000046829
+    },
+    {
+      "image": "images\\train\\29a7a13b0132392435902100.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 499.02650000876747
+    },
+    {
+      "image": "images\\train\\f59abdaace331456d3f777bf.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 401.608700005454
+    },
+    {
+      "image": "images\\train\\2d955238ef65239e52896668.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 395.54180001141503
+    },
+    {
+      "image": "images\\train\\d9ce4482a0558140850caeb1.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 387.5550000084331
+    },
+    {
+      "image": "images\\train\\291ddd1250b264cd76107dd6.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 600.2088999957778
+    },
+    {
+      "image": "images\\train\\b201a8bade5b9f3824ec28c6.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 435.3620000038063
+    },
+    {
+      "image": "images\\train\\b4d5efd2575baa5aef709ad4.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 194.02850000187755
+    },
+    {
+      "image": "images\\train\\55d21eda4e124aa95d7cff38.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 220.6933000124991
+    },
+    {
+      "image": "images\\train\\524d278810feb885c71700b0.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 231.4528999995673
+    },
+    {
+      "image": "images\\train\\5a184bc84a50cea00af0b8a0.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 238.18290000781417
+    },
+    {
+      "image": "images\\train\\77f4116287885db789a5276f.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 225.38419999182224
+    },
+    {
+      "image": "images\\train\\827646708bb78a6892606009.jpg",
+      "ground_truth": 3,
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 202.78599999437574
+    },
+    {
+      "image": "images\\train\\5fc303e18115c491393d0023.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 219.79060000739992
+    },
+    {
+      "image": "images\\train\\3a4e1a1c8f0656a093c42d35.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 196.09610000043176
+    },
+    {
+      "image": "images\\train\\646acee85595829de324b5a3.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 214.12789999158122
+    },
+    {
+      "image": "images\\train\\343050284bdf5148e43298db.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 316.6717999993125
+    },
+    {
+      "image": "images\\train\\5d16bf6235912264ef8a20e1.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 299.3509000079939
+    },
+    {
+      "image": "images\\train\\baec71edd2637a9362ed3aa4.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 218.22019999672193
+    },
+    {
+      "image": "images\\train\\4208d64380709fef.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 312.1436000074027
+    },
+    {
+      "image": "images\\train\\43c0dc0bb1059747.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 242.02170000353362
+    },
+    {
+      "image": "images\\train\\52baa4f64e63e33d.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 329.52129999466706
+    },
+    {
+      "image": "images\\train\\53b9504a03c6d74a.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 253.3662999921944
+    },
+    {
+      "image": "images\\train\\a0893025c69a4ee8.jpg",
+      "ground_truth": 2,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 253.12779999512713
+    },
+    {
+      "image": "images\\train\\c343032a7e25c932.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 467.5577999878442
+    },
+    {
+      "image": "images/train/11db327193fafcd0.jpg",
+      "ground_truth": 2,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 364.7860000055516
+    },
+    {
+      "image": "images/train/2c716fe6536d46a6.jpg",
+      "ground_truth": 2,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 283.8902999938
+    },
+    {
+      "image": "images/train/3287fcb539ba2915.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 435.08419999852777
+    },
+    {
+      "image": "images/train/307dd3482f39b31b.jpg",
+      "ground_truth": 4,
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 271.31789999839384
+    },
+    {
+      "image": "images/train/27375dda6bb6b0eb.jpg",
+      "ground_truth": 4,
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 269.7087999986252
+    },
+    {
+      "image": "images/train/13998fa14da472bf.jpg",
+      "ground_truth": 3,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 3,
+      "inference_ms": 294.5326000044588
+    },
+    {
+      "image": "images/train/0a4944d22e6d21fe.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 431.3434999930905
+    },
+    {
+      "image": "images/train/3aa2d320d1b857f5.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 241.6388999990886
+    },
+    {
+      "image": "images/train/a70b154a08e5d32f.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 243.3817999990424
+    },
+    {
+      "image": "images/train/b6a1496eb8ace01c.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 235.0146999960998
+    },
+    {
+      "image": "images/train/b96bb825d1b32251.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 255.33200000063516
+    },
+    {
+      "image": "images/train/bd56c54fb36fc09b.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 244.951000000583
+    },
+    {
+      "image": "images/train/5befc15ca36ce3ea.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 380.9427000087453
+    },
+    {
+      "image": "images/train/9c7980717fa3e7d0.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 270.4255999997258
+    },
+    {
+      "image": "images/train/b65f587ce9f38fa0.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 274.3532000022242
+    },
+    {
+      "image": "images/train/dd607d87fb675ad6.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 278.6210999911418
+    },
+    {
+      "image": "images/train/aa3bfefd96c831a9.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 331.12019998952746
+    },
+    {
+      "image": "images/train/e79382f6150d550d.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 1099.3261000112398
+    },
+    {
+      "image": "images/train/73aa40ea11e5aa92.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 496.2538000108907
+    },
+    {
+      "image": "images/train/6fcf0206525bd64e.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 290.1501000014832
+    },
+    {
+      "image": "images/train/7105cc6829fcbb98.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 253.9808000001358
+    },
+    {
+      "image": "images/train/d99ff2185e8d5d7e.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 257.74519999686163
+    },
+    {
+      "image": "images/train/def587f4b52902f3.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 268.42749999195803
+    },
+    {
+      "image": "images/train/e87daca4b650f9c2.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 396.2567999988096
+    },
+    {
+      "image": "images/train/51feff5533afd1a2.jpg",
+      "ground_truth": 4,
+      "true_positive": 1,
+      "false_positive": 1,
+      "false_negative": 3,
+      "inference_ms": 283.3630999957677
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.35,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "PottedPlant",
+      "true_positive": 81,
+      "false_positive": 7,
+      "false_negative": 15,
+      "precision": 0.9204545454545454,
+      "recall": 0.84375
+    },
+    {
+      "name": "CutArrangement",
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": null,
+      "recall": null
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 297.42931538459123,
+  "p95_inference_ms": 490.23305001173867,
+  "cold_first_image_ms": 1259.0393999998923,
+  "warm_mean_ms": 286.74475888886565,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images\\train\\551f81bf7a94b9ea88710e2b.jpg",
+      "example": "error-551f81bf7a94b9ea88710e2b.jpg",
+      "ground_truth": 7,
+      "true_positives": 4,
+      "false_positives": 1,
+      "false_negatives": 3,
+      "confidence": 0.35
+    },
+    {
+      "image": "images\\train\\4208d64380709fef.jpg",
+      "example": "error-4208d64380709fef.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35
+    },
+    {
+      "image": "images\\train\\43c0dc0bb1059747.jpg",
+      "example": "error-43c0dc0bb1059747.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35
+    },
+    {
+      "image": "images\\train\\a0893025c69a4ee8.jpg",
+      "example": "error-a0893025c69a4ee8.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/train/11db327193fafcd0.jpg",
+      "example": "error-11db327193fafcd0.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/train/2c716fe6536d46a6.jpg",
+      "example": "error-2c716fe6536d46a6.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/train/307dd3482f39b31b.jpg",
+      "example": "error-307dd3482f39b31b.jpg",
+      "ground_truth": 4,
+      "true_positives": 3,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/train/27375dda6bb6b0eb.jpg",
+      "example": "error-27375dda6bb6b0eb.jpg",
+      "ground_truth": 4,
+      "true_positives": 3,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/train/13998fa14da472bf.jpg",
+      "example": "error-13998fa14da472bf.jpg",
+      "ground_truth": 3,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/train/0a4944d22e6d21fe.jpg",
+      "example": "error-0a4944d22e6d21fe.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/train/b6a1496eb8ace01c.jpg",
+      "example": "error-b6a1496eb8ace01c.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/train/73aa40ea11e5aa92.jpg",
+      "example": "error-73aa40ea11e5aa92.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/train/7105cc6829fcbb98.jpg",
+      "example": "error-7105cc6829fcbb98.jpg",
+      "ground_truth": 1,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/train/51feff5533afd1a2.jpg",
+      "example": "error-51feff5533afd1a2.jpg",
+      "ground_truth": 4,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 3,
+      "confidence": 0.35
+    }
+  ],
+  "allowed_classes": [
+    "PottedPlant"
+  ],
+  "max_det": 8,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}

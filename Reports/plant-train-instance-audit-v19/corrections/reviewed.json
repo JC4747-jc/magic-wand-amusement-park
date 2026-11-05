@@ -1,0 +1,46 @@
+{
+  "parent_dataset_sha256": "f3eefa042dd1ea24acc10213dfb4eb15aeab4887ee5f52e21b71e91a486f6616",
+  "samples": [
+    {
+      "original_id": "6f30db47a5308f81",
+      "split": "train",
+      "source_image": "Datasets\\plant-rooted-v18\\images\\train\\525096ef346596e8a38f1e51.jpg",
+      "source_sha256": "525096ef346596e8a38f1e51d55fdad3a9cb9dda908cda4ee08de06c0c7667ea",
+      "parent_label": "Datasets\\plant-rooted-v18\\labels\\train\\525096ef346596e8a38f1e51.txt",
+      "parent_label_sha256": "f2acf64ff4120b7b28c7df243bef2c9e8a54590e7aa51118302a978747b8723a",
+      "label": "Reports\\plant-train-instance-audit-v19\\corrections\\labels\\525096ef346596e8a38f1e51.txt",
+      "label_sha256": "501ee37469ad212c8ee58526d1cb7e1f104afbe06aaa512a2b6563dc084d9cd2",
+      "overlay": "Reports\\plant-train-instance-audit-v19\\corrections\\6f30db47a5308f81.jpg",
+      "overlay_sha256": "2923af87392ded830f35b981eeeda66fbd6ab963ba0f05124fea3765b3c88a0e",
+      "old_instances": 2,
+      "new_instances": 2,
+      "reason": "Right planted maple visible container lower edge omitted from old box; retain main bonsai box.",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "training_approved": false,
+      "visual_annotation_approved": true
+    },
+    {
+      "original_id": "bf66f91af557ad59",
+      "split": "train",
+      "source_image": "Datasets\\plant-rooted-v18\\images\\train\\551f81bf7a94b9ea88710e2b.jpg",
+      "source_sha256": "551f81bf7a94b9ea88710e2bc3672fe784ab340f0928f15d58565da0fdc4036d",
+      "parent_label": "Datasets\\plant-rooted-v18\\labels\\train\\551f81bf7a94b9ea88710e2b.txt",
+      "parent_label_sha256": "4fb2c0d582cdc71d29a9cd54d49f87488428292ab4ddf199a57a003955b9bff7",
+      "label": "Reports\\plant-train-instance-audit-v19\\corrections\\labels\\551f81bf7a94b9ea88710e2b.txt",
+      "label_sha256": "11354280b46623cb426f160e2420b18570269bf8d945b34b8c3ef23271fae163",
+      "overlay": "Reports\\plant-train-instance-audit-v19\\corrections\\bf66f91af557ad59.jpg",
+      "overlay_sha256": "7f6d88d517e945eeb36d6145ca6f152c7797e71012730f6fab0f659132b3cbb3",
+      "old_instances": 5,
+      "new_instances": 7,
+      "reason": "Three independent planted baskets in vertical metal rack must be three instances, not one group box; retain four large vine pots.",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "training_approved": false,
+      "visual_annotation_approved": true
+    }
+  ],
+  "scope": "Proposed TRAIN-only fixes; no old dataset mutation, no held-out label changes",
+  "training_approved": false,
+  "approval_scope": "Reviewed TRAIN-only label patch proposals, not yet applied to a new dataset release; original parent immutable."
+}
