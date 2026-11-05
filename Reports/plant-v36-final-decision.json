@@ -1,0 +1,41 @@
+{
+  "status": "REJECTED_OBSERVED_REGRESSION",
+  "weight_sha256": "9778ae05560fcdc3882a56a303783b3e3c3b8471a7c39cba22e77af20ea32a82",
+  "validation_report_sha256": "91bfea7226cbab681599ce4be99cb96c426fafff5df9220e66dfa36025e7613d",
+  "completed_audit_sha256": "67d3e3849806e151c226e4093f9cae3ec3d618a77a4cf09efc8586abf34813d9",
+  "observed_regressions": [
+    {
+      "path": "Reports\\plant-v36-observed-v23\\report.json",
+      "sha256": "3373ce127a0ca1c18e22d0e962a2c46890dc4335624c3ebb1908e23e4741839d",
+      "weight_sha256": "9778ae05560fcdc3882a56a303783b3e3c3b8471a7c39cba22e77af20ea32a82",
+      "metrics": {
+        "name": "PottedPlant",
+        "true_positive": 3,
+        "false_positive": 1,
+        "false_negative": 3,
+        "precision": 0.75,
+        "recall": 0.5
+      },
+      "scope": "PREVIOUSLY_OBSERVED_REGRESSION_NOT_FRESH_TEST"
+    },
+    {
+      "path": "Reports\\plant-v36-observed-v25\\report.json",
+      "sha256": "e892a36acc1a6916d779bb9d8b1c78896744f0fa0dada543b5cfda9cd19d2b40",
+      "weight_sha256": "9778ae05560fcdc3882a56a303783b3e3c3b8471a7c39cba22e77af20ea32a82",
+      "metrics": {
+        "name": "PottedPlant",
+        "true_positive": 3,
+        "false_positive": 2,
+        "false_negative": 1,
+        "precision": 0.6,
+        "recall": 0.75
+      },
+      "scope": "PREVIOUSLY_OBSERVED_REGRESSION_NOT_FRESH_TEST"
+    }
+  ],
+  "service_routed": false,
+  "fresh_test_performed": false,
+  "pico_validation": "NOT_PERFORMED",
+  "error_overlays_actually_reviewed": false,
+  "next_action": "Review actual error overlays, preserve failures and diagnose domain coverage; no threshold/checkpoint selection on these observed test sets."
+}

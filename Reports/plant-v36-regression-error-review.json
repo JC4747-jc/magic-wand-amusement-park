@@ -1,0 +1,46 @@
+{
+  "errors": [
+    {
+      "report": "Reports\\plant-v36-observed-v23\\report.json",
+      "image": "images/test/a58480cec90b3c4d2a8f8dd7.jpg",
+      "overlay": "Reports\\plant-v36-observed-v23\\error-a58480cec90b3c4d2a8f8dd7.jpg",
+      "overlay_sha256": "2697ef53e56337e2a8d899fc6cc0aafaad44924c570230c5961627e1ca96f4bb",
+      "actually_viewed": true,
+      "observation": "Three elevated recycled-can plants all missed."
+    },
+    {
+      "report": "Reports\\plant-v36-observed-v23\\report.json",
+      "image": "images/test/9483aaaca28e87ca16cb89c7.jpg",
+      "overlay": "Reports\\plant-v36-observed-v23\\error-9483aaaca28e87ca16cb89c7.jpg",
+      "overlay_sha256": "157a49fe16620b4dd2cbf3c53f7cbaefc2333e344ceff02d507f60e5ee8d0921",
+      "actually_viewed": true,
+      "observation": "Harvested leafy stems in kitchen metal bowl mistaken for potted plant."
+    },
+    {
+      "report": "Reports\\plant-v36-observed-v25\\report.json",
+      "image": "images/test/fa7ce41d4b9afc22848ed03f.jpg",
+      "overlay": "Reports\\plant-v36-observed-v25\\error-fa7ce41d4b9afc22848ed03f.jpg",
+      "overlay_sha256": "da382252baabe85fb746a714995db8db632a0291d7257fae173b5c1e14100c0d",
+      "actually_viewed": true,
+      "observation": "Basil-like plant in visible soil-filled ceramic pot missed."
+    },
+    {
+      "report": "Reports\\plant-v36-observed-v25\\report.json",
+      "image": "images/test/d1cc1bc099bbb2b813596601.jpg",
+      "overlay": "Reports\\plant-v36-observed-v25\\error-d1cc1bc099bbb2b813596601.jpg",
+      "overlay_sha256": "1a2b427ce3c73d1fa21177a55f4b6ee38b0043f5cdb3b08667a697bda39db195",
+      "actually_viewed": true,
+      "observation": "Woven mesh container closeup without foliage mistaken for plant."
+    },
+    {
+      "report": "Reports\\plant-v36-observed-v25\\report.json",
+      "image": "images/test/4623649c5615b1972eb853e0.jpg",
+      "overlay": "Reports\\plant-v36-observed-v25\\error-4623649c5615b1972eb853e0.jpg",
+      "overlay_sha256": "c691e523d3f1601ac16ad40e2a73fee3b238c8560b402c14ea9bdf8f8d6ff57d",
+      "actually_viewed": true,
+      "observation": "Empty decorative vase mistaken for potted plant."
+    }
+  ],
+  "training_approved": false,
+  "scope": "Actual visual review of observed-regression errors only. No TEST relabel, TRAIN use, checkpoint or threshold reselection."
+}
