@@ -1,0 +1,24 @@
+{
+  "dataset_sha256": "e4b314a992b76ac40f709ef437c11302478a1b95f6cdcdfbba99a45fac78b3be",
+  "train_images": 80,
+  "prior_val_images": 7,
+  "prior_val_GT": 21,
+  "new_val_images": 12,
+  "new_val_GT": 12,
+  "total_val_images": 19,
+  "total_val_GT": 33,
+  "epochs": 20,
+  "schedule_exposures": 82,
+  "gate": "Both prior7 and extension12 cohorts precision>=.9 recall>=.8, plus zero VAL-negative FP. Rank macrocohortF1/minrecall/minprecision/AP95, earliest exact tie.",
+  "operating": {
+    "confidence": 0.65,
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 32
+  },
+  "fresh_test_required_for_acceptance": true,
+  "model_inference_on_new_VAL_performed": false,
+  "service_routed": false,
+  "deployment_accepted": false
+}
