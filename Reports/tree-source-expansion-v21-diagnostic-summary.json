@@ -1,0 +1,21 @@
+{
+  "status": "REJECTED_VALIDATION",
+  "weight_sha256": "eea9e5d34d8c80151d480e8677901512aa153af4107e20292005e9703093ae4d",
+  "train_operating": [
+    {
+      "name": "Tree",
+      "true_positive": 28,
+      "false_positive": 0,
+      "false_negative": 4,
+      "precision": 1.0,
+      "recall": 0.875
+    }
+  ],
+  "train_report_sha256": "6b4391b6586ce83b0c08ed5e76c0866ec9d53e7cc2ea44e1f60a9b2d3d0ad69d",
+  "validation_error_overlay_actually_viewed": true,
+  "validation_miss_detail": "Dominant tree confidence .613275 IoU .92036; distant small tree .050861 IoU .69477. Both below frozen .65. Strong localization for dominant tree does not satisfy fixed operating recall.",
+  "threshold_changed": false,
+  "service_routed": false,
+  "test_performed": false,
+  "pico_validation": "NOT_PERFORMED"
+}

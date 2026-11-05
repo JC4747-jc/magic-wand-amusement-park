@@ -1,0 +1,177 @@
+{
+  "mode": "baseline",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "commons",
+      "license": "Per-photo CC BY/CC BY-SA/CC0 retained in samples",
+      "reviewed": true
+    },
+    {
+      "id": "openimages-v7",
+      "license": "Per-photo CC BY2 attribution retained",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\tree-oiv7n-runtime-selection-v22-training\\train\\weights\\last.pt",
+  "architecture": "DetectionModel",
+  "sha256": "248538bf05a64692d7525d81bdbd17b3c864edeb8f8d243343b1bec9e1872397",
+  "dataset_version": "93486d0425afb423956d7d76755d1ed8d961e3449fb5791d970b37a5b37c1749",
+  "split": "val",
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "Tree"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "Tree",
+      "precision": 1.0,
+      "recall": 0.9879646913540531,
+      "mAP50": 0.995,
+      "mAP50_95": 0.79,
+      "labels": 5
+    }
+  ],
+  "images": 11,
+  "excluded_samples": [],
+  "ground_truth_instances": 5,
+  "false_positive_images": 0,
+  "per_image": [
+    {
+      "image": "images/val/tree-a3b756995303cc0a73d37530d7cdddda9f5c44d81dfc05fb9f30a1d7e0ef67d1.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 1300.6191000022227
+    },
+    {
+      "image": "images/val/tree-6757d2454edf8221c267e9ddc147898c0cd8f443bd49ad51ba3be9005a3ddbdf.jpg",
+      "ground_truth": 2,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 62.617599993245676
+    },
+    {
+      "image": "images/val/tree-d3108fa9e2b0785460975f0d1f268951b0f48e9f17ecea3be1f5fe068ca77d3c.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 66.96440000087023
+    },
+    {
+      "image": "images/val/tree-334ffb4a8925b1a4924b2f2959740605698efa9d71828b8ce5cf6bb1fc6efc08.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 37.22899999411311
+    },
+    {
+      "image": "images/val/negative-dd407578974b814626342889.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 51.76760000176728
+    },
+    {
+      "image": "images/val/negative-7c04e2b6c375513493ab08de.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 35.49350000685081
+    },
+    {
+      "image": "images/val/negative-5eeccf30e06d3e703a7020ac.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 35.73529999994207
+    },
+    {
+      "image": "images/val/negative-32d341ce004fc3d3f5069f4b.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 60.01839999225922
+    },
+    {
+      "image": "images/val/negative-3cfefd1b807cdb77806d1326.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 58.94580000312999
+    },
+    {
+      "image": "images/val/negative-06242aea552d61966150402f.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 55.75709999538958
+    },
+    {
+      "image": "images/val/negative-a0e412398dca20812fd61961.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 42.610300006344914
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "Tree",
+      "true_positive": 4,
+      "false_positive": 0,
+      "false_negative": 1,
+      "precision": 1.0,
+      "recall": 0.8
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 164.34164545419415,
+  "p95_inference_ms": 683.7917500015465,
+  "cold_first_image_ms": 1300.6191000022227,
+  "warm_mean_ms": 50.71389999939129,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images/val/tree-6757d2454edf8221c267e9ddc147898c0cd8f443bd49ad51ba3be9005a3ddbdf.jpg",
+      "example": "error-tree-6757d2454edf8221c267e9ddc147898c0cd8f443bd49ad51ba3be9005a3ddbdf.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    }
+  ],
+  "allowed_classes": [
+    "Tree"
+  ],
+  "max_det": 8,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}

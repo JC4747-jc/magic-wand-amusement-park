@@ -1,0 +1,113 @@
+{
+  "names": [
+    "Tree"
+  ],
+  "samples": [
+    {
+      "original_id": "3ec3f95f090577e5",
+      "image": "images/3ec3f95f090577e5.jpg",
+      "image_sha256": "d3cbebf0d7595636baaa674e00cea241a2f80bcb1dee109902effcbf9234d2a0",
+      "label": "labels/3ec3f95f090577e5.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "overlay": "Datasets/tree-train-source-v18/images/3ec3f95f090577e5.jpg",
+      "overlay_sha256": "d3cbebf0d7595636baaa674e00cea241a2f80bcb1dee109902effcbf9234d2a0",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "review_approved": true,
+      "reserved_split": "train",
+      "group": "https://www.flickr.com/people/biodivlibrary/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Biodiversity Heritage Library",
+        "AuthorProfileURL": "https://www.flickr.com/people/biodivlibrary/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/biodivlibrary/16854335405",
+        "Title": "n194_w1150"
+      },
+      "notes": "Printed/painted depiction only",
+      "source_manifest": "Datasets/tree-train-source-v18/manifest.json",
+      "source_manifest_sha256": "9a084db6906ac9cbec0c3e77a4856e543de1df898a18b04eb1b1264b4b51bc20",
+      "sha256": "d3cbebf0d7595636baaa674e00cea241a2f80bcb1dee109902effcbf9234d2a0",
+      "source": "openimages-v7",
+      "negative": true
+    },
+    {
+      "original_id": "f4fb48d632bd3201",
+      "image": "images/f4fb48d632bd3201.jpg",
+      "image_sha256": "20175af7dd723e622eb724a8ca08b8bea8e8c81de002e36236f11a90efb7e565",
+      "label": "labels/f4fb48d632bd3201.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "overlay": "Datasets/tree-whole-train-source-v19/images/f4fb48d632bd3201.jpg",
+      "overlay_sha256": "20175af7dd723e622eb724a8ca08b8bea8e8c81de002e36236f11a90efb7e565",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "review_approved": true,
+      "reserved_split": "train",
+      "group": "https://www.flickr.com/people/mercysoul/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Rula",
+        "AuthorProfileURL": "https://www.flickr.com/people/mercysoul/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/mercysoul/4724874121",
+        "Title": "Life not stop"
+      },
+      "notes": "Printed/painted depiction only",
+      "source_manifest": "Datasets/tree-whole-train-source-v19/manifest.json",
+      "source_manifest_sha256": "c27cdf4b0c35adc6f961ad43b54e7d9088ae427102c11ab52fd4da8b39801586",
+      "sha256": "20175af7dd723e622eb724a8ca08b8bea8e8c81de002e36236f11a90efb7e565",
+      "source": "openimages-v7",
+      "negative": true
+    },
+    {
+      "original_id": "f5ae582dd9b6586c",
+      "image": "images/f5ae582dd9b6586c.jpg",
+      "image_sha256": "2b404ffe97b10bd8964c151bcee9a87d543f671685bf8ec9b208f33d34402612",
+      "label": "labels/f5ae582dd9b6586c.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "overlay": "Datasets/tree-whole-train-source-v19/images/f5ae582dd9b6586c.jpg",
+      "overlay_sha256": "2b404ffe97b10bd8964c151bcee9a87d543f671685bf8ec9b208f33d34402612",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "review_approved": true,
+      "reserved_split": "train",
+      "group": "https://www.flickr.com/people/witchesfallscottages/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Daniela",
+        "AuthorProfileURL": "https://www.flickr.com/people/witchesfallscottages/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/witchesfallscottages/14340766416",
+        "Title": "GoldenKiwis"
+      },
+      "notes": "Kiwi climbing vine, not an arbor tree",
+      "source_manifest": "Datasets/tree-whole-train-source-v19/manifest.json",
+      "source_manifest_sha256": "c27cdf4b0c35adc6f961ad43b54e7d9088ae427102c11ab52fd4da8b39801586",
+      "sha256": "2b404ffe97b10bd8964c151bcee9a87d543f671685bf8ec9b208f33d34402612",
+      "source": "openimages-v7",
+      "negative": true
+    }
+  ],
+  "training_approved": false,
+  "status": "REVIEWED_BANK_PENDING_COMBINED_RELEASE",
+  "review_sha256": "fcf9e841ee12110820d904b20670f7a7a3717bcb2bfa5a8146fb13869c9460da",
+  "evidence": [
+    {
+      "path": "Reports/tree-train-v18-source-reservation-audit.json",
+      "sha256": "a2edecebc32a2307bc49b705c6315fd855b209993d2d8b6091707327fd967a5a"
+    },
+    {
+      "path": "Reports/tree-train-v18-pixel-history.json",
+      "sha256": "a1fa135bf1ba996e3de0fb7c12ea65ed538b335bad7d3f5dfc8bc83b06ccbb04"
+    },
+    {
+      "path": "Reports/tree-whole-train-v19-source-reservation-audit.json",
+      "sha256": "a24db61a4284c05e02dde6af77b3ac6ae9fedddb8253ecadf404b10b58ae5f90"
+    },
+    {
+      "path": "Reports/tree-whole-train-v19-pixel-history.json",
+      "sha256": "fcd70111253ba0a561341b9aa4e340209e1ca9d79945e8dd611c22bde20de18e"
+    }
+  ],
+  "limitations": [
+    "Three TRAIN negatives only, no new positive or independent evaluation evidence.",
+    "Unknown cross-platform creator aliases remain possible; no deployment acceptance."
+  ]
+}

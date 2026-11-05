@@ -5,6 +5,7 @@ import hashlib
 import io
 import json
 from pathlib import Path
+from urllib.parse import urlsplit
 import requests
 from PIL import Image
 
@@ -22,6 +23,9 @@ def main():
     assert output.is_relative_to(ROOT / 'Datasets')
     plan = json.loads(plan_path.read_text())
     assert plan['samples'] and all(row['reserved_split'] == args.reserved_split for row in plan['samples'])
+    upstream_splits = {urlsplit(row['download_url']).path.strip('/').split('/')[0]
+                       for row in plan['samples']}
+    assert len(upstream_splits) == 1 and upstream_splits <= {'train', 'validation', 'test'}
     output.mkdir(exist_ok=False)
     (output / 'images').mkdir()
     (output / 'selection.json').write_bytes(plan_path.read_bytes())
@@ -46,7 +50,7 @@ def main():
         for result in pool.map(fetch, plan['samples']):
             (rows if 'image' in result else failures).append(result)
             print(result['original_id'], 'DOWNLOADED' if 'image' in result else 'FAILED', flush=True)
-    manifest = dict(source='openimages-v7', upstream_split='test', project_reserved_split=args.reserved_split,
+    manifest = dict(source='openimages-v7', upstream_split=next(iter(upstream_splits)), project_reserved_split=args.reserved_split,
         selection_sha256=hashlib.sha256(plan_path.read_bytes()).hexdigest(),
         sources=[dict(id='openimages-v7', url='https://storage.googleapis.com/openimages/web/download_v7.html',
                       license='Per-image metadata CC BY2.0; attribution retained')],

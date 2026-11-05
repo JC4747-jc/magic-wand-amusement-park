@@ -1,0 +1,70 @@
+{
+  "weight_sha256": "2c5db942db9491a803796a5b87556243b79059937e7c88b3ade6cb1d355f1ae6",
+  "report_sha256": "ff28189c7e0837e3cecb2cb9c8f487563cf86cc583298dd8a39a9ae6bd40c836",
+  "errors": [
+    {
+      "image": "images/val/inat-59.jpg",
+      "example": "error-inat-59.jpg",
+      "ground_truth": 3,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 2,
+      "confidence": 0.65,
+      "overlay_sha256": "a91431a7b23d079f86468d4d724aaacdf33a22c1f44c5bc01acf0fb1f77d5d48",
+      "overlay_actually_viewed": true,
+      "observation": "Central tall pine TP, two smaller side pines missed; substantially recognizable arbor trees, small-scale/occluded-base failure. Background inventory may remain incomplete."
+    },
+    {
+      "image": "images/val/inat-80.jpg",
+      "example": "error-inat-80.jpg",
+      "ground_truth": 3,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "confidence": 0.65,
+      "overlay_sha256": "3fbf634e9980ac042c496593b5b420a5d2735d722e9e0dfe3ff3851aebe31761",
+      "overlay_actually_viewed": true,
+      "observation": "Three marked cliff pines missed; large middle pine and upper-left tree truncated by frame, right small tree distant; whole-instance scope and full inventory unresolved."
+    },
+    {
+      "image": "images/val/inat-97.jpg",
+      "example": "error-inat-97.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65,
+      "overlay_sha256": "ed60744b6f404cfeaea90b9b47bdc785556ac51aa4b051fb6338bcaf82cd4b1b",
+      "overlay_actually_viewed": true,
+      "observation": "Horizontal windswept tree missed; recognizable woody trunk/crown but crown clipped right and background shrubs overlap; atypical orientation plus scope limitation."
+    },
+    {
+      "image": "images/val/commons-16.jpg",
+      "example": "error-commons-16.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65,
+      "overlay_sha256": "f06cf546cd18734cddc794bce9c4f2862133a574d97649c7fddd3b6994c3a13b",
+      "overlay_actually_viewed": true,
+      "observation": "Main sunset tree TP; right background marked tree missed; additional unmarked background crowns visible, inventory incomplete."
+    },
+    {
+      "image": "images/val/commons3-9.jpg",
+      "example": "error-commons3-9.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65,
+      "overlay_sha256": "08c1627306adfc4101c09c52e507ff9ed4075b8e9ad491b98e6a5bcff49310a9",
+      "overlay_actually_viewed": true,
+      "observation": "Small isolated hill conifer missed; substantially complete tree with clear crown and trunk, real small-object coverage failure."
+    }
+  ],
+  "dataset_changed": false,
+  "samples_removed": false,
+  "metrics_recomputed": false,
+  "scope": "Five actual diagnostic overlay reviews, raw20image/18GT10TP0FP8FN preserved. Scope issues coexist with genuine small/side tree failures. No fresh TEST or deployment evidence."
+}

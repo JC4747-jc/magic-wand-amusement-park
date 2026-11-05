@@ -1,0 +1,2293 @@
+{
+  "names": [
+    "Tree"
+  ],
+  "task": "detect",
+  "samples": [
+    {
+      "source_image": "Datasets/commons-quality-tree-sa-source-v6/images/104914618.jpg",
+      "sha256": "1a166fca034591456b762c283c3837e2fe9a76843849d042618396025e73d95f",
+      "reserved_split": "train",
+      "group": "commons:artist:b56ebe192474b89cfd520447d3855b4f92610fe772c77e7938482bf5e260ec56",
+      "index": 10,
+      "label": "labels/train/tree-1a166fca034591456b762c283c3837e2fe9a76843849d042618396025e73d95f.txt",
+      "label_sha256": "5508982d428f43c0cfd0584e3e8c6f06d6bc8ef72ba6cdb7abff916b9b693755",
+      "boxes_xyxy_pixels": [
+        [
+          81,
+          144,
+          854,
+          1055
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "overlay": "Reports/commons-quality-sa-v6-overlay-10.jpg",
+      "overlay_sha256": "76f97f9482d81ef5f5631ddaf077bb0abc712df025e022b58b0db79b02908085",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Uoaei1",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Pyrus_communis_mit_geborstenem_Stamm_01.jpg",
+      "changes": "Manual Tree-only bounding-box annotation",
+      "qualified_for_future_dataset_release": true,
+      "source": "commons",
+      "image": "images/train/tree-1a166fca034591456b762c283c3837e2fe9a76843849d042618396025e73d95f.jpg",
+      "source_label": "Reports/commons-quality-sa-v6-index10-tree-only.txt",
+      "split": "train",
+      "training_approved": true
+    },
+    {
+      "source_image": "Datasets/commons-solitary-tree-source-v3/images/5007935.jpg",
+      "sha256": "a3b756995303cc0a73d37530d7cdddda9f5c44d81dfc05fb9f30a1d7e0ef67d1",
+      "reserved_split": "val",
+      "group": "commons:artist:f252ed3249f93258f37e479e689aac7b478c8df3612ce491a2a707e50b045494",
+      "index": 20,
+      "label": "labels/val/tree-a3b756995303cc0a73d37530d7cdddda9f5c44d81dfc05fb9f30a1d7e0ef67d1.txt",
+      "label_sha256": "a32740345d31edf28389630fe42ad729252cfdcfa9c952227937d0f4b3427389",
+      "boxes_xyxy_pixels": [
+        [
+          0,
+          201,
+          846,
+          551
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "overlay": "Reports/commons-tree-v3-tree-only-additional-annotations/20-overlay.jpg",
+      "overlay_sha256": "cb0f36f309cd29be35a623eae612b5d7720d079a626ed4292841bf26b507abc7",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "Leonardo Pallotta",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Windswept_tree_-_Ushuaia.jpg",
+      "changes": "Manual Tree-only bounding-box annotation",
+      "qualified_for_future_dataset_release": true,
+      "creator_audit": "Reports/commons-tree-v3-creator-link-audit-v2.json",
+      "historical_overlap_audit": "Reports/commons-tree-v3-history-overlap.json",
+      "source": "commons",
+      "image": "images/val/tree-a3b756995303cc0a73d37530d7cdddda9f5c44d81dfc05fb9f30a1d7e0ef67d1.jpg",
+      "source_label": "Reports/commons-tree-v3-tree-only-additional-annotations/20.txt",
+      "split": "val",
+      "training_approved": true
+    },
+    {
+      "source_image": "Datasets/commons-quality-tree-more-source-v7/images/111444348.jpg",
+      "sha256": "3a279a4ec1aa942cea2a927702103094a56e5be63836fc51e1ed6482703a7b9c",
+      "reserved_split": "train",
+      "group": "commons:artist:b56ebe192474b89cfd520447d3855b4f92610fe772c77e7938482bf5e260ec56",
+      "index": 7,
+      "label": "labels/train/tree-3a279a4ec1aa942cea2a927702103094a56e5be63836fc51e1ed6482703a7b9c.txt",
+      "label_sha256": "0d3199048ad9d45bc3b4765e1ac5a2b2e72198941c6c1065eebd2e3d2af45558",
+      "boxes_xyxy_pixels": [
+        [
+          64,
+          242,
+          854,
+          987
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "overlay": "Reports/commons-quality-more-v7-annotations/7-overlay.jpg",
+      "overlay_sha256": "3a37e112d2c7614d387e7396237d61f7bd31d900ad4f448b1a02e3d79c1055c6",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Uoaei1",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Pyrus_communis_mit_geborstenem_Stamm_02.jpg",
+      "changes": "Manual Tree-only bounding-box annotation",
+      "qualified_for_future_dataset_release": true,
+      "creator_audit": "Reports/commons-quality-more-v7-creator-link-audit.json",
+      "historical_overlap_audit": "Reports/commons-quality-more-v7-history-overlap.json",
+      "same_physical_tree_as": "Datasets/commons-quality-tree-sa-source-v6/images/104914618.jpg",
+      "source": "commons",
+      "image": "images/train/tree-3a279a4ec1aa942cea2a927702103094a56e5be63836fc51e1ed6482703a7b9c.jpg",
+      "source_label": "Reports/commons-quality-more-v7-annotations/7.txt",
+      "split": "train",
+      "training_approved": true
+    },
+    {
+      "source_image": "Datasets/commons-coastal-tree-validation-source-v1/images/90828850.jpg",
+      "sha256": "6757d2454edf8221c267e9ddc147898c0cd8f443bd49ad51ba3be9005a3ddbdf",
+      "reserved_split": "val",
+      "group": "commons:artist:23911710488ec497a9fe5cef59fc215f6e57a85c14dc9387776f27a5f5da7dba",
+      "index": 1,
+      "label": "labels/val/tree-6757d2454edf8221c267e9ddc147898c0cd8f443bd49ad51ba3be9005a3ddbdf.txt",
+      "label_sha256": "ae2176af033f21c0b1e83ceaf038e84bdc7e33c702ffbba1aaee743b1327112c",
+      "boxes_xyxy_pixels": [
+        [
+          372,
+          264,
+          650,
+          468
+        ],
+        [
+          802,
+          425,
+          831,
+          451
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "overlay": "Reports/coastal-tree-validation-v1-review/90828850-final-overlay.jpg",
+      "overlay_sha256": "98dddca29a8431425b7bb6209ead5ec123eee07a43fffd7e52cf5fc24f7a161f",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Shakir Jamaldeen",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Kandalama_Lake_in_Dambulla_DSC496.jpg",
+      "qualified_for_future_dataset_release": true,
+      "changes": "Manual visible-Tree boxes; separate right tree included and reflection excluded",
+      "source_reservation": "Datasets/commons-coastal-tree-validation-source-v1/reservation.json",
+      "creator_audit": "Reports/coastal-tree-validation-v1-creator-links.json",
+      "historical_overlap_audit": "Reports/coastal-tree-validation-v1-history.json",
+      "flags": {
+        "main_base_partly_submerged": true,
+        "physical_root_or_pose_known": false,
+        "visible_colour_processing": true,
+        "small_second_tree": true
+      },
+      "note": "Two individually distinguishable trees. Undifferentiated distant shoreline is not assigned a fictional single-tree box. Not a census of all background physical trees.",
+      "source": "commons",
+      "image": "images/val/tree-6757d2454edf8221c267e9ddc147898c0cd8f443bd49ad51ba3be9005a3ddbdf.jpg",
+      "source_label": "Reports/coastal-tree-validation-v1-review/90828850-final.txt",
+      "split": "val",
+      "training_approved": true
+    },
+    {
+      "source_image": "Datasets/commons-solitary-tree-source-v1/images/52899621.jpg",
+      "sha256": "00fd9ff8fec318d50e725ce7e98fccb0638811d849e38eee010184797f9b38ed",
+      "reserved_split": "train",
+      "group": "commons:artist:ed56d65ec16e51c25d7f53f3e62a9b2c6959534011b3b9ca813b79ca7c9d0e72",
+      "index": 0,
+      "label": "labels/train/tree-00fd9ff8fec318d50e725ce7e98fccb0638811d849e38eee010184797f9b38ed.txt",
+      "label_sha256": "3f22aaa9867014db941a28a2a179615f040f7868745dd71d727ef3dff979b05e",
+      "boxes_xyxy_pixels": [
+        [
+          36.0,
+          20.0,
+          783.0,
+          548.0
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "overlay": "Reports/tree-complete-training-requalification-v1/commons-0-existing-overlay.jpg",
+      "overlay_sha256": "d4a3fa1d726948b339672cdf88f4c8689857dd6f31c1e28578879cbc69a8e74c",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "artist": "derula",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Acedo_-_Nogal_-_Ismael_-_panoramio.jpg",
+      "creator_links": [
+        "https://panoramio.com/user/2142208"
+      ],
+      "creator_fold_audit": "Reports/commons-creator-fold-audit-v1.json",
+      "creator_fold_audit_sha256": "659c255f7cda3fa45ce73c18796ab62d9acb882b61dd98072e76041840b3b3e1",
+      "source_manifest": "Datasets/commons-solitary-tree-source-v1/manifest.json",
+      "source_manifest_sha256": "fd4ac01d883e3cef4985ff943b69f268ca478249202c26b2cec724da39f8b6f8",
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "changes": "Original full frame and existing label bytes unchanged; manual original/context/overlay reinspection",
+      "already_present_in_old_training_dataset": true,
+      "already_used_in_prior_candidate_training": true,
+      "new_independent_acquisition": false,
+      "flags": {
+        "bare_branches": true,
+        "leaning_tree": false,
+        "main_tree_frame_truncated": false,
+        "root_pose_verified": false
+      },
+      "scope": "One clearly separable visible Tree at supplied resolution. Undifferentiated distant vegetation is not boxed as one tree. No physical-tree census/3D pose/domain acceptance.",
+      "source": "commons",
+      "image": "images/train/tree-00fd9ff8fec318d50e725ce7e98fccb0638811d849e38eee010184797f9b38ed.jpg",
+      "source_label": "Datasets/tree-only-instance-review-v7/labels/train/commons-0.txt",
+      "split": "train"
+    },
+    {
+      "source_image": "Datasets/commons-solitary-tree-source-v2/images/31215891.jpg",
+      "sha256": "39c9684e011aa449d463d6c7564792b7e00dc4e37b901d11dc12f094157531f2",
+      "reserved_split": "train",
+      "group": "commons:artist:03157e27a595b09427b0cd4baceee428302cdd62063e89ba1f7b607e22c121d2",
+      "index": 0,
+      "label": "labels/train/tree-39c9684e011aa449d463d6c7564792b7e00dc4e37b901d11dc12f094157531f2.txt",
+      "label_sha256": "c868b630815dbd38f3a60a4b70cbbfe463c521f2cad527bd9e30f89d262395d8",
+      "boxes_xyxy_pixels": [
+        [
+          175.0,
+          144.0,
+          435.0,
+          561.0
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "overlay": "Reports/tree-complete-training-requalification-v1/commons-3-existing-overlay.jpg",
+      "overlay_sha256": "4f3530ed21d43af060abbcf28ffbcf0057e8f3b2756ea3e243bf57f7b2084953",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "Christopher Michel",
+      "description_url": "https://commons.wikimedia.org/wiki/File:A_few_of_my_best_memories_as_a_Photographer._-_Flickr_-_Christopher.Michel_(20).jpg",
+      "creator_links": [
+        "https://en.wikipedia.org/wiki/en:Christopher_Michel"
+      ],
+      "creator_fold_audit": "Reports/commons-creator-fold-audit-v1.json",
+      "creator_fold_audit_sha256": "659c255f7cda3fa45ce73c18796ab62d9acb882b61dd98072e76041840b3b3e1",
+      "source_manifest": "Datasets/commons-solitary-tree-source-v2/manifest.json",
+      "source_manifest_sha256": "5cae6a78f8c1a477f9b5be847a694885fce01963eb4aac830fd615bf7c749933",
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "changes": "Original full frame and existing label bytes unchanged; manual original/context/overlay reinspection",
+      "already_present_in_old_training_dataset": true,
+      "already_used_in_prior_candidate_training": true,
+      "new_independent_acquisition": false,
+      "flags": {
+        "bare_branches": false,
+        "leaning_tree": true,
+        "main_tree_frame_truncated": false,
+        "root_pose_verified": false
+      },
+      "scope": "One clearly separable visible Tree at supplied resolution. Undifferentiated distant vegetation is not boxed as one tree. No physical-tree census/3D pose/domain acceptance.",
+      "source": "commons",
+      "image": "images/train/tree-39c9684e011aa449d463d6c7564792b7e00dc4e37b901d11dc12f094157531f2.jpg",
+      "source_label": "Datasets/tree-only-instance-review-v7/labels/train/commons-3.txt",
+      "split": "train"
+    },
+    {
+      "source_image": "Datasets/commons-solitary-tree-source-v2/images/104810648.jpg",
+      "sha256": "8ff8fdfcd50d0689d622ddd4340d7ad14b5e80110828f52798d6c586296a4395",
+      "reserved_split": "train",
+      "group": "commons:artist:226f2521e00751fa563c61395bde7adaad7e6e07b5f02ba4ce8704885afb5a60",
+      "index": 26,
+      "label": "labels/train/tree-8ff8fdfcd50d0689d622ddd4340d7ad14b5e80110828f52798d6c586296a4395.txt",
+      "label_sha256": "0705af27b7ba3130df11823665515a9ce4845c83dbfa083c0eaf1c011e1a7760",
+      "boxes_xyxy_pixels": [
+        [
+          300.0,
+          262.0,
+          400.0,
+          372.0
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "overlay": "Reports/tree-small-training-requalification-v1/commons-29-overlay.jpg",
+      "overlay_sha256": "12377ff6f088e750f67ee76bf2febb2e92e41780c7d6565fce5a385893f293e9",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "kuhnmi",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Lone_Tree_(50770893636).jpg",
+      "creator_links": [
+        "https://flickr.com/people/31176607@N05"
+      ],
+      "creator_fold_audit": "Reports/commons-creator-fold-audit-v1.json",
+      "creator_fold_audit_sha256": "659c255f7cda3fa45ce73c18796ab62d9acb882b61dd98072e76041840b3b3e1",
+      "source_manifest": "Datasets/commons-solitary-tree-source-v2/manifest.json",
+      "source_manifest_sha256": "5cae6a78f8c1a477f9b5be847a694885fce01963eb4aac830fd615bf7c749933",
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "already_present_in_old_training_dataset": true,
+      "already_used_in_prior_candidate_training": true,
+      "new_independent_acquisition": false,
+      "changes": "Full image and existing label unchanged; manual original and box overlay reinspection",
+      "flags": {
+        "small_target": true,
+        "snow_scene": true,
+        "bare_branches": true,
+        "visible_watermark": false,
+        "visible_photo_color_processing": false,
+        "main_tree_frame_truncated": false,
+        "base_partly_hidden_by_snow": true,
+        "root_pose_verified": false
+      },
+      "scope": "One clearly separate visible arborescent tree at supplied resolution. Snow hides physical roots. Supports visible2D detection only; image processing/watermark kept, no inferred root/pose or PICO domain claim.",
+      "source": "commons",
+      "image": "images/train/tree-8ff8fdfcd50d0689d622ddd4340d7ad14b5e80110828f52798d6c586296a4395.jpg",
+      "source_label": "Datasets/tree-only-instance-review-v7/labels/train/commons-29.txt",
+      "split": "train"
+    },
+    {
+      "source_image": "Datasets/commons-solitary-tree-source-v2/images/73860209.jpg",
+      "sha256": "f6243a186689e5d90c5a156d92a197e570f0727e010db904d6dad99c92e82cfe",
+      "reserved_split": "train",
+      "group": "commons:artist:a5a2d243b18a516326c6114acd1d5bdc0778fad2134ffd30e8dc691b7d879e83",
+      "index": 43,
+      "label": "labels/train/tree-f6243a186689e5d90c5a156d92a197e570f0727e010db904d6dad99c92e82cfe.txt",
+      "label_sha256": "82055332b51c879fc0988625c1efa609a8de95c46937f98a735d075ffea8ab47",
+      "boxes_xyxy_pixels": [
+        [
+          408.0,
+          98.0,
+          532.0,
+          200.0
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "overlay": "Reports/tree-small-training-requalification-v1/commons-46-overlay.jpg",
+      "overlay_sha256": "0413ae7e9ba3b687ddad70904a06af1e061dec40143c9b1598f18ed4c48fc64a",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "artist": "Sonja Sayer",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Silence_(140532441).jpeg",
+      "creator_links": [
+        "https://500px.com/sonjasayer"
+      ],
+      "creator_fold_audit": "Reports/commons-creator-fold-audit-v1.json",
+      "creator_fold_audit_sha256": "659c255f7cda3fa45ce73c18796ab62d9acb882b61dd98072e76041840b3b3e1",
+      "source_manifest": "Datasets/commons-solitary-tree-source-v2/manifest.json",
+      "source_manifest_sha256": "5cae6a78f8c1a477f9b5be847a694885fce01963eb4aac830fd615bf7c749933",
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "already_present_in_old_training_dataset": true,
+      "already_used_in_prior_candidate_training": true,
+      "new_independent_acquisition": false,
+      "changes": "Full image and existing label unchanged; manual original and box overlay reinspection",
+      "flags": {
+        "small_target": true,
+        "snow_scene": true,
+        "bare_branches": true,
+        "visible_watermark": true,
+        "visible_photo_color_processing": true,
+        "main_tree_frame_truncated": false,
+        "base_partly_hidden_by_snow": true,
+        "root_pose_verified": false
+      },
+      "scope": "One clearly separate visible arborescent tree at supplied resolution. Snow hides physical roots. Supports visible2D detection only; image processing/watermark kept, no inferred root/pose or PICO domain claim.",
+      "source": "commons",
+      "image": "images/train/tree-f6243a186689e5d90c5a156d92a197e570f0727e010db904d6dad99c92e82cfe.jpg",
+      "source_label": "Datasets/tree-only-instance-review-v7/labels/train/commons-46.txt",
+      "split": "train"
+    },
+    {
+      "source_image": "Datasets/commons-winter-tree-training-source-v1/images/59582224.jpg",
+      "sha256": "3c2a086aba9f2dbd843d999e8673488f075e01b714a4155b8a96c3e888a9d799",
+      "reserved_split": "train",
+      "group": "commons:artist:cd5a0212eebb199bef6b65c19571e7088a7f510efd056e4013034abc6229e654",
+      "index": 5,
+      "label": "labels/train/tree-3c2a086aba9f2dbd843d999e8673488f075e01b714a4155b8a96c3e888a9d799.txt",
+      "label_sha256": "9dca534d6cbf3984a5dabceb81d4e6298cbd49362bb2856d6ff3f7c1c774dd23",
+      "boxes_xyxy_pixels": [
+        [
+          418,
+          294,
+          538,
+          442
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "overlay": "Reports/commons-winter-training-review-v1/59582224-overlay.jpg",
+      "overlay_sha256": "c40815143f2470890cc57a653ec0c3616999deead8ba7e4f07d0343ef4ac24e6",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Ulet Natalius",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Lonely_tree_in_the_sandy_fields.jpg",
+      "creator_links": [
+        "https://commons.wikimedia.org/wiki/User:Travalgar"
+      ],
+      "creator_audit": "Reports/commons-winter-training-creator-links-v1.json",
+      "historical_overlap_audit": "Reports/commons-winter-training-history-v1.json",
+      "history_audit_sha256": "1ed09e0a4f38d44fe2ce219546d013a3e90f291e920a3202d2d800d90eadfd04",
+      "reservation": "Datasets/commons-winter-tree-training-source-v1/reservation.json",
+      "reservation_sha256": "1fb9ae191a71e75c0b90476e52ee79810404d05a20615076c2a6a11955f5abf0",
+      "source_manifest": "Datasets/commons-winter-tree-training-source-v1/manifest.json",
+      "source_manifest_sha256": "667b8739dd71192a23f0ee66e2b3f6017afb4ea6ee5578d43c6cae976564f0a1",
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "new_independent_acquisition": true,
+      "already_used_in_prior_candidate_training": false,
+      "changes": "Raw publisher image unchanged; manually added visible2D Tree box.",
+      "flags": {
+        "small_target": true,
+        "leaning_tree": true,
+        "processed_color_appearance": true,
+        "main_tree_frame_truncated": false,
+        "root_pose_verified": false
+      },
+      "scope": "One clearly separable arborescent main tree. Distant continuous mountain woodland not a single annotated tree. Unknown all-physical-tree/pretraining independence; public photo not PICO acceptance.",
+      "source": "commons",
+      "image": "images/train/tree-3c2a086aba9f2dbd843d999e8673488f075e01b714a4155b8a96c3e888a9d799.jpg",
+      "source_label": "Reports/commons-winter-training-review-v1/59582224.txt",
+      "split": "train"
+    },
+    {
+      "source_image": "Datasets/commons-winter-tree-training-source-v1/images/55212555.jpg",
+      "sha256": "e7089c56021a01ff009ea5834704c2cb7d9c12993a1f6120d6ad3c8c1e480988",
+      "reserved_split": "train",
+      "group": "commons:artist:535be04bc42ed8dd976ee8c11277e66001ede48d797dc7ab96329dfe151de591",
+      "index": 2,
+      "label": "labels/train/tree-e7089c56021a01ff009ea5834704c2cb7d9c12993a1f6120d6ad3c8c1e480988.txt",
+      "label_sha256": "3170abf484677554a0fff737f7ab80578eae1fcbbed6e177c7badfc1b735a1a1",
+      "boxes_xyxy_pixels": [
+        [
+          86,
+          0,
+          894,
+          720
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "overlay": "Reports/tree-truncated-training-review-v1/55212555-overlay.jpg",
+      "overlay_sha256": "4a0b246e46155d702ab726fa6764186c1c06f42f4a644895c6e6a0e54fe09b14",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Armineaghayan",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Winter,_English_park,_ArmAg_(12).jpg",
+      "creator_links": [
+        "https://commons.wikimedia.org/wiki/User:Armineaghayan"
+      ],
+      "source_manifest": "Datasets/commons-winter-tree-training-source-v1/manifest.json",
+      "source_manifest_sha256": "667b8739dd71192a23f0ee66e2b3f6017afb4ea6ee5578d43c6cae976564f0a1",
+      "reservation": "Datasets/commons-winter-tree-training-source-v1/reservation.json",
+      "reservation_sha256": "1fb9ae191a71e75c0b90476e52ee79810404d05a20615076c2a6a11955f5abf0",
+      "creator_audit": "Reports/commons-winter-training-creator-links-v1.json",
+      "historical_overlap_audit": "Reports/commons-winter-training-history-v1.json",
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "already_used_in_prior_candidate_training": false,
+      "flags": {
+        "main_tree_frame_truncated": true,
+        "root_pose_verified": false,
+        "low_angle_view": true
+      },
+      "changes": "Raw image unchanged; manual visible-extent Tree label. Frame truncation is allowed for 2D detection, not extrapolated beyond frame.",
+      "scope": "One clearly identifiable arborescent tree. No other clearly separable tree visible at supplied resolution. Truncated example for detection diversity, not full-tree size/base/pose evidence.",
+      "source": "commons",
+      "image": "images/train/tree-e7089c56021a01ff009ea5834704c2cb7d9c12993a1f6120d6ad3c8c1e480988.jpg",
+      "source_label": "Reports/tree-truncated-training-review-v1/55212555.txt",
+      "split": "train"
+    },
+    {
+      "source_image": "Datasets/commons-winter-tree-training-source-v1/images/60006983.jpg",
+      "sha256": "d27e51b0b869f6052f7eee9a9c8f935b78432d2e9ca55a05a6713970ab817141",
+      "reserved_split": "train",
+      "group": "commons:artist:01639448ed82a22e19c8b609347986b85af59b3dc7537727167aabd219adb48c",
+      "index": 6,
+      "label": "labels/train/tree-d27e51b0b869f6052f7eee9a9c8f935b78432d2e9ca55a05a6713970ab817141.txt",
+      "label_sha256": "f59b24576570c5f61c30d3beef74ed1146c528f87307607ae1fb490dc5ccaa88",
+      "boxes_xyxy_pixels": [
+        [
+          113,
+          0,
+          960,
+          586
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "overlay": "Reports/tree-truncated-training-review-v1/60006983-overlay.jpg",
+      "overlay_sha256": "51792cf1be7d5689baa719a3cd055755141e319706dd1a3e659c705230d6cb1d",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Emjeha",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Satu_Pohon,_Satu_kehidupan.jpg",
+      "creator_links": [
+        "https://commons.wikimedia.org/wiki/User:Emjeha"
+      ],
+      "source_manifest": "Datasets/commons-winter-tree-training-source-v1/manifest.json",
+      "source_manifest_sha256": "667b8739dd71192a23f0ee66e2b3f6017afb4ea6ee5578d43c6cae976564f0a1",
+      "reservation": "Datasets/commons-winter-tree-training-source-v1/reservation.json",
+      "reservation_sha256": "1fb9ae191a71e75c0b90476e52ee79810404d05a20615076c2a6a11955f5abf0",
+      "creator_audit": "Reports/commons-winter-training-creator-links-v1.json",
+      "historical_overlap_audit": "Reports/commons-winter-training-history-v1.json",
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "already_used_in_prior_candidate_training": false,
+      "flags": {
+        "main_tree_frame_truncated": true,
+        "root_pose_verified": false,
+        "low_angle_view": false
+      },
+      "changes": "Raw image unchanged; manual visible-extent Tree label. Frame truncation is allowed for 2D detection, not extrapolated beyond frame.",
+      "scope": "One clearly identifiable arborescent tree. No other clearly separable tree visible at supplied resolution. Truncated example for detection diversity, not full-tree size/base/pose evidence.",
+      "source": "commons",
+      "image": "images/train/tree-d27e51b0b869f6052f7eee9a9c8f935b78432d2e9ca55a05a6713970ab817141.jpg",
+      "source_label": "Reports/tree-truncated-training-review-v1/60006983.txt",
+      "split": "train"
+    },
+    {
+      "source_image": "Datasets/commons-solitary-tree-source-v2/images/69273167.jpg",
+      "sha256": "1f61075d944bf770461374ca1b91a305c735c7549dd1d6c960026c48fa852650",
+      "reserved_split": "train",
+      "group": "commons:artist:14b9b8763a0795e552db0607e22a2a7f5f0cd48d436bdf71bff5b320670b56c2",
+      "index": 16,
+      "label": "labels/train/tree-1f61075d944bf770461374ca1b91a305c735c7549dd1d6c960026c48fa852650.txt",
+      "label_sha256": "508fe9fe9f877dbcfdd9f6190ec8b7347cd9dfe1df42221f8fbfb07fd0f2b53e",
+      "boxes_xyxy_pixels": [
+        [
+          207,
+          39,
+          865,
+          540
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "overlay": "Reports/tree-existing-visible-review-v1/commons-19-overlay.jpg",
+      "overlay_sha256": "5d564531cb4433fd6ff6e9810664344ecfb4296bcc3e3e687d6d5041a4b54c50",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "Jorge Franganillo from Barcelona, Spain",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Embalse_de_El_Grado_(28969387781).jpg",
+      "creator_links": [
+        "https://flickr.com/people/46191841@N00"
+      ],
+      "source_manifest": "Datasets/commons-solitary-tree-source-v2/manifest.json",
+      "source_manifest_sha256": "5cae6a78f8c1a477f9b5be847a694885fce01963eb4aac830fd615bf7c749933",
+      "creator_fold_audit": "Reports/commons-creator-fold-audit-v1.json",
+      "creator_fold_audit_sha256": "659c255f7cda3fa45ce73c18796ab62d9acb882b61dd98072e76041840b3b3e1",
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "already_used_in_prior_candidate_training": true,
+      "new_independent_acquisition": false,
+      "flags": {
+        "main_tree_frame_truncated": false,
+        "root_pose_verified": false,
+        "bare_branches": true
+      },
+      "changes": "New separate visible-extent label; raw and old held dataset labels retained.",
+      "scope": "One visible arborescent tree; no additional clearly separable tree at supplied resolution. Detection annotation only; public image not PICO acceptance.",
+      "correction": "Old top bound0 falsely implied truncation; visible branches start around39. New box [207,39,865,540]. Old review reason about top clipping contradicted by actual image.",
+      "source": "commons",
+      "image": "images/train/tree-1f61075d944bf770461374ca1b91a305c735c7549dd1d6c960026c48fa852650.jpg",
+      "source_label": "Reports/tree-existing-visible-review-v1/commons-19.txt",
+      "split": "train"
+    },
+    {
+      "source_image": "Datasets/commons-solitary-tree-source-v2/images/97601550.jpg",
+      "sha256": "ededd6904dc5af11b9c4aa6d28708d71dab87a9e838510066f0e5db650152cf6",
+      "reserved_split": "train",
+      "group": "commons:artist:250d345f81dadb16a539ffa511289b466d02626d5efa6bf7a4091ea5b2096b9b",
+      "index": 32,
+      "label": "labels/train/tree-ededd6904dc5af11b9c4aa6d28708d71dab87a9e838510066f0e5db650152cf6.txt",
+      "label_sha256": "91433f3134792f0c1e3ab54c92aa69da9db06bce06c1bf81976719b59dec073a",
+      "boxes_xyxy_pixels": [
+        [
+          171,
+          18,
+          619,
+          640
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "overlay": "Reports/tree-existing-visible-review-v1/commons-35-overlay.jpg",
+      "overlay_sha256": "c3403058f116448586aa6e467c1ce95881fae96277782a6c75db74bc9c9c20d5",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "artist": "StockyPics",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Lonely_tree_(21464459422).jpg",
+      "creator_links": [
+        "https://flickr.com/people/135371437@N04"
+      ],
+      "source_manifest": "Datasets/commons-solitary-tree-source-v2/manifest.json",
+      "source_manifest_sha256": "5cae6a78f8c1a477f9b5be847a694885fce01963eb4aac830fd615bf7c749933",
+      "creator_fold_audit": "Reports/commons-creator-fold-audit-v1.json",
+      "creator_fold_audit_sha256": "659c255f7cda3fa45ce73c18796ab62d9acb882b61dd98072e76041840b3b3e1",
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "already_used_in_prior_candidate_training": true,
+      "new_independent_acquisition": false,
+      "flags": {
+        "main_tree_frame_truncated": true,
+        "root_pose_verified": false,
+        "bare_branches": false
+      },
+      "changes": "New separate visible-extent label; raw and old held dataset labels retained.",
+      "scope": "One visible arborescent tree; no additional clearly separable tree at supplied resolution. Detection annotation only; public image not PICO acceptance.",
+      "provenance_note": "Publisher artist StockyPics; description credits contributor Jordy Vlug. Declared account grouping only, not all contributor alias independence.",
+      "source": "commons",
+      "image": "images/train/tree-ededd6904dc5af11b9c4aa6d28708d71dab87a9e838510066f0e5db650152cf6.jpg",
+      "source_label": "Reports/tree-existing-visible-review-v1/commons-35.txt",
+      "split": "train"
+    },
+    {
+      "source_image": "Datasets/commons-solitary-tree-source-v2/images/71647242.jpg",
+      "sha256": "d3108fa9e2b0785460975f0d1f268951b0f48e9f17ecea3be1f5fe068ca77d3c",
+      "reserved_split": "val",
+      "group": "commons:artist:998a64159fea2d65ed0b5438063a44c34473c9f94a5acb26176ff9c4493a696a",
+      "index": 24,
+      "label": "labels/val/tree-d3108fa9e2b0785460975f0d1f268951b0f48e9f17ecea3be1f5fe068ca77d3c.txt",
+      "label_sha256": "70196e8ced7a12834b62a907b268c5abe52c2389e5534df609fecc1260505a93",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "overlay": "Reports/tree-validation-requalification-v1/commons-27-overlay.jpg",
+      "overlay_sha256": "439d174167e45fa6f46ad5a28748e88051cbd81aa88f8d24428acac9682ff931",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "artist": "Benjamin Balazs",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Lone_Tree_(177177433).jpeg",
+      "creator_links": [
+        "https://500px.com/brenkee"
+      ],
+      "source_manifest": "Datasets/commons-solitary-tree-source-v2/manifest.json",
+      "source_manifest_sha256": "5cae6a78f8c1a477f9b5be847a694885fce01963eb4aac830fd615bf7c749933",
+      "creator_fold_audit": "Reports/commons-creator-fold-audit-v1.json",
+      "creator_fold_audit_sha256": "659c255f7cda3fa45ce73c18796ab62d9acb882b61dd98072e76041840b3b3e1",
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "already_used_in_prior_candidate_validation": true,
+      "new_independent_acquisition": false,
+      "flags": {
+        "monochrome": false,
+        "visible_photo_color_processing": true,
+        "occluded_base": true,
+        "multi_stem": false
+      },
+      "changes": "Original image and label unchanged; visible tree inventory and overlay rechecked.",
+      "scope": "One clearly separable arborescent tree. Public previously observed validation; not new independent test or 3D/root pose evidence.",
+      "source": "commons",
+      "image": "images/val/tree-d3108fa9e2b0785460975f0d1f268951b0f48e9f17ecea3be1f5fe068ca77d3c.jpg",
+      "source_label": "Datasets/tree-only-instance-review-v7/labels/val/commons-27.txt",
+      "split": "val"
+    },
+    {
+      "source_image": "Datasets/commons-solitary-tree-source-v2/images/24523230.jpg",
+      "sha256": "334ffb4a8925b1a4924b2f2959740605698efa9d71828b8ce5cf6bb1fc6efc08",
+      "reserved_split": "val",
+      "group": "commons:artist:b0c111ba91290d6be9dfae9e1cbd1bc6d1492536d919c80eb7d5415da188f923",
+      "index": 41,
+      "label": "labels/val/tree-334ffb4a8925b1a4924b2f2959740605698efa9d71828b8ce5cf6bb1fc6efc08.txt",
+      "label_sha256": "1ff0ca4242e9d8fde7883f33dc4a685902d788c6e632bdb794fcaa1f9e0a5052",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "overlay": "Reports/tree-validation-requalification-v1/commons-44-overlay.jpg",
+      "overlay_sha256": "f47da5e4bd75634b1b190152e462337c91ef6714283b0a0ebf84bd0000d2f1f8",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "artist": "yeowatzup",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Pantai_Wataboo,_Osolata,_East_Timor_(310354363).jpg",
+      "creator_links": [
+        "https://flickr.com/people/46274125@N00"
+      ],
+      "source_manifest": "Datasets/commons-solitary-tree-source-v2/manifest.json",
+      "source_manifest_sha256": "5cae6a78f8c1a477f9b5be847a694885fce01963eb4aac830fd615bf7c749933",
+      "creator_fold_audit": "Reports/commons-creator-fold-audit-v1.json",
+      "creator_fold_audit_sha256": "659c255f7cda3fa45ce73c18796ab62d9acb882b61dd98072e76041840b3b3e1",
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "already_used_in_prior_candidate_validation": true,
+      "new_independent_acquisition": false,
+      "flags": {
+        "backlit": false,
+        "occluded_base": false,
+        "small_target": false,
+        "snow_scene": false,
+        "bare_branches": false,
+        "tidal_scene": true
+      },
+      "changes": "Original image and label unchanged; visible tree inventory and overlay rechecked.",
+      "scope": "One clearly separable arborescent tree. Public previously observed validation; not new independent test or 3D/root pose evidence.",
+      "source": "commons",
+      "image": "images/val/tree-334ffb4a8925b1a4924b2f2959740605698efa9d71828b8ce5cf6bb1fc6efc08.jpg",
+      "source_label": "Datasets/tree-only-instance-review-v7/labels/val/commons-44.txt",
+      "split": "val"
+    },
+    {
+      "image": "images/train/tree-50d6cbf541df80f8b6132d7c80d4eee48c14ddcf5d68c8738114b974efc3b439.jpg",
+      "sha256": "50d6cbf541df80f8b6132d7c80d4eee48c14ddcf5d68c8738114b974efc3b439",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/chokingsun/",
+      "original_id": "0022d0ab1e1347ab",
+      "label": "labels/train/tree-50d6cbf541df80f8b6132d7c80d4eee48c14ddcf5d68c8738114b974efc3b439.txt",
+      "negative": true,
+      "index": 3,
+      "status": "ORIGINAL_VISUALLY_REVIEWED_NO_CONSPICUOUS_TREE",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "choking sun",
+        "AuthorProfileURL": "https://www.flickr.com/people/chokingsun/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/chokingsun/15740079073",
+        "Title": "IMG_0390.JPG"
+      },
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "reviewer": "Codex visual inspection; no independent human second review",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "90f34322dcf5c61723a642e734e5c1ec89119c3b18f3d20a44bdeafe5f3ab632",
+      "training_approved": true,
+      "source_dataset": "Datasets/spider-openimages-negative-v4",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "source_image": "Datasets/tree-only-instance-review-v8/images/train/negative-50d6cbf541df80f8b6132d7c.jpg",
+      "reserved_split": "train",
+      "source_audit": "Datasets/tree-only-instance-review-v8/audit.json",
+      "source_audit_sha256": "c45beb05d07fa8e8422eb41a00087b754c41d247446d4b22cbfa8560f308dab9",
+      "qualified_for_future_dataset_release": true,
+      "already_used_in_prior_candidate_training": true,
+      "scope": "Tree-only negative after actual full-image visual review; contains cat/dog/statue, not all-class background. No new acquisition; preserve original TRAIN group.",
+      "source_label": "Datasets/tree-only-instance-review-v8/labels/train/negative-50d6cbf541df80f8b6132d7c.txt"
+    },
+    {
+      "image": "images/train/tree-b59343bae8cca93d73d3b878ee52678a0ba2062d650a3c301e5b18bdb9eafa0a.jpg",
+      "sha256": "b59343bae8cca93d73d3b878ee52678a0ba2062d650a3c301e5b18bdb9eafa0a",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/tostie14/",
+      "original_id": "010c94fc3baef214",
+      "label": "labels/train/tree-b59343bae8cca93d73d3b878ee52678a0ba2062d650a3c301e5b18bdb9eafa0a.txt",
+      "negative": true,
+      "index": 12,
+      "status": "ORIGINAL_VISUALLY_REVIEWED_NO_CONSPICUOUS_TREE",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Kevin Tostado",
+        "AuthorProfileURL": "https://www.flickr.com/people/tostie14/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/tostie14/34095624",
+        "Title": "Puppy Belle"
+      },
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "reviewer": "Codex visual inspection; no independent human second review",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "48febc9e33f74c62210d7d8992ca8164858acd9950402961513b0173c7580ff7",
+      "training_approved": true,
+      "source_dataset": "Datasets/spider-openimages-negative-v4",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "source_image": "Datasets/tree-only-instance-review-v8/images/train/negative-b59343bae8cca93d73d3b878.jpg",
+      "reserved_split": "train",
+      "source_audit": "Datasets/tree-only-instance-review-v8/audit.json",
+      "source_audit_sha256": "c45beb05d07fa8e8422eb41a00087b754c41d247446d4b22cbfa8560f308dab9",
+      "qualified_for_future_dataset_release": true,
+      "already_used_in_prior_candidate_training": true,
+      "scope": "Tree-only negative after actual full-image visual review; contains cat/dog/statue, not all-class background. No new acquisition; preserve original TRAIN group.",
+      "source_label": "Datasets/tree-only-instance-review-v8/labels/train/negative-b59343bae8cca93d73d3b878.txt"
+    },
+    {
+      "image": "images/train/tree-61801453d7a64e42857c0ab655b2e37e9922d7bfb90f6ecf02fbb59e65df5f19.jpg",
+      "sha256": "61801453d7a64e42857c0ab655b2e37e9922d7bfb90f6ecf02fbb59e65df5f19",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/70253321@N00/",
+      "original_id": "017f7b9e23d7c908",
+      "label": "labels/train/tree-61801453d7a64e42857c0ab655b2e37e9922d7bfb90f6ecf02fbb59e65df5f19.txt",
+      "negative": true,
+      "index": 17,
+      "status": "ORIGINAL_VISUALLY_REVIEWED_NO_CONSPICUOUS_TREE",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "fugzu",
+        "AuthorProfileURL": "https://www.flickr.com/people/70253321@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/70253321@N00/11381011104",
+        "Title": "Bam Bam delle Caserosse"
+      },
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "reviewer": "Codex visual inspection; no independent human second review",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "7ff5538ac1906dc37664611e81ed6379defbbd2811a36803403864f693c2a39d",
+      "training_approved": true,
+      "source_dataset": "Datasets/spider-openimages-negative-v4",
+      "dimensions": [
+        1024,
+        868
+      ],
+      "source_image": "Datasets/tree-only-instance-review-v8/images/train/negative-61801453d7a64e42857c0ab6.jpg",
+      "reserved_split": "train",
+      "source_audit": "Datasets/tree-only-instance-review-v8/audit.json",
+      "source_audit_sha256": "c45beb05d07fa8e8422eb41a00087b754c41d247446d4b22cbfa8560f308dab9",
+      "qualified_for_future_dataset_release": true,
+      "already_used_in_prior_candidate_training": true,
+      "scope": "Tree-only negative after actual full-image visual review; contains cat/dog/statue, not all-class background. No new acquisition; preserve original TRAIN group.",
+      "source_label": "Datasets/tree-only-instance-review-v8/labels/train/negative-61801453d7a64e42857c0ab6.txt"
+    },
+    {
+      "image": "images/train/tree-0bbe927293aa1d8186447ec485cfff86cd13a47f10c9122271573d3f7dbd8463.jpg",
+      "sha256": "0bbe927293aa1d8186447ec485cfff86cd13a47f10c9122271573d3f7dbd8463",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/lesphotosdejerome/",
+      "original_id": "039beb511fd1e7f7",
+      "label": "labels/train/tree-0bbe927293aa1d8186447ec485cfff86cd13a47f10c9122271573d3f7dbd8463.txt",
+      "negative": true,
+      "index": 26,
+      "status": "ORIGINAL_VISUALLY_REVIEWED_NO_CONSPICUOUS_TREE",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "J\u00e9r\u00f4me Decq",
+        "AuthorProfileURL": "https://www.flickr.com/people/lesphotosdejerome/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/lesphotosdejerome/3703720579",
+        "Title": "Pink our new cat"
+      },
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "reviewer": "Codex visual inspection; no independent human second review",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "9308e8c6b5f9d0afce55bd2f75451ed9064b6dbfce365f548b686e0a0cc9b6a6",
+      "training_approved": true,
+      "source_dataset": "Datasets/spider-openimages-negative-v4",
+      "dimensions": [
+        1024,
+        765
+      ],
+      "source_image": "Datasets/tree-only-instance-review-v8/images/train/negative-0bbe927293aa1d8186447ec4.jpg",
+      "reserved_split": "train",
+      "source_audit": "Datasets/tree-only-instance-review-v8/audit.json",
+      "source_audit_sha256": "c45beb05d07fa8e8422eb41a00087b754c41d247446d4b22cbfa8560f308dab9",
+      "qualified_for_future_dataset_release": true,
+      "already_used_in_prior_candidate_training": true,
+      "scope": "Tree-only negative after actual full-image visual review; contains cat/dog/statue, not all-class background. No new acquisition; preserve original TRAIN group.",
+      "source_label": "Datasets/tree-only-instance-review-v8/labels/train/negative-0bbe927293aa1d8186447ec4.txt"
+    },
+    {
+      "image": "images/train/tree-d7631d7ee3335dd01e60b2819fac8928b097f308cafc181ce226f4d8096d9c43.jpg",
+      "sha256": "d7631d7ee3335dd01e60b2819fac8928b097f308cafc181ce226f4d8096d9c43",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/vmos/",
+      "original_id": "0413f9c94df7ebcb",
+      "label": "labels/train/tree-d7631d7ee3335dd01e60b2819fac8928b097f308cafc181ce226f4d8096d9c43.txt",
+      "negative": true,
+      "index": 28,
+      "status": "ORIGINAL_VISUALLY_REVIEWED_NO_CONSPICUOUS_TREE",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "J",
+        "AuthorProfileURL": "https://www.flickr.com/people/vmos/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/vmos/449567850",
+        "Title": "Ziggy was named after Ziggy Stardust"
+      },
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "reviewer": "Codex visual inspection; no independent human second review",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "4e89af8848160678aefde161a0e845396f9da8383319d8b93557422da7b3da65",
+      "training_approved": true,
+      "source_dataset": "Datasets/spider-openimages-negative-v4",
+      "dimensions": [
+        1024,
+        637
+      ],
+      "source_image": "Datasets/tree-only-instance-review-v8/images/train/negative-d7631d7ee3335dd01e60b281.jpg",
+      "reserved_split": "train",
+      "source_audit": "Datasets/tree-only-instance-review-v8/audit.json",
+      "source_audit_sha256": "c45beb05d07fa8e8422eb41a00087b754c41d247446d4b22cbfa8560f308dab9",
+      "qualified_for_future_dataset_release": true,
+      "already_used_in_prior_candidate_training": true,
+      "scope": "Tree-only negative after actual full-image visual review; contains cat/dog/statue, not all-class background. No new acquisition; preserve original TRAIN group.",
+      "source_label": "Datasets/tree-only-instance-review-v8/labels/train/negative-d7631d7ee3335dd01e60b281.txt"
+    },
+    {
+      "image": "images/train/tree-11ad33169492d0f6afe2969a7a9ca90a2fc92ac7503194cea187e5ec7512ebb1.jpg",
+      "sha256": "11ad33169492d0f6afe2969a7a9ca90a2fc92ac7503194cea187e5ec7512ebb1",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/zeevveez/",
+      "original_id": "05455df7c2b08919",
+      "label": "labels/train/tree-11ad33169492d0f6afe2969a7a9ca90a2fc92ac7503194cea187e5ec7512ebb1.txt",
+      "negative": true,
+      "index": 29,
+      "status": "ORIGINAL_VISUALLY_REVIEWED_NO_CONSPICUOUS_TREE",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "zeevveez",
+        "AuthorProfileURL": "https://www.flickr.com/people/zeevveez/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/zeevveez/8464801471",
+        "Title": "My NEW Flash (1)"
+      },
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "reviewer": "Codex visual inspection; no independent human second review",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "12335d3d4a8f65ecbde47ed1fc6016d9d04e4045dff9c4fdaca14674c63eb034",
+      "training_approved": true,
+      "source_dataset": "Datasets/spider-openimages-negative-v4",
+      "dimensions": [
+        1024,
+        683
+      ],
+      "source_image": "Datasets/tree-only-instance-review-v8/images/train/negative-11ad33169492d0f6afe2969a.jpg",
+      "reserved_split": "train",
+      "source_audit": "Datasets/tree-only-instance-review-v8/audit.json",
+      "source_audit_sha256": "c45beb05d07fa8e8422eb41a00087b754c41d247446d4b22cbfa8560f308dab9",
+      "qualified_for_future_dataset_release": true,
+      "already_used_in_prior_candidate_training": true,
+      "scope": "Tree-only negative after actual full-image visual review; contains cat/dog/statue, not all-class background. No new acquisition; preserve original TRAIN group.",
+      "source_label": "Datasets/tree-only-instance-review-v8/labels/train/negative-11ad33169492d0f6afe2969a.txt"
+    },
+    {
+      "image": "images/train/tree-a7c4a6a86ca53c1ee56f422b6a4088cd0d8fd928902bd074cce1dc0a321f2d84.jpg",
+      "sha256": "a7c4a6a86ca53c1ee56f422b6a4088cd0d8fd928902bd074cce1dc0a321f2d84",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/belencantero/",
+      "original_id": "06e83fd457ccb4c0",
+      "label": "labels/train/tree-a7c4a6a86ca53c1ee56f422b6a4088cd0d8fd928902bd074cce1dc0a321f2d84.txt",
+      "negative": true,
+      "index": 34,
+      "status": "ORIGINAL_VISUALLY_REVIEWED_NO_CONSPICUOUS_TREE",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "ANA BEL\u00c9N CANTERO PAZ",
+        "AuthorProfileURL": "https://www.flickr.com/people/belencantero/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/belencantero/4571508440",
+        "Title": "\u00cddolo cicl\u00e1dico"
+      },
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "reviewer": "Codex visual inspection; no independent human second review",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "7f971dd46e229a6090009b1f1acfdb4c1c17b8b8beba5f78859a0be83240b22e",
+      "training_approved": true,
+      "source_dataset": "Datasets/spider-openimages-negative-v4",
+      "dimensions": [
+        586,
+        1024
+      ],
+      "source_image": "Datasets/tree-only-instance-review-v8/images/train/negative-a7c4a6a86ca53c1ee56f422b.jpg",
+      "reserved_split": "train",
+      "source_audit": "Datasets/tree-only-instance-review-v8/audit.json",
+      "source_audit_sha256": "c45beb05d07fa8e8422eb41a00087b754c41d247446d4b22cbfa8560f308dab9",
+      "qualified_for_future_dataset_release": true,
+      "already_used_in_prior_candidate_training": true,
+      "scope": "Tree-only negative after actual full-image visual review; contains cat/dog/statue, not all-class background. No new acquisition; preserve original TRAIN group.",
+      "source_label": "Datasets/tree-only-instance-review-v8/labels/train/negative-a7c4a6a86ca53c1ee56f422b.txt"
+    },
+    {
+      "image": "images/train/tree-75f46c6b1cc935af084bb18e5dc64a26981c6991cfe841edea47fe67e21e3fca.jpg",
+      "sha256": "75f46c6b1cc935af084bb18e5dc64a26981c6991cfe841edea47fe67e21e3fca",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/66502359@N06/",
+      "original_id": "0be5876ff26d9992",
+      "label": "labels/train/tree-75f46c6b1cc935af084bb18e5dc64a26981c6991cfe841edea47fe67e21e3fca.txt",
+      "negative": true,
+      "index": 42,
+      "status": "ORIGINAL_VISUALLY_REVIEWED_NO_CONSPICUOUS_TREE",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "\u00d8yvind Wahl",
+        "AuthorProfileURL": "https://www.flickr.com/people/66502359@N06/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/66502359@N06/6100259603",
+        "Title": "Googoosh Sad"
+      },
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "reviewer": "Codex visual inspection; no independent human second review",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "2377e145ddd82bd8e01da3e0b1ef89b0b0dad84e3763acbf65dbad06fa3822bf",
+      "training_approved": true,
+      "source_dataset": "Datasets/spider-openimages-negative-v4",
+      "dimensions": [
+        1024,
+        683
+      ],
+      "source_image": "Datasets/tree-only-instance-review-v8/images/train/negative-75f46c6b1cc935af084bb18e.jpg",
+      "reserved_split": "train",
+      "source_audit": "Datasets/tree-only-instance-review-v8/audit.json",
+      "source_audit_sha256": "c45beb05d07fa8e8422eb41a00087b754c41d247446d4b22cbfa8560f308dab9",
+      "qualified_for_future_dataset_release": true,
+      "already_used_in_prior_candidate_training": true,
+      "scope": "Tree-only negative after actual full-image visual review; contains cat/dog/statue, not all-class background. No new acquisition; preserve original TRAIN group.",
+      "source_label": "Datasets/tree-only-instance-review-v8/labels/train/negative-75f46c6b1cc935af084bb18e.txt"
+    },
+    {
+      "source_image": "Datasets\\commons-solitary-tree-sa-source-v9\\images\\159289782.jpg",
+      "sha256": "07e97697dbfb2e3445733d19e961cee91212886e7aa9af67e77f59b2a5a8ecee",
+      "label": "labels/train/tree-07e97697dbfb2e3445733d19e961cee91212886e7aa9af67e77f59b2a5a8ecee.txt",
+      "label_sha256": "b45e9777489dc0fc184495f8aed6e98e0e84687dbf5a7395b2bc9b9b9096d6fc",
+      "group": "commons:artist:4bdd2116ae847237c800dc15ebd7337b468c0bf0937028c9874c9e9d2747bcb8",
+      "reserved_split": "train",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "negative": false,
+      "boxes": 1,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Theov999",
+      "source_url": "https://commons.wikimedia.org/wiki/File:A_lonely_tree_Pyrgos,Elis_Greece.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/A_lonely_tree_Pyrgos%2CElis_Greece.jpg/960px-A_lonely_tree_Pyrgos%2CElis_Greece.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "modification_notice": "Publisher derivative downloaded unchanged; manual visible-instance YOLO bounding box added by Codex. No pixel edits. CC BY-SA 4.0 attribution and share-alike retained.",
+      "review_report": "Reports\\commons-solitary-tree-v9-review\\annotation-drafts.json",
+      "review_report_sha256": "22480130a403bfb3c023346b7d78752544397d1abd3b4bc8a3e28ccb67e6c91c",
+      "reservation_report": "Datasets\\commons-solitary-tree-sa-source-v9\\reservation.json",
+      "reservation_report_sha256": "2b91cbae7b4b75164a6c336d1c557036694e26b16ccd204e98f67f8fdf72ff7a",
+      "image": "images/train/tree-07e97697dbfb2e3445733d19e961cee91212886e7aa9af67e77f59b2a5a8ecee.jpg",
+      "source_label": "Reports\\commons-solitary-tree-v9-review\\159289782.txt",
+      "split": "train",
+      "source": "commons"
+    },
+    {
+      "source_image": "Datasets\\commons-solitary-tree-sa-source-v9\\images\\105539471.jpg",
+      "sha256": "0672f264e886307584cdbd391f2f82f1ba6571629de010ecded9d547b80edd31",
+      "label": "labels/train/tree-0672f264e886307584cdbd391f2f82f1ba6571629de010ecded9d547b80edd31.txt",
+      "label_sha256": "a71797cf460ef38ac3e0a9221e4cda03d24f44e8d3d2c5937ebbc698be52944e",
+      "group": "commons:artist:b1c01cc4b4e365c396c394a9f9ca5a596dc54a9b6fc2b22d7776933c330e7b20",
+      "reserved_split": "train",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "negative": false,
+      "boxes": 1,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Lowai Alkawarit",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Al_Ghaf_tree_.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Al_Ghaf_tree_.jpg/960px-Al_Ghaf_tree_.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "modification_notice": "Publisher derivative downloaded unchanged; manual visible-instance YOLO bounding box added by Codex. No pixel edits. CC BY-SA 4.0 attribution and share-alike retained.",
+      "review_report": "Reports\\commons-solitary-tree-v9-review\\annotation-drafts.json",
+      "review_report_sha256": "22480130a403bfb3c023346b7d78752544397d1abd3b4bc8a3e28ccb67e6c91c",
+      "reservation_report": "Datasets\\commons-solitary-tree-sa-source-v9\\reservation.json",
+      "reservation_report_sha256": "2b91cbae7b4b75164a6c336d1c557036694e26b16ccd204e98f67f8fdf72ff7a",
+      "image": "images/train/tree-0672f264e886307584cdbd391f2f82f1ba6571629de010ecded9d547b80edd31.jpg",
+      "source_label": "Reports\\commons-solitary-tree-v9-review\\105539471.txt",
+      "split": "train",
+      "source": "commons"
+    },
+    {
+      "source_image": "Datasets\\commons-solitary-tree-sa-source-v9\\images\\69094784.jpg",
+      "sha256": "800fa7acc8d0e3945d5d776f33ae6b27d26ba5fb963b929df01f233677dc9692",
+      "label": "labels/train/tree-800fa7acc8d0e3945d5d776f33ae6b27d26ba5fb963b929df01f233677dc9692.txt",
+      "label_sha256": "f6cf5be56990441f2c7ff43a3bfc8c10343f33e8617227374193dfed5bfa7be3",
+      "group": "commons:artist:d40cd1113a9d4a1c86c22109d207d1faacca2adccde85512814ae3363e007977",
+      "reserved_split": "train",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "negative": false,
+      "boxes": 1,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Membeth",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Alleinstehende.Linde.Nationalpark.Hainich.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Alleinstehende.Linde.Nationalpark.Hainich.jpg/960px-Alleinstehende.Linde.Nationalpark.Hainich.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "modification_notice": "Publisher derivative downloaded unchanged; manual visible-instance YOLO bounding box added by Codex. No pixel edits. CC BY-SA 4.0 attribution and share-alike retained.",
+      "review_report": "Reports\\commons-solitary-tree-v9-review\\annotation-drafts.json",
+      "review_report_sha256": "22480130a403bfb3c023346b7d78752544397d1abd3b4bc8a3e28ccb67e6c91c",
+      "reservation_report": "Datasets\\commons-solitary-tree-sa-source-v9\\reservation.json",
+      "reservation_report_sha256": "2b91cbae7b4b75164a6c336d1c557036694e26b16ccd204e98f67f8fdf72ff7a",
+      "image": "images/train/tree-800fa7acc8d0e3945d5d776f33ae6b27d26ba5fb963b929df01f233677dc9692.jpg",
+      "source_label": "Reports\\commons-solitary-tree-v9-review\\69094784.txt",
+      "split": "train",
+      "source": "commons"
+    },
+    {
+      "source_image": "Datasets\\commons-solitary-tree-sa-source-v9\\images\\179971851.jpg",
+      "sha256": "c4b4078a68d1161c70039861e5b38b0d3847b90fec1bee73fd18b515522f59b5",
+      "label": "labels/train/tree-c4b4078a68d1161c70039861e5b38b0d3847b90fec1bee73fd18b515522f59b5.txt",
+      "label_sha256": "ae7ba01cd227c238e52b7b478e02fc6f0e0ea9914d276a8eb676d35e0b50b1d0",
+      "group": "commons:artist:225e5fd9b92453d1288d87126581967d5c6d498b843f4eb6652e3cbec0fa0baf",
+      "reserved_split": "train",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "negative": false,
+      "boxes": 1,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Daniel Case",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Acacia_tree_and_dirt_road,_Maasai_Mara_National_Reserve,_Kenya.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Acacia_tree_and_dirt_road%2C_Maasai_Mara_National_Reserve%2C_Kenya.jpg/960px-Acacia_tree_and_dirt_road%2C_Maasai_Mara_National_Reserve%2C_Kenya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "modification_notice": "Publisher derivative downloaded unchanged; manual visible-instance YOLO bounding box added by Codex. No pixel edits. CC BY-SA 4.0 attribution and share-alike retained.",
+      "review_report": "Reports\\commons-solitary-tree-v9-review\\179971851-review.json",
+      "review_report_sha256": "a25e5c0aa8523905b4b8e4a7794cc207bb75aca62f0cd319e735758653184e9c",
+      "reservation_report": "Datasets\\commons-solitary-tree-sa-source-v9\\reservation.json",
+      "reservation_report_sha256": "2b91cbae7b4b75164a6c336d1c557036694e26b16ccd204e98f67f8fdf72ff7a",
+      "image": "images/train/tree-c4b4078a68d1161c70039861e5b38b0d3847b90fec1bee73fd18b515522f59b5.jpg",
+      "source_label": "Reports\\commons-solitary-tree-v9-review\\179971851.txt",
+      "split": "train",
+      "source": "commons"
+    },
+    {
+      "source_image": "Datasets\\commons-solitary-tree-sa-source-v10\\images\\81730784.jpg",
+      "sha256": "9a907c0ac5497b033e17dbe04f2512a26956232c1ad9e1d1af6ba7a7a20df000",
+      "label": "labels/train/tree-9a907c0ac5497b033e17dbe04f2512a26956232c1ad9e1d1af6ba7a7a20df000.txt",
+      "label_sha256": "7b26cbbcbd0325da0c5e80ced952b35882b94dde5aadba1c239ac0a87db0c0b5",
+      "group": "commons:artist:0620827fe82bc8b84bf530c2810ed24b92b5113626a68cae22c67584f6c16ab8",
+      "reserved_split": "train",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "negative": false,
+      "boxes": 1,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Edvaldo LL Souza",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Arvore_na_Lagoa_de_Araruama.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Arvore_na_Lagoa_de_Araruama.jpg/960px-Arvore_na_Lagoa_de_Araruama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "modification_notice": "Publisher pixels unchanged; manual visible2D box added; attribution and CC BY-SA4 retained.",
+      "review_report": "Reports\\commons-solitary-tree-v10-review\\original-review-batch1.json",
+      "review_report_sha256": "a57b0efb850d234e9af9a4e3853e1531ce80604c16755243a6557031c7a6ba4b",
+      "reservation_report": "Datasets\\commons-solitary-tree-sa-source-v10\\reservation-v1.json",
+      "reservation_report_sha256": "0e0e2d4a51e2cfb3e3bbdd9c80aaabaecdfcc2f4e21632b2b65a4752ddb2d734",
+      "image": "images/train/tree-9a907c0ac5497b033e17dbe04f2512a26956232c1ad9e1d1af6ba7a7a20df000.jpg",
+      "source_label": "Reports\\commons-solitary-tree-v10-review\\81730784.txt",
+      "split": "train",
+      "source": "commons"
+    },
+    {
+      "source_image": "Datasets\\commons-solitary-tree-sa-source-v10\\images\\121066222.jpg",
+      "sha256": "022086902b4a38646e3bdc1ee4c952c8e4f6da571d982eb6e002098a69493f0d",
+      "label": "labels/train/tree-022086902b4a38646e3bdc1ee4c952c8e4f6da571d982eb6e002098a69493f0d.txt",
+      "label_sha256": "4cf250affad3073e9f03273b3e570f5e1e6e6f3bb23cfa11c4a90b97d7b7adfa",
+      "group": "commons:artist:cb8a498bbdd9c9ae0029d32c269bb93cd53ea226632f51a9cb5ddd9710b7c770",
+      "reserved_split": "train",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "negative": false,
+      "boxes": 1,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "LBM1948",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chinguetti_1997_47.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Chinguetti_1997_47.jpg/960px-Chinguetti_1997_47.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "modification_notice": "Publisher pixels unchanged; manual visible2D box added; attribution and CC BY-SA4 retained.",
+      "review_report": "Reports\\commons-solitary-tree-v10-review\\original-review-batch1.json",
+      "review_report_sha256": "a57b0efb850d234e9af9a4e3853e1531ce80604c16755243a6557031c7a6ba4b",
+      "reservation_report": "Datasets\\commons-solitary-tree-sa-source-v10\\reservation-v1.json",
+      "reservation_report_sha256": "0e0e2d4a51e2cfb3e3bbdd9c80aaabaecdfcc2f4e21632b2b65a4752ddb2d734",
+      "image": "images/train/tree-022086902b4a38646e3bdc1ee4c952c8e4f6da571d982eb6e002098a69493f0d.jpg",
+      "source_label": "Reports\\commons-solitary-tree-v10-review\\121066222.txt",
+      "split": "train",
+      "source": "commons"
+    },
+    {
+      "source_image": "Datasets\\commons-solitary-tree-sa-source-v10\\images\\81752371.jpg",
+      "sha256": "5c636b19dd48c0f9ac7d21f25f2be6838e5058aa0229e3844c4c02b2daf74204",
+      "label": "labels/train/tree-5c636b19dd48c0f9ac7d21f25f2be6838e5058aa0229e3844c4c02b2daf74204.txt",
+      "label_sha256": "7d412616e106cb4a930fa38df86e8ec63c6a2e866bc1fadf2bda8585b5aeb8ac",
+      "group": "commons:artist:c87106e49d1bba0dabf05fd46e29672c66e434501113aeb19f4e55e2d33d00f8",
+      "reserved_split": "train",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "negative": false,
+      "boxes": 1,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Anna Saini",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Baum_kA.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Baum_kA.jpg/960px-Baum_kA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "modification_notice": "Publisher image unchanged; manual visible-instance labels added; attribution and CC BY-SA4 retained.",
+      "review_report": "Reports\\commons-solitary-tree-v10-review\\original-review-batch2.json",
+      "review_report_sha256": "c9f3cbe5324abac2fe09610fbe61a27e0156dd04a3fa9a2ed95c45b9b218d15a",
+      "reservation_report": "Datasets\\commons-solitary-tree-sa-source-v10\\reservation-v2.json",
+      "reservation_report_sha256": "28173d4c8f93331eae3d8a0b5aa4125b404bbcae51a7c39f1bde11b034d09253",
+      "image": "images/train/tree-5c636b19dd48c0f9ac7d21f25f2be6838e5058aa0229e3844c4c02b2daf74204.jpg",
+      "source_label": "Reports\\commons-solitary-tree-v10-review\\81752371.txt",
+      "split": "train",
+      "source": "commons"
+    },
+    {
+      "source_image": "Datasets\\commons-solitary-tree-sa-source-v10\\images\\86994699.jpg",
+      "sha256": "6ef9a4a141e1faac2b709fcae517af3e2c6c90186258cb25a70b753c0eb26156",
+      "label": "labels/train/tree-6ef9a4a141e1faac2b709fcae517af3e2c6c90186258cb25a70b753c0eb26156.txt",
+      "label_sha256": "9a98a7911a5fde44470dd5e2f93cb2f0e7a4e1476fefc8b3fcb8258d35e95107",
+      "group": "commons:artist:e5f25bb36391318172ab47fa488b679adf773703735ebe06ee274f6e49e58e90",
+      "reserved_split": "train",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "negative": false,
+      "boxes": 2,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Fabiour",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cerro_su_Monte_Tesa.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Cerro_su_Monte_Tesa.jpg/960px-Cerro_su_Monte_Tesa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "modification_notice": "Publisher image unchanged; manual visible-instance labels added; attribution and CC BY-SA4 retained.",
+      "review_report": "Reports\\commons-solitary-tree-v10-review\\original-review-batch3.json",
+      "review_report_sha256": "80e4510b3118c735aeb14b3363bf114860e704ab078ba576dd45566b09b82d8b",
+      "reservation_report": "Datasets\\commons-solitary-tree-sa-source-v10\\reservation-v2.json",
+      "reservation_report_sha256": "28173d4c8f93331eae3d8a0b5aa4125b404bbcae51a7c39f1bde11b034d09253",
+      "image": "images/train/tree-6ef9a4a141e1faac2b709fcae517af3e2c6c90186258cb25a70b753c0eb26156.jpg",
+      "source_label": "Reports\\commons-solitary-tree-v10-review\\86994699.txt",
+      "split": "train",
+      "source": "commons"
+    },
+    {
+      "image": "images/val/negative-dd407578974b814626342889.jpg",
+      "sha256": "dd407578974b8146263428892a9856b8b0bc4f314bdc7ed9baf47a1416facf8f",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/chelmsfordblue/",
+      "original_id": "0148fb9a454a9bd0",
+      "label": "labels/val/negative-dd407578974b814626342889.txt",
+      "negative": true,
+      "index": 65,
+      "status": "ORIGINAL_VISUALLY_REVIEWED_NO_CONSPICUOUS_TREE",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "fourthandfifteen",
+        "AuthorProfileURL": "https://www.flickr.com/people/chelmsfordblue/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/chelmsfordblue/17830646170",
+        "Title": "Pentecost Flowers 2015"
+      },
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "reviewer": "Codex visual inspection; no independent human second review",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "368b62c05b251bfa519f361fe87b9706266dd0b4fc2b1aeb3e0791dcb5263ffd",
+      "training_approved": true,
+      "source_dataset": "Datasets/spider-openimages-negative-v4"
+    },
+    {
+      "image": "images/val/negative-7c04e2b6c375513493ab08de.jpg",
+      "sha256": "7c04e2b6c375513493ab08defa6f5f0027e209421b96c4728f8824d82c44b454",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/estelahe/",
+      "original_id": "04d49a245f13b536",
+      "label": "labels/val/negative-7c04e2b6c375513493ab08de.txt",
+      "negative": true,
+      "index": 71,
+      "status": "ORIGINAL_VISUALLY_REVIEWED_NO_CONSPICUOUS_TREE",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "estelahe",
+        "AuthorProfileURL": "https://www.flickr.com/people/estelahe/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/estelahe/6840172798",
+        "Title": "IMG_0235"
+      },
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "reviewer": "Codex visual inspection; no independent human second review",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "12bc3a82034fe0d9dee49b11cc6bbe3d70044822906cbb2e47bee35ae9eaa13d",
+      "training_approved": true,
+      "source_dataset": "Datasets/spider-openimages-negative-v4"
+    },
+    {
+      "image": "images/val/negative-5eeccf30e06d3e703a7020ac.jpg",
+      "sha256": "5eeccf30e06d3e703a7020ac1b71a0c4c6cc396f1dad15e8eead1b02d9743b81",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/escpeapalumni/",
+      "original_id": "09c6ddd2c210450e",
+      "label": "labels/val/negative-5eeccf30e06d3e703a7020ac.txt",
+      "negative": true,
+      "index": 87,
+      "status": "ORIGINAL_VISUALLY_REVIEWED_NO_CONSPICUOUS_TREE",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "escpeapalumni",
+        "AuthorProfileURL": "https://www.flickr.com/people/escpeapalumni/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/escpeapalumni/307673192",
+        "Title": "LLadr\u00f3 Venus 03"
+      },
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "reviewer": "Codex visual inspection; no independent human second review",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "744f45bcc777f6bc40bccc1e5ca17d6587d40556f1f5e77b0800dba75a8ea5f5",
+      "training_approved": true,
+      "source_dataset": "Datasets/spider-openimages-negative-v4"
+    },
+    {
+      "image": "images/val/negative-32d341ce004fc3d3f5069f4b.jpg",
+      "sha256": "32d341ce004fc3d3f5069f4b69612f029182e48ee7d55a803fe6ebf0ff112b54",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/jinterwas/",
+      "original_id": "1954c2c745b87bfe",
+      "label": "labels/val/negative-32d341ce004fc3d3f5069f4b.txt",
+      "negative": true,
+      "index": 90,
+      "status": "ORIGINAL_VISUALLY_REVIEWED_NO_CONSPICUOUS_TREE",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "jinterwas",
+        "AuthorProfileURL": "https://www.flickr.com/people/jinterwas/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/jinterwas/6036733604",
+        "Title": "Diva named Sushi ..."
+      },
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "reviewer": "Codex visual inspection; no independent human second review",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "46c36d977f930a079760c4f1c440f3ec38b2fa67f979a21c95403bb3c2007e4b",
+      "training_approved": true,
+      "source_dataset": "Datasets/spider-openimages-negative-v4"
+    },
+    {
+      "image": "images/val/negative-3cfefd1b807cdb77806d1326.jpg",
+      "sha256": "3cfefd1b807cdb77806d13264d51c19cf528acac30183fded910093d2aa10332",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/121004196@N06/",
+      "original_id": "2ca2d110708d96b5",
+      "label": "labels/val/negative-3cfefd1b807cdb77806d1326.txt",
+      "negative": true,
+      "index": 95,
+      "status": "ORIGINAL_VISUALLY_REVIEWED_NO_CONSPICUOUS_TREE",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "muo1417",
+        "AuthorProfileURL": "https://www.flickr.com/people/121004196@N06/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/121004196@N06/14975531355",
+        "Title": "\u732b\u3001\u9b4e\u7687\u9b3c"
+      },
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "reviewer": "Codex visual inspection; no independent human second review",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "54e3130f708c3f403dad231578b4a7791d344e5313391f4c592c693e63451506",
+      "training_approved": true,
+      "source_dataset": "Datasets/spider-openimages-negative-v4"
+    },
+    {
+      "image": "images/val/negative-06242aea552d61966150402f.jpg",
+      "sha256": "06242aea552d61966150402f8db76d93f8b2ee0c6e1a101b49f7a0a4a1facacb",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/leshaines123/",
+      "original_id": "3000667e77882c44",
+      "label": "labels/val/negative-06242aea552d61966150402f.txt",
+      "negative": true,
+      "index": 98,
+      "status": "ORIGINAL_VISUALLY_REVIEWED_NO_CONSPICUOUS_TREE",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Les Haines",
+        "AuthorProfileURL": "https://www.flickr.com/people/leshaines123/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/leshaines123/8337005719",
+        "Title": "V&A  Torso of Banovic Strahinja #dailyshoot #Art"
+      },
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "reviewer": "Codex visual inspection; no independent human second review",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "6a8d59a7025048808fc216f173085ec7336e188be3eab62770bb9e2abcf387a0",
+      "training_approved": true,
+      "source_dataset": "Datasets/spider-openimages-negative-v4"
+    },
+    {
+      "image": "images/val/negative-a0e412398dca20812fd61961.jpg",
+      "sha256": "a0e412398dca20812fd61961b5df2cf6f94e6dbacde38eeffc2a39a60af6925e",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://www.flickr.com/people/121004196@N06/",
+      "original_id": "32dd1511ede69117",
+      "label": "labels/val/negative-a0e412398dca20812fd61961.txt",
+      "negative": true,
+      "index": 101,
+      "status": "ORIGINAL_VISUALLY_REVIEWED_NO_CONSPICUOUS_TREE",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "muo1417",
+        "AuthorProfileURL": "https://www.flickr.com/people/121004196@N06/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/121004196@N06/19349903261",
+        "Title": "\u732b"
+      },
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "reviewer": "Codex visual inspection; no independent human second review",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decoded_rgb_sha256": "5dfc498dc4917966f63ff073c1a2ed688d4fc03714a49e974014b6c44cf51b2e",
+      "training_approved": true,
+      "source_dataset": "Datasets/spider-openimages-negative-v4"
+    },
+    {
+      "source_image": "Datasets\\commons-solitary-tree-sa-source-v11\\images\\49119550.jpg",
+      "sha256": "524e9415c172a34d3f7b5c6569ab45cd5f4e6c2ac952e496ef03530496e92204",
+      "label": "labels/train/tree-524e9415c172a34d3f7b5c6569ab45cd5f4e6c2ac952e496ef03530496e92204.txt",
+      "label_sha256": "ead9e31b1d6a7f7222075f2baab7f7b5811e699a818181cd8efcd4ad2b4c97c4",
+      "group": "commons:artist:c390ab737d6532d4a01cbccf632f729612ed61f3fead1694e261446b4d37cae4",
+      "reserved_split": "train",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "negative": false,
+      "boxes": 1,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "H.alhajji",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Magical_sunset_tree.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Magical_sunset_tree.jpg/960px-Magical_sunset_tree.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "modification_notice": "Publisher pixels unchanged; manual visible 2D label added. Retain attribution, license and change notice; adapted images shared under CC BY-SA4.",
+      "limitations": "Single connected branched tree silhouette; trunk clipped by bottom edge. High saturation/backlighting domain limitation; no bottom anchor or complete shape claim.",
+      "review_report": "Reports\\commons-solitary-tree-v11-review\\original-review-batch1.json",
+      "review_report_sha256": "15c4b2960826b962276d0b1f6a17cafce4b6d640c159e1d4beac212d4c89908d",
+      "reservation_report": "Datasets\\commons-solitary-tree-sa-source-v11\\reservation-v1.json",
+      "reservation_report_sha256": "a2ed0d8992b57f9bed07fbc42c2ae978a70ab0654f20c1c0e20f21b8ce6d593c",
+      "image": "images/train/tree-524e9415c172a34d3f7b5c6569ab45cd5f4e6c2ac952e496ef03530496e92204.jpg",
+      "source_label": "Reports\\commons-solitary-tree-v11-review\\49119550-draft.txt",
+      "split": "train",
+      "source": "commons"
+    },
+    {
+      "source_image": "Datasets\\commons-solitary-tree-sa-source-v11\\images\\81579091.jpg",
+      "sha256": "f387c23bc670501cdd7bf0b7c0ca25748a4efeb916ed5c7489a739796142796f",
+      "label": "labels/train/tree-f387c23bc670501cdd7bf0b7c0ca25748a4efeb916ed5c7489a739796142796f.txt",
+      "label_sha256": "d9ba97e798dc8a07ba98be5788f62fa0842c14ac95dde20a71d5beac7447369a",
+      "group": "commons:artist:aed1164bd6d25f38540a45cc1627a46147e23c16bcec7c9567ce108adea2d838",
+      "reserved_split": "train",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "negative": false,
+      "boxes": 1,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Whippetsgalore",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lonetreeinrapefield.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Lonetreeinrapefield.jpg/960px-Lonetreeinrapefield.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "modification_notice": "Publisher pixels unchanged; manual visible 2D label added. Retain attribution, license and change notice; adapted images shared under CC BY-SA4.",
+      "limitations": "Single leafless woody tree; canopy clipped at top and sides. Box covers visible extent; flower crop obscures trunk base. No complete shape or ground-anchor claim.",
+      "review_report": "Reports\\commons-solitary-tree-v11-review\\original-review-batch1.json",
+      "review_report_sha256": "15c4b2960826b962276d0b1f6a17cafce4b6d640c159e1d4beac212d4c89908d",
+      "reservation_report": "Datasets\\commons-solitary-tree-sa-source-v11\\reservation-v1.json",
+      "reservation_report_sha256": "a2ed0d8992b57f9bed07fbc42c2ae978a70ab0654f20c1c0e20f21b8ce6d593c",
+      "image": "images/train/tree-f387c23bc670501cdd7bf0b7c0ca25748a4efeb916ed5c7489a739796142796f.jpg",
+      "source_label": "Reports\\commons-solitary-tree-v11-review\\81579091-draft.txt",
+      "split": "train",
+      "source": "commons"
+    },
+    {
+      "source_image": "Datasets\\commons-solitary-tree-sa-source-v11\\images\\69497690.jpg",
+      "sha256": "f83000a6043e8e376945d16e837257f2bc7b27fd92ade2091e4c2dfed848a259",
+      "label": "labels/train/tree-f83000a6043e8e376945d16e837257f2bc7b27fd92ade2091e4c2dfed848a259.txt",
+      "label_sha256": "29c422d4b76d4889441fefcb317df87b1663dce8083bc3ce1eccfb871a66e7d0",
+      "group": "commons:artist:b57e2d5a3af4b7bc5f453521fbc980be40296db64090fc745fe00cab385b575b",
+      "reserved_split": "train",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "negative": false,
+      "boxes": 1,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Riyadawn",
+      "source_url": "https://commons.wikimedia.org/wiki/File:IMG-20171014-WA0010.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/IMG-20171014-WA0010.jpg/960px-IMG-20171014-WA0010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "modification_notice": "Publisher pixels unchanged; manual visible 2D label added. Retain attribution, license and change notice; adapted images shared under CC BY-SA4.",
+      "limitations": "Single forked coastal tree; person partially occludes lower trunk. Distant skyline vegetation unresolved rather than separable instances at available resolution. Visible tree box reviewed.",
+      "review_report": "Reports\\commons-solitary-tree-v11-review\\original-review-batch1.json",
+      "review_report_sha256": "15c4b2960826b962276d0b1f6a17cafce4b6d640c159e1d4beac212d4c89908d",
+      "reservation_report": "Datasets\\commons-solitary-tree-sa-source-v11\\reservation-v2.json",
+      "reservation_report_sha256": "bb47932e79fa5c389227e22b41e99d174586adf396fd2b0520a410f89f6639ec",
+      "image": "images/train/tree-f83000a6043e8e376945d16e837257f2bc7b27fd92ade2091e4c2dfed848a259.jpg",
+      "source_label": "Reports\\commons-solitary-tree-v11-review\\69497690-draft.txt",
+      "split": "train",
+      "source": "commons"
+    },
+    {
+      "source_image": "Datasets\\commons-solitary-tree-sa-source-v12\\images\\107123354.jpg",
+      "sha256": "397a55d9cecd8da25e5d4e7e124054273566720a1fa57f73d31e1d36b25ec47b",
+      "label": "labels/train/tree-397a55d9cecd8da25e5d4e7e124054273566720a1fa57f73d31e1d36b25ec47b.txt",
+      "label_sha256": "26d0b583b951b6cce9fee0d7be3e753ba1b1d79c264b58ead1616a7b78f02a03",
+      "group": "commons:artist:1e6cce29aef611abd9237da719e086ddce5deb0b66f0f89c66652a1cf9abf673",
+      "reserved_split": "train",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "negative": false,
+      "boxes": 1,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Emma YSU",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sevordats_ler.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Sevordats_ler.jpg/960px-Sevordats_ler.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "modification_notice": "Publisher pixels unchanged; manual visible 2D boxes added. Retain attribution and CC BY-SA 4.0 license; no 3D ground-anchor claim.",
+      "limitations": "Single leafless woody tree; complete canopy and trunk visible, base partly hidden by snowy slope. No other separable tree instances. No 3D ground-anchor claim.",
+      "review_report": "Reports\\commons-solitary-tree-v12-review\\original-review-batch1.json",
+      "review_report_sha256": "baa5e5e1412f7367e259051d958ee9f99e4d0f8c9dfd2f0f216eab54940b58e5",
+      "reservation_report": "Datasets\\commons-solitary-tree-sa-source-v12\\reservation-v1.json",
+      "reservation_report_sha256": "52cc3bf0d653209f0db497497ccfd8734facc2e27a15699a039050f62a291908",
+      "image": "images/train/tree-397a55d9cecd8da25e5d4e7e124054273566720a1fa57f73d31e1d36b25ec47b.jpg",
+      "source_label": "Reports\\commons-solitary-tree-v12-review\\107123354-draft.txt",
+      "split": "train",
+      "source": "commons"
+    },
+    {
+      "source_image": "Datasets\\commons-solitary-tree-sa-source-v12\\images\\50533727.jpg",
+      "sha256": "097ad6c7219ebd04063071261d904e28fd92967cfba2e3f898ba474913a66bd4",
+      "label": "labels/train/tree-097ad6c7219ebd04063071261d904e28fd92967cfba2e3f898ba474913a66bd4.txt",
+      "label_sha256": "5788a357aaaa7029335c0fb8c8ad0be96e00095cd4e7e897d56990988b2ae051",
+      "group": "commons:artist:220c6007fa2a49ca0f52f3e744a20759b2e0a45f6c27e55f723af609ddda5b0c",
+      "reserved_split": "train",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "negative": false,
+      "boxes": 2,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Anika Andric",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Old_Lady_of_Mirovica.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Old_Lady_of_Mirovica.jpg/960px-Old_Lady_of_Mirovica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "modification_notice": "Publisher pixels unchanged; manual visible 2D boxes added. Retain attribution and CC BY-SA 4.0 license; no 3D ground-anchor claim.",
+      "limitations": "Two visible tree instances: main ancient multi-stem tree sharing massive central trunk/root crown, and left-edge clipped separate tree. Ornamental low planting is not labelled Tree. Main crown overlaps left crown; boxes cover visible extents only.",
+      "review_report": "Reports\\commons-solitary-tree-v12-review\\original-review-batch2.json",
+      "review_report_sha256": "9e681d3805bdc60c7353809be161b4299debc0f21e30e44585bd6a51fc473ee8",
+      "reservation_report": "Datasets\\commons-solitary-tree-sa-source-v12\\reservation-v1.json",
+      "reservation_report_sha256": "52cc3bf0d653209f0db497497ccfd8734facc2e27a15699a039050f62a291908",
+      "image": "images/train/tree-097ad6c7219ebd04063071261d904e28fd92967cfba2e3f898ba474913a66bd4.jpg",
+      "source_label": "Reports\\commons-solitary-tree-v12-review\\50533727-draft.txt",
+      "split": "train",
+      "source": "commons"
+    },
+    {
+      "source_image": "Datasets\\commons-solitary-tree-sa-source-v12\\images\\130031091.jpg",
+      "sha256": "a944b7abc20f5c2ac5cbf7f0dd7c117f32d9bfb696568d98415ba51471049079",
+      "label": "labels/train/tree-a944b7abc20f5c2ac5cbf7f0dd7c117f32d9bfb696568d98415ba51471049079.txt",
+      "label_sha256": "34875cfd0f4d73bcdcd93039af61a88086122a2d599f799253d86ce82987eb19",
+      "group": "commons:artist:9b458f5acc89804a265b5290a590fd3f5e2eac482b304c34cd8886857aebc41d",
+      "reserved_split": "train",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "qualified_for_future_dataset_release": true,
+      "training_approved": true,
+      "negative": false,
+      "boxes": 2,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Kingaustin07",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Picture_of_a_tree_without_leaves.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Picture_of_a_tree_without_leaves.jpg/960px-Picture_of_a_tree_without_leaves.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "modification_notice": "Publisher pixels unchanged; manual visible 2D boxes added. Retain attribution and CC BY-SA 4.0 license; no 3D ground-anchor claim.",
+      "limitations": "Two visible tree instances: foreground spreading tree clipped right; single contiguous background green crown behind building/foreground branches. Background box covers visible crown only; hidden trunk, full size and ground contact remain unknown.",
+      "review_report": "Reports\\commons-solitary-tree-v12-review\\130031091-followup-review.json",
+      "review_report_sha256": "fbe98ca4613f1334ddaadeab9d1140906e2674dd95feb8ba386855d41e9313d6",
+      "reservation_report": "Datasets\\commons-solitary-tree-sa-source-v12\\reservation-v2.json",
+      "reservation_report_sha256": "fd335d1413376256a188928a4d105cee34cbd27efceac80b0c0255e50274f519",
+      "image": "images/train/tree-a944b7abc20f5c2ac5cbf7f0dd7c117f32d9bfb696568d98415ba51471049079.jpg",
+      "source_label": "Reports\\commons-solitary-tree-v12-review\\130031091-two-instance-draft.txt",
+      "split": "train",
+      "source": "commons"
+    },
+    {
+      "image": "images/train/confuser-89112057.jpg",
+      "source": "commons",
+      "group": "commons:artist:16af9169d27fad5fcb2a478f55510cd4f699d06cf529879e620b828e2e9aa1a2",
+      "artist": "Rizorius",
+      "title": "File:Anzaroot.jpg",
+      "page_id": 89112057,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2020-04-13 18:21:36",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Anzaroot",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Astragalus sarcocolla|Shrubs|Self-published work|Uploaded from Persian Wikipedia using UploadWizard|Uploaded via Campaign:fa|Fabales in Iran|Ambiguous location in EXIF",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Astragalus sarcocolla",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2020-04-13 17:32:00",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Rizorius&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Rizorius (page does not exist)\">Rizorius</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:Anzaroot.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Anzaroot.jpg/960px-Anzaroot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "309c82d6db2706d148a0a5907ceb43bfacd474c8657ba7e0e373dd3e2e4dc855",
+      "dimensions": [
+        830,
+        667
+      ],
+      "annotation_status": "REVIEWED_ZERO_TREE",
+      "original_image": "images/89112057.jpg",
+      "original_sha256": "187bbf07d76973a8af8eb2e774d5e601fa85bd1a91d6728a04e2d3392e24079b",
+      "label": "labels/train/confuser-89112057.txt",
+      "crop_xyxy": [
+        130,
+        160,
+        960,
+        827
+      ],
+      "modification_notice": "Foreground crop of licensed original, JPEG re-encoded quality95",
+      "reserved_split": "train",
+      "original_decoded_rgb_sha256": "b96774de1eccd2c2a43bfa9e6b537f84fdd44c556fb1a7a63c3c081f1f3e62c1",
+      "decoded_rgb_sha256": "6c67017da206021edd8eab6ce69cd00c9febff21795d992440b0338337203f67",
+      "source_image": "Datasets\\tree-shrub-crop-bank-v1\\images\\89112057-crop.jpg",
+      "split": "train",
+      "negative": true,
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "training_approved": true
+    },
+    {
+      "image": "images/train/confuser-90692135.jpg",
+      "source": "commons",
+      "group": "commons:artist:053fc3fe6d58c44bae0b26b77739f5ec2a38503f36c8f6be74e0ce87980b5af9",
+      "artist": "Yomal Indula Perera",
+      "title": "File:Cactus in southern coast.jpg",
+      "page_id": 90692135,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2020-05-27 09:27:30",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Cactus in southern coast",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Shrubs|Beaches of Sri Lanka|Flora of Sri Lanka|Self-published work|Unidentified Opuntia|Unidentified locations in Sri Lanka|Images from Wiki Loves Earth 2020|Images from Wiki Loves Earth 2020 in Sri Lanka|Sri Lanka photographs taken on 2020-03-14|Images from Wiki Loves Earth missing SDC location of creation|Taken with Samsung Galaxy Note 10+|Uploaded via Campaign:wle-lk",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "cactus shrubs in a hotel in the southern coast of sri lanka overlooking the beach",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2020-03-14 17:34:39",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Yomalperera&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Yomalperera (page does not exist)\">Yomal Indula Perera</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:Cactus_in_southern_coast.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Cactus_in_southern_coast.jpg/960px-Cactus_in_southern_coast.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "94c7f8e9388484ec2713e59d8ccfb55fb64b0cf4d669a70b193a3ccd3d648428",
+      "decoded_rgb_sha256": "ee49aa4ece91d7aea40e4825863f5312b8a254b189754756b8a366e0f29564e5",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "annotation_status": "REVIEWED_ZERO_TREE",
+      "label": "labels/train/confuser-90692135.txt",
+      "reserved_split": "train",
+      "review_reason": "Original full-frame cactus coast; no visible arboreal Tree. Vegetation confuser, not evidence of shrub taxonomy. Pending pixel audit and fold reservation.",
+      "source_image": "Datasets\\tree-vegetation-confuser-bank-v1\\images\\90692135.jpg",
+      "split": "train",
+      "negative": true,
+      "tree_negative_approved": true,
+      "original_reviewed": true,
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "training_approved": true
+    },
+    {
+      "image": "images/train/windswept-201108271.jpg",
+      "source": "commons",
+      "group": "commons:artist:f4a1308533acd8c4e8ab7cb5766053220cf5b0b2d3d9a6f064fdf47258905c05",
+      "artist": "Draceane",
+      "title": "File:Antequera, 2025 (09).jpg",
+      "page_id": 201108271,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2026-10-05 22:03:07",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Antequera, 2025 (09)",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Antequera|Windswept trees|Uploaded with pattypan|Arecaceae in Andalusia|Files by Draceane \u2013 Spain|Nature of Antequera|Taken with Canon EOS 90D and Sigma 17-70mm F2.8-4 DC Macro OS HSM C",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Antequera",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2025-11-15 18:17",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:Draceane\" title=\"User:Draceane\">Draceane</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:Antequera,_2025_(09).jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Antequera%2C_2025_%2809%29.jpg/960px-Antequera%2C_2025_%2809%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "6077bc05f36c8b3df1e93eaa7d85049fbc38de51b29893e7d0eaf9b9dfb2ba26",
+      "decoded_rgb_sha256": "3ba6a7d94ca649029374b3f10446d6869e4746748275eecc68fe5c696c513362",
+      "dimensions": [
+        960,
+        1440
+      ],
+      "annotation_status": "UNLABELED",
+      "source_image": "Datasets\\commons-windswept-tree-source-v1\\images\\201108271.jpg",
+      "label": "labels/train/windswept-201108271.txt",
+      "label_sha256": "15b7c323ff25b99c21bf99807a89d4468612774568d572a62094973bdf06349d",
+      "split": "train",
+      "reserved_split": "train",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "training_approved": true,
+      "boxes_xyxy_pixels": [
+        [
+          367,
+          302,
+          726,
+          1215
+        ],
+        [
+          655,
+          540,
+          960,
+          1025
+        ]
+      ],
+      "changes": "Manual visible-extent Tree boxes, including partial right-edge target",
+      "review_report": "Reports/windswept-tree-201108271-annotation-review-v1.json",
+      "review_report_sha256": "7ca050045e2ead97bf88da11ea58a56e7d4a1ce69b05df07149a0b1caf6de20e",
+      "reservation_report": "Reports/windswept-tree-201108271-reservation-v1.json",
+      "reservation_report_sha256": "3b79f9180ba2ed5b3c78619d396291c70106bd52d19155b1a541e20e33b9c68e"
+    },
+    {
+      "image": "images/train/windswept-49411864-crop.jpg",
+      "source": "commons",
+      "group": "commons:artist:947dd773380f40747f564c28b60a2c647e03bc555dce54c5e50f52f52f313a69",
+      "artist": "Joao lara mesquita",
+      "title": "File:A-arvore-de-mangue-.jpg",
+      "page_id": 49411864,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2016-06-12 23:44:09",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "A-arvore-de-mangue-",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Windswept trees|\u00c1rvore da Pregui\u00e7a (Jericoacoara)|Self-published work|Uploaded via Campaign:wle-br|Images from Wiki Loves Earth 2016 in Brazil|Images from Wiki Loves Earth 2016|Brazil photographs taken on 2015-06-15|Images from Wiki Loves Earth missing SDC location of creation",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Mangrove tree at National Park Jericoacoara",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2015-06-15",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Joao_lara_mesquita&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Joao lara mesquita (page does not exist)\">Joao lara mesquita</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:A-arvore-de-mangue-.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/A-arvore-de-mangue-.jpg/960px-A-arvore-de-mangue-.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "ffaa966da33b6afbd55113c49aa8e84305869d0443390e92d9f92e7a9c8ce087",
+      "decoded_rgb_sha256": "aec56efe7978e19df2672e2cc4aa5dace8254da276ba9e78b90f905e8bb96248",
+      "dimensions": [
+        880,
+        540
+      ],
+      "annotation_status": "REVIEWED_PENDING_CROP_PIXEL_AUDIT",
+      "original_sha256": "9614630436af3c4fc3a4a34c8ef8eda73b27a0932693ef8990146fec0cc78851",
+      "original_decoded_rgb_sha256": "b62c9f872f9caaaf34fbf1c91a3852d6629de563ca5ae9609e162006a1af0f56",
+      "crop_xyxy": [
+        80,
+        100,
+        960,
+        640
+      ],
+      "reserved_split": "train",
+      "label": "labels/train/windswept-49411864-crop.txt",
+      "label_sha256": "36e4da1cb278c5247fcdfb33740535fdab989d4dbb5e39e231adf1170c389859",
+      "split": "train",
+      "training_approved": true,
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "boxes_xyxy_pixels": [
+        [
+          0,
+          35,
+          866,
+          468
+        ]
+      ],
+      "changes": "Foreground crop and manual Tree visible-extent annotation; partial left trunk/roots",
+      "review_report": "Reports/windswept-mangrove-49411864-review-v1.json",
+      "review_report_sha256": "75bcbc9ac36a77aff60b33db550f3882d4540418f87e41ee67b1a28ba7d3d2d9"
+    },
+    {
+      "image": "images/train/29ef2b10af0a0eead17f1c9b.png",
+      "source": "commons",
+      "group": "commons:artist:5540e9c65824cb13b46ffd3367e82c35ac22f0e7f4eb36fd8a909b24a8b5b361",
+      "artist": "Hp.Baumeler",
+      "title": "File:Tree and snow.jpg",
+      "page_id": 98579353,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required": "true",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2021-01-06 10:21:58",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Tree and snow",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Solitary trees|Self-published work",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Baum im Schnee",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2021-01-05 14:28:40",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:Hp.Baumeler\" title=\"User:Hp.Baumeler\">Hp.Baumeler</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "description_url": "https://commons.wikimedia.org/wiki/File:Tree_and_snow.jpg",
+      "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Tree_and_snow.jpg/960px-Tree_and_snow.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sha256": "29ef2b10af0a0eead17f1c9b467c00e091812e626d80d9b412c8fe0740ea3659",
+      "decoded_rgb_sha256": "79d53890c8bfca13118f214b8d780be3a1d1bee8d40191dcf3848c3dbe2b0af2",
+      "dimensions": [
+        920,
+        640
+      ],
+      "annotation_status": "REVIEWED_TREE_CROP",
+      "label": "labels/train/29ef2b10af0a0eead17f1c9b.txt",
+      "label_sha256": "c64ad38aec4225c274c0dd208371b55410036f757bd2c08129d81caafdbe3a88",
+      "original_sha256": "a5676651a27d00d866283b2b8eb950dbc1a90450fc90cdd888b1e0badf954d67",
+      "crop_xyxy": [
+        40,
+        0,
+        960,
+        640
+      ],
+      "split": "train",
+      "reserved_split": "train",
+      "training_approved": true,
+      "original_decoded_rgb_sha256": "bf82a8f9f1f6a1aedfc566929e6fe52dc43bf1499867e410586c282e1d1fb93b",
+      "image_path": "Datasets/tree-reviewed-supplement-v14/images/train/98579353.png",
+      "label_path": "Reports/tree-snow-v21-annotations/98579353.txt",
+      "source_image": "Datasets/tree-reviewed-supplement-v14/images/train/98579353.png",
+      "source_label": "Reports/tree-snow-v21-annotations/98579353.txt",
+      "original_reviewed": true,
+      "overlay_reviewed": true
+    },
+    {
+      "original_id": "3ec3f95f090577e5",
+      "image": "images/train/d3cbebf0d7595636baaa674e.jpg",
+      "image_sha256": "d3cbebf0d7595636baaa674e00cea241a2f80bcb1dee109902effcbf9234d2a0",
+      "label": "labels/train/d3cbebf0d7595636baaa674e.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "overlay": "Datasets/tree-train-source-v18/images/3ec3f95f090577e5.jpg",
+      "overlay_sha256": "d3cbebf0d7595636baaa674e00cea241a2f80bcb1dee109902effcbf9234d2a0",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "review_approved": true,
+      "reserved_split": "train",
+      "group": "https://www.flickr.com/people/biodivlibrary/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Biodiversity Heritage Library",
+        "AuthorProfileURL": "https://www.flickr.com/people/biodivlibrary/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/biodivlibrary/16854335405",
+        "Title": "n194_w1150"
+      },
+      "notes": "Printed/painted depiction only",
+      "source_manifest": "Datasets/tree-train-source-v18/manifest.json",
+      "source_manifest_sha256": "9a084db6906ac9cbec0c3e77a4856e543de1df898a18b04eb1b1264b4b51bc20",
+      "sha256": "d3cbebf0d7595636baaa674e00cea241a2f80bcb1dee109902effcbf9234d2a0",
+      "source": "openimages-v7",
+      "negative": true,
+      "image_path": "Datasets/tree-confuser-reviewed-bank-v20/images/3ec3f95f090577e5.jpg",
+      "label_path": "Datasets/tree-confuser-reviewed-bank-v20/labels/3ec3f95f090577e5.txt",
+      "split": "train",
+      "source_image": "Datasets/tree-confuser-reviewed-bank-v20/images/3ec3f95f090577e5.jpg",
+      "source_label": "Datasets/tree-confuser-reviewed-bank-v20/labels/3ec3f95f090577e5.txt",
+      "training_approved": true
+    },
+    {
+      "original_id": "f4fb48d632bd3201",
+      "image": "images/train/20175af7dd723e622eb724a8.jpg",
+      "image_sha256": "20175af7dd723e622eb724a8ca08b8bea8e8c81de002e36236f11a90efb7e565",
+      "label": "labels/train/20175af7dd723e622eb724a8.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "overlay": "Datasets/tree-whole-train-source-v19/images/f4fb48d632bd3201.jpg",
+      "overlay_sha256": "20175af7dd723e622eb724a8ca08b8bea8e8c81de002e36236f11a90efb7e565",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "review_approved": true,
+      "reserved_split": "train",
+      "group": "https://www.flickr.com/people/mercysoul/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Rula",
+        "AuthorProfileURL": "https://www.flickr.com/people/mercysoul/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/mercysoul/4724874121",
+        "Title": "Life not stop"
+      },
+      "notes": "Printed/painted depiction only",
+      "source_manifest": "Datasets/tree-whole-train-source-v19/manifest.json",
+      "source_manifest_sha256": "c27cdf4b0c35adc6f961ad43b54e7d9088ae427102c11ab52fd4da8b39801586",
+      "sha256": "20175af7dd723e622eb724a8ca08b8bea8e8c81de002e36236f11a90efb7e565",
+      "source": "openimages-v7",
+      "negative": true,
+      "image_path": "Datasets/tree-confuser-reviewed-bank-v20/images/f4fb48d632bd3201.jpg",
+      "label_path": "Datasets/tree-confuser-reviewed-bank-v20/labels/f4fb48d632bd3201.txt",
+      "split": "train",
+      "source_image": "Datasets/tree-confuser-reviewed-bank-v20/images/f4fb48d632bd3201.jpg",
+      "source_label": "Datasets/tree-confuser-reviewed-bank-v20/labels/f4fb48d632bd3201.txt",
+      "training_approved": true
+    },
+    {
+      "original_id": "f5ae582dd9b6586c",
+      "image": "images/train/2b404ffe97b10bd8964c151b.jpg",
+      "image_sha256": "2b404ffe97b10bd8964c151bcee9a87d543f671685bf8ec9b208f33d34402612",
+      "label": "labels/train/2b404ffe97b10bd8964c151b.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "overlay": "Datasets/tree-whole-train-source-v19/images/f5ae582dd9b6586c.jpg",
+      "overlay_sha256": "2b404ffe97b10bd8964c151bcee9a87d543f671685bf8ec9b208f33d34402612",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "review_approved": true,
+      "reserved_split": "train",
+      "group": "https://www.flickr.com/people/witchesfallscottages/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Daniela",
+        "AuthorProfileURL": "https://www.flickr.com/people/witchesfallscottages/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/witchesfallscottages/14340766416",
+        "Title": "GoldenKiwis"
+      },
+      "notes": "Kiwi climbing vine, not an arbor tree",
+      "source_manifest": "Datasets/tree-whole-train-source-v19/manifest.json",
+      "source_manifest_sha256": "c27cdf4b0c35adc6f961ad43b54e7d9088ae427102c11ab52fd4da8b39801586",
+      "sha256": "2b404ffe97b10bd8964c151bcee9a87d543f671685bf8ec9b208f33d34402612",
+      "source": "openimages-v7",
+      "negative": true,
+      "image_path": "Datasets/tree-confuser-reviewed-bank-v20/images/f5ae582dd9b6586c.jpg",
+      "label_path": "Datasets/tree-confuser-reviewed-bank-v20/labels/f5ae582dd9b6586c.txt",
+      "split": "train",
+      "source_image": "Datasets/tree-confuser-reviewed-bank-v20/images/f5ae582dd9b6586c.jpg",
+      "source_label": "Datasets/tree-confuser-reviewed-bank-v20/labels/f5ae582dd9b6586c.txt",
+      "training_approved": true
+    }
+  ],
+  "sources": [
+    {
+      "id": "commons",
+      "license": "Per-photo CC BY/CC BY-SA/CC0 retained in samples",
+      "reviewed": true
+    },
+    {
+      "id": "openimages-v7",
+      "license": "Per-photo CC BY2 attribution retained",
+      "reviewed": true
+    }
+  ],
+  "counts": {
+    "train": 41,
+    "val": 11
+  },
+  "training_approved": true,
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "qualified_source_report": "Reports/tree-only-qualified-source-annotations-v11.json",
+  "qualified_source_report_sha256": "f82c757e20167411aa58c887c5d449ff214768e16bfd9b8225eabdb930546bde",
+  "required_additional_regression": "Datasets/tree-only-instance-review-v8",
+  "limitations": [
+    "Small public-source pilot:33TRAIN including8negative images;11previously observed VAL including7negative images.",
+    "Adds3 reviewed author-reserved TRAIN images; original41parent rows, bytes and folds unchanged.",
+    "No fresh TEST in this training release; new source TEST reservations excluded.",
+    "No PICO validation; pretraining overlap and unknown creator/physical-tree aliases remain possible.",
+    "Prior difficult regression remains required; this pilot alone cannot authorize deployment.",
+    "Only one new positive; not a broad-domain dataset. Autumn partial tree excluded. Snow box bottom corrected from537to570 using original image, no model predictions."
+  ],
+  "assembly_inputs": [
+    {
+      "path": "Datasets/tree-qualified-public-pilot-v5/audit.json",
+      "sha256": "6f04a79ab0a6907ebdf6bdca4dffc0c0567eb2be4bfdc86977d5fc6d11644f8e"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-annotation-bank-v16/audit.json",
+      "sha256": "2b03026502cb544377b2e61e8c7f2761845ecaab6137db4bfca22c408f0ddc6f"
+    }
+  ],
+  "assembly_script_sha256": "3e535ac320df18f15a85abf0c93ece234bae27b4da75a36381ed942d0c4f40d7",
+  "assembly_inputs_sha256": {
+    "tree-vegetation-negatives-v10": "a64334c702369eacacfb180deb641ff2003aaef02b3d7206b33083182f88b03d",
+    "tree-windswept-positive-bank-v2": "00a22460d209bf2dc6f5080f3e78b4111eee68e6f7c5089c8c9612c24bb861bc"
+  },
+  "scope": "Original48payloads/folds unchanged plus one reviewed complete snow tree and three depiction/vine negatives; no TEST selection or new acceptance evidence.",
+  "parent_audit_sha256": "9196b6a2fa8c22d34d808a3e1a7f903f4275121950c837bcabeab794514782fb"
+}

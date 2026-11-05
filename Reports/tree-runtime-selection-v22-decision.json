@@ -1,0 +1,33 @@
+{
+  "status": "VALIDATION_PASSED_INDEPENDENT_TEST_PENDING",
+  "weight_sha256": "2c5db942db9491a803796a5b87556243b79059937e7c88b3ade6cb1d355f1ae6",
+  "validation": [
+    {
+      "name": "Tree",
+      "true_positive": 4,
+      "false_positive": 0,
+      "false_negative": 1,
+      "precision": 1.0,
+      "recall": 0.8
+    }
+  ],
+  "validation_report_sha256": "9d3a6379883992c672576e740a7cf26683d5c88c6d6c9c250e1ede13366986a6",
+  "completed_audit_sha256": "9305fc9de20005d21f33f7132ace1459bed41fc25f740e752d3c0e6eaf329bcd",
+  "observed_instance_diagnostic": [
+    {
+      "name": "Tree",
+      "true_positive": 10,
+      "false_positive": 0,
+      "false_negative": 8,
+      "precision": 1.0,
+      "recall": 0.5555555555555556
+    }
+  ],
+  "observed_report_sha256": "ff28189c7e0837e3cecb2cb9c8f487563cf86cc583298dd8a39a9ae6bd40c836",
+  "observed_scope": "20 previously observed VAL photos,18GT, no exclusions; source audit evaluation_approved=false and unresolved instance inventory. Diagnostic only, not fresh or acceptance evidence.",
+  "fresh_test_performed": false,
+  "service_routed": false,
+  "deployment_accepted": false,
+  "pico_validation": "NOT_PERFORMED",
+  "next_action": "Inspect five observed regression error examples and source scope; independent manually complete author/subject-separated TEST required. Do not tune checkpoint/threshold using TEST."
+}

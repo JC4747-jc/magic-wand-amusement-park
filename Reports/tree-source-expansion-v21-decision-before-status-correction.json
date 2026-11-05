@@ -1,0 +1,35 @@
+{
+  "status": "VALIDATION_CANDIDATE_NO_FRESH_TEST",
+  "weight_sha256": "eea9e5d34d8c80151d480e8677901512aa153af4107e20292005e9703093ae4d",
+  "validation": [
+    {
+      "name": "Tree",
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 2,
+      "precision": 1.0,
+      "recall": 0.6
+    }
+  ],
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "Tree",
+      "precision": 0.989342449675332,
+      "recall": 0.8,
+      "mAP50": 0.9616666666666666,
+      "mAP50_95": 0.7521666666666667,
+      "labels": 5
+    }
+  ],
+  "frozen_inputs_postverified": 110,
+  "report_sha256": "f729249c21428f10f83ec5e1e0bda6a0eed46a0ef526e948203a2eb2b6dcb324",
+  "service_routed": false,
+  "deployment_accepted": false,
+  "pico_validation": "NOT_PERFORMED",
+  "limitations": [
+    "Only11previously observed validation images,5GT; do not infer broad reliability.",
+    "No validation gain assumed; compare original TRAIN diagnostic and required tree-only-instance-review-v8 regression before new acceptance.",
+    "One new snow photo and3negatives, no TEST used."
+  ]
+}

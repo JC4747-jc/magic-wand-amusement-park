@@ -1,0 +1,16 @@
+{
+  "model": "object-detection-demo/weights/candidates/tree-runtime-selection-v22/best.pt",
+  "weight_sha256": "2c5db942db9491a803796a5b87556243b79059937e7c88b3ade6cb1d355f1ae6",
+  "reserved_split": "test",
+  "source": "Commons Category:Solitary trees",
+  "max_images": 8,
+  "max_pages": 6,
+  "known_artists_sha256": "327676a0421297c6dd70139072ff950a7999201bf6af80a76b380b14568c63e5",
+  "operating_confidence": 0.65,
+  "imgsz": 640,
+  "rect": true,
+  "nms_iou": 0.7,
+  "max_det": 8,
+  "policy": "All resulting authors/photos TESTONLY neverTRAINVAL; source/content-only annotation before predictions. No checkpoint/threshold search. Check all author/physicalsubject/pixel overlaps. SmallpublicpilotnotPICOacceptance.",
+  "deployment_accepted": false
+}

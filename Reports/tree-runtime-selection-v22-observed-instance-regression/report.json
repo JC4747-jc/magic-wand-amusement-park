@@ -1,0 +1,302 @@
+{
+  "mode": "baseline",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "inat",
+      "url": "https://www.inaturalist.org",
+      "license": "Per-photo CC BY orCC0; attribution retained",
+      "reviewed": true
+    },
+    {
+      "id": "commons",
+      "url": "https://commons.wikimedia.org/wiki/Category:Solitary_trees",
+      "license": "Per-photo CC BY2/3/4 orCC0; original credit and license URL retained",
+      "reviewed": true
+    },
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated",
+    "Semantic labels under review; metrics are diagnostic and cannot establish model acceptance"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\candidates\\tree-runtime-selection-v22\\best.pt",
+  "architecture": "DetectionModel",
+  "sha256": "2c5db942db9491a803796a5b87556243b79059937e7c88b3ade6cb1d355f1ae6",
+  "dataset_version": "c45beb05d07fa8e8422eb41a00087b754c41d247446d4b22cbfa8560f308dab9",
+  "split": "val",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "Tree"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "Tree",
+      "precision": 0.8605102106537394,
+      "recall": 0.7777777777777778,
+      "mAP50": 0.8730092592592593,
+      "mAP50_95": 0.7163694823694824,
+      "labels": 18
+    }
+  ],
+  "images": 20,
+  "excluded_samples": [],
+  "ground_truth_instances": 18,
+  "false_positive_images": 0,
+  "per_image": [
+    {
+      "image": "images/val/inat-59.jpg",
+      "ground_truth": 3,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 2,
+      "inference_ms": 1130.2883999887854
+    },
+    {
+      "image": "images/val/inat-80.jpg",
+      "ground_truth": 3,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 3,
+      "inference_ms": 53.031799994641915
+    },
+    {
+      "image": "images/val/inat-97.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 53.29879999044351
+    },
+    {
+      "image": "images/val/commons-5.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 49.68469998857472
+    },
+    {
+      "image": "images/val/commons-15.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 57.14760000410024
+    },
+    {
+      "image": "images/val/commons-27.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 59.1712000023108
+    },
+    {
+      "image": "images/val/commons-31.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 25.899899992509745
+    },
+    {
+      "image": "images/val/commons-16.jpg",
+      "ground_truth": 2,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 53.05000000225846
+    },
+    {
+      "image": "images/val/commons-44.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 33.53600000264123
+    },
+    {
+      "image": "images/val/negative-dd407578974b814626342889.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 47.52809999627061
+    },
+    {
+      "image": "images/val/negative-7c04e2b6c375513493ab08de.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 33.385899994755164
+    },
+    {
+      "image": "images/val/negative-5eeccf30e06d3e703a7020ac.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 31.308899997384287
+    },
+    {
+      "image": "images/val/negative-32d341ce004fc3d3f5069f4b.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 37.517899996601045
+    },
+    {
+      "image": "images/val/negative-3cfefd1b807cdb77806d1326.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 40.02339999715332
+    },
+    {
+      "image": "images/val/negative-06242aea552d61966150402f.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 38.17620000336319
+    },
+    {
+      "image": "images/val/negative-a0e412398dca20812fd61961.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 34.06879999965895
+    },
+    {
+      "image": "images/val/commons3-0.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 39.01110000151675
+    },
+    {
+      "image": "images/val/commons3-9.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 34.38149999419693
+    },
+    {
+      "image": "images/val/commons3-11.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 32.395899994298816
+    },
+    {
+      "image": "images/val/oi3-26.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 36.54300000926014
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "Tree",
+      "true_positive": 10,
+      "false_positive": 0,
+      "false_negative": 8,
+      "precision": 1.0,
+      "recall": 0.5555555555555556
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 95.97245499753626,
+  "p95_inference_ms": 112.7270600016353,
+  "cold_first_image_ms": 1130.2883999887854,
+  "warm_mean_ms": 41.53477368220736,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images/val/inat-59.jpg",
+      "example": "error-inat-59.jpg",
+      "ground_truth": 3,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 2,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/inat-80.jpg",
+      "example": "error-inat-80.jpg",
+      "ground_truth": 3,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/inat-97.jpg",
+      "example": "error-inat-97.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/commons-16.jpg",
+      "example": "error-commons-16.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/val/commons3-9.jpg",
+      "example": "error-commons3-9.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    }
+  ],
+  "allowed_classes": [
+    "Tree"
+  ],
+  "max_det": 8,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate",
+  "annotation_review_hold": {
+    "status": "OPEN",
+    "dataset_audit_sha256": "c45beb05d07fa8e8422eb41a00087b754c41d247446d4b22cbfa8560f308dab9",
+    "training_approved": false,
+    "evaluation_acceptance_approved": false,
+    "issues_report": "Reports/tree-validation-instance-inventory-issues.json",
+    "reason": "Only explicit confirmed corrections applied; full inventory/scope review remains"
+  }
+}
