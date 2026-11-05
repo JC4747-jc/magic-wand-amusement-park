@@ -1,0 +1,77 @@
+{
+  "status": "NO_ELIGIBLE_THRESHOLD",
+  "plan_sha256": "cdc9d585cf75b07dc216dc1a8cbccb9ec33ad6d01acf92987db87ffdbf342377",
+  "report_sha256": "176af494bfa7d1298a140c2547943a37320e40769de33bf43d7be3a89676fca5",
+  "weight_sha256": "9d955a218b8918a16248618760d8b721506f35859280a69125849ee6110b86d9",
+  "grid": [
+    {
+      "confidence": 0.1,
+      "per_class": [
+        {
+          "name": "Statue",
+          "true_positive": 18,
+          "false_positive": 10,
+          "false_negative": 3,
+          "precision": 0.6428571428571429,
+          "recall": 0.8571428571428571
+        }
+      ]
+    },
+    {
+      "confidence": 0.25,
+      "per_class": [
+        {
+          "name": "Statue",
+          "true_positive": 17,
+          "false_positive": 4,
+          "false_negative": 4,
+          "precision": 0.8095238095238095,
+          "recall": 0.8095238095238095
+        }
+      ]
+    },
+    {
+      "confidence": 0.35,
+      "per_class": [
+        {
+          "name": "Statue",
+          "true_positive": 15,
+          "false_positive": 2,
+          "false_negative": 6,
+          "precision": 0.8823529411764706,
+          "recall": 0.7142857142857143
+        }
+      ]
+    },
+    {
+      "confidence": 0.5,
+      "per_class": [
+        {
+          "name": "Statue",
+          "true_positive": 12,
+          "false_positive": 1,
+          "false_negative": 9,
+          "precision": 0.9230769230769231,
+          "recall": 0.5714285714285714
+        }
+      ]
+    },
+    {
+      "confidence": 0.65,
+      "per_class": [
+        {
+          "name": "Statue",
+          "true_positive": 10,
+          "false_positive": 0,
+          "false_negative": 11,
+          "precision": 1.0,
+          "recall": 0.47619047619047616
+        }
+      ]
+    }
+  ],
+  "selected_threshold": null,
+  "service_changed": false,
+  "independent_test_performed": false,
+  "deployment_accepted": false
+}

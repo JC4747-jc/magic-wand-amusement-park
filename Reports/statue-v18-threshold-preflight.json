@@ -1,0 +1,24 @@
+{
+  "weight_sha256": "9d955a218b8918a16248618760d8b721506f35859280a69125849ee6110b86d9",
+  "dataset_sha256": "280a95cdd1508a371b52fee5f5977ad837c0213b10dbcb7409df117ea25dbaca",
+  "split": "val",
+  "images": 7,
+  "instances": 21,
+  "confidence_grid": [
+    0.1,
+    0.25,
+    0.35,
+    0.5,
+    0.65
+  ],
+  "imgsz": 640,
+  "rect": true,
+  "max_det": 32,
+  "nms_iou": 0.7,
+  "eligibility": {
+    "precision": 0.9,
+    "recall": 0.8
+  },
+  "policy": "Evaluate all fixed grid points on complete VAL only; eligible threshold chosen by F1, precision, recall, then higher confidence. No TEST use or checkpoint search. Preserve old .65 result.",
+  "deployment_accepted": false
+}

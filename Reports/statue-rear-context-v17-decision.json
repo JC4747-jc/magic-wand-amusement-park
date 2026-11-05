@@ -1,0 +1,45 @@
+{
+  "status": "REJECTED_VALIDATION",
+  "sha256": "9d955a218b8918a16248618760d8b721506f35859280a69125849ee6110b86d9",
+  "baseline_operating": [
+    {
+      "name": "Statue",
+      "true_positive": 12,
+      "false_positive": 0,
+      "false_negative": 9,
+      "precision": 1.0,
+      "recall": 0.5714285714285714
+    }
+  ],
+  "candidate_operating": [
+    {
+      "name": "Statue",
+      "true_positive": 10,
+      "false_positive": 0,
+      "false_negative": 11,
+      "precision": 1.0,
+      "recall": 0.47619047619047616
+    }
+  ],
+  "evidence": [
+    {
+      "path": "Reports/statue-rear-context-v17-final-val/report.json",
+      "sha256": "f7e3ad24ff372ecac88f4b1cbe001f7c6bd77972c7131bd5918affbdc6aaaaa6"
+    },
+    {
+      "path": "Reports/statue-unfrozen-runtime-v15-final-val/report.json",
+      "sha256": "37d40b3d7ed98b07c6fb1cb0e50296a8b89094260077ab5637109d3d602ebe91"
+    },
+    {
+      "path": "Reports/statue-rear-context-v17-completed-audit.json",
+      "sha256": "e749146da775086641ecb4ba0515716c79654feb6f7f3f9a4c8105ba0382a42a"
+    }
+  ],
+  "finding": "Four rear-view TRAIN additions did not improve unchanged fixed .65/640rect/.7/max32 VAL. AP curve improvement does not override operating-point recall regression.",
+  "limitations": [
+    "Complete training exposure budget76 versus72; not equal-compute.",
+    "Small repeatedly observed public validation set; no independent test or PICO acceptance."
+  ],
+  "service_routed": false,
+  "deployment_accepted": false
+}
