@@ -1,0 +1,39 @@
+{
+  "status": "REJECTED_VALIDATION",
+  "model_sha256": "21bac2ad04b257e0c53198d53ef9f78c07496320e0ae8d6b8dc10cd62c68b25e",
+  "elapsed_seconds": 302.425,
+  "reports": {
+    "runtime-val": [
+      {
+        "name": "Tree",
+        "true_positive": 3,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": 1.0,
+        "recall": 0.6
+      }
+    ],
+    "train-diagnostic": [
+      {
+        "name": "Tree",
+        "true_positive": 26,
+        "false_positive": 0,
+        "false_negative": 5,
+        "precision": 1.0,
+        "recall": 0.8387096774193549
+      }
+    ]
+  },
+  "evidence_sha256": {
+    "Reports\\tree-windswept-v11-runtime-val\\report.json": "c9d24b9ec334c14931aefb44511dae1c3762947a612c7888891cf05b77904fd8",
+    "Reports\\tree-windswept-v11-train-diagnostic\\report.json": "f6288adb43c784092072db46d29ff36fd8ac6d8a905577ff2cef2ff5289c9b8d"
+  },
+  "failed_gates": [
+    "Recall0.6 below prespecified0.8"
+  ],
+  "case_diagnostic_sha256": "3531f6b71c10dad7afae9c7da985d989a13ace1f6f3fb3e5ca9437ed9ae63ae6",
+  "test_performed": false,
+  "service_routed": false,
+  "pico_validation": "NOT_PERFORMED",
+  "next_action": "Reassess initialization/feature adaptation and positive scale coverage; no blind extra epochs"
+}

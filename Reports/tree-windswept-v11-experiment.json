@@ -1,0 +1,38 @@
+{
+  "hypothesis": "Reviewed wind-affected and low-bent Tree positives address low-confidence atypical-shape coverage; unchanged v10 vegetation negatives retained.",
+  "control": "Reports/tree-vegetation-v10-training",
+  "inputs_sha256": {
+    "Datasets/tree-windswept-positives-v11/audit.json": "9196b6a2fa8c22d34d808a3e1a7f903f4275121950c837bcabeab794514782fb",
+    "object-detection-demo/weights/candidates/tree-new-sources-freeze10-v3/best.pt": "5337fe1648703a274315afdd75bb88556a723a65e1030639124e22abaaf73138",
+    "Reports/tree-windswept-v11-initial-baseline/report.json": "f75e568c0ddbc23437d86aa8a61bedfecba1818c323b113c8594813b498ef2b2",
+    "Tools/MultiScene/train_eval.py": "3c4ebb8d0ebaa7c1825a6595fcc131d3e603fb7122075c0ffa46616c1da6380b"
+  },
+  "settings": {
+    "epochs": 20,
+    "seed": 20261103,
+    "imgsz": 640,
+    "batch": 4,
+    "workers": 0,
+    "freeze": 10,
+    "learning_rate": 0.0001,
+    "augmentation_scale": 0.7,
+    "conservative_augmentation": true,
+    "ultralytics": "8.4.173"
+  },
+  "gates": {
+    "conf": 0.65,
+    "rect": true,
+    "imgsz": 640,
+    "nms_iou": 0.7,
+    "max_det": 8,
+    "val_recall_min": 0.8,
+    "val_precision_min": 0.9,
+    "val_background_false_positive_images_max": 0
+  },
+  "limitations": [
+    "Same initializer/environment/settings as v10; 35vs37TRAIN changes exposure count and RNG order",
+    "Two new photos/threeGT are TRAIN, not independent evaluation",
+    "Existing primaryVAL only5GT and repeatedlyobserved; no PICO acceptance"
+  ],
+  "deployed": false
+}

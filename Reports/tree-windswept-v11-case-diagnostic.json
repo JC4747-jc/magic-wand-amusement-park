@@ -1,0 +1,124 @@
+{
+  "model_sha256": "21bac2ad04b257e0c53198d53ef9f78c07496320e0ae8d6b8dc10cd62c68b25e",
+  "rows": [
+    {
+      "image": "Datasets\\tree-windswept-positives-v11\\images\\val\\tree-a3b756995303cc0a73d37530d7cdddda9f5c44d81dfc05fb9f30a1d7e0ef67d1.jpg",
+      "role": "known_VAL_error",
+      "targets": [
+        {
+          "gt": [
+            0.0,
+            200.999999988,
+            846.0,
+            550.99999998
+          ],
+          "best_iou50": {
+            "confidence": 0.04762953519821167,
+            "iou": 0.9065188587902497
+          }
+        }
+      ],
+      "max_score": 0.04762953519821167,
+      "detections_over_065": 0
+    },
+    {
+      "image": "Datasets\\tree-windswept-positives-v11\\images\\val\\tree-6757d2454edf8221c267e9ddc147898c0cd8f443bd49ad51ba3be9005a3ddbdf.jpg",
+      "role": "known_VAL_error",
+      "targets": [
+        {
+          "gt": [
+            372.00000004800006,
+            264.0000000011,
+            650.0000000160001,
+            468.0000000005
+          ],
+          "best_iou50": {
+            "confidence": 0.8118018507957458,
+            "iou": 0.9515621144411506
+          }
+        },
+        {
+          "gt": [
+            801.9999999839999,
+            425.00000001469994,
+            830.9999999519999,
+            451.0000000165
+          ],
+          "best_iou50": {
+            "confidence": 0.013183576054871082,
+            "iou": 0.7674095967435633
+          }
+        }
+      ],
+      "max_score": 0.8118018507957458,
+      "detections_over_065": 1
+    },
+    {
+      "image": "Datasets\\tree-windswept-positive-bank-v2\\images\\train\\windswept-201108271.jpg",
+      "role": "new_TRAIN_positive",
+      "targets": [
+        {
+          "gt": [
+            366.99999998399994,
+            301.99999996799994,
+            725.9999999519999,
+            1215.0
+          ],
+          "best_iou50": {
+            "confidence": 0.8532488942146301,
+            "iou": 0.9726269883305145
+          }
+        },
+        {
+          "gt": [
+            654.999999984,
+            540.0,
+            959.999999952,
+            1025.000000064
+          ],
+          "best_iou50": {
+            "confidence": 0.18255841732025146,
+            "iou": 0.720696906344975
+          }
+        }
+      ],
+      "max_score": 0.8532488942146301,
+      "detections_over_065": 1
+    },
+    {
+      "image": "Datasets\\tree-windswept-positive-bank-v2\\images\\train\\windswept-49411864-crop.jpg",
+      "role": "new_TRAIN_positive",
+      "targets": [
+        {
+          "gt": [
+            -4.4000003640576324e-08,
+            34.999999965,
+            865.9999999639999,
+            467.99999999100004
+          ],
+          "best_iou50": {
+            "confidence": 0.2745803892612457,
+            "iou": 0.77880418200708
+          }
+        }
+      ],
+      "max_score": 0.2745803892612457,
+      "detections_over_065": 0
+    },
+    {
+      "image": "Datasets\\tree-shrub-crop-bank-v1\\images\\89112057-crop.jpg",
+      "role": "TRAIN_negative",
+      "targets": [],
+      "max_score": 0.252407968044281,
+      "detections_over_065": 0
+    },
+    {
+      "image": "Datasets\\tree-vegetation-confuser-bank-v1\\images\\90692135.jpg",
+      "role": "TRAIN_negative",
+      "targets": [],
+      "max_score": 0.4008762538433075,
+      "detections_over_065": 0
+    }
+  ],
+  "scope": "Known VAL error and TRAIN fitting diagnosis; per-GT coverage, not independent testing"
+}

@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "inputs_sha256": {
+    "Datasets/tree-windswept-positives-v11/audit.json": "9196b6a2fa8c22d34d808a3e1a7f903f4275121950c837bcabeab794514782fb",
+    "object-detection-demo/weights/candidates/tree-new-sources-freeze10-v3/best.pt": "5337fe1648703a274315afdd75bb88556a723a65e1030639124e22abaaf73138",
+    "Reports/tree-windswept-v11-initial-baseline/report.json": "f75e568c0ddbc23437d86aa8a61bedfecba1818c323b113c8594813b498ef2b2",
+    "Tools/MultiScene/train_eval.py": "3c4ebb8d0ebaa7c1825a6595fcc131d3e603fb7122075c0ffa46616c1da6380b"
+  },
+  "effective_differences": {
+    "project": [
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\tree-vegetation-v10-training",
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\tree-windswept-v11-training"
+    ],
+    "save_dir": [
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\tree-vegetation-v10-training\\train",
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\tree-windswept-v11-training\\train"
+    ],
+    "data": [
+      "Datasets/tree-vegetation-negatives-v10/data.yaml",
+      "Datasets/tree-windswept-positives-v11/data.yaml"
+    ]
+  },
+  "ultralytics": "8.4.173",
+  "torch": "2.14.1+cpu",
+  "scope": "Configuration/input parity; data35vs37TRAIN differs, not exact exposure/RNG pairing"
+}

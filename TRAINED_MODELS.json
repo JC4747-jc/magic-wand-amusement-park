@@ -65,6 +65,14 @@
       "bytes": 25779144,
       "status": "REJECTED_VALIDATION",
       "deployment_accepted": false
+    },
+    {
+      "name": "tree-windswept-positives-v11",
+      "path": "object-detection-demo/weights/candidates/tree-windswept-positives-v11/best.pt",
+      "sha256": "21bac2ad04b257e0c53198d53ef9f78c07496320e0ae8d6b8dc10cd62c68b25e",
+      "bytes": 25779144,
+      "status": "REJECTED_VALIDATION",
+      "deployment_accepted": false
     }
   ],
   "datasets_included": false,
@@ -73,6 +81,5 @@
     "Rejected and pending candidates retain their original status.",
     "No runtime configuration or Unity animation changes included in this upload.",
     "last.pt omitted; these completed runs have stripped optimizer state."
-  ],
-  "also_archived_on": "4d"
+  ]
 }
