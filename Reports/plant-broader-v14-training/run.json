@@ -1,0 +1,62 @@
+{
+  "dataset_version": "2d62c0ad3ce35b80d9c402b71924c94ff1c9bc276bb813366d519881016b7339",
+  "initializer_sha256": "fe706e1763a8ffa5924c849d9798bb1083d416df6c8c6720cb6ffcdb3780177a",
+  "parameters": {
+    "data": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\plant-broader-v14\\data.yaml",
+    "device": 0,
+    "epochs": 50,
+    "imgsz": 640,
+    "batch": 4,
+    "workers": 0,
+    "seed": 20261105,
+    "deterministic": true,
+    "freeze": 0,
+    "optimizer": "AdamW",
+    "lr0": 0.0001,
+    "lrf": 0.1,
+    "warmup_bias_lr": 0.0001,
+    "mosaic": 0.0,
+    "mixup": 0.0,
+    "cutmix": 0.0,
+    "scale": 0.3,
+    "translate": 0.05,
+    "hsv_h": 0.01,
+    "hsv_s": 0.3,
+    "hsv_v": 0.2,
+    "close_mosaic": 0,
+    "project": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-broader-v14-training",
+    "name": "train",
+    "plots": true
+  },
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "hypothesis": "Six reviewed TRAIN additions: broader rooted/flowering/occluded/multi-container coverage and one cut-arrangement confuser. Same initializer/settings as v13; full13 runtime acceptance unchanged.",
+  "unity_mapping": {
+    "PottedPlant": "ParkPlant",
+    "CutArrangement": null
+  },
+  "evaluation_protocol": {
+    "confidence": 0.35,
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 8,
+    "allowed_classes": [
+      "PottedPlant"
+    ]
+  },
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8
+  },
+  "mandatory_runtime_val_images": 13,
+  "native_two_class_fitness_images": 12,
+  "limitations": [
+    "One unresolved auxiliary VAL image excluded only from native two-class fitness; must remain in complete13-image target acceptance",
+    "One unresolved border-flower TRAIN image held before inference; no fold reassignment",
+    "Tiny public-photo pilot; fresh independent TEST/PICO positive validation required"
+  ],
+  "service_routed": false,
+  "pico_validated": false,
+  "test_policy": "No observed TEST selection/tuning"
+}

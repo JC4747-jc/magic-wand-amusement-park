@@ -1,0 +1,51 @@
+{
+  "samples": [
+    {
+      "original_id": "13998fa14da472bf",
+      "source_image": "Datasets\\openimages-plant-fresh-general-source-v4\\images\\13998fa14da472bf.jpg",
+      "source_sha256": "2e2b484e3d35fb2589a0392fb42570ae6dc3e859cd2eb17888ef7839e76dce82",
+      "group": "https://www.flickr.com/people/miketroyy/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Mike Troy",
+        "AuthorProfileURL": "https://www.flickr.com/people/miketroyy/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/miketroyy/5569453035",
+        "Title": "Ferrari California"
+      },
+      "label": "Reports\\plant-broader-v14-palm-planter-review\\corrected.txt",
+      "label_sha256": "1093e058eb0d9749ef764e011a0906ecb462d50d544bd682a4aeddd8c80cc7eb",
+      "overlay": "Reports\\plant-broader-v14-palm-planter-review\\corrected-overlay.jpg",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "training_approved": false,
+      "boxes_class_xyxy": [
+        [
+          0,
+          0.0,
+          309.76769705999993,
+          84.57817088,
+          509.22789575
+        ],
+        [
+          0,
+          0.0,
+          0.0,
+          202.38348288,
+          343.0110692
+        ],
+        [
+          0,
+          545.2271103999999,
+          0.0,
+          897.1327488,
+          336.96681972
+        ]
+      ],
+      "correction": "Removed fourth upstream box covering only right planter: same container already included in full palm instance; 3 distinct planted containers retained.",
+      "visual_annotation_approved": true,
+      "overlay_sha256": "717a91516f8987e9c430543850e63b791fb784af5080f40adec206d96fcd57a4"
+    }
+  ],
+  "training_approved": false,
+  "status": "VISUAL_ANNOTATION_APPROVED_PENDING_CLEARANCE"
+}

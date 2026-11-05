@@ -1,0 +1,55 @@
+{
+  "samples": [
+    {
+      "original_id": "307dd3482f39b31b",
+      "source_image": "Datasets\\openimages-plant-fresh-general-source-v4\\images\\307dd3482f39b31b.jpg",
+      "source_sha256": "4872c12287f454b1a1e3ee967dc4dbef7fffcf906a48a8ae36846ef429b9888a",
+      "group": "https://www.flickr.com/people/20256065@N00/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Bhakti Henna",
+        "AuthorProfileURL": "https://www.flickr.com/people/20256065@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/20256065@N00/14368554258",
+        "Title": "IMG_4239"
+      },
+      "label": "Reports\\plant-broader-v14-multi-instance-review\\corrected-labels\\307dd3482f39b31b.txt",
+      "label_sha256": "c6ccea123c927d0af27cd8d77436dcfedef2802ab7900de9ead506d1dd4c19ce",
+      "overlay": "Reports\\plant-broader-v14-multi-instance-review\\corrected-307dd-overlay.jpg",
+      "boxes_class_xyxy": [
+        [
+          0,
+          0,
+          390,
+          104,
+          507
+        ],
+        [
+          0,
+          0,
+          541,
+          105,
+          874
+        ],
+        [
+          0,
+          219,
+          705,
+          334,
+          863
+        ],
+        [
+          0,
+          555,
+          707,
+          683,
+          881
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": false,
+      "training_approved": false,
+      "observation": "Retain upstream fourth sparse woody plant visible behind left seated person; container occluded. Source label supports plant association, no label inferred from model predictions."
+    }
+  ],
+  "training_approved": false
+}

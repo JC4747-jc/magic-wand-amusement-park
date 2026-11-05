@@ -1,0 +1,25 @@
+{
+  "dataset_sha256": "2d62c0ad3ce35b80d9c402b71924c94ff1c9bc276bb813366d519881016b7339",
+  "evaluator_sha256": "c1c2ec70fa4344c66408a498ca4b2c5ee8f6a76dc4d066b3e69c51e4c81c3035",
+  "confidence": 0.35,
+  "imgsz": 640,
+  "rect": true,
+  "nms_iou": 0.7,
+  "max_det": 8,
+  "allowed_target_classes": [
+    "PottedPlant"
+  ],
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8,
+    "observed_negative_false_positive_max": 0
+  },
+  "mandatory_target_val_images": 13,
+  "auxiliary_diagnostic_images": 12,
+  "auxiliary_diagnostic_dataset_sha256": "2fece1dbf7b0d3e30072bf9748411d9cbe527f9c6fdb555c6b0ef9151a4b28ad",
+  "threshold_selection": false,
+  "test_selection": false,
+  "service_routed": false,
+  "pico_validated": false,
+  "scope": "Frozen v13 runtime settings. Native12fitness not full13target acceptance; fresh independent TEST required after development gates."
+}

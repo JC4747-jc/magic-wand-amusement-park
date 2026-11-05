@@ -1,0 +1,24 @@
+{
+  "status": "PASS_WINDOWS_EXPORT_PAYLOAD_AND_SHELL_BYTES",
+  "export_directory": "C:\\magic-training-plant-v14",
+  "payload_files": 192,
+  "native_val_list_images": 12,
+  "full_target_val_images": 13,
+  "shell": {
+    "setup-ubuntu.sh": {
+      "sha256": "39a752eda1606b2c67805ab82f344de8641ad1b10ef0fa5f3b925627118e9eaf",
+      "crlf_count": 0
+    },
+    "train-ubuntu.sh": {
+      "sha256": "8f75eb9283ef2401cfe7757fff37273b09ebbb889b115c79cf818154c56bac97",
+      "crlf_count": 0
+    }
+  },
+  "actual_ubuntu_run": false,
+  "new_training_started_by_export": false,
+  "initializer": "Final rejected v12 only; no live v14 checkpoint exported",
+  "limitations": [
+    "Generic portable runner starts fresh training, not exact specialized v14 reproduction or optimizer resume.",
+    "Ubuntu dependency/GPU/OS execution remains unverified."
+  ]
+}

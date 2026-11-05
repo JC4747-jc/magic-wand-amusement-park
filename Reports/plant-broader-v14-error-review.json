@@ -1,0 +1,44 @@
+{
+  "status": "ACTUAL_ALL_THREE_ERROR_OVERLAYS_REVIEWED",
+  "model_sha256": "db270e9dc2ba4063ed8d7aa54ead8eb9f31924b3a3c074095d8f374e36f002bb",
+  "confidence": 0.35,
+  "findings": [
+    {
+      "image": "images\\val\\2eeeba800c582ff3ecef355e.jpg",
+      "example": "error-2eeeba800c582ff3ecef355e.jpg",
+      "ground_truth": 1,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "overlay_sha256": "dc26795f5f01f644f6d49d99ff319ce10ea5fd32d047b4027e09ed7aac837d05",
+      "observation": "Small tabletop accent/accessory still detected at0.92; rooting uncertain from image, retain prior labels pending independent source review."
+    },
+    {
+      "image": "images\\val\\581cedc885d26e10455cf980.jpg",
+      "example": "error-581cedc885d26e10455cf980.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "overlay_sha256": "5c307960eb1b889527c1da0c52a5f38238929787d9cc04b8129eda5abd6a8bc9",
+      "observation": "Cut arrangement remains high-confidence plant false positive0.94."
+    },
+    {
+      "image": "images\\val\\9fbc2444b8acf1398deaddd3.jpg",
+      "example": "error-9fbc2444b8acf1398deaddd3.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 1,
+      "confidence": 0.35,
+      "overlay_sha256": "89117701985503f4a4b8f8bf50327651e979286a429d908dd3e6cfba603a6d82",
+      "observation": "Detected upper inner pot only, fails0.5IoU against complete plant/container target; oneFP+oneFN. Rabbit no longer detected."
+    }
+  ],
+  "label_changes": false,
+  "test_selection": false,
+  "service_routed": false,
+  "next_action": "Do not repeat same tiny experiment or search more thresholds. Need materially broader reviewed confuser/rooted-container training coverage and consistent complete-container labels; source-review ambiguous accent independently before any versioned annotation change."
+}

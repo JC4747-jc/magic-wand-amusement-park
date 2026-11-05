@@ -185,7 +185,9 @@ Only training assets are exported; Unity Library/SDK/Windows virtual environment
     (out / 'README.txt').write_text(guide, encoding='utf-8')
     ubuntu_templates = Path(__file__).with_name('portable-ubuntu')
     for name in ['setup-ubuntu.sh', 'train-ubuntu.sh']:
-        shutil.copy2(ubuntu_templates / name, out / name)
+        # Shell scripts must remain executable by bash after Windows checkouts.
+        script = (ubuntu_templates / name).read_bytes().replace(b'\r\n', b'\n')
+        (out / name).write_bytes(script)
     dual_boot = (ubuntu_templates / 'DUAL_BOOT.txt').read_text(encoding='utf-8')
     dual_boot = dual_boot.replace('C:\\magic-training', str(out))
     dual_boot = dual_boot.replace('C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project', str(ROOT))

@@ -1,0 +1,92 @@
+{
+  "scope": "Nine original-resolution photos actually viewed; no inference-based selection",
+  "training_approved": false,
+  "samples": [
+    {
+      "original_id": "09729ef7ea077267",
+      "image_sha256": "12b2088734ab95f1b097eb6c2a38607a3b49af0c83210029c02aaf97f64d8363",
+      "original_resolution_viewed": true,
+      "status": "HOLD_EXHAUSTIVE_INSTANCE_OR_ONTOLOGY_REVIEW",
+      "observation": "Right potted palm clear, but dark plants behind car partly occluded; requires exhaustive background instance review."
+    },
+    {
+      "original_id": "11db327193fafcd0",
+      "image_sha256": "51cfc3793576862d8f7f09895ee5a99ad4a98e3300ec77ccb422ca4c0188939a",
+      "original_resolution_viewed": true,
+      "status": "DRAFT_ANNOTATION_REVIEW_REQUIRED",
+      "observation": "Two left-edge planted containers visible, both clipped; drafted two class0 boxes."
+    },
+    {
+      "original_id": "13998fa14da472bf",
+      "image_sha256": "2e2b484e3d35fb2589a0392fb42570ae6dc3e859cd2eb17888ef7839e76dce82",
+      "original_resolution_viewed": true,
+      "status": "HOLD_EXHAUSTIVE_INSTANCE_OR_ONTOLOGY_REVIEW",
+      "observation": "Three foreground large palm planters plus left-edge truncated planter; background vegetation association requires review."
+    },
+    {
+      "original_id": "145e60d064abd78f",
+      "image_sha256": "1ee08b821c76fdffbafd7b5d8d0ac1634cd6ff41563be6d89803df3f0d8910d0",
+      "original_resolution_viewed": true,
+      "status": "HOLD_EXHAUSTIVE_INSTANCE_OR_ONTOLOGY_REVIEW",
+      "observation": "Foreground rubber plant plus multiple distant plants behind globe/rails and downstairs; reflections excluded, exhaustive instances pending."
+    },
+    {
+      "original_id": "14dae106922dcff7",
+      "image_sha256": "b7e06c1629240862b76c6b16598f6db433999cf571a8d5abc533799d4af848f1",
+      "original_resolution_viewed": true,
+      "status": "HOLD_EXHAUSTIVE_INSTANCE_OR_ONTOLOGY_REVIEW",
+      "observation": "Continuous planted architectural bed foreground and two rear troughs; per-container convention needs explicit scope review."
+    },
+    {
+      "original_id": "1adc002bef1599cb",
+      "image_sha256": "0b0cbddfbd772082e31335626b6c6d11a122019902664b21cb4392e55ea5795c",
+      "original_resolution_viewed": true,
+      "status": "HOLD_EXHAUSTIVE_INSTANCE_OR_ONTOLOGY_REVIEW",
+      "observation": "Multiple hanging baskets plus many nursery seedling pots/troughs; incomplete source labels must not be accepted as exhaustive."
+    },
+    {
+      "original_id": "1c8c08c3f0620c2c",
+      "image_sha256": "b1e640ed75f5b0714c5b48128bd0e6bb5a1d1974038dc8d3ef38b5019502ef63",
+      "original_resolution_viewed": true,
+      "status": "HOLD_EXHAUSTIVE_INSTANCE_OR_ONTOLOGY_REVIEW",
+      "observation": "Center large cropped pot and right small pot, additional upper-edge foliage with hidden containers; review association before release."
+    },
+    {
+      "original_id": "1e21cef024fe1184",
+      "image_sha256": "e69f61b65be01acdc6228fcaa031c67faec0584d9692087dbb3f7f786e50be09",
+      "original_resolution_viewed": true,
+      "status": "HOLD_EXHAUSTIVE_INSTANCE_OR_ONTOLOGY_REVIEW",
+      "observation": "Large foreground planter and many distant patio pots; exhaustive annotations pending."
+    },
+    {
+      "original_id": "2273e57565451305",
+      "image_sha256": "5a626461831bd534e267fdb8a0ae3be7266def18c707a21baaaa732d4eb7c98c",
+      "original_resolution_viewed": true,
+      "status": "HOLD_EXHAUSTIVE_INSTANCE_OR_ONTOLOGY_REVIEW",
+      "observation": "Central clear cut-flower vase auxiliary and multiple rooted peripheral pots; left background arrangement root/cut status uncertain."
+    }
+  ],
+  "draft": {
+    "original_id": "11db327193fafcd0",
+    "label": "Reports\\plant-broader-train-v14-review\\draft-labels\\11db327193fafcd0.txt",
+    "label_sha256": "07e7aa49fffcfb2641a3c08b3b5833408a621cdaf033351482fb8fa8581bb826",
+    "boxes_xyxy": [
+      [
+        0,
+        410,
+        173,
+        768
+      ],
+      [
+        96,
+        641,
+        184,
+        768
+      ]
+    ],
+    "classes": {
+      "0": "PottedPlant",
+      "1": "CutArrangement"
+    }
+  }
+}

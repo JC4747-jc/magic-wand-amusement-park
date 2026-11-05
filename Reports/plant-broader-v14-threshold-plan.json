@@ -1,0 +1,29 @@
+{
+  "model_sha256": "db270e9dc2ba4063ed8d7aa54ead8eb9f31924b3a3c074095d8f374e36f002bb",
+  "dataset_sha256": "2d62c0ad3ce35b80d9c402b71924c94ff1c9bc276bb813366d519881016b7339",
+  "split": "val",
+  "mandatory_images": 13,
+  "confidence_grid": [
+    0.25,
+    0.35,
+    0.45,
+    0.55,
+    0.65,
+    0.75,
+    0.85,
+    0.9,
+    0.95
+  ],
+  "selection_rule": "Among precision>=0.9 and recall>=0.8, maximize recall; then precision; then highest confidence. If none qualify, reject without further threshold search.",
+  "imgsz": 640,
+  "rect": true,
+  "nms_iou": 0.7,
+  "max_det": 8,
+  "allowed_classes": [
+    "PottedPlant"
+  ],
+  "test_selection": false,
+  "original_frozen035_rejection_retained": true,
+  "service_routed": false,
+  "pico_validated": false
+}

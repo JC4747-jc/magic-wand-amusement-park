@@ -1,0 +1,29 @@
+{
+  "source": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\plant-broader-v14-multi-instance-staging",
+  "datasets": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets",
+  "source_manifest_sha256": "f1ed75ca0f15a524e2a7a99979d53916190604fce7414275490e6b8c4e83f203",
+  "tool_sha256": "2cc4d5c2fef3e3df32af967006a679ff534f30e2dce453d1b1ae1fc73107f954",
+  "candidates": 1,
+  "enumerated_paths": 15287,
+  "scanned_paths": 15287,
+  "unique_encoded": 5314,
+  "errors": [],
+  "matches": [
+    {
+      "candidate_id": "images/307dd3482f39b31b.jpg",
+      "historical_image": "openimages-plant-fresh-general-source-v4\\images\\307dd3482f39b31b.jpg",
+      "historical_sha256": "4872c12287f454b1a1e3ee967dc4dbef7fffcf906a48a8ae36846ef429b9888a",
+      "encoded_exact": true,
+      "decoded_exact": true,
+      "dhash_distance": 0
+    }
+  ],
+  "internal_pair_comparisons": 0,
+  "internal_matches": [],
+  "training_approved": false,
+  "method": "Current files: encoded SHA256, decoded RGB SHA256, horizontal64bit dHash distance<=4",
+  "limitations": [
+    "Near matches need visual review; crops/viewpoint/physical-instance aliases may escape detection.",
+    "Missing historical files and Reports-only reservations require separate metadata audit."
+  ]
+}

@@ -16,3 +16,21 @@ Tools/MultiScene/diagnose_plant_v13_class_filter.py -text
 Tools/MultiScene/prepare_plant_confuser_v13.py -text
 Tools/MultiScene/draft_plant_confuser_v13.py -text
 Tools/MultiScene/correct_plant_confuser_v13.py -text
+
+# Preserve v14 source hashes and training evidence.
+Datasets/plant-broader-v14*/** -text
+Reports/plant-broader*v14*/** -text
+Reports/plant-broader*v14*.json -text
+Reports/plant-v14-portable-export-check.json -text
+object-detection-demo/weights/candidates/plant-broader-v14/*.json -text
+object-detection-demo/weights/candidates/plant-broader-v14/*.yaml -text
+Tools/MultiScene/prepare_plant_broader_v14_review.py -text
+Tools/MultiScene/train_plant_broader_v14.py -text
+Tools/MultiScene/draft_plant_v14_multi_instance.py -text
+Tools/MultiScene/verify_plant_v14_staging.py -text
+Tools/MultiScene/prepare_plant_broader_v14.py -text
+Tools/MultiScene/draft_plant_broader_v14.py -text
+Tools/MultiScene/draft_plant_broader_v14_batch2.py -text
+Tools/MultiScene/stage_plant_broader_v14_batch2.py -text
+Tools/MultiScene/evaluate_plant_broader_v14_completed.py -text
+Tools/MultiScene/stage_plant_broader_v14.py -text

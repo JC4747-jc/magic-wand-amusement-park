@@ -1,0 +1,58 @@
+{
+  "samples": [
+    {
+      "original_id": "27375dda6bb6b0eb",
+      "source_image": "Datasets\\openimages-plant-fresh-general-source-v4\\images\\27375dda6bb6b0eb.jpg",
+      "source_sha256": "58dba1068e140ed1f19eae18ec71ee40a31698f8bea097171eda34b69cc501d0",
+      "group": "https://www.flickr.com/people/kansallisarkisto/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Kansallisarkisto",
+        "AuthorProfileURL": "https://www.flickr.com/people/kansallisarkisto/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/kansallisarkisto/19423728794",
+        "Title": "Aula"
+      },
+      "label": "Reports\\plant-broader-v14-waiting-room-review\\draft.txt",
+      "label_sha256": "72c7190da2940b5a213b461750113ea0497275b252ef53fd68b0af638322be07",
+      "overlay": "Reports\\plant-broader-v14-waiting-room-review\\overlay.jpg",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "training_approved": false,
+      "boxes_class_xyxy": [
+        [
+          0,
+          342.8436582400001,
+          347.54424948,
+          425.9115008,
+          385.3208019
+        ],
+        [
+          0,
+          424.40118271999995,
+          364.16592872,
+          453.09734912,
+          391.36503772
+        ],
+        [
+          0,
+          394.19469824,
+          364.16592872,
+          560.33038336,
+          575.7146058800001
+        ],
+        [
+          0,
+          543.71679232,
+          395.898218,
+          676.6253670400001,
+          554.5597327
+        ]
+      ],
+      "visual_annotation_approved": true,
+      "overlay_sha256": "45adc5b5790c5c18fd022bc9da1949c3294a7644d6ec823e5301ada20e25b3c7",
+      "observation": "Four upstream instances individually visible: two foreground rooted white planters and two background plants with containers occluded by sofas; preserve occluded target scope. No separate cut arrangement established."
+    }
+  ],
+  "status": "VISUAL_ANNOTATION_APPROVED_PENDING_CLEARANCE",
+  "training_approved": false
+}

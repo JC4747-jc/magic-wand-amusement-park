@@ -1,0 +1,45 @@
+{
+  "status": "PASS_STAGED_BYTES_LABELS_AND_ATTRIBUTION",
+  "images": 5,
+  "instances": {
+    "PottedPlant": 12,
+    "CutArrangement": 1
+  },
+  "records": [
+    {
+      "original_id": "11db327193fafcd0",
+      "batch": "plant-broader-v14-staging",
+      "instances": 2,
+      "group": "https://www.flickr.com/people/93033713@N00/"
+    },
+    {
+      "original_id": "2c716fe6536d46a6",
+      "batch": "plant-broader-v14-batch2-staging",
+      "instances": 2,
+      "group": "https://www.flickr.com/people/hairylunch/"
+    },
+    {
+      "original_id": "3287fcb539ba2915",
+      "batch": "plant-broader-v14-batch2-staging",
+      "instances": 1,
+      "group": "https://www.flickr.com/people/zimtsternin/"
+    },
+    {
+      "original_id": "307dd3482f39b31b",
+      "batch": "plant-broader-v14-multi-instance-staging",
+      "instances": 4,
+      "group": "https://www.flickr.com/people/20256065@N00/"
+    },
+    {
+      "original_id": "27375dda6bb6b0eb",
+      "batch": "plant-broader-v14-waiting-room-staging",
+      "instances": 4,
+      "group": "https://www.flickr.com/people/kansallisarkisto/"
+    }
+  ],
+  "training_released": false,
+  "limitations": [
+    "Staging integrity only; each source/pixel clearance is separately recorded.",
+    "No model accuracy, independent TEST or PICO validation implied."
+  ]
+}
