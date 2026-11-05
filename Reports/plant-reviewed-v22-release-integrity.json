@@ -1,0 +1,45 @@
+{
+  "status": "PASS_TRAIN_ONLY_REVIEWED_ADDITIONS",
+  "dataset_sha256": "8b71dab78cea08f595f7cba2e53723a0f3986dafcb26affc7014c224fb1fcd3d",
+  "counts": {
+    "train": 97,
+    "val": 13,
+    "test": 4
+  },
+  "added_images": 6,
+  "added_auxiliary_instances": 2,
+  "added_empty_negatives": 4,
+  "parent_images_labels_folds_unchanged": true,
+  "native_val_list_unchanged": true,
+  "historical_pixel_paths": 15894,
+  "metadata_inputs": 387,
+  "ambiguous_parent_train_hold_preserved": [
+    {
+      "image": "images\\train\\739519eea594d43d7e638c4c.jpg",
+      "label": "labels\\train\\739519eea594d43d7e638c4c.txt",
+      "sha256": "739519eea594d43d7e638c4cb933e678cccb658310701843337d2cfec90f1e37",
+      "label_sha256": "51d6c7f98f01bb048c1e9c5226b980fff8598eaeee301e3a916162e3662bd380",
+      "decoded_rgb_sha256": "194e791c613ab22a60c0147bbc30b7e4e152c32444b0299f242d50553c421cc8",
+      "split": "train",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://flickr.com/people/fotoguy49057",
+      "original_id": "d4457bb0551265a6",
+      "negative": true,
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "FotoGuy 49057",
+        "AuthorProfileURL": "https://www.flickr.com/people/fotoguy49057/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/fotoguy49057/16688185916",
+        "Title": "Tulips"
+      },
+      "source_image": "Datasets\\plant-container-corrected-v2\\images\\train\\739519eea594d43d7e638c4c.jpg",
+      "source_label": "Datasets\\plant-container-corrected-v2\\labels\\train\\739519eea594d43d7e638c4c.txt",
+      "parent_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "auxiliary_instances": 1,
+      "reason": "Independent wrapped bouquets in shared display bucket: auxiliary instance boundary uncertain",
+      "reserved_split": "train"
+    }
+  ],
+  "training_started": false,
+  "deployment_accepted": false
+}

@@ -1,0 +1,143 @@
+{
+  "model": "object-detection-demo/weights/candidates/plant-reviewed-v22/best.pt",
+  "weight_sha256": "e817453878277c6e80171bac90b8212a2e1ea69ac4ff230ca69e6037183e6a43",
+  "data": "Datasets/plant-independent-test-v23",
+  "dataset_sha256": "f8342528c8441b885ea758361adacca576fa5249bdde28eb05e4b38d0521b806",
+  "frozen_inputs": [
+    {
+      "path": "Datasets/plant-independent-test-v23/audit.json",
+      "sha256": "f8342528c8441b885ea758361adacca576fa5249bdde28eb05e4b38d0521b806"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/data.yaml",
+      "sha256": "8d0f28ddd1c9faf383cec0f43274767e458a50c446d89b7378976634c69640c3"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/images/test/6d890f9b668f69fcadf289e0.jpg",
+      "sha256": "6d890f9b668f69fcadf289e09ddd838278d47f1aa481ddac22f7989001a60c56"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/labels/test/6d890f9b668f69fcadf289e0.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/images/test/89934a2dcdbc7ac1ca4f7b79.jpg",
+      "sha256": "89934a2dcdbc7ac1ca4f7b79c5079e7ba8fa25345e5e8f71d94a61c8dfbe3fb6"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/labels/test/89934a2dcdbc7ac1ca4f7b79.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/images/test/a58480cec90b3c4d2a8f8dd7.jpg",
+      "sha256": "a58480cec90b3c4d2a8f8dd75097a4eb4dc897cc5a1701d49883e6ec8dd78bb2"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/labels/test/a58480cec90b3c4d2a8f8dd7.txt",
+      "sha256": "18470ae690dc79b4790c3a47caecf760706596b35f6f1a5f8d5b97930650a4d9"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/images/test/4b4e6c122e47ca32ca2befed.jpg",
+      "sha256": "4b4e6c122e47ca32ca2befedb155f31796fc65482d49fec0d24203d910cbb93e"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/labels/test/4b4e6c122e47ca32ca2befed.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/images/test/9483aaaca28e87ca16cb89c7.jpg",
+      "sha256": "9483aaaca28e87ca16cb89c76337dae1d0e31f93837e5cc38434e68364d35167"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/labels/test/9483aaaca28e87ca16cb89c7.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/images/test/bf48c57259aaea3248b64ee8.jpg",
+      "sha256": "bf48c57259aaea3248b64ee8e666e7d5d54ad82deb6c2ccec911a261b827fb1c"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/labels/test/bf48c57259aaea3248b64ee8.txt",
+      "sha256": "e884ca35dc1f0eeb3e441da6ef1edc0c884a74e71aef41a1b8f6e6d6b1371002"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/images/test/4fbf894b34eecf18077f687b.jpg",
+      "sha256": "4fbf894b34eecf18077f687bf7ba165789b90ab51d0b48a590d78134977e32ef"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/labels/test/4fbf894b34eecf18077f687b.txt",
+      "sha256": "6645a9fcd55a86af84d4b44be161216c6b391347c204bc6f0c12716c373161df"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/images/test/19752193139d71c11dff4f18.jpg",
+      "sha256": "19752193139d71c11dff4f18ae78ae3b2a91a35868d77ca6b616b4adcb958f74"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/labels/test/19752193139d71c11dff4f18.txt",
+      "sha256": "5b8aa820e71b646a115ca56aee57b5be657bb524ac4a407c624308391c2c83c8"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/images/test/68751f0785cc6f7ace3fa496.jpg",
+      "sha256": "68751f0785cc6f7ace3fa496ebfb92a8794af9fc125edf2058d6758b286cb691"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/labels/test/68751f0785cc6f7ace3fa496.txt",
+      "sha256": "c2b411910ce6db18b2fa390745decdec6bca7506509456fc4cf60c1e7700ac49"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/images/test/3ec052e2235c7ae73db1f3ae.jpg",
+      "sha256": "3ec052e2235c7ae73db1f3aec9c9a4e2c1cb038cc41ddfc1d3b6653b5d015d08"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/labels/test/3ec052e2235c7ae73db1f3ae.txt",
+      "sha256": "ef44bd747219ac41a48638e95da747964a642e629324332461d301bb437c3a8e"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/images/test/2888f4e200b27d7f251e7b0d.jpg",
+      "sha256": "2888f4e200b27d7f251e7b0d872af46adb691c83cc55ce897d8e4e921c0df716"
+    },
+    {
+      "path": "Datasets/plant-independent-test-v23/labels/test/2888f4e200b27d7f251e7b0d.txt",
+      "sha256": "c1ed44269285d66a0ee77dd8f33de67832a6c1cad6b41d11f6f56843ac3cbf6c"
+    },
+    {
+      "path": "object-detection-demo/weights/candidates/plant-reviewed-v22/best.pt",
+      "sha256": "e817453878277c6e80171bac90b8212a2e1ea69ac4ff230ca69e6037183e6a43"
+    },
+    {
+      "path": "Tools/MultiScene/evaluate_mapped.py",
+      "sha256": "e583e11b503d07f81159149a1f40826d6dc0cffc4197384f770586e47d3a103c"
+    },
+    {
+      "path": "Tools/MultiScene/dataset_paths.py",
+      "sha256": "aa476afeadd9d689d9629265365022d7212f2d909fb678f46d71b4050cd206c0"
+    },
+    {
+      "path": "Tools/MultiScene/source_author_identity.py",
+      "sha256": "ad9b3b7b6d45e004347b18b925efdf9c17dd7b702a91f1df373ae87acac62cce"
+    }
+  ],
+  "split": "test",
+  "images": 11,
+  "ground_truth_instances": 6,
+  "operating_confidence": 0.35,
+  "imgsz": 640,
+  "rect": true,
+  "nms_iou": 0.7,
+  "max_det": 8,
+  "allowed_classes": [
+    "PottedPlant"
+  ],
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8
+  },
+  "limitations": [
+    "Only four positive images and six target instances; limited public pilot coverage.",
+    "Fourteen ambiguous source images remain TEST-reserved and unscored.",
+    "One author-conflicted negative image rejected before inference; all lineage retained.",
+    "No PICO acceptance or broad tabletop-plant reliability established."
+  ],
+  "policy": "One frozen candidate. No threshold search, checkpoint choice, relabeling or image removal based on TEST predictions.",
+  "deployment_accepted": false
+}

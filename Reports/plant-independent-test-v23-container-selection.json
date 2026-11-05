@@ -1,0 +1,1435 @@
+{
+  "scope": "Blinded TEST-only candidate reservation; no predictions used. Titles are not labels.",
+  "metadata_sha256": "de55c6b8cbda32a79f4a20f28572d54e9c49d527a4006725675764074a51a36d",
+  "reservation_snapshot": [
+    {
+      "path": "Datasets/bugs-joint-negative-heldout-v1/audit.json",
+      "sha256": "2c348cc942c41887b360b8d3dd90e3291213ac9c6e5a926df0cdb87d065ff2de"
+    },
+    {
+      "path": "Datasets/bugs-joint-public-v1/audit.json",
+      "sha256": "28674e726ad5837579d2475b7cf0382f007f8c10075efd918aab5ee24e0ae987"
+    },
+    {
+      "path": "Datasets/bugs-joint-public-v2/audit.json",
+      "sha256": "4c88069837abea669fd5cb3d97f3f91ef3aa2405e6ffb96e3001a197bab6c9ca"
+    },
+    {
+      "path": "Datasets/bugs-joint-public-v3/audit.json",
+      "sha256": "c98ce9ef439c980e9dfbd3de54907e022466b16e874b5f1c5245b9c313be168e"
+    },
+    {
+      "path": "Datasets/cockroach-beetle-confuser-test-v6-source/manifest.json",
+      "sha256": "2c33ea3db204f022759e70b96bd5471fe6fd9c35a9e766214f3aca20dad4594f"
+    },
+    {
+      "path": "Datasets/cockroach-beetle-test-v12-source/manifest.json",
+      "sha256": "2afb0c9fb6afa353148956350bbf1431179ba4913ed97389686ee08717156505"
+    },
+    {
+      "path": "Datasets/cockroach-beetle-test-v17-source/manifest.json",
+      "sha256": "8908b6da8a8824ba8476cc91b4cbec1a7132c338d999737293de3ed95dd5a1ec"
+    },
+    {
+      "path": "Datasets/cockroach-beetle-test-v9-source/manifest.json",
+      "sha256": "82188494782282ee290c48ecbf545241aa242b5ae9c40ec4817698a8ed2fd313"
+    },
+    {
+      "path": "Datasets/cockroach-beetle-train-v7-source/manifest.json",
+      "sha256": "be66ff165f4c01d523f9b24b7f6308f3f7143e4bc3f9d94ba21ab0a6e1ffc547"
+    },
+    {
+      "path": "Datasets/cockroach-beetle-v14/audit.json",
+      "sha256": "a64c75fa07304b27fac7ea87f0a1f39bbe8c466387b8ea02335838ea7abc560b"
+    },
+    {
+      "path": "Datasets/cockroach-beetle-val-v7-source/manifest.json",
+      "sha256": "3a254d415fd0518c0ee0ccfaebf4fec616042e7ec8b6c6321935450aa1262bdb"
+    },
+    {
+      "path": "Datasets/cockroach-confusers-v7/audit.json",
+      "sha256": "09d9573cf1123d7d2b2351c72394159c42f4f756239df330148c10dd47c6d8de"
+    },
+    {
+      "path": "Datasets/cockroach-diverse-negative-v15-source/manifest.json",
+      "sha256": "f73d551b5bbd2d9735a2eac2e6968867da06b43e2d23e30498ece47297e3dd8d"
+    },
+    {
+      "path": "Datasets/cockroach-diverse-v15/audit.json",
+      "sha256": "1e46824a3e2abf55ae0ec7f1530e79e9a9662956facde7c6256cdf12085255e3"
+    },
+    {
+      "path": "Datasets/cockroach-expanded-v5/audit.json",
+      "sha256": "d5ca262af780deba4969794c8ca60ca6eb2e9d07047e3e02e11a66c821eaf572"
+    },
+    {
+      "path": "Datasets/cockroach-fresh-positive-v12-source/manifest.json",
+      "sha256": "bc772da0e04ef7593cb38aede363b3bb2fcf0fafd5c882005e8eac9ebe28a4c0"
+    },
+    {
+      "path": "Datasets/cockroach-fresh-positive-v17-source/manifest.json",
+      "sha256": "3f530da88113a3d4832888ea765845e75e224c97d14a07a0b2b19cf1857586a2"
+    },
+    {
+      "path": "Datasets/cockroach-fresh-positive-v6-source/manifest.json",
+      "sha256": "ea8e626d14a99e5293a6132316fbb8a2a58a506def06df78fed9c8aa6a2c0bbe"
+    },
+    {
+      "path": "Datasets/cockroach-fresh-positive-v9-source/manifest.json",
+      "sha256": "d9afbcd7f439a0c5c394f292f01983d2c3f58a8fdbb21c2bbb0c379d27425e97"
+    },
+    {
+      "path": "Datasets/cockroach-fresh-test-v12/audit.json",
+      "sha256": "89dc11419e45d30c8a1c98a8b8dc3d7f865a4a2f8ab88b8b1b4d7506463244cc"
+    },
+    {
+      "path": "Datasets/cockroach-fresh-test-v17/audit.json",
+      "sha256": "3483800ec121d6b2a709e8d3d2aff4e3b1ad95b552b2c1c270d1d444164ebe0f"
+    },
+    {
+      "path": "Datasets/cockroach-fresh-test-v4/audit.json",
+      "sha256": "c425035984871f3b820f390e6262d3cc2a7fa3f2fcec1b3a330f82ba298cd125"
+    },
+    {
+      "path": "Datasets/cockroach-fresh-test-v4-source/manifest.json",
+      "sha256": "02a2f191ec8c84ad31d8cfc2415a2ae0aa32ba13e4f95e092568ca7927b3af6d"
+    },
+    {
+      "path": "Datasets/cockroach-fresh-test-v6/audit.json",
+      "sha256": "677f7aba2d9512ed2037a8c952d6bd7c69e8cf04a2820ca66e395d2871e1212a"
+    },
+    {
+      "path": "Datasets/cockroach-fresh-test-v9/audit.json",
+      "sha256": "6e45836ca80304805229ed340d17268cbc48bac61a92f7aa4349055e34fd4864"
+    },
+    {
+      "path": "Datasets/cockroach-longhorn-train-v8-source/manifest.json",
+      "sha256": "acdcc824d80195d97d6ef9eb428cf32a127aa9ac18e1a39c89d2f25310cd1ca6"
+    },
+    {
+      "path": "Datasets/cockroach-longhorn-v8/audit.json",
+      "sha256": "b4914edf7afe58ea50014bee863dcaee3bfd915cfb202470697e03ddc4ec4935"
+    },
+    {
+      "path": "Datasets/cockroach-new-observer-test-v3/audit.json",
+      "sha256": "fe17e3f491da80ffb1724f5343fd7ca19a18f4eb70e5d4a7377c6bd4f809146a"
+    },
+    {
+      "path": "Datasets/cockroach-positive-train-v11/audit.json",
+      "sha256": "7a9ad7fc58abf6de5ed9c9f7ef72fbae37eb374a06a40dc0cd0693a590a73837"
+    },
+    {
+      "path": "Datasets/cockroach-positive-train-v11-source/manifest.json",
+      "sha256": "f011168990f7b0acfefa001300dd4a5ef36b7c936d8f3f1ca53cea82499d6027"
+    },
+    {
+      "path": "Datasets/cockroach-positive-train-v16/audit.json",
+      "sha256": "ea5662758384ef064c530f0d1b0b1a4abdc48e1d3d458aa2d17d82ce9724795a"
+    },
+    {
+      "path": "Datasets/cockroach-positive-train-v16-source/manifest.json",
+      "sha256": "4bb3b4c05f299df34331dd9e147b1250c3bf840f710f3ce350774fcad0eac0f8"
+    },
+    {
+      "path": "Datasets/cockroach-positive-val-v10/audit.json",
+      "sha256": "12d3c586d6e48108a0349b4990c07ea0fbd088a0aafb2204475ee9ab6c22fcd8"
+    },
+    {
+      "path": "Datasets/cockroach-positive-val-v10-source/manifest.json",
+      "sha256": "0721ca2627c6ae270864c835fe752433cf086cb0a718e5809966f8ffed74b90d"
+    },
+    {
+      "path": "Datasets/cockroach-public-negative-test-v3/audit.json",
+      "sha256": "bbc170cf9bbcbe607328ac44b82978a0edd7fa12f413199442d76a8d2b84c5ad"
+    },
+    {
+      "path": "Datasets/cockroach-training-expansion-v5-source/manifest.json",
+      "sha256": "bcb410f2b700487ca1836a6a314d685fdb8b95bac73aff8e7e935de1ce99fe1f"
+    },
+    {
+      "path": "Datasets/commons-bicycle-handlebar-confuser-source-v1/manifest.json",
+      "sha256": "e49895011670e1cdaef1201b920ddb34f647b4d1a096512bc16acaa8b7cccf3a"
+    },
+    {
+      "path": "Datasets/commons-coastal-tree-validation-source-v1/manifest.json",
+      "sha256": "bfd00ce25e34a552bd0723c098feca089a8383493c1845feb5fd3b511f99a98a"
+    },
+    {
+      "path": "Datasets/commons-distant-tree-v16-source/manifest.json",
+      "sha256": "d7097f8bffe0b3e063ec60243fc86d2ddd63d7bd4a32460a36966efdd462d8fe"
+    },
+    {
+      "path": "Datasets/commons-germany-tree-source-v5/manifest.json",
+      "sha256": "2f7268ae45be3bfc9a36dbed5df9b5084d12ef9c6c776adb3a00aecb67c296de"
+    },
+    {
+      "path": "Datasets/commons-headset-statue-negative-source-v1/manifest.json",
+      "sha256": "87e42f32d4bef1b6a02ad0059612575a50e97880dcf02b244abdda66814cd48a"
+    },
+    {
+      "path": "Datasets/commons-quality-tree-more-source-v7/manifest.json",
+      "sha256": "92740a6734179415da24cdee502f66ffe4578dc4a47448e1afca93961cc2aba5"
+    },
+    {
+      "path": "Datasets/commons-quality-tree-sa-source-v6/manifest.json",
+      "sha256": "8865f1078155b381afe3701198582db5b5e4e6dc61844a1ae6d6d0df15dc6001"
+    },
+    {
+      "path": "Datasets/commons-quality-tree-source-v4/manifest.json",
+      "sha256": "8a5c2a19ee7e6f31e8bc7588638ca10b9e03558d701e891b2db9d4c3ee5cf3f1"
+    },
+    {
+      "path": "Datasets/commons-shrub-independent-test-source-v1/manifest.json",
+      "sha256": "11d2772e09403f1ee5f9527851fba2a6e21eaee2c962a6b860d9c462ed54398a"
+    },
+    {
+      "path": "Datasets/commons-shrub-negative-source-v1/manifest.json",
+      "sha256": "e25b6360dce658db5dfc2631339aa3392fc1c9a81d10f7db9b529da42fe04fba"
+    },
+    {
+      "path": "Datasets/commons-shrub-negative-source-v2/manifest.json",
+      "sha256": "3610a56d336c8431c2aaec594e190871d90a5b978c17aa62f7caf747d833028f"
+    },
+    {
+      "path": "Datasets/commons-small-tree-fields-v15-source/manifest.json",
+      "sha256": "6dbf0538e1d2287b997995ec86f48a0f7ab271053337b499b9a3ca7db347660f"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-annotation-bank-v10/audit.json",
+      "sha256": "73fbd037ebbbfe8e1a1a35b8c1e19f67142b476ffb650dace3f1773d50957c4b"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-annotation-bank-v11/audit.json",
+      "sha256": "820e2a928ea0693882f569a410742671f1170096c8fc97c08576b12c2cf5522d"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-annotation-bank-v12/audit.json",
+      "sha256": "1bfc7ef63647879f4d68cd5b23228cb5a2556d66912f1460ec598be5acb3053c"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-annotation-bank-v12-reproduction-check/audit.json",
+      "sha256": "1bfc7ef63647879f4d68cd5b23228cb5a2556d66912f1460ec598be5acb3053c"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-annotation-bank-v13/audit.json",
+      "sha256": "1a73443585cff4cbeb0e7297cbb1541dcb229468bb0836f486fae375936c00c8"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-annotation-bank-v14/audit.json",
+      "sha256": "9f3901af31cae5786105b7bc9a7e9aec2a3944f4186448b175a1c13f73bd530a"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-annotation-bank-v15/audit.json",
+      "sha256": "d6858b408423bd58ef74d3e0bf5988f507e5036966f7e1257a3b152550a64d49"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-annotation-bank-v16/audit.json",
+      "sha256": "2b03026502cb544377b2e61e8c7f2761845ecaab6137db4bfca22c408f0ddc6f"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-annotation-bank-v9/audit.json",
+      "sha256": "cda4b37850e18dddf4a76c30d3e3c10f989203768d62e67532baff12ce5ce055"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-independent-test-source-v1/manifest.json",
+      "sha256": "07a1b8e5692e1626b9dd5d8148cfd6a0196da7a6231c93ec92e49e772bdedb24"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-sa-source-v10/manifest.json",
+      "sha256": "00377f8c59f9140b5bd6983bd61097f7e4b2572e021410c9c5844eed1d13ccae"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-sa-source-v11/manifest.json",
+      "sha256": "3ecd17a3cea9b4daf6fa28ec6db0c56524cfb7c0b107b0042844cce9d02d73e1"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-sa-source-v12/manifest.json",
+      "sha256": "1bfd5267c57b114cf4c0a02e27db2cd3f3547f716813e05720de58ae81c8fdef"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-sa-source-v9/manifest.json",
+      "sha256": "620f3e9134e9d26df0482349ef4bac50b580c4d374f06b0a1abbd1eddf12ddcd"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-source-v1/manifest.json",
+      "sha256": "fd4ac01d883e3cef4985ff943b69f268ca478249202c26b2cec724da39f8b6f8"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-source-v2/manifest.json",
+      "sha256": "5cae6a78f8c1a477f9b5be847a694885fce01963eb4aac830fd615bf7c749933"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-source-v3/manifest.json",
+      "sha256": "c3f68d478ebb1b037a0dc60aef39b28573c87697e2ab2cfe57863ed999ee4c3c"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-source-v8/manifest.json",
+      "sha256": "1ef0e064794b162a114e63a93e7146586448529a13613c201ef3d844bf5dfc86"
+    },
+    {
+      "path": "Datasets/commons-solitary-tree-train-expansion-v14-source/manifest.json",
+      "sha256": "1eeca7c42d2354d73299de4017afe070d77f3316f397f8dddd72c7594f4faa87"
+    },
+    {
+      "path": "Datasets/commons-statue-positive-bank-v1/manifest.json",
+      "sha256": "8cd7ee5cea468fda89e6411680dccfe4e187f21bd913a3c8a623ae481e50a356"
+    },
+    {
+      "path": "Datasets/commons-statue-positive-bank-v1-reproduction-check/manifest.json",
+      "sha256": "8cd7ee5cea468fda89e6411680dccfe4e187f21bd913a3c8a623ae481e50a356"
+    },
+    {
+      "path": "Datasets/commons-statue-positive-source-v1/manifest.json",
+      "sha256": "dcd1cdfa322f715dc73bef336ca027b173cd04324d884e8a3cafe8e9dac0abf0"
+    },
+    {
+      "path": "Datasets/commons-windswept-tree-source-v1/manifest.json",
+      "sha256": "325ce92eb42e5e3b9b484e51c14c8b3bc34f2634e3b45f1bbdd7f8158eb1d33d"
+    },
+    {
+      "path": "Datasets/commons-winter-tree-training-source-v1/manifest.json",
+      "sha256": "667b8739dd71192a23f0ee66e2b3f6017afb4ea6ee5578d43c6cae976564f0a1"
+    },
+    {
+      "path": "Datasets/homeobjects-plant-diagnostic-v1/audit.json",
+      "sha256": "ba8a4e9304070498a02a9f5942ed625f45b7b431fc0be547d56dead27d6f79a9"
+    },
+    {
+      "path": "Datasets/homeobjects-plant-manual-source-v1/manifest.json",
+      "sha256": "efe03183e50fac29ae9a764bbc4c02967fd67bcdd4d4b88dc861ef1bded0cd3e"
+    },
+    {
+      "path": "Datasets/inaturalist-cockroach-expanded-v3/audit.json",
+      "sha256": "ab24a4c016a24a1f71c471e33e9ac3b7fe5b7a3f56b9c3c148975ec0dc11d700"
+    },
+    {
+      "path": "Datasets/inaturalist-cockroach-negative-v2/audit.json",
+      "sha256": "cbb2933a980099f1b9a98a4fde944aa03fc4d0bcaa916303cfbaa018bac963a8"
+    },
+    {
+      "path": "Datasets/inaturalist-cockroach-reviewed-v1/audit.json",
+      "sha256": "bcd771b10be23bf0d7dcb918c5541c0a57dc40c5af9f233becec7d2bc31917da"
+    },
+    {
+      "path": "Datasets/inaturalist-cockroach-source-v1/manifest.json",
+      "sha256": "2462155dfd35f48ed913d9187c08513c17e56b39a7d6a5bb63e1b278b6dc59d1"
+    },
+    {
+      "path": "Datasets/inaturalist-cockroach-source-v2/manifest.json",
+      "sha256": "3230df0362cc7596b0a6efda68e1e160818702ff4204e3c8844a3a488985acd1"
+    },
+    {
+      "path": "Datasets/inaturalist-jumping-spider-independent-source-v2/manifest.json",
+      "sha256": "2a3ba4e78064e0fc364fd62fe852231ad718b07c113f38b0fadac7498268b53d"
+    },
+    {
+      "path": "Datasets/inaturalist-jumping-spider-source-v1/manifest.json",
+      "sha256": "5c35512f2f303b253bc6868edf7131552c611ffec7b0ef2cdc06d4db3acb048a"
+    },
+    {
+      "path": "Datasets/inaturalist-jumping-spider-training-source-v3/manifest.json",
+      "sha256": "e4396a651636915d9d0580e9c7f07d54a5a6771b7cfeb54cc980c703ea007814"
+    },
+    {
+      "path": "Datasets/inaturalist-oak-alternate-source-v1/manifest.json",
+      "sha256": "0fa9771eba0dc65f1deba7bbe5cfcbf4bfcd512b5819bcbffa2bfb3e7e1bafdf"
+    },
+    {
+      "path": "Datasets/inaturalist-oak-alternate-source-v2/manifest.json",
+      "sha256": "2df2201098d49e29e61bba5bd3d0de258660b9bcde58bb3d4f0a0edfad934271"
+    },
+    {
+      "path": "Datasets/inaturalist-oak-source-v1/manifest.json",
+      "sha256": "ada170eb709fdc28479c5355df4a789e3d39ad0f9bb877c5deaf237865366128"
+    },
+    {
+      "path": "Datasets/inaturalist-oak-source-v2/manifest.json",
+      "sha256": "29b52cf110759a2dbde963cb7793b1e0694a3a7782c73224e426c7418af1e8fb"
+    },
+    {
+      "path": "Datasets/inaturalist-spider-independent-source-v2/manifest.json",
+      "sha256": "8a362bce97e090153590b14ed3f5ea2eedfddbb5131023334cef5477c1906dc5"
+    },
+    {
+      "path": "Datasets/inaturalist-spider-source-v1/manifest.json",
+      "sha256": "54d3f13a4c103fdb9d3edddb8bba14d1b8215dde0f3c9535f4efc5b665678ea8"
+    },
+    {
+      "path": "Datasets/inaturalist-spider-training-expansion-source-v3/manifest.json",
+      "sha256": "ec73bb1981515266bbd0a40949990a33d9d6da60fbbcd90e1f08380429a1e9d4"
+    },
+    {
+      "path": "Datasets/inaturalist-tree-source-v1/manifest.json",
+      "sha256": "6e56a8a9ec6b89dc8966be2655455770086d921b013b9bf793ce0c9a3cb9b634"
+    },
+    {
+      "path": "Datasets/inaturalist-tree-source-v2/manifest.json",
+      "sha256": "a30d23e2e4bb85c05f4eb01b816aceea04ef73cc86debd6531ad3d6e4ec6296b"
+    },
+    {
+      "path": "Datasets/inaturalist-tree-source-v3/manifest.json",
+      "sha256": "573fbd2c7c1b4e499ca6701557fe293ec9a47fa26906b4720496720b0d300f75"
+    },
+    {
+      "path": "Datasets/inaturalist-tree-source-v4/manifest.json",
+      "sha256": "f2ac4297074dec407ec1fa336f3e72841ef270a9bc813ee8ee2e3e2dc6dcfd6e"
+    },
+    {
+      "path": "Datasets/jumping-spider-bicycle-confuser-bank-v1/manifest.json",
+      "sha256": "eaa15bb29aae3585f57888e9b3b4009cdd6c335dd20fcbf9d6621bd9f2638f4e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v10/audit.json",
+      "sha256": "1cffbf88636061a9f515b9ca8f02f7667e1893b0ec8aa8e89e87c1c21722510e"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v5/audit.json",
+      "sha256": "83df6b7f7be14c60d28c7660e91f263a0122945af5c871822800a9cc03f659d2"
+    },
+    {
+      "path": "Datasets/jumping-spider-confusers-v6/audit.json",
+      "sha256": "6ecc20477d39aaa7f169e20c0db807b10191872d404abd5d3ab2ae0918af4ca9"
+    },
+    {
+      "path": "Datasets/jumping-spider-context-v7/audit.json",
+      "sha256": "643bb8050240bf2622425c07073c0bfa38c38db59cd3b572fce0e50c49f6a5e9"
+    },
+    {
+      "path": "Datasets/jumping-spider-expanded-v3/audit.json",
+      "sha256": "2d0d1a9b1a390fcd8ca2911cb9e2dce9a1df55d1caebb0a415c7c79120c27512"
+    },
+    {
+      "path": "Datasets/jumping-spider-expanded-v8/audit.json",
+      "sha256": "1bab48fc734659346910138daf38c8b02a3db1942607d2681b86ed427be50dca"
+    },
+    {
+      "path": "Datasets/jumping-spider-fresh-test-v8/audit.json",
+      "sha256": "bb36189934d18d1d9c51f9a5ad55964103e615261c92989e07bca2277b10226b"
+    },
+    {
+      "path": "Datasets/jumping-spider-independent-negative-test-v2/audit.json",
+      "sha256": "9eec7da4971e6d93b5b63497a27e1aea1c1094d234e3ac4c47309a38ad34aa88"
+    },
+    {
+      "path": "Datasets/jumping-spider-independent-test-v2/audit.json",
+      "sha256": "687bbe9e3c8a7bdf4b6cc2db08ec5ae947c19412362e5c2e2b545ce74f8efb61"
+    },
+    {
+      "path": "Datasets/jumping-spider-negative-regression-v1/audit.json",
+      "sha256": "d6d7ebe458e08118f7c8f4b6e6438b51f841cb70fdbad1cb8e27d60d76d492f7"
+    },
+    {
+      "path": "Datasets/jumping-spider-negative-v2/audit.json",
+      "sha256": "eda2b3d4a54e795262069d3aabc07a14e89526e829c457940bb934b80906c373"
+    },
+    {
+      "path": "Datasets/jumping-spider-reviewed-v1/audit.json",
+      "sha256": "fc0d4a3e5a71c4f27ac7de29fe0066ca8c23f5c31477f604907ed920b77b316e"
+    },
+    {
+      "path": "Datasets/jumping-spider-source-v8/manifest.json",
+      "sha256": "b48acc30208267ef3e560adabacda9fd41a0415bc2f93ebf44a88b68c63d8d4e"
+    },
+    {
+      "path": "Datasets/jumping-spider-source-v8-large/manifest.json",
+      "sha256": "7d906b8ecff7d08238432ff9f6351a1373d99dccb9a1c6449392d91790c2a5e3"
+    },
+    {
+      "path": "Datasets/jumping-spider-statue-negative-v4/audit.json",
+      "sha256": "23a61130ddf6a604de5be6cdbe975d8b87103871c5e0208ccee2e53060e3acc0"
+    },
+    {
+      "path": "Datasets/lvis-statue-expansion-v1/manifest.json",
+      "sha256": "171f00503b16768ea96142c2480e4221a58c7c67f6ab9c8fe5060b3290a6a4e3"
+    },
+    {
+      "path": "Datasets/lvis-statue-expansion-v2/manifest.json",
+      "sha256": "a2a7ee45d8bc08b41a2e901e0a8107f5a3576de52a4ede8f78a01e83e6b0455f"
+    },
+    {
+      "path": "Datasets/lvis-statue-small-expansion-v2/manifest.json",
+      "sha256": "291834ecf9d66103a39fe4b39ff8deff600ca10e609cecf0145b34861e64d800"
+    },
+    {
+      "path": "Datasets/lvis-statue-small-expansion-v3/manifest.json",
+      "sha256": "ee4db0f343103fdd5d73fc39f066b716fc5379c12a7987047bd7d7bbda32fb27"
+    },
+    {
+      "path": "Datasets/lvis-statue-small-expansion-v4/manifest.json",
+      "sha256": "9c944381beb49e37c1581895ba54689f0aa7d7221e5f8f859d6c15b454fc2a92"
+    },
+    {
+      "path": "Datasets/lvis-statue-small-expansion-v5/manifest.json",
+      "sha256": "abd26d8eebd05a025eadaedc36baf791b38dfd5087c2c08c11e84535133907b7"
+    },
+    {
+      "path": "Datasets/lvis-statue-training-expansion-v1/manifest.json",
+      "sha256": "2c796d86c280421b6edc6ed747271c742014680d3c432dac5a40d490ef6655b8"
+    },
+    {
+      "path": "Datasets/openimages-bicycle-negative-source-v4/manifest.json",
+      "sha256": "e5c2924b94fe85dbd6e434ceffa99b9493ccbda4fe574d45ccef2886a75c8119"
+    },
+    {
+      "path": "Datasets/openimages-dining-candidate-source-v1/manifest.json",
+      "sha256": "9290b3b8c35dc8bbaf731b996e9d75d051f2805bee6a97752ccdaed6e812aff7"
+    },
+    {
+      "path": "Datasets/openimages-dining-keyword-source-v1/manifest.json",
+      "sha256": "8232910c6a7d651b14f6bb1472eba24b0c7c423d5aca24dfe85b59be6b198b88"
+    },
+    {
+      "path": "Datasets/openimages-plant-curated-source-v1/manifest.json",
+      "sha256": "b8e122fa9debd95ac731af127c299cf0d442504b7ee82a84fcaf9c4fa4842a26"
+    },
+    {
+      "path": "Datasets/openimages-plant-curated-source-v2/manifest.json",
+      "sha256": "1b7c0360ae4838a22d44d8577db62e212a66af0393ebebc886bb5894444c6558"
+    },
+    {
+      "path": "Datasets/openimages-plant-curated-v1/audit.json",
+      "sha256": "a76a4bc38f1b50b6614407bbb29e7a1d6bbcadc69867d5da071077f0d12d65f7"
+    },
+    {
+      "path": "Datasets/openimages-plant-curated-v2/audit.json",
+      "sha256": "1b7c9ce44368ff477037a224ce1eb1250da8797c9d686de05a1ee2a8179ccd90"
+    },
+    {
+      "path": "Datasets/openimages-plant-expansion/manifest.json",
+      "sha256": "9e20dff89efefccf2f58b2f0a98f8aa7d1f28ab08ad26c3e451365abd6dd1ece"
+    },
+    {
+      "path": "Datasets/openimages-plant-fresh-container-source-v3/manifest.json",
+      "sha256": "b8b33ae067e633165e025a36f5b10713c8021c016ee8b111f95a8009eca7f5db"
+    },
+    {
+      "path": "Datasets/openimages-plant-fresh-general-source-v4/manifest.json",
+      "sha256": "0f82da29c9173fd5507f3fe52540bd58edecd813b2d1442f82bb7e699b1c33fa"
+    },
+    {
+      "path": "Datasets/openimages-plant-native-source-v1/manifest.json",
+      "sha256": "c79d10e0120fcfc32ce19d5cc43c5c94dbd26a14ea7fd795ba9c7826969f35ec"
+    },
+    {
+      "path": "Datasets/openimages-plant-native-v1/audit.json",
+      "sha256": "4ab97bd27dd07687aa0eebd668de20e3d706ea384417829449f41b87be833473"
+    },
+    {
+      "path": "Datasets/openimages-plant-negative-v1/audit.json",
+      "sha256": "a05c34596873c0cf24c71df5e3a5d8ee425467d36144c6c9c741bb10f1ac0e28"
+    },
+    {
+      "path": "Datasets/openimages-room-expansion-source-v1/manifest.json",
+      "sha256": "47007dc018efe0dd6d68c7d688206bf7d0003a2ca0d118a9830f2adf97cf3fc0"
+    },
+    {
+      "path": "Datasets/openimages-room-interior-source-v1/manifest.json",
+      "sha256": "361c40ac224839670be61c547a924a362b472c710e35cc292121c5b410afa9d3"
+    },
+    {
+      "path": "Datasets/openimages-room-interior-source-v2/manifest.json",
+      "sha256": "0a06d6c5f054315d68b0f646e34ed725d864ccaa6b6d2ff7edde2a0cefcda9a2"
+    },
+    {
+      "path": "Datasets/openimages-room-source-v1/manifest.json",
+      "sha256": "b7149966771ecbb94fe34af6a77bcce0796acb57258d4a7d35cf549e884fe30e"
+    },
+    {
+      "path": "Datasets/openimages-statue-curated-source-v1/manifest.json",
+      "sha256": "cfc8fc968da23c3fe8e475b032ddefecaead8b28fabb32ab0fd5c84c679e300f"
+    },
+    {
+      "path": "Datasets/openimages-statue-curated-v1/audit.json",
+      "sha256": "73478f1c563c067d70a963d0eb58499abf43c1596f6595b2eef02cff896c2d6d"
+    },
+    {
+      "path": "Datasets/openimages-table-title-source-v1/manifest.json",
+      "sha256": "6a0ba80a42c4e33d0f24e65275e90fbddfdaa1d8357a365faf6d8a24a419b448"
+    },
+    {
+      "path": "Datasets/openimages-test-tree-source-v1/manifest.json",
+      "sha256": "f465bf0495305cd5d10a634eab76e908966776d495b9de7c2a78ff0afca2e12d"
+    },
+    {
+      "path": "Datasets/openimages-tree-expansion-v2/manifest.json",
+      "sha256": "32f0f0ed5be23c7eeda27edf18610437700200268af61f245c137775f521246d"
+    },
+    {
+      "path": "Datasets/openimages-tree-fresh-source-v3/manifest.json",
+      "sha256": "099dcc974a8da76e189ce6ca7778fa12b76b92bcbea9c76813fbb3f9fd414e3c"
+    },
+    {
+      "path": "Datasets/openimages-tree-statue-expansion/manifest.json",
+      "sha256": "b146546baeb6ce1a796a4be45c35bfd3ce4a4ba8ce14bf3ee76bf6c096090965"
+    },
+    {
+      "path": "Datasets/openimages-v7-pilot/manifest.json",
+      "sha256": "5ca11f3a44d0181e8dfeeb75c69613e4423fd2aec2b63156c38d4cc949b56a7e"
+    },
+    {
+      "path": "Datasets/openimages-v7-pilot-v1/audit.json",
+      "sha256": "88f88c802623b40d1f6676128c3801c5081701fcb0493282e1073f4f851804a8"
+    },
+    {
+      "path": "Datasets/pico-cockroach-negative-heldout-v1/audit.json",
+      "sha256": "50526b41c13ca7fd799c6825a52268e41d76acdf5fd5ec6c59ea0d52678df57e"
+    },
+    {
+      "path": "Datasets/pico-spider-negative-heldout-v1/audit.json",
+      "sha256": "c1ffc508a435ca19a6c36b5bf9b32a41be549bc832ff5322c1e64b7bf25ea59a"
+    },
+    {
+      "path": "Datasets/pico-tree-negative-heldout-v1/audit.json",
+      "sha256": "c60e6a0ee3783207b4f0a7e72ac7d802bb9ae74a21efefb8e0e5b50fdef0245f"
+    },
+    {
+      "path": "Datasets/plant-additional-cut-flower-negative-v1/audit.json",
+      "sha256": "08da4cc0f3dcf16553508fe719fc7031972e47a2cca357670ec5a255b156402c"
+    },
+    {
+      "path": "Datasets/plant-broader-v14/audit.json",
+      "sha256": "2d62c0ad3ce35b80d9c402b71924c94ff1c9bc276bb813366d519881016b7339"
+    },
+    {
+      "path": "Datasets/plant-broader-v14-batch2-staging/manifest.json",
+      "sha256": "2eee43e334a09254af480a74e4969b300e6721a77c6c6ebe7712e45f5d5bdb10"
+    },
+    {
+      "path": "Datasets/plant-broader-v14-multi-instance-staging/manifest.json",
+      "sha256": "f1ed75ca0f15a524e2a7a99979d53916190604fce7414275490e6b8c4e83f203"
+    },
+    {
+      "path": "Datasets/plant-broader-v14-palm-staging/manifest.json",
+      "sha256": "6ed3b450edf403cf5b83af4cdd6a730c980a22160393461ca36eb04e5c815a79"
+    },
+    {
+      "path": "Datasets/plant-broader-v14-staging/manifest.json",
+      "sha256": "ff897494eafd46f4afe7bed0f81afff637057c2721bf3ed2ba73e9936da399e1"
+    },
+    {
+      "path": "Datasets/plant-broader-v14-waiting-room-staging/manifest.json",
+      "sha256": "de1031f606a64b32aee1cff2bce21361d99d250e7b512d07cf2c4b0cec5c2019"
+    },
+    {
+      "path": "Datasets/plant-confuser-v13/audit.json",
+      "sha256": "39fe41890c36c832cf9dfcaf2afb72729ca78fb22dc24ac2e294279f80c0f6c3"
+    },
+    {
+      "path": "Datasets/plant-confuser-v13-aux-val-view/audit.json",
+      "sha256": "2fece1dbf7b0d3e30072bf9748411d9cbe527f9c6fdb555c6b0ef9151a4b28ad"
+    },
+    {
+      "path": "Datasets/plant-confuser-v15/audit.json",
+      "sha256": "e2a8547af666b1fa4519fd11b356828ad70aeff244cd5541ddb3ba7f99dddf18"
+    },
+    {
+      "path": "Datasets/plant-container-corrected-v2/audit.json",
+      "sha256": "cb97cd04af60f3d7ba4dd6adaa4db0ae7ea511623cef327ea6b422b3399bae87"
+    },
+    {
+      "path": "Datasets/plant-container-expanded-v6/audit.json",
+      "sha256": "2fdc594121f4fda504080550af900f46737770c51d8ea63979cd83048b082f1c"
+    },
+    {
+      "path": "Datasets/plant-container-expanded-v7/audit.json",
+      "sha256": "ca822c78657b69adfcc16dc43420ac5e9bb41b27842be4bc0591ec16eb95ebb3"
+    },
+    {
+      "path": "Datasets/plant-container-expanded-v8/audit.json",
+      "sha256": "6d118106b1a882b32a728bbf705b7bbb1f917baae806581f90f9c34bb64cb9ea"
+    },
+    {
+      "path": "Datasets/plant-container-expanded-v9/audit.json",
+      "sha256": "83784472faeba9fe00a061ccd92d21163965965d663a8e0b2cc5fb6d5131a956"
+    },
+    {
+      "path": "Datasets/plant-container-fresh-v3/audit.json",
+      "sha256": "3bcb1ab9ef32c6b2024ccee1de6be5d9f5d939512d43aed19b1a089adc8314a7"
+    },
+    {
+      "path": "Datasets/plant-container-negative-v4/audit.json",
+      "sha256": "10f888fbb7c3fa0bdd596c5693e304dbbec403098e4164e55b77559a5f880a07"
+    },
+    {
+      "path": "Datasets/plant-cut-arrangement-source-v15/manifest.json",
+      "sha256": "f61d986d14a060946090a88e6d46175e025c01a9fc713a7dad59ddf947ee549c"
+    },
+    {
+      "path": "Datasets/plant-cut-arrangement-source-v15/selection.json",
+      "sha256": "1cd696704237c7407dcea8df960595dfe8c9dcd807857be28935541828f075c1"
+    },
+    {
+      "path": "Datasets/plant-cut-arrangement-source-v22/manifest.json",
+      "sha256": "5582b87838e1778d67bd5f3c0b8b6d09871052accdf66748a74e8462450d8a1a"
+    },
+    {
+      "path": "Datasets/plant-cut-arrangement-source-v22/selection.json",
+      "sha256": "0ec6cc3909d07f84bc2b14596d929b4f1d7a54c7aef89b1352c90269a08ac629"
+    },
+    {
+      "path": "Datasets/plant-cut-arrangement-v15-staging/manifest.json",
+      "sha256": "f17c74caf066fa3a3a0f58e25b065774f123564dc29af0603de5648b86abf22e"
+    },
+    {
+      "path": "Datasets/plant-cutflower-v11-staging/manifest.json",
+      "sha256": "d6536f047581a141bea0c2df6b58c7518a763b31c431d78f6b7e2af7d4556dd6"
+    },
+    {
+      "path": "Datasets/plant-flowering-v12-staging/manifest.json",
+      "sha256": "6367db2907b491ea33f38ffaf9dfb929e93fcf5dcef1e87aabbf3229c57cd58f"
+    },
+    {
+      "path": "Datasets/plant-fresh-container-manual-source-v10/manifest.json",
+      "sha256": "29eab483ff41cb6461246612746715fcf90ad84ee1ecb2d3dc19a2dd2c2bac4b"
+    },
+    {
+      "path": "Datasets/plant-fresh-container-manual-source-v11/manifest.json",
+      "sha256": "8ce68531d3d94d438098f698d0e99d4157f9036877faee49b630efb9bade5c4b"
+    },
+    {
+      "path": "Datasets/plant-fresh-container-manual-source-v12/manifest.json",
+      "sha256": "c2c8294eafe61f065e303ed8480aed13ef4e198fdbf90d3995477b198c27061f"
+    },
+    {
+      "path": "Datasets/plant-fresh-container-manual-source-v13/manifest.json",
+      "sha256": "4105fd08ba68f30e33ccaa2c760cef2a629cfc7e70de73afcba351733529b754"
+    },
+    {
+      "path": "Datasets/plant-fresh-container-manual-source-v14/manifest.json",
+      "sha256": "3091d6b8c1360cdbb4216a74ce4cefd73b627ddfd6838654f282266925f0718e"
+    },
+    {
+      "path": "Datasets/plant-fresh-container-manual-source-v15/manifest.json",
+      "sha256": "715ace8a1c268e4a1ada7cfd8ac4e42846215fca184b71704425ed73ac2d59d6"
+    },
+    {
+      "path": "Datasets/plant-fresh-container-manual-source-v16/manifest.json",
+      "sha256": "f4fe8df97cafaa25506be86510642991ac7a381646e2c3d293dc7001dbae0b6a"
+    },
+    {
+      "path": "Datasets/plant-fresh-container-manual-source-v17/manifest.json",
+      "sha256": "de3b96e876feab2dcafb052e04dac0e63b0bcb9948a090652a8aabd511ec5239"
+    },
+    {
+      "path": "Datasets/plant-fresh-container-manual-source-v18/manifest.json",
+      "sha256": "791d128dadcd1fdfa08649cc6a053ed46628380278298d1a1f3d882f364275b9"
+    },
+    {
+      "path": "Datasets/plant-fresh-container-manual-source-v5/manifest.json",
+      "sha256": "07c7ad063fa94bf71cf43913a1ecca759a0cb165363cae4af7c2a9a109a04f62"
+    },
+    {
+      "path": "Datasets/plant-fresh-container-manual-source-v6/manifest.json",
+      "sha256": "dd32248a32a9705595052a8448e35a7510ce1430bc454a9370a21c122ebf3d66"
+    },
+    {
+      "path": "Datasets/plant-fresh-container-manual-source-v7/manifest.json",
+      "sha256": "cb585843c3fc963425e3e911e8506e6dc7095c94ac1845c3d418df2c229aa1ec"
+    },
+    {
+      "path": "Datasets/plant-fresh-container-manual-source-v8/manifest.json",
+      "sha256": "ddd903ba2192a8cdc1be823f6840a700b644b82996e7ec73b85a514d1d17a29d"
+    },
+    {
+      "path": "Datasets/plant-fresh-container-manual-source-v9/manifest.json",
+      "sha256": "a3c1375fb6871e774105e641d6a5977c1c4974a31db3c02edd267b421127abed"
+    },
+    {
+      "path": "Datasets/plant-fresh-cut-flower-negative-source-v1/manifest.json",
+      "sha256": "e5fcca783b28804331e2f35ba94a61fd16d9a6074c36d1e0e313340178026131"
+    },
+    {
+      "path": "Datasets/plant-fresh-negative-diagnostic-v1/audit.json",
+      "sha256": "b1592cc1b9009024a9e7406a8850eeeef1a3620d66e9104c16770b64adee4f2e"
+    },
+    {
+      "path": "Datasets/plant-independent-test-source-v23/manifest.json",
+      "sha256": "e5f5f324bb28e72b92237751e32eb48e2a1dd134a58341963377efc1363a6637"
+    },
+    {
+      "path": "Datasets/plant-independent-test-source-v23/selection.json",
+      "sha256": "43deffe0a32d475e14210f33ab08ab1ef0a905fcc919c10dd46bda00a83aa1c8"
+    },
+    {
+      "path": "Datasets/plant-instance-v19/audit.json",
+      "sha256": "12ff87b047fedb6a1985475d3a33ad006dc6f0ff1bc7a20e35cb98d14e713838"
+    },
+    {
+      "path": "Datasets/plant-manual-container-corrections-v1/manifest.json",
+      "sha256": "467d7403ed10ddc48ed66551aeb0619cb40e86322d9ea3c3e518da02d8ab3f98"
+    },
+    {
+      "path": "Datasets/plant-multi-v18-staging/manifest.json",
+      "sha256": "25ce4dc502d81cd23655893219bdcc6baa9cf214e5b62c75b8b0ed07a63271d2"
+    },
+    {
+      "path": "Datasets/plant-native-v10/audit.json",
+      "sha256": "e74e2af7b6be77fd03fc2c95544c6d27fe55911c3df25fc630b33d28db1f3cdc"
+    },
+    {
+      "path": "Datasets/plant-native-v11/audit.json",
+      "sha256": "de41a31a94cdb7c4c435c2a020cbb386970cc971291da71ff65ebbb6b13bf8ea"
+    },
+    {
+      "path": "Datasets/plant-native-v12/audit.json",
+      "sha256": "3e64d1787a8677d316e396a230d1ca727ebe8166bad3b3dad66f98394c7aedcf"
+    },
+    {
+      "path": "Datasets/plant-new-author-heldout-v5/audit.json",
+      "sha256": "667ab36ffab748e32bb148ca7145a30c13ce6a81d62e14519eb595981cabbe9b"
+    },
+    {
+      "path": "Datasets/plant-public-visible-pot-regression-v1/audit.json",
+      "sha256": "56b4273a39b3c3b0ed2df2ae5bdbb563b461582515f8e1298c588d9e68cd3ba5"
+    },
+    {
+      "path": "Datasets/plant-reviewed-v20/audit.json",
+      "sha256": "e15191e0e50572c0f02206b14f11416e91df08192322fb02e06987e9f215de31"
+    },
+    {
+      "path": "Datasets/plant-reviewed-v22/audit.json",
+      "sha256": "8b71dab78cea08f595f7cba2e53723a0f3986dafcb26affc7014c224fb1fcd3d"
+    },
+    {
+      "path": "Datasets/plant-rooted-source-v16/manifest.json",
+      "sha256": "84c73e1925d6aaf242ba3235861cd54af99ea8a9f9edd702bb1a5696de8c23a4"
+    },
+    {
+      "path": "Datasets/plant-rooted-source-v16/selection.json",
+      "sha256": "8acb63ff0c7c1d4364625bc23b61f12fedc6b58f2fa6a6625330ee57a14aac3a"
+    },
+    {
+      "path": "Datasets/plant-rooted-source-v16-r2/manifest.json",
+      "sha256": "c29208f4efa4a1a0ed22f415825900106ea2fe9cf4559311ae8ecd3dcac99fcb"
+    },
+    {
+      "path": "Datasets/plant-rooted-source-v16-r2/selection.json",
+      "sha256": "85c8b61d7024fae1a7db325e0ea1d345591c88dd27f3508d10c2ed2ce9d22e1d"
+    },
+    {
+      "path": "Datasets/plant-rooted-source-v17/manifest.json",
+      "sha256": "35f070181b8518c45ae045926d827db324881319306c253988da9e768ee2d9ec"
+    },
+    {
+      "path": "Datasets/plant-rooted-source-v17/selection.json",
+      "sha256": "f88e6b548c32987eb557d91f1c492eb9ce0385f5e9b05147a2bd3dae4c14ac24"
+    },
+    {
+      "path": "Datasets/plant-rooted-v16-staging/manifest.json",
+      "sha256": "617ef7a732b31ca56b1d2497aa2ac0b55e79faf5b2c7f6371553a7c1e8b0cdad"
+    },
+    {
+      "path": "Datasets/plant-rooted-v17-staging/manifest.json",
+      "sha256": "e94ce077ed2030c6bc322679b626929ab57912adee41a0560e1d05f09614d7ca"
+    },
+    {
+      "path": "Datasets/plant-rooted-v18/audit.json",
+      "sha256": "f3eefa042dd1ea24acc10213dfb4eb15aeab4887ee5f52e21b71e91a486f6616"
+    },
+    {
+      "path": "Datasets/rafis-tree-visible-annotation-bank-v1/audit.json",
+      "sha256": "7928a46997cc12828538856bccd34d44c6a7be205c9fa9e715568e0020c5bdd4"
+    },
+    {
+      "path": "Datasets/rafis-tree-visible-annotation-bank-v2/audit.json",
+      "sha256": "d34fa1da8850a7d49955a80ea6d9422cfbe85acd9cc9b347c8496583d7dcc43c"
+    },
+    {
+      "path": "Datasets/roboflow-rafis-tree-source-v1/audit.json",
+      "sha256": "5587aebdc5dac45eed00104493323d578d6be3d0efdd7a6d715eede0de4b3617"
+    },
+    {
+      "path": "Datasets/room-native-pilot-v1/audit.json",
+      "sha256": "210944fbb7935dda9fe3ab222f926b7dec877f7bc90bcdc0a34996152f752446"
+    },
+    {
+      "path": "Datasets/room-native-pilot-v10/audit.json",
+      "sha256": "edbebb88210040ecc63430ffa25f6c664766e85239c5c051775a08bf223e12d9"
+    },
+    {
+      "path": "Datasets/room-native-pilot-v2/audit.json",
+      "sha256": "bc70198b440e63a8a64afabac741d71749b76978157d5c44c46b129af5e1397d"
+    },
+    {
+      "path": "Datasets/room-native-pilot-v3/audit.json",
+      "sha256": "310711378318a7627f3951fe9323dc954ea11c0a38bcebef7e75b6936e58e4d7"
+    },
+    {
+      "path": "Datasets/room-native-pilot-v4/audit.json",
+      "sha256": "05af1b4a3510b159579fe60364a6d3a554bebbe390ac4b4b7b6832fdb8e73c60"
+    },
+    {
+      "path": "Datasets/room-native-pilot-v5/audit.json",
+      "sha256": "a417421c6a1bd0c17517d3cb66b11bf7e05ed7fab35656468ddf4d1ff5f95e35"
+    },
+    {
+      "path": "Datasets/room-native-pilot-v6/audit.json",
+      "sha256": "2cc42a1b3103f596a56b82fc85e1a50537fccb931640b9b37cdc8c683e38758e"
+    },
+    {
+      "path": "Datasets/room-native-pilot-v7/audit.json",
+      "sha256": "2964d1ed21a3d63bb1ddded207c79111f35cfa34ebae87c9946a88861dba5a24"
+    },
+    {
+      "path": "Datasets/room-native-pilot-v8/audit.json",
+      "sha256": "d326add88f440714a35d84175705eac7966ff5b8a0c70aecb328a5c7db427626"
+    },
+    {
+      "path": "Datasets/room-native-pilot-v9/audit.json",
+      "sha256": "c28ee895ab475b4bd389859b87ef4a0e1f5efca6fe641451d19bd1071e3f4935"
+    },
+    {
+      "path": "Datasets/room-reviewed-public-test-v1/audit.json",
+      "sha256": "bf275408f33c52e5b8caf481fcc57230ad5d07d75ac0224d501a0e13b15b01eb"
+    },
+    {
+      "path": "Datasets/room-reviewed-public-test-v2/audit.json",
+      "sha256": "c1f4138861af613f5f672367b0c7ee40754d3e9c231a696de1601c26c6e5cafd"
+    },
+    {
+      "path": "Datasets/room-reviewed-public-test-v3/audit.json",
+      "sha256": "548e24a48a62607a5fbbf6f6431fb553ff8002a57283c59be990dae7afc6aa56"
+    },
+    {
+      "path": "Datasets/spider-independent-observer-test-v6/audit.json",
+      "sha256": "36bf5a6864dbed3e4acabd30ed8175c6accf60d1c85dc55c54263ae840903ce5"
+    },
+    {
+      "path": "Datasets/spider-new-observer-test-v5/audit.json",
+      "sha256": "e179df40cab32ef61e779261a4721a892518a33c65eaeb401b4871536f44e765"
+    },
+    {
+      "path": "Datasets/spider-openimages-negative-v3/audit.json",
+      "sha256": "96fd4e7fc05a1e2fd95b451011aaa914acb24dbd5bf185708669c8bc3ab2dee6"
+    },
+    {
+      "path": "Datasets/spider-openimages-negative-v4/audit.json",
+      "sha256": "261052c1bcaf400667138c83ab6fc9bb7c9ddd4ecb80e57bca9afeace831e1c6"
+    },
+    {
+      "path": "Datasets/spider-openimages-pilot-v1/audit.json",
+      "sha256": "e9e320cfc563ea3f6e62be985db3ed4e314bfbeb254c3b260ea1c740a224575b"
+    },
+    {
+      "path": "Datasets/spider-openimages-reviewed-v2/audit.json",
+      "sha256": "9be056dd380fc3b32282352453bb01eaa18d34d62a59ee5ad49ba6150b2c1659"
+    },
+    {
+      "path": "Datasets/spider-other-class-validation-v1/audit.json",
+      "sha256": "9a493261f25538f57402696a1bb166662b7c8e104093c1051db05dcfa1936a25"
+    },
+    {
+      "path": "Datasets/spider-source-expanded-v5/audit.json",
+      "sha256": "0094c5e8c5b494d82b936d093bc66e8031e1a60c3dfc4ea76c67edca52c23a8c"
+    },
+    {
+      "path": "Datasets/statue-commons-positives-v14/audit.json",
+      "sha256": "3139db9919eb13e358c5e0e9ddf974b1fab9181af19269f365cfe6e9c306155e"
+    },
+    {
+      "path": "Datasets/statue-commons-positives-v14-reproduction-check/audit.json",
+      "sha256": "3139db9919eb13e358c5e0e9ddf974b1fab9181af19269f365cfe6e9c306155e"
+    },
+    {
+      "path": "Datasets/statue-dense-reviewed-v3/audit.json",
+      "sha256": "9767e416ee4ce48b5691d25f8f842f0208dcfcbfc5fd1db1b8d7fb8a2d1525ce"
+    },
+    {
+      "path": "Datasets/statue-equipment-negative-bank-v1/manifest.json",
+      "sha256": "8d0d6ea6e211053f4fdf65ab59e3f0275f7e723799d0804aaff57f6810c6e82e"
+    },
+    {
+      "path": "Datasets/statue-equipment-negatives-v13/audit.json",
+      "sha256": "05fc2cea3061624a4d1bce6c018c38d9fc533ec63636ff79a974f98ab21b5c5b"
+    },
+    {
+      "path": "Datasets/statue-equipment-negatives-v13-reproduction-check/audit.json",
+      "sha256": "05fc2cea3061624a4d1bce6c018c38d9fc533ec63636ff79a974f98ab21b5c5b"
+    },
+    {
+      "path": "Datasets/statue-human-negative-bank-v1/audit.json",
+      "sha256": "e2a47b8fcfb4bf9f4b1d78a1f429d8a0499783e758fe9dd56309747429cd5a14"
+    },
+    {
+      "path": "Datasets/statue-human-negative-bank-v2/audit.json",
+      "sha256": "a50e123a7970bd7f353647d768d1321e4682627074f4a3bbb38f97cfe19ad5f4"
+    },
+    {
+      "path": "Datasets/statue-human-negatives-v8/audit.json",
+      "sha256": "f31d41baccd753fa950b85e1fe65b4f41f7e03f75b46f5a26001e83cff8dfab5"
+    },
+    {
+      "path": "Datasets/statue-human-negatives-v8-reproduction-check/audit.json",
+      "sha256": "f31d41baccd753fa950b85e1fe65b4f41f7e03f75b46f5a26001e83cff8dfab5"
+    },
+    {
+      "path": "Datasets/statue-lvis-revision-v1/audit.json",
+      "sha256": "6af8a7c603993e108b8b0ea03d57c350a02b43743b7041c982b8c50aeb11885d"
+    },
+    {
+      "path": "Datasets/statue-reviewed-revision-v2/audit.json",
+      "sha256": "4abf58dee19f10eab1c5549663e0c916e437d6b7b22145ed91ac80bb1b73ff7c"
+    },
+    {
+      "path": "Datasets/statue-reviewed-v4/audit.json",
+      "sha256": "688d6adaacb91d18b9f820cd983740d0c635cd2fb973db3351284d31db3dbf7c"
+    },
+    {
+      "path": "Datasets/statue-reviewed-v5/audit.json",
+      "sha256": "97c3c3c3014e62f4792ab51411314c5425b56cc0b73f2da969ab78cb4aae2f31"
+    },
+    {
+      "path": "Datasets/statue-reviewed-v6/audit.json",
+      "sha256": "a7260d051a4d7023d6f1fed8a56d667eea69636df453bdb25db2dea08566c60f"
+    },
+    {
+      "path": "Datasets/statue-reviewed-v7/audit.json",
+      "sha256": "fb0a9126dc31b4d542ffc14da499284bb74166006fd964874e62b261475e252d"
+    },
+    {
+      "path": "Datasets/statue-small-positive-bank-v1/audit.json",
+      "sha256": "48b30366eea6dad795f7410b2d9830533c5d2f7cfc42802ba19c26958f1b4b08"
+    },
+    {
+      "path": "Datasets/statue-small-positive-bank-v2/audit.json",
+      "sha256": "83fa249f15f9eb02603367e276cd545810c65f88b2e159edd0602c4318911001"
+    },
+    {
+      "path": "Datasets/statue-small-positive-bank-v3/audit.json",
+      "sha256": "44bfbfbcd790f094475bf366f379ab0e367839429a63ea5cf3736ecf1b307cf3"
+    },
+    {
+      "path": "Datasets/statue-small-positives-v10/audit.json",
+      "sha256": "26ce2147c98f4b8f77eb571452f23ccb9920b82b3df27f74a67ce3746a178a4f"
+    },
+    {
+      "path": "Datasets/statue-small-positives-v10-reproduction-check/audit.json",
+      "sha256": "26ce2147c98f4b8f77eb571452f23ccb9920b82b3df27f74a67ce3746a178a4f"
+    },
+    {
+      "path": "Datasets/statue-small-positives-v11/audit.json",
+      "sha256": "3d21e0236e0082f87bb1fc77a4bcd28d6fe6e66759fd0e8031825803d67d1613"
+    },
+    {
+      "path": "Datasets/statue-small-positives-v11-reproduction-check/audit.json",
+      "sha256": "3d21e0236e0082f87bb1fc77a4bcd28d6fe6e66759fd0e8031825803d67d1613"
+    },
+    {
+      "path": "Datasets/statue-small-positives-v12/audit.json",
+      "sha256": "27e3cafc35397d1ba45bdc00f88f68cbed09daff0261c50505ba3a7763e46be8"
+    },
+    {
+      "path": "Datasets/statue-small-positives-v12-reproduction-check/audit.json",
+      "sha256": "27e3cafc35397d1ba45bdc00f88f68cbed09daff0261c50505ba3a7763e46be8"
+    },
+    {
+      "path": "Datasets/statue-small-positives-v9/audit.json",
+      "sha256": "6700bfd55f12ee2400516806d20b309d4b7a66b6db9a317baaaaa2aa8c6a31a8"
+    },
+    {
+      "path": "Datasets/statue-small-positives-v9-reproduction-check/audit.json",
+      "sha256": "6700bfd55f12ee2400516806d20b309d4b7a66b6db9a317baaaaa2aa8c6a31a8"
+    },
+    {
+      "path": "Datasets/tree-argan-reserved-test-v1/audit.json",
+      "sha256": "bb3390f3c599473bdfcac315c1f180bea9543dc35933faf8188683811c82b1e0"
+    },
+    {
+      "path": "Datasets/tree-argan-reserved-test-v1/manifest.json",
+      "sha256": "f435bd9abb7dd3c2c79fea4cfbc1792139507668768417fcf6abe99d4e7a82db"
+    },
+    {
+      "path": "Datasets/tree-fresh-negative-test-v1/audit.json",
+      "sha256": "79ec58533269e1081a39aabe30c4a3f31504da95e8e0bcce05a036193ca1127b"
+    },
+    {
+      "path": "Datasets/tree-inaturalist-heldout-v1/audit.json",
+      "sha256": "7915ff6afb5bd25394bad90e657fb09213092a2a095970b1c401239978148a47"
+    },
+    {
+      "path": "Datasets/tree-independent-shrub-test-crop-staging-v1/manifest.json",
+      "sha256": "75e148d373bbdafe2ab5897769856dbe9e88bb4210e28979b869e4493a33933a"
+    },
+    {
+      "path": "Datasets/tree-independent-test-v1/audit.json",
+      "sha256": "00404c916cc80e31068ba5824b34e43e1b2161f18c9307e9b20ee0dd02c8d68a"
+    },
+    {
+      "path": "Datasets/tree-independent-visible-validation-v1/audit.json",
+      "sha256": "c3802a4b1c5eb0b8d2999673792d8d82f69b266be86e4ebf271c9f04d4e75d81"
+    },
+    {
+      "path": "Datasets/tree-instance-review-v5/audit.json",
+      "sha256": "785140bac81627de684b3a58b72aa05d8a0d47c56c357ea74b07523fea1faaf7"
+    },
+    {
+      "path": "Datasets/tree-manual-test-source-corrections-v1/manifest.json",
+      "sha256": "6b437f2b19cd23f8808364f38d603457b8adab5d1e2922e8ce1bddce47ba0ded"
+    },
+    {
+      "path": "Datasets/tree-new-observer-validation-v1/audit.json",
+      "sha256": "ad7042b15556db826b3818c992facd1486493c863c556512c1a27d81d328163f"
+    },
+    {
+      "path": "Datasets/tree-new-public-diagnostic-v1/audit.json",
+      "sha256": "a4b8872309ff0c5817cfd5e728abdb99d87def676d55910314dd083817813c2b"
+    },
+    {
+      "path": "Datasets/tree-new-sources-background-v2/audit.json",
+      "sha256": "53d41bcc655cc42c437b61e84d809941b650fdaf86c02e762da88566e925141a"
+    },
+    {
+      "path": "Datasets/tree-new-sources-reviewed-v1/audit.json",
+      "sha256": "5fbdd4b9e46a055caa9f9572da77ac258c880bebcecf80529d938bf9b52984d8"
+    },
+    {
+      "path": "Datasets/tree-only-instance-review-v6/audit.json",
+      "sha256": "c4af686af505e2b7c60c46c34d0c6306f770ba45f7b252d130e16fa4adfe98da"
+    },
+    {
+      "path": "Datasets/tree-only-instance-review-v7/audit.json",
+      "sha256": "1cfec484a0c5b852e11234ee2ade3cce723432dd1822d08a1bfb6e87ec309112"
+    },
+    {
+      "path": "Datasets/tree-only-instance-review-v8/audit.json",
+      "sha256": "c45beb05d07fa8e8422eb41a00087b754c41d247446d4b22cbfa8560f308dab9"
+    },
+    {
+      "path": "Datasets/tree-partial-instance-corrections-v1/manifest.json",
+      "sha256": "df8e379da65fc773d8f8a48e81c7c5f2b4d3d9344a85ce54939b539f0c65445b"
+    },
+    {
+      "path": "Datasets/tree-public-validation-extension-v1/audit.json",
+      "sha256": "4abc0be496bfd09e315e58a5d1d250a31ddcc6ce93f44fc7d9df89281fdd489b"
+    },
+    {
+      "path": "Datasets/tree-qualified-public-pilot-v1/audit.json",
+      "sha256": "6d77e751d8968fe05902b95fe5f976d852e6af34556d5cef6408acac65f65191"
+    },
+    {
+      "path": "Datasets/tree-qualified-public-pilot-v2/audit.json",
+      "sha256": "7c4e0cf3bf21ce7bb7ed453fef22c7ffbd434e43284a189f24478e653a02c060"
+    },
+    {
+      "path": "Datasets/tree-qualified-public-pilot-v2-reproduction-check/audit.json",
+      "sha256": "7c4e0cf3bf21ce7bb7ed453fef22c7ffbd434e43284a189f24478e653a02c060"
+    },
+    {
+      "path": "Datasets/tree-qualified-public-pilot-v3/audit.json",
+      "sha256": "71b8509cca888fc1f625860ca0e36e73579e5bc40e96e248a5e55528fae33365"
+    },
+    {
+      "path": "Datasets/tree-qualified-public-pilot-v3-reproduction-check/audit.json",
+      "sha256": "71b8509cca888fc1f625860ca0e36e73579e5bc40e96e248a5e55528fae33365"
+    },
+    {
+      "path": "Datasets/tree-qualified-public-pilot-v4/audit.json",
+      "sha256": "276290892ce75234b2ff45909ce252a7069bfd9cee41d3789db1ca21d45ae168"
+    },
+    {
+      "path": "Datasets/tree-qualified-public-pilot-v4-reproduction-check/audit.json",
+      "sha256": "276290892ce75234b2ff45909ce252a7069bfd9cee41d3789db1ca21d45ae168"
+    },
+    {
+      "path": "Datasets/tree-qualified-public-pilot-v5/audit.json",
+      "sha256": "6f04a79ab0a6907ebdf6bdca4dffc0c0567eb2be4bfdc86977d5fc6d11644f8e"
+    },
+    {
+      "path": "Datasets/tree-qualified-public-pilot-v5-reproduction-check/audit.json",
+      "sha256": "6f04a79ab0a6907ebdf6bdca4dffc0c0567eb2be4bfdc86977d5fc6d11644f8e"
+    },
+    {
+      "path": "Datasets/tree-qualified-public-pilot-v6/audit.json",
+      "sha256": "8865d290ee9b5473b1008f4bf194717679795021af90d86bbbf10c8e0a62343a"
+    },
+    {
+      "path": "Datasets/tree-qualified-public-pilot-v6-reproduction-check/audit.json",
+      "sha256": "8865d290ee9b5473b1008f4bf194717679795021af90d86bbbf10c8e0a62343a"
+    },
+    {
+      "path": "Datasets/tree-qualified-train-annotation-bank-v1/audit.json",
+      "sha256": "170f66ea040c3e523bcdbf47fed08f4d6d941a2683ccbcd0e5d3293a4216ce2f"
+    },
+    {
+      "path": "Datasets/tree-qualified-train-annotation-bank-v2/audit.json",
+      "sha256": "f562de03caed10abb16c8428374083f6cf4f18ccbbbe43a4cb7df68ee72613db"
+    },
+    {
+      "path": "Datasets/tree-reviewed-ground-v6/audit.json",
+      "sha256": "996aa5f9a679e59f6d915ddcfc73205b7f6feb5180ae3534848a4bcf1709caa1"
+    },
+    {
+      "path": "Datasets/tree-reviewed-ground-v7/audit.json",
+      "sha256": "dcd7f3fd7f39b4a66be0356a3986344a6ee2faa76c56a5821e767e8cde34cc6f"
+    },
+    {
+      "path": "Datasets/tree-reviewed-ground-v8/audit.json",
+      "sha256": "b83dbaefc9aa1beba91f2c7e68645802a56d3bdab5b1d9cc6c2187ed3bdb2ad2"
+    },
+    {
+      "path": "Datasets/tree-reviewed-label-corrections-v1/audit.json",
+      "sha256": "fefcc0bfe127eab18ddbfae436fb54fd96d1e7a78757ec71b8ca0b480a77cfc7"
+    },
+    {
+      "path": "Datasets/tree-reviewed-label-corrections-v2/audit.json",
+      "sha256": "6ada730824a0e33d9e7bc935c6222cbe898543d2b281954b74fa94d820db506c"
+    },
+    {
+      "path": "Datasets/tree-reviewed-supplement-v14/audit.json",
+      "sha256": "01dc98f01715880452e703661eaa6b6b48e9d43cfd0a872049bdbb77539775ec"
+    },
+    {
+      "path": "Datasets/tree-shrub-crop-bank-v1/manifest.json",
+      "sha256": "3751cb1e1ce9e64cf72e979cb664d3dd04881e8af7b2fbc5ffc9c85be93a59b7"
+    },
+    {
+      "path": "Datasets/tree-small-views-v17/audit.json",
+      "sha256": "5e62a8691f719f693ce3ed13a6664d95ce36b716a2288554a15d3ac7930a1be5"
+    },
+    {
+      "path": "Datasets/tree-source-expanded-v4/audit.json",
+      "sha256": "dbe6b6be8b41ac3b0eddd69ec7371d4caf2b915882b8fd9d66326cc79a16a446"
+    },
+    {
+      "path": "Datasets/tree-train-body-crop-bank-v1/audit.json",
+      "sha256": "568870bdc46aa49afedaa78713eb48dac259aa43cf2f54f38be5309e6a7647ea"
+    },
+    {
+      "path": "Datasets/tree-train-partial-crop-bank-v1/audit.json",
+      "sha256": "59f87611b455687e731fb306dcde09099b165b55394540106f0a956bfc905e67"
+    },
+    {
+      "path": "Datasets/tree-vegetation-confuser-bank-v1/manifest.json",
+      "sha256": "491b590373c0ff0282ebe0a7b54f240c92057232b6f375739eb993be2a7d4829"
+    },
+    {
+      "path": "Datasets/tree-vegetation-negatives-v10/audit.json",
+      "sha256": "a64334c702369eacacfb180deb641ff2003aaef02b3d7206b33083182f88b03d"
+    },
+    {
+      "path": "Datasets/tree-vegetation-negatives-v10-reproduction-check/audit.json",
+      "sha256": "a64334c702369eacacfb180deb641ff2003aaef02b3d7206b33083182f88b03d"
+    },
+    {
+      "path": "Datasets/tree-visible-instance-source-v1/manifest.json",
+      "sha256": "ead888b9cc4b66188589d39f518bcb38d71e46be177421082397ca0608f95bbf"
+    },
+    {
+      "path": "Datasets/tree-visible-instance-v1/audit.json",
+      "sha256": "a0f49b86f1d736a63fe3e2de49117b896d499d26d96b6f3624480cef2f056815"
+    },
+    {
+      "path": "Datasets/tree-visible-instance-v2/audit.json",
+      "sha256": "b03ac9e834a2b971be2ddfe467e72b449ad22e9caab1381f23d79391ba723f90"
+    },
+    {
+      "path": "Datasets/tree-visible-instance-v3/audit.json",
+      "sha256": "bc5dcc63070c4675e378316bf59ccdf722bd2e2038ef42b116086fd7c16d3c01"
+    },
+    {
+      "path": "Datasets/tree-visible-instance-v4/audit.json",
+      "sha256": "520973b9c191008d365af9d52530f779e21e4bfa1cf8bc475d360b99dce144b7"
+    },
+    {
+      "path": "Datasets/tree-visible-partial-v9/audit.json",
+      "sha256": "e23f2602be70f215c5ad8b9f27e8a9398c8693d9214956107f9d57985d0fc868"
+    },
+    {
+      "path": "Datasets/tree-whole-reviewed-v5/audit.json",
+      "sha256": "b056677665265a9f99579e9750e3921f9f1d60c8c82ab137e9547832a165ff0c"
+    },
+    {
+      "path": "Datasets/tree-windswept-positive-bank-v1/audit.json",
+      "sha256": "fc1b34bb919463b00165b21cb00260434e9371b9a186008615b06700a892f690"
+    },
+    {
+      "path": "Datasets/tree-windswept-positive-bank-v1-reproduction-check/audit.json",
+      "sha256": "fc1b34bb919463b00165b21cb00260434e9371b9a186008615b06700a892f690"
+    },
+    {
+      "path": "Datasets/tree-windswept-positive-bank-v2/audit.json",
+      "sha256": "00a22460d209bf2dc6f5080f3e78b4111eee68e6f7c5089c8c9612c24bb861bc"
+    },
+    {
+      "path": "Datasets/tree-windswept-positive-bank-v2-reproduction-check/audit.json",
+      "sha256": "00a22460d209bf2dc6f5080f3e78b4111eee68e6f7c5089c8c9612c24bb861bc"
+    },
+    {
+      "path": "Datasets/tree-windswept-positives-v11/audit.json",
+      "sha256": "9196b6a2fa8c22d34d808a3e1a7f903f4275121950c837bcabeab794514782fb"
+    },
+    {
+      "path": "Datasets/tree-windswept-positives-v11-reproduction-check/audit.json",
+      "sha256": "9196b6a2fa8c22d34d808a3e1a7f903f4275121950c837bcabeab794514782fb"
+    },
+    {
+      "path": "Datasets/windswept-mangrove-crop-staging-v1/manifest.json",
+      "sha256": "599d18d7970860891e633a3e5cd8a32158e2e942a6d8bc7e4dfd492329015415"
+    },
+    {
+      "path": "Reports/bugs-joint-v3-class-selection-decision.json",
+      "sha256": "83af104bf7cd99ddf45940669a4e9f63ebc9aff4f515755e9e464f9c60ca1ba6"
+    },
+    {
+      "path": "Reports/build-environment-before-preview-selection-v1.json",
+      "sha256": "a1110bc3bf5aeae2f0a58b7e60079a80619dbaffa13a06ad37c8c513b2e1c980"
+    },
+    {
+      "path": "Reports/inaturalist-tree-source-photo-selection-limitation.json",
+      "sha256": "6e65f366d64f2006ec4e121732b5805cdcd03f9ecc4fd79d3d7a77988070d620"
+    },
+    {
+      "path": "Reports/jumping-spider-confuser-selection-v10.json",
+      "sha256": "71fc2919c95bdd351f13eb6580a51789ed289c87e3cee81ab94dccb1e2828fd7"
+    },
+    {
+      "path": "Reports/pinned-android-frozen-code-inputs-preview-selection-v1.json",
+      "sha256": "a544dc7681cac4dc381a9e8f1c6008ba5f4651a4449e589b04ec07c8c08d8290"
+    },
+    {
+      "path": "Reports/pinned-android-preview-selection-v1-pico-lfs.json",
+      "sha256": "ab7fdd406cb8680e91906e58b6a21a15c07ec1044d842c0223c1208914708f15"
+    },
+    {
+      "path": "Reports/pinned-android-preview-selection-v1-session.json",
+      "sha256": "5b6dd003d36cc4f57c6d84d48ae2ea9285eafa80bc3833107a951c64dd94ea3d"
+    },
+    {
+      "path": "Reports/pinned-unity-probe-inputs-preview-selection-v1.json",
+      "sha256": "665426c7ba5536b56e4a7a01f1fe71d08b3c81527de05b124bcba5bb25f798bd"
+    },
+    {
+      "path": "Reports/plant-cut-arrangement-expansion-v15-selection.json",
+      "sha256": "1cd696704237c7407dcea8df960595dfe8c9dcd807857be28935541828f075c1"
+    },
+    {
+      "path": "Reports/plant-cut-arrangement-v22-selection.json",
+      "sha256": "0ec6cc3909d07f84bc2b14596d929b4f1d7a54c7aef89b1352c90269a08ac629"
+    },
+    {
+      "path": "Reports/plant-independent-test-v23-selection.json",
+      "sha256": "43deffe0a32d475e14210f33ab08ab1ef0a905fcc919c10dd46bda00a83aa1c8"
+    },
+    {
+      "path": "Reports/plant-reviewed-v20-live-selection-audit.json",
+      "sha256": "ab46e344173ad204c38e81daae2a7dba14fd9357821610dcc0e144cac6b2b3e3"
+    },
+    {
+      "path": "Reports/plant-rooted-expansion-v16-r2-selection.json",
+      "sha256": "85c8b61d7024fae1a7db325e0ea1d345591c88dd27f3508d10c2ed2ce9d22e1d"
+    },
+    {
+      "path": "Reports/plant-rooted-expansion-v16-selection.json",
+      "sha256": "8acb63ff0c7c1d4364625bc23b61f12fedc6b58f2fa6a6625330ee57a14aac3a"
+    },
+    {
+      "path": "Reports/plant-rooted-expansion-v17-selection.json",
+      "sha256": "f88e6b548c32987eb557d91f1c492eb9ce0385f5e9b05147a2bd3dae4c14ac24"
+    },
+    {
+      "path": "Reports/pretrained-selection.json",
+      "sha256": "72d4ef8922c52ae5eacdcbb084a6796a0eaa67a1026f412df4d3a8a1357c25b3"
+    },
+    {
+      "path": "Reports/pretrained-yolov8-size-selection.json",
+      "sha256": "d5fd238ae096cc47433e319f5c94159810a3f1618cf2889e3c0e712abee67d81"
+    },
+    {
+      "path": "Reports/room-confidence-validation-selection-v1.json",
+      "sha256": "5eda83e123b07d3cc064f45f667d7ef0a59e4673aaa4d7a10fd44d3eee983d34"
+    },
+    {
+      "path": "Reports/statue-checkpoint-selection-audit.json",
+      "sha256": "e51c08ac12ff38ad3cdfa330bf23791fa44e3f08ea79a0a55d6a592f35e070e2"
+    },
+    {
+      "path": "Reports/statue-v11-checkpoint-selection-audit.json",
+      "sha256": "af1d813efe52b03821fbed7c4c61f222493c00451f271e2b6193b840a938852e"
+    },
+    {
+      "path": "Reports/tree-freeze10-v3-calibration-selection.json",
+      "sha256": "7d2a337635ae5b1399c99273f766d571c2ec5e6d7b35eb5919427724642d530d"
+    }
+  ],
+  "samples": [
+    {
+      "original_id": "05e87c5b3af1ffda",
+      "group": "https://www.flickr.com/people/upsticksngo/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "UpSticksNGo Crew",
+        "AuthorProfileURL": "https://www.flickr.com/people/upsticksngo/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/upsticksngo/21829720850",
+        "Title": "Pots in a park in Roma! #upsticksandgo #roma #park #parkart #potplants #colour#michfrost #travel #travelingtheworld #instagood #instaphoto #instaitalia #italia"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/test/05e87c5b3af1ffda.jpg",
+      "reserved_split": "test",
+      "selection_keyword": "pot",
+      "annotation_status": "NOT_REVIEWED"
+    },
+    {
+      "original_id": "095be420bf7977ec",
+      "group": "https://www.flickr.com/people/plong/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Paul Long",
+        "AuthorProfileURL": "https://www.flickr.com/people/plong/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/plong/3317840597",
+        "Title": "Tea pot"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/test/095be420bf7977ec.jpg",
+      "reserved_split": "test",
+      "selection_keyword": "pot",
+      "annotation_status": "NOT_REVIEWED"
+    },
+    {
+      "original_id": "394572c3a670b113",
+      "group": "https://www.flickr.com/people/maveric2003/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Eric Chan",
+        "AuthorProfileURL": "https://www.flickr.com/people/maveric2003/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/maveric2003/137231423",
+        "Title": "chairs on a balcony in the art department"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/test/394572c3a670b113.jpg",
+      "reserved_split": "test",
+      "selection_keyword": "balcony",
+      "annotation_status": "NOT_REVIEWED"
+    },
+    {
+      "original_id": "431b4faaaf8350f7",
+      "group": "https://www.flickr.com/people/derek-john-lee/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Derek Lee",
+        "AuthorProfileURL": "https://www.flickr.com/people/derek-john-lee/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/derek-john-lee/6831531250",
+        "Title": "balcony"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/test/431b4faaaf8350f7.jpg",
+      "reserved_split": "test",
+      "selection_keyword": "balcony",
+      "annotation_status": "NOT_REVIEWED"
+    }
+  ],
+  "eligible_counts": {
+    "pot": 54,
+    "planter": 0,
+    "windowsill": 0,
+    "balcony": 7,
+    "flowerpot": 0
+  },
+  "keywords": [
+    "pot",
+    "planter",
+    "windowsill",
+    "balcony",
+    "flowerpot"
+  ],
+  "per_keyword_limit": 2,
+  "training_approved": false,
+  "evaluation_ready": false,
+  "reserved_split": "test",
+  "policy": "Never move these authors/images into TRAIN or VAL. Manual semantic/instance review and duplicate clearance precede test release. Reject unsuitable images using image content only, never model predictions. Freeze candidate model and threshold before inference."
+}

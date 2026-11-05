@@ -1,0 +1,97 @@
+{
+  "status": "REJECTED_INDEPENDENT_TEST",
+  "model_sha256": "e817453878277c6e80171bac90b8212a2e1ea69ac4ff230ca69e6037183e6a43",
+  "dataset_sha256": "f8342528c8441b885ea758361adacca576fa5249bdde28eb05e4b38d0521b806",
+  "plan_sha256": "8919aef2ad6d704833ad8b319d6adf0933e02bd83fe97c888887a357f6d87ca1",
+  "report_sha256": "09648da2e4a7b42637ab5da4e89c10f908fce7a13cfe8b5cab32d546db499a2a",
+  "operating_metrics": {
+    "name": "PottedPlant",
+    "true_positive": 1,
+    "false_positive": 2,
+    "false_negative": 5,
+    "precision": 0.3333333333333333,
+    "recall": 0.16666666666666666
+  },
+  "ap_metrics": [
+    {
+      "class_id": 0,
+      "name": "PottedPlant",
+      "precision": 0.3243242402803397,
+      "recall": 0.16666666666666666,
+      "mAP50": 0.1368295019157088,
+      "mAP50_95": 0.06587649857866766,
+      "labels": 6
+    }
+  ],
+  "mean_inference_ms": 543.7260181828275,
+  "error_reviews": [
+    {
+      "image": "images/test/a58480cec90b3c4d2a8f8dd7.jpg",
+      "example": "error-a58480cec90b3c4d2a8f8dd7.jpg",
+      "ground_truth": 3,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "confidence": 0.35,
+      "overlay_sha256": "2697ef53e56337e2a8d899fc6cc0aafaad44924c570230c5961627e1ca96f4bb",
+      "actually_viewed": true
+    },
+    {
+      "image": "images/test/9483aaaca28e87ca16cb89c7.jpg",
+      "example": "error-9483aaaca28e87ca16cb89c7.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "overlay_sha256": "af58b8cd9235b136a0563523e45cc056b88ab53480ecd1fd923a4a2279a92121",
+      "actually_viewed": true
+    },
+    {
+      "image": "images/test/4fbf894b34eecf18077f687b.jpg",
+      "example": "error-4fbf894b34eecf18077f687b.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "overlay_sha256": "7d6df5fbfe6816b15561d687de5b1b03a286c5e3c57b1d44fac52b96d0e5e86a",
+      "actually_viewed": true
+    },
+    {
+      "image": "images/test/19752193139d71c11dff4f18.jpg",
+      "example": "error-19752193139d71c11dff4f18.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.35,
+      "overlay_sha256": "e933b0c1a3da289f0dcbe96c380fe399b4beb8227d5baaa86ca018eb8db675c0",
+      "actually_viewed": true
+    },
+    {
+      "image": "images/test/3ec052e2235c7ae73db1f3ae.jpg",
+      "example": "error-3ec052e2235c7ae73db1f3ae.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.35,
+      "overlay_sha256": "c3d4afeddbd48473945762a718acd61adb6f12d79f4fd4c34535a4c2995ebcbd",
+      "actually_viewed": true
+    }
+  ],
+  "limitations": [
+    "Only four positive images and six target instances; limited public pilot coverage.",
+    "Fourteen ambiguous source images remain TEST-reserved and unscored.",
+    "One author-conflicted negative image rejected before inference; all lineage retained.",
+    "No PICO acceptance or broad tabletop-plant reliability established."
+  ],
+  "post_evaluation_frozen_inputs_verified": true,
+  "test_freshness": "FIRST_FROZEN_EVALUATION_FOR_V22; now observed regression data for future work",
+  "threshold_or_labels_changed": false,
+  "service_routed": false,
+  "pico_validation": "NOT_PERFORMED",
+  "deployment_accepted": false,
+  "next_action": "Archive failed candidate and evidence; improve independently sourced TRAIN coverage. Do not reuse this test to tune thresholds or choose checkpoints."
+}

@@ -1,0 +1,31 @@
+{
+  "status": "COMPLETED_EVIDENCE_VERIFIED",
+  "trials": [
+    {
+      "name": "baseline",
+      "selected_epoch": 2,
+      "weight_sha256": "e817453878277c6e80171bac90b8212a2e1ea69ac4ff230ca69e6037183e6a43",
+      "rank": [
+        1,
+        0.962962962962963,
+        0.9285714285714286,
+        1.0,
+        0.8762202380952381
+      ],
+      "operating_metrics": {
+        "name": "PottedPlant",
+        "true_positive": 13,
+        "false_positive": 1,
+        "false_negative": 0,
+        "precision": 0.9285714285714286,
+        "recall": 1.0
+      },
+      "mean_inference_ms": 294.68914615147065,
+      "status": "COMPLETED_VAL_CANDIDATE",
+      "deployment_accepted": false
+    }
+  ],
+  "best_development_candidate": "baseline",
+  "fresh_test_performed": false,
+  "deployment_accepted": false
+}

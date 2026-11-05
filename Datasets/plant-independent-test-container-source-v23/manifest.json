@@ -1,0 +1,87 @@
+{
+  "source": "openimages-v7",
+  "upstream_split": "test",
+  "project_reserved_split": "test",
+  "selection_sha256": "acad648d91190daeb64eaf64999a0e15517416e2d48350e036dff84785659cd6",
+  "sources": [
+    {
+      "id": "openimages-v7",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "license": "Per-image metadata CC BY2.0; attribution retained"
+    }
+  ],
+  "samples": [
+    {
+      "original_id": "05e87c5b3af1ffda",
+      "group": "https://www.flickr.com/people/upsticksngo/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "UpSticksNGo Crew",
+        "AuthorProfileURL": "https://www.flickr.com/people/upsticksngo/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/upsticksngo/21829720850",
+        "Title": "Pots in a park in Roma! #upsticksandgo #roma #park #parkart #potplants #colour#michfrost #travel #travelingtheworld #instagood #instaphoto #instaitalia #italia"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/test/05e87c5b3af1ffda.jpg",
+      "reserved_split": "test",
+      "selection_keyword": "pot",
+      "annotation_status": "NOT_REVIEWED",
+      "image": "images/05e87c5b3af1ffda.jpg",
+      "sha256": "a58480cec90b3c4d2a8f8dd75097a4eb4dc897cc5a1701d49883e6ec8dd78bb2"
+    },
+    {
+      "original_id": "095be420bf7977ec",
+      "group": "https://www.flickr.com/people/plong/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Paul Long",
+        "AuthorProfileURL": "https://www.flickr.com/people/plong/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/plong/3317840597",
+        "Title": "Tea pot"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/test/095be420bf7977ec.jpg",
+      "reserved_split": "test",
+      "selection_keyword": "pot",
+      "annotation_status": "NOT_REVIEWED",
+      "image": "images/095be420bf7977ec.jpg",
+      "sha256": "4b4e6c122e47ca32ca2befedb155f31796fc65482d49fec0d24203d910cbb93e"
+    },
+    {
+      "original_id": "394572c3a670b113",
+      "group": "https://www.flickr.com/people/maveric2003/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Eric Chan",
+        "AuthorProfileURL": "https://www.flickr.com/people/maveric2003/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/maveric2003/137231423",
+        "Title": "chairs on a balcony in the art department"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/test/394572c3a670b113.jpg",
+      "reserved_split": "test",
+      "selection_keyword": "balcony",
+      "annotation_status": "NOT_REVIEWED",
+      "image": "images/394572c3a670b113.jpg",
+      "sha256": "60ca27972a635df8858f5d93f191c246f2b3ddd12926d8cafc2fa5cad07c2224"
+    },
+    {
+      "original_id": "431b4faaaf8350f7",
+      "group": "https://www.flickr.com/people/derek-john-lee/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Derek Lee",
+        "AuthorProfileURL": "https://www.flickr.com/people/derek-john-lee/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/derek-john-lee/6831531250",
+        "Title": "balcony"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/test/431b4faaaf8350f7.jpg",
+      "reserved_split": "test",
+      "selection_keyword": "balcony",
+      "annotation_status": "NOT_REVIEWED",
+      "image": "images/431b4faaaf8350f7.jpg",
+      "sha256": "e8aa516e49d89eec3c11c063b5308bfc3e19ee37be70d9ab6f19697ec64642e0"
+    }
+  ],
+  "failures": [],
+  "training_approved": false,
+  "evaluation_ready": false,
+  "scope": "Unreviewed source photos only; immutable fold reservation. No labels or model predictions generated."
+}
