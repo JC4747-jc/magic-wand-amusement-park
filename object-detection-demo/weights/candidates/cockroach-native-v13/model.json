@@ -1048,5 +1048,106 @@
   "warm_mean_inference_ms": 201.6958157894949,
   "limitations": [
     "Candidate packaging does not authorize deployment or prove PICO performance"
-  ]
+  ],
+  "validation_calibration": {
+    "status": "NO_VALID_THRESHOLD",
+    "selected_confidence": null,
+    "curve": [
+      {
+        "confidence": 0.25,
+        "per_class": [
+          {
+            "name": "Cockroach",
+            "true_positive": 25,
+            "false_positive": 10,
+            "false_negative": 4,
+            "precision": 0.7142857142857143,
+            "recall": 0.8620689655172413
+          }
+        ]
+      },
+      {
+        "confidence": 0.35,
+        "per_class": [
+          {
+            "name": "Cockroach",
+            "true_positive": 25,
+            "false_positive": 7,
+            "false_negative": 4,
+            "precision": 0.78125,
+            "recall": 0.8620689655172413
+          }
+        ]
+      },
+      {
+        "confidence": 0.45,
+        "per_class": [
+          {
+            "name": "Cockroach",
+            "true_positive": 24,
+            "false_positive": 7,
+            "false_negative": 5,
+            "precision": 0.7741935483870968,
+            "recall": 0.8275862068965517
+          }
+        ]
+      },
+      {
+        "confidence": 0.55,
+        "per_class": [
+          {
+            "name": "Cockroach",
+            "true_positive": 23,
+            "false_positive": 5,
+            "false_negative": 6,
+            "precision": 0.8214285714285714,
+            "recall": 0.7931034482758621
+          }
+        ]
+      },
+      {
+        "confidence": 0.65,
+        "per_class": [
+          {
+            "name": "Cockroach",
+            "true_positive": 21,
+            "false_positive": 4,
+            "false_negative": 8,
+            "precision": 0.84,
+            "recall": 0.7241379310344828
+          }
+        ]
+      },
+      {
+        "confidence": 0.75,
+        "per_class": [
+          {
+            "name": "Cockroach",
+            "true_positive": 21,
+            "false_positive": 1,
+            "false_negative": 8,
+            "precision": 0.9545454545454546,
+            "recall": 0.7241379310344828
+          }
+        ]
+      },
+      {
+        "confidence": 0.85,
+        "per_class": [
+          {
+            "name": "Cockroach",
+            "true_positive": 15,
+            "false_positive": 0,
+            "false_negative": 14,
+            "precision": 1.0,
+            "recall": 0.5172413793103449
+          }
+        ]
+      }
+    ],
+    "model_sha256": "2c9d3e7b0b0b26112278a25e05640fb76638df3faf813a2b59fd84b801479884",
+    "plan_sha256": "d537e35a23b3b164d95bdb93a5219404c2de1e64130fba529af97e539c600851",
+    "deployment_changed": false
+  },
+  "error_review_sha256": "a95ce2564181e7a99ca9682520ddcf057e14e43924f257124a7a393d0b154fb3"
 }

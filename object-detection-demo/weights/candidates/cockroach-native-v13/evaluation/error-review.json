@@ -1,0 +1,148 @@
+{
+  "model_sha256": "2c9d3e7b0b0b26112278a25e05640fb76638df3faf813a2b59fd84b801479884",
+  "report_sha256": "27ae11d7828dc92e514f6c4365665bbf32c60d3e8a801e461ad21ce6735f2f52",
+  "split": "val",
+  "samples": [
+    {
+      "image": "images/val/7754390-10182401.jpg",
+      "example": "error-7754390-10182401.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65,
+      "overlay_sha256": "6e31287b1ef6eb712840de16874e4db8425cc6493b463aa727f363e2c2be2c6e",
+      "overlay_viewed": true,
+      "observation": "Low-light wall target, no accepted detection at .65"
+    },
+    {
+      "image": "images/val/14158501-20987090.jpg",
+      "example": "error-14158501-20987090.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65,
+      "overlay_sha256": "644de680bf558254497ab559fdf33bb53d0ef898ca9a944f7722e31d561865af",
+      "overlay_viewed": true,
+      "observation": "Indoor threshold/floor target, no accepted detection at .65"
+    },
+    {
+      "image": "images/val/13279091-19439388.jpg",
+      "example": "error-13279091-19439388.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65,
+      "overlay_sha256": "2a78e73af60755c167cf7f39909964a6b7118bf5099ae84498aa4991df0282ad",
+      "overlay_viewed": true,
+      "observation": "Close side-view target, no accepted detection at .65"
+    },
+    {
+      "image": "images/val/beetle-412819302-759676584.jpg",
+      "example": "error-beetle-412819302-759676584.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65,
+      "overlay_sha256": "edda4453251b9c9c1ae86fc5f9199162d1f2ed2909025dffa512df6b5cd0aa7d",
+      "overlay_viewed": true,
+      "observation": "Ladybird class confusion, accepted score approximately .80"
+    },
+    {
+      "image": "images/val/beetle-412799738-759638790.jpg",
+      "example": "error-beetle-412799738-759638790.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65,
+      "overlay_sha256": "a06e82f8ea35b399db63fe114b3091f6b48a80eb930bf0bf9bdf06c64a1b92ed",
+      "overlay_viewed": true,
+      "observation": "Longhorn class confusion, accepted score approximately .74"
+    },
+    {
+      "image": "images/val/new-positive-394667350-723561165.jpg",
+      "example": "error-new-positive-394667350-723561165.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65,
+      "overlay_sha256": "36b1095bf234f20fbac7b6f4ff1439ae1b82573265569157ab7870f1e27299d2",
+      "overlay_viewed": true,
+      "observation": "Small low-light car/window target, no accepted detection at .65"
+    },
+    {
+      "image": "images/val/new-positive-394596555-723424650.jpg",
+      "example": "error-new-positive-394596555-723424650.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65,
+      "overlay_sha256": "c44047716d3e428f8d1f22ca60cdae8d7008ca358ec093f60d8b952501f62e23",
+      "overlay_viewed": true,
+      "observation": "Main individual detected, edge-clipped partial individual missed"
+    },
+    {
+      "image": "images/val/new-positive-393829078-721912275.jpg",
+      "example": "error-new-positive-393829078-721912275.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65,
+      "overlay_sha256": "65560688b71a97966e4ff1fb014fe8a1fa2e82ac5f55241460dfba68b0624a65",
+      "overlay_viewed": true,
+      "observation": "Noisy low-light fabric background, no accepted detection at .65"
+    },
+    {
+      "image": "images/val/new-positive-392934945-720161930.jpg",
+      "example": "error-new-positive-392934945-720161930.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65,
+      "overlay_sha256": "db8c3ddc381032eab460481672ed44ed0e257c5cc1dd9d79f9f2bbbaeedec638",
+      "overlay_viewed": true,
+      "observation": "Main ventral individual detected, edge-clipped partial individual missed"
+    },
+    {
+      "image": "images/val/new-positive-392652023-719612073.jpg",
+      "example": "error-new-positive-392652023-719612073.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 1,
+      "confidence": 0.65,
+      "overlay_sha256": "9ded49dbb806ae43d746003e545f0b8360e3134d381795b6a10460819b5d74fb",
+      "overlay_viewed": true,
+      "observation": "Target detected with oversized box; insufficient IoU yields FP plus FN"
+    },
+    {
+      "image": "images/val/new-positive-391165463-716717484.jpg",
+      "example": "error-new-positive-391165463-716717484.jpg",
+      "ground_truth": 1,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65,
+      "overlay_sha256": "cb1253cfc738b5072fc8681cba62f1f568efc28c97f8469f853f79c8ae28a2ad",
+      "overlay_viewed": true,
+      "observation": "One valid target prediction plus extra oversized duplicate prediction"
+    }
+  ],
+  "labels_changed": false,
+  "threshold_changed": false,
+  "training_started": false,
+  "test_accessed": false,
+  "limitations": [
+    "Visual error modes do not establish training root cause",
+    "No difficult samples removed; fragments retained; full source/label specialist review remains distinct from model-error inspection"
+  ],
+  "next_experiment_rationale": "Threshold-only adjustment failed; explicitly labelled insect confusers and broader low-light/side-view training coverage are candidate approaches, not proven remedies"
+}

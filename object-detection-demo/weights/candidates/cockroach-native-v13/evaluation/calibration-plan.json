@@ -1,0 +1,23 @@
+{
+  "model_sha256": "2c9d3e7b0b0b26112278a25e05640fb76638df3faf813a2b59fd84b801479884",
+  "dataset_sha256": "7a9ad7fc58abf6de5ed9c9f7ef72fbae37eb374a06a40dc0cd0693a590a73837",
+  "split": "val",
+  "confidence_grid": [
+    0.25,
+    0.35,
+    0.45,
+    0.55,
+    0.65,
+    0.75,
+    0.85
+  ],
+  "protocol": {
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 8
+  },
+  "selection": "Require P>=.9,R>=.8 and zeroFP; highestrecall thenlowestconfidence; none if unmet",
+  "policy": "VAL-only development calibration, no TEST/checkpoint selection; fresh independent acceptance needed",
+  "deployment_changed": false
+}
