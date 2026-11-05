@@ -1,0 +1,73 @@
+{
+  "status": "ONE_ANNOTATION_REVIEWED_DATASET_NOT_RELEASED",
+  "draft_sha256": "59e558168d7d6589362ccd65d1c93e7da34bff5168a7eb1b7698c830c180c2bb",
+  "samples": [
+    {
+      "page_id": 129746819,
+      "image": "Datasets/plant-hanging-train-source-v31/images/129746819.jpg",
+      "image_sha256": "ca88ba626678dc56f125c9002fc3c350efccbbc7d458b0777543f35faf4c746f",
+      "boxes_class_xyxy": [
+        [
+          0,
+          103,
+          151,
+          292,
+          420
+        ],
+        [
+          0,
+          561,
+          0,
+          950,
+          435
+        ]
+      ],
+      "dimensions": [
+        960,
+        720
+      ],
+      "original_reviewed": true,
+      "overlay": "Reports/plant-hanging-train-v31-boxes/129746819.png",
+      "overlay_sha256": "f0b72d0c607cf9147016e14a1e05c791c4eaa735fb897060015f731b92d197b9",
+      "label": "Reports/plant-hanging-train-v31-boxes/129746819.txt",
+      "label_sha256": "c2732b6b21e28494fd86249f40e065fb94ffff7f508244babfa62376eb9d2180",
+      "overlay_reviewed": true,
+      "training_approved": false,
+      "note": "Two visible planted hanging containers, include foliage/container but exclude support cords. No species or physical size inference.",
+      "annotation_approved": true
+    }
+  ],
+  "proof_inputs": [
+    {
+      "path": "Reports/plant-hanging-train-v31-pixel-history.json",
+      "sha256": "555e17ebd51e055de13a45688a1fadeb2d6b15864ea75d7912837bd752cb0817"
+    },
+    {
+      "path": "Reports/plant-hanging-train-v31-identity-history-v2.json",
+      "sha256": "03e876ca38a214e6b78e7a5213f2b811e3257b6bb3f2a7dd30e3bbc270f5ab7b"
+    },
+    {
+      "path": "Reports/plant-hanging-train-v31-creator-links.json",
+      "sha256": "c356ea0ba33a98f4f124139196f813363ffdbfe5baa58fc3b1b28286a6aa0fd1"
+    }
+  ],
+  "held_page_ids": [
+    47732706,
+    154687556,
+    149596841,
+    105199206,
+    62352677,
+    28572677,
+    87404883
+  ],
+  "holds": {
+    "62352677": "Two foreground baskets reviewed; central doorway wreath-like object and reflected/background content need explicit complete-instance decision before adoption. Draft remains unapproved."
+  },
+  "permanent_split": "train",
+  "training_approved": false,
+  "review_limitations": [
+    "Single assistant visual review, not independent dual annotation.",
+    "Only visible container/foliage boxes, no species, real size, rooting proof or 3D pose.",
+    "Identity and pixel audit do not prove all aliases, pretraining absence or physical-instance independence."
+  ]
+}

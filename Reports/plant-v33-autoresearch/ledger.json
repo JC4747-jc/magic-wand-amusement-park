@@ -1,0 +1,41 @@
+{
+  "trials": [
+    {
+      "name": "hanging_data",
+      "hypothesis": "Two independently sourced hanging-container TRAIN photos may improve domain coverage; no improvement presumed, full frozen VAL gate required.",
+      "overrides": {
+        "scale": 0.1
+      },
+      "status": "REJECTED_VALIDATION",
+      "service_routed": false,
+      "rank": [
+        0,
+        0.9285714285714286,
+        0.8666666666666667,
+        1.0,
+        0.8151347985347984
+      ],
+      "weight_sha256": "d10d9fe9d2e54ff123a4f87151d11efa2078a516420007167a500e7eee45f134",
+      "weight": "Reports\\plant-v33-autoresearch\\hanging_data\\train\\weights\\best.pt",
+      "selected_for_development": true,
+      "selected_epoch": 12,
+      "deployment_accepted": false,
+      "elapsed_seconds": 223.79451829999743
+    }
+  ],
+  "best_development_candidate": {
+    "name": "hanging_data",
+    "rank": [
+      0,
+      0.9285714285714286,
+      0.8666666666666667,
+      1.0,
+      0.8151347985347984
+    ],
+    "weight": "Reports\\plant-v33-autoresearch\\hanging_data\\train\\weights\\best.pt",
+    "sha256": "d10d9fe9d2e54ff123a4f87151d11efa2078a516420007167a500e7eee45f134"
+  },
+  "all_artifacts_retained": true,
+  "fresh_test_performed": false,
+  "deployment_accepted": false
+}

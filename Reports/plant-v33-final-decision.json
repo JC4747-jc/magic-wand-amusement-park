@@ -1,0 +1,41 @@
+{
+  "status": "REJECTED_VALIDATION",
+  "selected_epoch": 12,
+  "weight_sha256": "d10d9fe9d2e54ff123a4f87151d11efa2078a516420007167a500e7eee45f134",
+  "operating_metrics": {
+    "name": "PottedPlant",
+    "true_positive": 13,
+    "false_positive": 2,
+    "false_negative": 0,
+    "precision": 0.8666666666666667,
+    "recall": 1.0
+  },
+  "mAP50": 0.9556666666666667,
+  "mAP50_95": 0.8151347985347984,
+  "elapsed_including_validation_seconds": 223.79451829999743,
+  "validation_sha256": "883ce1d87965f43fce63420c8a141b706910f8135983573a1698db3673da13a1",
+  "completed_audit_sha256": "b3ef505cab9c2f1af1e61a1a7f884d229fe3b34117388ca2495286bd2e462fbb",
+  "error_review": [
+    {
+      "image": "images\\val\\2eeeba800c582ff3ecef355e.jpg",
+      "overlay": "Reports\\plant-v33-autoresearch\\hanging_data\\final-val\\error-2eeeba800c582ff3ecef355e.jpg",
+      "overlay_sha256": "5521f836c00c731efc26efb7986b3eb9c7d7352a1d02e8cb5372729d5e415dbf",
+      "actually_viewed": true,
+      "observation": "Small companion vessel remains semantically unresolved; frozen raw label/report retained."
+    },
+    {
+      "image": "images\\val\\581cedc885d26e10455cf980.jpg",
+      "overlay": "Reports\\plant-v33-autoresearch\\hanging_data\\final-val\\error-581cedc885d26e10455cf980.jpg",
+      "overlay_sha256": "085443a5f821edbbb944ddde968662c3d7b68c7fd7dff1230d227ffa71e32e9e",
+      "actually_viewed": true,
+      "observation": "Cut floral arrangement incorrectly predicted PottedPlant; auxiliary class has not eliminated confusion."
+    }
+  ],
+  "generic_auditor_failure": "Paired-trial auditor rejected first trial nonempty override; no training failure. Initial redirected completed-audit.json empty; actual dedicated v2 report verifies same audit_trial plus prospective plan/run comparisons.",
+  "source_summary_limitation": "Inherited top-level sources summary lists OIV only. v32 audit per-sample source/Commons license/artist/publisher metadata and context evidence preserve the two Commons additions. Do not describe dataset as OIV-only.",
+  "fresh_test_performed": false,
+  "observed_regression_performed": false,
+  "service_routed": false,
+  "pico_validation": "NOT_PERFORMED",
+  "next_action": "Improve verified TRAIN cut-arrangement/small-container coverage and resolve annotation ambiguity from primary evidence; do not relabel VAL to improve score."
+}

@@ -1,0 +1,16 @@
+{
+  "epochs": 15,
+  "scope": "One prospective 15-epoch run on plant-hanging-v32; compare to v30 reduced_scale with same initializer and hyperparameters. New TRAIN data only intervention; no equal wall-clock claim.",
+  "trials": [
+    {
+      "name": "hanging_data",
+      "overrides": {
+        "scale": 0.1
+      },
+      "hypothesis": "Two independently sourced hanging-container TRAIN photos may improve domain coverage; no improvement presumed, full frozen VAL gate required."
+    }
+  ],
+  "gates": "Full13VAL confidence.35 imgsz640 rect IoU.7 max8 P>=.9 R>=.8; same existing selector.",
+  "observed_test_policy": "v23/v25 are observed regression only; never TRAIN/selection or fresh TEST. Fresh source-separated TEST and PICO required for deployment.",
+  "deployment_accepted": false
+}

@@ -1,0 +1,32 @@
+{
+  "status": "COMPLETED_EVIDENCE_VERIFIED",
+  "frozen_inputs": 308,
+  "trials": [
+    {
+      "name": "hanging_data",
+      "selected_epoch": 12,
+      "weight_sha256": "d10d9fe9d2e54ff123a4f87151d11efa2078a516420007167a500e7eee45f134",
+      "rank": [
+        0,
+        0.9285714285714286,
+        0.8666666666666667,
+        1.0,
+        0.8151347985347984
+      ],
+      "operating_metrics": {
+        "name": "PottedPlant",
+        "true_positive": 13,
+        "false_positive": 2,
+        "false_negative": 0,
+        "precision": 0.8666666666666667,
+        "recall": 1.0
+      },
+      "mean_inference_ms": 290.9995461534261,
+      "status": "REJECTED_VALIDATION",
+      "deployment_accepted": false
+    }
+  ],
+  "auditor_limitation_resolved": "Historical paired-trial auditor requires first override empty; v33 prospectively uses one scale.1 trial. Same audit_trial verifies all15 epoch reports/ranks/CSV/weights. Frozen historical auditor unchanged.",
+  "fresh_test_performed": false,
+  "deployment_accepted": false
+}
