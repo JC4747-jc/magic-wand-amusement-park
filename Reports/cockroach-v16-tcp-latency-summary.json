@@ -1,0 +1,26 @@
+[
+  {
+    "report": "cockroach-v16-public-pilot-tcp-smoke",
+    "responses": 64,
+    "mean_tcp_ms": 620.0369671869339,
+    "p95_tcp_ms": 762.1171999926446,
+    "min_confidence": 0.8374226093292236,
+    "scope": "Local TCP wall-clock including service and transport; not headset latency"
+  },
+  {
+    "report": "cockroach-v16-public-pilot-cuda-tcp-smoke",
+    "responses": 64,
+    "mean_tcp_ms": 37.233479686847204,
+    "p95_tcp_ms": 125.64919999567792,
+    "min_confidence": 0.8374751210212708,
+    "scope": "Local TCP wall-clock including service and transport; not headset latency"
+  },
+  {
+    "report": "cockroach-v16-discovery-cuda-smoke",
+    "responses": 18,
+    "mean_tcp_ms": 74.54987222364353,
+    "p95_tcp_ms": 408.721500003594,
+    "min_confidence": 0.9259201884269714,
+    "scope": "Local TCP wall-clock including service and transport; not headset latency"
+  }
+]

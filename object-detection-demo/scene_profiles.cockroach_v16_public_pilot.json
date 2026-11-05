@@ -1,0 +1,83 @@
+{
+  "lighter": {
+    "weights": "weights/best_yolo26n_quad_v4_50e.pt",
+    "allowed": [
+      "Lighter"
+    ],
+    "aliases": {
+      "lighter": "Lighter"
+    },
+    "max_det": 1
+  },
+  "tree": {
+    "weights": null,
+    "allowed": [
+      "Tree"
+    ],
+    "aliases": {
+      "tree": "Tree"
+    },
+    "max_det": 8
+  },
+  "bugs": {
+    "weights": "weights/candidates/cockroach-positive-v16/best.pt",
+    "allowed": [
+      "Cockroach"
+    ],
+    "aliases": {
+      "cockroach": "Cockroach"
+    },
+    "max_det": 8,
+    "confidence": 0.65,
+    "validation": "PUBLIC_PILOT_TEST_PASSED_PICO_PENDING",
+    "scope": "Periplaneta americana public-photo pilot; auxiliary Beetle never routed; PICO positive validation pending"
+  },
+  "statue": {
+    "weights": null,
+    "allowed": [
+      "Statue",
+      "BronzeBeast"
+    ],
+    "aliases": {
+      "statue": "Statue",
+      "bronze beast": "BronzeBeast"
+    },
+    "max_det": 4
+  },
+  "room": {
+    "weights": "weights/deployed/coco-yolov8n/best.pt",
+    "allowed": [
+      "chair",
+      "couch",
+      "bed",
+      "dining table"
+    ],
+    "aliases": {},
+    "max_det": 8,
+    "validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING"
+  },
+  "plant": {
+    "weights": "weights/deployed/coco-yolov8n/best.pt",
+    "allowed": [
+      "PottedPlant"
+    ],
+    "aliases": {
+      "potted plant": "PottedPlant"
+    },
+    "max_det": 8,
+    "validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING"
+  },
+  "pet": {
+    "weights": "weights/deployed/coco-yolov8n/best.pt",
+    "allowed": [
+      "Cat",
+      "Dog"
+    ],
+    "aliases": {
+      "cat": "Cat",
+      "dog": "Dog"
+    },
+    "max_det": 8,
+    "validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING"
+  }
+}

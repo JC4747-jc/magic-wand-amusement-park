@@ -1,0 +1,592 @@
+{
+  "status": "PASS_DISCOVERY_TCP",
+  "profile_sha256": "894f1103eac75ea0701df6170d473ddc08837ba62579c13242a080f8c64e8be7",
+  "source_image": "images/test/364760827-665902477.jpg",
+  "sent_jpeg_sha256": "d009954209a3afaa75341e5d858016f1775c0ab423a654b3cbcf6325ba525043",
+  "results": [
+    {
+      "session": 0,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 1,
+        "timestamp": 67620394059600,
+        "width": 1024,
+        "height": 768,
+        "detections": [],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\best_yolo26n_quad_v4_50e.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "fd4a31001feb66127a8c527ffb1e0ba32bfe9f72566cfde4f2f9b5fc0c3e7ca7",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Lighter": 0.399
+        },
+        "model_validation": "lighter:MAIN_BASELINE"
+      },
+      "tcp_ms": 408.721500003594
+    },
+    {
+      "session": 0,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 2,
+        "timestamp": 67620802785700,
+        "width": 1024,
+        "height": 768,
+        "detections": [
+          {
+            "class": "Cockroach",
+            "class_id": 0,
+            "class_name": "Cockroach",
+            "bbox": [
+              243.8631134033203,
+              17.10498046875,
+              762.4459228515625,
+              663.4835815429688
+            ],
+            "confidence": 0.9259201884269714,
+            "centerX": 503.1545181274414,
+            "centerY": 340.2942810058594,
+            "x1": 243.8631134033203,
+            "y1": 17.10498046875,
+            "x2": 762.4459228515625,
+            "y2": 663.4835815429688,
+            "instance_id": "2bcea10954b2:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "bugs"
+          }
+        ],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\candidates\\cockroach-positive-v16\\best.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Cockroach": 0.65
+        },
+        "model_validation": "bugs:PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING"
+      },
+      "tcp_ms": 148.27569999033585
+    },
+    {
+      "session": 0,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 3,
+        "timestamp": 67620951064100,
+        "width": 1024,
+        "height": 768,
+        "detections": [],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\deployed\\coco-yolov8n\\best.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Cat": 0.399,
+          "Dog": 0.399,
+          "PottedPlant": 0.399
+        },
+        "model_validation": "pet:PUBLIC_BASELINE_ONLY_PICO_PENDING; plant:PUBLIC_BASELINE_ONLY_PICO_PENDING"
+      },
+      "tcp_ms": 111.29749999963678
+    },
+    {
+      "session": 0,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 4,
+        "timestamp": 67621062364400,
+        "width": 1024,
+        "height": 768,
+        "detections": [],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\best_yolo26n_quad_v4_50e.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "fd4a31001feb66127a8c527ffb1e0ba32bfe9f72566cfde4f2f9b5fc0c3e7ca7",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Lighter": 0.399
+        },
+        "model_validation": "lighter:MAIN_BASELINE"
+      },
+      "tcp_ms": 22.877399998833425
+    },
+    {
+      "session": 0,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 5,
+        "timestamp": 67621085244200,
+        "width": 1024,
+        "height": 768,
+        "detections": [
+          {
+            "class": "Cockroach",
+            "class_id": 0,
+            "class_name": "Cockroach",
+            "bbox": [
+              243.8631134033203,
+              17.10498046875,
+              762.4459228515625,
+              663.4835815429688
+            ],
+            "confidence": 0.9259201884269714,
+            "centerX": 503.1545181274414,
+            "centerY": 340.2942810058594,
+            "x1": 243.8631134033203,
+            "y1": 17.10498046875,
+            "x2": 762.4459228515625,
+            "y2": 663.4835815429688,
+            "instance_id": "2bcea10954b2:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "bugs"
+          }
+        ],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\candidates\\cockroach-positive-v16\\best.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Cockroach": 0.65
+        },
+        "model_validation": "bugs:PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING"
+      },
+      "tcp_ms": 22.182999993674457
+    },
+    {
+      "session": 0,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 6,
+        "timestamp": 67621107430200,
+        "width": 1024,
+        "height": 768,
+        "detections": [],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\deployed\\coco-yolov8n\\best.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Cat": 0.399,
+          "Dog": 0.399,
+          "PottedPlant": 0.399
+        },
+        "model_validation": "pet:PUBLIC_BASELINE_ONLY_PICO_PENDING; plant:PUBLIC_BASELINE_ONLY_PICO_PENDING"
+      },
+      "tcp_ms": 15.037200006190687
+    },
+    {
+      "session": 0,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 7,
+        "timestamp": 67621122470500,
+        "width": 1024,
+        "height": 768,
+        "detections": [],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\best_yolo26n_quad_v4_50e.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "fd4a31001feb66127a8c527ffb1e0ba32bfe9f72566cfde4f2f9b5fc0c3e7ca7",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Lighter": 0.399
+        },
+        "model_validation": "lighter:MAIN_BASELINE"
+      },
+      "tcp_ms": 23.527500001364388
+    },
+    {
+      "session": 0,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 8,
+        "timestamp": 67621146000200,
+        "width": 1024,
+        "height": 768,
+        "detections": [
+          {
+            "class": "Cockroach",
+            "class_id": 0,
+            "class_name": "Cockroach",
+            "bbox": [
+              243.8631134033203,
+              17.10498046875,
+              762.4459228515625,
+              663.4835815429688
+            ],
+            "confidence": 0.9259201884269714,
+            "centerX": 503.1545181274414,
+            "centerY": 340.2942810058594,
+            "x1": 243.8631134033203,
+            "y1": 17.10498046875,
+            "x2": 762.4459228515625,
+            "y2": 663.4835815429688,
+            "instance_id": "2bcea10954b2:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "bugs"
+          }
+        ],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\candidates\\cockroach-positive-v16\\best.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Cockroach": 0.65
+        },
+        "model_validation": "bugs:PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING"
+      },
+      "tcp_ms": 20.95950000511948
+    },
+    {
+      "session": 0,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 9,
+        "timestamp": 67621166962800,
+        "width": 1024,
+        "height": 768,
+        "detections": [],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\deployed\\coco-yolov8n\\best.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Cat": 0.399,
+          "Dog": 0.399,
+          "PottedPlant": 0.399
+        },
+        "model_validation": "pet:PUBLIC_BASELINE_ONLY_PICO_PENDING; plant:PUBLIC_BASELINE_ONLY_PICO_PENDING"
+      },
+      "tcp_ms": 21.234200001345016
+    },
+    {
+      "session": 1,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 1,
+        "timestamp": 67621188674800,
+        "width": 1024,
+        "height": 768,
+        "detections": [],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\best_yolo26n_quad_v4_50e.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "fd4a31001feb66127a8c527ffb1e0ba32bfe9f72566cfde4f2f9b5fc0c3e7ca7",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Lighter": 0.399
+        },
+        "model_validation": "lighter:MAIN_BASELINE"
+      },
+      "tcp_ms": 275.9148000041023
+    },
+    {
+      "session": 1,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 2,
+        "timestamp": 67621464592500,
+        "width": 1024,
+        "height": 768,
+        "detections": [
+          {
+            "class": "Cockroach",
+            "class_id": 0,
+            "class_name": "Cockroach",
+            "bbox": [
+              243.8631134033203,
+              17.10498046875,
+              762.4459228515625,
+              663.4835815429688
+            ],
+            "confidence": 0.9259201884269714,
+            "centerX": 503.1545181274414,
+            "centerY": 340.2942810058594,
+            "x1": 243.8631134033203,
+            "y1": 17.10498046875,
+            "x2": 762.4459228515625,
+            "y2": 663.4835815429688,
+            "instance_id": "23b3817d4d0a:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "bugs"
+          }
+        ],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\candidates\\cockroach-positive-v16\\best.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Cockroach": 0.65
+        },
+        "model_validation": "bugs:PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING"
+      },
+      "tcp_ms": 56.089300007442944
+    },
+    {
+      "session": 1,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 3,
+        "timestamp": 67621520684700,
+        "width": 1024,
+        "height": 768,
+        "detections": [],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\deployed\\coco-yolov8n\\best.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Cat": 0.399,
+          "Dog": 0.399,
+          "PottedPlant": 0.399
+        },
+        "model_validation": "pet:PUBLIC_BASELINE_ONLY_PICO_PENDING; plant:PUBLIC_BASELINE_ONLY_PICO_PENDING"
+      },
+      "tcp_ms": 108.1659000046784
+    },
+    {
+      "session": 1,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 4,
+        "timestamp": 67621628853700,
+        "width": 1024,
+        "height": 768,
+        "detections": [],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\best_yolo26n_quad_v4_50e.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "fd4a31001feb66127a8c527ffb1e0ba32bfe9f72566cfde4f2f9b5fc0c3e7ca7",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Lighter": 0.399
+        },
+        "model_validation": "lighter:MAIN_BASELINE"
+      },
+      "tcp_ms": 16.239900010987185
+    },
+    {
+      "session": 1,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 5,
+        "timestamp": 67621645096400,
+        "width": 1024,
+        "height": 768,
+        "detections": [
+          {
+            "class": "Cockroach",
+            "class_id": 0,
+            "class_name": "Cockroach",
+            "bbox": [
+              243.8631134033203,
+              17.10498046875,
+              762.4459228515625,
+              663.4835815429688
+            ],
+            "confidence": 0.9259201884269714,
+            "centerX": 503.1545181274414,
+            "centerY": 340.2942810058594,
+            "x1": 243.8631134033203,
+            "y1": 17.10498046875,
+            "x2": 762.4459228515625,
+            "y2": 663.4835815429688,
+            "instance_id": "23b3817d4d0a:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "bugs"
+          }
+        ],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\candidates\\cockroach-positive-v16\\best.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Cockroach": 0.65
+        },
+        "model_validation": "bugs:PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING"
+      },
+      "tcp_ms": 22.482700005639344
+    },
+    {
+      "session": 1,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 6,
+        "timestamp": 67621667582200,
+        "width": 1024,
+        "height": 768,
+        "detections": [],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\deployed\\coco-yolov8n\\best.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Cat": 0.399,
+          "Dog": 0.399,
+          "PottedPlant": 0.399
+        },
+        "model_validation": "pet:PUBLIC_BASELINE_ONLY_PICO_PENDING; plant:PUBLIC_BASELINE_ONLY_PICO_PENDING"
+      },
+      "tcp_ms": 13.323799998033792
+    },
+    {
+      "session": 1,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 7,
+        "timestamp": 67621680908600,
+        "width": 1024,
+        "height": 768,
+        "detections": [],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\best_yolo26n_quad_v4_50e.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "fd4a31001feb66127a8c527ffb1e0ba32bfe9f72566cfde4f2f9b5fc0c3e7ca7",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Lighter": 0.399
+        },
+        "model_validation": "lighter:MAIN_BASELINE"
+      },
+      "tcp_ms": 20.60910000000149
+    },
+    {
+      "session": 1,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 8,
+        "timestamp": 67621701520600,
+        "width": 1024,
+        "height": 768,
+        "detections": [
+          {
+            "class": "Cockroach",
+            "class_id": 0,
+            "class_name": "Cockroach",
+            "bbox": [
+              243.8631134033203,
+              17.10498046875,
+              762.4459228515625,
+              663.4835815429688
+            ],
+            "confidence": 0.9259201884269714,
+            "centerX": 503.1545181274414,
+            "centerY": 340.2942810058594,
+            "x1": 243.8631134033203,
+            "y1": 17.10498046875,
+            "x2": 762.4459228515625,
+            "y2": 663.4835815429688,
+            "instance_id": "23b3817d4d0a:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "bugs"
+          }
+        ],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\candidates\\cockroach-positive-v16\\best.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Cockroach": 0.65
+        },
+        "model_validation": "bugs:PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING"
+      },
+      "tcp_ms": 22.447399998782203
+    },
+    {
+      "session": 1,
+      "response": {
+        "scene": "discovery",
+        "status": "OK",
+        "frame_id": 9,
+        "timestamp": 67621723971000,
+        "width": 1024,
+        "height": 768,
+        "detections": [],
+        "weights": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\deployed\\coco-yolov8n\\best.pt",
+        "inference_rotation_degrees": 0,
+        "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+        "discovery_model_budget": 1,
+        "discovery_model_count": 3,
+        "detection_limit": 8,
+        "inference_max_det": 8,
+        "class_confidence": {
+          "Cat": 0.399,
+          "Dog": 0.399,
+          "PottedPlant": 0.399
+        },
+        "model_validation": "pet:PUBLIC_BASELINE_ONLY_PICO_PENDING; plant:PUBLIC_BASELINE_ONLY_PICO_PENDING"
+      },
+      "tcp_ms": 12.5112999958219
+    }
+  ],
+  "bug_detections": 6,
+  "model_budget": 1,
+  "model_sources": 3,
+  "scope": "Actual public JPEG inference, model rotation and bugs routing across reconnects; known replay image, not new accuracy evaluation",
+  "unity": false,
+  "pico": false,
+  "stereo": false,
+  "animation": false
+}
