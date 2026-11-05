@@ -1,0 +1,15 @@
+{
+  "status": "FROZEN_BEFORE_TRAINING",
+  "budget": {
+    "trials": 1,
+    "epochs": 20,
+    "unique_train_photos": 88,
+    "exposures_per_epoch": 90
+  },
+  "hypothesis": "Add seven independently sourced TRAIN flat/real-person negatives and one two-figure TRAIN photo compared with v33. Assess whether false positives reduce without losing sculptural figures.",
+  "dataset_audit_sha256": "7a5c03ca6f1a75cac5338f8b76fbf992ff136441d4fa2580c46a3124929e3f95",
+  "sampling_plan_sha256": "23abc2a5de0a7d8742d6be59ab544d7a5ef03424d5c4b1f5e10a819c80005904",
+  "selection": "Unchanged19VAL cohort membership and gate P>=.9/R>=.8 in each, zero negative-image FP, same rank/tie rule and .65/640rect/.7/max32. No TEST selection.",
+  "comparability": "More TRAIN data/exposures vs v33(80/82); combined data intervention, not isolated single-negative ablation or equal compute.",
+  "deployment_accepted": false
+}
