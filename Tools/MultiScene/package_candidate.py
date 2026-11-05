@@ -13,7 +13,7 @@ parser.add_argument('--run', required=True)
 parser.add_argument('--data', required=True)
 parser.add_argument('--validation', required=True)
 parser.add_argument('--out', required=True)
-parser.add_argument('--status', choices=['REJECTED_VALIDATION', 'REJECTED_INDEPENDENT_TEST', 'REJECTED_NEGATIVE_REGRESSION', 'LOCAL_TEST_PENDING',
+parser.add_argument('--status', choices=['REJECTED_VALIDATION', 'REJECTED_INDEPENDENT_TEST', 'REJECTED_OBSERVED_REGRESSION', 'REJECTED_NEGATIVE_REGRESSION', 'LOCAL_TEST_PENDING',
     'LOCAL_TEST_PASSED_PICO_PENDING', 'NOT_SELECTED_NO_VALIDATION_IMPROVEMENT'], required=True)
 parser.add_argument('--test')
 parser.add_argument('--test-data', help='Explicit separately held-out test dataset directory; defaults to training dataset')
@@ -52,6 +52,8 @@ if args.status == 'LOCAL_TEST_PASSED_PICO_PENDING' and test is None:
     raise ValueError('Cannot mark locally tested without actual test report')
 if args.status == 'REJECTED_INDEPENDENT_TEST' and test is None:
     raise ValueError('Independent test rejection requires the matching actual test report')
+if args.status == 'REJECTED_OBSERVED_REGRESSION' and test is None:
+    raise ValueError('Observed regression rejection requires the matching actual report')
 negative_test = None
 if args.negative_test:
     negative_test = json.loads(Path(args.negative_test).read_text(encoding='utf-8'))
@@ -86,6 +88,7 @@ metadata = dict(architecture=str(model.model.yaml.get('yaml_file','YOLO detectio
     dataset=str(data.resolve()),dataset_sha256=version,annotation_review_hold=review_hold,
     data_sources=json.loads((data/'audit.json').read_text(encoding='utf-8'))['sources'],
     parameters=params,validation=report,test=test,status=args.status,
+    test_freshness='PREVIOUSLY_OBSERVED_REGRESSION_NOT_FRESH_TEST' if args.status == 'REJECTED_OBSERVED_REGRESSION' else None,
     negative_regression=negative_test,
     service_routed=False,pico_validation='NOT_PERFORMED for this model',
     training_outputs=str((run/'train').resolve()),

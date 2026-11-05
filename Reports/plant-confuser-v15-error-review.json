@@ -1,0 +1,66 @@
+{
+  "all_five_regression_error_overlays_actually_viewed": true,
+  "validation_error_overlay_actually_viewed": true,
+  "validation_remaining_error": "Small bonsai accent/accessory rooting unresolved; prior label retained.",
+  "model_sha256": "df5d6156c68d31a77fad4029e8375d38e8fe490d84b35847209bab79625ba5f6",
+  "findings": [
+    {
+      "image": "images\\test\\1c77a13caf4647c7.jpg",
+      "example": "error-1c77a13caf4647c7.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.35,
+      "overlay_sha256": "6c6443df561c79fa1361bb2de33e49f45651e305bef726c58ce273644d7d5edc",
+      "observation": "Small background planter behind dog missed."
+    },
+    {
+      "image": "images\\test\\1c9af1dfe8b79cb1.jpg",
+      "example": "error-1c9af1dfe8b79cb1.jpg",
+      "ground_truth": 2,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 2,
+      "confidence": 0.35,
+      "overlay_sha256": "b0ffe4911d1b7aded7bb3f53f6eab052f998c3c9bffba78294753d043f30041a",
+      "observation": "Both overlapping rooted orchid/window-box targets missed."
+    },
+    {
+      "image": "images\\test\\1fe4082597d636d3.jpg",
+      "example": "error-1fe4082597d636d3.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.35,
+      "overlay_sha256": "8fc26c5be59075605b3f7dc1aa16fc0ec2590a01338c1f7d9000793e19f1ec23",
+      "observation": "Clipped cactus/container target missed."
+    },
+    {
+      "image": "images\\test\\2664ce031523e2f9.jpg",
+      "example": "error-2664ce031523e2f9.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "overlay_sha256": "7c2e24e3dee3105a6debbdf4720b406de2c58fee1b2bbdf3033d46b80271bb68",
+      "observation": "Cut bouquet in clear water vase falsely detected as plant."
+    },
+    {
+      "image": "images\\test\\4152871216f2a904.jpg",
+      "example": "error-4152871216f2a904.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "overlay_sha256": "36e273a2d17cc7da9b37033c119a168d4339b82e70954c284a21beafe28d70a9",
+      "observation": "Cut flowers in pitcher falsely detected as plant."
+    }
+  ],
+  "labels_or_folds_changed": false,
+  "service_routed": false,
+  "pico_validated": false
+}

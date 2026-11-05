@@ -213,6 +213,15 @@
       "deployment_accepted": false,
       "attribution_report": "Reports/plant-broader-v14-attribution-recovery.json",
       "attribution_report_sha256": "925863c20f0aa0037625111681133c2a537163706b2cecff912aaa04016d529e"
+    },
+    {
+      "name": "plant-confuser-v15",
+      "path": "object-detection-demo/weights/candidates/plant-confuser-v15/best.pt",
+      "sha256": "df5d6156c68d31a77fad4029e8375d38e8fe490d84b35847209bab79625ba5f6",
+      "bytes": 52019794,
+      "status": "REJECTED_OBSERVED_REGRESSION",
+      "deployment_accepted": false,
+      "test_freshness": "PREVIOUSLY_OBSERVED_REGRESSION_NOT_FRESH_TEST"
     }
   ],
   "datasets_included": false,

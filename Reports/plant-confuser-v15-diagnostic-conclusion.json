@@ -1,0 +1,27 @@
+{
+  "scope": "Observed-error diagnosis only, not new threshold selection or fresh TEST evaluation",
+  "model_sha256": "df5d6156c68d31a77fad4029e8375d38e8fe490d84b35847209bab79625ba5f6",
+  "native_diagnostic_sha256": "1205236cc2daefae0a84ca8e69c6d5f763643169d6e69d50dd3e80fefacdd255",
+  "positive_error_images": 3,
+  "positive_missed_instances": 4,
+  "high_confidence_auxiliary_substitution_on_positive_errors": false,
+  "observations": [
+    "Overlapping orchid/window-box targets share a single low-confidence plant box; low score is not the only instance-separation issue.",
+    "Small background pot and cactus have overlapping target boxes below frozen0.35 confidence.",
+    "Two cut arrangements remain accepted as plants; pitcher also yields a separate auxiliary-class box."
+  ],
+  "confidence_only_bound": {
+    "assumption": "Same current prediction set and preprocessing; changing only acceptance threshold",
+    "ground_truth_instances": 7,
+    "false_positives_already_above035": 2,
+    "max_precision_if_threshold_below035_and_all7_targets_recovered": 0.7777777777777778,
+    "recall_at035": 0.42857142857142855,
+    "reason": "Lowering threshold retains both current false positives, so even perfect7GTrecall cannot reach0.9 precision. Raising threshold cannot recover current missed targets."
+  },
+  "runtime_threshold_unchanged": 0.35,
+  "threshold_selected": false,
+  "labels_or_folds_changed": false,
+  "service_routed": false,
+  "pico_validated": false,
+  "next_action": "Broaden independently sourced rooted/clipped/overlapping/container positives and matched cut-arrangement confusers; inspect instance-separation/localization consistency. Preserve all observed regression reservations and require fresh independent evaluation for acceptance."
+}

@@ -1,0 +1,126 @@
+{
+  "status": "FULL_VAL_AND_OBSERVED_NEGATIVE_PASSED_MORE_REGRESSION_AND_FRESH_TEST_PENDING",
+  "sha256": "df5d6156c68d31a77fad4029e8375d38e8fe490d84b35847209bab79625ba5f6",
+  "dataset_version": "e2a8547af666b1fa4519fd11b356828ad70aeff244cd5541ddb3ba7f99dddf18",
+  "results": {
+    "runtime-val": {
+      "images": 13,
+      "operating": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 13,
+          "false_positive": 1,
+          "false_negative": 0,
+          "precision": 0.9285714285714286,
+          "recall": 1.0
+        }
+      ],
+      "ap": [
+        {
+          "class_id": 0,
+          "name": "PottedPlant",
+          "precision": 0.9195816549723155,
+          "recall": 1.0,
+          "mAP50": 0.9785714285714289,
+          "mAP50_95": 0.8413374542124543,
+          "labels": 13
+        }
+      ],
+      "mean_inference_ms": 327.17202307517607
+    },
+    "auxiliary-val-diagnostic": {
+      "images": 12,
+      "operating": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 13,
+          "false_positive": 1,
+          "false_negative": 0,
+          "precision": 0.9285714285714286,
+          "recall": 1.0
+        },
+        {
+          "name": "CutArrangement",
+          "true_positive": 3,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0
+        }
+      ],
+      "ap": [
+        {
+          "class_id": 0,
+          "name": "PottedPlant",
+          "precision": 0.9279671971616474,
+          "recall": 0.9915407602630633,
+          "mAP50": 0.9785714285714289,
+          "mAP50_95": 0.8413374542124543,
+          "labels": 13
+        },
+        {
+          "class_id": 1,
+          "name": "CutArrangement",
+          "precision": 0.9678253126179995,
+          "recall": 1.0,
+          "mAP50": 0.995,
+          "mAP50_95": 0.929,
+          "labels": 3
+        }
+      ],
+      "mean_inference_ms": 286.29286666667514
+    },
+    "train-diagnostic": {
+      "images": 83,
+      "operating": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 78,
+          "false_positive": 3,
+          "false_negative": 4,
+          "precision": 0.9629629629629629,
+          "recall": 0.9512195121951219
+        }
+      ],
+      "ap": [
+        {
+          "class_id": 0,
+          "name": "PottedPlant",
+          "precision": 0.9573967404086734,
+          "recall": 0.9512195121951219,
+          "mAP50": 0.975623899112679,
+          "mAP50_95": 0.8892823812757509,
+          "labels": 82
+        }
+      ],
+      "mean_inference_ms": 214.6637891564751
+    },
+    "observed-cut-flower-negative": {
+      "images": 1,
+      "operating": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "ap": [],
+      "mean_inference_ms": 1299.035299991374
+    }
+  },
+  "training_seconds": 230.162,
+  "native_two_class_fitness_images": 12,
+  "target_runtime_val_images": 13,
+  "service_routed": false,
+  "pico_validated": false,
+  "fresh_test_performed": false,
+  "limitations": [
+    "CutArrangement is auxiliary only; never a Unity target",
+    "Native fitness12omits unresolved auxiliary sunflower-label image; full target gate13includes it",
+    "Observed negative diagnostic has one eligible image; not broad negative acceptance",
+    "Tiny public-photo pilot; independent fresh TEST and PICO positives still required"
+  ]
+}

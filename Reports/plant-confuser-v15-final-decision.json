@@ -1,0 +1,29 @@
+{
+  "status": "REJECTED_OBSERVED_REGRESSION",
+  "model_sha256": "df5d6156c68d31a77fad4029e8375d38e8fe490d84b35847209bab79625ba5f6",
+  "confidence": 0.35,
+  "validation": {
+    "name": "PottedPlant",
+    "true_positive": 13,
+    "false_positive": 1,
+    "false_negative": 0,
+    "precision": 0.9285714285714286,
+    "recall": 1.0
+  },
+  "observed_regression": {
+    "name": "PottedPlant",
+    "true_positive": 3,
+    "false_positive": 2,
+    "false_negative": 4,
+    "precision": 0.6,
+    "recall": 0.42857142857142855
+  },
+  "validation_report_sha256": "93678c76560114e487601872e2a25337330a7d642344d4f736dad3a22e343509",
+  "observed_regression_report_sha256": "df5aa85e664d6d65e7eb925db9fbd283d6aaa878061c3b479ff9495dda3887b3",
+  "regression_dataset_sha256": "667ab36ffab748e32bb148ca7145a30c13ce6a81d62e14519eb595981cabbe9b",
+  "fresh_test_performed": false,
+  "threshold_retuned_on_regression": false,
+  "service_routed": false,
+  "pico_validated": false,
+  "scope": "Development VAL passed; previously observed source-grouped regression failed. No fresh independent TEST acceptance."
+}

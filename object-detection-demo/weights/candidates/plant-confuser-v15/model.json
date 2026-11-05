@@ -1,0 +1,1144 @@
+{
+  "architecture": "YOLO detection",
+  "task": "detect",
+  "classes": {
+    "0": "PottedPlant",
+    "1": "CutArrangement"
+  },
+  "allowed_classes": [
+    "PottedPlant"
+  ],
+  "unity": {
+    "0": "ParkPlant",
+    "1": null
+  },
+  "sha256": "df5d6156c68d31a77fad4029e8375d38e8fe490d84b35847209bab79625ba5f6",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "dataset": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\plant-confuser-v15",
+  "dataset_sha256": "e2a8547af666b1fa4519fd11b356828ad70aeff244cd5541ddb3ba7f99dddf18",
+  "annotation_review_hold": null,
+  "data_sources": [
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    }
+  ],
+  "parameters": {
+    "dataset_version": "e2a8547af666b1fa4519fd11b356828ad70aeff244cd5541ddb3ba7f99dddf18",
+    "initializer_sha256": "fe706e1763a8ffa5924c849d9798bb1083d416df6c8c6720cb6ffcdb3780177a",
+    "parameters": {
+      "data": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\plant-confuser-v15\\data.yaml",
+      "device": 0,
+      "epochs": 50,
+      "imgsz": 640,
+      "batch": 4,
+      "workers": 0,
+      "seed": 20261105,
+      "deterministic": true,
+      "freeze": 0,
+      "optimizer": "AdamW",
+      "lr0": 0.0001,
+      "lrf": 0.1,
+      "warmup_bias_lr": 0.0001,
+      "mosaic": 0.0,
+      "mixup": 0.0,
+      "cutmix": 0.0,
+      "scale": 0.3,
+      "translate": 0.05,
+      "hsv_h": 0.01,
+      "hsv_s": 0.3,
+      "hsv_v": 0.2,
+      "close_mosaic": 0,
+      "project": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-confuser-v15-training",
+      "name": "train",
+      "plots": true
+    },
+    "torch": "2.13.0+cu126",
+    "ultralytics": "8.4.173",
+    "hypothesis": "Ten independent reviewed TRAIN additions:6cut arrangements+4negativephotos. Same initializer/settings as v14, unchanged full13runtime acceptance.",
+    "unity_mapping": {
+      "PottedPlant": "ParkPlant",
+      "CutArrangement": null
+    },
+    "evaluation_protocol": {
+      "confidence": 0.35,
+      "imgsz": 640,
+      "rect": true,
+      "nms_iou": 0.7,
+      "max_det": 8,
+      "allowed_classes": [
+        "PottedPlant"
+      ]
+    },
+    "gates": {
+      "precision_min": 0.9,
+      "recall_min": 0.8
+    },
+    "mandatory_runtime_val_images": 13,
+    "native_two_class_fitness_images": 12,
+    "limitations": [
+      "One unresolved auxiliary VAL image excluded only from native two-class fitness; must remain in complete13-image target acceptance",
+      "One unresolved border-flower TRAIN image held before inference; no fold reassignment",
+      "Tiny public-photo pilot; fresh independent TEST/PICO positive validation required"
+    ],
+    "service_routed": false,
+    "pico_validated": false,
+    "test_policy": "No observed TEST selection/tuning"
+  },
+  "validation": {
+    "mode": "baseline",
+    "domain": "public-openimages-pilot",
+    "deployment_accepted": false,
+    "dataset_sources": [
+      {
+        "id": "openimages-v7",
+        "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+        "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+        "reviewed": true
+      }
+    ],
+    "limitations": [
+      "Small source-grouped subset; not an official benchmark score",
+      "No PICO targets evaluated",
+      "Houseplant labels are broader than potted tabletop plants; domain validation required"
+    ],
+    "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-confuser-v15-training\\train\\weights\\best.pt",
+    "architecture": "DetectionModel",
+    "sha256": "df5d6156c68d31a77fad4029e8375d38e8fe490d84b35847209bab79625ba5f6",
+    "dataset_version": "e2a8547af666b1fa4519fd11b356828ad70aeff244cd5541ddb3ba7f99dddf18",
+    "split": "val",
+    "torch": "2.14.1+cpu",
+    "ultralytics": "8.4.173",
+    "model_names": {
+      "0": "PottedPlant",
+      "1": "CutArrangement"
+    },
+    "per_class": [
+      {
+        "class_id": 0,
+        "name": "PottedPlant",
+        "precision": 0.9195816549723155,
+        "recall": 1.0,
+        "mAP50": 0.9785714285714289,
+        "mAP50_95": 0.8413374542124543,
+        "labels": 13
+      }
+    ],
+    "images": 13,
+    "excluded_samples": [],
+    "ground_truth_instances": 13,
+    "false_positive_images": 1,
+    "per_image": [
+      {
+        "image": "images\\val\\2eeeba800c582ff3ecef355e.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 1,
+        "false_negative": 0,
+        "inference_ms": 1975.5867999920156
+      },
+      {
+        "image": "images\\val\\a6bbcafb10d754a05e0706b3.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 165.305200003786
+      },
+      {
+        "image": "images\\val\\789c1cc964cd408c51312028.jpg",
+        "ground_truth": 2,
+        "true_positive": 2,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 184.71089999366086
+      },
+      {
+        "image": "images\\val\\e5fde1c97f0f71710eb2c497.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 188.78939999558497
+      },
+      {
+        "image": "images\\val\\1778c52931d70cefc775af12.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 203.2889999973122
+      },
+      {
+        "image": "images\\val\\770aea72d5e07c15a5d62998.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 161.20619999128394
+      },
+      {
+        "image": "images\\val\\f2ca90725a1a7fe87d9594d9.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 266.67390001239255
+      },
+      {
+        "image": "images\\val\\026dbd3cbf9ee4442186797b.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 191.1887000023853
+      },
+      {
+        "image": "images\\val\\87514a2d9ff2547f39cbb4ac.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 194.44500000099652
+      },
+      {
+        "image": "images\\val\\80af71df5d201ada8c3935bb.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 177.58519999915734
+      },
+      {
+        "image": "images\\val\\581cedc885d26e10455cf980.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 181.26549999578856
+      },
+      {
+        "image": "images\\val\\478585150555622ee282ec40.jpg",
+        "ground_truth": 4,
+        "true_positive": 4,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 173.07309999887366
+      },
+      {
+        "image": "images\\val\\9fbc2444b8acf1398deaddd3.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 190.11739999405108
+      }
+    ],
+    "ap_scope": "Positive target instances",
+    "operating_confidence": 0.35,
+    "operating_iou": 0.5,
+    "operating_per_class": [
+      {
+        "name": "PottedPlant",
+        "true_positive": 13,
+        "false_positive": 1,
+        "false_negative": 0,
+        "precision": 0.9285714285714286,
+        "recall": 1.0
+      },
+      {
+        "name": "CutArrangement",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      }
+    ],
+    "operating_confidence_curve": [],
+    "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+    "mean_inference_ms": 327.17202307517607,
+    "p95_inference_ms": 950.2390600042394,
+    "cold_first_image_ms": 1975.5867999920156,
+    "warm_mean_ms": 189.80412499877275,
+    "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+    "imgsz": 640,
+    "rect": true,
+    "device": "cpu",
+    "errors": [
+      {
+        "image": "images\\val\\2eeeba800c582ff3ecef355e.jpg",
+        "example": "error-2eeeba800c582ff3ecef355e.jpg",
+        "ground_truth": 1,
+        "true_positives": 1,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "confidence": 0.35
+      }
+    ],
+    "allowed_classes": [
+      "PottedPlant"
+    ],
+    "max_det": 8,
+    "nms_iou": 0.7,
+    "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+    "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+  },
+  "test": {
+    "mode": "test",
+    "domain": "public-openimages-pilot",
+    "deployment_accepted": false,
+    "dataset_sources": [
+      {
+        "id": "openimages-v7",
+        "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+        "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+        "reviewed": true
+      }
+    ],
+    "limitations": [
+      "Small source-grouped subset; not an official benchmark score",
+      "No PICO targets evaluated",
+      "Houseplant labels are broader than potted tabletop plants; domain validation required"
+    ],
+    "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-confuser-v15-training\\train\\weights\\best.pt",
+    "architecture": "DetectionModel",
+    "sha256": "df5d6156c68d31a77fad4029e8375d38e8fe490d84b35847209bab79625ba5f6",
+    "dataset_version": "667ab36ffab748e32bb148ca7145a30c13ce6a81d62e14519eb595981cabbe9b",
+    "split": "test",
+    "torch": "2.14.1+cpu",
+    "ultralytics": "8.4.173",
+    "model_names": {
+      "0": "PottedPlant",
+      "1": "CutArrangement"
+    },
+    "per_class": [
+      {
+        "class_id": 58,
+        "name": "PottedPlant",
+        "precision": 0.5902715413252974,
+        "recall": 0.7142857142857143,
+        "mAP50": 0.5567,
+        "mAP50_95": 0.3904000472813239,
+        "labels": 7
+      }
+    ],
+    "images": 10,
+    "excluded_samples": [],
+    "ground_truth_instances": 7,
+    "false_positive_images": 2,
+    "per_image": [
+      {
+        "image": "images\\test\\1572393cd287520b.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 1251.7035999917425
+      },
+      {
+        "image": "images\\test\\1648f9a633618567.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 200.61290000739973
+      },
+      {
+        "image": "images\\test\\1788570708384f8b.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 211.7409999918891
+      },
+      {
+        "image": "images\\test\\1c77a13caf4647c7.jpg",
+        "ground_truth": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "inference_ms": 266.91930000379216
+      },
+      {
+        "image": "images\\test\\1c9af1dfe8b79cb1.jpg",
+        "ground_truth": 2,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 2,
+        "inference_ms": 209.70330000272952
+      },
+      {
+        "image": "images\\test\\1fe4082597d636d3.jpg",
+        "ground_truth": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "inference_ms": 260.4280000086874
+      },
+      {
+        "image": "images\\test\\2664ce031523e2f9.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0,
+        "inference_ms": 250.0897999998415
+      },
+      {
+        "image": "images\\test\\2e385e0245eb4214.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 212.38280000397936
+      },
+      {
+        "image": "images\\test\\3cdc3ef9a1c5f660.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 183.87769999390002
+      },
+      {
+        "image": "images\\test\\4152871216f2a904.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0,
+        "inference_ms": 242.1736999967834
+      }
+    ],
+    "ap_scope": "Positive target instances",
+    "operating_confidence": 0.35,
+    "operating_iou": 0.5,
+    "operating_per_class": [
+      {
+        "name": "person",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "bicycle",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "car",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "motorcycle",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "airplane",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "bus",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "train",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "truck",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "boat",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "traffic light",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "fire hydrant",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "stop sign",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "parking meter",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "bench",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "bird",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "Cat",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "Dog",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "horse",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "sheep",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "cow",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "elephant",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "bear",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "zebra",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "giraffe",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "backpack",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "umbrella",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "handbag",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "tie",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "suitcase",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "frisbee",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "skis",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "snowboard",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "sports ball",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "kite",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "baseball bat",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "baseball glove",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "skateboard",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "surfboard",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "tennis racket",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "bottle",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "wine glass",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "cup",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "fork",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "knife",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "spoon",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "bowl",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "banana",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "apple",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "sandwich",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "orange",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "broccoli",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "carrot",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "hot dog",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "pizza",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "donut",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "cake",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "chair",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "couch",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "PottedPlant",
+        "true_positive": 3,
+        "false_positive": 2,
+        "false_negative": 4,
+        "precision": 0.6,
+        "recall": 0.42857142857142855
+      },
+      {
+        "name": "bed",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "dining table",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "toilet",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "tv",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "laptop",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "mouse",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "remote",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "keyboard",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "cell phone",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "microwave",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "oven",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "toaster",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "sink",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "refrigerator",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "book",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "clock",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "vase",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "scissors",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "teddy bear",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "hair drier",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      },
+      {
+        "name": "toothbrush",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      }
+    ],
+    "operating_confidence_curve": [],
+    "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+    "mean_inference_ms": 328.96321000007447,
+    "p95_inference_ms": 808.5506649971638,
+    "cold_first_image_ms": 1251.7035999917425,
+    "warm_mean_ms": 226.43650000100024,
+    "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+    "imgsz": 640,
+    "rect": true,
+    "device": "cpu",
+    "errors": [
+      {
+        "image": "images\\test\\1c77a13caf4647c7.jpg",
+        "example": "error-1c77a13caf4647c7.jpg",
+        "ground_truth": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.35
+      },
+      {
+        "image": "images\\test\\1c9af1dfe8b79cb1.jpg",
+        "example": "error-1c9af1dfe8b79cb1.jpg",
+        "ground_truth": 2,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 2,
+        "confidence": 0.35
+      },
+      {
+        "image": "images\\test\\1fe4082597d636d3.jpg",
+        "example": "error-1fe4082597d636d3.jpg",
+        "ground_truth": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.35
+      },
+      {
+        "image": "images\\test\\2664ce031523e2f9.jpg",
+        "example": "error-2664ce031523e2f9.jpg",
+        "ground_truth": 0,
+        "true_positives": 0,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "confidence": 0.35
+      },
+      {
+        "image": "images\\test\\4152871216f2a904.jpg",
+        "example": "error-4152871216f2a904.jpg",
+        "ground_truth": 0,
+        "true_positives": 0,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "confidence": 0.35
+      }
+    ],
+    "allowed_classes": [
+      "PottedPlant"
+    ],
+    "max_det": 8,
+    "nms_iou": 0.7,
+    "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+    "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+  },
+  "status": "REJECTED_OBSERVED_REGRESSION",
+  "test_freshness": "PREVIOUSLY_OBSERVED_REGRESSION_NOT_FRESH_TEST",
+  "negative_regression": null,
+  "service_routed": false,
+  "pico_validation": "NOT_PERFORMED for this model",
+  "training_outputs": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-confuser-v15-training\\train",
+  "resume_weight": null,
+  "last_weight": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-confuser-v15-training\\train\\weights\\last.pt",
+  "optimizer_resume_available": false,
+  "last_weight_usage": "Fine-tuning initializer only; optimizer state stripped or unavailable",
+  "validation_report": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-confuser-v15-runtime-val\\report.json",
+  "test_report": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-confuser-v15-conf035-observed-v5\\report.json",
+  "test_dataset": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\plant-new-author-heldout-v5",
+  "inference_timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "warm_mean_inference_ms": 189.80412499877275,
+  "limitations": [
+    "Candidate packaging does not authorize deployment or prove PICO performance"
+  ],
+  "dataset_scope": "Add6reviewedCutArrangementinstances+4negativeTRAINphotos. All90parentimages/labels/folds unchanged. Per-image attribution recovered for19parentrows with exact source evidence."
+}
