@@ -1,7 +1,7 @@
 Trained model archive on branch restore-4d-lighter (also initially archived on 4d)
 
 Use TRAINED_MODELS.json for paths, SHA-256 and validation status.
-Sixteen actual best.pt files are stored with Git LFS. Run git lfs install, then git lfs pull after cloning.
+Seventeen actual best.pt files are stored with Git LFS. Run git lfs install, then git lfs pull after cloning.
 These are research candidates, not approved deployment weights. Several failed validation; see model.json in each directory.
 model.json includes class IDs, Unity mapping, data sources, package versions and available evaluation metrics.
 training-records includes actual training arguments/results where available. Dataset images and last.pt are not included.

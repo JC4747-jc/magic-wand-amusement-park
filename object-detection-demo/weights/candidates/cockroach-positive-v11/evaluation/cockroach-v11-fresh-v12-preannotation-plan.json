@@ -1,0 +1,26 @@
+{
+  "model_sha256": "8ab80feefdce415c286f45a22e8e73f653a2260041514104fddd73efcf46281c",
+  "validation_report_sha256": "758525a4fbf3a5a761178cb41d5fdac0160de3c91686dc9c2289047b06376f40",
+  "protocol": {
+    "confidence": 0.65,
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 8
+  },
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8,
+    "negative_false_positives_max": 0
+  },
+  "planned_images": {
+    "positive": 16,
+    "beetle_negative": 16
+  },
+  "policy": "One frozen model/threshold before acquisition; no TEST-based selection/tuning or fold reassignment",
+  "deployment_changed": false,
+  "positive_manifest_sha256": "bc772da0e04ef7593cb38aede363b3bb2fcf0fafd5c882005e8eac9ebe28a4c0",
+  "beetle_manifest_sha256": "2afb0c9fb6afa353148956350bbf1431179ba4913ed97389686ee08717156505",
+  "inference_performed": false,
+  "review_complete": false
+}

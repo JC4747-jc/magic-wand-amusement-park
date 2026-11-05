@@ -1,0 +1,66 @@
+{
+  "status": "VAL_AND_OBSERVED_NEGATIVES_PASSED_FRESH_TEST_PENDING",
+  "model_sha256": "8ab80feefdce415c286f45a22e8e73f653a2260041514104fddd73efcf46281c",
+  "training_seconds": 168.036,
+  "results": {
+    "runtime-val": {
+      "images": 39,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 25,
+          "false_positive": 0,
+          "false_negative": 4,
+          "precision": 1.0,
+          "recall": 0.8620689655172413
+        }
+      ]
+    },
+    "train-diagnostic": {
+      "images": 161,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 98,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0
+        }
+      ]
+    },
+    "observed-public-negative": {
+      "images": 44,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ]
+    },
+    "observed-pico-negative": {
+      "images": 8,
+      "operating": [
+        {
+          "name": "Cockroach",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ]
+    }
+  },
+  "service_routed": false,
+  "fresh_test_performed": false,
+  "pico_positive_test": "NOT_PERFORMED",
+  "limitations": [
+    "Observed negative regressions are not fresh TEST; VAL has29positiveinstances and12negativeimages",
+    "Historical/fresh-v4/fresh-v6 TEST not accessed for checkpoint or threshold selection"
+  ]
+}

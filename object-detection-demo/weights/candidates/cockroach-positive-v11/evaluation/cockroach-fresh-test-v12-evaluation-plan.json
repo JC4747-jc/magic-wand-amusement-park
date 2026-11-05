@@ -1,0 +1,23 @@
+{
+  "preannotation_plan_sha256": "a7365b585ea46bd92479e7dcc589a202bc1687e7d99ad2c397d45bbc3bcbcdf9",
+  "model_sha256": "8ab80feefdce415c286f45a22e8e73f653a2260041514104fddd73efcf46281c",
+  "data_sha256": "89dc11419e45d30c8a1c98a8b8dc3d7f865a4a2f8ab88b8b1b4d7506463244cc",
+  "protocol": {
+    "confidence": 0.65,
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 8
+  },
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8,
+    "negative_false_positives_max": 0
+  },
+  "policy": "One frozen model/threshold before acquisition; no TEST-based selection/tuning or fold reassignment",
+  "limitations": [
+    "32 public photos, 32 publisher observers; not a household or PICO benchmark",
+    "Beetles mostly ladybirds/leaf beetles with some specimen images",
+    "Publisher taxonomy not independently expert verified"
+  ]
+}
