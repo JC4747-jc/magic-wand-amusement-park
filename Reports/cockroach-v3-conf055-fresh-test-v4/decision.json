@@ -1,0 +1,20 @@
+{
+  "status": "REJECTED_FRESH_TEST",
+  "operating": {
+    "name": "Cockroach",
+    "true_positive": 8,
+    "false_positive": 0,
+    "false_negative": 4,
+    "precision": 1.0,
+    "recall": 0.6666666666666666
+  },
+  "model_sha256": "cb7262e883d7787a2ba30434807ea94768ec545836f6055b9a7f4aa36af96da0",
+  "plan_sha256": "0075cb503eb7f5591e07a4b1f918a818a0757cc6c5f053f10cd2ef71aa855982",
+  "report_sha256": "28ffbd63bc3e4b8d3491c15515666f7abb011025e867e07fb083c7b9f5c4a77b",
+  "deployment_changed": false,
+  "pico_test": "NOT_PERFORMED",
+  "limitations": [
+    "Positive-only12photo public cohort; fresh negative confusers and PICO positive acceptance still required",
+    "Research-grade publisher taxon, no independent expert species verification"
+  ]
+}

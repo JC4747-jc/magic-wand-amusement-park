@@ -1,0 +1,18 @@
+{
+  "model_sha256": "cb7262e883d7787a2ba30434807ea94768ec545836f6055b9a7f4aa36af96da0",
+  "data_sha256": "c425035984871f3b820f390e6262d3cc2a7fa3f2fcec1b3a330f82ba298cd125",
+  "confidence": 0.55,
+  "imgsz": 640,
+  "rect": true,
+  "nms_iou": 0.7,
+  "max_det": 8,
+  "policy": "One frozen model and VAL-selected threshold. No tuning/selection/training from TEST results.",
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8
+  },
+  "limitations": [
+    "Positive-only12photo public cohort; fresh negative confusers and PICO positive acceptance still required",
+    "Research-grade publisher taxon, no independent expert species verification"
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "mode": "test",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "inaturalist",
+      "license": "Per-photo CC BY/CC0 with attribution retained",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\candidates\\cockroach-expanded-v3\\best.pt",
+  "architecture": "WorldModel",
+  "sha256": "cb7262e883d7787a2ba30434807ea94768ec545836f6055b9a7f4aa36af96da0",
+  "dataset_version": "c425035984871f3b820f390e6262d3cc2a7fa3f2fcec1b3a330f82ba298cd125",
+  "split": "test",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "Cockroach"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "Cockroach",
+      "precision": 0.9953059798416903,
+      "recall": 0.9166666666666666,
+      "mAP50": 0.9835714285714285,
+      "mAP50_95": 0.7292142857142856,
+      "labels": 12
+    }
+  ],
+  "images": 12,
+  "excluded_samples": [],
+  "ground_truth_instances": 12,
+  "false_positive_images": 0,
+  "per_image": [
+    {
+      "image": "images/test/412747829-759537905.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 1121.3834000009228
+    },
+    {
+      "image": "images/test/412617655-759272887.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 104.91779999574646
+    },
+    {
+      "image": "images/test/412473188-758981013.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 126.6001000039978
+    },
+    {
+      "image": "images/test/412380384-758794730.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 87.06879999954253
+    },
+    {
+      "image": "images/test/411770773-757559050.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 87.97140000388026
+    },
+    {
+      "image": "images/test/411626816-757273744.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 107.05770000640769
+    },
+    {
+      "image": "images/test/411568179-757156720.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 88.05930000380613
+    },
+    {
+      "image": "images/test/411047482-756100571.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 91.55640000244603
+    },
+    {
+      "image": "images/test/410906142-755818663.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 93.19420000247192
+    },
+    {
+      "image": "images/test/410891513-755789599.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 75.70240000495687
+    },
+    {
+      "image": "images/test/410727988-755455103.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 107.20479999872623
+    },
+    {
+      "image": "images/test/410672486-755341187.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 99.42030000092927
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.55,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "Cockroach",
+      "true_positive": 8,
+      "false_positive": 0,
+      "false_negative": 4,
+      "precision": 1.0,
+      "recall": 0.6666666666666666
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 182.5113833353195,
+  "p95_inference_ms": 574.2525850026134,
+  "cold_first_image_ms": 1121.3834000009228,
+  "warm_mean_ms": 97.15938182026466,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images/test/412617655-759272887.jpg",
+      "example": "error-412617655-759272887.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.55
+    },
+    {
+      "image": "images/test/411568179-757156720.jpg",
+      "example": "error-411568179-757156720.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.55
+    },
+    {
+      "image": "images/test/410906142-755818663.jpg",
+      "example": "error-410906142-755818663.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.55
+    },
+    {
+      "image": "images/test/410891513-755789599.jpg",
+      "example": "error-410891513-755789599.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.55
+    }
+  ],
+  "allowed_classes": [
+    "Cockroach"
+  ],
+  "max_det": 8,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}
