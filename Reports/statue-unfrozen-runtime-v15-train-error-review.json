@@ -1,0 +1,41 @@
+{
+  "report_sha256": "87895113e1cdb7238560cf0201c3fed367d6deb4b1e1d57e2a133d81c56fad0d",
+  "samples": [
+    {
+      "image": "images\\train\\166565.jpg",
+      "false_negatives": 3,
+      "overlay_sha256": "0f7fef381c828f2acf7e308029b7d9e4179b75a60987e5d1f712dbdabe0905c7",
+      "original_overlay_viewed": true,
+      "note": "Office image includes small foreground figurine and two very small wall-associated targets; wall target dimensionality/identity needs high-resolution source evidence before any label change."
+    },
+    {
+      "image": "images\\train\\245560.jpg",
+      "false_negatives": 6,
+      "overlay_sha256": "594f82fa568d33c0696166b32369b7793cb80368d5beb4b43220ebdd3492311d",
+      "original_overlay_viewed": true,
+      "note": "Tall tower and roofline: multiple tiny distant statues; six misses."
+    },
+    {
+      "image": "images/train/176571.jpg",
+      "false_negatives": 7,
+      "overlay_sha256": "8f231271bae6ff408b9e623229d445a46a28fbde012c799b144837ee3edd4eb0",
+      "original_overlay_viewed": true,
+      "note": "Crowded rainy street: small and distant statues on architecture, one foreground statue detected; seven misses."
+    },
+    {
+      "image": "images/train/commons-statue-10546900.jpg",
+      "false_negatives": 3,
+      "overlay_sha256": "87a33315d29b97716a4121a07da44346e0814b41687b3341c0ab84c467d5091c",
+      "original_overlay_viewed": true,
+      "note": "Three large overlapping bronze children with vegetation and fence context; all three missed."
+    }
+  ],
+  "reviewed_images": 4,
+  "reviewed_false_negatives": 19,
+  "annotation_changes": false,
+  "limitations": [
+    "Error overlays reviewed, high-resolution source originals not newly fetched.",
+    "Uncertain wall-associated labels remain unchanged and require independent source evidence.",
+    "These TRAIN errors cannot establish held-out model quality."
+  ]
+}
