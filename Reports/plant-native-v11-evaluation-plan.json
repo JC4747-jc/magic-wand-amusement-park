@@ -1,0 +1,16 @@
+{
+  "model": "plant-native-v11",
+  "selection": "Ultralytics validation fitness only",
+  "evaluator_sha256": "74a1bed85587f33596592f9c18b2ee2fce44f2db315800e9e730a96e58c5db01",
+  "dataset_sha256": "de41a31a94cdb7c4c435c2a020cbb386970cc971291da71ff65ebbb6b13bf8ea",
+  "confidence": 0.65,
+  "imgsz": 640,
+  "rect": true,
+  "nms_iou": 0.7,
+  "max_det": 8,
+  "precision_min": 0.9,
+  "recall_min": 0.8,
+  "observed_negative_false_positives_max": 0,
+  "fresh_test": "Required after validation; no observed TEST tuning",
+  "deployment_accepted": false
+}

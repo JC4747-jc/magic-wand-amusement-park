@@ -1,0 +1,48 @@
+{
+  "dataset_sha256": "e74e2af7b6be77fd03fc2c95544c6d27fe55911c3df25fc630b33d28db1f3cdc",
+  "initializer_sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+  "parameters": {
+    "data": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\plant-native-v10\\data.yaml",
+    "device": 0,
+    "epochs": 40,
+    "imgsz": 640,
+    "batch": 4,
+    "workers": 0,
+    "seed": 20261105,
+    "deterministic": true,
+    "freeze": 0,
+    "optimizer": "AdamW",
+    "lr0": 0.0001,
+    "lrf": 0.1,
+    "warmup_bias_lr": 0.0001,
+    "mosaic": 0.0,
+    "mixup": 0.0,
+    "cutmix": 0.0,
+    "scale": 0.3,
+    "translate": 0.05,
+    "hsv_h": 0.01,
+    "hsv_s": 0.3,
+    "hsv_v": 0.2,
+    "close_mosaic": 0,
+    "project": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-native-v10-training",
+    "name": "train",
+    "plots": true
+  },
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "hypothesis": "Single-class native head and full-network adaptation may improve container/foliage discrimination; not an isolated one-variable ablation",
+  "protocol": {
+    "confidence": 0.65,
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 8
+  },
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8
+  },
+  "test_policy": "Validation selection only; observed TEST is diagnostic, fresh independent TEST required after passing VAL",
+  "service_routed": false,
+  "pico_validated": false
+}

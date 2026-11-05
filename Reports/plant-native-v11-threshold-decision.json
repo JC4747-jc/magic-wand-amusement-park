@@ -1,0 +1,25 @@
+{
+  "status": "VAL_PASSED_OBSERVED_REGRESSION_FAILED",
+  "model_sha256": "0f91ac17fc3966a3185447181c80e6cc7e700fe0176f6e0d3cc9e377580baa1f",
+  "confidence": 0.35,
+  "validation": {
+    "name": "PottedPlant",
+    "true_positive": 12,
+    "false_positive": 0,
+    "false_negative": 1,
+    "precision": 1.0,
+    "recall": 0.9230769230769231
+  },
+  "selection_scope": "VAL only, frozen before subsequent regression and fresh TEST",
+  "report_sha256": "dc09fef93cdd6685b5b700d468ab7113f9c086eae4ffc759fa64e6e850a751b1",
+  "service_routed": false,
+  "pico_validated": false,
+  "observed_regression": {
+    "false_negative": 3,
+    "sha256": "80360510bf3be3638b3d2046b928641a02c7cf897ef32eedadf169dffd2463c2",
+    "report": "Reports/plant-native-v11-conf035-observed-v5/report.json",
+    "false_positive": 2,
+    "fresh_test": false,
+    "true_positive": 4
+  }
+}

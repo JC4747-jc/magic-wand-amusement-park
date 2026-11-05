@@ -1,0 +1,40 @@
+{
+  "scope": "All five observed v5 error overlays actually inspected; diagnostic only",
+  "model_sha256": "0f91ac17fc3966a3185447181c80e6cc7e700fe0176f6e0d3cc9e377580baa1f",
+  "confidence": 0.35,
+  "items": [
+    {
+      "finding": "True potted plant detected at right; mirror reflection at left counted as extra physical instance",
+      "action": "Retain existing test labels; seek independent TRAIN reflection confusers",
+      "overlay_sha256": "364beed395302b3464a5fce10ce94fdd3224be0c70c49037a9ae4ed045c0c16e",
+      "id": "1572393cd287520b"
+    },
+    {
+      "finding": "Large flowering rooted outdoor container missed",
+      "action": "Retain legitimate positive; do not narrow ontology to leafy indoor plants",
+      "overlay_sha256": "c204242f85b4552cbd0b3c1512d6b38cc4eb8f171e759be16be8313b03117c9d",
+      "id": "1648f9a633618567"
+    },
+    {
+      "finding": "Small background rectangular planter missed behind dog",
+      "action": "Retain small positive; new TRAIN context examples needed",
+      "overlay_sha256": "6c6443df561c79fa1361bb2de33e49f45651e305bef726c58ce273644d7d5edc",
+      "id": "1c77a13caf4647c7"
+    },
+    {
+      "finding": "Two rooted containers overlap; one large prediction covers combined scene and only one instance matches",
+      "action": "Retain two ground-truth instances; review instance separation in independent TRAIN data",
+      "overlay_sha256": "c3c674dd16cdcf450814bb25868574b2444c1cb94a8ddf21e4b456eb3fb18176",
+      "id": "1c9af1dfe8b79cb1"
+    },
+    {
+      "finding": "Cut flowers in transparent vase misidentified at .81",
+      "action": "Retain negative; no threshold tuning on observed TEST",
+      "overlay_sha256": "5c727c44ad69b9f4fb47cdc5a6a4f797302356b947a651026d8b2a96d2356220",
+      "id": "2664ce031523e2f9"
+    }
+  ],
+  "labels_changed": false,
+  "test_reassignment_allowed": false,
+  "deployment_accepted": false
+}

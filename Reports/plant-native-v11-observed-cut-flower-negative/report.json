@@ -1,0 +1,79 @@
+{
+  "mode": "test",
+  "domain": "public-openimages-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated",
+    "Houseplant labels are broader than potted tabletop plants; domain validation required"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-native-v11-training\\train\\weights\\best.pt",
+  "architecture": "DetectionModel",
+  "sha256": "0f91ac17fc3966a3185447181c80e6cc7e700fe0176f6e0d3cc9e377580baa1f",
+  "dataset_version": "08da4cc0f3dcf16553508fe719fc7031972e47a2cca357670ec5a255b156402c",
+  "split": "test",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "PottedPlant"
+  },
+  "per_class": [],
+  "images": 1,
+  "excluded_samples": [
+    {
+      "image": "images/test/2289321b04eb740b16065dbc.jpg",
+      "reason": "Right-edge foliage has unresolved rooted/potted status; image-level empty label is unreliable."
+    }
+  ],
+  "ground_truth_instances": 0,
+  "false_positive_images": 0,
+  "per_image": [
+    {
+      "image": "images/test/95a1478ce3e99921d608d1b3.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 1407.4239000037778
+    }
+  ],
+  "ap_scope": "NOT_APPLICABLE: negative-only evaluation",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "PottedPlant",
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": null,
+      "recall": null
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 1407.4239000037778,
+  "p95_inference_ms": 1407.4239000037778,
+  "cold_first_image_ms": 1407.4239000037778,
+  "warm_mean_ms": null,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [],
+  "allowed_classes": [
+    "PottedPlant"
+  ],
+  "max_det": 8,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}

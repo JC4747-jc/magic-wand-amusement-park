@@ -169,13 +169,32 @@
       "bytes": 52011922,
       "status": "LOCAL_TEST_PASSED_PICO_PENDING",
       "deployment_accepted": false
+    },
+    {
+      "name": "plant-native-v10",
+      "path": "object-detection-demo/weights/candidates/plant-native-v10/best.pt",
+      "sha256": "d120ae894572ea1c685e9fc6548e5dddd95c8a87a027036526342b17025c718f",
+      "bytes": 52017362,
+      "status": "REJECTED_VALIDATION",
+      "deployment_accepted": false
+    },
+    {
+      "name": "plant-native-v11",
+      "path": "object-detection-demo/weights/candidates/plant-native-v11/best.pt",
+      "sha256": "0f91ac17fc3966a3185447181c80e6cc7e700fe0176f6e0d3cc9e377580baa1f",
+      "bytes": 52016018,
+      "status": "REJECTED_VALIDATION",
+      "deployment_accepted": false,
+      "alternative_threshold_status": "VAL_PASSED_OBSERVED_REGRESSION_FAILED",
+      "alternative_confidence": 0.35
     }
   ],
   "datasets_included": false,
   "pico_validation": "NOT_PERFORMED",
   "notes": [
     "Rejected and pending candidates retain their original status.",
-    "No runtime configuration or Unity animation changes included in this upload.",
-    "last.pt omitted; these completed runs have stripped optimizer state."
+    "Optional Python pilot service is included; Unity changes are not included in this archive.",
+    "Raw images omitted; dataset manifests and provenance retain local source mappings.",
+    "last.pt omitted; completed runs have stripped optimizer state."
   ]
 }

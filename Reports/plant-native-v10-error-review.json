@@ -1,0 +1,31 @@
+{
+  "model_sha256": "d120ae894572ea1c685e9fc6548e5dddd95c8a87a027036526342b17025c718f",
+  "scope": "All four actual fixed-threshold VAL error overlays visually inspected",
+  "items": [
+    {
+      "finding": "Cut lilies in transparent water vase predicted as PottedPlant at .78; retain negative under rooted-container policy",
+      "id": "e5fde1c97f0f71710eb2c497",
+      "overlay_sha256": "d8ae611151f7da32272ff29db0496cbd6f261bc8f3332d55a55a8eb9a2f58151"
+    },
+    {
+      "finding": "Cut-flower arrangement in ornamental vessel predicted as PottedPlant at .88; retain negative",
+      "id": "581cedc885d26e10455cf980",
+      "overlay_sha256": "ce3c4e970803e1d412a05bcc7fb9e03b62541f55b72cac683d42a353f2c8ce77"
+    },
+    {
+      "finding": "Three of four pots detected; right-edge clipped small potted target missed; retain all four boxes",
+      "id": "478585150555622ee282ec40",
+      "overlay_sha256": "a389df098d1b4dee9e2dacdafb5d6c50d1ffce239490b1324da0077df21f15be"
+    },
+    {
+      "finding": "Large left-edge clipped rooted plant missed beside rabbit; retain reviewed positive",
+      "id": "9fbc2444b8acf1398deaddd3",
+      "overlay_sha256": "c9b1c5110b8b98b3cfa4c1759ccb135ae49422bf0e9b9d3911e6f0a8a8fa216a"
+    }
+  ],
+  "dataset_changed": false,
+  "threshold_changed": false,
+  "next_data_need": "Independent TRAIN cut-flower confusers and edge-clipped rooted-container positives; preserve source groups and observed TEST reservations",
+  "caveat": "Observable failure patterns, not proven optimization root cause",
+  "service_routed": false
+}

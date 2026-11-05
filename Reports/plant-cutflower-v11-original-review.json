@@ -1,0 +1,49 @@
+{
+  "scope": "All six eligible original images actually visually inspected; no model inference used",
+  "candidate_audit_sha256": "90a890101572099d89d7ddc311d574177a51fed8bc2e7551882c757a9b5ad8b9",
+  "samples": [
+    {
+      "original_id": "303a3afd931dc81c",
+      "image_sha256": "fa45a4b377776ee741603200ade8dcd75e9041a62f96d4575526169caab64953",
+      "decision": "HOLD_ROOTING_UNCERTAIN",
+      "finding": "Lilac branches in opaque ceramic container; rooting cannot be established from original image"
+    },
+    {
+      "original_id": "3369bd061d925f7e",
+      "image_sha256": "666b3db5441facce5783c9ec0c97eaa0fdc7b9565c24cb9895b8a221829a906b",
+      "decision": "HOLD_ROOTING_UNCERTAIN",
+      "finding": "Tulips in partly hidden green container; soil/root state unclear"
+    },
+    {
+      "original_id": "4208d64380709fef",
+      "image_sha256": "671966d7cea13054a10c4741423d9d1e527abd546dcdce867fff0bcd7a907a1d",
+      "decision": "VISUAL_NEGATIVE_PENDING_RESERVATION_AND_PIXEL_CLEARANCE",
+      "finding": "Lilac cut branches in transparent vase; no rooted container target visible"
+    },
+    {
+      "original_id": "43c0dc0bb1059747",
+      "image_sha256": "6cac74aecffa36abdc2a7b0eca42dc62a49ff4a6def4b194905057b17fe52ed9",
+      "decision": "VISUAL_NEGATIVE_PENDING_RESERVATION_AND_PIXEL_CLEARANCE",
+      "finding": "Mixed cut bouquet in transparent water vase; no other potted target visible"
+    },
+    {
+      "original_id": "52baa4f64e63e33d",
+      "image_sha256": "90fcff2875ea813c436918d4eb61197b50122c2de4d6c29df9378178ebec8bb4",
+      "decision": "VISUAL_NEGATIVE_PENDING_RESERVATION_AND_PIXEL_CLEARANCE",
+      "finding": "Mixed cut stems in decorative wall vase; no other potted target visible"
+    },
+    {
+      "original_id": "53b9504a03c6d74a",
+      "image_sha256": "ff2fac92bab42d434c75dfcd0e741829250ba4d3827abab063f1fa12b0d36ec8",
+      "decision": "VISUAL_NEGATIVE_PENDING_RESERVATION_AND_PIXEL_CLEARANCE",
+      "finding": "Two cut arrangements with visible stems and water vase; no potted target visible"
+    }
+  ],
+  "training_approved": false,
+  "remaining": [
+    "All source manifests/reservation records clearance",
+    "Decoded-pixel history and near-duplicate review",
+    "Immutable TRAIN-only source materialization retaining per-image attribution"
+  ],
+  "test_reassignment_allowed": false
+}

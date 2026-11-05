@@ -1,0 +1,48 @@
+{
+  "dataset_version": "de41a31a94cdb7c4c435c2a020cbb386970cc971291da71ff65ebbb6b13bf8ea",
+  "initializer_sha256": "d120ae894572ea1c685e9fc6548e5dddd95c8a87a027036526342b17025c718f",
+  "parameters": {
+    "data": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\plant-native-v11\\data.yaml",
+    "device": 0,
+    "epochs": 30,
+    "imgsz": 640,
+    "batch": 4,
+    "workers": 0,
+    "seed": 20261105,
+    "deterministic": true,
+    "freeze": 0,
+    "optimizer": "AdamW",
+    "lr0": 0.0001,
+    "lrf": 0.1,
+    "warmup_bias_lr": 0.0001,
+    "mosaic": 0.0,
+    "mixup": 0.0,
+    "cutmix": 0.0,
+    "scale": 0.3,
+    "translate": 0.05,
+    "hsv_h": 0.01,
+    "hsv_s": 0.3,
+    "hsv_v": 0.2,
+    "close_mosaic": 0,
+    "project": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-native-v11-training",
+    "name": "train",
+    "plots": true
+  },
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "hypothesis": "Four source-group-disjoint real cut-flower TRAIN negatives may reduce confusion; no threshold changes",
+  "protocol": {
+    "confidence": 0.65,
+    "imgsz": 640,
+    "rect": true,
+    "nms_iou": 0.7,
+    "max_det": 8
+  },
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8
+  },
+  "test_policy": "VAL selection only; fresh independent TEST required after validation/negative gates",
+  "service_routed": false,
+  "pico_validated": false
+}
