@@ -24,3 +24,15 @@ Repeated validation tuning does not demonstrate generalization. Never use TEST t
 Never overwrite the lighter baseline, production scene profiles, or Unity assets as a side effect of research. A larger metric on a subset, training completion, or a simulated TCP/Unity check does not constitute PICO acceptance. Report measured inference latency and resource conditions separately from accuracy.
 
 The full MR goal remains in force: models for the other scenes, one shared UI, scene-specific gestures and animation cleanup, stereo localization, Android build and device verification remain required.
+
+## Reproduction
+
+Run from the Unity project root with the recorded CUDA environment and all frozen local dataset payloads available. The GitHub archive omits raw images; downloading its scripts alone does not reproduce the dataset. Verify image provenance and restore the exact image bytes before using the frozen contract.
+
+```text
+python Tools/MultiScene/autoresearch/prepare.py --contract Reports/plant-v20-autoresearch-contract.json --verify
+python Tools/MultiScene/autoresearch/train.py --contract Reports/plant-v20-autoresearch-contract.json --plan Reports/plant-v21-autoresearch-plan.json --out Reports/plant-v21-autoresearch
+python Tools/MultiScene/autoresearch/audit_completed.py --out Reports/plant-v21-autoresearch
+```
+
+The training command is the original command, not a resume command. It intentionally refuses an existing output directory. Do not execute it while the original run is active. Preserve the existing run and use a new explicitly budgeted output for a future experiment. The audit command requires both trials to have completed and refuses missing or failed evidence; a passing evidence audit still does not authorize deployment.

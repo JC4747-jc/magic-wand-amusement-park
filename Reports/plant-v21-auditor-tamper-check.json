@@ -1,0 +1,20 @@
+{
+  "scope": "Metadata mutation checks against real completed baseline; no artifacts modified and no inference performed",
+  "checks": [
+    {
+      "case": "failed-status",
+      "rejected": true,
+      "reason": "Trial did not complete successfully: baseline"
+    },
+    {
+      "case": "wrong-final-weight",
+      "rejected": true,
+      "reason": "Final weight hash mismatch"
+    },
+    {
+      "case": "wrong-selected-epoch",
+      "rejected": true,
+      "reason": "Selected epoch mismatch"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "scope": "Actual full-resolution inspection of baseline early-best epoch2, not final trial acceptance",
+  "report_sha256": "cf8c2d931ebb3916112ab2e0fe8e5347252b25747185d99673be3c3e38d83cbb",
+  "weight_sha256": "86fa50f4c6402ed819a2b5d294e385e4ffd027bbb686a633310ba6e7d7e6688b",
+  "reviews": [
+    {
+      "id": "e5fde1c97f0f71710eb2c497",
+      "overlay_sha256": "c31e9015fe23a752ed8add457483ea277baeac671067558ca43c76e94d2f3342",
+      "observation": "Cut lilies in transparent water vase incorrectly detected as PottedPlant at0.80; cut stems and water visible."
+    },
+    {
+      "id": "581cedc885d26e10455cf980",
+      "overlay_sha256": "65120b0aa0e70314e102501470705b552d47c1a94638e18a5497d748907a77b2",
+      "observation": "Decorative mixed cut-flower arrangement in opaque vase incorrectly detected as PottedPlant at0.99; consistent with reviewed auxiliary label."
+    }
+  ],
+  "action": "Keep frozen labels, threshold and run unchanged. Inspect final selected checkpoint and second trial; no TEST selection.",
+  "deployment_accepted": false
+}
