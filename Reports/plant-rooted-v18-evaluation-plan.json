@@ -1,0 +1,24 @@
+{
+  "dataset_sha256": "f3eefa042dd1ea24acc10213dfb4eb15aeab4887ee5f52e21b71e91a486f6616",
+  "evaluator_sha256": "b6b37cc2f3f05fca644ea89ebde69adabf784de57cb1d75fb7bfb2b3e66f4b37",
+  "fixed_runtime": {
+    "confidence": 0.35,
+    "imgsz": 640,
+    "nms_iou": 0.7,
+    "max_det": 8,
+    "allowed_classes": [
+      "PottedPlant"
+    ]
+  },
+  "mandatory_runtime_val_images": 13,
+  "native_fitness_images": 12,
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8,
+    "observed_negative_fp_max": 0
+  },
+  "fresh_test_performed": false,
+  "service_routed": false,
+  "selection": "Native best checkpoint selected by unchanged native two-class fitness; full13 target acceptance evaluated after completion. No observed TEST threshold selection.",
+  "next_gate": "If full validation passes, check previously observed regression only as diagnostic gate; fresh independent author-grouped TEST remains required for acceptance."
+}

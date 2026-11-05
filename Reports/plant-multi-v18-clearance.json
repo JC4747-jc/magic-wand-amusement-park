@@ -1,0 +1,18 @@
+{
+  "status": "SOURCE_AND_PIXEL_CLEARANCE_PASSED",
+  "source_manifest_sha256": "25ce4dc502d81cd23655893219bdcc6baa9cf214e5b62c75b8b0ed07a63271d2",
+  "metadata_report_sha256": "3e1e900e26c35736ebbce688edea05f06b34cdedfb5ca7ec0bdd0b36e4e2d680",
+  "pixel_report_sha256": "a0cc7ac2d970a1fbe42ec57f2f8ab9aba9d1a735411db2c7e43c809d3dc69f2f",
+  "historical_paths": 15567,
+  "approved_images": 1,
+  "potted_plant_instances": 4,
+  "auxiliary_instances": 0,
+  "matched_original_sources_only": true,
+  "reserved_split": "train",
+  "training_started": false,
+  "deployment_accepted": false,
+  "limitations": [
+    "Source-only reuse approved after actual author/reservation/pixel audit; not reuse of held-out labels.",
+    "Current-file matching cannot prove absence of all viewpoint aliases."
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "samples": [
+    {
+      "original_id": "51feff5533afd1a2",
+      "source_image": "Datasets\\openimages-plant-fresh-general-source-v4\\images\\51feff5533afd1a2.jpg",
+      "source_sha256": "ff5c6eeb2509188f45d92256a646d23b03569068162188e55c25ea7a82c59944",
+      "group": "https://www.flickr.com/people/larry1732/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Larry Lamsa",
+        "AuthorProfileURL": "https://www.flickr.com/people/larry1732/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/larry1732/7616457882",
+        "Title": "Tea Garden - Perennial Pleasures Nursery"
+      },
+      "label": "Reports\\plant-multi-source-v18-review\\annotations\\labels\\51feff5533afd1a2.txt",
+      "label_sha256": "7c75a471f6dca895bb40a36a05ad8d0669f815f2afaf41f9f47c90cc99b4f34a",
+      "overlay": "Reports\\plant-multi-source-v18-review\\annotations\\51feff5533afd1a2.jpg",
+      "boxes_class_xyxy": [
+        [
+          0,
+          354,
+          344,
+          501,
+          525
+        ],
+        [
+          0,
+          553,
+          317,
+          659,
+          530
+        ],
+        [
+          0,
+          651,
+          359,
+          945,
+          529
+        ],
+        [
+          0,
+          850,
+          346,
+          1024,
+          529
+        ]
+      ],
+      "negative": false,
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "training_approved": false,
+      "visual_annotation_approved": true,
+      "overlay_sha256": "c2a5509ab254c64b1ba693f1aff1cb2510341f3d21cab319a43c52c27074dde8"
+    }
+  ],
+  "names": [
+    "PottedPlant",
+    "CutArrangement"
+  ],
+  "training_approved": false,
+  "convention": "Three rooted geranium containers plus one clipped orchid cachepot; include visible outer wicker cachepot. Empty left basket and exterior ground vegetation excluded. Overlapping visible extents retain distinct container identity."
+}

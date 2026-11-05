@@ -1,0 +1,94 @@
+{
+  "samples": [
+    {
+      "image": "images/02500399435a284f.jpg",
+      "label": "labels/02500399435a284f.txt",
+      "source": "openimages-v7",
+      "group": "https://www.flickr.com/people/jeremylevinedesign/",
+      "original_id": "02500399435a284f",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Jeremy Levine",
+        "AuthorProfileURL": "https://www.flickr.com/people/jeremylevinedesign/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/jeremylevinedesign/3640920470",
+        "Title": "Roof Deck"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/test/02500399435a284f.jpg"
+    },
+    {
+      "image": "images/2273e57565451305.jpg",
+      "label": "labels/2273e57565451305.txt",
+      "source": "openimages-v7",
+      "group": "https://www.flickr.com/people/87164897@N08/",
+      "original_id": "2273e57565451305",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Rosyth Estate House",
+        "AuthorProfileURL": "https://www.flickr.com/people/87164897@N08/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/87164897@N08/7977990869",
+        "Title": "RE6"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/test/2273e57565451305.jpg"
+    },
+    {
+      "image": "images/51feff5533afd1a2.jpg",
+      "label": "labels/51feff5533afd1a2.txt",
+      "source": "openimages-v7",
+      "group": "https://www.flickr.com/people/larry1732/",
+      "original_id": "51feff5533afd1a2",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Larry Lamsa",
+        "AuthorProfileURL": "https://www.flickr.com/people/larry1732/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/larry1732/7616457882",
+        "Title": "Tea Garden - Perennial Pleasures Nursery"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/test/51feff5533afd1a2.jpg"
+    }
+  ],
+  "hits": [
+    {
+      "candidate": "02500399435a284f",
+      "path": "Datasets\\openimages-plant-fresh-general-source-v4\\manifest.json",
+      "location": "$.samples[4]",
+      "split": null,
+      "reserved_split": null
+    },
+    {
+      "candidate": "02500399435a284f",
+      "path": "Datasets\\openimages-plant-fresh-general-source-v4\\manifest.json",
+      "location": "$.samples[4].attribution",
+      "split": null,
+      "reserved_split": null
+    },
+    {
+      "candidate": "2273e57565451305",
+      "path": "Datasets\\openimages-plant-fresh-general-source-v4\\manifest.json",
+      "location": "$.samples[61]",
+      "split": null,
+      "reserved_split": null
+    },
+    {
+      "candidate": "2273e57565451305",
+      "path": "Datasets\\openimages-plant-fresh-general-source-v4\\manifest.json",
+      "location": "$.samples[61].attribution",
+      "split": null,
+      "reserved_split": null
+    },
+    {
+      "candidate": "51feff5533afd1a2",
+      "path": "Datasets\\openimages-plant-fresh-general-source-v4\\manifest.json",
+      "location": "$.samples[153]",
+      "split": null,
+      "reserved_split": null
+    },
+    {
+      "candidate": "51feff5533afd1a2",
+      "path": "Datasets\\openimages-plant-fresh-general-source-v4\\manifest.json",
+      "location": "$.samples[153].attribution",
+      "split": null,
+      "reserved_split": null
+    }
+  ],
+  "training_approved": false
+}

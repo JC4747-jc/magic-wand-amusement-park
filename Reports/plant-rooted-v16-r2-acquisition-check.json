@@ -1,0 +1,16 @@
+{
+  "status": "COMPLETE_WITH_ONE_DOWNLOAD_FAILURE",
+  "downloaded": 11,
+  "failed": 1,
+  "failures": [
+    {
+      "original_id": "250f70481b410851",
+      "error": "ReadTimeout",
+      "detail": "HTTPSConnectionPool(host='open-images-dataset.s3.amazonaws.com', port=443): Read timed out. (read timeout=10)"
+    }
+  ],
+  "full_word_match_checks_passed": true,
+  "original27_contact_review_completed": true,
+  "second_batch_original_or_contact_review_completed": false,
+  "training_approved": false
+}

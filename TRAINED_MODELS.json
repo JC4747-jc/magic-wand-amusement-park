@@ -222,6 +222,14 @@
       "status": "REJECTED_OBSERVED_REGRESSION",
       "deployment_accepted": false,
       "test_freshness": "PREVIOUSLY_OBSERVED_REGRESSION_NOT_FRESH_TEST"
+    },
+    {
+      "name": "plant-rooted-v18",
+      "path": "object-detection-demo/weights/candidates/plant-rooted-v18/best.pt",
+      "sha256": "0e4dbd6400bf568a06bbb70141ea88d34891c6014ee64260227ff246ed5920b4",
+      "bytes": 52019794,
+      "status": "REJECTED_VALIDATION",
+      "deployment_accepted": false
     }
   ],
   "datasets_included": false,

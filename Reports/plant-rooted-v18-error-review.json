@@ -1,0 +1,17 @@
+{
+  "model_sha256": "0e4dbd6400bf568a06bbb70141ea88d34891c6014ee64260227ff246ed5920b4",
+  "status": "REJECTED_VALIDATION",
+  "all_five_full_resolution_error_overlays_actually_viewed": true,
+  "operating_confidence": 0.35,
+  "observations": {
+    "2eeeba800c582ff3ecef355e": "Bonsai target TP plus small accent/accessory FP; rooting remains unresolved, original VAL label retained.",
+    "770aea72d5e07c15a5d62998": "Main fern TP plus extra partial/empty-neighbor-container box FP.",
+    "789c1cc964cd408c51312028": "Both labeled plants TP plus extra box over sofa/overlapping scene FP.",
+    "9fbc2444b8acf1398deaddd3": "Clipped planted container prediction box truncates lower outer container; IoU mismatch contributes FP despite visible target.",
+    "a6bbcafb10d754a05e0706b3": "Rooted succulent FN at fixed confidence."
+  },
+  "labels_changed": false,
+  "threshold_retuned": false,
+  "fresh_test_performed": false,
+  "next_action": "Do not repeat tiny data-only training or tune observed TEST. Inspect supervision conventions and broader source diversity; retain explicit release gates."
+}
