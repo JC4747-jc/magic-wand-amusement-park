@@ -1,0 +1,1024 @@
+{
+  "mode": "training-diagnostic",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "commons",
+      "license": "Per-photo CC BY/CC BY-SA/CC0 retained in samples",
+      "reviewed": true
+    },
+    {
+      "id": "openimages-v7",
+      "license": "Per-photo CC BY2 attribution retained",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\tree-oiv7n-small-views-v17-training\\train\\weights\\best.pt",
+  "architecture": "DetectionModel",
+  "sha256": "4ab4958567d6b6806f4bfd9c2dfbdf14c0e6a4c5a77b6330561be8074fd1ff49",
+  "dataset_version": "5e62a8691f719f693ce3ed13a6664d95ce36b716a2288554a15d3ac7930a1be5",
+  "split": "train",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "Tree"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "Tree",
+      "precision": 0.9288629293873463,
+      "recall": 0.8424396340961514,
+      "mAP50": 0.9309908423654742,
+      "mAP50_95": 0.7966697578279185,
+      "labels": 93
+    }
+  ],
+  "images": 91,
+  "excluded_samples": [],
+  "ground_truth_instances": 93,
+  "false_positive_images": 0,
+  "per_image": [
+    {
+      "image": "images/train/tree-1a166fca034591456b762c283c3837e2fe9a76843849d042618396025e73d95f.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 997.6114000019152
+    },
+    {
+      "image": "images/train/tree-1a166fca034591456b762c283c3837e2fe9a76843849d042618396025e73d95f-small25.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 64.0417000031448
+    },
+    {
+      "image": "images/train/tree-1a166fca034591456b762c283c3837e2fe9a76843849d042618396025e73d95f-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 48.42839999764692
+    },
+    {
+      "image": "images/train/tree-3a279a4ec1aa942cea2a927702103094a56e5be63836fc51e1ed6482703a7b9c.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 40.11670000181766
+    },
+    {
+      "image": "images/train/tree-3a279a4ec1aa942cea2a927702103094a56e5be63836fc51e1ed6482703a7b9c-small25.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 47.12590000417549
+    },
+    {
+      "image": "images/train/tree-3a279a4ec1aa942cea2a927702103094a56e5be63836fc51e1ed6482703a7b9c-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 44.773800000257324
+    },
+    {
+      "image": "images/train/tree-00fd9ff8fec318d50e725ce7e98fccb0638811d849e38eee010184797f9b38ed.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 47.8893000035896
+    },
+    {
+      "image": "images/train/tree-00fd9ff8fec318d50e725ce7e98fccb0638811d849e38eee010184797f9b38ed-small25.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 38.69940000004135
+    },
+    {
+      "image": "images/train/tree-00fd9ff8fec318d50e725ce7e98fccb0638811d849e38eee010184797f9b38ed-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 41.47519999969518
+    },
+    {
+      "image": "images/train/tree-39c9684e011aa449d463d6c7564792b7e00dc4e37b901d11dc12f094157531f2.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 43.888100000913255
+    },
+    {
+      "image": "images/train/tree-39c9684e011aa449d463d6c7564792b7e00dc4e37b901d11dc12f094157531f2-small25.png",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 49.03790000389563
+    },
+    {
+      "image": "images/train/tree-39c9684e011aa449d463d6c7564792b7e00dc4e37b901d11dc12f094157531f2-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 45.06339999352349
+    },
+    {
+      "image": "images/train/tree-8ff8fdfcd50d0689d622ddd4340d7ad14b5e80110828f52798d6c586296a4395.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 41.188299997884315
+    },
+    {
+      "image": "images/train/tree-8ff8fdfcd50d0689d622ddd4340d7ad14b5e80110828f52798d6c586296a4395-small25.png",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 44.872799997392576
+    },
+    {
+      "image": "images/train/tree-8ff8fdfcd50d0689d622ddd4340d7ad14b5e80110828f52798d6c586296a4395-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 40.181500000471715
+    },
+    {
+      "image": "images/train/tree-f6243a186689e5d90c5a156d92a197e570f0727e010db904d6dad99c92e82cfe.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 32.318000005034264
+    },
+    {
+      "image": "images/train/tree-f6243a186689e5d90c5a156d92a197e570f0727e010db904d6dad99c92e82cfe-small25.png",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 46.99790000449866
+    },
+    {
+      "image": "images/train/tree-f6243a186689e5d90c5a156d92a197e570f0727e010db904d6dad99c92e82cfe-small50.png",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 37.43950000352925
+    },
+    {
+      "image": "images/train/tree-3c2a086aba9f2dbd843d999e8673488f075e01b714a4155b8a96c3e888a9d799.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 35.53549999924144
+    },
+    {
+      "image": "images/train/tree-3c2a086aba9f2dbd843d999e8673488f075e01b714a4155b8a96c3e888a9d799-small25.png",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 45.09179999877233
+    },
+    {
+      "image": "images/train/tree-3c2a086aba9f2dbd843d999e8673488f075e01b714a4155b8a96c3e888a9d799-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 42.80589999689255
+    },
+    {
+      "image": "images/train/tree-e7089c56021a01ff009ea5834704c2cb7d9c12993a1f6120d6ad3c8c1e480988.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 37.243900005705655
+    },
+    {
+      "image": "images/train/tree-e7089c56021a01ff009ea5834704c2cb7d9c12993a1f6120d6ad3c8c1e480988-small25.png",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 49.16899999807356
+    },
+    {
+      "image": "images/train/tree-e7089c56021a01ff009ea5834704c2cb7d9c12993a1f6120d6ad3c8c1e480988-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 40.987499996845145
+    },
+    {
+      "image": "images/train/tree-d27e51b0b869f6052f7eee9a9c8f935b78432d2e9ca55a05a6713970ab817141.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 34.50610000436427
+    },
+    {
+      "image": "images/train/tree-d27e51b0b869f6052f7eee9a9c8f935b78432d2e9ca55a05a6713970ab817141-small25.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 47.85479999554809
+    },
+    {
+      "image": "images/train/tree-d27e51b0b869f6052f7eee9a9c8f935b78432d2e9ca55a05a6713970ab817141-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 45.02099999808706
+    },
+    {
+      "image": "images/train/tree-1f61075d944bf770461374ca1b91a305c735c7549dd1d6c960026c48fa852650.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 34.83509999932721
+    },
+    {
+      "image": "images/train/tree-1f61075d944bf770461374ca1b91a305c735c7549dd1d6c960026c48fa852650-small25.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 48.289499995007645
+    },
+    {
+      "image": "images/train/tree-1f61075d944bf770461374ca1b91a305c735c7549dd1d6c960026c48fa852650-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 46.537399997760076
+    },
+    {
+      "image": "images/train/tree-ededd6904dc5af11b9c4aa6d28708d71dab87a9e838510066f0e5db650152cf6.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 33.54140000010375
+    },
+    {
+      "image": "images/train/tree-ededd6904dc5af11b9c4aa6d28708d71dab87a9e838510066f0e5db650152cf6-small25.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 46.7994999999064
+    },
+    {
+      "image": "images/train/tree-ededd6904dc5af11b9c4aa6d28708d71dab87a9e838510066f0e5db650152cf6-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 42.465500002435874
+    },
+    {
+      "image": "images/train/tree-50d6cbf541df80f8b6132d7c80d4eee48c14ddcf5d68c8738114b974efc3b439.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 33.59130000171717
+    },
+    {
+      "image": "images/train/tree-b59343bae8cca93d73d3b878ee52678a0ba2062d650a3c301e5b18bdb9eafa0a.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 33.578499998839106
+    },
+    {
+      "image": "images/train/tree-61801453d7a64e42857c0ab655b2e37e9922d7bfb90f6ecf02fbb59e65df5f19.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 59.871299999940675
+    },
+    {
+      "image": "images/train/tree-0bbe927293aa1d8186447ec485cfff86cd13a47f10c9122271573d3f7dbd8463.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 43.47649999544956
+    },
+    {
+      "image": "images/train/tree-d7631d7ee3335dd01e60b2819fac8928b097f308cafc181ce226f4d8096d9c43.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 45.1625999994576
+    },
+    {
+      "image": "images/train/tree-11ad33169492d0f6afe2969a7a9ca90a2fc92ac7503194cea187e5ec7512ebb1.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 28.853800002252683
+    },
+    {
+      "image": "images/train/tree-a7c4a6a86ca53c1ee56f422b6a4088cd0d8fd928902bd074cce1dc0a321f2d84.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 49.45179999776883
+    },
+    {
+      "image": "images/train/tree-75f46c6b1cc935af084bb18e5dc64a26981c6991cfe841edea47fe67e21e3fca.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 37.38539999903878
+    },
+    {
+      "image": "images/train/tree-07e97697dbfb2e3445733d19e961cee91212886e7aa9af67e77f59b2a5a8ecee.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 32.7878000025521
+    },
+    {
+      "image": "images/train/tree-07e97697dbfb2e3445733d19e961cee91212886e7aa9af67e77f59b2a5a8ecee-small25.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 41.25860000203829
+    },
+    {
+      "image": "images/train/tree-07e97697dbfb2e3445733d19e961cee91212886e7aa9af67e77f59b2a5a8ecee-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 45.797599996149074
+    },
+    {
+      "image": "images/train/tree-0672f264e886307584cdbd391f2f82f1ba6571629de010ecded9d547b80edd31.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 37.7639999933308
+    },
+    {
+      "image": "images/train/tree-0672f264e886307584cdbd391f2f82f1ba6571629de010ecded9d547b80edd31-small25.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 44.64049999660347
+    },
+    {
+      "image": "images/train/tree-0672f264e886307584cdbd391f2f82f1ba6571629de010ecded9d547b80edd31-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 42.951900002663024
+    },
+    {
+      "image": "images/train/tree-800fa7acc8d0e3945d5d776f33ae6b27d26ba5fb963b929df01f233677dc9692.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 41.8227999980445
+    },
+    {
+      "image": "images/train/tree-800fa7acc8d0e3945d5d776f33ae6b27d26ba5fb963b929df01f233677dc9692-small25.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 50.71280000265688
+    },
+    {
+      "image": "images/train/tree-800fa7acc8d0e3945d5d776f33ae6b27d26ba5fb963b929df01f233677dc9692-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 42.87070000282256
+    },
+    {
+      "image": "images/train/tree-c4b4078a68d1161c70039861e5b38b0d3847b90fec1bee73fd18b515522f59b5.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 34.805600000254344
+    },
+    {
+      "image": "images/train/tree-c4b4078a68d1161c70039861e5b38b0d3847b90fec1bee73fd18b515522f59b5-small25.png",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 39.23590000340482
+    },
+    {
+      "image": "images/train/tree-c4b4078a68d1161c70039861e5b38b0d3847b90fec1bee73fd18b515522f59b5-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 41.25729999941541
+    },
+    {
+      "image": "images/train/tree-9a907c0ac5497b033e17dbe04f2512a26956232c1ad9e1d1af6ba7a7a20df000.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 39.05089999898337
+    },
+    {
+      "image": "images/train/tree-9a907c0ac5497b033e17dbe04f2512a26956232c1ad9e1d1af6ba7a7a20df000-small25.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 46.76070000277832
+    },
+    {
+      "image": "images/train/tree-9a907c0ac5497b033e17dbe04f2512a26956232c1ad9e1d1af6ba7a7a20df000-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 48.436799996125046
+    },
+    {
+      "image": "images/train/tree-022086902b4a38646e3bdc1ee4c952c8e4f6da571d982eb6e002098a69493f0d.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 28.05629999784287
+    },
+    {
+      "image": "images/train/tree-022086902b4a38646e3bdc1ee4c952c8e4f6da571d982eb6e002098a69493f0d-small25.png",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 46.591399994213134
+    },
+    {
+      "image": "images/train/tree-022086902b4a38646e3bdc1ee4c952c8e4f6da571d982eb6e002098a69493f0d-small50.png",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 46.866399999998976
+    },
+    {
+      "image": "images/train/tree-5c636b19dd48c0f9ac7d21f25f2be6838e5058aa0229e3844c4c02b2daf74204.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 49.44629999954486
+    },
+    {
+      "image": "images/train/tree-5c636b19dd48c0f9ac7d21f25f2be6838e5058aa0229e3844c4c02b2daf74204-small25.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 44.21139999612933
+    },
+    {
+      "image": "images/train/tree-5c636b19dd48c0f9ac7d21f25f2be6838e5058aa0229e3844c4c02b2daf74204-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 40.251500002341345
+    },
+    {
+      "image": "images/train/tree-6ef9a4a141e1faac2b709fcae517af3e2c6c90186258cb25a70b753c0eb26156.jpg",
+      "ground_truth": 2,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 50.224799997522496
+    },
+    {
+      "image": "images/train/tree-6ef9a4a141e1faac2b709fcae517af3e2c6c90186258cb25a70b753c0eb26156-small25.png",
+      "ground_truth": 2,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 46.45829999935813
+    },
+    {
+      "image": "images/train/tree-6ef9a4a141e1faac2b709fcae517af3e2c6c90186258cb25a70b753c0eb26156-small50.png",
+      "ground_truth": 2,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 44.996299999183975
+    },
+    {
+      "image": "images/train/tree-524e9415c172a34d3f7b5c6569ab45cd5f4e6c2ac952e496ef03530496e92204.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 30.489500000840053
+    },
+    {
+      "image": "images/train/tree-524e9415c172a34d3f7b5c6569ab45cd5f4e6c2ac952e496ef03530496e92204-small25.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 35.61539999645902
+    },
+    {
+      "image": "images/train/tree-524e9415c172a34d3f7b5c6569ab45cd5f4e6c2ac952e496ef03530496e92204-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 44.338299994706176
+    },
+    {
+      "image": "images/train/tree-f387c23bc670501cdd7bf0b7c0ca25748a4efeb916ed5c7489a739796142796f.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 39.661200004047714
+    },
+    {
+      "image": "images/train/tree-f387c23bc670501cdd7bf0b7c0ca25748a4efeb916ed5c7489a739796142796f-small25.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 50.01129999436671
+    },
+    {
+      "image": "images/train/tree-f387c23bc670501cdd7bf0b7c0ca25748a4efeb916ed5c7489a739796142796f-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 41.50050000316696
+    },
+    {
+      "image": "images/train/tree-f83000a6043e8e376945d16e837257f2bc7b27fd92ade2091e4c2dfed848a259.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 35.666600000695325
+    },
+    {
+      "image": "images/train/tree-f83000a6043e8e376945d16e837257f2bc7b27fd92ade2091e4c2dfed848a259-small25.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 41.98799999721814
+    },
+    {
+      "image": "images/train/tree-f83000a6043e8e376945d16e837257f2bc7b27fd92ade2091e4c2dfed848a259-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 43.399599999247584
+    },
+    {
+      "image": "images/train/tree-397a55d9cecd8da25e5d4e7e124054273566720a1fa57f73d31e1d36b25ec47b.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 32.36730000207899
+    },
+    {
+      "image": "images/train/tree-397a55d9cecd8da25e5d4e7e124054273566720a1fa57f73d31e1d36b25ec47b-small25.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 46.87019999983022
+    },
+    {
+      "image": "images/train/tree-397a55d9cecd8da25e5d4e7e124054273566720a1fa57f73d31e1d36b25ec47b-small50.png",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 43.934399996942375
+    },
+    {
+      "image": "images/train/tree-097ad6c7219ebd04063071261d904e28fd92967cfba2e3f898ba474913a66bd4.jpg",
+      "ground_truth": 2,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 33.36970000236761
+    },
+    {
+      "image": "images/train/tree-097ad6c7219ebd04063071261d904e28fd92967cfba2e3f898ba474913a66bd4-small25.png",
+      "ground_truth": 2,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 2,
+      "inference_ms": 43.198799998208415
+    },
+    {
+      "image": "images/train/tree-097ad6c7219ebd04063071261d904e28fd92967cfba2e3f898ba474913a66bd4-small50.png",
+      "ground_truth": 2,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 42.18140000011772
+    },
+    {
+      "image": "images/train/tree-a944b7abc20f5c2ac5cbf7f0dd7c117f32d9bfb696568d98415ba51471049079.jpg",
+      "ground_truth": 2,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 36.772400002519134
+    },
+    {
+      "image": "images/train/tree-a944b7abc20f5c2ac5cbf7f0dd7c117f32d9bfb696568d98415ba51471049079-small25.png",
+      "ground_truth": 2,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 45.11630000342848
+    },
+    {
+      "image": "images/train/tree-a944b7abc20f5c2ac5cbf7f0dd7c117f32d9bfb696568d98415ba51471049079-small50.png",
+      "ground_truth": 2,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 45.702999996137805
+    },
+    {
+      "image": "images/train/confuser-89112057.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 42.2751000005519
+    },
+    {
+      "image": "images/train/confuser-90692135.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 33.1538999962504
+    },
+    {
+      "image": "images/train/windswept-201108271.jpg",
+      "ground_truth": 2,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 2,
+      "inference_ms": 48.30270000093151
+    },
+    {
+      "image": "images/train/windswept-201108271-small25.png",
+      "ground_truth": 2,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 2,
+      "inference_ms": 40.98520000115968
+    },
+    {
+      "image": "images/train/windswept-201108271-small50.png",
+      "ground_truth": 2,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 2,
+      "inference_ms": 37.82609999325359
+    },
+    {
+      "image": "images/train/windswept-49411864-crop.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 30.792199999268632
+    },
+    {
+      "image": "images/train/windswept-49411864-crop-small25.png",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 39.38519999792334
+    },
+    {
+      "image": "images/train/windswept-49411864-crop-small50.png",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 46.985000000859145
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "Tree",
+      "true_positive": 65,
+      "false_positive": 0,
+      "false_negative": 28,
+      "precision": 1.0,
+      "recall": 0.6989247311827957
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 52.66318901064281,
+  "p95_inference_ms": 50.1180499959446,
+  "cold_first_image_ms": 997.6114000019152,
+  "warm_mean_ms": 42.16376444407312,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images/train/tree-39c9684e011aa449d463d6c7564792b7e00dc4e37b901d11dc12f094157531f2-small25.png",
+      "example": "error-tree-39c9684e011aa449d463d6c7564792b7e00dc4e37b901d11dc12f094157531f2-small25.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-8ff8fdfcd50d0689d622ddd4340d7ad14b5e80110828f52798d6c586296a4395-small25.png",
+      "example": "error-tree-8ff8fdfcd50d0689d622ddd4340d7ad14b5e80110828f52798d6c586296a4395-small25.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-f6243a186689e5d90c5a156d92a197e570f0727e010db904d6dad99c92e82cfe-small25.png",
+      "example": "error-tree-f6243a186689e5d90c5a156d92a197e570f0727e010db904d6dad99c92e82cfe-small25.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-f6243a186689e5d90c5a156d92a197e570f0727e010db904d6dad99c92e82cfe-small50.png",
+      "example": "error-tree-f6243a186689e5d90c5a156d92a197e570f0727e010db904d6dad99c92e82cfe-small50.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-3c2a086aba9f2dbd843d999e8673488f075e01b714a4155b8a96c3e888a9d799-small25.png",
+      "example": "error-tree-3c2a086aba9f2dbd843d999e8673488f075e01b714a4155b8a96c3e888a9d799-small25.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-e7089c56021a01ff009ea5834704c2cb7d9c12993a1f6120d6ad3c8c1e480988-small25.png",
+      "example": "error-tree-e7089c56021a01ff009ea5834704c2cb7d9c12993a1f6120d6ad3c8c1e480988-small25.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-c4b4078a68d1161c70039861e5b38b0d3847b90fec1bee73fd18b515522f59b5-small25.png",
+      "example": "error-tree-c4b4078a68d1161c70039861e5b38b0d3847b90fec1bee73fd18b515522f59b5-small25.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-022086902b4a38646e3bdc1ee4c952c8e4f6da571d982eb6e002098a69493f0d-small25.png",
+      "example": "error-tree-022086902b4a38646e3bdc1ee4c952c8e4f6da571d982eb6e002098a69493f0d-small25.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-022086902b4a38646e3bdc1ee4c952c8e4f6da571d982eb6e002098a69493f0d-small50.png",
+      "example": "error-tree-022086902b4a38646e3bdc1ee4c952c8e4f6da571d982eb6e002098a69493f0d-small50.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-6ef9a4a141e1faac2b709fcae517af3e2c6c90186258cb25a70b753c0eb26156.jpg",
+      "example": "error-tree-6ef9a4a141e1faac2b709fcae517af3e2c6c90186258cb25a70b753c0eb26156.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-6ef9a4a141e1faac2b709fcae517af3e2c6c90186258cb25a70b753c0eb26156-small25.png",
+      "example": "error-tree-6ef9a4a141e1faac2b709fcae517af3e2c6c90186258cb25a70b753c0eb26156-small25.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-6ef9a4a141e1faac2b709fcae517af3e2c6c90186258cb25a70b753c0eb26156-small50.png",
+      "example": "error-tree-6ef9a4a141e1faac2b709fcae517af3e2c6c90186258cb25a70b753c0eb26156-small50.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-097ad6c7219ebd04063071261d904e28fd92967cfba2e3f898ba474913a66bd4.jpg",
+      "example": "error-tree-097ad6c7219ebd04063071261d904e28fd92967cfba2e3f898ba474913a66bd4.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-097ad6c7219ebd04063071261d904e28fd92967cfba2e3f898ba474913a66bd4-small25.png",
+      "example": "error-tree-097ad6c7219ebd04063071261d904e28fd92967cfba2e3f898ba474913a66bd4-small25.jpg",
+      "ground_truth": 2,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 2,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-097ad6c7219ebd04063071261d904e28fd92967cfba2e3f898ba474913a66bd4-small50.png",
+      "example": "error-tree-097ad6c7219ebd04063071261d904e28fd92967cfba2e3f898ba474913a66bd4-small50.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-a944b7abc20f5c2ac5cbf7f0dd7c117f32d9bfb696568d98415ba51471049079.jpg",
+      "example": "error-tree-a944b7abc20f5c2ac5cbf7f0dd7c117f32d9bfb696568d98415ba51471049079.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-a944b7abc20f5c2ac5cbf7f0dd7c117f32d9bfb696568d98415ba51471049079-small25.png",
+      "example": "error-tree-a944b7abc20f5c2ac5cbf7f0dd7c117f32d9bfb696568d98415ba51471049079-small25.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/tree-a944b7abc20f5c2ac5cbf7f0dd7c117f32d9bfb696568d98415ba51471049079-small50.png",
+      "example": "error-tree-a944b7abc20f5c2ac5cbf7f0dd7c117f32d9bfb696568d98415ba51471049079-small50.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/windswept-201108271.jpg",
+      "example": "error-windswept-201108271.jpg",
+      "ground_truth": 2,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 2,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/windswept-201108271-small25.png",
+      "example": "error-windswept-201108271-small25.jpg",
+      "ground_truth": 2,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 2,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/windswept-201108271-small50.png",
+      "example": "error-windswept-201108271-small50.jpg",
+      "ground_truth": 2,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 2,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/windswept-49411864-crop.jpg",
+      "example": "error-windswept-49411864-crop.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/windswept-49411864-crop-small25.png",
+      "example": "error-windswept-49411864-crop-small25.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/train/windswept-49411864-crop-small50.png",
+      "example": "error-windswept-49411864-crop-small50.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    }
+  ],
+  "allowed_classes": [
+    "Tree"
+  ],
+  "max_det": 8,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}

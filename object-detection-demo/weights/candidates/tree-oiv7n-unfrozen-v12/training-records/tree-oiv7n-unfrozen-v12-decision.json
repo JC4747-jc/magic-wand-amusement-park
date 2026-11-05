@@ -1,0 +1,21 @@
+{
+  "status": "NO_RUNTIME_GATE_IMPROVEMENT",
+  "model_sha256": "46134091cab83f227c32333f52d0299e0fbc268d2e9d26fc7378d47df96c14f4",
+  "training_epochs": 20,
+  "training_seconds": 151.45,
+  "comparison": "freeze10 to freeze0 only; same v11 data and extracted initializer",
+  "val": {
+    "TP": 4,
+    "FP": 0,
+    "FN": 1
+  },
+  "train": {
+    "TP": 25,
+    "FP": 0,
+    "FN": 6
+  },
+  "service_routed": false,
+  "test_evaluated": false,
+  "pico_test": "NOT_PERFORMED",
+  "next": "Do not repeat freeze-only intervention; inspect reviewed TRAIN coverage/augmentation and use fresh independent acceptance cohort only after selecting via VAL"
+}

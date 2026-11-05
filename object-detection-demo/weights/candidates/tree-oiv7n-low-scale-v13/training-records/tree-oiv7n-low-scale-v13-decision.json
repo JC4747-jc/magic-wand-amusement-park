@@ -1,0 +1,20 @@
+{
+  "status": "TRAIN_FIT_IMPROVED_VALIDATION_UNCHANGED",
+  "model_sha256": "42a1d103630b74595863d3a4a5844b5efb4b6ca93d21741bb7a6eb095f99bf7a",
+  "epochs": 20,
+  "training_seconds": 108.466,
+  "val": {
+    "TP": 4,
+    "FP": 0,
+    "FN": 1
+  },
+  "train": {
+    "TP": 28,
+    "FP": 0,
+    "FN": 3
+  },
+  "service_routed": false,
+  "test_evaluated": false,
+  "pico_test": "NOT_PERFORMED",
+  "scope": "scale .7 to .1 only, same extracted initializer/v11 data/seed/freeze10; TRAIN improvement does not establish generalization"
+}

@@ -44,12 +44,22 @@ def main():
     global OUT
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--target', choices=['statue', 'tree'], default='statue')
+    parser.add_argument('--tree-unfrozen', action='store_true', help='Paired Tree experiment: freeze=0, all other training settings unchanged')
+    parser.add_argument('--tree-low-scale', action='store_true', help='Paired Tree experiment: scale=.1 instead of .7')
     args = parser.parse_args()
+    if args.tree_unfrozen and args.target != 'tree':
+        parser.error('--tree-unfrozen requires --target tree')
+    if args.tree_low_scale and (args.target != 'tree' or args.tree_unfrozen):
+        parser.error('--tree-low-scale requires tree and cannot combine with unfreezing')
     target_name, dataset_name, expected_hash = {
         'statue':('Statue','statue-small-positives-v12','27e3cafc35397d1ba45bdc00f88f68cbed09daff0261c50505ba3a7763e46be8'),
         'tree':('Tree','tree-windswept-positives-v11','9196b6a2fa8c22d34d808a3e1a7f903f4275121950c837bcabeab794514782fb')}[args.target]
     if args.target == 'tree':
         OUT = ROOT / 'Reports/tree-oiv7n-preserved-v11-training'
+        if args.tree_unfrozen:
+            OUT = ROOT / 'Reports/tree-oiv7n-unfrozen-v12-training'
+        if args.tree_low_scale:
+            OUT = ROOT / 'Reports/tree-oiv7n-low-scale-v13-training'
     PreservedHeadTrainer.target_name = target_name
     if OUT.exists():
         raise FileExistsError('Run already exists; inspect authoritative process before any resume')
@@ -81,6 +91,10 @@ def main():
                    project=str(OUT), name='train', plots=True)
     if args.target == 'tree':
         options.update(seed=20261103, scale=.7)
+        if args.tree_unfrozen:
+            options.update(freeze=0)
+        if args.tree_low_scale:
+            options.update(scale=.1)
     specification = dict(initializer=str(init), initializer_sha256=sha(init),
                          dataset_version=sha(data / 'audit.json'), parameters=options,
                          script_sha256=sha(Path(__file__)), extraction_report_sha256=sha(extraction),
@@ -95,6 +109,15 @@ def main():
     if args.target == 'tree':
         specification['gates'].update(max_det=8, val_precision_min=.9, val_background_false_positive_images_max=0)
         specification['initial_runtime_report_sha256'] = sha(tree_baseline)
+        if args.tree_unfrozen:
+            specification['experiment_comparability'] = 'Paired with preserved-v11: freeze=10 to freeze=0 only; same initializer/data/seed/20 epochs'
+            specification['rationale'] = 'TRAIN-only low matching confidence despite IoU above .5; test samples never used for training or checkpoint selection'
+            specification['test_policy'] = 'Existing independent TEST sealed; no checkpoint selection or threshold tuning from it. Fresh acceptance evidence needed.'
+        if args.tree_low_scale:
+            transform_audit = ROOT / 'Reports/tree-v11-actual-transform-audit.json'
+            specification['transform_audit_sha256'] = sha(transform_audit)
+            specification['experiment_comparability'] = 'Paired with preserved-v11: scale=.7 to .1 only; same initializer/data/seed/freeze10/20 epochs'
+            specification['test_policy'] = 'No existing independent TEST selection or tuning; fresh acceptance evidence required'
     (OUT / 'run.json').write_text(json.dumps(specification, indent=2))
     model = YOLO(init)
     model.train(trainer=PreservedHeadTrainer, **options)

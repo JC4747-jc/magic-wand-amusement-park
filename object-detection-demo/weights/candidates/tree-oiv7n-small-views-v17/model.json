@@ -1,0 +1,282 @@
+{
+  "architecture": "yolov8n.yaml",
+  "task": "detect",
+  "classes": {
+    "0": "Tree"
+  },
+  "allowed_classes": [
+    "Tree"
+  ],
+  "unity": {
+    "0": "ParkTree"
+  },
+  "sha256": "4ab4958567d6b6806f4bfd9c2dfbdf14c0e6a4c5a77b6330561be8074fd1ff49",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "dataset": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\tree-small-views-v17",
+  "dataset_sha256": "5e62a8691f719f693ce3ed13a6664d95ce36b716a2288554a15d3ac7930a1be5",
+  "annotation_review_hold": null,
+  "data_sources": [
+    {
+      "id": "commons",
+      "license": "Per-photo CC BY/CC BY-SA/CC0 retained in samples",
+      "reviewed": true
+    },
+    {
+      "id": "openimages-v7",
+      "license": "Per-photo CC BY2 attribution retained",
+      "reviewed": true
+    }
+  ],
+  "parameters": {
+    "initializer": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\tree-oiv7n-single-class-extraction\\initializer.pt",
+    "initializer_sha256": "e2ccab7539293d2c2fa17a8f4ae81a4a41b24d1e1d7b8fe5362fffbb2d82d230",
+    "dataset_version": "5e62a8691f719f693ce3ed13a6664d95ce36b716a2288554a15d3ac7930a1be5",
+    "parameters": {
+      "data": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\tree-small-views-v17\\data.yaml",
+      "device": "cpu",
+      "epochs": 20,
+      "batch": 4,
+      "workers": 0,
+      "imgsz": 640,
+      "seed": 20261103,
+      "deterministic": true,
+      "freeze": 10,
+      "optimizer": "AdamW",
+      "lr0": 0.0001,
+      "lrf": 0.1,
+      "warmup_bias_lr": 0.0001,
+      "mosaic": 0.0,
+      "mixup": 0.0,
+      "cutmix": 0.0,
+      "scale": 0.1,
+      "translate": 0.05,
+      "hsv_h": 0.01,
+      "hsv_s": 0.3,
+      "hsv_v": 0.2,
+      "close_mosaic": 0,
+      "project": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\tree-oiv7n-small-views-v17-training",
+      "name": "train",
+      "plots": true
+    },
+    "script_sha256": "fcbbb34ce080321b1c9017046e3d22a933a1cc58886478410b15aca4e3a0fa75",
+    "extraction_report_sha256": "7cb7fe8466c4de3243942be5395c2de56ecd67ad21e7a8c11e0eab77e6ed1294",
+    "torch": "2.14.1+cpu",
+    "ultralytics": "8.4.173",
+    "scope": "Official OIV7 Tree-head initialization, public pilot only",
+    "gates": {
+      "val_recall_min": 0.8,
+      "office_false_positives_max": 0,
+      "conf": 0.65,
+      "imgsz": 640,
+      "rect": true,
+      "nms_iou": 0.7,
+      "max_det": 8,
+      "val_precision_min": 0.9,
+      "val_background_false_positive_images_max": 0
+    },
+    "target_name": "Tree",
+    "experiment_comparability": "Synthetic TRAIN views added; same initializer/seed/20epochs/scale.1/freeze10 as v13, more batches per epoch; not equal-compute ablation",
+    "test_policy": "No existing independent TEST for selection or tuning; fresh acceptance evidence required",
+    "service_routed": false,
+    "pico_validated": false,
+    "initial_runtime_report_sha256": "035365a6865577617777a86388f03ba201a3dcf8182b225c76ddb9b86e557a64",
+    "transform_audit_sha256": "9c9493afb6e0c8267f98780edc2b7dbdf7dcc072007cb05f2b2689a7bfea4781"
+  },
+  "validation": {
+    "mode": "baseline",
+    "domain": "public-source-pilot",
+    "deployment_accepted": false,
+    "dataset_sources": [
+      {
+        "id": "commons",
+        "license": "Per-photo CC BY/CC BY-SA/CC0 retained in samples",
+        "reviewed": true
+      },
+      {
+        "id": "openimages-v7",
+        "license": "Per-photo CC BY2 attribution retained",
+        "reviewed": true
+      }
+    ],
+    "limitations": [
+      "Small source-grouped subset; not an official benchmark score",
+      "No PICO targets evaluated"
+    ],
+    "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\tree-oiv7n-small-views-v17-training\\train\\weights\\best.pt",
+    "architecture": "DetectionModel",
+    "sha256": "4ab4958567d6b6806f4bfd9c2dfbdf14c0e6a4c5a77b6330561be8074fd1ff49",
+    "dataset_version": "5e62a8691f719f693ce3ed13a6664d95ce36b716a2288554a15d3ac7930a1be5",
+    "split": "val",
+    "torch": "2.14.1+cpu",
+    "ultralytics": "8.4.173",
+    "model_names": {
+      "0": "Tree"
+    },
+    "per_class": [
+      {
+        "class_id": 0,
+        "name": "Tree",
+        "precision": 1.0,
+        "recall": 0.9886701254587201,
+        "mAP50": 0.995,
+        "mAP50_95": 0.792,
+        "labels": 5
+      }
+    ],
+    "images": 11,
+    "excluded_samples": [],
+    "ground_truth_instances": 5,
+    "false_positive_images": 0,
+    "per_image": [
+      {
+        "image": "images/val/tree-a3b756995303cc0a73d37530d7cdddda9f5c44d81dfc05fb9f30a1d7e0ef67d1.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 1020.8434000014677
+      },
+      {
+        "image": "images/val/tree-6757d2454edf8221c267e9ddc147898c0cd8f443bd49ad51ba3be9005a3ddbdf.jpg",
+        "ground_truth": 2,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 1,
+        "inference_ms": 51.5157999980147
+      },
+      {
+        "image": "images/val/tree-d3108fa9e2b0785460975f0d1f268951b0f48e9f17ecea3be1f5fe068ca77d3c.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 64.60479999805102
+      },
+      {
+        "image": "images/val/tree-334ffb4a8925b1a4924b2f2959740605698efa9d71828b8ce5cf6bb1fc6efc08.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 35.719799998332746
+      },
+      {
+        "image": "images/val/negative-dd407578974b814626342889.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 47.48429999744985
+      },
+      {
+        "image": "images/val/negative-7c04e2b6c375513493ab08de.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 35.0752999947872
+      },
+      {
+        "image": "images/val/negative-5eeccf30e06d3e703a7020ac.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 31.386900001962204
+      },
+      {
+        "image": "images/val/negative-32d341ce004fc3d3f5069f4b.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 52.617900000768714
+      },
+      {
+        "image": "images/val/negative-3cfefd1b807cdb77806d1326.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 49.90009999892209
+      },
+      {
+        "image": "images/val/negative-06242aea552d61966150402f.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 46.283299998322036
+      },
+      {
+        "image": "images/val/negative-a0e412398dca20812fd61961.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 33.42619999602903
+      }
+    ],
+    "ap_scope": "Positive target instances",
+    "operating_confidence": 0.65,
+    "operating_iou": 0.5,
+    "operating_per_class": [
+      {
+        "name": "Tree",
+        "true_positive": 4,
+        "false_positive": 0,
+        "false_negative": 1,
+        "precision": 1.0,
+        "recall": 0.8
+      }
+    ],
+    "operating_confidence_curve": [],
+    "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+    "mean_inference_ms": 133.53252727128248,
+    "p95_inference_ms": 542.7240999997593,
+    "cold_first_image_ms": 1020.8434000014677,
+    "warm_mean_ms": 44.80143999826396,
+    "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+    "imgsz": 640,
+    "rect": true,
+    "device": "cpu",
+    "errors": [
+      {
+        "image": "images/val/tree-6757d2454edf8221c267e9ddc147898c0cd8f443bd49ad51ba3be9005a3ddbdf.jpg",
+        "example": "error-tree-6757d2454edf8221c267e9ddc147898c0cd8f443bd49ad51ba3be9005a3ddbdf.jpg",
+        "ground_truth": 2,
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.65
+      }
+    ],
+    "allowed_classes": [
+      "Tree"
+    ],
+    "max_det": 8,
+    "nms_iou": 0.7,
+    "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+    "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+  },
+  "test": null,
+  "status": "NOT_SELECTED_NO_VALIDATION_IMPROVEMENT",
+  "negative_regression": null,
+  "service_routed": false,
+  "pico_validation": "NOT_PERFORMED for this model",
+  "training_outputs": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\tree-oiv7n-small-views-v17-training\\train",
+  "resume_weight": null,
+  "last_weight": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\tree-oiv7n-small-views-v17-training\\train\\weights\\last.pt",
+  "optimizer_resume_available": false,
+  "last_weight_usage": "Fine-tuning initializer only; optimizer state stripped or unavailable",
+  "validation_report": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\tree-oiv7n-small-views-v17-runtime-val\\report.json",
+  "test_report": null,
+  "test_dataset": null,
+  "inference_timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "warm_mean_inference_ms": 44.80143999826396,
+  "limitations": [
+    "Candidate packaging does not authorize deployment or prove PICO performance"
+  ],
+  "dataset_scope": "Parent46pairs unchanged; twoTRAINatypicaltreephotos added, no newheldoutdata"
+}

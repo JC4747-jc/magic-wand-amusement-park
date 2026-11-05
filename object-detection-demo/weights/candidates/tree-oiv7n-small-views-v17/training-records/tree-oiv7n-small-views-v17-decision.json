@@ -1,0 +1,69 @@
+{
+  "status": "REJECTED_NO_VALIDATION_GAIN_AND_TRAIN_REGRESSION",
+  "model_sha256": "4ab4958567d6b6806f4bfd9c2dfbdf14c0e6a4c5a77b6330561be8074fd1ff49",
+  "epochs": 20,
+  "training_seconds": 258.29,
+  "reports": {
+    "runtime-val": {
+      "images": 11,
+      "metrics": [
+        {
+          "name": "Tree",
+          "true_positive": 4,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": 1.0,
+          "recall": 0.8
+        }
+      ]
+    },
+    "original-train": {
+      "images": 37,
+      "metrics": [
+        {
+          "name": "Tree",
+          "true_positive": 25,
+          "false_positive": 0,
+          "false_negative": 6,
+          "precision": 1.0,
+          "recall": 0.8064516129032258
+        }
+      ]
+    },
+    "train-diagnostic": {
+      "images": 91,
+      "metrics": [
+        {
+          "name": "Tree",
+          "true_positive": 65,
+          "false_positive": 0,
+          "false_negative": 28,
+          "precision": 1.0,
+          "recall": 0.6989247311827957
+        }
+      ]
+    },
+    "observed-office-regression": {
+      "images": 8,
+      "metrics": [
+        {
+          "name": "Tree",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ]
+    }
+  },
+  "service_routed": false,
+  "independent_test_performed": false,
+  "pico_test": "NOT_PERFORMED",
+  "limitations": [
+    "Observed office negative regression is not a fresh test",
+    "54 derived TRAIN views are not independent acquisitions",
+    "More optimizer batches than v13; not equal-compute",
+    "Inherited source boxes/overlay fields describe original annotation provenance; generated label files are authoritative transformed coordinates"
+  ]
+}
