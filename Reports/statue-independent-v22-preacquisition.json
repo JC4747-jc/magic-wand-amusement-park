@@ -1,0 +1,38 @@
+{
+  "weight_sha256": "2508435a84ea8ec907ac4bdb1aa1141c7f58adde20c126582b4557bb1ae84dfb",
+  "allowed_classes": [
+    "Statue"
+  ],
+  "confidence": 0.65,
+  "imgsz": 640,
+  "rect": true,
+  "nms_iou": 0.7,
+  "max_det": 32,
+  "reserved_split": "test",
+  "sources": [
+    {
+      "category": "Category:Statues of women",
+      "max_images": 8,
+      "max_pages": 3
+    },
+    {
+      "category": "Category:Statues of men",
+      "max_images": 8,
+      "max_pages": 3
+    },
+    {
+      "category": "Category:People wearing virtual reality headsets",
+      "max_images": 8,
+      "max_pages": 3
+    }
+  ],
+  "max_total_photos": 24,
+  "known_artists_sha256": "5d535693ab121307f433e290b67fc5ba02e171c392ab6fd9b673e2ab57b7b06e",
+  "acceptance": {
+    "precision_min": 0.9,
+    "recall_min": 0.8
+  },
+  "policy": "All downloaded sources TEST-only forever, including review holds. Review/annotate complete images before inference. No threshold/checkpoint changes, no performance-based exclusions; document census/identity ambiguities. Public source pilot cannot establish PICO readiness.",
+  "training_approved": false,
+  "deployment_accepted": false
+}

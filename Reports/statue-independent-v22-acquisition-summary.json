@@ -1,0 +1,32 @@
+{
+  "preacquisition_sha256": "83a456828f857882b20c02a5f715062b816179f289e96c8fd52d83b0b745985a",
+  "fixed_weight_sha256": "2508435a84ea8ec907ac4bdb1aa1141c7f58adde20c126582b4557bb1ae84dfb",
+  "candidate_photos": 24,
+  "source_author_groups": 24,
+  "sources": [
+    {
+      "path": "Datasets/statue-women-independent-source-v22/manifest.json",
+      "sha256": "f1728e9c2d83ec0748cb8f3f0ef120e169ea3002548e9ddd1272e663e88c6449",
+      "failures": []
+    },
+    {
+      "path": "Datasets/statue-men-independent-source-v22/manifest.json",
+      "sha256": "fd5995b2598d57a2d5fa7fdcb6e82e7b7dd332ac9b059b74fe0de91a3c6c20cb",
+      "failures": [
+        {
+          "page_id": 14893574,
+          "error": "HTTPError"
+        }
+      ]
+    },
+    {
+      "path": "Datasets/statue-vr-independent-source-v22/manifest.json",
+      "sha256": "c5faae8369317c1729285f457a8ab09852468f994e95c239282b96bf22c0005a",
+      "failures": []
+    }
+  ],
+  "status": "UNANNOTATED_TEST_ONLY_SOURCE_POOL",
+  "model_inference_performed": false,
+  "training_approved": false,
+  "deployment_accepted": false
+}

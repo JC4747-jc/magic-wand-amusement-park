@@ -1,0 +1,33 @@
+{
+  "status": "LOCAL_VALIDATION_AND_OBSERVED_NEGATIVES_PASSED_FRESH_TEST_REQUIRED",
+  "weight_sha256": "2508435a84ea8ec907ac4bdb1aa1141c7f58adde20c126582b4557bb1ae84dfb",
+  "operating": [
+    {
+      "name": "Statue",
+      "true_positive": 19,
+      "false_positive": 1,
+      "false_negative": 2,
+      "precision": 0.95,
+      "recall": 0.9047619047619048
+    }
+  ],
+  "observed_office_images": 8,
+  "observed_office_false_positives": 0,
+  "evidence": [
+    {
+      "path": "Reports/statue-oiv7m-vr-negatives-v21-final-val/report.json",
+      "sha256": "4ea53e82bef549db4c1523cece6c7c958e5dd8da649d9e8a85de915d4b51416d"
+    },
+    {
+      "path": "Reports/statue-oiv7m-vr-negatives-v21-office-regression-counted.json",
+      "sha256": "049bba405ff38ae5577dae8685e9a0ef3686779babcf804ed4e94c276c9d9d99"
+    }
+  ],
+  "limitations": [
+    "Repeated public VAL and previously observed private PICO backgrounds; no fresh independent test or device verification.",
+    "Final CPU VAL and office evaluations ran concurrently; recorded timing has CPU contention and is not a controlled latency comparison.",
+    "Two new TRAIN negatives changed sampling budget78 versus76; not equal-compute."
+  ],
+  "service_routed": false,
+  "deployment_accepted": false
+}

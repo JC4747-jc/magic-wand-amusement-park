@@ -1,0 +1,94 @@
+{
+  "status": "REJECTED_INDEPENDENT_TEST",
+  "weight_sha256": "2508435a84ea8ec907ac4bdb1aa1141c7f58adde20c126582b4557bb1ae84dfb",
+  "test_dataset_sha256": "bc8607b8d85ed6478bb9cd393cc47285985d6756e94313981d0a6b01f4b822a3",
+  "operating": [
+    {
+      "name": "Statue",
+      "true_positive": 15,
+      "false_positive": 3,
+      "false_negative": 8,
+      "precision": 0.8333333333333334,
+      "recall": 0.6521739130434783
+    }
+  ],
+  "AP": [
+    {
+      "class_id": 0,
+      "name": "Statue",
+      "precision": 0.8112874921947242,
+      "recall": 0.6956521739130435,
+      "mAP50": 0.7584962486830907,
+      "mAP50_95": 0.5821365020398022,
+      "labels": 23
+    }
+  ],
+  "images": 22,
+  "GT": 23,
+  "negative_images": 7,
+  "negative_false_positives": 0,
+  "inference_mean_ms": 318.3418727276148,
+  "inference_warm_mean_ms": 224.00177619073517,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "evidence": [
+    {
+      "path": "Reports/statue-independent-v22-final-test/report.json",
+      "sha256": "7bdbc9ef8c12407b356356dd9efb72bc11e7acd855744086cfc4026d721701e3"
+    },
+    {
+      "path": "Reports/statue-independent-v22-post-test-audit.json",
+      "sha256": "03d8180c62c86294ad64d670acf7e50b6da6f1c1e20845397b763922de5739f5"
+    },
+    {
+      "path": "Reports/statue-independent-v22-frozen-test-inputs.json",
+      "sha256": "01255fdd59928a904de873b4bf25994e3e31667e2859b72dbb33d6b4b436a7c4"
+    },
+    {
+      "path": "Datasets/statue-independent-test-v22/audit.json",
+      "sha256": "bc8607b8d85ed6478bb9cd393cc47285985d6756e94313981d0a6b01f4b822a3"
+    },
+    {
+      "path": "Reports/statue-independent-v22-boxes/reviewed.json",
+      "sha256": "bad11d11a7c57321bce6eb49c584ac79af324d88a9db5e987b6143f2adf5d00d"
+    }
+  ],
+  "error_review": [
+    {
+      "page_id": 75908598,
+      "example": "Reports/statue-independent-v22-final-test/error-75908598.jpg",
+      "sha256": "c3930acec56586fffc7737326000926f964babf20ccd5d22830406044d685faf",
+      "actually_viewed": true,
+      "note": "Mother matched; three sculpted children missed. A narrow architectural baluster detected as Statue is a real background FP."
+    },
+    {
+      "page_id": 45756467,
+      "example": "Reports/statue-independent-v22-final-test/error-45756467.jpg",
+      "sha256": "cb6d97f821fd7145231dc8ea1c77ec388e8215778d118f60852beaaed37fefea",
+      "actually_viewed": true,
+      "note": "Prediction includes large sculptural backdrop/support and pedestal; box IoU below .5 versus pre-inference figure extent. Do not expand TEST label to improve result."
+    },
+    {
+      "page_id": 39354795,
+      "example": "Reports/statue-independent-v22-final-test/error-39354795.jpg",
+      "sha256": "bdd6456f3f875527a8ba2765313c78ea6d89ae5bec30ef760359b414fef8134d",
+      "actually_viewed": true,
+      "note": "Prediction includes full pointed support and base; box IoU below .5 versus pre-inference seated-figure extent. Do not expand TEST label to improve result."
+    },
+    {
+      "page_id": 34609639,
+      "example": "Reports/statue-independent-v22-final-test/error-34609639.jpg",
+      "sha256": "f1b50c05a2ea09736a4b05fdb95d538580dc2854daa1c633424397d6f05c6711",
+      "actually_viewed": true,
+      "note": "Six annotated heads including right-edge partial head; only three accepted matches, three misses. Do not remove small/cropped GT."
+    }
+  ],
+  "service_routed": false,
+  "deployment_accepted": false,
+  "pico_validation": "NOT_PERFORMED",
+  "next_action": "Archive rejected model and frozen data/evaluation. Obtain distinct TRAIN-only complete individual/group statue context and figure-versus-support coverage; this now-observed TEST is permanent regression only and cannot select thresholds/checkpoints. No TEST relabeling to match predictions.",
+  "limitations": [
+    "Single-annotator public pilot, unknown pretraining overlap; no positive PICO targets.",
+    "Two whole-image identity/semantic holds were decided before inference and remain TEST-only.",
+    "VAL passed P.95/R.9048 but independent TEST fails preregistered P.9/R.8."
+  ]
+}

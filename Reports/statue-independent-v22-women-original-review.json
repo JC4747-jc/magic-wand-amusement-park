@@ -1,0 +1,58 @@
+{
+  "review": "Original images actually viewed by assistant before any candidate inference",
+  "source_manifest_sha256": "f1728e9c2d83ec0748cb8f3f0ef120e169ea3002548e9ddd1272e663e88c6449",
+  "split": "TEST_ONLY_FOREVER_INCLUDING_HOLDS",
+  "model_inference_performed": false,
+  "labels_approved": false,
+  "limitations": "Visual census notes only; publisher linkage, full box review and semantic/identity holds still required. No public pilot implies PICO acceptance or known pretraining independence.",
+  "rows": [
+    {
+      "page_id": 46472562,
+      "image": "images/46472562.jpg",
+      "image_sha256": "99f7251fbb0b146f87cd970db73e485abb682c902233e924912302df9cbc22d2",
+      "note": "One seated female bronze figure; full visible extent needs annotation."
+    },
+    {
+      "page_id": 75908598,
+      "image": "images/75908598.jpg",
+      "image_sha256": "ed5e318df1ddf7174052ae35a9e5ac02e00416fa8af67b578b5216bcf7cc98da",
+      "note": "Mother and children group; likely four figures; HOLD complete instance census."
+    },
+    {
+      "page_id": 58228525,
+      "image": "images/58228525.jpg",
+      "image_sha256": "240872ca92e879c17bff79cca07b9150f346095e416ac7d8feb89ab2216306e5",
+      "note": "One standing draped bronze figure; HOLD missing creator link."
+    },
+    {
+      "page_id": 113009697,
+      "image": "images/113009697.jpg",
+      "image_sha256": "a82b7819f24d2671d0ca7f43ba642640a31d9aecf2d01c5c5ad424119d5356a9",
+      "note": "One gilded female saint; exclude supporting plinth."
+    },
+    {
+      "page_id": 179100901,
+      "image": "images/179100901.jpg",
+      "image_sha256": "1961585155e2aa4b78827785efc242f1719b780073b347fba34f76dd1e476004",
+      "note": "One marble robed figure in niche; include outstretched hand."
+    },
+    {
+      "page_id": 45374298,
+      "image": "images/45374298.jpg",
+      "image_sha256": "498ac6494475892cf7d8a5bff46e08271077b699c68152b5a9e3f2487186f30f",
+      "note": "Abstract long-nosed physical bust with patterned hair; HOLD subject alias check with 45105771."
+    },
+    {
+      "page_id": 45756467,
+      "image": "images/45756467.jpg",
+      "image_sha256": "5d8954c8948f05bb20cc7a642b20983aea55f52cc7c31ddf6e6ae128177a4372",
+      "note": "Seated sculptural figure in monochrome studio/composite presentation; review domain, do not reject for model difficulty."
+    },
+    {
+      "page_id": 45105771,
+      "image": "images/45105771.jpg",
+      "image_sha256": "d82a3dc116f1fb84d1b906021c4dbfc6a960f3055cd56fc4e680bc761e16f3bc",
+      "note": "Abstract long-nosed physical bust; HOLD physical subject alias check with 45374298."
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "review": "Original images actually viewed by assistant before any candidate inference",
+  "source_manifest_sha256": "fd5995b2598d57a2d5fa7fdcb6e82e7b7dd332ac9b059b74fe0de91a3c6c20cb",
+  "split": "TEST_ONLY_FOREVER_INCLUDING_HOLDS",
+  "model_inference_performed": false,
+  "labels_approved": false,
+  "limitations": "Visual census notes only; publisher linkage, full box review and semantic/identity holds still required. No public pilot implies PICO acceptance or known pretraining independence.",
+  "rows": [
+    {
+      "page_id": 123655719,
+      "image": "images/123655719.jpg",
+      "image_sha256": "ced5807262b31bcbc90a50e9aec5b17b6dbdd88b8755955cf2daf6619b3f4984",
+      "note": "Main suited boules player; HOLD census of small possible background figure near hedge."
+    },
+    {
+      "page_id": 82534150,
+      "image": "images/82534150.jpg",
+      "image_sha256": "e07dd371d7b023437c5258953005277577e719b26f6afa74cebbd634af83817f",
+      "note": "One gold bust, top clipped; exclude large stump-like support."
+    },
+    {
+      "page_id": 68506694,
+      "image": "images/68506694.jpg",
+      "image_sha256": "db8ea79f8a6888ac573a52865970af4c2c64741135670a87b329132e7bdad8bf",
+      "note": "One bent stone male figure; separate supporting stone structures."
+    },
+    {
+      "page_id": 80080423,
+      "image": "images/80080423.jpg",
+      "image_sha256": "dd28c730c1ca39b2ac83e1d9acb23ebb9438e94bf61e14133e474f5a29e9a01b",
+      "note": "One standing statue heavily bush-occluded; annotate only visible extent."
+    },
+    {
+      "page_id": 39354795,
+      "image": "images/39354795.jpg",
+      "image_sha256": "cbe9a098f86f42f6b4e5a860c66a98c8a2542225f56de24b606e165e52cb1539",
+      "note": "One seated bronze male; exclude pointed abstract support."
+    },
+    {
+      "page_id": 15001683,
+      "image": "images/15001683.jpg",
+      "image_sha256": "9178932eadfd05a12c683ff68b7a81853b3e38920dde2715fd1141d26a3c5c3d",
+      "note": "One full standing white male statue; exclude pedestal."
+    },
+    {
+      "page_id": 2273236,
+      "image": "images/2273236.jpg",
+      "image_sha256": "2a4c5628aedbfcaa360e0309dd17977c2f06660370fd82c19a37857ba13b6129",
+      "note": "One large crowned deity head/upper torso cropped by image; creator-field conflict resolved separately."
+    },
+    {
+      "page_id": 34609639,
+      "image": "images/34609639.jpg",
+      "image_sha256": "8f0e08677d671740e93cfc71f192f23e9d8c4b147df60dd42be047a6d870131c",
+      "note": "Five visible sculpted heads, overlapping/cropped; HOLD complete per-instance boxes."
+    }
+  ]
+}

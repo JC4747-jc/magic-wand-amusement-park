@@ -1,0 +1,289 @@
+{
+  "mode": "test",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "commons-statue-independent-v22",
+      "url": "https://commons.wikimedia.org/",
+      "license": "Per-image CC BY / CC BY-SA; preserve attribution and ShareAlike",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated",
+    "Statue class does not establish historical identity, age or full 3D pose"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\candidates\\statue-oiv7m-vr-negatives-v21\\best.pt",
+  "architecture": "DetectionModel",
+  "sha256": "2508435a84ea8ec907ac4bdb1aa1141c7f58adde20c126582b4557bb1ae84dfb",
+  "dataset_version": "bc8607b8d85ed6478bb9cd393cc47285985d6756e94313981d0a6b01f4b822a3",
+  "split": "test",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "Statue"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "Statue",
+      "precision": 0.8112874921947242,
+      "recall": 0.6956521739130435,
+      "mAP50": 0.7584962486830907,
+      "mAP50_95": 0.5821365020398022,
+      "labels": 23
+    }
+  ],
+  "images": 22,
+  "excluded_samples": [],
+  "ground_truth_instances": 23,
+  "false_positive_images": 3,
+  "per_image": [
+    {
+      "image": "images/test/46472562.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 2299.4839000020875
+    },
+    {
+      "image": "images/test/75908598.jpg",
+      "ground_truth": 4,
+      "true_positive": 1,
+      "false_positive": 1,
+      "false_negative": 3,
+      "inference_ms": 252.83729999500792
+    },
+    {
+      "image": "images/test/113009697.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 178.48629999207333
+    },
+    {
+      "image": "images/test/179100901.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 230.49590000300668
+    },
+    {
+      "image": "images/test/45374298.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 275.8542999945348
+    },
+    {
+      "image": "images/test/45756467.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 1,
+      "inference_ms": 261.2451000022702
+    },
+    {
+      "image": "images/test/45105771.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 308.7709000101313
+    },
+    {
+      "image": "images/test/123655719.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 222.32030000304803
+    },
+    {
+      "image": "images/test/82534150.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 204.59159999154508
+    },
+    {
+      "image": "images/test/68506694.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 278.4057000098983
+    },
+    {
+      "image": "images/test/80080423.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 207.7592999994522
+    },
+    {
+      "image": "images/test/39354795.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 1,
+      "inference_ms": 208.12569999543484
+    },
+    {
+      "image": "images/test/15001683.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 201.3472999969963
+    },
+    {
+      "image": "images/test/2273236.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 215.14220000244677
+    },
+    {
+      "image": "images/test/34609639.jpg",
+      "ground_truth": 6,
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 3,
+      "inference_ms": 202.32920000853483
+    },
+    {
+      "image": "images/test/148524760.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 203.11600000422914
+    },
+    {
+      "image": "images/test/159433287.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 172.9166000004625
+    },
+    {
+      "image": "images/test/153964930.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 201.76269998773932
+    },
+    {
+      "image": "images/test/147733852.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 267.81439999467693
+    },
+    {
+      "image": "images/test/179649522.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 201.82200000272132
+    },
+    {
+      "image": "images/test/33399267.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 213.14440001151524
+    },
+    {
+      "image": "images/test/149607354.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 195.7500999997137
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "Statue",
+      "true_positive": 15,
+      "false_positive": 3,
+      "false_negative": 8,
+      "precision": 0.8333333333333334,
+      "recall": 0.6521739130434783
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 318.3418727276148,
+  "p95_inference_ms": 307.25264001011965,
+  "cold_first_image_ms": 2299.4839000020875,
+  "warm_mean_ms": 224.00177619073517,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images/test/75908598.jpg",
+      "example": "error-75908598.jpg",
+      "ground_truth": 4,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 3,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/45756467.jpg",
+      "example": "error-45756467.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/39354795.jpg",
+      "example": "error-39354795.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 1,
+      "confidence": 0.65
+    },
+    {
+      "image": "images/test/34609639.jpg",
+      "example": "error-34609639.jpg",
+      "ground_truth": 6,
+      "true_positives": 3,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "confidence": 0.65
+    }
+  ],
+  "allowed_classes": [
+    "Statue"
+  ],
+  "max_det": 32,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}
