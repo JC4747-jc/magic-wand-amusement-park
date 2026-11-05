@@ -1,0 +1,61 @@
+{
+  "trials": [
+    {
+      "name": "baseline",
+      "hypothesis": "Fresh15epoch baseline with same reviewed data and initializer; controls changed learning-rate schedule duration.",
+      "overrides": {},
+      "status": "REJECTED_VALIDATION",
+      "service_routed": false,
+      "rank": [
+        0,
+        0.9285714285714286,
+        0.8666666666666667,
+        1.0,
+        0.8364980769230769
+      ],
+      "weight_sha256": "6e70213d59678016255aa02603e68156ac820a61a8cf5b61537c7769ba51bb09",
+      "weight": "Reports\\plant-v21-autoresearch\\baseline\\train\\weights\\best.pt",
+      "selected_for_development": true,
+      "selected_epoch": 2,
+      "deployment_accepted": false,
+      "elapsed_seconds": 1336.0027523000026
+    },
+    {
+      "name": "faster-head-learning",
+      "hypothesis": "Test whether higher learning rate learns new auxiliary cut-arrangement class sooner. Hypothesis only, may worsen target recall or false positives.",
+      "overrides": {
+        "lr0": 0.0003
+      },
+      "status": "REJECTED_VALIDATION",
+      "service_routed": false,
+      "rank": [
+        0,
+        0.896551724137931,
+        0.8125,
+        1.0,
+        0.8132825757575757
+      ],
+      "weight_sha256": "f94669c037dcbc467f7f6742ca3f8beb871da1d990e6b4927fa93f8141afc549",
+      "weight": "Reports\\plant-v21-autoresearch\\faster-head-learning\\train\\weights\\best.pt",
+      "selected_for_development": false,
+      "selected_epoch": 1,
+      "deployment_accepted": false,
+      "elapsed_seconds": 620.3897620000062
+    }
+  ],
+  "best_development_candidate": {
+    "name": "baseline",
+    "rank": [
+      0,
+      0.9285714285714286,
+      0.8666666666666667,
+      1.0,
+      0.8364980769230769
+    ],
+    "weight": "Reports\\plant-v21-autoresearch\\baseline\\train\\weights\\best.pt",
+    "sha256": "6e70213d59678016255aa02603e68156ac820a61a8cf5b61537c7769ba51bb09"
+  },
+  "all_artifacts_retained": true,
+  "fresh_test_performed": false,
+  "deployment_accepted": false
+}

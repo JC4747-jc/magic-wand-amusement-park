@@ -1,0 +1,22 @@
+{
+  "name": "faster-head-learning",
+  "hypothesis": "Test whether higher learning rate learns new auxiliary cut-arrangement class sooner. Hypothesis only, may worsen target recall or false positives.",
+  "overrides": {
+    "lr0": 0.0003
+  },
+  "status": "REJECTED_VALIDATION",
+  "service_routed": false,
+  "rank": [
+    0,
+    0.896551724137931,
+    0.8125,
+    1.0,
+    0.8132825757575757
+  ],
+  "weight_sha256": "f94669c037dcbc467f7f6742ca3f8beb871da1d990e6b4927fa93f8141afc549",
+  "weight": "Reports\\plant-v21-autoresearch\\faster-head-learning\\train\\weights\\best.pt",
+  "selected_for_development": false,
+  "selected_epoch": 1,
+  "deployment_accepted": false,
+  "elapsed_seconds": 620.3897620000062
+}

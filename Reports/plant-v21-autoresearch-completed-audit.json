@@ -1,0 +1,54 @@
+{
+  "status": "COMPLETED_EVIDENCE_VERIFIED",
+  "trials": [
+    {
+      "name": "baseline",
+      "selected_epoch": 2,
+      "weight_sha256": "6e70213d59678016255aa02603e68156ac820a61a8cf5b61537c7769ba51bb09",
+      "rank": [
+        0,
+        0.9285714285714286,
+        0.8666666666666667,
+        1.0,
+        0.8364980769230769
+      ],
+      "operating_metrics": {
+        "name": "PottedPlant",
+        "true_positive": 13,
+        "false_positive": 2,
+        "false_negative": 0,
+        "precision": 0.8666666666666667,
+        "recall": 1.0
+      },
+      "mean_inference_ms": 398.29298461867995,
+      "status": "REJECTED_VALIDATION",
+      "deployment_accepted": false
+    },
+    {
+      "name": "faster-head-learning",
+      "selected_epoch": 1,
+      "weight_sha256": "f94669c037dcbc467f7f6742ca3f8beb871da1d990e6b4927fa93f8141afc549",
+      "rank": [
+        0,
+        0.896551724137931,
+        0.8125,
+        1.0,
+        0.8132825757575757
+      ],
+      "operating_metrics": {
+        "name": "PottedPlant",
+        "true_positive": 13,
+        "false_positive": 3,
+        "false_negative": 0,
+        "precision": 0.8125,
+        "recall": 1.0
+      },
+      "mean_inference_ms": 414.2851923064042,
+      "status": "REJECTED_VALIDATION",
+      "deployment_accepted": false
+    }
+  ],
+  "best_development_candidate": "baseline",
+  "fresh_test_performed": false,
+  "deployment_accepted": false
+}
