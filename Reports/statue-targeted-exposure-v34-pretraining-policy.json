@@ -1,0 +1,16 @@
+{
+  "status": "FROZEN_BEFORE_TRAINING",
+  "budget": {
+    "trials": 1,
+    "epochs": 20,
+    "exposures_per_epoch": 82
+  },
+  "baseline": "statue-oiv7m-expanded-val-v33",
+  "hypothesis": "Replace two rotating extras with fixed extra exposure to existing cropped-instance166565 and distant crowded176571 TRAIN images; same82exposures per epoch. No new photos or label edits.",
+  "dataset_audit_sha256": "e4b314a992b76ac40f709ef437c11302478a1b95f6cdcdfbba99a45fac78b3be",
+  "sampling_plan_sha256": "a3defde1afc4a0e87be1f24ab208cc3b17cb99cef380467342d44c89aec63585",
+  "selection": "Unchanged statue_expanded_validation_selection.py; both VAL cohorts must meet P>=.9 R>=.8 and zero negative-image FP",
+  "no_test_selection": true,
+  "deployment_accepted": false,
+  "diagnostic_report_sha256": "69b4da4d833fe64061a347117ebe7f9b6d1b22dda59d7e3ccad904d6a48c9959"
+}

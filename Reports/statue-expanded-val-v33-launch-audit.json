@@ -1,0 +1,17 @@
+{
+  "status": "PASS_PRETRAIN_COMPARISON",
+  "frozen_inputs": 261,
+  "parameters_differ_only_in_paths": {
+    "project": [
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-oiv7m-groups-hands-v27-training",
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\statue-oiv7m-expanded-val-v33-training"
+    ],
+    "data": [
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\statue-hands-v26\\data.yaml",
+      "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\statue-validation-extension-v32\\data.yaml"
+    ]
+  },
+  "initializer_equal": true,
+  "training_schedule": "Same80TRAIN/82exposures asv27; VAL19 and selectionpolicy changed; nativevalidationfeedback differs.",
+  "completed": false
+}

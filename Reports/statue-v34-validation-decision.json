@@ -1,0 +1,67 @@
+{
+  "status": "REJECTED_VALIDATION",
+  "deployment_accepted": false,
+  "service_routed": false,
+  "experiment": "One fixed20epoch trial replacing two rotating extras with two fixed difficult TRAIN extras;82total exposures unchanged",
+  "baseline_operating": [
+    {
+      "name": "Statue",
+      "true_positive": 30,
+      "false_positive": 4,
+      "false_negative": 3,
+      "precision": 0.8823529411764706,
+      "recall": 0.9090909090909091
+    }
+  ],
+  "candidate_operating": [
+    {
+      "name": "Statue",
+      "true_positive": 29,
+      "false_positive": 5,
+      "false_negative": 4,
+      "precision": 0.8529411764705882,
+      "recall": 0.8787878787878788
+    }
+  ],
+  "candidate_cohorts": {
+    "prior": {
+      "tp": 19,
+      "fp": 3,
+      "fn": 2,
+      "precision": 0.8636363636363636,
+      "recall": 0.9047619047619048,
+      "f1": 0.8837209302325582
+    },
+    "extension": {
+      "tp": 10,
+      "fp": 2,
+      "fn": 2,
+      "precision": 0.8333333333333334,
+      "recall": 0.8333333333333334,
+      "f1": 0.8333333333333334
+    }
+  },
+  "baseline_rank": [
+    0,
+    0.8901098901098901,
+    0.8571428571428571,
+    0.75,
+    0.7547689144166292
+  ],
+  "candidate_rank": [
+    0,
+    0.8585271317829457,
+    0.8333333333333334,
+    0.8333333333333334,
+    0.7107279027676356
+  ],
+  "conclusion": "Targeted two-image extra exposure did not improve frozen validation; do not promote or increase repeats without new evidence. Small-instance coverage remains a diagnostic issue, not a proven cause or solved capability.",
+  "test_performed": false,
+  "pico_validation": "NOT_PERFORMED",
+  "evidence": {
+    "Reports\\statue-oiv7m-targeted-exposure-v34-final-val\\report.json": "81aecdca6a9305d73b1c50811ab21cef2ea5c0cb70cdea1563cc4befc725f943",
+    "Reports\\statue-oiv7m-targeted-exposure-v34-completed-audit.json": "5b42b2aac9ffc353dbe0183e41de455ebfcbed4dc8bde001240030f645a747ed",
+    "Reports\\statue-targeted-exposure-v34-pretraining-policy.json": "d0bd74dcee9eb4897e971f29eb4f165fc6f0d21e46b704fcd255ded0303d2fa0"
+  },
+  "next_action": "Archive rejected experiments and assess source coverage/annotation completeness; avoid blind additional repeat or threshold sweeps."
+}

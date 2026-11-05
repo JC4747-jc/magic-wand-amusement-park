@@ -1,0 +1,39 @@
+{
+  "status": "REJECTED_VALIDATION",
+  "deployment_accepted": false,
+  "test_performed": false,
+  "operating_conf": 0.65,
+  "imgsz": 640,
+  "rect": true,
+  "nms_iou": 0.7,
+  "max_det": 32,
+  "report_sha256": "9664084fbd4c5c67d2f629682a2ce3c692847c0b41cbe748511edb55bb632fce",
+  "original_annotations_changed": false,
+  "visual_review": [
+    {
+      "image": "15217428",
+      "overlay_sha256": "b1726952667551af9e071595ecb3108ab660a5db3081a99324cfa33977510136",
+      "actually_viewed": true,
+      "observation": "Two duplicate partial-body predictions on one reclining statue; full-instance TP also present."
+    },
+    {
+      "image": "18393147",
+      "overlay_sha256": "39ea7f1447917d33c9b228bc9eac526bdd0863ef02931e7664a695815a90c968",
+      "actually_viewed": true,
+      "observation": "Oversized architecture/niche prediction in addition to correctly localized figure."
+    },
+    {
+      "image": "23367767",
+      "overlay_sha256": "cfa4a718506de0c0cd0ea5cbc269a37187af6ced76e52579a4dbe0720142500d",
+      "actually_viewed": true,
+      "observation": "Flat painted figure false positive under frozen volumetric-sculpture ontology."
+    },
+    {
+      "image": "e2ce7aaa49ea84334e86ffb9",
+      "overlay_sha256": "a93d248cfef57051e6df70abd51b610076206583bc1af1193c1939301ea7bf47",
+      "actually_viewed": true,
+      "observation": "Three missed annotated figures in dense museum group; no false positives."
+    }
+  ],
+  "next_action": "TRAIN-only diagnosis before proposing a bounded intervention; do not move VAL or TEST samples into TRAIN."
+}

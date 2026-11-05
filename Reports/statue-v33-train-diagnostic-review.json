@@ -1,0 +1,37 @@
+{
+  "mode": "TRAIN_ONLY_DIAGNOSTIC_NOT_GENERALIZATION",
+  "report_sha256": "69b4da4d833fe64061a347117ebe7f9b6d1b22dda59d7e3ccad904d6a48c9959",
+  "images": 80,
+  "ground_truth_instances": 104,
+  "operating_per_class": [
+    {
+      "name": "Statue",
+      "true_positive": 81,
+      "false_positive": 2,
+      "false_negative": 23,
+      "precision": 0.9759036144578314,
+      "recall": 0.7788461538461539
+    }
+  ],
+  "reviewed_overlays": [
+    {
+      "stem": "166565",
+      "actually_viewed": true,
+      "observation": "Two partial-instance predictions on cropped foreground figure fail IoU match; two distant annotated figures missed.",
+      "sha256": "15b55dc19d55c27d57ba7efdbf29ef0579e137fec68f52314bf7cb98a8596bb8"
+    },
+    {
+      "stem": "176571",
+      "actually_viewed": true,
+      "observation": "Eight annotated small/distant figures missed; crowded outdoor view.",
+      "sha256": "094fbddaca4c5c3b8fb6ce9cb0e15743441c44138321a28d69e72e6938ebe959"
+    },
+    {
+      "stem": "245560",
+      "actually_viewed": true,
+      "observation": "Three of seven annotated figures detected; tiny distant roof/tower figures missed.",
+      "sha256": "33b927b2a82d1b632328b0f9050c18fe06c67c271a571c7dd56fd19d667bbdff"
+    }
+  ],
+  "next_hypothesis": "Assess bounded training exposure to existing small-instance and cropped-instance TRAIN sources before collecting more easy single-figure positives. Preserve labels and all splits. No new training plan approved in this report."
+}
