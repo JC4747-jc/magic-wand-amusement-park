@@ -1,0 +1,511 @@
+{
+  "architecture": "YOLO detection",
+  "task": "detect",
+  "classes": {
+    "0": "PottedPlant",
+    "1": "CutArrangement"
+  },
+  "allowed_classes": [
+    "PottedPlant"
+  ],
+  "unity": {
+    "0": "ParkPlant",
+    "1": null
+  },
+  "sha256": "b5e8c9f80118b4410a1d292b0ef10c98666b771e6ffc40e74d5d41596b5c4e9f",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "dataset": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\plant-reviewed-v28",
+  "dataset_sha256": "73f65a6576d58b113855bfa3996b4ec3607c4a413e17430b70715b8dadabdfbd",
+  "annotation_review_hold": null,
+  "data_sources": [
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    }
+  ],
+  "parameters": {
+    "dataset_version": "73f65a6576d58b113855bfa3996b4ec3607c4a413e17430b70715b8dadabdfbd",
+    "initializer_sha256": "fe706e1763a8ffa5924c849d9798bb1083d416df6c8c6720cb6ffcdb3780177a",
+    "parameters": {
+      "data": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\plant-reviewed-v28\\data.yaml",
+      "device": 0,
+      "epochs": 15,
+      "imgsz": 640,
+      "batch": 4,
+      "workers": 0,
+      "seed": 20261105,
+      "deterministic": true,
+      "freeze": 0,
+      "optimizer": "AdamW",
+      "lr0": 0.0001,
+      "lrf": 0.1,
+      "warmup_bias_lr": 0.0001,
+      "mosaic": 0.0,
+      "mixup": 0.0,
+      "cutmix": 0.0,
+      "scale": 0.1,
+      "translate": 0.05,
+      "hsv_h": 0.01,
+      "hsv_s": 0.3,
+      "hsv_v": 0.2,
+      "close_mosaic": 0,
+      "project": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-v30-autoresearch\\reduced_scale",
+      "name": "train",
+      "plots": true
+    },
+    "torch": "2.13.0+cu126",
+    "ultralytics": "8.4.173",
+    "contract_sha256": "80681360e3d132cd7c3132401fa488a917047c1062beb6923d215d541c2af36f",
+    "hypothesis": "Reducing geometric scale amplitude from.3to.1 may retain cropped-container and small-plant context without amplifying truncation; test against same-data baseline, not assumed improvement.",
+    "test_selection": false,
+    "service_routed": false
+  },
+  "validation": {
+    "mode": "baseline",
+    "domain": "public-openimages-pilot",
+    "deployment_accepted": false,
+    "dataset_sources": [
+      {
+        "id": "openimages-v7",
+        "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+        "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+        "reviewed": true
+      }
+    ],
+    "limitations": [
+      "Small source-grouped subset; not an official benchmark score",
+      "No PICO targets evaluated",
+      "Houseplant labels are broader than potted tabletop plants; domain validation required"
+    ],
+    "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-v30-autoresearch\\reduced_scale\\train\\weights\\best.pt",
+    "architecture": "DetectionModel",
+    "sha256": "b5e8c9f80118b4410a1d292b0ef10c98666b771e6ffc40e74d5d41596b5c4e9f",
+    "dataset_version": "73f65a6576d58b113855bfa3996b4ec3607c4a413e17430b70715b8dadabdfbd",
+    "split": "val",
+    "torch": "2.13.0+cu126",
+    "ultralytics": "8.4.173",
+    "model_names": {
+      "0": "PottedPlant",
+      "1": "CutArrangement"
+    },
+    "per_class": [
+      {
+        "class_id": 0,
+        "name": "PottedPlant",
+        "precision": 0.9060795097566554,
+        "recall": 0.9230769230769231,
+        "mAP50": 0.9723755656108598,
+        "mAP50_95": 0.8393437371452078,
+        "labels": 13
+      }
+    ],
+    "images": 13,
+    "excluded_samples": [],
+    "ground_truth_instances": 13,
+    "false_positive_images": 1,
+    "per_image": [
+      {
+        "image": "images\\val\\2eeeba800c582ff3ecef355e.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 1272.5410999992164
+      },
+      {
+        "image": "images\\val\\a6bbcafb10d754a05e0706b3.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 188.9597999979742
+      },
+      {
+        "image": "images\\val\\789c1cc964cd408c51312028.jpg",
+        "ground_truth": 2,
+        "true_positive": 2,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 212.47899999434594
+      },
+      {
+        "image": "images\\val\\e5fde1c97f0f71710eb2c497.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 217.16770000057295
+      },
+      {
+        "image": "images\\val\\1778c52931d70cefc775af12.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 220.98640000331216
+      },
+      {
+        "image": "images\\val\\770aea72d5e07c15a5d62998.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 191.51370000327006
+      },
+      {
+        "image": "images\\val\\f2ca90725a1a7fe87d9594d9.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 292.4588000023505
+      },
+      {
+        "image": "images\\val\\026dbd3cbf9ee4442186797b.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 201.78810000652447
+      },
+      {
+        "image": "images\\val\\87514a2d9ff2547f39cbb4ac.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 191.36389999766834
+      },
+      {
+        "image": "images\\val\\80af71df5d201ada8c3935bb.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 188.88970000261907
+      },
+      {
+        "image": "images\\val\\581cedc885d26e10455cf980.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0,
+        "inference_ms": 197.15110000106506
+      },
+      {
+        "image": "images\\val\\478585150555622ee282ec40.jpg",
+        "ground_truth": 4,
+        "true_positive": 4,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 187.90520000038669
+      },
+      {
+        "image": "images\\val\\9fbc2444b8acf1398deaddd3.jpg",
+        "ground_truth": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "inference_ms": 209.02379999461118
+      }
+    ],
+    "ap_scope": "Positive target instances",
+    "operating_confidence": 0.35,
+    "operating_iou": 0.5,
+    "operating_per_class": [
+      {
+        "name": "PottedPlant",
+        "true_positive": 12,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.9230769230769231,
+        "recall": 0.9230769230769231
+      },
+      {
+        "name": "CutArrangement",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      }
+    ],
+    "operating_confidence_curve": [],
+    "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+    "mean_inference_ms": 290.171407692609,
+    "p95_inference_ms": 684.4917200010955,
+    "cold_first_image_ms": 1272.5410999992164,
+    "warm_mean_ms": 208.30726666705837,
+    "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+    "imgsz": 640,
+    "rect": true,
+    "device": "cpu",
+    "errors": [
+      {
+        "image": "images\\val\\581cedc885d26e10455cf980.jpg",
+        "example": "error-581cedc885d26e10455cf980.jpg",
+        "ground_truth": 0,
+        "true_positives": 0,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "confidence": 0.35
+      },
+      {
+        "image": "images\\val\\9fbc2444b8acf1398deaddd3.jpg",
+        "example": "error-9fbc2444b8acf1398deaddd3.jpg",
+        "ground_truth": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.35
+      }
+    ],
+    "allowed_classes": [
+      "PottedPlant"
+    ],
+    "max_det": 8,
+    "nms_iou": 0.7,
+    "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+    "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+  },
+  "test": {
+    "mode": "test",
+    "domain": "public-openimages-pilot",
+    "deployment_accepted": false,
+    "dataset_sources": [
+      {
+        "id": "openimages-v7",
+        "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+        "license": "Per-image CC BY2.0 metadata and attribution retained"
+      }
+    ],
+    "limitations": [
+      "Small source-grouped subset; not an official benchmark score",
+      "No PICO targets evaluated",
+      "Houseplant labels are broader than potted tabletop plants; domain validation required"
+    ],
+    "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-v30-autoresearch\\reduced_scale\\train\\weights\\best.pt",
+    "architecture": "DetectionModel",
+    "sha256": "b5e8c9f80118b4410a1d292b0ef10c98666b771e6ffc40e74d5d41596b5c4e9f",
+    "dataset_version": "f8342528c8441b885ea758361adacca576fa5249bdde28eb05e4b38d0521b806",
+    "split": "test",
+    "torch": "2.14.1+cpu",
+    "ultralytics": "8.4.173",
+    "model_names": {
+      "0": "PottedPlant",
+      "1": "CutArrangement"
+    },
+    "per_class": [
+      {
+        "class_id": 0,
+        "name": "PottedPlant",
+        "precision": 0.42479796781353757,
+        "recall": 0.16666666666666666,
+        "mAP50": 0.14518907563025213,
+        "mAP50_95": 0.07557563025210086,
+        "labels": 6
+      }
+    ],
+    "images": 11,
+    "excluded_samples": [],
+    "ground_truth_instances": 6,
+    "false_positive_images": 2,
+    "per_image": [
+      {
+        "image": "images/test/6d890f9b668f69fcadf289e0.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 1379.7782999899937
+      },
+      {
+        "image": "images/test/89934a2dcdbc7ac1ca4f7b79.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 188.17979999585077
+      },
+      {
+        "image": "images/test/a58480cec90b3c4d2a8f8dd7.jpg",
+        "ground_truth": 3,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 3,
+        "inference_ms": 232.1442999964347
+      },
+      {
+        "image": "images/test/4b4e6c122e47ca32ca2befed.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 224.50550000939984
+      },
+      {
+        "image": "images/test/9483aaaca28e87ca16cb89c7.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0,
+        "inference_ms": 213.56280001054984
+      },
+      {
+        "image": "images/test/bf48c57259aaea3248b64ee8.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 246.48299999535084
+      },
+      {
+        "image": "images/test/4fbf894b34eecf18077f687b.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0,
+        "inference_ms": 210.61970001028385
+      },
+      {
+        "image": "images/test/19752193139d71c11dff4f18.jpg",
+        "ground_truth": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "inference_ms": 197.74109999707434
+      },
+      {
+        "image": "images/test/68751f0785cc6f7ace3fa496.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 201.40710000123363
+      },
+      {
+        "image": "images/test/3ec052e2235c7ae73db1f3ae.jpg",
+        "ground_truth": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "inference_ms": 205.0180999940494
+      },
+      {
+        "image": "images/test/2888f4e200b27d7f251e7b0d.jpg",
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 204.91829999082256
+      }
+    ],
+    "ap_scope": "Positive target instances",
+    "operating_confidence": 0.35,
+    "operating_iou": 0.5,
+    "operating_per_class": [
+      {
+        "name": "PottedPlant",
+        "true_positive": 1,
+        "false_positive": 2,
+        "false_negative": 5,
+        "precision": 0.3333333333333333,
+        "recall": 0.16666666666666666
+      },
+      {
+        "name": "CutArrangement",
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null
+      }
+    ],
+    "operating_confidence_curve": [],
+    "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+    "mean_inference_ms": 318.57799999918575,
+    "p95_inference_ms": 813.1306499926723,
+    "cold_first_image_ms": 1379.7782999899937,
+    "warm_mean_ms": 212.45797000010498,
+    "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+    "imgsz": 640,
+    "rect": true,
+    "device": "cpu",
+    "errors": [
+      {
+        "image": "images/test/a58480cec90b3c4d2a8f8dd7.jpg",
+        "example": "error-a58480cec90b3c4d2a8f8dd7.jpg",
+        "ground_truth": 3,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 3,
+        "confidence": 0.35
+      },
+      {
+        "image": "images/test/9483aaaca28e87ca16cb89c7.jpg",
+        "example": "error-9483aaaca28e87ca16cb89c7.jpg",
+        "ground_truth": 0,
+        "true_positives": 0,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "confidence": 0.35
+      },
+      {
+        "image": "images/test/4fbf894b34eecf18077f687b.jpg",
+        "example": "error-4fbf894b34eecf18077f687b.jpg",
+        "ground_truth": 0,
+        "true_positives": 0,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "confidence": 0.35
+      },
+      {
+        "image": "images/test/19752193139d71c11dff4f18.jpg",
+        "example": "error-19752193139d71c11dff4f18.jpg",
+        "ground_truth": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.35
+      },
+      {
+        "image": "images/test/3ec052e2235c7ae73db1f3ae.jpg",
+        "example": "error-3ec052e2235c7ae73db1f3ae.jpg",
+        "ground_truth": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "confidence": 0.35
+      }
+    ],
+    "allowed_classes": [
+      "PottedPlant"
+    ],
+    "max_det": 8,
+    "nms_iou": 0.7,
+    "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+    "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+  },
+  "status": "REJECTED_OBSERVED_REGRESSION",
+  "test_freshness": "PREVIOUSLY_OBSERVED_REGRESSION_NOT_FRESH_TEST",
+  "negative_regression": null,
+  "service_routed": false,
+  "pico_validation": "NOT_PERFORMED for this model",
+  "training_outputs": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-v30-autoresearch\\reduced_scale\\train",
+  "resume_weight": null,
+  "last_weight": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-v30-autoresearch\\reduced_scale\\train\\weights\\last.pt",
+  "optimizer_resume_available": false,
+  "last_weight_usage": "Fine-tuning initializer only; optimizer state stripped or unavailable",
+  "validation_report": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-v30-autoresearch\\reduced_scale\\final-val\\report.json",
+  "test_report": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-v30-reduced-observed-v23\\report.json",
+  "test_dataset": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Datasets\\plant-independent-test-v23",
+  "inference_timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "warm_mean_inference_ms": 208.30726666705837,
+  "limitations": [
+    "Candidate packaging does not authorize deployment or prove PICO performance"
+  ],
+  "dataset_scope": "v26 plus two reviewed TRAIN photos/three targets; all134parent image/label/group/fold bytes and native-val list unchanged. Historical source holds retained except two explicitly resolved candidates."
+}

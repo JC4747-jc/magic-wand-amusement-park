@@ -1,0 +1,220 @@
+{
+  "mode": "test",
+  "domain": "public-openimages-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "openimages-v7",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "license": "Per-image CC BY2.0; attribution retained"
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated",
+    "Houseplant labels are broader than potted tabletop plants; domain validation required"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-v30-autoresearch\\reduced_scale\\train\\weights\\best.pt",
+  "architecture": "DetectionModel",
+  "sha256": "b5e8c9f80118b4410a1d292b0ef10c98666b771e6ffc40e74d5d41596b5c4e9f",
+  "dataset_version": "59d38e64a49d6289d936b7a28d7536ef5cf0aa2bbe52ce425244464437ed1250",
+  "split": "test",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "PottedPlant",
+    "1": "CutArrangement"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "PottedPlant",
+      "precision": 0.9645920175793341,
+      "recall": 1.0,
+      "mAP50": 0.995,
+      "mAP50_95": 0.7212500000000001,
+      "labels": 4
+    }
+  ],
+  "images": 17,
+  "excluded_samples": [],
+  "ground_truth_instances": 4,
+  "false_positive_images": 0,
+  "per_image": [
+    {
+      "image": "images/test/fa7ce41d4b9afc22848ed03f.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 1475.1421000109985
+    },
+    {
+      "image": "images/test/ba5e20450c409a914f412b28.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 203.73249999829568
+    },
+    {
+      "image": "images/test/575dc428696ca3d057ee245b.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 237.78200001106597
+    },
+    {
+      "image": "images/test/f72f268adba58b0fdccb7234.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 187.07739999808837
+    },
+    {
+      "image": "images/test/4d9747551f3eeb72f051e533.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 314.48879999516066
+    },
+    {
+      "image": "images/test/5aacda586b10aa8a8f46e80c.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 211.0958999983268
+    },
+    {
+      "image": "images/test/85e83e023fbe34c3dab63f75.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 182.11590001010336
+    },
+    {
+      "image": "images/test/d1cc1bc099bbb2b813596601.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 192.43080000160262
+    },
+    {
+      "image": "images/test/4623649c5615b1972eb853e0.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 294.8668000026373
+    },
+    {
+      "image": "images/test/58928bc762497041cec8a5fe.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 249.2037999909371
+    },
+    {
+      "image": "images/test/67a9f2a47cb5808479367e50.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 215.0584000046365
+    },
+    {
+      "image": "images/test/a292080049e7ce4c1c2bbb7f.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 177.47830000007525
+    },
+    {
+      "image": "images/test/4d21d1ebe86d87df358823d8.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 180.90229999506846
+    },
+    {
+      "image": "images/test/126e295f9d4b0a0570687fc4.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 204.57580000220332
+    },
+    {
+      "image": "images/test/a0e43146e268a5ad23520c07.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 227.6317000068957
+    },
+    {
+      "image": "images/test/dfcd19b09c23902b4fa5a6b2.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 269.59050000004936
+    },
+    {
+      "image": "images/test/536763201b2f692f2c7c1f73.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 193.8196999981301
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.35,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "PottedPlant",
+      "true_positive": 4,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "name": "CutArrangement",
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": null,
+      "recall": null
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 295.11721764848676,
+  "p95_inference_ms": 546.6194599983274,
+  "cold_first_image_ms": 1475.1421000109985,
+  "warm_mean_ms": 221.36566250082979,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [],
+  "allowed_classes": [
+    "PottedPlant"
+  ],
+  "max_det": 8,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}

@@ -1,0 +1,21 @@
+{
+  "epochs": 15,
+  "scope": "Exactly two serial trials on fixed plant-reviewed-v28; equal15epochs, same data/initializer/options except scale. Not fixed wall clock.",
+  "trials": [
+    {
+      "name": "baseline",
+      "overrides": {},
+      "hypothesis": "Reproduce existing scale.3 training on reviewed119TRAIN to measure new data baseline; no historical TEST selection."
+    },
+    {
+      "name": "reduced_scale",
+      "overrides": {
+        "scale": 0.1
+      },
+      "hypothesis": "Reducing geometric scale amplitude from.3to.1 may retain cropped-container and small-plant context without amplifying truncation; test against same-data baseline, not assumed improvement."
+    }
+  ],
+  "gates": "Full13VAL at.35/640rect/.7/max8 P>=.9 R>=.8, frozen existing selector.",
+  "observed_test_policy": "No v23/v25 observed TEST selection, fresh source-separated TEST and actualPICO required for deployment.",
+  "deployment_accepted": false
+}

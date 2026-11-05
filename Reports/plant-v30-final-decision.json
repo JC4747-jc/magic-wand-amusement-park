@@ -1,0 +1,63 @@
+{
+  "status": "REJECTED_OBSERVED_REGRESSION",
+  "weight_sha256": "b5e8c9f80118b4410a1d292b0ef10c98666b771e6ffc40e74d5d41596b5c4e9f",
+  "validation": {
+    "tp": 12,
+    "fp": 1,
+    "fn": 1,
+    "precision": 0.9230769230769231,
+    "recall": 0.9230769230769231
+  },
+  "observed_reports": [
+    {
+      "dataset": "v23",
+      "report_sha256": "24bb2fbe2211e9a377ec5c422c5e6bb17c3d74687c9f66fcef738a4fe913103e",
+      "operating": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 1,
+          "false_positive": 2,
+          "false_negative": 5,
+          "precision": 0.3333333333333333,
+          "recall": 0.16666666666666666
+        },
+        {
+          "name": "CutArrangement",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "observed_regression_not_fresh": true
+    },
+    {
+      "dataset": "v25",
+      "report_sha256": "9e2177ba227ed129bab2f0b146492eed644a3a5c6f74d5667bd0e42486e9d992",
+      "operating": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 4,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "name": "CutArrangement",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "observed_regression_not_fresh": true
+    }
+  ],
+  "fresh_test_performed": false,
+  "deployment_accepted": false,
+  "service_changed": false,
+  "conclusion": "Reduced scale passes development VAL and v25 observed regression but fails v23 observed regression. No deployment or threshold retuning; retain both experiments."
+}

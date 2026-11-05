@@ -398,6 +398,22 @@
       "bytes": 52037235,
       "status": "REJECTED_VALIDATION",
       "deployment_accepted": false
+    },
+    {
+      "name": "plant-v30-baseline",
+      "path": "object-detection-demo/weights/candidates/plant-v30-baseline/best.pt",
+      "sha256": "41c9e3eda7e713c225311a034fb387e4de94f779474431558a09780ca719137a",
+      "bytes": 52042234,
+      "status": "REJECTED_VALIDATION",
+      "deployment_accepted": false
+    },
+    {
+      "name": "plant-v30-reduced-scale",
+      "path": "object-detection-demo/weights/candidates/plant-v30-reduced-scale/best.pt",
+      "sha256": "b5e8c9f80118b4410a1d292b0ef10c98666b771e6ffc40e74d5d41596b5c4e9f",
+      "bytes": 52041338,
+      "status": "REJECTED_OBSERVED_REGRESSION",
+      "deployment_accepted": false
     }
   ],
   "datasets_included": false,

@@ -1,0 +1,22 @@
+{
+  "name": "reduced_scale",
+  "hypothesis": "Reducing geometric scale amplitude from.3to.1 may retain cropped-container and small-plant context without amplifying truncation; test against same-data baseline, not assumed improvement.",
+  "overrides": {
+    "scale": 0.1
+  },
+  "status": "COMPLETED_VAL_CANDIDATE",
+  "service_routed": false,
+  "rank": [
+    1,
+    0.9230769230769231,
+    0.9230769230769231,
+    0.9230769230769231,
+    0.8393437371452078
+  ],
+  "weight_sha256": "b5e8c9f80118b4410a1d292b0ef10c98666b771e6ffc40e74d5d41596b5c4e9f",
+  "weight": "Reports\\plant-v30-autoresearch\\reduced_scale\\train\\weights\\best.pt",
+  "selected_for_development": true,
+  "selected_epoch": 1,
+  "deployment_accepted": false,
+  "elapsed_seconds": 214.70228789999965
+}

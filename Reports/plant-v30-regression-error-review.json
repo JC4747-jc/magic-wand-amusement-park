@@ -1,0 +1,38 @@
+{
+  "report_sha256": "24bb2fbe2211e9a377ec5c422c5e6bb17c3d74687c9f66fcef738a4fe913103e",
+  "weight_sha256": "b5e8c9f80118b4410a1d292b0ef10c98666b771e6ffc40e74d5d41596b5c4e9f",
+  "scope": "Previously observed regression visual diagnosis only; no label, threshold or checkpoint change.",
+  "rows": [
+    {
+      "image": "images/test/a58480cec90b3c4d2a8f8dd7.jpg",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "2697ef53e56337e2a8d899fc6cc0aafaad44924c570230c5961627e1ca96f4bb",
+      "observation": "Three hanging planted recycled cans missed."
+    },
+    {
+      "image": "images/test/9483aaaca28e87ca16cb89c7.jpg",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "8e3b3ccfb728dcc7afc445178f814ca154461b3d0d5eec2954de9e646d970896",
+      "observation": "Harvested leafy stems in metal kitchen bowl falsely predicted as rooted container plant."
+    },
+    {
+      "image": "images/test/4fbf894b34eecf18077f687b.jpg",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "6789a31f4a163dfbd09d7089b28b28d30ccabfec874b4bbf3721c073c7e0c0ac",
+      "observation": "Cut roses/flowers in transparent water vase falsely predicted as rooted container plant."
+    },
+    {
+      "image": "images/test/19752193139d71c11dff4f18.jpg",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "e933b0c1a3da289f0dcbe96c380fe399b4beb8227d5baaa86ca018eb8db675c0",
+      "observation": "Small windowsill herb container missed."
+    },
+    {
+      "image": "images/test/3ec052e2235c7ae73db1f3ae.jpg",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "c3d4afeddbd48473945762a718acd61adb6f12d79f4fd4c34535a4c2995ebcbd",
+      "observation": "Elevated flowering windowbox missed."
+    }
+  ],
+  "deployment_accepted": false
+}

@@ -1,0 +1,61 @@
+{
+  "trials": [
+    {
+      "name": "baseline",
+      "hypothesis": "Reproduce existing scale.3 training on reviewed119TRAIN to measure new data baseline; no historical TEST selection.",
+      "overrides": {},
+      "status": "REJECTED_VALIDATION",
+      "service_routed": false,
+      "rank": [
+        0,
+        0.896551724137931,
+        0.8125,
+        1.0,
+        0.7992027472527472
+      ],
+      "weight_sha256": "41c9e3eda7e713c225311a034fb387e4de94f779474431558a09780ca719137a",
+      "weight": "Reports\\plant-v30-autoresearch\\baseline\\train\\weights\\best.pt",
+      "selected_for_development": true,
+      "selected_epoch": 8,
+      "deployment_accepted": false,
+      "elapsed_seconds": 224.60653619999357
+    },
+    {
+      "name": "reduced_scale",
+      "hypothesis": "Reducing geometric scale amplitude from.3to.1 may retain cropped-container and small-plant context without amplifying truncation; test against same-data baseline, not assumed improvement.",
+      "overrides": {
+        "scale": 0.1
+      },
+      "status": "COMPLETED_VAL_CANDIDATE",
+      "service_routed": false,
+      "rank": [
+        1,
+        0.9230769230769231,
+        0.9230769230769231,
+        0.9230769230769231,
+        0.8393437371452078
+      ],
+      "weight_sha256": "b5e8c9f80118b4410a1d292b0ef10c98666b771e6ffc40e74d5d41596b5c4e9f",
+      "weight": "Reports\\plant-v30-autoresearch\\reduced_scale\\train\\weights\\best.pt",
+      "selected_for_development": true,
+      "selected_epoch": 1,
+      "deployment_accepted": false,
+      "elapsed_seconds": 214.70228789999965
+    }
+  ],
+  "best_development_candidate": {
+    "name": "reduced_scale",
+    "rank": [
+      1,
+      0.9230769230769231,
+      0.9230769230769231,
+      0.9230769230769231,
+      0.8393437371452078
+    ],
+    "weight": "Reports\\plant-v30-autoresearch\\reduced_scale\\train\\weights\\best.pt",
+    "sha256": "b5e8c9f80118b4410a1d292b0ef10c98666b771e6ffc40e74d5d41596b5c4e9f"
+  },
+  "all_artifacts_retained": true,
+  "fresh_test_performed": false,
+  "deployment_accepted": false
+}
