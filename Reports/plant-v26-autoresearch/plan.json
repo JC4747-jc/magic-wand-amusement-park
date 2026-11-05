@@ -1,0 +1,14 @@
+{
+  "epochs": 15,
+  "scope": "One bounded data expansion from111to117TRAIN; same v12 initializer/settings as v24, equal epochs not equal optimizer steps.",
+  "trials": [
+    {
+      "name": "baseline",
+      "overrides": {},
+      "hypothesis": "Six source-only reviewed TRAIN additions add14target instances and1cut auxiliary. Evaluate full13VAL without TEST selection."
+    }
+  ],
+  "observed_test_policy": "v23/v25 and historical TEST are observed regression only; no threshold/checkpoint selection. Fresh independent TEST plus PICO required for acceptance.",
+  "fresh_test_selection": false,
+  "deployment_accepted": false
+}

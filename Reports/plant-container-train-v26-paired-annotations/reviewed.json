@@ -1,0 +1,55 @@
+{
+  "samples": [
+    {
+      "original_id": "6119af9658c2a188",
+      "image": "Datasets/plant-container-train-paired-source-v24/images/6119af9658c2a188.jpg",
+      "label": "Reports/plant-container-train-v26-paired-annotations/6119af9658c2a188.txt",
+      "overlay": "Reports/plant-container-train-v26-paired-annotations/6119af9658c2a188.jpg",
+      "image_sha256": "9c4dd96d9a10dbf58b420dffc15d2c28f0142f8e68d7e93ec6ab454dda458e23",
+      "label_sha256": "c97d9012b9193cedf7f7113a2d9cdb7ef43a061cf488d48f45d0e8a758a3f540",
+      "overlay_sha256": "c3b04b5f3ffe3343a448be478afb23d9fa122f00a648c335b3e242b7f8732f4e",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "review_approved": true,
+      "reserved_split": "train",
+      "group": "https://www.flickr.com/people/bwp13/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Brian",
+        "AuthorProfileURL": "https://www.flickr.com/people/bwp13/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/bwp13/4256298332",
+        "Title": "John McMath Nidan-18"
+      },
+      "boxes_class_xyxy": [
+        [
+          0,
+          142,
+          141,
+          259,
+          384
+        ],
+        [
+          1,
+          980,
+          119,
+          1024,
+          192
+        ]
+      ],
+      "notes": "Full original, enlarged vase context and annotated full overlay actually viewed. One rooted dracaena left; one cut-flower arrangement with exposed stems in transparent water vase at upper-right, image-clipped. No predictions used."
+    }
+  ],
+  "names": [
+    "PottedPlant",
+    "CutArrangement"
+  ],
+  "model_predictions_used": false,
+  "training_approved": false,
+  "scope": "Previously TRAIN-reserved photograph, source-content manual annotation only.",
+  "pending_review_observations": {
+    "5d1838e8161716e7": "Actual original and left-edge enlarged crop reveal additional clipped containers and possible very small upper-left hanging vegetation beyond two obvious blue pots; keep pending full instance census.",
+    "6748701b7c7a38c8": "Actual full original shows foreground bonsai, separate right fern and left-edge container/foliage association; retain pending, do not omit edge objects.",
+    "595aefba4db8aeb3": "Actual full original and enlarged floral crop do not conclusively establish all flower materials; mixed realistic roses/decorations cannot be treated as guaranteed all-artificial negative.",
+    "1d4a192a1141f7f6": "Actual full original re-viewed; black orchid pot plus decorated left and bottom-right blue containers, leaf ownership ambiguous; hold."
+  }
+}

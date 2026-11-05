@@ -1,0 +1,91 @@
+{
+  "samples": [
+    {
+      "original_id": "3f8dc73efefb2744",
+      "image": "Datasets/plant-container-train-batch2-source-v24/images/3f8dc73efefb2744.jpg",
+      "label": "Reports/plant-container-train-v26-dense-annotations/3f8dc73efefb2744.txt",
+      "overlay": "Reports/plant-container-train-v26-dense-annotations/3f8dc73efefb2744.jpg",
+      "image_sha256": "e6300003a4265a5523ab1cc0ac76a811c084a0fe9915dc0030522fe341cf1f42",
+      "label_sha256": "8cebb831c1877858b80561b41833f88cbd98e90aa4f2ab0b15f27653d6562935",
+      "overlay_sha256": "3bf2711cdfd85e18a89789e1ed67241d90581d5a2b362fe5611b9a643ec66b8b",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "review_approved": true,
+      "reserved_split": "train",
+      "group": "https://www.flickr.com/people/barndweller/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "abarndweller",
+        "AuthorProfileURL": "https://www.flickr.com/people/barndweller/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/barndweller/14349466288",
+        "Title": "Potting Bench"
+      },
+      "boxes_class_xyxy": [
+        [
+          0,
+          304,
+          269,
+          351,
+          331
+        ],
+        [
+          0,
+          338,
+          278,
+          387,
+          327
+        ],
+        [
+          0,
+          383,
+          257,
+          419,
+          327
+        ],
+        [
+          0,
+          410,
+          252,
+          468,
+          322
+        ],
+        [
+          0,
+          253,
+          308,
+          328,
+          390
+        ],
+        [
+          0,
+          320,
+          318,
+          380,
+          391
+        ],
+        [
+          0,
+          377,
+          307,
+          448,
+          397
+        ],
+        [
+          0,
+          184,
+          431,
+          261,
+          546
+        ]
+      ],
+      "notes": "Enlarged original shows FOUR independent back-row pots: green left, two adjacent center pots, terracotta right. Three front pots plus one floor pot: eight total. Inverted vessel under bench empty. Actual full overlay reviewed after enlarged original review."
+    }
+  ],
+  "names": [
+    "PottedPlant",
+    "CutArrangement"
+  ],
+  "model_predictions_used": false,
+  "training_approved": false,
+  "scope": "One previously TRAIN-reserved photo; eight independent plant-container instances, manually reviewed. No VAL/TEST image used."
+}

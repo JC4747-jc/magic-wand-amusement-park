@@ -1,0 +1,61 @@
+{
+  "weight_sha256": "7e6d70d509278250f89057503aa9181a9bd70986d2b06f7d074b067ae2441209",
+  "report_sha256": "ebc04a23403e5bfab7dd15ad15037f6c77eb40a38dd8309a1bf9fe3eba1b2459",
+  "operating_metrics": {
+    "name": "PottedPlant",
+    "true_positive": 13,
+    "false_positive": 3,
+    "false_negative": 0,
+    "precision": 0.8125,
+    "recall": 1.0
+  },
+  "status": "REJECTED_VALIDATION",
+  "errors": [
+    {
+      "image": "images\\val\\2eeeba800c582ff3ecef355e.jpg",
+      "example": "error-2eeeba800c582ff3ecef355e.jpg",
+      "ground_truth": 1,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "overlay_sha256": "fc8d3324550bd15120878fef8f11ea2266f8f7ac7d6e45921df0fa7866298e1e",
+      "overlay_actually_viewed": true,
+      "observation": "Small unannotated reddish planting-like object in shallow vessel; enlarged original actually reviewed but material/rooting unresolved. Potential annotation completeness concern; raw FP retained pending source-only adjudication."
+    },
+    {
+      "image": "images\\val\\581cedc885d26e10455cf980.jpg",
+      "example": "error-581cedc885d26e10455cf980.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "overlay_sha256": "ee13eacfdce1cea47122cb6d6d3284c573d9ce02bdc99750b4baf468a353b3b0",
+      "overlay_actually_viewed": true,
+      "observation": "Cut floral arrangement predicted as PottedPlant, visible error."
+    },
+    {
+      "image": "images\\val\\9fbc2444b8acf1398deaddd3.jpg",
+      "example": "error-9fbc2444b8acf1398deaddd3.jpg",
+      "ground_truth": 1,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "overlay_sha256": "3b3f9fe36ec675586c2917914be48c726d8a61567dc463d3c643d59b34cf3879",
+      "overlay_actually_viewed": true,
+      "observation": "Two accepted boxes overlap the same clipped snake-plant container: duplicate instance prediction."
+    }
+  ],
+  "annotation_issue": {
+    "status": "OPEN_SOURCE_CONTENT_REVIEW",
+    "image": "images/val/2eeeba800c582ff3ecef355e.jpg",
+    "context": "Reports/plant-v26-validation-small-vessel-context.jpg",
+    "context_sha256": "c7b7fbb02d93be143513f00835776655f3291b1ec26be4299225b45c08ba697a",
+    "dataset_labels_changed": false,
+    "metrics_recomputed": false
+  },
+  "service_routed": false,
+  "policy": "Preserve frozen raw metrics; no deletion/relabeling just to improve model score. Independent content evidence needed for any new annotation version."
+}

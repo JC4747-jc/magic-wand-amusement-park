@@ -1,0 +1,40 @@
+{
+  "samples": [
+    {
+      "original_id": "3f8dc73efefb2744",
+      "image": "images/3f8dc73efefb2744.jpg",
+      "label": "labels/3f8dc73efefb2744.txt",
+      "sha256": "e6300003a4265a5523ab1cc0ac76a811c084a0fe9915dc0030522fe341cf1f42",
+      "label_sha256": "8cebb831c1877858b80561b41833f88cbd98e90aa4f2ab0b15f27653d6562935",
+      "group": "https://www.flickr.com/people/barndweller/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "abarndweller",
+        "AuthorProfileURL": "https://www.flickr.com/people/barndweller/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/barndweller/14349466288",
+        "Title": "Potting Bench"
+      },
+      "source": "openimages-v7",
+      "reserved_split": "train",
+      "negative": false,
+      "review_approved": true
+    }
+  ],
+  "names": [
+    "PottedPlant",
+    "CutArrangement"
+  ],
+  "sources": [
+    {
+      "id": "openimages-v7",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "license": "Per-image metadata CC BY2.0; attribution retained"
+    }
+  ],
+  "source_manifest_sha256": "a28abf6a3cbcc6a182d5e8931651fc4a013f033151009eb19d0dfac226dd359c",
+  "review_sha256": "c8ebb8eab05b602fa52e119b89313ca81646d6b77f85aa7f0b6f11640a336921",
+  "metadata_audit_sha256": "026e750e56f04f8fed731317792bb7448436aae3c04141cd1cf7153748ad6d02",
+  "pixel_audit_sha256": "6ca1e99c4eab6b9fc69dd10698e14e92925cec2e98410cc0030b434d654d4f30",
+  "training_approved": false,
+  "scope": "Reviewed TRAIN staging only. No automatic release, training or model acceptance."
+}
