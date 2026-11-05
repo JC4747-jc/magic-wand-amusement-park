@@ -137,6 +137,14 @@
       "bytes": 25777864,
       "status": "REJECTED_INDEPENDENT_TEST",
       "deployment_accepted": false
+    },
+    {
+      "name": "cockroach-native-v13",
+      "path": "object-detection-demo/weights/candidates/cockroach-native-v13/best.pt",
+      "sha256": "2c9d3e7b0b0b26112278a25e05640fb76638df3faf813a2b59fd84b801479884",
+      "bytes": 52014546,
+      "status": "REJECTED_NEGATIVE_REGRESSION",
+      "deployment_accepted": false
     }
   ],
   "datasets_included": false,
