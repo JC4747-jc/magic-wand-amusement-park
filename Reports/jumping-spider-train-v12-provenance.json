@@ -1,0 +1,51 @@
+{
+  "status": "PUBLISHER_LINKAGE_PASS_PENDING_PIXEL_AUDIT",
+  "samples": 12,
+  "source_manifest_sha256": "0f6f84235ac05ecde327539f666997be82d6d0126c586f205df082106651a4a8",
+  "inputs": [
+    {
+      "path": "Datasets/jumping-spider-train-source-v12/manifest.json",
+      "sha256": "0f6f84235ac05ecde327539f666997be82d6d0126c586f205df082106651a4a8"
+    },
+    {
+      "path": "Reports/jumping-spider-train-v12-preacquisition.json",
+      "sha256": "bd1b218df655401c1f8d5a4786b8b77129084e385916c3f189fad63a1d04b833"
+    },
+    {
+      "path": "Reports/jumping-spider-train-v12-exclusion-snapshot.json",
+      "sha256": "96b890b76f114ac8ae19659d9b62b76f364117f890cf9b27369ac1dba78604cd"
+    },
+    {
+      "path": "Reports/jumping-spider-train-v12-source-history.json",
+      "sha256": "3e90af074b8b520d7d5089f8b974ec04f1adfd00928560a327d034a5dcc1113a"
+    },
+    {
+      "path": "Datasets/jumping-spider-train-source-v12/publisher-page-11.json",
+      "sha256": "34029056bfc53fbe8419b4154ecb46602edf25cf8dd3718be27cc97c307a3ee2"
+    },
+    {
+      "path": "Datasets/jumping-spider-train-source-v12/publisher-page-12.json",
+      "sha256": "cde50a8f327e9b46c26241d2331f4c7d4ea4afd09fb1256f986d861c67754a50"
+    },
+    {
+      "path": "Datasets/jumping-spider-train-source-v12/publisher-page-13.json",
+      "sha256": "809091b7cd3f34ef6d23748622f687373428dc96051b5579c4ed7004f47d875a"
+    },
+    {
+      "path": "Datasets/jumping-spider-train-source-v12/taxon.json",
+      "sha256": "bff637f7413c4cabf115e3bb981de484fdd5c324df8de3051708d387c88d3b10"
+    },
+    {
+      "path": "Datasets/jumping-spider-train-source-v12/train-reservation.json",
+      "sha256": "d5114e52bc5d24a70b849725e31fdd889cf68a3977d57548bcca25f443cff86c"
+    }
+  ],
+  "checks": [
+    "Research grade observation and Salticidae ancestor",
+    "Exact observation user, photo ID, licensed URL and attribution linkage",
+    "Image encoded SHA",
+    "No previously recorded observer; all current metadata hits are own manifest only"
+  ],
+  "errors": [],
+  "training_approved": false
+}
