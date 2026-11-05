@@ -1,0 +1,14 @@
+{
+  "epochs": 15,
+  "scope": "One bounded data-expansion experiment, same initializer and training settings as v22. TRAIN grows from97 to111; equal epochs are not equal optimizer steps or wall clock. Existing full13 VAL remains checkpoint selection only.",
+  "trials": [
+    {
+      "name": "baseline",
+      "overrides": {},
+      "hypothesis": "Fourteen independently sourced reviewed TRAIN images add small/background/occluded containers and cut/nonliving confusers. Test whether these improve frozen full-target VAL; no generalization improvement is assumed."
+    }
+  ],
+  "observed_v23_test_policy": "Previously evaluated v23 data can only be a labeled observed regression diagnostic after freezing a candidate; never use it to choose thresholds or checkpoints. Any future acceptance requires another fresh independent source/session test and PICO validation.",
+  "fresh_test_selection": false,
+  "deployment_accepted": false
+}

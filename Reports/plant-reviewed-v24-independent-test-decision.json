@@ -1,0 +1,40 @@
+{
+  "status": "REJECTED_INDEPENDENT_TEST",
+  "weight_sha256": "34bfbf18ed65e0d87c6de44a88d26db6a77cd267e974d6cb3aeb484a19c52d48",
+  "dataset_sha256": "59d38e64a49d6289d936b7a28d7536ef5cf0aa2bbe52ce425244464437ed1250",
+  "plan_sha256": "19d62c6ada5819483ba281e521233ce47e6f5daa62db272c2b40e3d494fa7a4c",
+  "report_sha256": "4d303427d8fd16c21bfdea67a42470448619b499fcdff0b8555015e00c33d611",
+  "frozen_inputs_verified_before_and_after": 49,
+  "operating_metrics": {
+    "name": "PottedPlant",
+    "true_positive": 3,
+    "false_positive": 0,
+    "false_negative": 1,
+    "precision": 1.0,
+    "recall": 0.75
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "PottedPlant",
+      "precision": 0.981141070686027,
+      "recall": 0.75,
+      "mAP50": 0.9116666666666666,
+      "mAP50_95": 0.6378333333333334,
+      "labels": 4
+    }
+  ],
+  "mean_inference_ms": 367.6075117631733,
+  "error_original_id": "68da16cde28f39fc",
+  "error_overlay_actually_viewed": true,
+  "error_overlay_sha256": "da382252baabe85fb746a714995db8db632a0291d7257fae173b5c1e14100c0d",
+  "observation": "Clipped basil plant and rectangular soil pot not detected at frozen .35 threshold.",
+  "service_routed": false,
+  "pico_validation": "NOT_PERFORMED",
+  "limitations": [
+    "Only four positive images and four target instances; limited public pilot, not broad acceptance.",
+    "Seven ambiguous originals remain TEST-reserved and unscored; selection used content only.",
+    "No positive PICO camera evaluation or end-to-end device acceptance."
+  ],
+  "policy": "v25 is now observed regression only; never fresh acceptance or checkpoint/threshold selection data."
+}

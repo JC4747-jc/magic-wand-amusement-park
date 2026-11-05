@@ -11,3 +11,12 @@ def author_identity(value):
     if value.startswith('www.'):
         value = value[4:]
     return value
+
+
+def reservation_author_keys(row):
+    """Keep stable groups when attribution is a human-readable credit string."""
+    values = [row.get('group')]
+    attribution = row.get('attribution')
+    if isinstance(attribution, dict):
+        values.append(attribution.get('AuthorProfileURL'))
+    return {author_identity(value) for value in values if value}

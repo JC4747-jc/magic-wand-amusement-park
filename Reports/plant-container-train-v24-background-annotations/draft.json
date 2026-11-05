@@ -1,0 +1,49 @@
+{
+  "samples": [
+    {
+      "original_id": "2af6a2a751af08b5",
+      "image": "Datasets/plant-container-train-source-v24/images/2af6a2a751af08b5.jpg",
+      "image_sha256": "dc2bf84bc34fec38bb719a98686d54f6b0092002ae2be28ddeedfac572fc0090",
+      "label": "Reports/plant-container-train-v24-background-annotations/labels/2af6a2a751af08b5.txt",
+      "label_sha256": "0f8d1e49c01c65067228bfd19087afb0e8de6159c192f45c3d598959a71fc442",
+      "overlay": "Reports/plant-container-train-v24-background-annotations/2af6a2a751af08b5.jpg",
+      "overlay_sha256": "0e49f064fc90ffb7423676cb04f1a2f0a7e8077c15ee4aaeed3c3dc1eed707ad",
+      "group": "https://www.flickr.com/people/missantsypants/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Rachael",
+        "AuthorProfileURL": "https://www.flickr.com/people/missantsypants/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/missantsypants/5708960998",
+        "Title": "Laughing dog"
+      },
+      "boxes_class_xyxy": [
+        [
+          0,
+          0,
+          0,
+          180,
+          376
+        ],
+        [
+          0,
+          815,
+          74,
+          1024,
+          456
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": false,
+      "review_approved": false,
+      "reserved_split": "train",
+      "training_approved": false,
+      "note": "Two blurred background container plants; dog remains non-target. Both context crops inspected, visible container and foliage extents approximated manually."
+    }
+  ],
+  "names": [
+    "PottedPlant",
+    "CutArrangement"
+  ],
+  "training_approved": false,
+  "scope": "Provisional background-instance annotations; no model predictions used"
+}

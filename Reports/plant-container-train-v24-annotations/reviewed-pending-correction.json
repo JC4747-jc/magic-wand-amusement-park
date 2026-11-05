@@ -1,0 +1,160 @@
+{
+  "samples": [
+    {
+      "original_id": "1e3bb22ec9731e1f",
+      "image": "Datasets/plant-container-train-source-v24/images/1e3bb22ec9731e1f.jpg",
+      "image_sha256": "78ce18d7459d9246b0f323c1e44c4ce02c32f47ae6d8142b4b702cb4a3cb6bf0",
+      "label": "Reports/plant-container-train-v24-annotations/labels/1e3bb22ec9731e1f.txt",
+      "label_sha256": "68575ff895436faddd692f32143c3ea9b5455c8b9c510cb0cba7e5686cf52e2b",
+      "overlay": "Reports/plant-container-train-v24-annotations/1e3bb22ec9731e1f.jpg",
+      "overlay_sha256": "9bc2c74ca8fe58a6004b01c226f67aa0fac52c9f20f6763fc6c58b8e3478fcb1",
+      "group": "https://www.flickr.com/people/cell105/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "cell105",
+        "AuthorProfileURL": "https://www.flickr.com/people/cell105/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/cell105/5831955090",
+        "Title": "Wedding Photo"
+      },
+      "boxes_class_xyxy": [
+        [
+          0,
+          0,
+          215,
+          198,
+          860
+        ],
+        [
+          0,
+          0,
+          475,
+          57,
+          896
+        ],
+        [
+          0,
+          514,
+          467,
+          682,
+          795
+        ],
+        [
+          0,
+          562,
+          214,
+          682,
+          721
+        ]
+      ],
+      "note": "Four visible pot bodies with palms, including both image boundaries and people occlusion. Foliage ownership and visible extent require overlay verification.",
+      "original_reviewed": true,
+      "overlay_reviewed": false,
+      "reserved_split": "train",
+      "training_approved": false
+    },
+    {
+      "original_id": "2307da683364847f",
+      "image": "Datasets/plant-container-train-source-v24/images/2307da683364847f.jpg",
+      "image_sha256": "3bb20b609d547cf71691b6e713496f82a001afc139b8cfc7e27108d36ba49c7b",
+      "label": "Reports/plant-container-train-v24-annotations/labels/2307da683364847f.txt",
+      "label_sha256": "7cafcd02d2831f3811d0cd4c204618a9dbb0efd872bfa70c8a33935eb150de0d",
+      "overlay": "Reports/plant-container-train-v24-annotations/2307da683364847f.jpg",
+      "overlay_sha256": "9f07326f9d7798ca99181f0d38c08606ad145ede298e940e410700f62c91fc2f",
+      "group": "https://www.flickr.com/people/eldark70/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Freddy Alberto Su\u00e1rez Guerrero",
+        "AuthorProfileURL": "https://www.flickr.com/people/eldark70/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/eldark70/9113047782/",
+        "Title": "Dwarf with lamp (Enano con l\u00e1mpara)"
+      },
+      "boxes_class_xyxy": [
+        [
+          0,
+          300,
+          0,
+          1024,
+          513
+        ],
+        [
+          0,
+          619,
+          264,
+          1024,
+          682
+        ]
+      ],
+      "note": "Back lined planter and front succulent container. Gnome and empty vessels excluded. Confirm back-planter leaf association and right-edge completeness.",
+      "original_reviewed": true,
+      "overlay_reviewed": false,
+      "reserved_split": "train",
+      "training_approved": false
+    },
+    {
+      "original_id": "249b4c5b70fa891b",
+      "image": "Datasets/plant-container-train-source-v24/images/249b4c5b70fa891b.jpg",
+      "image_sha256": "0804421d483a7ce35ad9529ea25bf867a608a586307228ee571413ef803da883",
+      "label": "Reports/plant-container-train-v24-annotations/labels/249b4c5b70fa891b-corrected.txt",
+      "label_sha256": "34f6da18b1a550b98acea14369d9dd04732783d0d1f1a2c82e1ecfe8e699ab7a",
+      "overlay": "Reports/plant-container-train-v24-annotations/249b4c5b70fa891b-corrected.jpg",
+      "overlay_sha256": "abb4cad26fcecb9943756cecae8b4429749404b1ca4bcd10d5841cc846e7b49b",
+      "group": "https://www.flickr.com/people/42996397@N05/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Kathryn james",
+        "AuthorProfileURL": "https://www.flickr.com/people/42996397@N05/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/42996397@N05/4743328268",
+        "Title": "IMG_0798"
+      },
+      "boxes_class_xyxy": [
+        [
+          0,
+          182,
+          277,
+          450,
+          580
+        ]
+      ],
+      "note": "Central garden container with flowering foliage. Review extent against adjacent ground vegetation.",
+      "original_reviewed": true,
+      "overlay_reviewed": false,
+      "reserved_split": "train",
+      "training_approved": false,
+      "original_draft_label_sha256": "8b86b2f02b54cbc46374ed117edcfa79db2bcb68193cbbb021e40ebaf68046d8",
+      "correction_reason": "Original-context inspection shows associated foliage extending left/above provisional box; adjacent ground vegetation remains a separate non-container context."
+    },
+    {
+      "original_id": "32cebad428009a99",
+      "image": "Datasets/plant-container-train-source-v24/images/32cebad428009a99.jpg",
+      "image_sha256": "ab8c4e48e4a7b413c121165bac4c2f1019e66b29edc961dd707e5bc9a212a65d",
+      "label": "Reports/plant-container-train-v24-annotations/labels/32cebad428009a99.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "overlay": "Reports/plant-container-train-v24-annotations/32cebad428009a99.jpg",
+      "overlay_sha256": "a0ef5f94681669574571524bb198132e2f730233332db7cadeec96dfe22d9938",
+      "group": "https://www.flickr.com/people/22836836@N00/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "pyewacket42",
+        "AuthorProfileURL": "https://www.flickr.com/people/22836836@N00/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/22836836@N00/249394882",
+        "Title": "pye2"
+      },
+      "boxes_class_xyxy": [],
+      "note": "Cat and decorative marbles in an empty bowl; not a live planted container.",
+      "original_reviewed": true,
+      "overlay_reviewed": false,
+      "reserved_split": "train",
+      "training_approved": false
+    }
+  ],
+  "names": [
+    "PottedPlant",
+    "CutArrangement"
+  ],
+  "source_manifest_sha256": "56f2dc00cc0d10dd5989c458b4be3b98d73aac00b72c3a38fc99d40aef89ed66",
+  "original_review_sha256": "383a7b7286c8b9d439c5e92651c1f4328a9169b083f3d0022fc95e1d06c0aaec",
+  "training_approved": false,
+  "model_predictions_used": false,
+  "scope": "Provisional manual boxes, not accepted ground truth. Review completeness and foliage-to-container assignment before any release.",
+  "draft_sha256": "e043c3eee390ff25bec6abdce53120609a1e82458e6a9b8432acde0810c4d038"
+}

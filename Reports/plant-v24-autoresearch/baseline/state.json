@@ -1,0 +1,20 @@
+{
+  "name": "baseline",
+  "hypothesis": "Fourteen independently sourced reviewed TRAIN images add small/background/occluded containers and cut/nonliving confusers. Test whether these improve frozen full-target VAL; no generalization improvement is assumed.",
+  "overrides": {},
+  "status": "COMPLETED_VAL_CANDIDATE",
+  "service_routed": false,
+  "rank": [
+    1,
+    0.9600000000000001,
+    1.0,
+    0.9230769230769231,
+    0.8657787878787879
+  ],
+  "weight_sha256": "34bfbf18ed65e0d87c6de44a88d26db6a77cd267e974d6cb3aeb484a19c52d48",
+  "weight": "Reports\\plant-v24-autoresearch\\baseline\\train\\weights\\best.pt",
+  "selected_for_development": true,
+  "selected_epoch": 1,
+  "deployment_accepted": false,
+  "elapsed_seconds": 223.95640809999895
+}

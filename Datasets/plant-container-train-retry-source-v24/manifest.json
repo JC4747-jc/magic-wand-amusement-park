@@ -1,0 +1,36 @@
+{
+  "source": "openimages-v7",
+  "upstream_split": "test",
+  "project_reserved_split": "train",
+  "selection_sha256": "9104ca466845a01b52738da71a7fff36a401f76a4f685416dec816b86e3704b1",
+  "sources": [
+    {
+      "id": "openimages-v7",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "license": "Per-image metadata CC BY2.0; attribution retained"
+    }
+  ],
+  "samples": [
+    {
+      "original_id": "2633ef9212f52a52",
+      "group": "https://www.flickr.com/people/cynthiacranesart/",
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Cynthia Crane",
+        "AuthorProfileURL": "https://www.flickr.com/people/cynthiacranesart/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/cynthiacranesart/15488502427",
+        "Title": "Porcelain Snowman - Snowlady"
+      },
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/test/2633ef9212f52a52.jpg",
+      "reserved_split": "train",
+      "selection_keyword": "upstream-container-annotation",
+      "annotation_status": "NOT_REVIEWED",
+      "image": "images/2633ef9212f52a52.jpg",
+      "sha256": "bea932f4becbe7a8311fdc7570ce6265cf1b9b03efd1b4a47c97eb8d0cb1971e"
+    }
+  ],
+  "failures": [],
+  "training_approved": false,
+  "evaluation_ready": false,
+  "scope": "Unreviewed source photos only; immutable fold reservation. No labels or model predictions generated."
+}
