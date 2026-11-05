@@ -1,0 +1,25 @@
+{
+  "status": "PASS_POLICY_AND_EXISTING_ARTIFACTS",
+  "profiles": [
+    {
+      "profile": "scene_profiles.json",
+      "models": 2,
+      "sha256s": [
+        "fd4a31001feb66127a8c527ffb1e0ba32bfe9f72566cfde4f2f9b5fc0c3e7ca7",
+        "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36"
+      ]
+    },
+    {
+      "profile": "scene_profiles.cockroach_v16_public_pilot.json",
+      "models": 3,
+      "sha256s": [
+        "fd4a31001feb66127a8c527ffb1e0ba32bfe9f72566cfde4f2f9b5fc0c3e7ca7",
+        "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+        "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36"
+      ]
+    }
+  ],
+  "existing_allowlisted_artifacts_checked": 68,
+  "inference_performed": false,
+  "pico": false
+}

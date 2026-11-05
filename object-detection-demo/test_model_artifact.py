@@ -67,6 +67,31 @@ class ArtifactTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'MODEL_METADATA_INVALID'):
                 verify_artifact(self.weight, {})
 
+    def test_auxiliary_alias_cannot_become_interactive_target(self):
+        self.metadata(sha256=self.digest, classes={'0': 'PottedPlant', '1': 'CutArrangement'},
+                      allowed_classes=['PottedPlant'])
+        profile = {'allowed': ['PottedPlant'], 'aliases': {'cutarrangement': 'PottedPlant'}}
+        with self.assertRaisesRegex(ValueError, 'MODEL_AUXILIARY_CLASS_ROUTED'):
+            verify_artifact(self.weight, profile)
+        config = self.root / 'profiles.json'
+        config.write_text(json.dumps({'plant': dict(profile, weights='best.pt')}))
+        with self.assertRaisesRegex(ValueError, 'MODEL_AUXILIARY_CLASS_ROUTED'):
+            DiscoveryPool(config, self.root)
+
+    def test_declared_native_allowlist_and_legacy_profiles_remain_usable(self):
+        self.metadata(sha256=self.digest, classes={'0': 'PottedPlant', '1': 'CutArrangement'},
+                      allowed_classes=['PottedPlant'])
+        profile = {'allowed': ['PottedPlant'], 'aliases': {'pottedplant': 'PottedPlant'}}
+        result, digest = verify_artifact(self.weight, profile)
+        self.assertEqual(result, profile)
+        self.assertEqual(digest, self.digest)
+
+    def test_invalid_declared_allowlist_fails_closed(self):
+        for declared in (None, [], 'PottedPlant', ['Absent']):
+            self.metadata(sha256=self.digest, classes={'0': 'PottedPlant'}, allowed_classes=declared)
+            with self.subTest(declared=declared), self.assertRaisesRegex(ValueError, 'MODEL_CLASS_POLICY_INVALID'):
+                verify_artifact(self.weight, {'allowed': ['PottedPlant']})
+
 
 if __name__ == '__main__':
     unittest.main()
