@@ -1,0 +1,20 @@
+{
+  "model": "plant-confuser-v13",
+  "dataset_sha256": "39fe41890c36c832cf9dfcaf2afb72729ca78fb22dc24ac2e294279f80c0f6c3",
+  "evaluator_sha256": "e5230c4379ef163b4e098378dfca0f6c08d7892e91ea39ac8b8ea934dc62ce9b",
+  "confidence": 0.35,
+  "imgsz": 640,
+  "rect": true,
+  "nms_iou": 0.7,
+  "max_det": 8,
+  "mandatory_target_val_images": 13,
+  "native_fitness_images": 12,
+  "precision_min": 0.9,
+  "recall_min": 0.8,
+  "observed_negative_false_positives_max": 0,
+  "test_selection": false,
+  "service_routed": false,
+  "prior_plan_sha256": "bf9220316d0b3ec2364454f80fd7a7bddbf41504d8e6f457f240102b3cc46aa8",
+  "change_scope": "Add12-image auxiliary diagnostic only; full13 target gates, thresholds and model selection unchanged",
+  "auxiliary_dataset_sha256": "2fece1dbf7b0d3e30072bf9748411d9cbe527f9c6fdb555c6b0ef9151a4b28ad"
+}

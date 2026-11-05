@@ -1,0 +1,356 @@
+{
+  "seed": 4747,
+  "task": "detect",
+  "sources": [
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    }
+  ],
+  "unique_images": 12,
+  "samples": [
+    {
+      "image": "images\\val\\2eeeba800c582ff3ecef355e.jpg",
+      "label": "labels\\val\\2eeeba800c582ff3ecef355e.txt",
+      "sha256": "2eeeba800c582ff3ecef355e740646b6f6d5661d0b9c91e43d9aac6fbe043cce",
+      "label_sha256": "e84ae02d2008c6fbaba50d0340c7e080901eca7fef4c7e0a6d6167dcedd69d1c",
+      "decoded_rgb_sha256": "724e2f0027f1e18cc363238ae7af721f08b317e26196eb26eb450b5c715e500c",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://flickr.com/people/sammycrane",
+      "original_id": "7d32c46cba25551b",
+      "negative": false,
+      "attribution": null,
+      "source_image": "Datasets\\plant-container-corrected-v2\\images\\val\\2eeeba800c582ff3ecef355e.jpg",
+      "source_label": "Datasets\\plant-container-corrected-v2\\labels\\val\\2eeeba800c582ff3ecef355e.txt",
+      "parent_label_sha256": "e84ae02d2008c6fbaba50d0340c7e080901eca7fef4c7e0a6d6167dcedd69d1c",
+      "auxiliary_instances": 0,
+      "native_two_class_val_included": true
+    },
+    {
+      "image": "images\\val\\a6bbcafb10d754a05e0706b3.jpg",
+      "label": "labels\\val\\a6bbcafb10d754a05e0706b3.txt",
+      "sha256": "a6bbcafb10d754a05e0706b37100a42cff9c1a0ff816e329215b29a9f5f9818d",
+      "label_sha256": "a757ca45a63e5afc2f54f26e44f7a037aa245a92e2eb9fe41e33c3ed6b84ea6c",
+      "decoded_rgb_sha256": "978e3e1cebb3f145f48cc02864dc43e3ea20575a3adf7f1e6376fdd4b3dbc99e",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://flickr.com/people/ares64",
+      "original_id": "cc687f4313e3fa71",
+      "negative": false,
+      "attribution": null,
+      "source_image": "Datasets\\plant-container-corrected-v2\\images\\val\\a6bbcafb10d754a05e0706b3.jpg",
+      "source_label": "Datasets\\plant-container-corrected-v2\\labels\\val\\a6bbcafb10d754a05e0706b3.txt",
+      "parent_label_sha256": "a757ca45a63e5afc2f54f26e44f7a037aa245a92e2eb9fe41e33c3ed6b84ea6c",
+      "auxiliary_instances": 0,
+      "native_two_class_val_included": true
+    },
+    {
+      "image": "images\\val\\789c1cc964cd408c51312028.jpg",
+      "label": "labels\\val\\789c1cc964cd408c51312028.txt",
+      "sha256": "789c1cc964cd408c51312028ca6af88a81ef39fea0d6645788a0a557dcfb3b38",
+      "label_sha256": "3c190e761bda70047cf1e7b5d09f54535ec72e8ac83d24c3590c6d68bb3932ba",
+      "decoded_rgb_sha256": "76fcae3fd25400e93816fe02117f0673f6fd7e77557e3ecde6f730d077e26b68",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://flickr.com/people/goksanozman",
+      "original_id": "f7e5307116d5c3a7",
+      "negative": false,
+      "attribution": null,
+      "source_image": "Datasets\\plant-container-corrected-v2\\images\\val\\789c1cc964cd408c51312028.jpg",
+      "source_label": "Datasets\\plant-container-corrected-v2\\labels\\val\\789c1cc964cd408c51312028.txt",
+      "parent_label_sha256": "3c190e761bda70047cf1e7b5d09f54535ec72e8ac83d24c3590c6d68bb3932ba",
+      "auxiliary_instances": 0,
+      "native_two_class_val_included": true
+    },
+    {
+      "image": "images\\val\\e5fde1c97f0f71710eb2c497.jpg",
+      "label": "labels\\val\\e5fde1c97f0f71710eb2c497.txt",
+      "sha256": "e5fde1c97f0f71710eb2c49729307b48860a44d82636e8e0fb8a73aa1219a9d5",
+      "label_sha256": "5a33284ef76788b53f7c3ae90e84c78f4b03c9975a7d5693e729b4abbda7bd1f",
+      "decoded_rgb_sha256": "27796ec967f02a7133de9e928182b984a27a92e43bb69e2536584035c3c2765c",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://flickr.com/people/pasotraspaso",
+      "original_id": "76bb7a292e6cda6a",
+      "negative": true,
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Jesus Solana",
+        "AuthorProfileURL": "https://www.flickr.com/people/pasotraspaso/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/pasotraspaso/496732227",
+        "Title": "Lilium"
+      },
+      "source_image": "Datasets\\plant-container-corrected-v2\\images\\val\\e5fde1c97f0f71710eb2c497.jpg",
+      "source_label": "Datasets\\plant-container-corrected-v2\\labels\\val\\e5fde1c97f0f71710eb2c497.txt",
+      "parent_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "auxiliary_instances": 1,
+      "native_two_class_val_included": true
+    },
+    {
+      "image": "images\\val\\1778c52931d70cefc775af12.jpg",
+      "label": "labels\\val\\1778c52931d70cefc775af12.txt",
+      "sha256": "1778c52931d70cefc775af1277b7bf34b751d3bc0867370459a04cf5123ae1a2",
+      "label_sha256": "8531560afa0d9875f417ee58a20149dc2ac9b74f833418ca722ad0cb307192bf",
+      "decoded_rgb_sha256": "6f131e4b14c91c040c40099f4a18c5d2d2990dd88b25223692cd14d641ea3cef",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://flickr.com/people/epaul_07",
+      "original_id": "e68794b06f205792",
+      "negative": true,
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Paul-in-London",
+        "AuthorProfileURL": "https://www.flickr.com/people/epaul_07/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/epaul_07/1251932167",
+        "Title": "270820072300"
+      },
+      "source_image": "Datasets\\plant-container-corrected-v2\\images\\val\\1778c52931d70cefc775af12.jpg",
+      "source_label": "Datasets\\plant-container-corrected-v2\\labels\\val\\1778c52931d70cefc775af12.txt",
+      "parent_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "auxiliary_instances": 1,
+      "native_two_class_val_included": true
+    },
+    {
+      "image": "images\\val\\770aea72d5e07c15a5d62998.jpg",
+      "label": "labels\\val\\770aea72d5e07c15a5d62998.txt",
+      "sha256": "770aea72d5e07c15a5d629984462cdeb8a6f5f2d2485e5734f4b6984d72da63c",
+      "label_sha256": "85816595c6d018d58bacf64ddbadce228c075d0fab2e71015efc493fe60a7de0",
+      "decoded_rgb_sha256": "309a7cca1450675469e477d311aec1b9e18ba1f1b60f82269ba3cdf224b82134",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://flickr.com/people/ursonate",
+      "original_id": "1b131f4a9ce1adf4",
+      "negative": false,
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "charlene mcbride",
+        "AuthorProfileURL": "https://www.flickr.com/people/ursonate/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/ursonate/17991599516",
+        "Title": "IMAG9807.jpg"
+      },
+      "source_image": "Datasets\\plant-fresh-container-manual-source-v5\\images\\1b131f4a9ce1adf4.jpg",
+      "source_label": "Datasets\\plant-fresh-container-manual-source-v5\\labels\\1b131f4a9ce1adf4.txt",
+      "parent_label_sha256": "85816595c6d018d58bacf64ddbadce228c075d0fab2e71015efc493fe60a7de0",
+      "auxiliary_instances": 0,
+      "native_two_class_val_included": true
+    },
+    {
+      "image": "images\\val\\f2ca90725a1a7fe87d9594d9.jpg",
+      "label": "labels\\val\\f2ca90725a1a7fe87d9594d9.txt",
+      "sha256": "f2ca90725a1a7fe87d9594d9b19c78b676c48d2d2a109a02a918f7b005bdb60f",
+      "label_sha256": "6d6e57606d02580637d356b059450ab90ac00f0cbf9850d69f6f1c0a3156e8f8",
+      "decoded_rgb_sha256": "6b721cf38849a5292889bdf05d692bbb275ebc1dc0cd5297f80826befc1c286a",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://flickr.com/people/sarzk",
+      "original_id": "3fc91350ff49b388",
+      "negative": false,
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Sara K",
+        "AuthorProfileURL": "https://www.flickr.com/people/sarzk/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/sarzk/3188852488",
+        "Title": "Heart shaped"
+      },
+      "source_image": "Datasets\\plant-fresh-container-manual-source-v6\\images\\3fc91350ff49b388.jpg",
+      "source_label": "Datasets\\plant-fresh-container-manual-source-v6\\labels\\3fc91350ff49b388.txt",
+      "parent_label_sha256": "6d6e57606d02580637d356b059450ab90ac00f0cbf9850d69f6f1c0a3156e8f8",
+      "auxiliary_instances": 0,
+      "native_two_class_val_included": true
+    },
+    {
+      "image": "images\\val\\026dbd3cbf9ee4442186797b.jpg",
+      "label": "labels\\val\\026dbd3cbf9ee4442186797b.txt",
+      "sha256": "026dbd3cbf9ee4442186797ba4da951a2a5668afb991a53dae0d846cf4175262",
+      "label_sha256": "041004d7e26d8e07cf49897701f1303c0d72812eea3c46af5e47131e86fd5804",
+      "decoded_rgb_sha256": "5df8c5631004bd7408ce2a15d604539ee725ebd377650e009a31123c394ab973",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://flickr.com/people/msvg",
+      "original_id": "2f983b0525f2f787",
+      "negative": false,
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Michael Gil",
+        "AuthorProfileURL": "https://www.flickr.com/people/msvg/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/msvg/13911682827",
+        "Title": "My New Place in Calgary"
+      },
+      "source_image": "Datasets\\plant-fresh-container-manual-source-v7\\images\\2f983b0525f2f787.jpg",
+      "source_label": "Datasets\\plant-fresh-container-manual-source-v7\\labels\\2f983b0525f2f787.txt",
+      "parent_label_sha256": "041004d7e26d8e07cf49897701f1303c0d72812eea3c46af5e47131e86fd5804",
+      "auxiliary_instances": 0,
+      "native_two_class_val_included": true
+    },
+    {
+      "image": "images\\val\\87514a2d9ff2547f39cbb4ac.jpg",
+      "label": "labels\\val\\87514a2d9ff2547f39cbb4ac.txt",
+      "sha256": "87514a2d9ff2547f39cbb4acc128d34096c3b097a734c3f8add8c8af44200aef",
+      "label_sha256": "c971b7269f4b5c223c057dd61ec4e647bdbc65a60603e26b321df9c77fa1779d",
+      "decoded_rgb_sha256": "79ef7db0a7e099fe63a6ed7e715d23259e2135fda8f3cfa1846846896b808e10",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://flickr.com/people/onefish2",
+      "original_id": "5102708982e8d48c",
+      "negative": false,
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Steve Fishman",
+        "AuthorProfileURL": "https://www.flickr.com/people/onefish2/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/onefish2/2876521503",
+        "Title": "Noah's Bonsai Oak Tree"
+      },
+      "source_image": "Datasets\\plant-fresh-container-manual-source-v7\\images\\5102708982e8d48c.jpg",
+      "source_label": "Datasets\\plant-fresh-container-manual-source-v7\\labels\\5102708982e8d48c.txt",
+      "parent_label_sha256": "c971b7269f4b5c223c057dd61ec4e647bdbc65a60603e26b321df9c77fa1779d",
+      "auxiliary_instances": 0,
+      "native_two_class_val_included": true
+    },
+    {
+      "image": "images\\val\\581cedc885d26e10455cf980.jpg",
+      "label": "labels\\val\\581cedc885d26e10455cf980.txt",
+      "sha256": "581cedc885d26e10455cf980dbb1bbe34d0216ca1fa3549d47f4fa0f65ab3d8b",
+      "label_sha256": "0faabfa29c8def4de7bfcb63b3f293a70f0f7703b4e5cc5c554ccfcb5f5ec969",
+      "decoded_rgb_sha256": "5ec914b4208928d4ad15392deb441aacc3aee535066647d4e759762b7573389e",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://flickr.com/people/st_johns_flowers",
+      "original_id": "17b49e8c450a47e4",
+      "negative": true,
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "St.John&#x27;sFlowerGuild",
+        "AuthorProfileURL": "https://www.flickr.com/people/st_johns_flowers/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/st_johns_flowers/3510876889/",
+        "Title": "Narthex"
+      },
+      "source_image": "Datasets\\plant-fresh-cut-flower-negative-source-v1\\images\\17b49e8c450a47e4.jpg",
+      "source_label": "Datasets\\plant-fresh-cut-flower-negative-source-v1\\labels\\17b49e8c450a47e4.txt",
+      "parent_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "auxiliary_instances": 1,
+      "native_two_class_val_included": true
+    },
+    {
+      "image": "images\\val\\478585150555622ee282ec40.jpg",
+      "label": "labels\\val\\478585150555622ee282ec40.txt",
+      "sha256": "478585150555622ee282ec40e0d6b8bf46f0b06882b9e4960cfcdf1ae374723c",
+      "label_sha256": "e3c5fff3285809b37046284a7442f2206f567493a8a6737256d4e695bb1cf997",
+      "decoded_rgb_sha256": "d3a6f741f9005e1f518a1350055573641205ee667a44af13630c12978ab5fc26",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://flickr.com/people/aoisakana",
+      "original_id": "23d5dd2912bb356d",
+      "negative": false,
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "Rob Ireton",
+        "AuthorProfileURL": "https://www.flickr.com/people/aoisakana/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/aoisakana/4697963325",
+        "Title": "Gray Bark Elm Bonsai"
+      },
+      "source_image": "Datasets\\plant-fresh-container-manual-source-v13\\images\\23d5dd2912bb356d.jpg",
+      "source_label": "Datasets\\plant-fresh-container-manual-source-v13\\labels\\23d5dd2912bb356d.txt",
+      "parent_label_sha256": "e3c5fff3285809b37046284a7442f2206f567493a8a6737256d4e695bb1cf997",
+      "auxiliary_instances": 0,
+      "native_two_class_val_included": true
+    },
+    {
+      "image": "images\\val\\9fbc2444b8acf1398deaddd3.jpg",
+      "label": "labels\\val\\9fbc2444b8acf1398deaddd3.txt",
+      "sha256": "9fbc2444b8acf1398deaddd3364bfd2d670888d6fce13c3c43dbec0ee350da04",
+      "label_sha256": "f5ce6a846ec54c8ba322ba4e9f1bb69aafec52e3778567c6d4ba03bc9dd025e7",
+      "decoded_rgb_sha256": "520fed4117918981f1dd8239ad42c2e3aec89d6cb6d857dbd2f2f961697bc73b",
+      "split": "val",
+      "source": "openimages-v7",
+      "group": "openimages-v7:https://flickr.com/people/euacreditava",
+      "original_id": "34012c59c928d625",
+      "negative": false,
+      "attribution": {
+        "License": "https://creativecommons.org/licenses/by/2.0/",
+        "Author": "C\u00e1ssia Afini",
+        "AuthorProfileURL": "https://www.flickr.com/people/euacreditava/",
+        "OriginalLandingURL": "https://www.flickr.com/photos/euacreditava/991692862",
+        "Title": "Nicolas - fazendo pose"
+      },
+      "source_image": "Datasets\\plant-fresh-container-manual-source-v15\\images\\34012c59c928d625.jpg",
+      "source_label": "Datasets\\plant-fresh-container-manual-source-v15\\labels\\34012c59c928d625.txt",
+      "parent_label_sha256": "f5ce6a846ec54c8ba322ba4e9f1bb69aafec52e3778567c6d4ba03bc9dd025e7",
+      "auxiliary_instances": 0,
+      "native_two_class_val_included": true
+    }
+  ],
+  "parent_audit_sha256": "39fe41890c36c832cf9dfcaf2afb72729ca78fb22dc24ac2e294279f80c0f6c3",
+  "inputs": [
+    {
+      "path": "Datasets\\plant-fresh-container-manual-source-v5\\manifest.json",
+      "sha256": "07c7ad063fa94bf71cf43913a1ecca759a0cb165363cae4af7c2a9a109a04f62"
+    },
+    {
+      "path": "Datasets\\plant-fresh-container-manual-source-v6\\manifest.json",
+      "sha256": "dd32248a32a9705595052a8448e35a7510ce1430bc454a9370a21c122ebf3d66"
+    },
+    {
+      "path": "Datasets\\plant-fresh-container-manual-source-v7\\manifest.json",
+      "sha256": "cb585843c3fc963425e3e911e8506e6dc7095c94ac1845c3d418df2c229aa1ec"
+    },
+    {
+      "path": "Datasets\\plant-fresh-container-manual-source-v8\\manifest.json",
+      "sha256": "ddd903ba2192a8cdc1be823f6840a700b644b82996e7ec73b85a514d1d17a29d"
+    },
+    {
+      "path": "Datasets\\plant-fresh-container-manual-source-v9\\manifest.json",
+      "sha256": "a3c1375fb6871e774105e641d6a5977c1c4974a31db3c02edd267b421127abed"
+    },
+    {
+      "path": "Datasets\\plant-fresh-container-manual-source-v10\\manifest.json",
+      "sha256": "29eab483ff41cb6461246612746715fcf90ad84ee1ecb2d3dc19a2dd2c2bac4b"
+    }
+  ],
+  "independent_test_scope": "NONE: inherited test is already observed regression; v5 heldout is observed and excluded from training.",
+  "deployment_accepted": false,
+  "negative_source_manifest_sha256": "e5fcca783b28804331e2f35ba94a61fd16d9a6074c36d1e0e313340178026131",
+  "new_reviewed_inputs": [
+    {
+      "path": "Datasets\\plant-fresh-container-manual-source-v18\\manifest.json",
+      "sha256": "791d128dadcd1fdfa08649cc6a053ed46628380278298d1a1f3d882f364275b9"
+    }
+  ],
+  "excluded_observed_test_author_ids": [],
+  "training_addition_scope": "New source groups assigned to train only; prior validation and observed regression test unchanged.",
+  "names": [
+    "PottedPlant",
+    "CutArrangement"
+  ],
+  "class_remap": {
+    "58": 0
+  },
+  "scope": "Auxiliary-class diagnostic view only; unresolved sunflower auxiliary instances excluded here, mandatory PottedPlant acceptance remains full13 in parent dataset",
+  "new_negative_source_sha256": "d6536f047581a141bea0c2df6b58c7518a763b31c431d78f6b7e2af7d4556dd6",
+  "pixel_clearance_sha256": "a76c3716fa4e4da06cc0d69b5c3ef7d942da66b2a2ea081e2c2efab9fdec3d15",
+  "reservation_clearance_sha256": "be42841bcfc30e2626e9bb477f8a50f01ff6457c0896514a7f255afb86abcfe1",
+  "new_positive_source_sha256": "6367db2907b491ea33f38ffaf9dfb929e93fcf5dcef1e87aabbf3229c57cd58f",
+  "training_approved": false,
+  "training_exclusions": [
+    {
+      "original_id": "44533174330f4238",
+      "split": "train",
+      "reason": "Border flower decoration has unresolved auxiliary class; omitted from derived TRAIN only, parent retained"
+    }
+  ],
+  "annotation_review_inputs": {
+    "Reports\\plant-confuser-v13-review\\reviewed.json": "cf67f7fb1e5f077e2cd15d0f2ea71e5cf95bcaf55dd4e27f4ea73ac4c9467203",
+    "Reports\\plant-confuser-v13-completeness\\val-reviewed.json": "0d4af5f1aa2d1072392b60166c8c5c180235ade88428a3096042148f68f75da1",
+    "Reports\\plant-confuser-v13-completeness\\positive-train-review.json": "eae7b0c1248396c13e74f4db20710b0f2c16c8c5b33847f0bfd830e6a9dbfc91"
+  },
+  "counts": {
+    "train": 0,
+    "val": 12,
+    "test": 0
+  },
+  "native_two_class_val_images": 12,
+  "target_runtime_val_images": 13,
+  "auxiliary_validation_limitation": "Native two-class fitness omits one unresolved auxiliary-label image; mandatory PottedPlant runtime gate must evaluate all13 VAL images including this hard negative"
+}

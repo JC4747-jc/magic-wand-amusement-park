@@ -1,0 +1,20 @@
+{
+  "dataset_sha256": "39fe41890c36c832cf9dfcaf2afb72729ca78fb22dc24ac2e294279f80c0f6c3",
+  "other_train_negatives_full_resolution_review": [
+    {
+      "id": "2118ed2e68e9bee2",
+      "finding": "Harvested culinary herbs laid on cutting board; outside decorative CutArrangement"
+    },
+    {
+      "id": "4b202bdbd49d1ba7",
+      "finding": "Harvested herbs in glass jars, no decorative flower arrangement; retain original target-negative policy"
+    },
+    {
+      "id": "52927ceb4eef0487",
+      "finding": "Koala enclosure with cut foliage feed; outside decorative CutArrangement"
+    }
+  ],
+  "target_validation": "Mandatory all13 original VAL images; sunflower hard negative retained",
+  "native_validation": "12 images with complete two-class labels; not deployment acceptance",
+  "service_routed": false
+}

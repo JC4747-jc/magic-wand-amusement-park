@@ -1,0 +1,36 @@
+{
+  "status": "VISUAL_ERROR_REVIEW_COMPLETED",
+  "weight_sha256": "d56e4b33d93308ca29a5fd3d7518ac0a28dfb02243746f7ad2abf7d921052275",
+  "confidence": 0.35,
+  "all_four_error_overlays_actually_viewed": true,
+  "label_or_split_changes": false,
+  "service_routed": false,
+  "pico_validated": false,
+  "findings": [
+    {
+      "image": "images\\val\\2eeeba800c582ff3ecef355e.jpg",
+      "overlay": "error-2eeeba800c582ff3ecef355e.jpg",
+      "overlay_sha256": "e28c2a5816d5aa9f6cc8ea8e254863b06b019b532103fd391023d3e354c1096f",
+      "observation": "Extra small tabletop accessory detected as plant; rooted status cannot be established from this view, retain existing annotation pending source review."
+    },
+    {
+      "image": "images\\val\\e5fde1c97f0f71710eb2c497.jpg",
+      "overlay": "error-e5fde1c97f0f71710eb2c497.jpg",
+      "overlay_sha256": "38144a8a45ae5da4da886b62a11fcb2765f61ea7bf392a76e2c9e408f31df5b7",
+      "observation": "Cut lilies in clear water vase falsely routed as PottedPlant."
+    },
+    {
+      "image": "images\\val\\581cedc885d26e10455cf980.jpg",
+      "overlay": "error-581cedc885d26e10455cf980.jpg",
+      "overlay_sha256": "ee4839b084fa3aaa1cb95ba4fb147b2f30b353ad8097fd8e14a75f21394436bc",
+      "observation": "Decorative cut-flower vessel falsely detected as PottedPlant."
+    },
+    {
+      "image": "images\\val\\9fbc2444b8acf1398deaddd3.jpg",
+      "overlay": "error-9fbc2444b8acf1398deaddd3.jpg",
+      "overlay_sha256": "46da07e7f6960509a6ef8c3284ff5113219cf4f7dd2acde953112ddb639d1a88",
+      "observation": "Correct clipped plant plus duplicate partial plant box and separate rabbit false positive."
+    }
+  ],
+  "next_action": "Do not blindly repeat tiny retraining. Review training/inference class competition and label completeness, then acquire broader independent TRAIN positives/confusers; retain full target VAL and all TEST reservations."
+}
