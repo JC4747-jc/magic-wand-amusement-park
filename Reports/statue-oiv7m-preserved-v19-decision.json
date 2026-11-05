@@ -1,0 +1,37 @@
+{
+  "status": "REJECTED_NEGATIVE_REGRESSION",
+  "weight_sha256": "bbd7c6c42f9450cee4746793630b0c0f944e835e28ddf316b1b82de74006691e",
+  "validation": [
+    {
+      "name": "Statue",
+      "true_positive": 19,
+      "false_positive": 2,
+      "false_negative": 2,
+      "precision": 0.9047619047619048,
+      "recall": 0.9047619047619048
+    }
+  ],
+  "observed_office_false_positives": 2,
+  "train_negative_images": 13,
+  "train_negative_false_positives": 0,
+  "private_error_overlay_actually_viewed": true,
+  "error_description": "Two detections in one historical frame cover wrist/sleeve and near headset/chair region. Private images and overlay omitted from publication.",
+  "evidence": [
+    {
+      "path": "Reports/statue-oiv7m-preserved-v19-final-val/report.json",
+      "sha256": "8a11c4a58763429f08856d0c56a75e56054a8e6b9f95092645ea490632d083d3"
+    },
+    {
+      "path": "Reports/statue-oiv7m-preserved-v19-office-regression-counted.json",
+      "sha256": "7735c542a0b193e29e550039374b966fd579b563ca02ed816bbfab06f44d1ab3"
+    },
+    {
+      "path": "Reports/statue-v19-train-negative-diagnostic.json",
+      "sha256": "5b8fd3e2fc36e48a8de25ea1f9afcd5f8b47ab0841d4d22c1555f875ebb35868"
+    }
+  ],
+  "next_action": "Seek independently sourced TRAIN-only hands/sleeves/headset/chair contexts; no held-out image training or threshold tuning from office regression.",
+  "independent_test_performed": false,
+  "service_routed": false,
+  "deployment_accepted": false
+}

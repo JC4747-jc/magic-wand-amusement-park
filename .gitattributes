@@ -2,7 +2,6 @@ object-detection-demo/weights/candidates/spider-joint-v3-yolov8m/*.pt filter=lfs
 object-detection-demo/weights/candidates/jumping-spider-v1-yolov8m/*.pt filter=lfs diff=lfs merge=lfs -text
 object-detection-demo/weights/candidates/jumping-spider-negative-v2-yolov8m/*.pt filter=lfs diff=lfs merge=lfs -text
 object-detection-demo/weights/candidates/*/*.pt filter=lfs diff=lfs merge=lfs -text
-
 # Preserve hashed training records exactly across platforms.
 Datasets/plant-confuser-v13/** -text
 Datasets/plant-confuser-v13-aux-val-view/** -text
@@ -16,7 +15,6 @@ Tools/MultiScene/diagnose_plant_v13_class_filter.py -text
 Tools/MultiScene/prepare_plant_confuser_v13.py -text
 Tools/MultiScene/draft_plant_confuser_v13.py -text
 Tools/MultiScene/correct_plant_confuser_v13.py -text
-
 # Preserve v14 source hashes and training evidence.
 Datasets/plant-broader-v14*/** -text
 Reports/plant-broader*v14*/** -text
@@ -34,7 +32,6 @@ Tools/MultiScene/draft_plant_broader_v14_batch2.py -text
 Tools/MultiScene/stage_plant_broader_v14_batch2.py -text
 Tools/MultiScene/evaluate_plant_broader_v14_completed.py -text
 Tools/MultiScene/stage_plant_broader_v14.py -text
-
 # Preserve exact v15 audit and evidence bytes.
 Datasets/plant-confuser-v15/audit.json -text
 Datasets/plant-confuser-v15/data.yaml -text
@@ -199,7 +196,6 @@ Tools/MultiScene/select_plant_cut_arrangement_v15.py -text
 Tools/MultiScene/stage_plant_broader_v14_batch2.py -text
 Tools/MultiScene/test_plant_review_gate.py -text
 Tools/MultiScene/train_plant_confuser_v15.py -text
-
 # Preserve exact rooted v18 data lineage and evidence bytes.
 Datasets/plant-multi-v18-staging/labels/51feff5533afd1a2.txt -text
 Datasets/plant-multi-v18-staging/manifest.json -text
@@ -390,7 +386,6 @@ Tools/MultiScene/prepare_plant_rooted_v18.py -text
 Tools/MultiScene/select_plant_rooted_v16.py -text
 Tools/MultiScene/select_plant_rooted_v17.py -text
 Tools/MultiScene/train_plant_rooted_v18.py -text
-
 # Preserve exact v19/v20 audit and runtime-selection evidence.
 Datasets/plant-instance-v19/audit.json -text
 Datasets/plant-instance-v19/data.yaml -text
@@ -2218,3 +2213,44 @@ Tools/MultiScene/prepare_statue_rear_context_v17.py -text
 Tools/MultiScene/train_statue_rear_context_v17.py -text
 object-detection-demo/weights/candidates/statue-rear-context-v17/model.json -text
 object-detection-demo/weights/candidates/statue-rear-context-v17/train-args.yaml -text
+Reports/statue-oiv7m-preserved-v19-completed-audit.json -text
+Reports/statue-oiv7m-preserved-v19-decision.json -text
+Reports/statue-oiv7m-preserved-v19-final-val/report.json -text
+Reports/statue-oiv7m-preserved-v19-office-regression-counted.json -text
+Reports/statue-oiv7m-preserved-v19-office-regression.json -text
+Reports/statue-oiv7m-preserved-v19-training/completion.json -text
+Reports/statue-oiv7m-preserved-v19-training/run.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-001/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-002/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-003/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-004/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-005/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-006/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-007/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-008/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-009/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-010/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-011/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-012/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-013/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-014/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-015/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-016/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-017/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-018/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-019/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/epoch-020/report.json -text
+Reports/statue-oiv7m-preserved-v19-training/runtime-selection/selection.json -text
+Reports/statue-oiv7m-preserved-v19-training/train/args.yaml -text
+Reports/statue-oiv7m-preserved-v19-training/train/results.csv -text
+Reports/statue-oiv7m-preserved-v19-training/trainer-initializer-verification.json -text
+Reports/statue-oiv7m-single-class-extraction/report.json -text
+Reports/statue-v19-train-negative-diagnostic.json -text
+Tools/MultiScene/audit_statue_oiv7m_preserved_v19.py -text
+Tools/MultiScene/evaluate_statue_observed_negatives_v19.py -text
+Tools/MultiScene/extract_oiv7m_statue_head.py -text
+Tools/MultiScene/preserved_medium_statue_trainer.py -text
+Tools/MultiScene/train_statue_oiv7m_preserved_v19.py -text
+object-detection-demo/weights/candidates/statue-oiv7m-preserved-v19/model.json -text
+object-detection-demo/weights/candidates/statue-oiv7m-preserved-v19/train-args.yaml -text
+Reports/statue-oiv7m-single-class-extraction/initializer.pt filter=lfs diff=lfs merge=lfs -text
