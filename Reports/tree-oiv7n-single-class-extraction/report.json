@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "source_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+  "initializer_sha256": "e2ccab7539293d2c2fa17a8f4ae81a4a41b24d1e1d7b8fe5362fffbb2d82d230",
+  "source_class": 553,
+  "native_name": "Tree",
+  "output_class": 0,
+  "output_name": "Tree",
+  "classifier_hidden_width": 100,
+  "sliced_state_tensors": [
+    "model.22.cv3.0.2.weight",
+    "model.22.cv3.0.2.bias",
+    "model.22.cv3.1.2.weight",
+    "model.22.cv3.1.2.bias",
+    "model.22.cv3.2.2.weight",
+    "model.22.cv3.2.2.bias"
+  ],
+  "probes": [
+    {
+      "train_image": "images/train/tree-1a166fca034591456b762c283c3837e2fe9a76843849d042618396025e73d95f.jpg",
+      "shape": [
+        1,
+        3,
+        320,
+        320
+      ],
+      "image_sha256": "1a166fca034591456b762c283c3837e2fe9a76843849d042618396025e73d95f",
+      "box_max_abs": 0.0,
+      "score_max_abs": 3.5762786865234375e-07
+    },
+    {
+      "train_image": "images/train/tree-3a279a4ec1aa942cea2a927702103094a56e5be63836fc51e1ed6482703a7b9c.jpg",
+      "shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "image_sha256": "3a279a4ec1aa942cea2a927702103094a56e5be63836fc51e1ed6482703a7b9c",
+      "box_max_abs": 0.0,
+      "score_max_abs": 0.0
+    }
+  ],
+  "script_sha256": "1cd38a11545b68286e1760e3530e29f0a3c19631c74afab4ad0871ea065ca8a2",
+  "scope": "All state tensors verified; two real TRAIN-image pre-NMS forward probes after save/reload",
+  "limitations": [
+    "Extraction does not improve recognition",
+    "Training must preserve serialized head topology; generic YAML rebuild is incompatible",
+    "No TEST, PICO or deployment validation"
+  ],
+  "deployed": false
+}

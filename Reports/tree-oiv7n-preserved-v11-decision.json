@@ -1,0 +1,67 @@
+{
+  "status": "VALIDATION_GATE_PASSED_PENDING_INDEPENDENT_POSITIVES_AND_PICO",
+  "model_sha256": "2cd103ef038543dda692967e7647deaf1a7c7f38da508e3c9c6d97fce718c3bf",
+  "elapsed_seconds": 114.104,
+  "reports": {
+    "runtime-val": {
+      "images": 11,
+      "metrics": [
+        {
+          "name": "Tree",
+          "true_positive": 4,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": 1.0,
+          "recall": 0.8
+        }
+      ]
+    },
+    "observed-negative-regression": {
+      "images": 20,
+      "metrics": [
+        {
+          "name": "Tree",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ]
+    },
+    "office-regression": {
+      "images": 8,
+      "metrics": [
+        {
+          "name": "Tree",
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null
+        }
+      ]
+    }
+  },
+  "evidence_sha256": {
+    "Reports\\tree-oiv7n-preserved-v11-runtime-val\\report.json": "3d824329baacff43d426eaab4fe8be1f9298280e6770744308584d7607ee67b5",
+    "Reports\\tree-oiv7n-preserved-v11-observed-negative-regression\\report.json": "1bbf8cdd5963da12f3fcd42c7fd25dc9ff3ee613888db27ca82b31299e5be356",
+    "Reports\\tree-oiv7n-preserved-v11-office-regression\\report.json": "e77e9f1935514fd3659a395bb14e868f153a25583bdbd97e7d4866ee21c90fe4"
+  },
+  "trainer_initializer_verification": {
+    "status": "PASS",
+    "tensors": 355,
+    "class_hidden_width": 100,
+    "scope": "Actual trainer model construction before optimizer setup"
+  },
+  "independent_positive_test_performed": false,
+  "service_routed": false,
+  "pico_validation": "NOT_PERFORMED",
+  "limitations": [
+    "PrimaryVAL only5GT and repeatedlyobserved",
+    "20indoor and8office negatives are observed regression, not new test",
+    "Publicpretraining overlap unknown",
+    "NativeTree learned semantics not proof of arboreal-only generalization; shrubs need independent validation"
+  ],
+  "next_action": "Review independent reserved positive and shrub test annotations before any deployment routing"
+}
