@@ -1,0 +1,54 @@
+{
+  "status": "REJECTED_VALIDATION",
+  "sha256": "643be1c91bec314cbc18bce2be9b507ec9ee995a046226e0851bdf5a002eab9c",
+  "validation": [
+    {
+      "name": "Statue",
+      "true_positive": 12,
+      "false_positive": 0,
+      "false_negative": 9,
+      "precision": 1.0,
+      "recall": 0.5714285714285714
+    }
+  ],
+  "training_diagnostic": [
+    {
+      "name": "Statue",
+      "true_positive": 66,
+      "false_positive": 6,
+      "false_negative": 27,
+      "precision": 0.9166666666666666,
+      "recall": 0.7096774193548387
+    }
+  ],
+  "evidence": [
+    {
+      "path": "Reports/statue-unfrozen-runtime-v15-final-val/report.json",
+      "sha256": "37d40b3d7ed98b07c6fb1cb0e50296a8b89094260077ab5637109d3d602ebe91"
+    },
+    {
+      "path": "Reports/statue-unfrozen-runtime-v15-train-diagnostic/report.json",
+      "sha256": "87895113e1cdb7238560cf0201c3fed367d6deb4b1e1d57e2a133d81c56fad0d"
+    },
+    {
+      "path": "Reports/statue-unfrozen-runtime-v15-completed-audit.json",
+      "sha256": "c638c853ad63de4104ddcee4722688d26fcbff41b57a13ffa77d8dc406582ba4"
+    },
+    {
+      "path": "Reports/statue-unfrozen-runtime-v15-final-val/error-e2ce7aaa49ea84334e86ffb9.jpg",
+      "sha256": "54e43c4f05cad8d49d0a5eb0cfc673d7c7d89bc2e9c9671b12dc47954622c43c"
+    }
+  ],
+  "visual_review": {
+    "overlay_reviewed": true,
+    "finding": "All nine VAL misses belong to dense museum scene with back/side views, overlap and small distant figures. Dense image retained unchanged."
+  },
+  "limitations": [
+    "Small seven-image public VAL; no independent test or PICO acceptance.",
+    "CUDA, freeze0 and runtime checkpoint selection differ from old CPU run; no single-variable causal attribution.",
+    "Training diagnostic still misses 27/93 instances; performance is not a generalization proof."
+  ],
+  "next_action": "Inspect difficult TRAIN positives and source/viewpoint coverage; a new trial needs a declared change grounded in those errors. Keep full VAL and .65/640rect/.7/max32 fixed.",
+  "service_routed": false,
+  "deployment_accepted": false
+}

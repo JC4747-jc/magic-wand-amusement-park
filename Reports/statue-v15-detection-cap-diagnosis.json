@@ -1,0 +1,48 @@
+{
+  "status": "CAP_CONFIGURATION_CORRECTED_MODEL_STILL_REJECTED",
+  "old_cap": 4,
+  "new_cap": 32,
+  "images": 7,
+  "instances": 21,
+  "old_cap_maximum_recall": 0.5238095238095238,
+  "actual_evaluations": [
+    {
+      "max_det": 4,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 10,
+          "false_positive": 1,
+          "false_negative": 11,
+          "precision": 0.9090909090909091,
+          "recall": 0.47619047619047616
+        }
+      ],
+      "report": "Reports\\statue-commons-v14-cap4-val\\report.json",
+      "report_sha256": "b1d79e239f8e069a820b812755aea25e0807d59dbc5dfe4ba578f2296852d7a3"
+    },
+    {
+      "max_det": 32,
+      "operating": [
+        {
+          "name": "Statue",
+          "true_positive": 11,
+          "false_positive": 1,
+          "false_negative": 10,
+          "precision": 0.9166666666666666,
+          "recall": 0.5238095238095238
+        }
+      ],
+      "report": "Reports\\statue-commons-v14-cap32-val-current\\report.json",
+      "report_sha256": "2da919c780639e926d10d406d343a29bd7cac508bdaa347fc73cbd833d83b545"
+    }
+  ],
+  "config_before_sha256": "07d39527c896a926ba217fc42599ea6b26b2d48a57865e31c7be18ef954d5a87",
+  "config_after_sha256": "30a3825b167c708a2161746a742d26337bf092d63e3d4b1a7457030ca8a4df5e",
+  "scope": "Production Statue remains unconfigured (weights null). Only default output budget changed; historical experimental profiles remain immutable and require explicit max_det override when reused.",
+  "limitations": [
+    "Cap correction recovers only one actual detection, not the nine remaining dense-scene misses.",
+    "No model acceptance, independent TEST, Unity or PICO validation."
+  ],
+  "next_action": "Evaluate bounded training change with full seven-image/21-instance VAL, fixed .65/640 rect/.7/max32; preserve dense image and class scope."
+}
