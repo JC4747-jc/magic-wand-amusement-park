@@ -1,0 +1,144 @@
+{
+  "source_manifest_sha256": "27d1a7dfe6de01c3bb278825fb72f95954c43b56742cffd29b40bbea7e532c63",
+  "samples": [
+    {
+      "page_id": 117953988,
+      "image": "Datasets\\plant-cut-train-source-v34\\images\\117953988.jpg",
+      "image_sha256": "e375b931d5fe75f8c85aa8139bc0621b4f394b103d09a20496a7bf0f0309bee4",
+      "group": "commons:artist:24f724980ef363461d18f1441a9e1358df985909a7c72c035ab5d8fae75dd33f",
+      "artist": "Dr Umesh Prasad",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2022-05-13 05:34:34",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Alt Flr 2",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Gladiolus|Umesh Prasad|Self-published work|Flowers in vases",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Flower",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2022-05-13",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:Dr_Umesh_Prasad\" title=\"User:Dr Umesh Prasad\">Dr Umesh Prasad</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "boxes_class_xyxy": [
+        [
+          1,
+          0,
+          0,
+          768,
+          1024
+        ]
+      ],
+      "label": "Reports\\plant-cut-v34-boxes\\117953988.txt",
+      "label_sha256": "b4c7cb9213f22fd2b167a52060ce2322b7028f3602ca201c7a5f82864959192b",
+      "overlay": "Reports\\plant-cut-v34-boxes\\117953988.png",
+      "overlay_sha256": "8b400461995af2244c4953cec4a803496499d351215c7131892ab170c408658d",
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "annotation_approved": true,
+      "reserved_split": "train",
+      "note": "Single assembled spike/leaves in glass vessel; stems visible through glass, image-clipped flower/vessel extend to image boundaries. Do not extrapolate invisible extent. No other identifiable target."
+    }
+  ],
+  "proof_inputs": [
+    {
+      "path": "Datasets\\plant-cut-train-source-v34\\manifest.json",
+      "sha256": "27d1a7dfe6de01c3bb278825fb72f95954c43b56742cffd29b40bbea7e532c63"
+    },
+    {
+      "path": "Reports\\plant-cut-v34-pixel-history.json",
+      "sha256": "4e7c4a7fc48c0c2517fd57d4a5ae2462d776130adb019c200fb07c824e92aa14"
+    },
+    {
+      "path": "Reports\\plant-cut-v34-identity-history-v2.json",
+      "sha256": "30c7ff7b4d8ea7135f5b04f6966c22b5833eaf316371980ad3cff37bd00ee237"
+    },
+    {
+      "path": "Reports\\plant-cut-v34-creator-links.json",
+      "sha256": "0ca39bf4f15a3a2da93fcb7a7d01014f8c06460655e35daafb7d6c3d66669e8e"
+    }
+  ],
+  "held_page_ids": [
+    57951583,
+    113450346,
+    93095143,
+    61810283,
+    86688227,
+    82769847,
+    133786349
+  ],
+  "missing_creator_hold": {
+    "page_id": 86688227,
+    "reason": "State Government Photographer lacks exact personal creator link; no identity clearance claimed."
+  },
+  "training_approved": false,
+  "review_limitations": [
+    "Single assistant review, not independent dual annotation.",
+    "Per-photo attribution/sharealike obligations retained; no blanket license over mixed dataset.",
+    "Metadata/pixel audits cannot prove all aliases, subject identity or pretraining exclusion."
+  ]
+}

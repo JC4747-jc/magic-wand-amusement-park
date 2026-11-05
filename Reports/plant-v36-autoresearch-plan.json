@@ -1,0 +1,16 @@
+{
+  "epochs": 15,
+  "scope": "One prospective15epoch run on plant-cut-v35, same initializer/hyperparameters asv33; four TRAIN auxiliary photos only addition plus source metadata summary correction. No equalwallclock claim.",
+  "trials": [
+    {
+      "name": "cut_data",
+      "overrides": {
+        "scale": 0.1
+      },
+      "hypothesis": "Four reviewed cut-arrangement TRAIN examples may reduce floral confusion; test full13VAL at unchanged operating policy, improvement not presumed."
+    }
+  ],
+  "gates": "Full13VAL confidence.35 imgsz640 rect IoU.7 max8 P>=.9 R>=.8; same existing selector.",
+  "observed_test_policy": "v23/v25 are observed regression only; never TRAIN/selection or fresh TEST. Fresh source-separated TEST and PICO required for deployment.",
+  "deployment_accepted": false
+}
