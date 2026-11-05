@@ -1,0 +1,22 @@
+{
+  "model_sha256": "2cd103ef038543dda692967e7647deaf1a7c7f38da508e3c9c6d97fce718c3bf",
+  "audit_sha256": "00404c916cc80e31068ba5824b34e43e1b2161f18c9307e9b20ee0dd02c8d68a",
+  "protocol": {
+    "imgsz": 640,
+    "rect": true,
+    "operating_conf": 0.65,
+    "nms_iou": 0.7,
+    "max_det": 8
+  },
+  "gates": {
+    "precision_min": 0.9,
+    "recall_min": 0.8,
+    "negative_false_positives_max": 0
+  },
+  "policy": "Single frozen candidate; no threshold grid, model selection, training use or deployment promotion from this small TEST",
+  "limitations": [
+    "Small public-photo test, insufficient population or PICO acceptance",
+    "Three cropped negatives do not establish full-frame or botanical taxonomy performance",
+    "Unknown pretraining overlap and unrecorded author/physical-instance aliases remain possible"
+  ]
+}

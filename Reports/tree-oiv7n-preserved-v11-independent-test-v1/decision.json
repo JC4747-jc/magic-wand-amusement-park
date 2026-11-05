@@ -1,0 +1,20 @@
+{
+  "status": "REJECTED_INDEPENDENT_TEST",
+  "operating": {
+    "name": "Tree",
+    "true_positive": 3,
+    "false_positive": 0,
+    "false_negative": 1,
+    "precision": 1.0,
+    "recall": 0.75
+  },
+  "plan_sha256": "7c50447cbb8d821178699c6ba696ed44af48017c14c68dcf2ee15b50b8af7b80",
+  "report_sha256": "9a3a4c02ab1c4f64e924d92ce782748ae0d5cabcffc2ed7edc7eb21b51707300",
+  "service_routed": false,
+  "pico_test": "NOT_PERFORMED",
+  "limitations": [
+    "Small public-photo test, insufficient population or PICO acceptance",
+    "Three cropped negatives do not establish full-frame or botanical taxonomy performance",
+    "Unknown pretraining overlap and unrecorded author/physical-instance aliases remain possible"
+  ]
+}

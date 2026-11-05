@@ -1,0 +1,134 @@
+{
+  "mode": "test",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\object-detection-demo\\weights\\candidates\\tree-oiv7n-preserved-v11\\best.pt",
+  "architecture": "DetectionModel",
+  "sha256": "2cd103ef038543dda692967e7647deaf1a7c7f38da508e3c9c6d97fce718c3bf",
+  "dataset_version": "00404c916cc80e31068ba5824b34e43e1b2161f18c9307e9b20ee0dd02c8d68a",
+  "split": "test",
+  "torch": "2.14.1+cpu",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "Tree"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "Tree",
+      "precision": 0.9920740867875696,
+      "recall": 1.0,
+      "mAP50": 0.995,
+      "mAP50_95": 0.9324999999999999,
+      "labels": 4
+    }
+  ],
+  "images": 7,
+  "excluded_samples": [],
+  "ground_truth_instances": 4,
+  "false_positive_images": 0,
+  "per_image": [
+    {
+      "image": "images/test/154439776.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 1014.5272000008845
+    },
+    {
+      "image": "images/test/89821206.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 44.7996000002604
+    },
+    {
+      "image": "images/test/93405403.jpg",
+      "ground_truth": 1,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 29.462899998179637
+    },
+    {
+      "image": "images/test/91854263.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 28.65929999825312
+    },
+    {
+      "image": "images/test/174159866.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 49.41830000461778
+    },
+    {
+      "image": "images/test/196783578.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 39.273800000955816
+    },
+    {
+      "image": "images/test/168946016.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 27.66919999703532
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.65,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "Tree",
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 1,
+      "precision": 1.0,
+      "recall": 0.75
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 176.25861428574095,
+  "p95_inference_ms": 724.9945300020038,
+  "cold_first_image_ms": 1014.5272000008845,
+  "warm_mean_ms": 36.54718333321701,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images/test/93405403.jpg",
+      "example": "error-93405403.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65
+    }
+  ],
+  "allowed_classes": [
+    "Tree"
+  ],
+  "max_det": 8,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate"
+}
