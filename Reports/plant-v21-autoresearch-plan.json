@@ -1,0 +1,20 @@
+{
+  "epochs": 15,
+  "scope": "Two predeclared sequential development trials. Equal epoch budget, not fixed wallclock; never compare directly against50epoch v20 as same budget.",
+  "trials": [
+    {
+      "name": "baseline",
+      "overrides": {},
+      "hypothesis": "Fresh15epoch baseline with same reviewed data and initializer; controls changed learning-rate schedule duration."
+    },
+    {
+      "name": "faster-head-learning",
+      "overrides": {
+        "lr0": 0.0003
+      },
+      "hypothesis": "Test whether higher learning rate learns new auxiliary cut-arrangement class sooner. Hypothesis only, may worsen target recall or false positives."
+    }
+  ],
+  "fresh_test_selection": false,
+  "deployment_accepted": false
+}
