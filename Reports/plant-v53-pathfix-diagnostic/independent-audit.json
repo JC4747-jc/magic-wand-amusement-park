@@ -1,0 +1,177 @@
+{
+  "status": "COMPLETED_DIAGNOSTIC_NOT_ACCEPTED",
+  "epochs": 30,
+  "native_best_epoch": 22,
+  "frozen_files_verified": 330,
+  "best_sha256": "bd65eb25f027fc56ec9fdd2199f3eb4fce401cb0520474e6953584b00589ff90",
+  "last_sha256": "cb23b42edc4ff4eba727461c17f893f55f6c2ba60fb88d26068616f9c3ec216a",
+  "report_sha256": "40c0e2de2819066680087a0765926f3170e7cd0768ec08258280d66090c9aaba",
+  "train_report_sha256": "41c84ee590596dece4a0c0b010f514a99e8ed95fbd3285f44fd6ede04c2d94dc",
+  "training_metrics": [
+    {
+      "name": "PottedPlant",
+      "true_positive": 133,
+      "false_positive": 2,
+      "false_negative": 0,
+      "precision": 0.9851851851851852,
+      "recall": 1.0
+    },
+    {
+      "name": "CutArrangement",
+      "true_positive": 32,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  ],
+  "validation_metrics": [
+    {
+      "name": "PottedPlant",
+      "true_positive": 17,
+      "false_positive": 7,
+      "false_negative": 5,
+      "precision": 0.7083333333333334,
+      "recall": 0.7727272727272727
+    },
+    {
+      "name": "CutArrangement",
+      "true_positive": 7,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  ],
+  "repaired_training_images": [
+    {
+      "image": "images/train/27375dda6bb6b0eb.jpg",
+      "ground_truth": 4,
+      "true_positive": 4,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 181.8259000137914
+    },
+    {
+      "image": "images/train/13998fa14da472bf.jpg",
+      "ground_truth": 3,
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 169.49309999472462
+    }
+  ],
+  "actual_val_errors_reviewed": [
+    {
+      "image": "images\\val\\2eeeba800c582ff3ecef355e.jpg",
+      "example": "error-2eeeba800c582ff3ecef355e.jpg",
+      "ground_truth": 1,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "observation": "Main bonsai TP, unresolved companion vessel FP caveat retained; no relabeling.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "16785dbe89558d3da3d88519d881fef673fdbccdc5b0ab170956cd76a5196468"
+    },
+    {
+      "image": "images\\val\\9fbc2444b8acf1398deaddd3.jpg",
+      "example": "error-9fbc2444b8acf1398deaddd3.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 1,
+      "confidence": 0.35,
+      "observation": "Upper planted pot prediction versus larger stacked-container GT creates FP+FN spatial mismatch.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "c6146a4cd2bac9a496575ad8c5f82ea95e98ed79348fd4db5acd778dd2234b48"
+    },
+    {
+      "image": "images/val/a8d79cd1e9fd1cdb40e2541a.jpg",
+      "example": "error-a8d79cd1e9fd1cdb40e2541a.jpg",
+      "ground_truth": 3,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "confidence": 0.35,
+      "observation": "Two full hanging baskets and one partial remain missed.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "0c1f962a61068ddc2ce61828119a2a20162ae9ff0f50088be02953cb0c1c42fd"
+    },
+    {
+      "image": "images/val/5cd2e794017caf6756d2020a.jpg",
+      "example": "error-5cd2e794017caf6756d2020a.jpg",
+      "ground_truth": 1,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "observation": "Cut roses auxiliary TP plus erroneous overlapping PottedPlant prediction.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "ae17dfd4d8b5fe7cd9516f8beb0f172155166928c8650a06606c5b33a6e79f2d"
+    },
+    {
+      "image": "images/val/d6a4f5f64a10ff59fe54d62c.jpg",
+      "example": "error-d6a4f5f64a10ff59fe54d62c.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "observation": "Empty decorative glass vase again misclassified PottedPlant.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "408ecab432f67122715999a496abec50e884105fb606580f0d5851152d673bb5"
+    },
+    {
+      "image": "images/val/ad4054926f2d2738dc4a8773.jpg",
+      "example": "error-ad4054926f2d2738dc4a8773.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.35,
+      "observation": "Main herb pot TP; partial left planted container still missed.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "140e7241e95169f9e05da3d7eb97209b4c1c0b14f034ea92a4655d1b5e124346"
+    },
+    {
+      "image": "images/val/f6064c57134f3277e5fe7b20.jpg",
+      "example": "error-f6064c57134f3277e5fe7b20.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "observation": "Harvested chopped food greens on plate misclassified PottedPlant.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "2529f84d1efaf4d90a863ff2678a1590032546d5d9cb6f7559117836acbf713c"
+    },
+    {
+      "image": "images/val/467fb80fca7896af512309a0.jpg",
+      "example": "error-467fb80fca7896af512309a0.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "observation": "Loose plate spinach leaves misclassified PottedPlant.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "7a63426f3cc234ec8afc9e01be4e37cec7d233b5992148a93cec6eef1c3a621e"
+    },
+    {
+      "image": "images/val/e890004cc7bf2354f7bdc5f3.jpg",
+      "example": "error-e890004cc7bf2354f7bdc5f3.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "observation": "Harvested market produce scene misclassified as one large PottedPlant.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "7e251b19bef3f0267d119f7162ac3abe1a27d1246e75905730cd583820a9012c"
+    }
+  ],
+  "labels_semantically_changed": false,
+  "deployment_accepted": false,
+  "conclusion": "Label discovery repair verified independently. TRAIN fit improvement does not establish held-out generalization; fullVALprecision/recall still fail."
+}

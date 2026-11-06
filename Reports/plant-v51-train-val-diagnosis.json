@@ -1,0 +1,86 @@
+{
+  "status": "TRAIN_DIAGNOSTIC_NOT_GENERALIZATION",
+  "training_metrics": [
+    {
+      "name": "PottedPlant",
+      "true_positive": 126,
+      "false_positive": 1,
+      "false_negative": 7,
+      "precision": 0.9921259842519685,
+      "recall": 0.9473684210526315
+    },
+    {
+      "name": "CutArrangement",
+      "true_positive": 32,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  ],
+  "validation_metrics": [
+    {
+      "name": "PottedPlant",
+      "true_positive": 16,
+      "false_positive": 4,
+      "false_negative": 6,
+      "precision": 0.8,
+      "recall": 0.7272727272727273
+    },
+    {
+      "name": "CutArrangement",
+      "true_positive": 7,
+      "false_positive": 1,
+      "false_negative": 0,
+      "precision": 0.875,
+      "recall": 1.0
+    }
+  ],
+  "dedicated_hanging_source_training_photos": [
+    {
+      "page_id": 129746819,
+      "image": "images/train/ca88ba626678dc56f125c900.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 182.960499994806
+    },
+    {
+      "page_id": 87404883,
+      "image": "images/train/2be595db5d0aae8a286629b7.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 171.8008000025293
+    },
+    {
+      "page_id": 134319541,
+      "image": "images/train/2e0bda6475b40c2a330f2b33.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 263.2154000020819
+    },
+    {
+      "page_id": 63438809,
+      "image": "images/train/08deaa0eb58301f9d1891e59.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 210.89819999178872
+    }
+  ],
+  "note": "Source63438809 includes hanging basket plus ground urn; do not call both instances hanging.",
+  "evidence": {
+    "Reports/plant-v51-training-diagnostic/report.json": "83e67cc34be5a9e1797e721cc89425b6dfe3ea12f568b2aed95249940ddb320a",
+    "Reports/plant-v51-diagnostic/final-val/report.json": "015f65160566ed4738e0c5343b2518d8c9b712e30d3161018663c3fb7e128c7f",
+    "Datasets/plant-hanging-v50/audit.json": "f7035956f669e6f73a95349dfaff0bfe695378e90b2a88bdf6cde8836a94671a"
+  },
+  "deployment_accepted": false,
+  "labels_changed": false,
+  "next_action": "Inspect remaining TRAIN errors and annotation consistency. Strong TRAIN fit with weak VAL favors source/appearance coverage work, not assuming more epochs alone will generalize."
+}

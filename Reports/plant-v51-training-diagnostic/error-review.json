@@ -1,0 +1,43 @@
+{
+  "errors": [
+    {
+      "image": "images/train/27375dda6bb6b0eb.jpg",
+      "example": "error-27375dda6bb6b0eb.jpg",
+      "ground_truth": 4,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 4,
+      "confidence": 0.35,
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "ea47aaea9e669b5d739e79c0c2a3f25aeed8bf6dcd40d970c046520c4cced3f6",
+      "observation": "Lobby four plants visually present; all four labels were absent from actual YOLO discovery due draft.txt path. Not evidence of failure to fit trained targets."
+    },
+    {
+      "image": "images/train/13998fa14da472bf.jpg",
+      "example": "error-13998fa14da472bf.jpg",
+      "ground_truth": 3,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "confidence": 0.35,
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "87b30f199e5e1e0790b705a5164f0409c065ef95c73f22fa65849ac4fb495a40",
+      "observation": "Three large/partial street containers visually present; all three labels absent from actual YOLO discovery due corrected.txt path."
+    },
+    {
+      "image": "images/train/ccf8bb593980e586927cad56.jpg",
+      "example": "error-ccf8bb593980e586927cad56.jpg",
+      "ground_truth": 2,
+      "true_positives": 2,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "d4b97dd7753812a4285ffcc27ca77c9be000c8183819a96f83122ed2da252550",
+      "observation": "Two overlapping planted rose containers both matched; extra prediction selects left foliage subregion. No third physical plant established; retain original two labels."
+    }
+  ],
+  "labels_semantically_changed": false,
+  "historical_metric_caveat": "7FNs correspond to labels not loaded during training; corrected filename dataset v52 preserves original bytes.",
+  "deployment_accepted": false
+}

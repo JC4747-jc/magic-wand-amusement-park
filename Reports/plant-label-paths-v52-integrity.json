@@ -1,0 +1,25 @@
+{
+  "status": "PREPARED_PATH_FIX_OPEN_ANNOTATION_HOLD",
+  "fixes": [
+    {
+      "image": "images/train/27375dda6bb6b0eb.jpg",
+      "old_label": "labels/train/draft.txt",
+      "new_label": "labels/train/27375dda6bb6b0eb.txt",
+      "label_sha256": "72c7190da2940b5a213b461750113ea0497275b252ef53fd68b0af638322be07",
+      "instances": 4
+    },
+    {
+      "image": "images/train/13998fa14da472bf.jpg",
+      "old_label": "labels/train/corrected.txt",
+      "new_label": "labels/train/13998fa14da472bf.txt",
+      "label_sha256": "1093e058eb0d9749ef764e011a0906ecb462d50d544bd682a4aeddd8c80cc7eb",
+      "instances": 3
+    }
+  ],
+  "images": 161,
+  "all_image_and_label_bytes_unchanged": true,
+  "actual_yolo_path_checks": 161,
+  "dataset_sha256": "39681aca2f7ca939ff7f19fcd7bca6f61a87ee7f558631be0e8aa38a1aba88e8",
+  "deployment_accepted": false,
+  "historical_training_caveat": "Previous manifest evaluator saw seven labels that YOLO training missed because filenames differed. Historical metrics remain recorded, not evidence that these targets were trained."
+}
