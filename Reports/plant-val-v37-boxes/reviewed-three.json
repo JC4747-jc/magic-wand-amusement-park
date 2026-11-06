@@ -1,0 +1,104 @@
+{
+  "source_manifest_sha256": "bfa6f2b3e6e9c86dc3b264e064bd5192c9535f704a1e9866acb1c57315cf6ec5",
+  "samples": [
+    {
+      "page_id": 69845986,
+      "image": "Datasets\\plant-hanging-val-source-v37\\images\\69845986.jpg",
+      "image_sha256": "db867d614aa06c5027d0ea72aeeacec9b0cd87595ffac02f62fcf28f42077ebe",
+      "label": "Reports\\plant-val-v37-boxes\\69845986.txt",
+      "label_sha256": "8a68c703005a9ffc90fe006208012478d316f03d18d2f1bee29d48889859f7f2",
+      "overlay": "Reports\\plant-val-v37-boxes\\69845986.png",
+      "overlay_sha256": "f34a8519f362670e56b517b7c9303eb5e306e6f674b1dc662b7947beade3d10d",
+      "boxes_class_xyxy": [
+        [
+          0,
+          70,
+          174,
+          925,
+          1060
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "annotation_approved": true,
+      "reserved_split": "val",
+      "note": "Single visible hanging flowering container/foliage, metal hanger excluded where outside plant extent; no shadows or background objects labeled."
+    },
+    {
+      "page_id": 156001052,
+      "image": "Datasets\\plant-hanging-val-source-v37\\images\\156001052.jpg",
+      "image_sha256": "f792813aeb8521eb5e9ba43f3e8bb294e0b7320018236afeaf7a61e2ed8051a1",
+      "label": "Reports\\plant-val-v37-boxes\\156001052.txt",
+      "label_sha256": "c39401487379208286ae54f996b5cd1facf5e94f191472afdff13d0f0e20c3ac",
+      "overlay": "Reports\\plant-val-v37-boxes\\156001052.png",
+      "overlay_sha256": "f3a9b921790ce4d7f83e540b8553111d248a3e445e85c3f512ae881cc40c70fd",
+      "boxes_class_xyxy": [
+        [
+          0,
+          24,
+          475,
+          327,
+          775
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "annotation_approved": true,
+      "reserved_split": "val",
+      "note": "Single hanging container, background climbing vegetation has no identifiable planted vessel."
+    },
+    {
+      "page_id": 39230888,
+      "image": "Datasets\\plant-hanging-val-source-v37\\images\\39230888.jpg",
+      "image_sha256": "a8d79cd1e9fd1cdb40e2541aac68adea8e8edaf3f3f93843e444399859e045b1",
+      "label": "Reports\\plant-val-v37-boxes\\39230888-corrected.txt",
+      "label_sha256": "dcee48374c5503576da71db2e72d5aa178031f3316c3cebc67c6c9bcab0667d9",
+      "overlay": "Reports\\plant-val-v37-boxes\\39230888-corrected.png",
+      "overlay_sha256": "436ae5fc9b9025e87464bdd6fa757a2e56a34e4e929adc37c36d4ed7af2eb5e4",
+      "boxes_class_xyxy": [
+        [
+          0,
+          100,
+          280,
+          413,
+          560
+        ],
+        [
+          0,
+          535,
+          290,
+          770,
+          578
+        ],
+        [
+          0,
+          796,
+          590,
+          960,
+          638
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "annotation_approved": true,
+      "reserved_split": "val",
+      "note": "Two whole hanging containers and one lower-right clipped flowering basket; label visible extent only, no extrapolated vessel/body. Corrected leaf boundaries actually re-viewed."
+    }
+  ],
+  "training_approved": false,
+  "validation_dataset_released": false,
+  "limitations": [
+    "Single assistant annotation review, not independent dual annotation.",
+    "Other7sources not approved, three exactcreatorhistoryholds.",
+    "No model inference on this source pool."
+  ],
+  "previous_review_sha256": "fae5621962f4ef095bca7fc351ae6ed7a7a4307c0a14698cbf39b47400a96117",
+  "held_page_ids": [
+    145512883,
+    18757807,
+    67128425,
+    31947510,
+    119825791
+  ],
+  "scope": "Three reviewed VAL-only photos/five targets, all five remaining sources held. No model inference, training or validation dataset release."
+}

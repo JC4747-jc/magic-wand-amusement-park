@@ -1,0 +1,203 @@
+{
+  "status": "COMPLETED_EVIDENCE_VERIFIED_NOT_ACCEPTED",
+  "native_best_epoch_from_csv_and_checkpoint": 28,
+  "stripped_epoch_field": -1,
+  "frozen_files_verified": 330,
+  "epochs_completed": 30,
+  "best_sha256": "046e0ad1597dea75c6c6ad98cf66baee8e410c8da93f608c317ed1c302bbdec9",
+  "last_sha256": "0f3eefa58be69df5858f4f3ac2156ea5506f1a543b626578a2e6b91a7c3f891d",
+  "csv_sha256": "066252b9f3ed2d2fcca045ab64001ceb8452862d048d80ed601f034593c4e77d",
+  "report_sha256": "015f65160566ed4738e0c5343b2518d8c9b712e30d3161018663c3fb7e128c7f",
+  "old_report_sha256": "c3a31c518dc96b1f051461119f87c654efec907fe01b90b4e01f862855a99602",
+  "cohorts_both_classes": {
+    "old": {
+      "original13": {
+        "images": 13,
+        "ground_truth": 16,
+        "true_positive": 16,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "hanging-v37": {
+        "images": 3,
+        "ground_truth": 5,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 5
+      },
+      "cut-v39": {
+        "images": 3,
+        "ground_truth": 3,
+        "true_positive": 3,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "vessel-v41": {
+        "images": 4,
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "herb-v43": {
+        "images": 3,
+        "ground_truth": 4,
+        "true_positive": 3,
+        "false_positive": 0,
+        "false_negative": 1
+      },
+      "harvested-leaf-v45": {
+        "images": 4,
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      }
+    },
+    "new": {
+      "original13": {
+        "images": 13,
+        "ground_truth": 16,
+        "true_positive": 15,
+        "false_positive": 3,
+        "false_negative": 1
+      },
+      "hanging-v37": {
+        "images": 3,
+        "ground_truth": 5,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 4
+      },
+      "cut-v39": {
+        "images": 3,
+        "ground_truth": 3,
+        "true_positive": 3,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "vessel-v41": {
+        "images": 4,
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "herb-v43": {
+        "images": 3,
+        "ground_truth": 4,
+        "true_positive": 3,
+        "false_positive": 0,
+        "false_negative": 1
+      },
+      "harvested-leaf-v45": {
+        "images": 4,
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      }
+    }
+  },
+  "reviewed_errors": [
+    {
+      "image": "images\\val\\2eeeba800c582ff3ecef355e.jpg",
+      "example": "error-2eeeba800c582ff3ecef355e.jpg",
+      "ground_truth": 1,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "observation": "Main bonsai TP; companion vessel still unresolved annotation scope, retain caveat and labels.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "c39ce1e4f3d39913d3454d349b70d431e99c852e15ac7fcd6e2c32851ee46ae6"
+    },
+    {
+      "image": "images\\val\\80af71df5d201ada8c3935bb.jpg",
+      "example": "error-80af71df5d201ada8c3935bb.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "observation": "New false positive on cut sunflowers in buckets; whole-frame box. Existing negative label retained; auxiliary arrangement grouping needs separate source-based review, not metric-driven relabeling.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "2199bc916fde07d62703801e04b7df0fcde240ad685547a6ad28fee04c5d65a4"
+    },
+    {
+      "image": "images\\val\\9fbc2444b8acf1398deaddd3.jpg",
+      "example": "error-9fbc2444b8acf1398deaddd3.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 1,
+      "confidence": 0.35,
+      "observation": "Plant prediction covers upper planted pot but GT includes larger stacked-container extent: spatial mismatch causes FP+FN, not absence of plant recognition.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "e3c0ddbfb8bc0ad6ecb25e292a747d2ca7d08f6644906b68905da487acaa4653"
+    },
+    {
+      "image": "images/val/f792813aeb8521eb5e9ba43f.jpg",
+      "example": "error-f792813aeb8521eb5e9ba43f.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.35,
+      "observation": "Hanging pot still FN, previous whole-background/ground-foliage false predictions gone.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "542d5e60c491ce9ec0fb985be66cc1d360351e70c02a577bffac00062b9ceb86"
+    },
+    {
+      "image": "images/val/a8d79cd1e9fd1cdb40e2541a.jpg",
+      "example": "error-a8d79cd1e9fd1cdb40e2541a.jpg",
+      "ground_truth": 3,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "confidence": 0.35,
+      "observation": "Two full hanging baskets and one partial basket remain without accepted detections.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "0c1f962a61068ddc2ce61828119a2a20162ae9ff0f50088be02953cb0c1c42fd"
+    },
+    {
+      "image": "images/val/5cd2e794017caf6756d2020a.jpg",
+      "example": "error-5cd2e794017caf6756d2020a.jpg",
+      "ground_truth": 1,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "observation": "Cut roses arrangement detected plus additional overlapping erroneous prediction; extra class/box confusion, not a new physical target.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "91ed1774bec3e4b54ca74aeda36407b1a4ed55b66b4a9a1e501d05ef500fa712"
+    },
+    {
+      "image": "images/val/ad4054926f2d2738dc4a8773.jpg",
+      "example": "error-ad4054926f2d2738dc4a8773.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.35,
+      "observation": "Main herb pot TP, partial left white planted pot remains FN.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "b2341bb47ed8f6d02fb73918f55f3a1ddc7ae2aedcd2bc8a826aed38f1f76cd8"
+    },
+    {
+      "image": "images/val/467fb80fca7896af512309a0.jpg",
+      "example": "error-467fb80fca7896af512309a0.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "observation": "New high-confidence plant false positive on loose spinach leaves on plate, no planted container.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "798ef9336a93c793e0e4c35efd7fbad1d710d2cc40ae37f583e8b54cf00173d8"
+    }
+  ],
+  "labels_changed": false,
+  "decision": "NOT_ACCEPTED: plantP.8R.727 fails development gates; OPEN annotation hold and no independent TEST/PICO.",
+  "deployment_accepted": false
+}

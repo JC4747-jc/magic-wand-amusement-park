@@ -1,0 +1,126 @@
+{
+  "source_manifest_sha256": "aa2ba167a8a1b7bab190f11f78e24432027c5853bf45a35daa7df6d2d4de8e55",
+  "samples": [
+    {
+      "page_id": 134319541,
+      "image": "Datasets/plant-hanging-train-source-v49/images/134319541.jpg",
+      "image_sha256": "2e0bda6475b40c2a330f2b336bf99ad4f33167b6b0dfe8a70ef5381fa129a29d",
+      "label": "Reports/plant-hanging-train-v49-boxes/134319541.txt",
+      "label_sha256": "2c29fdc77ff568816c739a064d8128e31390a4d4ab089a1c6c9b3e3ce2a58eb1",
+      "overlay": "Reports/plant-hanging-train-v49-boxes/134319541.png",
+      "overlay_sha256": "f058a9bab29510f038b55bd0b2866c44338eed8229e2c3f734283b40a90d4b89",
+      "boxes_class_xyxy": [
+        [
+          0,
+          0,
+          20,
+          960,
+          839
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "annotation_approved": true,
+      "reserved_split": "train",
+      "artist": "Ljiljana Sunda\u0107",
+      "group": "commons:artist:78da55ad7085c751b37e040cfa37022838ff74a742011a4db016c3ca8efb151f",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "publisher_metadata": {
+        "DateTime": {
+          "value": "2023-07-12 14:58:47",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Cve\u0107e u saksiji 04",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Self-published work|Hanging flower baskets|Unidentified Petunia|Projekat Viki Senior 2023",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Cve\u0107e u saksiji",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2015-06-27 11:12:56",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ljiljana_Sunda%C4%87&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ljiljana Sunda\u0107 (page does not exist)\">Ljiljana Sunda\u0107</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "observation": "One flowering hanging container; visible cropped foliage retained through left/right/bottom frame boundaries. Support cords excluded, no hidden extent inferred."
+    }
+  ],
+  "proof_sha256": {
+    "Reports/plant-hanging-train-v49-identity-history-v2.json": "08dd16869862ec6fa24c23e6ae90c72b4036d8c8939554390bf7b5e1ed098bce",
+    "Reports/plant-hanging-train-v49-creator-links.json": "5f879836728faaac361bcf043b24e4f6e893401a80d487b6c551bab463e2658b",
+    "Reports/plant-hanging-train-v49-pixel-history.json": "d6d0babe47ff2cad773cce2683ca4a01646da77b34e5e6540e33fd1254679c06"
+  },
+  "held_page_ids": [
+    106792794,
+    63438809,
+    99427707,
+    132263778,
+    89955956,
+    112116808,
+    92697132
+  ],
+  "training_approved": false,
+  "limitations": [
+    "Single-assistant review only; source-to-dataset crossfold clearance and dataset merge still required.",
+    "Sparse pot106792794 remains held: plant/ground foliage extent needs review, not negative."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "status": "DIAGNOSTIC_ONLY",
+  "report_sha256": "11a094454afd70dd3a96430a77d9e903895741559fdbf412936c0ed9c1a8dd66",
+  "images": 125,
+  "metrics": [
+    {
+      "name": "PottedPlant",
+      "true_positive": 117,
+      "false_positive": 4,
+      "false_negative": 13,
+      "precision": 0.9669421487603306,
+      "recall": 0.9
+    },
+    {
+      "name": "CutArrangement",
+      "true_positive": 23,
+      "false_positive": 2,
+      "false_negative": 9,
+      "precision": 0.92,
+      "recall": 0.71875
+    }
+  ],
+  "error_review": [
+    {
+      "image": "images\\train\\551f81bf7a94b9ea88710e2b.jpg",
+      "overlay_sha256": "81e619c71ca7131bc315ce4250d1c94a0a2b3c3e6345a08139b85d3b96fe332e",
+      "actually_viewed": true,
+      "observation": "Small stacked flowering containers merged into one prediction while multiple GT instances need separation."
+    },
+    {
+      "image": "images\\train\\29a7a13b0132392435902100.jpg",
+      "overlay_sha256": "4c9769cc80e77dc53f241fd894c7a53a169e99b3393e0a7bd24851372785e266",
+      "actually_viewed": true,
+      "observation": "TRAIN auxiliary flower arrangement beside office phone missed."
+    },
+    {
+      "image": "images\\train\\f59abdaace331456d3f777bf.jpg",
+      "overlay_sha256": "ce1c3445df046ee1ed9ae045ded51c9b6e106b1661855b1a9cfb2dd279dd44da",
+      "actually_viewed": true,
+      "observation": "TRAIN close-up assembled carnation flowers missed."
+    }
+  ],
+  "interpretation": "Auxiliary TRAIN recall23/32 and PottedPlant117/130 show missed in-distribution training targets. Does not prove optimization is sole cause; grouping, label scope, scale and confidence can also contribute.",
+  "checkpoint_policy": "Keep selectedepoch5 and rejection status unchanged. Later fullVAL epochs14/15 also13TP1FP0FN; no observed TEST checkpoint comparison/reselection.",
+  "next_action": "Check late/native-fitness checkpoint on TRAIN only with same preprocessing to distinguish selected early model from later learning; retain original frozen VAL selection and do not promote based on TRAIN.",
+  "fresh_test_performed": false,
+  "deployment_accepted": false
+}

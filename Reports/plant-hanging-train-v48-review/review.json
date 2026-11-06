@@ -1,0 +1,33 @@
+{
+  "samples": [
+    {
+      "page_id": 154687556,
+      "source_sha256": "8e374d08b5d9eb63aeb6b8479d1482815902cc2fcab94875d6229d95ba5bf546",
+      "original_actually_viewed": true,
+      "observation": "Single hanging basket plus large fixed planter and dense column/ceiling foliage; many visible container-like structures require complete census. Do not treat remaining scene as empty.",
+      "reserved_split": "train",
+      "annotation_approved": false
+    },
+    {
+      "page_id": 149596841,
+      "source_sha256": "5384faba6d0b7226f336de6a9fd6bdc253b7ba4f2204023e5071cbd073fa5dcf",
+      "original_actually_viewed": true,
+      "observation": "Draft overlay actually viewed: main visible canopy crosses left draft boundary; upper-left clipped planted container has crossing foliage, cannot approve current two-box draft. Hold pending association/boundary correction.",
+      "reserved_split": "train",
+      "annotation_approved": false
+    },
+    {
+      "page_id": 105199206,
+      "source_sha256": "c06c5a08e7680ce01a32d1df77f1dad3948cc2a86a79f6e68b570b8e8419f949",
+      "original_actually_viewed": true,
+      "observation": "Main soil pot plus bottom foreground partial pot and left partial flowering container; lower-right plant origin uncertain. Complete census required, cannot label main pot alone.",
+      "reserved_split": "train",
+      "annotation_approved": false
+    }
+  ],
+  "source_manifest_sha256": "ae26a57ebcbb4011cefecd1d8eb6b72e7842b32bc9487619d433786fb4b6f6b3",
+  "draft_overlay_actually_viewed": true,
+  "draft_overlay_sha256": "1db371336bfbe1b6c377b2c51a735acdc8b2f55a429a5f13a844b984992160a7",
+  "training_approved": false,
+  "next_action": "Prefer fresh source-separated simple hanging-container TRAIN views within bounded acquisition; do not omit partial instances to force release."
+}

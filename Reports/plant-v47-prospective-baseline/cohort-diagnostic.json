@@ -1,0 +1,68 @@
+{
+  "status": "DIAGNOSTIC_ONLY_NOT_SELECTION",
+  "operating_per_class": [
+    {
+      "name": "PottedPlant",
+      "true_positive": 16,
+      "false_positive": 5,
+      "false_negative": 6,
+      "precision": 0.7619047619047619,
+      "recall": 0.7272727272727273
+    },
+    {
+      "name": "CutArrangement",
+      "true_positive": 7,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  ],
+  "cohorts": {
+    "original13": {
+      "images": 13,
+      "ground_truth": 16,
+      "true_positive": 16,
+      "false_positive": 1,
+      "false_negative": 0
+    },
+    "hanging-v37": {
+      "images": 3,
+      "ground_truth": 5,
+      "true_positive": 0,
+      "false_positive": 2,
+      "false_negative": 5
+    },
+    "cut-v39": {
+      "images": 3,
+      "ground_truth": 3,
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "vessel-v41": {
+      "images": 4,
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 1,
+      "false_negative": 0
+    },
+    "herb-v43": {
+      "images": 3,
+      "ground_truth": 4,
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 1
+    },
+    "harvested-leaf-v45": {
+      "images": 4,
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 0
+    }
+  },
+  "mean_inference_ms": 246.24870999978157,
+  "report_sha256": "c3a31c518dc96b1f051461119f87c654efec907fe01b90b4e01f862855a99602",
+  "historical_rejection_preserved": true
+}

@@ -1,0 +1,26 @@
+{
+  "checkpoints": [
+    {
+      "name": "best.pt",
+      "sha256": "9778ae05560fcdc3882a56a303783b3e3c3b8471a7c39cba22e77af20ea32a82",
+      "stored_epoch": -1,
+      "optimizer_resume_available": false
+    },
+    {
+      "name": "last.pt",
+      "sha256": "ff6c135b28ee5e43baed328da01bae262c3a607c7ac04d03127398af853482a4",
+      "stored_epoch": -1,
+      "optimizer_resume_available": false
+    },
+    {
+      "name": "native-fitness-best.pt",
+      "sha256": "454920bba88726f174ef438c8666173261544618ce4f0d31a0817074bff2cd6d",
+      "stored_epoch": -1,
+      "optimizer_resume_available": false
+    }
+  ],
+  "selected_epoch_from_frozen_ledger": 5,
+  "last_epoch_from_actual_csv": 15,
+  "scope": "Stripped checkpoint epoch=-1 is not training failure. CSV/selection report determine actual epoch; last/native equality checked by SHA.",
+  "deployment_accepted": false
+}

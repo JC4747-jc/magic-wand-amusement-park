@@ -1,0 +1,148 @@
+{
+  "source_report_sha256": "a4b3454dabeda75750d4ad88d25085ff35e4888a06bdb5e945c3d7ae1cd73bf4",
+  "holds": [
+    {
+      "page_id": 18757807,
+      "creator_accounts": {
+        "flickr_accounts": [
+          "53133240@n00",
+          "calliope"
+        ],
+        "commons_users": []
+      },
+      "historical_hits": [
+        {
+          "manifest": "bugs-joint-negative-heldout-v1/audit.json",
+          "image": "images\\test\\faba6754b1388665e49e3f20.jpg",
+          "split": "test",
+          "group": "openimages-v7:https://www.flickr.com/people/calliope/",
+          "reasons": [
+            "exact_flickr_accounts"
+          ]
+        },
+        {
+          "manifest": "bugs-joint-public-v3/audit.json",
+          "image": "images\\test\\faba6754b1388665e49e3f20.jpg",
+          "split": "test",
+          "group": "openimages-v7:https://www.flickr.com/people/calliope/",
+          "reasons": [
+            "exact_flickr_accounts"
+          ]
+        },
+        {
+          "manifest": "cockroach-public-negative-test-v3/audit.json",
+          "image": "images\\test\\faba6754b1388665e49e3f20.jpg",
+          "split": "test",
+          "group": "openimages-v7:https://www.flickr.com/people/calliope/",
+          "reasons": [
+            "exact_flickr_accounts"
+          ]
+        },
+        {
+          "manifest": "jumping-spider-negative-regression-v1/audit.json",
+          "image": "images/test/faba6754b1388665e49e3f20.jpg",
+          "split": "test",
+          "group": "openimages-v7:https://www.flickr.com/people/calliope/",
+          "reasons": [
+            "exact_flickr_accounts"
+          ]
+        },
+        {
+          "manifest": "openimages-v7-pilot/manifest.json",
+          "image": "images/060a3eefdf1fdd38.jpg",
+          "split": null,
+          "group": "https://www.flickr.com/people/calliope/",
+          "reasons": [
+            "exact_flickr_accounts"
+          ]
+        },
+        {
+          "manifest": "openimages-v7-pilot-v1/audit.json",
+          "image": "images\\test\\faba6754b1388665e49e3f20.jpg",
+          "split": "test",
+          "group": "openimages-v7:https://www.flickr.com/people/calliope/",
+          "reasons": [
+            "exact_flickr_accounts"
+          ]
+        },
+        {
+          "manifest": "spider-openimages-negative-v3/audit.json",
+          "image": "images\\test\\faba6754b1388665e49e3f20.jpg",
+          "split": "test",
+          "group": "openimages-v7:https://www.flickr.com/people/calliope/",
+          "reasons": [
+            "exact_flickr_accounts"
+          ]
+        },
+        {
+          "manifest": "spider-openimages-negative-v4/audit.json",
+          "image": "images\\test\\faba6754b1388665e49e3f20.jpg",
+          "split": "test",
+          "group": "openimages-v7:https://www.flickr.com/people/calliope/",
+          "reasons": [
+            "exact_flickr_accounts"
+          ]
+        },
+        {
+          "manifest": "spider-source-expanded-v5/audit.json",
+          "image": "images\\test\\faba6754b1388665e49e3f20.jpg",
+          "split": "test",
+          "group": "openimages-v7:https://www.flickr.com/people/calliope/",
+          "reasons": [
+            "exact_flickr_accounts"
+          ]
+        }
+      ],
+      "decision": "HOLD_EXACT_CREATOR_HISTORY",
+      "reason": "Exact Flickr account matches, not substring false positives. 18757807 has recorded TEST ancestry; other2 source-only ancestry unresolved. Do not adopt in newVAL or move existing folds."
+    },
+    {
+      "page_id": 31947510,
+      "creator_accounts": {
+        "flickr_accounts": [
+          "8721758@n06",
+          "jlascar"
+        ],
+        "commons_users": []
+      },
+      "historical_hits": [
+        {
+          "manifest": "openimages-test-tree-source-v1/manifest.json",
+          "image": "images/02862c4d9df2787d.jpg",
+          "split": null,
+          "group": "https://www.flickr.com/people/jlascar/",
+          "reasons": [
+            "exact_flickr_accounts"
+          ]
+        }
+      ],
+      "decision": "HOLD_EXACT_CREATOR_HISTORY",
+      "reason": "Exact Flickr account matches, not substring false positives. 18757807 has recorded TEST ancestry; other2 source-only ancestry unresolved. Do not adopt in newVAL or move existing folds."
+    },
+    {
+      "page_id": 119825791,
+      "creator_accounts": {
+        "flickr_accounts": [
+          "37213589@n08",
+          "okchomeseller"
+        ],
+        "commons_users": []
+      },
+      "historical_hits": [
+        {
+          "manifest": "openimages-tree-statue-expansion/manifest.json",
+          "image": "images/1beea2712bf5a333.jpg",
+          "split": null,
+          "group": "https://www.flickr.com/people/okchomeseller/",
+          "reasons": [
+            "exact_flickr_accounts"
+          ]
+        }
+      ],
+      "decision": "HOLD_EXACT_CREATOR_HISTORY",
+      "reason": "Exact Flickr account matches, not substring false positives. 18757807 has recorded TEST ancestry; other2 source-only ancestry unresolved. Do not adopt in newVAL or move existing folds."
+    }
+  ],
+  "approved_page_ids": [],
+  "training_approved": false
+}

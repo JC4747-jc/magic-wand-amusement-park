@@ -1,0 +1,109 @@
+{
+  "report_sha256": "c3a31c518dc96b1f051461119f87c654efec907fe01b90b4e01f862855a99602",
+  "reviewed_errors": [
+    {
+      "image": "images\\val\\2eeeba800c582ff3ecef355e.jpg",
+      "example": "error-2eeeba800c582ff3ecef355e.jpg",
+      "ground_truth": 1,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "category": "UNRESOLVED_LABEL_SCOPE",
+      "observation": "Main bonsai correctly detected; small companion vessel predicted plant at .90. Rooted content remains unresolved from earlier publisher review. Preserve existing annotation and mark metric caveat; do not relabel from prediction.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "9331b68763ac0b046d21c8383e6a879453f8628c3ec242b4c1811f368c37f8cf"
+    },
+    {
+      "image": "images/val/db867d614aa06c5027d0ea72.jpg",
+      "example": "error-db867d614aa06c5027d0ea72.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.35,
+      "category": "NO_ACCEPTED_DETECTION",
+      "observation": "Large hanging flowering basket has no accepted detection at .35. Visible foliage occupies most image; not explained by tiny-target resolution alone.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "2fc5ebbd4c509315ce38bcdde4d1772facad2e1485c8a560821a6dc9162beef7"
+    },
+    {
+      "image": "images/val/f792813aeb8521eb5e9ba43f.jpg",
+      "example": "error-f792813aeb8521eb5e9ba43f.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 2,
+      "false_negatives": 1,
+      "confidence": 0.35,
+      "category": "WRONG_SPATIAL_SUPPORT",
+      "observation": "Visible suspended planted container missed. One accepted prediction spans nearly whole frame including ground ivy/tree; another covers lower-right ground foliage. These are false spatial supports, not near-correct boxes for hanging pot.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "cb596f696dabc3249bfb57637a5d02fef0f7b8079f54a4c85022ca295459d887"
+    },
+    {
+      "image": "images/val/a8d79cd1e9fd1cdb40e2541a.jpg",
+      "example": "error-a8d79cd1e9fd1cdb40e2541a.jpg",
+      "ground_truth": 3,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "confidence": 0.35,
+      "category": "NO_ACCEPTED_DETECTION",
+      "observation": "Two complete hanging baskets plus lower-right partial basket have no accepted detections. Cropped third target was included before model inference.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "0c1f962a61068ddc2ce61828119a2a20162ae9ff0f50088be02953cb0c1c42fd"
+    },
+    {
+      "image": "images/val/d6a4f5f64a10ff59fe54d62c.jpg",
+      "example": "error-d6a4f5f64a10ff59fe54d62c.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "category": "EMPTY_VESSEL_CONFUSION",
+      "observation": "Decorative faceted empty glass vase is predicted PottedPlant .93 despite no visible vegetation. Container appearance alone is insufficient.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "67138234aa4c6d7cf2f9aa326207ab9cb67567f1d5c59143c317215631d882c2"
+    },
+    {
+      "image": "images/val/ad4054926f2d2738dc4a8773.jpg",
+      "example": "error-ad4054926f2d2738dc4a8773.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.35,
+      "category": "PARTIAL_INSTANCE_MISS",
+      "observation": "Main soil-grown herb in red container is correctly detected; bottom-left partial white planted container missed. Maintain pre-inference partial-instance annotation.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "e657a418f31e6aa72cfcab748a84a05090d505ab13d0b2dafc534e73f0dad50b"
+    },
+    {
+      "image": "images/val/f6064c57134f3277e5fe7b20.jpg",
+      "example": "error-f6064c57134f3277e5fe7b20.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35,
+      "category": "HARVESTED_FOOD_CONFUSION",
+      "observation": "Chopped loose food greens on plate with knife/hands predicted PottedPlant .92 nearly full-frame; no rooted container. High-confidence semantic false positive.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "8c1116811b1acaf89597af1e1c04c64db4f0591494663b944178ed954f2e472a"
+    }
+  ],
+  "labels_changed": false,
+  "deployment_accepted": false,
+  "conclusions": [
+    "Hanging failures include large targets and spatial confusion; do not assume image resolution alone.",
+    "Empty vessel and harvested-food errors exceed .9 confidence; a small threshold increase cannot be presumed sufficient.",
+    "Need representative source-separated TRAIN coverage and bounded optimization assessment; current evidence does not isolate one cause."
+  ],
+  "next_experiment_constraints": [
+    "Keep all prospective VAL images out of TRAIN.",
+    "Preserve original13 regression cohort and all historical rejections.",
+    "Do not train against unresolved companion-vessel annotation.",
+    "No deployment without independent TEST and PICO validation."
+  ]
+}

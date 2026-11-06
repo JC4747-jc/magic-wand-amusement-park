@@ -1,0 +1,152 @@
+{
+  "dataset_sha256": "9ec5c1a65165fbe1075f72193cb5b010b30daa180d47eb1b63caf44b6ed59e37",
+  "val_class_instances": {
+    "0": 13,
+    "1": 3
+  },
+  "val_rows": [
+    {
+      "image": "images\\val\\2eeeba800c582ff3ecef355e.jpg",
+      "class_counts": {
+        "0": 1
+      },
+      "group": "openimages-v7:https://flickr.com/people/sammycrane"
+    },
+    {
+      "image": "images\\val\\a6bbcafb10d754a05e0706b3.jpg",
+      "class_counts": {
+        "0": 1
+      },
+      "group": "openimages-v7:https://flickr.com/people/ares64"
+    },
+    {
+      "image": "images\\val\\789c1cc964cd408c51312028.jpg",
+      "class_counts": {
+        "0": 2
+      },
+      "group": "openimages-v7:https://flickr.com/people/goksanozman"
+    },
+    {
+      "image": "images\\val\\e5fde1c97f0f71710eb2c497.jpg",
+      "class_counts": {
+        "1": 1
+      },
+      "group": "openimages-v7:https://flickr.com/people/pasotraspaso"
+    },
+    {
+      "image": "images\\val\\1778c52931d70cefc775af12.jpg",
+      "class_counts": {
+        "1": 1
+      },
+      "group": "openimages-v7:https://flickr.com/people/epaul_07"
+    },
+    {
+      "image": "images\\val\\770aea72d5e07c15a5d62998.jpg",
+      "class_counts": {
+        "0": 1
+      },
+      "group": "openimages-v7:https://flickr.com/people/ursonate"
+    },
+    {
+      "image": "images\\val\\f2ca90725a1a7fe87d9594d9.jpg",
+      "class_counts": {
+        "0": 1
+      },
+      "group": "openimages-v7:https://flickr.com/people/sarzk"
+    },
+    {
+      "image": "images\\val\\026dbd3cbf9ee4442186797b.jpg",
+      "class_counts": {
+        "0": 1
+      },
+      "group": "openimages-v7:https://flickr.com/people/msvg"
+    },
+    {
+      "image": "images\\val\\87514a2d9ff2547f39cbb4ac.jpg",
+      "class_counts": {
+        "0": 1
+      },
+      "group": "openimages-v7:https://flickr.com/people/onefish2"
+    },
+    {
+      "image": "images\\val\\80af71df5d201ada8c3935bb.jpg",
+      "class_counts": {},
+      "group": "openimages-v7:https://flickr.com/people/mk94577"
+    },
+    {
+      "image": "images\\val\\581cedc885d26e10455cf980.jpg",
+      "class_counts": {
+        "1": 1
+      },
+      "group": "openimages-v7:https://flickr.com/people/st_johns_flowers"
+    },
+    {
+      "image": "images\\val\\478585150555622ee282ec40.jpg",
+      "class_counts": {
+        "0": 4
+      },
+      "group": "openimages-v7:https://flickr.com/people/aoisakana"
+    },
+    {
+      "image": "images\\val\\9fbc2444b8acf1398deaddd3.jpg",
+      "class_counts": {
+        "0": 1
+      },
+      "group": "openimages-v7:https://flickr.com/people/euacreditava"
+    }
+  ],
+  "reports": [
+    {
+      "path": "Reports\\plant-v36-both-class-val-diagnostic\\report.json",
+      "sha256": "8417fa8f10368e4d4994b848d96e34423c09dc26bb025388beb1c014c694c5f2",
+      "weight_sha256": "9778ae05560fcdc3882a56a303783b3e3c3b8471a7c39cba22e77af20ea32a82",
+      "metrics": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 13,
+          "false_positive": 1,
+          "false_negative": 0,
+          "precision": 0.9285714285714286,
+          "recall": 1.0
+        },
+        {
+          "name": "CutArrangement",
+          "true_positive": 3,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0
+        }
+      ]
+    },
+    {
+      "path": "Reports\\plant-v36-last-both-class-val-diagnostic\\report.json",
+      "sha256": "173d8d452a94602372b123041bd8f3c7e602602511be4f7a5d47a2d2ecdba530",
+      "weight_sha256": "ff6c135b28ee5e43baed328da01bae262c3a607c7ac04d03127398af853482a4",
+      "metrics": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 13,
+          "false_positive": 1,
+          "false_negative": 0,
+          "precision": 0.9285714285714286,
+          "recall": 1.0
+        },
+        {
+          "name": "CutArrangement",
+          "true_positive": 3,
+          "false_positive": 1,
+          "false_negative": 0,
+          "precision": 0.75,
+          "recall": 1.0
+        }
+      ]
+    }
+  ],
+  "finding": "Selected epoch5 detects all3auxVAL withoutFP; last15 also3TP but1FP. TRAIN improvement does not establish heldout improvement; no evidence to replace selected model or change historical rank based on these reports.",
+  "limitation": "Only3auxGT on13VALphotos, one unresolved companion-vessel semantic case. Sparse development validation cannot prove broad application performance.",
+  "next_action": "Acquire prospective source-separated VAL coverage including hanging containers, soil herbs, empty vessels, harvested leaves and cut arrangements. Freeze original13 as regression cohort, complete original review/annotation/identity/pixel clearance before inference. Do not transfer observed TEST to VAL or TRAIN.",
+  "production_changed": false,
+  "fresh_test_performed": false,
+  "deployment_accepted": false
+}

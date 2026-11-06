@@ -1,0 +1,47 @@
+{
+  "status": "DIAGNOSTIC_COMPLETE",
+  "selected_report_sha256": "11a094454afd70dd3a96430a77d9e903895741559fdbf412936c0ed9c1a8dd66",
+  "last_report_sha256": "4e1fab6bd1c0c3db8b04cf6482506e391575af556717d139deeab5985ac30c9f",
+  "rows": [
+    {
+      "name": "PottedPlant",
+      "selected_epoch5": {
+        "name": "PottedPlant",
+        "true_positive": 117,
+        "false_positive": 4,
+        "false_negative": 13,
+        "precision": 0.9669421487603306,
+        "recall": 0.9
+      },
+      "last_epoch15": {
+        "name": "PottedPlant",
+        "true_positive": 121,
+        "false_positive": 0,
+        "false_negative": 9,
+        "precision": 1.0,
+        "recall": 0.9307692307692308
+      }
+    },
+    {
+      "name": "CutArrangement",
+      "selected_epoch5": {
+        "name": "CutArrangement",
+        "true_positive": 23,
+        "false_positive": 2,
+        "false_negative": 9,
+        "precision": 0.92,
+        "recall": 0.71875
+      },
+      "last_epoch15": {
+        "name": "CutArrangement",
+        "true_positive": 31,
+        "false_positive": 0,
+        "false_negative": 1,
+        "precision": 1.0,
+        "recall": 0.96875
+      }
+    }
+  ],
+  "scope": "Same125TRAIN photos,conf.35/640rect/.7/max8,bothclasses. No TEST checkpoint comparison/reselection, no deployment acceptance.",
+  "deployment_accepted": false
+}

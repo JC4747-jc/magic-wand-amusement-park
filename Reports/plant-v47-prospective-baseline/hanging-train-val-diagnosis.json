@@ -1,0 +1,51 @@
+{
+  "status": "DIAGNOSTIC_NOT_ACCEPTANCE",
+  "source_reports": {
+    "Reports\\plant-v36-train-diagnostic\\report.json": "11a094454afd70dd3a96430a77d9e903895741559fdbf412936c0ed9c1a8dd66",
+    "Reports\\plant-v36-last-train-diagnostic\\report.json": "4e1fab6bd1c0c3db8b04cf6482506e391575af556717d139deeab5985ac30c9f",
+    "Reports\\plant-v47-prospective-baseline\\report.json": "c3a31c518dc96b1f051461119f87c654efec907fe01b90b4e01f862855a99602"
+  },
+  "hanging_train": [
+    {
+      "image": "images/train/ca88ba626678dc56f125c900.jpg",
+      "selected": {
+        "image": "images/train/ca88ba626678dc56f125c900.jpg",
+        "ground_truth": 2,
+        "true_positive": 2,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 210.7129000069108
+      },
+      "last": {
+        "image": "images/train/ca88ba626678dc56f125c900.jpg",
+        "ground_truth": 2,
+        "true_positive": 2,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 197.2920999978669
+      }
+    },
+    {
+      "image": "images/train/2be595db5d0aae8a286629b7.jpg",
+      "selected": {
+        "image": "images/train/2be595db5d0aae8a286629b7.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 186.80399999720976
+      },
+      "last": {
+        "image": "images/train/2be595db5d0aae8a286629b7.jpg",
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "inference_ms": 184.14409999968484
+      }
+    }
+  ],
+  "interpretation": "Known two hanging TRAIN photos:3TP0FP0FN at both epoch5 and15. Three new hanging VAL photos:0TP2FP5FN. Domain coverage/generalization issue; does not isolate optimization vs data cause.",
+  "next_action": "Add independently sourced TRAIN hanging containers across underside, crowded background and partial-instance views; do not reuse VAL. Preserve pre-inference source reservation and complete census.",
+  "deployment_accepted": false
+}

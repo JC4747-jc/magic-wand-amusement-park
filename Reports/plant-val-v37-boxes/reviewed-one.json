@@ -1,0 +1,35 @@
+{
+  "source_manifest_sha256": "bfa6f2b3e6e9c86dc3b264e064bd5192c9535f704a1e9866acb1c57315cf6ec5",
+  "samples": [
+    {
+      "page_id": 69845986,
+      "image": "Datasets\\plant-hanging-val-source-v37\\images\\69845986.jpg",
+      "image_sha256": "db867d614aa06c5027d0ea72aeeacec9b0cd87595ffac02f62fcf28f42077ebe",
+      "label": "Reports\\plant-val-v37-boxes\\69845986.txt",
+      "label_sha256": "8a68c703005a9ffc90fe006208012478d316f03d18d2f1bee29d48889859f7f2",
+      "overlay": "Reports\\plant-val-v37-boxes\\69845986.png",
+      "overlay_sha256": "f34a8519f362670e56b517b7c9303eb5e306e6f674b1dc662b7947beade3d10d",
+      "boxes_class_xyxy": [
+        [
+          0,
+          70,
+          174,
+          925,
+          1060
+        ]
+      ],
+      "original_reviewed": true,
+      "overlay_reviewed": true,
+      "annotation_approved": true,
+      "reserved_split": "val",
+      "note": "Single visible hanging flowering container/foliage, metal hanger excluded where outside plant extent; no shadows or background objects labeled."
+    }
+  ],
+  "training_approved": false,
+  "validation_dataset_released": false,
+  "limitations": [
+    "Single assistant annotation review, not independent dual annotation.",
+    "Other7sources not approved, three exactcreatorhistoryholds.",
+    "No model inference on this source pool."
+  ]
+}
