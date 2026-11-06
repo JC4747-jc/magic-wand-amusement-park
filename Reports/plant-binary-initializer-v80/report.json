@@ -1,0 +1,70 @@
+{
+  "status": "PLANT_ONLY_INITIALIZER_RETAINED_TENSORS_AND_FORWARD_VERIFIED",
+  "source_initializer_sha256": "e155a229ca5c197b40e2f2728d900bc495beca748895fb308950b4dc714595d3",
+  "initializer_sha256": "485b331c5f534350643277c7b5b1e9df4670e7263d159e3ad4d84edb734b1d55",
+  "source_classes": {
+    "0": "PottedPlant",
+    "1": "CutArrangement"
+  },
+  "target_classes": {
+    "0": "PottedPlant"
+  },
+  "plant_class_id": 0,
+  "plant_output_row_tensors_exact": [
+    "model.22.cv3.0.2.weight",
+    "model.22.cv3.0.2.bias",
+    "model.22.cv3.1.2.weight",
+    "model.22.cv3.1.2.bias",
+    "model.22.cv3.2.2.weight",
+    "model.22.cv3.2.2.bias"
+  ],
+  "all_other_state_tensors_exact": 469,
+  "classifier_hidden_width": 192,
+  "next_training_load_all_state_exact": true,
+  "forward_probes": [
+    {
+      "training_image": "images\\train\\d5ae91276f1fdbd4f446fcdf.jpg",
+      "image_sha256": "d5ae91276f1fdbd4f446fcdf6d90e8ef7f46d06d68c3fef6c0fbbd0be9e1efed",
+      "input_shape": [
+        1,
+        3,
+        320,
+        320
+      ],
+      "box_max_absolute_difference": 0.0,
+      "plant_score_max_absolute_difference": 4.470348358154297e-07
+    },
+    {
+      "training_image": "images\\train\\58311aabeebc59977b3a8193.jpg",
+      "image_sha256": "58311aabeebc59977b3a8193f7708366e4979b4a5a0095b6276e0bc899a71f4d",
+      "input_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "box_max_absolute_difference": 0.0,
+      "plant_score_max_absolute_difference": 0.0
+    }
+  ],
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "implementation_files": [
+    {
+      "path": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\.venv-cuda\\Lib\\site-packages\\ultralytics\\models\\yolo\\detect\\train.py",
+      "sha256": "a045142cebae53ff94af9144fa108cd413904c27f085d58dc4ade2e83343c93a"
+    },
+    {
+      "path": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\.venv-cuda\\Lib\\site-packages\\ultralytics\\nn\\tasks.py",
+      "sha256": "c2465c97a13a1e3bb0ebd5ec7c531aa912122d59281e61677af376411c7d448a"
+    }
+  ],
+  "training_performed": false,
+  "test_used": false,
+  "deployment_accepted": false,
+  "limitations": [
+    "Initializer is not a trained/deployable best.pt.",
+    "Removing auxiliary output changes task/loss dimensionality; a later comparison cannot isolate a unique class-competition mechanism.",
+    "Two TRAIN probes establish retained forward behavior on those inputs only."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "status": "PLANT_ONLY_TASK_VIEW_PREPARED_WITH_OPEN_HOLD",
+  "dataset_sha256": "76561101c92b6cf08f00ccda8b47023325992b04b87153605a211a3025135cdf",
+  "images": 194,
+  "counts": {
+    "train": 160,
+    "val": 30,
+    "test": 4
+  },
+  "parent_class_names": [
+    "PottedPlant",
+    "CutArrangement"
+  ],
+  "names": [
+    "PottedPlant"
+  ],
+  "source_to_target": {
+    "0": 0,
+    "1": null
+  },
+  "changed_label_files": 37,
+  "plant_instances_preserved": {
+    "train": 147,
+    "val": 22,
+    "test": 5
+  },
+  "auxiliary_annotations_removed": {
+    "train": 32,
+    "val": 7,
+    "test": 0
+  },
+  "all_images_and_folds_unchanged": true,
+  "class0_label_lines_exact": true,
+  "parent_labels_preserved": true,
+  "training_approved": false,
+  "deployment_accepted": false,
+  "test_inference_performed": false
+}
