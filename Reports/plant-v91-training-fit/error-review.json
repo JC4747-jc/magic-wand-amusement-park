@@ -1,0 +1,18 @@
+{
+  "report_sha256": "cac4f395989e7dc8bf72ff649886cf64a29cf05cfb0aaa8d092d2739144b9a22",
+  "weight_sha256": "49e7c0332e4cd1988070893fa3b13b1aed92bf279073c54f0bbf55ca443a5d04",
+  "actually_viewed": true,
+  "counts": {
+    "image": "images\\train\\1d18851e595653a8c3277865.jpg",
+    "ground_truth": 1,
+    "true_positive": 1,
+    "false_positive": 1,
+    "false_negative": 0,
+    "inference_ms": 154.35100000468083
+  },
+  "overlay_sha256": "3f9e15c7d4b5acc131818a563d4c6c8e935ad35a83588e1efe2a5a8230f3cea0",
+  "observation": "One real trailing potted plant produces two overlapping detections: a full foliage/trailing-stem box and a tighter pot/top-foliage box. One TP and one duplicate FP under fixed IoU/NMS policy. No second physical target.",
+  "labels_changed": false,
+  "checkpoint_reselected": false,
+  "deployment_accepted": false
+}

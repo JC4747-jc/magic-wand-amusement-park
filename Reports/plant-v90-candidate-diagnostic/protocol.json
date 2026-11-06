@@ -1,0 +1,73 @@
+{
+  "status": "PRE_INFERENCE_DIAGNOSTIC_PROTOCOL",
+  "files": [
+    {
+      "path": "Datasets/plant-hanging-v88/audit.json",
+      "sha256": "efee464040393a27bc61eb94eb3de4a1abf90506f0f2d5faf3b43cd31c2dc8c1"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/images/val/a8d79cd1e9fd1cdb40e2541a.jpg",
+      "sha256": "a8d79cd1e9fd1cdb40e2541aac68adea8e8edaf3f3f93843e444399859e045b1"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/images/val/ad4054926f2d2738dc4a8773.jpg",
+      "sha256": "ad4054926f2d2738dc4a87730347d3a26960820eda77df5728431c7c98f7310e"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/images/val/f792813aeb8521eb5e9ba43f.jpg",
+      "sha256": "f792813aeb8521eb5e9ba43f3e8bb294e0b7320018236afeaf7a61e2ed8051a1"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/a8d79cd1e9fd1cdb40e2541a.txt",
+      "sha256": "dcee48374c5503576da71db2e72d5aa178031f3316c3cebc67c6c9bcab0667d9"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/ad4054926f2d2738dc4a8773.txt",
+      "sha256": "44d9baa899c0b225d940d0fdaabca90424b34f16104b3d4a161336a5314e8bee"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/f792813aeb8521eb5e9ba43f.txt",
+      "sha256": "c39401487379208286ae54f996b5cd1facf5e94f191472afdff13d0f0e20c3ac"
+    },
+    {
+      "path": "object-detection-demo/weights/candidates/common-yolov8m-official-v1/best.pt",
+      "sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5"
+    },
+    {
+      "path": "object-detection-demo/weights/candidates/plant-binary-v81/best.pt",
+      "sha256": "66c8f1c0bc059b8a7d14c1f7a0b2be81fc1466fe77b7a7afb0d61efa92005218"
+    },
+    {
+      "path": "object-detection-demo/weights/candidates/plant-hanging-v89/best.pt",
+      "sha256": "49e7c0332e4cd1988070893fa3b13b1aed92bf279073c54f0bbf55ca443a5d04"
+    },
+    {
+      "path": "Tools/MultiScene/diagnose_plant_candidates_v90.py",
+      "sha256": "bb92c0111417b4dbdfc3c319c19ebdcbd29a91de9d34d2c24523bb103baf34e9"
+    }
+  ],
+  "observed_val_only": true,
+  "models": [
+    "official_coco_m",
+    "v81",
+    "v89"
+  ],
+  "image_stems": [
+    "a8d79cd1e9fd1cdb40e2541a",
+    "ad4054926f2d2738dc4a8773",
+    "f792813aeb8521eb5e9ba43f"
+  ],
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "prediction_confidence": 0.001,
+  "nms_iou": 0.7,
+  "max_det": 8,
+  "operating_confidence": 0.35,
+  "iou_match": 0.5,
+  "test_used": false,
+  "checkpoint_selection": false,
+  "threshold_selection": false,
+  "class_filter": "Native plant ID before NMS max_det, matching actual scene allowlist",
+  "deployment_accepted": false
+}
