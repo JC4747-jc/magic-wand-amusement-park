@@ -1,0 +1,429 @@
+{
+  "mode": "baseline",
+  "domain": "public-source-pilot",
+  "deployment_accepted": false,
+  "dataset_sources": [
+    {
+      "id": "openimages-v7",
+      "license": "annotations CC BY 4.0; selected image metadata CC BY 2.0",
+      "url": "https://storage.googleapis.com/openimages/web/download_v7.html",
+      "reviewed": true
+    },
+    {
+      "id": "commons",
+      "url": "https://commons.wikimedia.org/",
+      "license": "Mixed per-photo CC BY2.0, CC0 and CC BY-SA4.0. Retain artist, original publisher URL, license URL and change notices for each sample; no blanket license for mixed dataset.",
+      "reviewed": true
+    }
+  ],
+  "limitations": [
+    "Small source-grouped subset; not an official benchmark score",
+    "No PICO targets evaluated",
+    "Houseplant labels are broader than potted tabletop plants; domain validation required",
+    "Semantic labels under review; metrics are diagnostic and cannot establish model acceptance"
+  ],
+  "model": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-v89-hanging-diagnostic\\train\\weights\\last.pt",
+  "architecture": "DetectionModel",
+  "sha256": "5250cd97f3096d99d0bab45cf2c70e2125f5e1552e8b9e7b10db26d5d621420c",
+  "dataset_version": "efee464040393a27bc61eb94eb3de4a1abf90506f0f2d5faf3b43cd31c2dc8c1",
+  "split": "val",
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "model_names": {
+    "0": "PottedPlant"
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "PottedPlant",
+      "precision": 0.8194075994220777,
+      "recall": 0.7727272727272727,
+      "mAP50": 0.8239560162563793,
+      "mAP50_95": 0.7366089478008716,
+      "labels": 22
+    }
+  ],
+  "images": 30,
+  "excluded_samples": [],
+  "ground_truth_instances": 22,
+  "false_positive_images": 9,
+  "per_image": [
+    {
+      "image": "images\\val\\2eeeba800c582ff3ecef355e.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 1234.200500010047
+    },
+    {
+      "image": "images\\val\\a6bbcafb10d754a05e0706b3.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 180.64479998429306
+    },
+    {
+      "image": "images\\val\\789c1cc964cd408c51312028.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 227.98290001810528
+    },
+    {
+      "image": "images\\val\\e5fde1c97f0f71710eb2c497.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 285.4907999862917
+    },
+    {
+      "image": "images\\val\\1778c52931d70cefc775af12.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 242.50510000274517
+    },
+    {
+      "image": "images\\val\\770aea72d5e07c15a5d62998.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 192.10169999860227
+    },
+    {
+      "image": "images\\val\\f2ca90725a1a7fe87d9594d9.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 281.89929999643937
+    },
+    {
+      "image": "images\\val\\026dbd3cbf9ee4442186797b.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 220.60239998972975
+    },
+    {
+      "image": "images\\val\\87514a2d9ff2547f39cbb4ac.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 214.0441999945324
+    },
+    {
+      "image": "images\\val\\80af71df5d201ada8c3935bb.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 2,
+      "false_negative": 0,
+      "inference_ms": 208.6760999809485
+    },
+    {
+      "image": "images\\val\\581cedc885d26e10455cf980.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 228.39880001265556
+    },
+    {
+      "image": "images\\val\\478585150555622ee282ec40.jpg",
+      "ground_truth": 4,
+      "true_positive": 3,
+      "false_positive": 1,
+      "false_negative": 1,
+      "inference_ms": 192.5823999918066
+    },
+    {
+      "image": "images\\val\\9fbc2444b8acf1398deaddd3.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 230.76170001877472
+    },
+    {
+      "image": "images/val/db867d614aa06c5027d0ea72.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 206.08559998800047
+    },
+    {
+      "image": "images/val/f792813aeb8521eb5e9ba43f.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 210.96649998798966
+    },
+    {
+      "image": "images/val/a8d79cd1e9fd1cdb40e2541a.jpg",
+      "ground_truth": 3,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 3,
+      "inference_ms": 190.3292000060901
+    },
+    {
+      "image": "images/val/792d8cab06f558f60f17ce6d.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 220.2294000016991
+    },
+    {
+      "image": "images/val/f60e0d82ab2d14d6c70fdca9.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 298.32099998020567
+    },
+    {
+      "image": "images/val/5cd2e794017caf6756d2020a.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 233.93449999275617
+    },
+    {
+      "image": "images/val/d6a4f5f64a10ff59fe54d62c.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 193.74030001927167
+    },
+    {
+      "image": "images/val/90e3f0e111331c0a08c71539.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 262.7018000057433
+    },
+    {
+      "image": "images/val/04bfb3bc7b905bc8f40219f0.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 260.7840000127908
+    },
+    {
+      "image": "images/val/ea4d489234a17f1d8a4f93f7.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 204.45390001987107
+    },
+    {
+      "image": "images/val/61b87cc9e422041b15538369.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 164.2584000073839
+    },
+    {
+      "image": "images/val/c40a67d7e5c2aa244969b1f6.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 160.85970000131056
+    },
+    {
+      "image": "images/val/ad4054926f2d2738dc4a8773.jpg",
+      "ground_truth": 2,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 1,
+      "inference_ms": 200.84169998881407
+    },
+    {
+      "image": "images/val/f6064c57134f3277e5fe7b20.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 217.64149999944493
+    },
+    {
+      "image": "images/val/467fb80fca7896af512309a0.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 199.48629999998957
+    },
+    {
+      "image": "images/val/0913dea122b9e30e10a04073.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 201.5733000007458
+    },
+    {
+      "image": "images/val/e890004cc7bf2354f7bdc5f3.jpg",
+      "ground_truth": 0,
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 0,
+      "inference_ms": 176.53220001375303
+    }
+  ],
+  "ap_scope": "Positive target instances",
+  "operating_confidence": 0.35,
+  "operating_iou": 0.5,
+  "operating_per_class": [
+    {
+      "name": "PottedPlant",
+      "true_positive": 17,
+      "false_positive": 10,
+      "false_negative": 5,
+      "precision": 0.6296296296296297,
+      "recall": 0.7727272727272727
+    }
+  ],
+  "operating_confidence_curve": [],
+  "threshold_selection_scope": "Use validation only for threshold selection; test curves are diagnostic, not tuning data",
+  "mean_inference_ms": 251.42100000036103,
+  "p95_inference_ms": 292.5474099829443,
+  "cold_first_image_ms": 1234.200500010047,
+  "warm_mean_ms": 217.53205172416497,
+  "timing_scope": "PC PyTorch prediction only; first sample includes cold initialization; excludes TCP, stereo and Unity animation",
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "errors": [
+    {
+      "image": "images\\val\\87514a2d9ff2547f39cbb4ac.jpg",
+      "example": "error-87514a2d9ff2547f39cbb4ac.jpg",
+      "ground_truth": 1,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35
+    },
+    {
+      "image": "images\\val\\80af71df5d201ada8c3935bb.jpg",
+      "example": "error-80af71df5d201ada8c3935bb.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 2,
+      "false_negatives": 0,
+      "confidence": 0.35
+    },
+    {
+      "image": "images\\val\\478585150555622ee282ec40.jpg",
+      "example": "error-478585150555622ee282ec40.jpg",
+      "ground_truth": 4,
+      "true_positives": 3,
+      "false_positives": 1,
+      "false_negatives": 1,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/val/f792813aeb8521eb5e9ba43f.jpg",
+      "example": "error-f792813aeb8521eb5e9ba43f.jpg",
+      "ground_truth": 1,
+      "true_positives": 1,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/val/a8d79cd1e9fd1cdb40e2541a.jpg",
+      "example": "error-a8d79cd1e9fd1cdb40e2541a.jpg",
+      "ground_truth": 3,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/val/f60e0d82ab2d14d6c70fdca9.jpg",
+      "example": "error-f60e0d82ab2d14d6c70fdca9.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/val/5cd2e794017caf6756d2020a.jpg",
+      "example": "error-5cd2e794017caf6756d2020a.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/val/d6a4f5f64a10ff59fe54d62c.jpg",
+      "example": "error-d6a4f5f64a10ff59fe54d62c.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/val/ad4054926f2d2738dc4a8773.jpg",
+      "example": "error-ad4054926f2d2738dc4a8773.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/val/467fb80fca7896af512309a0.jpg",
+      "example": "error-467fb80fca7896af512309a0.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35
+    },
+    {
+      "image": "images/val/e890004cc7bf2354f7bdc5f3.jpg",
+      "example": "error-e890004cc7bf2354f7bdc5f3.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.35
+    }
+  ],
+  "allowed_classes": [
+    "PottedPlant"
+  ],
+  "max_det": 8,
+  "nms_iou": 0.7,
+  "preprocessing": "YOLO predict: minimal stride-aligned rectangular letterbox",
+  "native_validation_comparability": "Ultralytics val may add 0.5 stride padding and produce different tensor shapes at the same imgsz; use this runtime-shaped report for the service gate",
+  "annotation_review_hold": {
+    "status": "OPEN",
+    "dataset_audit_sha256": "efee464040393a27bc61eb94eb3de4a1abf90506f0f2d5faf3b43cd31c2dc8c1",
+    "training_approved": false,
+    "reason": "Small prospective pilot; seventeen source holds retained, single-assistant annotations not independently double reviewed. Future evaluation/selection protocol not frozen."
+  }
+}

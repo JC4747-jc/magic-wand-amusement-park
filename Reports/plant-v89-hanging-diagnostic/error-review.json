@@ -1,0 +1,90 @@
+{
+  "status": "ALL6_SELECTED_V89_ERRORS_ACTUALLY_REVIEWED",
+  "reviewed": [
+    {
+      "image": "images\\val\\80af71df5d201ada8c3935bb.jpg",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 0
+      },
+      "observation": "Cut sunflower buckets produce two plant false positives: one almost full-frame and one clipped right bucket.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v89-hanging-diagnostic/final-val/error-80af71df5d201ada8c3935bb.jpg",
+      "overlay_sha256": "b763fcf8307c095fbc078704a53c7a2eaf64e33369640d5eb5b82f131573a509"
+    },
+    {
+      "image": "images/val/a8d79cd1e9fd1cdb40e2541a.jpg",
+      "counts": {
+        "ground_truth": 3,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 3
+      },
+      "observation": "All three hanging baskets missed, including bottom-right clipped basket; no operating prediction.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v89-hanging-diagnostic/final-val/error-a8d79cd1e9fd1cdb40e2541a.jpg",
+      "overlay_sha256": "0c1f962a61068ddc2ce61828119a2a20162ae9ff0f50088be02953cb0c1c42fd"
+    },
+    {
+      "image": "images/val/5cd2e794017caf6756d2020a.jpg",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "observation": "Cut white roses in clear water vase predicted rooted plant; no rooted terrestrial pot.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v89-hanging-diagnostic/final-val/error-5cd2e794017caf6756d2020a.jpg",
+      "overlay_sha256": "5fcb3103aa1508e2ab7a74ebe715935a6da9c4470f03136d54cfb220a208031d"
+    },
+    {
+      "image": "images/val/ad4054926f2d2738dc4a8773.jpg",
+      "counts": {
+        "ground_truth": 2,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 1
+      },
+      "observation": "Main soil herb pot correctly detected; partial planted white container at lower left missed.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v89-hanging-diagnostic/final-val/error-ad4054926f2d2738dc4a8773.jpg",
+      "overlay_sha256": "3cb500f7f2daef18e236aa1a769d92814f596790720cc15898e9f6ff033512f8"
+    },
+    {
+      "image": "images/val/0913dea122b9e30e10a04073.jpg",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "observation": "Harvested market vegetables in produce cartons predicted plant; no planted soil container.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v89-hanging-diagnostic/final-val/error-0913dea122b9e30e10a04073.jpg",
+      "overlay_sha256": "e62efa9520d1862d39e556ec6c146604330e4ea453d4134d3f97f6d64a82be2b"
+    },
+    {
+      "image": "images/val/e890004cc7bf2354f7bdc5f3.jpg",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "observation": "Harvested leafy vegetables in market basins predicted plant; visible loose roots and bowls do not establish a planted target.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v89-hanging-diagnostic/final-val/error-e890004cc7bf2354f7bdc5f3.jpg",
+      "overlay_sha256": "135a229af87265126ec3ec720d91436b3c817cdf84bc24c8a57a7bd874b4a24d"
+    }
+  ],
+  "report_sha256": "3b518bd754e25216327ead9b823dd7540cb9a57fda9ff9945aa585512264e0cb",
+  "weight_sha256": "49e7c0332e4cd1988070893fa3b13b1aed92bf279073c54f0bbf55ca443a5d04",
+  "labels_changed": false,
+  "checkpoint_reselected": false,
+  "deployment_accepted": false,
+  "test_used": false,
+  "pico_validated": false
+}

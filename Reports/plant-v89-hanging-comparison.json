@@ -1,0 +1,589 @@
+{
+  "status": "CONTROLLED_HANGING_TRAIN_ADDITION_COMPARISON",
+  "results": {
+    "v81": {
+      "selected_epoch": 30,
+      "weight_sha256": "66c8f1c0bc059b8a7d14c1f7a0b2be81fc1466fe77b7a7afb0d61efa92005218",
+      "operating_per_class": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 18,
+          "false_positive": 4,
+          "false_negative": 4,
+          "precision": 0.8181818181818182,
+          "recall": 0.8181818181818182
+        }
+      ],
+      "per_class_ap": [
+        {
+          "class_id": 0,
+          "name": "PottedPlant",
+          "precision": 0.9518045526888697,
+          "recall": 0.7727272727272727,
+          "mAP50": 0.8752588595312734,
+          "mAP50_95": 0.7704178730509967,
+          "labels": 22
+        }
+      ],
+      "runtime_cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 4,
+          "false_negative": 4,
+          "precision": 0.8181818181818182,
+          "recall": 0.8181818181818182,
+          "f1": 0.8181818181818182
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 1,
+          "false_negative": 0,
+          "precision": 0.9285714285714286,
+          "recall": 1.0,
+          "f1": 0.962962962962963
+        }
+      },
+      "runtime_gate_pass": false,
+      "subsets": {
+        "harvested_food": {
+          "images": 4,
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0
+        },
+        "soil_herb": {
+          "images": 3,
+          "ground_truth": 4,
+          "true_positive": 3,
+          "false_positive": 0,
+          "false_negative": 1
+        }
+      }
+    },
+    "v89": {
+      "selected_epoch": 21,
+      "weight_sha256": "49e7c0332e4cd1988070893fa3b13b1aed92bf279073c54f0bbf55ca443a5d04",
+      "operating_per_class": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 18,
+          "false_positive": 5,
+          "false_negative": 4,
+          "precision": 0.782608695652174,
+          "recall": 0.8181818181818182
+        }
+      ],
+      "per_class_ap": [
+        {
+          "class_id": 0,
+          "name": "PottedPlant",
+          "precision": 0.8546536290522775,
+          "recall": 0.802341275787221,
+          "mAP50": 0.8605437147977469,
+          "mAP50_95": 0.7332615348856011,
+          "labels": 22
+        }
+      ],
+      "runtime_cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 5,
+          "false_negative": 4,
+          "precision": 0.782608695652174,
+          "recall": 0.8181818181818182,
+          "f1": 0.8
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 2,
+          "false_negative": 0,
+          "precision": 0.8666666666666667,
+          "recall": 1.0,
+          "f1": 0.9285714285714286
+        }
+      },
+      "runtime_gate_pass": false,
+      "subsets": {
+        "harvested_food": {
+          "images": 4,
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 2,
+          "false_negative": 0
+        },
+        "soil_herb": {
+          "images": 3,
+          "ground_truth": 4,
+          "true_positive": 3,
+          "false_positive": 0,
+          "false_negative": 1
+        }
+      }
+    }
+  },
+  "unchanged_parent_rows": 194,
+  "new_train_images": 6,
+  "unchanged_val_images": 30,
+  "initializer_and_options_exact": true,
+  "per_image": [
+    {
+      "stem": "2eeeba800c582ff3ecef355e",
+      "before": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "a6bbcafb10d754a05e0706b3",
+      "before": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "789c1cc964cd408c51312028",
+      "before": {
+        "ground_truth": 2,
+        "true_positive": 2,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 2,
+        "true_positive": 2,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "e5fde1c97f0f71710eb2c497",
+      "before": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "1778c52931d70cefc775af12",
+      "before": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "770aea72d5e07c15a5d62998",
+      "before": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "f2ca90725a1a7fe87d9594d9",
+      "before": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "026dbd3cbf9ee4442186797b",
+      "before": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "87514a2d9ff2547f39cbb4ac",
+      "before": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "80af71df5d201ada8c3935bb",
+      "before": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "581cedc885d26e10455cf980",
+      "before": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "478585150555622ee282ec40",
+      "before": {
+        "ground_truth": 4,
+        "true_positive": 4,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 4,
+        "true_positive": 4,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "9fbc2444b8acf1398deaddd3",
+      "before": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "db867d614aa06c5027d0ea72",
+      "before": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "f792813aeb8521eb5e9ba43f",
+      "before": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "a8d79cd1e9fd1cdb40e2541a",
+      "before": {
+        "ground_truth": 3,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 3
+      },
+      "after": {
+        "ground_truth": 3,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 3
+      }
+    },
+    {
+      "stem": "792d8cab06f558f60f17ce6d",
+      "before": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "f60e0d82ab2d14d6c70fdca9",
+      "before": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "5cd2e794017caf6756d2020a",
+      "before": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "d6a4f5f64a10ff59fe54d62c",
+      "before": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "90e3f0e111331c0a08c71539",
+      "before": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "04bfb3bc7b905bc8f40219f0",
+      "before": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "ea4d489234a17f1d8a4f93f7",
+      "before": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "61b87cc9e422041b15538369",
+      "before": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "c40a67d7e5c2aa244969b1f6",
+      "before": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "ad4054926f2d2738dc4a8773",
+      "before": {
+        "ground_truth": 2,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 1
+      },
+      "after": {
+        "ground_truth": 2,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 1
+      }
+    },
+    {
+      "stem": "f6064c57134f3277e5fe7b20",
+      "before": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "467fb80fca7896af512309a0",
+      "before": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "0913dea122b9e30e10a04073",
+      "before": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      }
+    },
+    {
+      "stem": "e890004cc7bf2354f7bdc5f3",
+      "before": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "after": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      }
+    }
+  ],
+  "evidence": {
+    "Reports/plant-v81-binary-diagnostic/final-val/report.json": "adab17909ac1d316a64c88d8539e49509c73252ebe82e43469aa2d2b9cf09f15",
+    "Reports/plant-v89-hanging-diagnostic/final-val/report.json": "3b518bd754e25216327ead9b823dd7540cb9a57fda9ff9945aa585512264e0cb"
+  },
+  "limitation": "Single seed; small repeatedly observed development VAL. Additional images change batch order/count. Three crops retain their original creator groups and are not independent sources. No unique causal attribution or generalization claim.",
+  "test_used": false,
+  "pico_validated": false,
+  "deployment_accepted": false
+}

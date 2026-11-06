@@ -1,0 +1,27 @@
+{
+  "status": "DIAGNOSTIC_COMPLETE_NOT_ACCEPTED",
+  "weight_sha256": "49e7c0332e4cd1988070893fa3b13b1aed92bf279073c54f0bbf55ca443a5d04",
+  "report_sha256": "3b518bd754e25216327ead9b823dd7540cb9a57fda9ff9945aa585512264e0cb",
+  "frozen_files_verified": 563,
+  "elapsed_seconds": 572.8404582999938,
+  "deployment_accepted": false,
+  "operating_per_class": [
+    {
+      "name": "PottedPlant",
+      "true_positive": 18,
+      "false_positive": 5,
+      "false_negative": 4,
+      "precision": 0.782608695652174,
+      "recall": 0.8181818181818182
+    }
+  ],
+  "runtime_rank": [
+    0,
+    0.8,
+    0.9285714285714286,
+    0.782608695652174,
+    0.8181818181818182,
+    0.7332615348856011
+  ],
+  "selected_epoch": 21
+}
