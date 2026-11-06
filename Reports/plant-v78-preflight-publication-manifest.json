@@ -1,0 +1,33 @@
+{
+  "files": [
+    {
+      "path": "Tools/MultiScene/preflight_plant_freeze_v78.py",
+      "sha256": "3566d08113c9bf4f3b4ab993a678ce299bb516461a2be39b65b86196259db967"
+    },
+    {
+      "path": "Tools/MultiScene/train_plant_v78_freeze.py",
+      "sha256": "3dea4cfc50a5e7b245feef613d77a46754fe6816e4597883aaa9056ce8386434"
+    },
+    {
+      "path": "Tools/MultiScene/audit_plant_v78_completed.py",
+      "sha256": "67456edbf14344c652eb97fd56a9fd618fb9ec43395f224a717a2aca8bd9af17"
+    },
+    {
+      "path": "Tools/MultiScene/compare_plant_v78_freeze.py",
+      "sha256": "01df16cc4cc1885cb80a1a36c97a46e3365c4b5b767734b92724491ccb9395d2"
+    },
+    {
+      "path": "Reports/plant-v78-freeze-preflight/report.json",
+      "sha256": "2627caec738123dc1d3c71dcc240aebeac64f39bae05cf6d2067d187f0fabe57"
+    },
+    {
+      "path": "Reports/plant-v78-freeze-preflight/installed-model-train.txt",
+      "sha256": "7600744cfbeb09f19748ef34e0d6c2de211a1472b9a7ee38b4a03d21472ec91f"
+    }
+  ],
+  "scope": "Actual installed freeze10 BN forward preflight:39frozen BN buffers unchanged,38active BN changed. One bounded30epoch run same v75 data/init/options as v76 except freeze0->10; runtime per-epoch state checks and final lineage auditor prepared. Run outputs and weights not included; no completion claimed.",
+  "installed_source_excerpt": "Ultralytics BaseTrainer._model_train, installed version recorded in report; upstream https://github.com/ultralytics/ultralytics/blob/main/ultralytics/engine/trainer.py (AGPL-3.0).",
+  "exclusions": "No live outputs, image bytes, private captures, weights, environment packages, Unity assets or deployment changes.",
+  "deployment_accepted": false,
+  "pico_validated": false
+}
