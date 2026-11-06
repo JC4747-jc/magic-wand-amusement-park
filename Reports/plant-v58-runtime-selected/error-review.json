@@ -1,0 +1,167 @@
+{
+  "status": "ALL11_SELECTED_WEIGHT_ERROR_OVERLAYS_VISUALLY_REVIEWED",
+  "report_sha256": "694055c715869ec5426dab2ada0e99eeb54949873845f5e1a93544128d8c0416",
+  "weight_sha256": "b2de50026bd92b62a6f3335f6e8a1ab5cf7342d88e8d06dc7ba34562d8f0ebee",
+  "reviewed": [
+    {
+      "image": "images\\val\\2eeeba800c582ff3ecef355e.jpg",
+      "category": "annotation_scope_hold",
+      "observation": "Main bonsai matched. Extra small companion vessel at lower left predicted plant; its semantic scope remains unresolved, so this FP is not unqualified evidence of model error.",
+      "counts": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "overlay": "Reports/plant-v58-runtime-selected/final-val/error-2eeeba800c582ff3ecef355e.jpg",
+      "overlay_sha256": "7ab20b931faed1e1a05e93b8d378206c138a0ac7f7d67a0a2468ea6003fca766",
+      "actually_viewed": true
+    },
+    {
+      "image": "images\\val\\80af71df5d201ada8c3935bb.jpg",
+      "category": "cut_flower_confusion",
+      "observation": "Sunflower bunches in white buckets receive near-full-image plant prediction. Existing negative scope retained; no prediction-driven auxiliary relabeling.",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "overlay": "Reports/plant-v58-runtime-selected/final-val/error-80af71df5d201ada8c3935bb.jpg",
+      "overlay_sha256": "5bd392d25ef3b747f1f737a413e619df75462869dbbd93e2b6197b2d73746fb1",
+      "actually_viewed": true
+    },
+    {
+      "image": "images\\val\\581cedc885d26e10455cf980.jpg",
+      "category": "cross_class_confusion",
+      "observation": "White cut-flower arrangement in decorative silver urn has near-matching geometry but is predicted PottedPlant instead of auxiliary CutArrangement.",
+      "counts": {
+        "ground_truth": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1
+      },
+      "overlay": "Reports/plant-v58-runtime-selected/final-val/error-581cedc885d26e10455cf980.jpg",
+      "overlay_sha256": "505251ab95dc09385717e9dd56e67538eb3cecd9075838e9c78dbed7dd40fd19",
+      "actually_viewed": true
+    },
+    {
+      "image": "images\\val\\9fbc2444b8acf1398deaddd3.jpg",
+      "category": "nested_duplicate_box",
+      "observation": "Left stacked planted containers have one matching large prediction plus extra smaller upper-pot prediction. Rabbit is outside predictions; instance grouping scope is retained.",
+      "counts": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "overlay": "Reports/plant-v58-runtime-selected/final-val/error-9fbc2444b8acf1398deaddd3.jpg",
+      "overlay_sha256": "ddd0a67afe3ceed689636da65c1a765c7fc944f43383a1b565b068f636451c14",
+      "actually_viewed": true
+    },
+    {
+      "image": "images/val/f792813aeb8521eb5e9ba43f.jpg",
+      "category": "hanging_miss_background_fp",
+      "observation": "Annotated suspended pot on left has no prediction. Separate red FP covers lower-left climbing ivy without a visible container.",
+      "counts": {
+        "ground_truth": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1
+      },
+      "overlay": "Reports/plant-v58-runtime-selected/final-val/error-f792813aeb8521eb5e9ba43f.jpg",
+      "overlay_sha256": "5bddb326ffdf0741fb25d11d0f45cf78d78ab8e52a715eca894015cc24849b1b",
+      "actually_viewed": true
+    },
+    {
+      "image": "images/val/a8d79cd1e9fd1cdb40e2541a.jpg",
+      "category": "hanging_miss",
+      "observation": "Two full suspended flower baskets and one bottom-right partial basket all have GT boxes and no predictions.",
+      "counts": {
+        "ground_truth": 3,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 3
+      },
+      "overlay": "Reports/plant-v58-runtime-selected/final-val/error-a8d79cd1e9fd1cdb40e2541a.jpg",
+      "overlay_sha256": "0c1f962a61068ddc2ce61828119a2a20162ae9ff0f50088be02953cb0c1c42fd",
+      "actually_viewed": true
+    },
+    {
+      "image": "images/val/ad4054926f2d2738dc4a8773.jpg",
+      "category": "partial_target_miss",
+      "observation": "Main red soil herb pot matches; partial planted white container at lower left is missed.",
+      "counts": {
+        "ground_truth": 2,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 1
+      },
+      "overlay": "Reports/plant-v58-runtime-selected/final-val/error-ad4054926f2d2738dc4a8773.jpg",
+      "overlay_sha256": "8760054263247b4d39887501cb9cb8777723b3359a55f987919c4146865dad80",
+      "actually_viewed": true
+    },
+    {
+      "image": "images/val/f6064c57134f3277e5fe7b20.jpg",
+      "category": "harvested_food_fp",
+      "observation": "Chopped leafy food on plate with hands and knife receives large plant prediction; no planted container visible.",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "overlay": "Reports/plant-v58-runtime-selected/final-val/error-f6064c57134f3277e5fe7b20.jpg",
+      "overlay_sha256": "3a2077120a390162539de37d1c57cafc2d1637b39f56162a717248e565635222",
+      "actually_viewed": true
+    },
+    {
+      "image": "images/val/467fb80fca7896af512309a0.jpg",
+      "category": "harvested_food_fp",
+      "observation": "Loose harvested spinach on plate predicted as plant; no planted container visible.",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "overlay": "Reports/plant-v58-runtime-selected/final-val/error-467fb80fca7896af512309a0.jpg",
+      "overlay_sha256": "f570cf59eeb4ddb156084ac822206d9699706ddb0a5c22567999675f108f42a4",
+      "actually_viewed": true
+    },
+    {
+      "image": "images/val/0913dea122b9e30e10a04073.jpg",
+      "category": "harvested_market_fp",
+      "observation": "Two red plant predictions on harvested leafy produce in market cartons; no soil-planted pot visible.",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 0
+      },
+      "overlay": "Reports/plant-v58-runtime-selected/final-val/error-0913dea122b9e30e10a04073.jpg",
+      "overlay_sha256": "17b39936a6cc76d57c37ce8742dde5735dd99efdb10b32894f6b4caea82bc95d",
+      "actually_viewed": true
+    },
+    {
+      "image": "images/val/e890004cc7bf2354f7bdc5f3.jpg",
+      "category": "harvested_market_fp",
+      "observation": "Two large red predictions cover harvested leafy bundles in market bowls/buckets and surrounding scene; no planted pot visible.",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 0
+      },
+      "overlay": "Reports/plant-v58-runtime-selected/final-val/error-e890004cc7bf2354f7bdc5f3.jpg",
+      "overlay_sha256": "40684ae4ce59235a2ea4b84e7355dedeac5c81b6066f3703a657500ae7877742",
+      "actually_viewed": true
+    }
+  ],
+  "labels_changed": false,
+  "checkpoint_reselected": false,
+  "deployment_accepted": false,
+  "test_used": false,
+  "pico_validated": false,
+  "next_action": "Compare fixed selected-weight TRAIN fit with full VAL under identical runtime policy before further training. Preserve annotation scope holds and frozen validation labels."
+}

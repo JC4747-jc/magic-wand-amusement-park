@@ -1,0 +1,21 @@
+{
+  "weight_sha256": "5c89bbd946955e67d55a3553049b3ed1a1c97b12b148219fd1a72fb0298af6df",
+  "options": {
+    "data": "Datasets/plant-label-paths-v52/data.yaml",
+    "split": "val",
+    "device": "cpu",
+    "imgsz": 640,
+    "batch": 4,
+    "workers": 0,
+    "conf": 0.001,
+    "iou": 0.7,
+    "max_det": 8,
+    "half": false,
+    "plots": false,
+    "project": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\Reports\\plant-v56-native-single-label-diagnostic",
+    "name": "native"
+  },
+  "intervention": "Only native postprocess multi_label=False instead of True; project path changed for evidence isolation.",
+  "implementation_sha256": "632aeb42cecd0b7ccd3696c99df6fd02d48675d541ff5903c02afa3cda4588f3",
+  "deployment_accepted": false
+}

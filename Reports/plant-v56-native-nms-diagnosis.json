@@ -1,0 +1,23 @@
+{
+  "status": "CONTROLLED_NATIVE_CPU_NMS_DIFFERENCE_CONFIRMED",
+  "intervention": "Only multi_label True -> False in native validator; same CPU model,data,batch4,imgsz640/conf.001/iou.7/max8.",
+  "multi_label_ap95": [
+    0.6045673404941915,
+    0.8526000000000001
+  ],
+  "single_label_ap95": [
+    0.6045673404941915,
+    0.4545975772424119
+  ],
+  "class_order": [
+    0,
+    1
+  ],
+  "evidence": {
+    "Reports\\plant-v56-native-cpu-diagnostic\\metrics.json": "ba60c839e048a5e86d63779079016df55636761a85e101af13860d8da4d0b0d9",
+    "Reports\\plant-v56-native-single-label-diagnostic\\metrics.json": "177428472c9e8f9313196a8203301389976544d70e8a06c55200072488ccd58c"
+  },
+  "conclusion": "Auxiliary AP95 drops with only NMS class policy changed. Native multi-label validation can retain an auxiliary prediction whose competing plant class wins single-label runtime prediction. Does not explain every preprocessing/AP-matching difference.",
+  "next_action": "Future checkpoint ranking must use frozen runtime-shaped single-label full30VAL operating policy and old13 cohort, not native multi-label fitness alone. Do not retrospectively promote a different v56 checkpoint.",
+  "deployment_accepted": false
+}

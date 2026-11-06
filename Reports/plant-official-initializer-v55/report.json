@@ -1,0 +1,39 @@
+{
+  "status": "OFFICIAL_PLANT_ROW_TRANSFER_VERIFIED",
+  "source_sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5",
+  "initializer_sha256": "e155a229ca5c197b40e2f2728d900bc495beca748895fb308950b4dc714595d3",
+  "native_class_id": 58,
+  "target_class_id": 0,
+  "alias_change": "In-memory source name potted plant -> PottedPlant before trainer load; no source checkpoint mutation.",
+  "classifier_hidden_width": 192,
+  "plant_row_tensors_exact": [
+    "model.22.cv3.0.2.weight",
+    "model.22.cv3.0.2.bias",
+    "model.22.cv3.1.2.weight",
+    "model.22.cv3.1.2.bias",
+    "model.22.cv3.2.2.weight",
+    "model.22.cv3.2.2.bias"
+  ],
+  "other_state_tensors_unchanged": 469,
+  "auxiliary_initialization": "New independent class row with fixed seed20261105, not duplicated plant weights.",
+  "save_reload_plant_row_exact": true,
+  "next_trainer_load_all_state_exact": true,
+  "torch": "2.13.0+cu126",
+  "ultralytics": "8.4.173",
+  "implementation_files": [
+    {
+      "path": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\.venv-cuda\\Lib\\site-packages\\ultralytics\\models\\yolo\\detect\\train.py",
+      "sha256": "a045142cebae53ff94af9144fa108cd413904c27f085d58dc4ade2e83343c93a"
+    },
+    {
+      "path": "C:\\Users\\26417\\Documents\\ChatGPT\\magic\\project\\.venv-cuda\\Lib\\site-packages\\ultralytics\\nn\\tasks.py",
+      "sha256": "c2465c97a13a1e3bb0ebd5ec7c531aa912122d59281e61677af376411c7d448a"
+    }
+  ],
+  "deployment_accepted": false,
+  "training_performed": false,
+  "limitations": [
+    "Parameter transfer does not establish accuracy improvement or preserve all 80-class capabilities.",
+    "Auxiliary row is untrained; this initializer is not a deployable recognition model."
+  ]
+}

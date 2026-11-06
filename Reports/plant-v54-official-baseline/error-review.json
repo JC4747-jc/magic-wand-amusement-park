@@ -1,0 +1,103 @@
+{
+  "errors": [
+    {
+      "image": "images\\val\\87514a2d9ff2547f39cbb4ac.jpg",
+      "example": "error-87514a2d9ff2547f39cbb4ac.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65,
+      "observation": "Sparse young bonsai missed at .65.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "2e3c7b58f18fc4b5a8bc162a489f7ac9bbba6e0550c70af4f183c4fc1b847f02"
+    },
+    {
+      "image": "images\\val\\581cedc885d26e10455cf980.jpg",
+      "example": "error-581cedc885d26e10455cf980.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65,
+      "observation": "Cut-flower arrangement in decorative vessel misclassified PottedPlant.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "3ec72562e32f40f0cf3426de5f30e53ae44870c9aa200132c63eb19eaf344110"
+    },
+    {
+      "image": "images\\val\\478585150555622ee282ec40.jpg",
+      "example": "error-478585150555622ee282ec40.jpg",
+      "ground_truth": 4,
+      "true_positives": 3,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65,
+      "observation": "Three of four bonsai display targets found; clipped right-hand potted plant missed.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "79011fd19fc2b905f0e3303be3332fd4dbbe541780244661767e88dc39e3e53e"
+    },
+    {
+      "image": "images/val/a8d79cd1e9fd1cdb40e2541a.jpg",
+      "example": "error-a8d79cd1e9fd1cdb40e2541a.jpg",
+      "ground_truth": 3,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "confidence": 0.65,
+      "observation": "Two full hanging baskets and partial lower-right basket missed.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "0c1f962a61068ddc2ce61828119a2a20162ae9ff0f50088be02953cb0c1c42fd"
+    },
+    {
+      "image": "images/val/5cd2e794017caf6756d2020a.jpg",
+      "example": "error-5cd2e794017caf6756d2020a.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65,
+      "observation": "Cut roses in water vase misclassified PottedPlant.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "721288b4ba22d560d332c59e8d0fdab38d2ec8f7d642dcf289334821758c5883"
+    },
+    {
+      "image": "images/val/61b87cc9e422041b15538369.jpg",
+      "example": "error-61b87cc9e422041b15538369.jpg",
+      "ground_truth": 1,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65,
+      "observation": "Dense cropped herb in purple soil pot missed.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "899eee30549c78f396a710ad040415f80d193819216bf866443be8717e457804"
+    },
+    {
+      "image": "images/val/ad4054926f2d2738dc4a8773.jpg",
+      "example": "error-ad4054926f2d2738dc4a8773.jpg",
+      "ground_truth": 2,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "confidence": 0.65,
+      "observation": "Main herb pot TP; partial left white planted container missed.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "403e71063f3aeee7d61ae283f48a417df9d2cfd33239f7b6b6e0121fa0b85a52"
+    },
+    {
+      "image": "images/val/0913dea122b9e30e10a04073.jpg",
+      "example": "error-0913dea122b9e30e10a04073.jpg",
+      "ground_truth": 0,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "confidence": 0.65,
+      "observation": "Harvested spinach in produce carton misclassified PottedPlant.",
+      "overlay_actually_viewed": true,
+      "overlay_sha256": "dfd9fe56a35e61f6f83d8fb416f039e232ec4ed45422624fd03bbbc4ef655626"
+    }
+  ],
+  "confidence": 0.65,
+  "labels_changed": false,
+  "deployment_accepted": false
+}

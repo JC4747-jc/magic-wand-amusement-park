@@ -1,0 +1,19 @@
+{
+  "weight_sha256": "5c89bbd946955e67d55a3553049b3ed1a1c97b12b148219fd1a72fb0298af6df",
+  "options": {
+    "data": "Datasets/plant-label-paths-v52/data.yaml",
+    "split": "val",
+    "device": "cpu",
+    "imgsz": 640,
+    "batch": 4,
+    "workers": 0,
+    "conf": 0.001,
+    "iou": 0.7,
+    "max_det": 8,
+    "half": false,
+    "plots": false,
+    "project": "Reports\\plant-v56-native-cpu-diagnostic",
+    "name": "native"
+  },
+  "scope": "Single fixed-weight native CPU diagnostic; no selection or deployment."
+}

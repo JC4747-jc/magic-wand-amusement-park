@@ -1,0 +1,38 @@
+{
+  "records": [
+    {
+      "epoch": 1,
+      "rank": [
+        0,
+        0.6,
+        0.8387096774193548,
+        0.47368421052631576,
+        0.8181818181818182,
+        0.5559395042981958
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 20,
+          "false_negative": 4,
+          "precision": 0.47368421052631576,
+          "recall": 0.8181818181818182,
+          "f1": 0.6
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 5,
+          "false_negative": 0,
+          "precision": 0.7222222222222222,
+          "recall": 1.0,
+          "f1": 0.8387096774193548
+        }
+      },
+      "selected": true,
+      "checkpoint_sha256": "5c89bbd946955e67d55a3553049b3ed1a1c97b12b148219fd1a72fb0298af6df",
+      "report_sha256": "6ea8d86038f0679d0c0c1d7303a63c66fe69d9afc7720afad424deecdf054454"
+    }
+  ],
+  "best_sha256": "5c89bbd946955e67d55a3553049b3ed1a1c97b12b148219fd1a72fb0298af6df",
+  "deployment_accepted": false
+}

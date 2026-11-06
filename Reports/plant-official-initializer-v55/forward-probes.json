@@ -1,0 +1,29 @@
+{
+  "status": "PASS_PRE_NMS_PLANT_BRANCH",
+  "probes": [
+    {
+      "image": "images\\train\\d5ae91276f1fdbd4f446fcdf.jpg",
+      "shape": [
+        1,
+        3,
+        320,
+        320
+      ],
+      "box_max_abs": 0.0,
+      "plant_score_max_abs": 9.5367431640625e-07
+    },
+    {
+      "image": "images\\train\\58311aabeebc59977b3a8193.jpg",
+      "shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "box_max_abs": 0.0,
+      "plant_score_max_abs": 0.0
+    }
+  ],
+  "initializer_sha256": "e155a229ca5c197b40e2f2728d900bc495beca748895fb308950b4dc714595d3",
+  "limitation": "Raw box/plant-score equivalence only; random auxiliary branch not validated and no deployment acceptance."
+}

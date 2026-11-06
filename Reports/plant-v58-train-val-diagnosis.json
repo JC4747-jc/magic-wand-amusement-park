@@ -1,0 +1,88 @@
+{
+  "status": "FIXED_WEIGHT_TRAIN_FIT_DIAGNOSTIC",
+  "training_metrics": [
+    {
+      "name": "PottedPlant",
+      "true_positive": 132,
+      "false_positive": 0,
+      "false_negative": 1,
+      "precision": 1.0,
+      "recall": 0.9924812030075187
+    },
+    {
+      "name": "CutArrangement",
+      "true_positive": 32,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  ],
+  "validation_metrics": [
+    {
+      "name": "PottedPlant",
+      "true_positive": 17,
+      "false_positive": 10,
+      "false_negative": 5,
+      "precision": 0.6296296296296297,
+      "recall": 0.7727272727272727
+    },
+    {
+      "name": "CutArrangement",
+      "true_positive": 6,
+      "false_positive": 1,
+      "false_negative": 1,
+      "precision": 0.8571428571428571,
+      "recall": 0.8571428571428571
+    }
+  ],
+  "dedicated_hanging_source_training_photos": [
+    {
+      "page_id": 129746819,
+      "image": "images/train/ca88ba626678dc56f125c900.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 199.16689999809023
+    },
+    {
+      "page_id": 87404883,
+      "image": "images/train/2be595db5d0aae8a286629b7.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 186.20050000026822
+    },
+    {
+      "page_id": 134319541,
+      "image": "images/train/2e0bda6475b40c2a330f2b33.jpg",
+      "ground_truth": 1,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 255.54209999972954
+    },
+    {
+      "page_id": 63438809,
+      "image": "images/train/08deaa0eb58301f9d1891e59.jpg",
+      "ground_truth": 2,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "inference_ms": 230.58469999523368
+    }
+  ],
+  "evidence": {
+    "Reports/plant-v58-training-diagnostic/report.json": "556f1a0aaa6ac82d9716550a3672cc77db5a3b361b27dd65ff5d0d319565272d",
+    "Reports/plant-v58-runtime-selected/final-val/report.json": "694055c715869ec5426dab2ada0e99eeb54949873845f5e1a93544128d8c0416",
+    "Datasets/plant-label-paths-v52/audit.json": "39681aca2f7ca939ff7f19fcd7bca6f61a87ee7f558631be0e8aa38a1aba88e8"
+  },
+  "note": "Source63438809 has a hanging basket plus ground urn. TRAIN fit is not held-out accuracy. Counts support diagnosis, not proof of a unique causal mechanism.",
+  "labels_changed": false,
+  "checkpoint_reselected": false,
+  "deployment_accepted": false,
+  "test_used": false,
+  "pico_validated": false
+}

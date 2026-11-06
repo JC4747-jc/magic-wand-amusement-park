@@ -1,0 +1,28 @@
+{
+  "scope": "One fixed-weight VAL diagnostic changing only rect to square. No checkpoint or threshold search, no service change, cannot select based on TEST.",
+  "fixed_policy": {
+    "confidence": 0.35,
+    "imgsz": 640,
+    "nms_iou": 0.7,
+    "max_det": 8,
+    "classes": [
+      "PottedPlant",
+      "CutArrangement"
+    ]
+  },
+  "files": [
+    {
+      "path": "Reports/plant-v56-official-diagnostic/train/weights/best.pt",
+      "sha256": "5c89bbd946955e67d55a3553049b3ed1a1c97b12b148219fd1a72fb0298af6df"
+    },
+    {
+      "path": "Datasets/plant-label-paths-v52/audit.json",
+      "sha256": "39681aca2f7ca939ff7f19fcd7bca6f61a87ee7f558631be0e8aa38a1aba88e8"
+    },
+    {
+      "path": "Tools/MultiScene/evaluate_mapped.py",
+      "sha256": "e583e11b503d07f81159149a1f40826d6dc0cffc4197384f770586e47d3a103c"
+    }
+  ],
+  "deployment_accepted": false
+}

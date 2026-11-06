@@ -1,0 +1,39 @@
+{
+  "status": "COMPLETED_EVIDENCE_VERIFIED_NOT_ACCEPTED",
+  "epochs_completed": 30,
+  "native_best_epoch": 13,
+  "weight_sha256": "5c89bbd946955e67d55a3553049b3ed1a1c97b12b148219fd1a72fb0298af6df",
+  "frozen_files_verified": 332,
+  "csv_sha256": "5d94882b7962ffcb07e7e4c09108c6764ea54123026c405195bbdaff664660b2",
+  "report_sha256": "cb50483dfd0ba526d6654f9cf6d5415dbd30aa2ac45f9cbf754c896279547f82",
+  "runtime_operating_metrics": [
+    {
+      "name": "PottedPlant",
+      "true_positive": 18,
+      "false_positive": 20,
+      "false_negative": 4,
+      "precision": 0.47368421052631576,
+      "recall": 0.8181818181818182
+    },
+    {
+      "name": "CutArrangement",
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 4,
+      "precision": 1.0,
+      "recall": 0.42857142857142855
+    }
+  ],
+  "native_stored_metrics": {
+    "metrics/precision(B)": 0.68433,
+    "metrics/recall(B)": 0.78896,
+    "metrics/mAP50(B)": 0.8511,
+    "metrics/mAP50-95(B)": 0.74303,
+    "val/box_loss": 0.57755,
+    "val/cls_loss": 2.24723,
+    "val/dfl_loss": 1.20899,
+    "fitness": 0.74303
+  },
+  "actual_error_overlays_reviewed": false,
+  "deployment_accepted": false
+}
