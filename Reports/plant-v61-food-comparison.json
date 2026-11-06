@@ -1,0 +1,208 @@
+{
+  "status": "CONTROLLED_TRAIN_FOOD_ADDITION_COMPARISON",
+  "results": {
+    "v58": {
+      "selected_epoch": 25,
+      "operating_per_class": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 17,
+          "false_positive": 10,
+          "false_negative": 5,
+          "precision": 0.6296296296296297,
+          "recall": 0.7727272727272727
+        },
+        {
+          "name": "CutArrangement",
+          "true_positive": 6,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.8571428571428571,
+          "recall": 0.8571428571428571
+        }
+      ],
+      "per_class_ap": [
+        {
+          "class_id": 0,
+          "name": "PottedPlant",
+          "precision": 0.6509544164848645,
+          "recall": 0.763234195531121,
+          "mAP50": 0.7097732695777439,
+          "mAP50_95": 0.6166732513886366,
+          "labels": 22
+        },
+        {
+          "class_id": 1,
+          "name": "CutArrangement",
+          "precision": 0.8040561295620764,
+          "recall": 0.8571428571428571,
+          "mAP50": 0.8995454545454545,
+          "mAP50_95": 0.7557545454545456,
+          "labels": 7
+        }
+      ],
+      "runtime_cohorts": {
+        "full": {
+          "true_positive": 17,
+          "false_positive": 10,
+          "false_negative": 5,
+          "precision": 0.6296296296296297,
+          "recall": 0.7727272727272727,
+          "f1": 0.6938775510204083
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 3,
+          "false_negative": 0,
+          "precision": 0.8125,
+          "recall": 1.0,
+          "f1": 0.896551724137931
+        }
+      },
+      "harvested_food_negative_photos": [
+        {
+          "image": "images/val/f6064c57134f3277e5fe7b20.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 0,
+          "inference_ms": 234.5493000029819
+        },
+        {
+          "image": "images/val/467fb80fca7896af512309a0.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 0,
+          "inference_ms": 198.2038999994984
+        },
+        {
+          "image": "images/val/0913dea122b9e30e10a04073.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 2,
+          "false_negative": 0,
+          "inference_ms": 200.46560000628233
+        },
+        {
+          "image": "images/val/e890004cc7bf2354f7bdc5f3.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 2,
+          "false_negative": 0,
+          "inference_ms": 168.12479999498464
+        }
+      ],
+      "harvested_food_false_positives": 6,
+      "runtime_gate_pass": false,
+      "weight_sha256": "b2de50026bd92b62a6f3335f6e8a1ab5cf7342d88e8d06dc7ba34562d8f0ebee"
+    },
+    "v61": {
+      "selected_epoch": 8,
+      "operating_per_class": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 18,
+          "false_positive": 8,
+          "false_negative": 4,
+          "precision": 0.6923076923076923,
+          "recall": 0.8181818181818182
+        },
+        {
+          "name": "CutArrangement",
+          "true_positive": 7,
+          "false_positive": 3,
+          "false_negative": 0,
+          "precision": 0.7,
+          "recall": 1.0
+        }
+      ],
+      "per_class_ap": [
+        {
+          "class_id": 0,
+          "name": "PottedPlant",
+          "precision": 0.7795662751364957,
+          "recall": 0.6363636363636364,
+          "mAP50": 0.7351309620453725,
+          "mAP50_95": 0.5934836154462361,
+          "labels": 22
+        },
+        {
+          "class_id": 1,
+          "name": "CutArrangement",
+          "precision": 0.7733426992892334,
+          "recall": 1.0,
+          "mAP50": 0.995,
+          "mAP50_95": 0.8389999999999999,
+          "labels": 7
+        }
+      ],
+      "runtime_cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 8,
+          "false_negative": 4,
+          "precision": 0.6923076923076923,
+          "recall": 0.8181818181818182,
+          "f1": 0.7500000000000001
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 4,
+          "false_negative": 0,
+          "precision": 0.7647058823529411,
+          "recall": 1.0,
+          "f1": 0.8666666666666666
+        }
+      },
+      "harvested_food_negative_photos": [
+        {
+          "image": "images/val/f6064c57134f3277e5fe7b20.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 232.50310000730678
+        },
+        {
+          "image": "images/val/467fb80fca7896af512309a0.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 188.8028000103077
+        },
+        {
+          "image": "images/val/0913dea122b9e30e10a04073.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 2,
+          "false_negative": 0,
+          "inference_ms": 189.46689998847432
+        },
+        {
+          "image": "images/val/e890004cc7bf2354f7bdc5f3.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 0,
+          "inference_ms": 165.54489999543875
+        }
+      ],
+      "harvested_food_false_positives": 3,
+      "runtime_gate_pass": false,
+      "weight_sha256": "fe286288323cc920785f6cd0a0ba2ef00b1688f11ac7cda8f776060360ebf4ff"
+    }
+  },
+  "evidence": {
+    "Reports/plant-v58-runtime-selected/final-val/report.json": "694055c715869ec5426dab2ada0e99eeb54949873845f5e1a93544128d8c0416",
+    "Reports/plant-v61-food-diagnostic/final-val/report.json": "09790fbfc5b59406e02435a48c70a3ab06795a1406b21c69d5adf0698bd89438"
+  },
+  "unchanged_val_photos": 30,
+  "unchanged_original_rows": 161,
+  "new_train_food_negatives": 9,
+  "limitation": "Single seed, small repeatedly observed development VAL; changes in batch count/order also follow data addition. Not an independent TEST or unique causal proof.",
+  "test_used": false,
+  "pico_validated": false,
+  "deployment_accepted": false
+}

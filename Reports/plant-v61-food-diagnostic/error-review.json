@@ -1,0 +1,155 @@
+{
+  "status": "ALL11_SELECTED_V61_ERRORS_VISUALLY_REVIEWED",
+  "reviewed": [
+    {
+      "image": "images/val/0913dea122b9e30e10a04073.jpg",
+      "observation": "Two plant false positives on market harvested produce cartons; plated-food negatives did not remove market-container confusion.",
+      "actually_viewed": true,
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 0
+      },
+      "overlay": "Reports/plant-v61-food-diagnostic/final-val/error-0913dea122b9e30e10a04073.jpg",
+      "overlay_sha256": "fd14be2e847898ae720d93279a041071c7dd609427ce3d5b2d679a91b7776b2a"
+    },
+    {
+      "image": "images\\val\\2eeeba800c582ff3ecef355e.jpg",
+      "observation": "Main bonsai matched; lower-left companion vessel predicted plant. Existing semantic scope hold remains, so this is not an unqualified model FP.",
+      "actually_viewed": true,
+      "counts": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "overlay": "Reports/plant-v61-food-diagnostic/final-val/error-2eeeba800c582ff3ecef355e.jpg",
+      "overlay_sha256": "5ca62b38477c3782ba846202aae40e6fb453505737f630952e2c5c2cd25b799d"
+    },
+    {
+      "image": "images\\val\\478585150555622ee282ec40.jpg",
+      "observation": "Four annotated plants matched, but extra smaller boxes on clipped left/right plants produce duplicate false positives; retain original instance grouping.",
+      "actually_viewed": true,
+      "counts": {
+        "ground_truth": 4,
+        "true_positive": 4,
+        "false_positive": 2,
+        "false_negative": 0
+      },
+      "overlay": "Reports/plant-v61-food-diagnostic/final-val/error-478585150555622ee282ec40.jpg",
+      "overlay_sha256": "b4859c02b77f1a03a696f421ce66153da250da9814f4c7f07fe0b276ba792d1f"
+    },
+    {
+      "image": "images\\val\\80af71df5d201ada8c3935bb.jpg",
+      "observation": "Near-full-image plant false positive on cut sunflower bunches in white buckets; negative label scope retained.",
+      "actually_viewed": true,
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "overlay": "Reports/plant-v61-food-diagnostic/final-val/error-80af71df5d201ada8c3935bb.jpg",
+      "overlay_sha256": "c4c47721a707049cab47db74f3b1bd160efd8dfb969b65c44c5bcb683770a3b5"
+    },
+    {
+      "image": "images\\val\\9fbc2444b8acf1398deaddd3.jpg",
+      "observation": "Stacked planted pots matched by one tall box with an extra upper-pot prediction; nested duplicate/grouping issue.",
+      "actually_viewed": true,
+      "counts": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "overlay": "Reports/plant-v61-food-diagnostic/final-val/error-9fbc2444b8acf1398deaddd3.jpg",
+      "overlay_sha256": "1004e00eca43b1b9d812a0ecfcbbf99ab74a77f65b25d8b1e01b0580edea70b5"
+    },
+    {
+      "image": "images\\val\\a6bbcafb10d754a05e0706b3.jpg",
+      "observation": "Sparse planted succulent has plant TP plus overlapping auxiliary CutArrangement false positive; class competition/duplicate prediction.",
+      "actually_viewed": true,
+      "counts": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "overlay": "Reports/plant-v61-food-diagnostic/final-val/error-a6bbcafb10d754a05e0706b3.jpg",
+      "overlay_sha256": "b1e4f681ac7bce64b9daebc9c27827b0f48929f07e23b8d4a406ab1423a7faa5"
+    },
+    {
+      "image": "images/val/a8d79cd1e9fd1cdb40e2541a.jpg",
+      "observation": "Two full hanging baskets missed; third partial lower-right basket matched. Hanging appearance coverage remains weak.",
+      "actually_viewed": true,
+      "counts": {
+        "ground_truth": 3,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 2
+      },
+      "overlay": "Reports/plant-v61-food-diagnostic/final-val/error-a8d79cd1e9fd1cdb40e2541a.jpg",
+      "overlay_sha256": "5115ad3598b94c0cefd1a09661ff5ca28e02a7f78ebe6b9577be0c2ffa602959"
+    },
+    {
+      "image": "images/val/ad4054926f2d2738dc4a8773.jpg",
+      "observation": "Main herb in red soil pot matched; partial planted white pot at lower left missed.",
+      "actually_viewed": true,
+      "counts": {
+        "ground_truth": 2,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 1
+      },
+      "overlay": "Reports/plant-v61-food-diagnostic/final-val/error-ad4054926f2d2738dc4a8773.jpg",
+      "overlay_sha256": "aa9763668d8b4027e7739537cba2ae4571814266be0cbbeb41241cc036679ea3"
+    },
+    {
+      "image": "images/val/c40a67d7e5c2aa244969b1f6.jpg",
+      "observation": "Basil in black soil pot has plant TP plus overlapping auxiliary CutArrangement false positive.",
+      "actually_viewed": true,
+      "counts": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "overlay": "Reports/plant-v61-food-diagnostic/final-val/error-c40a67d7e5c2aa244969b1f6.jpg",
+      "overlay_sha256": "1c9f2e825b49149acdbd7cf8e6b67b22d3d427710231ab1969e62ff7662626a7"
+    },
+    {
+      "image": "images/val/e890004cc7bf2354f7bdc5f3.jpg",
+      "observation": "One large plant false positive covers harvested leafy bundles in market bowls/buckets; visible food context remains confused.",
+      "actually_viewed": true,
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "overlay": "Reports/plant-v61-food-diagnostic/final-val/error-e890004cc7bf2354f7bdc5f3.jpg",
+      "overlay_sha256": "72beb488c114125de8f458462657142f2ebb51c57cf77b3c17dc29930fd45e21"
+    },
+    {
+      "image": "images/val/f792813aeb8521eb5e9ba43f.jpg",
+      "observation": "Annotated suspended pot missed; separate tiny red FP at bottom right on ground vegetation without a visible pot.",
+      "actually_viewed": true,
+      "counts": {
+        "ground_truth": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1
+      },
+      "overlay": "Reports/plant-v61-food-diagnostic/final-val/error-f792813aeb8521eb5e9ba43f.jpg",
+      "overlay_sha256": "ea60bc20dea15de46f38cadaea6b56035d40af78c9a64a3da9b3b1c4d620dbcc"
+    }
+  ],
+  "report_sha256": "09790fbfc5b59406e02435a48c70a3ab06795a1406b21c69d5adf0698bd89438",
+  "weight_sha256": "fe286288323cc920785f6cd0a0ba2ef00b1688f11ac7cda8f776060360ebf4ff",
+  "labels_changed": false,
+  "checkpoint_reselected": false,
+  "test_used": false,
+  "pico_validated": false,
+  "deployment_accepted": false
+}
