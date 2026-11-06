@@ -1,0 +1,893 @@
+{
+  "files": [
+    {
+      "path": "Datasets/plant-hanging-crop-source-v86/manifest.json",
+      "sha256": "07e67a3d810dd52c8d6677992db871e60405eec03a7d88a5075f5b567a3ca3c6"
+    },
+    {
+      "path": "Datasets/plant-hanging-crop-source-v86/train-reservation.json",
+      "sha256": "132d74181392ec5634a3b42616736923e89e0a1001af419a8d567aa2bcc16313"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/audit.json",
+      "sha256": "efee464040393a27bc61eb94eb3de4a1abf90506f0f2d5faf3b43cd31c2dc8c1"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/data.yaml",
+      "sha256": "a7b66ac9ecdc6d5882e9b0cfed1dad7bab5cbe99bdb8e8a8dc1433e13f75e14f"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/test/364b170c0f0bff8e06b59484.txt",
+      "sha256": "d338b22bd00246bb904e2a66f15652fb72b48131f0fb12f7aeb9997eb4c7be24"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/test/61ee760487338375c9b6fb74.txt",
+      "sha256": "9b39e2603792da7ab8d3a435aa9e83d0eec1e1780d95833f0f70201044f960ed"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/test/622866da183e8fd988dc0c94.txt",
+      "sha256": "9b39e2603792da7ab8d3a435aa9e83d0eec1e1780d95833f0f70201044f960ed"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/test/998d02157df011476b0ea448.txt",
+      "sha256": "cd6d16d98e2673ef22e33d657844cc9da90f80fc74b4adcfb5d82c6af1a0b613"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/000d9a986b739c210049dde8.txt",
+      "sha256": "3c561c5775313b31a02b0adf54ea47a96b0547561bd2c703043a29f593b5b450"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/008e86dc0f644835f83fb990.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/014cfffae11abdb071f6ab18.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/06e386ee50c0d6c83ed28564.txt",
+      "sha256": "267f81b0d2a0a31ea822dceb1790dc05022b42d6529fe7656e6f70e10c238d43"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/0702e6ae1b31c347a139ace5.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/0804421d483a7ce35ad9529e.txt",
+      "sha256": "34f6da18b1a550b98acea14369d9dd04732783d0d1f1a2c82e1ecfe8e699ab7a"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/08deaa0eb58301f9d1891e59.txt",
+      "sha256": "70210070324753a34963c7c1c078f09459d9d85d52194f318664cb2784bf95a4"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/09bce345d7b6ca46f178dfe0.txt",
+      "sha256": "32d0b1275e7cc550bd14cedfdb47717f013a953fa98971e2c90bc22ffbca181a"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/0a4944d22e6d21fe.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/0aa49670c89c7b85d1b5e7d0.txt",
+      "sha256": "ecdf7c1237b4b862e6ff973003e8768e458242794c2749770ffe0e544ed7aac7"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/0f1123f2852da5625804b23a.txt",
+      "sha256": "8bad06e6a42f3b5825e5e0937af327a9724c8a1da7790ab0dd7720fdcb10304b"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/0ff4ce829777beca04c297b6.txt",
+      "sha256": "e9936742d620571324b65b69291000f7a1b4a02159b380c1d7438eb080b5ff01"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/115c3b399a232ecc4c0e931d.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/11db327193fafcd0.txt",
+      "sha256": "4d9df5a4219487e044ecc416631428b6920dabf0600790f28dbfbce9b02215a7"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/13998fa14da472bf.txt",
+      "sha256": "1093e058eb0d9749ef764e011a0906ecb462d50d544bd682a4aeddd8c80cc7eb"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/176a555fd0c55c7908d2d495.txt",
+      "sha256": "ceeb7db182b9f8ca62e11e4031d7102c074b12b7cf41156413861be0f1df28b9"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/19b432f27c390a614c97f3f1.txt",
+      "sha256": "befee8f3effbf3ef24e0ce157e64d82083f75f5ef5d1f0ee264a09afc7e6d249"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/1cb2e4da4097cefd771be7f8.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/1d18851e595653a8c3277865.txt",
+      "sha256": "0a14883cd07cda50fc87485984270875ed8ee3d86a1452528e2a80abbc767908"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/1e43dcf21c471383c0e39fa3.txt",
+      "sha256": "581ec88db3cb362a1a8fd4a6d85031ba4aecddd77c98bf7c9bdb6c227fb0c150"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/1fd1253c18994fdf6745ffa4.txt",
+      "sha256": "d36938f5bd01753695c9103eefa9bf39c47d720cf5412abb8072a782697e8ddd"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/22aa7f578888bd97840d39d0.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/24dedf557251e5165ad973a2.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/2725131e8b349515ecdf2201.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/27375dda6bb6b0eb.txt",
+      "sha256": "72c7190da2940b5a213b461750113ea0497275b252ef53fd68b0af638322be07"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/291ddd1250b264cd76107dd6.txt",
+      "sha256": "67e79a4e573e26234ce145270074f27ab7b22280581ecc4f0316c7bb0299d889"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/29a7a13b0132392435902100.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/2be595db5d0aae8a286629b7.txt",
+      "sha256": "3f1ca169b8cbf8792f0b5a839331896e0594d5849cca61a13a6d0ad183e17101"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/2c567e0dc21235cfde3f95e5.txt",
+      "sha256": "41875d67369369b45f87192c46c80c5abbdb37a1968940dd1b5b7ede06c374af"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/2c716fe6536d46a6.txt",
+      "sha256": "17d3ccd06d2897741518227c0097a717f9b2d10f54c170d77f8687525f528b28"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/2d37281046be778c42a812ca.txt",
+      "sha256": "d7a74e0681009cf623654576c3c6bdcf75de895c666bd63c28057728272f98d7"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/2d955238ef65239e52896668.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/2e0bda6475b40c2a330f2b33.txt",
+      "sha256": "2c29fdc77ff568816c739a064d8128e31390a4d4ab089a1c6c9b3e3ce2a58eb1"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/307dd3482f39b31b.txt",
+      "sha256": "c6ccea123c927d0af27cd8d77436dcfedef2802ab7900de9ead506d1dd4c19ce"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/30f1889a75d099aeddd73b3c.txt",
+      "sha256": "9fbee839bdb9cbd4910477c0ef83f1303889a90adbff51910888b4aec8b8b84d"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/3287fcb539ba2915.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/343050284bdf5148e43298db.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/37787ad13b82bf8a93c3df0b.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/3a4e1a1c8f0656a093c42d35.txt",
+      "sha256": "9b39e2603792da7ab8d3a435aa9e83d0eec1e1780d95833f0f70201044f960ed"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/3aa2d320d1b857f5.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/3bb20b609d547cf71691b6e7.txt",
+      "sha256": "7cafcd02d2831f3811d0cd4c204618a9dbb0efd872bfa70c8a33935eb150de0d"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/3f69b2b874d434f97dc9bcd3.txt",
+      "sha256": "628603b5a8f4c4d18260db4509cb0db4a60c65665c42ed4ca09570e48ac07800"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/4208d64380709fef.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/43c0dc0bb1059747.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/47dd9b9cdf9cb4d38be8e37b.txt",
+      "sha256": "fe08b0d3fe54fc0f5209883b9d9ea03244ce684a570c462a80cafd775c23752b"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/490ac15b7f67d75be1ba64dc.txt",
+      "sha256": "de201f3b3d5a8b52018198e3bbe6ade495cb30ba1e313607b5e51d1ee1fc3bec"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/4b3fcbaa79507b5681e97bf0.txt",
+      "sha256": "a7d4c50555f29c60f0dbf98304b4c819ef21e7d180d1e8a4d735e5559bc67cb2"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/4c8c0d76396f018777926ab0.txt",
+      "sha256": "5ab75c70049b21863d1511536e94f2282d49cbcd492fc60345adfcba26f6aa46"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/4cb5853654701fbba9b25b0e.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/51feff5533afd1a2.txt",
+      "sha256": "7c75a471f6dca895bb40a36a05ad8d0669f815f2afaf41f9f47c90cc99b4f34a"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/524d278810feb885c71700b0.txt",
+      "sha256": "4fab6a325d7785728f424d17bc44b8c0b273877b673c23d7c199a7c9b3276a21"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/525096ef346596e8a38f1e51.txt",
+      "sha256": "501ee37469ad212c8ee58526d1cb7e1f104afbe06aaa512a2b6563dc084d9cd2"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/52baa4f64e63e33d.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/53b9504a03c6d74a.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/54cf85475a98d6aa4f255266.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/551f81bf7a94b9ea88710e2b.txt",
+      "sha256": "11354280b46623cb426f160e2420b18570269bf8d945b34b8c3ef23271fae163"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/557fcd50f1940140f4bdeaa2.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/55d21eda4e124aa95d7cff38.txt",
+      "sha256": "9b39e2603792da7ab8d3a435aa9e83d0eec1e1780d95833f0f70201044f960ed"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/58311aabeebc59977b3a8193.txt",
+      "sha256": "67a03b45b63bb3264dee1793dc78a254b276042650dad8f3a77170dfb4b39b0e"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/5a184bc84a50cea00af0b8a0.txt",
+      "sha256": "85585f685a59dd603783a31e597f684c4d31a863bf03f709f5cef901f12fba29"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/5b448f89a4a22d26a6c185f6.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/5befc15ca36ce3ea.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/5c592396f98c4f25e96ba9b5.txt",
+      "sha256": "805d5733253e97cb8600f02b86a899f1902f068595c3e9d1e6ad897cbd17e286"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/5d16bf6235912264ef8a20e1.txt",
+      "sha256": "a20b88b8395dc4d0e63753dce5d62c8e3426d41acca5beae5e4193c72e259687"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/5ea6d6bb80b0e3089d6031c5.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/5fc303e18115c491393d0023.txt",
+      "sha256": "5c8ade9317afc4054d72376f67867263f186fe386151504f88d859e988cc9661"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/618547f8d2312e47479ecb0e.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/61e7b837de17f84ec92932bb.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/646acee85595829de324b5a3.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/690b860b5f3d299ca9d47738.txt",
+      "sha256": "b7fb4b3d2c512939fcf9fc064299fce36a906b800ab511585b334df0d5caa9ee"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/69fdf6ba702d4e6a2c214bd8.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/6c229357a50207aae99589a3.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/6fcf0206525bd64e.txt",
+      "sha256": "f66cf56685f2241196fb30ad855b726a9badd3cd342d60a8300a449a4a95948c"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/7105cc6829fcbb98.txt",
+      "sha256": "866226b1a674846c4a0b3d6fd01f9cf627fe922e046d928b52471672639895d7"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/72903b2f542107764071f6f4.txt",
+      "sha256": "b6c118aa7c406f1fb076611c0554795eb0c98c04cc4202081072197e12f553b1"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/72b14f90f50a5a29f131a3b4.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/72ef13844a03393525afc44d.txt",
+      "sha256": "e11c5f56612fd2aa75bd98839a864593308d1c3239de6610ec79ab11b33d64b7"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/73aa40ea11e5aa92.txt",
+      "sha256": "fad9c33d03d10bd6ecc069e29146b9a5aa7e9f2423cbc861726994572b0b7958"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/766b43dc70a7679b02060f35.txt",
+      "sha256": "7a72cc149b64110437121a1fbd72715e152128d2b629a63534eeaf081487aa6c"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/76c21a5eea7b8c171c3cfa53.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/77f4116287885db789a5276f.txt",
+      "sha256": "6a66c85f9012743cf38c8f6b677f0c1ad0815c760f729d06d5a533cd1ebe0c2d"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/783eaf794116db1a59c5de78.txt",
+      "sha256": "2bfe9b41ffe26040ab9e2c1afec695f75c83adc53d9ebfab584f98eb9ffba76e"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/78ce18d7459d9246b0f323c1.txt",
+      "sha256": "68575ff895436faddd692f32143c3ea9b5455c8b9c510cb0cba7e5686cf52e2b"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/7931206e21aa136688adff50.txt",
+      "sha256": "2bfe9b41ffe26040ab9e2c1afec695f75c83adc53d9ebfab584f98eb9ffba76e"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/7ffe9881b55006578f1f2246.txt",
+      "sha256": "3f0b9961ae4651ddc2293bd0da0f44d7a0d26daf0a5666fb55b63e1f07c57ab2"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/815d8cf87045be8f9c6a8b71.txt",
+      "sha256": "a51a6b23abc1c1903711f8f3f2f91299ad25cc8d99caf8e50b68f4be46b2a7a0"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/819aee773660d9e86671374e.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/824f5fa69181d31a70a3271e.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/827646708bb78a6892606009.txt",
+      "sha256": "9c4cf07c64a2e26f13feefd6b078120ce6da3c5a4bc1d2731e112339a4bc8ebf"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/8778541fbd77f19cf9110733.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/8c67d1d4f02e035880da7778.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/8d0027fbeca5a2d51f24c839.txt",
+      "sha256": "aa9f4f7e635b78caf43260ac09e9d84c07fb9733c823f82bdbf32c366693f81b"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/8d152a391fe4acc126346d83.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/8e61ef09aca1577aff747486.txt",
+      "sha256": "ff019155341687ab51702a1134ed363166405c735746adccadba4abada0c59fd"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/8ed1ce46775b2afeb4ec664b.txt",
+      "sha256": "7e5224e9244a913ef80024e5d19a6b00b553ba8f55f6127fbca5c306a686f3e6"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/93338060ed1641146cc4445e.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/9835e2318d667c6226356dac.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/9ba0a80cff3e149e1cf8ec76.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/9c0ec03efaaee3e9e562bd48.txt",
+      "sha256": "31d06120ab6a1a6d3206596e23d4d9e9e6a79852919e7b5161cc7f469281c3b6"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/9c25d9b7c84b0f79e63418b7.txt",
+      "sha256": "bf1f4d204429fd9aa0fdccec3eb4c339f261b06673544628eabfee597e909979"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/9c4dd96d9a10dbf58b420dff.txt",
+      "sha256": "7ae27df3c217a5c27f5df3eb3b2db79d421f2ef212fb8795cf57447dc3b2564b"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/9c7980717fa3e7d0.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/9f3208d2a46eeda0bb57eaeb.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/a04f02043be61d131ddc9826.txt",
+      "sha256": "5ec8d4314ee83c62242f75e89d4bbe175546a3601bfdab5b308ab1fcc2f347a1"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/a0893025c69a4ee8.txt",
+      "sha256": "e8f0a2b56894da7a30302ad387c0ea3d9ad470c0939835e650129532ee52c300"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/a70b154a08e5d32f.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/aa3bfefd96c831a9.txt",
+      "sha256": "94db0a2620375577aa10afb943888df200dd9d602ee6133ad3864f0bf4cd7d7e"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/ab8c4e48e4a7b413c121165b.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/aceb10b569177b48863d09cb.txt",
+      "sha256": "04e92f94da497e52f94f2cbcbe467884fb25582a56456028831c0b8e5d777f00"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/acf8ad6e3194aa83cade2a16.txt",
+      "sha256": "695b8ef018e46c19f53171bf694c9be050674e4a3442a204e3bbbe76a63e88b3"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/b0021d4e0c3f579be1122a80.txt",
+      "sha256": "b280177592b36622e2c56ccfef48ac96c93f03954e7a2b80c2868f2212160161"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/b201a8bade5b9f3824ec28c6.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/b357e7f17134fea1ef600b72.txt",
+      "sha256": "c708346a51125a76bdc34ce89ee64c5ee9b9517a56399f24ee65eb9658766b7f"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/b4d5efd2575baa5aef709ad4.txt",
+      "sha256": "1978b72ab732e7baf67ffecaeeef396d6fb6de8573b89fe7ace38b116f44d9c7"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/b5eca9e30cd5dbf031d2172f.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/b65f587ce9f38fa0.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/b6a1496eb8ace01c.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/b738fa72df6e32d0211806ff.txt",
+      "sha256": "bb166136ffd4ba7a1369dd6abb0691f6f36ed5ceab4b45df9c4aea4141c251a1"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/b96bb825d1b32251.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/baa504ca39fa6acbb401e234.txt",
+      "sha256": "f1fab6ccba739908df489a1053ca499e089803a0cb8a05f9766cb37b333c643d"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/baec71edd2637a9362ed3aa4.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/bd56c54fb36fc09b.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/c127e22f3bd9a3618483780f.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/c2912524f9b22eaf83543c81.txt",
+      "sha256": "82e1f88ebe6071990da077a1e2e1b6d852522171d30ab3d46a779ec4cee74ba3"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/c343032a7e25c932.txt",
+      "sha256": "5037a5f95b122dd77ebf37bbaf4a93db296db32c1ea1cc75d9b62757ac635308"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/c5d2ff597d63ce157d65b4dc.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/c63a460c5b9c4b27975855be.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/c9d6854e0e68918f0c9fb94f.txt",
+      "sha256": "4d140f9b63737df809e80b37b9cba254f84ef9ffcc29fe32d11a01a3e823a933"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/ca88ba626678dc56f125c900.txt",
+      "sha256": "c2732b6b21e28494fd86249f40e065fb94ffff7f508244babfa62376eb9d2180"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/cc43ab36d3e43adafc7e8521.txt",
+      "sha256": "c23216d8b9ad881612fd1360423d5b3a5335328032703451c735cc49e99f3dea"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/ccf8bb593980e586927cad56.txt",
+      "sha256": "0df07da087aa036aa5fe5880951ced32b505b42eeb28c26b0d72397945c23670"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/d19104e2763f72654fd0e95e.txt",
+      "sha256": "d09f4572ba32831f547879d05feeebbd4f8621d1c4c15e87f680f34653631920"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/d4064828b9bae278f477a2c7.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/d4cd77ca29f2cb85e70b5010.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/d5ae91276f1fdbd4f446fcdf.txt",
+      "sha256": "9f3b2dba66ad3cfe657ec20649bf136b8aa615e3a45f9a0c86e07ee2c177babb"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/d8c93d4204faeb177c00a385.txt",
+      "sha256": "d4a9abd7ead9c152050ac74e59807844665e3ebc3837ffc547a8e6ebafabe5c5"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/d900e9a8fbba6881b5a26d52.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/d99ff2185e8d5d7e.txt",
+      "sha256": "9c60043fa2ec96a7017c19f03c112238a3186ab034e9378c99caa381b84d5591"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/d9ce4482a0558140850caeb1.txt",
+      "sha256": "9b39e2603792da7ab8d3a435aa9e83d0eec1e1780d95833f0f70201044f960ed"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/dbeb642775f27e243d77d405.txt",
+      "sha256": "4f68a6a822b3a8d45d2216c37e7d3595394fc768d8ff068b45ebd54bc12dbbba"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/dc2bf84bc34fec38bb719a98.txt",
+      "sha256": "0f8d1e49c01c65067228bfd19087afb0e8de6159c192f45c3d598959a71fc442"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/dca1904ead0155c3e5f35b28.txt",
+      "sha256": "203a5bbbdd2cf6d21bcaa842d30a2ea96a1a8f2a855112c7ca5757e9f6b24373"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/dd607d87fb675ad6.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/ddb7cb29bbb92ee1fbfe98dc.txt",
+      "sha256": "70a5b1cc40d46419fb2039f5a1dc23229982297f17a40b7958f2a4eb601848c3"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/def587f4b52902f3.txt",
+      "sha256": "b3c1567e4440f3d0e232a6596f76967db9cf249d5a267927b1c5877f7d43faa3"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/e1f5aaad487b0fea271fae2c.txt",
+      "sha256": "2bec7c99d3bdfbe5472fb83a0cee0b192173fd9ad6313c64ed5cec3d3ea6426e"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/e2e03ab32c225ed60ea47d10.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/e375b931d5fe75f8c85aa813.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/e6300003a4265a5523ab1cc0.txt",
+      "sha256": "8cebb831c1877858b80561b41833f88cbd98e90aa4f2ab0b15f27653d6562935"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/e66b33e2157790887a1b1957.txt",
+      "sha256": "9945f8819bb81befe92415675cb675733179fd0ea1295fb88b77e452e7b81db4"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/e72f4b99564ffc97af533a31.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/e772d8365e9343becee700d4.txt",
+      "sha256": "873375e98e74fc06e45cd4dddf7c375ed41f608f0b4e1415afe0758f99b8bdd3"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/e79382f6150d550d.txt",
+      "sha256": "a51fd5fe9f49231b1786c705157fa34696dfe3a8417ab5e00be0d8297ccf05c8"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/e87daca4b650f9c2.txt",
+      "sha256": "a676dee8ec9bde4fa5f85e16fd731af7eff57e13409e26b08c3c73245c2047ae"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/ec84cb871e7996d28091f53d.txt",
+      "sha256": "684a3d0ee24890cd115cc5087de09fcf35a84808179dcbf747eacda6d3303e47"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/eda16401b87513348f920e8b.txt",
+      "sha256": "53bb0169ae1a3e04d5343176a7ef01758f6d1ef82d0773d3bbf9da6b95364778"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/ef75d6d240987fb45894d0ce.txt",
+      "sha256": "00ac9b219eb1511df02802938e2226cb17a2e30d7ee7c24d154705760136d4e5"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/f30aeff0bee4c4e52c4ff917.txt",
+      "sha256": "ac48b1109208ef62b78e4ab40c3c54a5fdac0a063aeafd534b49d50781dd4e54"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/f46d64842a89e166725a14d4.txt",
+      "sha256": "2abb5814a436483d1febe6fbac0befebf3427795c2b570f62a97272f3da56684"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/f48515f6ee0a838fbdca2be3.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/f59abdaace331456d3f777bf.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/f8efd5614f9665563e294d39.txt",
+      "sha256": "c2c7ec2413cfde2480068fb057b6f09be8ded4db0bf2a63a0eac0a88a4d9bb6f"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/fa9352ccbc6b9d9f9cf39852.txt",
+      "sha256": "a85a2fbfc0321e0184def294f68d07a86ebd09fd3110c252ab15bc9bc082756b"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/fc4f7d689948d0e6cbb598d7.txt",
+      "sha256": "e16bdb8f96535b399f1a4ae76796bab490cd35ed1b4ca9105af0905005567e90"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/fcecf9b65b20e7274ef0cf55.txt",
+      "sha256": "9ef2403db9d948baff9df821a0bab73c45ee9f00c8d81b85f458ae745bd633ef"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/train/ffad74e1bf3d19a81945a101.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/026dbd3cbf9ee4442186797b.txt",
+      "sha256": "041004d7e26d8e07cf49897701f1303c0d72812eea3c46af5e47131e86fd5804"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/04bfb3bc7b905bc8f40219f0.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/0913dea122b9e30e10a04073.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/1778c52931d70cefc775af12.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/2eeeba800c582ff3ecef355e.txt",
+      "sha256": "e84ae02d2008c6fbaba50d0340c7e080901eca7fef4c7e0a6d6167dcedd69d1c"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/467fb80fca7896af512309a0.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/478585150555622ee282ec40.txt",
+      "sha256": "e3c5fff3285809b37046284a7442f2206f567493a8a6737256d4e695bb1cf997"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/581cedc885d26e10455cf980.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/5cd2e794017caf6756d2020a.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/61b87cc9e422041b15538369.txt",
+      "sha256": "5fd86982f2a0477ef449cef78f1e1f4731e8b9d26984b61cc91da4de485e3157"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/770aea72d5e07c15a5d62998.txt",
+      "sha256": "85816595c6d018d58bacf64ddbadce228c075d0fab2e71015efc493fe60a7de0"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/789c1cc964cd408c51312028.txt",
+      "sha256": "3c190e761bda70047cf1e7b5d09f54535ec72e8ac83d24c3590c6d68bb3932ba"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/792d8cab06f558f60f17ce6d.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/80af71df5d201ada8c3935bb.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/87514a2d9ff2547f39cbb4ac.txt",
+      "sha256": "c971b7269f4b5c223c057dd61ec4e647bdbc65a60603e26b321df9c77fa1779d"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/90e3f0e111331c0a08c71539.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/9fbc2444b8acf1398deaddd3.txt",
+      "sha256": "f5ce6a846ec54c8ba322ba4e9f1bb69aafec52e3778567c6d4ba03bc9dd025e7"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/a6bbcafb10d754a05e0706b3.txt",
+      "sha256": "a757ca45a63e5afc2f54f26e44f7a037aa245a92e2eb9fe41e33c3ed6b84ea6c"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/a8d79cd1e9fd1cdb40e2541a.txt",
+      "sha256": "dcee48374c5503576da71db2e72d5aa178031f3316c3cebc67c6c9bcab0667d9"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/ad4054926f2d2738dc4a8773.txt",
+      "sha256": "44d9baa899c0b225d940d0fdaabca90424b34f16104b3d4a161336a5314e8bee"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/c40a67d7e5c2aa244969b1f6.txt",
+      "sha256": "f2c6811ea3fed6a91837c0eb4c837acc1c449d513ecce8271d302f30f33e9e5b"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/d6a4f5f64a10ff59fe54d62c.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/db867d614aa06c5027d0ea72.txt",
+      "sha256": "8a68c703005a9ffc90fe006208012478d316f03d18d2f1bee29d48889859f7f2"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/e5fde1c97f0f71710eb2c497.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/e890004cc7bf2354f7bdc5f3.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/ea4d489234a17f1d8a4f93f7.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/f2ca90725a1a7fe87d9594d9.txt",
+      "sha256": "6d6e57606d02580637d356b059450ab90ac00f0cbf9850d69f6f1c0a3156e8f8"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/f6064c57134f3277e5fe7b20.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/f60e0d82ab2d14d6c70fdca9.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/labels/val/f792813aeb8521eb5e9ba43f.txt",
+      "sha256": "c39401487379208286ae54f996b5cd1facf5e94f191472afdff13d0f0e20c3ac"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/legacy-native-val.txt",
+      "sha256": "0b36a14f1fa254068c2ae8a6fc7e639946ca368aa801c84e908ed804100faeee"
+    },
+    {
+      "path": "Datasets/plant-hanging-v88/review_hold.json",
+      "sha256": "52d7e1c943109cd557662c438d9cefd5041c56d0de3f44048182fa20f50824ec"
+    },
+    {
+      "path": "Reports/plant-hanging-crops-v86-creator-links.json",
+      "sha256": "21a4534fd43cb0d5d812fed1a62f19a03a88bbb934fa6d2af49e9d0dabdcb7dd"
+    },
+    {
+      "path": "Reports/plant-hanging-crops-v86-identity-history-v2.json",
+      "sha256": "fd1fa139b5dbc8e213d04db9262aff66c753f1c35726b567814514d2acbe8092"
+    },
+    {
+      "path": "Reports/plant-hanging-crops-v86-pixel-history.json",
+      "sha256": "2ab3dea6deb01e6af5d549d7775d92c7e10246f4e4e0d4e4276c545c5419fd9b"
+    },
+    {
+      "path": "Reports/plant-hanging-crops-v86-plan.json",
+      "sha256": "325c0319c6147479ab347c80f90a9edde87d523739fae4f781d0ff3c51230f6f"
+    },
+    {
+      "path": "Reports/plant-hanging-crops-v87-boxes/134655765.txt",
+      "sha256": "9fbee839bdb9cbd4910477c0ef83f1303889a90adbff51910888b4aec8b8b84d"
+    },
+    {
+      "path": "Reports/plant-hanging-crops-v87-boxes/200088542.txt",
+      "sha256": "aa9f4f7e635b78caf43260ac09e9d84c07fb9733c823f82bdbf32c366693f81b"
+    },
+    {
+      "path": "Reports/plant-hanging-crops-v87-boxes/60784237.txt",
+      "sha256": "e9936742d620571324b65b69291000f7a1b4a02159b380c1d7438eb080b5ff01"
+    },
+    {
+      "path": "Reports/plant-hanging-crops-v87-boxes/draft.json",
+      "sha256": "bb442e48ac560dd3951e2a1a11da97d554238cb10083a6f22f1ef74bb2c715ef"
+    },
+    {
+      "path": "Reports/plant-hanging-crops-v87-boxes/reviewed-three.json",
+      "sha256": "976913682f31263a89aa856fbc874db5b01e104539192e86f2177098ba463219"
+    },
+    {
+      "path": "Reports/plant-hanging-v88-loader-check.json",
+      "sha256": "a1d37475714fe23e59314827777e45106466bd90115c1b8c04332bc02aadb2c5"
+    },
+    {
+      "path": "Tools/MultiScene/audit_plant_hanging_v88.py",
+      "sha256": "59bd95c97a941b8a023cc67592bd9d03d916b60772ac13cbddabe69d66c82c29"
+    },
+    {
+      "path": "Tools/MultiScene/draft_plant_hanging_crops_v87.py",
+      "sha256": "d18896a68667a7d414883f102b2ecc36e3c0a2837472563b5fe7abc098ad366d"
+    },
+    {
+      "path": "Tools/MultiScene/prepare_plant_hanging_crops_v86.py",
+      "sha256": "1628f79c031e26f5e00e2ec70028d2091243956a45be7b73a0f0aacce33b93f6"
+    },
+    {
+      "path": "Tools/MultiScene/prepare_plant_hanging_v88.py",
+      "sha256": "5b9272a8c8b2844e9412fe0a1e3b899363a09decf3edb153b5feac0128b77ea4"
+    },
+    {
+      "path": "Tools/MultiScene/review_plant_hanging_crops_v87.py",
+      "sha256": "8ad430e9dc1c3ac8110a36edc4b9a7ffa80a1482b3628a43272ed6e2105ec9e8"
+    }
+  ],
+  "scope": "Three lossless TRAIN crop derivatives with retained original creator groups, attribution and full-frame holds. Actual source SHA/pixel equivalence, three expected original-parent identity hits and zero recorded recursive VAL/TEST hits over414 historical documents verified. All197 parent rows and payload folds preserved. Actual YOLO loader166TRAIN153plant64backgrounds0corrupt;200 total images. Single assistant annotation review, not independent second review. No training or deployment acceptance.",
+  "exclusions": "No raw images, overlays, publisher dumps, weights, private captures, Unity assets, Packages or ProjectSettings.",
+  "limitations": "OPEN annotation hold; no model acceptance or PICO validation. Restore licensed image bytes via source URL/hash and regenerate OS-specific paths.",
+  "training_command": null,
+  "deployment_accepted": false
+}

@@ -1,0 +1,55 @@
+{
+  "samples": [
+    {
+      "source_manifest": "Datasets/plant-hanging-train-source-v83/manifest.json",
+      "source_manifest_sha256": "6059656fd1bc57b5ca60cf42f72f71c6f01c1697a3f2d6a7e75a5ac7dff98c57",
+      "reservation_sha256": "41958a270f661ca0797bddd270296fb53e1c1d99c5db4ab90b7ef60d0b1086da",
+      "original_image": "Datasets/plant-hanging-train-source-v83/images/200088542.jpg",
+      "original_sha256": "00b06fcb763cbc8a8fdef8262ae50653fe4718e2b059627bdb1be1abc88a82b4",
+      "page_id": 200088542,
+      "crop_xyxy": [
+        24,
+        0,
+        960,
+        1280
+      ],
+      "reserved_split": "train",
+      "original_full_frame_hold_retained": true
+    },
+    {
+      "source_manifest": "Datasets/plant-hanging-train-source-v83/manifest.json",
+      "source_manifest_sha256": "6059656fd1bc57b5ca60cf42f72f71c6f01c1697a3f2d6a7e75a5ac7dff98c57",
+      "reservation_sha256": "41958a270f661ca0797bddd270296fb53e1c1d99c5db4ab90b7ef60d0b1086da",
+      "original_image": "Datasets/plant-hanging-train-source-v83/images/60784237.jpg",
+      "original_sha256": "f3165a85e302b8d50c358c541454a3bfe4db5c882129f6ee5e1525dcbe0d059c",
+      "page_id": 60784237,
+      "crop_xyxy": [
+        0,
+        0,
+        760,
+        677
+      ],
+      "reserved_split": "train",
+      "original_full_frame_hold_retained": true
+    },
+    {
+      "source_manifest": "Datasets/plant-hanging-train-source-v70/manifest.json",
+      "source_manifest_sha256": "814d55037d87cdeffb599899ff835037a1bede2701b13047e4b8d9687f8ed5a3",
+      "reservation_sha256": "2f15c77de5bac47348c773278ce4294f5be40682099195f906dec1d612a418dd",
+      "original_image": "Datasets/plant-hanging-train-source-v70/images/134655765.jpg",
+      "original_sha256": "f62c4a35f73744bd90bce504c5a4030aca0e1779de1a49ac9fb1ac01c46f06df",
+      "page_id": 134655765,
+      "crop_xyxy": [
+        0,
+        0,
+        860,
+        960
+      ],
+      "reserved_split": "train",
+      "original_full_frame_hold_retained": true
+    }
+  ],
+  "method": "Lossless RGB crop saved PNG; coordinates left,top,right,bottom exclusive. No synthetic content, resizing, model inference, label adoption or full-frame hold clearance.",
+  "training_approved": false,
+  "deployment_accepted": false
+}
