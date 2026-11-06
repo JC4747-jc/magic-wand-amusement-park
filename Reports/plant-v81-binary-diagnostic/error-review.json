@@ -1,0 +1,90 @@
+{
+  "status": "ALL6_SELECTED_V81_ERRORS_ACTUALLY_REVIEWED",
+  "reviewed": [
+    {
+      "image": "images\\val\\80af71df5d201ada8c3935bb.jpg",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "observation": "Right clipped white bucket containing cut sunflowers predicted plant; no rooted target.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v81-binary-diagnostic/final-val/error-80af71df5d201ada8c3935bb.jpg",
+      "overlay_sha256": "a7027f137a20959c00f09d4dd5759b55f230773930ec37ed3ef5cada36e0c9a1"
+    },
+    {
+      "image": "images/val/f792813aeb8521eb5e9ba43f.jpg",
+      "counts": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "observation": "Hanging pot TP; separate bottom-right ground vegetation FP.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v81-binary-diagnostic/final-val/error-f792813aeb8521eb5e9ba43f.jpg",
+      "overlay_sha256": "e556e7ef3f9b2e0599fef0b5e050b64a4a2ade4df3ab106eadf8cccd42aeede8"
+    },
+    {
+      "image": "images/val/a8d79cd1e9fd1cdb40e2541a.jpg",
+      "counts": {
+        "ground_truth": 3,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 3
+      },
+      "observation": "All three hanging baskets missed, including bottom-right clipped partial basket.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v81-binary-diagnostic/final-val/error-a8d79cd1e9fd1cdb40e2541a.jpg",
+      "overlay_sha256": "0c1f962a61068ddc2ce61828119a2a20162ae9ff0f50088be02953cb0c1c42fd"
+    },
+    {
+      "image": "images/val/5cd2e794017caf6756d2020a.jpg",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "observation": "Cut white roses in clear water vase predicted plant; no rooted terrestrial pot.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v81-binary-diagnostic/final-val/error-5cd2e794017caf6756d2020a.jpg",
+      "overlay_sha256": "a772822160495da78049a6c4d6c382e79eaf876e80518ddf41b535d1614299c1"
+    },
+    {
+      "image": "images/val/d6a4f5f64a10ff59fe54d62c.jpg",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "observation": "Empty amber ribbed glass vase predicted plant without soil or foliage.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v81-binary-diagnostic/final-val/error-d6a4f5f64a10ff59fe54d62c.jpg",
+      "overlay_sha256": "1568ef469882b71cd9dfcbaebac129c0dbdb41df1a4ff88e63473251082d1e7a"
+    },
+    {
+      "image": "images/val/ad4054926f2d2738dc4a8773.jpg",
+      "counts": {
+        "ground_truth": 2,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 1
+      },
+      "observation": "Main soil herb pot TP with overlarge left extent; partial white planted pot lower left FN.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v81-binary-diagnostic/final-val/error-ad4054926f2d2738dc4a8773.jpg",
+      "overlay_sha256": "0b6f40fe5af752dca2620bcf3281548bec7c86c58e3f3870588efe9ce15908e7"
+    }
+  ],
+  "report_sha256": "adab17909ac1d316a64c88d8539e49509c73252ebe82e43469aa2d2b9cf09f15",
+  "weight_sha256": "66c8f1c0bc059b8a7d14c1f7a0b2be81fc1466fe77b7a7afb0d61efa92005218",
+  "labels_changed": false,
+  "checkpoint_reselected": false,
+  "deployment_accepted": false,
+  "test_used": false,
+  "pico_validated": false
+}
