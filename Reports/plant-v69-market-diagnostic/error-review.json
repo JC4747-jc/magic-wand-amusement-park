@@ -1,0 +1,116 @@
+{
+  "status": "ALL8_SELECTED_V69_ERRORS_ACTUALLY_REVIEWED",
+  "reviewed": [
+    {
+      "image": "images\\val\\2eeeba800c582ff3ecef355e.jpg",
+      "counts": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "observation": "Main bonsai TP plus small lower-left companion-vessel FP; existing annotation-scope hold retained.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v69-market-diagnostic/final-val/error-2eeeba800c582ff3ecef355e.jpg",
+      "overlay_sha256": "4405cffc3400a50ccbd80f6eb72da46bd7b2327f0d6c47538ddc8f3230d1818f"
+    },
+    {
+      "image": "images\\val\\581cedc885d26e10455cf980.jpg",
+      "counts": {
+        "ground_truth": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1
+      },
+      "observation": "White cut-flower arrangement in decorative silver urn misclassified as plant instead of CutArrangement.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v69-market-diagnostic/final-val/error-581cedc885d26e10455cf980.jpg",
+      "overlay_sha256": "17a074eaa7b7aa32191d0733b7cbbc144303a2083713db912a81548e1adcd52d"
+    },
+    {
+      "image": "images\\val\\80af71df5d201ada8c3935bb.jpg",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 0
+      },
+      "observation": "Two plant FPs on cut sunflower bunches in white buckets: full-frame and right clipped bucket; frozen negative scope retained.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v69-market-diagnostic/final-val/error-80af71df5d201ada8c3935bb.jpg",
+      "overlay_sha256": "e03ca0276f17af9dee2d7e954427d4cfa21735922d2507dfe6a09a9ea627175b"
+    },
+    {
+      "image": "images\\val\\9fbc2444b8acf1398deaddd3.jpg",
+      "counts": {
+        "ground_truth": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1
+      },
+      "observation": "Rabbit and stacked pots: prediction encloses upper pot only, mismatching taller frozen ground-truth extent, FP plus FN.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v69-market-diagnostic/final-val/error-9fbc2444b8acf1398deaddd3.jpg",
+      "overlay_sha256": "6f6f42b7f4b7e984dfb837ab35bf097dfbf8b0b11e78d7da4b55debbd146ed95"
+    },
+    {
+      "image": "images/val/a8d79cd1e9fd1cdb40e2541a.jpg",
+      "counts": {
+        "ground_truth": 3,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 3
+      },
+      "observation": "All three hanging baskets missed, including two full baskets and bottom-right partial basket.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v69-market-diagnostic/final-val/error-a8d79cd1e9fd1cdb40e2541a.jpg",
+      "overlay_sha256": "0c1f962a61068ddc2ce61828119a2a20162ae9ff0f50088be02953cb0c1c42fd"
+    },
+    {
+      "image": "images/val/ad4054926f2d2738dc4a8773.jpg",
+      "counts": {
+        "ground_truth": 2,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 1
+      },
+      "observation": "Main red soil herb pot TP; partial white planted pot at lower left FN.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v69-market-diagnostic/final-val/error-ad4054926f2d2738dc4a8773.jpg",
+      "overlay_sha256": "2b6d0a72bcd5ea786b412c9542f06cf27000505e4ebf20186dea2fefeebd8bf7"
+    },
+    {
+      "image": "images/val/e890004cc7bf2354f7bdc5f3.jpg",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "observation": "One large plant FP on harvested market leafy produce in bowls and buckets.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v69-market-diagnostic/final-val/error-e890004cc7bf2354f7bdc5f3.jpg",
+      "overlay_sha256": "1dafffa4d6e9ad667ce6d988a58e0d3ee44f7b6e6640fc91862ca96c19c4aa72"
+    },
+    {
+      "image": "images/val/f792813aeb8521eb5e9ba43f.jpg",
+      "counts": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "observation": "Hanging pot TP plus tall extra FP on left wall ivy.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v69-market-diagnostic/final-val/error-f792813aeb8521eb5e9ba43f.jpg",
+      "overlay_sha256": "5ee54c5145933ee2bc2654dcf71215efe525fb0ed8fa000782c621a6b672da2d"
+    }
+  ],
+  "report_sha256": "41bb59c02bc2be2c4fc1645f87f08c8f4b1600bf72c18643d70c51526abe4905",
+  "weight_sha256": "e689892c71ceeb881e859649cf5fdc1f796f5027bdcaee198ce4629b335bf3a7",
+  "labels_changed": false,
+  "checkpoint_reselected": false,
+  "deployment_accepted": false,
+  "test_used": false,
+  "pico_validated": false
+}

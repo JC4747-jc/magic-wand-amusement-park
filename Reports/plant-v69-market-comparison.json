@@ -1,0 +1,260 @@
+{
+  "status": "CONTROLLED_MARKET_NEGATIVE_ADDITION_COMPARISON",
+  "results": {
+    "v66": {
+      "selected_epoch": 10,
+      "operating_per_class": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 19,
+          "false_positive": 12,
+          "false_negative": 3,
+          "precision": 0.6129032258064516,
+          "recall": 0.8636363636363636
+        },
+        {
+          "name": "CutArrangement",
+          "true_positive": 7,
+          "false_positive": 1,
+          "false_negative": 0,
+          "precision": 0.875,
+          "recall": 1.0
+        }
+      ],
+      "per_class_ap": [
+        {
+          "class_id": 0,
+          "name": "PottedPlant",
+          "precision": 0.7803469615785533,
+          "recall": 0.8077778414431634,
+          "mAP50": 0.7474015620447739,
+          "mAP50_95": 0.5286571408605993,
+          "labels": 22
+        },
+        {
+          "class_id": 1,
+          "name": "CutArrangement",
+          "precision": 0.8619354702515473,
+          "recall": 1.0,
+          "mAP50": 0.9600000000000001,
+          "mAP50_95": 0.7353928571428571,
+          "labels": 7
+        }
+      ],
+      "runtime_cohorts": {
+        "full": {
+          "true_positive": 19,
+          "false_positive": 12,
+          "false_negative": 3,
+          "precision": 0.6129032258064516,
+          "recall": 0.8636363636363636,
+          "f1": 0.7169811320754716
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 3,
+          "false_negative": 0,
+          "precision": 0.8125,
+          "recall": 1.0,
+          "f1": 0.896551724137931
+        }
+      },
+      "soil_herb_photos": [
+        {
+          "image": "images/val/61b87cc9e422041b15538369.jpg",
+          "ground_truth": 1,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 176.21679999865592
+        },
+        {
+          "image": "images/val/c40a67d7e5c2aa244969b1f6.jpg",
+          "ground_truth": 1,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 173.64560000714846
+        },
+        {
+          "image": "images/val/ad4054926f2d2738dc4a8773.jpg",
+          "ground_truth": 2,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 1,
+          "inference_ms": 218.91589999722783
+        }
+      ],
+      "harvested_food_negative_photos": [
+        {
+          "image": "images/val/f6064c57134f3277e5fe7b20.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 260.1086999929976
+        },
+        {
+          "image": "images/val/467fb80fca7896af512309a0.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 0,
+          "inference_ms": 215.2432000002591
+        },
+        {
+          "image": "images/val/0913dea122b9e30e10a04073.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 3,
+          "false_negative": 0,
+          "inference_ms": 199.05850000213832
+        },
+        {
+          "image": "images/val/e890004cc7bf2354f7bdc5f3.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 2,
+          "false_negative": 0,
+          "inference_ms": 174.64250000193715
+        }
+      ],
+      "harvested_food_false_positives": 6,
+      "runtime_gate_pass": false,
+      "weight_sha256": "fe97bb076c3d43e53a5d16277a0f335420630f72b288d179b8ac5cce8ba3f3cc"
+    },
+    "v69": {
+      "selected_epoch": 20,
+      "operating_per_class": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 17,
+          "false_positive": 6,
+          "false_negative": 5,
+          "precision": 0.7391304347826086,
+          "recall": 0.7727272727272727
+        },
+        {
+          "name": "CutArrangement",
+          "true_positive": 6,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.8571428571428571,
+          "recall": 0.8571428571428571
+        }
+      ],
+      "per_class_ap": [
+        {
+          "class_id": 0,
+          "name": "PottedPlant",
+          "precision": 0.8223743237911848,
+          "recall": 0.7727272727272727,
+          "mAP50": 0.7920252613240417,
+          "mAP50_95": 0.7008450363322314,
+          "labels": 22
+        },
+        {
+          "class_id": 1,
+          "name": "CutArrangement",
+          "precision": 1.0,
+          "recall": 0.8389466652111055,
+          "mAP50": 0.9775,
+          "mAP50_95": 0.8168124999999999,
+          "labels": 7
+        }
+      ],
+      "runtime_cohorts": {
+        "full": {
+          "true_positive": 17,
+          "false_positive": 6,
+          "false_negative": 5,
+          "precision": 0.7391304347826086,
+          "recall": 0.7727272727272727,
+          "f1": 0.7555555555555555
+        },
+        "original13": {
+          "true_positive": 12,
+          "false_positive": 4,
+          "false_negative": 1,
+          "precision": 0.75,
+          "recall": 0.9230769230769231,
+          "f1": 0.8275862068965517
+        }
+      },
+      "soil_herb_photos": [
+        {
+          "image": "images/val/61b87cc9e422041b15538369.jpg",
+          "ground_truth": 1,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 182.37179999414366
+        },
+        {
+          "image": "images/val/c40a67d7e5c2aa244969b1f6.jpg",
+          "ground_truth": 1,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 181.18309999408666
+        },
+        {
+          "image": "images/val/ad4054926f2d2738dc4a8773.jpg",
+          "ground_truth": 2,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 1,
+          "inference_ms": 233.51809999439865
+        }
+      ],
+      "harvested_food_negative_photos": [
+        {
+          "image": "images/val/f6064c57134f3277e5fe7b20.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 233.17730000417214
+        },
+        {
+          "image": "images/val/467fb80fca7896af512309a0.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 221.57930000685155
+        },
+        {
+          "image": "images/val/0913dea122b9e30e10a04073.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 228.8291000004392
+        },
+        {
+          "image": "images/val/e890004cc7bf2354f7bdc5f3.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 0,
+          "inference_ms": 169.67459999432322
+        }
+      ],
+      "harvested_food_false_positives": 1,
+      "runtime_gate_pass": false,
+      "weight_sha256": "e689892c71ceeb881e859649cf5fdc1f796f5027bdcaee198ce4629b335bf3a7"
+    }
+  },
+  "evidence": {
+    "Reports/plant-v66-herb-diagnostic/final-val/report.json": "265a057cc49bc9f79d99d15f7edef7a4983336a453f9de100859b4fad1134c2f",
+    "Reports/plant-v69-market-diagnostic/final-val/report.json": "41bb59c02bc2be2c4fc1645f87f08c8f4b1600bf72c18643d70c51526abe4905"
+  },
+  "unchanged_val_photos": 30,
+  "unchanged_original_rows": 174,
+  "new_train_market_negative_photos": 12,
+  "limitation": "Single seed, small repeatedly observed development VAL; changes in batch count/order also follow data addition. Not an independent TEST or unique causal proof.",
+  "test_used": false,
+  "pico_validated": false,
+  "deployment_accepted": false
+}
