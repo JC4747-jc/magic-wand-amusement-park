@@ -1,0 +1,25 @@
+{
+  "status": "ALL30_RUNTIME_SELECTION_EVIDENCE_VERIFIED",
+  "selected_epoch": 25,
+  "rank": [
+    0,
+    0.7826086956521738,
+    0.896551724137931,
+    0.75,
+    0.8181818181818182,
+    0.6977873611246872
+  ],
+  "raw_selected_sha256": "1d3529aa4d52495f56847dcc1cdefd57c39f83e9aa378638fc88e31bcf3f0c87",
+  "stripped_best_sha256": "3f2c1d6b8503b841d8e6e35ac6d6f0f7e29cfda346ab1222b620cdf32205a113",
+  "frozen_files_verified": 482,
+  "all30_report_hashes_verified": true,
+  "all30_rank_and_earliest_tie_decisions_verified": true,
+  "all30_frozen_runtime_checks_verified": true,
+  "frozen_backbone_tensors_exact_after_checkpoint_half_normalization": 234,
+  "changed_neck_head_state_tensors": 202,
+  "native_fitness_best_preserved": true,
+  "strip_optimizer_model_tensors_exact": true,
+  "runtime_gate_pass": false,
+  "deployment_accepted": false,
+  "limitation": "Even a development gate pass requires annotation clearance, independent TEST and PICO validation."
+}

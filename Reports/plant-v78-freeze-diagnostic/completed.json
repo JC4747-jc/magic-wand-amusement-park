@@ -1,0 +1,35 @@
+{
+  "status": "DIAGNOSTIC_COMPLETE_NOT_ACCEPTED",
+  "weight_sha256": "3f2c1d6b8503b841d8e6e35ac6d6f0f7e29cfda346ab1222b620cdf32205a113",
+  "report_sha256": "cae53d9ff91f8db83161c1742171e4641f0ee80d74fb6b66126aaf05e18a8321",
+  "frozen_files_verified": 482,
+  "elapsed_seconds": 528.1171374999976,
+  "deployment_accepted": false,
+  "operating_per_class": [
+    {
+      "name": "PottedPlant",
+      "true_positive": 18,
+      "false_positive": 6,
+      "false_negative": 4,
+      "precision": 0.75,
+      "recall": 0.8181818181818182
+    },
+    {
+      "name": "CutArrangement",
+      "true_positive": 6,
+      "false_positive": 1,
+      "false_negative": 1,
+      "precision": 0.8571428571428571,
+      "recall": 0.8571428571428571
+    }
+  ],
+  "runtime_rank": [
+    0,
+    0.7826086956521738,
+    0.896551724137931,
+    0.75,
+    0.8181818181818182,
+    0.6977873611246872
+  ],
+  "selected_epoch": 25
+}

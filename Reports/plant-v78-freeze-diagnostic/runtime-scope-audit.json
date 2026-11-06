@@ -1,0 +1,76 @@
+{
+  "status": "EXPORTED_RUNTIME_REPORT_EXACTLY_REPRODUCES_SELECTED_CHECKPOINT_METRICS",
+  "selected_epoch": 25,
+  "rank": [
+    0,
+    0.7826086956521738,
+    0.896551724137931,
+    0.75,
+    0.8181818181818182,
+    0.6977873611246872
+  ],
+  "cohorts": {
+    "full": {
+      "true_positive": 18,
+      "false_positive": 6,
+      "false_negative": 4,
+      "precision": 0.75,
+      "recall": 0.8181818181818182,
+      "f1": 0.7826086956521738
+    },
+    "original13": {
+      "true_positive": 13,
+      "false_positive": 3,
+      "false_negative": 0,
+      "precision": 0.8125,
+      "recall": 1.0,
+      "f1": 0.896551724137931
+    }
+  },
+  "runtime_plant_ap": [
+    {
+      "class_id": 0,
+      "name": "PottedPlant",
+      "precision": 0.8554906565314028,
+      "recall": 0.8076678142907452,
+      "mAP50": 0.8413535415700397,
+      "mAP50_95": 0.6977873611246872,
+      "labels": 22
+    }
+  ],
+  "all_class_auxiliary_diagnostic_ap": [
+    {
+      "class_id": 0,
+      "name": "PottedPlant",
+      "precision": 0.7452425413301591,
+      "recall": 0.8181818181818182,
+      "mAP50": 0.830276726727251,
+      "mAP50_95": 0.6891889837933192,
+      "labels": 22
+    },
+    {
+      "class_id": 1,
+      "name": "CutArrangement",
+      "precision": 0.8706067398902898,
+      "recall": 0.9648539191223187,
+      "mAP50": 0.9600000000000001,
+      "mAP50_95": 0.8540000000000001,
+      "labels": 7
+    }
+  ],
+  "report_scope": "final-runtime-val is plant-only routing evidence; final-val retained as all-class auxiliary diagnostic",
+  "service_filter_actual_result": [
+    0
+  ],
+  "final_report_sha256": "2ac2ea76ee92bd089ce108e8d6cd02516403ccd95773543a61a9c50e7f64d924",
+  "selected_report_sha256": "68d10389f1d52365e70de30944d4447de69f53b65160d65b708fe67e09ff87e2",
+  "all_class_report_sha256": "cae53d9ff91f8db83161c1742171e4641f0ee80d74fb6b66126aaf05e18a8321",
+  "service_policy_sha256": "e71c2d4f728bb32b3cf139a05980b6b9257bdac02562370b0685dc6f5c7f6b30",
+  "weight_sha256": "3f2c1d6b8503b841d8e6e35ac6d6f0f7e29cfda346ab1222b620cdf32205a113",
+  "runtime_per_image_counts_exact": true,
+  "labels_changed": false,
+  "checkpoint_reselected": false,
+  "test_used": false,
+  "deployment_accepted": false,
+  "limitation": "Class filtering before max_det changes low-score candidates/AP; this does not change the frozen threshold, historical selected checkpoint, or deployment status."
+}

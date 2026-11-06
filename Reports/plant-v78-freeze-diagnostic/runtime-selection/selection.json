@@ -1,0 +1,966 @@
+{
+  "records": [
+    {
+      "epoch": 1,
+      "rank": [
+        0,
+        0.6666666666666667,
+        0.8275862068965517,
+        0.5862068965517241,
+        0.7727272727272727,
+        0.7143007660785693
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 17,
+          "false_positive": 12,
+          "false_negative": 5,
+          "precision": 0.5862068965517241,
+          "recall": 0.7727272727272727,
+          "f1": 0.6666666666666667
+        },
+        "original13": {
+          "true_positive": 12,
+          "false_positive": 4,
+          "false_negative": 1,
+          "precision": 0.75,
+          "recall": 0.9230769230769231,
+          "f1": 0.8275862068965517
+        }
+      },
+      "selected": true,
+      "checkpoint_sha256": "adfdc428e9797e4c93d9de96f75866dee353aa0497aa2beab3f3ac24293da094",
+      "report_sha256": "a6d005f13de8fcc9a7b0d02512f0e3751cd5f178fc8a9015792734e200fd913d"
+    },
+    {
+      "epoch": 2,
+      "rank": [
+        0,
+        0.64,
+        0.888888888888889,
+        0.5714285714285714,
+        0.7272727272727273,
+        0.6765565768527578
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 16,
+          "false_positive": 12,
+          "false_negative": 6,
+          "precision": 0.5714285714285714,
+          "recall": 0.7272727272727273,
+          "f1": 0.64
+        },
+        "original13": {
+          "true_positive": 12,
+          "false_positive": 2,
+          "false_negative": 1,
+          "precision": 0.8571428571428571,
+          "recall": 0.9230769230769231,
+          "f1": 0.888888888888889
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "4cff8a0d96942dffbc1dd18578e863358c663d6c78e78287610338c2ae597a58",
+      "report_sha256": "5dc481bed613c8d38d7f54edd63547aec3ded8ee4589d655696c2344987c06a8"
+    },
+    {
+      "epoch": 3,
+      "rank": [
+        0,
+        0.6666666666666666,
+        0.896551724137931,
+        0.5625,
+        0.8181818181818182,
+        0.7056065099412081
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 14,
+          "false_negative": 4,
+          "precision": 0.5625,
+          "recall": 0.8181818181818182,
+          "f1": 0.6666666666666666
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 3,
+          "false_negative": 0,
+          "precision": 0.8125,
+          "recall": 1.0,
+          "f1": 0.896551724137931
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "537b954b30e0fd9a403579f9b2a6ab9240d9f5aa47be0ac2ba98847ee0520d29",
+      "report_sha256": "88bf0c3f544e20e5c984b4108db4ae6c70485124e6f860e4b1f6a1b516916281"
+    },
+    {
+      "epoch": 4,
+      "rank": [
+        0,
+        0.6,
+        0.787878787878788,
+        0.47368421052631576,
+        0.8181818181818182,
+        0.7380140665706841
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 20,
+          "false_negative": 4,
+          "precision": 0.47368421052631576,
+          "recall": 0.8181818181818182,
+          "f1": 0.6
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 7,
+          "false_negative": 0,
+          "precision": 0.65,
+          "recall": 1.0,
+          "f1": 0.787878787878788
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "82ab07f236be48e6a9d49efe1b65d85b9fdc2bc05694a90c029bbd8a48bc5347",
+      "report_sha256": "bc673511446636d615cf29589020b9caab98aa95b46c2b86c6f8be87b046f9c1"
+    },
+    {
+      "epoch": 5,
+      "rank": [
+        0,
+        0.6101694915254238,
+        0.7647058823529412,
+        0.4864864864864865,
+        0.8181818181818182,
+        0.7320622229220055
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 19,
+          "false_negative": 4,
+          "precision": 0.4864864864864865,
+          "recall": 0.8181818181818182,
+          "f1": 0.6101694915254238
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 8,
+          "false_negative": 0,
+          "precision": 0.6190476190476191,
+          "recall": 1.0,
+          "f1": 0.7647058823529412
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "d779105ceb818ee5ce58b51cae745335b36e806e8f04d9b5587e34b71d3e1148",
+      "report_sha256": "e1aa1b8a10983d6ceb34cdb19c41bd11aeb8cc9ef1f51e55de377d3bd73a73fa"
+    },
+    {
+      "epoch": 6,
+      "rank": [
+        0,
+        0.6909090909090909,
+        0.8387096774193548,
+        0.5757575757575758,
+        0.8636363636363636,
+        0.7411750119113065
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 19,
+          "false_positive": 14,
+          "false_negative": 3,
+          "precision": 0.5757575757575758,
+          "recall": 0.8636363636363636,
+          "f1": 0.6909090909090909
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 5,
+          "false_negative": 0,
+          "precision": 0.7222222222222222,
+          "recall": 1.0,
+          "f1": 0.8387096774193548
+        }
+      },
+      "selected": true,
+      "checkpoint_sha256": "fd39715385dbccc20da18a09d7797d3689a6d72a5389ec8a40c3e27d4723793f",
+      "report_sha256": "61bb85c077ba1047f921e0c4fa932c22e7da24cd6d67596ea7765d7a88f5dfbc"
+    },
+    {
+      "epoch": 7,
+      "rank": [
+        0,
+        0.6785714285714287,
+        0.8387096774193548,
+        0.5588235294117647,
+        0.8636363636363636,
+        0.7753169099189456
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 19,
+          "false_positive": 15,
+          "false_negative": 3,
+          "precision": 0.5588235294117647,
+          "recall": 0.8636363636363636,
+          "f1": 0.6785714285714287
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 5,
+          "false_negative": 0,
+          "precision": 0.7222222222222222,
+          "recall": 1.0,
+          "f1": 0.8387096774193548
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "cbb8338ca6814334c867182b17bc2f94aba1a909e08b23698fc0c3b9f27342d9",
+      "report_sha256": "77458ab73d1eb7ba44cf09a997d03bdb58f973d3f85019705c3ec657e28a0ff0"
+    },
+    {
+      "epoch": 8,
+      "rank": [
+        0,
+        0.6909090909090909,
+        0.8387096774193548,
+        0.5757575757575758,
+        0.8636363636363636,
+        0.7504790239749879
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 19,
+          "false_positive": 14,
+          "false_negative": 3,
+          "precision": 0.5757575757575758,
+          "recall": 0.8636363636363636,
+          "f1": 0.6909090909090909
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 5,
+          "false_negative": 0,
+          "precision": 0.7222222222222222,
+          "recall": 1.0,
+          "f1": 0.8387096774193548
+        }
+      },
+      "selected": true,
+      "checkpoint_sha256": "0eb934a3acb9542339dd7d527140823d31a72774240a9ce62979c9c32d70f548",
+      "report_sha256": "939ac8f6f104a3e4ca3d6d33e0db31d9af7a97f57e43f784bb1de0f5c7674f59"
+    },
+    {
+      "epoch": 9,
+      "rank": [
+        0,
+        0.6938775510204083,
+        0.8275862068965517,
+        0.6296296296296297,
+        0.7727272727272727,
+        0.721342293427532
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 17,
+          "false_positive": 10,
+          "false_negative": 5,
+          "precision": 0.6296296296296297,
+          "recall": 0.7727272727272727,
+          "f1": 0.6938775510204083
+        },
+        "original13": {
+          "true_positive": 12,
+          "false_positive": 4,
+          "false_negative": 1,
+          "precision": 0.75,
+          "recall": 0.9230769230769231,
+          "f1": 0.8275862068965517
+        }
+      },
+      "selected": true,
+      "checkpoint_sha256": "def1b0e9db8c6e9fd45c2d546ee17a36489308ad945783da902a03e74c27d65c",
+      "report_sha256": "0f6f2f74337e9aee02d011c5b95deb0b706ccdc2d1046e17a9a596a314db2be1"
+    },
+    {
+      "epoch": 10,
+      "rank": [
+        0,
+        0.6909090909090909,
+        0.8125000000000001,
+        0.5757575757575758,
+        0.8636363636363636,
+        0.7319193752326106
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 19,
+          "false_positive": 14,
+          "false_negative": 3,
+          "precision": 0.5757575757575758,
+          "recall": 0.8636363636363636,
+          "f1": 0.6909090909090909
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 6,
+          "false_negative": 0,
+          "precision": 0.6842105263157895,
+          "recall": 1.0,
+          "f1": 0.8125000000000001
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "96c022826753e00e97c1ee0f4252295d958712b905b68621e9764f9b05e933fb",
+      "report_sha256": "49d2c869830ac0e80ee0a022e4dcae10d392963edf466f63af5126ca9c6afc1c"
+    },
+    {
+      "epoch": 11,
+      "rank": [
+        0,
+        0.7169811320754716,
+        0.8125000000000001,
+        0.6129032258064516,
+        0.8636363636363636,
+        0.7282850045687865
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 19,
+          "false_positive": 12,
+          "false_negative": 3,
+          "precision": 0.6129032258064516,
+          "recall": 0.8636363636363636,
+          "f1": 0.7169811320754716
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 6,
+          "false_negative": 0,
+          "precision": 0.6842105263157895,
+          "recall": 1.0,
+          "f1": 0.8125000000000001
+        }
+      },
+      "selected": true,
+      "checkpoint_sha256": "ec164b22bf4058eb611e2530a1090240b5e4b5d01ffea1e4060ca667e50dd8b0",
+      "report_sha256": "d0f5329ee3378dd60d1b5bc5f0e63e43e9fd79fb2d0d573d188a8af6745bfa3e"
+    },
+    {
+      "epoch": 12,
+      "rank": [
+        0,
+        0.7058823529411765,
+        0.8666666666666666,
+        0.6206896551724138,
+        0.8181818181818182,
+        0.7548659909377132
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 11,
+          "false_negative": 4,
+          "precision": 0.6206896551724138,
+          "recall": 0.8181818181818182,
+          "f1": 0.7058823529411765
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 4,
+          "false_negative": 0,
+          "precision": 0.7647058823529411,
+          "recall": 1.0,
+          "f1": 0.8666666666666666
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "f52e4e5d6a4de2b97dc3cd6df0c35ee81d45544f817ac31e46aeb64a0d942fa8",
+      "report_sha256": "71c0aa4526f9333d5b690ef580568c331c1ca3c872079e98d6e235279f62949a"
+    },
+    {
+      "epoch": 13,
+      "rank": [
+        0,
+        0.7200000000000001,
+        0.896551724137931,
+        0.6428571428571429,
+        0.8181818181818182,
+        0.7722473913559675
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 10,
+          "false_negative": 4,
+          "precision": 0.6428571428571429,
+          "recall": 0.8181818181818182,
+          "f1": 0.7200000000000001
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 3,
+          "false_negative": 0,
+          "precision": 0.8125,
+          "recall": 1.0,
+          "f1": 0.896551724137931
+        }
+      },
+      "selected": true,
+      "checkpoint_sha256": "695abba119d428e5f1420fc74cf75cb62aba5caf17e76e21ffd0f526d3e6b051",
+      "report_sha256": "ec67477e2259e36e168379502b1b022885876233967b631ade700344e62632c8"
+    },
+    {
+      "epoch": 14,
+      "rank": [
+        0,
+        0.7200000000000001,
+        0.8666666666666666,
+        0.6428571428571429,
+        0.8181818181818182,
+        0.7564275818515613
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 10,
+          "false_negative": 4,
+          "precision": 0.6428571428571429,
+          "recall": 0.8181818181818182,
+          "f1": 0.7200000000000001
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 4,
+          "false_negative": 0,
+          "precision": 0.7647058823529411,
+          "recall": 1.0,
+          "f1": 0.8666666666666666
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "13fb54d21fd4f39d19828915ad7d69dca1c79988a2584308b2d428dcba2829f4",
+      "report_sha256": "696ef57714b2e68e4d31323011f72d05a1930e1642548953c8f4a5f06db2cb6f"
+    },
+    {
+      "epoch": 15,
+      "rank": [
+        0,
+        0.6923076923076923,
+        0.8387096774193548,
+        0.6,
+        0.8181818181818182,
+        0.7370754102080895
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 12,
+          "false_negative": 4,
+          "precision": 0.6,
+          "recall": 0.8181818181818182,
+          "f1": 0.6923076923076923
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 5,
+          "false_negative": 0,
+          "precision": 0.7222222222222222,
+          "recall": 1.0,
+          "f1": 0.8387096774193548
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "971a9117048453a8f2af2a96a198262f58ac9a4a7eaf39ece08cb64da73888e8",
+      "report_sha256": "8f7b8b779fa273f4a29da6aa00754eb2cc1f740c7909fb5e05c11c8440894425"
+    },
+    {
+      "epoch": 16,
+      "rank": [
+        0,
+        0.7200000000000001,
+        0.8666666666666666,
+        0.6428571428571429,
+        0.8181818181818182,
+        0.7268086721707412
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 10,
+          "false_negative": 4,
+          "precision": 0.6428571428571429,
+          "recall": 0.8181818181818182,
+          "f1": 0.7200000000000001
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 4,
+          "false_negative": 0,
+          "precision": 0.7647058823529411,
+          "recall": 1.0,
+          "f1": 0.8666666666666666
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "31bc9a8587be2000d89cc0ef58a07407c6592c5782f4428ad54dc21205fb11c7",
+      "report_sha256": "7ab1ee91ecd7553a3f6c3587c173efeb46d1b03e087a1a9d520a378db2c207e6"
+    },
+    {
+      "epoch": 17,
+      "rank": [
+        0,
+        0.6666666666666666,
+        0.8387096774193548,
+        0.5625,
+        0.8181818181818182,
+        0.7036363490464208
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 14,
+          "false_negative": 4,
+          "precision": 0.5625,
+          "recall": 0.8181818181818182,
+          "f1": 0.6666666666666666
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 5,
+          "false_negative": 0,
+          "precision": 0.7222222222222222,
+          "recall": 1.0,
+          "f1": 0.8387096774193548
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "a5cb3781716592fa5cbba6edb2c3a67bdef24b10a2803b0afc2d3bbb924f8ae7",
+      "report_sha256": "ea98feefe4e49dcdde20ebce4112ed809075504cdaa3482456813e7618b087a7"
+    },
+    {
+      "epoch": 18,
+      "rank": [
+        0,
+        0.6923076923076923,
+        0.8666666666666666,
+        0.6,
+        0.8181818181818182,
+        0.7228705357142857
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 12,
+          "false_negative": 4,
+          "precision": 0.6,
+          "recall": 0.8181818181818182,
+          "f1": 0.6923076923076923
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 4,
+          "false_negative": 0,
+          "precision": 0.7647058823529411,
+          "recall": 1.0,
+          "f1": 0.8666666666666666
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "1a3377886fb5f2d4db31be7eda66084703bb53a7c511c3159e0cb77a14c494f5",
+      "report_sha256": "218158e659f72c72a145d7a5d4eaf6b905e1dc1bc58ebb2008fdd70ec25dadec"
+    },
+    {
+      "epoch": 19,
+      "rank": [
+        0,
+        0.6923076923076923,
+        0.8666666666666666,
+        0.6,
+        0.8181818181818182,
+        0.7425095163086666
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 12,
+          "false_negative": 4,
+          "precision": 0.6,
+          "recall": 0.8181818181818182,
+          "f1": 0.6923076923076923
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 4,
+          "false_negative": 0,
+          "precision": 0.7647058823529411,
+          "recall": 1.0,
+          "f1": 0.8666666666666666
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "e5fbd36c8ce2bebc70193e0d6cde5a8ee96c2bfd043e6c6d2729d6d67a64b2d7",
+      "report_sha256": "c1bef486d1b913a0b25f2e487ab4ea6927c00c81fb1d6a941c70e06b62335353"
+    },
+    {
+      "epoch": 20,
+      "rank": [
+        0,
+        0.7058823529411765,
+        0.8666666666666666,
+        0.6206896551724138,
+        0.8181818181818182,
+        0.7415943222854
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 11,
+          "false_negative": 4,
+          "precision": 0.6206896551724138,
+          "recall": 0.8181818181818182,
+          "f1": 0.7058823529411765
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 4,
+          "false_negative": 0,
+          "precision": 0.7647058823529411,
+          "recall": 1.0,
+          "f1": 0.8666666666666666
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "dffd6a48cdd91fd732d70383e80d82da61bde9c4f736234ab1182bfbfba3be99",
+      "report_sha256": "681b66e645a2ae0292df5d8280560caff659ac7a11319690c329ba2694a1e8d3"
+    },
+    {
+      "epoch": 21,
+      "rank": [
+        0,
+        0.7346938775510203,
+        0.8666666666666666,
+        0.6666666666666666,
+        0.8181818181818182,
+        0.7169585389756442
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 9,
+          "false_negative": 4,
+          "precision": 0.6666666666666666,
+          "recall": 0.8181818181818182,
+          "f1": 0.7346938775510203
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 4,
+          "false_negative": 0,
+          "precision": 0.7647058823529411,
+          "recall": 1.0,
+          "f1": 0.8666666666666666
+        }
+      },
+      "selected": true,
+      "checkpoint_sha256": "7c9a207ab0da89a959221d69cf09d821ca08993474f114eb3959fcc9d98faed8",
+      "report_sha256": "28856bcb325d457a2c21175a6f9f8de0ad5e5db95716c705be6fff03879d50d0"
+    },
+    {
+      "epoch": 22,
+      "rank": [
+        0,
+        0.7058823529411765,
+        0.8387096774193548,
+        0.6206896551724138,
+        0.8181818181818182,
+        0.6813731316809806
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 11,
+          "false_negative": 4,
+          "precision": 0.6206896551724138,
+          "recall": 0.8181818181818182,
+          "f1": 0.7058823529411765
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 5,
+          "false_negative": 0,
+          "precision": 0.7222222222222222,
+          "recall": 1.0,
+          "f1": 0.8387096774193548
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "05764e9ad7a0d26b53d16581bfefc4d21e3743eff9cc3b291d31a4cacd59559f",
+      "report_sha256": "1feb4183643fcd263913f8447a20b085d0f4620e6968544a0bb145ccbd5bb9d4"
+    },
+    {
+      "epoch": 23,
+      "rank": [
+        0,
+        0.7659574468085107,
+        0.8666666666666666,
+        0.72,
+        0.8181818181818182,
+        0.6721262405420518
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 7,
+          "false_negative": 4,
+          "precision": 0.72,
+          "recall": 0.8181818181818182,
+          "f1": 0.7659574468085107
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 4,
+          "false_negative": 0,
+          "precision": 0.7647058823529411,
+          "recall": 1.0,
+          "f1": 0.8666666666666666
+        }
+      },
+      "selected": true,
+      "checkpoint_sha256": "794bd12b3da951032d98fb79dd64bf0e7c2f6f8c3042407e8216809613f40d7a",
+      "report_sha256": "6b4fa8249d7d02b9cd01e1e122ec7fbde8360c42522bcf0b11df289581cbeb90"
+    },
+    {
+      "epoch": 24,
+      "rank": [
+        0,
+        0.7659574468085107,
+        0.8666666666666666,
+        0.72,
+        0.8181818181818182,
+        0.6915756174286323
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 7,
+          "false_negative": 4,
+          "precision": 0.72,
+          "recall": 0.8181818181818182,
+          "f1": 0.7659574468085107
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 4,
+          "false_negative": 0,
+          "precision": 0.7647058823529411,
+          "recall": 1.0,
+          "f1": 0.8666666666666666
+        }
+      },
+      "selected": true,
+      "checkpoint_sha256": "d0e032667107d89f839322f6a72b81d5adcfea6c35124ebce3e08326840ac1d9",
+      "report_sha256": "05c6bd274eb2cfc11c6dd8f6e38597609b401b439a613efec0c172c7c9c46017"
+    },
+    {
+      "epoch": 25,
+      "rank": [
+        0,
+        0.7826086956521738,
+        0.896551724137931,
+        0.75,
+        0.8181818181818182,
+        0.6977873611246872
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 6,
+          "false_negative": 4,
+          "precision": 0.75,
+          "recall": 0.8181818181818182,
+          "f1": 0.7826086956521738
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 3,
+          "false_negative": 0,
+          "precision": 0.8125,
+          "recall": 1.0,
+          "f1": 0.896551724137931
+        }
+      },
+      "selected": true,
+      "checkpoint_sha256": "1d3529aa4d52495f56847dcc1cdefd57c39f83e9aa378638fc88e31bcf3f0c87",
+      "report_sha256": "68d10389f1d52365e70de30944d4447de69f53b65160d65b708fe67e09ff87e2"
+    },
+    {
+      "epoch": 26,
+      "rank": [
+        0,
+        0.7659574468085107,
+        0.8666666666666666,
+        0.72,
+        0.8181818181818182,
+        0.7076084409064831
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 7,
+          "false_negative": 4,
+          "precision": 0.72,
+          "recall": 0.8181818181818182,
+          "f1": 0.7659574468085107
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 4,
+          "false_negative": 0,
+          "precision": 0.7647058823529411,
+          "recall": 1.0,
+          "f1": 0.8666666666666666
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "495734a70125744b55939645067e1538a55d7b9ccd9dd3bb48d7c3260fccd035",
+      "report_sha256": "b8da3ae4e21285ee24a6a643dbadfefcf7854bdb6889ae9a5c742b3393150d4d"
+    },
+    {
+      "epoch": 27,
+      "rank": [
+        0,
+        0.7659574468085107,
+        0.8666666666666666,
+        0.72,
+        0.8181818181818182,
+        0.7101635759094376
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 7,
+          "false_negative": 4,
+          "precision": 0.72,
+          "recall": 0.8181818181818182,
+          "f1": 0.7659574468085107
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 4,
+          "false_negative": 0,
+          "precision": 0.7647058823529411,
+          "recall": 1.0,
+          "f1": 0.8666666666666666
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "0e79b5fa19407b0ee68658f981213dc899d3e3ded5bc633dfe7f4bbe1bdf7e1e",
+      "report_sha256": "b3f61ea1ec6e3d055c214041f0a6ab05cbbe703761ab8297617c2beb01ce0f93"
+    },
+    {
+      "epoch": 28,
+      "rank": [
+        0,
+        0.7500000000000001,
+        0.8666666666666666,
+        0.6923076923076923,
+        0.8181818181818182,
+        0.7110196635796312
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 8,
+          "false_negative": 4,
+          "precision": 0.6923076923076923,
+          "recall": 0.8181818181818182,
+          "f1": 0.7500000000000001
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 4,
+          "false_negative": 0,
+          "precision": 0.7647058823529411,
+          "recall": 1.0,
+          "f1": 0.8666666666666666
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "fc42807c41d3e9dd699d900e02345e9d0588101dba4282aef114f3d5c6b7625e",
+      "report_sha256": "8e965a4f8151a1bcb11ea93dc91235e385ff5504324769b330140018a2f4cbc6"
+    },
+    {
+      "epoch": 29,
+      "rank": [
+        0,
+        0.7500000000000001,
+        0.8666666666666666,
+        0.6923076923076923,
+        0.8181818181818182,
+        0.7029375025587404
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 8,
+          "false_negative": 4,
+          "precision": 0.6923076923076923,
+          "recall": 0.8181818181818182,
+          "f1": 0.7500000000000001
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 4,
+          "false_negative": 0,
+          "precision": 0.7647058823529411,
+          "recall": 1.0,
+          "f1": 0.8666666666666666
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "9c4ed5168bc37372d7ec5664b149a80d83c310e86e92a734bf7233da9a6f19c2",
+      "report_sha256": "2226d4a5bab96154f3389c11dd6659b1d29f0224bf072a96376f79dece70af34"
+    },
+    {
+      "epoch": 30,
+      "rank": [
+        0,
+        0.7659574468085107,
+        0.896551724137931,
+        0.72,
+        0.8181818181818182,
+        0.6995347937327938
+      ],
+      "cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 7,
+          "false_negative": 4,
+          "precision": 0.72,
+          "recall": 0.8181818181818182,
+          "f1": 0.7659574468085107
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 3,
+          "false_negative": 0,
+          "precision": 0.8125,
+          "recall": 1.0,
+          "f1": 0.896551724137931
+        }
+      },
+      "selected": false,
+      "checkpoint_sha256": "b3acc3a904ddc1ffab880fa0089557a342c0178955abb20d152c3817806d8143",
+      "report_sha256": "d656e6972736c53b35333bdfc672068966ae2fe0d01faa4389097b5f7c7d350c"
+    }
+  ],
+  "best_sha256": "1d3529aa4d52495f56847dcc1cdefd57c39f83e9aa378638fc88e31bcf3f0c87",
+  "deployment_accepted": false
+}

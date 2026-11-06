@@ -1,0 +1,264 @@
+{
+  "status": "CONTROLLED_FREEZE10_COMPARISON",
+  "results": {
+    "v76": {
+      "selected_epoch": 19,
+      "operating_per_class": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 17,
+          "false_positive": 9,
+          "false_negative": 5,
+          "precision": 0.6538461538461539,
+          "recall": 0.7727272727272727
+        },
+        {
+          "name": "CutArrangement",
+          "true_positive": 7,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0
+        }
+      ],
+      "per_class_ap": [
+        {
+          "class_id": 0,
+          "name": "PottedPlant",
+          "precision": 0.7003832670024105,
+          "recall": 0.7727272727272727,
+          "mAP50": 0.8140042732149955,
+          "mAP50_95": 0.6641201285063906,
+          "labels": 22
+        },
+        {
+          "class_id": 1,
+          "name": "CutArrangement",
+          "precision": 1.0,
+          "recall": 0.9464961066419902,
+          "mAP50": 0.995,
+          "mAP50_95": 0.8627527472527474,
+          "labels": 7
+        }
+      ],
+      "runtime_cohorts": {
+        "full": {
+          "true_positive": 17,
+          "false_positive": 9,
+          "false_negative": 5,
+          "precision": 0.6538461538461539,
+          "recall": 0.7727272727272727,
+          "f1": 0.7083333333333333
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 4,
+          "false_negative": 0,
+          "precision": 0.7647058823529411,
+          "recall": 1.0,
+          "f1": 0.8666666666666666
+        }
+      },
+      "soil_herb_photos": [
+        {
+          "image": "images/val/61b87cc9e422041b15538369.jpg",
+          "ground_truth": 1,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 165.25910000200383
+        },
+        {
+          "image": "images/val/c40a67d7e5c2aa244969b1f6.jpg",
+          "ground_truth": 1,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 176.0192000074312
+        },
+        {
+          "image": "images/val/ad4054926f2d2738dc4a8773.jpg",
+          "ground_truth": 2,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 1,
+          "inference_ms": 216.6338000097312
+        }
+      ],
+      "harvested_food_negative_photos": [
+        {
+          "image": "images/val/f6064c57134f3277e5fe7b20.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 257.0320999948308
+        },
+        {
+          "image": "images/val/467fb80fca7896af512309a0.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 215.91920001083054
+        },
+        {
+          "image": "images/val/0913dea122b9e30e10a04073.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 2,
+          "false_negative": 0,
+          "inference_ms": 183.96329999086447
+        },
+        {
+          "image": "images/val/e890004cc7bf2354f7bdc5f3.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 2,
+          "false_negative": 0,
+          "inference_ms": 160.7205000182148
+        }
+      ],
+      "harvested_food_false_positives": 4,
+      "runtime_gate_pass": false,
+      "weight_sha256": "12adc8bcdf1f37c9be9039a6188dd882fa1166db3e5b44d3b8ee04cc319f4bae"
+    },
+    "v78": {
+      "selected_epoch": 25,
+      "operating_per_class": [
+        {
+          "name": "PottedPlant",
+          "true_positive": 18,
+          "false_positive": 6,
+          "false_negative": 4,
+          "precision": 0.75,
+          "recall": 0.8181818181818182
+        },
+        {
+          "name": "CutArrangement",
+          "true_positive": 6,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.8571428571428571,
+          "recall": 0.8571428571428571
+        }
+      ],
+      "per_class_ap": [
+        {
+          "class_id": 0,
+          "name": "PottedPlant",
+          "precision": 0.7452425413301591,
+          "recall": 0.8181818181818182,
+          "mAP50": 0.830276726727251,
+          "mAP50_95": 0.6891889837933192,
+          "labels": 22
+        },
+        {
+          "class_id": 1,
+          "name": "CutArrangement",
+          "precision": 0.8706067398902898,
+          "recall": 0.9648539191223187,
+          "mAP50": 0.9600000000000001,
+          "mAP50_95": 0.8540000000000001,
+          "labels": 7
+        }
+      ],
+      "runtime_cohorts": {
+        "full": {
+          "true_positive": 18,
+          "false_positive": 6,
+          "false_negative": 4,
+          "precision": 0.75,
+          "recall": 0.8181818181818182,
+          "f1": 0.7826086956521738
+        },
+        "original13": {
+          "true_positive": 13,
+          "false_positive": 3,
+          "false_negative": 0,
+          "precision": 0.8125,
+          "recall": 1.0,
+          "f1": 0.896551724137931
+        }
+      },
+      "soil_herb_photos": [
+        {
+          "image": "images/val/61b87cc9e422041b15538369.jpg",
+          "ground_truth": 1,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 163.6026999913156
+        },
+        {
+          "image": "images/val/c40a67d7e5c2aa244969b1f6.jpg",
+          "ground_truth": 1,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 176.4067000185605
+        },
+        {
+          "image": "images/val/ad4054926f2d2738dc4a8773.jpg",
+          "ground_truth": 2,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 1,
+          "inference_ms": 215.66980000352487
+        }
+      ],
+      "harvested_food_negative_photos": [
+        {
+          "image": "images/val/f6064c57134f3277e5fe7b20.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 295.6306999840308
+        },
+        {
+          "image": "images/val/467fb80fca7896af512309a0.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 213.94190000137314
+        },
+        {
+          "image": "images/val/0913dea122b9e30e10a04073.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 202.18400002340786
+        },
+        {
+          "image": "images/val/e890004cc7bf2354f7bdc5f3.jpg",
+          "ground_truth": 0,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "inference_ms": 170.06219999166206
+        }
+      ],
+      "harvested_food_false_positives": 0,
+      "runtime_gate_pass": false,
+      "weight_sha256": "3f2c1d6b8503b841d8e6e35ac6d6f0f7e29cfda346ab1222b620cdf32205a113"
+    }
+  },
+  "evidence": {
+    "Reports/plant-v76-positive-diagnostic/final-val/report.json": "118dd75488a799891303e7fa7cf013bdc1c0cd8380e4c47e7fac9b5c09c3b8ec",
+    "Reports/plant-v78-freeze-diagnostic/final-val/report.json": "cae53d9ff91f8db83161c1742171e4641f0ee80d74fb6b66126aaf05e18a8321"
+  },
+  "unchanged_val_photos": 30,
+  "unchanged_original_rows": 194,
+  "changed_parameter": {
+    "freeze_before": 0,
+    "freeze_after": 10
+  },
+  "dataset_rows_and_payloads_exact": true,
+  "limitation": "Single seed, repeatedly observed small development VAL; only freeze changes, installed frozen-BN behavior verified separately. This does not prove independent generalization or a unique mechanism.",
+  "test_used": false,
+  "pico_validated": false,
+  "deployment_accepted": false
+}

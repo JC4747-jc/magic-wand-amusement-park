@@ -1,0 +1,116 @@
+{
+  "status": "ALL8_SELECTED_V78_ERRORS_ACTUALLY_REVIEWED",
+  "reviewed": [
+    {
+      "image": "images\\val\\80af71df5d201ada8c3935bb.jpg",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "observation": "One full-frame plant FP on cut sunflower bunches in white buckets.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v78-freeze-diagnostic/final-runtime-val/error-80af71df5d201ada8c3935bb.jpg",
+      "overlay_sha256": "5cbdbdef2a0f7b2919a5fd912ea7f9bce94e8e95a0c4a9402d5f4375d58c560d"
+    },
+    {
+      "image": "images\\val\\478585150555622ee282ec40.jpg",
+      "counts": {
+        "ground_truth": 4,
+        "true_positive": 4,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "observation": "All four potted plants TP; extra foliage-only prediction duplicates clipped right bonsai.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v78-freeze-diagnostic/final-runtime-val/error-478585150555622ee282ec40.jpg",
+      "overlay_sha256": "2ce8aa9fbbaa6a8c1242c9e2c051507ca53d369faebb0926800b95d7bab195d1"
+    },
+    {
+      "image": "images\\val\\9fbc2444b8acf1398deaddd3.jpg",
+      "counts": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "observation": "Full stacked container TP plus extra upper-pot-only duplicate FP.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v78-freeze-diagnostic/final-runtime-val/error-9fbc2444b8acf1398deaddd3.jpg",
+      "overlay_sha256": "772868533a6d47bb9a5f4075a5c679f974d4d1e2a4984b33349a2f3267b9bbe1"
+    },
+    {
+      "image": "images/val/f792813aeb8521eb5e9ba43f.jpg",
+      "counts": {
+        "ground_truth": 1,
+        "true_positive": 1,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "observation": "Hanging pot recovered as TP; separate bottom-right ground vegetation FP.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v78-freeze-diagnostic/final-runtime-val/error-f792813aeb8521eb5e9ba43f.jpg",
+      "overlay_sha256": "3f5683c202f3faabe62773575d20c63034c4399e6a0619782090d9b47732b83b"
+    },
+    {
+      "image": "images/val/a8d79cd1e9fd1cdb40e2541a.jpg",
+      "counts": {
+        "ground_truth": 3,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 3
+      },
+      "observation": "All three hanging baskets missed, including bottom-right clipped partial basket.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v78-freeze-diagnostic/final-runtime-val/error-a8d79cd1e9fd1cdb40e2541a.jpg",
+      "overlay_sha256": "0c1f962a61068ddc2ce61828119a2a20162ae9ff0f50088be02953cb0c1c42fd"
+    },
+    {
+      "image": "images/val/5cd2e794017caf6756d2020a.jpg",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "observation": "Cut white roses in clear water vase predicted plant under plant-only route; actual rooted plant absent.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v78-freeze-diagnostic/final-runtime-val/error-5cd2e794017caf6756d2020a.jpg",
+      "overlay_sha256": "dcc9567263e2bcd0ffe67c1f5832e4b9d132dcf949fbf9d5d4b66a3b8d4a5f7a"
+    },
+    {
+      "image": "images/val/d6a4f5f64a10ff59fe54d62c.jpg",
+      "counts": {
+        "ground_truth": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "observation": "Empty amber ribbed glass vase predicted plant, no foliage or soil.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v78-freeze-diagnostic/final-runtime-val/error-d6a4f5f64a10ff59fe54d62c.jpg",
+      "overlay_sha256": "d898de6e83d2988206cdc5a0dc77d0b9a7dd5cfb69416ad0520f74c6246be67a"
+    },
+    {
+      "image": "images/val/ad4054926f2d2738dc4a8773.jpg",
+      "counts": {
+        "ground_truth": 2,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 1
+      },
+      "observation": "Main red herb pot matches with box extending left; partial white planted pot lower left missed.",
+      "actually_viewed": true,
+      "overlay": "Reports/plant-v78-freeze-diagnostic/final-runtime-val/error-ad4054926f2d2738dc4a8773.jpg",
+      "overlay_sha256": "e9d1a2f801827439bea598c468a1bc12d63394dde0ed8368b628f6a934c8ae3c"
+    }
+  ],
+  "report_sha256": "2ac2ea76ee92bd089ce108e8d6cd02516403ccd95773543a61a9c50e7f64d924",
+  "weight_sha256": "3f2c1d6b8503b841d8e6e35ac6d6f0f7e29cfda346ab1222b620cdf32205a113",
+  "labels_changed": false,
+  "checkpoint_reselected": false,
+  "deployment_accepted": false,
+  "test_used": false,
+  "pico_validated": false
+}
