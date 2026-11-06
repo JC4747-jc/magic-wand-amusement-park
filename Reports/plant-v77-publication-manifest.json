@@ -1,0 +1,29 @@
+{
+  "files": [
+    {
+      "path": "Tools/MultiScene/diagnose_plant_candidates_v77.py",
+      "sha256": "2adc546eabc930a4aa7f0bfb1b8db9dde042e9fb2bda2cfb014ef6067a1ed6e9"
+    },
+    {
+      "path": "Tools/MultiScene/analyze_plant_candidates_v77.py",
+      "sha256": "33f6c75dbd8fe8f70f7e971016c9994b082561478aaa1292526aa7555e649426"
+    },
+    {
+      "path": "Reports/plant-v77-candidate-diagnostic/protocol.json",
+      "sha256": "e2c183847b7414f396092a0295ab949a6d7398c5abece2bdd14e24ffcaa6304a"
+    },
+    {
+      "path": "Reports/plant-v77-candidate-diagnostic/report.json",
+      "sha256": "82e4fc08fd42359d73c78d1e12ea6cb783f7dc39048982b949f8928d7e101434"
+    },
+    {
+      "path": "Reports/plant-v77-candidate-diagnostic/findings.json",
+      "sha256": "8a5369efd06845e67ce62e3794899d59488993740c72d225529de5f15ec0be64"
+    }
+  ],
+  "scope": "Actual three-model raw and post-NMS trace on three observed VAL photos/six plant GT. All five v76 misses lack correctly overlapping plant-winning raw scores>=0.35; max_det300 does not recover valid operating detections. No training, threshold changes or model selection.",
+  "exclusions": "No image bytes, private captures, weights or deployment changes.",
+  "deployment_accepted": false,
+  "test_used": false,
+  "pico_validated": false
+}

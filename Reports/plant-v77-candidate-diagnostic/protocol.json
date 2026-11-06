@@ -1,0 +1,72 @@
+{
+  "status": "PRE_INFERENCE_DIAGNOSTIC_PROTOCOL",
+  "files": [
+    {
+      "path": "Datasets/plant-houseplant-v75/audit.json",
+      "sha256": "4f2edd8d341ab2b9bdcbcd8bd57f44ce9f3829ca586a5e780b494541618d91fe"
+    },
+    {
+      "path": "Datasets/plant-houseplant-v75/images/val/a8d79cd1e9fd1cdb40e2541a.jpg",
+      "sha256": "a8d79cd1e9fd1cdb40e2541aac68adea8e8edaf3f3f93843e444399859e045b1"
+    },
+    {
+      "path": "Datasets/plant-houseplant-v75/images/val/ad4054926f2d2738dc4a8773.jpg",
+      "sha256": "ad4054926f2d2738dc4a87730347d3a26960820eda77df5728431c7c98f7310e"
+    },
+    {
+      "path": "Datasets/plant-houseplant-v75/images/val/f792813aeb8521eb5e9ba43f.jpg",
+      "sha256": "f792813aeb8521eb5e9ba43f3e8bb294e0b7320018236afeaf7a61e2ed8051a1"
+    },
+    {
+      "path": "Datasets/plant-houseplant-v75/labels/val/a8d79cd1e9fd1cdb40e2541a.txt",
+      "sha256": "dcee48374c5503576da71db2e72d5aa178031f3316c3cebc67c6c9bcab0667d9"
+    },
+    {
+      "path": "Datasets/plant-houseplant-v75/labels/val/ad4054926f2d2738dc4a8773.txt",
+      "sha256": "44d9baa899c0b225d940d0fdaabca90424b34f16104b3d4a161336a5314e8bee"
+    },
+    {
+      "path": "Datasets/plant-houseplant-v75/labels/val/f792813aeb8521eb5e9ba43f.txt",
+      "sha256": "c39401487379208286ae54f996b5cd1facf5e94f191472afdff13d0f0e20c3ac"
+    },
+    {
+      "path": "object-detection-demo/weights/candidates/common-yolov8m-official-v1/best.pt",
+      "sha256": "5d4a90cdc7a21786cc59cd19778e9eafff836df9e2da32524737c7ee6efe4fe5"
+    },
+    {
+      "path": "object-detection-demo/weights/candidates/plant-market-v69/best.pt",
+      "sha256": "e689892c71ceeb881e859649cf5fdc1f796f5027bdcaee198ce4629b335bf3a7"
+    },
+    {
+      "path": "object-detection-demo/weights/candidates/plant-positive-v76/best.pt",
+      "sha256": "12adc8bcdf1f37c9be9039a6188dd882fa1166db3e5b44d3b8ee04cc319f4bae"
+    },
+    {
+      "path": "Tools/MultiScene/diagnose_plant_candidates_v77.py",
+      "sha256": "2adc546eabc930a4aa7f0bfb1b8db9dde042e9fb2bda2cfb014ef6067a1ed6e9"
+    }
+  ],
+  "observed_val_only": true,
+  "models": [
+    "official_coco_m",
+    "v69",
+    "v76"
+  ],
+  "image_stems": [
+    "a8d79cd1e9fd1cdb40e2541a",
+    "ad4054926f2d2738dc4a8773",
+    "f792813aeb8521eb5e9ba43f"
+  ],
+  "imgsz": 640,
+  "rect": true,
+  "device": "cpu",
+  "prediction_confidence": 0.001,
+  "nms_iou": 0.7,
+  "max_det": 8,
+  "operating_confidence": 0.35,
+  "iou_match": 0.5,
+  "test_used": false,
+  "checkpoint_selection": false,
+  "threshold_selection": false,
+  "deployment_accepted": false
+}
