@@ -1,0 +1,36 @@
+{
+  "status": "NO_CAPTURED_SCORE_THRESHOLD_PASSES_BOTH_GATES",
+  "source_report_sha256": "64013903d5216af4c980140ab9cbcef7f1fea6a239692b8a8109199a19cb4d4c",
+  "distinct_scores": 95,
+  "breakpoints_evaluated": 192,
+  "passing_count": 0,
+  "best_full_precision_subject_to_recall08": {
+    "threshold": 0.3909809887409211,
+    "full": {
+      "true_positive": 18,
+      "false_positive": 3,
+      "false_negative": 4,
+      "precision": 0.8571428571428571,
+      "recall": 0.8181818181818182,
+      "f1": 0.8372093023255814
+    },
+    "original13": {
+      "true_positive": 13,
+      "false_positive": 1,
+      "false_negative": 0,
+      "precision": 0.9285714285714286,
+      "recall": 1.0,
+      "f1": 0.962962962962963
+    },
+    "passes_both_gates": false
+  },
+  "passing_breakpoints": [],
+  "all_predeclared_grid_counts_exact": true,
+  "method": "Enumerate every captured score and immediately-above boundary plus endpoints; no change of model, matching, max_det or NMS. This exhausts accepted subsets obtainable by thresholding these recorded predictions.",
+  "scope": "Observed30-image development VAL and captured post-NMS predictions at conf0.001/max_det8 only; not a new official benchmark, fresh test, or proof for other preprocessing/NMS policies.",
+  "historical_gate_changed": false,
+  "runtime_config_changed": false,
+  "new_inference_performed": false,
+  "test_used": false,
+  "deployment_accepted": false
+}

@@ -1,0 +1,29 @@
+{
+  "files": [
+    {
+      "path": "Tools/MultiScene/diagnose_plant_confidence_v82.py",
+      "sha256": "ab9fbc9579e2ee1cb25760073f4544f848d172ee7739ea191b38c6932255b6c2"
+    },
+    {
+      "path": "Tools/MultiScene/analyze_plant_confidence_v82.py",
+      "sha256": "38ebbe0c6b17b5f437133589c44324b6835976af48ba1fc55173d474cf83da85"
+    },
+    {
+      "path": "Reports/plant-v82-confidence-diagnostic/protocol.json",
+      "sha256": "966a470aaccc5379d0fb3e593e6f26a75de4161a21f1d411611625c03715b85c"
+    },
+    {
+      "path": "Reports/plant-v82-confidence-diagnostic/report.json",
+      "sha256": "64013903d5216af4c980140ab9cbcef7f1fea6a239692b8a8109199a19cb4d4c"
+    },
+    {
+      "path": "Reports/plant-v82-confidence-diagnostic/breakpoint-findings.json",
+      "sha256": "58e1faec9bd3434b197eb6b9b11fefecc9712a2a737565522c2085820b660e6d"
+    }
+  ],
+  "scope": "Actual fixed-grid validation-only v81 confidence diagnostic plus exhaustive192 captured-score breakpoints. Baseline0.35 all30per-image counts exactly reproduced. No tested grid value or captured score breakpoint meets both full and original13 P>=0.9/R>=0.8; best full precision retaining recall>=0.8 is0.857143. No new training, checkpoint selection or runtime configuration change.",
+  "exclusions": "No image bytes, private captures, weights, Unity assets or deployment changes.",
+  "test_used": false,
+  "pico_validated": false,
+  "deployment_accepted": false
+}
