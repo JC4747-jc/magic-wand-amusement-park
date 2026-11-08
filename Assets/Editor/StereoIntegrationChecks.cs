@@ -251,9 +251,18 @@ public static class StereoIntegrationChecks
         for (int y=0; y<480; y++) for (int x=0; x<616; x++) right[y*640+x]=left[y*640+x+24];
         var result = StereoPatchMatcher.EstimateDepth(left,right,640,480,320,240,407,.06392f,3,7);
         if (!result.valid || Math.Abs(result.disparityPixels-24)>.5f) throw new Exception("ROI stereo shift failed");
+        var samples = new StereoPatchMatcher.Sample[9];
+        var diagnosticResult = StereoPatchMatcher.EstimateDepth(left,right,640,480,320,240,407,.06392f,3,7,samples);
+        if (diagnosticResult.depthMeters != result.depthMeters || diagnosticResult.confidence != result.confidence ||
+            diagnosticResult.acceptedSamples != result.acceptedSamples || diagnosticResult.matchedSamples != 9)
+            throw new Exception("Stereo diagnostics changed the depth measurement");
         Array.Clear(left,0,left.Length); Array.Clear(right,0,right.Length);
-        if (StereoPatchMatcher.EstimateDepth(left,right,640,480,320,240,407,.06392f,3,7).valid)
+        var flat = StereoPatchMatcher.EstimateDepth(left,right,640,480,320,240,407,.06392f,3,7,samples);
+        if (flat.valid || flat.matchedSamples != 0)
             throw new Exception("Flat target must be rejected");
+        foreach (var sample in samples)
+            if (sample.valid || sample.inlier || sample.reason != "LOW_TEXTURE")
+                throw new Exception("Flat target diagnostics retained stale valid samples");
         Vector3 head = StereoFusionGeometry.OpticalToHead(new Vector3(0,0,1),new Pose(Vector3.zero,Quaternion.Euler(180,0,0)));
         if (Vector3.Distance(head,Vector3.forward)>.001f) throw new Exception("Optical reflection failed");
         var tex = new Texture2D(32,32,TextureFormat.RGB24,false);

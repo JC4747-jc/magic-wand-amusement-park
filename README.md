@@ -4,6 +4,22 @@
 
 当前默认场景为 `Assets/Scenes/BridgeStereoFusion.unity`，默认跟随模式为 **VisualAverage（1.10.0，最近三帧视觉位置加权平均）**。仓库同时保留桌面卡牌捕捉、AR 图像追踪和早期 MR 场景。
 
+新增独立实验场景 `Assets/Scenes/BridgeStereoPoseFusion.unity`：保留原双目位置，增加 F2G-Pose 旋转通路。录制、Linux 推理环境、构建入口和当前验证限制见 [F2G_POSE.md](F2G_POSE.md)。真实模型推理与头显旋转尚未验收，默认主线不变。
+
+Pose 1.11.1 / 26 已修复通信隔离：通过原 YOLO 回复携带 PC 姿态服务就绪通知，服务不可用时头显不连接姿态端口。五项实机对照测试均无 YOLO 超时，约 6.66–6.78 FPS。WSL／Ubuntu 和独立 CUDA 环境已安装，真实 F2G 官方样例推理通过，预热后约 79–117 ms；完整模型共存与实物旋转仍待验收。
+
+Pose 1.11.2 / 27 已安装：真实模型已对 PICO 打火机帧输出有效姿态，原三帧平均定位也出现锁定。新增 PICO 原始行方向适配、模型启动预热和实测延迟适配；完整服务只监听本机 localhost。最终旋转稳定性仍在实机验收，启动方法与证据见 [F2G_POSE.md](F2G_POSE.md)。
+
+定位修复版 **Magic MR Stereo Repair 1.10.1** 使用独立场景 `Assets/Scenes/BridgeStereoRepair.unity`，完全移除场景中的 F2G 客户端，保留原双目与三帧平滑，并增加限量左右图、检测框及匹配失败诊断。已构建并安装，真实打火机定位和点赞召唤待实机验收；操作与记录见 [STEREO_REPAIR.md](STEREO_REPAIR.md)。
+
+## 开发快照状态（2026-11-09）
+
+本分支备份特效与内部结构优化、双目诊断、F2G 姿态实验及检测服务改动，尚未作为稳定版本验收。最新特效说明见 [VFX_POLISH.md](VFX_POLISH.md)。
+
+文中此前的构建、安装与回放结果是对应日期的实验记录，不代表当前全部修改已经重新验证。最近一次 Python 回归尝试出现错误和本机 socket 超时，已停止，原因尚未确定；当前快照未重新完成 Unity 编译和头显验收。旋转稳定性、定位召唤和最新特效需继续验证。
+
+日志、回放图像、APK 和本机推理环境未纳入本次提交。新机器需按文档配置 PICO SDK、Python 与 F2G 环境；文档中 `.codex-tmp/` 的历史证据路径不会随克隆提供。
+
 ## 当前功能与限制
 
 - PICO 采集双目图像，PC 端 YOLO 返回打火机检测框，Unity 使用对应帧的双目结果与拍摄姿态计算世界位置。
@@ -43,13 +59,13 @@ python -m venv .venv
 
 无需预览窗口时，可给最后一条命令加 `--headless`。服务接收的是 **PICO 相机图像**，不是电脑摄像头。
 
-当前 `tcp_server.py` 实际加载的权重为：
+当前定位与姿态服务共用 `object-detection-demo/detector_config.py`，默认 conf=0.399、imgsz=640、iou=0.7，加载的权重为：
 
 ```text
-object-detection-demo/weights/best_yolo26n_quad_v4_50e.pt
+object-detection-demo/weights/best_yolo26n_assgn2_v6_50e.pt
 ```
 
-本地 v5 / v6 / v7 训练结果不会自动替换部署模型。启动时检查控制台输出的权重名称；训练资料与检测工具另见 [object-detection-demo](object-detection-demo/README.md)，服务的实际配置以 `tcp_server.py` 为准。
+本开发版本已明确切换到 v6 部署权重；其他训练结果不会自动替换模型。启动时检查控制台输出的权重名称；训练资料与检测工具另见 [object-detection-demo](object-detection-demo/README.md)，默认配置以 `detector_config.py` 为准，更换权重后需重启定位和姿态服务。
 
 ### 2. 连接头显
 

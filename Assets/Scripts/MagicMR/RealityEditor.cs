@@ -105,6 +105,20 @@ namespace MagicMR
         bool m_IsDeconstructed;
         ParticleSystem m_SmokeParticles;
         float m_LastGrowlTime;
+        float m_HeatUntil;
+        MaterialPropertyBlock m_HeatProperties;
+        void SetHeat(float heat)
+        {
+            if (m_AllRenderers == null) return;
+            m_HeatProperties ??= new MaterialPropertyBlock();
+            foreach (var renderer in m_AllRenderers)
+            {
+                if (renderer == null) continue;
+                renderer.GetPropertyBlock(m_HeatProperties);
+                m_HeatProperties.SetFloat("_Heat", heat);
+                renderer.SetPropertyBlock(m_HeatProperties);
+            }
+        }
         float m_LastEvasionFailureLogTime;
         float m_LastGhostTrailTime;
 
@@ -220,6 +234,11 @@ namespace MagicMR
 
         void Update()
         {
+            if (m_HeatUntil > 0)
+            {
+                SetHeat(Mathf.Clamp01((m_HeatUntil-Time.time)/1.8f));
+                if (Time.time >= m_HeatUntil) m_HeatUntil = 0;
+            }
             if (m_ActiveDimension == EditDimension.Agency)
             {
                 ApplyIdlePulse();
@@ -336,6 +355,18 @@ namespace MagicMR
             }
         }
 
+        // Tracking rotation is applied before the binder transports the registered root.
+        // Rotate around the OLD root here; SyncWorldAnchor adds its displacement once.
+        public void RotateWorldEffects(Quaternion delta)
+        {
+            if (!m_IsDeconstructed) return;
+            m_FlowerSupportPoint = m_InitialPosition + delta * (m_FlowerSupportPoint - m_InitialPosition);
+            if (m_SpawnedFlower == null) return;
+            var flower = m_SpawnedFlower.transform;
+            flower.position = m_InitialPosition + delta * (flower.position - m_InitialPosition);
+            flower.rotation = delta * flower.rotation;
+        }
+
         /// <summary>
         /// Re-show the lighter only if it was not intentionally deconstructed.
         /// Calibration must not resurrect a flower+lighter double state.
@@ -360,10 +391,14 @@ namespace MagicMR
 
             if (m_BurntMaterial != null)
             {
-                foreach (var renderer in m_AllRenderers)
+                var burntMetal = Resources.Load<Material>("MagicMR/BurntMetal");
+                for (int i = 0; i < m_AllRenderers.Length; i++)
                 {
+                    var renderer = m_AllRenderers[i];
+                    var original = m_OriginalChildMaterials[i];
+                    bool isMetal = original != null && original.HasProperty("_Metallic") && original.GetFloat("_Metallic") > .5f;
                     if (renderer != null)
-                        renderer.sharedMaterial = m_BurntMaterial;
+                        renderer.sharedMaterial = isMetal && burntMetal != null ? burntMetal : m_BurntMaterial;
                 }
 
                 Debug.Log("[MagicMR] Appearance: burnt material applied.", this);
@@ -373,6 +408,8 @@ namespace MagicMR
                 Debug.LogWarning("[MagicMR] Appearance: burnt material missing.", this);
             }
 
+            m_HeatUntil = Time.time + 1.8f;
+            SetHeat(1);
             PlayAppearanceVfx();
 
             if (m_AudioSource != null)
@@ -501,6 +538,8 @@ namespace MagicMR
             CoverLighterWithStem(m_SpawnedFlower.transform, m_FlowerLighterSize);
             AlignFlowerBase(m_SpawnedFlower.transform, m_FlowerSupportPoint);
             MagicMRVfxFactory.CreateGoldDust(m_SpawnedFlower.transform);
+            var blossom = m_SpawnedFlower.transform.Find("Blossom");
+            if (blossom != null) blossom.gameObject.AddComponent<MagicMRBloomReveal>();
             Debug.Log($"[MagicMR] Flower base aligned to lighter bottom={m_FlowerSupportPoint:F4} (no vertical bob).");
         }
 
@@ -719,6 +758,11 @@ namespace MagicMR
 
         void EnterState(EditDimension dimension)
         {
+            if (dimension != EditDimension.Appearance)
+            {
+                m_HeatUntil = 0; SetHeat(0);
+                if (m_SmokeParticles != null) m_SmokeParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            }
             if (dimension != EditDimension.Scale && InteriorVisible)
             {
                 m_InteriorView.Hide();
@@ -917,6 +961,7 @@ namespace MagicMR
 
         public void ResetTarget()
         {
+            m_HeatUntil = 0; SetHeat(0);
             if (GestureManager.Instance != null)
                 GestureManager.Instance.GetComponent<RightHandSpellVfx>()?.Clear();
             m_InteriorView?.Hide();
@@ -967,107 +1012,4 @@ namespace MagicMR
         }
     }
 
-    // Runtime schematic: dimensions follow the authored mesh, with no claims of
-    // measured fuel level or scanned internal geometry. Opaque wire casing avoids
-    // transparent-material sorting and shader variant issues on standalone MR.
-    internal sealed class LighterInteriorView
-    {
-        readonly GameObject root;
-        readonly System.Collections.Generic.List<Material> materials = new System.Collections.Generic.List<Material>();
-        public bool Visible => root != null && root.activeSelf;
-
-        public LighterInteriorView(Transform owner, Renderer[] body)
-        {
-            root = new GameObject("LighterInterior_Schematic");
-            root.transform.SetParent(owner, false);
-            var bounds = new Bounds(Vector3.zero, Vector3.one);
-            bool found = false;
-            foreach (var renderer in body)
-            {
-                if (renderer == null) continue;
-                var mesh = renderer.GetComponent<MeshFilter>();
-                if (mesh == null || mesh.sharedMesh == null) continue;
-                var local = mesh.sharedMesh.bounds;
-                for (int i = 0; i < 8; i++)
-                {
-                    var sign = new Vector3((i & 1) == 0 ? -1 : 1,
-                        (i & 2) == 0 ? -1 : 1, (i & 4) == 0 ? -1 : 1);
-                    var p = owner.InverseTransformPoint(renderer.transform.TransformPoint(
-                        local.center + Vector3.Scale(local.extents, sign)));
-                    if (!found) { bounds = new Bounds(p, Vector3.zero); found = true; }
-                    else bounds.Encapsulate(p);
-                }
-            }
-            root.transform.localPosition = bounds.center;
-            root.transform.localScale = bounds.size;
-            var cyan = MakeMaterial(new Color(.12f, .8f, 1f));
-            var fuel = MakeMaterial(new Color(.1f, .55f, .9f));
-            var metal = MakeMaterial(new Color(.75f, .8f, .88f));
-            var orange = MakeMaterial(new Color(1f, .45f, .06f));
-            // Twelve casing edges retain the silhouette while exposing the interior.
-            for (int axis = 0; axis < 3; axis++)
-                for (int a = -1; a <= 1; a += 2)
-                    for (int b = -1; b <= 1; b += 2)
-                    {
-                        var center = Vector3.zero;
-                        center[(axis + 1) % 3] = a * .5f;
-                        center[(axis + 2) % 3] = b * .5f;
-                        var size = Vector3.one * .012f; size[axis] = 1f;
-                        Part("CasingEdge", PrimitiveType.Cube, center, size, cyan);
-                    }
-            Part("FuelReservoir", PrimitiveType.Cube, new Vector3(-.10f,-.12f,0), new Vector3(.56f,.62f,.55f), fuel);
-            Part("Flint", PrimitiveType.Cylinder, new Vector3(.27f,.12f,0), new Vector3(.09f,.16f,.14f), metal);
-            var wheel = Part("IgnitionWheel", PrimitiveType.Cylinder, new Vector3(.27f,.34f,0), new Vector3(.23f,.10f,.23f), metal);
-            wheel.localRotation = Quaternion.Euler(90,0,0);
-            Part("Nozzle", PrimitiveType.Cylinder, new Vector3(-.12f,.32f,0), new Vector3(.09f,.06f,.14f), metal);
-            Part("FuelPath", PrimitiveType.Cube, new Vector3(-.12f,.22f,-.32f), new Vector3(.025f,.42f,.025f), orange);
-            Part("FlamePath", PrimitiveType.Capsule, new Vector3(-.12f,.52f,0), new Vector3(.08f,.1f,.1f), orange);
-            Label("INTERNAL VIEW (SCHEMATIC)", new Vector3(.65f,.60f,0), cyan.color);
-            Label("Ignition wheel", new Vector3(.65f,.34f,0), metal.color);
-            Label("Flint / nozzle", new Vector3(.65f,.15f,0), metal.color);
-            Label("Fuel reservoir", new Vector3(.65f,-.12f,0), fuel.color);
-            Label("Orange: fuel / flame path", new Vector3(.65f,-.39f,0), orange.color);
-            root.SetActive(false);
-        }
-
-        Material MakeMaterial(Color color)
-        {
-            var shader = Shader.Find("Universal Render Pipeline/Unlit") ?? Shader.Find("Unlit/Color");
-            var material = new Material(shader); material.color = color;
-            materials.Add(material); return material;
-        }
-
-        Transform Part(string name, PrimitiveType primitive, Vector3 position, Vector3 scale, Material material)
-        {
-            var part = GameObject.CreatePrimitive(primitive); part.name = name;
-            part.transform.SetParent(root.transform, false);
-            part.transform.localPosition = position; part.transform.localScale = scale;
-            var collider = part.GetComponent<Collider>(); collider.enabled = false;
-            Object.Destroy(collider);
-            part.GetComponent<Renderer>().sharedMaterial = material;
-            return part.transform;
-        }
-
-        void Label(string caption, Vector3 position, Color color)
-        {
-            var label = new GameObject(caption); label.transform.SetParent(root.transform, false);
-            label.transform.localPosition = position;
-            // Compensate for the lighter's nonuniform dimensions to keep text legible.
-            var s = root.transform.lossyScale;
-            float height = Mathf.Abs(s.y) * .045f;
-            label.transform.localScale = new Vector3(height / Mathf.Max(.00001f, Mathf.Abs(s.x)),
-                height / Mathf.Max(.00001f, Mathf.Abs(s.y)), height / Mathf.Max(.00001f, Mathf.Abs(s.z)));
-            var text = label.AddComponent<TextMesh>(); text.text = caption;
-            text.fontSize = 64; text.characterSize = .15f; text.color = color;
-            text.anchor = TextAnchor.MiddleLeft;
-        }
-
-        public void Show() { root.SetActive(true); }
-        public void Hide() { root.SetActive(false); }
-        public void Dispose()
-        {
-            if (root != null) Object.Destroy(root);
-            foreach (var material in materials) Object.Destroy(material);
-        }
-    }
 }

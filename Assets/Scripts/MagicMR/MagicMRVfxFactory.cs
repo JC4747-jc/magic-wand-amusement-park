@@ -1,170 +1,102 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace MagicMR
 {
-    /// <summary>
-    /// Runtime particle helpers (no prefab dependency) for study polish VFX.
-    /// </summary>
+    /// <summary>Small, bounded particle layers, using a build-included stereo shader.</summary>
     public static class MagicMRVfxFactory
     {
+        static Material softMaterial;
+        static Material SoftMaterial
+        {
+            get
+            {
+                if (softMaterial == null) softMaterial = new Material(Resources.Load<Shader>("MagicMR/SoftParticle")) { hideFlags = HideFlags.HideAndDontSave };
+                return softMaterial;
+            }
+        }
+        static ParticleSystem Layer(Transform parent, string label, Color color, int count, float life, float size, float speed, bool loop = false)
+        {
+            var go = new GameObject(label);
+            go.transform.SetParent(parent, false);
+            var ps = go.AddComponent<ParticleSystem>();
+            ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            var main = ps.main;
+            main.playOnAwake = false; main.loop = loop; main.duration = 1;
+            main.startLifetime = new ParticleSystem.MinMaxCurve(life * .65f, life);
+            main.startSize = new ParticleSystem.MinMaxCurve(size * .45f, size);
+            main.startSpeed = new ParticleSystem.MinMaxCurve(speed * .4f, speed);
+            main.startColor = color; main.maxParticles = count;
+            main.simulationSpace = ParticleSystemSimulationSpace.World;
+            main.scalingMode = ParticleSystemScalingMode.Shape;
+            var emission = ps.emission; emission.rateOverTime = loop ? count / life * .55f : 0;
+            if (!loop) emission.SetBursts(new[] { new ParticleSystem.Burst(0, (short)count) });
+            var shape = ps.shape; shape.shapeType = ParticleSystemShapeType.Sphere; shape.radius = .012f;
+            var fade = ps.colorOverLifetime; fade.enabled = true;
+            var gradient = new Gradient();
+            gradient.SetKeys(new[] { new GradientColorKey(Color.white, 0), new GradientColorKey(Color.white, 1) },
+                new[] { new GradientAlphaKey(0, 0), new GradientAlphaKey(1, .12f), new GradientAlphaKey(.45f, .55f), new GradientAlphaKey(0, 1) });
+            fade.color = gradient;
+            var renderer = ps.GetComponent<ParticleSystemRenderer>();
+            renderer.sharedMaterial = SoftMaterial; renderer.shadowCastingMode = ShadowCastingMode.Off; renderer.receiveShadows = false;
+            return ps;
+        }
+        // Position particle emitters in metres regardless of the authored model scale.
+        static void Position(ParticleSystem ps, Vector3 world)
+        {
+            ps.transform.position = world;
+            var scale = ps.transform.parent.lossyScale;
+            ps.transform.localScale = new Vector3(1 / Mathf.Max(.0001f, Mathf.Abs(scale.x)), 1 / Mathf.Max(.0001f, Mathf.Abs(scale.y)), 1 / Mathf.Max(.0001f, Mathf.Abs(scale.z)));
+        }
         public static ParticleSystem CreateSmoke(Transform parent)
         {
-            var go = new GameObject("Appearance_smoke");
-            go.transform.SetParent(parent, false);
-            go.transform.localPosition = new Vector3(0f, -0.35f, 0f);
-            var ps = go.AddComponent<ParticleSystem>();
-            ConfigureCommon(ps);
-
-            var main = ps.main;
-            main.startLifetime = 1.4f;
-            main.startSize = new ParticleSystem.MinMaxCurve(0.01f, 0.04f);
-            main.startColor = new Color(0.15f, 0.12f, 0.1f, 0.55f);
-            main.startSpeed = 0.08f;
-            main.maxParticles = 40;
-            main.simulationSpace = ParticleSystemSimulationSpace.World;
-            main.loop = false;
-            main.playOnAwake = false;
-
-            var emission = ps.emission;
-            emission.rateOverTime = 0f;
-            emission.SetBursts(new[] { new ParticleSystem.Burst(0f, 18) });
-
-            var shape = ps.shape;
-            shape.shapeType = ParticleSystemShapeType.Cone;
-            shape.angle = 18f;
-            shape.radius = 0.01f;
-
-            var colorOverLifetime = ps.colorOverLifetime;
-            colorOverLifetime.enabled = true;
-            var grad = new Gradient();
-            grad.SetKeys(
-                new[] { new GradientColorKey(Color.black, 0f), new GradientColorKey(new Color(0.2f, 0.2f, 0.2f), 1f) },
-                new[] { new GradientAlphaKey(0.55f, 0f), new GradientAlphaKey(0f, 1f) });
-            colorOverLifetime.color = grad;
-
-            ApplyUnlitMaterial(ps, new Color(0.1f, 0.1f, 0.1f, 0.5f));
+            var ps = Layer(parent, "Appearance smoke + embers", new Color(.19f, .17f, .16f, .32f), 26, 1.7f, .025f, .012f);
+            Position(ps, parent.position);
+            var velocity = ps.velocityOverLifetime; velocity.enabled = true; velocity.space = ParticleSystemSimulationSpace.World; velocity.y = .028f;
+            var size = ps.sizeOverLifetime; size.enabled = true; size.size = new ParticleSystem.MinMaxCurve(1, AnimationCurve.Linear(0, .3f, 1, 1.6f));
+            var noise = ps.noise; noise.enabled = true; noise.strength = .008f; noise.frequency = 4; noise.scrollSpeed = .2f; noise.quality = ParticleSystemNoiseQuality.Low;
+            var embers = Layer(ps.transform, "Cooling embers", new Color(1, .37f, .055f, 1), 22, .85f, .0028f, .055f);
+            var gravity = embers.main; gravity.gravityModifier = .012f;
             return ps;
         }
-
         public static ParticleSystem CreateRingBurst(Transform parent)
         {
-            var go = new GameObject("calibration_ring");
-            go.transform.SetParent(parent, false);
-            var ps = go.AddComponent<ParticleSystem>();
-            ConfigureCommon(ps);
-
-            var main = ps.main;
-            main.startLifetime = 0.6f;
-            main.startSize = 0.015f;
-            main.startColor = new Color(0.45f, 0.85f, 1f, 0.9f);
-            main.startSpeed = 0.45f;
-            main.maxParticles = 48;
-            main.loop = false;
-            main.playOnAwake = false;
-            main.simulationSpace = ParticleSystemSimulationSpace.World;
-
-            var emission = ps.emission;
-            emission.rateOverTime = 0f;
-            emission.SetBursts(new[] { new ParticleSystem.Burst(0f, 36) });
-
-            var shape = ps.shape;
-            shape.shapeType = ParticleSystemShapeType.Circle;
-            shape.radius = 0.02f;
-
-            ApplyUnlitMaterial(ps, new Color(0.5f, 0.9f, 1f, 0.85f));
+            var ps = Layer(parent, "Calibration dew", new Color(.5f, .88f, 1, .9f), 32, .65f, .004f, .075f);
+            Position(ps, parent.position);
+            var shape = ps.shape; shape.shapeType = ParticleSystemShapeType.Circle; shape.radius = .018f;
             return ps;
         }
-
         public static ParticleSystem CreateGoldDust(Transform parent)
         {
-            var go = new GameObject("flower_gold_dust");
-            go.transform.SetParent(parent, false);
-            go.transform.localPosition = Vector3.up * .06f;
-            var ps = go.AddComponent<ParticleSystem>();
-            ConfigureCommon(ps);
-
-            var main = ps.main;
-            main.startLifetime = 1.8f;
-            main.startSize = new ParticleSystem.MinMaxCurve(0.001f, 0.0025f);
-            main.startColor = new Color(1f, 0.85f, 0.35f, 0.8f);
-            main.startSpeed = 0.008f;
-            main.maxParticles = 18;
-            main.loop = true;
-            main.playOnAwake = true;
-            main.simulationSpace = ParticleSystemSimulationSpace.World;
-
-            var emission = ps.emission;
-            emission.rateOverTime = 5f;
-
-            var shape = ps.shape;
-            shape.shapeType = ParticleSystemShapeType.Sphere;
-            shape.radius = 0.025f;
-
-            ApplyUnlitMaterial(ps, new Color(1f, 0.85f, 0.3f, 0.75f));
+            var blossom = parent.Find("Blossom");
+            var ps = Layer(parent, "Flower pollen", new Color(1, .79f, .28f, .85f), 24, 2.2f, .0025f, .012f, true);
+            Position(ps, blossom != null ? blossom.position : parent.position + Vector3.up * .08f);
+            var shape = ps.shape; shape.radius = .045f;
+            var velocity = ps.velocityOverLifetime; velocity.enabled = true; velocity.y = .008f;
+            var petals = Layer(ps.transform, "Rose dew", new Color(1, .39f, .5f, .8f), 16, 1.2f, .005f, .045f);
+            ps.Play(true);
             return ps;
         }
-
         public static GameObject CreateGhostTrailClone(Transform source, float lifetime)
         {
-            var ghost = Object.Instantiate(source.gameObject);
-            ghost.name = "evade_ghost_trail";
-            ghost.SetActive(false);
-
-            foreach (var rb in ghost.GetComponentsInChildren<Rigidbody>(true))
-                Object.Destroy(rb);
-            foreach (var behaviour in ghost.GetComponentsInChildren<MonoBehaviour>(true))
-                Object.Destroy(behaviour);
-            foreach (var col in ghost.GetComponentsInChildren<Collider>(true))
-                Object.Destroy(col);
-
-            foreach (var renderer in ghost.GetComponentsInChildren<Renderer>(true))
+            // Copy only geometry; cloning the gameplay root invokes Awake on tracking and audio.
+            var ghost = new GameObject("Evade silhouette");
+            ghost.transform.SetPositionAndRotation(source.position, source.rotation);
+            ghost.transform.localScale = source.lossyScale;
+            foreach (var mesh in source.GetComponentsInChildren<MeshFilter>())
             {
-                if (renderer == null)
-                    continue;
-                var mat = new Material(Shader.Find("Universal Render Pipeline/Unlit") ?? Shader.Find("Unlit/Color"));
-                var color = new Color(0.35f, 0.75f, 1f, 0.35f);
-                if (mat.HasProperty("_BaseColor"))
-                    mat.SetColor("_BaseColor", color);
-                if (mat.HasProperty("_Color"))
-                    mat.SetColor("_Color", color);
-                SetTransparent(mat);
-                renderer.sharedMaterial = mat;
-                renderer.enabled = true;
+                var renderer = mesh.GetComponent<MeshRenderer>();
+                if (renderer == null || !renderer.enabled || mesh.sharedMesh == null) continue;
+                var part = new GameObject(mesh.name);
+                part.transform.SetPositionAndRotation(mesh.transform.position, mesh.transform.rotation);
+                part.transform.localScale = mesh.transform.lossyScale;
+                part.transform.SetParent(ghost.transform, true);
+                part.AddComponent<MeshFilter>().sharedMesh = mesh.sharedMesh;
+                var copy = part.AddComponent<MeshRenderer>(); copy.sharedMaterial = SoftMaterial;
+                copy.shadowCastingMode = ShadowCastingMode.Off;
             }
-
-            ghost.SetActive(true);
-            Object.Destroy(ghost, lifetime);
+            ghost.AddComponent<MagicMRGhostFade>().Initialize(lifetime);
             return ghost;
-        }
-
-        static void SetTransparent(Material mat)
-        {
-            if (mat.HasProperty("_Surface"))
-                mat.SetFloat("_Surface", 1f);
-            mat.SetOverrideTag("RenderType", "Transparent");
-            mat.renderQueue = 3000;
-            mat.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
-        }
-
-        static void ConfigureCommon(ParticleSystem ps)
-        {
-            var renderer = ps.GetComponent<ParticleSystemRenderer>();
-            renderer.renderMode = ParticleSystemRenderMode.Billboard;
-        }
-
-        static void ApplyUnlitMaterial(ParticleSystem ps, Color color)
-        {
-            var renderer = ps.GetComponent<ParticleSystemRenderer>();
-            var shader = Shader.Find("Universal Render Pipeline/Particles/Unlit")
-                         ?? Shader.Find("Particles/Standard Unlit")
-                         ?? Shader.Find("Universal Render Pipeline/Unlit")
-                         ?? Shader.Find("Unlit/Color");
-            var mat = new Material(shader);
-            if (mat.HasProperty("_BaseColor"))
-                mat.SetColor("_BaseColor", color);
-            if (mat.HasProperty("_Color"))
-                mat.SetColor("_Color", color);
-            renderer.sharedMaterial = mat;
         }
     }
 }

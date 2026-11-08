@@ -26,6 +26,7 @@ public sealed class PicoStereoCapture : MonoBehaviour
     }
 
     public Perception.StereoYoloLocator locator;
+    public Perception.F2GPoseClient poseClient;
 
     static readonly XrCameraIdPICO Left = XrCameraIdPICO.XR_CAMERA_ID_RGB_LEFT_PICO;
     static readonly XrCameraIdPICO Right = XrCameraIdPICO.XR_CAMERA_ID_RGB_RIGHT_PICO;
@@ -34,6 +35,8 @@ public sealed class PicoStereoCapture : MonoBehaviour
     StreamWriter journal;
     XrCameraIntrinsics leftK;
     XrCameraExtrinsics leftE;
+    XrCameraIntrinsics rightK;
+    XrCameraExtrinsics rightE;
     float baselineMeters;
     string phase = "STARTING";
     string detail = "Waiting for PICO XR.";
@@ -112,7 +115,11 @@ public sealed class PicoStereoCapture : MonoBehaviour
                 }
 
                 pairCount++;
-                locator?.AcceptPair(leftFrame.rgba, ToGray(leftFrame.rgba), ToGray(rightFrame.rgba), leftK, leftE, baselineMeters, leftFrame.captureTime);
+                byte[] rightGray = ToGray(rightFrame.rgba);
+                locator?.AcceptPair(leftFrame.rgba, ToGray(leftFrame.rgba), rightGray, leftK, leftE, baselineMeters,
+                    leftFrame.captureTime, rightFrame.captureTime);
+                poseClient?.OfferPair(leftFrame.rgba, rightGray, leftK, rightK, leftE, rightE,
+                    leftFrame.captureTime, rightFrame.captureTime);
             }
         }
         catch (Exception e)
@@ -242,8 +249,8 @@ public sealed class PicoStereoCapture : MonoBehaviour
         phase = "READING_CALIBRATION";
         Require(PXR_CameraImage.GetCameraIntrinsics(Left, out leftK), "Get left intrinsics");
         Require(PXR_CameraImage.GetCameraExtrinsics(Left, out leftE), "Get left extrinsics");
-        Require(PXR_CameraImage.GetCameraIntrinsics(Right, out XrCameraIntrinsics rightK), "Get right intrinsics");
-        Require(PXR_CameraImage.GetCameraExtrinsics(Right, out XrCameraExtrinsics rightE), "Get right extrinsics");
+        Require(PXR_CameraImage.GetCameraIntrinsics(Right, out rightK), "Get right intrinsics");
+        Require(PXR_CameraImage.GetCameraExtrinsics(Right, out rightE), "Get right extrinsics");
         baselineMeters = Distance(leftE.pose.Position, rightE.pose.Position);
         if (leftK.focalLength.X <= 0 || leftK.focalLength.Y <= 0 || baselineMeters < 0.01f)
             throw new InvalidDataException("Invalid camera calibration");

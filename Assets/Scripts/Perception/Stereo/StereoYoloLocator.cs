@@ -19,6 +19,13 @@ namespace Perception
         public Transform lighter;
         public Text debugText;
         public float maxResultAgeSeconds = 1.5f;
+        [Tooltip("Bounded local evidence: at most 60 detected pairs and 6 empty pairs per launch. No pose server.")]
+        public bool recordStereoDiagnostics;
+        StereoFrameDiagnostics evidence;
+        readonly StereoPatchMatcher.Sample[] stereoSamples = new StereoPatchMatcher.Sample[9];
+        string detectionStatus = "waiting", depthStatus = "waiting", replyStatus = "waiting";
+        float measurementLogAt, pairGapMs;
+        long captureTimestampNs;
         [Tooltip("VisualAverage follows only YOLO + stereo measurements. HybridGrip enables left-hand continuation.")]
         public LighterFollowMode followMode = LighterFollowMode.VisualAverage;
         public bool UsesVisualAverage => followMode == LighterFollowMode.VisualAverage;
@@ -89,6 +96,7 @@ namespace Perception
             var binder = FindFirstObjectByType<LighterUnderAnchorBinder>();
             if (binder == null || !binder.PrepareSummon(this)) return false;
             summoned = true;
+            GetComponent<F2GPoseClient>()?.CalibrateAtSummon();
             foreach (var r in renderers) if (r != null) r.forceRenderingOff = false;
             Debug.Log($"[Tabletop] SUMMONED world={InteractionPosition:F4} bottom={CurrentBottom:F4} height={registeredHeight:F4} " +
                 $"root={lighter.position:F4} yaw={lighter.eulerAngles.y:F1} protected={holdFollowing}");
@@ -101,6 +109,7 @@ namespace Perception
 
         public override void ResetInteraction()
         {
+            GetComponent<F2GPoseClient>()?.ResetSession();
             FindFirstObjectByType<MagicMR.TabletopGestureRecognizer>()?.ResetSummoning();
             summoned = false;
             tabletopLock.Reset();
@@ -118,6 +127,7 @@ namespace Perception
             FindFirstObjectByType<AnchorManager>()?.ResetPlacement();
             foreach (var r in renderers) if (r != null) r.forceRenderingOff = true;
             state = "SEARCHING - keep lighter still";
+            detectionStatus = depthStatus = replyStatus = "waiting";
             Debug.Log("[Tabletop] Reset: reacquiring real lighter.");
         }
         AndroidJavaClass clock;
@@ -139,6 +149,7 @@ namespace Perception
             clock = new AndroidJavaClass("java.lang.System");
 #endif
             texture = new Texture2D(640, 480, TextureFormat.RGBA32, false);
+            if (recordStereoDiagnostics) evidence = new StereoFrameDiagnostics(Application.persistentDataPath);
             anchorManager = FindFirstObjectByType<AnchorManager>();
             gestureRecognizer = FindFirstObjectByType<MagicMR.TabletopGestureRecognizer>();
             renderers = lighter.GetComponentsInChildren<Renderer>(true);
@@ -146,8 +157,18 @@ namespace Perception
         }
         void OnEnable() { detections.AcceptFrame = AcceptReply; detections.DetectionFrameReceived += OnDetection; }
         void OnDisable() { detections.AcceptFrame = null; detections.DetectionFrameReceived -= OnDetection; }
-        bool AcceptReply(DetectionFrame frame) => waiting && tracking && IsMatchingReply(
-            frame.frameId, pendingId, frame.width, frame.height, Time.realtimeSinceStartup - capturedAt, maxResultAgeSeconds);
+        bool AcceptReply(DetectionFrame frame)
+        {
+            bool accepted = waiting && tracking && IsMatchingReply(frame.frameId, pendingId, frame.width, frame.height,
+                Time.realtimeSinceStartup - capturedAt, maxResultAgeSeconds);
+            if (!accepted)
+            {
+                replyStatus = $"rejected id={frame.frameId} expected={pendingId}";
+                Debug.Log($"[StereoReply] rejected id={frame.frameId} expected={pendingId} size={frame.width}x{frame.height} " +
+                    $"ageMs={(Time.realtimeSinceStartup-capturedAt)*1000:F0} waiting={waiting} tracked={tracking}");
+            }
+            return accepted;
+        }
         public static bool IsMatchingReply(long id, long expected, int width, int height, float age, float maxAge)
             => id > 0 && id == expected && width == 640 && height == 480 && age >= 0 && age <= maxAge;
         long NowNs()
@@ -181,18 +202,24 @@ namespace Perception
             if (tracking && transport != null && !transport.IsConnected)
             { waiting = false; left = null; Invalidate("PC_DISCONNECTED"); }
             if (waiting && Time.realtimeSinceStartup - sentAt > maxResultAgeSeconds)
-            { waiting = false; Invalidate("YOLO_TIMEOUT"); }
+            {
+                replyStatus = $"timeout {(Time.realtimeSinceStartup-sentAt)*1000:F0} ms";
+                RecordStereoEvidence("YOLO_TIMEOUT");
+                waiting = false; Invalidate("YOLO_TIMEOUT");
+            }
             bool fresh = TargetLocated;
             if (!fresh && state == "LIGHTER_LOCATED") state = "WAITING_FOR_FRESH_POSITION";
             foreach (var r in renderers) if (r != null) r.forceRenderingOff = !InteractionReady;
             var gesture = FindFirstObjectByType<MagicMR.TabletopGestureRecognizer>();
             RecordTrackingDiagnostics();
-            if (debugText != null) debugText.text = (UsesVisualAverage ? "VISUAL FOLLOW 1.10.0 (3 frames)\n" : "HYBRID GRIP 1.10.0\n") +
+            if (debugText != null) debugText.text = (recordStereoDiagnostics ? "POSITION REPAIR 1.10.1 / POSE OFF\n" :
+                UsesVisualAverage ? "VISUAL FOLLOW 1.10.0 (3 frames)\n" : "HYBRID GRIP 1.10.0\n") +
                 (TargetLocated && !summoned ? (CanSummon ? "READY - thumbs-up to summon" : "WAIT TO SUMMON - " + state) :
                 InteractionReady ? (IsHeld ? (grip.UsingPalmFallback ? "FOLLOW - brief palm fallback" : !ObjectRecent ? "FOLLOW LEFT GRIP - vision pending" : "FOLLOW LEFT GRIP + vision") : grip.IsHolding ? "VERIFY PICKUP - keep lighter visible" : holdFollowing ? "HOLD - right hand casting" :
                     Time.realtimeSinceStartup - validAt < 1f ? "FOLLOW - right hand to cast" : "HOLD - " + state) : state) +
                 "\nPC: " + (transport != null && transport.IsConnected ? "connected" : "disconnected") +
                 "\nFrame: " + pendingId + (waiting ? " (waiting)" : "") +
+                (recordStereoDiagnostics ? "\nYOLO: " + detectionStatus + "\nDepth: " + depthStatus + "\nReply: " + replyStatus : "") +
                 "\nDistance: " + (fresh ? distance.ToString("F3") + " m" : "--") +
                 "   Z: " + (fresh ? depth.ToString("F3") + " m" : "--") +
                 "\n" + (IsHeld ? $"Corr: {grip.Corrections} / filter gap: {grip.FilterLagMm:F1} mm" : CanSummon && Time.realtimeSinceStartup - validAt >= 1f ? "Using saved pose; moved? Left Reset" :
@@ -200,7 +227,15 @@ namespace Perception
                 "\n" + (gesture != null ? gesture.ReachFeedback : "Hand: --") +
                 "\n" + (gesture != null ? gesture.Feedback : "") +
                 "\n" + (MagicMR.GestureManager.Instance != null ? MagicMR.GestureManager.Instance.LastGestureFeedback : "") +
-                "\n" + (UsesVisualAverage ? "YOLO + stereo / lost vision: hold pose" : IsHeld ? "Separate left fingers to release" : "Left thumb/index to pick up / Reset");
+                "\n" + (UsesVisualAverage ? "YOLO + stereo / lost vision: hold pose" : IsHeld ? "Separate left fingers to release" : "Left thumb/index to pick up / Reset") +
+                (GetComponent<F2GPoseClient>() is F2GPoseClient pose ? "\nPose: " + pose.Status + "\nLeft Y: pose on/off" : "");
+        }
+        public bool TryGetCapturePose(long timestamp, out Pose head, out float capturedAt)
+        {
+            double age = (NowNs() - timestamp) / 1e9;
+            capturedAt = Time.realtimeSinceStartup - (float)age;
+            head = default;
+            return !paused && age >= 0 && age <= .25 && PoseAt(timestamp, out head);
         }
         bool PoseAt(long timestamp, out Pose result)
         {
@@ -219,7 +254,7 @@ namespace Perception
             return false;
         }
         public void AcceptPair(byte[] rgba, byte[] leftGray, byte[] rightGray,
-            XrCameraIntrinsics k, XrCameraExtrinsics e, float separation, long timestamp)
+            XrCameraIntrinsics k, XrCameraExtrinsics e, float separation, long timestamp, long rightTimestamp = 0)
         {
             UpdateFollowingHold();
             if (paused || (holdFollowing && !IsHeld)) return;
@@ -243,6 +278,8 @@ namespace Perception
                 new Quaternion(e.pose.Orientation.X, e.pose.Orientation.Y, e.pose.Orientation.Z, e.pose.Orientation.W).normalized);
             intrinsics = new Vector4(k.focalLength.X, k.focalLength.Y, k.principalPoint.X, k.principalPoint.Y);
             baseline = separation;
+            captureTimestampNs = timestamp;
+            pairGapMs = rightTimestamp == 0 ? -1f : (float)(Math.Abs(rightTimestamp-timestamp)/1e6);
             capturedAt = captureTime;
             pendingId = sender.LastSentFrameId; sentAt = Time.realtimeSinceStartup; waiting = true;
         }
@@ -250,11 +287,17 @@ namespace Perception
         {
             if (frame.frameId != pendingId) return;
             lastReplyAt=Time.realtimeSinceStartup;lastReplyAgeMs=(lastReplyAt-capturedAt)*1000;
+            replyStatus = $"{lastReplyAgeMs:F0} ms capture age";
             waiting = false;
             bool hasLighter = false;
             foreach (var d in frame.detections)
                 if (string.Equals(d.className, "Lighter", StringComparison.OrdinalIgnoreCase)) hasLighter = true;
-            if (!hasLighter) Invalidate("NO_LIGHTER");
+            if (!hasLighter)
+            {
+                detectionStatus = "no lighter"; depthStatus = "not attempted (no box)";
+                RecordStereoEvidence("NO_LIGHTER");
+                Invalidate("NO_LIGHTER");
+            }
             else if (Time.realtimeSinceStartup - validAt > .6f) state = "CONFIRMING_LIGHTER";
         }
         public bool TryLocate(ObjectDetectionEvent detection, out Vector3 position, out string reason)
@@ -284,9 +327,25 @@ namespace Perception
             // Keep complete 9x7 patches in the middle 60% of the detected object.
             int sx = Mathf.Min(24, Mathf.FloorToInt((x2 - x1) * .3f) - 5);
             int sy = Mathf.Min(16, Mathf.FloorToInt((y2 - y1) * .3f) - 4);
-            if (sx < 2 || sy < 2) { reason = "LighterTooSmall"; Invalidate(reason); return false; }
+            detectionStatus = $"{detection.confidence:F2}, box {x2-x1:F0}x{y2-y1:F0}px";
+            if (sx < 2 || sy < 2)
+            {
+                reason = "LighterTooSmall"; depthStatus = "box too small";
+                RecordStereoEvidence(reason, box, detection.confidence);
+                Invalidate(reason); return false;
+            }
             var estimate = StereoPatchMatcher.EstimateDepth(left, right, 640, 480, u, v,
-                intrinsics.x, baseline, sx, sy);
+                intrinsics.x, baseline, sx, sy, recordStereoDiagnostics ? stereoSamples : null);
+            depthStatus = estimate.valid ? $"{estimate.depthMeters:F3}m, {estimate.acceptedSamples}/9, q={estimate.confidence:F2}" : estimate.reason;
+            if (Time.realtimeSinceStartup >= measurementLogAt)
+            {
+                measurementLogAt = Time.realtimeSinceStartup + 1f;
+                Debug.Log($"[StereoMeasure] frame={pendingId} conf={detection.confidence:F3} bbox=({x1:F1},{y1:F1},{x2:F1},{y2:F1}) " +
+                    $"ageMs={(Time.realtimeSinceStartup-capturedAt)*1000:F0} pairGapMs={pairGapMs:F2} " +
+                    $"matches={estimate.matchedSamples}/9 inliers={estimate.acceptedSamples} disparity={estimate.disparityPixels:F2} " +
+                    $"dy={estimate.verticalOffsetPixels:F1} z={estimate.depthMeters:F3} q={estimate.confidence:F3} reason={estimate.reason}");
+            }
+            RecordStereoEvidence(estimate.valid ? "STEREO_OK" : "NoReliableLighterDepth", box, detection.confidence, estimate, stereoSamples);
             quality = estimate.confidence;
             if (!estimate.valid) { reason = "NoReliableLighterDepth"; Invalidate(reason); return false; }
             depth = estimate.depthMeters;
@@ -385,6 +444,20 @@ namespace Perception
             if (state != reason || Time.realtimeSinceStartup - lastLogAt > 2f)
             { Debug.Log($"[StereoYOLO] state={reason} frame={pendingId}"); lastLogAt = Time.realtimeSinceStartup; }
             state = reason; validAt = -100;
+        }
+        void RecordStereoEvidence(string status, Rect box = default, float confidence = 0,
+            StereoPatchMatcher.Estimate estimate = default, StereoPatchMatcher.Sample[] samples = null)
+        {
+            if (evidence == null) return;
+            evidence.Record(new StereoFrameDiagnostics.Frame {
+                status = status, frameId = pendingId, captureTimestampNs = captureTimestampNs,
+                captureAgeMs = (Time.realtimeSinceStartup-capturedAt)*1000,
+                roundTripMs = (Time.realtimeSinceStartup-sentAt)*1000, pairGapMs = pairGapMs,
+                hasDetection = box.width > 0, jpegFlipped = sender.FlipVerticallyBeforeEncode,
+                confidence = confidence, x1 = box.xMin, x2 = box.xMax, y1 = box.yMin, y2 = box.yMax,
+                intrinsics = intrinsics, baseline = baseline, headPose = capturePose, cameraPose = cameraPose,
+                estimate = estimate, samples = samples
+            }, left, right, Time.realtimeSinceStartup);
         }
         bool captureTimeInvalid() => capturedAt <= resumeCaptureAfter;
         void RecordTrackingDiagnostics()

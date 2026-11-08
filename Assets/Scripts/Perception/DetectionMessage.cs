@@ -30,5 +30,6 @@ namespace Perception
         public int width;
         public int height;
         public DetectionMessage[] detections;
+        public bool pose_available, pose_model_ready;
     }
 }

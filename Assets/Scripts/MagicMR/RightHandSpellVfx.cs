@@ -21,6 +21,7 @@ namespace MagicMR
         }
         readonly List<Stroke> pool = new List<Stroke>(Capacity);
         readonly List<Vector3> trace = new List<Vector3>(128);
+        readonly List<float> traceTimes = new List<float>(128);
         Material material;
         LineRenderer trail;
         float lastSample = -100, nextPreview, traceStart;
@@ -44,7 +45,7 @@ namespace MagicMR
             if (shader == null) { enabled = false; Debug.LogError("HandSpell shader missing", this); return; }
             material = new Material(shader);
             trail = MakeLine("Finger circle trail");
-            trail.widthMultiplier = .0018f;
+            trail.widthMultiplier = .0024f;
         }
 
         LineRenderer MakeLine(string label)
@@ -56,7 +57,10 @@ namespace MagicMR
             line.useWorldSpace = true;
             line.shadowCastingMode = ShadowCastingMode.Off;
             line.receiveShadows = false;
-            line.numCapVertices = 2;
+            line.numCapVertices = 4;
+            line.numCornerVertices = 3;
+            line.textureMode = LineTextureMode.Stretch;
+            line.widthCurve = new AnimationCurve(new Keyframe(0, .15f), new Keyframe(.22f, 1), new Keyframe(.8f, .8f), new Keyframe(1, .08f));
             line.enabled = false;
             return line;
         }
@@ -71,13 +75,14 @@ namespace MagicMR
             if (material == null) return;
             if (pointing && !fist && !pinching)
             {
-                if (!tracing || now - traceStart > 3f) { trace.Clear(); traceStart = now; }
+                if (!tracing || now - traceStart > 3f) { trace.Clear(); traceTimes.Clear(); traceStart = now; }
                 tracing = true;
                 if (trace.Count == 0 || Vector3.Distance(trace[trace.Count - 1], index) > .003f)
                 {
-                    if (trace.Count == 128) trace.RemoveAt(0);
-                    trace.Add(index);
+                    if (trace.Count == 128) { trace.RemoveAt(0); traceTimes.RemoveAt(0); }
+                    trace.Add(index); traceTimes.Add(now);
                 }
+                while (traceTimes.Count > 0 && now - traceTimes[0] > .65f) { traceTimes.RemoveAt(0); trace.RemoveAt(0); }
                 trail.positionCount = trace.Count;
                 for (int n = 0; n < trace.Count; n++) trail.SetPosition(n, trace[n]);
                 trail.startColor = new Color(Life.r, Life.g, Life.b, .12f);
@@ -124,7 +129,8 @@ namespace MagicMR
             }
             ClearTrace();
             Emit(source, target, color, dimension == EditDimension.Scale ? 4 : 3, .32f, .003f, Vector3.zero);
-            Emit(target, target, color, 1, .48f, .045f, Vector3.zero);
+            Emit(target, target, color, 1, .68f, .045f, Vector3.zero);
+            Emit(target, target, Color.Lerp(color, Color.white, .45f), 1, .45f, .028f, Vector3.zero);
             if (dimension == EditDimension.Scale)
             {
 #if XR_HANDS_1_1_OR_NEWER
@@ -143,6 +149,7 @@ namespace MagicMR
             int count = dimension == EditDimension.Deconstruction ? 14 : 9;
             for (int i = 0; i < count; i++)
             {
+                if (dimension == EditDimension.Deconstruction) color = Color.Lerp(new Color(1, .34f, .48f), Gold, i / (float)count);
                 Vector3 drift = Random.onUnitSphere * Random.Range(.035f, .10f);
                 if (dimension == EditDimension.Rule) drift = (velocity.sqrMagnitude > .01f ? velocity.normalized : (target - source).normalized) * .22f;
                 Emit(source + Random.insideUnitSphere * .012f, target, color,
@@ -164,8 +171,11 @@ namespace MagicMR
             s.origin = origin; s.destination = destination; s.color = color; s.shape = shape;
             s.start = Time.unscaledTime; s.life = life; s.radius = radius; s.drift = drift;
             s.phase = Random.value * Mathf.PI * 2;
-            s.line.positionCount = shape == 0 ? 2 : 25;
-            s.line.widthMultiplier = shape == 2 ? .003f : shape == 1 ? .0015f : radius;
+            s.line.positionCount = shape == 0 ? 2 : 49;
+            s.line.widthMultiplier = shape == 2 ? .0018f : shape == 1 ? .0024f : radius * 1.5f;
+            s.line.widthCurve = shape == 1 || shape == 2
+                ? AnimationCurve.Constant(0, 1, 1)
+                : new AnimationCurve(new Keyframe(0, .08f), new Keyframe(.3f, 1), new Keyframe(1, .05f));
             s.line.enabled = true;
         }
 
@@ -180,7 +190,7 @@ namespace MagicMR
                 if (!s.line.enabled) continue;
                 float t = (Time.unscaledTime - s.start) / s.life;
                 if (t >= 1) { s.line.enabled = false; continue; }
-                Color c = s.color; c.a = (1 - t) * .85f;
+                Color c = s.color; c.a = Mathf.SmoothStep(0, 1, t * 12) * Mathf.Pow(1 - t, 1.4f) * .9f;
                 s.line.startColor = s.line.endColor = c;
                 Vector3 center = s.origin + s.drift * t;
                 for (int n = 0; n < s.line.positionCount; n++)
@@ -193,23 +203,23 @@ namespace MagicMR
                     else if (s.shape == 2)
                     {
                         center = Vector3.Lerp(s.origin, s.destination, t * t) + s.drift * Mathf.Sin(t * Mathf.PI);
-                        p = center + right * Mathf.Sin(a) * s.radius * .5f + up * Mathf.Cos(a) * s.radius;
+                        p = center + (right * Mathf.Sin(a) * .55f + up * Mathf.Cos(a)) * s.radius * (.65f + .35f * Mathf.Sin(a * .5f));
                     }
                     else if (s.shape == 3)
                     {
                         float travel = Mathf.Clamp01(t * 1.5f - u * .18f);
                         p = Vector3.Lerp(s.origin, s.destination, travel) + up * Mathf.Sin(travel * Mathf.PI) * .025f;
                     }
-                    else p = Vector3.Lerp(s.origin, s.destination, u) + up * Mathf.Sin(u * Mathf.PI) * .02f * (1 - t);
+                    else p = Vector3.Lerp(s.origin, s.destination, u) + (up * Mathf.Sin(u * Mathf.PI * 4 + t * 7) + right * Mathf.Cos(u * Mathf.PI * 4 + t * 7)) * Mathf.Sin(u * Mathf.PI) * .008f * (1 - t);
                     s.line.SetPosition(n, p);
                 }
             }
         }
 
-        void ClearTrace() { tracing = false; trace.Clear(); if (trail != null) trail.enabled = false; }
+        void ClearTrace() { tracing = false; trace.Clear(); traceTimes.Clear(); if (trail != null) trail.enabled = false; }
         public void Clear()
         {
-            ClearTrace(); lastSample = -100; velocity = Vector3.zero;
+            ClearTrace(); lastSample = -100; nextPreview = 0; velocity = Vector3.zero;
             foreach (var s in pool) s.line.enabled = false;
         }
         void OnDisable() { Clear(); }

@@ -37,6 +37,9 @@ namespace Perception
         public int LastFrameWidth { get; private set; }
         public int LastFrameHeight { get; private set; }
         public Func<DetectionFrame, bool> AcceptFrame { get; set; }
+        public bool PoseAvailable { get; private set; }
+        public bool PoseModelReady { get; private set; }
+        public float PoseAdvertisementAt { get; private set; } = -100;
 
         void Awake()
         {
@@ -69,6 +72,7 @@ namespace Perception
             long frameId = 0;
             int width = 0;
             int height = 0;
+            bool poseAvailable = false, poseModelReady = false;
             var events = new List<ObjectDetectionEvent>(8);
 
             if (json.IndexOf("\"detections\"", StringComparison.Ordinal) >= 0)
@@ -81,6 +85,7 @@ namespace Perception
                         timestamp = frameDto.timestamp;
                     width = frameDto.width;
                     height = frameDto.height;
+                    poseAvailable = frameDto.pose_available; poseModelReady = frameDto.pose_model_ready;
 
                     if (frameDto.detections != null)
                     {
@@ -97,6 +102,8 @@ namespace Perception
 
             var frame = new DetectionFrame(events, timestamp, frameId, width, height);
             if (AcceptFrame != null && !AcceptFrame(frame)) return;
+            PoseAvailable = poseAvailable; PoseModelReady = poseModelReady;
+            PoseAdvertisementAt = Time.realtimeSinceStartup;
             if (width > 0 && height > 0)
             {
                 LastFrameWidth = width;

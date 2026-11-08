@@ -2,6 +2,16 @@ using System;
 
 public static class StereoPatchMatcher
 {
+    [Serializable]
+    public struct Sample
+    {
+        public int x, y;
+        public bool valid, inlier;
+        public float disparity, confidence, texture;
+        public int verticalOffset;
+        public string reason;
+    }
+    [Serializable]
     public struct Estimate
     {
         public bool valid;
@@ -12,6 +22,7 @@ public static class StereoPatchMatcher
         public float verticalOffsetPixels;
         public int acceptedSamples;
         public int attemptedSamples;
+        public int matchedSamples;
         public string reason;
     }
 
@@ -21,6 +32,8 @@ public static class StereoPatchMatcher
         public float disparity;
         public float confidence;
         public int verticalOffset;
+        public float texture;
+        public string reason;
     }
 
     const int PatchRadiusX = 4;
@@ -35,7 +48,8 @@ public static class StereoPatchMatcher
     static readonly int[] SampleOffsetY = { -16, -16, -16, 0, 0, 0, 16, 16, 16 };
 
     public static Estimate EstimateDepth(byte[] leftGray, byte[] rightGray, int width, int height,
-        int centerX, int centerY, float focalLengthPixels, float baselineMeters, int spreadX = 24, int spreadY = 16)
+        int centerX, int centerY, float focalLengthPixels, float baselineMeters, int spreadX = 24, int spreadY = 16,
+        Sample[] samples = null)
     {
         var result = new Estimate
         {
@@ -64,6 +78,10 @@ public static class StereoPatchMatcher
             int x = centerX + Math.Sign(SampleOffsetX[i]) * spreadX;
             int y = centerY + Math.Sign(SampleOffsetY[i]) * spreadY;
             Match match = MatchPoint(leftGray, rightGray, width, height, x, y);
+            if (samples != null && i < samples.Length)
+                samples[i] = new Sample { x = x, y = y, valid = match.valid, disparity = match.disparity,
+                    confidence = match.confidence, texture = match.texture, verticalOffset = match.verticalOffset,
+                    reason = match.reason };
             if (!match.valid) continue;
             disparities[count] = match.disparity;
             confidences[count] = match.confidence;
@@ -71,6 +89,7 @@ public static class StereoPatchMatcher
             count++;
         }
 
+        result.matchedSamples = count;
         if (count < 3)
         {
             result.reason = "Only " + count + "/" + SampleOffsetX.Length + " textured matches";
@@ -79,6 +98,9 @@ public static class StereoPatchMatcher
 
         float medianDisparity = Median(disparities, count);
         float tolerance = Math.Max(2f, medianDisparity * 0.25f);
+        if (samples != null)
+            for (int i = 0; i < Math.Min(samples.Length, SampleOffsetX.Length); i++)
+                samples[i].inlier = samples[i].valid && Math.Abs(samples[i].disparity - medianDisparity) <= tolerance;
         var acceptedDisparities = new float[count];
         var acceptedConfidences = new float[count];
         var acceptedVerticalOffsets = new float[count];
@@ -92,6 +114,8 @@ public static class StereoPatchMatcher
             accepted++;
         }
 
+        result.acceptedSamples = accepted;
+        result.validRatio = accepted / (float)SampleOffsetX.Length;
         if (accepted < 3)
         {
             result.reason = "Stereo matches disagree on disparity";
@@ -100,6 +124,10 @@ public static class StereoPatchMatcher
 
         float disparity = Median(acceptedDisparities, accepted);
         float depth = focalLengthPixels * baselineMeters / disparity;
+        result.disparityPixels = disparity;
+        result.depthMeters = depth;
+        result.confidence = Median(acceptedConfidences, accepted);
+        result.verticalOffsetPixels = Median(acceptedVerticalOffsets, accepted);
         if (!Finite(depth) || depth < 0.20f || depth > 10f)
         {
             result.reason = "Estimated depth is outside 0.20-10.0 m";
@@ -119,7 +147,7 @@ public static class StereoPatchMatcher
 
     static Match MatchPoint(byte[] left, byte[] right, int width, int height, int x, int y)
     {
-        var result = new Match();
+        var result = new Match { reason = "PATCH_OUT_OF_BOUNDS" };
         int maxDisparity = Math.Min(MaxDisparity, x - PatchRadiusX - 1);
         if (x - PatchRadiusX < 0 || x + PatchRadiusX >= width ||
             maxDisparity <= MinDisparity || y - PatchRadiusY - MaxVerticalOffset < 0 ||
@@ -136,7 +164,9 @@ public static class StereoPatchMatcher
         for (int py = -PatchRadiusY; py <= PatchRadiusY; py++)
             for (int px = -PatchRadiusX; px <= PatchRadiusX; px++)
                 texture += Math.Abs(left[(y + py) * width + x + px] - leftMean);
-        if (texture / (float)sampleCount < MinimumTexture) return result;
+        result.texture = texture / (float)sampleCount;
+        result.reason = "LOW_TEXTURE";
+        if (result.texture < MinimumTexture) return result;
 
         var costs = new int[maxDisparity + 1];
         var offsets = new int[maxDisparity + 1];
@@ -182,6 +212,9 @@ public static class StereoPatchMatcher
             bestCost = costs[d];
             bestDisparity = d;
         }
+        result.disparity = bestDisparity;
+        result.verticalOffset = bestDisparity >= 0 ? offsets[bestDisparity] : 0;
+        result.reason = "DISPARITY_AT_SEARCH_LIMIT";
         if (bestDisparity <= MinDisparity || bestDisparity >= maxDisparity) return result;
 
         int secondCost = int.MaxValue;
@@ -190,8 +223,10 @@ public static class StereoPatchMatcher
             if (Math.Abs(d - bestDisparity) <= 2) continue;
             if (costs[d] < secondCost) secondCost = costs[d];
         }
+        result.reason = "AMBIGUOUS_MATCH";
         if (secondCost == int.MaxValue || secondCost <= 0) return result;
         float confidence = (secondCost - bestCost) / (float)secondCost;
+        result.confidence = confidence;
         if (confidence < MinimumConfidence) return result;
 
         float subpixel = 0f;
@@ -206,6 +241,7 @@ public static class StereoPatchMatcher
         }
 
         result.valid = true;
+        result.reason = "OK";
         result.disparity = bestDisparity + subpixel;
         result.confidence = confidence;
         result.verticalOffset = offsets[bestDisparity];

@@ -45,14 +45,17 @@ import cv2
 import numpy as np
 import torch
 from ultralytics import YOLO
+from pose_availability import PoseAvailability
+from detector_config import WEIGHTS_PATH, DEFAULT_CONF, DEFAULT_IMGSZ, DEFAULT_IOU, load_detector
+
+POSE_AVAILABILITY = PoseAvailability()
 
 HOST = "0.0.0.0"
 PORT = 5005
 MAGIC = b"PICF"
 VERSION = 1
+ACTIVE_MODEL_LABEL = WEIGHTS_PATH.stem
 
-WEIGHTS_PATH = Path(__file__).resolve().parent / "weights" / "best_yolo26n_quad_v4_50e.pt"
-ACTIVE_MODEL_LABEL = "YOLO26n QUAD v4 (50 epochs)"
 
 UNITY_CLASS_ALIASES = {
     "lighter": "Lighter",
@@ -329,12 +332,7 @@ def load_model(config: InferenceConfig) -> tuple[YOLO, str]:
   if config.half and resolved_device == "cpu":
     print("[Python] WARN: --half ignored on CPU (FP16 requires CUDA).")
 
-  if WEIGHTS_PATH.is_file():
-    print(f"[Python] Loading detector weights: {WEIGHTS_PATH}")
-    model = YOLO(str(WEIGHTS_PATH))
-  else:
-    print(f"[Python] WARN {WEIGHTS_PATH} not found; falling back to yolov8n.pt")
-    model = YOLO("yolov8n.pt")
+  model = load_detector(WEIGHTS_PATH, conf=config.conf, imgsz=config.imgsz, iou=config.iou)
 
   print(f"[Python] Model names={model.names}")
   print_runtime_audit(config, resolved_device)
@@ -484,6 +482,7 @@ def receiver_loop(
     stop_event.set()
     with buffer._cond:
       buffer._cond.notify_all()
+    shutdown_client(conn)
 
 
 def run_yolo_predict(
@@ -544,7 +543,9 @@ def inference_loop(
 
       if buffer.generation() != generation:
         perf.record_stale_skip()
-        last_generation = buffer.generation()
+        # Only this completed inference has been consumed. The newer buffered
+        # frame still needs inference, even if no third frame ever arrives.
+        last_generation = generation
         perf.maybe_flush()
         continue
 
@@ -557,6 +558,7 @@ def inference_loop(
         "width": frame.width,
         "height": frame.height,
         "detections": detections,
+        **POSE_AVAILABILITY.snapshot(),
       }
 
       t_json0 = time.perf_counter()
@@ -593,10 +595,44 @@ def inference_loop(
     stop_event.set()
     with buffer._cond:
       buffer._cond.notify_all()
+    shutdown_client(conn)
+
+
+def shutdown_client(conn: socket.socket) -> None:
+  # Wake the other worker if it is blocked in recv/send after this worker exits.
+  try:
+    conn.shutdown(socket.SHUT_RDWR)
+  except OSError:
+    pass
+
+
+def serve_client(conn, model, resolved_device, config, headless):
+  buffer = LatestFrameBuffer()
+  perf = PerfAggregator()
+  stop_event = threading.Event()
+  receiver = threading.Thread(target=receiver_loop,
+    args=(conn, buffer, perf, stop_event), name="picf-receiver")
+  worker = threading.Thread(target=inference_loop,
+    args=(conn, model, buffer, perf, stop_event, headless, threading.Lock(), resolved_device, config),
+    name="yolo-worker")
+  receiver.start()
+  worker.start()
+  try:
+    receiver.join()
+    worker.join()
+  finally:
+    stop_event.set()
+    shutdown_client(conn)
+    with buffer._cond:
+      buffer._cond.notify_all()
+    receiver.join()
+    worker.join()
+    conn.close()
 
 
 def parse_args() -> argparse.Namespace:
   parser = argparse.ArgumentParser(description="PICO PICF JPEG -> YOLO TCP bridge")
+  parser.add_argument("--host", default=HOST, help="Listener address; use 127.0.0.1 for local ADB forwarding")
   parser.add_argument(
     "--headless",
     action="store_true",
@@ -615,19 +651,19 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument(
     "--imgsz",
     type=int,
-    default=640,
+    default=DEFAULT_IMGSZ,
     help="YOLO letterbox inference size (default: 640)",
   )
   parser.add_argument(
     "--conf",
     type=float,
-    default=0.399,
+    default=DEFAULT_CONF,
     help="Minimum detection confidence (default: 0.399)",
   )
   parser.add_argument(
     "--iou",
     type=float,
-    default=0.7,
+    default=DEFAULT_IOU,
     help="NMS IoU threshold (default: 0.7)",
   )
   parser.add_argument(
@@ -653,13 +689,15 @@ def main() -> None:
 
   model, resolved_device = load_model(config)
   warmup_model(model, config, resolved_device)
+  POSE_AVAILABILITY.expected_detector = model.magicmr_detector_identity
+  POSE_AVAILABILITY.start()
 
   server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
   server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-  server.bind((HOST, PORT))
+  server.bind((args.host, PORT))
   server.listen(1)
 
-  print(f"[Python] TCP server listening on {HOST}:{PORT}")
+  print(f"[Python] TCP server listening on {args.host}:{PORT}")
   print("[Python] Waiting for Unity (PICO) client to send PICF JPEG frames...")
   print("[Python] Pipeline: receiver thread + latest-frame buffer + YOLO worker")
   if headless:
@@ -667,51 +705,17 @@ def main() -> None:
   else:
     print("[Python] Debug window open. Press Q to quit.")
 
-  conn, addr = server.accept()
-  print(f"[Python] Client connected: {addr}")
-
-  buffer = LatestFrameBuffer()
-  perf = PerfAggregator()
-  stop_event = threading.Event()
-  send_lock = threading.Lock()
-
-  receiver = threading.Thread(
-    target=receiver_loop,
-    name="picf-receiver",
-    args=(conn, buffer, perf, stop_event),
-    daemon=False,
-  )
-  worker = threading.Thread(
-    target=inference_loop,
-    name="yolo-worker",
-    args=(
-      conn,
-      model,
-      buffer,
-      perf,
-      stop_event,
-      headless,
-      send_lock,
-      resolved_device,
-      config,
-    ),
-    daemon=False,
-  )
-
-  receiver.start()
-  worker.start()
-
   try:
-    receiver.join()
-    worker.join()
+    while True:
+      conn, addr = server.accept()
+      print(f"[Python] Client connected: {addr}")
+      serve_client(conn, model, resolved_device, config, headless)
+      if not headless:
+        break
+      print("[Python] Client session ended; waiting for reconnect...")
   finally:
-    stop_event.set()
     if not headless:
       cv2.destroyAllWindows()
-    try:
-      conn.close()
-    except Exception:
-      pass
     try:
       server.close()
     except Exception:

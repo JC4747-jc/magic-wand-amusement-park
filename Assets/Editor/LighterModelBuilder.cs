@@ -78,7 +78,7 @@ public static class LighterModelBuilder
         Directory.CreateDirectory(Folder);AssetDatabase.Refresh();
         foreach(string old in new[]{"LighterCap","LighterWheel","RealisticDetails"})
         {var child=root.transform.Find(old);if(child!=null)UnityEngine.Object.DestroyImmediate(child.gameObject);}
-        var blue=Material("BlueGlossPlastic",new Color(.045f,.12f,.30f),0,.65f);
+        var blue=Material("BlueGlossPlastic",new Color(1f,.24f,.015f),0,.65f);
         var metal=Material("BrushedSteel",new Color(.64f,.67f,.70f),.72f,.58f);
         var dark=Material("DarkRecess",new Color(.025f,.028f,.033f),.1f,.28f);
         var red=Material("IgnitionLever",new Color(.38f,.035f,.025f),0,.42f);
