@@ -75,8 +75,8 @@
 ## 当前机器环境配置（2026-11-14）
 
 - PICO Integration SDK 3.4.0 已安装到 `D:/Unity/PICO`，固定官方标签 `release_3.4.0`、提交 `e0740bf309b26a0b9adae33c506514569bfe5d38`。具有项目使用的相机、标定和取图 API，Unity 桌面及 Android 目标脚本编译已通过。
-- Unity Hub 的安装目录已设为 `D:/Unity/Hub/Editor`；6000.0.26f1 与 Android SDK/NDK、OpenJDK 17.0.9+9 均已安装完成。ADB 与 java 已验证可执行。首次导入、桌面及 Android 目标集成检查、F2G 几何检查与特效渲染检查均通过；详见 BRANCH_SCENE_PLAN.md。 
-- Windows 的 WSL 所需功能已启用；早期结果曾要求重启，但本次实际内核/GPU探针与模型验证已通过，当前以实际结果为准。本代理没有自动重启。WSL3.0.5、D 盘 Ubuntu24.04 和真实 F2G 环境已配置。 
+- Unity Hub 的安装目录已设为 `D:/Unity/Hub/Editor`；6000.0.26f1 与 Android SDK/NDK、OpenJDK 17.0.9+9 均已安装完成。ADB 与 java 已验证可执行。首次导入、桌面及 Android 目标集成检查、F2G 几何检查与特效渲染检查均通过；详见 BRANCH_SCENE_PLAN.md。
+- Windows 的 WSL 所需功能已启用；早期结果曾要求重启，但本次实际内核/GPU探针与模型验证已通过，当前以实际结果为准。本代理没有自动重启。WSL3.0.5、D 盘 Ubuntu24.04 和真实 F2G 环境已配置。
 - 用户级 `.wslconfig` 已配置内存上限 8GB、4 个处理器、2GB 交换空间放到 `D:/Unity/WSL/swap.vhdx`，启用渐进内存回收；实际 Linux 探针已确认约 7,944MiB 内存和 2,048MiB swap。
 - F2G 安装脚本改为从自身位置定位项目；编译并发为 1，pip 下载缓存关闭，安装前要求 Linux 文件系统至少 20 GiB 空闲。训练仍未启动。
 - `.gitattributes` 为 shell 文件指定 LF，两个 WSL 入口的 CRLF 已修正；Bash 语法与真实安装脚本已在 WSL 执行。
