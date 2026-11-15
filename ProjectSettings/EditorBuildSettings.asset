@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/BridgeStereoFusion.unity
+    guid: 813d4b750a85827408e083525ea814fd
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
@@ -21,8 +24,23 @@ EditorBuildSettings:
     path: Assets/Scenes/BridgeTest.unity
     guid: 3074b6cf52a2dbf42af5ed5333a6e19c
   - enabled: 1
-    path: Assets/Scenes/BridgeStereoFusion.unity
-    guid: 813d4b750a85827408e083525ea814fd
+    path: Assets/Scenes/ParkTree.unity
+    guid: 36ea2bbbe405bba4caef2f14c223ea89
+  - enabled: 1
+    path: Assets/Scenes/ParkBugs.unity
+    guid: f2a2867aaa6a0d94cb5dc98baba93f23
+  - enabled: 1
+    path: Assets/Scenes/ParkStatue.unity
+    guid: 85a340e71578a5344b75d442b206f6b0
+  - enabled: 1
+    path: Assets/Scenes/ParkRoom.unity
+    guid: 45555ff379eece64b86b30e60de8c473
+  - enabled: 1
+    path: Assets/Scenes/ParkPlant.unity
+    guid: d3569334c5a6b264ab6e9b439db7e7b7
+  - enabled: 1
+    path: Assets/Scenes/ParkPet.unity
+    guid: e34158e143760ba419c651e00589398e
   m_configObjects:
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: 28854e84a244746c1ac994a008c5c091, type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 8e97f131c30954ba6824aa8af8fa9acf, type: 2}

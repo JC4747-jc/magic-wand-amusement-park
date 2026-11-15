@@ -1,0 +1,120 @@
+{
+  "source": "https://polyhaven.com/a/bull_head",
+  "license": "CC0-1.0",
+  "info": {
+    "type": 2,
+    "name": "Bull Head",
+    "categories": [
+      "decorative"
+    ],
+    "tags": [
+      "antique",
+      "vintage",
+      "old",
+      "ornate",
+      "statue",
+      "sculpture",
+      "animal",
+      "art",
+      "wildlife"
+    ],
+    "authors": {
+      "Tina": "All"
+    },
+    "donated": true,
+    "max_resolution": [
+      8192,
+      8192
+    ],
+    "polycount": 17148,
+    "texel_density": 12137.474803547344,
+    "dimensions": [
+      306.3598871231079,
+      280.7491421699524,
+      433.00686348811723
+    ],
+    "date_published": 1739145600,
+    "staging": null,
+    "files_hash": "69296e3dab4af13ddb59b1c9323152dd43d237ac",
+    "description": "Free 8K model: ornate antique bull head sculpture in dark bronze with polished golden horns, rich patina and detailed sculpted features.",
+    "category_id": "7640f984-6f63-523f-8953-8ddc8f33d39a",
+    "category": "Decor & Art/Sculptures & Figurines/Animal Figures",
+    "attributes": {
+      "condition": [
+        "worn"
+      ],
+      "material": [
+        "metal"
+      ]
+    },
+    "img_version": "e28704c8",
+    "download_count": 7673,
+    "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/bull_head.png?width=256&height=256&format=webp&v=e28704c8"
+  },
+  "files": [
+    {
+      "path": "bull_head_1k.gltf",
+      "bytes": 2738,
+      "sha256": "02385d6be1cee95c1ee614cb01b619d3aeb9ea5e90504562ce4eb57f06e75947",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/bull_head/bull_head_1k.gltf"
+    },
+    {
+      "path": "textures/bull_head_nor_gl_1k.jpg",
+      "bytes": 534294,
+      "sha256": "060746ec7956cc454de3234450c4a7fc581c1641e47498449c0a8a4361f703df",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/bull_head/bull_head_nor_gl_1k.jpg"
+    },
+    {
+      "path": "textures/bull_head_diff_1k.jpg",
+      "bytes": 398303,
+      "sha256": "890beefd7bbd1ff32f7bbd5d2485d44324a90a4d9bcc4b713832509aa329d2c5",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/bull_head/bull_head_diff_1k.jpg"
+    },
+    {
+      "path": "textures/bull_head_arm_1k.jpg",
+      "bytes": 684843,
+      "sha256": "554b78c5400c2770bc5a1487f0c2e2b254d9d5dec632607fa66e737f8fdb3100",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/bull_head/bull_head_arm_1k.jpg"
+    },
+    {
+      "path": "bull_head.bin",
+      "bytes": 401192,
+      "sha256": "935f767641f7f0ac80aba121746db7d1f51fce475817e208ce6a51f5768e5ec3",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/bull_head/bull_head.bin"
+    }
+  ],
+  "total_bytes": 2021370,
+  "resolution": "1k",
+  "triangles": 17148,
+  "meshes": 1,
+  "bones": 2,
+  "fixed_base_vertices": 1531,
+  "moving_head_vertices": 7791,
+  "materials": [
+    {
+      "name": "bull_head",
+      "albedo": "bull_head_diff_1k.jpg",
+      "packed": "Bronze_MetalAO_Smooth.png",
+      "maximumPackingError": 1.1920928955078125e-07,
+      "normal": "bull_head_nor_gl_1k.jpg"
+    }
+  ],
+  "original_bounds": {
+    "min": [
+      -0.147944837808609,
+      -0.11054600775241852,
+      -0.00031755436793901026
+    ],
+    "max": [
+      0.1584150493144989,
+      0.17020313441753387,
+      0.4326893091201782
+    ]
+  },
+  "modifications": [
+    "Original topology, UV, diffuse and GL normal retained; FBX conversion.",
+    "Original ARM numerically repacked for URP R=metal/G=AO/A=smoothness.",
+    "Authored two-bone virtual head/neck rig; lower 16% of source height remains rigid. No claim of original artifact articulation.",
+    "Generic bronze bovine bust representation; not a reconstruction/identification of a specific recognized museum object."
+  ]
+}

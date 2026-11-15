@@ -28,9 +28,14 @@ namespace MagicMR {
         readonly List<GameObject> boxes=new List<GameObject>();
         readonly List<Button> buttons=new List<Button>();
         readonly List<Button> plantSimulationButtons=new List<Button>();
+        readonly List<Button> petSimulationButtons=new List<Button>();
+        readonly List<Button> bugSimulationButtons=new List<Button>();
+        readonly List<Button> treeSimulationButtons=new List<Button>();
+        readonly List<Button> statueSimulationButtons=new List<Button>();
         public static bool DesktopPointerCaptured {get=>ParkDesktopInput.PointerCapturedByUi;private set=>ParkDesktopInput.PointerCapturedByUi=value;}
         Text status;
         RectTransform detectionPanel;
+        RectTransform menuRect;
         PicoYoloFrameSender previewSender;
         RawImage matchedPreview;
         Texture2D matchedTexture;
@@ -88,7 +93,7 @@ namespace MagicMR {
             // Main TargetLockDebugUI uses yellow 24px status; PicoCameraPreviewUI uses black .65 background.
             status=Label(statusRoot.transform,"Status",new Vector2(440,270),24);status.color=Color.yellow;
             status.resizeTextForBestFit=true;status.resizeTextMinSize=16;status.resizeTextMaxSize=24;
-            menuRoot=Panel("Shared scene menu",new Vector3(-.5f,-.24f,1.2f),new Vector2(470,420));
+            menuRoot=Panel("Shared scene menu",new Vector3(-.5f,-.24f,1.2f),new Vector2(470,420));menuRect=menuRoot.GetComponent<RectTransform>();
             string[] commands={"Entry","Lighter","Tree","Bugs","Statue","Plant","Pet","Room","Auto","Reset","Virtual test","Replay","Confirm room","Fit","Plane","Stop"};
             for(int i=0;i<commands.Length;i++) {
                 string command=commands[i];
@@ -97,6 +102,22 @@ namespace MagicMR {
             if(controller)foreach(string test in new[]{"Test grow","Test bloom"}) {
                 string command=test;AddButton(menuRoot.transform,command,new Vector2(plantSimulationButtons.Count*150,-155),()=>Command(command));
                 var button=buttons[buttons.Count-1];button.gameObject.SetActive(false);plantSimulationButtons.Add(button);
+            }
+            if(controller)foreach(string test in new[]{"Preview Cat","Preview Dog","Walk in place"}) {
+                string command=test;AddButton(menuRoot.transform,command,new Vector2((petSimulationButtons.Count-1)*150,-215),()=>Command(command));
+                var button=buttons[buttons.Count-1];button.gameObject.SetActive(false);petSimulationButtons.Add(button);
+            }
+            if(controller)foreach(string test in new[]{"Cockroach","Spider","Test defeat"}) {
+                string command=test;AddButton(menuRoot.transform,command,new Vector2((bugSimulationButtons.Count-1)*150,-215),()=>Command(command));
+                var button=buttons[buttons.Count-1];button.gameObject.SetActive(false);bugSimulationButtons.Add(button);
+            }
+            if(controller)foreach(string test in new[]{"Marble statue","Bronze beast"}) {
+                string command=test;AddButton(menuRoot.transform,command,new Vector2((statueSimulationButtons.Count-1)*150,-215),()=>Command(command));
+                var button=buttons[buttons.Count-1];button.gameObject.SetActive(false);statueSimulationButtons.Add(button);
+            }
+            if(controller)foreach(string test in new[]{"Natural tree","Fantasy tree","Test awaken"}) {
+                string command=test;AddButton(menuRoot.transform,command,new Vector2((treeSimulationButtons.Count-1)*150,-215),()=>Command(command));
+                var button=buttons[buttons.Count-1];button.gameObject.SetActive(false);treeSimulationButtons.Add(button);
             }
             detectionPanel=Panel("Shared YOLO detection",new Vector3(.12f,.1f,1.2f),new Vector2(640,480)).GetComponent<RectTransform>();
             var previewObject=new GameObject("Exact sent frame preview",typeof(RectTransform),typeof(RawImage));
@@ -230,17 +251,52 @@ namespace MagicMR {
             }
             if(controller && controller.SwitchContent(profile,id)) {
                 Feedback="Selected "+profile+"; waiting for location";
-                if(replayMode) {
+                if(controller.simulation) {
                     var candidate=Selection.Candidates.Find(d=>d.instance_id==id);
                     string recognized=candidate==null?null:string.IsNullOrWhiteSpace(candidate.class_name)?candidate.@class:candidate.class_name;
-                    controller.simulation=true;controller.SpawnVirtual(recognized);Feedback="REPLAY + VIRTUAL ANIMATION: no physical location";
+                    controller.SpawnVirtual(recognized);Feedback=replayMode?"REPLAY + VIRTUAL ANIMATION: no physical location":"VIRTUAL SIMULATION: no physical location";
                 }
             }
         }
+        void SetReplayMode(bool enabled) {
+            ClearRecognitionPresentation();replayMode=enabled;
+            if(receiver) {receiver.discovery.Return(Time.unscaledTime);receiver.enabled=!replayMode;}
+            if(controller) {controller.ResetScene();controller.recognitionLock=null;controller.simulation=replayMode;}
+            replayIndex=0;replaySelection.ResetSession(Time.unscaledTime);Selection.automatic=automaticSwitching;
+            Feedback=replayMode?"REPLAY: JSON frames; no physical location":"LIVE TCP";
+        }
         public void Command(string command) {ExecuteCommand(command);ShowActionFeedback();}
         void ExecuteCommand(string command) {
+            if(command=="Preview Cat"||command=="Preview Dog"||command=="Walk in place") {
+                if(!controller||!controller.simulation||replayMode||controller.scenario!=ParkScenario.Pet||(controller.selected&&!controller.selected.virtualTarget)){Feedback="Pet previews require VIRTUAL SIMULATION";return;}
+                if(command=="Walk in place"&&!controller.selected){Feedback="Select a Cat or Dog preview first";return;}
+                bool accepted=command=="Walk in place"?controller.selected&&controller.selected.TryPreviewPetWalk(!controller.selected.PetWalking):controller.SelectVirtualPet(command=="Preview Dog"?"Dog":"Cat");
+                Feedback=accepted?"VIRTUAL pet animation preview":"Wait for animation or Reset";return;
+            }
+            if(command=="Cockroach"||command=="Spider"||command=="Test defeat") {
+                if(!controller||!controller.simulation||replayMode||controller.scenario!=ParkScenario.Bugs||(controller.selected&&!controller.selected.virtualTarget)){Feedback="Bug previews require VIRTUAL SIMULATION";return;}
+                if(command=="Test defeat"&&!controller.selected){Feedback="Select a virtual bug first";return;}
+                bool accepted=command=="Test defeat"?controller.selected&&controller.ConfirmVirtualAttack(controller.selected,controller.selected.transform.position,true):controller.SelectVirtualBug(command);
+                Feedback=accepted?"VIRTUAL bug preview / simulated defeat":"SIMULATION: "+controller.InteractionStatus;return;
+            }
+            if(command=="Marble statue"||command=="Bronze beast") {
+                if(!controller||!controller.simulation||replayMode||controller.scenario!=ParkScenario.Statue||(controller.selected&&!controller.selected.virtualTarget)){Feedback="Statue previews require VIRTUAL SIMULATION";return;}
+                bool accepted=controller.SelectVirtualStatue(command=="Bronze beast"?"BronzeBeast":"Statue");
+                Feedback=accepted?"VIRTUAL statue variant selected; not object identification":"Finish the current interaction before changing statue";return;
+            }
+            if(command=="Test awaken") {
+                bool supported=controller&&(controller.scenario==ParkScenario.Tree||controller.scenario==ParkScenario.Room||controller.scenario==ParkScenario.Statue);
+                if(!supported||!controller.simulation||replayMode||!controller.selected||!controller.selected.virtualTarget){Feedback="Awaken previews require a selected VIRTUAL SIMULATION Tree, Room or Statue";return;}
+                bool accepted=controller.Dispatch(ParkAction.Awaken,controller.selected.transform.position,true);
+                Feedback=accepted?"SIMULATED awaken input; no gesture or location measurement":"SIMULATION: "+controller.InteractionStatus;return;
+            }
+            if(command=="Natural tree"||command=="Fantasy tree") {
+                if(!controller||!controller.simulation||replayMode||controller.scenario!=ParkScenario.Tree||(controller.selected&&!controller.selected.virtualTarget)){Feedback="Tree previews require VIRTUAL SIMULATION";return;}
+                bool accepted=controller.SetVirtualTreeMode(command=="Fantasy tree");
+                Feedback=accepted?"VIRTUAL tree: "+(controller.selected.magicTree?"Fantasy":"Natural"):"Finish placement or select a tracked virtual tree";return;
+            }
             if(command=="Test grow" || command=="Test bloom") {
-                if(!controller || !controller.simulation || controller.scenario!=ParkScenario.Plant || !controller.selected) {Feedback="Plant animation tests require a selected VIRTUAL SIMULATION target";return;}
+                if(!controller || !controller.simulation || replayMode || controller.scenario!=ParkScenario.Plant || !controller.selected || !controller.selected.virtualTarget) {Feedback="Plant animation tests require a selected VIRTUAL SIMULATION target";return;}
                 bool accepted=controller.Dispatch(command=="Test grow"?ParkAction.GrowUp:ParkAction.Bloom,controller.selected.transform.position,true);
                 Feedback=accepted?"SIMULATED plant animation input; no gesture or location measurement":"SIMULATION: "+controller.InteractionStatus;return;
             }
@@ -255,8 +311,17 @@ namespace MagicMR {
             if(command=="Fit") { if(controller)controller.RequestFit();else Feedback="Lighter: use its existing calibration gesture";return; }
             if(command=="Stop") { if(controller && controller.selected)controller.Dispatch(ParkAction.Stop,controller.selected.transform.position,true);return; }
             if(command=="Plane") { if(controller)controller.RequestManualPlane();else Feedback="Select a park scene for manual surface confirmation";return; }
-            if(command=="Virtual test") { if(controller) { controller.ResetScene();controller.simulation=!controller.simulation;if(controller.simulation)controller.SpawnVirtual(); }else Feedback="Select a park scene to preview its own animations";return; }
-            if(command=="Replay") { ClearRecognitionPresentation();replayMode=!replayMode;if(receiver) {receiver.discovery.Return(Time.unscaledTime);receiver.enabled=!replayMode;}if(controller) {controller.ResetScene();controller.recognitionLock=null;controller.simulation=replayMode;}replayIndex=0;replaySelection.ResetSession(Time.unscaledTime);Selection.automatic=automaticSwitching;Feedback=replayMode?"REPLAY: JSON frames; no physical location":"LIVE TCP";return; }
+            if(command=="Virtual test") {
+                if(controller) {
+                    bool enable=replayMode || !controller.simulation;
+                    if(replayMode)SetReplayMode(false);
+                    else ClearRecognitionPresentation();
+                    controller.ResetScene();controller.recognitionLock=null;Selection.Return(Time.unscaledTime);
+                    controller.simulation=enable;if(enable)controller.SpawnVirtual();
+                    Feedback=enable?"VIRTUAL SIMULATION: no physical location":"LIVE TCP";
+                }else Feedback="Select a park scene to preview its own animations";return;
+            }
+            if(command=="Replay") {SetReplayMode(!replayMode);return;}
             if(command=="Recorded replay") {
                 var recording=Resources.Load<TextAsset>("MagicMR/recorded-recognition-images.jsonl")??Resources.Load<TextAsset>("MagicMR/recorded-recognition-replay.jsonl");
                 if(!recording) {Feedback="No recorded recognition resource; export offline inference first";return;}
@@ -272,7 +337,25 @@ namespace MagicMR {
             else SceneManager.LoadScene("Park"+command);
         }
         void Update() {
-            foreach(var button in plantSimulationButtons)if(button)button.gameObject.SetActive(controller && controller.simulation && controller.scenario==ParkScenario.Plant);
+            bool petPreview=controller&&controller.simulation&&!replayMode&&controller.scenario==ParkScenario.Pet;
+            bool bugPreview=controller&&controller.simulation&&!replayMode&&controller.scenario==ParkScenario.Bugs;
+            bool treePreview=controller&&controller.simulation&&!replayMode&&controller.scenario==ParkScenario.Tree;
+            bool statuePreview=controller&&controller.simulation&&!replayMode&&controller.scenario==ParkScenario.Statue;
+            bool awakenPreview=treePreview||(controller&&controller.simulation&&!replayMode&&(controller.scenario==ParkScenario.Room||controller.scenario==ParkScenario.Statue));
+            bool variantPreview=petPreview||bugPreview||awakenPreview;
+            if(menuRect&&menuRect.sizeDelta.y!=(variantPreview?485:420))menuRect.sizeDelta=new Vector2(470,variantPreview?485:420);
+            foreach(var button in plantSimulationButtons)if(button)button.gameObject.SetActive(controller && controller.simulation && !replayMode && controller.scenario==ParkScenario.Plant);
+            foreach(var button in petSimulationButtons)if(button) {
+                button.gameObject.SetActive(petPreview);
+                if(button.name=="Walk in place")button.GetComponentInChildren<Text>().text=controller&&controller.selected&&controller.selected.PetWalking?"Stop walking":"Walk in place";
+            }
+            foreach(var button in bugSimulationButtons)if(button)button.gameObject.SetActive(bugPreview);
+            foreach(var button in statueSimulationButtons)if(button)button.gameObject.SetActive(statuePreview);
+            foreach(var button in treeSimulationButtons)if(button) {
+                bool awaken=button.name=="Test awaken";
+                button.gameObject.SetActive(awaken?awakenPreview:treePreview);
+                if(awaken)button.GetComponent<RectTransform>().anchoredPosition=new Vector2(treePreview||statuePreview?150:0,-215);
+            }
             Selection.Tick(Time.unscaledTime,controller && controller.AnimationBusy);
             RefreshCandidates();
             if(replayMode && replayLines!=null && replayLines.Length>0 && Time.unscaledTime>=nextReplay) {

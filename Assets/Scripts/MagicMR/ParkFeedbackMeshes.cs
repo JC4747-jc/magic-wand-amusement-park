@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MagicMR
 {
-    public enum ParkFeedbackShape { Star, Heart, Coin, Candy, Leaf, Fish, Bone, Petal }
+    public enum ParkFeedbackShape { Star, Heart, Coin, Candy, Leaf, Fish, Bone, Petal, Mote }
 
     /// <summary>Shared, bounded geometry for recognizable virtual feedback.</summary>
     public static class ParkFeedbackMeshes
@@ -18,7 +18,7 @@ namespace MagicMR
             else if(shape==ParkFeedbackShape.Bone)outline.AddRange(new[]{new Vector2(-.5f,-.12f),new Vector2(-.42f,-.25f),new Vector2(-.27f,-.25f),new Vector2(-.2f,-.1f),new Vector2(.2f,-.1f),new Vector2(.27f,-.25f),new Vector2(.42f,-.25f),new Vector2(.5f,-.12f),new Vector2(.43f,0),new Vector2(.5f,.12f),new Vector2(.42f,.25f),new Vector2(.27f,.25f),new Vector2(.2f,.1f),new Vector2(-.2f,.1f),new Vector2(-.27f,.25f),new Vector2(-.42f,.25f),new Vector2(-.5f,.12f),new Vector2(-.43f,0)});
             else if(shape==ParkFeedbackShape.Candy)outline.AddRange(new[]{new Vector2(-.5f,-.22f),new Vector2(-.28f,-.10f),new Vector2(-.20f,-.25f),new Vector2(.20f,-.25f),new Vector2(.28f,-.10f),new Vector2(.5f,-.22f),new Vector2(.5f,.22f),new Vector2(.28f,.10f),new Vector2(.20f,.25f),new Vector2(-.20f,.25f),new Vector2(-.28f,.10f),new Vector2(-.5f,.22f)});
             else {
-                int count=shape==ParkFeedbackShape.Star?10:40;
+                int count=shape==ParkFeedbackShape.Star?10:shape==ParkFeedbackShape.Mote?12:40;
                 for(int i=0;i<count;i++) {
                     float a=i*Mathf.PI*2/count;
                     if(shape==ParkFeedbackShape.Heart)outline.Add(new Vector2(16*Mathf.Pow(Mathf.Sin(a),3)/32,(13*Mathf.Cos(a)-5*Mathf.Cos(2*a)-2*Mathf.Cos(3*a)-Mathf.Cos(4*a))/32));

@@ -7,9 +7,20 @@ using System.IO;
 using UnityEditor.SceneManagement;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 public static class ParkSharedInteractionChecks
 {
+    public static void CheckDefaultBuildEntry()
+    {
+        var enabled=EditorBuildSettings.scenes.Where(s=>s.enabled).ToArray();
+        if(enabled.Length==0||enabled[0].path!="Assets/Scenes/BridgeStereoFusion.unity")
+            throw new Exception("Ordinary Build/Build And Run must start at the shared lighter entry");
+        foreach(var name in ParkContentBuilder.Names)
+            if(enabled.Count(s=>s.path=="Assets/Scenes/"+name+".unity")!=1)
+                throw new Exception("Missing or duplicate enabled Park scene: "+name);
+        Debug.Log("DEFAULT_BUILD_ENTRY_PASS: main scene first, six Park scenes available exactly once");
+    }
     public static void DiagnoseScene() {
         var script=AssetDatabase.LoadAssetAtPath<MonoScript>("Assets/Scripts/MagicMR/ParkController.cs");
         Debug.Log("PARK_SCRIPT_TYPE="+(script?script.GetClass()?.AssemblyQualifiedName:"missing asset"));

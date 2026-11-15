@@ -5,7 +5,7 @@ Protocol (Unity -> Python), little-endian:
   magic      : 4 bytes b'PICF'
   version    : u8  (=1)
   frame_id   : u32
-  timestamp  : i64  (UTC send time in ms; frame_id joins the headset capture-pose sidecar)
+  timestamp  : i64  (ms, Unity/PICO capture clock)
   width      : u32  (pixels of the JPEG image)
   height     : u32
   jpeg_len   : u32
@@ -31,7 +31,6 @@ Usage (headset needs adb reverse if Host is 127.0.0.1):
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import platform
 import socket
@@ -39,10 +38,6 @@ import struct
 import subprocess
 import threading
 import time
-import uuid
-from record_journal import append_response
-from image_orientation import inference_image, original_detections
-from discovery import DiscoveryPool, detection_limit, inference_limit, filter_candidates
 from dataclasses import dataclass, replace
 from pathlib import Path
 
@@ -50,26 +45,20 @@ import cv2
 import numpy as np
 import torch
 from ultralytics import YOLO
-from scene_protocol import load_profile, InstanceTracker, read_packet, native_class_filter
-from model_artifact import verify_artifact
+from pose_availability import PoseAvailability
+from detector_config import WEIGHTS_PATH, DEFAULT_CONF, DEFAULT_IMGSZ, DEFAULT_IOU, load_detector
+from scene_protocol import read_packet, InstanceTracker
+from scene_router import SceneRouter
 
-ACTIVE_PROFILE = None
-TRACKER = InstanceTracker()
-PROFILE_CONFIG = None
-START_SCENE = 'lighter'
-MAX_DET_OVERRIDE = None
-CPU_THREADS_OVERRIDE = None
-RECORD_DIR = None
-LAST_RECORD_AT = 0.0
-RECORD_SESSION = "not-connected"
+POSE_AVAILABILITY = PoseAvailability()
+PROFILE_CONFIG = Path(__file__).with_name('scene_profiles.json')
 
 HOST = "0.0.0.0"
 PORT = 5005
 MAGIC = b"PICF"
 VERSION = 1
+ACTIVE_MODEL_LABEL = WEIGHTS_PATH.stem
 
-WEIGHTS_PATH = Path(__file__).resolve().parent / "weights" / "best_yolo26n_quad_v4_50e.pt"
-ACTIVE_MODEL_LABEL = "YOLO26n QUAD v4 (50 epochs)"
 
 UNITY_CLASS_ALIASES = {
     "lighter": "Lighter",
@@ -84,7 +73,6 @@ class InferenceConfig:
   conf: float
   iou: float
   max_det: int
-  image_rotation: int = 0
 
 
 @dataclass(frozen=True)
@@ -340,7 +328,7 @@ def print_runtime_audit(config: InferenceConfig, resolved_device: str) -> None:
     f"half={config.half} dtype={dtype} conf={config.conf} "
     f"iou={config.iou} max_det={config.max_det}"
   )
-  print("[Python] Input source = PICF JPEG client (PICO camera expected; no PC webcam capture)")
+  print("[Python] Input source = PICO Camera JPEG (no PC Webcam)")
 
 
 def load_model(config: InferenceConfig) -> tuple[YOLO, str]:
@@ -348,14 +336,9 @@ def load_model(config: InferenceConfig) -> tuple[YOLO, str]:
   if config.half and resolved_device == "cpu":
     print("[Python] WARN: --half ignored on CPU (FP16 requires CUDA).")
 
-  if WEIGHTS_PATH.is_file():
-    print(f"[Python] Loading detector weights: {WEIGHTS_PATH}")
-    model = YOLO(str(WEIGHTS_PATH))
-  else:
-    raise FileNotFoundError(f"SCENE_NOT_CONFIGURED: {WEIGHTS_PATH}; lighter must never fall back to a COCO model")
+  model = load_detector(WEIGHTS_PATH, conf=config.conf, imgsz=config.imgsz, iou=config.iou)
 
   print(f"[Python] Model names={model.names}")
-  print(f"[Python] SHA256={hashlib.sha256(WEIGHTS_PATH.read_bytes()).hexdigest()}")
   print_runtime_audit(config, resolved_device)
   return model, resolved_device
 
@@ -391,9 +374,10 @@ def read_exact(conn: socket.socket, n: int) -> bytes:
   return bytes(buf)
 
 
-def read_pico_frame(conn: socket.socket) -> tuple[int, int, int, int, bytes, str | None]:
-  """Read v1 lighter or v2 per-frame scene selection."""
-  return read_packet(lambda count: read_exact(conn,count))
+def read_pico_frame(conn: socket.socket, *, include_scene=False):
+  """Returns frame_id, timestamp_ms, width, height, jpeg_bytes."""
+  packet = read_packet(lambda count: read_exact(conn, count))
+  return packet if include_scene else packet[:5]
 
 
 def detections_from_result(result) -> list[dict]:
@@ -407,16 +391,12 @@ def detections_from_result(result) -> list[dict]:
     cls_id = int(box.cls[0].item())
     conf = float(box.conf[0].item())
     raw_label = names.get(cls_id, str(cls_id))
-    label = (ACTIVE_PROFILE or {}).get("aliases", {}).get(str(raw_label).lower(), normalize_class_label(str(raw_label)))
-    if ACTIVE_PROFILE and label not in ACTIVE_PROFILE["allowed"]:
-      continue
+    label = normalize_class_label(str(raw_label))
     x1, y1, x2, y2 = box.xyxy[0].tolist()
     payloads.append(
       {
         "class": label,
         "class_id": cls_id,
-        "class_name": label,
-        "bbox": [x1, y1, x2, y2],
         "confidence": conf,
         "centerX": (x1 + x2) * 0.5,
         "centerY": (y1 + y2) * 0.5,
@@ -435,9 +415,7 @@ def decode_jpeg_frame(
   hdr_w: int,
   hdr_h: int,
   jpeg: bytes,
-  scene: str | None = None,
 ) -> DecodedFrame | None:
-  global LAST_RECORD_AT
   arr = np.frombuffer(jpeg, dtype=np.uint8)
   frame = cv2.imdecode(arr, cv2.IMREAD_COLOR)
   if frame is None:
@@ -452,22 +430,12 @@ def decode_jpeg_frame(
       f"using decoded size for detections."
     )
 
-  if RECORD_DIR is not None and time.monotonic() - LAST_RECORD_AT >= 1.0:
-    LAST_RECORD_AT = time.monotonic()
-    filename = f"{RECORD_SESSION}-frame-{frame_id:010d}.jpg"
-    (RECORD_DIR / filename).write_bytes(jpeg)
-    with (RECORD_DIR / "captures.jsonl").open("a", encoding="utf-8") as journal:
-      journal.write(json.dumps({"image":filename,"session":RECORD_SESSION,"frame_id":frame_id,"send_utc_ms":timestamp,
-        "width":width,"height":height,"source":"PICF client JPEG","origin_verified":False,"group":RECORD_DIR.name,
-        "labels":"NOT_ANNOTATED","scene":scene or START_SCENE,"capture_pose":"join by frame_id to headset poses.jsonl; UTC send time is NOT capture time"}) + "\n")
-
   return DecodedFrame(
     frame_id=int(frame_id),
     timestamp=int(timestamp),
     width=width,
     height=height,
     image=frame,
-    scene=scene,
   )
 
 
@@ -480,16 +448,17 @@ def receiver_loop(
   try:
     while not stop_event.is_set():
       t_recv0 = time.perf_counter()
-      frame_id, timestamp, hdr_w, hdr_h, jpeg, scene = read_pico_frame(conn)
+      frame_id, timestamp, hdr_w, hdr_h, jpeg, scene = read_pico_frame(conn, include_scene=True)
       recv_ms = (time.perf_counter() - t_recv0) * 1000.0
       perf.record_recv(recv_ms)
 
       t_decode0 = time.perf_counter()
-      decoded = decode_jpeg_frame(frame_id, timestamp, hdr_w, hdr_h, jpeg, scene)
+      decoded = decode_jpeg_frame(frame_id, timestamp, hdr_w, hdr_h, jpeg)
       decode_ms = (time.perf_counter() - t_decode0) * 1000.0
       perf.record_decode(decode_ms)
       if decoded is None:
         continue
+      decoded = replace(decoded, scene=scene)
 
       dropped_before = buffer.dropped_frames
       buffer.publish(decoded)
@@ -505,6 +474,7 @@ def receiver_loop(
     stop_event.set()
     with buffer._cond:
       buffer._cond.notify_all()
+    shutdown_client(conn)
 
 
 def run_yolo_predict(
@@ -512,7 +482,7 @@ def run_yolo_predict(
   image: np.ndarray,
   resolved_device: str,
   config: InferenceConfig,
-  class_filter=None,
+  classes=None,
 ):
   use_half = config.half and resolved_device != "cpu"
   predict_kwargs: dict = {
@@ -523,10 +493,11 @@ def run_yolo_predict(
     "conf": config.conf,
     "iou": config.iou,
     "max_det": config.max_det,
-    "classes": class_filter,
   }
   if use_half:
     predict_kwargs["half"] = True
+  if classes is not None:
+    predict_kwargs['classes'] = classes
   with torch.inference_mode():
     return model.predict(**predict_kwargs)
 
@@ -550,21 +521,9 @@ def inference_loop(
   resolved_device: str,
   config: InferenceConfig,
 ) -> None:
-  if resolved_device == 'cpu':
-    if CPU_THREADS_OVERRIDE is not None:
-      torch.set_num_threads(CPU_THREADS_OVERRIDE)
-    print(f'[Python] YOLO worker CPU threads={torch.get_num_threads()}', flush=True)
   last_generation = 0
-  global ACTIVE_PROFILE, WEIGHTS_PATH, ACTIVE_MODEL_LABEL, TRACKER
-  ACTIVE_PROFILE=load_profile(START_SCENE,PROFILE_CONFIG)
-  WEIGHTS_PATH=(Path(__file__).parent/ACTIVE_PROFILE['weights']).resolve()
-  ACTIVE_MODEL_LABEL=START_SCENE
-  active_scene=START_SCENE
-  models={WEIGHTS_PATH:model}
-  ACTIVE_PROFILE, starting_hash = verify_artifact(WEIGHTS_PATH, ACTIVE_PROFILE)
-  model_hashes={WEIGHTS_PATH:starting_hash}
-  discovery_pool=DiscoveryPool(PROFILE_CONFIG,Path(__file__).parent)
-  discovery_models={WEIGHTS_PATH:model}
+  router = None
+  lighter_tracks = InstanceTracker()
   try:
     while not stop_event.is_set():
       frame, generation = buffer.wait_for_newer(last_generation, stop_event)
@@ -573,94 +532,41 @@ def inference_loop(
 
       t_total0 = time.perf_counter()
 
-      requested=frame.scene or START_SCENE
-      if requested=='discovery':
-        source=discovery_pool.next_source();path=source['path']
-        if path not in discovery_models:
-          discovery_models[path]=YOLO(str(path))
-          print(f'[Python] Discovery weights={path} SHA256={hashlib.sha256(path.read_bytes()).hexdigest()} classes={discovery_models[path].names}',flush=True)
-        discovery_model=discovery_models[path]
-        previous_profile=ACTIVE_PROFILE
-        try:
-          ACTIVE_PROFILE=discovery_pool.profile(source,discovery_model.names)
-          thresholds={label:(value if value is not None else config.conf) for label,value in ACTIVE_PROFILE['class_confidence'].items()}
-          output_limit=detection_limit(MAX_DET_OVERRIDE if MAX_DET_OVERRIDE is not None else ACTIVE_PROFILE['max_det'])
-          discovery_config=replace(config,conf=min(thresholds.values()),max_det=inference_limit(thresholds,output_limit))
-          results=run_yolo_predict(discovery_model,inference_image(frame.image,config.image_rotation),resolved_device,discovery_config,native_class_filter(discovery_model.names,ACTIVE_PROFILE))
-          detections=original_detections(detections_from_result(results[0]),frame.width,frame.height,config.image_rotation)
-          detections=filter_candidates(detections,thresholds,output_limit)
-          detections=source['tracker'].assign(detections,frame.frame_id,time.monotonic())
-          for d in detections:d['target_scene']=ACTIVE_PROFILE['routes'][d['class']]
-          payload=dict(scene='discovery',status='OK',frame_id=frame.frame_id,timestamp=frame.timestamp,width=frame.width,height=frame.height,
-                       detections=detections,weights=str(path),inference_rotation_degrees=config.image_rotation,
-                       weights_sha256=source['sha256'],
-                       discovery_model_budget=1,discovery_model_count=len(discovery_pool.sources),
-                       detection_limit=output_limit,inference_max_det=discovery_config.max_det,
-                       class_confidence=thresholds,
-                       model_validation='; '.join(f'{scene}:{state}' for scene,state in sorted(source['validation'].items())))
-        finally:
-          ACTIVE_PROFILE=previous_profile
-        if buffer.generation()==generation:
-          with send_lock:conn.sendall((json.dumps(payload)+'\n').encode())
-          append_response(RECORD_DIR,RECORD_SESSION,payload)
-        else:perf.record_stale_skip()
-        buffer.mark_consumed(generation);last_generation=generation
-        continue
-      try:
-        profile=load_profile(requested,PROFILE_CONFIG)
-        weight=Path(profile['weights'])
-        requested_path=(Path(__file__).parent/weight).resolve() if not weight.is_absolute() else weight.resolve()
-        if requested!=active_scene or requested_path!=WEIGHTS_PATH:
-          profile, artifact_hash = verify_artifact(requested_path, profile, loaded_hash=model_hashes.get(requested_path))
-          if requested_path not in models:
-            if not requested_path.is_file(): raise FileNotFoundError('SCENE_NOT_CONFIGURED: '+str(requested_path))
-            models[requested_path]=YOLO(str(requested_path))
-            model_hashes[requested_path]=artifact_hash
-          WEIGHTS_PATH=requested_path
-          model=models[requested_path]; ACTIVE_PROFILE=profile; ACTIVE_MODEL_LABEL=requested
-          TRACKER=InstanceTracker(); active_scene=requested
-          print(f'[Python] Scene={requested} weights={WEIGHTS_PATH} SHA256={model_hashes[WEIGHTS_PATH]} classes={model.names}',flush=True)
-        class_filter=native_class_filter(model.names,ACTIVE_PROFILE)
-      except (ValueError,FileNotFoundError) as error:
-        failure=dict(frame_id=frame.frame_id,timestamp=frame.timestamp,width=frame.width,height=frame.height,scene=requested,status=str(error),detections=[])
-        with send_lock:
-          conn.sendall((json.dumps(failure)+'\n').encode())
-        append_response(RECORD_DIR,RECORD_SESSION,failure)
-        buffer.mark_consumed(generation); last_generation=generation
-        continue
-
       t_infer0 = time.perf_counter()
-      scene_config=replace(config,max_det=MAX_DET_OVERRIDE or ACTIVE_PROFILE['max_det'],
-                           conf=ACTIVE_PROFILE.get('confidence',config.conf))
-      results = run_yolo_predict(model, inference_image(frame.image, config.image_rotation), resolved_device, scene_config,class_filter)
+      routed_payload = None
+      if frame.scene not in (None, 'lighter'):
+        if router is None:
+          router = SceneRouter(model, WEIGHTS_PATH, PROFILE_CONFIG, run_yolo_predict, detections_from_result, config, resolved_device)
+        routed_payload, result = router.infer(frame)
+      else:
+        result = run_yolo_predict(model, frame.image, resolved_device, config)[0]
       total_inference_ms = (time.perf_counter() - t_infer0) * 1000.0
-      record_yolo_speed(perf, results[0], total_inference_ms)
-      perf.record_inference_done()
+      if result is not None:
+        record_yolo_speed(perf, result, total_inference_ms)
+        perf.record_inference_done()
 
       if buffer.generation() != generation:
         perf.record_stale_skip()
+        # Only this completed inference has been consumed. The newer buffered
+        # frame still needs inference, even if no third frame ever arrives.
         last_generation = generation
         perf.maybe_flush()
         continue
 
-      result = results[0]
-      detections = detections_from_result(result)
-      detections = original_detections(detections, frame.width, frame.height, config.image_rotation)
-
-      detections = TRACKER.assign(detections, frame.frame_id, time.monotonic())
+      if routed_payload is None:
+        detections = lighter_tracks.assign(detections_from_result(result), frame.frame_id, time.monotonic())
+        for detection in detections:
+          detection.update(class_name=detection['class'], target_scene='lighter',
+                           bbox=[detection[k] for k in ('x1','y1','x2','y2')])
+        routed_payload = dict(scene='lighter', status='OK', detections=detections,
+                              weights=str(WEIGHTS_PATH), model_validation='MAIN_BASELINE', **POSE_AVAILABILITY.snapshot())
 
       payload = {
-        "weights": str(WEIGHTS_PATH),
-        "weights_sha256": model_hashes[WEIGHTS_PATH],
-        "model_validation": ACTIVE_PROFILE.get('validation','MAIN_BASELINE'),
-        "inference_rotation_degrees": config.image_rotation,
-        "scene": active_scene,
-        "status": "OK",
         "frame_id": frame.frame_id,
         "timestamp": frame.timestamp,
         "width": frame.width,
         "height": frame.height,
-        "detections": detections,
+        **routed_payload,
       }
 
       t_json0 = time.perf_counter()
@@ -672,7 +578,6 @@ def inference_loop(
       t_send0 = time.perf_counter()
       with send_lock:
         conn.sendall(encoded)
-      append_response(RECORD_DIR,RECORD_SESSION,payload)
       send_ms = (time.perf_counter() - t_send0) * 1000.0
       perf.record_send(send_ms)
 
@@ -683,9 +588,8 @@ def inference_loop(
       last_generation = generation
       perf.maybe_flush()
 
-      if not headless:
+      if not headless and result is not None:
         annotated = result.plot()
-        annotated = inference_image(annotated, config.image_rotation)
         cv2.imshow("YOLO Debug (PICO Camera)", annotated)
         if cv2.waitKey(1) & 0xFF == ord("q"):
           print("[Python] Quit requested (Q).")
@@ -699,17 +603,46 @@ def inference_loop(
     stop_event.set()
     with buffer._cond:
       buffer._cond.notify_all()
+    shutdown_client(conn)
+
+
+def shutdown_client(conn: socket.socket) -> None:
+  # Wake the other worker if it is blocked in recv/send after this worker exits.
+  try:
+    conn.shutdown(socket.SHUT_RDWR)
+  except OSError:
+    pass
+
+
+def serve_client(conn, model, resolved_device, config, headless):
+  buffer = LatestFrameBuffer()
+  perf = PerfAggregator()
+  stop_event = threading.Event()
+  receiver = threading.Thread(target=receiver_loop,
+    args=(conn, buffer, perf, stop_event), name="picf-receiver")
+  worker = threading.Thread(target=inference_loop,
+    args=(conn, model, buffer, perf, stop_event, headless, threading.Lock(), resolved_device, config),
+    name="yolo-worker")
+  receiver.start()
+  worker.start()
+  try:
+    receiver.join()
+    worker.join()
+  finally:
+    stop_event.set()
+    shutdown_client(conn)
+    with buffer._cond:
+      buffer._cond.notify_all()
+    receiver.join()
+    worker.join()
+    conn.close()
 
 
 def parse_args() -> argparse.Namespace:
   parser = argparse.ArgumentParser(description="PICO PICF JPEG -> YOLO TCP bridge")
-  parser.add_argument('--host', default=HOST, help='Bind address; defaults to existing PICO listener')
-  parser.add_argument('--port', type=int, default=PORT, help='TCP listener port; use a separate port for offline model validation')
-  parser.add_argument('--image-rotation', type=int, choices=[0,180], default=0,
-                      help='Optional inference rotation; returned boxes remain in original JPEG coordinates')
-  parser.add_argument("--scene", default="lighter", choices=["lighter","tree","bugs","statue","room","plant","pet"])
-  parser.add_argument("--profiles", type=Path, default=Path(__file__).with_name("scene_profiles.json"))
-  parser.add_argument("--record-dir", type=Path, help="Save real PICO JPEGs at 1 Hz for manual annotation; empty session directory required")
+  parser.add_argument("--profiles", type=Path, default=PROFILE_CONFIG,
+    help="Local v2 scene profile configuration; missing weights never trigger downloads")
+  parser.add_argument("--host", default=HOST, help="Listener address; use 127.0.0.1 for local ADB forwarding")
   parser.add_argument(
     "--headless",
     action="store_true",
@@ -728,55 +661,34 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument(
     "--imgsz",
     type=int,
-    default=640,
+    default=DEFAULT_IMGSZ,
     help="YOLO letterbox inference size (default: 640)",
   )
   parser.add_argument(
     "--conf",
     type=float,
-    default=0.399,
+    default=DEFAULT_CONF,
     help="Minimum detection confidence (default: 0.399)",
   )
   parser.add_argument(
     "--iou",
     type=float,
-    default=0.7,
+    default=DEFAULT_IOU,
     help="NMS IoU threshold (default: 0.7)",
   )
   parser.add_argument(
     "--max-det",
     type=int,
-    default=None,
-    help="Override maximum detections per scene/discovery frame (default: scene profile)",
+    default=1,
+    help="Maximum detections returned per frame (default: 1)",
   )
-  parser.add_argument('--cpu-threads', type=int, help='Explicit PyTorch intra-op threads in the inference worker; omitted preserves library defaults')
-  args=parser.parse_args()
-  if args.max_det is not None and args.max_det < 1:parser.error('--max-det must be positive')
-  if args.cpu_threads is not None and args.cpu_threads < 1:parser.error('--cpu-threads must be positive')
-  if not 1<=args.port<=65535:parser.error('--port must be between 1 and 65535')
-  return args
+  return parser.parse_args()
 
 
 def main() -> None:
-  global WEIGHTS_PATH, ACTIVE_PROFILE, ACTIVE_MODEL_LABEL, TRACKER, RECORD_DIR, RECORD_SESSION, LAST_RECORD_AT
+  global PROFILE_CONFIG
   args = parse_args()
-  global PROFILE_CONFIG, START_SCENE, MAX_DET_OVERRIDE, CPU_THREADS_OVERRIDE
-  CPU_THREADS_OVERRIDE=args.cpu_threads
-  PROFILE_CONFIG=args.profiles
-  START_SCENE=args.scene
-  MAX_DET_OVERRIDE=args.max_det
-  ACTIVE_PROFILE = load_profile(args.scene, args.profiles)
-  if args.record_dir:
-    RECORD_DIR = args.record_dir.resolve()
-    if RECORD_DIR.exists() and any(RECORD_DIR.iterdir()):
-      raise ValueError("Use a fresh capture session directory to prevent frame-name collisions")
-    RECORD_DIR.mkdir(parents=True, exist_ok=True)
-  weight = ACTIVE_PROFILE["weights"]
-  WEIGHTS_PATH = (Path(__file__).parent / weight).resolve()
-  ACTIVE_MODEL_LABEL = args.scene + ": " + weight
-  # Pretrained models may download by name; explicitly selected profiles only.
-  if not WEIGHTS_PATH.exists():
-    raise FileNotFoundError('SCENE_NOT_CONFIGURED: '+str(WEIGHTS_PATH))
+  PROFILE_CONFIG = args.profiles.resolve()
   headless = args.headless
   config = InferenceConfig(
     device=args.device,
@@ -784,23 +696,20 @@ def main() -> None:
     imgsz=args.imgsz,
     conf=args.conf,
     iou=args.iou,
-    max_det=max(1, args.max_det or ACTIVE_PROFILE["max_det"]),
-    image_rotation=args.image_rotation,
+    max_det=max(1, args.max_det),
   )
-  print(f'[Python] Inference rotation={config.image_rotation}; TCP boxes=original JPEG coordinates')
-  print(f'[Python] Effective starting scene confidence={ACTIVE_PROFILE.get("confidence",config.conf)}; profile confidence overrides base confidence per frame')
 
-  ACTIVE_PROFILE, artifact_hash = verify_artifact(WEIGHTS_PATH, ACTIVE_PROFILE)
-  print(f"[Python] Artifact SHA256={artifact_hash} validation={ACTIVE_PROFILE['validation']}", flush=True)
   model, resolved_device = load_model(config)
   warmup_model(model, config, resolved_device)
+  POSE_AVAILABILITY.expected_detector = model.magicmr_detector_identity
+  POSE_AVAILABILITY.start()
 
   server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
   server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-  server.bind((args.host, args.port))
+  server.bind((args.host, PORT))
   server.listen(1)
 
-  print(f"[Python] TCP server listening on {args.host}:{args.port}")
+  print(f"[Python] TCP server listening on {args.host}:{PORT}")
   print("[Python] Waiting for Unity (PICO) client to send PICF JPEG frames...")
   print("[Python] Pipeline: receiver thread + latest-frame buffer + YOLO worker")
   if headless:
@@ -808,56 +717,22 @@ def main() -> None:
   else:
     print("[Python] Debug window open. Press Q to quit.")
 
-  while True:
-    conn, addr = server.accept()
-    RECORD_SESSION = uuid.uuid4().hex
-    LAST_RECORD_AT = 0.0
-    print(f"[Python] Client connected: {addr}")
-
-    TRACKER = InstanceTracker()
-    buffer = LatestFrameBuffer()
-    perf = PerfAggregator()
-    stop_event = threading.Event()
-    send_lock = threading.Lock()
-
-    receiver = threading.Thread(
-      target=receiver_loop,
-      name="picf-receiver",
-      args=(conn, buffer, perf, stop_event),
-      daemon=False,
-    )
-    worker = threading.Thread(
-      target=inference_loop,
-      name="yolo-worker",
-      args=(
-        conn,
-        model,
-        buffer,
-        perf,
-        stop_event,
-        headless,
-        send_lock,
-        resolved_device,
-        config,
-      ),
-      daemon=False,
-    )
-
-    receiver.start()
-    worker.start()
-
-    try:
-      receiver.join()
-      worker.join()
-    finally:
-      stop_event.set()
+  try:
+    while True:
+      conn, addr = server.accept()
+      print(f"[Python] Client connected: {addr}")
+      serve_client(conn, model, resolved_device, config, headless)
       if not headless:
-        cv2.destroyAllWindows()
-      try:
-        conn.close()
-      except Exception:
-        pass
-      print("[Python] Client session closed; waiting for reconnect.")
+        break
+      print("[Python] Client session ended; waiting for reconnect...")
+  finally:
+    if not headless:
+      cv2.destroyAllWindows()
+    try:
+      server.close()
+    except Exception:
+      pass
+    print("[Python] Server closed (no webcam was used).")
 
 
 if __name__ == "__main__":

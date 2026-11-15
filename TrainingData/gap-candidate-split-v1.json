@@ -1,0 +1,473 @@
+{
+  "version": 1,
+  "purpose": "SMALL_TWO_CLASS_CANDIDATE_EXPERIMENT_NOT_FULL_PROJECT_TRAINING_ACCEPTANCE",
+  "seed": 42,
+  "names": [
+    "Cockroach",
+    "BronzeBeast"
+  ],
+  "annotation_sha256": "f9b92118715ff62a1384b7d1bda2ae11873d97d2175c513731ca69d07eaec2f5",
+  "group_audit_sha256": "f6fc84865a22c46e7496333ba6b8216188a2e895e497ad8a9c17556c749ecef0",
+  "split_counts": {
+    "train": {
+      "Cockroach": 10,
+      "BronzeBeast": 7
+    },
+    "valid": {
+      "Cockroach": 2,
+      "BronzeBeast": 1
+    },
+    "test": {
+      "Cockroach": 2,
+      "BronzeBeast": 1
+    }
+  },
+  "physical_provenance_components": 19,
+  "group_overlap_between_splits": false,
+  "test_frozen_before_training": true,
+  "accepted_for_deployment": false,
+  "limitations": [
+    "Very small public-photo holdout: metrics are exploratory and do not establish deployment quality.",
+    "Other eleven project classes remain required; this experiment does not replace their training/data work.",
+    "No real PICO image-domain accuracy or full capture-independence claim beyond the documented conservative grouping."
+  ],
+  "records": [
+    {
+      "key": "commons-97859136",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/commons-97859136.jpg",
+      "sha256": "b24c3d48f298411e3997ec62beca14e428b2f33b8d9b6d14b3a47894a10706df",
+      "size": [
+        1280,
+        853
+      ],
+      "class": "BronzeBeast",
+      "class_id": 1,
+      "xyxy_normalized": [
+        0.16796875,
+        0.14654161781946073,
+        0.8046875,
+        0.9636576787807737
+      ],
+      "component_id": "commons-97859136",
+      "split": "test"
+    },
+    {
+      "key": "inat-407564596",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-407564596.jpg",
+      "sha256": "2bcd2b67df530cf822c2d4b2efd208cb3d6ff4d8d071224a50dafbf832fc37e7",
+      "size": [
+        1024,
+        684
+      ],
+      "class": "Cockroach",
+      "class_id": 0,
+      "xyxy_normalized": [
+        0.2958984375,
+        0.21929824561403508,
+        0.6533203125,
+        0.8611111111111112
+      ],
+      "component_id": "inat-407564596",
+      "split": "test"
+    },
+    {
+      "key": "inat-413336029",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-413336029.jpg",
+      "sha256": "e14b9ce1b7db6b23a4d00d8aa284a012d44a05e172e327a93284dbaf8307b2ff",
+      "size": [
+        824,
+        1024
+      ],
+      "class": "Cockroach",
+      "class_id": 0,
+      "xyxy_normalized": [
+        0.3155339805825243,
+        0.263671875,
+        0.7524271844660194,
+        0.697265625
+      ],
+      "component_id": "inat-413336029",
+      "split": "test"
+    },
+    {
+      "key": "commons-101302261",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/commons-101302261.jpg",
+      "sha256": "52574a8a901d21403758b466c9bcd85126cb13340b590a683341c2e7ea2054aa",
+      "size": [
+        1280,
+        853
+      ],
+      "class": "BronzeBeast",
+      "class_id": 1,
+      "xyxy_normalized": [
+        0.171875,
+        0.16412661195779601,
+        0.825,
+        0.8558030480656507
+      ],
+      "component_id": "commons-101302261",
+      "split": "train"
+    },
+    {
+      "key": "commons-101302262",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/commons-101302262.jpg",
+      "sha256": "2d5ed60b2ae087f5db1d571adc320059fc2bac4f3db29978bd05567f89cfcd59",
+      "size": [
+        1280,
+        853
+      ],
+      "class": "BronzeBeast",
+      "class_id": 1,
+      "xyxy_normalized": [
+        0.08125,
+        0.0738569753810082,
+        0.84140625,
+        0.9413833528722158
+      ],
+      "component_id": "commons-101302261",
+      "split": "train"
+    },
+    {
+      "key": "commons-177625644",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/commons-177625644.jpg",
+      "sha256": "b09a9366acfc997197bc86b040e3911f1268d0f6e516cf1a79b8f27853d3638d",
+      "size": [
+        1280,
+        853
+      ],
+      "class": "BronzeBeast",
+      "class_id": 1,
+      "xyxy_normalized": [
+        0.19296875,
+        0.05041031652989449,
+        0.7984375,
+        0.9191090269636577
+      ],
+      "component_id": "commons-177625644",
+      "split": "train"
+    },
+    {
+      "key": "commons-20059983",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/commons-20059983.jpg",
+      "sha256": "7919fc01c7da9c231cc88b93b4136c8e98a89a997fa98ae1a31088e4a17169fc",
+      "size": [
+        1280,
+        850
+      ],
+      "class": "BronzeBeast",
+      "class_id": 1,
+      "xyxy_normalized": [
+        0.0046875,
+        0.0,
+        0.98984375,
+        0.9811764705882353
+      ],
+      "component_id": "commons-20059983",
+      "split": "train"
+    },
+    {
+      "key": "commons-31216981",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/commons-31216981.jpg",
+      "sha256": "aec039a448d32d2e347580edfca2c002df2818574b91c89fef0ab1d21f648733",
+      "size": [
+        1280,
+        857
+      ],
+      "class": "BronzeBeast",
+      "class_id": 1,
+      "xyxy_normalized": [
+        0.02109375,
+        0.0338389731621937,
+        0.97265625,
+        0.9509918319719953
+      ],
+      "component_id": "commons-20059983",
+      "split": "train"
+    },
+    {
+      "key": "commons-4300068",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/commons-4300068.jpg",
+      "sha256": "3ab7b98c565d14d819ac4440b10504f9dd4614bf80ff088cf17764a74452ef11",
+      "size": [
+        1280,
+        960
+      ],
+      "class": "BronzeBeast",
+      "class_id": 1,
+      "xyxy_normalized": [
+        0.09921875,
+        0.03958333333333333,
+        0.80703125,
+        0.990625
+      ],
+      "component_id": "commons-101302261",
+      "split": "train"
+    },
+    {
+      "key": "commons-97144425",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/commons-97144425.jpg",
+      "sha256": "6ac70ec6541b177d1f78453755cbc961bcb7a96fabc6ba6e2596cfe0f53832ef",
+      "size": [
+        1280,
+        853
+      ],
+      "class": "BronzeBeast",
+      "class_id": 1,
+      "xyxy_normalized": [
+        0.19609375,
+        0.0492379835873388,
+        0.8625,
+        0.9660023446658851
+      ],
+      "component_id": "commons-97144424",
+      "split": "train"
+    },
+    {
+      "key": "inat-410056471",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-410056471.jpg",
+      "sha256": "bbea64bd5d9fbd696a3404eea8703d5dbca36a0c1bf1aa3140d25923f9de642d",
+      "size": [
+        771,
+        1024
+      ],
+      "class": "Cockroach",
+      "class_id": 0,
+      "xyxy_normalized": [
+        0.17639429312581065,
+        0.3212890625,
+        0.51621271076524,
+        0.4755859375
+      ],
+      "component_id": "inat-410056471",
+      "split": "train"
+    },
+    {
+      "key": "inat-412205156",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-412205156.jpg",
+      "sha256": "52e8935e09f726550347aa0187256f7a18f57375578b3484fca3511be83820da",
+      "size": [
+        768,
+        1024
+      ],
+      "class": "Cockroach",
+      "class_id": 0,
+      "xyxy_normalized": [
+        0.3841145833333333,
+        0.11328125,
+        0.9544270833333334,
+        0.771484375
+      ],
+      "component_id": "inat-412205156",
+      "split": "train"
+    },
+    {
+      "key": "inat-413807289",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-413807289.jpg",
+      "sha256": "e1e8d7875c4bbc1141fc17fac2cabbd3b2beec8799b8db76810b2a2a04ce8443",
+      "size": [
+        768,
+        1024
+      ],
+      "class": "Cockroach",
+      "class_id": 0,
+      "xyxy_normalized": [
+        0.4283854166666667,
+        0.341796875,
+        0.6640625,
+        0.556640625
+      ],
+      "component_id": "inat-413807289",
+      "split": "train"
+    },
+    {
+      "key": "inat-413808525",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-413808525.jpg",
+      "sha256": "6542634cd026d555c12f143b93f1afc1aea72811f60ca76091cc94a2c4aea581",
+      "size": [
+        768,
+        1024
+      ],
+      "class": "Cockroach",
+      "class_id": 0,
+      "xyxy_normalized": [
+        0.4479166666666667,
+        0.3369140625,
+        0.6979166666666666,
+        0.7705078125
+      ],
+      "component_id": "inat-413807289",
+      "split": "train"
+    },
+    {
+      "key": "inat-413955771",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-413955771.jpg",
+      "sha256": "489ebc20a71871e5548e864cbc3c0544117c6fc3d2dde4291dea8adb2a7696bd",
+      "size": [
+        771,
+        1024
+      ],
+      "class": "Cockroach",
+      "class_id": 0,
+      "xyxy_normalized": [
+        0.125810635538262,
+        0.13671875,
+        0.7016861219195849,
+        0.6298828125
+      ],
+      "component_id": "inat-413955771",
+      "split": "train"
+    },
+    {
+      "key": "inat-414168220",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-414168220.jpg",
+      "sha256": "f77ffedcd6bbf20b4c2717aeea3ae473883c0498fa27cd7eaae838141a26d3c6",
+      "size": [
+        1024,
+        943
+      ],
+      "class": "Cockroach",
+      "class_id": 0,
+      "xyxy_normalized": [
+        0.341796875,
+        0.3054082714740191,
+        0.630859375,
+        0.559915164369035
+      ],
+      "component_id": "inat-414168220",
+      "split": "train"
+    },
+    {
+      "key": "inat-414173185",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-414173185.jpg",
+      "sha256": "1eb0460835ae73f28d71561289f1219969683aca16da28aa5835aa02f28d6966",
+      "size": [
+        1024,
+        768
+      ],
+      "class": "Cockroach",
+      "class_id": 0,
+      "xyxy_normalized": [
+        0.2001953125,
+        0.3346354166666667,
+        0.7958984375,
+        0.8463541666666666
+      ],
+      "component_id": "inat-414173185",
+      "split": "train"
+    },
+    {
+      "key": "inat-414256437",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-414256437.jpg",
+      "sha256": "bc8f335087b1479b09b25069e8ca78e90e5bd85d15d3fea8d72a0e014f4d6f75",
+      "size": [
+        1024,
+        768
+      ],
+      "class": "Cockroach",
+      "class_id": 0,
+      "xyxy_normalized": [
+        0.31640625,
+        0.4075520833333333,
+        0.5966796875,
+        0.6263020833333334
+      ],
+      "component_id": "inat-414256437",
+      "split": "train"
+    },
+    {
+      "key": "inat-414708372",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-414708372.jpg",
+      "sha256": "cfb0455bf8442614723a578c2b1f6628ba1cf5f4772ee0a83aca5261b944ae25",
+      "size": [
+        1024,
+        683
+      ],
+      "class": "Cockroach",
+      "class_id": 0,
+      "xyxy_normalized": [
+        0.478515625,
+        0.5592972181551976,
+        0.6875,
+        0.7554904831625183
+      ],
+      "component_id": "inat-414708372",
+      "split": "train"
+    },
+    {
+      "key": "inat-414820062",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-414820062.jpg",
+      "sha256": "896d769f0fbffc41c88a5c93c402c3149e1f7990f0f4099deb36947adcf9b43e",
+      "size": [
+        768,
+        1024
+      ],
+      "class": "Cockroach",
+      "class_id": 0,
+      "xyxy_normalized": [
+        0.29296875,
+        0.498046875,
+        0.5924479166666666,
+        0.8642578125
+      ],
+      "component_id": "inat-414820062",
+      "split": "train"
+    },
+    {
+      "key": "commons-98011103",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/commons-98011103.jpg",
+      "sha256": "5ac908e68ca00f3b124c9fbe08222e4d857eeb62dc262e4888ee2c2dd8824a70",
+      "size": [
+        1280,
+        853
+      ],
+      "class": "BronzeBeast",
+      "class_id": 1,
+      "xyxy_normalized": [
+        0.13125,
+        0.3083235638921454,
+        0.86953125,
+        0.8733880422039859
+      ],
+      "component_id": "commons-98006765",
+      "split": "valid"
+    },
+    {
+      "key": "inat-413866317",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-413866317.jpg",
+      "sha256": "7592c06b3a8465332505c21e7aa89951480dd496c519f1e67148caf6e2948609",
+      "size": [
+        768,
+        1024
+      ],
+      "class": "Cockroach",
+      "class_id": 0,
+      "xyxy_normalized": [
+        0.4036458333333333,
+        0.4248046875,
+        0.578125,
+        0.5859375
+      ],
+      "component_id": "inat-413866317",
+      "split": "valid"
+    },
+    {
+      "key": "inat-414319613",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-414319613.jpg",
+      "sha256": "c15e720410b40f404efc66f776456b86f09cd28cca839d83b596aedc69668b99",
+      "size": [
+        768,
+        1024
+      ],
+      "class": "Cockroach",
+      "class_id": 0,
+      "xyxy_normalized": [
+        0.16666666666666666,
+        0.3369140625,
+        0.55859375,
+        0.693359375
+      ],
+      "component_id": "inat-414319613",
+      "split": "valid"
+    }
+  ]
+}

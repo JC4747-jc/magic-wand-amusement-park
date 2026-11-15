@@ -1,0 +1,2539 @@
+{
+  "version": 1,
+  "purpose": "SEMANTIC_SCREENING_NOT_TRAINING_SPLIT_OR_MODEL_ACCEPTANCE",
+  "sources": [
+    {
+      "manifest": ".codex-tmp/yolo-training/openimages-review/candidate-p20.json",
+      "sha256": "6031caae7ef1f4363b0afa1210e9f959061dac0d1a0a2d89b845e01157ef12df"
+    },
+    {
+      "manifest": ".codex-tmp/yolo-training/openimages-review/potted-p40.json",
+      "sha256": "10f18af70fd3e9e6eadbfbf8fd939d974889177331914f9f6f516be3de20fc89"
+    }
+  ],
+  "review_method": "All 60 ambiguous photos inspected in original-RGB annotation QA plots; selected difficult photos also inspected individually.",
+  "reviewed_ambiguous_photos": 60,
+  "semantic_candidates": 20,
+  "quarantined_not_negatives": 40,
+  "exact_class_sample": "15 distinct photos covering the first two image IDs per exact class were inspected; two issues recorded. This is not exhaustive verification of other photos.",
+  "additional_sample_issues": {
+    "06bdb5ea9ec0e963": "Indoor artificial Christmas trees; living-tree scene domain is not established.",
+    "00f3dbbbf5bdf2cf": "Photo includes large unannotated pallet chairs beside the labeled couch; do not train them as background."
+  },
+  "limitations": [
+    "Statue candidates emphasize clear human/carved figures; broader sculpture targets remain in scope and require suitable real examples.",
+    "Some source boxes exclude pot extents or other target instances; semantic suitability alone does not authorize their use as complete YOLO labels.",
+    "Do not silently use quarantined photos as negatives or turn Sculpture/Houseplant mappings into accepted target classes."
+  ],
+  "records": [
+    {
+      "image_id": "319a174180a93dc5",
+      "image_sha256": "9d644fdcdbfbb6ba681949b19356d4e409af5ecfd61ff0193c7ade37e57c4054",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/319a174180a93dc5.jpg",
+      "source_page": "https://www.flickr.com/photos/bradbox/19810400591",
+      "author": "Bradley Howard",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\319a174180a93dc5.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0625,
+            0.50208336,
+            0.1734375,
+            0.6479167
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0796875,
+            0.49166667,
+            0.1015625,
+            0.5104167
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.3109375,
+            0.50208336,
+            0.346875,
+            0.53541666
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.484375,
+            0.57916665,
+            0.5203125,
+            0.60833335
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.534375,
+            0.5875,
+            0.565625,
+            0.6125
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.5921875,
+            0.55625,
+            0.625,
+            0.58958334
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.6953125,
+            0.56041664,
+            0.7328125,
+            0.6041667
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.7125,
+            0.5395833,
+            0.7515625,
+            0.5854167
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.7296875,
+            0.44583333,
+            0.7671875,
+            0.47708333
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.8234375,
+            0.5833333,
+            0.90625,
+            0.62291664
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.865625,
+            0.54583335,
+            0.9078125,
+            0.5875
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.9078125,
+            0.5520833,
+            0.9484375,
+            0.61041665
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Many tiny or incompletely scoped pots; per-container box completeness needs reannotation.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "2834df29044b96a1",
+      "image_sha256": "d68e0d25441f3a97b27d05ae6d1973193e50f04e5d117a33ee4c7b8931297c6e",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2834df29044b96a1.jpg",
+      "source_page": "https://www.flickr.com/photos/telemax/3471565716",
+      "author": "Tilemahos Efthimiadis",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\2834df29044b96a1.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.1,
+            0.17708333,
+            0.946875,
+            0.86041665
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "2644292432654db6",
+      "image_sha256": "06a3932cec39d8aba07a84517c28ecb47e86af5573225c75d7ea089b1ecbe287",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2644292432654db6.jpg",
+      "source_page": "https://www.flickr.com/photos/strupler/7704451524",
+      "author": "ND Strupler",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\2644292432654db6.jpg",
+      "size": [
+        1024,
+        576
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.20703654,
+            0.0,
+            0.92422193,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Architectural column detail rather than a clear independent statue target.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "76de7db03ced37ae",
+      "image_sha256": "f470a5439b3c99c1f37bc7c1811b7e844b2ecf3dc8169ffb940b236ee28aae2d",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/76de7db03ced37ae.jpg",
+      "source_page": "https://www.flickr.com/photos/vxla/5049502887",
+      "author": "vxla",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\76de7db03ced37ae.jpg",
+      "size": [
+        680,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.36141908,
+            0.05735294,
+            0.85144126,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "269191f83be6c348",
+      "image_sha256": "e06fea0bf1d6e81b9f4a40bc85fba8741d8647f2d87e64b43f73c920d1aeaed2",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/269191f83be6c348.jpg",
+      "source_page": "https://www.flickr.com/photos/antoine_bertier/5755026113",
+      "author": "Antoine Bertier",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\269191f83be6c348.jpg",
+      "size": [
+        1024,
+        683
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0088495575,
+            0.7676991,
+            0.054572273,
+            0.84070796
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.15929204,
+            0.7787611,
+            0.2758112,
+            0.88053095
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.18289086,
+            0.5553097,
+            0.24483776,
+            0.6061947
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.5221239,
+            0.54646015,
+            0.5943953,
+            0.59292036
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Small outdoor planters; source boxes appear to omit container extent.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "133667cd04b760e7",
+      "image_sha256": "de940b1365cfd492c8cf850dafff9376f6eba616a41c10252f56add2be338e9d",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/133667cd04b760e7.jpg",
+      "source_page": "https://www.flickr.com/photos/9290304@N06/5791832985",
+      "author": "Joey McCoy",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\133667cd04b760e7.jpg",
+      "size": [
+        1024,
+        763
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.018691588,
+            0.06903765,
+            0.91433024,
+            0.80543935
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.017133957,
+            0.06903765,
+            0.91121495,
+            0.73221755
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false,
+      "required_correction": "Bonsai in a visible pot: PottedPlant only; remove competing Tree label for the same object."
+    },
+    {
+      "image_id": "00d962525f1ea4e7",
+      "image_sha256": "adfcf1b99338d3a4a1cdc5da465029836ffb361ca04691311b463eb976f48b38",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/00d962525f1ea4e7.jpg",
+      "source_page": "https://www.flickr.com/photos/noprev/6276108767",
+      "author": "no prev",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\00d962525f1ea4e7.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.9984375,
+            0.99791664
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Flower close-up with no clear container/base extent.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "07251bb443093202",
+      "image_sha256": "47133561abbcb6c84e971ab16c576f3e2ce41a9f869e51e7f4ef2605fa2384f1",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/07251bb443093202.jpg",
+      "source_page": "https://www.flickr.com/photos/jfraire/6139308432",
+      "author": "julio_f",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\07251bb443093202.jpg",
+      "size": [
+        1024,
+        652
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.15850145,
+            0.09049774,
+            0.6743516,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "2ccf2343d8d6b899",
+      "image_sha256": "36dc3bb3739f189bf2a0c29ea95d00f51453fc43ae2278bce7abf4b705910284",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2ccf2343d8d6b899.jpg",
+      "source_page": "https://www.flickr.com/photos/vladimir04/7023256311/",
+      "author": "vl04",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\2ccf2343d8d6b899.jpg",
+      "size": [
+        576,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.026506023,
+            0.37077132,
+            0.0939759,
+            0.65899867
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.062650606,
+            0.25845736,
+            0.4433735,
+            0.73477674
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.34457833,
+            0.21244925,
+            0.44578314,
+            0.691475
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.35903615,
+            0.21109608,
+            0.40963855,
+            0.6928281
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.7975904,
+            0.046008117,
+            1.0,
+            0.73477674
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.0,
+            0.0,
+            1.0,
+            0.6292287
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "3f26f78e96430d20",
+      "image_sha256": "fd717b7a9d84816c0d45d02f3b103226b6e62220a9b00f4bbda61d967168d223",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/3f26f78e96430d20.jpg",
+      "source_page": "https://www.flickr.com/photos/bellergy/4045851079",
+      "author": "bellergy2",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\3f26f78e96430d20.jpg",
+      "size": [
+        685,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.059602648,
+            0.31905466,
+            0.9977925,
+            0.9778434
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "13b7206961bca9c6",
+      "image_sha256": "d29da7c190fcba897e35b910d963ce87c403aab1e687a773d33d6b5378b5645c",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/13b7206961bca9c6.jpg",
+      "source_page": "https://www.flickr.com/photos/twechy/6844700924",
+      "author": "twechy",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\13b7206961bca9c6.jpg",
+      "size": [
+        768,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.28333333,
+            0.0328125,
+            0.69166666,
+            0.928125
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.29791668,
+            0.0,
+            0.37708333,
+            0.3015625
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.9770833,
+            0.0,
+            1.0,
+            0.1234375
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "199146e00b05846b",
+      "image_sha256": "ab6d267aa60385ee9d3ebfdb66ea2518e1fc50886cadd174d6637e0f6795f75d",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/199146e00b05846b.jpg",
+      "source_page": "https://www.flickr.com/photos/midiman/90232400",
+      "author": "midiman",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\199146e00b05846b.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.925,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Only an isolated sculpted hand is visible.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "2250c417f8fdede6",
+      "image_sha256": "9d116443a5cfec3232a36a8959dd0b0c833e90db7d72feca28942e347b35db3e",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2250c417f8fdede6.jpg",
+      "source_page": "https://www.flickr.com/photos/dodo-bird/4233805799",
+      "author": "Dodo-Bird",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\2250c417f8fdede6.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.6375,
+            0.16875,
+            0.95
+          ],
+          "occluded": true,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0703125,
+            0.025,
+            0.8375,
+            0.9375
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Flower close-up across multiple partially visible plants; per-container extent ambiguous.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "2a0feb84d28eec15",
+      "image_sha256": "ba73b2253bd843a90b46928eb91eb1dc31f8a3b682acd218d6777b678eedde39",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2a0feb84d28eec15.jpg",
+      "source_page": "https://www.flickr.com/photos/mccchurch/765009865/",
+      "author": "MCCchurch",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\2a0feb84d28eec15.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.41875,
+            0.0875,
+            0.59375,
+            0.59166664
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Dark/occluded foliage; living potted-plant identity and container extent unresolved.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "4ecc85eb4b742f62",
+      "image_sha256": "47b976e67a531fabd73f26d3b40ee4eeedd1d54040616cbdf44f046cd6f08902",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/4ecc85eb4b742f62.jpg",
+      "source_page": "https://www.flickr.com/photos/bitsorf/5005859685",
+      "author": "bitsorf: Thank you 1,500,000 times",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\4ecc85eb4b742f62.jpg",
+      "size": [
+        734,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.036247335,
+            0.056574922,
+            0.8976546,
+            0.98165137
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.0,
+            0.48929664,
+            0.24946696,
+            0.94801223
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.6034115,
+            0.17431192,
+            1.0,
+            0.795107
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "115ef722923602a8",
+      "image_sha256": "5dfd35ae7047e40ad069fe8d919c27731e1c568258262daec7f6b5f51e1f5c4a",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/115ef722923602a8.jpg",
+      "source_page": "https://www.flickr.com/photos/markhillary/3651320669",
+      "author": "Mark Hillary",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\115ef722923602a8.jpg",
+      "size": [
+        768,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.035416666,
+            0.7984375,
+            0.15416667,
+            0.978125
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.2,
+            0.903125,
+            0.28333333,
+            0.965625
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.28958333,
+            0.784375,
+            0.39583334,
+            0.8921875
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.35833332,
+            0.8703125,
+            0.49583334,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.83125,
+            0.875,
+            0.96458334,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.45208332,
+            0.4125
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Small/occluded balcony plants; container-aware completeness not yet verified.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "7506c71127e786b2",
+      "image_sha256": "007e129d617dd79808644b0dd7bd960cfb00f2b00628f1fc6cbd163f918a26ca",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/7506c71127e786b2.jpg",
+      "source_page": "https://www.flickr.com/photos/starwarsblog/515787489",
+      "author": "Star Wars",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\7506c71127e786b2.jpg",
+      "size": [
+        768,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.62916666,
+            0.4125,
+            0.88958335,
+            0.8484375
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Costume/armour display; source Statue box covers the background, not the main object.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "0fc1771518abb67c",
+      "image_sha256": "7d0ea5d334cc0a483f8b30e4799ba573af9e666d49f08a092121362e8206265b",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/0fc1771518abb67c.jpg",
+      "source_page": "https://www.flickr.com/photos/donabelandewen/16351137328",
+      "author": "Ewen Roberts",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\0fc1771518abb67c.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.25625,
+            0.49375,
+            0.6
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.5984375,
+            0.10625,
+            1.0,
+            0.5854167
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Rhubarb growing directly in a garden bed, not a potted plant.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "8a1acbd94021367c",
+      "image_sha256": "5e088860d71c945b87bc0d9c7f2f5d9afbcaab2af996527bbe91592fb218c8f5",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/8a1acbd94021367c.jpg",
+      "source_page": "https://www.flickr.com/photos/franciscoantunes/2301939174",
+      "author": "Francisco Antunes",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\8a1acbd94021367c.jpg",
+      "size": [
+        694,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.17105263,
+            0.04754829,
+            0.8333333,
+            0.6240713
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "1d6468e90f600660",
+      "image_sha256": "c704543f61f5212e3f742d8b2057538d6c118f26534d85668ad2b0b156b7c55a",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1d6468e90f600660.jpg",
+      "source_page": "https://www.flickr.com/photos/phalinn/325284679",
+      "author": "Phalinn Ooi",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\1d6468e90f600660.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.9703125,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.4572025,
+            0.165625,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.8109375,
+            0.16283925,
+            1.0,
+            0.68058455
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "4019e570109201cc",
+      "image_sha256": "0306a500a64afc2bfb4b724a38abb46c4b401ad5b58a36fb9479465137c1ca0b",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/4019e570109201cc.jpg",
+      "source_page": "https://www.flickr.com/photos/albertoalerigi/5386466226",
+      "author": "Alberto ....",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\4019e570109201cc.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.01875,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Cactus foliage close-up with no visible pot/base.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "8edb19a248373836",
+      "image_sha256": "e599db2a7b93750479852a08b34ccdf8882d0da8ecda6f4d9f17f5ad9eafb653",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/8edb19a248373836.jpg",
+      "source_page": "https://www.flickr.com/photos/ter-burg/8735415522",
+      "author": "Sebastiaan ter Burg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\8edb19a248373836.jpg",
+      "size": [
+        683,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.26327434,
+            0.15486726,
+            0.8982301,
+            0.95280236
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Fashion display/mannequin ambiguity; sculpture identity not established.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "2ce47ae6d1cd0c63",
+      "image_sha256": "2c0cd609180de20377572a52de2116966a8dcf6cd9f914c928a586ff277d3996",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2ce47ae6d1cd0c63.jpg",
+      "source_page": "https://www.flickr.com/photos/briangratwicke/8440036324",
+      "author": "Brian Gratwicke",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\2ce47ae6d1cd0c63.jpg",
+      "size": [
+        1024,
+        683
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.9985251,
+            0.99557525
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Orchid flower close-up with no clear container/base.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "1568dfe2beeda804",
+      "image_sha256": "f71c72724b723614ed2453a732f085f336aa244cbbae8df3b881354f219a66bd",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1568dfe2beeda804.jpg",
+      "source_page": "https://www.flickr.com/photos/web-stark/4247535740",
+      "author": "daniel.stark",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\1568dfe2beeda804.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.0,
+            0.0,
+            1.0,
+            0.76666665
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Only the feet of a larger statue are visible.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "7d1cb6eec3e2d13f",
+      "image_sha256": "48e9816f70d6de4c21eb5aad43ece282e039e5f5d8a3ab382c9d07de1b112a77",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/7d1cb6eec3e2d13f.jpg",
+      "source_page": "https://www.flickr.com/photos/iphoneshoot/15666905933",
+      "author": "iPhone-shoot",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\7d1cb6eec3e2d13f.jpg",
+      "size": [
+        768,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.11875,
+            0.0890625,
+            0.83958334,
+            0.9984375
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "7d9c6a1fabd2e1ee",
+      "image_sha256": "9275059f030054c418f79d0f0ccd8099a75b7a4584f76154bec60e7bed82f9dc",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/7d9c6a1fabd2e1ee.jpg",
+      "source_page": "https://www.flickr.com/photos/kirby_shots/8190642126",
+      "author": "Andy Kirby",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\7d9c6a1fabd2e1ee.jpg",
+      "size": [
+        666,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Stone animal relief; initial mapping/target extent unresolved. Not a bronze beast.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "2260e855a2c63167",
+      "image_sha256": "4a14496fc2222bdd68d3b2ac3576d0b88e640d442763208b8d92b36c010a16bb",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2260e855a2c63167.jpg",
+      "source_page": "https://www.flickr.com/photos/brightsea/2907002482",
+      "author": "Tatyana Temirbulatova",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\2260e855a2c63167.jpg",
+      "size": [
+        1024,
+        682
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.9985251,
+            0.99557525
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Tulip close-up with no clear pot/base.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "326c062e0b66f5af",
+      "image_sha256": "b70411be21754a132e61c7309e2631b38c24dff93fca9f6b218dc49701f44e13",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/326c062e0b66f5af.jpg",
+      "source_page": "https://www.flickr.com/photos/fishermansdaughter/3222292693",
+      "author": "fishermansdaughter",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\326c062e0b66f5af.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.9984375,
+            0.99791664
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "563cd442d7a8fe61",
+      "image_sha256": "f44e5862d730eb5e7c0aa0cd8d7168b27dc11f8e4dc3ef0ba1232286e29dbfe5",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/563cd442d7a8fe61.jpg",
+      "source_page": "https://www.flickr.com/photos/provence___provenza/8064601662",
+      "author": "Daniel70mi Falciola",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\563cd442d7a8fe61.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.0,
+            0.46041667,
+            0.0421875,
+            0.62291664
+          ],
+          "occluded": true,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.315625,
+            0.18125,
+            0.603125,
+            0.99791664
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.596875,
+            0.42708334,
+            0.6328125,
+            0.5208333
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.7875,
+            0.47083333,
+            0.8421875,
+            0.60625
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Doll display; do not silently equate dolls with the scene statue target.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "7953df9f00a3d067",
+      "image_sha256": "77b3115d47b9df3119b7275d63aee5a52489fdfd1b785e2032d3354dbe6060bd",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/7953df9f00a3d067.jpg",
+      "source_page": "https://www.flickr.com/photos/jimmyg/4697213232",
+      "author": "jimmyweee",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\7953df9f00a3d067.jpg",
+      "size": [
+        1024,
+        683
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.7138643,
+            0.9977876
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.80088496,
+            0.0,
+            1.0,
+            0.49778762
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Animal fountain; material and intended Statue/BronzeBeast mapping unresolved.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "37ad4393b55ce83f",
+      "image_sha256": "8dd982d82fc8132e48536a3dc7f6e488de33e131ff5ed25b87584941af8707d1",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/37ad4393b55ce83f.jpg",
+      "source_page": "https://www.flickr.com/photos/25403493@N06/2731318342",
+      "author": "tattooblogger",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\37ad4393b55ce83f.jpg",
+      "size": [
+        437,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.3483871,
+            0.09917355,
+            0.9548387,
+            0.9862259
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "7b3c99d0ae458835",
+      "image_sha256": "5ea0dcec9faac7a00f14ca1ce7437779511c70ce5a1dce5e5a514c9917d7ed16",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/7b3c99d0ae458835.jpg",
+      "source_page": "https://www.flickr.com/photos/gatz125/5107657293",
+      "author": "Colleen McMahon",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\7b3c99d0ae458835.jpg",
+      "size": [
+        1024,
+        843
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.15245901,
+            0.13346614,
+            0.895082,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "6dbcd715a2aae68c",
+      "image_sha256": "aca8d0b6a7aec6e39575a034c45993de5be07d617ae6c321141fac7e970b01b5",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/6dbcd715a2aae68c.jpg",
+      "source_page": "https://www.flickr.com/photos/mathplourde/14632714949",
+      "author": "Mathieu Plourde",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\6dbcd715a2aae68c.jpg",
+      "size": [
+        768,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.06859206,
+            0.0072202166,
+            0.5740072,
+            0.99819493
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.5451264,
+            0.041516244,
+            0.9169675,
+            0.9097473
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.86823106,
+            0.045126352,
+            0.99819493,
+            0.58844763
+          ],
+          "occluded": true,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.46931407,
+            0.72021663
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "1cadca0d3ff6e185",
+      "image_sha256": "7eac35863b743aac763fa8edeb4c71745e75fac60d8a398682d34cf52d234969",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1cadca0d3ff6e185.jpg",
+      "source_page": "https://www.flickr.com/photos/docguy/6970362184",
+      "author": "Paul Pehrson",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\1cadca0d3ff6e185.jpg",
+      "size": [
+        768,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.08125,
+            0.1046875,
+            0.95208335,
+            0.7953125
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.90416664,
+            0.11875,
+            1.0,
+            0.44375
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Cut-flower arrangement; do not map cut flowers to a growing potted plant.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "2eb40861eb6097a1",
+      "image_sha256": "c5e9fa1718c4c3dde8154999218c239fb8ec5430cc442d54ec50caaead5ad92a",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2eb40861eb6097a1.jpg",
+      "source_page": "https://www.flickr.com/photos/cristinabe/7292000068",
+      "author": "Cristina Bejarano",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\2eb40861eb6097a1.jpg",
+      "size": [
+        765,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.08768267,
+            0.17784712,
+            0.82881004,
+            0.75039
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.19415449,
+            0.0,
+            0.3841336,
+            0.1825273
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Main fern box omits pot bottom; second window-container label uncertain; needs explicit reannotation.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "2a934341e5fce116",
+      "image_sha256": "2289321b04eb740b16065dbc1a1b1057b6a0b45ba59b7636fedd93a543231728",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2a934341e5fce116.jpg",
+      "source_page": "https://www.flickr.com/photos/melissaclark/3784622995",
+      "author": "Melissa Clark",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\2a934341e5fce116.jpg",
+      "size": [
+        768,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.054166667,
+            0.0125,
+            1.0,
+            0.9671875
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Cut flowers in a vase rather than a growing potted plant.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "6bb7e70c38657568",
+      "image_sha256": "8626b4c280876c0ccc4166a15ddbd02609f19e9ff4ae0f111f6af4823edbeb98",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/6bb7e70c38657568.jpg",
+      "source_page": "https://www.flickr.com/photos/7738503@N05/493697526",
+      "author": "jimd2007",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\6bb7e70c38657568.jpg",
+      "size": [
+        655,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Statue",
+          "source_class_id": "/m/06msq",
+          "xyxy": [
+            0.19638826,
+            0.10115607,
+            0.758465,
+            0.9248555
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "20b1acb2c4566634",
+      "image_sha256": "d1344578b8fbece06ba1afd22fb2a5d37e8489f8dc56f5e863ce156f73ca02cd",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/20b1acb2c4566634.jpg",
+      "source_page": "https://www.flickr.com/photos/eekim/6375184631",
+      "author": "Eugene Kim",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\20b1acb2c4566634.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.9984375,
+            0.95625
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Loose air plants for sale in a bowl; per-container instance scope ambiguous.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "0867ed7b739f753a",
+      "image_sha256": "709c2002b98e3a3656dd960712ec80dddf21dae4a7c67d15b300571d6d9f5d46",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/0867ed7b739f753a.jpg",
+      "source_page": "https://www.flickr.com/photos/bizmac/5953713008",
+      "author": "bizmac",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\0867ed7b739f753a.jpg",
+      "size": [
+        1024,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0072202166,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Cactus close-up with no visible pot/base.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "1a65ac537f92de02",
+      "image_sha256": "cd46a414bb934aa9736f019b9cff6a2fe576987fd6d95a3788814c24813cc99a",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1a65ac537f92de02.jpg",
+      "source_page": "https://www.flickr.com/photos/rictor-and-david/4372371137",
+      "author": "Rictor Norton  &amp; David Allen",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\1a65ac537f92de02.jpg",
+      "size": [
+        750,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.025316456,
+            0.29520866,
+            0.96202534,
+            0.9984544
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Garden urn decoration; source label does not establish a growing potted plant.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "948794bfee784412",
+      "image_sha256": "75b72d4858806402a1bc08024dbdfccebf13b8e7c34a543fe3f041eac288a9c7",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/948794bfee784412.jpg",
+      "source_page": "https://www.flickr.com/photos/donabelandewen/2190228334",
+      "author": "Ewen Roberts",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\948794bfee784412.jpg",
+      "size": [
+        1024,
+        683
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.2581121,
+            0.2079646,
+            0.9424779,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.43510324,
+            0.0,
+            1.0,
+            0.36283186
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Multiple partly occluded pots grouped into one box; per-container labels incomplete.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "53f5816d58a9159d",
+      "image_sha256": "b3d492ae1e5d94bade5d48a670928123dfd503395b4fb0e3d6755f465e7e5347",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/53f5816d58a9159d.jpg",
+      "source_page": "https://www.flickr.com/photos/metor153/7526261028",
+      "author": "Nikos",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\53f5816d58a9159d.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.246875,
+            0.13333334,
+            0.9390625,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "8dc48310cd96cac3",
+      "image_sha256": "8e94a684a8c87582dab914a65d89f45dd28647f10b816039c370b7188f1622d7",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/8dc48310cd96cac3.jpg",
+      "source_page": "https://www.flickr.com/photos/misawakatsutoshi/15995205695",
+      "author": "克年 三沢",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\8dc48310cd96cac3.jpg",
+      "size": [
+        768,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.0,
+            1.0,
+            0.9984375
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Cut flowers with no growing plant/container identity.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "d29f095f98aec84f",
+      "image_sha256": "182fe21a022cc4c0df90504993ec90dd3491da838177f96e9e0249862ce5f90a",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/d29f095f98aec84f.jpg",
+      "source_page": "https://www.flickr.com/photos/jorgecancela/5126760783",
+      "author": "Jorge Cancela",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\d29f095f98aec84f.jpg",
+      "size": [
+        768,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.27291667,
+            0.0,
+            0.59791666,
+            0.2046875
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Flower/container partly cropped; source box omits most of the container; needs reannotation.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "b499182ee39701e0",
+      "image_sha256": "defe28e786a8fa7d5b13595e4703d17d5df2e04c2edb5f9e557173fe99dfe348",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/b499182ee39701e0.jpg",
+      "source_page": "https://www.flickr.com/photos/moto_club4ag/5382050645",
+      "author": "Moto &quot;Club4AG&quot; Miwa",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\b499182ee39701e0.jpg",
+      "size": [
+        1024,
+        685
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.70310193,
+            0.34216335,
+            1.0,
+            0.9072848
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.38847858,
+            0.23620309,
+            0.562777,
+            0.48565122
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Cut flowers in a vase; not a growing potted plant.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "48b2d1bc4e911898",
+      "image_sha256": "3ce72278f33f0debf122d622be282e4d00f0b3c38cff56e19fb719b92b9a69d7",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/48b2d1bc4e911898.jpg",
+      "source_page": "https://www.flickr.com/photos/boscdanjou/5190598247",
+      "author": "Bosc d&#x27;Anjou",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\48b2d1bc4e911898.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Foliage close-up; no clear pot/base.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "dc031a77f70f0593",
+      "image_sha256": "9121bd0f4b76f775fcf3247be3f9c0c0d0cc2d2ecf18fa8fd282f9239878043b",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/dc031a77f70f0593.jpg",
+      "source_page": "https://www.flickr.com/photos/edwardotis/8927618046",
+      "author": "Ed Johnson",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\dc031a77f70f0593.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.0020833334,
+            1.0,
+            1.0
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Foliage behind glass; container extent not established.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "ddbb872ebdedb99a",
+      "image_sha256": "cc652f0fc68211cfdd2cc74aebe88d5e546a7a66c904d0fef8b1de644aab619f",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/ddbb872ebdedb99a.jpg",
+      "source_page": "https://www.flickr.com/photos/dodo-bird/1801160648",
+      "author": "Dodo-Bird",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\ddbb872ebdedb99a.jpg",
+      "size": [
+        1024,
+        689
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.3215859,
+            0.3288889,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.16,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "64685fb20bec41db",
+      "image_sha256": "756b7053a0a3a8b47ceb7245e7e73869456d336cbc82730f257f63b054e1e3ac",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/64685fb20bec41db.jpg",
+      "source_page": "https://www.flickr.com/photos/affinity23/5312135033",
+      "author": "affinity",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\64685fb20bec41db.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.165625,
+            0.37291667,
+            0.403125,
+            0.78125
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.1375,
+            0.2015625,
+            0.65416664
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.41875,
+            0.28541666,
+            0.5953125,
+            0.37083334
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.6328125,
+            0.0,
+            0.871875,
+            0.5375
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.84375,
+            0.08958333,
+            1.0,
+            0.6
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.8984375,
+            0.88125,
+            1.0,
+            0.99791664
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Nested planters and several small containers; source boxes omit pot extents and need per-container reannotation.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "90a059259cefdb3a",
+      "image_sha256": "8af6b0b88172e77a8e5109ff46c567a9391a15a98735958e98b5bfc4ad930125",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/90a059259cefdb3a.jpg",
+      "source_page": "https://www.flickr.com/photos/tinfoilraccoon/5910366682",
+      "author": "rochelle hartman",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\90a059259cefdb3a.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.022916667,
+            0.9984375,
+            0.99791664
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Flowers near siding; no clear pot/base.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "da627065ef5a9ce2",
+      "image_sha256": "0a9c7b89ed6b4bcbc1f7a3922473726de35565ffbbd0d548f33a4f306e137055",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/da627065ef5a9ce2.jpg",
+      "source_page": "https://www.flickr.com/photos/tobiastoft/3920487424/",
+      "author": "Tobias Toft",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\da627065ef5a9ce2.jpg",
+      "size": [
+        1024,
+        683
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.073746316,
+            0.07743363,
+            1.0,
+            0.9977876
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Foliage close-up; container extent not established.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "9f6c11b60796e451",
+      "image_sha256": "ff1889b611c93da3741bd81852d4d983fb7873e2336fde7bcb4ca38792f2b136",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/9f6c11b60796e451.jpg",
+      "source_page": "https://www.flickr.com/photos/39908901@N06/7327755650",
+      "author": "m01229",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\9f6c11b60796e451.jpg",
+      "size": [
+        1024,
+        678
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.041116007,
+            0.40133038,
+            0.2966226,
+            0.8935698
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.5565345,
+            0.52549887,
+            0.6431718,
+            0.68070954
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.6901615,
+            0.5388027,
+            0.7209985,
+            0.60310423
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "571e87b93aecab33",
+      "image_sha256": "6d07a4d1f706ff6f0eb2729c3af7528bfa42f62230efcaa36ad6f65ce4da5fb6",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/571e87b93aecab33.jpg",
+      "source_page": "https://www.flickr.com/photos/rjhuttondfw/2849276810",
+      "author": "Rodney",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\571e87b93aecab33.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.053125,
+            0.29583332,
+            0.8,
+            0.9895833
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.071875,
+            0.045833334,
+            0.4546875,
+            0.35208333
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "decision": "SEMANTIC_CANDIDATE_BOX_COMPLETENESS_PENDING",
+      "reason": "Visible sculpture target or growing potted plant; initial candidate, not a complete domain sample.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "dbdcc799cfaf617d",
+      "image_sha256": "b94ed899760ea0ee0f149798d44ab6b9cf06e4e2e4151f752ee3cbe125ee8720",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/dbdcc799cfaf617d.jpg",
+      "source_page": "https://www.flickr.com/photos/creativewebe/19528143144",
+      "author": "Theothermrscepero",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\dbdcc799cfaf617d.jpg",
+      "size": [
+        1024,
+        726
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Flower close-up; pots belong to surrounding plants, instance extent unresolved.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "888d409664a38e78",
+      "image_sha256": "87a99f90c55946c89c96e9bf34129ec166b451cddeed5052446883a2fa3bc74f",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/888d409664a38e78.jpg",
+      "source_page": "https://www.flickr.com/photos/bitterjug/428591607",
+      "author": "Mark Skipper",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\888d409664a38e78.jpg",
+      "size": [
+        1024,
+        769
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.16666667,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Foliage close-up with unclear pot/base.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "a0893025c69a4ee8",
+      "image_sha256": "c0702af413383252d4d0fbca4b829228c8937950d919231f4e7897e4335fad1c",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/a0893025c69a4ee8.jpg",
+      "source_page": "https://www.flickr.com/photos/clotee_allochuku/20215395290",
+      "author": "Clotee Allochuku",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\a0893025c69a4ee8.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.159375,
+            0.54583335
+          ],
+          "occluded": true,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.059375,
+            0.0,
+            0.9125,
+            0.99791664
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Mixed flower arrangement; growing-container and per-instance scope unresolved.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "4c8d29126f5f6154",
+      "image_sha256": "844df16a17791d50eca5c668c51baae93d5ba9d22ea7e41752afebb8dc9382f0",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/4c8d29126f5f6154.jpg",
+      "source_page": "https://www.flickr.com/photos/joccay/6200976642/",
+      "author": "Joccay",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\4c8d29126f5f6154.jpg",
+      "size": [
+        682,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.50442475,
+            0.22566372,
+            0.8539823,
+            0.679941
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Sunflower appears to grow from a chimney masonry crack; the object behind is a chimney pot, not clear planted-container evidence.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "83b8fb35cbf7ffa1",
+      "image_sha256": "250e7712c5b0ec9b36f98e904d463ee104a9b715ef2813e44a312366cb9bfbad",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/83b8fb35cbf7ffa1.jpg",
+      "source_page": "https://www.flickr.com/photos/fhsu/128354487",
+      "author": "Fred Hsu",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\83b8fb35cbf7ffa1.jpg",
+      "size": [
+        683,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.03982301,
+            0.9977876,
+            0.9985251
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Orchid flowers close-up with no clear pot/base.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "64bffc40f0d073fe",
+      "image_sha256": "5aebc1481aaa2a5572167c4db7471b57369f2918e94355e2bd800cdb6151a124",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/64bffc40f0d073fe.jpg",
+      "source_page": "https://www.flickr.com/photos/nothingatall/2723249858",
+      "author": "Rich Jones",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\64bffc40f0d073fe.jpg",
+      "size": [
+        1024,
+        768
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.078125,
+            0.16875,
+            0.965625,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Decorative floral arrangement with toy; growing potted-plant identity unresolved.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    },
+    {
+      "image_id": "c7a4c2afc29aa9e3",
+      "image_sha256": "d4cd77ca29f2cb85e70b5010afe5608f47df1d817f09a4bf8544896a89189535",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/c7a4c2afc29aa9e3.jpg",
+      "source_page": "https://www.flickr.com/photos/wihel/16525204202",
+      "author": "ppc1337",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\c7a4c2afc29aa9e3.jpg",
+      "size": [
+        1024,
+        1024
+      ],
+      "source_annotations": [
+        {
+          "canonical_candidate": "PottedPlant",
+          "source_class_id": "/m/03fp41",
+          "xyxy": [
+            0.0,
+            0.0,
+            1.0,
+            0.8862816
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "decision": "QUARANTINE_NOT_NEGATIVE",
+      "reason": "Cut tulips/bouquet; no growing potted plant.",
+      "training_split_assigned": false,
+      "accepted_for_deployment": false
+    }
+  ]
+}

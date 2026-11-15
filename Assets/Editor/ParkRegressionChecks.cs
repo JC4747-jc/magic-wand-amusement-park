@@ -29,6 +29,9 @@ public static class ParkRegressionChecks
             Require(poses.Length==1 && poses[0].Contains("\"frame_id\":10") && poses[0].Contains("\"capture_ns\":123"),"Sent capture pose association failed");
             Set("nextRecord",0f);capture.RecordAcceptedPose(10,123,Pose.identity,Pose.identity);capture.RecordAcceptedPose(11,123,Pose.identity,Pose.identity);
             Require(System.IO.File.ReadAllLines(System.IO.Path.Combine(folder,"poses.jsonl")).Length==1,"Recorder duplicated or exceeded limit");
+            capture.maxRecordPairs=int.MaxValue;Set("recordedPairs",60);Set("nextRecord",0f);
+            capture.RecordAcceptedPose(12,123,Pose.identity,Pose.identity);
+            Require(System.IO.File.ReadAllLines(System.IO.Path.Combine(folder,"poses.jsonl")).Length==1,"Recorder exceeded hard 60-pair disk budget");
             Debug.Log("STEREO_RECORDER_REGRESSION_PASS: exact sent capture association, raw/pair/pose commit, duplicate/cap rejection; synthetic I/O fixture only");
         } finally {
             UnityEngine.Object.DestroyImmediate(go);
@@ -40,6 +43,7 @@ public static class ParkRegressionChecks
     public static void Run()
     {
         RunRecorder();
+        ParkDestroyedTargetChecks.Run();
         foreach(ParkFeedbackShape shape in Enum.GetValues(typeof(ParkFeedbackShape))) {
             var mesh=ParkFeedbackMeshes.Get(shape);
             Require(mesh && mesh.vertexCount>0 && mesh.vertexCount<100 && mesh.triangles.Length>0,"Invalid feedback geometry: "+shape);
@@ -87,11 +91,12 @@ public static class ParkRegressionChecks
                     var stateField=typeof(ParkActor).GetField("state",windFlags);object snapshot=stateField.GetValue(actor);
                     snapshot.GetType().GetField("wind").SetValue(snapshot,true);stateField.SetValue(actor,snapshot);
                     var branches=(System.Collections.Generic.List<Transform>)typeof(ParkActor).GetField("branches",windFlags).GetValue(actor);
+                    var restPose=branches[0].localRotation;
                     var step=typeof(ParkActor).GetMethod("StepTreeWind",windFlags);actor.windDirection=Vector3.right;
                     step.Invoke(actor,new object[]{.25f,1f});
-                    Require(branches.Count>0 && Quaternion.Angle(branches[0].localRotation,Quaternion.Euler(0,0,40))>.1f,"Tree wind did not move virtual branches");
+                    Require(branches.Count>0 && Quaternion.Angle(branches[0].localRotation,restPose)>.1f,"Tree wind did not move virtual branches");
                     actor.EndHandInteraction();step.Invoke(actor,new object[]{.3f,1f});
-                    Require(Quaternion.Angle(branches[0].localRotation,Quaternion.Euler(0,0,40))<.01f,"Interrupted wind did not settle");
+                    Require(Quaternion.Angle(branches[0].localRotation,restPose)<.01f,"Interrupted wind did not settle");
                     actor.ResetEffects();foreach(var branch in branches)Require(float.IsFinite(branch.localRotation.x),"Reset retained invalid branch rotation");
                     var emit=typeof(ParkActor).GetMethod("Emit",windFlags);
                     var pool=(System.Collections.Generic.List<Transform>)typeof(ParkActor).GetField("pool",windFlags).GetValue(actor);

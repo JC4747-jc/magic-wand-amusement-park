@@ -9,7 +9,7 @@ namespace MagicMR
     public enum ParkAction { Style, Awaken, Wind, Reward, Pull, Poke, Feed, GrowUp, GrowDown, Undo, Reset, Stop, Bloom }
 
     /// <summary>Virtual representation only. Root is a tracking/confirmed-placement anchor.</summary>
-    public sealed class ParkActor : MonoBehaviour
+    public sealed partial class ParkActor : MonoBehaviour
     {
         public ParkScenario scenario;
         public string species = "Cat";
@@ -39,13 +39,21 @@ namespace MagicMR
         public bool FitRepresentation(Vector3 bottom,Vector3 top,bool valid) {
             if(!built || !tracked || Busy || !valid || !FinitePoint(bottom) || !FinitePoint(top) || Vector3.Dot(transform.up,Vector3.up)<.99f)return false;
             float height=top.y-bottom.y;
-            if(height<.005f || height>3 || new Vector2(top.x-bottom.x,top.z-bottom.z).magnitude>.1f || neutralBounds.size.y<.001f)return false;
+            if(height<.005f || height>3 || new Vector2(top.x-bottom.x,top.z-bottom.z).magnitude>.1f ||
+                !FinitePoint(neutralBounds.center) || !FinitePoint(neutralBounds.size) || neutralBounds.size.y<.001f)return false;
             float scale=height/neutralBounds.size.y;
             representationFit.localScale=Vector3.one*scale;
             representationFit.localPosition=transform.InverseTransformPoint(bottom)-new Vector3(neutralBounds.center.x,neutralBounds.min.y,neutralBounds.center.z)*scale;
             sizeConfirmed=true;Feedback="Manual nominal height / bottom confirmed; no 3D pose inference";return true;
         }
         static bool FinitePoint(Vector3 p)=>float.IsFinite(p.x)&&float.IsFinite(p.y)&&float.IsFinite(p.z);
+        internal bool SetVirtualTreeMode(bool fantasy)
+        {
+            if(!built||scenario!=ParkScenario.Tree||!virtualTarget||!tracked||!isActiveAndEnabled||IsExiting)return false;
+            var fitPosition=representationFit.localPosition;var fitScale=representationFit.localScale;bool fitted=sizeConfirmed,oriented=orientationConfirmed;
+            magicTree=fantasy;ResetEffects();representationFit.localPosition=fitPosition;representationFit.localScale=fitScale;sizeConfirmed=fitted;orientationConfirmed=oriented;
+            Feedback=fantasy?"VIRTUAL fantasy tree; effects reset":"VIRTUAL natural tree; effects reset";return true;
+        }
         public bool orientationConfirmed { get; private set; }
         public bool ConfirmOrientation(float yaw) {
             if(!tracked || !float.IsFinite(yaw))return false;
@@ -83,13 +91,14 @@ namespace MagicMR
         State state;
         readonly Stack<State> history = new Stack<State>();
         readonly List<Renderer> body = new List<Renderer>();
-        readonly List<Transform> foliage = new List<Transform>();
+        readonly Dictionary<Renderer,Color> componentColors = new Dictionary<Renderer,Color>();
         readonly List<Transform> branches = new List<Transform>();
         readonly List<Transform> pool = new List<Transform>();
         Transform eyes, bubble, portal, jellyfish, scar, reward, environment, branchRoot, preview, spell, ears;
         readonly List<Transform> dreamContents=new List<Transform>();
         Transform[] stoppingEffects;
         Transform statueScan;
+        NaturalBronzeBeast naturalBronze;
         Transform plantFlower;
         float bloomVisibility;
         float bugDefeatProgress;
@@ -112,7 +121,7 @@ namespace MagicMR
         float particleStart;
         ParkAction particleKind;
         bool built;
-        static readonly Color[] SeasonColors={new Color(1,.6f,.7f),new Color(.2f,.7f,.25f),new Color(1,.55f,.12f),new Color(.45f,.35f,.25f)};
+        static readonly Color[] SeasonColors={new Color(.38f,.52f,.24f),new Color(.19f,.36f,.13f),new Color(.62f,.39f,.15f),new Color(.37f,.39f,.32f)};
 
         public void Build()
         {
@@ -123,25 +132,14 @@ namespace MagicMR
             representationFit=new GameObject("Manual fit - separate from tracking and animation").transform;representationFit.SetParent(transform,false);visual.SetParent(representationFit,false);
             audioSource = gameObject.AddComponent<AudioSource>(); audioSource.spatialBlend=1; audioSource.volume=.18f; audioSource.playOnAwake=false;
             eyes = new GameObject("Eyes").transform; eyes.SetParent(visual,false);
-            Part(eyes,"LeftEye",PrimitiveType.Sphere,new Vector3(-.055f,.25f,-.105f),Vector3.one*.025f,Color.black,false);
-            Part(eyes,"RightEye",PrimitiveType.Sphere,new Vector3(.055f,.25f,-.105f),Vector3.one*.025f,Color.black,false);
             switch(scenario)
             {
                 case ParkScenario.Tree:
-                    Part(visual,"Trunk",PrimitiveType.Cylinder,new Vector3(0,.28f,0),new Vector3(.13f,.28f,.13f),new Color(.3f,.16f,.08f));
-                    branchRoot=new GameObject("Decorative virtual branches").transform; branchRoot.SetParent(visual,false);
-                    for(int i=0;i<5;i++) {
-                        var pivot=new GameObject("BranchPivot").transform; pivot.SetParent(branchRoot,false); pivot.localPosition=new Vector3(0,.32f+i*.03f,0); pivot.localRotation=Quaternion.Euler(0,i*72,40);
-                        Part(pivot,"Branch",PrimitiveType.Cylinder,new Vector3(0,.12f,0),new Vector3(.025f,.14f,.025f),new Color(.3f,.16f,.08f)); branches.Add(pivot);
-                        foliage.Add(Part(pivot,"Crown",PrimitiveType.Sphere,new Vector3(0,.28f,0),new Vector3(.3f,.25f,.28f),targetColor));
-                    }
-                    scar=Part(visual,"Virtual scar",PrimitiveType.Sphere,new Vector3(0,.29f,-.07f),new Vector3(.05f,.07f,.02f),Color.red,false);
+                    BuildNaturalTree();
+                    BuildNaturalTreeMark();
                     break;
                 case ParkScenario.Bugs:
-                    Part(visual,"Pixel body",PrimitiveType.Cube,Vector3.zero,new Vector3(.13f,.025f,.08f),new Color(.5f,.16f,.1f));
-                    Part(visual,"Pixel head",PrimitiveType.Cube,new Vector3(0,0,-.06f),new Vector3(.06f,.03f,.04f),Color.red);
-                    for(int i=0;i<(species=="Spider"?8:6);i++) { float side=i%2==0?-1:1; var leg=Part(visual,"Pixel leg",PrimitiveType.Cube,new Vector3(side*.09f,0,(i/2-1)*.025f),new Vector3(.1f,.013f,.012f),Color.black); leg.localRotation=Quaternion.Euler(0,side*(i/2-1)*20,0); }
-                    eyes.localPosition=new Vector3(0,-.25f,.02f); eyes.localScale=Vector3.one*.4f;
+                    BuildNaturalBug();
                     break;
                 case ParkScenario.Statue:
                     var scan=new GameObject("Virtual statue scan ring").AddComponent<LineRenderer>();
@@ -150,37 +148,19 @@ namespace MagicMR
                     var scanColor=new MaterialPropertyBlock();scanColor.SetColor("_BaseColor",Color.cyan);scan.SetPropertyBlock(scanColor);
                     for(int i=0;i<48;i++) {float a=i*Mathf.PI*2/48;scan.SetPosition(i,new Vector3(Mathf.Cos(a)*.25f,0,Mathf.Sin(a)*.25f));}
                     statueScan.gameObject.SetActive(false);
-                    Part(visual,"Pedestal",PrimitiveType.Cube,new Vector3(0,.06f,0),new Vector3(.35f,.12f,.28f),Color.gray);
-                    Part(visual,"Torso",PrimitiveType.Capsule,new Vector3(0,.28f,0),new Vector3(.19f,.16f,.16f),Color.gray);
-                    Part(visual,"Head",PrimitiveType.Sphere,new Vector3(0,.49f,0),Vector3.one*.16f,Color.gray);
-                    for(int i=-1;i<=1;i+=2) branches.Add(Part(visual,"Arm",PrimitiveType.Capsule,new Vector3(i*.16f,.3f,0),new Vector3(.045f,.12f,.045f),Color.gray));
-                    eyes.localPosition=Vector3.up*.23f;
+                    BuildNaturalStatue();
                     break;
                 case ParkScenario.Room:
-                    for(int i=0;i<3;i++) Part(visual,"Local decoration",PrimitiveType.Cube,new Vector3((i-1)*.25f,.15f,.15f),new Vector3(.18f,.25f,.04f),new Color(.35f,.5f,.7f));
+                    BuildNaturalRoom();
                     portal=Part(visual,"Virtual window",PrimitiveType.Cube,new Vector3(0,.3f,.2f),new Vector3(.01f,.45f,.02f),new Color(.025f,.07f,.22f),false);
-                    jellyfish=new GameObject("Virtual jellyfish lamp").transform; jellyfish.SetParent(visual,false); jellyfish.localPosition=Vector3.up*.6f;
-                    Part(jellyfish,"Bell",PrimitiveType.Sphere,Vector3.zero,new Vector3(.22f,.12f,.22f),new Color(.5f,.8f,1),false);
-                    for(int i=0;i<6;i++) Part(jellyfish,"Tentacle",PrimitiveType.Cylinder,new Vector3(Mathf.Cos(i)*.06f,-.12f,Mathf.Sin(i)*.06f),new Vector3(.012f,.1f,.012f),Color.cyan,false);
+                    BuildNaturalJellyfish();
                     break;
                 case ParkScenario.Plant:
-                    Part(visual,"Pot",PrimitiveType.Cylinder,new Vector3(0,.05f,0),new Vector3(.15f,.05f,.15f),new Color(.55f,.28f,.13f),false);
-                    branchRoot=new GameObject("Growing virtual plant").transform; branchRoot.SetParent(visual,false); branchRoot.localPosition=Vector3.up*.1f;
-                    Part(branchRoot,"Stem",PrimitiveType.Cylinder,Vector3.up*.12f,new Vector3(.018f,.12f,.018f),Color.green);
-                    for(int i=0;i<5;i++) { var leaf=Part(branchRoot,"Leaf",PrimitiveType.Sphere,new Vector3((i%2==0?1:-1)*.06f,.04f+i*.035f,0),new Vector3(.12f,.035f,.055f),targetColor); foliage.Add(leaf); }
-                    plantFlower=new GameObject("Virtual plant blossom").transform;plantFlower.SetParent(branchRoot,false);plantFlower.localPosition=Vector3.up*.29f;
-                    for(int i=0;i<5;i++) {
-                        float a=i*Mathf.PI*2/5;
-                        var petal=Part(plantFlower,"Blossom petal",PrimitiveType.Cube,new Vector3(Mathf.Sin(a)*.035f,Mathf.Cos(a)*.035f,0),new Vector3(.055f,.08f,.025f),new Color(1,.35f,.65f),false);
-                        petal.GetComponent<MeshFilter>().sharedMesh=ParkFeedbackMeshes.Get(ParkFeedbackShape.Petal);petal.localRotation=Quaternion.Euler(0,0,-i*72);plantPetals.Add(petal);
-                    }
-                    Part(plantFlower,"Blossom centre",PrimitiveType.Sphere,new Vector3(0,0,-.015f),Vector3.one*.03f,Color.yellow,false);
+                    BuildNaturalPlant();
+                    BuildNaturalBlossom();
                     break;
                 case ParkScenario.Pet:
-                    Part(visual,"Virtual comic pet body",PrimitiveType.Capsule,new Vector3(0,.12f,0),new Vector3(.25f,.12f,.19f),new Color(.9f,.65f,.35f));
-                    Part(visual,"Head",PrimitiveType.Sphere,new Vector3(0,.24f,-.08f),Vector3.one*.18f,targetColor);
-                    ears=new GameObject("Virtual ears only").transform; ears.SetParent(visual,false);
-                    for(int i=-1;i<=1;i+=2) Part(ears,"Ear",PrimitiveType.Cube,new Vector3(i*.06f,.34f,-.08f),new Vector3(.04f,species=="Dog"?.12f:.07f,.04f),targetColor);
+                    BuildNaturalPet();
                     break;
             }
             bubble=Part(visual,"Dream bubble",PrimitiveType.Sphere,new Vector3(0,headOffset,0),Vector3.one*.2f,new Color(.7f,.85f,1),false);
@@ -212,7 +192,7 @@ namespace MagicMR
             if(scenario==ParkScenario.Bugs)foreach(var renderer in body)bugRestScales.Add(renderer.transform.localScale);
             ResetEffects(); currentColor=targetColor;
             bool first=true;
-            foreach(var renderer in body) { var bounds=renderer.localBounds;for(int corner=0;corner<8;corner++) {
+            foreach(var renderer in body) { var bounds=NeutralGeometryBounds(renderer);for(int corner=0;corner<8;corner++) {
                 var local=bounds.center+Vector3.Scale(bounds.extents,new Vector3((corner&1)==0?-1:1,(corner&2)==0?-1:1,(corner&4)==0?-1:1));
                 var point=representationFit.InverseTransformPoint(renderer.transform.TransformPoint(local));
                 if(first) { neutralBounds=new Bounds(point,Vector3.zero);first=false; } else neutralBounds.Encapsulate(point);
@@ -224,8 +204,19 @@ namespace MagicMR
                 Part(selectionHighlight,"Selection corner",PrimitiveType.Cube,point,Vector3.one*.018f,Color.cyan,false);
             }
             selectionHighlight.gameObject.SetActive(false);
+            if(statueScan) {
+                float radius=Mathf.Max(neutralBounds.extents.x,neutralBounds.extents.z)+.015f;
+                var line=statueScan.GetComponent<LineRenderer>();line.widthMultiplier=.003f;
+                for(int i=0;i<48;i++){float a=i*Mathf.PI*2/48;line.SetPosition(i,new Vector3(Mathf.Cos(a)*radius,0,Mathf.Sin(a)*radius));}
+            }
             entryProgress=Application.isPlaying?0:1;
             if(Application.isPlaying)visual.localScale=Vector3.zero;
+        }
+        static Bounds NeutralGeometryBounds(Renderer renderer)
+        {
+            // Nominal fitting uses the bind-pose mesh, not the skin's expanded culling box.
+            // Bounds remain readable in a player without retaining a CPU copy of all vertices or baking a temporary mesh.
+            return renderer is SkinnedMeshRenderer skin&&skin.sharedMesh?skin.sharedMesh.bounds:renderer.localBounds;
         }
         public void SetHighlighted(bool value) {
             value=value && tracked;
@@ -238,7 +229,7 @@ namespace MagicMR
             var go=GameObject.CreatePrimitive(type); go.name=name; go.transform.SetParent(parent,false); go.transform.localPosition=position; go.transform.localScale=size;
             var collider=go.GetComponent<Collider>(); if(Application.isPlaying) Destroy(collider); else DestroyImmediate(collider);
             var r=go.GetComponent<Renderer>(); r.sharedMaterial=sharedMaterial;
-            var b=new MaterialPropertyBlock(); b.SetColor("_BaseColor",color); r.SetPropertyBlock(b); if(tint) body.Add(r);
+            var b=new MaterialPropertyBlock(); b.SetColor("_BaseColor",color); r.SetPropertyBlock(b); if(tint) {body.Add(r);componentColors[r]=color;}
             return go.transform;
         }
 
@@ -251,7 +242,7 @@ namespace MagicMR
             if(scenario==ParkScenario.Room && action==ParkAction.Awaken && RoomCandySelected)action=ParkAction.Reward;
             if(!FinitePoint(hand)) {Feedback="Blocked: invalid hand position";return false;}
             if(action==ParkAction.Stop) {
-                if(!isActiveAndEnabled || !tracked || !valid || (scenario!=ParkScenario.Room && scenario!=ParkScenario.Pet)) {Feedback="Blocked: stop requires an active tracked fantasy target";return false;}
+                if(!isActiveAndEnabled || !tracked || !valid || (scenario!=ParkScenario.Room && scenario!=ParkScenario.Pet && scenario!=ParkScenario.Statue)) {Feedback="Blocked: stop requires an active tracked fantasy target";return false;}
                 if(stoppingEffects!=null)return true;
                 var visibleParticles=new List<Transform>();var scales=new List<Vector3>();
                 foreach(var p in pool)if(p.gameObject.activeSelf) {visibleParticles.Add(p);scales.Add(p.localScale);}
@@ -261,7 +252,7 @@ namespace MagicMR
             }
             float radius=virtualTarget?virtualInteractionRadius:interactionRadius;
             if(!isActiveAndEnabled || !tracked || !valid || !float.IsFinite(radius) || radius<=0 || Vector3.Distance(hand,transform.position)>radius) { Feedback="Blocked: target / tracking / distance"; return false; }
-            if(scenario==ParkScenario.Pet && !virtualTarget && !reliableHeadPose && (action==ParkAction.Poke || action==ParkAction.Feed)) {
+            if(scenario==ParkScenario.Pet && !virtualTarget && (!reliableHeadPose || !headAnchor || !FinitePoint(headAnchor.position)) && (action==ParkAction.Poke || action==ParkAction.Feed)) {
                 Feedback="Blocked: pet head position is not verified; use virtual dream controls";return false;
             }
             if(Busy || Time.unscaledTime-acceptedAt<cooldown) { Feedback="Blocked: transition / cooldown"; return false; }
@@ -271,6 +262,7 @@ namespace MagicMR
             if(scenario==ParkScenario.Room && action==ParkAction.Reward && !RoomCandySelected) {Feedback="Select Candy rain before summoning it";return false;}
             if(scenario==ParkScenario.Pet && (action==ParkAction.Feed || action==ParkAction.Poke) && !state.bubble) { Feedback="Pull open dream bubble first"; return false; }
             if(scenario==ParkScenario.Tree && magicTree && action==ParkAction.Reward && !state.scar) { Feedback="Awaken and reveal scar before sealing"; return false; }
+            if(scenario==ParkScenario.Pet&&naturalPetRig)naturalPetRig.SetWalking(false);
             state.growth=growthTime; state.season=seasonTime; history.Push(state); acceptedAt=Time.unscaledTime;
             motion=StartCoroutine(Perform(action,hand)); return true;
         }
@@ -283,17 +275,21 @@ namespace MagicMR
             var exiting=new List<Transform>{bubble,portal,jellyfish};
             foreach(var p in pool)if(p.gameObject.activeSelf)exiting.Add(p);
             stoppingEffects=exiting.ToArray();stoppingScales=new Vector3[stoppingEffects.Length];
+            float jellyOpacity=naturalJellyfish?naturalJellyfish.Visibility:0;
             for(int i=0;i<stoppingEffects.Length;i++)if(stoppingEffects[i])stoppingScales[i]=stoppingEffects[i].localScale;
             float elapsed=0;
             while(elapsed<.3f) {
                 elapsed+=Time.unscaledDeltaTime;
                 for(int i=0;i<stoppingEffects.Length;i++)if(stoppingEffects[i])stoppingEffects[i].localScale=stoppingScales[i]*(1-Mathf.SmoothStep(0,1,elapsed/.3f));
+                if(naturalJellyfish)naturalJellyfish.SetVisibility(jellyOpacity*(1-Mathf.SmoothStep(0,1,elapsed/.3f)));
                 yield return null;
             }
             FinishFantasyExit();
         }
         void FinishFantasyExit() {
             state.awake=state.bubble=state.wind=state.rewarded=false;
+            if(naturalBronze)naturalBronze.ResetPose();
+            if(naturalJellyfish)naturalJellyfish.ResetPose();
             dreamVisibility=0;
             RestoreStoppedScales();particleCount=0;foreach(var p in pool)p.gameObject.SetActive(false);
             ApplyVisibility();Feedback="Virtual effects stopped";
@@ -339,7 +335,7 @@ namespace MagicMR
                 case ParkAction.Pull: state.bubble=scenario==ParkScenario.Pet?!state.bubble:true; break;
                 case ParkAction.Bloom: state.bloom=!state.bloom;Feedback=state.bloom?"Virtual blossom opening":"Virtual blossom closing";break;
                 case ParkAction.Poke: state.bubble=false; if(magicTree) { state.sealedTree=true; Feedback="Scar soothed; decorative branches rest"; } Emit(ParkAction.Poke,20); break;
-                case ParkAction.Feed: state.affection++; Emit(ParkAction.Feed,12); break;
+                case ParkAction.Feed: state.affection++;if(naturalPetRig)naturalPetRig.Sniff();Emit(ParkAction.Feed,12);break;
                 case ParkAction.GrowUp: targetGrowth=Mathf.Clamp01(growthTime+.2f); targetSeason=seasonTime+.25f; break;
                 case ParkAction.GrowDown: targetGrowth=Mathf.Clamp01(growthTime-.2f); targetSeason=seasonTime-.25f; break;
                 case ParkAction.Reward: state.rewarded=true; state.sealedTree=magicTree; state.bubble=false; if(scenario==ParkScenario.Pet) { state.affection++; state.style=0; targetColor=new Color(.25f,.65f,.4f); } Emit(ParkAction.Reward,24); if(scenario==ParkScenario.Bugs)Feedback="+100 virtual EXP / coins; physical insect remains visible"; break;
@@ -368,15 +364,21 @@ namespace MagicMR
             if(!statueScan)return;
             bool visible=tracked && float.IsFinite(progress) && progress>=0 && progress<1;
             statueScan.gameObject.SetActive(visible);
-            if(visible)statueScan.localPosition=Vector3.up*Mathf.Lerp(.04f,.6f,progress);
+            if(visible)statueScan.localPosition=new Vector3(neutralBounds.center.x,Mathf.Lerp(neutralBounds.min.y,neutralBounds.max.y,progress),neutralBounds.center.z);
         }
 
         void Emit(ParkAction kind,int count) {
             particleKind=kind; particleCount=Mathf.Min(count,pool.Count); particleStart=Time.unscaledTime;
+            if(scenario==ParkScenario.Room && kind==ParkAction.Awaken)particleCount=Mathf.Min(particleCount,6);
+            if(scenario==ParkScenario.Tree && kind!=ParkAction.Wind)particleCount=Mathf.Min(particleCount,6);
+            if(scenario==ParkScenario.Statue && kind==ParkAction.Awaken)particleCount=Mathf.Min(particleCount,6);
             int windSeason=(int)(Mathf.Repeat(seasonTime,1)*4)%4;
             if(scenario==ParkScenario.Tree && kind==ParkAction.Wind && windSeason==3)particleCount=0;
             for(int i=0;i<particleCount;i++) {
                 var shape=ParkFeedbackShape.Star; var color=Color.yellow;
+                if(scenario==ParkScenario.Room && kind==ParkAction.Awaken){shape=ParkFeedbackShape.Mote;color=new Color(.68f,.80f,.85f);}
+                if(scenario==ParkScenario.Tree && kind!=ParkAction.Wind){shape=ParkFeedbackShape.Mote;color=new Color(.70f,.59f,.40f);}
+                if(scenario==ParkScenario.Statue && kind==ParkAction.Awaken){shape=ParkFeedbackShape.Mote;color=new Color(.62f,.53f,.37f);}
                 if(scenario==ParkScenario.Bugs && kind==ParkAction.Reward)shape=ParkFeedbackShape.Coin;
                 if(scenario==ParkScenario.Pet && (kind==ParkAction.Feed || kind==ParkAction.Reward)) { shape=ParkFeedbackShape.Heart;color=new Color(1,.2f,.45f); }
                 if(scenario==ParkScenario.Room && kind==ParkAction.Reward) { shape=ParkFeedbackShape.Candy;color=i%2==0?new Color(1,.3f,.65f):Color.cyan; }
@@ -402,15 +404,16 @@ namespace MagicMR
             if(!value) {
                 // Brief pet occlusion ends motion but keeps the chosen dream and affection.
                 // Full Reset/scene exit still clears everything through ResetEffects.
-                if(scenario==ParkScenario.Pet)Cancel();else ResetEffects();
+                if(scenario==ParkScenario.Pet){Cancel();reliableHeadPose=false;headAnchor=null;}else ResetEffects();
                 Feedback="TARGET_LOST - interaction paused";
             } else {if(!hasPresented)entryProgress=0;Feedback="Target recovered; waiting for a new gesture";}
             if(visual)visual.gameObject.SetActive(value);
             if(!value)SetHighlighted(false);
         }
-        public void Undo() { Cancel(); if(history.Count>0) { state=history.Pop(); targetGrowth=growthTime=state.growth; targetSeason=seasonTime=state.season; targetColor=state.style==1?new Color(.15f,.16f,.2f):state.style==2?new Color(.9f,.3f,.5f):new Color(.25f,.65f,.4f); Revision++;ApplyGrowthPose();ApplyVisibility(); } Feedback="Undo latest effect"; }
+        public void Undo() { Cancel(); if(history.Count>0) { state=history.Pop(); targetGrowth=growthTime=state.growth; targetSeason=seasonTime=state.season; targetColor=state.style==1?new Color(.15f,.16f,.2f):state.style==2?new Color(.9f,.3f,.5f):new Color(.25f,.65f,.4f); Revision++;ApplyGrowthPose();if(scenario==ParkScenario.Bugs){bugDefeatProgress=state.rewarded?1:0;ApplyBugDefeatPose();}ApplyVisibility(); } Feedback="Undo latest effect"; }
         void ApplyGrowthPose() {
             if(scenario==ParkScenario.Plant && branchRoot)branchRoot.localScale=new Vector3(1,Mathf.Lerp(.15f,1.4f,growthTime),1);
+            if(scenario==ParkScenario.Tree){ApplyNaturalTreeGrowth();ApplyNaturalTreeSeason();}
         }
         public void ResetEffects()
         {
@@ -419,24 +422,31 @@ namespace MagicMR
             if(representationFit) { representationFit.localPosition=Vector3.zero;representationFit.localScale=Vector3.one; }
             Cancel(); history.Clear(); state=default; targetGrowth=growthTime=.45f; targetSeason=seasonTime=0; targetColor=new Color(.25f,.65f,.4f); Revision++; Feedback="Reset";
             acceptedAt=-100;currentColor=targetColor;styleMix=0;
-            foreach(var r in body)if(r) {r.GetPropertyBlock(block);block.SetColor("_BaseColor",currentColor);block.SetFloat("_Style",0);r.SetPropertyBlock(block);}
+            ApplyComponentColors(0);
+            StepNaturalBug(0,false);
             dreamVisibility=0;if(bubble && scenario==ParkScenario.Pet)bubble.localScale=dreamRestScale;
+            if(naturalJellyfish)naturalJellyfish.ResetPose();
             bloomVisibility=0;if(plantFlower) {plantFlower.localScale=Vector3.zero;plantFlower.gameObject.SetActive(false);}
+            if(naturalBronze)naturalBronze.ResetPose();
             if(scenario==ParkScenario.Plant && branchRoot) {branchRoot.localRotation=Quaternion.identity;StepPlantAnimation(0,0);branchRoot.localRotation=Quaternion.identity;}
             bugDefeatProgress=0;ApplyBugDefeatPose();
             windBlend=0;
-            if(scenario==ParkScenario.Tree)for(int i=0;i<branches.Count;i++)branches[i].localRotation=Quaternion.Euler(0,i*72,40);
+            if(scenario==ParkScenario.Tree)ResetNaturalTreePose();
             confirmedPlane=false; environmentAnchor=null; reliableHeadPose=false; headAnchor=null;
             if(visual) { visual.localPosition=Vector3.zero; visual.localRotation=Quaternion.identity; visual.localScale=scenario==ParkScenario.Pet?Vector3.one*Mathf.Lerp(.6f,1.15f,.45f):Vector3.one; }
             if(scenario==ParkScenario.Plant && branchRoot)branchRoot.localScale=new Vector3(1,Mathf.Lerp(.15f,1.4f,.45f),1);
             if(built) ApplyVisibility();
         }
-        void Cancel() { if(statueScan)statueScan.gameObject.SetActive(false);StopAllCoroutines(); RestoreStoppedScales();motion=null; if(audioSource)audioSource.Stop(); particleCount=0; foreach(var p in pool)if(p)p.gameObject.SetActive(false); if(preview)preview.gameObject.SetActive(false); if(spell)spell.gameObject.SetActive(false); bend=spin=stretch=0; dance=Vector3.zero; }
+        void Cancel() { if(statueScan)statueScan.gameObject.SetActive(false);if(naturalPetRig)naturalPetRig.ResetPose();if(naturalBronze)naturalBronze.ResetPose();StopAllCoroutines(); RestoreStoppedScales();motion=null; if(audioSource)audioSource.Stop(); particleCount=0; foreach(var p in pool)if(p)p.gameObject.SetActive(false); if(preview)preview.gameObject.SetActive(false); if(spell)spell.gameObject.SetActive(false); bend=spin=stretch=0; dance=Vector3.zero; }
         public void ExitAndDestroy() {
             if(IsExiting)return;
             if(!Application.isPlaying || !isActiveAndEnabled || !built || !visual) {Destroy(gameObject);return;}
             Vector3 fromScale=visual.localScale;
+            // Reset clears calibration for reuse. An exiting representation must
+            // retain its displayed size/bottom until it has finished shrinking.
+            Vector3 fitPosition=representationFit.localPosition,fitScale=representationFit.localScale;
             ResetEffects();IsExiting=true;tracked=false;SetHighlighted(false);
+            representationFit.localPosition=fitPosition;representationFit.localScale=fitScale;
             if(label)label.gameObject.SetActive(false);
             foreach(var collider in GetComponentsInChildren<Collider>())collider.enabled=false;
             StartCoroutine(ExitPresentation(fromScale));
@@ -461,7 +471,7 @@ namespace MagicMR
             if(scar)scar.gameObject.SetActive(state.scar && !state.sealedTree);
             reward.gameObject.SetActive(state.rewarded && scenario==ParkScenario.Tree);
             environment.gameObject.SetActive(state.rewarded && scenario==ParkScenario.Statue && confirmedPlane && environmentAnchor);
-            if(jellyfish)jellyfish.gameObject.SetActive(state.awake);
+            if(jellyfish)jellyfish.gameObject.SetActive(state.awake || (naturalJellyfish && naturalJellyfish.Visibility>0));
             if(portal)portal.gameObject.SetActive(state.bubble);
         }
         void StepDreamTransition(float dt) {
@@ -477,7 +487,11 @@ namespace MagicMR
             float sway=valid?Mathf.Clamp01(windStrength)*10*windBlend:0;
             for(int i=0;i<branches.Count;i++) {
                 float wave=valid?Mathf.Sin(now+i)*sway:0;
-                branches[i].localRotation=Quaternion.Euler(valid?windDirection.z*wave:0,i*72,40+bend+(valid?windDirection.x*wave:0));
+                var branch=branches[i];
+                var direction=valid?Vector3.ProjectOnPlane(windDirection,Vector3.up):Vector3.zero;
+                var axis=Vector3.Cross(Vector3.up,direction);
+                var localAxis=axis.sqrMagnitude>.00001f?branch.parent.InverseTransformDirection(axis.normalized):Vector3.right;
+                branch.localRotation=Quaternion.AngleAxis(wave+bend,localAxis)*treeBranchRest[i];
             }
         }
         void ApplyBugDefeatPose() {
@@ -486,6 +500,11 @@ namespace MagicMR
             // Impact squash, then dissolve by shrinking virtual geometry; pooled rewards stay full size.
             float squash=Mathf.Sin(Mathf.Clamp01(t/.35f)*Mathf.PI);
             float shrink=1-Mathf.SmoothStep(0,1,Mathf.InverseLerp(.25f,1,t));
+            if(naturalBugRig)
+            {
+                // Scale the mesh and its skeleton together; renderer-only scaling is cancelled by skin bind matrices.
+                naturalBugRig.transform.localScale=Vector3.Scale(naturalBugRestScale,new Vector3(1+squash*.2f,1-squash*.35f,1+squash*.2f))*shrink;return;
+            }
             for(int i=0;i<body.Count && i<bugRestScales.Count;i++)if(body[i])
                 body[i].transform.localScale=Vector3.Scale(bugRestScales[i],new Vector3(1+squash*.2f,1-squash*.35f,1+squash*.2f))*shrink;
         }
@@ -496,11 +515,7 @@ namespace MagicMR
             float growing=Mathf.Clamp01(Mathf.Abs(targetGrowth-growthTime)/.12f);
             float sway=Mathf.Sin(now*1.6f)*(.65f+growing*1.8f);
             branchRoot.localRotation=Quaternion.Euler(0,0,sway);
-            for(int i=0;i<foliage.Count;i++) {
-                float unfold=Mathf.SmoothStep(0,1,Mathf.InverseLerp(.08f+i*.055f,.45f+i*.055f,growthTime));
-                foliage[i].localScale=new Vector3(.12f,.035f,.055f)*Mathf.Lerp(.25f,1,unfold);
-                foliage[i].localRotation=Quaternion.Euler(0,0,(i%2==0?1:-1)*(Mathf.Lerp(55,8,unfold)+Mathf.Sin(now*2+i)*2));
-            }
+            StepNaturalPlant(now);
             if(!plantFlower)return;
             bloomVisibility=Mathf.MoveTowards(bloomVisibility,state.bloom?1:0,dt/.65f);
             float open=Mathf.SmoothStep(0,1,bloomVisibility);
@@ -508,10 +523,7 @@ namespace MagicMR
             plantFlower.gameObject.SetActive(state.bloom || bloomVisibility>0);
             for(int i=0;i<plantPetals.Count;i++) {
                 float petalOpen=Mathf.SmoothStep(0,1,Mathf.InverseLerp(i*.045f,.8f+i*.045f,bloomVisibility));
-                float a=i*Mathf.PI*2/5;
-                plantPetals[i].localPosition=new Vector3(Mathf.Sin(a),Mathf.Cos(a),0)*Mathf.Lerp(.008f,.035f,petalOpen);
-                plantPetals[i].localRotation=Quaternion.Euler(Mathf.Lerp(70,0,petalOpen),0,-i*72);
-                plantPetals[i].localScale=new Vector3(.055f,.08f,.025f)*Mathf.Lerp(.35f,1,petalOpen);
+                plantPetals[i].localScale=Vector3.one*.026f*Mathf.Lerp(.25f,1,petalOpen);
             }
         }
         void Update()
@@ -522,29 +534,29 @@ namespace MagicMR
             growthTime=Mathf.MoveTowards(growthTime,targetGrowth,dt*.35f); seasonTime=Mathf.MoveTowards(seasonTime,targetSeason,dt*.2f);
             styleMix=Mathf.MoveTowards(styleMix,state.style/2f,dt);
             currentColor=Color.Lerp(currentColor,targetColor,1-Mathf.Exp(-dt*4));
-            foreach(var r in body) { if(!r)continue; r.GetPropertyBlock(block); block.SetColor("_BaseColor",currentColor); block.SetFloat("_Style",styleMix*2); r.SetPropertyBlock(block); }
-            float breathing=state.awake && !state.sealedTree?Mathf.Sin(Time.unscaledTime*2)*.018f:0;
+            ApplyComponentColors(styleMix*2);
+            StepNaturalBug(Time.unscaledTime,state.awake && !state.rewarded);
+            if(naturalBronze)naturalBronze.Step(dt,Time.unscaledTime,state.awake);
+            float breathing=state.awake && !state.sealedTree && scenario!=ParkScenario.Room && scenario!=ParkScenario.Statue?Mathf.Sin(Time.unscaledTime*2)*.018f:0;
             visual.localPosition=dance; visual.localRotation=Quaternion.Euler(0,spin,breathing*100);
-            visual.localScale=Vector3.one*(1+breathing)+Vector3.up*stretch*.15f;
+            visual.localScale=Vector3.one*(1+breathing)+(scenario==ParkScenario.Room||scenario==ParkScenario.Statue?Vector3.zero:Vector3.up*stretch*.15f);
             if(scenario==ParkScenario.Pet)visual.localScale*=Mathf.Lerp(.6f,1.15f,growthTime);
             entryProgress=Mathf.MoveTowards(entryProgress,1,dt/.28f);
             visual.localScale*=Mathf.SmoothStep(0,1,entryProgress);
             if(entryProgress>=1)hasPresented=true;
             if(scenario==ParkScenario.Plant)StepPlantAnimation(dt,Time.unscaledTime);
-            float season=Mathf.Repeat(seasonTime,1)*4;
-            var colors=SeasonColors;
             if(scenario==ParkScenario.Tree) {
-                float canopy=season<2?1:Mathf.Lerp(1,.05f,Mathf.SmoothStep(0,1,(season-2)/1.1f)); if(season>3.5f)canopy=Mathf.Lerp(.05f,1,(season-3.5f)*2);
-                for(int i=0;i<foliage.Count;i++) { foliage[i].localScale=new Vector3(.3f,.25f,.28f)*canopy; var r=foliage[i].GetComponent<Renderer>(); r.GetPropertyBlock(block); block.SetColor("_BaseColor",Color.Lerp(colors[(int)season%4],colors[((int)season+1)%4],Mathf.SmoothStep(0,1,season%1))); r.SetPropertyBlock(block); }
+                ApplyNaturalTreeGrowth();ApplyNaturalTreeSeason();
                 StepTreeWind(dt,Time.unscaledTime);
             }
             if(scenario==ParkScenario.Statue)for(int i=0;i<branches.Count;i++)branches[i].localRotation=Quaternion.Euler(0,0,(i==0?-1:1)*stretch*45);
             if(ears)ears.localRotation=Quaternion.Euler(0,0,state.awake?Mathf.Sin(Time.unscaledTime*3)*5:0);
-            if(jellyfish)jellyfish.localPosition=Vector3.up*(.6f+Mathf.Sin(Time.unscaledTime)*.04f);
+            StepRoomJellyfish(dt,Time.unscaledTime);
             if(portal)portal.localScale=new Vector3(Mathf.Lerp(portal.localScale.x,state.bubble?.6f:.01f,dt*4),.45f,.02f);
             if(bubble && scenario==ParkScenario.Pet) {
                 StepDreamTransition(dt);
                 if(reliableHeadPose && headAnchor)bubble.position=headAnchor.position+Vector3.up*.12f;
+                else if(virtualTarget && naturalPetRig)bubble.position=naturalPetRig.Head.position+Vector3.up*.12f;
                 else bubble.localPosition=Vector3.up*headOffset;
                 // Face only the flat dream content toward the viewer; never rotate the tracking anchor.
                 var viewer=Camera.main;
@@ -563,8 +575,10 @@ namespace MagicMR
                 bool on=i<particleCount && particleAge<1.6f; var p=pool[i]; p.gameObject.SetActive(on); if(!on)continue;
                 float angle=i*2.39996f; Vector3 direction=new Vector3(Mathf.Cos(angle),.5f,Mathf.Sin(angle));
                 p.localPosition=particleKind==ParkAction.Wind?Vector3.up*.4f+windDirection*age*.25f+direction*.05f:new Vector3(0,.2f,0)+direction*age*.15f+Vector3.down*age*age*.07f;
-                if(scenario==ParkScenario.Room && particleKind==ParkAction.Reward && confirmedPlane && environmentAnchor)p.position=environmentAnchor.position+direction*.25f+Vector3.down*particleAge*.18f;
+                if(scenario==ParkScenario.Room && particleKind==ParkAction.Reward && confirmedPlane && environmentAnchor)p.position=environmentAnchor.position+new Vector3(direction.x,0,direction.z)*.25f+Vector3.down*(.02f+particleAge*.18f);
                 p.localRotation=Quaternion.Euler(particleAge*80,i*30,particleAge*100); p.localScale=Vector3.one*.045f*Mathf.Clamp01((1.6f-particleAge)/.3f);
+                if(scenario==ParkScenario.Room && particleKind==ParkAction.Awaken){p.localPosition=Vector3.up*(.6f+age*.025f)+direction*age*.035f;p.localScale=Vector3.one*.009f*Mathf.Clamp01((1.6f-particleAge)/.3f);}
+                if(scenario==ParkScenario.Tree && particleKind!=ParkAction.Wind){p.position=TreeScarWorldPosition+visual.TransformVector(direction*age*.025f+Vector3.up*age*.02f);p.localScale=Vector3.one*.009f*Mathf.Clamp01((1.6f-particleAge)/.3f);}
             }
             ApplyVisibility();
             if(label) { label.text=scenario+" / "+(virtualTarget?"VIRTUAL TEST":"STEREO TRANSLATION")+"\n"+Feedback+"\n"+(scenario==ParkScenario.Plant?"Moisture: DEMO 55% | no sensor":scenario==ParkScenario.Pet?"Affection (virtual): "+state.affection+" | head "+(reliableHeadPose?"tracked":"approximate"):"Local effects")+"\nOrientation: "+(orientationConfirmed?"manually confirmed":"UNCONFIRMED")+" | "+(sizeConfirmed?"MANUAL nominal height/bottom":"virtual size; bottom uncalibrated"); if(Camera.main)label.transform.rotation=Quaternion.LookRotation(label.transform.position-Camera.main.transform.position); }

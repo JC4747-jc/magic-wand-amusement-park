@@ -1,0 +1,457 @@
+{
+  "version": 1,
+  "purpose": "MANUALLY_REVIEWED_PIXEL_BOX_REVISIONS_NOT_MODEL_ACCEPTANCE",
+  "method": "Each of these 36 SHA-bound original downloaded JPEGs individually viewed; manually authored pixel boxes. Overlay verification still required before candidate training eligibility.",
+  "target_scope": "All 13 project target classes checked per photo; 4 ambiguous furniture-completeness photos quarantined and not negatives. Public photo domain is not PICO accuracy acceptance.",
+  "decisions": {
+    "1a4ce99db1425ee1": {
+      "boxes": [
+        [
+          "Dog",
+          57,
+          150,
+          940,
+          574
+        ]
+      ],
+      "notes": "One curled domestic dog; original body box retained within rounding. Tiny top-right furniture fragment is not independently class-identifiable."
+    },
+    "1d1ef6def56f4b91": {
+      "boxes": [
+        [
+          "Spider",
+          288,
+          166,
+          826,
+          730
+        ]
+      ],
+      "notes": "Expanded original box to include all visible leg tips; exclude shadow/occluding fabric."
+    },
+    "1d5bb9d9a8a49e84": {
+      "boxes": [
+        [
+          "bed",
+          0,
+          59,
+          869,
+          768
+        ],
+        [
+          "chair",
+          829,
+          106,
+          1024,
+          458
+        ]
+      ],
+      "notes": "Bed plus clipped right chair; tightened chair to full visible legs and included headboard in bed."
+    },
+    "1da59662fc078356": {
+      "boxes": [
+        [
+          "Spider",
+          46,
+          42,
+          999,
+          729
+        ]
+      ],
+      "notes": "Single spider with complete visible legs; liquid/specimen-like setting is a domain flag, not proof of PICO performance."
+    },
+    "1e868895fdbc938d": {
+      "boxes": [
+        [
+          "Spider",
+          242,
+          10,
+          947,
+          723
+        ]
+      ],
+      "notes": "Single wall spider, all visible leg tips included; small expansion at right edge."
+    },
+    "1ee2cfb26b6fe8e4": {
+      "boxes": [
+        [
+          "Spider",
+          194,
+          113,
+          720,
+          939
+        ]
+      ],
+      "notes": "Single spider on a leaf; leaf is not a separate whole-tree instance."
+    },
+    "20b8c9d1facf4f72": {
+      "boxes": [
+        [
+          "Dog",
+          268,
+          124,
+          555,
+          899
+        ]
+      ],
+      "notes": "Single running dog, include both ears and lowest paw; background vegetation not resolved as separate tree instances."
+    },
+    "28b565f93c252cc0": {
+      "boxes": [
+        [
+          "Dog",
+          57,
+          110,
+          965,
+          611
+        ]
+      ],
+      "notes": "Single dog on grass, full coat/tail/paws; leash and shadow excluded."
+    },
+    "28fc2db2a779aefe": {
+      "boxes": [
+        [
+          "Dog",
+          232,
+          67,
+          1024,
+          768
+        ]
+      ],
+      "notes": "Single cropped domestic dog beside person; include both ear tips, box clipped to image."
+    },
+    "2ca2d110708d96b5": {
+      "boxes": [
+        [
+          "Cat",
+          71,
+          106,
+          706,
+          759
+        ]
+      ],
+      "notes": "Single domestic cat including full curved tail and paws; dark background frame not independently identifiable as a target furniture instance."
+    },
+    "2da7d83a6b68debc": {
+      "boxes": [
+        [
+          "Spider",
+          78,
+          48,
+          962,
+          677
+        ]
+      ],
+      "notes": "Expanded left extent to include blurry rear-leg tip; shallow depth-of-field domain flag."
+    },
+    "2e21b13ff742fcbf": {
+      "boxes": [],
+      "quarantine": "Blurred dog on cropped upholstered surface; bed/couch identity and complete furniture labels cannot be established."
+    },
+    "2e8edb16c6a09beb": {
+      "boxes": [
+        [
+          "Cat",
+          225,
+          26,
+          963,
+          685
+        ]
+      ],
+      "notes": "One grooming domestic cat; visible body clipped at bottom edge, include both ear tips."
+    },
+    "2ed000d799794d71": {
+      "boxes": [
+        [
+          "Cat",
+          298,
+          277,
+          531,
+          427
+        ],
+        [
+          "Cat",
+          449,
+          203,
+          675,
+          427
+        ],
+        [
+          "bed",
+          0,
+          276,
+          1024,
+          725
+        ]
+      ],
+      "notes": "Two backlit cats and full visible bed; distinct cat instances overlap, bed also annotated."
+    },
+    "2f36f31c87748e5d": {
+      "boxes": [
+        [
+          "Dog",
+          116,
+          125,
+          1024,
+          681
+        ]
+      ],
+      "notes": "One standing dog; tail and paws truncated by image edges."
+    },
+    "2f63228c4bf8be1c": {
+      "boxes": [],
+      "quarantine": "Dog is clear but large cropped beige upholstered furniture behind it has unresolved chair/couch extent; cannot certify complete 13-class labels."
+    },
+    "37c532e1d1b3fe8e": {
+      "boxes": [
+        [
+          "Dog",
+          209,
+          290,
+          642,
+          739
+        ]
+      ],
+      "notes": "One top-down domestic dog, include visible paws/belly, exclude leash."
+    },
+    "3ec20e93d8182fcb": {
+      "boxes": [
+        [
+          "Spider",
+          408,
+          158,
+          619,
+          539
+        ]
+      ],
+      "notes": "Single web spider; expanded right/bottom for thin leg tips, exclude web."
+    },
+    "3f65d9a5db068b25": {
+      "boxes": [
+        [
+          "bed",
+          0,
+          109,
+          883,
+          768
+        ]
+      ],
+      "notes": "Single bed including dark headboard/footboard, clipped at image edges; dresser/lamp are not target dining tables."
+    },
+    "4ac678dd36951a9a": {
+      "boxes": [
+        [
+          "Dog",
+          55,
+          0,
+          872,
+          633
+        ]
+      ],
+      "notes": "Single long-haired domestic dog; include top hair and coat/paw tips; exclude blurred background shapes."
+    },
+    "4d1a7164a8e856ad": {
+      "boxes": [
+        [
+          "Spider",
+          28,
+          0,
+          984,
+          922
+        ]
+      ],
+      "notes": "Original top bound cut a long leg; expanded to image top and all visible feet, exclude shadow."
+    },
+    "4eb49a1163a8a453": {
+      "boxes": [
+        [
+          "Cat",
+          30,
+          58,
+          1024,
+          720
+        ]
+      ],
+      "notes": "Single domestic cat with cropped body/tail, including visible whisker envelope; wooden plank background is not independently identifiable chair/bed."
+    },
+    "51a0d12e084aeced": {
+      "boxes": [],
+      "quarantine": "Cat is clear but cropped blue wooden furniture could be chair/table and requires additional instance scope review; not a clean multiclass candidate yet."
+    },
+    "57a79840e636bb18": {
+      "boxes": [
+        [
+          "Dog",
+          109,
+          122,
+          609,
+          831
+        ]
+      ],
+      "notes": "One seated dog including both paws; background climbing leaves are not a distinct whole-tree instance."
+    },
+    "59987a562d6187c6": {
+      "boxes": [
+        [
+          "Cat",
+          248,
+          144,
+          651,
+          486
+        ],
+        [
+          "Cat",
+          260,
+          269,
+          674,
+          751
+        ]
+      ],
+      "notes": "Two distinct kittens in a box with cloth lining; cloth is not a separately established human bed/couch target."
+    },
+    "666a614b3123dff9": {
+      "boxes": [
+        [
+          "bed",
+          0,
+          317,
+          622,
+          768
+        ],
+        [
+          "bed",
+          498,
+          288,
+          1024,
+          768
+        ]
+      ],
+      "notes": "Two separate beds including headboards, bedding and foot edges. Nightstand excluded from dining-table class."
+    },
+    "850bfdf25e95a3ab": {
+      "boxes": [
+        [
+          "Spider",
+          130,
+          17,
+          916,
+          642
+        ]
+      ],
+      "notes": "Single jumping spider, include all visible legs, exclude reflections on transparent substrate."
+    },
+    "8aea1f1d12a7dc4f": {
+      "boxes": [
+        [
+          "Spider",
+          160,
+          148,
+          850,
+          854
+        ]
+      ],
+      "notes": "Single dark spider, all visible leg tips, exclude shadow."
+    },
+    "c8a4a4786eea0ec5": {
+      "boxes": [
+        [
+          "chair",
+          398,
+          384,
+          572,
+          659
+        ],
+        [
+          "chair",
+          527,
+          371,
+          691,
+          624
+        ],
+        [
+          "chair",
+          911,
+          419,
+          1024,
+          768
+        ]
+      ],
+      "notes": "Two bar stools and one cropped right chair. Removed source dining-table box: it covers a fixed kitchen bar/counter, not a freestanding dining table."
+    },
+    "74c9a0c1ab44e47f": {
+      "boxes": [
+        [
+          "bed",
+          0,
+          556,
+          1024,
+          1024
+        ]
+      ],
+      "notes": "Single bed with ornate white headboard and bedding, lower part cropped. Blue patterned wall is wallpaper, not bed."
+    },
+    "1050b3c3f36090a3": {
+      "boxes": [
+        [
+          "couch",
+          211,
+          357,
+          1024,
+          768
+        ]
+      ],
+      "notes": "Single dark couch partially occluded by a person, clipped at right/bottom; candles/person excluded."
+    },
+    "15e9f230f8f0609f": {
+      "boxes": [
+        [
+          "bed",
+          0,
+          727,
+          768,
+          1024
+        ]
+      ],
+      "notes": "Single bed including visible headboard and bedding; separately suspended mosquito net is not bed extent."
+    },
+    "248b5f914b325928": {
+      "boxes": [],
+      "quarantine": "Foreground person/child heavily occlude left and right upholstered seating; uncertain one sectional versus multiple furniture instances."
+    },
+    "3a689e83e0e9f6e9": {
+      "boxes": [
+        [
+          "bed",
+          301,
+          625,
+          768,
+          1024
+        ]
+      ],
+      "notes": "Single narrow red bed, foot/side cropped; cabinets not target dining table."
+    },
+    "46afaf945caee54c": {
+      "boxes": [
+        [
+          "couch",
+          0,
+          302,
+          1024,
+          685
+        ]
+      ],
+      "notes": "Single wide couch, person/laptop occlude center; full visible upholstery extent included."
+    },
+    "6e86e224c7e36481": {
+      "boxes": [
+        [
+          "couch",
+          0,
+          309,
+          1024,
+          768
+        ]
+      ],
+      "notes": "Single couch heavily occluded by people; one furniture instance with full visible back/arms/seat."
+    }
+  }
+}

@@ -25,7 +25,8 @@ namespace Perception
             Initializing,
             Running,
             Failed,
-            Stopped
+            Stopped,
+            UnsupportedPlatform
         }
 
         [SerializeField]
@@ -120,9 +121,8 @@ namespace Perception
         IEnumerator BootstrapRoutine()
         {
 #if !UNITY_ANDROID || UNITY_EDITOR
-            SetStatus(CaptureStatus.Failed, "PXR_CameraImage preview is Android/PICO device only (Editor skipped).");
-            FailException("Platform", XrCameraIdPICO.XR_CAMERA_ID_RGB_LEFT_PICO,
-                "Not running on Android device (Editor Play skipped).");
+            SetStatus(CaptureStatus.UnsupportedPlatform, "PXR_CameraImage requires an Android/PICO device; no camera frame is available on this platform.");
+            Log("Device camera unavailable on this platform; capture remains stopped.");
             yield break;
 #else
             Log("Initializing");

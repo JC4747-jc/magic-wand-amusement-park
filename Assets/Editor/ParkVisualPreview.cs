@@ -12,7 +12,7 @@ public static class ParkVisualPreview
     public static void RunRecorded() {Render(true);}
     public static void RunBugImpact() {
         string previous=UnityEngine.SceneManagement.SceneManager.GetActiveScene().path;
-        string output=Path.GetFullPath("Reports/bug-impact-visual-simulation");Directory.CreateDirectory(output);
+        string output=Path.GetFullPath(".codex-tmp/park-previews/bug-impact-visual-simulation");Directory.CreateDirectory(output);
         try {
             EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
             var camera=new GameObject("Synthetic bug impact camera").AddComponent<Camera>();camera.tag="MainCamera";
@@ -42,7 +42,7 @@ public static class ParkVisualPreview
     }
     public static void RunPlantBloom() {
         string previous=UnityEngine.SceneManagement.SceneManager.GetActiveScene().path;
-        string output=Path.GetFullPath("Reports/plant-bloom-visual-simulation");Directory.CreateDirectory(output);
+        string output=Path.GetFullPath(".codex-tmp/park-previews/plant-bloom-visual-simulation");Directory.CreateDirectory(output);
         try {
             EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
             var camera=new GameObject("Synthetic blossom camera").AddComponent<Camera>();camera.tag="MainCamera";
@@ -63,7 +63,7 @@ public static class ParkVisualPreview
     }
     public static void RunStatueScan() {
         string previous=UnityEngine.SceneManagement.SceneManager.GetActiveScene().path;
-        string output=Path.GetFullPath("Reports/statue-scan-visual-simulation");Directory.CreateDirectory(output);
+        string output=Path.GetFullPath(".codex-tmp/park-previews/statue-scan-visual-simulation");Directory.CreateDirectory(output);
         try {
             EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
             var camera=new GameObject("Synthetic statue camera").AddComponent<Camera>();camera.tag="MainCamera";
@@ -84,7 +84,7 @@ public static class ParkVisualPreview
     }
     public static void RunPetDream() {
         string previous=UnityEngine.SceneManagement.SceneManager.GetActiveScene().path;
-        string output=Path.GetFullPath("Reports/pet-dream-content-simulation");Directory.CreateDirectory(output);
+        string output=Path.GetFullPath(".codex-tmp/park-previews/pet-dream-content-simulation");Directory.CreateDirectory(output);
         try {
             EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
             var camera=new GameObject("Synthetic dream camera").AddComponent<Camera>();camera.tag="MainCamera";
@@ -111,7 +111,7 @@ public static class ParkVisualPreview
     static void Render(bool recorded)
     {
         string previous=UnityEngine.SceneManagement.SceneManager.GetActiveScene().path;
-        string output=Path.GetFullPath(recorded?"Reports/shared-ui-recorded-image-simulation":"Reports/shared-ui-visual-simulation");Directory.CreateDirectory(output);
+        string output=Path.GetFullPath(recorded?".codex-tmp/park-previews/shared-ui-recorded-image-simulation":".codex-tmp/park-previews/shared-ui-visual-simulation");Directory.CreateDirectory(output);
         try {
             foreach(ParkScenario scenario in Enum.GetValues(typeof(ParkScenario))) {
                 EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);

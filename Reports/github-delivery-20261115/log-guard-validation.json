@@ -1,0 +1,27 @@
+{
+  "purpose": "NO_MODEL_TRAINING_LOG_AND_CLEANUP_VALIDATION",
+  "tests": 7,
+  "windows_result": "PASS",
+  "linux_result": "PASS",
+  "linux_interpreter": "/opt/magicmr-yolo/venv/bin/python",
+  "linux_distro": "Ubuntu-24.04",
+  "command": "python Tools/test_yolo_training_logs.py",
+  "source_sha256": {
+    "Tools/yolo_training_logs.py": "f95157c7d9bb12f1bbafaa40eeb492a0dca49db303095c3e5fecd4b38dc215e7",
+    "Tools/test_yolo_training_logs.py": "5b881eb74faddf899cbe6b8e87fdd44f34c95670890d3445da7c7a5de98dfa9d",
+    "Tools/train_yolo_gap_candidate.py": "cb1919080ef0080abd2e0a2385f2a8a8e1cab9079e55eeb91d25d1087095cddb",
+    "Tools/smoke_yolo_training.py": "390acdf2e70f2b1d13e18a1071c9722c998a79abc3f3533997f4a788cd03d166"
+  },
+  "limits": {
+    "prefix_bytes": 1048576,
+    "tail_bytes": 65536,
+    "owned_log_directory_bytes": 8388608,
+    "keep_completed_success_logs": 2
+  },
+  "historical_log_inventory": {
+    "files": 20,
+    "bytes": 99825,
+    "deleted": 0
+  },
+  "model_training_performed_in_this_check": false
+}

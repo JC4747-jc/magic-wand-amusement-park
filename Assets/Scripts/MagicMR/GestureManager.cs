@@ -66,6 +66,7 @@ namespace MagicMR
 
 #if XR_HANDS_1_1_OR_NEWER
         XRHandSubsystem m_HandSubsystem;
+        static readonly List<XRHandSubsystem> s_HandSubsystems = new List<XRHandSubsystem>();
 #endif
 
         public string SubjectId => m_SubjectId;
@@ -84,7 +85,9 @@ namespace MagicMR
             Instance = this;
             BindDetectors();
 #if XR_HANDS_1_1_OR_NEWER
-            m_HandSubsystem = ParkHandTracking.Current;
+            SubsystemManager.GetSubsystems(s_HandSubsystems);
+            if (s_HandSubsystems.Count > 0)
+                m_HandSubsystem = s_HandSubsystems[0];
 #endif
         }
 
@@ -122,7 +125,16 @@ namespace MagicMR
         void Update()
         {
 #if XR_HANDS_1_1_OR_NEWER
-            m_HandSubsystem = ParkHandTracking.EnsureRunning();
+            if (m_HandSubsystem == null)
+            {
+                SubsystemManager.GetSubsystems(s_HandSubsystems);
+                if (s_HandSubsystems.Count > 0)
+                {
+                    m_HandSubsystem = s_HandSubsystems[0];
+                    if (!m_HandSubsystem.running)
+                        m_HandSubsystem.Start();
+                }
+            }
 #endif
             SampleHandForLogging();
         }

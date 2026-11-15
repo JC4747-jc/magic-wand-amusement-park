@@ -123,7 +123,7 @@ namespace MagicMR
             ResetHandState(true);
         }
         void ResetHandState(bool interruptEffects) {
-            if(interruptEffects)selected?.EndHandInteraction();
+            if(interruptEffects&&selected)selected.EndHandInteraction();
             rules.Reset();hasPalm=false;
             pinchHeld=fistHeld=leftFistHeld=pullArmed=clapArmed=false;
             undoFired=false;bothFistsResetFired=false;suppressPinchRelease=true;
@@ -177,11 +177,38 @@ namespace MagicMR
             actors.Add(id,actor); seen[id]=Time.unscaledTime; confirmations[id]=0; if(!virtualTarget)actor.SetTracked(false); return actor;
         }
         public void SpawnVirtual() {SpawnVirtual(null);}
+        public bool SelectVirtualPet(string species)
+        {
+            return (species=="Cat"||species=="Dog")&&SelectVirtualSpecies(ParkScenario.Pet,species);
+        }
+        public bool SelectVirtualBug(string species)
+        {
+            return (species=="Cockroach"||species=="Spider")&&SelectVirtualSpecies(ParkScenario.Bugs,species);
+        }
+        public bool SelectVirtualStatue(string species)
+        {
+            return (species=="Statue"||species=="BronzeBeast")&&SelectVirtualSpecies(ParkScenario.Statue,species);
+        }
+        bool SelectVirtualSpecies(ParkScenario expected,string species)
+        {
+            if(!simulation||scenario!=expected||AnimationBusy||(selected&&!selected.virtualTarget))return false;
+            if(selected&&selected.species==species)return true;
+            Clear();recognitionLock=null;SpawnVirtual(species);return selected&&selected.species==species;
+        }
+        public bool SetVirtualTreeMode(bool fantasy)
+        {
+            if(!simulation||scenario!=ParkScenario.Tree||FitConfirmationPending||PlaneConfirmationPending)return false;
+            if(!selected){SpawnVirtual();if(!selected)return false;selected.magicTree=fantasy;status=fantasy?"VIRTUAL fantasy tree":"VIRTUAL natural tree";return true;}
+            if(!selected.virtualTarget||!selected.tracked||!selected.isActiveAndEnabled||selected.IsExiting)return false;
+            if(selected.magicTree==fantasy)return true;
+            ResetHandInteraction();ReleaseSurface(selected);
+            bool accepted=selected.SetVirtualTreeMode(fantasy);status=selected.Feedback;return accepted;
+        }
         public void SpawnVirtual(string recognizedClass)
         {
             if(!Camera.main || !actorPrefab)return;
-            var cam=Camera.main.transform; Vector3 point=cam.position+cam.forward*1.35f+cam.right*.85f-cam.up*.2f;
-            string species=scenario==ParkScenario.Pet?(string.Equals(recognizedClass?.Trim(),"Dog",System.StringComparison.OrdinalIgnoreCase)?"Dog":"Cat"):scenario==ParkScenario.Bugs?(string.Equals(recognizedClass?.Trim(),"Spider",System.StringComparison.OrdinalIgnoreCase)?"Spider":"Cockroach"):scenario.ToString();
+            var cam=Camera.main.transform; Vector3 point=cam.position+cam.forward*1.35f+cam.right*.5f-cam.up*.2f;
+            string species=scenario==ParkScenario.Pet?(string.Equals(recognizedClass?.Trim(),"Dog",System.StringComparison.OrdinalIgnoreCase)?"Dog":"Cat"):scenario==ParkScenario.Bugs?(string.Equals(recognizedClass?.Trim(),"Spider",System.StringComparison.OrdinalIgnoreCase)?"Spider":"Cockroach"):scenario==ParkScenario.Statue?(string.Equals(recognizedClass?.Trim(),"BronzeBeast",System.StringComparison.OrdinalIgnoreCase)?"BronzeBeast":"Statue"):scenario.ToString();
             selected=Create("virtual:"+actors.Count,species,point,true);
             selected.SetVirtualPreviewSize(.35f);
             status="VIRTUAL TEST: point/pinch to select; no YOLO/depth claim";
@@ -258,7 +285,10 @@ namespace MagicMR
         {
             ResetHandInteraction();
             planeTarget=null;fitTarget=null;fitHasBottom=false;suppressPinchRelease=false;
-            foreach(var pair in surfaceAnchors) { if(pair.Key)pair.Key.ResetEffects();if(pair.Value)Destroy(pair.Value.gameObject); }surfaceAnchors.Clear();
+            foreach(var pair in surfaceAnchors) {
+                if(pair.Key) {pair.Key.environmentAnchor=null;pair.Key.confirmedPlane=false;}
+                if(pair.Value)Destroy(pair.Value.gameObject);
+            }surfaceAnchors.Clear();
             foreach(var actor in actors.Values) { if(actor) { if(animateExit && Application.isPlaying && actor.isActiveAndEnabled)actor.ExitAndDestroy();else {actor.ResetEffects();Destroy(actor.gameObject);} } }
             actors.Clear(); seen.Clear(); confirmations.Clear(); selected=null; rules.Reset(); hasPalm=false; pullArmed=false; clapArmed=false;
         }
@@ -289,7 +319,7 @@ namespace MagicMR
             foreach(var actor in actors.Values) { if(!actor || !actor.tracked)continue; var delta=actor.transform.position-origin; float along=Vector3.Dot(delta,direction); float distance=(delta-direction*along).magnitude; if(along>0 && along<best && distance<.17f) { best=along;candidate=actor; } }
             if(candidate && select) {
                 if(selected!=candidate) {
-                    selected?.EndHandInteraction();
+                    if(selected)selected.EndHandInteraction();
                     rules.Reset();hasPalm=false;pullArmed=clapArmed=false;
                     openPalmHold.Reset();openPalmSince=-1;openPalmFired=false;
                 }
@@ -329,7 +359,7 @@ namespace MagicMR
                 if(ParkDesktopInput.KeyDown(KeyCode.Z))Dispatch(ParkAction.Undo,hand,true);
                 if(ParkDesktopInput.KeyDown(KeyCode.R))Dispatch(ParkAction.Reset,hand,true);
                 if(ParkDesktopInput.KeyDown(KeyCode.G))Menu("Plane",hand);
-                if(ParkDesktopInput.KeyDown(KeyCode.T))selected.magicTree=!selected.magicTree;
+                if(ParkDesktopInput.KeyDown(KeyCode.T)&&scenario==ParkScenario.Tree)SetVirtualTreeMode(!selected.magicTree);
                 if(ParkDesktopInput.KeyDown(KeyCode.N))SceneManager.LoadScene(SceneNames[((int)scenario+1)%6]);
             }
             if(ParkDesktopInput.ClickDown && !ParkDesktopInput.PointerCapturedByUi && Camera.main) { var ray=Camera.main.ScreenPointToRay(ParkDesktopInput.Pointer); Point(ray.origin,ray.direction,true); }
@@ -380,7 +410,7 @@ namespace MagicMR
                 }
                 requireGestureRelease=false;rules.Reset();hasPalm=false;
             }
-            selected?.Preview(index,true);
+            if(selected)selected.Preview(index,true);
             if(scenario==ParkScenario.Bugs && !pinch && !fist && !rightOpenHand) {
                 var previous=pointingTarget;pointingTarget=Point(index,index-proximal,false);
                 if(previous && previous!=pointingTarget)previous.SetHighlighted(previous==selected);
@@ -427,7 +457,7 @@ namespace MagicMR
             Vector3 velocity=motionSafe && hasPalm && now-lastPalmAt>.001f?(palm-lastPalm)/(now-lastPalmAt):Vector3.zero; lastPalm=palm; lastPalmAt=now; hasPalm=motionSafe;
             if(open && Mathf.Abs(velocity.y)>.35f && (scenario==ParkScenario.Plant || scenario==ParkScenario.Tree)) { Dispatch(velocity.y>0?ParkAction.GrowUp:ParkAction.GrowDown,palm,true); openPalmFired=true;openPalmHold.Consume();rules.Reset(); return; }
             if(scenario==ParkScenario.Pet && selected && !pinch && !fist && Vector3.Distance(index,selected.transform.position+Vector3.up*selected.headOffset)<.08f)Dispatch(ParkAction.Poke,palm,true);
-            if(scenario==ParkScenario.Tree && selected && selected.magicTree && !pinch && Vector3.Distance(index,selected.transform.TransformPoint(new Vector3(0,.29f,-.07f)))<.06f)Dispatch(ParkAction.Poke,palm,true);
+            if(scenario==ParkScenario.Tree && selected && selected.magicTree && !pinch && Vector3.Distance(index,selected.TreeScarWorldPosition)<.06f)Dispatch(ParkAction.Poke,palm,true);
             var sample=new TabletopGestureRules.Sample { time=now,pinch=Vector3.Distance(index,thumb),index=index,palm=palm,swipeAxis=Camera.main?Camera.main.transform.right:Vector3.right,fist=fist,open=open,pointing=!fist && !pinch && !open };
             var action=motionSafe?rules.Step(sample):EditDimension.None;
             if(action==EditDimension.Agency) {Dispatch(ParkAction.Awaken,palm,true);return;}

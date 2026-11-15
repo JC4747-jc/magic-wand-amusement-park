@@ -1,0 +1,5345 @@
+{
+  "version": 1,
+  "purpose": "COMPLETE_CONTACT_SHEET_SCREENING_NOT_TRAINING_ACCEPTANCE",
+  "manifest": ".codex-tmp/yolo-training/annotation-plots/exact-rest-manifest.json",
+  "manifest_sha256": "00011334459bdadb882b73be22d31c50f43c00428a6f6269e42c9b7985e11eed",
+  "source_manifest": ".codex-tmp/yolo-training/openimages-review/candidate-p20.json",
+  "source_manifest_sha256": "6031caae7ef1f4363b0afa1210e9f959061dac0d1a0a2d89b845e01157ef12df",
+  "reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "pending_contact_sheet_pages": [],
+  "contact_sheet_photos": 114,
+  "full_resolution_photos": 6,
+  "flagged_photos": 78,
+  "approved_for_training": false,
+  "flags": {
+    "0": "Tree box covers only a small cropped background evergreen; pole-climbing foreground is not the labeled tree. Verify intended instance extent.",
+    "1": "Tree label covers a leaf close-up with no clear tree-instance extent; quarantine initial tree positive.",
+    "2": "Check possible unannotated foreground chair/stool parts at full resolution.",
+    "3": "Strongly cropped/occluded branches with people; clear tree class but whole-instance extent cannot be assessed in this contact sheet.",
+    "4": "Multiple heavily occluded background Tree boxes; verify their extent against speaker/people.",
+    "6": "Couch versus single ornate armchair is ambiguous; review category before using as multiclass labels.",
+    "7": "Photo pixels are sideways and the cat is strongly cropped; record orientation/domain and truncation before acceptance.",
+    "8": "Couch versus cropped upholstered chair/backrest is ambiguous.",
+    "9": "Tree label contains branch tips and a bird rather than clear tree-instance extent.",
+    "11": "Large orange couch is visible but unannotated while the foreground chair is labeled; incomplete target-class annotation.",
+    "12": "Dining table photo has visible background dining chairs that need a completeness check.",
+    "13": "Tree label covers a flowering canopy filling the frame; instance extent needs explicit review.",
+    "15": "Flower/leaf close-up has Tree label without visible tree-instance extent; initial mapping/extent unresolved.",
+    "16": "Strongly cropped dog portrait; keep explicit truncation/domain flag.",
+    "21": "Modern room has clearly visible dining table and chairs/stools missing beside the labeled couch.",
+    "23": "Tarantula legs extend outside the source box; needs per-leg visible-extent reannotation.",
+    "24": "Full-resolution review WITHDRAWS initial contact-sheet plush/toy suspicion: visible cats and natural whiskers/fur, blurred and sideways. Do not reject as plush. Verify orientation, three-instance count and source extents before acceptance.",
+    "25": "Large meeting/dining table is visible but no table label is present; confirm project table taxonomy and annotate complete target set.",
+    "26": "Tree label is a fruit/leaf close-up, not a clear tree-instance extent.",
+    "27": "Strongly cropped dog-face close-up; record truncation and restricted visible extent.",
+    "29": "Large promotional human statue is unannotated; table/chair labels alone are not complete for the project's full target set.",
+    "31": "The same visible cat appears split into a body Cat box and a second tail-only Cat box; verify and reannotate instance count/extent.",
+    "32": "Tree label covers an orchid/flower close-up; tree-instance mapping is not established.",
+    "33": "Tree label covers flowers/leaves without clear instance extent.",
+    "36": "Source includes a tiny second Spider box; inspect at full resolution before treating it as a second instance.",
+    "37": "Multiple small/occluded room furniture boxes need full-resolution extent/completeness review.",
+    "38": "Large foreground cot/crib is unannotated; define and verify bed-class mapping/completeness.",
+    "39": "Rightmost single chair appears labeled couch; central table is unannotated. Review class boundaries and all targets.",
+    "40": "Overlapping left-edge Dog boxes need full-resolution instance-count verification.",
+    "46": "Large left single armchair appears labeled couch while a separate sofa is also labeled; verify/reclassify before training.",
+    "49": "Single armchair appears labeled couch, large left sofa and central table lack target boxes; source labels are incomplete for project multiclass training.",
+    "50": "Tree box overlaps a foreground person and only part of background vegetation; intended tree-instance extent needs full-resolution review.",
+    "51": "Tree label is a berry/leaf close-up without a clear tree-instance extent.",
+    "52": "Source bed box covers almost the entire dog/window-seat photo; verify whether a qualifying bed exists and reannotate extent.",
+    "54": "Spider's upper leg segments extend beyond the source box; revise visible full-leg extent.",
+    "55": "Tree label covers olive fruit/leaves close-up; no clear whole-tree instance extent.",
+    "56": "Cropped dog portrait; record truncation before acceptance.",
+    "58": "Background potted palm appears unannotated in a furniture photo; complete all project targets and check pot visibility/full extent.",
+    "59": "Large foreground table, chairs and possible bed are unannotated while only a small background chair is labeled; incomplete project target set.",
+    "60": "Tarantula strongly cropped at photo edges; verify visible legs against source extent.",
+    "61": "Two dogs are labeled but the large table behind them is not; incomplete target-class labels.",
+    "62": "Background Tree boxes overlap leaping foreground dog; verify intended tree instances and extent.",
+    "65": "Full-resolution confirms dominant red sectional couch has no couch box; existing couch box covers small background sofa. Central coffee table is also unlabeled but must first resolve whether it belongs in project's dining-table category.",
+    "66": "Bed box appears to exclude the headboard; define full furniture extent consistently.",
+    "67": "Full-resolution: source y_min is already 0 (leg truncated at photo edge); thin left leg falls outside x_min near 405px. Revise visible leg extent; do not claim top extends outside a y=0 box.",
+    "68": "Cropped cat portrait; record truncation.",
+    "69": "Bed appears to be a miniature/exhibit on a display plinth; physical scene/domain and full headboard extent need review.",
+    "70": "Full-resolution confirms wild spotted felid, not an ordinary domestic pet. Exact species not established from image alone; quarantine Cat domain mapping, not a verified live-animal negative.",
+    "71": "Spider legs extend beyond source box, especially right/bottom; revise extent.",
+    "73": "Recreational-vehicle furniture: verify bed/couch extent and missing table or chair targets; small occluded source boxes need full resolution.",
+    "74": "Cat is truncated at top image edge; record visible-extent policy.",
+    "75": "Cropped cat portrait; record truncation/domain.",
+    "77": "Couch is only a fabric close-up behind an open book; instance extent/domain needs review.",
+    "79": "Many distant/occluded chairs/tables; full-resolution count and extent verification needed.",
+    "80": "Spider legs reach beyond right edge of source box; recheck full visible extent.",
+    "82": "Bed photo is largely cropped pillows/headboard; record truncation and extent policy.",
+    "83": "Spider uppermost thin leg extends above source box; revise full visible extent.",
+    "86": "Only right armchair is labeled couch while multiple obvious left/background seats and central tables are unlabeled; class ambiguity/incomplete target set.",
+    "88": "Two overlapping bed boxes may refer to one bed; chair/couch mapping of the small rear seat also appears inconsistent. Verify instance count and reannotate.",
+    "89": "High-backed single-person booth is labeled couch; resolve chair/couch taxonomy and full booth extent.",
+    "90": "Bed box excludes substantial headboard; reannotate consistent furniture extent.",
+    "91": "Restaurant furniture image has background potted plants and possible duplicate table boxes; verify all target instances and mapping.",
+    "92": "Hospital/medical bed rather than domestic room bed; record domain/taxonomy explicitly.",
+    "93": "Cropped cat head portrait; record truncation.",
+    "94": "Cropped cat head portrait; record truncation.",
+    "95": "Bed source box excludes substantial headboard; verify complete visible bed extent.",
+    "97": "Bed box appears to omit much of the headboard; verify consistent full furniture extent.",
+    "98": "Spider far-right leg tip may extend beyond source box; inspect full-resolution extent.",
+    "99": "Full-resolution confirms the same single armchair has overlapping chair AND couch labels, and a clear white domestic cat on the seat has no Cat box. Must reannotate before project multiclass use.",
+    "100": "Cat body truncated by left/bottom photo edges; record truncation.",
+    "102": "Cropped cat head portrait; record truncation.",
+    "104": "Large cropped foreground sofa and visible potted plants lack labels beside marked tables/chairs; complete project target set.",
+    "105": "Left bar stools and other furniture need completeness check; many small overlapping furniture boxes.",
+    "106": "Cat tail/body truncation at left edge; verify visible extent.",
+    "109": "Foreground curved table extent/completeness and overlapping furniture need full-resolution review.",
+    "111": "Conference table is labeled dining table; verify explicit project dining-table taxonomy rather than assuming generic table equivalence.",
+    "112": "Full-resolution: source Kitchen & dining room table box 0 covers actual dining table at far left; box 1 covers fixed kitchen counter/cupboards. Preserve valid candidate separately, remove/reclassify counter; visible dining chairs and hanging plant also need complete annotation.",
+    "113": "Many heavily occluded pub chairs/tables; full-resolution instance count/extent/completeness needed."
+  },
+  "limitations": [
+    "All 114 photos remain pending full multiclass annotation acceptance; an unflagged thumbnail is not a clean training image.",
+    "Visible legs are part of insect boxes; antennae/shadows are excluded by existing gap annotation convention.",
+    "Table types, domestic/wild cats, artificial/natural trees and furniture class overlap require explicit policy; public source categories are not automatic project labels.",
+    "Earlier plush-cat suspicion at index 24 was withdrawn after full-resolution inspection; photograph is blurred and sideways.",
+    "This review uses existing downloads only and does not define a new split or authorize test-set tuning."
+  ],
+  "records": [
+    {
+      "index": 0,
+      "image_id": "07bd7ed5dce6d3fd",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/07bd7ed5dce6d3fd.jpg",
+      "sha256": "989e18586f761f2a2a44e36204b03285f06ed2af3dce90740ed23168d98a98e6",
+      "pixel_sha256": "8822684ce887d958b8e5e5c4160d52d8812cccda1496532f172b323dc57c834e",
+      "size": [
+        731,
+        1024
+      ],
+      "author": "Claire Thompson",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/claire69/7680572104",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/07bd7ed5dce6d3fd.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.29273504,
+            0.8503817,
+            0.72863245,
+            0.9984733
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Tree box covers only a small cropped background evergreen; pole-climbing foreground is not the labeled tree. Verify intended instance extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 1,
+      "image_id": "096fa4c02ea76fe3",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/096fa4c02ea76fe3.jpg",
+      "sha256": "2586b58b89742c39fb1e3d51b1fe69e646694c12746611e3f40a543563bc4bc6",
+      "pixel_sha256": "dcf1520c868f2ab16b47f3760abd61fa71a43aa9c724d88043736d6745eb0547",
+      "size": [
+        683,
+        1024
+      ],
+      "author": "Purple Crow",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/purplecrow/5613615610",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/096fa4c02ea76fe3.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Tree label covers a leaf close-up with no clear tree-instance extent; quarantine initial tree positive.",
+      "approved_for_training": false
+    },
+    {
+      "index": 2,
+      "image_id": "0bc7015328a7f447",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/0bc7015328a7f447.jpg",
+      "sha256": "6fe65d884cce52e3f89a4aac327f9c37ceaebd816045006f8977e512c209a0fa",
+      "pixel_sha256": "c93d6418100c18be12bf02b508e9fddf6e0feec38739beb4af6361748e8c5d90",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "James Emery",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/emeryjl/2552818167",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/0bc7015328a7f447.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.7265625,
+            0.32083333,
+            0.8375,
+            0.59791666
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.8359375,
+            0.32291666,
+            0.9703125,
+            0.63125
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Check possible unannotated foreground chair/stool parts at full resolution.",
+      "approved_for_training": false
+    },
+    {
+      "index": 3,
+      "image_id": "0dc76550ff7054b3",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/0dc76550ff7054b3.jpg",
+      "sha256": "e778678c136fbc83c8269642acb60dfd8bf5db13524dd3b147c994ca5ff16b8e",
+      "pixel_sha256": "8d4d238156884a3e7d2ebe1d233b5c701860986eaec720e2f9c5c35e15289f09",
+      "size": [
+        984,
+        1024
+      ],
+      "author": "Bonnie",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/senkiwboo/4455156226",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/0dc76550ff7054b3.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Strongly cropped/occluded branches with people; clear tree class but whole-instance extent cannot be assessed in this contact sheet.",
+      "approved_for_training": false
+    },
+    {
+      "index": 4,
+      "image_id": "0fa1f463189c8e42",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/0fa1f463189c8e42.jpg",
+      "sha256": "71337342d3e80d006e8faf7451349e37fbac1d1222827b4155a4c4f68c26af1f",
+      "pixel_sha256": "dd9f387abe77a42c213836de87efecb36c16da30e03c94ae3fa7ac776b1b502a",
+      "size": [
+        1024,
+        576
+      ],
+      "author": "Tim Regan",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/dumbledad/4767052683",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/0fa1f463189c8e42.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.0338295,
+            0.21927711,
+            0.22733423,
+            0.48433736
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.28010824,
+            0.26024097,
+            0.4343708,
+            0.5975904
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.48173207,
+            0.0,
+            0.9986468,
+            0.53493977
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Multiple heavily occluded background Tree boxes; verify their extent against speaker/people.",
+      "approved_for_training": false
+    },
+    {
+      "index": 5,
+      "image_id": "1050b3c3f36090a3",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1050b3c3f36090a3.jpg",
+      "sha256": "c1dcd6878ef9599bf30d2367c283a24414809447eb56992f148ce710bbac69dc",
+      "pixel_sha256": "97ccd01ca5bdd22a9ce1c0cda486917204140cb1df00210f5f83ef9808aac40f",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "leatherlady 1",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/66457415@N04/8057673513",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1050b3c3f36090a3.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.2109375,
+            0.46875,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 6,
+      "image_id": "115ca6aa3522da5a",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/115ca6aa3522da5a.jpg",
+      "sha256": "e62ad3efdb876c5cd9e3d169c44d2574621c7e9d17bfe5db4b436e1f56cb0bdf",
+      "pixel_sha256": "d68e3f59548725678da8a76446c32d22832ab0ef16994fb5fe5a02d209a54883",
+      "size": [
+        768,
+        1024
+      ],
+      "author": "ruben van eijk",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/073/3177600926",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/115ca6aa3522da5a.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.21875,
+            0.0,
+            1.0,
+            0.9859375
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.21875,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Couch versus single ornate armchair is ambiguous; review category before using as multiclass labels.",
+      "approved_for_training": false
+    },
+    {
+      "index": 7,
+      "image_id": "116a5833e358d6df",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/116a5833e358d6df.jpg",
+      "sha256": "6dd51c5b25a6e6a638991647b3f9e041c0668b1b27495cf5f1291014c6c7556d",
+      "pixel_sha256": "a2aff4ac5a0b9aedbbc87ea34b93607f7092814364db7044d183bd567764446b",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Adam Raoof",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/adamraoof/3372528428",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/116a5833e358d6df.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Photo pixels are sideways and the cat is strongly cropped; record orientation/domain and truncation before acceptance.",
+      "approved_for_training": false
+    },
+    {
+      "index": 8,
+      "image_id": "1250a079d3fbd919",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1250a079d3fbd919.jpg",
+      "sha256": "b8a28b7292559f6d854281373349b91e7fa2a162d5ec5ae4bdb88abfeb23bfd7",
+      "pixel_sha256": "4e47927224e65d65b180972af7e4d0519f1c702feccacdfc1397642ddeccad99",
+      "size": [
+        1024,
+        787
+      ],
+      "author": "Pedro Lopez",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/pedrolopez/2982458541",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1250a079d3fbd919.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.0,
+            0.40412372,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Couch versus cropped upholstered chair/backrest is ambiguous.",
+      "approved_for_training": false
+    },
+    {
+      "index": 9,
+      "image_id": "15dcbdc66f2ecd1e",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/15dcbdc66f2ecd1e.jpg",
+      "sha256": "884f350c6527063994fd08755a18e75a467a4acfc5823041ad28fbc4c270495e",
+      "pixel_sha256": "af0e3449fa045e575bc36d03352475cff1eed7ec3228206a22a70afb6fad998a",
+      "size": [
+        768,
+        820
+      ],
+      "author": "Åsa Berndtsson",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/93892629@N07/14079173251/",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/15dcbdc66f2ecd1e.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.16044776,
+            0.0,
+            0.94962686,
+            0.99825174
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Tree label contains branch tips and a bird rather than clear tree-instance extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 10,
+      "image_id": "15e9f230f8f0609f",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/15e9f230f8f0609f.jpg",
+      "sha256": "ceb66349f26461cada96e6c14b496687aceaf11b3969b723b99570f7cca07133",
+      "pixel_sha256": "b447201be27871e03b88ecda3298fb62af2ef0d5e79bb88634831b2ebae5f604",
+      "size": [
+        768,
+        1024
+      ],
+      "author": "Anthony Majanlahti",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/antmoose/12113983",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/15e9f230f8f0609f.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.0,
+            0.70625,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 11,
+      "image_id": "1654c86093ada840",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1654c86093ada840.jpg",
+      "sha256": "5cd46ea3e5696c592ff7f3fd79cc90aa43e19789520a95cbe87f8a5cf4285561",
+      "pixel_sha256": "4fbd960b42f43ecc2733d174d6668d9ecdae336bd341f38c80ab4dea92ad1a34",
+      "size": [
+        1024,
+        466
+      ],
+      "author": "Yury Primakov",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/24613260@N06/5569050589",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1654c86093ada840.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.28014615,
+            0.5630027,
+            0.40560293,
+            0.99731904
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Large orange couch is visible but unannotated while the foreground chair is labeled; incomplete target-class annotation.",
+      "approved_for_training": false
+    },
+    {
+      "index": 12,
+      "image_id": "1681f749e331106f",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1681f749e331106f.jpg",
+      "sha256": "00b9bb117545b330adfb9b2faa7526666d55321174ba1b4fc4e2a7e24ddb98e7",
+      "pixel_sha256": "02ced05863424adb3f457b5b38d05a0a97e811202142456996365303cd51bf45",
+      "size": [
+        683,
+        1024
+      ],
+      "author": "Kmilo Marin",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/jkmilo7/4829665950",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1681f749e331106f.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.0,
+            0.31563422,
+            0.99115044,
+            0.9941003
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Dining table photo has visible background dining chairs that need a completeness check.",
+      "approved_for_training": false
+    },
+    {
+      "index": 13,
+      "image_id": "171982d5845a3d30",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/171982d5845a3d30.jpg",
+      "sha256": "a5aa1bd6f5112f22338909602ec86ede378aa49f8518214842e3d19f1269b33f",
+      "pixel_sha256": "bf584b7101fbf0e602e862a2be9179a5eb57544afa759ce97559c7091722ca89",
+      "size": [
+        1024,
+        683
+      ],
+      "author": "LaurPhil",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/51417107@N03/5657628974",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/171982d5845a3d30.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Tree label covers a flowering canopy filling the frame; instance extent needs explicit review.",
+      "approved_for_training": false
+    },
+    {
+      "index": 14,
+      "image_id": "1a4ce99db1425ee1",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1a4ce99db1425ee1.jpg",
+      "sha256": "af5f10251d73ecbb6ec3ebe7a360026321cf66156cf7aba995b34f8434dd3de1",
+      "pixel_sha256": "51c47b9628f098daf8ee903fcd41d98d5ca39051b58270da912cfcd574a2d372",
+      "size": [
+        1024,
+        681
+      ],
+      "author": "Clare Bell",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/southpaw2305/3938386160/",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1a4ce99db1425ee1.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.055964652,
+            0.22172949,
+            0.916053,
+            0.84035474
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 15,
+      "image_id": "1ce1768a981bca1a",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1ce1768a981bca1a.jpg",
+      "sha256": "d7c3735a244d88bb463d0af83b03f207b3ef50f5dc1ef0381785432d34284ab4",
+      "pixel_sha256": "af69a4e0169b17a5efa744566231c90c62f4a4473d8c0e633d5c8eb1aaa7b96b",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Carolyn",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/52781623@N00/4584513454",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1ce1768a981bca1a.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.9984375,
+            0.99791664
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Flower/leaf close-up has Tree label without visible tree-instance extent; initial mapping/extent unresolved.",
+      "approved_for_training": false
+    },
+    {
+      "index": 16,
+      "image_id": "1ce1f362b5bcaafe",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1ce1f362b5bcaafe.jpg",
+      "sha256": "587ed99de4c8e4baba8fe05d227471d76a6c7f92aec68582d52fe0d9cbf0c6e4",
+      "pixel_sha256": "f178a49ea5849d5e4ed93acb4e69f4bc35af9f5bf9d291492895d615edc4e462",
+      "size": [
+        723,
+        1024
+      ],
+      "author": "Daisyree Bakker",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/27875041@N02/4621700443",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1ce1f362b5bcaafe.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.07526882,
+            0.23065251,
+            0.8989247,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Strongly cropped dog portrait; keep explicit truncation/domain flag.",
+      "approved_for_training": false
+    },
+    {
+      "index": 17,
+      "image_id": "1d1ef6def56f4b91",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1d1ef6def56f4b91.jpg",
+      "sha256": "08ea2c4af3b2124bb34618c5fe340aedc00fcb5bca1986d4ae25d6169b9b57cf",
+      "pixel_sha256": "71ec615e26687203d2ac65dba4fdc40cba6c201f600ab53eecb12c3503c68435",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "James McCauley",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/nukeit1/33325524",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1d1ef6def56f4b91.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.2921875,
+            0.23333333,
+            0.7890625,
+            0.9458333
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 18,
+      "image_id": "1d5bb9d9a8a49e84",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1d5bb9d9a8a49e84.jpg",
+      "sha256": "c8269a3b91afb4da0ede99cd2dcd8b7bd23bffbabbf4002a9305f332bf438359",
+      "pixel_sha256": "ea7a8866b62fca25b2535b41f0e30ac06718bf86fc2b14065c167502de83da59",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Miran  Rijavec",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/miran/4142950300",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1d5bb9d9a8a49e84.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.809375,
+            0.14166667,
+            1.0,
+            0.65625
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.0,
+            0.079166666,
+            0.8421875,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 19,
+      "image_id": "1da59662fc078356",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1da59662fc078356.jpg",
+      "sha256": "48d04159d3a0e95f1f4d5bf73e8661efe29e4091c5777a9bb2cdcc94d0cc64fa",
+      "pixel_sha256": "3eeba7a4a888bd1caeec0bed1f1b8f5d9f33a33f531d4cce0f90b6880ca92066",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "lcspiderlab",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/55957245@N07/5221985247",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1da59662fc078356.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.0453125,
+            0.058333334,
+            0.9734375,
+            0.9458333
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 20,
+      "image_id": "1e868895fdbc938d",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1e868895fdbc938d.jpg",
+      "sha256": "1afe94d29eea94785db91402d62a498a9b12bce395fe175b12ede6407d9dff28",
+      "pixel_sha256": "375785fac2755d00e144b310023098a8102d45e49df1be7e86827d01cf85e84d",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Peter",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/peteredin/5106088692",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1e868895fdbc938d.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.2390625,
+            0.014583333,
+            0.9203125,
+            0.93958336
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 21,
+      "image_id": "1ead457c867be1cd",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1ead457c867be1cd.jpg",
+      "sha256": "be7cc43611e76cadb66b24640e770d15bb81209557589791a3bed17d4853e86d",
+      "pixel_sha256": "21c8f5a8893e9337a49088fc69a1deadd62bc83dfb1596e9a958d082286fd488",
+      "size": [
+        1024,
+        681
+      ],
+      "author": "Trysil",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/trysil/6498609087/",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1ead457c867be1cd.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.0,
+            0.4778761,
+            0.49337262,
+            0.99557525
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Modern room has clearly visible dining table and chairs/stools missing beside the labeled couch.",
+      "approved_for_training": false
+    },
+    {
+      "index": 22,
+      "image_id": "1ee2cfb26b6fe8e4",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1ee2cfb26b6fe8e4.jpg",
+      "sha256": "e4a9c713bcf418b28cd32f66ccead9d05d7809e8a11662cb9ce24bc7e5582ff6",
+      "pixel_sha256": "dd4d057f6c96becb8d75174c638f2fcd0ea464593717f49fc2d221d57b8b34f0",
+      "size": [
+        883,
+        1024
+      ],
+      "author": "Orangeaurochs",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/orangeaurochs/21844812556",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1ee2cfb26b6fe8e4.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.22178988,
+            0.113902844,
+            0.81128407,
+            0.9128978
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 23,
+      "image_id": "1f7bef3366b59a08",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1f7bef3366b59a08.jpg",
+      "sha256": "a717998a424f895618049632b931a9bac23da4aa3abc56ca011250b62de3459a",
+      "pixel_sha256": "92506d71e6953239cd4bf54d861ba8595a6f6d0027837293db0b03c8671fe54d",
+      "size": [
+        1024,
+        683
+      ],
+      "author": "Tydence Davis",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/tydence/5069936005",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1f7bef3366b59a08.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.14896755,
+            0.3340708,
+            0.7772861,
+            0.96681416
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Tarantula legs extend outside the source box; needs per-leg visible-extent reannotation.",
+      "approved_for_training": false
+    },
+    {
+      "index": 24,
+      "image_id": "1fa8972922aa3134",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1fa8972922aa3134.jpg",
+      "sha256": "e7536524a7783a70b6e9c29c1a2811cb153531f098d6a41dbebd7a098e2f8d3e",
+      "pixel_sha256": "caabfcfc1174e7ae5559c5a79f28538035a7f42aec3d9429f8bd6e477d51a4f0",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "CarmenFTBL",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/37906340@N06/15093747813",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1fa8972922aa3134.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.165625,
+            0.15,
+            0.528125,
+            0.66875
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.4421875,
+            0.035416666,
+            0.8015625,
+            0.825
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.4859375,
+            0.48333332,
+            0.8875,
+            0.99583334
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "FULL_RESOLUTION_AND_CONTACT_SHEET",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Full-resolution review WITHDRAWS initial contact-sheet plush/toy suspicion: visible cats and natural whiskers/fur, blurred and sideways. Do not reject as plush. Verify orientation, three-instance count and source extents before acceptance.",
+      "approved_for_training": false
+    },
+    {
+      "index": 25,
+      "image_id": "1fe8d1c4f4853599",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1fe8d1c4f4853599.jpg",
+      "sha256": "596336287e11cc28c1d5784f9c95f2fb6d2d0085d955665f46ebf9ba4bc96aa8",
+      "pixel_sha256": "e2c4b1e418eb97a67356394a6a08ffba6d649a17c496a3743644bc847f010043",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Molly",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/maulleigh/405261485",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1fe8d1c4f4853599.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.0,
+            0.38125,
+            0.41875,
+            1.0
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.21875,
+            0.34166667,
+            0.5,
+            0.68125
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.6703125,
+            0.31666666,
+            0.9375,
+            0.49791667
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Large meeting/dining table is visible but no table label is present; confirm project table taxonomy and annotate complete target set.",
+      "approved_for_training": false
+    },
+    {
+      "index": 26,
+      "image_id": "1fef0317d721467c",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/1fef0317d721467c.jpg",
+      "sha256": "e81d65a5e6390e239133221713cd863341027c573db8f145b54a85fb214f2e92",
+      "pixel_sha256": "032031bd3b8a7e0a3ba04e4a857235397dba6dfdaa379cecc7ce296a48e12969",
+      "size": [
+        1024,
+        683
+      ],
+      "author": "Toshihiro Gamo",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/dakiny/8373200902",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1fef0317d721467c.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.9985251,
+            0.99557525
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Tree label is a fruit/leaf close-up, not a clear tree-instance extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 27,
+      "image_id": "205ecd64ddbd7f97",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/205ecd64ddbd7f97.jpg",
+      "sha256": "6a305f68f899a39469458be4bf9f39805cacd6c05d70103f9817bb5150a0ab8f",
+      "pixel_sha256": "8cc082c19d73c97b303cb7427eac1c736e61d0f3a6e137546af981a167ce08de",
+      "size": [
+        1024,
+        1024
+      ],
+      "author": "Kurtis Garbutt",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/kjgarbutt/20523967082",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/205ecd64ddbd7f97.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.6787004,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Strongly cropped dog-face close-up; record truncation and restricted visible extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 28,
+      "image_id": "20b8c9d1facf4f72",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/20b8c9d1facf4f72.jpg",
+      "sha256": "3613fb223c1fbf8f873ad6be17a9a497bc6ccc1888e684947c24204fd5971062",
+      "pixel_sha256": "8a51880daa20d6406d9e65577ccb2f436752799f0f17b2dcd0e52fa533756b7b",
+      "size": [
+        1024,
+        987
+      ],
+      "author": "thecoolspringpack",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/88723904@N05/17171901821",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/20b8c9d1facf4f72.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.26595744,
+            0.13235295,
+            0.53900707,
+            0.9044118
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 29,
+      "image_id": "22a5848e375335e3",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/22a5848e375335e3.jpg",
+      "sha256": "773845ace767c84422f7db91f096b6b050b199acf8160073820c0fd98067e291",
+      "pixel_sha256": "3f837b2ac3e239e7452d23c28ed153c0de53c1a804f8dc1494339b3531e44b4c",
+      "size": [
+        1024,
+        1024
+      ],
+      "author": "Kathy",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/44603071@N00/18452413579",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/22a5848e375335e3.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.62274367,
+            0.52527076,
+            0.7093863,
+            0.70397115
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.6859206,
+            0.53429604,
+            0.8465704,
+            0.74187726
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.5397112,
+            0.49819493,
+            0.6696751,
+            0.58844763
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.6805054,
+            0.5216606,
+            0.87184113,
+            0.70397115
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Large promotional human statue is unannotated; table/chair labels alone are not complete for the project's full target set.",
+      "approved_for_training": false
+    },
+    {
+      "index": 30,
+      "image_id": "248b5f914b325928",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/248b5f914b325928.jpg",
+      "sha256": "c686e5aa72456de397dfd6eb317b84bdf056f77d65b8e9b9f3a0aca693b5efd1",
+      "pixel_sha256": "de29dde308562bd6d00e86fc87b73af7e5beb6a03dac54ae79f0003893d569cd",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Vince Smith",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/vsmithuk/11584750046",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/248b5f914b325928.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.6984375,
+            0.5520833,
+            0.9984375,
+            0.9125
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 31,
+      "image_id": "258550a1eea28fbb",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/258550a1eea28fbb.jpg",
+      "sha256": "c16ed1ade9c20052f35913f8e25da6075c9a35ac3af4819cb7f0e4785248acb6",
+      "pixel_sha256": "bbd941c6480cd1ccbb19d9ea3a63718d0302cda398288b1810e92e7558f9dfef",
+      "size": [
+        1024,
+        857
+      ],
+      "author": "Jennifer C.",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/29638108@N06/5516329509",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/258550a1eea28fbb.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.023140496,
+            0.0295858,
+            0.73884296,
+            0.9585799
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.6578512,
+            0.19921105,
+            0.89917356,
+            0.9368836
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "The same visible cat appears split into a body Cat box and a second tail-only Cat box; verify and reannotate instance count/extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 32,
+      "image_id": "26f468c2f223b1d8",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/26f468c2f223b1d8.jpg",
+      "sha256": "9b8543a86f487f368f0017ab865232f6d142c95c3486521cbbe0ac4d41893f15",
+      "pixel_sha256": "22956af9969b14885b5cfbacfce024e27b120a755c712f5d981851691dfc1c38",
+      "size": [
+        768,
+        1024
+      ],
+      "author": "Gustavo Lazarini Forreque",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/gustavolf/450193243",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/26f468c2f223b1d8.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.99791664,
+            0.9984375
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Tree label covers an orchid/flower close-up; tree-instance mapping is not established.",
+      "approved_for_training": false
+    },
+    {
+      "index": 33,
+      "image_id": "282685b67a26bb0e",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/282685b67a26bb0e.jpg",
+      "sha256": "538ea96cdff999a4bfb80d3f016ef5fe740c0f90eb7e2994576b68c976716bd9",
+      "pixel_sha256": "50f66270d671da6f62704c2b1b967888b22aa90ca2c671442fd736a6758b21f6",
+      "size": [
+        1024,
+        877
+      ],
+      "author": "David  Eickhoff",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/dweickhoff/4832598918",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/282685b67a26bb0e.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Tree label covers flowers/leaves without clear instance extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 34,
+      "image_id": "28b565f93c252cc0",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/28b565f93c252cc0.jpg",
+      "sha256": "8189d570c636d9fbea0d04181768034324e76b468618ce9d6ba18922faa5ca53",
+      "pixel_sha256": "96445a3835b310aa610d96ac513bb709b7d6d4da6ce6f4ac89cf8f5c5f987472",
+      "size": [
+        1024,
+        683
+      ],
+      "author": "Tony Alter",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/78428166@N00/9410501179",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/28b565f93c252cc0.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.056047197,
+            0.1659292,
+            0.9424779,
+            0.88716817
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 35,
+      "image_id": "28fc2db2a779aefe",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/28fc2db2a779aefe.jpg",
+      "sha256": "1005e7f4d99af655f684de83fa393a29c84fe6bc12eb79c9315c46001ae285d8",
+      "pixel_sha256": "5edbf24146e6ba7c74775de7b542b3a67e9d20c0aef6f74d2e0438fe25e214d1",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Amici con la coda",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/amici-con-la-coda/16514613070",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/28fc2db2a779aefe.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.2328125,
+            0.108333334,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 36,
+      "image_id": "290e908272641aef",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/290e908272641aef.jpg",
+      "sha256": "88ffac74220a2a2c8c993d4c863c1f76a9e7c39d2c8219a33091008c72ab4344",
+      "pixel_sha256": "57b88cc8fcec2601839973007555444a2ece7aaf3c2aa37a6289cc123229689f",
+      "size": [
+        1024,
+        736
+      ],
+      "author": "SaraYeomans",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/yeomans/475566388",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/290e908272641aef.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.16232772,
+            0.104477614,
+            0.8300153,
+            0.90191895
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.7228178,
+            0.73773986,
+            0.8667688,
+            0.8955224
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Source includes a tiny second Spider box; inspect at full resolution before treating it as a second instance.",
+      "approved_for_training": false
+    },
+    {
+      "index": 37,
+      "image_id": "2a0905a2ff63f09e",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/2a0905a2ff63f09e.jpg",
+      "sha256": "fa7161b7caa176813ec75cd80978fea6ac8ccb90141135a11ba3494a7505523c",
+      "pixel_sha256": "b5350ab44b82de8904c0830c104b067e13e5fcd5e5c752d51405edc365c3062a",
+      "size": [
+        683,
+        1024
+      ],
+      "author": "Arnie Papp",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/apapp/8069880438",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2a0905a2ff63f09e.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.17035398,
+            0.89085543,
+            0.30088496,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.18362832,
+            0.66076696,
+            0.36725664,
+            0.8377581
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.23451327,
+            0.6386431,
+            0.38274336,
+            0.79498523
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.0,
+            0.7094395,
+            0.18141593,
+            0.92330384
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Multiple small/occluded room furniture boxes need full-resolution extent/completeness review.",
+      "approved_for_training": false
+    },
+    {
+      "index": 38,
+      "image_id": "2ac96d4eed4e33c8",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/2ac96d4eed4e33c8.jpg",
+      "sha256": "719a499016b83055a04c196473ea07d1b80a8c3c5dd685e8adabe212bf9dc23f",
+      "pixel_sha256": "0d198758bf4863aee3073972cdecb733725ca7b7813fd260aee44456e5ab9355",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Guguhuhu",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/46334999@N07/7167194782",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2ac96d4eed4e33c8.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.3578125,
+            0.0020833334,
+            0.9984375,
+            0.66041666
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Large foreground cot/crib is unannotated; define and verify bed-class mapping/completeness.",
+      "approved_for_training": false
+    },
+    {
+      "index": 39,
+      "image_id": "2b2c4fe6d63a13e4",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/2b2c4fe6d63a13e4.jpg",
+      "sha256": "95253178726acc96ae4c5c72c52283ad72fb78dc404718bc26fc8b49f2cf951e",
+      "pixel_sha256": "7361036b0ca57e9055485e69c4090808054a80884d23407855564c20df0580c0",
+      "size": [
+        1024,
+        680
+      ],
+      "author": "Ally Aubry",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/allyaubryphotography/3907635203",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2b2c4fe6d63a13e4.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.0882353,
+            0.36363637,
+            0.22205882,
+            0.6363636
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.21617647,
+            0.36807096,
+            0.35882354,
+            0.6474501
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.30147058,
+            0.32815966,
+            0.38235295,
+            0.556541
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.77794117,
+            0.37250555,
+            1.0,
+            0.7494457
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.4970588,
+            0.32150775,
+            0.8132353,
+            0.6430155
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.77794117,
+            0.36807096,
+            1.0,
+            0.7450111
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Rightmost single chair appears labeled couch; central table is unannotated. Review class boundaries and all targets.",
+      "approved_for_training": false
+    },
+    {
+      "index": 40,
+      "image_id": "2c8cb404d5678be2",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/2c8cb404d5678be2.jpg",
+      "sha256": "e59c17ee136ff3ebc24f9111e28016a612bd299abd5e3e969656c0bf07dda53f",
+      "pixel_sha256": "7547532f1d32ab45f316adffac9ed34be4bfcfa67076b6704febc1d17d6cbc4a",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Ryan",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/ryanready/474039787",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2c8cb404d5678be2.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.0,
+            0.108333334,
+            0.1859375,
+            0.35
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.0,
+            0.19375,
+            0.128125,
+            0.43541667
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.365625,
+            0.25208333,
+            0.825,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Overlapping left-edge Dog boxes need full-resolution instance-count verification.",
+      "approved_for_training": false
+    },
+    {
+      "index": 41,
+      "image_id": "2ca2d110708d96b5",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/2ca2d110708d96b5.jpg",
+      "sha256": "3cfefd1b807cdb77806d13264d51c19cf528acac30183fded910093d2aa10332",
+      "pixel_sha256": "ada953cc79a4f807c9616ccc38177baa0411e5827e55885b46781c0b5ac42d8e",
+      "size": [
+        1024,
+        778
+      ],
+      "author": "muo1417",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/121004196@N06/14975531355",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2ca2d110708d96b5.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.07178631,
+            0.13846155,
+            0.6861436,
+            0.9714286
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 42,
+      "image_id": "2da7d83a6b68debc",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/2da7d83a6b68debc.jpg",
+      "sha256": "c1c75ef1a6eb3f3a31a52f6302155421e2bc7da65a73ca41e8a290f4c5731d5d",
+      "pixel_sha256": "b5b01b0bd5ee62dc2c7c91ea31cbf206c33fc738b50ff07735df8368c3ef84d3",
+      "size": [
+        1024,
+        681
+      ],
+      "author": "steve lodefink",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/32547150@N00/756539463",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2da7d83a6b68debc.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.09425626,
+            0.07538803,
+            0.93078053,
+            0.98226166
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 43,
+      "image_id": "2e21b13ff742fcbf",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/2e21b13ff742fcbf.jpg",
+      "sha256": "f840e385c268a4ae72a8539c473fa47119ab64f361c8a28ec082158c30b9e98c",
+      "pixel_sha256": "ab4ba78eb13034c45b68c6fa19d7bc88f755fa82f4fcf3ad39106cf526c6ecfa",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Chris Meller",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/mellertime/2368958142",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2e21b13ff742fcbf.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.1296875,
+            0.16666667,
+            0.71875,
+            1.0
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 44,
+      "image_id": "2e8edb16c6a09beb",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/2e8edb16c6a09beb.jpg",
+      "sha256": "039e69f7c1ad3172ed73bf154ad7accb5acbc4063673450a529ca6e11879f4c9",
+      "pixel_sha256": "7df3190c14a1431e65ff836405401a3fdbf80a257e9d0f30e23183073a91dc0e",
+      "size": [
+        1024,
+        685
+      ],
+      "author": "SaraLowgren",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/saralowgren/5296060933",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2e8edb16c6a09beb.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.22156574,
+            0.041942604,
+            0.9364845,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 45,
+      "image_id": "2ed000d799794d71",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/2ed000d799794d71.jpg",
+      "sha256": "eb8b492ba83ddd93fe44acc1e8a882e1b26cea17e453eea8b26374098119d279",
+      "pixel_sha256": "b2227a2250438fd64f92ccb6d6c0cbd2c09c01e42596dd1c8acebf193a7e6894",
+      "size": [
+        1024,
+        725
+      ],
+      "author": "Suzanne LaGasa",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/65119345@N00/3509693130",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2ed000d799794d71.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.29483283,
+            0.37768242,
+            0.5045593,
+            0.57939917
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.47112462,
+            0.2832618,
+            0.65957445,
+            0.5772532
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.0,
+            0.38412017,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 46,
+      "image_id": "2eeec709f51ecd0d",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/2eeec709f51ecd0d.jpg",
+      "sha256": "f4e15d2f36882c825a1d8acf60b0ff4c1b3455fb012260eb9903632fd870fd4c",
+      "pixel_sha256": "34a69667a2ed45a7a0e1b0a6be956edae08621c7c22ae27474dd0b344aadee0b",
+      "size": [
+        768,
+        1024
+      ],
+      "author": "Newtown grafitti",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/newtown_grafitti/8890314112",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2eeec709f51ecd0d.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.0,
+            0.1953125,
+            0.52916664,
+            0.7515625
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.0,
+            0.196875,
+            0.52708334,
+            0.753125
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.31666666,
+            0.2984375,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Large left single armchair appears labeled couch while a separate sofa is also labeled; verify/reclassify before training.",
+      "approved_for_training": false
+    },
+    {
+      "index": 47,
+      "image_id": "2f36f31c87748e5d",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/2f36f31c87748e5d.jpg",
+      "sha256": "1ab660262f7076651001559c780410e13171bc6f4b96e131e3f22b7a86290947",
+      "pixel_sha256": "a1492bdea5df663307e34bc330748e303623f1b8b94add738d30e8d81d68f00a",
+      "size": [
+        1024,
+        681
+      ],
+      "author": "jeffreyw",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/jeffreyww/3813427422",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2f36f31c87748e5d.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.11487482,
+            0.18847007,
+            0.9985272,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 48,
+      "image_id": "2f63228c4bf8be1c",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/2f63228c4bf8be1c.jpg",
+      "sha256": "f3be5b5b242ee0bb35e1dc95ceaff3343a920057aceea03b87657e7a516faf66",
+      "pixel_sha256": "4686be5f88e2de43cb7f887b68fcce8bf5c6800f224f46966c0f4d251b826853",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Taro the Shiba Inu",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/_tar0_/5728084624",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2f63228c4bf8be1c.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.1921875,
+            0.1125,
+            0.9578125,
+            0.98125
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 49,
+      "image_id": "31448db4cd36ee82",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/31448db4cd36ee82.jpg",
+      "sha256": "52e0dc19e235cdfb89e567992c95701ff7e64a53576aa70db6d9bb8e504a93a1",
+      "pixel_sha256": "02867f524187481cb1ca3dec39218a9c81b772889a11ba801a330ef830d68e79",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Jeff Dlouhy",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/jdlouhy/238943489",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/31448db4cd36ee82.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.5,
+            0.51666665,
+            0.690625,
+            0.71875
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.4828125,
+            0.525,
+            0.6953125,
+            0.775
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.78125,
+            0.68541664,
+            0.840625,
+            0.8875
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Single armchair appears labeled couch, large left sofa and central table lack target boxes; source labels are incomplete for project multiclass training.",
+      "approved_for_training": false
+    },
+    {
+      "index": 50,
+      "image_id": "31acdd5035bc2b0f",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/31acdd5035bc2b0f.jpg",
+      "sha256": "14f1c73c409d5e368477710bc09acc91a191484d45a45a4e678483e781dc3b8c",
+      "pixel_sha256": "3d68a2717998f8ff41809939e3dd0d63e47bae10b84fe36d1e6f535f7efa6d8a",
+      "size": [
+        768,
+        1024
+      ],
+      "author": "Michael Beat",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/michael-beat/5128675957",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/31acdd5035bc2b0f.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.008333334,
+            0.003125,
+            0.83125,
+            0.6515625
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Tree box overlaps a foreground person and only part of background vegetation; intended tree-instance extent needs full-resolution review.",
+      "approved_for_training": false
+    },
+    {
+      "index": 51,
+      "image_id": "3390f337893ce662",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/3390f337893ce662.jpg",
+      "sha256": "bfde5ddb82ede22448626f011b0a8f5e44930c618ed3c1fa5a07fa5677423038",
+      "pixel_sha256": "5773690b1c539d29f80ee973f81720fb6674635b7392a920881d88f4d864766a",
+      "size": [
+        1024,
+        683
+      ],
+      "author": "*Vintage Fairytale*",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/-staci-/4104139736/",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/3390f337893ce662.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Tree label is a berry/leaf close-up without a clear tree-instance extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 52,
+      "image_id": "36fb4da1df30f769",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/36fb4da1df30f769.jpg",
+      "sha256": "bb6e636fa2218420cf4f7c8dc06bfc6139409089b48f3f83f551c299cbc6f1bd",
+      "pixel_sha256": "37f923741cc0f0787d1066437b1b2f3d3ff3fa059143eefc0e47d9b4b707d97b",
+      "size": [
+        1024,
+        869
+      ],
+      "author": "Sheila Sund",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/sheila_sund/8256623138",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/36fb4da1df30f769.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.118136436,
+            0.08627451,
+            0.953411,
+            0.9843137
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.9983361,
+            0.99607843
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Source bed box covers almost the entire dog/window-seat photo; verify whether a qualifying bed exists and reannotate extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 53,
+      "image_id": "37c532e1d1b3fe8e",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/37c532e1d1b3fe8e.jpg",
+      "sha256": "96dc04a7dd1e8f38874b9d1670471c56551708d48067ba0f8616e61c4c407c9c",
+      "pixel_sha256": "cde9f25f801a34ce555ae1ddb8624327a1e09124ced3474b0fefc634371bbdcd",
+      "size": [
+        768,
+        1024
+      ],
+      "author": "Mike Licht",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/notionscapital/9992481865",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/37c532e1d1b3fe8e.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.27291667,
+            0.2859375,
+            0.82916665,
+            0.7140625
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 54,
+      "image_id": "38b95b228d85e5bb",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/38b95b228d85e5bb.jpg",
+      "sha256": "9ef2efdc9f1ffe9d574d77313e3936291621c260ce97cdedab9ebb0010fb0905",
+      "pixel_sha256": "80ec094ab42c576042e682f1743c860813a6af17634924c56c86572ffd9fed99",
+      "size": [
+        768,
+        1024
+      ],
+      "author": "reophax",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/41839209@N07/3857840400",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/38b95b228d85e5bb.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.1625,
+            0.2015625,
+            0.7708333,
+            0.7734375
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Spider's upper leg segments extend beyond the source box; revise visible full-leg extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 55,
+      "image_id": "38f669c30e5fe0f6",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/38f669c30e5fe0f6.jpg",
+      "sha256": "f25c6ba6d849a2d2a825f68160e383b930bab6706dc43d8ef46ce565dbc3c30b",
+      "pixel_sha256": "07d9fb234b6e20d150498799c299802fadfa10913d94f67b3224ff609cff29b3",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Matt Feifarek",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/mad_city_bastard/4070139847",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/38f669c30e5fe0f6.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Tree label covers olive fruit/leaves close-up; no clear whole-tree instance extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 56,
+      "image_id": "399eb56dbffa49a2",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/399eb56dbffa49a2.jpg",
+      "sha256": "05efd834608bfaee69fb56eceb6bafb89822c878810a636da3750d41e69f2148",
+      "pixel_sha256": "8afe02b72eea61fb63e843de5fa316f244d79c90352cdb5deebf25eeb70bec32",
+      "size": [
+        1024,
+        683
+      ],
+      "author": "Nacho",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/gonmi/7913112818",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/399eb56dbffa49a2.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.36725664,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Cropped dog portrait; record truncation before acceptance.",
+      "approved_for_training": false
+    },
+    {
+      "index": 57,
+      "image_id": "3a689e83e0e9f6e9",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/3a689e83e0e9f6e9.jpg",
+      "sha256": "75f8f5e23fed9e42a44a1089ca82b7cf5da96d7cc993fa23217e810b0ffa5f9a",
+      "pixel_sha256": "0b6607dcb532473a82b8c152f0a3e4deba98b757663b28deaf73bcd9313c95eb",
+      "size": [
+        768,
+        1024
+      ],
+      "author": "Dennis Yang",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/dennis/535606954",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/3a689e83e0e9f6e9.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.39583334,
+            0.6125,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 58,
+      "image_id": "3a71be7ae113e593",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/3a71be7ae113e593.jpg",
+      "sha256": "bb3728067038173e58b54d685561726a7516bb4643181ee6377422ea412a997f",
+      "pixel_sha256": "fc6bd8092c06a70ed8686e411cfe026df8f81aaa7e2e8b75a6b752eee6f8c78b",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "TrinidadNews",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/trinidadnews/1749577733",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/3a71be7ae113e593.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.1109375,
+            0.54583335,
+            0.228125,
+            0.93125
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.1234375,
+            0.65208334,
+            0.44375,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.35625,
+            0.53333336,
+            0.5484375,
+            0.93541664
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.43125,
+            0.59375,
+            0.675,
+            0.99583334
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.4875,
+            0.8854167,
+            0.6515625,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.7875,
+            0.5208333,
+            0.9609375,
+            0.83958334
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.9046875,
+            0.5104167,
+            1.0,
+            0.75208336
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.95625,
+            0.625,
+            1.0,
+            0.8541667
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.1515625,
+            0.5729167,
+            0.5890625,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.878125,
+            0.55,
+            1.0,
+            0.80625
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Background potted palm appears unannotated in a furniture photo; complete all project targets and check pot visibility/full extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 59,
+      "image_id": "3ac1cccd3f2246eb",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/3ac1cccd3f2246eb.jpg",
+      "sha256": "ca32f9708f2db3392dd3a058a14b2b8a06c6ae7a22199fe4b11f9fae6d864a98",
+      "pixel_sha256": "5b8fe24b72c97d37b1fdf1dd2f111aa3c17d6944c4bd5237e264ef5d4b5039a7",
+      "size": [
+        1024,
+        766
+      ],
+      "author": "Robin Hastings",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/webgoddess/4429341239",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/3ac1cccd3f2246eb.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.4375,
+            0.6012526,
+            0.515625,
+            0.7745303
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Large foreground table, chairs and possible bed are unannotated while only a small background chair is labeled; incomplete project target set.",
+      "approved_for_training": false
+    },
+    {
+      "index": 60,
+      "image_id": "3b4d1022c2be3076",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/3b4d1022c2be3076.jpg",
+      "sha256": "7d6d95ad858dcef1437c0d155cb8a44abacd81598d9d2f006ea538184571f34c",
+      "pixel_sha256": "db18b15c603d6deeea68126af756684b87dae098a4d6607d442ae8307647a909",
+      "size": [
+        1024,
+        576
+      ],
+      "author": "Tim Fuller",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/timtimes/14386970528",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/3b4d1022c2be3076.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.94316643,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Tarantula strongly cropped at photo edges; verify visible legs against source extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 61,
+      "image_id": "3e29db8ad34c5261",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/3e29db8ad34c5261.jpg",
+      "sha256": "f94d6d8a3c684a97a33c023b6fad401a1176236afbf0e23697e49fa6d9a74340",
+      "pixel_sha256": "ae44444e3eb53824b0dda9083fbbe4f731e5a78392b58f74c32f78febd3fa8dc",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "LRJ53",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/underwriter/2890491669",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/3e29db8ad34c5261.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.0,
+            0.5083333,
+            0.75625,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.4984375,
+            0.37708333,
+            1.0,
+            0.75208336
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Two dogs are labeled but the large table behind them is not; incomplete target-class labels.",
+      "approved_for_training": false
+    },
+    {
+      "index": 62,
+      "image_id": "3e9c8c9e06cb3e9e",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/3e9c8c9e06cb3e9e.jpg",
+      "sha256": "dd8b9832897e511bd116c248b2e73a746a7b7b7b34e6beb87d64e9047e328478",
+      "pixel_sha256": "30064dba8440a636621572fd034572ff1cb9ac3fce8f61513a305cc75588d021",
+      "size": [
+        1024,
+        628
+      ],
+      "author": "Gloria",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/feeferlump/5982247063",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/3e9c8c9e06cb3e9e.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.07920792,
+            0.124423966,
+            0.8132956,
+            0.718894
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.0056577087,
+            0.0,
+            0.96181047,
+            0.9953917
+          ],
+          "occluded": true,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "Tree",
+          "source_class_id": "/m/07j7r",
+          "xyxy": [
+            0.86562943,
+            0.57373273,
+            0.9985856,
+            0.8202765
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Background Tree boxes overlap leaping foreground dog; verify intended tree instances and extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 63,
+      "image_id": "3ec20e93d8182fcb",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/3ec20e93d8182fcb.jpg",
+      "sha256": "40ee52fa7175bcdb704d86481ae07d8a9e0f5f4cfee1e580d975a6b8c2be43a3",
+      "pixel_sha256": "612feba54a49e27995dcb9fa8b6a4243ad031f02489aac8b0ed7675dbacfce3d",
+      "size": [
+        1024,
+        683
+      ],
+      "author": "rjones0856",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/91829349@N00/259405212",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/3ec20e93d8182fcb.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.39666668,
+            0.2325,
+            0.595,
+            0.7825
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 64,
+      "image_id": "3f65d9a5db068b25",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/3f65d9a5db068b25.jpg",
+      "sha256": "a401f67bb22d5d4cd902cc6c381615e169756539a17e64ac1b2a2b78d4b76886",
+      "pixel_sha256": "63c6e0d25bb6bc4d988edd16b345a368d25badb29877bbcec15ec5851b11dfa5",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Cam Switzer",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/camswitzer/5846444657",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/3f65d9a5db068b25.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.0015625,
+            0.14583333,
+            0.859375,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 65,
+      "image_id": "3f6e15958d41abf9",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/3f6e15958d41abf9.jpg",
+      "sha256": "41c6f78144cb2ec9bce7cab1fba5f21388aa7ea7728d8f3c297259e8f4720ddb",
+      "pixel_sha256": "767f36c552ea40870a9068637a2a04772aad811eb5cbf920b0d755b8f91a601f",
+      "size": [
+        1024,
+        612
+      ],
+      "author": "Scott Allen",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/scottandjayne/6812100728",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/3f6e15958d41abf9.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.0,
+            0.61915886,
+            0.4273743,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.12430168,
+            0.18691589,
+            0.20810056,
+            0.27570093
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.16480447,
+            0.28037384,
+            0.2611732,
+            0.33878505
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.73463684,
+            0.28738317,
+            0.86731845,
+            0.46728972
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.75418997,
+            0.17289719,
+            0.8156425,
+            0.37850466
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.8198324,
+            0.18925233,
+            0.84636873,
+            0.37616822
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.83519554,
+            0.1682243,
+            0.86452514,
+            0.27803737
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.8924581,
+            0.19158879,
+            0.9315643,
+            0.37383178
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.90782124,
+            0.15186916,
+            0.97625697,
+            0.29439253
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.96927375,
+            0.1542056,
+            1.0,
+            0.22897196
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.27653632,
+            0.14252336,
+            0.5111732,
+            0.26635513
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.7206704,
+            0.21728972,
+            0.96927375,
+            0.38551402
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "review_scope": "FULL_RESOLUTION_AND_CONTACT_SHEET",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Full-resolution confirms dominant red sectional couch has no couch box; existing couch box covers small background sofa. Central coffee table is also unlabeled but must first resolve whether it belongs in project's dining-table category.",
+      "approved_for_training": false
+    },
+    {
+      "index": 66,
+      "image_id": "408bfc9875660552",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/408bfc9875660552.jpg",
+      "sha256": "a5286b1c4d21104df8de6a3fd6440ea3c6978dc1ebf9ddf62cc5cfdcb2aabdc0",
+      "pixel_sha256": "9c9ca4fd305e3830ea12c5d81414dd77644aa886dc854bdb0fb019a8383c8d94",
+      "size": [
+        1024,
+        776
+      ],
+      "author": "DAVID BURILLO",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/dgbury/4343880037",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/408bfc9875660552.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.8207547,
+            0.61618257,
+            1.0,
+            0.95435685
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.15408805,
+            0.6141079,
+            0.7279874,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Bed box appears to exclude the headboard; define full furniture extent consistently.",
+      "approved_for_training": false
+    },
+    {
+      "index": 67,
+      "image_id": "41eec28d727a251d",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/41eec28d727a251d.jpg",
+      "sha256": "05542882f6393ade3fd8360db3312ab07506171587a39b29d7164e242d3909c1",
+      "pixel_sha256": "6b29bad7eea0400a86e55d94c29aa218de8c9e1f723d227800a48c73079c2585",
+      "size": [
+        1024,
+        683
+      ],
+      "author": "David Short",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/14583963@N00/17136219010",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/41eec28d727a251d.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.39528024,
+            0.0,
+            0.61651915,
+            0.92256635
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "FULL_RESOLUTION_AND_CONTACT_SHEET",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Full-resolution: source y_min is already 0 (leg truncated at photo edge); thin left leg falls outside x_min near 405px. Revise visible leg extent; do not claim top extends outside a y=0 box.",
+      "approved_for_training": false
+    },
+    {
+      "index": 68,
+      "image_id": "438118dbd16f942f",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/438118dbd16f942f.jpg",
+      "sha256": "cd7b0f770a307fd38cee1df7a058ce36c650bf157e965618af5828f025fe3643",
+      "pixel_sha256": "423da26eb30bb44794261e569b31782ef09325694c625e81bb40954c8474f994",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Amy",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/shouldbecleaning/117874106",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/438118dbd16f942f.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.296875,
+            0.0375,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Cropped cat portrait; record truncation.",
+      "approved_for_training": false
+    },
+    {
+      "index": 69,
+      "image_id": "44e6ff6555a759f3",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/44e6ff6555a759f3.jpg",
+      "sha256": "e3f04f24692e4e37a79ae35d05202307ca02a075015de63ccb07ba3bfd98427e",
+      "pixel_sha256": "9414fd7d433ea1f386187fcb19a540e9d212982ced87cb1054212c8fe70510f4",
+      "size": [
+        576,
+        1024
+      ],
+      "author": "Michela Simoncini",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/comunicati/3059058725",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/44e6ff6555a759f3.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.08915663,
+            0.38700947,
+            0.97590363,
+            0.65764546
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Bed appears to be a miniature/exhibit on a display plinth; physical scene/domain and full headboard extent need review.",
+      "approved_for_training": false
+    },
+    {
+      "index": 70,
+      "image_id": "4615c0c9192d1f4f",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/4615c0c9192d1f4f.jpg",
+      "sha256": "fae74119050e242c0a8bcbd53bf1ad1976881242372adef2b61a6396faa875a6",
+      "pixel_sha256": "3b13d55707562c51f253a53138f6b1626941720dbcb09f53e69669cfd1ae1530",
+      "size": [
+        960,
+        768
+      ],
+      "author": "GOGO Visual",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/gogovisual/9498691378",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/4615c0c9192d1f4f.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.0,
+            0.12929294,
+            0.82552505,
+            0.65656567
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "review_scope": "FULL_RESOLUTION_AND_CONTACT_SHEET",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Full-resolution confirms wild spotted felid, not an ordinary domestic pet. Exact species not established from image alone; quarantine Cat domain mapping, not a verified live-animal negative.",
+      "approved_for_training": false
+    },
+    {
+      "index": 71,
+      "image_id": "462d03bfed6e874e",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/462d03bfed6e874e.jpg",
+      "sha256": "5c0076c3b9489cb6abdf682fad26bd16e2df699e654b428d32f4e44dcff59bc7",
+      "pixel_sha256": "1784a2274b2c5cd9f260df925621e88fcf55e77e3a2dd4b89c70db66486e66d7",
+      "size": [
+        1024,
+        683
+      ],
+      "author": "Benoît Lesquerbault",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/14382098@N03/8875452470",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/462d03bfed6e874e.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.7492625,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Spider legs extend beyond source box, especially right/bottom; revise extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 72,
+      "image_id": "46afaf945caee54c",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/46afaf945caee54c.jpg",
+      "sha256": "cedcdafb55aba1366fbed29154082726f5ac8253d68a95ebeb73af08f39303f4",
+      "pixel_sha256": "7301f2a804261d9923891d386c2bdcd3b6959fb19b8e87ccab387d3d16e10ade",
+      "size": [
+        1024,
+        685
+      ],
+      "author": "Mirry",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/la-mirry/2294746810",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/46afaf945caee54c.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.0,
+            0.4370861,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 73,
+      "image_id": "477926ac3bcfb06e",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/477926ac3bcfb06e.jpg",
+      "sha256": "4b1d7d004011924c5d2d56479e660e97581c12a8bfc3defe08bf95bcdd941e14",
+      "pixel_sha256": "611ff4af34b578c2cda9f2f5da807fbc038a53dba2c6e695438e406310d89cab",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Tom Lianza",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/lianza/3568753413",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/477926ac3bcfb06e.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.3359375,
+            0.47916666,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.225,
+            0.46041667,
+            0.3671875,
+            0.72083336
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Recreational-vehicle furniture: verify bed/couch extent and missing table or chair targets; small occluded source boxes need full resolution.",
+      "approved_for_training": false
+    },
+    {
+      "index": 74,
+      "image_id": "49fe94c183f65ff0",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/49fe94c183f65ff0.jpg",
+      "sha256": "7fdc7e9ac30bae1b8a4b1df7ca4026923717524ee465bb2dd247c78775387bac",
+      "pixel_sha256": "99f89d98f6e28e6cda64197cd47ef8a16eabd47194d03b9ad8d4ccb422ae9e84",
+      "size": [
+        1024,
+        683
+      ],
+      "author": "Zengame",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/zengame/16486252860",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/49fe94c183f65ff0.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.36430678,
+            0.0,
+            0.8303835,
+            0.920354
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Cat is truncated at top image edge; record visible-extent policy.",
+      "approved_for_training": false
+    },
+    {
+      "index": 75,
+      "image_id": "4aa41977cb5e31c7",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/4aa41977cb5e31c7.jpg",
+      "sha256": "1be4a6444bd9fdce06f7885a727673450651c2deb9b9daa6c329b0c77b4ba564",
+      "pixel_sha256": "a73f750ad10961d6c62d7622ad9c53b6da7002aa87e0fa8c9ca945e26eb38577",
+      "size": [
+        1024,
+        881
+      ],
+      "author": "Pedro Ribeiro Simões",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/pedrosimoes7/71746073",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/4aa41977cb5e31c7.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.99832493,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Cropped cat portrait; record truncation/domain.",
+      "approved_for_training": false
+    },
+    {
+      "index": 76,
+      "image_id": "4ac678dd36951a9a",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/4ac678dd36951a9a.jpg",
+      "sha256": "9380de9c778fed6ad92df12567b105d26efe90ad38d102d01ce7d05943dbeb72",
+      "pixel_sha256": "5191cf7a8a8e982d6384e7a820fbd53a0f3ad3db9e058b0cef27005a92b503da",
+      "size": [
+        1024,
+        683
+      ],
+      "author": "Dmitry Kalinin",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/tree_leaf_clover/5625006805",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/4ac678dd36951a9a.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.057522126,
+            0.006637168,
+            0.84513277,
+            0.9137168
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 77,
+      "image_id": "4c12b0b56d0064e0",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/4c12b0b56d0064e0.jpg",
+      "sha256": "ceb7e48d668d52cecba56fd46840140b421ee65a161c6049728cc55334a6f711",
+      "pixel_sha256": "7d5e32df1eb04bec337564e887ebe6693084bafac0bc0403f392457786102be4",
+      "size": [
+        1024,
+        676
+      ],
+      "author": "Petra Bensted",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/chillmimi/13442363113",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/4c12b0b56d0064e0.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Couch is only a fabric close-up behind an open book; instance extent/domain needs review.",
+      "approved_for_training": false
+    },
+    {
+      "index": 78,
+      "image_id": "4d1a7164a8e856ad",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/4d1a7164a8e856ad.jpg",
+      "sha256": "e0553080403bf6334f41e0c1ca80f98e7794903d605d3a4a288ecd499002ccbf",
+      "pixel_sha256": "27dcc7dbba0206fe21660876410f0dbbfde9690de6bc842918fa7cdd61a0f1f7",
+      "size": [
+        1024,
+        938
+      ],
+      "author": "Ross Elliott",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/ross_elliott/4579419592",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/4d1a7164a8e856ad.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.029360967,
+            0.035849057,
+            0.9585492,
+            0.9754717
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 79,
+      "image_id": "4dd4010e95454176",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/4dd4010e95454176.jpg",
+      "sha256": "7426d9e8f0bd59a1b95a0a503e29aad2f835e1aae70f5432659fb05c341a5385",
+      "pixel_sha256": "2232e49c18293fec9701d01fe0af6c708470a585e87616f63b2f7a524f9312d5",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Creative Commons HQ",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/creativecommons/135078029",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/4dd4010e95454176.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.0078125,
+            0.79583335,
+            0.0859375,
+            0.88958335
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.0984375,
+            0.6,
+            0.140625,
+            0.66875
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.109375,
+            0.65625,
+            0.215625,
+            0.89166665
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.2046875,
+            0.57916665,
+            0.2484375,
+            0.6145833
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.2765625,
+            0.55,
+            0.3234375,
+            0.6875
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.3015625,
+            0.575,
+            0.34375,
+            0.8020833
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.3109375,
+            0.525,
+            0.353125,
+            0.5729167
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.3640625,
+            0.50625,
+            0.4,
+            0.58125
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.36875,
+            0.575,
+            0.4296875,
+            0.7083333
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.4875,
+            0.51458335,
+            0.525,
+            0.6125
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.50625,
+            0.6166667,
+            0.565625,
+            0.875
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.56875,
+            0.6875,
+            0.659375,
+            0.9375
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.6609375,
+            0.6875,
+            0.7375,
+            0.93958336
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.1578125,
+            0.6125,
+            0.2734375,
+            0.7583333
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.271875,
+            0.56666666,
+            0.390625,
+            0.71458334
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.575,
+            0.64166665,
+            0.7546875,
+            0.86041665
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Many distant/occluded chairs/tables; full-resolution count and extent verification needed.",
+      "approved_for_training": false
+    },
+    {
+      "index": 80,
+      "image_id": "4e36a6a84c203fe7",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/4e36a6a84c203fe7.jpg",
+      "sha256": "7d2b0951e6364d4899408991447dd700e63d862c77bbff3e4eb25ef35bbf4334",
+      "pixel_sha256": "c0196e297e7e2dccf38c5f07da79af02a3eeac6905d685196abf8c6451005552",
+      "size": [
+        683,
+        1024
+      ],
+      "author": "Pixel Addict",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/pixel_addict/978704460",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/4e36a6a84c203fe7.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.12610619,
+            0.056047197,
+            0.99336284,
+            0.9056047
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Spider legs reach beyond right edge of source box; recheck full visible extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 81,
+      "image_id": "4eb49a1163a8a453",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/4eb49a1163a8a453.jpg",
+      "sha256": "8d8070e60d8c4551c2959d39e33e12836db7c177548e8258d0293398357ba37f",
+      "pixel_sha256": "6230af184c0ccde400d38818039009c4be971301b7d28bb8d2a2de7a5b3b92a3",
+      "size": [
+        1024,
+        720
+      ],
+      "author": "Eric Merrill",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/ericmerrill/8405565837/",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/4eb49a1163a8a453.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.016666668,
+            0.075431034,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 82,
+      "image_id": "50c91362e9bc580f",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/50c91362e9bc580f.jpg",
+      "sha256": "e4ccf71df58b2cf034afa67963b3894b70fdd6c9e2197c9cc416ac73363fdbfd",
+      "pixel_sha256": "1f5094eb58780d438da615a096cd3a1fc465418b58720135a2ec13a51d300321",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Rev Stan",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/revstan/4447545030",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/50c91362e9bc580f.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.0,
+            0.016666668,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Bed photo is largely cropped pillows/headboard; record truncation and extent policy.",
+      "approved_for_training": false
+    },
+    {
+      "index": 83,
+      "image_id": "50f231b09e848f15",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/50f231b09e848f15.jpg",
+      "sha256": "130cdd2080b29e7b417c48bac1a8f6c1b7397e0eb60ab38f9a9effd2a33888ca",
+      "pixel_sha256": "356f3f794bcd782a958a19653d4d37ab51267c6931049e1963c9169addc47bc8",
+      "size": [
+        1024,
+        679
+      ],
+      "author": "Doug Bowman",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/bistrosavage/35308788",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/50f231b09e848f15.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.4632353,
+            0.1286031,
+            0.95,
+            0.8004435
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Spider uppermost thin leg extends above source box; revise full visible extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 84,
+      "image_id": "51a0d12e084aeced",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/51a0d12e084aeced.jpg",
+      "sha256": "aaf9db4a7dd64f96823f7694b80a8749761ddc57d783778530938a24e0e45d86",
+      "pixel_sha256": "09d3bc1fe7b6d238162b96e38f445d6f289b0337c021c61d8d9b1cab0e4c080a",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "jaci  XIII",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/turatti/16397612372",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/51a0d12e084aeced.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.06875,
+            0.0,
+            0.8265625,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 85,
+      "image_id": "57a79840e636bb18",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/57a79840e636bb18.jpg",
+      "sha256": "eb3fac504f15daa140b822f6874cf24b88377c451cba6710d2f23ce18acf861e",
+      "pixel_sha256": "23d7248122daba0de9460c5c6afe63ea47c678a093698c6c1790b0e8d0252857",
+      "size": [
+        680,
+        1024
+      ],
+      "author": "Indi Samarajiva",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/indi/8220055402",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/57a79840e636bb18.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.16851442,
+            0.120588236,
+            0.88913524,
+            0.8102941
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 86,
+      "image_id": "58f48187d94f8419",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/58f48187d94f8419.jpg",
+      "sha256": "1b7ef21d48e8eca5db949e5bc07336b898618b0815fdb660a6233186b81426b1",
+      "pixel_sha256": "6226cbae90c1929e2d5bd6b419182574ce062664ea2ea195bc13203ca96df661",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Piutus",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/alreadytaken/3113529118",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/58f48187d94f8419.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.66875,
+            0.45833334,
+            0.9984375,
+            0.8229167
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Only right armchair is labeled couch while multiple obvious left/background seats and central tables are unlabeled; class ambiguity/incomplete target set.",
+      "approved_for_training": false
+    },
+    {
+      "index": 87,
+      "image_id": "59987a562d6187c6",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/59987a562d6187c6.jpg",
+      "sha256": "a0a80df65932f8cb7cf7367305372c04aa37f1991436e4f1cb7828c9138f708e",
+      "pixel_sha256": "eeaf9bd931ad2110b99a54be6553efa57851d7569119e4b26498aca2f226fcff",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Antífama",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/loqueveelojo/2905202023/",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/59987a562d6187c6.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.24375,
+            0.18958333,
+            0.6296875,
+            0.625
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.25625,
+            0.35208333,
+            0.6515625,
+            0.975
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 88,
+      "image_id": "5b906e188aac9f24",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/5b906e188aac9f24.jpg",
+      "sha256": "b26f87015464f806b4a286147f7eab2ba99a2e35a56fafdaad92f91c5f41b1d8",
+      "pixel_sha256": "d425dcd4452f483611d02d11ebe2d4db49760da533f603a92a35008657c11575",
+      "size": [
+        684,
+        1024
+      ],
+      "author": "ChingHua Chung",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/110295958@N06/11830575783",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/5b906e188aac9f24.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.32671082,
+            0.35840708,
+            0.47240618,
+            0.460177
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.74613684,
+            0.3879056,
+            0.8807947,
+            0.49557522
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.32671082,
+            0.35693216,
+            0.47240618,
+            0.46165192
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.0,
+            0.42772862,
+            0.77262694,
+            0.53687316
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.0,
+            0.50884956,
+            0.777042,
+            0.7699115
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Two overlapping bed boxes may refer to one bed; chair/couch mapping of the small rear seat also appears inconsistent. Verify instance count and reannotate.",
+      "approved_for_training": false
+    },
+    {
+      "index": 89,
+      "image_id": "5ba4992a5dec8a7a",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/5ba4992a5dec8a7a.jpg",
+      "sha256": "397e402746328f85d359ba625265b0337959611f33442fb35539fdbf9b1f018e",
+      "pixel_sha256": "51bef18eca8f403f4f4024e612e4eb7aa5d6dc23462a595f5afbb5df0de0878f",
+      "size": [
+        1024,
+        1024
+      ],
+      "author": "Tim Lossen",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/tlossen/6941341789",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/5ba4992a5dec8a7a.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.11732852,
+            0.45306858,
+            0.5974729,
+            1.0
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.11371841,
+            0.44945848,
+            0.599278,
+            1.0
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "High-backed single-person booth is labeled couch; resolve chair/couch taxonomy and full booth extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 90,
+      "image_id": "5e360c07411fb805",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/5e360c07411fb805.jpg",
+      "sha256": "84711fccd255d2664c175cd3a3aef3a11e091bdd305a5672dd7dac28feb31c6e",
+      "pixel_sha256": "d5afc1189b8a7e0e8bf5285719cd461c6c79e771672548d49bd6eb824ea150a9",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "McKay Savage",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/mckaysavage/1631569082",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/5e360c07411fb805.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.0,
+            0.45,
+            0.8640625,
+            0.99791664
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Bed box excludes substantial headboard; reannotate consistent furniture extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 91,
+      "image_id": "601f47f5b112ecf9",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/601f47f5b112ecf9.jpg",
+      "sha256": "9ff8f2c3e38ffc3858bdda287dd65bdf10add8f8d700be8cd12adcd70a0431cb",
+      "pixel_sha256": "323db114fe633da965560721e42c83fb2f949e9e4dca532f2bf4b98493d454f4",
+      "size": [
+        1024,
+        576
+      ],
+      "author": "David McKelvey",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/dgmckelvey/6909140630",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/601f47f5b112ecf9.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.0,
+            0.6554217,
+            0.0473613,
+            0.9614458
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.05277402,
+            0.49156627,
+            0.28281462,
+            1.0
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.26928282,
+            0.49156627,
+            0.5818674,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.46955344,
+            0.5180723,
+            0.67658997,
+            1.0
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.6684709,
+            0.52048194,
+            0.7198917,
+            0.70843375
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.0,
+            0.56626505,
+            0.05818674,
+            0.9445783
+          ],
+          "occluded": true,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.059539918,
+            0.5831325,
+            0.6806495,
+            1.0
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.6657646,
+            0.5373494,
+            0.7117727,
+            0.7036145
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Restaurant furniture image has background potted plants and possible duplicate table boxes; verify all target instances and mapping.",
+      "approved_for_training": false
+    },
+    {
+      "index": 92,
+      "image_id": "60fdb7fd333eaf74",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/60fdb7fd333eaf74.jpg",
+      "sha256": "a5ff17afc30b0c2f4e2642f9c8b2629a664b2c0c0cbae36e800d7f89d52b0f50",
+      "pixel_sha256": "cef123ba16ad2e7b7ff0d06aa3163d6d11cceff17416a001a7e5d0d0d8df5b9b",
+      "size": [
+        1024,
+        576
+      ],
+      "author": "German Aerospace Center DLR",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/129162924@N07/19300626725",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/60fdb7fd333eaf74.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.12195122,
+            0.14457831,
+            0.9376694,
+            0.97590363
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Hospital/medical bed rather than domestic room bed; record domain/taxonomy explicitly.",
+      "approved_for_training": false
+    },
+    {
+      "index": 93,
+      "image_id": "6148de607e99704f",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/6148de607e99704f.jpg",
+      "sha256": "992c8f6080b7cc27748da6a61ecf306ac46c29e55d6333d170b6cd8e5effc887",
+      "pixel_sha256": "98d4f4af419a95e736fa757afc0052a72b1bb590fa2d580894726d635fe17965",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Drew Avery",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/33590535@N06/3481377533",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/6148de607e99704f.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.1625,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Cropped cat head portrait; record truncation.",
+      "approved_for_training": false
+    },
+    {
+      "index": 94,
+      "image_id": "61c1c5aabc962e28",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/61c1c5aabc962e28.jpg",
+      "sha256": "d2677ab7d75ff9b6a7a87fc4c4548dbcdd4451024ffef5a56f898554e1f58f4c",
+      "pixel_sha256": "225eedda824e70d577bf54330be67175a1892ad392781ffa16e3de2882886920",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "jorge andres chavarro salazar",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/130236570@N08/16386141516",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/61c1c5aabc962e28.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.0609375,
+            0.054166667,
+            0.9578125,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Cropped cat head portrait; record truncation.",
+      "approved_for_training": false
+    },
+    {
+      "index": 95,
+      "image_id": "63aae2fcaccefba7",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/63aae2fcaccefba7.jpg",
+      "sha256": "a6561f5c3cf4696b4858299d425ad26417d3dd7578a6b5e3945d821e75420def",
+      "pixel_sha256": "5a5dbf8a959b64a48485def5db4462d4ada62ec7f35618036019d49711f72901",
+      "size": [
+        819,
+        1024
+      ],
+      "author": "Sam Stockman",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/29848789@N04/8525599534",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/63aae2fcaccefba7.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.389899,
+            0.453958,
+            0.58181816,
+            0.5848142
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.042424243,
+            0.5573506,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Bed source box excludes substantial headboard; verify complete visible bed extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 96,
+      "image_id": "666a614b3123dff9",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/666a614b3123dff9.jpg",
+      "sha256": "9fb8c476c28c9b4dc0f48bbcf24385a3f85941c924f4aedfd028b8b4778dff96",
+      "pixel_sha256": "54216e3b92612b52deadcd3efbf0fe28673583cdb6893e5234e563413f2be789",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Gail Frederick",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/galfred/39744443",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/666a614b3123dff9.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.0,
+            0.41041666,
+            0.60625,
+            0.99791664
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.4890625,
+            0.37291667,
+            0.9984375,
+            1.0
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 97,
+      "image_id": "68907defc0c961e1",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/68907defc0c961e1.jpg",
+      "sha256": "ddca6601015b95233d1c400a3cc7e39c9ff92f3c7afa9c85f665208510971bd9",
+      "pixel_sha256": "7cec005faae19c6dd38213c0adb86c0cbf2996f95643e1941767796b5a9144d1",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Aaron Suggs",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/ktheory/5473032314",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/68907defc0c961e1.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.0,
+            0.44375,
+            0.6125,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Bed box appears to omit much of the headboard; verify consistent full furniture extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 98,
+      "image_id": "69fd61f54406189c",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/69fd61f54406189c.jpg",
+      "sha256": "6a47a037e75865079f257b888a5e6be2b48005c5263f4a657fcfba7eb6174575",
+      "pixel_sha256": "e8be1750d98f29efb42ecdfca1738c8ba080aa83a0c98638f218c8970d62d630",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Justin Taylor",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/bludgeoner86/6449063787",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/69fd61f54406189c.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.4609375,
+            0.1375,
+            0.7984375,
+            0.94166666
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Spider far-right leg tip may extend beyond source box; inspect full-resolution extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 99,
+      "image_id": "6ad3d3e6690da1c8",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/6ad3d3e6690da1c8.jpg",
+      "sha256": "22ddbbe341048ba0c6f18a304e9357cbc18b8365b80e158c6b060c4014c1b50e",
+      "pixel_sha256": "54baafeb439bf93cc456a41844fd63eb1d4faa7b78697afa914b41e7075ee94e",
+      "size": [
+        768,
+        1024
+      ],
+      "author": "your friend le",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/peem/2014071665",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/6ad3d3e6690da1c8.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.22916667,
+            0.053125,
+            0.99583334,
+            0.9109375
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.225,
+            0.0484375,
+            0.9875,
+            0.9140625
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "review_scope": "FULL_RESOLUTION_AND_CONTACT_SHEET",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Full-resolution confirms the same single armchair has overlapping chair AND couch labels, and a clear white domestic cat on the seat has no Cat box. Must reannotate before project multiclass use.",
+      "approved_for_training": false
+    },
+    {
+      "index": 100,
+      "image_id": "6c3cdb32cbdc1d0e",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/6c3cdb32cbdc1d0e.jpg",
+      "sha256": "153a67379a286655179ea87f34099db899fbad54d2d9df663eeb18d2afd36a16",
+      "pixel_sha256": "263fee92c13672953b770e114496ff9237673d4b98c32c2347947622e032dd56",
+      "size": [
+        1024,
+        683
+      ],
+      "author": "Alan Turkus",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/aturkus/1449946168",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/6c3cdb32cbdc1d0e.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.0,
+            0.22123894,
+            0.82300884,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Cat body truncated by left/bottom photo edges; record truncation.",
+      "approved_for_training": false
+    },
+    {
+      "index": 101,
+      "image_id": "6e86e224c7e36481",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/6e86e224c7e36481.jpg",
+      "sha256": "e18700cc290920901385281a1b10cbfb72c673d039ad87a05bcd5aab7cc48282",
+      "pixel_sha256": "560a36bb26f2b04fa5f572d30f4a3b84c97ec62e8fb7a8d67cc7bd02d27a6409",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "°ஐ[ßÜ.ĴŔå7]ஐ° &amp; ๑ Ψå5ςÅΓà  ๑",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/ya5sara/1845509689",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/6e86e224c7e36481.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.0,
+            0.40833333,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 102,
+      "image_id": "748c347e2c2a3e1b",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/748c347e2c2a3e1b.jpg",
+      "sha256": "a2e814305e5378139e0514e84a0b4b97ac33ad83d2fb27f53fa303fd8d79ea40",
+      "pixel_sha256": "d973c527bd5e89355aaab0b35d3f5fe375d56ad4b6131db80bf690667a8a6fca",
+      "size": [
+        1024,
+        576
+      ],
+      "author": "Predrag Stojadinovic",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/stojadinovicp/16917501737",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/748c347e2c2a3e1b.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.85250336,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Cropped cat head portrait; record truncation.",
+      "approved_for_training": false
+    },
+    {
+      "index": 103,
+      "image_id": "74c9a0c1ab44e47f",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/74c9a0c1ab44e47f.jpg",
+      "sha256": "0e1f40b48f418c8cb2534fae485b194156200544a5a4cc64c0570e91e86a1a0e",
+      "pixel_sha256": "eb00182fcf6296fe294c6b05da3280c153f912ae282bd2b35fda1bcdaa12a41d",
+      "size": [
+        1024,
+        1024
+      ],
+      "author": "Jonas Nordström",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/windyjonas/17363635246",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/74c9a0c1ab44e47f.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.0,
+            0.5469314,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 104,
+      "image_id": "757a1631131f4ba3",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/757a1631131f4ba3.jpg",
+      "sha256": "740cedfd8be14df252304008b2fe5bd83e46d9c4c26cba58e3ef80f4878997b2",
+      "pixel_sha256": "8d4a2ef9a6c9992f5ca274b14f9f61e7dc06807c87f2e10c69dacbb9f9b01f45",
+      "size": [
+        768,
+        1024
+      ],
+      "author": "Shintaro Kakutani",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/kakutani/5668951950",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/757a1631131f4ba3.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.47291666,
+            0.7140625,
+            0.61041665,
+            0.9390625
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.525,
+            0.7203125,
+            0.74791664,
+            0.9796875
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.78125,
+            0.7109375,
+            0.95208335,
+            0.9203125
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.8520833,
+            0.715625,
+            1.0,
+            0.9421875
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.33958334,
+            0.7234375,
+            0.39375,
+            0.775
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.45208332,
+            0.725,
+            0.71875,
+            0.746875
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.5833333,
+            0.7390625,
+            0.98125,
+            0.9546875
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Large cropped foreground sofa and visible potted plants lack labels beside marked tables/chairs; complete project target set.",
+      "approved_for_training": false
+    },
+    {
+      "index": 105,
+      "image_id": "78767a54758dcd79",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/78767a54758dcd79.jpg",
+      "sha256": "da003b6d95285287ca3a4f432dd3ff204861cd58d67ec69cb0447198fba33a80",
+      "pixel_sha256": "8706cdbc6fa86a3e71ab544b602ad8027471c42a07b010b51c0cc6eb5ccf1954",
+      "size": [
+        1024,
+        685
+      ],
+      "author": "woodleywonderworks",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/wwworks/9536149248",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/78767a54758dcd79.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.40635452,
+            0.5775,
+            0.4715719,
+            0.7325
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.44983277,
+            0.6025,
+            0.5401338,
+            0.7575
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.51839465,
+            0.59,
+            0.5852843,
+            0.7525
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.72742474,
+            0.6225,
+            0.909699,
+            0.915
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "couch",
+          "source_class_id": "/m/02crq1",
+          "xyxy": [
+            0.4214047,
+            0.725,
+            0.9632107,
+            0.9975
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.4147157,
+            0.5775,
+            0.5719063,
+            0.7375
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Left bar stools and other furniture need completeness check; many small overlapping furniture boxes.",
+      "approved_for_training": false
+    },
+    {
+      "index": 106,
+      "image_id": "7b082f7da69e2859",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/7b082f7da69e2859.jpg",
+      "sha256": "a9feaa42824f0f66d5f337eee63b13bee0ffcd9b41a38566ef6827ae9309cdc4",
+      "pixel_sha256": "12738fcfe205e88a0cedc48a0cd8735ebfa2b986e00edc56d344bd6b886c1dad",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Mamay Jane",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/mamayjane/4302816159",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/7b082f7da69e2859.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.0,
+            0.04375,
+            0.828125,
+            0.93958336
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Cat tail/body truncation at left edge; verify visible extent.",
+      "approved_for_training": false
+    },
+    {
+      "index": 107,
+      "image_id": "850bfdf25e95a3ab",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/850bfdf25e95a3ab.jpg",
+      "sha256": "97b5865243e31401b0de7c48df79c922795817e2ce9c8ca0a7216015d67a43f4",
+      "pixel_sha256": "158f0ff071c65634528d6e72d0acf7a53afcb3273e092f63a7faed8d8c97ebb2",
+      "size": [
+        1024,
+        678
+      ],
+      "author": "glenngould",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/for_tea_too/5745397128",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/850bfdf25e95a3ab.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.13069016,
+            0.024444444,
+            0.88986784,
+            0.9444444
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 108,
+      "image_id": "8aea1f1d12a7dc4f",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/8aea1f1d12a7dc4f.jpg",
+      "sha256": "9ab714c7dadbe7a5e1815dd9b239c2ef5cd3588515ddaeac5aa4fc3691fabaa1",
+      "pixel_sha256": "4ec7c73419c0dd40a2562f894ea1928ddeb73f164c4100da3dfbf3658cc59d5e",
+      "size": [
+        1024,
+        1002
+      ],
+      "author": "Emma Jane Hogbin Westby",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/emmajane/255550041",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/8aea1f1d12a7dc4f.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.15714286,
+            0.14963503,
+            0.82678574,
+            0.8485401
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 109,
+      "image_id": "973411d193107c9c",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/973411d193107c9c.jpg",
+      "sha256": "5ae392682d57f5714650b518d79d30bbf40bcce8340f1353bd218578112f3ddb",
+      "pixel_sha256": "4f2a4976b64034fb3368c0d65f3ee20554b68ca17b3fc2056efed57051d10931",
+      "size": [
+        1024,
+        724
+      ],
+      "author": "macinate",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/macinate/2061049887",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/973411d193107c9c.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.0045592706,
+            0.5064378,
+            0.15197569,
+            0.92918456
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.12917933,
+            0.50858366,
+            0.32218844,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.30091184,
+            0.50214595,
+            0.5151976,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.44072947,
+            0.7832618,
+            0.63221884,
+            0.99141634
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.78723407,
+            0.67596567,
+            0.89209723,
+            0.8690987
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.837386,
+            0.6180258,
+            0.8738602,
+            0.70386267
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.0,
+            0.7060086,
+            0.1443769,
+            0.832618
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.44832826,
+            0.8497854,
+            0.99848026,
+            0.99570817
+          ],
+          "occluded": true,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.8480243,
+            0.7360515,
+            0.99848026,
+            0.8755365
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Foreground curved table extent/completeness and overlapping furniture need full-resolution review.",
+      "approved_for_training": false
+    },
+    {
+      "index": 110,
+      "image_id": "c8a4a4786eea0ec5",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/c8a4a4786eea0ec5.jpg",
+      "sha256": "f7525265668f5e2f9ca16d8160b0af579cf8fc7bf7aa30671a658d7981d697d9",
+      "pixel_sha256": "bf9742a8d396f0d9b5e61d0963acd29db171dc66e697d992c5d6f10d7e97767d",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Brian Cantoni",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/cantoni/389259556",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/c8a4a4786eea0ec5.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.390625,
+            0.50208336,
+            0.553125,
+            0.8541667
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.515625,
+            0.4875,
+            0.6671875,
+            0.8041667
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.8921875,
+            0.5520833,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.284375,
+            0.46458334,
+            0.66875,
+            0.8541667
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "NO_OBVIOUS_ISSUE_AT_CONTACT_SCALE_FULL_REVIEW_PENDING",
+      "notes": "No obvious issue at contact-sheet scale; not full-resolution or complete multiclass annotation approval.",
+      "approved_for_training": false
+    },
+    {
+      "index": 111,
+      "image_id": "d224c4e1ea5c3d49",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/d224c4e1ea5c3d49.jpg",
+      "sha256": "c27a18d07611f339eed1f31a6c096904aef147a1b93d7332eaa34493461cf4ea",
+      "pixel_sha256": "07c56724ee69a3b5b0834feffca5a3ea220f15e5c4cd5e4a1692cb5218af0ae8",
+      "size": [
+        1024,
+        1024
+      ],
+      "author": "Heidi De Vries",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/veritatem/15546454575",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/d224c4e1ea5c3d49.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.0,
+            0.58483756,
+            0.13537906,
+            0.8267148
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.26534295,
+            0.57942235,
+            0.4133574,
+            0.82490975
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.48375452,
+            0.54873645,
+            0.6624549,
+            0.8303249
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.6191336,
+            0.48555955,
+            0.8267148,
+            0.8303249
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.041516244,
+            0.5830325,
+            0.7635379,
+            0.8285199
+          ],
+          "occluded": true,
+          "truncated": false
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Conference table is labeled dining table; verify explicit project dining-table taxonomy rather than assuming generic table equivalence.",
+      "approved_for_training": false
+    },
+    {
+      "index": 112,
+      "image_id": "de5c50f8027f7701",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/de5c50f8027f7701.jpg",
+      "sha256": "0ac8f3864bb422eeb1184af0a196437866e8b28ca6988685fc9854f8751a2d71",
+      "pixel_sha256": "46c80e18f7ed653cb12545e9af4618307b77d4cf47d7956efc687fe5ba994ea8",
+      "size": [
+        1024,
+        768
+      ],
+      "author": "Adriane Leithauser",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/adriane_l/6798510817",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/de5c50f8027f7701.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.015625,
+            0.55625,
+            0.190625,
+            0.73541665
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.1203125,
+            0.6125,
+            1.0,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "review_scope": "FULL_RESOLUTION_AND_CONTACT_SHEET",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Full-resolution: source Kitchen & dining room table box 0 covers actual dining table at far left; box 1 covers fixed kitchen counter/cupboards. Preserve valid candidate separately, remove/reclassify counter; visible dining chairs and hanging plant also need complete annotation.",
+      "approved_for_training": false
+    },
+    {
+      "index": 113,
+      "image_id": "e216dd92c7f1e961",
+      "local_path": ".codex-tmp/yolo-training/openimages-review/images/e216dd92c7f1e961.jpg",
+      "sha256": "9f8d358367824ddfa5c634657b28f93b360ae4dc61955b6ed78027c6275c0cab",
+      "pixel_sha256": "1cbec68fae4f3a0ddbc223a83ac7707f8a40a850af53ed95941b51b5c6ef1a42",
+      "size": [
+        1024,
+        683
+      ],
+      "author": "The 3B&#x27;s",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "landing_url": "https://www.flickr.com/photos/3-bs/15388287024",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/e216dd92c7f1e961.jpg",
+      "source_annotations": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.39823008,
+            0.74557525,
+            0.6932153,
+            0.99557525
+          ],
+          "occluded": true,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.5560472,
+            0.6061947,
+            0.7522124,
+            0.9358407
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.6858407,
+            0.5995575,
+            0.8495575,
+            0.8362832
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.72861356,
+            0.6438053,
+            0.9778761,
+            0.99557525
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.89085543,
+            0.63716817,
+            0.9985251,
+            0.9800885
+          ],
+          "occluded": true,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.0,
+            0.71902657,
+            0.50294983,
+            0.99557525
+          ],
+          "occluded": true,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.32448378,
+            0.59070796,
+            0.62094396,
+            0.71902657
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.5840708,
+            0.57300884,
+            0.76843655,
+            0.8141593
+          ],
+          "occluded": true,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "dining table",
+          "source_class_id": "/m/0h8n5zk",
+          "xyxy": [
+            0.6179941,
+            0.6238938,
+            0.99262536,
+            0.99557525
+          ],
+          "occluded": true,
+          "truncated": true
+        }
+      ],
+      "review_scope": "CONTACT_SHEET_ONLY",
+      "status": "REVIEW_REQUIRED",
+      "notes": "Many heavily occluded pub chairs/tables; full-resolution instance count/extent/completeness needed.",
+      "approved_for_training": false
+    }
+  ]
+}

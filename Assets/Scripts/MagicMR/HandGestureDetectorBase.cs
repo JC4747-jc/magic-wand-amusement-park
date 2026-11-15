@@ -17,6 +17,7 @@ namespace MagicMR
 
         XRHandSubsystem m_Subsystem;
 
+        static readonly List<XRHandSubsystem> s_Subsystems = new List<XRHandSubsystem>();
 
         protected Handedness Handedness => m_Handedness;
 
@@ -36,8 +37,8 @@ namespace MagicMR
             // load (after XR init). If we only subscribe in OnEnable we can
             // miss it entirely and gestures never fire — VstTest doesn't
             // use detectors so this race only shows up in MagicMR.
-            if (m_Subsystem != null && !m_Subsystem.running)UnsubscribeFromHands();
-            TrySubscribeToHands();
+            if (m_Subsystem == null)
+                TrySubscribeToHands();
         }
 
         void TrySubscribeToHands()
@@ -45,8 +46,13 @@ namespace MagicMR
             if (m_Subsystem != null)
                 return;
 
-            m_Subsystem = ParkHandTracking.EnsureRunning();
-            if(m_Subsystem==null)return;
+            SubsystemManager.GetSubsystems(s_Subsystems);
+            if (s_Subsystems.Count == 0)
+                return;
+
+            m_Subsystem = s_Subsystems[0];
+            if (!m_Subsystem.running)
+                m_Subsystem.Start();
 
             m_Subsystem.updatedHands += OnUpdatedHands;
         }

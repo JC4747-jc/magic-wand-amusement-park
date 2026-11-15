@@ -1,0 +1,27 @@
+{
+  "purpose": "EXISTING_COCO_PRETRAINED_CAT_INFERENCE_NOT_TRAINING_OR_PICO_ACCURACY_ACCEPTANCE",
+  "weights": "yolov8n.pt",
+  "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+  "names_count": 80,
+  "cat_class_id": 15,
+  "dog_class_id": 16,
+  "image_sha256": "3cfefd1b807cdb77806d13264d51c19cf528acac30183fded910093d2aa10332",
+  "device": "cpu",
+  "imgsz": 416,
+  "confidence": 0.25,
+  "elapsed_s": 2.069911200000206,
+  "detections": [
+    {
+      "class": "cat",
+      "confidence": 0.9453223347663879,
+      "xyxy": [
+        71.18193817138672,
+        109.06123352050781,
+        706.8030395507812,
+        757.1932983398438
+      ]
+    }
+  ],
+  "new_model_downloaded": false,
+  "training_performed": false
+}

@@ -1,0 +1,65 @@
+YOLO、Unity 动画与 GitHub 分支整合（2026-11-15）
+
+当前状态：交付文件已在本地准备；GitHub 设备登录仍待完成，尚未推送。
+目标按用户的“4drestore”解释为现有 restore-4d-lighter 分支；4d 是另一个独立分支。
+
+1. Codex 辅助训练的实际方法
+Codex 负责审查数据、编写并执行训练脚本、查看指标和修复问题；真正的 YOLO
+优化器计算由本机/WSL 的 PyTorch、Ultralytics 和 GPU 执行。
+官方示例是加载预训练 .pt，再调用 model.train(data=..., epochs=..., imgsz=...)。
+本项目已有隔离环境、有界训练入口、固定种子/权重 SHA、分组测试和资源守卫。
+执行前必须接入已审核且按来源分组的数据，不把网页候选、缩略图初筛直接当训练集。
+官方资料：
+https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex
+https://docs.ultralytics.com/guides/finetuning-guide/
+https://docs.ultralytics.com/modes/train/
+
+可以交给 Codex 的任务描述：
+“复用本机现有 nano 预训练权重，核查数据许可、完整实例标注和来源组划分，
+冻结独立测试集后做有界微调。batch1/workers0/cacheFalse，先短训测量资源；
+保留 best/last 和精简指标，使用项目日志/磁盘守卫。逐类报告漏检/误检、mAP
+及运行资源，未通过测试不得替换 scene_profiles 的部署权重。”
+
+2. 猫不需要从零训练
+官方 COCO 权重已有 cat（15）和 dog（16），也有常见家具和 potted plant。
+当前 pet/room/plant 配置使用本地 yolov8n.pt。单张公开猫图 CPU 推理检出 cat，
+confidence=0.945322；这是公开图上的推理检查，不是完整准确率或 PICO 通过。
+先验证官方基线在真实头显图上的效果；已有类别需要域适配时再微调。打火机、
+树、蟑螂、蜘蛛、雕像/青铜兽等缺失的项目类别仍需要合适数据及自定义训练。
+若选择统一13类微调模型，须保留常见类别样本并评估遗忘，不能仅用两类数据
+替代猫狗基线。13类的识别覆盖和逐场景验收要求仍然保留。
+https://docs.ultralytics.com/datasets/detect/coco/
+
+3. 本次交付的训练权重
+object-detection-demo/weights/candidates/gap-candidate-20261115-a/best.pt
+SHA-256: ba8c4259fafd94d218925f62197898997c3f5c87743d1209466781b4c844baeb
+Cockroach/BronzeBeast，23张公开照片、19个保守来源组，20epoch真实训练。
+冻结测试只有3张；conf0.25/IoU0.5下全部漏检，状态 REJECTED_INDEPENDENT_TEST。
+该文件只作为可审查候选归档，不部署，不覆盖当前打火机/COCO基线。保留原始
+训练参数、运行报告、冻结清单、CSV及当时的runner；不上传冗余last.pt或原始照片。
+
+4. 本次动画与项目资产
+Previews/scene-animation-20261115/ 下有9份离线 Unity 视频，合计1,124,630字节：
+CatIdle、CatSniff、CatWalk、DogWalk、Cockroach、Spider、JellyfishPulse、
+ReadingCornerPulse、BronzeAwaken。房间视频30fps，其余24fps；均已逐帧解码，
+抽样颜色与源PNG比较通过。MP4只是预览，实际模型、蒙皮/程序动画、材质、
+Prefab、脚本与.meta须一起整合；来源和许可在 Assets/StreamingAssets 和资产目录。
+Unity 6000.0.33f1，PICO Integration 3.4.0。当前本机 SDK 引用 D:/Unity/PICO；
+其他机器需先安装同版本SDK并调整该本地包路径。不能将本机已有构建当作
+其他机器全新克隆/包导入已经通过。实机手势/姿态/双眼/帧率仍待PICO验证。
+
+5. GitHub整合步骤
+先保留 restore-4d-lighter 原有训练归档和报告，在 codex/ 前缀的提交分支上
+追加新候选、动画源资产及小预览。对照交付清单检查 SHA、文件范围、许可和状态。
+认证成功并推送后，在 GitHub Compare & pull request 设置：
+base=restore-4d-lighter；compare=codex/yolo-animation-integration-20261115。
+检查 Files changed、Unity 编译/场景回归及模型状态，通过后合并该PR。
+如还要汇总到4d，再单独建立 base=4d、compare=restore-4d-lighter 的PR，处理
+差异并重跑验证；不要强推覆盖分支，也不要在场景/Prefab冲突时盲目接受全部一侧。
+长线分支保留合并记录；一次独立功能也可按仓库规则 squash。
+https://docs.github.com/en/pull-requests/reference/pull-request-merges
+
+普通 GitHub Git 禁止超过100MiB的单文件，网页上传限制25MiB；更大二进制应
+选Git LFS或Release。当前新候选约5.17MiB、视频合计约1.07MiB，不需要为它们
+重写仓库历史。Library、Temp、环境、SDK、APK、原始数据和凭据不进入本次提交。
+https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github

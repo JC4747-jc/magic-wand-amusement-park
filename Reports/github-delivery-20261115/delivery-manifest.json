@@ -1,0 +1,135 @@
+{
+  "purpose": "REVIEWABLE_TRAINED_CANDIDATE_AND_ANIMATION_DELIVERY",
+  "target_branch": "restore-4d-lighter",
+  "upload_status": "PREPARED_NOT_PUSHED",
+  "previews": [
+    {
+      "path": "Previews/scene-animation-20261115/CatIdle.mp4",
+      "bytes": 59793,
+      "sha256": "e1a4f32b1dfc3446c59c0161cc721f9073f481b369386b320ff8a88a641ee6e1",
+      "frames": 60,
+      "fps": 24,
+      "maximum_sampled_color_error_255": 1.2885587565104166,
+      "maximum_sampled_motion_delta_255": 0.414814453125,
+      "scope": "Offline Unity preview; not PICO footage or runtime performance evidence"
+    },
+    {
+      "path": "Previews/scene-animation-20261115/CatSniff.mp4",
+      "bytes": 64606,
+      "sha256": "ea0062eb5c16f18d9e794b008687092ea9d3cdffff4ae988f06a39804b04fe2f",
+      "frames": 60,
+      "fps": 24,
+      "maximum_sampled_color_error_255": 1.288603515625,
+      "maximum_sampled_motion_delta_255": 0.8916080729166667,
+      "scope": "Offline Unity preview; not PICO footage or runtime performance evidence"
+    },
+    {
+      "path": "Previews/scene-animation-20261115/CatWalk.mp4",
+      "bytes": 77849,
+      "sha256": "334dd2d89fe0ca8a9a958d2f83d837a65491ea4a9541ca493dca3c86612a9cca",
+      "frames": 48,
+      "fps": 24,
+      "maximum_sampled_color_error_255": 1.34698974609375,
+      "maximum_sampled_motion_delta_255": 4.0645760091145835,
+      "scope": "Offline Unity preview; not PICO footage or runtime performance evidence"
+    },
+    {
+      "path": "Previews/scene-animation-20261115/DogWalk.mp4",
+      "bytes": 81782,
+      "sha256": "db0929a37dbc0d6e69b52a833a9815cd8cb46302987693badf02c6180ab96678",
+      "frames": 26,
+      "fps": 24,
+      "maximum_sampled_color_error_255": 1.4692049153645834,
+      "maximum_sampled_motion_delta_255": 8.16381591796875,
+      "scope": "Offline Unity preview; not PICO footage or runtime performance evidence"
+    },
+    {
+      "path": "Previews/scene-animation-20261115/Cockroach.mp4",
+      "bytes": 54545,
+      "sha256": "14cb7026d0e46e7d30f2815673844b6a0bbd13f8a07afae3f306ad00f4fb9bdb",
+      "frames": 48,
+      "fps": 24,
+      "maximum_sampled_color_error_255": 0.9806827799479166,
+      "maximum_sampled_motion_delta_255": 0.4949560546875,
+      "scope": "Offline Unity preview; not PICO footage or runtime performance evidence"
+    },
+    {
+      "path": "Previews/scene-animation-20261115/Spider.mp4",
+      "bytes": 83450,
+      "sha256": "571a04079a879ddfdfccf29b26ea790c4f5592f9555d62c6b3b5921da3114848",
+      "frames": 48,
+      "fps": 24,
+      "maximum_sampled_color_error_255": 1.0734147135416667,
+      "maximum_sampled_motion_delta_255": 1.0262361653645833,
+      "scope": "Offline Unity preview; not PICO footage or runtime performance evidence"
+    },
+    {
+      "path": "Previews/scene-animation-20261115/JellyfishPulse.mp4",
+      "bytes": 237014,
+      "sha256": "14acb259316375cc6935e18c2911e879113830d15f4dacee5097fd457ec4d714",
+      "frames": 84,
+      "fps": 30,
+      "maximum_sampled_color_error_255": 1.3654012044270833,
+      "maximum_sampled_motion_delta_255": 4.940126953125,
+      "scope": "Offline Unity preview; not PICO footage or runtime performance evidence"
+    },
+    {
+      "path": "Previews/scene-animation-20261115/ReadingCornerPulse.mp4",
+      "bytes": 189547,
+      "sha256": "885705b8d80f046c83e83bf8ebfb99a494fc4b7987aad37992e1dbeed3b97874",
+      "frames": 84,
+      "fps": 30,
+      "maximum_sampled_color_error_255": 1.62212646484375,
+      "maximum_sampled_motion_delta_255": 1.2295402018229167,
+      "scope": "Offline Unity preview; not PICO footage or runtime performance evidence"
+    },
+    {
+      "path": "Previews/scene-animation-20261115/BronzeAwaken.mp4",
+      "bytes": 276044,
+      "sha256": "a6284fc3e5305c329ec712b9efa145d45fe530c6442383f00d4bf042723f2abb",
+      "frames": 96,
+      "fps": 24,
+      "maximum_sampled_color_error_255": 1.272109375,
+      "maximum_sampled_motion_delta_255": 2.3458553059895833,
+      "scope": "Offline Unity preview; not PICO footage or runtime performance evidence"
+    }
+  ],
+  "preview_total_bytes": 1124630,
+  "candidate": {
+    "path": "object-detection-demo/weights/candidates/gap-candidate-20261115-a/best.pt",
+    "bytes": 5422270,
+    "sha256": "ba8c4259fafd94d218925f62197898997c3f5c87743d1209466781b4c844baeb",
+    "classes": [
+      "Cockroach",
+      "BronzeBeast"
+    ],
+    "status": "REJECTED_INDEPENDENT_TEST",
+    "deployment_accepted": false,
+    "reason": "Frozen public test at confidence .25 / IoU .5 missed all three instances; tiny public test is not PICO accuracy."
+  },
+  "pretrained_cat_baseline": {
+    "path": "yolov8n.pt",
+    "classes": 80,
+    "cat_class_id": 15,
+    "dog_class_id": 16,
+    "basic_cat_class_needs_training_from_scratch": false,
+    "pico_domain_acceptance": false
+  },
+  "excluded": [
+    "duplicate last.pt checkpoint",
+    "raw photos/datasets",
+    "Unity Library/Temp/Logs",
+    "virtual environments",
+    "SDK/NDK installations",
+    "credentials/signing keys",
+    "APK binaries"
+  ],
+  "sources": [
+    "https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex",
+    "https://docs.ultralytics.com/datasets/detect/coco/",
+    "https://docs.ultralytics.com/guides/finetuning-guide/",
+    "https://docs.ultralytics.com/modes/train/",
+    "https://docs.github.com/en/pull-requests/reference/pull-request-merges",
+    "https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github"
+  ]
+}

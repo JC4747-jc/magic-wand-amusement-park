@@ -6,7 +6,11 @@ from pathlib import Path
 
 def verify_artifact(path, profile, loaded_hash=None):
     path = Path(path)
-    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    digest_state = hashlib.sha256()
+    with path.open('rb') as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+            digest_state.update(chunk)
+    digest = digest_state.hexdigest()
     if loaded_hash is not None and digest != loaded_hash:
         raise ValueError(f'MODEL_CHANGED_RESTART_REQUIRED: {path}; cached model differs from disk; restart or use a new version path')
     result = dict(profile)

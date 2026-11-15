@@ -11,6 +11,38 @@ public static class ParkContentBuilder
 {
     public static readonly string[] Names={"ParkTree","ParkBugs","ParkStatue","ParkRoom","ParkPlant","ParkPet"};
     const string Content="Assets/MagicMR/Park";
+    public static void AttachSharedInterfaceToActiveScene()
+    {
+        var oldEntry=UnityEngine.Object.FindFirstObjectByType<ParkLobby>();
+        if(oldEntry)oldEntry.enabled=false;
+        var shared=UnityEngine.Object.FindFirstObjectByType<ParkSharedInterface>();
+        if(!shared)shared=new GameObject("Shared Scene Interface").AddComponent<ParkSharedInterface>();
+        shared.enabled=true;
+        shared.transport=UnityEngine.Object.FindFirstObjectByType<Perception.TcpClient>();
+        shared.replay=AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Resources/MagicMR/recognition-replay.jsonl.bytes");
+        EditorUtility.SetDirty(shared);
+    }
+    public static void ConfigureLighterEntry()
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/BridgeStereoFusion.unity");
+        AttachSharedInterfaceToActiveScene();
+        EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+        EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());
+        var scenes=EditorBuildSettings.scenes.ToList();
+        foreach(var name in Names)
+        {
+            string path="Assets/Scenes/"+name+".unity";
+            int index=scenes.FindIndex(s=>s.path==path);
+            if(index<0)scenes.Add(new EditorBuildSettingsScene(path,true));
+            else scenes[index]=new EditorBuildSettingsScene(path,true);
+        }
+        scenes.RemoveAll(s=>s.path=="Assets/Scenes/BridgeStereoFusion.unity");
+        scenes.Insert(0,new EditorBuildSettingsScene("Assets/Scenes/BridgeStereoFusion.unity",true));
+        EditorBuildSettings.scenes=scenes.ToArray();
+        ParkSharedInteractionChecks.CheckDefaultBuildEntry();
+        AssetDatabase.SaveAssets();
+        ParkSharedInteractionChecks.Run();
+    }
     [MenuItem("MagicMR/Park/Generate six scenes")]
     public static void GenerateAll()
     {
@@ -19,12 +51,7 @@ public static class ParkContentBuilder
         var material=AssetDatabase.LoadAssetAtPath<Material>(Content+"/ParkShared.mat");
         if(!material) { material=new Material(shader); AssetDatabase.CreateAsset(material,Content+"/ParkShared.mat"); }
         EditorSceneManager.OpenScene("Assets/Scenes/BridgeStereoFusion.unity");
-        var oldEntry=UnityEngine.Object.FindFirstObjectByType<ParkLobby>();if(oldEntry)oldEntry.enabled=false;
-        var shared=UnityEngine.Object.FindFirstObjectByType<ParkSharedInterface>();
-        if(!shared)shared=new GameObject("Shared Scene Interface").AddComponent<ParkSharedInterface>();
-        shared.transport=UnityEngine.Object.FindFirstObjectByType<Perception.TcpClient>();
-        shared.replay=AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Resources/MagicMR/recognition-replay.jsonl.bytes");
-        var oldStatus=GameObject.Find("Stereo Debug");if(oldStatus)oldStatus.SetActive(false);
+        AttachSharedInterfaceToActiveScene();
         EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());
         for(int i=0;i<Names.Length;i++)
         {

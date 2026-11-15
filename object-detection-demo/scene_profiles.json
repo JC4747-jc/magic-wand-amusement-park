@@ -1,6 +1,6 @@
 {
   "lighter": {
-    "weights": "weights/best_yolo26n_quad_v4_50e.pt",
+    "weights": "weights/best_yolo26n_assgn2_v6_50e.pt",
     "allowed": [
       "Lighter"
     ],
@@ -44,7 +44,7 @@
     "max_det": 32
   },
   "room": {
-    "weights": "weights/deployed/coco-yolov8n/best.pt",
+    "weights": "yolov8n.pt",
     "allowed": [
       "chair",
       "couch",
@@ -56,7 +56,7 @@
     "validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING"
   },
   "plant": {
-    "weights": "weights/deployed/coco-yolov8n/best.pt",
+    "weights": "yolov8n.pt",
     "allowed": [
       "PottedPlant"
     ],
@@ -67,7 +67,7 @@
     "validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING"
   },
   "pet": {
-    "weights": "weights/deployed/coco-yolov8n/best.pt",
+    "weights": "yolov8n.pt",
     "allowed": [
       "Cat",
       "Dog"

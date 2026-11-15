@@ -96,12 +96,12 @@ namespace MagicMR
             }
 
 #if XR_HANDS_1_1_OR_NEWER
-            var subsystem = ParkHandTracking.Current;
-            if (subsystem == null) {
-                m_HoldTimer=0f;
-                ResetChargeVisual();
+            var subsystems = new System.Collections.Generic.List<XRHandSubsystem>();
+            SubsystemManager.GetSubsystems(subsystems);
+            if (subsystems.Count == 0)
                 return;
-            }
+
+            var subsystem = subsystems[0];
             var near =
                 IsPinchNearButton(subsystem.leftHand) ||
                 (FindFirstObjectByType<TabletopInteractionBase>() == null && IsPinchNearButton(subsystem.rightHand));

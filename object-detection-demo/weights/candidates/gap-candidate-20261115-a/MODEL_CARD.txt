@@ -1,0 +1,20 @@
+Two-class YOLO26n candidate archive. NOT ACCEPTED FOR DEPLOYMENT.
+
+Classes: Cockroach, BronzeBeast.
+23 manually reviewed public photographs, 19 conservative provenance/object groups.
+Frozen before training: train17 / validation3 / test3.
+20 epochs; 340 batches; 334 first-convolution optimizer steps; finite loss and changed weights.
+Independent test at conf0.25 / IoU0.5: 0 matched, 3 missed targets.
+Tiny public holdout is insufficient for PICO accuracy. Do not tune against the revealed test.
+
+best.pt bytes: 5422270
+SHA256: ba8c4259fafd94d218925f62197898997c3f5c87743d1209466781b4c844baeb
+best.pt was CPU-reloaded under Windows with the same SHA and finite output.
+Do not replace scene_profiles.json deployment weights with this rejected candidate.
+Existing service weights and F2G dependencies were retained.
+
+report.json, args.yaml, results.csv, runner.py and frozen-dataset.json describe the historical run.
+runner.py is the actual historical source, not the subsequently edited current training entry point.
+The newer bounded log helper was added AFTER this run; it is not claimed as a limit of this run.
+Source attributions and photo hashes: TrainingData/public-gap-annotations-v1.json.
+Raw training photos and duplicate last.pt are intentionally not part of this delivery.
