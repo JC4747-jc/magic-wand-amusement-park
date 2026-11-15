@@ -12,6 +12,10 @@
 
 本批统一线路交付证据见 [2026-11-16 整合验证](Reports/hci-unified-release-20261116/README.md)。源码快照 `c901a0c8aa21c63f8269b255b415baff1018dc50` 的 1581 个项目源文件核对一致；24 条共用手势轨迹、96 次条件检查/139 条记录及 14 场景启动通过。Android IL2CPP 被 3 GiB 可用内存下限中止（最低采样 2.828 GiB），未发布新 APK，不降低守卫重试。后续构建必须使用 PowerShell 7，并先解决内存预算；旧包与历史报告不能代替新版验收。此前段落中的“未发布”按当时源哈希保留，本批交付范围以最新报告为准。Goal 继续 active。
 
+2026-11-16 Android 后续验证：统一火机手势源码已完成 IL2CPP/Gradle 打包，签名、ZIP CRC、ARM64、14 场景和 40 项模型/材质/贴图来源核对通过。新包为 `HciUnifiedAllScenesValidation-20261116.apk`，应用标识 `com.yn.picmagicmr.validation`，见 [GitHub 验证包](https://github.com/JC4747-jc/magic-wand-amusement-park/releases/tag/hci-unified-validation-20261116) 与 [构建证据](Reports/hci-android-recovery-20261116/README.md)。它不包含新的已接受 YOLO 权重，不代表真实 YOLO→定位→手势→动画、PICO 双眼/性能或全部 32 项效果验收完成。此前 Android 失败报告保留作为历史。
+
+本次通过分离 Unity 与离线 IL2CPP 转换降低重叠内存；转换最低采样可用 RAM 3.827 GiB，随后完整构建最低 4.279 GiB。3 GiB 下限未降低，单编译进程、日志与磁盘增长预算继续生效，保留 Library，无训练或自动重启。后续需要连接 PICO 验证真实输入；Goal 保持 active。
+
 ## Goal 当前执行目标：HCI「魔法乐园」需求优先（2026-11-15，覆盖下方旧执行顺序）
 
 **目标：在现有 Magic Wand Amusement Park 的 Unity/PICO MR 工程中，完成以现实物体为对象、以四维手势为输入的魔法乐园体验。以仓库 HCI 八个用例为需求基线，逐项对照现有主线的识别、定位、动画、反馈、撤销/复位与实验记录，补足差异并验证。图片和工具只用于改善这些用例的表现与制作效率，不将项目改成森林漫游、宫殿游戏或通用 AI 建模演示。继续完成已授权的 YOLO 训练、F2G 独立实验、分支整合、GitHub 交付和资源控制。**

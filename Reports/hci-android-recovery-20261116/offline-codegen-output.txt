@@ -1,0 +1,73 @@
+[1/4        0s] WriteResponseFile Library/Bee/artifacts/rsp/10766106103327637571.rsp
+[2/4        4s] UnityLinker C:/Users/Administrator/Documents/ChatGPT/mr/.codex-tmp/restore-integration-validation/Library/Bee/artifacts/unitylinker_xy1a.traceevents
+D:\Unity\Hub\Editor\6000.0.33f1\Editor\Data\il2cpp\build\deploy\UnityLinker.exe @Library\Bee\artifacts\rsp\10766106103327637571.rsp
+[BUSY       6s] IL2CPP_CodeGen C:/Users/Administrator/Documents/ChatGPT/mr/.codex-tmp/restore-integration-validation/Library/Bee/artifacts/il2cpp_conv_i1d5.traceevents
+[BUSY      16s] IL2CPP_CodeGen C:/Users/Administrator/Documents/ChatGPT/mr/.codex-tmp/restore-integration-validation/Library/Bee/artifacts/il2cpp_conv_i1d5.traceevents
+[4/4       17s] IL2CPP_CodeGen C:/Users/Administrator/Documents/ChatGPT/mr/.codex-tmp/restore-integration-validation/Library/Bee/artifacts/il2cpp_conv_i1d5.traceevents
+D:\Unity\Hub\Editor\6000.0.33f1\Editor\Data\il2cpp\build\deploy\il2cpp.exe @Library\Bee\artifacts\rsp\8132061730632339084.rsp
+
+Warning: [UnityEngine.TextCoreTextEngineModule] - System.Void UnityEngine.TextCore.Text.TextGeneratorUtilities::.cctor() - Method was given it's own cpp file because it is large and costly to compile
+
+Warning: [Unity.InputSystem] - System.Void UnityEngine.InputSystem.FastTouchscreen::.ctor() - High Variable Count of 315
+
+Warning: [UnityEngine.TextCoreTextEngineModule] - System.Boolean UnityEngine.TextCore.Text.TextGenerator::ValidateHtmlTag(UnityEngine.TextCore.Text.TextProcessingElement[],System.Int32,System.Int32&,UnityEngine.TextCore.Text.TextGenerationSettings,UnityEngine.TextCore.Text.TextInfo,System.Boolean&) - High Variable Count of 242
+
+Warning: [UnityEngine.TextCoreTextEngineModule] - System.Boolean UnityEngine.TextCore.Text.TextGenerator::ValidateHtmlTag(UnityEngine.TextCore.Text.TextProcessingElement[],System.Int32,System.Int32&,UnityEngine.TextCore.Text.TextGenerationSettings,UnityEngine.TextCore.Text.TextInfo,System.Boolean&) - High Instruction Count of 6342
+
+Warning: [UnityEngine.TextCoreTextEngineModule] - System.Boolean UnityEngine.TextCore.Text.TextGenerator::ValidateHtmlTag(UnityEngine.TextCore.Text.TextProcessingElement[],System.Int32,System.Int32&,UnityEngine.TextCore.Text.TextGenerationSettings,UnityEngine.TextCore.Text.TextInfo,System.Boolean&) - High CodeSize of 18047
+
+Warning: [UnityEngine.TextCoreTextEngineModule] - System.Void UnityEngine.TextCore.Text.TextGenerator::ParsingPhase(UnityEngine.TextCore.Text.TextInfo,UnityEngine.TextCore.Text.TextGenerationSettings,System.UInt32&,System.Single&) - High Variable Count of 310
+
+Warning: [UnityEngine.TextCoreTextEngineModule] - System.Void UnityEngine.TextCore.Text.TextGenerator::ParsingPhase(UnityEngine.TextCore.Text.TextInfo,UnityEngine.TextCore.Text.TextGenerationSettings,System.UInt32&,System.Single&) - High Instruction Count of 6699
+
+Warning: [UnityEngine.TextCoreTextEngineModule] - System.Void UnityEngine.TextCore.Text.TextGenerator::ParsingPhase(UnityEngine.TextCore.Text.TextInfo,UnityEngine.TextCore.Text.TextGenerationSettings,System.UInt32&,System.Single&) - High CodeSize of 17457
+
+Warning: [UnityEngine.TextCoreTextEngineModule] - UnityEngine.Vector2 UnityEngine.TextCore.Text.TextGenerator::CalculatePreferredValues(System.Single&,UnityEngine.Vector2,System.Boolean,UnityEngine.TextCore.Text.TextGenerationSettings,UnityEngine.TextCore.Text.TextInfo) - High Variable Count of 207
+
+Warning: [UnityEngine.TextCoreTextEngineModule] - System.Void UnityEngine.TextCore.Text.TextGeneratorUtilities::.cctor() - High Instruction Count of 10585
+
+Warning: [UnityEngine.TextCoreTextEngineModule] - System.Void UnityEngine.TextCore.Text.TextGeneratorUtilities::.cctor() - High CodeSize of 31741
+output cleanup:          5.83 ms
+json parse time:         0.00 ms
+scan cache:
+  hits (new):               0
+  hits (frozen):            0
+  misses:                   0
+  inserts:                  0
+  save time:             0.00 ms
+  entries dropped:          0
+file signing:
+  cache hits:             812
+  cache get time:        0.00 ms
+  cache save time:       3.97 ms
+  digests:                137
+  digest time:          13.02 ms
+stat cache:
+  hits:                  1794
+  misses:                1667
+  dirty:                    0
+building:
+  old records:              0
+  new records:              0
+  dropped records:          0
+  state save time:       8.95 ms
+  exec() count:             3
+  exec() time:          21.52 s
+low-level syscalls:
+  mmap() calls:            11
+  mmap() time:           1.09 ms
+  munmap() calls:           0
+  munmap() time:         0.00 ms
+  stat() calls:          2000
+  stat() time:          17.53 ms
+  list dir calls:         179
+  list dir time:        38.39 ms
+  glob sig calls:          62
+  glob sig time:        26.24 ms
+compiledag:              0.00 ms
+compilederived           0.00 ms
+  cumulativepoints       0.00 ms
+  nongenindices          0.00 ms
+pointless wakeups           0
+*** Tundra requires additional run (21.62 seconds), 3 items updated, 4 evaluated
+*** Additional run caused by: contents change of C:/Users/Administrator/Documents/ChatGPT/mr/.codex-tmp/restore-integration-validation/Library/Bee/artifacts/Android/il2cppOutput/cpp

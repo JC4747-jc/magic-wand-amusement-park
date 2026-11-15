@@ -1,0 +1,1223 @@
+{
+  "unity": "D:/Unity/Hub/Editor/6000.0.33f1/Editor/Unity.exe",
+  "variant": "AllScenes",
+  "requestedBeeThreads": 1,
+  "requestedIl2CppJobs": 1,
+  "exitCode": 1,
+  "guardStop": null,
+  "maximumSampledOwnedRSSMiB": 3480.0,
+  "maximumSampledDiskGrowthMiB": 1.0,
+  "processOwnership": "PID and creation time validated at every parent-child edge",
+  "childCleanup": "Unnamed Windows job with KILL_ON_JOB_CLOSE; no breakaway flags",
+  "maximumAllowedDiskGrowthMiB": 1536,
+  "preparationRequested": false,
+  "outcome": "BUILD_NOT_COMPLETED",
+  "preparedDag": null,
+  "minimumSampledFreeMemoryGiB": 4.891,
+  "maximumSampledCompilerProcesses": 1,
+  "samplingScope": "Five-second snapshots of descendants of this Unity build; not a continuous or complete peak measurement",
+  "backendArguments": [
+    "\"D:\\Unity\\Hub\\Editor\\6000.0.33f1\\Editor\\Data\\bee_backend.exe\" --dont-print-to-structured-log --ipc --defer-dag-verification --dagfile=\"Library/Bee/1300b0aE.dag\" --continue-on-failure --profile=\"Library/Bee/backend1.traceevents\" ScriptAssemblies",
+    "\"D:\\Unity\\Hub\\Editor\\6000.0.33f1\\Editor\\Data\\bee_backend.exe\" --dont-print-to-structured-log --ipc --dagfile=\"Library/Bee/Playerd3785a9f.dag\" --profile=\"Library/Bee/backend1.traceevents\" Player",
+    "\"D:\\Unity\\Hub\\Editor\\6000.0.33f1\\Editor\\Data\\bee_backend.exe\" --dont-print-to-structured-log --ipc --dagfile=\"Library/Bee/Playerd3785a9f.dag\" --dagfilejson=\"Library\\Bee\\Playerd3785a9f.dag.json\" --profile=\"Library/Bee/backend2.traceevents\" Player"
+  ],
+  "samples": [
+    {
+      "utc": "2026-11-15T16:41:11.7619542Z",
+      "freeMemoryGiB": 7.746,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 601.0,
+      "diskGrowthMiB": -1.75
+    },
+    {
+      "utc": "2026-11-15T16:41:17.1688944Z",
+      "freeMemoryGiB": 6.438,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 1885.27,
+      "diskGrowthMiB": 0.3
+    },
+    {
+      "utc": "2026-11-15T16:41:22.4284534Z",
+      "freeMemoryGiB": 5.975,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2365.64,
+      "diskGrowthMiB": 1.13
+    },
+    {
+      "utc": "2026-11-15T16:41:27.7856108Z",
+      "freeMemoryGiB": 5.932,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2431.77,
+      "diskGrowthMiB": -0.23
+    },
+    {
+      "utc": "2026-11-15T16:41:33.0115237Z",
+      "freeMemoryGiB": 5.831,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2418.49,
+      "diskGrowthMiB": -8.51
+    },
+    {
+      "utc": "2026-11-15T16:41:38.3256395Z",
+      "freeMemoryGiB": 5.845,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2417.45,
+      "diskGrowthMiB": -10.05
+    },
+    {
+      "utc": "2026-11-15T16:41:43.5497345Z",
+      "freeMemoryGiB": 5.526,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2753.49,
+      "diskGrowthMiB": -22.96
+    },
+    {
+      "utc": "2026-11-15T16:41:48.8312199Z",
+      "freeMemoryGiB": 5.619,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2534.59,
+      "diskGrowthMiB": -32.04
+    },
+    {
+      "utc": "2026-11-15T16:41:54.0562153Z",
+      "freeMemoryGiB": 5.671,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2530.34,
+      "diskGrowthMiB": -31.23
+    },
+    {
+      "utc": "2026-11-15T16:41:59.2840986Z",
+      "freeMemoryGiB": 5.794,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2476.69,
+      "diskGrowthMiB": -32.14
+    },
+    {
+      "utc": "2026-11-15T16:42:04.5142097Z",
+      "freeMemoryGiB": 5.82,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2438.4,
+      "diskGrowthMiB": -30.32
+    },
+    {
+      "utc": "2026-11-15T16:42:09.7537773Z",
+      "freeMemoryGiB": 5.804,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2482.75,
+      "diskGrowthMiB": -29.03
+    },
+    {
+      "utc": "2026-11-15T16:42:14.9955522Z",
+      "freeMemoryGiB": 5.823,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2480.25,
+      "diskGrowthMiB": -29.97
+    },
+    {
+      "utc": "2026-11-15T16:42:20.2139112Z",
+      "freeMemoryGiB": 5.94,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2384.14,
+      "diskGrowthMiB": -25.31
+    },
+    {
+      "utc": "2026-11-15T16:42:25.4653607Z",
+      "freeMemoryGiB": 5.79,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2524.39,
+      "diskGrowthMiB": -27.83
+    },
+    {
+      "utc": "2026-11-15T16:42:30.7132656Z",
+      "freeMemoryGiB": 5.848,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2477.43,
+      "diskGrowthMiB": -30.49
+    },
+    {
+      "utc": "2026-11-15T16:42:36.0080567Z",
+      "freeMemoryGiB": 5.84,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2469.5,
+      "diskGrowthMiB": -27.79
+    },
+    {
+      "utc": "2026-11-15T16:42:41.2509539Z",
+      "freeMemoryGiB": 5.855,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2455.0,
+      "diskGrowthMiB": -27.39
+    },
+    {
+      "utc": "2026-11-15T16:42:46.5281631Z",
+      "freeMemoryGiB": 5.846,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2482.92,
+      "diskGrowthMiB": -27.63
+    },
+    {
+      "utc": "2026-11-15T16:42:51.7648829Z",
+      "freeMemoryGiB": 5.922,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2387.36,
+      "diskGrowthMiB": -26.69
+    },
+    {
+      "utc": "2026-11-15T16:42:57.0320443Z",
+      "freeMemoryGiB": 5.801,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2531.32,
+      "diskGrowthMiB": -24.47
+    },
+    {
+      "utc": "2026-11-15T16:43:02.2592705Z",
+      "freeMemoryGiB": 5.886,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2456.68,
+      "diskGrowthMiB": -24.74
+    },
+    {
+      "utc": "2026-11-15T16:43:07.4458854Z",
+      "freeMemoryGiB": 5.961,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2432.62,
+      "diskGrowthMiB": -25.4
+    },
+    {
+      "utc": "2026-11-15T16:43:12.6798069Z",
+      "freeMemoryGiB": 5.88,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2483.12,
+      "diskGrowthMiB": -23.15
+    },
+    {
+      "utc": "2026-11-15T16:43:17.9226473Z",
+      "freeMemoryGiB": 5.928,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2459.04,
+      "diskGrowthMiB": -69.55
+    },
+    {
+      "utc": "2026-11-15T16:43:23.1272401Z",
+      "freeMemoryGiB": 5.519,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2894.34,
+      "diskGrowthMiB": -69.55
+    },
+    {
+      "utc": "2026-11-15T16:43:28.3531294Z",
+      "freeMemoryGiB": 5.876,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2850.95,
+      "diskGrowthMiB": -69.53
+    },
+    {
+      "utc": "2026-11-15T16:43:33.5461132Z",
+      "freeMemoryGiB": 5.449,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 3303.11,
+      "diskGrowthMiB": -69.53
+    },
+    {
+      "utc": "2026-11-15T16:43:38.7880298Z",
+      "freeMemoryGiB": 5.244,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 3480.17,
+      "diskGrowthMiB": -69.53
+    },
+    {
+      "utc": "2026-11-15T16:43:44.0597792Z",
+      "freeMemoryGiB": 6.313,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2379.72,
+      "diskGrowthMiB": -28.0
+    },
+    {
+      "utc": "2026-11-15T16:43:49.3113010Z",
+      "freeMemoryGiB": 6.283,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2401.03,
+      "diskGrowthMiB": -32.46
+    },
+    {
+      "utc": "2026-11-15T16:43:54.5296762Z",
+      "freeMemoryGiB": 6.311,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2373.93,
+      "diskGrowthMiB": -27.23
+    },
+    {
+      "utc": "2026-11-15T16:43:59.7881776Z",
+      "freeMemoryGiB": 6.273,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2393.12,
+      "diskGrowthMiB": -27.95
+    },
+    {
+      "utc": "2026-11-15T16:44:05.0331170Z",
+      "freeMemoryGiB": 6.153,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2390.36,
+      "diskGrowthMiB": -27.91
+    },
+    {
+      "utc": "2026-11-15T16:44:10.2771890Z",
+      "freeMemoryGiB": 6.163,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2388.06,
+      "diskGrowthMiB": -27.08
+    },
+    {
+      "utc": "2026-11-15T16:44:15.5565628Z",
+      "freeMemoryGiB": 6.161,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2405.23,
+      "diskGrowthMiB": -28.27
+    },
+    {
+      "utc": "2026-11-15T16:44:20.7983467Z",
+      "freeMemoryGiB": 6.184,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2394.54,
+      "diskGrowthMiB": -26.67
+    },
+    {
+      "utc": "2026-11-15T16:44:26.0046460Z",
+      "freeMemoryGiB": 6.181,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2325.34,
+      "diskGrowthMiB": -26.99
+    },
+    {
+      "utc": "2026-11-15T16:44:31.2456972Z",
+      "freeMemoryGiB": 6.206,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2395.39,
+      "diskGrowthMiB": -30.78
+    },
+    {
+      "utc": "2026-11-15T16:44:36.4650158Z",
+      "freeMemoryGiB": 6.245,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2378.12,
+      "diskGrowthMiB": -29.33
+    },
+    {
+      "utc": "2026-11-15T16:44:41.7207312Z",
+      "freeMemoryGiB": 6.24,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2391.39,
+      "diskGrowthMiB": -28.23
+    },
+    {
+      "utc": "2026-11-15T16:44:46.9728694Z",
+      "freeMemoryGiB": 6.243,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2395.66,
+      "diskGrowthMiB": -28.6
+    },
+    {
+      "utc": "2026-11-15T16:44:52.2087559Z",
+      "freeMemoryGiB": 6.262,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2419.28,
+      "diskGrowthMiB": -28.68
+    },
+    {
+      "utc": "2026-11-15T16:44:57.4229684Z",
+      "freeMemoryGiB": 6.187,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2461.67,
+      "diskGrowthMiB": -29.83
+    },
+    {
+      "utc": "2026-11-15T16:45:02.6763619Z",
+      "freeMemoryGiB": 6.249,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2405.18,
+      "diskGrowthMiB": -28.51
+    },
+    {
+      "utc": "2026-11-15T16:45:07.9166024Z",
+      "freeMemoryGiB": 6.356,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2274.75,
+      "diskGrowthMiB": -27.47
+    },
+    {
+      "utc": "2026-11-15T16:45:13.1190740Z",
+      "freeMemoryGiB": 6.317,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2341.55,
+      "diskGrowthMiB": -26.22
+    },
+    {
+      "utc": "2026-11-15T16:45:18.3672305Z",
+      "freeMemoryGiB": 6.232,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2407.98,
+      "diskGrowthMiB": -25.79
+    },
+    {
+      "utc": "2026-11-15T16:45:23.7023721Z",
+      "freeMemoryGiB": 6.316,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2335.6,
+      "diskGrowthMiB": -26.67
+    },
+    {
+      "utc": "2026-11-15T16:45:28.9340050Z",
+      "freeMemoryGiB": 6.288,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2358.62,
+      "diskGrowthMiB": -26.46
+    },
+    {
+      "utc": "2026-11-15T16:45:34.2105607Z",
+      "freeMemoryGiB": 6.216,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2425.12,
+      "diskGrowthMiB": -23.62
+    },
+    {
+      "utc": "2026-11-15T16:45:39.4657310Z",
+      "freeMemoryGiB": 6.226,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2410.7,
+      "diskGrowthMiB": -20.31
+    },
+    {
+      "utc": "2026-11-15T16:45:44.7177693Z",
+      "freeMemoryGiB": 6.236,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2416.04,
+      "diskGrowthMiB": -20.37
+    },
+    {
+      "utc": "2026-11-15T16:45:49.9791339Z",
+      "freeMemoryGiB": 6.341,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2319.36,
+      "diskGrowthMiB": -21.16
+    },
+    {
+      "utc": "2026-11-15T16:45:55.1916701Z",
+      "freeMemoryGiB": 6.28,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2411.99,
+      "diskGrowthMiB": -23.34
+    },
+    {
+      "utc": "2026-11-15T16:46:00.4216218Z",
+      "freeMemoryGiB": 6.332,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2331.64,
+      "diskGrowthMiB": -21.86
+    },
+    {
+      "utc": "2026-11-15T16:46:05.6402114Z",
+      "freeMemoryGiB": 6.362,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2315.05,
+      "diskGrowthMiB": -20.23
+    },
+    {
+      "utc": "2026-11-15T16:46:10.8938698Z",
+      "freeMemoryGiB": 6.274,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2400.83,
+      "diskGrowthMiB": -20.29
+    },
+    {
+      "utc": "2026-11-15T16:46:16.1011392Z",
+      "freeMemoryGiB": 6.368,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2276.48,
+      "diskGrowthMiB": -21.54
+    },
+    {
+      "utc": "2026-11-15T16:46:21.3303646Z",
+      "freeMemoryGiB": 6.205,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2432.89,
+      "diskGrowthMiB": -21.37
+    },
+    {
+      "utc": "2026-11-15T16:46:26.5340448Z",
+      "freeMemoryGiB": 6.315,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2336.04,
+      "diskGrowthMiB": -19.64
+    },
+    {
+      "utc": "2026-11-15T16:46:31.8101268Z",
+      "freeMemoryGiB": 6.25,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2405.78,
+      "diskGrowthMiB": -21.17
+    },
+    {
+      "utc": "2026-11-15T16:46:37.0483325Z",
+      "freeMemoryGiB": 6.269,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2390.32,
+      "diskGrowthMiB": -19.65
+    },
+    {
+      "utc": "2026-11-15T16:46:42.2828504Z",
+      "freeMemoryGiB": 6.226,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2433.79,
+      "diskGrowthMiB": -19.18
+    },
+    {
+      "utc": "2026-11-15T16:46:47.5198990Z",
+      "freeMemoryGiB": 6.254,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2394.92,
+      "diskGrowthMiB": -17.95
+    },
+    {
+      "utc": "2026-11-15T16:46:52.7615895Z",
+      "freeMemoryGiB": 6.285,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2384.23,
+      "diskGrowthMiB": -18.85
+    },
+    {
+      "utc": "2026-11-15T16:46:58.0225262Z",
+      "freeMemoryGiB": 6.23,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2426.88,
+      "diskGrowthMiB": -16.84
+    },
+    {
+      "utc": "2026-11-15T16:47:03.2969162Z",
+      "freeMemoryGiB": 6.25,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2397.09,
+      "diskGrowthMiB": -16.51
+    },
+    {
+      "utc": "2026-11-15T16:47:08.5021984Z",
+      "freeMemoryGiB": 6.224,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2282.33,
+      "diskGrowthMiB": -16.7
+    },
+    {
+      "utc": "2026-11-15T16:47:13.7954813Z",
+      "freeMemoryGiB": 6.237,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2426.9,
+      "diskGrowthMiB": -16.07
+    },
+    {
+      "utc": "2026-11-15T16:47:19.0190249Z",
+      "freeMemoryGiB": 6.349,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2326.28,
+      "diskGrowthMiB": -14.07
+    },
+    {
+      "utc": "2026-11-15T16:47:24.2857577Z",
+      "freeMemoryGiB": 6.268,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2405.38,
+      "diskGrowthMiB": -12.54
+    },
+    {
+      "utc": "2026-11-15T16:47:29.5300340Z",
+      "freeMemoryGiB": 6.349,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2292.66,
+      "diskGrowthMiB": -15.2
+    },
+    {
+      "utc": "2026-11-15T16:47:34.8126308Z",
+      "freeMemoryGiB": 6.259,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2412.04,
+      "diskGrowthMiB": -13.57
+    },
+    {
+      "utc": "2026-11-15T16:47:40.0517753Z",
+      "freeMemoryGiB": 6.283,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2396.11,
+      "diskGrowthMiB": -12.6
+    },
+    {
+      "utc": "2026-11-15T16:47:45.2868338Z",
+      "freeMemoryGiB": 6.26,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2392.61,
+      "diskGrowthMiB": -11.7
+    },
+    {
+      "utc": "2026-11-15T16:47:50.4954535Z",
+      "freeMemoryGiB": 6.271,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2395.7,
+      "diskGrowthMiB": -12.7
+    },
+    {
+      "utc": "2026-11-15T16:47:55.7329172Z",
+      "freeMemoryGiB": 6.254,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2443.28,
+      "diskGrowthMiB": -13.0
+    },
+    {
+      "utc": "2026-11-15T16:48:00.9669948Z",
+      "freeMemoryGiB": 6.314,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2380.86,
+      "diskGrowthMiB": -16.92
+    },
+    {
+      "utc": "2026-11-15T16:48:06.2061316Z",
+      "freeMemoryGiB": 6.315,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2398.33,
+      "diskGrowthMiB": -16.41
+    },
+    {
+      "utc": "2026-11-15T16:48:11.4506633Z",
+      "freeMemoryGiB": 6.314,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2370.32,
+      "diskGrowthMiB": -14.41
+    },
+    {
+      "utc": "2026-11-15T16:48:16.7039279Z",
+      "freeMemoryGiB": 6.294,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2393.73,
+      "diskGrowthMiB": -15.16
+    },
+    {
+      "utc": "2026-11-15T16:48:21.9607530Z",
+      "freeMemoryGiB": 6.292,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2390.29,
+      "diskGrowthMiB": -16.59
+    },
+    {
+      "utc": "2026-11-15T16:48:27.1812686Z",
+      "freeMemoryGiB": 6.285,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2393.45,
+      "diskGrowthMiB": -16.8
+    },
+    {
+      "utc": "2026-11-15T16:48:32.4098269Z",
+      "freeMemoryGiB": 6.295,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2393.06,
+      "diskGrowthMiB": -17.08
+    },
+    {
+      "utc": "2026-11-15T16:48:37.6700582Z",
+      "freeMemoryGiB": 6.216,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2286.73,
+      "diskGrowthMiB": -13.91
+    },
+    {
+      "utc": "2026-11-15T16:48:42.9105206Z",
+      "freeMemoryGiB": 6.294,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2389.85,
+      "diskGrowthMiB": -12.46
+    },
+    {
+      "utc": "2026-11-15T16:48:48.1216242Z",
+      "freeMemoryGiB": 6.209,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2479.18,
+      "diskGrowthMiB": -13.29
+    },
+    {
+      "utc": "2026-11-15T16:48:53.3445950Z",
+      "freeMemoryGiB": 6.228,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2410.03,
+      "diskGrowthMiB": -11.9
+    },
+    {
+      "utc": "2026-11-15T16:48:58.5899709Z",
+      "freeMemoryGiB": 6.221,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2453.55,
+      "diskGrowthMiB": -11.67
+    },
+    {
+      "utc": "2026-11-15T16:49:03.8752493Z",
+      "freeMemoryGiB": 6.261,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2418.93,
+      "diskGrowthMiB": -13.35
+    },
+    {
+      "utc": "2026-11-15T16:49:09.1306356Z",
+      "freeMemoryGiB": 6.206,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2462.63,
+      "diskGrowthMiB": -13.11
+    },
+    {
+      "utc": "2026-11-15T16:49:14.4243883Z",
+      "freeMemoryGiB": 6.243,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2420.48,
+      "diskGrowthMiB": -11.33
+    },
+    {
+      "utc": "2026-11-15T16:49:19.6811602Z",
+      "freeMemoryGiB": 6.255,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2419.46,
+      "diskGrowthMiB": -11.99
+    },
+    {
+      "utc": "2026-11-15T16:49:24.9245690Z",
+      "freeMemoryGiB": 6.223,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2457.61,
+      "diskGrowthMiB": -11.55
+    },
+    {
+      "utc": "2026-11-15T16:49:30.1534343Z",
+      "freeMemoryGiB": 6.315,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2360.75,
+      "diskGrowthMiB": -13.3
+    },
+    {
+      "utc": "2026-11-15T16:49:35.3964555Z",
+      "freeMemoryGiB": 6.195,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2440.34,
+      "diskGrowthMiB": -12.11
+    },
+    {
+      "utc": "2026-11-15T16:49:40.6371182Z",
+      "freeMemoryGiB": 6.177,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2477.22,
+      "diskGrowthMiB": -12.35
+    },
+    {
+      "utc": "2026-11-15T16:49:45.9004955Z",
+      "freeMemoryGiB": 6.328,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2333.5,
+      "diskGrowthMiB": -10.25
+    },
+    {
+      "utc": "2026-11-15T16:49:51.1286819Z",
+      "freeMemoryGiB": 6.192,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2469.91,
+      "diskGrowthMiB": -7.57
+    },
+    {
+      "utc": "2026-11-15T16:49:56.3616772Z",
+      "freeMemoryGiB": 6.189,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2457.49,
+      "diskGrowthMiB": -8.57
+    },
+    {
+      "utc": "2026-11-15T16:50:01.6060034Z",
+      "freeMemoryGiB": 6.337,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2312.43,
+      "diskGrowthMiB": -8.05
+    },
+    {
+      "utc": "2026-11-15T16:50:06.8336978Z",
+      "freeMemoryGiB": 6.214,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2329.48,
+      "diskGrowthMiB": -8.63
+    },
+    {
+      "utc": "2026-11-15T16:50:12.0828800Z",
+      "freeMemoryGiB": 6.228,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2330.89,
+      "diskGrowthMiB": -7.01
+    },
+    {
+      "utc": "2026-11-15T16:50:17.2853865Z",
+      "freeMemoryGiB": 6.218,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2339.91,
+      "diskGrowthMiB": -5.54
+    },
+    {
+      "utc": "2026-11-15T16:50:22.5033260Z",
+      "freeMemoryGiB": 6.183,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2389.07,
+      "diskGrowthMiB": -7.05
+    },
+    {
+      "utc": "2026-11-15T16:50:27.7492643Z",
+      "freeMemoryGiB": 6.178,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2393.84,
+      "diskGrowthMiB": -5.84
+    },
+    {
+      "utc": "2026-11-15T16:50:33.0118507Z",
+      "freeMemoryGiB": 6.226,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2420.82,
+      "diskGrowthMiB": -6.19
+    },
+    {
+      "utc": "2026-11-15T16:50:38.2346007Z",
+      "freeMemoryGiB": 6.318,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2330.65,
+      "diskGrowthMiB": -6.97
+    },
+    {
+      "utc": "2026-11-15T16:50:43.5166937Z",
+      "freeMemoryGiB": 6.301,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2353.41,
+      "diskGrowthMiB": -7.15
+    },
+    {
+      "utc": "2026-11-15T16:50:48.7651773Z",
+      "freeMemoryGiB": 6.27,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2400.11,
+      "diskGrowthMiB": -7.32
+    },
+    {
+      "utc": "2026-11-15T16:50:54.0397190Z",
+      "freeMemoryGiB": 6.257,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2359.96,
+      "diskGrowthMiB": -7.75
+    },
+    {
+      "utc": "2026-11-15T16:50:59.2896772Z",
+      "freeMemoryGiB": 6.25,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2357.91,
+      "diskGrowthMiB": -8.22
+    },
+    {
+      "utc": "2026-11-15T16:51:04.4967567Z",
+      "freeMemoryGiB": 6.179,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2452.18,
+      "diskGrowthMiB": -7.83
+    },
+    {
+      "utc": "2026-11-15T16:51:09.7169666Z",
+      "freeMemoryGiB": 6.269,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2361.14,
+      "diskGrowthMiB": -5.61
+    },
+    {
+      "utc": "2026-11-15T16:51:14.9629776Z",
+      "freeMemoryGiB": 6.28,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2338.37,
+      "diskGrowthMiB": -9.11
+    },
+    {
+      "utc": "2026-11-15T16:51:20.1812630Z",
+      "freeMemoryGiB": 6.209,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2398.5,
+      "diskGrowthMiB": -7.98
+    },
+    {
+      "utc": "2026-11-15T16:51:25.3614010Z",
+      "freeMemoryGiB": 6.229,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2401.43,
+      "diskGrowthMiB": -5.26
+    },
+    {
+      "utc": "2026-11-15T16:51:30.5809941Z",
+      "freeMemoryGiB": 6.2,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2431.89,
+      "diskGrowthMiB": -4.79
+    },
+    {
+      "utc": "2026-11-15T16:51:35.8166370Z",
+      "freeMemoryGiB": 6.224,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2423.71,
+      "diskGrowthMiB": -6.35
+    },
+    {
+      "utc": "2026-11-15T16:51:41.0337672Z",
+      "freeMemoryGiB": 6.343,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2312.82,
+      "diskGrowthMiB": -7.34
+    },
+    {
+      "utc": "2026-11-15T16:51:46.2471507Z",
+      "freeMemoryGiB": 6.263,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2364.02,
+      "diskGrowthMiB": -6.07
+    },
+    {
+      "utc": "2026-11-15T16:51:51.5384324Z",
+      "freeMemoryGiB": 6.2,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2422.49,
+      "diskGrowthMiB": -13.17
+    },
+    {
+      "utc": "2026-11-15T16:51:56.7860675Z",
+      "freeMemoryGiB": 6.228,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2396.67,
+      "diskGrowthMiB": -10.54
+    },
+    {
+      "utc": "2026-11-15T16:52:02.0845468Z",
+      "freeMemoryGiB": 6.219,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2408.7,
+      "diskGrowthMiB": -10.62
+    },
+    {
+      "utc": "2026-11-15T16:52:07.2979505Z",
+      "freeMemoryGiB": 6.218,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2405.43,
+      "diskGrowthMiB": -10.96
+    },
+    {
+      "utc": "2026-11-15T16:52:12.5382343Z",
+      "freeMemoryGiB": 6.289,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2305.88,
+      "diskGrowthMiB": -10.18
+    },
+    {
+      "utc": "2026-11-15T16:52:17.7798112Z",
+      "freeMemoryGiB": 6.18,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2342.3,
+      "diskGrowthMiB": -10.18
+    },
+    {
+      "utc": "2026-11-15T16:52:22.9987618Z",
+      "freeMemoryGiB": 6.251,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2375.35,
+      "diskGrowthMiB": -14.71
+    },
+    {
+      "utc": "2026-11-15T16:52:28.2026371Z",
+      "freeMemoryGiB": 6.235,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2393.95,
+      "diskGrowthMiB": -12.17
+    },
+    {
+      "utc": "2026-11-15T16:52:33.4123731Z",
+      "freeMemoryGiB": 6.206,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2474.96,
+      "diskGrowthMiB": -12.33
+    },
+    {
+      "utc": "2026-11-15T16:52:38.6607568Z",
+      "freeMemoryGiB": 6.3,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2291.77,
+      "diskGrowthMiB": -11.75
+    },
+    {
+      "utc": "2026-11-15T16:52:43.9050290Z",
+      "freeMemoryGiB": 6.247,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2406.18,
+      "diskGrowthMiB": -13.75
+    },
+    {
+      "utc": "2026-11-15T16:52:49.1521835Z",
+      "freeMemoryGiB": 6.328,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2330.39,
+      "diskGrowthMiB": -13.69
+    },
+    {
+      "utc": "2026-11-15T16:52:54.3818753Z",
+      "freeMemoryGiB": 6.166,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2485.91,
+      "diskGrowthMiB": -15.21
+    },
+    {
+      "utc": "2026-11-15T16:52:59.6016752Z",
+      "freeMemoryGiB": 6.223,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2417.91,
+      "diskGrowthMiB": -11.52
+    },
+    {
+      "utc": "2026-11-15T16:53:04.8372220Z",
+      "freeMemoryGiB": 6.324,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2319.47,
+      "diskGrowthMiB": -14.76
+    },
+    {
+      "utc": "2026-11-15T16:53:10.0434098Z",
+      "freeMemoryGiB": 6.302,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2341.77,
+      "diskGrowthMiB": -16.62
+    },
+    {
+      "utc": "2026-11-15T16:53:15.2802196Z",
+      "freeMemoryGiB": 6.139,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2445.37,
+      "diskGrowthMiB": -15.37
+    },
+    {
+      "utc": "2026-11-15T16:53:20.4968542Z",
+      "freeMemoryGiB": 6.177,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2456.69,
+      "diskGrowthMiB": -14.05
+    },
+    {
+      "utc": "2026-11-15T16:53:25.7426296Z",
+      "freeMemoryGiB": 6.243,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2389.5,
+      "diskGrowthMiB": -11.84
+    },
+    {
+      "utc": "2026-11-15T16:53:31.0006677Z",
+      "freeMemoryGiB": 6.178,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2428.75,
+      "diskGrowthMiB": -13.81
+    },
+    {
+      "utc": "2026-11-15T16:53:36.2310774Z",
+      "freeMemoryGiB": 6.276,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2349.32,
+      "diskGrowthMiB": -13.55
+    },
+    {
+      "utc": "2026-11-15T16:53:41.4909913Z",
+      "freeMemoryGiB": 6.232,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2392.49,
+      "diskGrowthMiB": -13.9
+    },
+    {
+      "utc": "2026-11-15T16:53:46.7444157Z",
+      "freeMemoryGiB": 6.236,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2408.16,
+      "diskGrowthMiB": -14.04
+    },
+    {
+      "utc": "2026-11-15T16:53:52.0173500Z",
+      "freeMemoryGiB": 6.24,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2402.88,
+      "diskGrowthMiB": -13.61
+    },
+    {
+      "utc": "2026-11-15T16:53:57.2708748Z",
+      "freeMemoryGiB": 6.222,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2419.28,
+      "diskGrowthMiB": -15.1
+    },
+    {
+      "utc": "2026-11-15T16:54:02.5842826Z",
+      "freeMemoryGiB": 6.262,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2390.82,
+      "diskGrowthMiB": -12.96
+    },
+    {
+      "utc": "2026-11-15T16:54:07.8424730Z",
+      "freeMemoryGiB": 6.153,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2491.09,
+      "diskGrowthMiB": -15.3
+    },
+    {
+      "utc": "2026-11-15T16:54:13.0608787Z",
+      "freeMemoryGiB": 6.161,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2452.89,
+      "diskGrowthMiB": -5.73
+    },
+    {
+      "utc": "2026-11-15T16:54:18.2828416Z",
+      "freeMemoryGiB": 6.258,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2385.57,
+      "diskGrowthMiB": -15.51
+    },
+    {
+      "utc": "2026-11-15T16:54:23.4794327Z",
+      "freeMemoryGiB": 6.226,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2419.0,
+      "diskGrowthMiB": -20.59
+    },
+    {
+      "utc": "2026-11-15T16:54:28.7220028Z",
+      "freeMemoryGiB": 6.215,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2433.69,
+      "diskGrowthMiB": -21.93
+    },
+    {
+      "utc": "2026-11-15T16:54:33.9143498Z",
+      "freeMemoryGiB": 6.207,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2432.44,
+      "diskGrowthMiB": -21.41
+    },
+    {
+      "utc": "2026-11-15T16:54:39.1621562Z",
+      "freeMemoryGiB": 6.244,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2374.39,
+      "diskGrowthMiB": -23.37
+    },
+    {
+      "utc": "2026-11-15T16:54:44.3699902Z",
+      "freeMemoryGiB": 6.187,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2449.71,
+      "diskGrowthMiB": -22.02
+    },
+    {
+      "utc": "2026-11-15T16:54:49.5376462Z",
+      "freeMemoryGiB": 6.194,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2438.86,
+      "diskGrowthMiB": -20.93
+    },
+    {
+      "utc": "2026-11-15T16:54:54.7933692Z",
+      "freeMemoryGiB": 6.24,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2399.15,
+      "diskGrowthMiB": -20.56
+    },
+    {
+      "utc": "2026-11-15T16:55:00.0352238Z",
+      "freeMemoryGiB": 6.239,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2400.69,
+      "diskGrowthMiB": -21.43
+    },
+    {
+      "utc": "2026-11-15T16:55:05.2690799Z",
+      "freeMemoryGiB": 6.216,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2423.77,
+      "diskGrowthMiB": -22.79
+    },
+    {
+      "utc": "2026-11-15T16:55:10.4330150Z",
+      "freeMemoryGiB": 6.296,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2366.27,
+      "diskGrowthMiB": -18.52
+    },
+    {
+      "utc": "2026-11-15T16:55:15.6555052Z",
+      "freeMemoryGiB": 6.303,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2347.07,
+      "diskGrowthMiB": -21.62
+    },
+    {
+      "utc": "2026-11-15T16:55:20.8897299Z",
+      "freeMemoryGiB": 6.199,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2452.9,
+      "diskGrowthMiB": -20.77
+    },
+    {
+      "utc": "2026-11-15T16:55:26.1326175Z",
+      "freeMemoryGiB": 6.201,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2428.33,
+      "diskGrowthMiB": -19.86
+    },
+    {
+      "utc": "2026-11-15T16:55:31.3775615Z",
+      "freeMemoryGiB": 6.153,
+      "compilerProcesses": 1,
+      "ownedRSSMiB": 2476.76,
+      "diskGrowthMiB": -19.39
+    },
+    {
+      "utc": "2026-11-15T16:55:36.6330744Z",
+      "freeMemoryGiB": 5.759,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2290.98,
+      "diskGrowthMiB": -93.75
+    },
+    {
+      "utc": "2026-11-15T16:55:41.9523641Z",
+      "freeMemoryGiB": 5.698,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2568.04,
+      "diskGrowthMiB": -218.89
+    },
+    {
+      "utc": "2026-11-15T16:55:47.2129626Z",
+      "freeMemoryGiB": 5.522,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2626.91,
+      "diskGrowthMiB": -218.73
+    },
+    {
+      "utc": "2026-11-15T16:55:52.5202566Z",
+      "freeMemoryGiB": 5.143,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2766.3,
+      "diskGrowthMiB": -218.62
+    },
+    {
+      "utc": "2026-11-15T16:55:57.7877366Z",
+      "freeMemoryGiB": 5.099,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2923.01,
+      "diskGrowthMiB": -217.98
+    },
+    {
+      "utc": "2026-11-15T16:56:02.9944093Z",
+      "freeMemoryGiB": 4.891,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 3006.79,
+      "diskGrowthMiB": -217.86
+    }
+  ]
+}

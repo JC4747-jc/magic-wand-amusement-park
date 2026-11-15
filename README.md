@@ -8,7 +8,11 @@
 
 有界 Android 构建脚本需要 **PowerShell 7 (`pwsh`)**；使用 `pwsh -NoProfile -File Tools/build_android_bounded.ps1 -Variant AllScenes -BuildJobs 1`。日志、内存、磁盘增长和进程数均设上限，重任务串行执行。
 
-本批交付范围见 [统一线路验证报告](Reports/hci-unified-release-20261116/README.md)：24 条共用手势轨迹、96 次条件检查和 14 场景启动通过。新 Android 构建因可用内存低于 3 GiB 被保护性中止；仓库中的 `CombinedAllScenesValidation-20261115.apk` 是旧版包，不包含此次代码。PICO 与真实 YOLO 全链路仍待验证。
+本批交付范围见 [统一线路验证报告](Reports/hci-unified-release-20261116/README.md)：24 条共用手势轨迹、96 次条件检查和 14 场景启动通过。
+
+2026-11-16 Android 后续验证：统一火机手势源码已完成 IL2CPP/Gradle 打包，签名、ZIP CRC、ARM64、14 场景和 40 项模型/材质/贴图来源核对通过。新包为 `HciUnifiedAllScenesValidation-20261116.apk`，应用标识 `com.yn.picmagicmr.validation`，见 [GitHub 验证包](https://github.com/JC4747-jc/magic-wand-amusement-park/releases/tag/hci-unified-validation-20261116) 与 [构建证据](Reports/hci-android-recovery-20261116/README.md)。它不包含新的已接受 YOLO 权重，不代表真实 YOLO→定位→手势→动画、PICO 双眼/性能或全部 32 项效果验收完成。此前 Android 失败报告保留作为历史。
+
+本次通过分离 Unity 与离线 IL2CPP 转换降低重叠内存；转换最低采样可用 RAM 3.827 GiB，随后完整构建最低 4.279 GiB。3 GiB 下限未降低，单编译进程、日志与磁盘增长预算继续生效，保留 Library，无训练或自动重启。后续需要连接 PICO 验证真实输入；Goal 保持 active。
 
 ## 当前工作区接续（2026-11-15）
 
