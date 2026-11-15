@@ -74,3 +74,9 @@ CPU测试禁用图形和Burst编译；六场景界面使用实际图形渲染。
 新增磁盘0.98MiB；完整范围见combined-validation/summary.json。不是实机或新分支Android包验收。
 旧模型归档共65条，部署接受数0；cockroach-positive-v16仅公开图pilot通过、PICO待验收，
 未批量下载旧权重，也未将其自动部署。详见prior-model-archive-audit.json。
+
+追加：整合源码Android托管脚本编译通过（52个程序集，含MagicMR/Assembly-CSharp），
+最低采样空闲RAM5.091GiB、最大采样磁盘增量248.24MiB；未执行IL2CPP或重新打APK。
+历史Datasets共有129个目录/5927份标签、0份被Git追踪的图片；3个小审核清单有来源及SHA，
+1个审核文件超过1MiB只读预算未展开。恢复图片、许可/标签复核和旧测试污染检查仍须完成，
+本轮没有下载图片或训练。见historical-dataset-inventory.json。

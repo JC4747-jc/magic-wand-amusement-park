@@ -1,0 +1,2776 @@
+{
+  "purpose": "HISTORICAL_GIT_METADATA_INVENTORY_NOT_DATA_ACCEPTANCE",
+  "base_commit": "831fcc512adb00cb98fb426efcdf726fcfab3757",
+  "dataset_directories": 129,
+  "tracked_files": 6276,
+  "tracked_bytes": 97086262,
+  "tracked_image_files": 0,
+  "tracked_label_files": 5927,
+  "directories": {
+    "cockroach-beetle-test-v17-source": {
+      "files": 1,
+      "bytes": 15725,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "cockroach-beetle-test-v17-source/manifest.json",
+          "blob": "459f40f1eb57da0ae387e23471164f0b7c506b2b",
+          "bytes": 15725
+        }
+      ]
+    },
+    "cockroach-beetle-train-v7-source": {
+      "files": 1,
+      "bytes": 23097,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "cockroach-beetle-train-v7-source/manifest.json",
+          "blob": "2fb4c9bf6b18ad0cdcb5a5944b40df89bb6987e0",
+          "bytes": 23097
+        }
+      ]
+    },
+    "cockroach-beetle-v14": {
+      "files": 3,
+      "bytes": 248945,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "cockroach-beetle-v14/audit.json",
+          "blob": "e059186132126298c827c9de780888d199adc47b",
+          "bytes": 248405
+        },
+        {
+          "path": "cockroach-beetle-v14/data.yaml",
+          "blob": "7231c3a887beb1485fd82b1deec4f64f89c3221e",
+          "bytes": 215
+        },
+        {
+          "path": "cockroach-beetle-v14/training-release.json",
+          "blob": "59cef7a4226bec213385205efdc51e1c36f332a5",
+          "bytes": 325
+        }
+      ]
+    },
+    "cockroach-beetle-val-v7-source": {
+      "files": 1,
+      "bytes": 11897,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "cockroach-beetle-val-v7-source/manifest.json",
+          "blob": "72fa1c02644996e62de24bfae271c299d28ec53a",
+          "bytes": 11897
+        }
+      ]
+    },
+    "cockroach-diverse-negative-v15-source": {
+      "files": 1,
+      "bytes": 11387,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "cockroach-diverse-negative-v15-source/manifest.json",
+          "blob": "d0b3bc9f1e5b27d8d252c00f4eb4fafa1afcca29",
+          "bytes": 11387
+        }
+      ]
+    },
+    "cockroach-diverse-v15": {
+      "files": 2,
+      "bytes": 270471,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "cockroach-diverse-v15/audit.json",
+          "blob": "6ce09a017d3fcbe2118db2373e96750e5efcf705",
+          "bytes": 270255
+        },
+        {
+          "path": "cockroach-diverse-v15/data.yaml",
+          "blob": "ac0277167ea4349a80df5b34d8084976c5da4471",
+          "bytes": 216
+        }
+      ]
+    },
+    "cockroach-fresh-positive-v17-source": {
+      "files": 1,
+      "bytes": 15513,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "cockroach-fresh-positive-v17-source/manifest.json",
+          "blob": "c2ac3c0de452d23e09b72414a58e77271a6c44cb",
+          "bytes": 15513
+        }
+      ]
+    },
+    "cockroach-fresh-test-v17": {
+      "files": 2,
+      "bytes": 37818,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "cockroach-fresh-test-v17/audit.json",
+          "blob": "040d627eb065135a2193e16a2ee46bd1c4f0f954",
+          "bytes": 37663
+        },
+        {
+          "path": "cockroach-fresh-test-v17/data.yaml",
+          "blob": "ded4fb1e347e20223becd97597c176f21ad2dbcd",
+          "bytes": 155
+        }
+      ]
+    },
+    "cockroach-longhorn-train-v8-source": {
+      "files": 1,
+      "bytes": 15635,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "cockroach-longhorn-train-v8-source/manifest.json",
+          "blob": "abf0a6967884068d643482d6de7c04b72d674c63",
+          "bytes": 15635
+        }
+      ]
+    },
+    "cockroach-positive-train-v16-source": {
+      "files": 1,
+      "bytes": 23027,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "cockroach-positive-train-v16-source/manifest.json",
+          "blob": "4561fa720782df7afc845246e6b5ee24137b9ab6",
+          "bytes": 23027
+        }
+      ]
+    },
+    "cockroach-positive-train-v16": {
+      "files": 2,
+      "bytes": 299149,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "cockroach-positive-train-v16/audit.json",
+          "blob": "840846a5d9056eadcae5f72532cbd676985129dc",
+          "bytes": 298926
+        },
+        {
+          "path": "cockroach-positive-train-v16/data.yaml",
+          "blob": "762553b27cd45fa739ad346ed4282becfd591bda",
+          "bytes": 223
+        }
+      ]
+    },
+    "commons-tree-independent-source-v23": {
+      "files": 10,
+      "bytes": 1723794,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "commons-tree-independent-source-v23/acquisition.json",
+          "blob": "172c7eb48ae7b17b5bec5ccf84cdab697f5f3f61",
+          "bytes": 753
+        },
+        {
+          "path": "commons-tree-independent-source-v23/manifest-before-test-reservation.json",
+          "blob": "8cc54f65b4010a397e2bd1e211317a0a730f4586",
+          "bytes": 26685
+        },
+        {
+          "path": "commons-tree-independent-source-v23/manifest.json",
+          "blob": "3f96e150e342ba8a05e487c3b3704f420971e435",
+          "bytes": 27217
+        },
+        {
+          "path": "commons-tree-independent-source-v23/publisher-category-page-1.json",
+          "blob": "20eaa01dc505b4024d28131d70ae8ed927938923",
+          "bytes": 295085
+        },
+        {
+          "path": "commons-tree-independent-source-v23/publisher-category-page-2.json",
+          "blob": "a431f07eb89b41c269c9ff11ba9d6f1be9cf842f",
+          "bytes": 284699
+        },
+        {
+          "path": "commons-tree-independent-source-v23/publisher-category-page-3.json",
+          "blob": "ce639f4ab2c26ebbf2c10ad16b79c3fd20cba532",
+          "bytes": 281769
+        },
+        {
+          "path": "commons-tree-independent-source-v23/publisher-category-page-4.json",
+          "blob": "77c65c1fbfd035747f104fe5498b29c7c1c2638e",
+          "bytes": 261673
+        },
+        {
+          "path": "commons-tree-independent-source-v23/publisher-category-page-5.json",
+          "blob": "8513224344d7b1e7dd8328ec5443b2dc8f5d77e9",
+          "bytes": 277410
+        },
+        {
+          "path": "commons-tree-independent-source-v23/publisher-category-page-6.json",
+          "blob": "164ca77f2cd08987aae1b996ba51e9b8785972f5",
+          "bytes": 266043
+        },
+        {
+          "path": "commons-tree-independent-source-v23/reservation.json",
+          "blob": "9785ce021805b85662f49ea58dea16bb69085649",
+          "bytes": 2460
+        }
+      ]
+    },
+    "commons-tree-negative-independent-source-v23": {
+      "files": 5,
+      "bytes": 311570,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "commons-tree-negative-independent-source-v23/acquisition.json",
+          "blob": "367449a1fff0aa3d1bcd1170fd000b2fda3a7f67",
+          "bytes": 754
+        },
+        {
+          "path": "commons-tree-negative-independent-source-v23/manifest-before-test-reservation.json",
+          "blob": "344200938481a443de9e0a31428ab2dbd6f1332e",
+          "bytes": 23068
+        },
+        {
+          "path": "commons-tree-negative-independent-source-v23/manifest.json",
+          "blob": "99d1c4be4df5ef4a82d301c4809b50351bed9916",
+          "bytes": 23335
+        },
+        {
+          "path": "commons-tree-negative-independent-source-v23/publisher-category-page-1.json",
+          "blob": "bb56637716d71213eb64fd3b5d4b9e3a07fb1a38",
+          "bytes": 262896
+        },
+        {
+          "path": "commons-tree-negative-independent-source-v23/reservation.json",
+          "blob": "10b066667bf57ec73f28d13b8781a3c1d66bad0c",
+          "bytes": 1517
+        }
+      ]
+    },
+    "jumping-spider-context-v12": {
+      "files": 254,
+      "bytes": 286662,
+      "images": 0,
+      "labels": 252,
+      "metadata": [
+        {
+          "path": "jumping-spider-context-v12/audit.json",
+          "blob": "405271e8af3f93d8b491922764a1b83cd75d6fbb",
+          "bytes": 280350
+        },
+        {
+          "path": "jumping-spider-context-v12/data.yaml",
+          "blob": "6e4d9f04f17965f908a1b1a66278f8961f3369ed",
+          "bytes": 227
+        }
+      ]
+    },
+    "jumping-spider-curled-texture-source-v12": {
+      "files": 4,
+      "bytes": 353754,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "jumping-spider-curled-texture-source-v12/acquisition.json",
+          "blob": "867e239dbb0fed9fed94284cf94edae4cd7cc77f",
+          "bytes": 771
+        },
+        {
+          "path": "jumping-spider-curled-texture-source-v12/manifest.json",
+          "blob": "b7af92e5988633f51a717641b7cef310bda8432a",
+          "bytes": 38171
+        },
+        {
+          "path": "jumping-spider-curled-texture-source-v12/publisher-category-page-1.json",
+          "blob": "4faf93f62c0221dbd2a5327a9139b4c85d0cab17",
+          "bytes": 312975
+        },
+        {
+          "path": "jumping-spider-curled-texture-source-v12/train-reservation.json",
+          "blob": "f33b0d16ab60ea9ca6f05665c3759b79af223d11",
+          "bytes": 1837
+        }
+      ]
+    },
+    "jumping-spider-train-source-v12": {
+      "files": 6,
+      "bytes": 60909818,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "jumping-spider-train-source-v12/manifest.json",
+          "blob": "f25fe098b1efe25ebe3c14fd8bbe57a0fc3e8a88",
+          "bytes": 11094
+        },
+        {
+          "path": "jumping-spider-train-source-v12/publisher-page-11.json",
+          "blob": "d423dc065025b7001a8c48fdeb54c2dd93af6677",
+          "bytes": 20062918
+        },
+        {
+          "path": "jumping-spider-train-source-v12/publisher-page-12.json",
+          "blob": "2b88f31d23fcaf3e8dde47fae3023690217f9664",
+          "bytes": 20636303
+        },
+        {
+          "path": "jumping-spider-train-source-v12/publisher-page-13.json",
+          "blob": "34cf432a7a85b527abbbf2c9412c10203b0a905e",
+          "bytes": 20111506
+        },
+        {
+          "path": "jumping-spider-train-source-v12/taxon.json",
+          "blob": "d684aca6a50c28cca4e7986cf87aeee4ad1c891c",
+          "bytes": 85136
+        },
+        {
+          "path": "jumping-spider-train-source-v12/train-reservation.json",
+          "blob": "40be3a1cfab362036d56804652506cdd722fecc8",
+          "bytes": 2861
+        }
+      ]
+    },
+    "plant-binary-v79": {
+      "files": 198,
+      "bytes": 1391916,
+      "images": 0,
+      "labels": 194,
+      "metadata": [
+        {
+          "path": "plant-binary-v79/audit.json",
+          "blob": "693d6271974a7865a901291c657fd0db8a32706a",
+          "bytes": 1382073
+        },
+        {
+          "path": "plant-binary-v79/data.yaml",
+          "blob": "de08c81833142cd64471de7302eab71570fdc2c2",
+          "bytes": 215
+        },
+        {
+          "path": "plant-binary-v79/review_hold.json",
+          "blob": "eb59a5e9b9e557e750e4d4bd210c65b13f31e902",
+          "bytes": 337
+        }
+      ]
+    },
+    "plant-broader-v14-batch2-staging": {
+      "files": 3,
+      "bytes": 2428,
+      "images": 0,
+      "labels": 2,
+      "metadata": [
+        {
+          "path": "plant-broader-v14-batch2-staging/manifest.json",
+          "blob": "57032ad61468d9b5624efb0fa2e3237e351f9271",
+          "bytes": 2287
+        }
+      ]
+    },
+    "plant-broader-v14-multi-instance-staging": {
+      "files": 2,
+      "bytes": 1646,
+      "images": 0,
+      "labels": 1,
+      "metadata": [
+        {
+          "path": "plant-broader-v14-multi-instance-staging/manifest.json",
+          "blob": "a671bb1723b7f72c9aadea782254b11a1d99012c",
+          "bytes": 1458
+        }
+      ]
+    },
+    "plant-broader-v14-palm-staging": {
+      "files": 2,
+      "bytes": 1615,
+      "images": 0,
+      "labels": 1,
+      "metadata": [
+        {
+          "path": "plant-broader-v14-palm-staging/manifest.json",
+          "blob": "c3060701e4e2c0dc13c1ddf1b7108551e608b19c",
+          "bytes": 1448
+        }
+      ]
+    },
+    "plant-broader-v14-staging": {
+      "files": 2,
+      "bytes": 1575,
+      "images": 0,
+      "labels": 1,
+      "metadata": [
+        {
+          "path": "plant-broader-v14-staging/manifest.json",
+          "blob": "f786dfebef4394b73d042434de4985c560f3ffe7",
+          "bytes": 1481
+        }
+      ]
+    },
+    "plant-broader-v14-waiting-room-staging": {
+      "files": 2,
+      "bytes": 1736,
+      "images": 0,
+      "labels": 1,
+      "metadata": [
+        {
+          "path": "plant-broader-v14-waiting-room-staging/manifest.json",
+          "blob": "1b14349614071a23b7b79e9f05a1bee176080f84",
+          "bytes": 1459
+        }
+      ]
+    },
+    "plant-broader-v14": {
+      "files": 93,
+      "bytes": 121647,
+      "images": 0,
+      "labels": 90,
+      "metadata": [
+        {
+          "path": "plant-broader-v14/audit.json",
+          "blob": "61651118b9b598f27d1438c3bcd12e96fbcdc3af",
+          "bytes": 114450
+        },
+        {
+          "path": "plant-broader-v14/data.yaml",
+          "blob": "905644ac993f10687a98fbce177414cfc71e4864",
+          "bytes": 243
+        }
+      ]
+    },
+    "plant-confuser-v13-aux-val-view": {
+      "files": 14,
+      "bytes": 19994,
+      "images": 0,
+      "labels": 12,
+      "metadata": [
+        {
+          "path": "plant-confuser-v13-aux-val-view/audit.json",
+          "blob": "b400868a1e1099bc78b89fbe4a36f718853c7e62",
+          "bytes": 18944
+        },
+        {
+          "path": "plant-confuser-v13-aux-val-view/data.yaml",
+          "blob": "b3b1f07cbbeba1ab95ab49c6c281689edc941b36",
+          "bytes": 199
+        }
+      ]
+    },
+    "plant-confuser-v13": {
+      "files": 87,
+      "bytes": 113146,
+      "images": 0,
+      "labels": 84,
+      "metadata": [
+        {
+          "path": "plant-confuser-v13/audit.json",
+          "blob": "4aaef2870bdfa7bd0a87dbaf98868f0bf47f2b8e",
+          "bytes": 106815
+        },
+        {
+          "path": "plant-confuser-v13/data.yaml",
+          "blob": "fb731f6823503ad2773227467504d609d54cfb18",
+          "bytes": 244
+        }
+      ]
+    },
+    "plant-confuser-v15": {
+      "files": 103,
+      "bytes": 137485,
+      "images": 0,
+      "labels": 100,
+      "metadata": [
+        {
+          "path": "plant-confuser-v15/audit.json",
+          "blob": "f240722f6f1bf2c731fab513aa5ca4fd5053b78b",
+          "bytes": 130005
+        },
+        {
+          "path": "plant-confuser-v15/data.yaml",
+          "blob": "2c5fb58707638b65dcefd9bad10dd181e16246c8",
+          "bytes": 244
+        }
+      ]
+    },
+    "plant-container-train-batch2-source-v24": {
+      "files": 2,
+      "bytes": 79941,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-container-train-batch2-source-v24/manifest.json",
+          "blob": "2810ed625f2a1842d01c5ad125d0d3b416419718",
+          "bytes": 10562
+        },
+        {
+          "path": "plant-container-train-batch2-source-v24/selection.json",
+          "blob": "5404e7f6323acbf9aa4f2f483f50999dbbefa0fd",
+          "bytes": 69379
+        }
+      ]
+    },
+    "plant-container-train-paired-source-v24": {
+      "files": 2,
+      "bytes": 80325,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-container-train-paired-source-v24/manifest.json",
+          "blob": "d42fbca7d562ef3c3fddbdbfd167103e9aaaec58",
+          "bytes": 10376
+        },
+        {
+          "path": "plant-container-train-paired-source-v24/selection.json",
+          "blob": "20e27cdaa77a45705295945444d241544cb924a3",
+          "bytes": 69949
+        }
+      ]
+    },
+    "plant-container-train-retry-source-v24": {
+      "files": 2,
+      "bytes": 2485,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-container-train-retry-source-v24/manifest.json",
+          "blob": "8eb3cb9a35e5a6f6a1da1efd93ddf8fa6f187fe2",
+          "bytes": 1477
+        },
+        {
+          "path": "plant-container-train-retry-source-v24/selection.json",
+          "blob": "6c7cc9e42bde3ce69284b9efcfef943a33b90fcc",
+          "bytes": 1008
+        }
+      ]
+    },
+    "plant-container-train-source-v24": {
+      "files": 2,
+      "bytes": 77839,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-container-train-source-v24/manifest.json",
+          "blob": "c4848a8259ea48d6a26e9202bafee6bfc74cbe2d",
+          "bytes": 9914
+        },
+        {
+          "path": "plant-container-train-source-v24/selection.json",
+          "blob": "8710333df0b4a5d7f385b6b95b21e7d22a35824f",
+          "bytes": 67925
+        }
+      ]
+    },
+    "plant-container-train-source-v26": {
+      "files": 2,
+      "bytes": 83073,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-container-train-source-v26/manifest.json",
+          "blob": "f937af0b676fa5e12200d6fdfa08ff5e622bc946",
+          "bytes": 10523
+        },
+        {
+          "path": "plant-container-train-source-v26/selection.json",
+          "blob": "b267655d4d7815f522463c824a2a86d3a3a3c3ae",
+          "bytes": 72550
+        }
+      ]
+    },
+    "plant-container-train-source-v27": {
+      "files": 1,
+      "bytes": 4007,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-container-train-source-v27/manifest.json",
+          "blob": "adc3ce86bbc662178d149df5ce0dfab3447d5dd1",
+          "bytes": 4007
+        }
+      ]
+    },
+    "plant-container-train-v24-background-staging": {
+      "files": 2,
+      "bytes": 1747,
+      "images": 0,
+      "labels": 1,
+      "metadata": [
+        {
+          "path": "plant-container-train-v24-background-staging/manifest.json",
+          "blob": "bad7c7f07765b6650f4e30faf063fa25d10cbfb2",
+          "bytes": 1653
+        }
+      ]
+    },
+    "plant-container-train-v24-batch2-staging": {
+      "files": 5,
+      "bytes": 4386,
+      "images": 0,
+      "labels": 4,
+      "metadata": [
+        {
+          "path": "plant-container-train-v24-batch2-staging/manifest.json",
+          "blob": "e5813f1a8fb8f8fd58c7e26d74175cdeed7564d4",
+          "bytes": 4245
+        }
+      ]
+    },
+    "plant-container-train-v24-paired-staging": {
+      "files": 6,
+      "bytes": 5194,
+      "images": 0,
+      "labels": 5,
+      "metadata": [
+        {
+          "path": "plant-container-train-v24-paired-staging/manifest.json",
+          "blob": "39c31bfecbc9b4a398d12a269c315fd8f1d5fd2c",
+          "bytes": 5006
+        }
+      ]
+    },
+    "plant-container-train-v24-staging": {
+      "files": 5,
+      "bytes": 4535,
+      "images": 0,
+      "labels": 4,
+      "metadata": [
+        {
+          "path": "plant-container-train-v24-staging/manifest.json",
+          "blob": "e1f33a5c64d3a8f909545464bc06f40f80aec9b9",
+          "bytes": 4206
+        }
+      ]
+    },
+    "plant-container-train-v26-dense-staging": {
+      "files": 2,
+      "bytes": 2059,
+      "images": 0,
+      "labels": 1,
+      "metadata": [
+        {
+          "path": "plant-container-train-v26-dense-staging/manifest.json",
+          "blob": "ad106b7f7677747159f59498eabbd91b8c2644d1",
+          "bytes": 1651
+        }
+      ]
+    },
+    "plant-container-train-v26-paired-staging": {
+      "files": 2,
+      "bytes": 1734,
+      "images": 0,
+      "labels": 1,
+      "metadata": [
+        {
+          "path": "plant-container-train-v26-paired-staging/manifest.json",
+          "blob": "25450d861d664f6382c231d6b1f15a027abfccc0",
+          "bytes": 1632
+        }
+      ]
+    },
+    "plant-container-train-v26-staging": {
+      "files": 5,
+      "bytes": 4467,
+      "images": 0,
+      "labels": 4,
+      "metadata": [
+        {
+          "path": "plant-container-train-v26-staging/manifest.json",
+          "blob": "474162ce55ebb2b19c51b926b735e88b92fae0ae",
+          "bytes": 4212
+        }
+      ]
+    },
+    "plant-cut-arrangement-source-v15": {
+      "files": 2,
+      "bytes": 22329,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-cut-arrangement-source-v15/manifest.json",
+          "blob": "c466e531d513bcca610832fb7503164f31d58d38",
+          "bytes": 12226
+        },
+        {
+          "path": "plant-cut-arrangement-source-v15/selection.json",
+          "blob": "bf2a47ba3fcec01095dbe442a7ca6e33418bd245",
+          "bytes": 10103
+        }
+      ]
+    },
+    "plant-cut-arrangement-source-v22": {
+      "files": 2,
+      "bytes": 74339,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-cut-arrangement-source-v22/manifest.json",
+          "blob": "1ca69f9972c2e4619491327f18d6f34a0da64b50",
+          "bytes": 9618
+        },
+        {
+          "path": "plant-cut-arrangement-source-v22/selection.json",
+          "blob": "b513791ad291ef05e93dba15a40f946042823c47",
+          "bytes": 64721
+        }
+      ]
+    },
+    "plant-cut-arrangement-v15-staging": {
+      "files": 11,
+      "bytes": 9596,
+      "images": 0,
+      "labels": 10,
+      "metadata": [
+        {
+          "path": "plant-cut-arrangement-v15-staging/manifest.json",
+          "blob": "0b8041c6617e64cd3c8ada2e61831be65bbeeff5",
+          "bytes": 9314
+        }
+      ]
+    },
+    "plant-cut-train-source-v34": {
+      "files": 4,
+      "bytes": 287152,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-cut-train-source-v34/acquisition.json",
+          "blob": "a1f55f1852d94e2b4711247294da564482483fc8",
+          "bytes": 748
+        },
+        {
+          "path": "plant-cut-train-source-v34/manifest.json",
+          "blob": "2698d3797f6a467185007bb637bf394861d9a787",
+          "bytes": 34921
+        },
+        {
+          "path": "plant-cut-train-source-v34/publisher-category-page-1.json",
+          "blob": "cd1cfe8a8eb3b2189751642a5d89721060a19eb9",
+          "bytes": 251102
+        },
+        {
+          "path": "plant-cut-train-source-v34/train-reservation.json",
+          "blob": "fa58112d85e036ca14b2847f1f5bde91ff4765f0",
+          "bytes": 381
+        }
+      ]
+    },
+    "plant-cut-v35": {
+      "files": 145,
+      "bytes": 402677,
+      "images": 0,
+      "labels": 142,
+      "metadata": [
+        {
+          "path": "plant-cut-v35/audit.json",
+          "blob": "501ce16d51e093ee1762e048328a7406acb7fe49",
+          "bytes": 392632
+        },
+        {
+          "path": "plant-cut-v35/data.yaml",
+          "blob": "5b41c6da7a0a28a4872b3fd117e281a8054fdd8d",
+          "bytes": 239
+        }
+      ]
+    },
+    "plant-cut-val-source-v39": {
+      "files": 4,
+      "bytes": 273496,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-cut-val-source-v39/acquisition.json",
+          "blob": "f43883a11db6575e985b0cea83f91c97c2674075",
+          "bytes": 785
+        },
+        {
+          "path": "plant-cut-val-source-v39/manifest.json",
+          "blob": "569ac3e240d4f5d66bc117eea1cce5bd9926e21f",
+          "bytes": 21329
+        },
+        {
+          "path": "plant-cut-val-source-v39/publisher-category-page-1.json",
+          "blob": "cd1cfe8a8eb3b2189751642a5d89721060a19eb9",
+          "bytes": 251102
+        },
+        {
+          "path": "plant-cut-val-source-v39/val-reservation.json",
+          "blob": "e20356db743d419d3dc8e8a029ad6e48b86b287e",
+          "bytes": 280
+        }
+      ]
+    },
+    "plant-cutflower-v11-staging": {
+      "files": 1,
+      "bytes": 4013,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-cutflower-v11-staging/manifest.json",
+          "blob": "2320be948c071dfc988d3a253d077a27128eabfc",
+          "bytes": 4013
+        }
+      ]
+    },
+    "plant-flowering-v12-staging": {
+      "files": 1,
+      "bytes": 2287,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-flowering-v12-staging/manifest.json",
+          "blob": "fe6299209b705f090a46ebd49ee4fc38ac206c67",
+          "bytes": 2287
+        }
+      ]
+    },
+    "plant-food-train-source-v59": {
+      "files": 3,
+      "bytes": 48244,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-food-train-source-v59/acquisition.json",
+          "blob": "1d65fd91bdb55697c2d6f89d8406c2c14a5cb742",
+          "bytes": 760
+        },
+        {
+          "path": "plant-food-train-source-v59/manifest.json",
+          "blob": "d879a5d509203335950778b710b8e989c71006d8",
+          "bytes": 47176
+        },
+        {
+          "path": "plant-food-train-source-v59/train-reservation.json",
+          "blob": "dca469e10dc65a88d23b54f3760a3f9dbfca3183",
+          "bytes": 308
+        }
+      ]
+    },
+    "plant-food-v60": {
+      "files": 174,
+      "bytes": 1062710,
+      "images": 0,
+      "labels": 170,
+      "metadata": [
+        {
+          "path": "plant-food-v60/audit.json",
+          "blob": "0ae327566936d0a6d459e2ce7b265331a0c1d1e0",
+          "bytes": 1051591
+        },
+        {
+          "path": "plant-food-v60/data.yaml",
+          "blob": "1c9ea0c4bd83b1a2d7bf5b55992988a9832709f7",
+          "bytes": 236
+        },
+        {
+          "path": "plant-food-v60/review_hold.json",
+          "blob": "58cd5be38e5c68e1be89c977aee9073134144259",
+          "bytes": 337
+        }
+      ]
+    },
+    "plant-hanging-crop-source-v86": {
+      "files": 2,
+      "bytes": 15051,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-hanging-crop-source-v86/manifest.json",
+          "blob": "6ba539ed80763f494837da2da576751ddc1520f4",
+          "bytes": 14689
+        },
+        {
+          "path": "plant-hanging-crop-source-v86/train-reservation.json",
+          "blob": "cb9f0e8ae07930720338f475e7f197cfcf2b356c",
+          "bytes": 362
+        }
+      ]
+    },
+    "plant-hanging-train-source-v31": {
+      "files": 4,
+      "bytes": 311422,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-hanging-train-source-v31/acquisition.json",
+          "blob": "537ba8bf2155443cf61a1c307698a1ca27aba50f",
+          "bytes": 764
+        },
+        {
+          "path": "plant-hanging-train-source-v31/manifest.json",
+          "blob": "5464db26e9580badfee78be4d7c8c9322725dfc6",
+          "bytes": 32369
+        },
+        {
+          "path": "plant-hanging-train-source-v31/publisher-category-page-1.json",
+          "blob": "afb526ff1372a4fb141391d4f27ab3da5054554c",
+          "bytes": 278003
+        },
+        {
+          "path": "plant-hanging-train-source-v31/train-reservation.json",
+          "blob": "19fff887e5a6ebe840ef1b02d8eb8509c021be45",
+          "bytes": 286
+        }
+      ]
+    },
+    "plant-hanging-train-source-v49": {
+      "files": 5,
+      "bytes": 592347,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-hanging-train-source-v49/acquisition.json",
+          "blob": "67a7f51dbcf537ee74d1f55ba7f789b0464ad782",
+          "bytes": 764
+        },
+        {
+          "path": "plant-hanging-train-source-v49/manifest.json",
+          "blob": "c622a37a6fdd4ca37c9fa027225df7fabd6d09d2",
+          "bytes": 30273
+        },
+        {
+          "path": "plant-hanging-train-source-v49/publisher-category-page-1.json",
+          "blob": "afb526ff1372a4fb141391d4f27ab3da5054554c",
+          "bytes": 278003
+        },
+        {
+          "path": "plant-hanging-train-source-v49/publisher-category-page-2.json",
+          "blob": "6baa2aef3ee08d4a302c0693d0fb10138fe7c3a0",
+          "bytes": 283044
+        },
+        {
+          "path": "plant-hanging-train-source-v49/train-reservation.json",
+          "blob": "e7f733ae5e950e3c0dd1ae49e60aa21c96520f28",
+          "bytes": 263
+        }
+      ]
+    },
+    "plant-hanging-train-source-v70": {
+      "files": 3,
+      "bytes": 52739,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-hanging-train-source-v70/acquisition.json",
+          "blob": "6528e56fca7d2f55376429ea5791c96deab2dab0",
+          "bytes": 765
+        },
+        {
+          "path": "plant-hanging-train-source-v70/manifest.json",
+          "blob": "c6936eabf26f92fc50f89419081feb2ee15bc7e8",
+          "bytes": 51637
+        },
+        {
+          "path": "plant-hanging-train-source-v70/train-reservation.json",
+          "blob": "c8c5071f95d52de1392fa2bf7fab951c9c2cb2f8",
+          "bytes": 337
+        }
+      ]
+    },
+    "plant-hanging-train-source-v83": {
+      "files": 3,
+      "bytes": 80621,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-hanging-train-source-v83/acquisition.json",
+          "blob": "d70573b16e8895c1ea35e45a211a007cdcce81c7",
+          "bytes": 766
+        },
+        {
+          "path": "plant-hanging-train-source-v83/manifest.json",
+          "blob": "fd271638f3363e2b3c2170f32d672d6d5e708400",
+          "bytes": 79518
+        },
+        {
+          "path": "plant-hanging-train-source-v83/train-reservation.json",
+          "blob": "d73d3ebce48b82d88f8d82d8463a6624d9463593",
+          "bytes": 337
+        }
+      ]
+    },
+    "plant-hanging-train-source-v92": {
+      "files": 3,
+      "bytes": 47030,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-hanging-train-source-v92/acquisition.json",
+          "blob": "8ac861cc1bade980e20636b48bbf99fc0253e022",
+          "bytes": 766
+        },
+        {
+          "path": "plant-hanging-train-source-v92/manifest.json",
+          "blob": "2731036c4a6c852ecc8b8c3c3242414e324b877f",
+          "bytes": 45902
+        },
+        {
+          "path": "plant-hanging-train-source-v92/train-reservation.json",
+          "blob": "eb11108d09eae3efadac4522f345655a35a171e9",
+          "bytes": 362
+        }
+      ]
+    },
+    "plant-hanging-v32": {
+      "files": 141,
+      "bytes": 297110,
+      "images": 0,
+      "labels": 138,
+      "metadata": [
+        {
+          "path": "plant-hanging-v32/audit.json",
+          "blob": "8556155057c99edc999cb99d602b0a48ea6e1fda",
+          "bytes": 287249
+        },
+        {
+          "path": "plant-hanging-v32/data.yaml",
+          "blob": "fb70a616639a5bb39f85df28c500b13c688ef2be",
+          "bytes": 243
+        }
+      ]
+    },
+    "plant-hanging-v50": {
+      "files": 165,
+      "bytes": 942231,
+      "images": 0,
+      "labels": 161,
+      "metadata": [
+        {
+          "path": "plant-hanging-v50/audit.json",
+          "blob": "059a43f21d01c7c1381e35139ebc23483376882c",
+          "bytes": 931109
+        },
+        {
+          "path": "plant-hanging-v50/data.yaml",
+          "blob": "92cdc8c599139d45391dac385e23cf2408c9096e",
+          "bytes": 239
+        },
+        {
+          "path": "plant-hanging-v50/review_hold.json",
+          "blob": "c74dd63adb8b678032a29a2d269eafc2b8a32826",
+          "bytes": 337
+        }
+      ]
+    },
+    "plant-hanging-v72": {
+      "files": 191,
+      "bytes": 1282760,
+      "images": 0,
+      "labels": 187,
+      "metadata": [
+        {
+          "path": "plant-hanging-v72/audit.json",
+          "blob": "e480586ef2479788dfb0ad23b9d546e4bdf4fbce",
+          "bytes": 1271356
+        },
+        {
+          "path": "plant-hanging-v72/data.yaml",
+          "blob": "c03f1fb14b68141e286f191df670bdaa1cb79c42",
+          "bytes": 239
+        },
+        {
+          "path": "plant-hanging-v72/review_hold.json",
+          "blob": "13a8df6dc97ef10fae521e7b027b36a359465617",
+          "bytes": 337
+        }
+      ]
+    },
+    "plant-hanging-v85": {
+      "files": 201,
+      "bytes": 1487088,
+      "images": 0,
+      "labels": 197,
+      "metadata": [
+        {
+          "path": "plant-hanging-v85/audit.json",
+          "blob": "1eddd57e49263eef27a7dcd5adf7558caec9dd21",
+          "bytes": 1477103
+        },
+        {
+          "path": "plant-hanging-v85/data.yaml",
+          "blob": "651b972230297a70a6c1e75ad0eba7b1d54f3800",
+          "bytes": 216
+        },
+        {
+          "path": "plant-hanging-v85/review_hold.json",
+          "blob": "8a28598a6d978bce5a6902bd890b928615b46bc0",
+          "bytes": 337
+        }
+      ]
+    },
+    "plant-hanging-v88": {
+      "files": 204,
+      "bytes": 1501936,
+      "images": 0,
+      "labels": 200,
+      "metadata": [
+        {
+          "path": "plant-hanging-v88/audit.json",
+          "blob": "c979e154ee358917f744696e33b7e53f1f38cdce",
+          "bytes": 1491810
+        },
+        {
+          "path": "plant-hanging-v88/data.yaml",
+          "blob": "4ff469017843f716fd639ef03e318283bd033386",
+          "bytes": 216
+        },
+        {
+          "path": "plant-hanging-v88/review_hold.json",
+          "blob": "681f1dfde29b4093eb283dfa5558b51cb591b67c",
+          "bytes": 337
+        }
+      ]
+    },
+    "plant-hanging-v94": {
+      "files": 206,
+      "bytes": 1515026,
+      "images": 0,
+      "labels": 202,
+      "metadata": [
+        {
+          "path": "plant-hanging-v94/audit.json",
+          "blob": "07d04f8ddb01fea849889ea217ceabfbb5f288df",
+          "bytes": 1504665
+        },
+        {
+          "path": "plant-hanging-v94/data.yaml",
+          "blob": "973e6b87328eba01adc405b7686d4f74b634215d",
+          "bytes": 216
+        },
+        {
+          "path": "plant-hanging-v94/review_hold.json",
+          "blob": "1c1125d17fc73328dcc4ebab68eca2d2708c5323",
+          "bytes": 337
+        }
+      ]
+    },
+    "plant-hanging-val-source-v37": {
+      "files": 4,
+      "bytes": 312169,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-hanging-val-source-v37/acquisition.json",
+          "blob": "451d0bab43883bf3e5bb2fca36ffb410a154966d",
+          "bytes": 791
+        },
+        {
+          "path": "plant-hanging-val-source-v37/manifest.json",
+          "blob": "406a814e1719fb3c57a92c037400592966ef7158",
+          "bytes": 33064
+        },
+        {
+          "path": "plant-hanging-val-source-v37/publisher-category-page-1.json",
+          "blob": "afb526ff1372a4fb141391d4f27ab3da5054554c",
+          "bytes": 278003
+        },
+        {
+          "path": "plant-hanging-val-source-v37/val-reservation.json",
+          "blob": "dab3c199e78cbf561e0bc530d2484ac2400f1012",
+          "bytes": 311
+        }
+      ]
+    },
+    "plant-herb-train-source-v62": {
+      "files": 3,
+      "bytes": 44791,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-herb-train-source-v62/acquisition.json",
+          "blob": "1dc07fc70e5694e2f1f9c6903542d4950a85fba3",
+          "bytes": 764
+        },
+        {
+          "path": "plant-herb-train-source-v62/manifest.json",
+          "blob": "61c40bd1fece1ec93a597cd89da3076016df8627",
+          "bytes": 43719
+        },
+        {
+          "path": "plant-herb-train-source-v62/train-reservation.json",
+          "blob": "71df0131010116f4e712477b1932bcd4f32cacee",
+          "bytes": 308
+        }
+      ]
+    },
+    "plant-herb-v63": {
+      "files": 177,
+      "bytes": 1180524,
+      "images": 0,
+      "labels": 173,
+      "metadata": [
+        {
+          "path": "plant-herb-v63/audit.json",
+          "blob": "b3844401a386ca92f874bbf293189b24d57c0181",
+          "bytes": 1169264
+        },
+        {
+          "path": "plant-herb-v63/data.yaml",
+          "blob": "93697a1ce05b1b8306aded980d4915eea60ffed8",
+          "bytes": 236
+        },
+        {
+          "path": "plant-herb-v63/review_hold.json",
+          "blob": "d245b018adc257e9929612d9b762f54e577cf2a5",
+          "bytes": 337
+        }
+      ]
+    },
+    "plant-herb-val-source-v43": {
+      "files": 4,
+      "bytes": 337869,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-herb-val-source-v43/acquisition.json",
+          "blob": "9470b8e2751a9696b5f8b11c4cdcb9458e1e4a37",
+          "bytes": 761
+        },
+        {
+          "path": "plant-herb-val-source-v43/manifest.json",
+          "blob": "8c9a6be169eaf36dce3748151f4325a782085b07",
+          "bytes": 33192
+        },
+        {
+          "path": "plant-herb-val-source-v43/publisher-category-page-1.json",
+          "blob": "1da459dde151087ff8c38ea29925cdaeb201e572",
+          "bytes": 303627
+        },
+        {
+          "path": "plant-herb-val-source-v43/val-reservation.json",
+          "blob": "77e6c8091cfd664e6224cab9c6795b2d56d18fc8",
+          "bytes": 289
+        }
+      ]
+    },
+    "plant-houseplant-train-source-v73": {
+      "files": 3,
+      "bytes": 74364,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-houseplant-train-source-v73/acquisition.json",
+          "blob": "0f933553a7f2e6ac684609d2c0472ee6c639f8b9",
+          "bytes": 757
+        },
+        {
+          "path": "plant-houseplant-train-source-v73/manifest.json",
+          "blob": "989ddb70f1d3abfd1cb40f382249f9e4c70ad16a",
+          "bytes": 73267
+        },
+        {
+          "path": "plant-houseplant-train-source-v73/train-reservation.json",
+          "blob": "5b4a75ce9be0c8118cdd7df96438b9d3f8992838",
+          "bytes": 340
+        }
+      ]
+    },
+    "plant-houseplant-v75": {
+      "files": 198,
+      "bytes": 1388309,
+      "images": 0,
+      "labels": 194,
+      "metadata": [
+        {
+          "path": "plant-houseplant-v75/audit.json",
+          "blob": "6ec33b4c27b3befccb725f7cb66bf0199730c729",
+          "bytes": 1376526
+        },
+        {
+          "path": "plant-houseplant-v75/data.yaml",
+          "blob": "288197d4d396b08a36986a2be0c48611c1ba0b21",
+          "bytes": 242
+        },
+        {
+          "path": "plant-houseplant-v75/review_hold.json",
+          "blob": "5797f0ae51665ec9a48629d89f948c8714750c10",
+          "bytes": 337
+        }
+      ]
+    },
+    "plant-independent-test-box-source-v23": {
+      "files": 2,
+      "bytes": 77592,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-independent-test-box-source-v23/manifest.json",
+          "blob": "1792d3cc1031686121b94041ce32fe1157af53e0",
+          "bytes": 10419
+        },
+        {
+          "path": "plant-independent-test-box-source-v23/selection.json",
+          "blob": "df6a52774004660e4758d36348d077383b0bca0d",
+          "bytes": 67173
+        }
+      ]
+    },
+    "plant-independent-test-container-source-v23": {
+      "files": 2,
+      "bytes": 65037,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-independent-test-container-source-v23/manifest.json",
+          "blob": "8a0528caffbca71a6b1250a3e6b3ee9d73d99afa",
+          "bytes": 3949
+        },
+        {
+          "path": "plant-independent-test-container-source-v23/selection.json",
+          "blob": "07c14289a9deca7f4eee744581425013a781f6b8",
+          "bytes": 61088
+        }
+      ]
+    },
+    "plant-independent-test-negative-source-v25": {
+      "files": 2,
+      "bytes": 81639,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-independent-test-negative-source-v25/manifest.json",
+          "blob": "cbe82d89982db22fe168528ac95795b49c124692",
+          "bytes": 10333
+        },
+        {
+          "path": "plant-independent-test-negative-source-v25/selection.json",
+          "blob": "e89f31217d03497fb224183ca8e6b6c2a5cd0036",
+          "bytes": 71306
+        }
+      ]
+    },
+    "plant-independent-test-source-v23": {
+      "files": 2,
+      "bytes": 73179,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-independent-test-source-v23/manifest.json",
+          "blob": "1d074db435d34588f2178ea4c4f792b5dd26019b",
+          "bytes": 8656
+        },
+        {
+          "path": "plant-independent-test-source-v23/selection.json",
+          "blob": "7f6f348ab101ef8e8032c924308a537caf81db47",
+          "bytes": 64523
+        }
+      ]
+    },
+    "plant-independent-test-source-v25": {
+      "files": 2,
+      "bytes": 81507,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-independent-test-source-v25/manifest.json",
+          "blob": "a5d99670d3abd5a99f42ecbd50aef84a90e5f59a",
+          "bytes": 10503
+        },
+        {
+          "path": "plant-independent-test-source-v25/selection.json",
+          "blob": "80efde0ff2184d58e9ae29008cef490e62ff660a",
+          "bytes": 71004
+        }
+      ]
+    },
+    "plant-independent-test-v23": {
+      "files": 13,
+      "bytes": 19938,
+      "images": 0,
+      "labels": 11,
+      "metadata": [
+        {
+          "path": "plant-independent-test-v23/audit.json",
+          "blob": "586d09234b31468e54aa5e6075bc83f365de4950",
+          "bytes": 19319
+        },
+        {
+          "path": "plant-independent-test-v23/data.yaml",
+          "blob": "f8ba3bbd4de1debb954178c3cc9493c40cb1695f",
+          "bytes": 196
+        }
+      ]
+    },
+    "plant-independent-test-v25": {
+      "files": 19,
+      "bytes": 20917,
+      "images": 0,
+      "labels": 17,
+      "metadata": [
+        {
+          "path": "plant-independent-test-v25/audit.json",
+          "blob": "e9739171b02c287410758e622aa61abc47bdaeed",
+          "bytes": 20415
+        },
+        {
+          "path": "plant-independent-test-v25/data.yaml",
+          "blob": "cdfcfe6a48d562291cb49ec3015cf52479984d33",
+          "bytes": 196
+        }
+      ]
+    },
+    "plant-instance-v19": {
+      "files": 113,
+      "bytes": 147940,
+      "images": 0,
+      "labels": 109,
+      "metadata": [
+        {
+          "path": "plant-instance-v19/audit.json",
+          "blob": "e8be24d5da2ae0fffcfa17c6c6d3cd57a3ef6e2d",
+          "bytes": 139355
+        },
+        {
+          "path": "plant-instance-v19/data.yaml",
+          "blob": "59e8add6d39ecb7b6a8e5d9cd84690c80e2d364e",
+          "bytes": 244
+        },
+        {
+          "path": "plant-instance-v19/review_hold.json",
+          "blob": "7186f75c6fb7d66804fd9b3166c90d8a3f2b9bdb",
+          "bytes": 565
+        }
+      ]
+    },
+    "plant-label-paths-v52": {
+      "files": 165,
+      "bytes": 942659,
+      "images": 0,
+      "labels": 161,
+      "metadata": [
+        {
+          "path": "plant-label-paths-v52/audit.json",
+          "blob": "7f86a5298714d0a532fb746f451895a264b80e48",
+          "bytes": 931533
+        },
+        {
+          "path": "plant-label-paths-v52/data.yaml",
+          "blob": "f124d5fd9781861d93162c83641aa9211498fd2a",
+          "bytes": 243
+        },
+        {
+          "path": "plant-label-paths-v52/review_hold.json",
+          "blob": "5966eb91fb9eb508dfb51ff237d634c4706bd8d0",
+          "bytes": 337
+        }
+      ]
+    },
+    "plant-leafy-val-source-v45": {
+      "files": 4,
+      "bytes": 295117,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-leafy-val-source-v45/acquisition.json",
+          "blob": "fc937a4a72191df1bb6bb6e5ee3981d29b723a06",
+          "bytes": 745
+        },
+        {
+          "path": "plant-leafy-val-source-v45/manifest.json",
+          "blob": "81ca6fbcb363d8965326cd81b93049a1f4da177a",
+          "bytes": 30134
+        },
+        {
+          "path": "plant-leafy-val-source-v45/publisher-category-page-1.json",
+          "blob": "322e6d5bda4fb99182c20d13a2ae7e2201283252",
+          "bytes": 263936
+        },
+        {
+          "path": "plant-leafy-val-source-v45/val-reservation.json",
+          "blob": "48ddbcbe472c489f5619035e7cc8c772d6d69207",
+          "bytes": 302
+        }
+      ]
+    },
+    "plant-market-train-source-v67": {
+      "files": 3,
+      "bytes": 82240,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-market-train-source-v67/acquisition.json",
+          "blob": "b3c1613fbd312bbd27ba642732c76cde2d332760",
+          "bytes": 758
+        },
+        {
+          "path": "plant-market-train-source-v67/manifest.json",
+          "blob": "a3719352de5eff1aebc285b4f4c257169236518c",
+          "bytes": 81172
+        },
+        {
+          "path": "plant-market-train-source-v67/train-reservation.json",
+          "blob": "3470c95802d0bb0c9e96838aff4196b7f557c9d2",
+          "bytes": 310
+        }
+      ]
+    },
+    "plant-market-v68": {
+      "files": 190,
+      "bytes": 1264492,
+      "images": 0,
+      "labels": 186,
+      "metadata": [
+        {
+          "path": "plant-market-v68/audit.json",
+          "blob": "fc348baa883cffc87226d4ade044e33c2be8d851",
+          "bytes": 1253136
+        },
+        {
+          "path": "plant-market-v68/data.yaml",
+          "blob": "fe53bb03ed94e04bc5d8298c24c068f3f11a4bfa",
+          "bytes": 238
+        },
+        {
+          "path": "plant-market-v68/review_hold.json",
+          "blob": "ac23a39aa2e806d95c0dff94173b616610b516fb",
+          "bytes": 337
+        }
+      ]
+    },
+    "plant-multi-v18-staging": {
+      "files": 2,
+      "bytes": 1693,
+      "images": 0,
+      "labels": 1,
+      "metadata": [
+        {
+          "path": "plant-multi-v18-staging/manifest.json",
+          "blob": "4f712d4f81b59f3f0de8c59704fce6fca9a8f29a",
+          "bytes": 1505
+        }
+      ]
+    },
+    "plant-native-v10": {
+      "files": 2,
+      "bytes": 94956,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-native-v10/audit.json",
+          "blob": "9a13e6797410d14a6fd4ad58fc51c701bf7ae39e",
+          "bytes": 94769
+        },
+        {
+          "path": "plant-native-v10/data.yaml",
+          "blob": "6f3e37a3a6ee4d8b3ff42005c4bf93b5eaef3ddd",
+          "bytes": 187
+        }
+      ]
+    },
+    "plant-native-v11": {
+      "files": 2,
+      "bytes": 99274,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-native-v11/audit.json",
+          "blob": "39a5c1764be04489c2b9579b7a4445daca694e65",
+          "bytes": 99067
+        },
+        {
+          "path": "plant-native-v11/data.yaml",
+          "blob": "655a3477d4964ef603c3cc55b03076896f6a151f",
+          "bytes": 207
+        }
+      ]
+    },
+    "plant-native-v12": {
+      "files": 2,
+      "bytes": 101309,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-native-v12/audit.json",
+          "blob": "1ea7a838c3fd2285eee91f04fb2ac55d12177c21",
+          "bytes": 101102
+        },
+        {
+          "path": "plant-native-v12/data.yaml",
+          "blob": "456052b123e6950e227624cc1c4bb821fe6a555f",
+          "bytes": 207
+        }
+      ]
+    },
+    "plant-planters-v65": {
+      "files": 178,
+      "bytes": 1180962,
+      "images": 0,
+      "labels": 174,
+      "metadata": [
+        {
+          "path": "plant-planters-v65/audit.json",
+          "blob": "ed9ced2d93e58a2db8e76b015b4c860deef12292",
+          "bytes": 1169604
+        },
+        {
+          "path": "plant-planters-v65/data.yaml",
+          "blob": "9d736c640a3e2776742067f7cfed9af162ddb525",
+          "bytes": 240
+        },
+        {
+          "path": "plant-planters-v65/review_hold.json",
+          "blob": "69286231f5d7af8fd6cef2b0e8ce0e43f1830fcf",
+          "bytes": 337
+        }
+      ]
+    },
+    "plant-reviewed-v20": {
+      "files": 111,
+      "bytes": 147600,
+      "images": 0,
+      "labels": 108,
+      "metadata": [
+        {
+          "path": "plant-reviewed-v20/audit.json",
+          "blob": "fe24c5df0c17bae8b9ca2f9ea604e0a0652c2e8f",
+          "bytes": 139631
+        },
+        {
+          "path": "plant-reviewed-v20/data.yaml",
+          "blob": "338bf336cd78effc92dbf96e4695d81d271f898b",
+          "bytes": 244
+        }
+      ]
+    },
+    "plant-reviewed-v22": {
+      "files": 117,
+      "bytes": 155124,
+      "images": 0,
+      "labels": 114,
+      "metadata": [
+        {
+          "path": "plant-reviewed-v22/audit.json",
+          "blob": "93fec0009a288ef660ebe09dc5e49e7886fb9874",
+          "bytes": 147061
+        },
+        {
+          "path": "plant-reviewed-v22/data.yaml",
+          "blob": "e30e5428c5f845f5762bc39c6dbbb0d7b1ba834d",
+          "bytes": 244
+        }
+      ]
+    },
+    "plant-reviewed-v24": {
+      "files": 131,
+      "bytes": 182343,
+      "images": 0,
+      "labels": 128,
+      "metadata": [
+        {
+          "path": "plant-reviewed-v24/audit.json",
+          "blob": "6243df78440f9d8fba1e548e14c6912acd9a9d08",
+          "bytes": 173528
+        },
+        {
+          "path": "plant-reviewed-v24/data.yaml",
+          "blob": "e59125a01058cc338323fd27feb152564c4b7ee9",
+          "bytes": 244
+        }
+      ]
+    },
+    "plant-reviewed-v26": {
+      "files": 137,
+      "bytes": 192528,
+      "images": 0,
+      "labels": 134,
+      "metadata": [
+        {
+          "path": "plant-reviewed-v26/audit.json",
+          "blob": "2f4013a5b7491ece3b80a8e40a62c15e32920663",
+          "bytes": 182948
+        },
+        {
+          "path": "plant-reviewed-v26/data.yaml",
+          "blob": "df4f958d28061705a3705846cb4d07ac46792da0",
+          "bytes": 244
+        }
+      ]
+    },
+    "plant-reviewed-v28": {
+      "files": 139,
+      "bytes": 194742,
+      "images": 0,
+      "labels": 136,
+      "metadata": [
+        {
+          "path": "plant-reviewed-v28/audit.json",
+          "blob": "6b136143ef9c939d3ce7279439d72b60f379de05",
+          "bytes": 185021
+        },
+        {
+          "path": "plant-reviewed-v28/data.yaml",
+          "blob": "7cc6f0dbdc54a81dc4dc41ec14026c5d7ed7a6ad",
+          "bytes": 244
+        }
+      ]
+    },
+    "plant-rooted-source-v16-r2": {
+      "files": 2,
+      "bytes": 18390,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-rooted-source-v16-r2/manifest.json",
+          "blob": "0991882723e344d80d5c17402685676048ee1a6b",
+          "bytes": 9658
+        },
+        {
+          "path": "plant-rooted-source-v16-r2/selection.json",
+          "blob": "5d5530eecf11131ef1f8730d767b3276882d6fe7",
+          "bytes": 8732
+        }
+      ]
+    },
+    "plant-rooted-source-v16": {
+      "files": 2,
+      "bytes": 41621,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-rooted-source-v16/manifest.json",
+          "blob": "fe81bff0540e4fffb09b8931442311c50d9dc0c7",
+          "bytes": 22551
+        },
+        {
+          "path": "plant-rooted-source-v16/selection.json",
+          "blob": "9afb8256c89b83c49cdd35e00488a91d73bae13e",
+          "bytes": 19070
+        }
+      ]
+    },
+    "plant-rooted-source-v17": {
+      "files": 2,
+      "bytes": 26493,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-rooted-source-v17/manifest.json",
+          "blob": "dd21f78a440d497f660ee92f3c1171e8d9cf9123",
+          "bytes": 13962
+        },
+        {
+          "path": "plant-rooted-source-v17/selection.json",
+          "blob": "545a8eefbbe17b80cd0b1b98a75cee468c5f8e2a",
+          "bytes": 12531
+        }
+      ]
+    },
+    "plant-rooted-v16-staging": {
+      "files": 4,
+      "bytes": 3393,
+      "images": 0,
+      "labels": 3,
+      "metadata": [
+        {
+          "path": "plant-rooted-v16-staging/manifest.json",
+          "blob": "07c2cceb5eac1dabfd4b77a82de97545a30b4848",
+          "bytes": 3252
+        }
+      ]
+    },
+    "plant-rooted-v17-staging": {
+      "files": 6,
+      "bytes": 5177,
+      "images": 0,
+      "labels": 5,
+      "metadata": [
+        {
+          "path": "plant-rooted-v17-staging/manifest.json",
+          "blob": "4cc6db719d6163c0baf45a516118eff5d8eb1511",
+          "bytes": 4942
+        }
+      ]
+    },
+    "plant-rooted-v18": {
+      "files": 112,
+      "bytes": 146993,
+      "images": 0,
+      "labels": 109,
+      "metadata": [
+        {
+          "path": "plant-rooted-v18/audit.json",
+          "blob": "8f01b336b70def31c0e614351cadbef723d61d07",
+          "bytes": 138951
+        },
+        {
+          "path": "plant-rooted-v18/data.yaml",
+          "blob": "1b42df05efae8b2ce979c02c6322adbbf86765f8",
+          "bytes": 242
+        }
+      ]
+    },
+    "plant-validation-extension-v38": {
+      "files": 149,
+      "bytes": 506917,
+      "images": 0,
+      "labels": 145,
+      "metadata": [
+        {
+          "path": "plant-validation-extension-v38/audit.json",
+          "blob": "b0874777395b14dc0064ebea4e3af673282c736f",
+          "bytes": 496211
+        },
+        {
+          "path": "plant-validation-extension-v38/data.yaml",
+          "blob": "112397bc8c57ac3700f8c6952c6beb28796968b7",
+          "bytes": 252
+        },
+        {
+          "path": "plant-validation-extension-v38/review_hold.json",
+          "blob": "8441c007c1460c0d1ccd0eaa1f519cecbfe354c7",
+          "bytes": 413
+        }
+      ]
+    },
+    "plant-validation-extension-v40": {
+      "files": 152,
+      "bytes": 599028,
+      "images": 0,
+      "labels": 148,
+      "metadata": [
+        {
+          "path": "plant-validation-extension-v40/audit.json",
+          "blob": "7f6ace9fd5003b8195cff555d76bc69a1dafc6b6",
+          "bytes": 588135
+        },
+        {
+          "path": "plant-validation-extension-v40/data.yaml",
+          "blob": "218f30f2add6a738deadb80e19acf951d899ceac",
+          "bytes": 252
+        },
+        {
+          "path": "plant-validation-extension-v40/review_hold.json",
+          "blob": "1eaedf9b7804909c87e7a291fc6894fd90baf53a",
+          "bytes": 459
+        }
+      ]
+    },
+    "plant-validation-extension-v42": {
+      "files": 156,
+      "bytes": 701547,
+      "images": 0,
+      "labels": 152,
+      "metadata": [
+        {
+          "path": "plant-validation-extension-v42/audit.json",
+          "blob": "9b4789184bed43a50e59d8b949ddfea831903538",
+          "bytes": 690635
+        },
+        {
+          "path": "plant-validation-extension-v42/data.yaml",
+          "blob": "211632b687c0d111e7910eee01a483606c3e2af3",
+          "bytes": 252
+        },
+        {
+          "path": "plant-validation-extension-v42/review_hold.json",
+          "blob": "0bd8a449ac19c1b9e91a623215b6642333a27621",
+          "bytes": 431
+        }
+      ]
+    },
+    "plant-validation-extension-v44": {
+      "files": 159,
+      "bytes": 806274,
+      "images": 0,
+      "labels": 155,
+      "metadata": [
+        {
+          "path": "plant-validation-extension-v44/audit.json",
+          "blob": "094c108e31d23c59cbf57c57514dfccdc7a36b4d",
+          "bytes": 795194
+        },
+        {
+          "path": "plant-validation-extension-v44/data.yaml",
+          "blob": "851fcbc670d19d1dc9a978b84cad0870beb697a8",
+          "bytes": 252
+        },
+        {
+          "path": "plant-validation-extension-v44/review_hold.json",
+          "blob": "48b1ca4a706da2697cf756723e94740a00170682",
+          "bytes": 411
+        }
+      ]
+    },
+    "plant-validation-extension-v46": {
+      "files": 163,
+      "bytes": 907936,
+      "images": 0,
+      "labels": 159,
+      "metadata": [
+        {
+          "path": "plant-validation-extension-v46/audit.json",
+          "blob": "981171647b7605ff6638a8eba0f105a819e7ae3e",
+          "bytes": 896930
+        },
+        {
+          "path": "plant-validation-extension-v46/data.yaml",
+          "blob": "c95cffcc61e1e0ee2f4d288c12f8485b3cde504f",
+          "bytes": 252
+        },
+        {
+          "path": "plant-validation-extension-v46/review_hold.json",
+          "blob": "f17e43af44725422f5ef1ad6e0847688eeade05d",
+          "bytes": 337
+        }
+      ]
+    },
+    "plant-vessel-val-source-v41": {
+      "files": 4,
+      "bytes": 323798,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "plant-vessel-val-source-v41/acquisition.json",
+          "blob": "c70cc80a2c6ef2efa134e044fb6dde6d402e085d",
+          "bytes": 750
+        },
+        {
+          "path": "plant-vessel-val-source-v41/manifest.json",
+          "blob": "7f5bd782c9f5c75ed92fe1ec7215261665345474",
+          "bytes": 31569
+        },
+        {
+          "path": "plant-vessel-val-source-v41/publisher-category-page-1.json",
+          "blob": "4a98b2563b0ea5353a3d9fdfa42f43ffe3695cee",
+          "bytes": 291210
+        },
+        {
+          "path": "plant-vessel-val-source-v41/val-reservation.json",
+          "blob": "fa813c7bc61551d9f4b2176e7b118076421e2a8c",
+          "bytes": 269
+        }
+      ]
+    },
+    "statue-articulated-group-v35": {
+      "files": 106,
+      "bytes": 257453,
+      "images": 0,
+      "labels": 103,
+      "metadata": [
+        {
+          "path": "statue-articulated-group-v35/audit.json",
+          "blob": "12b41694ce36ce06b1a2543ad26143e4d58d6fd9",
+          "bytes": 249022
+        },
+        {
+          "path": "statue-articulated-group-v35/data.yaml",
+          "blob": "b38f3b1af53e5302152a35f6c76e9702e8859899",
+          "bytes": 224
+        },
+        {
+          "path": "statue-articulated-group-v35/review_hold.json",
+          "blob": "c188a75151f317e78c1b80834cefa4d136053c04",
+          "bytes": 278
+        }
+      ]
+    },
+    "statue-articulated-release-v36": {
+      "files": 106,
+      "bytes": 257830,
+      "images": 0,
+      "labels": 103,
+      "metadata": [
+        {
+          "path": "statue-articulated-release-v36/annotation_release.json",
+          "blob": "73552c0118551a75d059a15d7b85452391242c0e",
+          "bytes": 253
+        },
+        {
+          "path": "statue-articulated-release-v36/audit.json",
+          "blob": "110f965a3542e4fa533cad89fbb37fecfcb5257f",
+          "bytes": 249422
+        },
+        {
+          "path": "statue-articulated-release-v36/data.yaml",
+          "blob": "5b350ccaed8694deaf493c28ec5f44265f2d6b8c",
+          "bytes": 226
+        }
+      ]
+    },
+    "statue-complete-census-v40": {
+      "files": 113,
+      "bytes": 287214,
+      "images": 0,
+      "labels": 110,
+      "metadata": [
+        {
+          "path": "statue-complete-census-v40/annotation_release.json",
+          "blob": "aedbf4a5580706aa955ed7ed828eae42780e7af8",
+          "bytes": 354
+        },
+        {
+          "path": "statue-complete-census-v40/audit.json",
+          "blob": "cefdd05915ed1e6a28808af6cc47375ff772aade",
+          "bytes": 278386
+        },
+        {
+          "path": "statue-complete-census-v40/data.yaml",
+          "blob": "584a8d448030d8b1f9dd7a9a26f01611262adcf7",
+          "bytes": 222
+        }
+      ]
+    },
+    "statue-figure-labels-v23": {
+      "files": 88,
+      "bytes": 162600,
+      "images": 0,
+      "labels": 86,
+      "metadata": [
+        {
+          "path": "statue-figure-labels-v23/audit.json",
+          "blob": "75dad2c7cdd47fd6309940a7b707a48ae2500946",
+          "bytes": 155391
+        },
+        {
+          "path": "statue-figure-labels-v23/data.yaml",
+          "blob": "2e798b1b8d2a4a8fb10b56ef073db74f619af68d",
+          "bytes": 220
+        }
+      ]
+    },
+    "statue-flat-confusers-v38": {
+      "files": 113,
+      "bytes": 286843,
+      "images": 0,
+      "labels": 110,
+      "metadata": [
+        {
+          "path": "statue-flat-confusers-v38/annotation_release.json",
+          "blob": "870395c105dff36d5c75d1f8465de0e0aed01df3",
+          "bytes": 268
+        },
+        {
+          "path": "statue-flat-confusers-v38/audit.json",
+          "blob": "6d587c062de15538d670f7e16b7c4839a6db2ba7",
+          "bytes": 278425
+        },
+        {
+          "path": "statue-flat-confusers-v38/data.yaml",
+          "blob": "055e562f7f0b7864916a3359a04b5de3f09b8beb",
+          "bytes": 221
+        }
+      ]
+    },
+    "statue-flat-train-source-v37": {
+      "files": 4,
+      "bytes": 328555,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "statue-flat-train-source-v37/acquisition.json",
+          "blob": "f24089a88f1a3686184764a58c3ab05aee15578c",
+          "bytes": 757
+        },
+        {
+          "path": "statue-flat-train-source-v37/manifest.json",
+          "blob": "b8258575a67e7f6e444ae4b2d13569d1095b7f29",
+          "bytes": 30323
+        },
+        {
+          "path": "statue-flat-train-source-v37/publisher-category-page-1.json",
+          "blob": "7de39154c89fb9fc59c0cd82eb36fac79bf87c2c",
+          "bytes": 297190
+        },
+        {
+          "path": "statue-flat-train-source-v37/train-reservation.json",
+          "blob": "eb82099ac3934adda38ac88add30e691fd0953b1",
+          "bytes": 285
+        }
+      ]
+    },
+    "statue-group-train-source-v25": {
+      "files": 4,
+      "bytes": 144301,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "statue-group-train-source-v25/acquisition.json",
+          "blob": "c3180e2d3e300d904030617bb5205b2aa247f5e2",
+          "bytes": 759
+        },
+        {
+          "path": "statue-group-train-source-v25/manifest.json",
+          "blob": "5bb608287a46d60041c5ac026aa1a42f8a5b63ca",
+          "bytes": 39509
+        },
+        {
+          "path": "statue-group-train-source-v25/publisher-category-page-1.json",
+          "blob": "560a50283173d0b4254c0e3b39d1f066ddb0f0f5",
+          "bytes": 102853
+        },
+        {
+          "path": "statue-group-train-source-v25/train-reservation.json",
+          "blob": "114507fe43e176ebfb5b73ce2bc949f5a7debeb0",
+          "bytes": 1180
+        }
+      ]
+    },
+    "statue-groups-v25": {
+      "files": 90,
+      "bytes": 171803,
+      "images": 0,
+      "labels": 88,
+      "metadata": [
+        {
+          "path": "statue-groups-v25/audit.json",
+          "blob": "70fc3cb7bdd808b05b205adc9c73f99606f6f2f2",
+          "bytes": 164319
+        },
+        {
+          "path": "statue-groups-v25/data.yaml",
+          "blob": "4db2ce38b5c5c902421c7679091c03a71bfec323",
+          "bytes": 213
+        }
+      ]
+    },
+    "statue-hand-train-source-v26": {
+      "files": 4,
+      "bytes": 134168,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "statue-hand-train-source-v26/acquisition.json",
+          "blob": "2ef45f320267e2069a9a09d04c89ed335cf725fd",
+          "bytes": 750
+        },
+        {
+          "path": "statue-hand-train-source-v26/manifest.json",
+          "blob": "f0bff92dcb1844e2d1ca39f25dcf0825a04ad3b1",
+          "bytes": 34433
+        },
+        {
+          "path": "statue-hand-train-source-v26/publisher-category-page-1.json",
+          "blob": "86c2df4cb7914ac7f20ce67b06f36f56af735028",
+          "bytes": 97920
+        },
+        {
+          "path": "statue-hand-train-source-v26/train-reservation.json",
+          "blob": "b6b06d648acc829c0a501c79d05c3d8e410c5f3f",
+          "bytes": 1065
+        }
+      ]
+    },
+    "statue-hands-v26": {
+      "files": 92,
+      "bytes": 180607,
+      "images": 0,
+      "labels": 90,
+      "metadata": [
+        {
+          "path": "statue-hands-v26/audit.json",
+          "blob": "316c037b9691fdd36551301fdc1e917fc95b927a",
+          "bytes": 173124
+        },
+        {
+          "path": "statue-hands-v26/data.yaml",
+          "blob": "f28ffca1feaffb0ad81da3cb85a34ebf2ccb50c7",
+          "bytes": 212
+        }
+      ]
+    },
+    "statue-independent-test-v22": {
+      "files": 24,
+      "bytes": 102590,
+      "images": 0,
+      "labels": 22,
+      "metadata": [
+        {
+          "path": "statue-independent-test-v22/audit.json",
+          "blob": "f0097c161804ec04e8bb1bd8bc24d0a0825bd988",
+          "bytes": 101286
+        },
+        {
+          "path": "statue-independent-test-v22/data.yaml",
+          "blob": "b5a34eda2b143213e6647aab489d704baaf3cccf",
+          "bytes": 223
+        }
+      ]
+    },
+    "statue-men-independent-source-v22": {
+      "files": 4,
+      "bytes": 341231,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "statue-men-independent-source-v22/acquisition.json",
+          "blob": "c5ce9dd3d249a4494a9d38539c36bc0b68621551",
+          "bytes": 767
+        },
+        {
+          "path": "statue-men-independent-source-v22/manifest.json",
+          "blob": "8a9c0aeaae66f48e0dbbb8eb9601c946f6884b2d",
+          "bytes": 35122
+        },
+        {
+          "path": "statue-men-independent-source-v22/publisher-category-page-1.json",
+          "blob": "6f76a0c9f7725fc0d6efe2572560100b9c5ba324",
+          "bytes": 302993
+        },
+        {
+          "path": "statue-men-independent-source-v22/test-reservation.json",
+          "blob": "d84bed038aa8c56e3f066dce0cc497214d5da63e",
+          "bytes": 2349
+        }
+      ]
+    },
+    "statue-office-highres-review-v16": {
+      "files": 1,
+      "bytes": 850,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "statue-office-highres-review-v16/manifest.json",
+          "blob": "7c6204e25a4ccbab559e23a22ccfbe9fbf6e54fd",
+          "bytes": 850
+        }
+      ]
+    },
+    "statue-rear-context-v17": {
+      "files": 86,
+      "bytes": 152637,
+      "images": 0,
+      "labels": 84,
+      "metadata": [
+        {
+          "path": "statue-rear-context-v17/audit.json",
+          "blob": "229a188d1bf14bd333ae6ea70d060c3b80430c66",
+          "bytes": 145445
+        },
+        {
+          "path": "statue-rear-context-v17/data.yaml",
+          "blob": "ee1c175384ff15237f31f67d6bd990b204d013bb",
+          "bytes": 217
+        }
+      ]
+    },
+    "statue-rear-train-source-v17": {
+      "files": 4,
+      "bytes": 328892,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "statue-rear-train-source-v17/acquisition.json",
+          "blob": "1af4bab682a2ef16cb27d52c7943223769fe9a65",
+          "bytes": 761
+        },
+        {
+          "path": "statue-rear-train-source-v17/manifest.json",
+          "blob": "1cd047cad48ddce2c13ef2e522db9e742121c6c1",
+          "bytes": 36468
+        },
+        {
+          "path": "statue-rear-train-source-v17/publisher-category-page-1.json",
+          "blob": "6633692ac00a5dd6c9e2b40ac77f928c3cf28a54",
+          "bytes": 289301
+        },
+        {
+          "path": "statue-rear-train-source-v17/train-reservation.json",
+          "blob": "ba7c87929b04c70734d017636c3104a253cc1d0f",
+          "bytes": 2362
+        }
+      ]
+    },
+    "statue-validation-extension-v30": {
+      "files": 100,
+      "bytes": 244772,
+      "images": 0,
+      "labels": 97,
+      "metadata": [
+        {
+          "path": "statue-validation-extension-v30/audit.json",
+          "blob": "265f38256ec76e81f939f0217070fcba15387b1d",
+          "bytes": 236513
+        },
+        {
+          "path": "statue-validation-extension-v30/data.yaml",
+          "blob": "e7614b97f19f0ae840e59ee1e32544805eeeb788",
+          "bytes": 227
+        },
+        {
+          "path": "statue-validation-extension-v30/review_hold.json",
+          "blob": "e0df28a7467bd9718027ebf61bec7ffb024f4ee5",
+          "bytes": 432
+        }
+      ]
+    },
+    "statue-validation-extension-v31": {
+      "files": 102,
+      "bytes": 245837,
+      "images": 0,
+      "labels": 99,
+      "metadata": [
+        {
+          "path": "statue-validation-extension-v31/audit.json",
+          "blob": "4eea1daca5379c6033a7fdb4bc2010691c6a8f11",
+          "bytes": 237467
+        },
+        {
+          "path": "statue-validation-extension-v31/data.yaml",
+          "blob": "576d121a5f282e0d3cee86c4cb82b950d1bd0cdb",
+          "bytes": 227
+        },
+        {
+          "path": "statue-validation-extension-v31/review_hold.json",
+          "blob": "f8607e3856557b8a6df8f3130e5b519a5f24646d",
+          "bytes": 402
+        }
+      ]
+    },
+    "statue-validation-extension-v32": {
+      "files": 105,
+      "bytes": 246904,
+      "images": 0,
+      "labels": 102,
+      "metadata": [
+        {
+          "path": "statue-validation-extension-v32/annotation_release.json",
+          "blob": "40ccb98e224aae8e0601deb384fd3f51f93795e3",
+          "bytes": 592
+        },
+        {
+          "path": "statue-validation-extension-v32/audit.json",
+          "blob": "1c3bbaf194f3f45e554aefbd03123e8ce98d9d85",
+          "bytes": 238250
+        },
+        {
+          "path": "statue-validation-extension-v32/data.yaml",
+          "blob": "8fc629f5c986ce01b8b506ba5dea90d2cef88c86",
+          "bytes": 227
+        }
+      ]
+    },
+    "statue-validation-source-v29": {
+      "files": 5,
+      "bytes": 655414,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "statue-validation-source-v29/acquisition.json",
+          "blob": "aa05956a44f7bd6b419edd4afba89fe6b0bdf38d",
+          "bytes": 755
+        },
+        {
+          "path": "statue-validation-source-v29/manifest.json",
+          "blob": "5e12940d3a39f306e6e6b98d28f52d7f7c042c2d",
+          "bytes": 60098
+        },
+        {
+          "path": "statue-validation-source-v29/publisher-category-page-1.json",
+          "blob": "6f76a0c9f7725fc0d6efe2572560100b9c5ba324",
+          "bytes": 302993
+        },
+        {
+          "path": "statue-validation-source-v29/publisher-category-page-2.json",
+          "blob": "ab44544dabd2c46bfb2bc637024edbe7caf27e9f",
+          "bytes": 290106
+        },
+        {
+          "path": "statue-validation-source-v29/val-reservation.json",
+          "blob": "1245702135944379bfbe5b8af50e45e9a9437782",
+          "bytes": 1462
+        }
+      ]
+    },
+    "statue-vr-confuser-train-source-v20": {
+      "files": 5,
+      "bytes": 709216,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "statue-vr-confuser-train-source-v20/acquisition.json",
+          "blob": "59510d936dd89986eed4fd24e3c3c809fb3a5978",
+          "bytes": 786
+        },
+        {
+          "path": "statue-vr-confuser-train-source-v20/manifest.json",
+          "blob": "086a73ec36b91659f6421d20c778e5e12df4186e",
+          "bytes": 31747
+        },
+        {
+          "path": "statue-vr-confuser-train-source-v20/publisher-category-page-1.json",
+          "blob": "01620a80af6a0063474a9accf913fe3cdf3f8e6d",
+          "bytes": 399456
+        },
+        {
+          "path": "statue-vr-confuser-train-source-v20/publisher-category-page-2.json",
+          "blob": "8cc3998c575d8fbfd80c04be3561cfea5e9e166c",
+          "bytes": 274864
+        },
+        {
+          "path": "statue-vr-confuser-train-source-v20/train-reservation.json",
+          "blob": "2344d8a7f1ed01051b099a708ecdac3a4440dc2d",
+          "bytes": 2363
+        }
+      ]
+    },
+    "statue-vr-independent-source-v22": {
+      "files": 6,
+      "bytes": 988818,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "statue-vr-independent-source-v22/acquisition.json",
+          "blob": "0bd6c79b5881cbed961373b903455434abb3d83b",
+          "bytes": 790
+        },
+        {
+          "path": "statue-vr-independent-source-v22/manifest.json",
+          "blob": "fe80c390189172d0a243a9e3fda2722714c7befa",
+          "bytes": 31127
+        },
+        {
+          "path": "statue-vr-independent-source-v22/publisher-category-page-1.json",
+          "blob": "01620a80af6a0063474a9accf913fe3cdf3f8e6d",
+          "bytes": 399456
+        },
+        {
+          "path": "statue-vr-independent-source-v22/publisher-category-page-2.json",
+          "blob": "8cc3998c575d8fbfd80c04be3561cfea5e9e166c",
+          "bytes": 274864
+        },
+        {
+          "path": "statue-vr-independent-source-v22/publisher-category-page-3.json",
+          "blob": "1705f75bf23b1f000b40a89fffada46948cf554a",
+          "bytes": 280225
+        },
+        {
+          "path": "statue-vr-independent-source-v22/test-reservation.json",
+          "blob": "486c9c3cc56c728c8f04dd199a656c354a27b20a",
+          "bytes": 2356
+        }
+      ]
+    },
+    "statue-vr-negatives-v20": {
+      "files": 88,
+      "bytes": 161283,
+      "images": 0,
+      "labels": 86,
+      "metadata": [
+        {
+          "path": "statue-vr-negatives-v20/audit.json",
+          "blob": "1f496ad02c0dd84e1b53cddf625a8ec4c7a63ca1",
+          "bytes": 154091
+        },
+        {
+          "path": "statue-vr-negatives-v20/data.yaml",
+          "blob": "d54f2a8ca288bb0d44f240e814465954e43f7886",
+          "bytes": 217
+        }
+      ]
+    },
+    "statue-women-independent-source-v22": {
+      "files": 4,
+      "bytes": 364123,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "statue-women-independent-source-v22/acquisition.json",
+          "blob": "ad0bd3271560d449cc883f03b948ba3e94c22ab0",
+          "bytes": 757
+        },
+        {
+          "path": "statue-women-independent-source-v22/manifest.json",
+          "blob": "90a57e8e486b5a6725033fd8de0fee0df7d5c66e",
+          "bytes": 31922
+        },
+        {
+          "path": "statue-women-independent-source-v22/publisher-category-page-1.json",
+          "blob": "cc62e0c78fd79cdfb2f7da26b869f69922752b92",
+          "bytes": 329093
+        },
+        {
+          "path": "statue-women-independent-source-v22/test-reservation.json",
+          "blob": "e2e93721129013526431c11d92c8b2a83a701092",
+          "bytes": 2351
+        }
+      ]
+    },
+    "tree-confuser-reviewed-bank-v20": {
+      "files": 4,
+      "bytes": 5390,
+      "images": 0,
+      "labels": 3,
+      "metadata": [
+        {
+          "path": "tree-confuser-reviewed-bank-v20/audit.json",
+          "blob": "e4aafe03b3a9feb7cc0e98eedb852e5029b92d24",
+          "bytes": 5390
+        }
+      ]
+    },
+    "tree-independent-test-v23": {
+      "files": 7,
+      "bytes": 57219,
+      "images": 0,
+      "labels": 5,
+      "metadata": [
+        {
+          "path": "tree-independent-test-v23/audit.json",
+          "blob": "6b8278d13044385294e1965cf57bc8e214eb4a32",
+          "bytes": 56897
+        },
+        {
+          "path": "tree-independent-test-v23/data.yaml",
+          "blob": "cf894dbdfad6b5e835c17735aaf7484a4f793329",
+          "bytes": 157
+        }
+      ]
+    },
+    "tree-reviewed-expansion-v21": {
+      "files": 54,
+      "bytes": 124587,
+      "images": 0,
+      "labels": 52,
+      "metadata": [
+        {
+          "path": "tree-reviewed-expansion-v21/audit.json",
+          "blob": "6bf4cd7d1bc7b262a8996debdaf31c3da6cd525f",
+          "bytes": 122489
+        },
+        {
+          "path": "tree-reviewed-expansion-v21/data.yaml",
+          "blob": "8871c4684153c2ccd2ec204cfadc6df0156a2ec7",
+          "bytes": 187
+        }
+      ]
+    },
+    "tree-train-source-v18": {
+      "files": 3,
+      "bytes": 105614,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "tree-train-source-v18/manifest-before-upstream-split-correction.json",
+          "blob": "6dfac04bf81785045997d3ab4062f3d0e4217264",
+          "bytes": 10317
+        },
+        {
+          "path": "tree-train-source-v18/manifest.json",
+          "blob": "a6505bd20df04fa7ae105fd7576f4c34b7706ad9",
+          "bytes": 10403
+        },
+        {
+          "path": "tree-train-source-v18/selection.json",
+          "blob": "848ff931472011aae4eb5aecbd13e9060b8aa0ff",
+          "bytes": 84894
+        }
+      ]
+    },
+    "tree-whole-train-source-v19": {
+      "files": 2,
+      "bytes": 95684,
+      "images": 0,
+      "labels": 0,
+      "metadata": [
+        {
+          "path": "tree-whole-train-source-v19/manifest.json",
+          "blob": "6c99e929f8c37e8dbd96b64ea2d560c786d1c646",
+          "bytes": 10260
+        },
+        {
+          "path": "tree-whole-train-source-v19/selection.json",
+          "blob": "d35739fa90828ba1b5e5e628b2239ffbba7790e7",
+          "bytes": 85424
+        }
+      ]
+    }
+  },
+  "selected_audits": {
+    "cockroach-positive-train-v16": {
+      "audit_sha256": "ed55a845ce0076c8ef8dd9c5906d2e0bba9d5493cefaf3b712ef00b1c00bd7d3",
+      "audit_bytes": 298926,
+      "tracked_images": 0,
+      "sample_entries": 248,
+      "historical_claims": {
+        "names": [
+          "Cockroach",
+          "Beetle"
+        ],
+        "counts": {
+          "train": 200,
+          "val": 39,
+          "test": 9
+        },
+        "training_approved": true,
+        "deployment_accepted": false,
+        "limitations": [
+          "24 old TRAIN background images require explicit review for Beetle absence",
+          "Historical TEST labels remain Cockroach-only; not valid for Beetle AP",
+          "Public data scope is not PICO device acceptance"
+        ],
+        "class_instance_counts": {
+          "train": {
+            "0": 121,
+            "1": 38
+          },
+          "val": {
+            "0": 29,
+            "1": 13
+          },
+          "test": {
+            "0": 9
+          }
+        },
+        "split_policy": "225 parent image/label pairs unchanged;23new TRAIN photos23GT;1source taxonomy HOLD;no fold reassignment"
+      },
+      "samples_with_photo_url": 206,
+      "samples_with_image_sha": 248,
+      "samples_with_label_sha": 248,
+      "sample_split_counts": {
+        "test": 9,
+        "train": 200,
+        "val": 39
+      },
+      "current_training_acceptance": false,
+      "old_machine_absolute_path_present": true
+    },
+    "plant-binary-v79": {
+      "audit_bytes": 1382073,
+      "tracked_images": 0,
+      "audit_read": false,
+      "reason": "Above the 1 MiB per-audit read budget",
+      "current_training_acceptance": false
+    },
+    "statue-complete-census-v40": {
+      "audit_sha256": "458b5c0f0c4d420979b877368e6a11887c8069645d6ef209c7ed9e6dc2c3ee59",
+      "audit_bytes": 278386,
+      "tracked_images": 0,
+      "sample_entries": 110,
+      "historical_claims": {
+        "names": [
+          "Statue"
+        ],
+        "training_approved": true,
+        "deployment_accepted": false,
+        "limitations": [
+          "Two new test images are insufficient for deployment acceptance",
+          "Generic physical sculptures; no historical identity or material guarantee",
+          "No PICO imagery; source usernames checked against prior author aliases",
+          "New Flickr NSIDs verified from current publisher pages; old folds preserved",
+          "Two additional training images only; dense-instance and relief class policy unresolved.",
+          "Previously inspected validation/test remain diagnostic; no new independent acceptance set.",
+          "One additional six-instance training image; old observed folds retained, fresh acceptance still pending",
+          "Five newly original-reviewed public images; no PICO positive test; public pretraining overlap unknown. Existing holdouts preserved; no deployment acceptance implied."
+        ]
+      },
+      "samples_with_photo_url": 41,
+      "samples_with_image_sha": 110,
+      "samples_with_label_sha": 110,
+      "sample_split_counts": {
+        "train": 88,
+        "val": 19,
+        "test": 3
+      },
+      "current_training_acceptance": false,
+      "old_machine_absolute_path_present": false
+    },
+    "tree-reviewed-expansion-v21": {
+      "audit_sha256": "93486d0425afb423956d7d76755d1ed8d961e3449fb5791d970b37a5b37c1749",
+      "audit_bytes": 122489,
+      "tracked_images": 0,
+      "sample_entries": 52,
+      "historical_claims": {
+        "names": [
+          "Tree"
+        ],
+        "counts": {
+          "train": 41,
+          "val": 11
+        },
+        "training_approved": true,
+        "deployment_accepted": false,
+        "limitations": [
+          "Small public-source pilot:33TRAIN including8negative images;11previously observed VAL including7negative images.",
+          "Adds3 reviewed author-reserved TRAIN images; original41parent rows, bytes and folds unchanged.",
+          "No fresh TEST in this training release; new source TEST reservations excluded.",
+          "No PICO validation; pretraining overlap and unknown creator/physical-tree aliases remain possible.",
+          "Prior difficult regression remains required; this pilot alone cannot authorize deployment.",
+          "Only one new positive; not a broad-domain dataset. Autumn partial tree excluded. Snow box bottom corrected from537to570 using original image, no model predictions."
+        ]
+      },
+      "samples_with_photo_url": 19,
+      "samples_with_image_sha": 52,
+      "samples_with_label_sha": 52,
+      "sample_split_counts": {
+        "train": 41,
+        "val": 11
+      },
+      "current_training_acceptance": false,
+      "old_machine_absolute_path_present": true
+    }
+  },
+  "images_downloaded": 0,
+  "training_performed": false,
+  "limitations": [
+    "Metadata flags are historical claims, not current image/label review.",
+    "Datasets may overlap; sums are not independent images.",
+    "Some audits have source URL/SHA bindings, but actual image availability, labels, licenses and split leakage must be checked before reuse.",
+    "Historical public test images already revealed to prior model selection cannot become a new independent test set.",
+    "Old absolute paths must be replaced in an isolated materialized data configuration."
+  ]
+}

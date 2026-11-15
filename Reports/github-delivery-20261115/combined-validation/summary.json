@@ -198,5 +198,17 @@
     "Native cameras/pose/both eyes/device performance",
     "Fresh Android builds of this combined tree; existing four APKs were built from the main workspace"
   ],
-  "raw_credentials_recorded": false
+  "raw_credentials_recorded": false,
+  "android_managed_compilation": {
+    "source_input_commit": "466da01b3224bf541f18649d6292b4debb7d172d",
+    "status": "PASSED",
+    "assemblies": 52,
+    "result": "android-managed-result.json",
+    "harness": "CombinedAndroidCompileProbe.cs.txt",
+    "resources": "combined-android-managed-resources.json",
+    "log_sha256": "7a28ee0a7c767dc15d84cc42dda49971186f7af90b679a4c09d061889d70519d",
+    "scope": "CompilePlayerScripts(target=Android), not a packaged player/IL2CPP/device check",
+    "minimum_sampled_free_ram_gib": 5.091,
+    "maximum_sampled_disk_growth_mib": 248.24
+  }
 }
