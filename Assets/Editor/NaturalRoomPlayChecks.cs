@@ -91,7 +91,7 @@ public static class NaturalRoomPlayChecks
                 // dispatching input rather than starting a coroutine on it.
                 if(!restCaptured){rest=furniture.Select(r=>r.transform.localToWorldMatrix).ToArray();Require(!lamp.gameObject.activeSelf&&jelly.Visibility==0,"Resting room retained lamp");Capture("Rest");restCaptured=true;restCaptureFrame=probe.Frames;return;}
                 if(probe.Frames<restCaptureFrame+5)return;
-                Require(!actor.TryAction(ParkAction.Reward,Vector3.zero,true),"Room reward without plane accepted");Action(ParkAction.Awaken);Next();
+                Require(!actor.TryAction(ParkAction.Reward,Vector3.zero,true),"Room reward without plane accepted");Action(ParkAction.Wind);Next();
             }
             else if(stage==2)
             {
@@ -105,17 +105,17 @@ public static class NaturalRoomPlayChecks
             else if(stage==3)
             {
                 if(!partialStop&&elapsed>.12f){Require(jelly.Visibility>0&&jelly.Visibility<1&&actor.Busy,"Jellyfish Stop did not fade");partialStop=true;Capture("Stopping");}
-                if(elapsed>.45f&&StableFrame){Require(partialStop&&!actor.Busy&&!lamp.gameObject.activeSelf&&jelly.Visibility==0,"Stopped jellyfish reappeared");Action(ParkAction.Awaken);Next();}
+                if(elapsed>.45f&&StableFrame){Require(partialStop&&!actor.Busy&&!lamp.gameObject.activeSelf&&jelly.Visibility==0,"Stopped jellyfish reappeared");Action(ParkAction.Wind);Next();}
             }
             else if(stage==4&&elapsed>.85f){Require(jelly.Visibility==1,"Jellyfish restart failed");actor.Undo();Next();}
-            else if(stage==5&&elapsed>.45f){Require(jelly.Visibility==0&&!lamp.gameObject.activeSelf,"Undo retained lamp");Capture("Undo");Action(ParkAction.Awaken);Next();}
-            else if(stage==6&&elapsed>.9f&&StableFrame){Action(ParkAction.Style);Next();}
+            else if(stage==5&&elapsed>.45f){Require(jelly.Visibility==0&&!lamp.gameObject.activeSelf,"Undo retained lamp");Capture("Undo");Action(ParkAction.Wind);Next();}
+            else if(stage==6&&elapsed>.9f&&StableFrame){Action(ParkAction.Stop);Next();}
             else if(stage==7&&elapsed>1)
             {
-                Require(!actor.Busy&&actor.RoomCandySelected&&!lamp.gameObject.activeSelf&&jelly.Visibility==0,"Effect switch retained jellyfish");
-                Require(!actor.TryAction(ParkAction.Awaken,Vector3.zero,true),"Candy rain without ceiling accepted");
+                Require(!actor.Busy&&!lamp.gameObject.activeSelf&&jelly.Visibility==0,"Stop retained jellyfish");
+                Require(!actor.TryAction(ParkAction.Reward,Vector3.zero,true),"Candy rain without ceiling accepted");
                 ceiling=new GameObject("Synthetic horizontal ceiling - test only");ceiling.transform.position=new Vector3(.12f,.87f,.05f);actor.environmentAnchor=ceiling.transform;actor.confirmedPlane=true;
-                Action(ParkAction.Awaken);Next();
+                Action(ParkAction.Reward);Next();
             }
             else if(stage==8)
             {
@@ -134,14 +134,14 @@ public static class NaturalRoomPlayChecks
                 Require(!actor.Busy&&pool.All(p=>!p.gameObject.activeSelf)&&!lamp.gameObject.activeSelf,"Stop retained room fantasy");
                 Require(actor.confirmedPlane&&actor.environmentAnchor==ceiling.transform,"Stop discarded manual ceiling");Capture("Stopped");
                 actor.ResetEffects();Require(!actor.confirmedPlane&&!actor.environmentAnchor&&jelly.Visibility==0,"Reset retained ceiling/lamp");
-                Action(ParkAction.Awaken);actor.SetTracked(false);Require(!actor.Busy&&!actor.visual.gameObject.activeSelf&&!actor.confirmedPlane,"Room loss retained effect/plane");
+                Action(ParkAction.Wind);actor.SetTracked(false);Require(!actor.Busy&&!actor.visual.gameObject.activeSelf&&!actor.confirmedPlane,"Room loss retained effect/plane");
                 actor.SetTracked(true);Next();
             }
             else if(stage==10&&elapsed>.35f){Require(actor.visual.gameObject.activeSelf&&!lamp.gameObject.activeSelf,"Room recovery revived stale fantasy");Capture("Recovery");actor.ExitAndDestroy();UnityEngine.Object.Destroy(ceiling);Next();}
             else if(stage==11&&elapsed>.4f)
             {
                 Require(!actor&&UnityEngine.Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None).Length==0,"Room exit leaked actor/audio");
-                File.WriteAllText(Path.Combine(Output,"result.txt"),"PASS: actual Play Mode entry; fixed architecture through all effects; jellyfish pulse/open/Stop fade/Undo/restart/effect switch; synthetic ceiling gate, 24 pooled candy particles sustained >3s below ceiling and following moved anchor; Stop/Reset/loss/recovery/exit/audio cleanup. "+captures+" rendered frames. No real room mapping, tracking or headset acceptance.\n");
+                File.WriteAllText(Path.Combine(Output,"result.txt"),"PASS: actual Play Mode entry; fixed architecture through all effects; jellyfish pulse/open/Stop fade/Undo/restart/explicit Stop before D; synthetic ceiling gate, 24 pooled candy particles sustained >3s below ceiling and following moved anchor; Stop/Reset/loss/recovery/exit/audio cleanup. "+captures+" rendered frames. No real room mapping, tracking or headset acceptance.\n");
                 Debug.Log("NATURAL_ROOM_PLAYMODE_PASS: "+captures+" actual frames; fixed furniture, jellyfish lifecycle, below-ceiling bounded sustained candy, loss/recovery/exit/audio");Finish(0);
             }
         }

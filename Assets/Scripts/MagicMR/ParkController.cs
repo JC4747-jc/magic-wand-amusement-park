@@ -59,8 +59,6 @@ namespace MagicMR
         }
         bool StudyAllows(ParkAction action) {
             if(action==ParkAction.Reset||action==ParkAction.Stop||action==ParkAction.Undo)return true;
-            if(action==ParkAction.Awaken&&scenario==ParkScenario.Room&&selected&&selected.RoomCandySelected&&
-                (studyDimensions&EnabledDimensions.Deconstruction)==0)return false;
             var dimension=ActionDimension(action);
             // Extra debug actions are not part of the four study dimensions.
             if(dimension==EditDimension.None)return studyDimensions==EnabledDimensions.All;

@@ -84,7 +84,11 @@ namespace MagicMR
         public int Affection => state.affection;
         // Each selected virtual enemy is one round; its defeated state is the score source of truth.
         public int VirtualScore=>scenario==ParkScenario.Bugs && state.rewarded?100:0;
-        public bool RoomCandySelected=>scenario==ParkScenario.Room && state.style==1;
+        public bool RoomCandySelected=>scenario==ParkScenario.Room; // Legacy API: D is independent of A.
+        public int RoomStyle=>roomMagic?roomMagic.Style:0;
+        public bool RoomWindowRequested=>scenario==ParkScenario.Room&&state.awake;
+        public bool RoomLampRequested=>scenario==ParkScenario.Room&&state.bubble;
+        RoomMagicVisual roomMagic;
         public int Revision { get; private set; }
 
         [Serializable] struct State { public int style, affection; public bool awake, rewarded, bubble, sealedTree, scar, wind, bloom, petComic; public float growth, season; }
@@ -154,7 +158,7 @@ namespace MagicMR
                     break;
                 case ParkScenario.Room:
                     BuildNaturalRoom();
-                    portal=Part(visual,"Virtual window",PrimitiveType.Cube,new Vector3(0,.3f,.2f),new Vector3(.01f,.45f,.02f),new Color(.025f,.07f,.22f),false);
+                    roomMagic=gameObject.AddComponent<RoomMagicVisual>();roomMagic.Initialize(body.ToArray(),visual);
                     BuildNaturalJellyfish();
                     break;
                 case ParkScenario.Plant:
@@ -242,7 +246,6 @@ namespace MagicMR
             if(!built) Build();
             if(action==ParkAction.Reset) { ResetEffects(); return true; }
             if(action==ParkAction.Bloom && scenario!=ParkScenario.Plant) {Feedback="Bloom is a virtual plant action";return false;}
-            if(scenario==ParkScenario.Room && action==ParkAction.Awaken && RoomCandySelected)action=ParkAction.Reward;
             if(!FinitePoint(hand)) {Feedback="Blocked: invalid hand position";return false;}
             if(action==ParkAction.Stop) {
                 if(!isActiveAndEnabled || !tracked || !valid || (scenario!=ParkScenario.Room && scenario!=ParkScenario.Pet && scenario!=ParkScenario.Statue)) {Feedback="Blocked: stop requires an active tracked fantasy target";return false;}
@@ -262,7 +265,6 @@ namespace MagicMR
             if(action==ParkAction.Undo) { Undo(); return true; }
             if(scenario==ParkScenario.Bugs && action==ParkAction.Reward && state.rewarded) { Feedback="Already defeated; Reset starts a new virtual round";return false; }
             if((scenario==ParkScenario.Statue || scenario==ParkScenario.Room) && action==ParkAction.Reward && (!confirmedPlane || environmentAnchor==null)) { Feedback="Confirm a ground/ceiling plane first"; return false; }
-            if(scenario==ParkScenario.Room && action==ParkAction.Reward && !RoomCandySelected) {Feedback="Select Candy rain before summoning it";return false;}
             if(scenario==ParkScenario.Pet && (action==ParkAction.Feed || action==ParkAction.Poke) && !state.bubble) { Feedback="Pull open dream bubble first"; return false; }
             if(scenario==ParkScenario.Pet && action==ParkAction.Wind && !state.bubble) { Feedback="Open a dream bubble before swiping to pop it"; return false; }
             if(scenario==ParkScenario.Tree && magicTree && action==ParkAction.Reward && !state.scar) { Feedback="Swipe C to reveal the breathing scar before sealing"; return false; }
@@ -277,6 +279,7 @@ namespace MagicMR
         IEnumerator FadeFantasyEffects() {
             Feedback="Stopping virtual effects";
             var exiting=new List<Transform>{bubble,portal,jellyfish};
+            if(roomMagic)exiting.Add(roomMagic.Window);
             if(statueGarden)exiting.Add(environment);
             foreach(var p in pool)if(p.gameObject.activeSelf)exiting.Add(p);
             stoppingEffects=exiting.ToArray();stoppingScales=new Vector3[stoppingEffects.Length];
@@ -294,7 +297,7 @@ namespace MagicMR
         void FinishFantasyExit() {
             state.awake=state.bubble=state.wind=state.rewarded=false;
             if(naturalBronze)naturalBronze.ResetPose();if(naturalStatueStretch)naturalStatueStretch.ResetPose();
-            if(naturalJellyfish)naturalJellyfish.ResetPose();
+            if(naturalJellyfish)naturalJellyfish.ResetPose();if(roomMagic)roomMagic.SetWindow(0);
             if(statueGarden)statueGarden.Clear();
             dreamVisibility=0;
             RestoreStoppedScales();particleCount=0;foreach(var p in pool)p.gameObject.SetActive(false);
@@ -318,8 +321,7 @@ namespace MagicMR
                     if(scenario==ParkScenario.Plant) {SetHighlighted(true);Feedback="Plant selected";break;}
                     if(scenario==ParkScenario.Pet) {state.petComic=!state.petComic;Feedback=state.petComic?"Pet: manga outline":"Pet: natural appearance";break;}
                     if(scenario==ParkScenario.Statue) {state.style=1-state.style;Feedback=state.style==1?"Statue: cartoon appearance":"Statue: original material";break;}
-                    if(scenario==ParkScenario.Room && (state.awake || state.rewarded || state.bubble))
-                        yield return FadeFantasyEffects();
+                    if(scenario==ParkScenario.Room){state.style=state.style==1?2:1;Feedback=state.style==1?"Room: watercolor wash":"Room: cyber lines";break;}
                     if(scenario==ParkScenario.Tree && !magicTree) {state.style=1-state.style;Feedback=state.style==1?"Season tree: anime canopy":"Season tree: natural canopy";}
                     else if(scenario==ParkScenario.Tree) {state.style=1-state.style;Feedback=state.style==1?"Willow: dark woodland":"Willow: natural woodland";}
                     else {
@@ -327,9 +329,9 @@ namespace MagicMR
                         state.style=(state.style+1)%variants;
                         targetColor=state.style==1?new Color(.15f,.16f,.2f):state.style==2?new Color(.9f,.3f,.5f):new Color(.25f,.65f,.4f);
                     }
-                    if(scenario==ParkScenario.Room)Feedback="Selected effect: "+(state.style==0?"Jellyfish":"Candy rain; confirm ceiling first");
                     break;
                 case ParkAction.Awaken:
+                    if(scenario==ParkScenario.Room){state.awake=true;Feedback="Virtual floor-to-ceiling window opening";break;}
                     state.awake=true;Emit(ParkAction.Awaken,16);
                     if(scenario==ParkScenario.Tree&&magicTree){state.wind=true;state.sealedTree=false;state.rewarded=false;treeGustUntil=Time.unscaledTime+2.4f;Feedback="Willow: branch lash and recovery";}
                     // HCI MangaPet B (circle): open the dream, including on repeated casts.
@@ -347,6 +349,7 @@ namespace MagicMR
                 case ParkAction.GrowUp: targetGrowth=Mathf.Clamp01(growthTime+.2f); targetSeason=seasonTime+.25f; break;
                 case ParkAction.GrowDown: targetGrowth=Mathf.Clamp01(growthTime-.2f); targetSeason=seasonTime-.25f; break;
                 case ParkAction.Reward:
+                    if(scenario==ParkScenario.Room){state.rewarded=true;Feedback="Room: candy rain below confirmed ceiling";Emit(ParkAction.Reward,24);break;}
                     if(scenario==ParkScenario.Statue){state.rewarded=true;Feedback="Virtual lotus wish tree unfolding on the confirmed ground";Emit(ParkAction.Reward,12);break;}
                     if(scenario==ParkScenario.Tree&&!magicTree) {
                         state.wind=true;treeGustUntil=Time.unscaledTime+2.4f;
@@ -362,6 +365,7 @@ namespace MagicMR
                     }
                     state.rewarded=true; state.sealedTree=magicTree; state.bubble=false; if(scenario==ParkScenario.Tree&&magicTree){state.wind=false;Feedback="Willow sealed; treasure revealed";} if(scenario==ParkScenario.Pet) { state.affection++; state.style=0; targetColor=new Color(.25f,.65f,.4f); } Emit(ParkAction.Reward,24); if(scenario==ParkScenario.Bugs)Feedback="+100 virtual EXP / coins; physical insect remains visible"; break;
                 case ParkAction.Wind:
+                    if(scenario==ParkScenario.Room){state.bubble=true;Emit(ParkAction.Wind,6);Feedback="Room: jellyfish lamp floating";break;}
                     if(scenario==ParkScenario.Tree&&magicTree){state.scar=true;state.sealedTree=false;state.rewarded=false;state.wind=false;Feedback="Willow: breathing bark mark; fist-open to seal";break;}
                     if(scenario==ParkScenario.Tree&&!magicTree) {
                         targetSeason+=.25f;Feedback="Season: "+new[]{"Spring","Summer","Autumn","Winter"}[(int)(Mathf.Repeat(targetSeason,1)*4)%4];break;
@@ -398,15 +402,17 @@ namespace MagicMR
         }
 
         void Emit(ParkAction kind,int count) {
+            // The continuous D rain owns the shared pool; C may still turn on its lamp.
+            if(scenario==ParkScenario.Room&&kind==ParkAction.Wind&&state.rewarded)return;
             particleKind=kind; particleCount=Mathf.Min(count,pool.Count); particleStart=Time.unscaledTime;
-            if(scenario==ParkScenario.Room && kind==ParkAction.Awaken)particleCount=Mathf.Min(particleCount,6);
+            if(scenario==ParkScenario.Room && kind==ParkAction.Wind)particleCount=Mathf.Min(particleCount,6);
             if(scenario==ParkScenario.Tree && kind!=ParkAction.Wind)particleCount=Mathf.Min(particleCount,6);
             if(scenario==ParkScenario.Statue && kind==ParkAction.Awaken)particleCount=Mathf.Min(particleCount,6);
             int windSeason=(int)(Mathf.Repeat(seasonTime,1)*4)%4;
             if(scenario==ParkScenario.Tree && kind==ParkAction.Wind && windSeason==3)particleCount=0;
             for(int i=0;i<particleCount;i++) {
                 var shape=ParkFeedbackShape.Star; var color=Color.yellow;
-                if(scenario==ParkScenario.Room && kind==ParkAction.Awaken){shape=ParkFeedbackShape.Mote;color=new Color(.68f,.80f,.85f);}
+                if(scenario==ParkScenario.Room && kind==ParkAction.Wind){shape=ParkFeedbackShape.Mote;color=new Color(.68f,.80f,.85f);}
                 if(scenario==ParkScenario.Tree && kind!=ParkAction.Wind){shape=ParkFeedbackShape.Mote;color=new Color(.70f,.59f,.40f);}
                 if(scenario==ParkScenario.Statue && kind==ParkAction.Awaken){shape=ParkFeedbackShape.Mote;color=new Color(.62f,.53f,.37f);}
                 if(scenario==ParkScenario.Bugs && kind==ParkAction.Reward)shape=ParkFeedbackShape.Coin;
@@ -456,7 +462,7 @@ namespace MagicMR
             ApplyComponentColors(0);
             StepNaturalBug(0,false);
             dreamVisibility=0;if(bubble && scenario==ParkScenario.Pet)bubble.localScale=dreamRestScale;
-            if(naturalJellyfish)naturalJellyfish.ResetPose();
+            if(naturalJellyfish)naturalJellyfish.ResetPose();if(roomMagic)roomMagic.SetWindow(0);
             bloomVisibility=0;if(plantFlower) {plantFlower.localScale=Vector3.zero;plantFlower.gameObject.SetActive(false);}
             if(naturalBronze)naturalBronze.ResetPose();if(naturalStatueStretch)naturalStatueStretch.ResetPose();
             if(scenario==ParkScenario.Plant && branchRoot) {branchRoot.localRotation=Quaternion.identity;StepPlantAnimation(0,0);branchRoot.localRotation=Quaternion.identity;}
@@ -498,7 +504,7 @@ namespace MagicMR
             if(petOutline)petOutline.SetVisible(state.petComic&&tracked);
             if(statueCartoon)statueCartoon.SetActive(state.style==1&&tracked);
             if(scenario==ParkScenario.Bugs)foreach(var r in body)if(r)r.enabled=!state.rewarded || bugDefeatProgress<1;
-            eyes.gameObject.SetActive(state.awake && !(scenario==ParkScenario.Bugs && state.rewarded) && !(scenario==ParkScenario.Tree&&magicTree));
+            eyes.gameObject.SetActive(scenario!=ParkScenario.Room && state.awake && !(scenario==ParkScenario.Bugs && state.rewarded) && !(scenario==ParkScenario.Tree&&magicTree));
             if(plantSpeech)plantSpeech.gameObject.SetActive(state.awake);
             bubble.gameObject.SetActive(scenario==ParkScenario.Pet && (state.bubble || dreamVisibility>0));
             for(int i=0;i<dreamContents.Count;i++)dreamContents[i].gameObject.SetActive(i==state.style);
@@ -507,7 +513,8 @@ namespace MagicMR
             bool gardenAllowed=scenario==ParkScenario.Statue&&tracked&&confirmedPlane&&environmentAnchor;
             if(statueGarden)statueGarden.SetRequested(state.rewarded&&gardenAllowed);
             environment.gameObject.SetActive(gardenAllowed&&(state.rewarded||(statueGarden&&statueGarden.Progress>0)));
-            if(jellyfish)jellyfish.gameObject.SetActive(state.awake || (naturalJellyfish && naturalJellyfish.Visibility>0));
+            if(roomMagic)roomMagic.SetStyle(tracked?state.style:0);
+            if(jellyfish)jellyfish.gameObject.SetActive((scenario==ParkScenario.Room?state.bubble:state.awake) || (naturalJellyfish && naturalJellyfish.Visibility>0));
             if(portal)portal.gameObject.SetActive(state.bubble);
         }
         void StepDreamTransition(float dt) {
@@ -593,7 +600,7 @@ namespace MagicMR
             }
             if(scenario==ParkScenario.Statue)for(int i=0;i<branches.Count;i++)branches[i].localRotation=Quaternion.Euler(0,0,(i==0?-1:1)*stretch*45);
             if(ears)ears.localRotation=Quaternion.Euler(0,0,state.awake?Mathf.Sin(Time.unscaledTime*3)*5:0);
-            StepRoomJellyfish(dt,Time.unscaledTime);
+            StepRoomJellyfish(dt,Time.unscaledTime);if(roomMagic)roomMagic.Step(dt,state.awake&&tracked);
             if(portal)portal.localScale=new Vector3(Mathf.Lerp(portal.localScale.x,state.bubble?.6f:.01f,dt*4),.45f,.02f);
             if(bubble && scenario==ParkScenario.Pet) {
                 StepDreamTransition(dt);
@@ -619,7 +626,7 @@ namespace MagicMR
                 p.localPosition=particleKind==ParkAction.Wind?Vector3.up*.4f+windDirection*age*.25f+direction*.05f:new Vector3(0,.2f,0)+direction*age*.15f+Vector3.down*age*age*.07f;
                 if(scenario==ParkScenario.Room && particleKind==ParkAction.Reward && confirmedPlane && environmentAnchor)p.position=environmentAnchor.position+new Vector3(direction.x,0,direction.z)*.25f+Vector3.down*(.02f+particleAge*.18f);
                 p.localRotation=Quaternion.Euler(particleAge*80,i*30,particleAge*100); p.localScale=Vector3.one*.045f*Mathf.Clamp01((1.6f-particleAge)/.3f);
-                if(scenario==ParkScenario.Room && particleKind==ParkAction.Awaken){p.localPosition=Vector3.up*(.6f+age*.025f)+direction*age*.035f;p.localScale=Vector3.one*.009f*Mathf.Clamp01((1.6f-particleAge)/.3f);}
+                if(scenario==ParkScenario.Room && particleKind==ParkAction.Wind){p.localPosition=Vector3.up*(.6f+age*.025f)+direction*age*.035f;p.localScale=Vector3.one*.009f*Mathf.Clamp01((1.6f-particleAge)/.3f);}
                 if(scenario==ParkScenario.Tree && particleKind!=ParkAction.Wind){p.position=TreeScarWorldPosition+visual.TransformVector(direction*age*.025f+Vector3.up*age*.02f);p.localScale=Vector3.one*.009f*Mathf.Clamp01((1.6f-particleAge)/.3f);}
             }
             ApplyVisibility();

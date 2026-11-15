@@ -15,7 +15,7 @@ namespace MagicMR
         }
         void StepRoomJellyfish(float dt,float time)
         {
-            if(!naturalJellyfish)return;naturalJellyfish.Step(dt,time,state.awake);
+            if(!naturalJellyfish)return;naturalJellyfish.Step(dt,time,state.bubble);
             jellyfish.localPosition=Vector3.up*(.6f+Mathf.Sin(time*.8f)*.018f);
         }
     }

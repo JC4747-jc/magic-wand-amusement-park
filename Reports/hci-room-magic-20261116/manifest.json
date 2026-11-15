@@ -1,0 +1,51 @@
+{
+  "baseCommit": "ef1d9b5cdeb2dd2202b3a9be0dfaa5d3a0fd2de6",
+  "sourceTree": "7fdecd587cca06c9208bfe6cdc975ef777d3ed9c",
+  "verifiedProjectFiles": 1625,
+  "mismatches": [],
+  "extras": [],
+  "sourceSHA256": {
+    "Assets/Scripts/MagicMR/ParkActor.cs": "b2660fcc31888716065008ec11dad044f438b5e82c32b7ee8eccf0fc3324040f",
+    "Assets/Scripts/MagicMR/ParkActor.NaturalRoomEffects.cs": "f7ac915525d7ae683b07138c5106b1e3e3c11c3ec0283312e340cdaaba01bd75",
+    "Assets/Scripts/MagicMR/ParkController.cs": "ea3dc5fda4afb039e37b0eccd9edd6a537d52d69ec4971714d03b4c72c888011",
+    "Assets/Scripts/MagicMR/RoomMagicVisual.cs": "97e53a3a9f2bac5177ececa2583ebccf90f931b5b77cf4b11204429df4339756",
+    "Assets/Scripts/MagicMR/RoomMagicVisual.cs.meta": "936a0bb8ec6dc0443587c878db12492703b993e55ffb21d3c181f62813e80114",
+    "Assets/Resources/MagicMR/RoomStyle.shader": "8239a88fd2a932229fea14b87c42abbc8378ee4ded5914d08a9d72ad9f6412aa",
+    "Assets/Resources/MagicMR/RoomStyle.shader.meta": "063836fd1c3fa0a64b077ff2fed2d0d0c679a36187108072d468dd959442a911",
+    "Assets/Editor/HciRoomMagicChecks.cs": "696cc0158af7e4f2468892888c46e461b442c3026cf5fd1e8bee33236151ed7f",
+    "Assets/Editor/HciRoomMagicChecks.cs.meta": "8a8020c02d4b572b63836ff781121658aa88732c8d03609870868b71a387917b",
+    "Assets/Editor/NaturalRoomPlayChecks.cs": "a6837e7ff12c5974467bda8d8662675df8fabed3b3b63cc479d6ff6ceb2c7e5c"
+  },
+  "verification": "Unity 6000.0.33f1 Editor saved ParkRoom and synthetic shared-lighter traces; independent room material/window/lamp/rain effects. Not real room reconstruction or YOLO/PICO acceptance. No new APK.",
+  "resources": {
+    "room": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.625,
+      "maximumSampledDiskGrowthMiB": 0.8,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "legacy": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.667,
+      "maximumSampledDiskGrowthMiB": 2.24,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "shared": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.75,
+      "maximumSampledDiskGrowthMiB": 0.86,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "conditions": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.656,
+      "maximumSampledDiskGrowthMiB": 1.29,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    }
+  },
+  "regressionScope": "Legacy lamp/rain lifecycle ran before the final RoomStyle-only visual revision; final room playback checks cover that shader revision. Shared recognizer unchanged."
+}
