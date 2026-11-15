@@ -1,5 +1,13 @@
 # 开发接续记录
 
+## GitHub整合源码验证补充（2026-11-15）
+
+- 认证并推送至 `codex/yolo-animation-integration-20261115`，现有[PR #1](https://github.com/JC4747-jc/magic-wand-amusement-park/pull/1)的base为 `restore-4d-lighter`；保留65条旧模型归档，未强推/合并或改主工作区分支和暂存区。
+- 隔离整合树14场景审计、自然模型几何、旧6场景协程、6场景真实按钮/渲染流程通过；30张截图、0运行时错误。旧NUnit断言适配后6/6通过，产品代码未因测试调整。
+- 首次导入新增磁盘限额和首次图形NUnit内存限额曾触发，均停止并保留记录；后续复用独立缓存，CPU回归无图形/禁Burst，界面回归保留实际图形。最后界面回归最低采样空闲RAM6.57GiB、最大采样新增磁盘0.98MiB。
+- 报告、6张动作图、逐场景JSON及NUnit结果在 `Reports/github-delivery-20261115/combined-validation`。现有四份APK来自主工作区，不冒充本整合树重新构建；PICO实机、合格识别权重和完整训练覆盖仍未完成，Goal继续。
+
+
 ## 最新验证（2026-11-15）
 
 - 青铜兽变体已完成本地接入和四包构建：Tina/Poly Haven CC0 Bull Head原始17,148面/1K PBR，保留UV/拓扑、新编固定底座两骨苏醒；Statue/BronzeBeast按种类加载，界面新增Marble statue/Bronze beast选择及Test awaken，Stop可用于雕像，不再整体伸缩。129个35cm拟合/37°朝向独立蒙皮采样底部误差2.98e-8m、动作7.47mm、接缝0，512次更新0分配；96帧离线视频解码/颜色/动作差异通过。初次空白离线预览改用显式CPU蒙皮快照后通过，失败基线保留；初次三场景回归发现Stop不支持雕像，修复后实际Bugs/Tree/Statue共13张截图通过。模型是通用青铜牛首表现，不是特定藏品复原。

@@ -1,0 +1,51 @@
+{
+  "purpose": "PRESERVED_REMOTE_CANDIDATE_ARCHIVE_REVIEW_NOT_DEPLOYMENT_ACCEPTANCE",
+  "base_commit": "831fcc512adb00cb98fb426efcdf726fcfab3757",
+  "registry_sha256": "f305c2cc9189fb081514b79f512613e6ebe4f3e5d4466b75259fa6e36fd454b2",
+  "prior_models": 65,
+  "status_counts": {
+    "REJECTED_INDEPENDENT_TEST": 9,
+    "REJECTED_VALIDATION": 42,
+    "NOT_SELECTED_NO_VALIDATION_IMPROVEMENT": 3,
+    "REJECTED_NEGATIVE_REGRESSION": 5,
+    "LOCAL_TEST_PASSED_PICO_PENDING": 1,
+    "REJECTED_OBSERVED_REGRESSION": 4,
+    "INITIALIZER_ONLY_NOT_TRAINED_OR_DEPLOYABLE": 1
+  },
+  "deployment_accepted_count": 0,
+  "local_public_test_candidate": {
+    "name": "cockroach-positive-v16",
+    "path": "object-detection-demo/weights/candidates/cockroach-positive-v16/best.pt",
+    "sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+    "bytes": 52011922,
+    "status": "LOCAL_TEST_PASSED_PICO_PENDING",
+    "deployment_accepted": false,
+    "test_decision": {
+      "status": "PUBLIC_PILOT_TEST_PASSED_PICO_PENDING",
+      "operating": {
+        "name": "Cockroach",
+        "true_positive": 13,
+        "false_positive": 0,
+        "false_negative": 3,
+        "precision": 1.0,
+        "recall": 0.8125
+      },
+      "negative_images": 16,
+      "negative_false_positives": 0,
+      "model_sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+      "plan_sha256": "8c78c1eb979399fd041fa5c40e9f4fe837900685209bb2cb2acc38b4e80aefd0",
+      "report_sha256": "fe3593c2978343658cfd4016c7c08667badcd5d70362ea1ec7bd3d0e37048750",
+      "deployment_changed": false,
+      "pico_test": "NOT_PERFORMED",
+      "limitations": [
+        "32 public photos, 32 publisher observers; not a household or PICO benchmark",
+        "Diverse beetle confusers including ladybirds, longhorn, dung, ground and small larval forms; publisher taxonomy not expert-confirmed",
+        "Publisher taxonomy not independently expert verified"
+      ]
+    },
+    "scope": "Historical public-source test report only; no new weight download/reload or PICO validation performed in this audit"
+  },
+  "new_archive_entry": "gap-candidate-20261115-a",
+  "new_entry_deployment_accepted": false,
+  "models_after": 66
+}

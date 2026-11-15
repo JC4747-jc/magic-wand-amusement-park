@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using MagicMR;
 using NUnit.Framework;
 using UnityEngine;
@@ -16,6 +17,12 @@ public sealed class ParkInteractionTests
         var actor=target.AddComponent<ParkActor>();actor.scenario=scenario;actor.sharedMaterial=material;actor.Build();return actor;
     }
     [UnityTearDown] public IEnumerator Cleanup() { Object.Destroy(controllerObject);Object.Destroy(target);Object.Destroy(material);yield return null; }
+    IEnumerator Finish(ParkActor actor)
+    {
+        float deadline=Time.realtimeSinceStartup+3;
+        while(actor.Busy && Time.realtimeSinceStartup<deadline)yield return null;
+        Assert.IsFalse(actor.Busy,"Interaction failed to finish within three real seconds");
+    }
 
     [UnityTest] public IEnumerator ManualFitKeepsTrackingRootAndClearsOnLoss()
     {
@@ -67,19 +74,22 @@ public sealed class ParkInteractionTests
     [UnityTest] public IEnumerator BugRewardFragmentsCoinsAndResetKeepTheTrackedAnchor()
     {
         var actor=Create(ParkScenario.Bugs);Vector3 anchor=target.transform.position;
-        Assert.IsTrue(actor.TryAction(ParkAction.Awaken,anchor,true));yield return new WaitForSecondsRealtime(1.2f);
-        Assert.IsTrue(actor.visual.Find("Eyes").gameObject.activeSelf);
+        var skins=actor.GetComponentsInChildren<SkinnedMeshRenderer>(true);
+        Assert.IsNotEmpty(skins,"The insect must use the natural skinned representation");
+        Assert.IsTrue(actor.TryAction(ParkAction.Awaken,anchor,true));yield return Finish(actor);
+        Assert.IsTrue(skins.All(s=>s.enabled));
         Assert.IsTrue(actor.TryAction(ParkAction.Reward,anchor,true));
-        yield return new WaitForSecondsRealtime(.5f);
-        Assert.IsFalse(actor.visual.Find("Pixel body").GetComponent<Renderer>().enabled);
-        Assert.IsFalse(actor.visual.Find("Eyes").gameObject.activeSelf);
-        Assert.AreEqual("ParkFeedback_Coin",actor.visual.Find("Pooled feedback 8").GetComponent<MeshFilter>().sharedMesh.name);
-        Assert.IsTrue(actor.visual.Find("Pooled feedback 8").gameObject.activeSelf);
+        yield return Finish(actor);yield return null;
+        Assert.IsTrue(skins.All(s=>!s.enabled));
+        Assert.AreEqual(100,actor.VirtualScore);
+        var coins=actor.visual.GetComponentsInChildren<MeshFilter>(true)
+            .Where(f=>f.sharedMesh && f.sharedMesh.name=="ParkFeedback_Coin").ToArray();
+        Assert.IsTrue(coins.Any(f=>f.gameObject.activeInHierarchy),"Defeat must produce visible coin feedback");
         Assert.AreEqual(anchor,target.transform.position);
         actor.ResetEffects();yield return null;
-        Assert.IsTrue(actor.visual.Find("Pixel body").GetComponent<Renderer>().enabled);
+        Assert.IsTrue(skins.All(s=>s.enabled));Assert.AreEqual(0,actor.VirtualScore);
         Assert.IsFalse(actor.Busy);
-        Assert.IsFalse(actor.visual.Find("Pooled feedback 8").gameObject.activeSelf);
+        Assert.IsTrue(coins.All(f=>!f.gameObject.activeInHierarchy));
         Assert.AreEqual(anchor,target.transform.position);
     }
 
@@ -100,6 +110,12 @@ public sealed class ParkInteractionTests
         var actor=Create(ParkScenario.Room);Vector3 anchor=target.transform.position;
         Assert.IsFalse(actor.TryAction(ParkAction.Reward,anchor,true));
         actor.environmentAnchor=target.transform;actor.confirmedPlane=true;
+        Assert.IsFalse(actor.TryAction(ParkAction.Reward,anchor,true),"A confirmed plane must not silently switch Jellyfish to Candy");
+        Assert.IsTrue(actor.TryAction(ParkAction.Style,anchor,true));yield return Finish(actor);
+        Assert.IsTrue(actor.RoomCandySelected);
+        actor.confirmedPlane=false;
+        Assert.IsFalse(actor.TryAction(ParkAction.Reward,anchor,true),"Candy still requires a confirmed plane");
+        actor.confirmedPlane=true;
         Assert.IsTrue(actor.TryAction(ParkAction.Reward,anchor,true));yield return new WaitForSecondsRealtime(.5f);
         Assert.AreEqual("ParkFeedback_Candy",actor.visual.Find("Pooled feedback 0").GetComponent<MeshFilter>().sharedMesh.name);
         actor.enabled=false;yield return null;

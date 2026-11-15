@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<test-run id="2" testcasecount="6" result="Passed" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-15 10:38:41Z" end-time="2026-11-15 10:38:46Z" duration="5.4046493">
+  <test-suite type="TestSuite" id="1012" name="Magic MR Stereo YOLO" fullname="Magic MR Stereo YOLO" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-15 10:38:41Z" end-time="2026-11-15 10:38:46Z" duration="5.404649" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1008" name="MagicMR.ParkInteractionTests.dll" fullname="C:/Users/Administrator/Documents/ChatGPT/mr/.codex-tmp/restore-integration-validation/Library/ScriptAssemblies/MagicMR.ParkInteractionTests.dll" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-15 10:38:41Z" end-time="2026-11-15 10:38:46Z" duration="5.399584" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="16932" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestFixture" id="1001" name="ParkInteractionTests" fullname="ParkInteractionTests" classname="ParkInteractionTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-15 10:38:41Z" end-time="2026-11-15 10:38:46Z" duration="5.398229" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1005" name="BugRewardFragmentsCoinsAndResetKeepTheTrackedAnchor" fullname="ParkInteractionTests.BugRewardFragmentsCoinsAndResetKeepTheTrackedAnchor" methodname="BugRewardFragmentsCoinsAndResetKeepTheTrackedAnchor" classname="ParkInteractionTests" runstate="Runnable" seed="1899392633" result="Passed" start-time="2026-11-15 10:38:41Z" end-time="2026-11-15 10:38:43Z" duration="2.016176" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1002" name="ManualFitKeepsTrackingRootAndClearsOnLoss" fullname="ParkInteractionTests.ManualFitKeepsTrackingRootAndClearsOnLoss" methodname="ManualFitKeepsTrackingRootAndClearsOnLoss" classname="ParkInteractionTests" runstate="Runnable" seed="988156672" result="Passed" start-time="2026-11-15 10:38:43Z" end-time="2026-11-15 10:38:43Z" duration="0.020252" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1004" name="ManualSurfacesRequireConfirmationAndStayIndependentOfTargets" fullname="ParkInteractionTests.ManualSurfacesRequireConfirmationAndStayIndependentOfTargets" methodname="ManualSurfacesRequireConfirmationAndStayIndependentOfTargets" classname="ParkInteractionTests" runstate="Runnable" seed="14810073" result="Passed" start-time="2026-11-15 10:38:43Z" end-time="2026-11-15 10:38:43Z" duration="0.026611" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1003" name="OrientationConfirmationRequiresTrackingAndClearsOnLossAndReset" fullname="ParkInteractionTests.OrientationConfirmationRequiresTrackingAndClearsOnLossAndReset" methodname="OrientationConfirmationRequiresTrackingAndClearsOnLossAndReset" classname="ParkInteractionTests" runstate="Runnable" seed="174584323" result="Passed" start-time="2026-11-15 10:38:43Z" end-time="2026-11-15 10:38:43Z" duration="0.004254" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1006" name="PetFeedCancellationOnTargetLossDoesNotCommitAffection" fullname="ParkInteractionTests.PetFeedCancellationOnTargetLossDoesNotCommitAffection" methodname="PetFeedCancellationOnTargetLossDoesNotCommitAffection" classname="ParkInteractionTests" runstate="Runnable" seed="1611487896" result="Passed" start-time="2026-11-15 10:38:43Z" end-time="2026-11-15 10:38:45Z" duration="1.814625" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1007" name="RoomConfirmedSurfaceRewardAndDisableClearAllTransientState" fullname="ParkInteractionTests.RoomConfirmedSurfaceRewardAndDisableClearAllTransientState" methodname="RoomConfirmedSurfaceRewardAndDisableClearAllTransientState" classname="ParkInteractionTests" runstate="Runnable" seed="1067068208" result="Passed" start-time="2026-11-15 10:38:45Z" end-time="2026-11-15 10:38:46Z" duration="1.504733" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -1,0 +1,202 @@
+{
+  "purpose": "COMBINED_RESTORE_SOURCE_EDITOR_VALIDATION_NOT_HEADSET_ACCEPTANCE",
+  "source_input_commit": "315f89fdeb2c17ee20279bb225b26cefc23e3540",
+  "additional_source_patch": {
+    "path": "Assets/Tests/PlayMode/ParkInteractionTests.cs",
+    "sha256": "763620b0e98a89efb6d18813c5e987d913b8e536e5f9d694a2e277897ffd6050",
+    "scope": "Test-only adaptation to natural skinned insect and explicit Candy selection"
+  },
+  "unity": "6000.0.33f1",
+  "pico_integration": "3.4.0",
+  "script_compilation": "EDITOR_PASSED",
+  "scene_audit": {
+    "scenes": 14,
+    "missing_scripts": 0,
+    "unassigned_material_slots": 0
+  },
+  "nunit": {
+    "baseline": {
+      "passed": 4,
+      "failed": 2
+    },
+    "final_cases": [
+      {
+        "name": "BugRewardFragmentsCoinsAndResetKeepTheTrackedAnchor",
+        "result": "Passed",
+        "duration": "2.016176"
+      },
+      {
+        "name": "ManualFitKeepsTrackingRootAndClearsOnLoss",
+        "result": "Passed",
+        "duration": "0.020252"
+      },
+      {
+        "name": "ManualSurfacesRequireConfirmationAndStayIndependentOfTargets",
+        "result": "Passed",
+        "duration": "0.026611"
+      },
+      {
+        "name": "OrientationConfirmationRequiresTrackingAndClearsOnLossAndReset",
+        "result": "Passed",
+        "duration": "0.004254"
+      },
+      {
+        "name": "PetFeedCancellationOnTargetLossDoesNotCommitAffection",
+        "result": "Passed",
+        "duration": "1.814625"
+      },
+      {
+        "name": "RoomConfirmedSurfaceRewardAndDisableClearAllTransientState",
+        "result": "Passed",
+        "duration": "1.504733"
+      }
+    ],
+    "raw_xml_sha256": "c05dadb5602c12e2e1f168c0a6cdd37e0a21e275e6d295e0e9a8fd69ce16e4ce",
+    "published_xml": "nunit-results.xml"
+  },
+  "natural_geometry_checks": "PASSED",
+  "legacy_real_coroutine_scenes": 6,
+  "actual_saved_scene_flow": {
+    "scenes": 6,
+    "snapshots_captured": 30,
+    "published_action_frames": 6,
+    "runtime_error_logs": 0,
+    "run_id": "a82efad1d71145fd9c4c3c1276b2e4f6"
+  },
+  "resource_runs": {
+    "import": {
+      "exitCode": -1,
+      "guardStop": "Isolated import disk growth above 2 GiB",
+      "minimumSampledFreeRAMGiB": 4.742,
+      "maximumSampledDiskGrowthMiB": 2061.24,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "cached-import": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 4.826,
+      "maximumSampledDiskGrowthMiB": 339.27,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "nunit-before": {
+      "exitCode": -1,
+      "guardStop": "Host RAM below 3 GiB",
+      "minimumSampledFreeRAMGiB": 2.347,
+      "maximumSampledDiskGrowthMiB": 1561.21,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "nunit-headless-before": {
+      "exitCode": 2,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.999,
+      "maximumSampledDiskGrowthMiB": 1.12,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "nunit-headless-final": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.791,
+      "maximumSampledDiskGrowthMiB": 1.63,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "model-geometry": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 7.762,
+      "maximumSampledDiskGrowthMiB": 0.05,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "legacy-lifecycle": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.875,
+      "maximumSampledDiskGrowthMiB": 2.41,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "six-scene-ui": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.57,
+      "maximumSampledDiskGrowthMiB": 0.98,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    }
+  },
+  "log_evidence": {
+    "scene-audit": {
+      "local_log": ".codex-tmp/restore-combined-cached-import.log",
+      "sha256": "ab6fa26bb225f77e4a0656571c651bea23f953c1566603297bfc0646f3f0aa17",
+      "published_full_log": false,
+      "markers": [
+        "PROJECT_SCENE_AUDIT_PASS: 14 scenes, no missing scripts; unassigned material slots=0; runtime animation checks recorded separately"
+      ]
+    },
+    "natural-models": {
+      "local_log": ".codex-tmp/restore-combined-model-geometry.log",
+      "sha256": "1ee64c8eecfccdce6be57bc908f50d7c8f09f680a0db45a5b5c3a1b0732a0791",
+      "published_full_log": false,
+      "markers": [
+        "NATURAL_BRONZE_MODEL_PASS: 17148 original triangles/one skin/two bones; original 1K PBR; 129 independent LBS samples at 35cm fit/37deg yaw; bottom_error_m=2.980232E-08 motion_m=0.00746977 loop_seam_m=0; 512 steps zero allocation; Undo/loss/invalid-time reset",
+        "NATURAL_PLANT_SKIN_PASS: 8929 triangles, 2241/2241 vertices deformed; pot/soil invariant through growth and sway",
+        "NATURAL_TREE_RUNTIME_PASS: 121000/121000 leaf vertices deformed; fixed trunk/anchor, invalid-wind recovery, base-fixed growth/Undo and seasonal Reset",
+        "NATURAL_TREE_MARK_CHECK_PASS: independent nearest-triangle max distance=0.0009000198 m, 97 vertices/160 triangles, matte bark palette, shared attached geometry",
+        "NATURAL_INSECT_IK_PASS Cockroach: 6 legs, max ankle error=4.068953E-05, min local height=-3.218837E-08, 256 steps managed bytes=0; translated/yawed anchor invariant",
+        "NATURAL_INSECT_PLACEMENT_PASS Cockroach: independent skinned world geometry matches confirmed bottom/height within 0.5 mm; yaw and anchor preserved",
+        "NATURAL_INSECT_IK_PASS Spider: 8 legs, max ankle error=6.505813E-05, min local height=-5.682201E-05, 256 steps managed bytes=0; translated/yawed anchor invariant",
+        "NATURAL_INSECT_PLACEMENT_PASS Spider: independent skinned world geometry matches confirmed bottom/height within 0.5 mm; yaw and anchor preserved",
+        "NATURAL_PET_MODEL_PASS: 8646 triangles, three skins, original 40-bone rig; UV0 reprojected normals; five independently skinned placement poses, max bottom error=2.980232E-07; yaw/tracking anchor fixed",
+        "NATURAL_CAT_WALK_GEOMETRY_PASS: 193 imported-clip samples at 0.35m fit/37 degree yaw; minimum_ground_m=8.907914E-05 maximum_stance_error_m=0.0001761019 loop_seam_m=0 four_paw_lifts_m=0.01918451,0.01918231,0.01918526,0.01917803; original topology/rig, fixed tracking anchor; authored in-place preview, no real animal/hardware claim",
+        "NATURAL_DOG_MODEL_PASS: original 849 triangles/47 bones/256px coat; confirmed yaw and actual skin bottom fit; five sniff poses foot_error_m=0 skin_motion_m=0.01271678 head_angle_deg=8.291719; tracking root fixed",
+        "NATURAL_JELLYFISH_RUNTIME_PASS: 5730 vertices, 9248 nondegenerate triangles, four anatomy roles, one draw; 512 steps zero managed bytes; shared geometry/anchor invariant, invalid-time/reset recovery",
+        "NATURAL_ROOM_DETAIL_PASS: 24204 static triangles, 9 renderers; source CC0 chair/vase, packed PBR channels, supported bases, metric UV/tangents, wall opening and shared geometry; nominal cutaway, no room reconstruction claim",
+        "STEREO_RECORDER_REGRESSION_PASS: exact sent capture association, raw/pair/pose commit, duplicate/cap rejection; synthetic I/O fixture only",
+        "PARK_NATURAL_MODEL_CHECKS_PASS: component albedo restoration, finite cached meshes and renderer budgets; editor only"
+      ]
+    },
+    "legacy-lifecycle": {
+      "local_log": ".codex-tmp/restore-combined-legacy-lifecycle.log",
+      "sha256": "5b5172d43ecca7f11d6721ab95559017f50933ef9681707a8f5984f05367fa7a",
+      "published_full_log": false,
+      "markers": [
+        "PARK_PLAYMODE_SCENE_PASS: Tree synthetic command, actual coroutine completion and Reset; no PICO gesture validation",
+        "PARK_PLAYMODE_SCENE_PASS: Bugs synthetic command, actual coroutine completion and Reset; no PICO gesture validation",
+        "PARK_PLAYMODE_SCENE_PASS: Statue synthetic command, actual coroutine completion and Reset; no PICO gesture validation",
+        "PARK_PLAYMODE_ROOM_LIFECYCLE_PASS: synthetic ceiling, effect selection/switch/re-summon, sustained 24-object pool and completed Stop",
+        "PARK_PLAYMODE_SCENE_PASS: Room synthetic command, actual coroutine completion and Reset; no PICO gesture validation",
+        "PARK_PLAYMODE_PLANT_BLOOM_PASS: synthetic growth/bloom/undo/repeat/reset with actual coroutines; no YOLO or PICO acceptance",
+        "PARK_PLAYMODE_SCENE_PASS: Plant synthetic command, actual coroutine completion and Reset; no PICO gesture validation",
+        "PARK_PLAYMODE_PET_LIFECYCLE_PASS: actual open/close coroutines and synthetic tracked-loss recovery",
+        "PARK_PLAYMODE_SCENE_PASS: Pet synthetic command, actual coroutine completion and Reset; no PICO gesture validation",
+        "PARK_PLAYMODE_PASS: six real coroutine runs; synthetic inputs, no headset validation"
+      ]
+    },
+    "six-scene-ui": {
+      "local_log": ".codex-tmp/restore-combined-six-scene-ui.log",
+      "sha256": "937add94b0a661409cc802de699015d5c541558fc30038237948a48d7b14390d",
+      "published_full_log": false,
+      "markers": [
+        "PARK_ACTUAL_SCENE_FLOW_PASS ParkTree original camera, callbacks, virtual switch, replay boundaries, cleanup",
+        "PARK_ACTUAL_SCENE_FLOW_PASS ParkBugs original camera, callbacks, virtual switch, replay boundaries, cleanup",
+        "PARK_ACTUAL_SCENE_FLOW_PASS ParkStatue original camera, callbacks, virtual switch, replay boundaries, cleanup",
+        "PARK_ACTUAL_SCENE_FLOW_PASS ParkRoom original camera, callbacks, virtual switch, replay boundaries, cleanup",
+        "PARK_ACTUAL_SCENE_FLOW_PASS ParkPlant original camera, callbacks, virtual switch, replay boundaries, cleanup",
+        "PARK_ACTUAL_SCENE_FLOW_PASS ParkPet original camera, callbacks, virtual switch, replay boundaries, cleanup",
+        "PARK_ACTUAL_SIX_SCENE_FLOW_PASS"
+      ]
+    }
+  },
+  "guard_interpretation": [
+    "Initial fresh import stopped at the 2 GiB additional disk budget, then continued from its own cache within a 512 MiB allowance.",
+    "First graphical NUnit run stopped below 3 GiB host free RAM; no XML was produced, so no test verdict was assigned.",
+    "CPU lifecycle tests subsequently used -nographics and --burst-disable-compilation; rendered six-scene UI ran with graphics and Burst compilation disabled.",
+    "Host disk deltas include concurrent OS activity; observed pagefile allocation does not explain or attribute the entire earlier growth.",
+    "Package caches were not shared or junctioned: byte audit found a generated ARCore test asset difference.",
+    "All figures are five-second samples, not continuous hardware peaks."
+  ],
+  "not_accepted": [
+    "Physical pointer and headset gestures",
+    "YOLO accuracy on PICO captures",
+    "Native cameras/pose/both eyes/device performance",
+    "Fresh Android builds of this combined tree; existing four APKs were built from the main workspace"
+  ],
+  "raw_credentials_recorded": false
+}

@@ -1,5 +1,31 @@
 # Magic Wand Amusement Park
 
+## 当前工作区接续（2026-11-15）
+
+五个远程分支已审查并选择性整合；默认主线提供 Tree、Bugs、Statue、Room、Plant、Pet 六个 Park 内容入口。自然树、十二卷、石雕、双色猫、猎狼犬、阅读角家具已采用有来源和许可记录的模型/原始贴图；昆虫和水母效果使用项目原创几何。视觉方向为自然材质和克制反馈，生成概念图不作为模型交付。
+
+主线的内容菜单可进入虚拟测试，Tree 支持 Natural/Fantasy，Bugs 支持 Cockroach/Spider，Pet 支持 Cat/Dog 和原地步态。虚拟动作与真实识别分开；尚无树/虫/雕像已接受自定义权重。用户现已要求开展YOLO训练、验证与接入，按全分支计划顶部的修订目标和资源限额执行，推理服务仍不隐式训练。当前机器未连接PICO，下面旧记录中的“已安装”和实测数字属于原机器/原版本，不能套用于本次产物。
+
+最新构建、模型动画证据、资源限额和14场景验收表以 [DEVELOPMENT_STATUS.md](DEVELOPMENT_STATUS.md) 与 [BRANCH_SCENE_PLAN.md](BRANCH_SCENE_PLAN.md) 为准。Unity 当前使用6000.0.33f1，共享旧6000.0.26f1的Android工具链；构建入口为 `Tools/build_android_bounded.ps1`。F2G官方样例/跨系统服务已通过，真实头显姿态、完整手势、双眼画面与性能仍待设备验收。
+
+## Unity 编辑器里看模拟效果
+
+1. Unity Hub添加项目根目录，选择6000.0.33f1；Project面板进入Assets → Scenes，打开ParkRoom（或其他Park场景）。
+2. 点击顶部▶ Play，切换Game；双击Game标签可放大。若Project Validation面板遮挡预览，关闭面板即可继续查看，签名/设备/样例提示另行验收。
+3. 点击左侧Virtual test，等待模型进入。直接打开ParkRoom无需识别服务；跨内容进入Room时，先点Confirm room完成手动空间提示，再点Room。
+4. 使用下表鼠标按钮。编辑器黑色背景正常，没有PICO透视；仅看模型和动画无需头显、F2G或训练。
+
+| 内容 | 鼠标预览操作 |
+| --- | --- |
+| Room | Test awaken显示水母，Stop收起 |
+| Statue | Marble statue / Bronze beast选择模型，然后Test awaken；Stop停止动作 |
+| Tree | Natural tree / Fantasy tree，然后Test awaken |
+| Bugs | Cockroach / Spider，然后Test defeat |
+| Plant | Test grow / Test bloom |
+| Pet | Preview Cat / Preview Dog，然后Walk in place；同一按钮变为Stop walking |
+
+再次点击顶部▶结束模拟。数字2、T、Z、R等为设计中的桌面快捷键，需Game获得焦点；本机原生按键路径仍在诊断，当前优先使用上述实际点击验证的鼠标入口。
+
 基于 Unity 和 PICO 的 MR 手势交互项目。当前主线通过 **YOLO 检测真实打火机 + 双目图像估计三维位置**，将虚拟打火机叠加到实物上，再用手势触发碳化、生命化、躲闪、变花和放大效果。
 
 当前默认场景为 `Assets/Scenes/BridgeStereoFusion.unity`，默认跟随模式为 **VisualAverage（1.11.0，最近三帧视觉位置加权平均）**。仓库同时保留桌面卡牌捕捉、AR 图像追踪和早期 MR 场景。
@@ -221,4 +247,4 @@ adb pull /storage/emulated/0/Android/data/com.yn.picmagicmr.stereo.optimized/fil
 
 ## Unity animation and bounded YOLO delivery (2026-11-15)
 
-See [integration steps and official references](Reports/GITHUB_INTEGRATION.txt), [delivery checksums](Reports/github-delivery-20261115/delivery-manifest.json), and [offline animation previews](Previews/scene-animation-20261115). The new two-class model is a rejected candidate archive, not a deployment release. Cat/dog already have COCO pretrained classes; headset-domain validation remains pending. Source tree was validated in the current workspace; the combined restore branch, including its legacy-only test scripts, still needs a fresh Unity verification before merging.
+See [integration steps and official references](Reports/GITHUB_INTEGRATION.txt), [delivery checksums](Reports/github-delivery-20261115/delivery-manifest.json), and [offline animation previews](Previews/scene-animation-20261115). The new two-class model is a rejected candidate archive, not a deployment release. Cat/dog already have COCO pretrained classes; headset-domain validation remains pending. The isolated combined restore tree passed 14-scene auditing, natural-model geometry, six legacy coroutine flows, six PlayMode tests, and six rendered saved-scene UI flows. See [combined validation](Reports/github-delivery-20261115/combined-validation/summary.json) for exact scope and guard stops. Existing four APKs were built from the main workspace, not this combined tree; physical PICO acceptance remains pending.

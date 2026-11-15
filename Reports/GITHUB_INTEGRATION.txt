@@ -1,6 +1,7 @@
 YOLO、Unity 动画与 GitHub 分支整合（2026-11-15）
 
-当前状态：交付文件已在本地准备；GitHub 设备登录仍待完成，尚未推送。
+当前状态：GitHub认证和首次推送已完成；整合分支及验证补充通过现有PR交付。
+PR：https://github.com/JC4747-jc/magic-wand-amusement-park/pull/1
 目标按用户的“4drestore”解释为现有 restore-4d-lighter 分支；4d 是另一个独立分支。
 
 1. Codex 辅助训练的实际方法
@@ -51,7 +52,7 @@ Unity 6000.0.33f1，PICO Integration 3.4.0。当前本机 SDK 引用 D:/Unity/PI
 5. GitHub整合步骤
 先保留 restore-4d-lighter 原有训练归档和报告，在 codex/ 前缀的提交分支上
 追加新候选、动画源资产及小预览。对照交付清单检查 SHA、文件范围、许可和状态。
-认证成功并推送后，在 GitHub Compare & pull request 设置：
+现有PR的分支设置：
 base=restore-4d-lighter；compare=codex/yolo-animation-integration-20261115。
 检查 Files changed、Unity 编译/场景回归及模型状态，通过后合并该PR。
 如还要汇总到4d，再单独建立 base=4d、compare=restore-4d-lighter 的PR，处理
@@ -63,3 +64,13 @@ https://docs.github.com/en/pull-requests/reference/pull-request-merges
 选Git LFS或Release。当前新候选约5.17MiB、视频合计约1.07MiB，不需要为它们
 重写仓库历史。Library、Temp、环境、SDK、APK、原始数据和凭据不进入本次提交。
 https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github
+
+6. 整合源码的独立Unity验证
+隔离工作树以315f89f为基础，保留restore独有旧脚本。14场景无丢失脚本/材质槽，
+自然模型几何、6场景真实协程和6个保存场景的实际按钮流程通过；30张截图、0运行时错误。
+旧NUnit初测4通过/2失败，修正旧像素体断言和房间Candy显式选择后6/6通过，未改产品行为。
+CPU测试禁用图形和Burst编译；六场景界面使用实际图形渲染。前一次导入磁盘守卫和
+图形NUnit内存守卫触发均保留，不计作成功。最终渲染运行最低采样空闲RAM6.57GiB，
+新增磁盘0.98MiB；完整范围见combined-validation/summary.json。不是实机或新分支Android包验收。
+旧模型归档共65条，部署接受数0；cockroach-positive-v16仅公开图pilot通过、PICO待验收，
+未批量下载旧权重，也未将其自动部署。详见prior-model-archive-audit.json。
