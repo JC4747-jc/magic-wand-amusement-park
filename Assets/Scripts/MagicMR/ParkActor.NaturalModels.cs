@@ -25,7 +25,11 @@ namespace MagicMR
             {
                 body.Add(renderer);componentColors[renderer]=Color.white;
             }
+            statueCartoon=model.AddComponent<NaturalCartoonStyle>();statueCartoon.Initialize();
         }
+
+        NaturalCartoonStyle statueCartoon;
+        public bool StatueCartoon=>scenario==ParkScenario.Statue&&state.style==1;
 
         void BuildNaturalRoom()
         {

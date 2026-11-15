@@ -314,20 +314,17 @@ namespace MagicMR
                 case ParkAction.Style:
                     if(scenario==ParkScenario.Plant) {SetHighlighted(true);Feedback="Plant selected";break;}
                     if(scenario==ParkScenario.Pet) {state.petComic=!state.petComic;Feedback=state.petComic?"Pet: manga outline":"Pet: natural appearance";break;}
+                    if(scenario==ParkScenario.Statue) {state.style=1-state.style;Feedback=state.style==1?"Statue: cartoon appearance":"Statue: original material";break;}
                     if(scenario==ParkScenario.Room && (state.awake || state.rewarded || state.bubble))
                         yield return FadeFantasyEffects();
                     if(scenario==ParkScenario.Tree && !magicTree) {state.style=1-state.style;Feedback=state.style==1?"Season tree: anime canopy":"Season tree: natural canopy";}
                     else if(scenario==ParkScenario.Tree) {state.style=1-state.style;Feedback=state.style==1?"Willow: dark woodland":"Willow: natural woodland";}
                     else {
-                        int variants=scenario==ParkScenario.Room?2:scenario==ParkScenario.Statue?Mathf.Max(1,story.Split(new[]{'\n'},StringSplitOptions.RemoveEmptyEntries).Length):3;
+                        int variants=scenario==ParkScenario.Room?2:3;
                         state.style=(state.style+1)%variants;
                         targetColor=state.style==1?new Color(.15f,.16f,.2f):state.style==2?new Color(.9f,.3f,.5f):new Color(.25f,.65f,.4f);
                     }
                     if(scenario==ParkScenario.Room)Feedback="Selected effect: "+(state.style==0?"Jellyfish":"Candy rain; confirm ceiling first");
-                    if(scenario==ParkScenario.Statue) {
-                        var chapters=story.Split(new[]{'\n'},StringSplitOptions.RemoveEmptyEntries);
-                        Feedback=chapters.Length>0?"Fantasy chapter "+(state.style+1)+": "+chapters[state.style%chapters.Length]+"\nSource: "+storySource:"No story chapters configured";
-                    }
                     break;
                 case ParkAction.Awaken:
                     state.awake=true;Emit(ParkAction.Awaken,16);
@@ -338,7 +335,6 @@ namespace MagicMR
                     if(scenario==ParkScenario.Tree&&!magicTree)Feedback="Season tree awakened";
                     if(scenario==ParkScenario.Statue) {
                         var firstChapters=story.Split(new[]{'\n'},StringSplitOptions.RemoveEmptyEntries);
-                        state.style=0;
                         Feedback=firstChapters.Length>0?"Fantasy chapter 1: "+firstChapters[0]+"\nSource: "+storySource:"No story configured";
                     }
                     break;
@@ -496,6 +492,7 @@ namespace MagicMR
         void ApplyVisibility()
         {
             if(petOutline)petOutline.SetVisible(state.petComic&&tracked);
+            if(statueCartoon)statueCartoon.SetActive(state.style==1&&tracked);
             if(scenario==ParkScenario.Bugs)foreach(var r in body)if(r)r.enabled=!state.rewarded || bugDefeatProgress<1;
             eyes.gameObject.SetActive(state.awake && !(scenario==ParkScenario.Bugs && state.rewarded) && !(scenario==ParkScenario.Tree&&magicTree));
             if(plantSpeech)plantSpeech.gameObject.SetActive(state.awake);
