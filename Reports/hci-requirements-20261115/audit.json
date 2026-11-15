@@ -1,0 +1,921 @@
+{
+  "schema": 1,
+  "date": "2026-11-15",
+  "scope": "Human-reviewed semantic crosswalk of 8 HCI use cases x 4 dimensions. Source presence is not runtime acceptance.",
+  "requirement_source": {
+    "commit": "eae26868f857a7607a9fa2973fe9bc88c0260740",
+    "path": "Assets/Scripts/MagicMR/HciMeetingScenario.cs",
+    "sha256": "ecf1b7e3f26788a5254074f138631dbc604d83ed9764699551624585268521c2",
+    "meeting_pdf": "not present in reviewed branch tracked files"
+  },
+  "global_gaps": [
+    "ParkController.Dispatch does not directly write DataLogger events; verify UI/gesture/session coverage end-to-end before claiming HCI logs.",
+    "ExperimentConditionSwitcher currently gates GestureManager/RealityEditor; Park action gating must be audited and integrated for comparable conditions.",
+    "Existing 14-scene startup/build reports do not prove 32 semantic requirements or physical PICO input."
+  ],
+  "rows": [
+    {
+      "id": "LighterDemon.A",
+      "use_case": "打火机 · 焦炭小恶魔",
+      "dimension": "Appearance",
+      "gesture": "Pinch",
+      "required_effect": "焦炭火",
+      "code_review": "partial",
+      "finding": "Appearance 路由及烧焦材质存在；焦炭火持续表现须对照渲染复验。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/RealityEditor.cs",
+          "sha256": "e2352ba1770d82250b4c9cce646aa1feb38e83a5e913dca1440a1fbced8baef4",
+          "line": 315,
+          "anchor": "case EditDimension.Appearance"
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false
+    },
+    {
+      "id": "LighterDemon.B",
+      "use_case": "打火机 · 焦炭小恶魔",
+      "dimension": "Agency",
+      "gesture": "Circle",
+      "required_effect": "翅膀咳嗽烟",
+      "code_review": "gap",
+      "finding": "Agency 有眼睛/生命化；当前 RealityEditor 未提供原分支翅膀与咳嗽烟的完整对应证据。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/RealityEditor.cs",
+          "sha256": "e2352ba1770d82250b4c9cce646aa1feb38e83a5e913dca1440a1fbced8baef4",
+          "line": 318,
+          "anchor": "case EditDimension.Agency"
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false
+    },
+    {
+      "id": "LighterDemon.C",
+      "use_case": "打火机 · 焦炭小恶魔",
+      "dimension": "Rule",
+      "gesture": "Swipe",
+      "required_effect": "躲闪",
+      "code_review": "partial",
+      "finding": "Rule 躲闪与返回逻辑存在；本轮未重测 HCI 输入及实物锚点。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/RealityEditor.cs",
+          "sha256": "e2352ba1770d82250b4c9cce646aa1feb38e83a5e913dca1440a1fbced8baef4",
+          "line": 321,
+          "anchor": "case EditDimension.Rule"
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false
+    },
+    {
+      "id": "LighterDemon.D",
+      "use_case": "打火机 · 焦炭小恶魔",
+      "dimension": "Deconstruction",
+      "gesture": "Fist-open",
+      "required_effect": "爆炸净化开花",
+      "code_review": "partial",
+      "finding": "Deconstruction 变花逻辑存在；爆炸净化、完整前后状态与实机待逐项复验。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/RealityEditor.cs",
+          "sha256": "e2352ba1770d82250b4c9cce646aa1feb38e83a5e913dca1440a1fbced8baef4",
+          "line": 324,
+          "anchor": "case EditDimension.Deconstruction"
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false
+    },
+    {
+      "id": "WhompingWillow.A",
+      "use_case": "打人柳",
+      "dimension": "Appearance",
+      "gesture": "Pinch",
+      "required_effect": "黑暗风",
+      "code_review": "mismatch",
+      "finding": "Pinch/Style 当前推进季节，没有对应黑暗风转换。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 313,
+          "anchor": "case ParkAction.Style"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "WhompingWillow.B",
+      "use_case": "打人柳",
+      "dimension": "Agency",
+      "gesture": "Circle",
+      "required_effect": "枝条抽打",
+      "code_review": "mismatch",
+      "finding": "Circle/Awaken 设置 awake/scar；抽打 bend 位于 Wind，动作维度错位。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 330,
+          "anchor": "case ParkAction.Awaken"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "WhompingWillow.C",
+      "use_case": "打人柳",
+      "dimension": "Rule",
+      "gesture": "Swipe",
+      "required_effect": "树疤呼吸",
+      "code_review": "mismatch",
+      "finding": "Swipe/Wind 驱动枝条与花叶；树疤由 Awaken 开启，非 C 的独立反馈。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 356,
+          "anchor": "case ParkAction.Wind"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "WhompingWillow.D",
+      "use_case": "打人柳",
+      "dimension": "Deconstruction",
+      "gesture": "Fist-open",
+      "required_effect": "封印宝箱",
+      "code_review": "partial",
+      "finding": "Reward 有 scar 前置、封印与宝箱可见性；需连贯故事动作与真实手势验收。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 347,
+          "anchor": "case ParkAction.Reward"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "PixelCritter.A",
+      "use_case": "像素虫",
+      "dimension": "Appearance",
+      "gesture": "Pinch",
+      "required_effect": "8bit",
+      "code_review": "partial",
+      "finding": "共用火机 Pinch 已路由 Style，合成轨迹通过；像素 shader 候选是否清晰达到 8bit 表现仍需验收。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 313,
+          "anchor": "case ParkAction.Style"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "PixelCritter.B",
+      "use_case": "像素虫",
+      "dimension": "Agency",
+      "gesture": "Circle",
+      "required_effect": "卡顿舞",
+      "code_review": "partial",
+      "finding": "Circle/Awaken 有离散左右舞步和昆虫步态；需检查组合后是否清晰表达卡顿舞。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 330,
+          "anchor": "case ParkAction.Awaken"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "PixelCritter.C",
+      "use_case": "像素虫",
+      "dimension": "Rule",
+      "gesture": "Swipe",
+      "required_effect": "眩晕",
+      "code_review": "partial",
+      "finding": "Swipe/Wind 有 720 度旋转；眩晕姿态、恢复与可读性需实际对照。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 356,
+          "anchor": "case ParkAction.Wind"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "PixelCritter.D",
+      "use_case": "像素虫",
+      "dimension": "Deconstruction",
+      "gesture": "Fist-open",
+      "required_effect": "爆金币",
+      "code_review": "partial",
+      "finding": "共用火机 Fist-open 已路由 Reward，合成轨迹通过；金币表现与真实识别闭环仍需验收。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 347,
+          "anchor": "case ParkAction.Reward"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "HistoricStatue.A",
+      "use_case": "历史石像",
+      "dimension": "Appearance",
+      "gesture": "Pinch",
+      "required_effect": "卡通",
+      "code_review": "mismatch",
+      "finding": "Style 同时推进故事章节与通用材质样式，不能作为独立卡通外观维度验收。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 313,
+          "anchor": "case ParkAction.Style"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "HistoricStatue.B",
+      "use_case": "历史石像",
+      "dimension": "Agency",
+      "gesture": "Circle",
+      "required_effect": "伸懒腰",
+      "code_review": "partial",
+      "finding": "Awaken 有扫描/苏醒及首章提示；当前石雕/牛首不能证明伸懒腰动作完整。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 330,
+          "anchor": "case ParkAction.Awaken"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "HistoricStatue.C",
+      "use_case": "历史石像",
+      "dimension": "Rule",
+      "gesture": "Swipe",
+      "required_effect": "讲史",
+      "code_review": "partial",
+      "finding": "Wind 显示 story 并可播放 storyAudio；当前文案标明原创幻想，不是已核实藏品历史。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 356,
+          "anchor": "case ParkAction.Wind"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "HistoricStatue.D",
+      "use_case": "历史石像",
+      "dimension": "Deconstruction",
+      "gesture": "Fist-open",
+      "required_effect": "荷花许愿树",
+      "code_review": "partial",
+      "finding": "Reward 需要确认平面并显示 environment；荷花/许愿树形态与互动需逐项渲染验收。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 347,
+          "anchor": "case ParkAction.Reward"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "Bedroom.A",
+      "use_case": "出租屋",
+      "dimension": "Appearance",
+      "gesture": "Pinch",
+      "required_effect": "水彩/赛博",
+      "code_review": "mismatch",
+      "finding": "Style 选择水母/糖果雨，未实现独立水彩/赛博房间风格转换。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 313,
+          "anchor": "case ParkAction.Style"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "Bedroom.B",
+      "use_case": "出租屋",
+      "dimension": "Agency",
+      "gesture": "Circle",
+      "required_effect": "落地窗",
+      "code_review": "mismatch",
+      "finding": "Circle/Awaken 唤出当前灯/糖果效果；portal 由 Pull 控制，B 落地窗映射错位。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 330,
+          "anchor": "case ParkAction.Awaken"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "Bedroom.C",
+      "use_case": "出租屋",
+      "dimension": "Rule",
+      "gesture": "Swipe",
+      "required_effect": "水母灯",
+      "code_review": "mismatch",
+      "finding": "水母由 Awaken 控制，Swipe/Wind 不开启灯；C 映射错位。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 356,
+          "anchor": "case ParkAction.Wind"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "Bedroom.D",
+      "use_case": "出租屋",
+      "dimension": "Deconstruction",
+      "gesture": "Fist-open",
+      "required_effect": "糖果雨",
+      "code_review": "partial",
+      "finding": "Reward 依赖已选 Candy 和确认天花板；有持续限量糖果雨，需在 HCI 流程复验。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 347,
+          "anchor": "case ParkAction.Reward"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "DeskPlant.A",
+      "use_case": "桌面植物",
+      "dimension": "Appearance",
+      "gesture": "Pinch",
+      "required_effect": "选中",
+      "code_review": "repaired_editor_action_verified",
+      "finding": "本地 A 改为选中、不触发开花；已共用火机采样/仲裁并通过合成轨迹，真实输入待验收。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 313,
+          "anchor": "case ParkAction.Style"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "synthetic_dimension_action_verified; physical_input_not_verified",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "editor_evidence": "Reports/hci-shared-gestures-20261115/manifest.json",
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "DeskPlant.B",
+      "use_case": "桌面植物",
+      "dimension": "Agency",
+      "gesture": "Circle",
+      "required_effect": "拟人说话",
+      "code_review": "repaired_editor_action_verified",
+      "finding": "本地 B 有标注虚拟身份的文字对话与口型；尚无音频语音及真手势验收。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 330,
+          "anchor": "case ParkAction.Awaken"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "synthetic_dimension_action_verified; physical_input_not_verified",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "editor_evidence": "Reports/hci-shared-gestures-20261115/manifest.json",
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "DeskPlant.C",
+      "use_case": "桌面植物",
+      "dimension": "Rule",
+      "gesture": "Swipe",
+      "required_effect": "长大/幼苗",
+      "code_review": "repaired_editor_action_verified",
+      "finding": "本地 C 切换长大/幼苗，叶片生长且花盆固定；共用火机横挥合成轨迹通过，真实输入待验收。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 356,
+          "anchor": "case ParkAction.Wind"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "synthetic_dimension_action_verified; physical_input_not_verified",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "editor_evidence": "Reports/hci-shared-gestures-20261115/manifest.json",
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "DeskPlant.D",
+      "use_case": "桌面植物",
+      "dimension": "Deconstruction",
+      "gesture": "Fist-open",
+      "required_effect": "去掉效果",
+      "code_review": "repaired_editor_action_verified",
+      "finding": "本地 D 清除对话/开花/生长，保留选择和标定，可撤销；不是完整线路验收。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 347,
+          "anchor": "case ParkAction.Reward"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "synthetic_dimension_action_verified; physical_input_not_verified",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "editor_evidence": "Reports/hci-shared-gestures-20261115/manifest.json",
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "MangaPet.A",
+      "use_case": "漫画萌宠",
+      "dimension": "Appearance",
+      "gesture": "Pinch",
+      "required_effect": "漫画描边",
+      "code_review": "mismatch",
+      "finding": "Pinch/Style 选择梦境内容并驱动通用样式；明确的漫画描边尚需独立实现/验证。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 313,
+          "anchor": "case ParkAction.Style"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "MangaPet.B",
+      "use_case": "漫画萌宠",
+      "dimension": "Agency",
+      "gesture": "Circle",
+      "required_effect": "梦境泡",
+      "code_review": "repaired_editor_action_verified",
+      "finding": "本轮修复 Awaken 打开梦境且重复 B 不关闭；需绑定独立 Play Mode 报告，真实画圈仍未验收。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 330,
+          "anchor": "case ParkAction.Awaken"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "synthetic_controller_action_verified; physical_input_and_full_use_case_not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "editor_evidence": "Reports/hci-shared-gestures-20261115/manifest.json",
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "MangaPet.C",
+      "use_case": "漫画萌宠",
+      "dimension": "Rule",
+      "gesture": "Swipe",
+      "required_effect": "戳破",
+      "code_review": "repaired_editor_action_verified",
+      "finding": "本轮修复 Wind 戳破梦境并拒绝空泡；保留直接触碰的头部定位门控，真实横挥仍未验收。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 356,
+          "anchor": "case ParkAction.Wind"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "synthetic_controller_action_verified; physical_input_and_full_use_case_not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "editor_evidence": "Reports/hci-shared-gestures-20261115/manifest.json",
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "MangaPet.D",
+      "use_case": "漫画萌宠",
+      "dimension": "Deconstruction",
+      "gesture": "Fist-open",
+      "required_effect": "好感+1",
+      "code_review": "partial",
+      "finding": "Reward 增加 affection、收起气泡并发出心形；本轮 Play 检查覆盖状态与撤销，不代替真手势。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 347,
+          "anchor": "case ParkAction.Reward"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "synthetic_controller_action_verified; physical_input_and_full_use_case_not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "editor_evidence": "Reports/hci-shared-gestures-20261115/manifest.json",
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "SeasonTree.A",
+      "use_case": "四季树",
+      "dimension": "Appearance",
+      "gesture": "Pinch",
+      "required_effect": "动漫季",
+      "code_review": "mismatch",
+      "finding": "Style 当前推进季节，未独立表达 A 动漫风格切换。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 313,
+          "anchor": "case ParkAction.Style"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "SeasonTree.B",
+      "use_case": "四季树",
+      "dimension": "Agency",
+      "gesture": "Circle",
+      "required_effect": "拟人",
+      "code_review": "partial",
+      "finding": "Awaken 开启生命化状态，但通用 Eyes 只是节点，树表情几何与拟人表达仍需补齐验收。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 330,
+          "anchor": "case ParkAction.Awaken"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "SeasonTree.C",
+      "use_case": "四季树",
+      "dimension": "Rule",
+      "gesture": "Swipe",
+      "required_effect": "春夏秋冬",
+      "code_review": "mismatch",
+      "finding": "四季逻辑存在于 Style/Grow，Swipe/Wind 只触发风动花叶；C 映射错位。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 356,
+          "anchor": "case ParkAction.Wind"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    },
+    {
+      "id": "SeasonTree.D",
+      "use_case": "四季树",
+      "dimension": "Deconstruction",
+      "gesture": "Fist-open",
+      "required_effect": "风吹落叶",
+      "code_review": "mismatch",
+      "finding": "自然树 Reward 会设置奖励并显示树的 reward；风吹落叶位于 Wind，D 映射错位。",
+      "source_refs": [
+        {
+          "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+          "sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+          "line": 347,
+          "anchor": "case ParkAction.Reward"
+        },
+        {
+          "path": "Assets/Scripts/MagicMR/ParkController.cs",
+          "sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+          "line": 412,
+          "anchor": "public EditDimension ProcessHandSample("
+        }
+      ],
+      "hci_editor_acceptance": "not_complete",
+      "hci_android_acceptance": "not_verified",
+      "pico_acceptance": "not_verified",
+      "completed": false,
+      "shared_gesture_acceptance": "six_content_profiles_synthetic_live_entry_verified; real_XR_and_YOLO_not_verified",
+      "shared_gesture_evidence": "Reports/hci-shared-gestures-20261115/manifest.json"
+    }
+  ]
+}

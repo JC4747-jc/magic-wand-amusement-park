@@ -1,0 +1,161 @@
+{
+  "scope": "Saved ParkPet Play Mode with synthetic controller actions; actual rendered frames. No physical gestures/recognition/PICO/Android acceptance.",
+  "isolated_asset_note": "Cat gait v2 candidate may differ from main FBX; model differences explicitly retained below. This validates interaction state, not final cat animation acceptance.",
+  "sources": [
+    {
+      "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+      "main_sha256": "3fc62264b37e4651ce708583f523f29fe5c8baefc829468dcd1688a2540c21c3",
+      "tested_isolated_sha256": "3fc62264b37e4651ce708583f523f29fe5c8baefc829468dcd1688a2540c21c3",
+      "identical": true,
+      "same_text_with_normalized_newlines": true
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/ParkController.cs",
+      "main_sha256": "868e478b231c552ed0925b74e51290722a8dac6a907a68a6434aba7a5f46d8b2",
+      "tested_isolated_sha256": "868e478b231c552ed0925b74e51290722a8dac6a907a68a6434aba7a5f46d8b2",
+      "identical": true,
+      "same_text_with_normalized_newlines": true
+    },
+    {
+      "path": "Assets/Editor/HciPetDreamChecks.cs",
+      "main_sha256": "e1ac72f67eb593f614ef43ef9926013b08a02d3c973471b1bd6f3bce995e828e",
+      "tested_isolated_sha256": "e1ac72f67eb593f614ef43ef9926013b08a02d3c973471b1bd6f3bce995e828e",
+      "identical": true,
+      "same_text_with_normalized_newlines": true
+    },
+    {
+      "path": "Assets/Editor/ParkSceneFlowChecks.cs",
+      "main_sha256": "ebb3d8e0e2b1f5073ad86732b45a6aa5186506af7bf24880bb53944b6e9f79f6",
+      "tested_isolated_sha256": "f617e7c8420d59183eda2830b74cb42d1940f898747daefb591460d09046c63e",
+      "identical": false,
+      "same_text_with_normalized_newlines": true
+    },
+    {
+      "path": "Assets/Scenes/ParkPet.unity",
+      "main_sha256": "fc4d5e9eb1a0973d392faceee5cce02cde41da0a18e3d6161b80cfc051aa1fd7",
+      "tested_isolated_sha256": "b5d73f52e7e2049a5e744998e5893f5b0192be7c3e4094334ed709587fb2927f",
+      "identical": false,
+      "same_text_with_normalized_newlines": null
+    },
+    {
+      "path": "Assets/Resources/MagicMR/NaturalModels/BicolorCat.prefab",
+      "main_sha256": "e497c5d9c5e83ccc84384847504b417574cae6c8ca411ba4d17faf6885843157",
+      "tested_isolated_sha256": "e497c5d9c5e83ccc84384847504b417574cae6c8ca411ba4d17faf6885843157",
+      "identical": true,
+      "same_text_with_normalized_newlines": null
+    },
+    {
+      "path": "Assets/Resources/MagicMR/NaturalModels/Wolfhound.prefab",
+      "main_sha256": "a68710ce7df0d42d205ef977ffb9332c583a16170a38aaa72e75f8263ac76544",
+      "tested_isolated_sha256": "a23a17548587c5276fa1447b3b7566f19f0b2e18be395a17f740d2de2bfe5a9e",
+      "identical": false,
+      "same_text_with_normalized_newlines": null
+    },
+    {
+      "path": "Assets/ThirdParty/NaturalPets/BicolorCat/BicolorCat.fbx",
+      "main_sha256": "62b37087d672fe5b58947ccccc719079173e017dea9b1b3c8f20e40cb3410f3d",
+      "tested_isolated_sha256": "5b39b1bc5ce258bf3dc0dca1d201a3ad8da3038bb2861ad279b0566914678683",
+      "identical": false,
+      "same_text_with_normalized_newlines": null
+    },
+    {
+      "path": "Assets/ThirdParty/NaturalPets/Wolfhound/Wolfhound.fbx",
+      "main_sha256": "a031608bb288f20b86932b1c93bf2d826c2dca6eeb21c3d361b971030e683781",
+      "tested_isolated_sha256": "a031608bb288f20b86932b1c93bf2d826c2dca6eeb21c3d361b971030e683781",
+      "identical": true,
+      "same_text_with_normalized_newlines": null
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "before-result.txt",
+      "bytes": 232,
+      "sha256": "54b84403644ad57ce7acefaf5fee74afcc5496dcb819188184ae18f55dc3efb4"
+    },
+    {
+      "path": "hci-pet-dream-after-unity-resources.json",
+      "bytes": 1228,
+      "sha256": "91fb263d22eab0c29dde6c8a029eadb6000c50d79ae24789659637336e98f513"
+    },
+    {
+      "path": "hci-pet-dream-before-unity-resources.json",
+      "bytes": 717,
+      "sha256": "44b51f29217cc54c74ba9eee0f8f7de115f7258b80a010fc2aab290979ef0e8c"
+    },
+    {
+      "path": "hci-pet-six-scene-unity-resources.json",
+      "bytes": 3147,
+      "sha256": "008a6e5b2b2a2be5922c4b95524c0a7bc2486146647a43d2bdb416e0cb703804"
+    },
+    {
+      "path": "pet/Cat-B-open.png",
+      "bytes": 40171,
+      "sha256": "88d3c8d6872cbb68fa6cc35b88aaae805586ef3c7e4f72caf4b315379b111e7a"
+    },
+    {
+      "path": "pet/Cat-C-pop.png",
+      "bytes": 38836,
+      "sha256": "95145be1a94b8a17242072fa788fab4df7bfd4438228e97fa0cb2f4699c57d59"
+    },
+    {
+      "path": "pet/Cat-reset.png",
+      "bytes": 47181,
+      "sha256": "bced095466069cd4f17efab799e60bbcee356bc4c81e32329785ea906a39c6e7"
+    },
+    {
+      "path": "pet/Dog-B-open.png",
+      "bytes": 44210,
+      "sha256": "084082fae520686a2f35f705a5a4ec68f997332f5bd58661e875c155870e904d"
+    },
+    {
+      "path": "pet/Dog-C-pop.png",
+      "bytes": 42545,
+      "sha256": "cd1c7592dffa344c7fc316326196d902c7460c641738eb7c8a05e0d45de1ac91"
+    },
+    {
+      "path": "pet/Dog-reset.png",
+      "bytes": 42611,
+      "sha256": "824d29787869b566f196a525d3dd88b73ac30311dc2b263e90240589488869b4"
+    },
+    {
+      "path": "pet/result.txt",
+      "bytes": 310,
+      "sha256": "a9e421209b526bf53c22ad1fa71469fcdfba60d30d2287414571df135a0bd5aa"
+    },
+    {
+      "path": "six-scenes/ParkBugs.json",
+      "bytes": 762,
+      "sha256": "54a7468d0367249fad35429292739174e884499a85277f9a1c85eb380bf72f38"
+    },
+    {
+      "path": "six-scenes/ParkPet.json",
+      "bytes": 761,
+      "sha256": "b2a089e3a2cce3b573cb9359c7ca90f60bfbf6da4fe5e2391851d39f9f9ae3ac"
+    },
+    {
+      "path": "six-scenes/ParkPlant.json",
+      "bytes": 763,
+      "sha256": "68614f53af201468aa5f2e60eedcdcf2ab7bd72172e0d41846a1bdf41a58a7b8"
+    },
+    {
+      "path": "six-scenes/ParkRoom.json",
+      "bytes": 762,
+      "sha256": "d2df7c539f2eee518ed8851caa74ba7f49bbb1f5a9adb34c057999cd25c45591"
+    },
+    {
+      "path": "six-scenes/ParkStatue.json",
+      "bytes": 764,
+      "sha256": "f799e5857b3b65583754c5f5b541cf86ad2fa01b0a2117d7bec796168e6b29fa"
+    },
+    {
+      "path": "six-scenes/ParkTree.json",
+      "bytes": 762,
+      "sha256": "b49aed81e992c887f895f31ee352f0f34b6e7f1a7d27e1318f9d3ecbdc599a05"
+    },
+    {
+      "path": "six-scenes/result.txt",
+      "bytes": 359,
+      "sha256": "7452c40d2e64e93c229c94f94c09199cb4f02b78c742d732ece2b6e3aea533ab"
+    }
+  ]
+}

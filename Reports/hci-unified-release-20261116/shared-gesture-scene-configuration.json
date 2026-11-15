@@ -1,0 +1,50 @@
+{
+    "generatedUtc": "2026-11-15T16:25:43.2276342Z",
+    "unityVersion": "6000.0.33f1",
+    "deviceValidation": "PENDING_NO_PICO_TEST",
+    "configurationSource": "Assets/Scenes/Park*.unity, loaded by Unity; missing serialized fields use current runtime defaults",
+    "handPolicy": "All production magic uses TabletopHandSample + TabletopGestureRules + GestureReachWindow. Right hand: A pinch-release, B point-circle, C horizontal palm swipe, D fist-open. UI/Fit/Plane capture cancels casting; release required after interruption.",
+    "lighterPolicy": "Lighter and all six Park profiles share classification thresholds. Different targets dispatch different effects. Synthetic editor checks do not validate YOLO or PICO.",
+    "sampleGapSeconds": 0.15000000596046449,
+    "pinchEnterMeters": 0.03500000014901161,
+    "pinchReleaseMeters": 0.05999999865889549,
+    "pinchMinimumSeconds": 0.03999999910593033,
+    "pinchMaximumSeconds": 0.8500000238418579,
+    "fistMinimumSeconds": 0.11999999731779099,
+    "cooldownSeconds": 0.3499999940395355,
+    "reachEnterMeters": 0.20000000298023225,
+    "reachExitMeters": 0.3199999928474426,
+    "reachGraceSeconds": 0.6499999761581421,
+    "scenes": [
+        {
+            "scene": "Assets/Scenes/ParkTree.unity",
+            "hint": "Same as lighter: pinch-release A | point-circle B | palm-swipe C | fist-open D\nMove hand within 20 cm; UI Fit/Plane owns input while confirming. Undo/Reset: controls.",
+            "configurationKind": "Actual loaded scene wiring; live shared rule constants above. Legacy serialized Park gesture tuning fields are not used by production magic recognition."
+        },
+        {
+            "scene": "Assets/Scenes/ParkBugs.unity",
+            "hint": "Same as lighter: pinch-release A | point-circle B | palm-swipe C | fist-open D\nMove hand within 20 cm; UI Fit/Plane owns input while confirming. Undo/Reset: controls.",
+            "configurationKind": "Actual loaded scene wiring; live shared rule constants above. Legacy serialized Park gesture tuning fields are not used by production magic recognition."
+        },
+        {
+            "scene": "Assets/Scenes/ParkStatue.unity",
+            "hint": "Same as lighter: pinch-release A | point-circle B | palm-swipe C | fist-open D\nMove hand within 20 cm; UI Fit/Plane owns input while confirming. Undo/Reset: controls.",
+            "configurationKind": "Actual loaded scene wiring; live shared rule constants above. Legacy serialized Park gesture tuning fields are not used by production magic recognition."
+        },
+        {
+            "scene": "Assets/Scenes/ParkRoom.unity",
+            "hint": "Same as lighter: pinch-release A | point-circle B | palm-swipe C | fist-open D\nMove hand within 20 cm; UI Fit/Plane owns input while confirming. Undo/Reset: controls.",
+            "configurationKind": "Actual loaded scene wiring; live shared rule constants above. Legacy serialized Park gesture tuning fields are not used by production magic recognition."
+        },
+        {
+            "scene": "Assets/Scenes/ParkPlant.unity",
+            "hint": "Same as lighter: pinch-release A | point-circle B | palm-swipe C | fist-open D\nMove hand within 20 cm; UI Fit/Plane owns input while confirming. Undo/Reset: controls.",
+            "configurationKind": "Actual loaded scene wiring; live shared rule constants above. Legacy serialized Park gesture tuning fields are not used by production magic recognition."
+        },
+        {
+            "scene": "Assets/Scenes/ParkPet.unity",
+            "hint": "Same as lighter: pinch-release A | point-circle B | palm-swipe C | fist-open D\nMove hand within 20 cm; UI Fit/Plane owns input while confirming. Undo/Reset: controls.",
+            "configurationKind": "Actual loaded scene wiring; live shared rule constants above. Legacy serialized Park gesture tuning fields are not used by production magic recognition."
+        }
+    ]
+}

@@ -1,0 +1,266 @@
+{
+  "scope": "Shared lighter/Park recognition with synthetic input in actual Editor Play Mode; no physical YOLO/PICO acceptance; runtime unpublished",
+  "sources": [
+    {
+      "path": "Assets/Scripts/MagicMR/ParkController.cs",
+      "main_sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+      "tested_isolated_sha256": "f80c71b6944973ac9c2d19f05656d9b6c522aa4c2495db5b2a405c6752f715e3",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/TabletopHandSample.cs",
+      "main_sha256": "583c4f9f8bd4fbf4d6426b0bc3830c67f2ad7d91e9705f38265008bc30925865",
+      "tested_isolated_sha256": "583c4f9f8bd4fbf4d6426b0bc3830c67f2ad7d91e9705f38265008bc30925865",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/TabletopGestureRecognizer.cs",
+      "main_sha256": "7113e77a4261e745cb4f8aa022fe343fa77b1fee43b4fe87a982d3166803c599",
+      "tested_isolated_sha256": "7113e77a4261e745cb4f8aa022fe343fa77b1fee43b4fe87a982d3166803c599",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/TabletopGestureRules.cs",
+      "main_sha256": "645364f3485f6dc9561fff3774415ea31d6f6692f67b80a8de9daed627bb672e",
+      "tested_isolated_sha256": "645364f3485f6dc9561fff3774415ea31d6f6692f67b80a8de9daed627bb672e",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/ParkActor.cs",
+      "main_sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+      "tested_isolated_sha256": "370d91474a3fe08a470cbd6e094d26861b40c2ff2d892971eb4956cb01235827",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/ParkActor.NaturalPlants.cs",
+      "main_sha256": "9b190cfbbdff6c0aba838f4ce5e1451b1301a511cc6d10d4bfd1480a35e0039a",
+      "tested_isolated_sha256": "9b190cfbbdff6c0aba838f4ce5e1451b1301a511cc6d10d4bfd1480a35e0039a",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Editor/HciSharedGestureChecks.cs",
+      "main_sha256": "ff16351166f16bb72e298481dcbaeda2840c0563e6f5fe2ae729f089f63badee",
+      "tested_isolated_sha256": "ff16351166f16bb72e298481dcbaeda2840c0563e6f5fe2ae729f089f63badee",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Editor/HciPlantFlowChecks.cs",
+      "main_sha256": "f008a661d589a24452aa4909e87f7a5422cbabf16e20a9ad75b05cab9e0752d4",
+      "tested_isolated_sha256": "f008a661d589a24452aa4909e87f7a5422cbabf16e20a9ad75b05cab9e0752d4",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Editor/HciPetDreamChecks.cs",
+      "main_sha256": "e1ac72f67eb593f614ef43ef9926013b08a02d3c973471b1bd6f3bce995e828e",
+      "tested_isolated_sha256": "e1ac72f67eb593f614ef43ef9926013b08a02d3c973471b1bd6f3bce995e828e",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Editor/ParkSceneFlowChecks.cs",
+      "main_sha256": "ebb3d8e0e2b1f5073ad86732b45a6aa5186506af7bf24880bb53944b6e9f79f6",
+      "tested_isolated_sha256": "f617e7c8420d59183eda2830b74cb42d1940f898747daefb591460d09046c63e",
+      "text_equal": true,
+      "byte_equal": false
+    },
+    {
+      "path": "Assets/Editor/LegacySceneStartupProbe.cs",
+      "main_sha256": "0bf1e7f70f85791e03ca3b10088aca05b71889a834da155f3d97fd9b1d775794",
+      "tested_isolated_sha256": "b6ea2dd7c34565377b2a821500631ebad8aa8484014a96ef0d0f12e5cbd6c6d7",
+      "text_equal": true,
+      "byte_equal": false
+    },
+    {
+      "path": "Assets/Editor/ProjectSceneAudit.cs",
+      "main_sha256": "643ddeca6069ae72bb1b5cfa52b939a07e9a63674317f7b454ea4f07a1e18cc5",
+      "tested_isolated_sha256": "643ddeca6069ae72bb1b5cfa52b939a07e9a63674317f7b454ea4f07a1e18cc5",
+      "text_equal": true,
+      "byte_equal": true
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "gestures/result.txt",
+      "bytes": 2878,
+      "sha256": "4fa5c06f2afbeceac4471f648b9f707cbcd633e4350b8460a17980be865cb919"
+    },
+    {
+      "path": "hci-shared-final-pet-unity-resources.json",
+      "bytes": 1099,
+      "sha256": "ceac771328ab7c5a4941bef2fbd86dbf6becb62341ed1abbb27e2ee7b434a391"
+    },
+    {
+      "path": "hci-shared-final-plant-unity-resources.json",
+      "bytes": 1227,
+      "sha256": "55143cb6bcaffce78ebc6f5b2c84144f8520f07348bdf6948290a5a42c692df2"
+    },
+    {
+      "path": "hci-shared-final-six-unity-resources.json",
+      "bytes": 3145,
+      "sha256": "07e9f9e015769cdf4f2bd6ebbf710cc24e189a17e230dc4ace269fff7c29d2a4"
+    },
+    {
+      "path": "hci-shared-final-startup-retry-unity-resources.json",
+      "bytes": 3279,
+      "sha256": "e5c7ace49d4f81b8ada48d36f5a5ee23c01d8a656efa3388df37309f8b89cbea"
+    },
+    {
+      "path": "hci-shared-gestures-final-unity-resources.json",
+      "bytes": 2003,
+      "sha256": "95cc27c61f4f1f824fe8e1f2f3e947ec825821a5f09af7213928128339fbf6e8"
+    },
+    {
+      "path": "lighter-check-markers.txt",
+      "bytes": 101,
+      "sha256": "1262739f1cbe7e281426738a4ef2b62193b2edcd2168d73d85d8b9481af55003"
+    },
+    {
+      "path": "pet/result.txt",
+      "bytes": 310,
+      "sha256": "ba1e7974ccd3e5794bf593f03318993ffe8ec85ebab3986d3037c13f77cd7749"
+    },
+    {
+      "path": "plant/result.txt",
+      "bytes": 359,
+      "sha256": "bffb768a5771a5d6af183ef4f85b1e7a9afa624ba10a076f5e76c149084f257f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2340,
+      "sha256": "c2678965c2330f525b3e658c002897e40ed0bfb6eb17bb952cfc3ae4f1cca7b0"
+    },
+    {
+      "path": "scene-audit.json",
+      "bytes": 23451,
+      "sha256": "265d3ccb8be3ebaaef7379555947318ca10c85578178bcc36126c1fada84ea1e"
+    },
+    {
+      "path": "six-scenes/ParkBugs.json",
+      "bytes": 762,
+      "sha256": "207a2748c54d85d0a2d5d4bda128b468c29a684117083984656bebc25fdbe4ab"
+    },
+    {
+      "path": "six-scenes/ParkPet.json",
+      "bytes": 761,
+      "sha256": "286d53f16dd4c01bdef6730cd4b2ae26eb92d4b7ca8d7c6b74cb2a913e777472"
+    },
+    {
+      "path": "six-scenes/ParkPlant.json",
+      "bytes": 763,
+      "sha256": "c20f0e82249dd3f0ae1412bb1e8778d943dabb494e5c1d7ff7daae8989a246b1"
+    },
+    {
+      "path": "six-scenes/ParkRoom.json",
+      "bytes": 762,
+      "sha256": "9799a84d79c89be80977fb6d2a0cbf1059f9162d1d014d47828911310a5483a2"
+    },
+    {
+      "path": "six-scenes/ParkStatue.json",
+      "bytes": 764,
+      "sha256": "4536c78fe86aeac96c61b95acb55fb60aa886720d91d834d84d6b9918b1b05ad"
+    },
+    {
+      "path": "six-scenes/ParkTree.json",
+      "bytes": 762,
+      "sha256": "3972dcc2dd57e9ba3e1100ecebec6e532d410fff74515aa27bd3877f211ae6b5"
+    },
+    {
+      "path": "six-scenes/result.txt",
+      "bytes": 359,
+      "sha256": "7452c40d2e64e93c229c94f94c09199cb4f02b78c742d732ece2b6e3aea533ab"
+    },
+    {
+      "path": "startup/BridgeStereoFusion.json",
+      "bytes": 3657,
+      "sha256": "8e79126509d79f04a920186e4143d5b9ada95a0031c69207703433a1013e5779"
+    },
+    {
+      "path": "startup/BridgeStereoPoseFusion.json",
+      "bytes": 3738,
+      "sha256": "d16352bb28a06188dddf14bcbda1e9e4ca12956d413b505591441d32ee0d7e5e"
+    },
+    {
+      "path": "startup/BridgeStereoRepair.json",
+      "bytes": 3574,
+      "sha256": "b0b471f3df2ace5fc886618754a336ae9f3599679dbdce6665e1b166663e1c3d"
+    },
+    {
+      "path": "startup/BridgeTest.json",
+      "bytes": 3257,
+      "sha256": "f03bf9e9188f38c962ad72be2bf05bf0187ad97c552c749b71ab56fd2c105821"
+    },
+    {
+      "path": "startup/DesktopCaptureDemo.json",
+      "bytes": 1380,
+      "sha256": "4a22c3fc1a83c19daac41cf1ccaba2635be5549c41e908495b34d6e8f6dee59c"
+    },
+    {
+      "path": "startup/MagicMR.json",
+      "bytes": 2326,
+      "sha256": "4fdc870f7c8e0cd1d163bbf0fa2dec1c66c174aa2a0b12064f870acc0d7d3832"
+    },
+    {
+      "path": "startup/ParkBugs.json",
+      "bytes": 3854,
+      "sha256": "7d5c951f4659a7ed095e4fe447f7b81705a5fe8775e3b9de90965d276b130498"
+    },
+    {
+      "path": "startup/ParkPet.json",
+      "bytes": 3851,
+      "sha256": "7c017275bddd6024cc90e9d8542bce7055152816a6d4228a35ccbf82c68726be"
+    },
+    {
+      "path": "startup/ParkPlant.json",
+      "bytes": 3857,
+      "sha256": "45e18bd400bb020d5268221a39938b10b0c33bce8dcda0843c2218fa94c6706f"
+    },
+    {
+      "path": "startup/ParkRoom.json",
+      "bytes": 3854,
+      "sha256": "ca86a5f452ad384d61ada4906d5d94ccbd168e27ad48c165ad8544a52e534d22"
+    },
+    {
+      "path": "startup/ParkStatue.json",
+      "bytes": 3860,
+      "sha256": "4f49672cc5fb051d40450f60a033bd861182fbb1107bc473c2f5a8cdcab2c01d"
+    },
+    {
+      "path": "startup/ParkTree.json",
+      "bytes": 3854,
+      "sha256": "dc283de4b69c32822241efc639a82688ccc44865ddbf869558086dd9a637070b"
+    },
+    {
+      "path": "startup/result.txt",
+      "bytes": 147,
+      "sha256": "03a9f1d4fd99719456d8d8c52d36dfc26c69746a734e7af22bfa5bb47717a65d"
+    },
+    {
+      "path": "startup/SampleScene.json",
+      "bytes": 2078,
+      "sha256": "083163ff8f4d79cac0b5f30a4064b2998fc4f36c02b69140307750d5de5525cf"
+    },
+    {
+      "path": "startup/VstTest.json",
+      "bytes": 1104,
+      "sha256": "8348bd46fe670e763239c47c9b7538f718badf5144cc45104b734808a02ec430"
+    },
+    {
+      "path": "startup-before-error.txt",
+      "bytes": 233,
+      "sha256": "47894e5044f184151ea06bdfeb9a2316c038960610f3ddf1f61fa9112f7168f4"
+    },
+    {
+      "path": "startup-before-resources.json",
+      "bytes": 462,
+      "sha256": "9d4e7af432df862ea6359bece87f85e7e178be8ed12b49b9918fc5a644a32a08"
+    }
+  ]
+}

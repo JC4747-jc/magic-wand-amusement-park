@@ -1,0 +1,160 @@
+{
+  "scope": "Synthetic HCI condition gating and CSV outcomes in Editor; local candidate, no physical or Android acceptance",
+  "sources": [
+    {
+      "path": "Assets/Scripts/MagicMR/ParkController.cs",
+      "workspace_sha256": "7b30e3091f586bd78f7600094b253ae5cc9fb6377ba13cab9329f3888b233877",
+      "tested_sha256": "7b30e3091f586bd78f7600094b253ae5cc9fb6377ba13cab9329f3888b233877",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/ExperimentConditionSwitcher.cs",
+      "workspace_sha256": "e3a582faa81925d30674c548630f85bce27522f323f191b00deca7eba5483479",
+      "tested_sha256": "e3a582faa81925d30674c548630f85bce27522f323f191b00deca7eba5483479",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/ParkDesktopInput.cs",
+      "workspace_sha256": "e81ea9c6f45e0d5d8398afb06fa23837229fb8c846527e6d6d8fd7d5102fcbff",
+      "tested_sha256": "e81ea9c6f45e0d5d8398afb06fa23837229fb8c846527e6d6d8fd7d5102fcbff",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/DataLogger.cs",
+      "workspace_sha256": "a7eae6289f60d4d2409cad8f077d77616f7cae108d93af8d423f21eb941aaabe",
+      "tested_sha256": "a7eae6289f60d4d2409cad8f077d77616f7cae108d93af8d423f21eb941aaabe",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/TabletopHandSample.cs",
+      "workspace_sha256": "583c4f9f8bd4fbf4d6426b0bc3830c67f2ad7d91e9705f38265008bc30925865",
+      "tested_sha256": "583c4f9f8bd4fbf4d6426b0bc3830c67f2ad7d91e9705f38265008bc30925865",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/TabletopGestureRules.cs",
+      "workspace_sha256": "645364f3485f6dc9561fff3774415ea31d6f6692f67b80a8de9daed627bb672e",
+      "tested_sha256": "645364f3485f6dc9561fff3774415ea31d6f6692f67b80a8de9daed627bb672e",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Editor/HciStudyConditionChecks.cs",
+      "workspace_sha256": "d8585ce74a216c79dc53a1d93a33fb2c0e04d63d88cb3ac1bc6b165f570f2330",
+      "tested_sha256": "d8585ce74a216c79dc53a1d93a33fb2c0e04d63d88cb3ac1bc6b165f570f2330",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Editor/HciSharedGestureChecks.cs",
+      "workspace_sha256": "ff16351166f16bb72e298481dcbaeda2840c0563e6f5fe2ae729f089f63badee",
+      "tested_sha256": "ff16351166f16bb72e298481dcbaeda2840c0563e6f5fe2ae729f089f63badee",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Editor/ParkSceneFlowChecks.cs",
+      "workspace_sha256": "ebb3d8e0e2b1f5073ad86732b45a6aa5186506af7bf24880bb53944b6e9f79f6",
+      "tested_sha256": "f617e7c8420d59183eda2830b74cb42d1940f898747daefb591460d09046c63e",
+      "text_equal": true,
+      "byte_equal": false
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "conditions/result.txt",
+      "bytes": 305,
+      "sha256": "1a5e35a27f99282c38b03d00fdda1b2fa6b44efd0eb03d7a22f591ee173402d6"
+    },
+    {
+      "path": "conditions/synthetic-events.csv",
+      "bytes": 36961,
+      "sha256": "8cf0bcedcc2d22480aa0479efeca712952d4def39f73583a49651cf61577df9a"
+    },
+    {
+      "path": "conditions/synthetic-trajectory.csv",
+      "bytes": 199,
+      "sha256": "a15c8dd1849d11766034e7518703c6d33c8453ae723392db74797300e29e3da5"
+    },
+    {
+      "path": "gestures/result.txt",
+      "bytes": 2878,
+      "sha256": "f6c25208d32eb23ec9c0893dad328b2a466efeed7297f7a01072e4114f526c6d"
+    },
+    {
+      "path": "hci-study-conditions-final-compile-errors.txt",
+      "bytes": 2541,
+      "sha256": "ddfcb3cd40d7b8404aa2b155dd0de22fca0dee87c54f8caf8bf331b2a31ac491"
+    },
+    {
+      "path": "hci-study-conditions-focus-compile-errors.txt",
+      "bytes": 1029,
+      "sha256": "81b5080f598e35a99662bfb53f180fd06d11f894381da32b42c95815c040b207"
+    },
+    {
+      "path": "hci-study-conditions-manual-resources.json",
+      "bytes": 843,
+      "sha256": "ac3b963b8695a6e25fb4f54115cbb13802a2fe57ba8cbfe83312169766424d66"
+    },
+    {
+      "path": "hci-study-gestures-resources.json",
+      "bytes": 1998,
+      "sha256": "bfd02c35758e160ff1b61896ebcc5dfd2d2453ec72cd1532030a8fa3cacbc582"
+    },
+    {
+      "path": "hci-study-six-resources.json",
+      "bytes": 3145,
+      "sha256": "e8caf82a7eacff7d52e520fd816c449adfe7e6ac70a99c359add6a28865b75ca"
+    },
+    {
+      "path": "keyboard-before.txt",
+      "bytes": 433,
+      "sha256": "5fccb3b7b4c0f6379b7ddda927f430181ed762777f5da3541d7ce8fde7de2064"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2261,
+      "sha256": "845002666af932ca9b440f0b640efe11895754a4d50f80f7f36199c0b580ce16"
+    },
+    {
+      "path": "six-scenes/ParkBugs.json",
+      "bytes": 762,
+      "sha256": "55959f0f8e18f924f7539a41675d63cfa425d2fc569c7e3b2e0e7e7d4261cb1b"
+    },
+    {
+      "path": "six-scenes/ParkPet.json",
+      "bytes": 761,
+      "sha256": "ce8368eec7a4ab94bc54890f7538fda318b55ac0f0be22ab27b056f27146a6e0"
+    },
+    {
+      "path": "six-scenes/ParkPlant.json",
+      "bytes": 763,
+      "sha256": "b309398c76bf002adc60419f4f880fd70b30bd744ee2f69410458175d3ecef58"
+    },
+    {
+      "path": "six-scenes/ParkRoom.json",
+      "bytes": 762,
+      "sha256": "29d34adb7daa9d93d40313c5b0e036ee7a8916bfede4391d7ff6e94167cab2a3"
+    },
+    {
+      "path": "six-scenes/ParkStatue.json",
+      "bytes": 764,
+      "sha256": "2662a49bd96f956f639369515791937c3c52de9b5cc463aceaa53375ad8320e5"
+    },
+    {
+      "path": "six-scenes/ParkTree.json",
+      "bytes": 762,
+      "sha256": "67cad19286d3650b768e323a298124c65bb17e853326087007beb4b83491a4f6"
+    },
+    {
+      "path": "six-scenes/result.txt",
+      "bytes": 359,
+      "sha256": "7452c40d2e64e93c229c94f94c09199cb4f02b78c742d732ece2b6e3aea533ab"
+    }
+  ]
+}

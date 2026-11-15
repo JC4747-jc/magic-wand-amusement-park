@@ -1,0 +1,39 @@
+{
+    "scene": "SampleScene",
+    "scope": "Unmodified scene, actual Windows Editor Play Mode startup; no real camera/hand/AR/network service success claim",
+    "projectComponents": 2,
+    "errors": 0,
+    "warnings": 4,
+    "realityEditors": 0,
+    "activeRealityEditors": 0,
+    "activeCameras": 1,
+    "componentTypes": [
+        "CaptureTo2D [Assembly-CSharp] enabled=True active=True",
+        "SampleSceneDesktopPreview [Assembly-CSharp] enabled=True active=True"
+    ],
+    "errorMessages": [],
+    "warningMessages": [
+        "No active UnityEngine.XR.ARSubsystems.XRSessionSubsystem is available. This feature is either not supported on the current platform, or you may need to enable a provider in <b>Project Settings</b> > <b>XR Plug-in Management</b>.",
+        "No active UnityEngine.XR.XRInputSubsystem is available. Please ensure that a valid loader configuration exists in the XR project settings.",
+        "No active UnityEngine.XR.ARSubsystems.XRImageTrackingSubsystem is available. This feature is either not supported on the current platform, or you may need to enable a provider in <b>Project Settings</b> > <b>XR Plug-in Management</b>.",
+        "No active UnityEngine.XR.ARSubsystems.XRCameraSubsystem is available. This feature is either not supported on the current platform, or you may need to enable a provider in <b>Project Settings</b> > <b>XR Plug-in Management</b>."
+    ],
+    "cameras": [
+        "Main Camera enabled=True active=True tag=MainCamera clear=Skybox alpha=1",
+        "CaptureCamera enabled=False active=True tag=Untagged clear=Skybox alpha=0"
+    ],
+    "capturePresent": true,
+    "captureTargetAssigned": true,
+    "captureCardAssigned": true,
+    "captureBackpackAssigned": true,
+    "snapshot": "SampleScene.png",
+    "changedPixels": 125931,
+    "cameraInputStatus": "NO_CAMERA_COMPONENT",
+    "editorImageStatus": "NO_EDITOR_SOURCE",
+    "tcpHost": "NO_TCP_COMPONENT",
+    "cameraHasFrame": false,
+    "editorImageSending": false,
+    "parkActors": 0,
+    "activeParkActors": 0,
+    "parkScenario": "NO_PARK_CONTROLLER"
+}

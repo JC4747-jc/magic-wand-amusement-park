@@ -1,3 +1,5 @@
+﻿#Requires -Version 7.0
+# Process.Kill(entireProcessTree) requires PowerShell 7; reject older hosts before starting Unity.
 [CmdletBinding()]
 param(
     [string]$UnityPath = 'D:/Unity/Hub/Editor/6000.0.33f1/Editor/Unity.exe',

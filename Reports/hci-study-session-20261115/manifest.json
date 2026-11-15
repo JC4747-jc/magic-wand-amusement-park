@@ -1,0 +1,232 @@
+{
+  "scope": "Synthetic cross-scene session lifecycle, CSV validation, conditions and startup; no physical/Android acceptance",
+  "sources": [
+    {
+      "path": "Assets/Scripts/MagicMR/DataLogger.cs",
+      "workspace_sha256": "9c977ee2dc91becde655fa89cf8db8c08bd6636caf282ff720eeda6bbd2d5309",
+      "tested_sha256": "9c977ee2dc91becde655fa89cf8db8c08bd6636caf282ff720eeda6bbd2d5309",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/ExperimentConditionSwitcher.cs",
+      "workspace_sha256": "6a1eb4492513add4b1bb1467a081978b86d414a3bcd102bfa05c3fb9210314d4",
+      "tested_sha256": "6a1eb4492513add4b1bb1467a081978b86d414a3bcd102bfa05c3fb9210314d4",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/GestureManager.cs",
+      "workspace_sha256": "e28bf69c0b2a66f4256e8b5479763f386f2f620aa7eae89f3021fa6189ce9379",
+      "tested_sha256": "e28bf69c0b2a66f4256e8b5479763f386f2f620aa7eae89f3021fa6189ce9379",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/MagicMRStudyBootstrap.cs",
+      "workspace_sha256": "08f204adeb1dafc215d8211da46263493b39a2ec06aee1c6584cc50a3ee8bfcd",
+      "tested_sha256": "08f204adeb1dafc215d8211da46263493b39a2ec06aee1c6584cc50a3ee8bfcd",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/LighterAnchorManager.cs",
+      "workspace_sha256": "295bea7f80d7cdfeb52be2ff2b6286b8a757a028f677e3777b4714eb56bb8720",
+      "tested_sha256": "295bea7f80d7cdfeb52be2ff2b6286b8a757a028f677e3777b4714eb56bb8720",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/ParkController.cs",
+      "workspace_sha256": "7b30e3091f586bd78f7600094b253ae5cc9fb6377ba13cab9329f3888b233877",
+      "tested_sha256": "7b30e3091f586bd78f7600094b253ae5cc9fb6377ba13cab9329f3888b233877",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Editor/HciStudySessionChecks.cs",
+      "workspace_sha256": "5b1abadc87b164a772edad5718fdb9bc48f848b9358e06114b95af7c356840cd",
+      "tested_sha256": "5b1abadc87b164a772edad5718fdb9bc48f848b9358e06114b95af7c356840cd",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Editor/HciStudyConditionChecks.cs",
+      "workspace_sha256": "d8585ce74a216c79dc53a1d93a33fb2c0e04d63d88cb3ac1bc6b165f570f2330",
+      "tested_sha256": "d8585ce74a216c79dc53a1d93a33fb2c0e04d63d88cb3ac1bc6b165f570f2330",
+      "text_equal": true,
+      "byte_equal": true
+    },
+    {
+      "path": "Assets/Editor/LegacySceneStartupProbe.cs",
+      "workspace_sha256": "0bf1e7f70f85791e03ca3b10088aca05b71889a834da155f3d97fd9b1d775794",
+      "tested_sha256": "b6ea2dd7c34565377b2a821500631ebad8aa8484014a96ef0d0f12e5cbd6c6d7",
+      "text_equal": true,
+      "byte_equal": false
+    },
+    {
+      "path": "Assets/Editor/ProjectSceneAudit.cs",
+      "workspace_sha256": "643ddeca6069ae72bb1b5cfa52b939a07e9a63674317f7b454ea4f07a1e18cc5",
+      "tested_sha256": "643ddeca6069ae72bb1b5cfa52b939a07e9a63674317f7b454ea4f07a1e18cc5",
+      "text_equal": true,
+      "byte_equal": true
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "conditions/result.txt",
+      "bytes": 305,
+      "sha256": "1a5e35a27f99282c38b03d00fdda1b2fa6b44efd0eb03d7a22f591ee173402d6"
+    },
+    {
+      "path": "conditions/synthetic-events.csv",
+      "bytes": 36970,
+      "sha256": "f8bdb921ace9cf5e12c8046841851fc1ed50e22aee1070c520496a39cfa9a10b"
+    },
+    {
+      "path": "conditions/synthetic-trajectory.csv",
+      "bytes": 199,
+      "sha256": "e090510eacdd3195a9d5474b5db6e1a42477bffdf38b52fde28c58a9af949838"
+    },
+    {
+      "path": "csv-validation.json",
+      "bytes": 287,
+      "sha256": "5260aff2c5a6cf9ecb8a3b97f4b4ca0e053b15d01e91134f71ff11791e413be8"
+    },
+    {
+      "path": "fixture-before.txt",
+      "bytes": 215,
+      "sha256": "74acb1310020e06d9ea19e01515e853ebe9d17a732243fb37e1d0523e3e0a88a"
+    },
+    {
+      "path": "fixture-disabled-component-before.txt",
+      "bytes": 239,
+      "sha256": "cbbb8f4a778c2d258a7a95d2e4a1a21ef7a30a5a68cf35f447bb920d9c20e77b"
+    },
+    {
+      "path": "fixture-path-before.txt",
+      "bytes": 228,
+      "sha256": "3d0f7be2a9a29969e41c0dbf6660df9dc60033f6a564bdff7769c326c6359782"
+    },
+    {
+      "path": "hci-session-conditions-resources.json",
+      "bytes": 845,
+      "sha256": "10ef4b74772ca9de122823941a1a7bf0b695bbe8019cc746994f7f1d12a17356"
+    },
+    {
+      "path": "hci-session-startup-resources.json",
+      "bytes": 3273,
+      "sha256": "705311e5ba4741f6d1327eec2593968fdf553dfb736d91fd8d3f2cb1bc420b32"
+    },
+    {
+      "path": "hci-study-session-path-normalized-resources.json",
+      "bytes": 973,
+      "sha256": "9a8ac506661a3a5f57a868f17f00c68986d6982ee301e4d0037d7050ae9cb2b7"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2562,
+      "sha256": "1bb5d9852c159afa48665c721f7ecd38366098147608585da72b743f83ef64db"
+    },
+    {
+      "path": "session/result.txt",
+      "bytes": 430,
+      "sha256": "5e5b90bb779159d6b7052100939711b091f66b6538c556c21ae617e408a7e372"
+    },
+    {
+      "path": "session/synthetic-cross-scene.csv",
+      "bytes": 985,
+      "sha256": "ed62208e636d38432656b05efa27ddc03edf530b520e3d980b23a3d4fbd9e6c9"
+    },
+    {
+      "path": "session/synthetic-escaped.csv",
+      "bytes": 518,
+      "sha256": "283177495d4318b9e224488560309f8ebf1def9b253d2842c00d9339e11f6dcc"
+    },
+    {
+      "path": "session/synthetic-legacy-bootstrap.csv",
+      "bytes": 527,
+      "sha256": "3588fa166d675483a7ddd13eb08e0ce463b36649ff2dbcd6a2e7386cce787c90"
+    },
+    {
+      "path": "session/synthetic-throttled.csv",
+      "bytes": 189,
+      "sha256": "1f16b68dc38692e1583655d85b142df2131408e82c3fcc75281685f784a23024"
+    },
+    {
+      "path": "startup/BridgeStereoFusion.json",
+      "bytes": 3657,
+      "sha256": "9161bea599e2f11f2a9b125de6268002ee9497aff2fbaa52e945c433d94c2ebe"
+    },
+    {
+      "path": "startup/BridgeStereoPoseFusion.json",
+      "bytes": 3738,
+      "sha256": "c7add0c8c92c2e955235224cf77f433b748511497375871e834fc3536eb8c1a3"
+    },
+    {
+      "path": "startup/BridgeStereoRepair.json",
+      "bytes": 3574,
+      "sha256": "b0b471f3df2ace5fc886618754a336ae9f3599679dbdce6665e1b166663e1c3d"
+    },
+    {
+      "path": "startup/BridgeTest.json",
+      "bytes": 3257,
+      "sha256": "f03bf9e9188f38c962ad72be2bf05bf0187ad97c552c749b71ab56fd2c105821"
+    },
+    {
+      "path": "startup/DesktopCaptureDemo.json",
+      "bytes": 1380,
+      "sha256": "96b6efdbaa86369eba19d1e06d1ab0013fe5e2f1142b8306d96bfd990ca807e4"
+    },
+    {
+      "path": "startup/MagicMR.json",
+      "bytes": 2326,
+      "sha256": "4d6ccb7eb0cfbff068dab6686f16f6941cfda3226ff42efec067ed6ae6a87ce5"
+    },
+    {
+      "path": "startup/ParkBugs.json",
+      "bytes": 3936,
+      "sha256": "20e1dfc29e14864035c56c7626dd47e617007b4acd4bebd06b4f26f787d18887"
+    },
+    {
+      "path": "startup/ParkPet.json",
+      "bytes": 3933,
+      "sha256": "d8d1f5f8ebc509ad4b40711d34cc34be31697aada5e5939b98da9dcbfc769303"
+    },
+    {
+      "path": "startup/ParkPlant.json",
+      "bytes": 3939,
+      "sha256": "f5c0b350abe78da4fba9e0bc360dbc19e59cd0b03b58611c78bdbf45e855ac39"
+    },
+    {
+      "path": "startup/ParkRoom.json",
+      "bytes": 3936,
+      "sha256": "b2fb0a55e7c728a15100cc68b5035200cbe1be9a5a123bd6f988ca60c802230d"
+    },
+    {
+      "path": "startup/ParkStatue.json",
+      "bytes": 3942,
+      "sha256": "25817f99b77fabafcdec5d687d08ad78f35fd2bbe088f6881cefb1205e014e1c"
+    },
+    {
+      "path": "startup/ParkTree.json",
+      "bytes": 3936,
+      "sha256": "6f51672e21ca9cea405814b08eacc92453540eb1fff9f394c9c4116cee2c3cfd"
+    },
+    {
+      "path": "startup/result.txt",
+      "bytes": 147,
+      "sha256": "03a9f1d4fd99719456d8d8c52d36dfc26c69746a734e7af22bfa5bb47717a65d"
+    },
+    {
+      "path": "startup/SampleScene.json",
+      "bytes": 2078,
+      "sha256": "083163ff8f4d79cac0b5f30a4064b2998fc4f36c02b69140307750d5de5525cf"
+    },
+    {
+      "path": "startup/VstTest.json",
+      "bytes": 1104,
+      "sha256": "8348bd46fe670e763239c47c9b7538f718badf5144cc45104b734808a02ec430"
+    }
+  ]
+}

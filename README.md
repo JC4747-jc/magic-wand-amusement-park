@@ -1,6 +1,14 @@
-> 当前目标与交付：所有线路统一为 **YOLO 识别现实目标 → 定位/选中 → 与火机共用手势识别 → 对象魔法 → 撤销/复位**。这是待完成的统一架构要求，不代表所有现有线路已经贯通。请先阅读 [HCI 魔法乐园 Goal](BRANCH_SCENE_PLAN.md) 和 [此次已验证基线交付范围](Reports/RESTORE_4D_DELIVERY_20261115.md)；下方历史说明与最新目标冲突时，以最新目标为准。
-
 # Magic Wand Amusement Park
+
+## 统一交互线路（2026-11-16）
+
+魔法乐园全部 HCI 用例采用 **YOLO 识别实物 → 可靠定位与实例选择 → 火机共用手势识别 → 对象魔法**。A 为捏合后松开，B 为指尖画圈，C 为张掌横挥，D 为握拳后张开。火机与 Tree、Bugs、Statue、Room、Plant、Pet 共用手部采样、识别规则及距离门控；不同对象只改变对应效果。打人柳与四季树复用 Tree 入口。
+
+尺寸、朝向和表面确认是定位辅助步骤，UI 或标定占用输入时暂停施法。房间由家具检测提供入口，并另行确认空间几何。Virtual test、鼠标和键盘仅用于模拟；合成手势检查及 Android 编译不代表真实 YOLO/PICO 验收。所有用例仍须按 [最新 Goal](BRANCH_SCENE_PLAN.md) 完成各自效果和真机闭环。
+
+有界 Android 构建脚本需要 **PowerShell 7 (`pwsh`)**；使用 `pwsh -NoProfile -File Tools/build_android_bounded.ps1 -Variant AllScenes -BuildJobs 1`。日志、内存、磁盘增长和进程数均设上限，重任务串行执行。
+
+本批交付范围见 [统一线路验证报告](Reports/hci-unified-release-20261116/README.md)：24 条共用手势轨迹、96 次条件检查和 14 场景启动通过。新 Android 构建因可用内存低于 3 GiB 被保护性中止；仓库中的 `CombinedAllScenesValidation-20261115.apk` 是旧版包，不包含此次代码。PICO 与真实 YOLO 全链路仍待验证。
 
 ## 当前工作区接续（2026-11-15）
 

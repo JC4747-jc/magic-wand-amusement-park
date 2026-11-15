@@ -1,0 +1,65 @@
+NATURAL_BRONZE_MODEL_PASS: 17148 original triangles/one skin/two bones; original 1K PBR; 129 independent LBS samples at 35cm fit/37deg yaw; bottom_error_m=2.980232E-08 motion_m=0.00746977 loop_seam_m=0; 512 steps zero allocation; Undo/loss/invalid-time reset
+NATURAL_PLANT_SKIN_PASS: 8929 triangles, 2241/2241 vertices deformed; pot/soil invariant through growth and sway
+NATURAL_TREE_RUNTIME_PASS: 121000/121000 leaf vertices deformed; fixed trunk/anchor, invalid-wind recovery, base-fixed growth/Undo and seasonal Reset
+NATURAL_TREE_MARK_CHECK_PASS: independent nearest-triangle max distance=0.0009000198 m, 97 vertices/160 triangles, matte bark palette, shared attached geometry
+NATURAL_INSECT_IK_PASS Cockroach: 6 legs, max ankle error=4.068953E-05, min local height=-3.218837E-08, 256 steps managed bytes=0; translated/yawed anchor invariant
+NATURAL_INSECT_PLACEMENT_PASS Cockroach: independent skinned world geometry matches confirmed bottom/height within 0.5 mm; yaw and anchor preserved
+NATURAL_INSECT_IK_PASS Spider: 8 legs, max ankle error=6.505813E-05, min local height=-5.682201E-05, 256 steps managed bytes=0; translated/yawed anchor invariant
+NATURAL_INSECT_PLACEMENT_PASS Spider: independent skinned world geometry matches confirmed bottom/height within 0.5 mm; yaw and anchor preserved
+NATURAL_PET_MODEL_PASS: 8646 triangles, three skins, original 40-bone rig; UV0 reprojected normals; five independently skinned placement poses, max bottom error=2.980232E-07; yaw/tracking anchor fixed
+NATURAL_CAT_WALK_GEOMETRY_PASS: 193 imported-clip samples at 0.35m fit/37 degree yaw; minimum_ground_m=8.907914E-05 maximum_stance_error_m=0.0001761019 loop_seam_m=0 four_paw_lifts_m=0.01918451,0.01918231,0.01918526,0.01917803; original topology/rig, fixed tracking anchor; authored in-place preview, no real animal/hardware claim
+NATURAL_DOG_MODEL_PASS: original 849 triangles/47 bones/256px coat; confirmed yaw and actual skin bottom fit; five sniff poses foot_error_m=0 skin_motion_m=0.01271678 head_angle_deg=8.291719; tracking root fixed
+NATURAL_JELLYFISH_RUNTIME_PASS: 5730 vertices, 9248 nondegenerate triangles, four anatomy roles, one draw; 512 steps zero managed bytes; shared geometry/anchor invariant, invalid-time/reset recovery
+NATURAL_ROOM_DETAIL_PASS: 24204 static triangles, 9 renderers; source CC0 chair/vase, packed PBR channels, supported bases, metric UV/tangents, wall opening and shared geometry; nominal cutaway, no room reconstruction claim
+STEREO_RECORDER_REGRESSION_PASS: exact sent capture association, raw/pair/pose commit, duplicate/cap rejection; synthetic I/O fixture only
+PARK_DESTROYED_TARGET_PASS: retained Unity fake-null selection, hand interruption, actor-first controller disable and live replacement selection; native Play exit originally reproduced separately
+PARK_REGRESSION_PASS: missing target, invalid hand, distance, plane gate, reset/disable, anchor isolation, resource bounds
+PARK_NATURAL_MODEL_CHECKS_PASS: component albedo restoration, finite cached meshes and renderer budgets; editor only
+PARK_SAMPLE_SHAPE_ASSETS_PASS: compatible assets and missing-hand rejection; tracked PICO conditions NOT validated
+PARK_PINCH_LIFECYCLE_PASS: release once, short/long hold, UI ownership and sampling gap; synthetic inputs
+PARK_HOLD_LIFECYCLE_PASS: synthetic 60Hz hold, release, drift, reset and invalid pose; not PICO trajectory
+PARK_HEAD_MOTION_GATE_PASS: translation, rotation, settling and invalid pose; synthetic inputs, PICO thresholds pending
+PARK_FIST_LIFECYCLE_PASS: interrupted pair, solo undo once and pair reset once; synthetic inputs
+PARK_SAMPLE_CONTINUITY_PASS: gap, backwards clock and invalid sample cancel shared interaction; synthetic inputs
+PARK_GESTURE_SAFETY_PASS: empty/foreign attack rejected and interrupted gesture state cleared; editor fixture, not device validation
+STEREO_RECORDER_REGRESSION_PASS: exact sent capture association, raw/pair/pose commit, duplicate/cap rejection; synthetic I/O fixture only
+PARK_DESTROYED_TARGET_PASS: retained Unity fake-null selection, hand interruption, actor-first controller disable and live replacement selection; native Play exit originally reproduced separately
+PARK_REGRESSION_PASS: missing target, invalid hand, distance, plane gate, reset/disable, anchor isolation, resource bounds
+SHARED_MATCHED_PREVIEW_PASS: exact frame, missing frame, simulation, dimensions and bounded eviction; synthetic JPEG only
+SHARED_RECORDED_IMAGE_PASS: five source JPEG frames decoded at recorded dimensions; no device or model acceptance
+SHARED_REPLAY_BOUNDARY_PASS: immediate image/frame/cache cleanup on live transition; editor fixture only
+SHARED_INTERFACE_CHECK_PASS: cross-scene Auto preference and feedback retained during recognition; editor fixture only
+TABLETOP_THUMBS_UP_CHECKS_PASS
+TABLETOP_RAPID_TRANSITION_CHECKS_PASS
+TABLETOP_GESTURE_CHECKS_PASS
+PARK_SCENE_SERIALIZATION_PASS: Assets/Scenes/BridgeStereoFusion.unity objects=145
+PARK_LIGHTER_ENTRY_LOAD_PASS: shared UI, sender and existing gesture manager; editor loading only
+PARK_SCENE_SERIALIZATION_PASS: Assets/Scenes/ParkTree.unity objects=150
+PARK_SCENE_SERIALIZATION_PASS: Assets/Scenes/ParkBugs.unity objects=150
+PARK_SCENE_SERIALIZATION_PASS: Assets/Scenes/ParkStatue.unity objects=150
+PARK_SCENE_SERIALIZATION_PASS: Assets/Scenes/ParkRoom.unity objects=150
+PARK_SCENE_SERIALIZATION_PASS: Assets/Scenes/ParkPlant.unity objects=150
+PARK_SCENE_SERIALIZATION_PASS: Assets/Scenes/ParkPet.unity objects=150
+PARK_GESTURE_CONFIGURATION_EXPORTED: actual six scene controllers and registry verified; PICO validation pending
+PARK_SHARED_INTERACTION_REGRESSION_PASS: six scene fixtures, UI replay and lighter gestures/VFX; editor only, no device validation
+PROJECT_SCENE_AUDIT_PASS: 14 scenes inspected, all 14 required scenes present, no missing scripts; unassigned material slots=0; runtime animation checks recorded separately
+TABLETOP_THUMBS_UP_CHECKS_PASS
+TABLETOP_RAPID_TRANSITION_CHECKS_PASS
+TABLETOP_GESTURE_CHECKS_PASS
+PINCH_FOLLOW_CHECKS_PASS
+FOLLOW_OPTIMIZATION_CHECKS_PASS
+VISUAL_AVERAGE_RENDERED_ANCHOR_CHECK_PASS
+VISUAL_AVERAGE_CHECKS_PASS
+NO_VISION_RENDERED_FOLLOW_CHECK_PASS
+OBJECT_PICKUP_AND_SETDOWN_CHECK_PASS
+CONTACT_AND_CONTINUOUS_VISUAL_FOLLOW_CHECK_PASS
+OBJECT_TRACKING_CHECKS_PASS
+HANDHELD_FOLLOW_CHECKS_PASS
+TABLETOP_SUMMON_ELIGIBILITY_CHECKS_PASS
+TABLETOP_VISUAL_FOLLOW_CHECKS_PASS
+TABLETOP_BASE_AND_FACING_CHECKS_PASS
+LIGHTER_BBOX_REGISTRATION_CHECK_PASS
+FLOWER_BASE_ALIGNMENT_CHECK_PASS
+TABLETOP_LOCK_CHECKS_PASS
+STEREO_INTEGRATION_CHECKS_PASS
+F2G_POSE_CHECKS_PASS
