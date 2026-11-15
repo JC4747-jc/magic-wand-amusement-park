@@ -293,7 +293,7 @@ namespace MagicMR
         }
         void FinishFantasyExit() {
             state.awake=state.bubble=state.wind=state.rewarded=false;
-            if(naturalBronze)naturalBronze.ResetPose();
+            if(naturalBronze)naturalBronze.ResetPose();if(naturalStatueStretch)naturalStatueStretch.ResetPose();
             if(naturalJellyfish)naturalJellyfish.ResetPose();
             if(statueGarden)statueGarden.Clear();
             dreamVisibility=0;
@@ -337,8 +337,7 @@ namespace MagicMR
                     if(scenario==ParkScenario.Plant)Feedback="Virtual plant: A little light helps me grow.";
                     if(scenario==ParkScenario.Tree&&!magicTree)Feedback="Season tree awakened";
                     if(scenario==ParkScenario.Statue) {
-                        var firstChapters=story.Split(new[]{'\n'},StringSplitOptions.RemoveEmptyEntries);
-                        Feedback=firstChapters.Length>0?"Fantasy chapter 1: "+firstChapters[0]+"\nSource: "+storySource:"No story configured";
+                        Feedback=naturalStatueStretch?"Virtual statue: stretching and returning to rest":"Bronze bust awakened; full-body animation pending";
                     }
                     break;
                 case ParkAction.Pull: state.bubble=scenario==ParkScenario.Pet?!state.bubble:true; break;
@@ -376,11 +375,11 @@ namespace MagicMR
                     Emit(ParkAction.Wind,24); if(scenario==ParkScenario.Statue) { Feedback=story+"\nSource: "+storySource; if(storyAudio)audioSource.PlayOneShot(storyAudio); } break;
             }
             audioSource.PlayOneShot(action==ParkAction.Reward?MagicMRAudioFactory.Ding:MagicMRAudioFactory.ResetChime,.5f);
-            elapsed=0; float duration=Mathf.Max(.3f,transitionSeconds);
+            elapsed=0; float duration=action==ParkAction.Awaken&&naturalStatueStretch?naturalStatueStretch.Duration:Mathf.Max(.3f,transitionSeconds);
             while(elapsed<duration)
             {
                 elapsed+=Time.unscaledDeltaTime; float t=Mathf.Clamp01(elapsed/duration); float pulse=Mathf.Sin(t*Mathf.PI);
-                if(action==ParkAction.Awaken && scenario==ParkScenario.Statue)SetScanProgress(t);
+                if(action==ParkAction.Awaken && scenario==ParkScenario.Statue){if(naturalStatueStretch)naturalStatueStretch.Sample(t);else SetScanProgress(t);}
                 stretch=action==ParkAction.Awaken?pulse:0;
                 // Willow windup -> bounded side sweep -> recovery; never moves the anchor.
                 bend=0; // Willow B owns the bounded branch-only lash in StepTreeWind.
@@ -459,7 +458,7 @@ namespace MagicMR
             dreamVisibility=0;if(bubble && scenario==ParkScenario.Pet)bubble.localScale=dreamRestScale;
             if(naturalJellyfish)naturalJellyfish.ResetPose();
             bloomVisibility=0;if(plantFlower) {plantFlower.localScale=Vector3.zero;plantFlower.gameObject.SetActive(false);}
-            if(naturalBronze)naturalBronze.ResetPose();
+            if(naturalBronze)naturalBronze.ResetPose();if(naturalStatueStretch)naturalStatueStretch.ResetPose();
             if(scenario==ParkScenario.Plant && branchRoot) {branchRoot.localRotation=Quaternion.identity;StepPlantAnimation(0,0);branchRoot.localRotation=Quaternion.identity;}
             bugDefeatProgress=0;ApplyBugDefeatPose();
             windBlend=0;
@@ -469,7 +468,7 @@ namespace MagicMR
             if(scenario==ParkScenario.Plant && branchRoot)branchRoot.localScale=new Vector3(1,Mathf.Lerp(.15f,1.4f,.45f),1);
             if(built) ApplyVisibility();
         }
-        void Cancel() { if(statueScan)statueScan.gameObject.SetActive(false);if(naturalPetRig)naturalPetRig.ResetPose();if(naturalBronze)naturalBronze.ResetPose();StopAllCoroutines(); RestoreStoppedScales();motion=null; if(audioSource)audioSource.Stop(); particleCount=0; foreach(var p in pool)if(p)p.gameObject.SetActive(false); if(preview)preview.gameObject.SetActive(false); if(spell)spell.gameObject.SetActive(false); bend=spin=stretch=0; dance=Vector3.zero; }
+        void Cancel() { if(statueScan)statueScan.gameObject.SetActive(false);if(naturalPetRig)naturalPetRig.ResetPose();if(naturalBronze)naturalBronze.ResetPose();if(naturalStatueStretch)naturalStatueStretch.ResetPose();StopAllCoroutines(); RestoreStoppedScales();motion=null; if(audioSource)audioSource.Stop(); particleCount=0; foreach(var p in pool)if(p)p.gameObject.SetActive(false); if(preview)preview.gameObject.SetActive(false); if(spell)spell.gameObject.SetActive(false); bend=spin=stretch=0; dance=Vector3.zero; }
         public void ExitAndDestroy() {
             if(IsExiting)return;
             if(!Application.isPlaying || !isActiveAndEnabled || !built || !visual) {Destroy(gameObject);return;}

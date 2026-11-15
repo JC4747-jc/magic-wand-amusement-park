@@ -104,7 +104,7 @@ public static class HciSharedGestureChecks
         try {
             if(phase==0){started=EditorApplication.timeSinceStartup;controller=UnityEngine.Object.FindFirstObjectByType<ParkController>();Require(controller,"Saved scene controller missing");Camera.main.GetComponentsInChildren<Button>(false).Single(b=>b.name=="Virtual test").onClick.Invoke();phase=1;next=EditorApplication.timeSinceStartup+1;return;}
             Require(errors==0,"Runtime error");Require(EditorApplication.timeSinceStartup-started<120,"Timeout");
-            if(EditorApplication.timeSinceStartup<next)return;
+            if(EditorApplication.timeSinceStartup<next||(controller.selected&&controller.selected.Busy))return;
             if(phase==1){Require(controller.SwitchContent(Profiles[profile],null),"Content switch blocked");controller.SpawnVirtual();phase=2;}
             else if(phase==2){Safety();Replay(Trace(EditDimension.Appearance),EditDimension.Appearance,true);phase=3;}
             else if(phase==3){Replay(Trace(EditDimension.Agency),EditDimension.Agency,true);phase=4;}

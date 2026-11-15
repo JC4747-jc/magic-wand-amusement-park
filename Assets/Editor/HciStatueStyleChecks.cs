@@ -61,7 +61,7 @@ public static class HciStatueStyleChecks
         if(!EditorApplication.isPlaying){if(SessionState.GetBool(Key+".Done",false)&&!EditorApplication.isPlayingOrWillChangePlaymode){SessionState.SetBool(Key,false);EditorApplication.Exit(0);}return;}
         try{
             if(phase==0){started=EditorApplication.timeSinceStartup;new GameObject("Synthetic statue joint driver").AddComponent<HciSeasonTreeHandPump>().sample=Pump;Later(1);return;}
-            Require(errors==0,"Runtime error");Require(EditorApplication.timeSinceStartup-started<100,"Timeout");if(trace!=null||EditorApplication.timeSinceStartup<next)return;
+            Require(errors==0,"Runtime error");Require(EditorApplication.timeSinceStartup-started<100,"Timeout");if(trace!=null||EditorApplication.timeSinceStartup<next||(actor&&actor.Busy))return;
             if(phase==1){controller=UnityEngine.Object.FindFirstObjectByType<ParkController>();Require(controller&&controller.scenario==ParkScenario.Statue,"Saved Statue scene missing");controller.simulation=true;controller.SpawnVirtual();Later(2);}
             else if(phase==2){
                 actor=controller.selected;Require(actor&&actor.species==(species==0?"Statue":"BronzeBeast"),"Wrong variant");anchor=actor.transform.position;
@@ -84,7 +84,7 @@ public static class HciStatueStyleChecks
             else if(phase==9){Check(false);Cast(EditDimension.Appearance);Later(10);}
             else if(phase==10){Check(true);Act(ParkAction.Reset);Later(11);}
             else if(phase==11){Check(false);Require(!actor.Busy,"Reset retained motion");Capture("03-reset");if(species++==0){Require(controller.SelectVirtualStatue("BronzeBeast"),"Bronze switch failed");Later(2);}else{
-                File.WriteAllText(Output+"/result.txt","PASS: saved ParkStatue, marble + bronze; synthetic production A/B/C joint traces match lighter exactly once; A reversible cartoon material rather than story selection; B/C preserve appearance; C retains story/source; original albedo and exact shared material restoration; bounded material count; same-frame visible pixel checks; invalid/far/lost rejection; Undo/Reset; stable fit/anchor; zero runtime errors; ten camera renders. Editor only. B full stretching animation and D lotus/wish-tree requirements remain separate unfinished work; no real YOLO/XR/PICO/Android acceptance.\n");SessionState.SetBool(Key+".Done",true);EditorApplication.ExitPlaymode();}}
+                File.WriteAllText(Output+"/result.txt","PASS: saved ParkStatue, standing human + bronze; synthetic production A/B/C joint traces match lighter exactly once; A reversible cartoon material rather than story selection; B/C preserve appearance; C retains story/source; original albedo and exact shared material restoration; bounded material count; same-frame visible pixel checks; invalid/far/lost rejection; Undo/Reset; stable fit/anchor; zero runtime errors; ten camera renders. Editor only. Human B full stretching and D lotus/wish-tree lifecycle have separate validation; bronze full-body animation remains pending; no real YOLO/XR/PICO/Android acceptance.\n");SessionState.SetBool(Key+".Done",true);EditorApplication.ExitPlaymode();}}
         }catch(Exception e){Fail(e);}
     }
 }

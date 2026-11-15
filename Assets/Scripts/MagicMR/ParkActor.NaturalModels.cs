@@ -17,9 +17,10 @@ namespace MagicMR
         void BuildNaturalStatue()
         {
             bool bronze=species=="BronzeBeast";
-            var prefab=Resources.Load<GameObject>("MagicMR/NaturalModels/"+(bronze?"BronzeBeast":"MarbleBust"));
+            var prefab=Resources.Load<GameObject>("MagicMR/NaturalModels/"+(bronze?"BronzeBeast":"StandingStatue"));
             if(!prefab)throw new System.InvalidOperationException("Missing licensed natural statue prefab; run NaturalDecorAssetBuilder.Run");
-            var model=Instantiate(prefab,visual,false);model.name=bronze?"CC0 bronze bovine bust by Tina - Poly Haven":"CC0 marble bust by Rico Cilliers - Poly Haven";
+            var model=Instantiate(prefab,visual,false);model.name=bronze?"CC0 bronze bovine bust by Tina - Poly Haven":"Fictional standing sculpture - CC0 Quaternius base";
+            naturalStatueStretch=model.GetComponent<NaturalStatueStretch>();if(naturalStatueStretch)naturalStatueStretch.Initialize();
             naturalBronze=model.GetComponent<NaturalBronzeBeast>();if(naturalBronze)naturalBronze.Initialize();
             foreach(var renderer in model.GetComponentsInChildren<Renderer>())
             {
@@ -29,6 +30,7 @@ namespace MagicMR
         }
 
         NaturalCartoonStyle statueCartoon;
+        NaturalStatueStretch naturalStatueStretch;
         public bool StatueCartoon=>scenario==ParkScenario.Statue&&state.style==1;
 
         void BuildNaturalRoom()
