@@ -1,0 +1,24 @@
+{
+  "source_commit": "5fde328ad48173a8e01d41f0d1b0ec7e605ea193",
+  "source_scope": "Runtime Assets, Packages and ProjectSettings match the feature commit after Git clean filters; explicit Editor build concurrency override only",
+  "build_only_overrides": [
+    {
+      "path": "Assets/Editor/AllScenesValidationBuild.cs",
+      "sha256": "831af497551a9f122fde85ba2debc9e1b743ef09aa18c600d3c5dc23dc0c1675"
+    },
+    {
+      "path": "Assets/Editor/ResourceBoundedAndroidBuild.cs",
+      "sha256": "afaab4e433253d9f525c4ead14eeef34d4c36c77965e12cccad02acfa8900784"
+    }
+  ],
+  "build_override_reason": "Configurable 1/2 IL2CPP jobs; low-memory run chooses 1 and releases unused Editor asset memory before BuildPlayer",
+  "untracked_editor_only_harness": [
+    "Assets/Editor/CombinedAndroidCompileProbe.cs",
+    "Assets/Editor/CombinedAndroidCompileProbe.cs.meta"
+  ],
+  "desktop_generated_pico_flags_restored": true,
+  "main_head": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
+  "main_index_sha256": "aab38b747bb2453015b4ce247543cf2dd6aa54d5d5586cf1fcafce46a0398c5a",
+  "main_pico_settings_sha256": "48fe009aa569f4e1c4b4246f582f0fe408402a308c9d982de39980d7ab5cb35e",
+  "scope": "Fresh combined all-14-scenes Android validation APK, not physical headset acceptance"
+}

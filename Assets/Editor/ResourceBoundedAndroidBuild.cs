@@ -15,6 +15,7 @@ public sealed class ResourceBoundedAndroidBuild : IPostGenerateGradleAndroidProj
     public static void RecordAssets(BuildReport report)
     {
         if(!active||report.summary.result!=BuildResult.Succeeded)return;
+        if(report.packedAssets.Length==0)throw new Exception("BuildReport has no packed-asset provenance; repack player content before acceptance");
         var assets=report.packedAssets.SelectMany(p=>p.contents).Select(p=>p.sourceAssetPath).Where(p=>!string.IsNullOrEmpty(p)).Distinct().OrderBy(p=>p).ToArray();
         var required=new[]{"Assets/ThirdParty/NaturalTrees/SmallTree/SmallTree.fbx","Assets/MagicMR/NaturalTreeLeaves.shader","Assets/ThirdParty/NaturalTrees/SmallTree/leaves_alpha.jpg",
             "Assets/ThirdParty/NaturalPlants/Haworthia/Haworthia.fbx","Assets/ThirdParty/NaturalDecor/Statue/MarbleBust.fbx",
@@ -81,15 +82,27 @@ gradle.projectsEvaluated {
     public static void RunPose()=>Build(BridgeStereoBuild.BuildPose,false);
     public static void RunRepair()=>Build(BridgeStereoBuild.BuildRepair,false);
     public static void RunAllScenes()=>Build(AllScenesValidationBuild.Build,false);
+    public static void ReleaseEditorBuildMemory()
+    {
+        if(!active||Environment.GetEnvironmentVariable("MAGICMR_BUILD_JOBS")!="1")return;
+        long before=UnityEngine.Profiling.Profiler.GetTotalAllocatedMemoryLong();
+        EditorUtility.UnloadUnusedAssetsImmediate();
+        GC.Collect();GC.WaitForPendingFinalizers();GC.Collect();
+        Debug.Log("ANDROID_EDITOR_CACHE_RELEASE: allocated_bytes_before="+before+" after="+UnityEngine.Profiling.Profiler.GetTotalAllocatedMemoryLong()+"; unused assets and managed garbage only, not disk cache deletion");
+    }
     static void Build(Action build,bool checkModelReferences)
     {
         string previous=PlayerSettings.GetAdditionalIl2CppArgs();
         int previousHeap=AndroidExternalToolsSettings.maxJvmHeapSize;
         string previousSdk=AndroidExternalToolsSettings.sdkRootPath,previousNdk=AndroidExternalToolsSettings.ndkRootPath,previousJdk=AndroidExternalToolsSettings.jdkRootPath;
         if(previous.Contains("--jobs"))throw new Exception("Existing IL2CPP jobs argument requires explicit reconciliation");
+        int jobs=2;string requestedJobs=Environment.GetEnvironmentVariable("MAGICMR_BUILD_JOBS");
+        if(!string.IsNullOrEmpty(requestedJobs)&&(!int.TryParse(requestedJobs,out jobs)||jobs<1||jobs>2))
+            throw new Exception("MAGICMR_BUILD_JOBS must be 1 or 2");
         try
         {
-            active=true;PlayerSettings.SetAdditionalIl2CppArgs((previous+" --jobs=2").Trim());
+            active=true;PlayerSettings.SetAdditionalIl2CppArgs((previous+" --jobs="+jobs).Trim());
+            Debug.Log("ANDROID_IL2CPP_JOBS: "+jobs);
             string sharedToolchain=Environment.GetEnvironmentVariable("MAGICMR_ANDROID_TOOLCHAIN");
             if(!string.IsNullOrEmpty(sharedToolchain)) {
                 foreach(string directory in new[]{"SDK","NDK","OpenJDK"})if(!Directory.Exists(Path.Combine(sharedToolchain,directory)))throw new Exception("Missing shared Android toolchain directory: "+directory);

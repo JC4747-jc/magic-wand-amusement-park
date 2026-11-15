@@ -23,6 +23,7 @@ public static class AllScenesValidationBuild
             PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android,"com.yn.picmagicmr.validation");PlayerSettings.productName="Magic MR All Scenes Validation";
             PlayerSettings.bundleVersion="0.1.0";PlayerSettings.Android.bundleVersionCode=1;PlayerSettings.Android.useCustomKeystore=false;
             Directory.CreateDirectory("Builds/Android");
+            ResourceBoundedAndroidBuild.ReleaseEditorBuildMemory();
             var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=scenes,target=BuildTarget.Android,locationPathName="Builds/Android/AllScenesValidation.apk",options=BuildOptions.None});
             if(report.summary.result!=BuildResult.Succeeded)throw new Exception("All-scenes validation build failed");
             ResourceBoundedAndroidBuild.RecordAssets(report);

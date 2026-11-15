@@ -1,0 +1,254 @@
+{
+  "exitCode": -1,
+  "guardStop": "Host RAM below 3 GiB",
+  "sourceCommit": "5fde328ad48173a8e01d41f0d1b0ec7e605ea193",
+  "variant": "AllScenes",
+  "requestedBeeThreads": 1,
+  "requestedIl2CppJobs": 1,
+  "minimumSampledFreeRAMGiB": 2.745,
+  "maximumSampledOwnedRSSMiB": 5159.22,
+  "maximumSampledCompilerProcesses": 0.0,
+  "maximumSampledDiskGrowthMiB": 99.33,
+  "sampleScope": "5-second snapshots of host and this Editor descendants; not continuous peaks",
+  "samples": [
+    {
+      "elapsed": 0.2,
+      "freeRAMGiB": 7.907,
+      "ownedRSSMiB": 74.9,
+      "compilerProcesses": 0,
+      "diskGrowthMiB": 0.02,
+      "topOwnedProcesses": [
+        {
+          "name": "Unity.exe",
+          "rssMiB": 55.63
+        },
+        {
+          "name": "conhost.exe",
+          "rssMiB": 10.56
+        },
+        {
+          "name": "UnityCrashHandler64.exe",
+          "rssMiB": 8.71
+        }
+      ]
+    },
+    {
+      "elapsed": 5.5,
+      "freeRAMGiB": 7.197,
+      "ownedRSSMiB": 823.21,
+      "compilerProcesses": 0,
+      "diskGrowthMiB": 0.0,
+      "topOwnedProcesses": [
+        {
+          "name": "Unity.exe",
+          "rssMiB": 648.87
+        },
+        {
+          "name": "Unity.ILPP.Runner.exe",
+          "rssMiB": 93.9
+        },
+        {
+          "name": "UnityPackageManager.exe",
+          "rssMiB": 55.37
+        },
+        {
+          "name": "conhost.exe",
+          "rssMiB": 10.66
+        },
+        {
+          "name": "UnityCrashHandler64.exe",
+          "rssMiB": 8.71
+        },
+        {
+          "name": "UnityAutoQuitter.exe",
+          "rssMiB": 5.71
+        }
+      ]
+    },
+    {
+      "elapsed": 10.8,
+      "freeRAMGiB": 5.869,
+      "ownedRSSMiB": 2132.25,
+      "compilerProcesses": 0,
+      "diskGrowthMiB": 0.0,
+      "topOwnedProcesses": [
+        {
+          "name": "Unity.exe",
+          "rssMiB": 1880.33
+        },
+        {
+          "name": "UnityPackageManager.exe",
+          "rssMiB": 132.91
+        },
+        {
+          "name": "Unity.ILPP.Runner.exe",
+          "rssMiB": 93.94
+        },
+        {
+          "name": "conhost.exe",
+          "rssMiB": 10.66
+        },
+        {
+          "name": "UnityCrashHandler64.exe",
+          "rssMiB": 8.71
+        },
+        {
+          "name": "UnityAutoQuitter.exe",
+          "rssMiB": 5.71
+        }
+      ]
+    },
+    {
+      "elapsed": 16.1,
+      "freeRAMGiB": 5.7,
+      "ownedRSSMiB": 2319.65,
+      "compilerProcesses": 0,
+      "diskGrowthMiB": 0.0,
+      "topOwnedProcesses": [
+        {
+          "name": "Unity.exe",
+          "rssMiB": 2085.37
+        },
+        {
+          "name": "UnityPackageManager.exe",
+          "rssMiB": 114.6
+        },
+        {
+          "name": "Unity.ILPP.Runner.exe",
+          "rssMiB": 94.6
+        },
+        {
+          "name": "conhost.exe",
+          "rssMiB": 10.66
+        },
+        {
+          "name": "UnityCrashHandler64.exe",
+          "rssMiB": 8.71
+        },
+        {
+          "name": "UnityAutoQuitter.exe",
+          "rssMiB": 5.71
+        }
+      ]
+    },
+    {
+      "elapsed": 21.4,
+      "freeRAMGiB": 5.276,
+      "ownedRSSMiB": 2736.16,
+      "compilerProcesses": 0,
+      "diskGrowthMiB": 2.53,
+      "topOwnedProcesses": [
+        {
+          "name": "Unity.exe",
+          "rssMiB": 2471.38
+        },
+        {
+          "name": "UnityPackageManager.exe",
+          "rssMiB": 114.6
+        },
+        {
+          "name": "Unity.ILPP.Runner.exe",
+          "rssMiB": 101.53
+        },
+        {
+          "name": "UnityShaderCompiler.exe",
+          "rssMiB": 23.58
+        },
+        {
+          "name": "conhost.exe",
+          "rssMiB": 10.66
+        },
+        {
+          "name": "UnityCrashHandler64.exe",
+          "rssMiB": 8.71
+        },
+        {
+          "name": "UnityAutoQuitter.exe",
+          "rssMiB": 5.71
+        }
+      ]
+    },
+    {
+      "elapsed": 26.6,
+      "freeRAMGiB": 3.144,
+      "ownedRSSMiB": 4971.23,
+      "compilerProcesses": 0,
+      "diskGrowthMiB": 0.0,
+      "topOwnedProcesses": [
+        {
+          "name": "il2cpp.exe",
+          "rssMiB": 2538.43
+        },
+        {
+          "name": "Unity.exe",
+          "rssMiB": 2134.02
+        },
+        {
+          "name": "UnityPackageManager.exe",
+          "rssMiB": 114.6
+        },
+        {
+          "name": "Unity.ILPP.Runner.exe",
+          "rssMiB": 101.75
+        },
+        {
+          "name": "UnityShaderCompiler.exe",
+          "rssMiB": 23.58
+        },
+        {
+          "name": "bee_backend.exe",
+          "rssMiB": 19.31
+        },
+        {
+          "name": "conhost.exe",
+          "rssMiB": 10.66
+        },
+        {
+          "name": "UnityCrashHandler64.exe",
+          "rssMiB": 8.71
+        }
+      ]
+    },
+    {
+      "elapsed": 31.9,
+      "freeRAMGiB": 2.745,
+      "ownedRSSMiB": 5159.22,
+      "compilerProcesses": 0,
+      "diskGrowthMiB": 99.33,
+      "topOwnedProcesses": [
+        {
+          "name": "il2cpp.exe",
+          "rssMiB": 2726.12
+        },
+        {
+          "name": "Unity.exe",
+          "rssMiB": 2133.93
+        },
+        {
+          "name": "UnityPackageManager.exe",
+          "rssMiB": 114.61
+        },
+        {
+          "name": "Unity.ILPP.Runner.exe",
+          "rssMiB": 102.19
+        },
+        {
+          "name": "UnityShaderCompiler.exe",
+          "rssMiB": 23.58
+        },
+        {
+          "name": "bee_backend.exe",
+          "rssMiB": 19.31
+        },
+        {
+          "name": "conhost.exe",
+          "rssMiB": 10.64
+        },
+        {
+          "name": "UnityCrashHandler64.exe",
+          "rssMiB": 8.66
+        }
+      ]
+    }
+  ]
+}

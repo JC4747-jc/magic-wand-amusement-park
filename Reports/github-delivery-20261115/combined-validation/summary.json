@@ -196,7 +196,7 @@
     "Physical pointer and headset gestures",
     "YOLO accuracy on PICO captures",
     "Native cameras/pose/both eyes/device performance",
-    "Fresh Android builds of this combined tree; existing four APKs were built from the main workspace"
+    "Fresh combined Main/Pose/Repair app-specific packages; all-scenes validation APK alone rebuilt"
   ],
   "raw_credentials_recorded": false,
   "android_managed_compilation": {
@@ -210,5 +210,136 @@
     "scope": "CompilePlayerScripts(target=Android), not a packaged player/IL2CPP/device check",
     "minimum_sampled_free_ram_gib": 5.091,
     "maximum_sampled_disk_growth_mib": 248.24
+  },
+  "android_full_build": {
+    "status": "PASSED_ALL_14_SCENE_VALIDATION_APK",
+    "source_input_commit": "5fde328ad48173a8e01d41f0d1b0ec7e605ea193",
+    "build_only_patches": [
+      {
+        "path": "Assets/Editor/AllScenesValidationBuild.cs",
+        "sha256": "831af497551a9f122fde85ba2debc9e1b743ef09aa18c600d3c5dc23dc0c1675"
+      },
+      {
+        "path": "Assets/Editor/ResourceBoundedAndroidBuild.cs",
+        "sha256": "afaab4e433253d9f525c4ead14eeef34d4c36c77965e12cccad02acfa8900784"
+      }
+    ],
+    "apk": {
+      "apk": "AllScenesValidation.apk",
+      "bytes": 75352268,
+      "sha256": "e4ce79f942817dea569ae0e7a3397b45572a1b92f2f8497a4d8fa922aed20271",
+      "package": "com.yn.picmagicmr.validation",
+      "scene_count": 14,
+      "packed_scenes": [
+        "Assets/Scenes/BridgeStereoFusion.unity",
+        "Assets/Scenes/BridgeStereoPoseFusion.unity",
+        "Assets/Scenes/BridgeStereoRepair.unity",
+        "Assets/Scenes/BridgeTest.unity",
+        "Assets/Scenes/DesktopCaptureDemo.unity",
+        "Assets/Scenes/MagicMR.unity",
+        "Assets/Scenes/ParkBugs.unity",
+        "Assets/Scenes/ParkPet.unity",
+        "Assets/Scenes/ParkPlant.unity",
+        "Assets/Scenes/ParkRoom.unity",
+        "Assets/Scenes/ParkStatue.unity",
+        "Assets/Scenes/ParkTree.unity",
+        "Assets/Scenes/SampleScene.unity",
+        "Assets/Scenes/VstTest.unity"
+      ],
+      "crc_pass": true,
+      "signature_pass": true,
+      "unaccepted_candidates_absent": true,
+      "natural_assets": [
+        "Haworthia",
+        "MarbleBust",
+        "beige_wall_002",
+        "rough_linen",
+        "wood_table_001"
+      ],
+      "packed_pet_animations": [
+        "BicolorCat_Walk",
+        "Wolfhound_WalkSource"
+      ],
+      "packed_source_assets_pass": true,
+      "packed_required_sources": [
+        "Assets/MagicMR/NaturalBarkMark.shader",
+        "Assets/MagicMR/NaturalCuticle.shader",
+        "Assets/MagicMR/NaturalInsects/Cockroach.fbx",
+        "Assets/MagicMR/NaturalInsects/Spider.fbx",
+        "Assets/MagicMR/NaturalJellyfish.shader",
+        "Assets/MagicMR/NaturalJellyfish/Jellyfish.mesh.asset",
+        "Assets/MagicMR/NaturalTreeLeaves.shader",
+        "Assets/MagicMR/NaturalTreeScar/Scar.mat",
+        "Assets/MagicMR/NaturalTreeScar/Scar.mesh.asset",
+        "Assets/Resources/MagicMR/NaturalMaterials/BookCloth.mat",
+        "Assets/Resources/MagicMR/NaturalMaterials/BookPaper.mat",
+        "Assets/Resources/MagicMR/NaturalMaterials/Linen.mat",
+        "Assets/Resources/MagicMR/NaturalMaterials/Plaster.mat",
+        "Assets/Resources/MagicMR/NaturalMaterials/RoomMetal.mat",
+        "Assets/Resources/MagicMR/NaturalMaterials/Wood.mat",
+        "Assets/ThirdParty/NaturalDecor/BronzeBeast/Bronze.mat",
+        "Assets/ThirdParty/NaturalDecor/BronzeBeast/BronzeBeast.fbx",
+        "Assets/ThirdParty/NaturalDecor/BronzeBeast/Bronze_MetalAO_Smooth.png",
+        "Assets/ThirdParty/NaturalDecor/BronzeBeast/bull_head_diff_1k.jpg",
+        "Assets/ThirdParty/NaturalDecor/BronzeBeast/bull_head_nor_gl_1k.jpg",
+        "Assets/ThirdParty/NaturalDecor/CeramicVase/CeramicVase.fbx",
+        "Assets/ThirdParty/NaturalDecor/CeramicVase/ceramic_vase_01_URP_MetalAO_Smooth.png",
+        "Assets/ThirdParty/NaturalDecor/CeramicVase/ceramic_vase_01_diff_1k.jpg",
+        "Assets/ThirdParty/NaturalDecor/CeramicVase/ceramic_vase_01_nor_gl_1k.jpg",
+        "Assets/ThirdParty/NaturalDecor/ReadingChair/ReadingChair.fbx",
+        "Assets/ThirdParty/NaturalDecor/ReadingChair/modern_arm_chair_01_legs_URP_MetalAO_Smooth.png",
+        "Assets/ThirdParty/NaturalDecor/ReadingChair/modern_arm_chair_01_legs_diff_1k.jpg",
+        "Assets/ThirdParty/NaturalDecor/ReadingChair/modern_arm_chair_01_legs_nor_gl_1k.jpg",
+        "Assets/ThirdParty/NaturalDecor/ReadingChair/modern_arm_chair_01_pillow_URP_MetalAO_Smooth.png",
+        "Assets/ThirdParty/NaturalDecor/ReadingChair/modern_arm_chair_01_pillow_diff_1k.jpg",
+        "Assets/ThirdParty/NaturalDecor/ReadingChair/modern_arm_chair_01_pillow_nor_gl_1k.jpg",
+        "Assets/ThirdParty/NaturalDecor/Statue/MarbleBust.fbx",
+        "Assets/ThirdParty/NaturalPets/BicolorCat/BicolorCat.fbx",
+        "Assets/ThirdParty/NaturalPets/BicolorCat/BicolorCat_UV0_Normal.png",
+        "Assets/ThirdParty/NaturalPets/BicolorCat/Image_0.png",
+        "Assets/ThirdParty/NaturalPets/Wolfhound/Wolfhound.fbx",
+        "Assets/ThirdParty/NaturalPets/Wolfhound/Wolfhound_Albedo.png",
+        "Assets/ThirdParty/NaturalPlants/Haworthia/Haworthia.fbx",
+        "Assets/ThirdParty/NaturalTrees/SmallTree/SmallTree.fbx",
+        "Assets/ThirdParty/NaturalTrees/SmallTree/leaves_alpha.jpg"
+      ]
+    },
+    "local_delivery": "Builds/Android/CombinedAllScenesValidation-20261115.apk",
+    "resource_run": {
+      "unity": "D:/Unity/Hub/Editor/6000.0.33f1/Editor/Unity.exe",
+      "variant": "AllScenes",
+      "requestedBeeThreads": 1,
+      "requestedIl2CppJobs": 1,
+      "exitCode": 0,
+      "guardStop": null,
+      "maximumSampledOwnedRSSMiB": 3929.0,
+      "maximumSampledDiskGrowthMiB": 62.0,
+      "processOwnership": "PID and creation time validated at every parent-child edge",
+      "childCleanup": "Unnamed Windows job with KILL_ON_JOB_CLOSE; no breakaway flags",
+      "maximumAllowedDiskGrowthMiB": 512,
+      "minimumSampledFreeMemoryGiB": 3.672,
+      "maximumSampledCompilerProcesses": 0,
+      "samplingScope": "Five-second snapshots of descendants of this Unity build; not a continuous or complete peak measurement"
+    },
+    "full_build_log_sha256": "ee71199d0f1624f8278275f6adff845339f6c6b3f0a3a5ae9be71c6387bddb25",
+    "source_manifest": "android-packed-sources.json",
+    "validation": "android-apk-validation.json",
+    "failure_history": [
+      "Preflight initially rejected NUnit temporary scene; an erroneously started build was stopped and the owned temporary scene moved out of Assets.",
+      "Three runs stopped below the unchanged 3 GiB host RAM floor; jobs=1 and unused asset release alone did not resolve overlapping Editor/IL2CPP memory.",
+      "Offline full Player target was manually stopped because its graph requires Editor RPC. The audited codegen-only target completed conversion and returned 4 (DAG refresh required), not full-build success.",
+      "A later RSS stop was false: PID-only ancestry included older unrelated apps after PID reuse. Its owned-RSS numbers are invalid. Timestamp-edge regression tests and live ownership checks passed after the fix.",
+      "Native build then completed, but the 4 GiB additional disk guard stopped the Gradle phase. Cache size evidence was retained; pagefile allocation remained 2944 MiB.",
+      "A newly added disk parameter collided with an old statistic variable. The owned Editor and project-confirmed Gradle daemon were stopped; variable names and exception cleanup were fixed.",
+      "Windows job cleanup was added and tested with an orphan child and an unrelated sentinel.",
+      "First completed APK packaging was rejected because cached BuildReport had zero packed groups/entries. Only the approximately 60 MiB serialized PlayerDataCache was moved aside; native cache was retained. Fresh content serialization restored all 40 source bindings."
+    ],
+    "not_accepted": [
+      "Physical headset gestures/cameras/pose/both eyes/performance",
+      "Scene recognition accuracy or full 13-class training acceptance",
+      "Fresh combined Main/Pose/Repair app-specific APKs; those existing binaries remain from the main workspace"
+    ],
+    "training_performed": false,
+    "new_image_downloads": 0
   }
 }

@@ -1,0 +1,28 @@
+低内存Android整合构建（2026-11-15，本机验证范围）
+
+Unity6000.0.33f1；Android工具链复用6000.0.26f1；PICO Integration3.4.0。
+Tools/build_android_bounded.ps1支持-BuildJobs 1，并同时设置Bee/IL2CPP；
+-MaximumDiskGrowthMiB可设64..4096。运行中守卫：宿主空闲RAM3GiB、
+本任务RSS8GiB、项目盘20GiB、新增磁盘指定上限、20分钟、日志16MiB。
+统计值是五秒采样，不能当成连续峰值；磁盘增量含系统/其他程序活动。
+
+本次冷构建先因Editor与IL2CPP同时驻留触发RAM守卫。只把已生成DAG中的
+IL2CPP_CodeGen输出作为离线目标，确认其依赖闭包无Editor RPC；转换完成
+返回4要求刷新DAG，再交回Unity处理回调、原生编译、Gradle与BuildReport。
+没有修改DAG动作、跳过插件回调或把离线步骤当完整APK。完整Player目标含
+Editor RPC，不能直接离线跑完整目标。机器/工程变化后必须重新检查DAG。
+
+正式脚本按PID+创建时间识别每条父子边，防止PID复用误计其他程序。
+另用未命名Windows Job包住本次Editor及新子进程；退出时回收脱离父进程
+的Gradle进程。合成回归包含旧PID、根身份、子孙进程、枚举顺序、孤儿子进程
+及独立哨兵存活检查；本次正式打包也实际使用了这两个机制。
+参考：https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects
+
+中断构建留下内容缓存后，增量APK可生成但BuildReport.packedAssets为空。
+必须拒绝没有来源绑定的包；本次只移出隔离工作树的Library/PlayerDataCache/Android
+（约60MiB）并重序列化，保留6GiB级原生缓存，随后40项来源校验通过。
+不能盲删整个Library/SDK、共享存在差异的PackageCache、降低内存门槛或清理用户数据。
+
+校验命令：Tools/verify_android_artifacts.py --unity-data <现有工具链Editor/Data>
+--project-dir <隔离项目根目录> --variant AllScenes。保留ZIP/签名/ARM64、
+14精确场景路径、署名、走路动画、40来源与APK SHA绑定；不是实机验收。

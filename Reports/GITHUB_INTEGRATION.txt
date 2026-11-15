@@ -71,12 +71,20 @@ https://docs.github.com/en/repositories/working-with-files/managing-large-files/
 旧NUnit初测4通过/2失败，修正旧像素体断言和房间Candy显式选择后6/6通过，未改产品行为。
 CPU测试禁用图形和Burst编译；六场景界面使用实际图形渲染。前一次导入磁盘守卫和
 图形NUnit内存守卫触发均保留，不计作成功。最终渲染运行最低采样空闲RAM6.57GiB，
-新增磁盘0.98MiB；完整范围见combined-validation/summary.json。不是实机或新分支Android包验收。
+新增磁盘0.98MiB；完整范围见combined-validation/summary.json。这些编辑器检查不替代实机验收；完整整合包结果见下方第7节。
 旧模型归档共65条，部署接受数0；cockroach-positive-v16仅公开图pilot通过、PICO待验收，
 未批量下载旧权重，也未将其自动部署。详见prior-model-archive-audit.json。
 
 追加：整合源码Android托管脚本编译通过（52个程序集，含MagicMR/Assembly-CSharp），
-最低采样空闲RAM5.091GiB、最大采样磁盘增量248.24MiB；未执行IL2CPP或重新打APK。
+最低采样空闲RAM5.091GiB、最大采样磁盘增量248.24MiB；该项仅为托管编译；完整整合包现已另行通过，见第7节。
 历史Datasets共有129个目录/5927份标签、0份被Git追踪的图片；3个小审核清单有来源及SHA，
 1个审核文件超过1MiB只读预算未展开。恢复图片、许可/标签复核和旧测试污染检查仍须完成，
 本轮没有下载图片或训练。见historical-dataset-inventory.json。
+
+7. 完整整合Android包
+14场景验证包已完成IL2CPP/Gradle及签名、CRC、ARM64、场景路径、40来源校验。
+SHA256: e4ce79f942817dea569ae0e7a3397b45572a1b92f2f8497a4d8fa922aed20271
+最终增量阶段最低采样空闲RAM3.672GiB、新增磁盘62MiB；冷构建的内存/磁盘停止、
+进程归属误判和空来源报告均保留在combined-validation/summary.json，不计作成功。
+本地包：Builds/Android/CombinedAllScenesValidation-20261115.apk；APK不上传普通Git。
+Main/Pose/Repair仍为此前主工作区产物，头显及识别精度仍待验收。

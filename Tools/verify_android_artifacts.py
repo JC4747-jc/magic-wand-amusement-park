@@ -1,4 +1,4 @@
-"""Read-only signature, ZIP, identity and scene-count checks for the three APKs."""
+"""Read-only signature, ZIP, identity and scene checks for selected project APKs."""
 import argparse
 import hashlib
 import json
@@ -11,16 +11,25 @@ import zipfile
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--unity-data', type=Path, required=True)
+    parser.add_argument('--project-dir', type=Path, default=Path(__file__).resolve().parents[1],
+                        help='Project whose APKs and BuildReport manifests will be checked')
+    parser.add_argument('--variant', action='append', choices=('Main','Pose','Repair','AllScenes'),
+                        help='Check only these variants; repeat to select several. Default: Main, Pose, Repair')
     parser.add_argument('--include-all-scenes',action='store_true',help='Also verify the separate 14-scene compilation artifact')
     args = parser.parse_args()
-    root = Path(__file__).resolve().parents[1]
+    root = args.project_dir.resolve()
+    if not (root/'Assets/Scenes').is_dir():
+        parser.error('--project-dir must contain Assets/Scenes')
     android = args.unity_data/'PlaybackEngines/AndroidPlayer'
     build_tools = android/'SDK/build-tools/34.0.0'
     results = []
-    variants=[('BridgeStereoFusion','com.yn.picmagicmr.stereo',7),
-                                  ('BridgeStereoPoseFusion','com.yn.picmagicmr.stereo.pose',1),
-                                  ('BridgeStereoRepair','com.yn.picmagicmr.stereo.repair',1)]
-    if args.include_all_scenes:variants.append(('AllScenesValidation','com.yn.picmagicmr.validation',14))
+    available={'Main':('BridgeStereoFusion','com.yn.picmagicmr.stereo',7),
+               'Pose':('BridgeStereoPoseFusion','com.yn.picmagicmr.stereo.pose',1),
+               'Repair':('BridgeStereoRepair','com.yn.picmagicmr.stereo.repair',1),
+               'AllScenes':('AllScenesValidation','com.yn.picmagicmr.validation',14)}
+    selected=args.variant or ['Main','Pose','Repair']
+    if args.include_all_scenes:selected=selected+['AllScenes']
+    variants=[available[name] for name in dict.fromkeys(selected)]
     for name, package, scenes in variants:
         apk = root/'Builds/Android'/(name+'.apk')
         digest = hashlib.sha256()

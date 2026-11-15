@@ -2,7 +2,10 @@
 
 ## GitHub整合源码验证补充（2026-11-15）
 
-- Android托管脚本编译已补充通过：52程序集，最低采样空闲RAM5.091GiB、最大采样磁盘增量248.24MiB；尚未重建整合树IL2CPP/APK。历史129个Datasets目录只有元数据/标签，Git追踪图片0；先恢复并复核来源，不直接计入当前训练集。
+- 完整整合AllScenes验证包现已通过：IL2CPP/Gradle、签名/CRC/ARM64、14精确场景、40资源来源及APK SHA绑定。包在 `Builds/Android/CombinedAllScenesValidation-20261115.apk`，报告在 `Reports/github-delivery-20261115/combined-validation`。
+- 构建新增单并发/磁盘限额参数、进程创建时间校验及Windows Job子进程回收。离线仅完成无Editor RPC的IL2CPP转换，再交回Unity；保留冷构建守卫触发、PID误判和空来源报告的失败记录。最终阶段最低采样空闲RAM3.672GiB、新增磁盘62MiB；未训练、未重启、ADB无设备。
+
+- Android托管脚本编译已补充通过：52程序集，最低采样空闲RAM5.091GiB、最大采样磁盘增量248.24MiB；托管编译不替代完整包；整合树AllScenes验证包现已另行通过。历史129个Datasets目录只有元数据/标签，Git追踪图片0；先恢复并复核来源，不直接计入当前训练集。
 
 - 认证并推送至 `codex/yolo-animation-integration-20261115`，现有[PR #1](https://github.com/JC4747-jc/magic-wand-amusement-park/pull/1)的base为 `restore-4d-lighter`；保留65条旧模型归档，未强推/合并或改主工作区分支和暂存区。
 - 隔离整合树14场景审计、自然模型几何、旧6场景协程、6场景真实按钮/渲染流程通过；30张截图、0运行时错误。旧NUnit断言适配后6/6通过，产品代码未因测试调整。
