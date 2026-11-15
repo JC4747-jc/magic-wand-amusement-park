@@ -23,6 +23,58 @@ namespace MagicMR
             status="CLASS RECOGNIZED: "+profile+"; waiting for reliable stereo location";return true;
         }
         public bool simulation=false;
+        EnabledDimensions studyDimensions=EnabledDimensions.All;
+        string dispatchSource="controller_api";
+        public EnabledDimensions StudyDimensions=>studyDimensions;
+        // Explicit opt-in: ordinary preview sessions must not become study data.
+        public bool StartStudySession(string subjectId,int trialId=1) {
+            if(string.IsNullOrWhiteSpace(subjectId)||trialId<1)return false;
+            var logger=DataLogger.Instance;
+            if(!logger)logger=new GameObject("Study DataLogger").AddComponent<DataLogger>();
+            if(logger.SessionActive)return false;
+            var study=FindFirstObjectByType<ExperimentConditionSwitcher>();
+            if(!study)return false;
+            string label="C"+study.CurrentConditionId;
+            logger.StartSession(simulation?"SIM_"+subjectId:subjectId,label,trialId);
+            study.SetCondition(study.CurrentConditionId);
+            return true;
+        }
+        void Awake() {
+            if(!FindFirstObjectByType<ExperimentConditionSwitcher>())
+                gameObject.AddComponent<ExperimentConditionSwitcher>();
+        }
+        public void ApplyStudyCondition(EnabledDimensions dimensions) {
+            studyDimensions=dimensions;ResetHandInteraction();
+            foreach(var actor in actors.Values)if(actor) {ReleaseSurface(actor);actor.ResetEffects();}
+            status="Study condition: "+dimensions+"; open hand before next action";
+        }
+        static EditDimension ActionDimension(ParkAction action) {
+            switch(action) {
+                case ParkAction.Style:return EditDimension.Appearance;
+                case ParkAction.Awaken:return EditDimension.Agency;
+                case ParkAction.Wind:return EditDimension.Rule;
+                case ParkAction.Reward:return EditDimension.Deconstruction;
+                default:return EditDimension.None;
+            }
+        }
+        bool StudyAllows(ParkAction action) {
+            if(action==ParkAction.Reset||action==ParkAction.Stop||action==ParkAction.Undo)return true;
+            if(action==ParkAction.Awaken&&scenario==ParkScenario.Room&&selected&&selected.RoomCandySelected&&
+                (studyDimensions&EnabledDimensions.Deconstruction)==0)return false;
+            var dimension=ActionDimension(action);
+            // Extra debug actions are not part of the four study dimensions.
+            if(dimension==EditDimension.None)return studyDimensions==EnabledDimensions.All;
+            var flag=(EnabledDimensions)(int)dimension;
+            return (studyDimensions&flag)==flag;
+        }
+        void LogAction(ParkAction action,Vector3 hand,bool valid,bool accepted,string reason) {
+            var logger=DataLogger.Instance;if(!logger||!logger.SessionActive)return;
+            bool finite=valid&&TabletopHandSample.Finite(hand);
+            logger.LogEvent(accepted?"park_action_accepted":"park_action_rejected",ActionDimension(action),
+                finite&&selected?Vector3.Distance(hand,selected.transform.position):-1,-1,-1,
+                finite?(Vector3?)hand:null,
+                $"profile={Profile};target={(selected?selected.instanceId:"none")};mode={(simulation?"virtual_test":"physical")};input={dispatchSource};action={action};reason={reason};velocity_duration=unavailable");
+        }
         public int maxInstances=8;
         public float lostAfter=.65f;
         [Header("Shared gesture timing (PICO validation pending)")]
@@ -40,7 +92,7 @@ namespace MagicMR
         public TextMesh hud;
         public bool sharedInterface;
         public string InteractionStatus=>status;
-        public string GestureHint=>Hint().Replace("0.3s",openPalmStableSeconds.ToString("0.##")+"s").Replace("0.7s",fistHoldSeconds.ToString("0.##")+"s")+(scenario==ParkScenario.Plant?"\nSample hand shapes: "+(ParkHandTracking.SampleShapeAssetsAvailable?"PICO validation pending":"MISSING; open/fist disabled"):"");
+        public string GestureHint=>Hint();
         public bool AnimationBusy=>(selected && selected.Busy) || FitConfirmationPending || PlaneConfirmationPending ||
             (!rightHandUiCapture && (pinchHeld || fistHeld || openPalmSince>=0));
         public void ResetScene() { Clear();status="RESET: targets and effects cleared"; }
@@ -51,6 +103,10 @@ namespace MagicMR
         readonly List<Transform> buttons=new List<Transform>();
         readonly List<string> buttonActions=new List<string>();
         readonly TabletopGestureRules rules=new TabletopGestureRules();
+        readonly GestureReachWindow gestureReach=new GestureReachWindow();
+        ParkActor gestureTarget;
+        public EditDimension LastRecognizedDimension {get;private set;}
+        public bool LastMagicAccepted {get;private set;}
         Vector3 lastPalm;
         float lastPalmAt, pinchAt, fistAt, leftFistAt, spreadStart, nextPull, menuAt;
         bool pinchHeld, fistHeld,leftFistHeld,pullArmed,hasPalm,pointHeld,undoFired;
@@ -124,7 +180,7 @@ namespace MagicMR
         }
         void ResetHandState(bool interruptEffects) {
             if(interruptEffects&&selected)selected.EndHandInteraction();
-            rules.Reset();hasPalm=false;
+            rules.Reset();gestureReach.Reset();gestureTarget=null;hasPalm=false;
             pinchHeld=fistHeld=leftFistHeld=pullArmed=clapArmed=false;
             undoFired=false;bothFistsResetFired=false;suppressPinchRelease=true;
             lastSpread=lastSpreadAt=0;
@@ -147,6 +203,8 @@ namespace MagicMR
         public int InstanceCount=>actors.Count;
         void Start()
         {
+            var study=FindFirstObjectByType<ExperimentConditionSwitcher>();
+            if(study)studyDimensions=study.CurrentDimensions;
             var camera=Camera.main; if(!camera)return;
             if(!sharedInterface && !hud) { hud=new GameObject("Park operating instructions").AddComponent<TextMesh>(); hud.transform.SetParent(camera.transform,false); hud.transform.localPosition=new Vector3(0,.24f,.85f); hud.characterSize=.008f; hud.fontSize=40; hud.anchor=TextAnchor.MiddleCenter; }
             var actions=sharedInterface?System.Array.Empty<string>():new[]{"Tree","Bugs","Statue","Room","Plant","Pet","Mode","Place","Plane","Reset","Lighter","TreeMode","Fit"};
@@ -269,10 +327,24 @@ namespace MagicMR
         }
         public bool Dispatch(ParkAction action,Vector3 hand,bool valid)
         {
-            if(!selected) { status="Select an instance first"; return false; }
+            if(!StudyAllows(action)) {status="Disabled by study condition: "+action;LogAction(action,hand,valid,false,"dimension_disabled");return false;}
+            if(!selected) { status="Select an instance first";LogAction(action,hand,valid,false,"no_target"); return false; }
             if(action==ParkAction.Reset)ReleaseSurface(selected);
-            else if(FitConfirmationPending) { status="Finish Fit or Reset before effects";return false; }
-            bool accepted=selected.TryAction(action,hand,valid); status=selected.Feedback; return accepted;
+            else if(FitConfirmationPending||PlaneConfirmationPending) { status="Finish Fit/Plane or Reset before effects";LogAction(action,hand,valid,false,"calibration_pending");return false; }
+            bool accepted=selected.TryAction(action,hand,valid); status=selected.Feedback;
+            LogAction(action,hand,valid,accepted,status);return accepted;
+        }
+        // Shared by desktop previews and recognized four-dimensional gestures.
+        // Scenario-specific meaning is implemented by the actor, not by a second input consumer.
+        public bool DispatchDimension(EditDimension dimension,Vector3 hand,bool valid)
+        {
+            switch(dimension) {
+                case EditDimension.Appearance:return Dispatch(ParkAction.Style,hand,valid);
+                case EditDimension.Agency:return Dispatch(ParkAction.Awaken,hand,valid);
+                case EditDimension.Rule:return Dispatch(ParkAction.Wind,hand,valid);
+                case EditDimension.Deconstruction:return Dispatch(ParkAction.Reward,hand,valid);
+                default:status="Unsupported Park dimension";return false;
+            }
         }
         public bool ConfirmVirtualAttack(ParkActor pointedTarget,Vector3 hand,bool valid)
         {
@@ -306,7 +378,7 @@ namespace MagicMR
                 case "Plane": RequestManualPlane(); break;
                 case "Fit": RequestFit(); break;
                 case "Reset": foreach(var a in actors.Values) { ReleaseSurface(a);a.ResetEffects(); } break;
-                case "TreeMode": if(selected && scenario==ParkScenario.Tree) { ReleaseSurface(selected);selected.ResetEffects(); selected.magicTree=!selected.magicTree; status=selected.magicTree?"MAGIC TREE: awaken, wind, soothe scar, seal":"SEASON TREE: palm up/down timeline"; } break;
+                case "TreeMode": if(selected && scenario==ParkScenario.Tree) { ReleaseSurface(selected);selected.ResetEffects(); selected.magicTree=!selected.magicTree; status=selected.magicTree?"MAGIC TREE: A dark | B lash | C breathing scar | D seal/chest":"SEASON TREE: A anime | B awaken | C seasons | D falling foliage"; } break;
                 case "Lighter": Clear(); SceneManager.LoadScene("BridgeStereoFusion"); break;
             }
         }
@@ -320,7 +392,7 @@ namespace MagicMR
             if(candidate && select) {
                 if(selected!=candidate) {
                     if(selected)selected.EndHandInteraction();
-                    rules.Reset();hasPalm=false;pullArmed=clapArmed=false;
+                    rules.Reset();gestureReach.Reset();gestureTarget=null;hasPalm=false;pullArmed=clapArmed=false;
                     openPalmHold.Reset();openPalmSince=-1;openPalmFired=false;
                 }
                 selected=candidate; status="Locked instance "+selected.instanceId;
@@ -335,22 +407,26 @@ namespace MagicMR
             foreach(var id in expired) { if(selected==actors[id]) {ResetHandInteraction();selected=null;} Destroy(actors[id].gameObject); actors.Remove(id); seen.Remove(id); confirmations.Remove(id); }
             foreach(var actor in actors.Values)actor.SetHighlighted(actor==selected || actor==pointingTarget);
 #if XR_HANDS_1_1_OR_NEWER
-            hands=ParkHandTracking.Current;
-            if(hands!=null && (!simulation || hands.rightHand.isTracked || hands.leftHand.isTracked))SampleHands();
-            else {
-                // Desktop simulation has no hand source. Only an actual tracking loss interrupts its effects.
-                if(!simulation || lastHandSampleAt>=0)ResetHandInteraction();else ResetHandState(false);
-                lastHandSampleAt=-1;
+            var currentHands=ParkHandTracking.Current;
+            if(hands!=currentHands) {
+                if(hands!=null)hands.updatedHands-=OnUpdatedHands;
+                hands=currentHands;
+                if(hands!=null)hands.updatedHands+=OnUpdatedHands;
+                ResetHandState(lastHandSampleAt>=0);lastHandSampleAt=-1;
+            }
+            // Do not advance gesture time using cached joints from Update/BeforeRender.
+            if(lastHandSampleAt>=0&&Time.unscaledTime-lastHandSampleAt>TabletopGestureRules.MaximumSampleGapSeconds) {
+                ResetHandInteraction();lastHandSampleAt=-1;
             }
 #endif
             if(hud)hud.text=scenario+" | "+(simulation?"VIRTUAL TEST":"REAL: "+Profile)+"\n"+(FitConfirmationPending?(fitHasBottom?"FIT: bottom captured; pinch at top vertically (0.005-3m); hold still":"FIT: pinch at target bottom; hold still"):PlaneConfirmationPending?"PENDING SURFACE: touch it with index tip, then pinch":status)+"\n"+(receiver && !simulation?(receiver as IParkTrackingStatus)?.Status+"\n":"")+Hint();
 #if UNITY_EDITOR || UNITY_STANDALONE
             if(simulation && selected) {
                 var hand=selected.transform.position+Vector3.up*.1f;
-                if(ParkDesktopInput.KeyDown(KeyCode.Alpha1))Dispatch(ParkAction.Style,hand,true);
-                if(ParkDesktopInput.KeyDown(KeyCode.Alpha2))Dispatch(ParkAction.Awaken,hand,true);
-                if(ParkDesktopInput.KeyDown(KeyCode.Alpha3))Dispatch(ParkAction.Wind,hand,true);
-                if(ParkDesktopInput.KeyDown(KeyCode.Alpha4))Dispatch(ParkAction.Reward,hand,true);
+                if(ParkDesktopInput.KeyDown(KeyCode.Alpha1))DispatchDimension(EditDimension.Appearance,hand,true);
+                if(ParkDesktopInput.KeyDown(KeyCode.Alpha2))DispatchDimension(EditDimension.Agency,hand,true);
+                if(ParkDesktopInput.KeyDown(KeyCode.Alpha3))DispatchDimension(EditDimension.Rule,hand,true);
+                if(ParkDesktopInput.KeyDown(KeyCode.Alpha4))DispatchDimension(EditDimension.Deconstruction,hand,true);
                 if(ParkDesktopInput.KeyDown(KeyCode.B))Dispatch(ParkAction.Pull,hand,true);
                 if(ParkDesktopInput.KeyDown(KeyCode.F))Dispatch(ParkAction.Feed,hand,true);
                 if(ParkDesktopInput.KeyDown(KeyCode.O))Dispatch(ParkAction.Poke,hand,true);
@@ -365,116 +441,77 @@ namespace MagicMR
             if(ParkDesktopInput.ClickDown && !ParkDesktopInput.PointerCapturedByUi && Camera.main) { var ray=Camera.main.ScreenPointToRay(ParkDesktopInput.Pointer); Point(ray.origin,ray.direction,true); }
 #endif
         }
-        string Hint() {
-            switch(scenario) {
-                case ParkScenario.Tree:return "Pinch-release: season | hold open palm 0.3s: awaken\nPalm up/down: season | swipe: wind | fist-open: seal";
-                case ParkScenario.Bugs:return "Point+pinch-release: select and attack virtual enemy\nCircle: dance | swipe: stun | defeated enemy requires Reset";
-                case ParkScenario.Statue:return "Hold open palm 0.3s: reveal | pinch-release: chapter\nSwipe: story | confirmed plane + fist-open: lotus";
-                case ParkScenario.Room:return "Open palm 0.3s: selected effect | pinch: effect type\nConfirm ceiling for candy | right fist 0.7s / Stop: exit";
-                case ParkScenario.Plant:return "Open palm 0.3s: virtual growth | pinch-release: bloom\nFist-open: style | palm up/down: growth | fist: undo / both: Reset";
-                case ParkScenario.Pet:return "Open palm 0.3s: toggle dream bubble | pinch: content\nFist-open: affection | distance interaction needs validation";
-                default:return "";
+        string Hint() => "Same as lighter: pinch-release A | point-circle B | palm-swipe C | fist-open D\nMove hand within 20 cm; UI Fit/Plane owns input while confirming. Undo/Reset: controls.";
+
+        // This is the live recognition path, also replayable with synthetic joint-derived frames.
+        public EditDimension ProcessMagicSample(TabletopHandSample frame,bool fresh) {
+            LastRecognizedDimension=EditDimension.None;LastMagicAccepted=false;
+            if(!fresh||!frame.Valid||rightHandUiCapture||FitConfirmationPending||PlaneConfirmationPending||
+                !selected||!selected.tracked) {ResetHandState(false);return EditDimension.None;}
+            if(gestureTarget!=selected) {rules.Reset();gestureReach.Reset();gestureTarget=selected;}
+            if(requireGestureRelease) {
+                rules.Reset();gestureReach.Reset();
+                if(!frame.gesture.open||frame.gesture.pinch<TabletopGestureRules.PinchReleaseMeters) {status="Open hand after UI/selection before casting";return EditDimension.None;}
+                requireGestureRelease=false;return EditDimension.None;
             }
+            var query=frame.ClosestTo(selected.transform.position);
+            if(!gestureReach.Observe(true,Vector3.Distance(query,selected.transform.position),frame.gesture.time)) {
+                rules.Reset();status="Move hand within 20 cm of selected real target";return EditDimension.None;
+            }
+            var dimension=rules.Step(frame.gesture);status=rules.Status;
+            DataLogger.Instance?.LogHandTrajectory(query,selected.transform.position);
+            if(dimension!=EditDimension.None) {
+                LastRecognizedDimension=dimension;
+                dispatchSource="shared_hand_recognizer";
+                try {LastMagicAccepted=DispatchDimension(dimension,query,true);}
+                finally {dispatchSource="controller_api";}
+            }
+            return dimension;
+        }
+        public EditDimension ProcessHandSample(TabletopHandSample frame,bool fresh) {
+            LastRecognizedDimension=EditDimension.None;LastMagicAccepted=false;
+            if(!fresh||!frame.Valid||rightHandUiCapture) {ResetHandInteraction();lastHandSampleAt=-1;return EditDimension.None;}
+            lastHandSampleAt=frame.gesture.time;
+            var index=frame.gesture.index;
+            bool pinch=frame.gesture.pinch<=TabletopGestureRules.PinchEnterMeters;
+            bool began=pinch&&!pinchHeld;pinchHeld=pinch;fistHeld=frame.gesture.fist;
+            if(selected&&!selected.tracked) {ResetHandInteraction();return EditDimension.None;}
+            if(selected)selected.Preview(index,true);
+            if(began) {
+                for(int n=0;n<buttons.Count;n++)if(Vector3.Distance(index,buttons[n].position)<.055f) {
+                    Menu(buttonActions[n],index);ResetHandState(false);pinchHeld=true;return EditDimension.None;
+                }
+                if(FitConfirmationPending) {ConfirmFit(index,true);ResetHandState(false);pinchHeld=true;return EditDimension.None;}
+                if(PlaneConfirmationPending) {ConfirmManualPlane(index,true);ResetHandState(false);pinchHeld=true;return EditDimension.None;}
+                var previous=selected;Point(index,index-frame.indexBase,true);
+                if(selected!=previous) {ResetHandState(false);pinchHeld=true;return EditDimension.None;}
+            }
+            // Preserve the pinch edge while the user holds it during calibration.
+            // ResetHandState here would turn one held pinch into repeated confirmations.
+            if(FitConfirmationPending||PlaneConfirmationPending) {
+                rules.Reset();gestureReach.Reset();requireGestureRelease=true;return EditDimension.None;
+            }
+            return ProcessMagicSample(frame,true);
         }
 #if XR_HANDS_1_1_OR_NEWER
-        bool Read(XRHand hand,XRHandJointID id,out Vector3 world) { var root=Camera.main?Camera.main.transform.parent:null; bool ok=hand.GetJoint(id).TryGetPose(out var pose); world=root?root.TransformPoint(pose.position):pose.position; return ok && float.IsFinite(world.x) && float.IsFinite(world.y) && float.IsFinite(world.z); }
-        bool Fist(XRHand h) { if(scenario==ParkScenario.Plant)return ParkHandTracking.MatchesSampleShape(h,false);if(!Read(h,XRHandJointID.Palm,out var p))return false; int count=0; foreach(var id in new[]{XRHandJointID.IndexTip,XRHandJointID.MiddleTip,XRHandJointID.RingTip,XRHandJointID.LittleTip})if(Read(h,id,out var tip) && Vector3.Distance(tip,p)<.085f)count++; return count==4; }
-        bool OpenHand(XRHand h) {
-            if(scenario==ParkScenario.Plant)return ParkHandTracking.MatchesSampleShape(h,true);
-            if(!h.isTracked || !Read(h,XRHandJointID.Palm,out var p))return false;
-            foreach(var id in new[]{XRHandJointID.IndexTip,XRHandJointID.MiddleTip,XRHandJointID.RingTip,XRHandJointID.LittleTip})
-                if(!Read(h,id,out var tip) || Vector3.Distance(tip,p)<.10f)return false;
-            return true;
-        }
-        void SampleHands()
-        {
-            if(rightHandUiCapture) { ResetHandInteraction();return; }
-            var right=hands.rightHand; var left=hands.leftHand; float now=Time.unscaledTime;
-            if(!AcceptHandSample(now))return;
-            var head=Camera.main?Camera.main.transform:null;
-            bool motionSafe=head && AcceptMotionHeadPose(head.position,head.rotation,now);
-            if(!head)MotionGestureStatus="Motion: head camera unavailable";
-            if(!motionSafe) {rules.Reset();hasPalm=false;pullArmed=clapArmed=false;}
-            if(!right.isTracked || !Read(right,XRHandJointID.Palm,out var palm) || !Read(right,XRHandJointID.IndexTip,out var index) || !Read(right,XRHandJointID.ThumbTip,out var thumb) || !Read(right,XRHandJointID.IndexProximal,out var proximal)) {
-                ResetHandInteraction(); return;
+        void OnUpdatedHands(XRHandSubsystem subsystem,XRHandSubsystem.UpdateSuccessFlags flags,XRHandSubsystem.UpdateType type) {
+            if(type!=XRHandSubsystem.UpdateType.Dynamic)return;
+            if((flags&XRHandSubsystem.UpdateSuccessFlags.RightHandJoints)==0) {
+                ResetHandInteraction();lastHandSampleAt=-1;return;
             }
-            bool pinch=Vector3.Distance(index,thumb)<.035f; bool fist=Fist(right);
-            bool rightOpenHand=OpenHand(right);
-            // Plant motion and static holds share the same authored shape predicate.
-            bool open=(scenario==ParkScenario.Plant?rightOpenHand:Vector3.Distance(index,palm)>.12f) && !fist;
-            if(selected && !selected.tracked) {ResetHandInteraction();return;}
-            if(requireGestureRelease) {
-                bool leftClosed=!leftHandUiCapture && left.isTracked && Fist(left);
-                if(pinch || fist || rightOpenHand || leftClosed) {
-                    status="Release the held gesture before interacting again";return;
-                }
-                requireGestureRelease=false;rules.Reset();hasPalm=false;
-            }
-            if(selected)selected.Preview(index,true);
-            if(scenario==ParkScenario.Bugs && !pinch && !fist && !rightOpenHand) {
-                var previous=pointingTarget;pointingTarget=Point(index,index-proximal,false);
-                if(previous && previous!=pointingTarget)previous.SetHighlighted(previous==selected);
-                if(pointingTarget)pointingTarget.SetHighlighted(true);
-            } else if(!pinch) {
-                if(pointingTarget)pointingTarget.SetHighlighted(pointingTarget==selected);
-                pointingTarget=null;
-            }
-            bool menuPinch=false;
-            for(int n=0;n<buttons.Count;n++)if(Vector3.Distance(index,buttons[n].position)<.055f && pinch) { Menu(buttonActions[n],index); menuPinch=true; break; }
-            if(pinch && !pinchHeld && !menuPinch && FitConfirmationPending) { ConfirmFit(index,true);pinchHeld=true;suppressPinchRelease=true;rules.Reset();return; }
-            if(pinch && !pinchHeld && !menuPinch && PlaneConfirmationPending) { ConfirmManualPlane(index,true);pinchHeld=true;suppressPinchRelease=true;rules.Reset();return; }
-            if(pinch && !pinchHeld) { pinchAt=now;pinchTarget=menuPinch?null:Point(index,index-proximal,true); }
-            if(menuPinch) { pinchLifecycle.Cancel();pinchHeld=pinch;suppressPinchRelease=true;rules.Reset();return; }
-            var pinchPhase=pinchLifecycle.Step(pinch,!suppressPinchRelease && !PlaneConfirmationPending && !FitConfirmationPending,now,pinchMinimumSeconds,pinchMaximumSeconds,handSampleMaximumGapSeconds);
-            if(pinchPhase==ParkPinchPhase.Confirmed && selected) {
-                if(scenario!=ParkScenario.Bugs)Dispatch(scenario==ParkScenario.Plant?ParkAction.Bloom:ParkAction.Style,palm,true);
-                else ConfirmVirtualAttack(pinchTarget,palm,true);
-            }
-            pinchHeld=pinch;
-            if(!pinch) {suppressPinchRelease=false;pinchTarget=null;}
-            Vector3 leftPalm=Vector3.zero; bool leftValid=!leftHandUiCapture && left.isTracked && Read(left,XRHandJointID.Palm,out leftPalm);
-            bool leftFist=leftValid && Fist(left);
-            if(StepFists(fist,leftFist,now,out var fistAction))Dispatch(fistAction,palm,true);
-            if(PlaneConfirmationPending || FitConfirmationPending) { rules.Reset();hasPalm=false;pullArmed=false;clapArmed=false;return; }
-            // Motion and fist-open have priority over a stationary palm hold.
-            // Once any open-hand action fires, release before another action.
-            bool stableOpen=rightOpenHand && !pinch;
-            var holdPhase=openPalmHold.Step(stableOpen,palm,now,openPalmStableSeconds,openPalmMaximumDriftMeters,handSampleMaximumGapSeconds);
-            if(holdPhase==ParkHoldPhase.Ended && stableOpen) {ResetHandInteraction();return;}
-            openPalmSince=openPalmHold.Began;openPalmFired=openPalmHold.Consumed;
-            if(stableOpen && openPalmFired) {rules.Reset();return;}
-            bool bothOpen=motionSafe && leftValid && OpenHand(left) && rightOpenHand;
-            float spread=bothOpen?Vector3.Distance(palm,leftPalm):0;
-            if(scenario==ParkScenario.Plant && bothOpen) {
-                if(spread>.2f) { clapArmed=true;clapArmedAt=now; }
-                float closing=now-lastSpreadAt>.001f && now-lastSpreadAt<.1f?(lastSpread-spread)/(now-lastSpreadAt):0;
-                if(clapArmed && spread<.09f && closing>.35f && now-clapArmedAt<.7f) { Dispatch(ParkAction.Awaken,palm,true);openPalmFired=true;openPalmHold.Consume();clapArmed=false;pullArmed=false;rules.Reset();lastSpread=spread;lastSpreadAt=now;return; }
-            } else clapArmed=false;
-            lastSpread=spread;lastSpreadAt=now;
-            if(bothOpen && !pullArmed) { spreadStart=Vector3.Distance(palm,leftPalm); pullArmed=true; }
-            if(!bothOpen)pullArmed=false;
-            if(bothOpen && Vector3.Distance(palm,leftPalm)-spreadStart>.13f && now>nextPull) { Dispatch(ParkAction.Pull,palm,true); openPalmFired=true;openPalmHold.Consume();nextPull=now+.8f; spreadStart=Vector3.Distance(palm,leftPalm); rules.Reset(); return; }
-            Vector3 velocity=motionSafe && hasPalm && now-lastPalmAt>.001f?(palm-lastPalm)/(now-lastPalmAt):Vector3.zero; lastPalm=palm; lastPalmAt=now; hasPalm=motionSafe;
-            if(open && Mathf.Abs(velocity.y)>.35f && (scenario==ParkScenario.Plant || scenario==ParkScenario.Tree)) { Dispatch(velocity.y>0?ParkAction.GrowUp:ParkAction.GrowDown,palm,true); openPalmFired=true;openPalmHold.Consume();rules.Reset(); return; }
-            if(scenario==ParkScenario.Pet && selected && !pinch && !fist && Vector3.Distance(index,selected.transform.position+Vector3.up*selected.headOffset)<.08f)Dispatch(ParkAction.Poke,palm,true);
-            if(scenario==ParkScenario.Tree && selected && selected.magicTree && !pinch && Vector3.Distance(index,selected.TreeScarWorldPosition)<.06f)Dispatch(ParkAction.Poke,palm,true);
-            var sample=new TabletopGestureRules.Sample { time=now,pinch=Vector3.Distance(index,thumb),index=index,palm=palm,swipeAxis=Camera.main?Camera.main.transform.right:Vector3.right,fist=fist,open=open,pointing=!fist && !pinch && !open };
-            var action=motionSafe?rules.Step(sample):EditDimension.None;
-            if(action==EditDimension.Agency) {Dispatch(ParkAction.Awaken,palm,true);return;}
-            if(action==EditDimension.Rule) {Dispatch(ParkAction.Wind,palm,true);openPalmFired=true;openPalmHold.Consume();return;}
-            if(action==EditDimension.Deconstruction && !undoFired && scenario!=ParkScenario.Bugs) {
-                Dispatch(scenario==ParkScenario.Plant?ParkAction.Style:ParkAction.Reward,palm,true);
-                openPalmFired=true;openPalmHold.Consume();return;
-            }
-            if(holdPhase==ParkHoldPhase.Ready && !openPalmFired) {
-                openPalmFired=true;openPalmHold.Consume();rules.Reset();
-                if(scenario!=ParkScenario.Bugs)
-                    Dispatch(scenario==ParkScenario.Pet?ParkAction.Pull:scenario==ParkScenario.Plant?ParkAction.GrowUp:scenario==ParkScenario.Room && selected && selected.RoomCandySelected?ParkAction.Reward:ParkAction.Awaken,palm,true);
-            } else if(openPalmHold.Active && !openPalmFired && scenario!=ParkScenario.Bugs) {
-                status="Open palm confirming: "+Mathf.Clamp01((now-openPalmSince)/Mathf.Max(.1f,openPalmStableSeconds)).ToString("P0")+"; hold still";
-            }
+            var camera=Camera.main;
+            bool valid=TabletopHandSample.TryRead(subsystem.rightHand,camera?camera.transform.parent:null,
+                camera?camera.transform.right:Vector3.right,Time.unscaledTime,out var frame);
+            ProcessHandSample(frame,valid);
         }
 #endif
-        void OnDisable() { Clear(false); }
+        void OnDisable() {
+#if XR_HANDS_1_1_OR_NEWER
+            if(hands!=null)hands.updatedHands-=OnUpdatedHands;
+            hands=null;
+#endif
+            Clear(false);
+        }
     }
 }
+

@@ -7,6 +7,7 @@ Shader "MagicMR/NaturalTreeLeaves"
         _BaseColor("Component tint",Color)=(1,1,1,1) _BumpScale("Normal strength",Float)=0.5
         _SeasonTint("Season colour",Color)=(0.6,0.3,0.08,1) _SeasonMix("Season mix",Range(0,1))=0
         _LeafCoverage("Retained whole leaves",Range(0,1))=1 _Style("0 natural 1 ink 2 pixel",Float)=0
+        _ToonMix("Season tree anime canopy",Range(0,1))=0
     }
     SubShader
     {
@@ -18,7 +19,7 @@ Shader "MagicMR/NaturalTreeLeaves"
         TEXTURE2D(_BaseMap);SAMPLER(sampler_BaseMap);TEXTURE2D(_BumpMap);SAMPLER(sampler_BumpMap);
         TEXTURE2D(_AlphaMap);SAMPLER(sampler_AlphaMap);
         CBUFFER_START(UnityPerMaterial)
-        float4 _BaseMap_ST;half4 _BaseColor,_SeasonTint;float _BumpScale,_SeasonMix,_LeafCoverage,_Style,_Cutoff;
+        float4 _BaseMap_ST;half4 _BaseColor,_SeasonTint;float _BumpScale,_SeasonMix,_LeafCoverage,_Style,_Cutoff,_ToonMix;
         CBUFFER_END
         struct Attributes {float4 positionOS:POSITION;float3 normalOS:NORMAL;float4 tangentOS:TANGENT;float2 uv:TEXCOORD0;half4 colour:COLOR;UNITY_VERTEX_INPUT_INSTANCE_ID};
         struct Varyings {float4 positionCS:SV_POSITION;float3 positionWS:TEXCOORD0;half3 normalWS:TEXCOORD1;half4 tangentWS:TEXCOORD2;float2 uv:TEXCOORD3;half mask:TEXCOORD4;UNITY_VERTEX_OUTPUT_STEREO};
@@ -56,7 +57,12 @@ Shader "MagicMR/NaturalTreeLeaves"
                 half3 colour=albedo*(max(SampleSH(normal),half3(.12,.14,.13))+light.color*(diffuse*.8+transmission)*light.shadowAttenuation);
                 half shade=diffuse*.65+.35;half3 wash=lerp(half3(.85,.84,.8),half3(.08,.1,.11),1-shade);
                 half3 pixel=floor(albedo*4)/4*(.45+floor(shade*2)*.3);
-                colour=_Style<1?lerp(colour,wash,saturate(_Style)):lerp(wash,pixel,saturate(_Style-1));return half4(colour,1);
+                colour=_Style<1?lerp(colour,wash,saturate(_Style)):lerp(wash,pixel,saturate(_Style-1));
+                half3 celAlbedo=lerp(half3(.24,.42,.14),_SeasonTint.rgb,_SeasonMix)*lerp(1,clamp(luminance*2,.55,1.2),.25);
+                half celDiffuse=saturate(dot(normalize(input.normalWS)*IS_FRONT_VFACE(front,1,-1),light.direction));
+                half celShade=celDiffuse>.65?.95:celDiffuse>.25?.68:.4;
+                half3 cel=celAlbedo*(half3(.24,.25,.24)+light.color*celShade*lerp(.55,1,light.shadowAttenuation));
+                return half4(lerp(colour,cel,saturate(_ToonMix)),1);
             }
             ENDHLSL
         }

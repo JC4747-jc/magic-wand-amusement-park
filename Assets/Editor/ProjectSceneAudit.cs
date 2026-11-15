@@ -39,7 +39,13 @@ public static class ProjectSceneAudit
         try
         {
             var paths=AssetDatabase.FindAssets("t:Scene",new[]{"Assets/Scenes"}).Select(AssetDatabase.GUIDToAssetPath).OrderBy(p=>p).ToArray();
-            if(paths.Length!=14)throw new Exception("Expected all 14 integrated project scenes, found "+paths.Length);
+            // Candidate scenes may coexist with the integrated set. Check required
+            // identities rather than rejecting extra scenes or accepting a count
+            // that could conceal a missing required scene.
+            var required=new[]{"BridgeTest","BridgeStereoFusion","BridgeStereoPoseFusion","BridgeStereoRepair","MagicMR","VstTest","SampleScene","DesktopCaptureDemo"}
+                .Concat(ParkContentBuilder.Names).Select(n=>"Assets/Scenes/"+n+".unity");
+            var missing=required.Except(paths).ToArray();
+            if(missing.Length>0)throw new Exception("Missing integrated project scenes: "+string.Join(", ",missing));
             foreach(var path in paths)
             {
                 var scene=EditorSceneManager.OpenScene(path,OpenSceneMode.Single);
@@ -58,7 +64,7 @@ public static class ProjectSceneAudit
             Directory.CreateDirectory(".codex-tmp/scene-audit");
             File.WriteAllText(".codex-tmp/scene-audit/scenes.json",JsonUtility.ToJson(new Report {scenes=results.ToArray()},true));
             if(results.Any(r=>r.missingScripts>0))throw new Exception("Missing scripts found; inspect scene audit report");
-            Debug.Log("PROJECT_SCENE_AUDIT_PASS: 14 scenes, no missing scripts; unassigned material slots="+results.Sum(r=>r.unassignedMaterials)+"; runtime animation checks recorded separately");
+            Debug.Log("PROJECT_SCENE_AUDIT_PASS: "+results.Count+" scenes inspected, all 14 required scenes present, no missing scripts; unassigned material slots="+results.Sum(r=>r.unassignedMaterials)+"; runtime animation checks recorded separately");
         }
         finally {if(!string.IsNullOrEmpty(previous))EditorSceneManager.OpenScene(previous);}
     }

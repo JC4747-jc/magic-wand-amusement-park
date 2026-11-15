@@ -7,6 +7,43 @@ namespace MagicMR
     {
         readonly List<Transform> naturalPlantLeaves=new List<Transform>();
         readonly List<Quaternion> naturalPlantRestRotations=new List<Quaternion>();
+        TextMesh plantSpeech;
+        Transform plantMouth;
+        Vector3 plantMouthScale;
+        void BuildPlantDialogue(Bounds bounds)
+        {
+            // Small virtual face at pot height; reuse pooled lifetime and shared material.
+            float unit=Mathf.Max(.01f,bounds.size.y*.055f);
+            eyes.localPosition=new Vector3(bounds.center.x,bounds.min.y+bounds.size.y*.23f,bounds.center.z);
+            float front=Mathf.Max(bounds.extents.x,bounds.extents.z)*.78f;
+            foreach(float side in new[]{-1f,1f}) {
+                Part(eyes,"Plant eye",PrimitiveType.Sphere,new Vector3(side*unit,unit*.4f,front),Vector3.one*unit,new Color(.86f,.84f,.75f),false);
+                Part(eyes,"Plant pupil",PrimitiveType.Sphere,new Vector3(side*unit,unit*.4f,front+unit*.4f),Vector3.one*unit*.45f,new Color(.04f,.055f,.035f),false);
+            }
+            plantMouthScale=new Vector3(unit*.9f,unit*.15f,unit*.2f);
+            plantMouth=Part(eyes,"Plant speaking mouth",PrimitiveType.Sphere,new Vector3(0,-unit*.7f,front),plantMouthScale,new Color(.055f,.065f,.04f),false);
+            plantSpeech=new GameObject("Virtual plant dialogue").AddComponent<TextMesh>();
+            plantSpeech.transform.SetParent(representationFit,false);
+            plantSpeech.transform.localPosition=new Vector3(bounds.center.x,bounds.max.y+unit*5,bounds.center.z);
+            plantSpeech.text="A little light helps me grow.\n(Virtual plant dialogue)";
+            plantSpeech.fontSize=40;plantSpeech.characterSize=unit*.48f;plantSpeech.anchor=TextAnchor.MiddleCenter;
+            plantSpeech.alignment=TextAlignment.Center;plantSpeech.color=new Color(.91f,.90f,.78f);
+            plantSpeech.gameObject.SetActive(false);
+        }
+        void StepPlantDialogue(float now)
+        {
+            if(!plantSpeech)return;
+            plantSpeech.gameObject.SetActive(state.awake);
+            var viewer=Camera.main;
+            if(viewer) {
+                Vector3 forward=plantSpeech.transform.position-viewer.transform.position;
+                if(forward.sqrMagnitude>.0001f)plantSpeech.transform.rotation=Quaternion.LookRotation(forward,viewer.transform.up);
+                Vector3 facing=Vector3.ProjectOnPlane(viewer.transform.position-eyes.position,Vector3.up);
+                if(facing.sqrMagnitude>.0001f)eyes.rotation=Quaternion.LookRotation(facing,Vector3.up);
+            }
+            float syllable=state.awake?.25f+.75f*Mathf.Abs(Mathf.Sin(now*6.4f)*Mathf.Sin(now*2.1f)):0;
+            plantMouth.localScale=new Vector3(plantMouthScale.x,plantMouthScale.y*(1+syllable*3),plantMouthScale.z);
+        }
         void BuildNaturalPlant()
         {
             var prefab=Resources.Load<GameObject>("MagicMR/NaturalModels/Haworthia");

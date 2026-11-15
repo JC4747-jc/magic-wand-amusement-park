@@ -19,7 +19,7 @@ namespace MagicMR
             (spellVfx = RightHandSpellVfx.GetOrCreate(GestureManager.Instance != null ? GestureManager.Instance.gameObject : gameObject));
         public float TargetDistance { get; private set; }
         public Vector3 QueryPosition { get; private set; }
-        public bool HasFreshHand => Time.unscaledTime - sampledAt <= .15f;
+        public bool HasFreshHand => Time.unscaledTime - sampledAt <= TabletopGestureRules.MaximumSampleGapSeconds;
         public bool CanReach => HasFreshHand && reach.Allowed;
         float visionHoldUntil;
         public bool HoldVisualFollowing => Time.unscaledTime < visionHoldUntil;
@@ -49,34 +49,24 @@ namespace MagicMR
         protected override void ProcessHand(XRHand hand)
         {
             if (tabletop == null) tabletop = FindFirstObjectByType<TabletopInteractionBase>();
-            if (!hand.isTracked || !Read(hand, XRHandJointID.Palm, out var palm) ||
-                !Read(hand, XRHandJointID.IndexTip, out var index) || !Read(hand, XRHandJointID.ThumbTip, out var thumb) ||
-                !Extension(hand, XRHandJointID.IndexProximal, XRHandJointID.IndexIntermediate, XRHandJointID.IndexDistal, XRHandJointID.IndexTip, out float i) ||
-                !Extension(hand, XRHandJointID.MiddleProximal, XRHandJointID.MiddleIntermediate, XRHandJointID.MiddleDistal, XRHandJointID.MiddleTip, out float m) ||
-                !Extension(hand, XRHandJointID.RingProximal, XRHandJointID.RingIntermediate, XRHandJointID.RingDistal, XRHandJointID.RingTip, out float r) ||
-                !Extension(hand, XRHandJointID.LittleProximal, XRHandJointID.LittleIntermediate, XRHandJointID.LittleDistal, XRHandJointID.LittleTip, out float l))
-            { ResetRecognition(); return; }
-            sampledAt = Time.unscaledTime;
+            var root = Camera.main != null ? Camera.main.transform.parent : null;
+            if (!TabletopHandSample.TryRead(hand,root,Camera.main?Camera.main.transform.right:Vector3.right,
+                Time.unscaledTime,out var frame)) { ResetRecognition(); return; }
+            sampledAt = frame.gesture.time;
             if (tabletop == null || !tabletop.TargetLocated)
             { rules.Reset(); reach.Reset(); summon.Reset(); feedback = "Keep real lighter visible and still"; return; }
-            var root = Camera.main != null ? Camera.main.transform.parent : null;
-            Vector3 worldPalm = root != null ? root.TransformPoint(palm) : palm;
-            Vector3 worldIndex = root != null ? root.TransformPoint(index) : index;
-            Vector3 pinch = (index + thumb) * .5f;
-            Vector3 worldPinch = root != null ? root.TransformPoint(pinch) : pinch;
-            QueryPosition = worldPalm;
-            if (Vector3.Distance(worldIndex, tabletop.InteractionPosition) < Vector3.Distance(QueryPosition, tabletop.InteractionPosition)) QueryPosition = worldIndex;
-            if (Vector3.Distance(worldPinch, tabletop.InteractionPosition) < Vector3.Distance(QueryPosition, tabletop.InteractionPosition)) QueryPosition = worldPinch;
-            TargetDistance = Vector3.Distance(QueryPosition, tabletop.InteractionPosition);
-            int extended = (i > .82f ? 1 : 0) + (m > .82f ? 1 : 0) + (r > .82f ? 1 : 0) + (l > .82f ? 1 : 0);
-            bool openHand = extended >= 3 && Vector3.Distance(index, thumb) > .06f;
+            Vector3 worldPalm=frame.gesture.palm,worldIndex=frame.gesture.index;
+            float i=frame.extension.x,m=frame.extension.y,r=frame.extension.z,l=frame.extension.w;
+            QueryPosition=frame.ClosestTo(tabletop.InteractionPosition);
+            TargetDistance=Vector3.Distance(QueryPosition,tabletop.InteractionPosition);
+            bool openHand=frame.gesture.open&&frame.gesture.pinch>TabletopGestureRules.PinchReleaseMeters;
             if (!tabletop.InteractionReady)
             {
                 rules.Reset(); reach.Reset();
                 if (!Read(hand, XRHandJointID.ThumbProximal, out var thumbBase) ||
                     !Read(hand, XRHandJointID.ThumbDistal, out var thumbJoint))
                 { ResetRecognition(); return; }
-                Vector3 worldThumb = root != null ? root.TransformPoint(thumb) : thumb;
+                Vector3 worldThumb = frame.thumb;
                 bool thumbsUp = TabletopSummonGesture.IsThumbsUp(i, m, r, l,
                     root != null ? root.TransformPoint(thumbBase) : thumbBase,
                     root != null ? root.TransformPoint(thumbJoint) : thumbJoint, worldThumb, worldIndex);
@@ -108,16 +98,10 @@ namespace MagicMR
             { rules.Reset(); reach.Reset(); feedback = "Summoned! Open hand to continue"; return; }
             if (!reach.Observe(true, TargetDistance, sampledAt))
             { rules.Reset(); feedback = "Move hand closer to real lighter"; return; }
-            int othersCurled = (m < .68f ? 1 : 0) + (r < .68f ? 1 : 0) + (l < .68f ? 1 : 0);
-            var sample = new TabletopGestureRules.Sample {
-                time = sampledAt, pinch = Vector3.Distance(index, thumb), index = worldIndex, palm = worldPalm,
-                swipeAxis = Camera.main != null ? Camera.main.transform.right : Vector3.right,
-                fist = i < .68f && othersCurled == 3,
-                open = extended >= 3, pointing = i > .82f && othersCurled >= 2
-            };
+            var sample = frame.gesture;
             var dimension = rules.Step(sample);
-            SpellVfx.Preview(worldPalm, worldIndex, root != null ? root.TransformPoint(thumb) : thumb,
-                sample.pointing, sample.fist, sample.pinch <= .035f, sample.open);
+            SpellVfx.Preview(worldPalm, worldIndex, frame.thumb,
+                sample.pointing, sample.fist, sample.pinch <= TabletopGestureRules.PinchEnterMeters, sample.open);
             feedback = rules.Status;
             if (sampledAt >= nextDiagnostic)
             {
@@ -168,14 +152,6 @@ namespace MagicMR
             if (!Read(hand, id, out var point)) return false;
             var world=root != null ? root.TransformPoint(point) : point;
             return Vector3.Distance(world, tabletop.InteractionPosition) < .18f || Vector3.Distance(world, tabletop.VisualPosition)<.18f;
-        }
-        static bool Extension(XRHand hand, XRHandJointID a, XRHandJointID b, XRHandJointID c, XRHandJointID d, out float value)
-        {
-            value = 0;
-            if (!Read(hand,a,out var p0) || !Read(hand,b,out var p1) || !Read(hand,c,out var p2) || !Read(hand,d,out var p3)) return false;
-            float length = Vector3.Distance(p0,p1) + Vector3.Distance(p1,p2) + Vector3.Distance(p2,p3);
-            if (length < .01f) return false;
-            value = Vector3.Distance(p0,p3) / length; return true;
         }
 #else
         protected override void ProcessHand(object hand) { }

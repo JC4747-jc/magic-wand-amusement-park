@@ -7,13 +7,14 @@ namespace MagicMR
     {
         public const float EnterMeters = .20f;
         public const float ExitMeters = .32f;
+        public const float GraceSeconds = .65f;
         float nearAt = -100;
         public bool Allowed { get; private set; }
         public bool Observe(bool valid, float distance, float now)
         {
-            if (!valid || !float.IsFinite(distance)) { Reset(); return false; }
+            if (!valid || !float.IsFinite(distance) || distance < 0 || !float.IsFinite(now)) { Reset(); return false; }
             if (distance <= EnterMeters) nearAt = now;
-            Allowed = distance <= EnterMeters || (distance <= ExitMeters && now - nearAt <= .65f);
+            Allowed = distance <= EnterMeters || (distance <= ExitMeters && now - nearAt <= GraceSeconds);
             return Allowed;
         }
         public void Reset() { Allowed = false; nearAt = -100; }
@@ -23,6 +24,10 @@ namespace MagicMR
     public sealed class TabletopGestureRules
     {
         public const float RepeatCooldownSeconds = .35f;
+        public const float MaximumSampleGapSeconds = .15f;
+        public const float PinchEnterMeters = .035f, PinchReleaseMeters = .060f;
+        public const float PinchMinimumSeconds = .04f, PinchMaximumSeconds = .85f;
+        public const float FistMinimumSeconds = .12f;
         public struct Sample
         {
             public float time, pinch;
@@ -49,7 +54,12 @@ namespace MagicMR
 
         public EditDimension Step(Sample s)
         {
-            if (s.time - lastTime > .15f) { mode = Mode.Idle; circle.Clear(); swiping = false; fistArmed = false; }
+            if (!float.IsFinite(s.time) || !float.IsFinite(s.pinch) || s.pinch < 0 ||
+                !TabletopHandSample.Finite(s.index) || !TabletopHandSample.Finite(s.palm) ||
+                !TabletopHandSample.Finite(s.swipeAxis) || s.time < lastTime) {
+                Reset(); Status="Invalid or out-of-order hand sample"; return EditDimension.None;
+            }
+            if (s.time - lastTime > MaximumSampleGapSeconds) { mode = Mode.Idle; circle.Clear(); swiping = false; fistArmed = false; }
             lastTime = s.time;
             if (s.time < cooldownUntil) { Status = "Done - pause before next action"; return EditDimension.None; }
 
@@ -57,7 +67,7 @@ namespace MagicMR
             {
                 if (mode != Mode.Fist) { began = s.time; fistArmed = false; }
                 mode = Mode.Fist; lastClosed = s.time;
-                fistArmed |= s.time - began >= .12f;
+                fistArmed |= s.time - began >= FistMinimumSeconds;
                 circle.Clear(); swiping = false;
                 Status = fistArmed ? "Fist ready - open fingers" : "Hold fist briefly";
                 return EditDimension.None;
@@ -70,7 +80,7 @@ namespace MagicMR
                 return EditDimension.None;
             }
 
-            if (s.pinch <= .035f)
+            if (s.pinch <= PinchEnterMeters)
             {
                 if (mode != Mode.Pinch) began = s.time;
                 mode = Mode.Pinch; circle.Clear(); swiping = false;
@@ -79,9 +89,9 @@ namespace MagicMR
             }
             if (mode == Mode.Pinch)
             {
-                if (s.pinch < .060f) return EditDimension.None;
+                if (s.pinch < PinchReleaseMeters) return EditDimension.None;
                 mode = Mode.Idle;
-                if (s.time - began >= .04f && s.time - began <= .85f)
+                if (s.time - began >= PinchMinimumSeconds && s.time - began <= PinchMaximumSeconds)
                     return Fire(EditDimension.Appearance, s.time);
                 Status = "Pinch then release within 0.85s";
                 return EditDimension.None;

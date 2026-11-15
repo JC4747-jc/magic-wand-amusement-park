@@ -104,7 +104,9 @@ public static class ParkRegressionChecks
                         actor.seasonTime=season*.25f;emit.Invoke(actor,new object[]{ParkAction.Wind,24});
                         int emitted=(int)typeof(ParkActor).GetField("particleCount",windFlags).GetValue(actor);
                         Require(emitted==(season==3?0:24),"Winter emitted leaves or other season lost wind feedback");
-                        if(season<3)Require(pool[0].GetComponent<MeshFilter>().sharedMesh==ParkFeedbackMeshes.Get(season==0?ParkFeedbackShape.Petal:ParkFeedbackShape.Leaf),"Season wind used incorrect feedback geometry");
+                        // HCI season-tree D is falling leaves in every leafy season.
+                        // The legacy fantasy-only spring feedback may still use petals.
+                        if(season<3)Require(pool[0].GetComponent<MeshFilter>().sharedMesh==ParkFeedbackMeshes.Get(actor.magicTree&&season==0?ParkFeedbackShape.Petal:ParkFeedbackShape.Leaf),"Season wind used incorrect feedback geometry");
                     }
                     actor.ResetEffects();
                     Require(go.transform.position==anchor,"Tree wind moved tracking anchor");

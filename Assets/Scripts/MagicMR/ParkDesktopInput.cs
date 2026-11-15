@@ -15,6 +15,7 @@ namespace MagicMR
         {
 #if ENABLE_INPUT_SYSTEM
             if(Keyboard.current==null)return false;
+            if(Keyboard.current.leftCtrlKey.isPressed||Keyboard.current.rightCtrlKey.isPressed)return false;
             Key key;
             switch(code) {
                 case KeyCode.Alpha1:key=Key.Digit1;break;case KeyCode.Alpha2:key=Key.Digit2;break;
@@ -27,6 +28,7 @@ namespace MagicMR
             }
             return Keyboard.current[key].wasPressedThisFrame;
 #elif ENABLE_LEGACY_INPUT_MANAGER
+            if(Input.GetKey(KeyCode.LeftControl)||Input.GetKey(KeyCode.RightControl))return false;
             return Input.GetKeyDown(code);
 #else
             return false;

@@ -70,8 +70,8 @@ namespace MagicMR
                 // Preserve bark, stone, fur and leaf colors through idle and Reset.
                 // Artistic style is a shader transition, not a uniform green tint.
                 renderer.GetPropertyBlock(block);
-                block.SetColor("_BaseColor",componentColors[renderer]);
-                block.SetFloat("_Style",style);
+                block.SetColor("_BaseColor",componentColors[renderer]*(scenario==ParkScenario.Tree&&magicTree?Color.Lerp(Color.white,new Color(.42f,.48f,.52f),Mathf.Clamp01(style)):Color.white));
+                block.SetFloat("_Style",scenario==ParkScenario.Tree?0:style);
                 renderer.SetPropertyBlock(block);
             }
         }
@@ -96,3 +96,4 @@ namespace MagicMR
         }
     }
 }
+

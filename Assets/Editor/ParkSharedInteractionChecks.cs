@@ -94,14 +94,17 @@ public static class ParkSharedInteractionChecks
     [Serializable] class GestureReport {
         public string generatedUtc,unityVersion,deviceValidation="PENDING_NO_PICO_TEST";
         public string configurationSource="Assets/Scenes/Park*.unity, loaded by Unity; missing serialized fields use current runtime defaults";
-        public string handPolicy="Right hand: scene commands; left hand: UI and bimanual participation. UI-owned hands excluded from scene effects. Interrupted holds require release.";
-        public string lighterPolicy="Existing lighter gesture mapping retained; regression is editor evidence only.";
+        public string handPolicy="All production magic uses TabletopHandSample + TabletopGestureRules + GestureReachWindow. Right hand: A pinch-release, B point-circle, C horizontal palm swipe, D fist-open. UI/Fit/Plane capture cancels casting; release required after interruption.";
+        public string lighterPolicy="Lighter and all six Park profiles share classification thresholds. Different targets dispatch different effects. Synthetic editor checks do not validate YOLO or PICO.";
+        public float sampleGapSeconds=TabletopGestureRules.MaximumSampleGapSeconds;
+        public float pinchEnterMeters=TabletopGestureRules.PinchEnterMeters,pinchReleaseMeters=TabletopGestureRules.PinchReleaseMeters;
+        public float pinchMinimumSeconds=TabletopGestureRules.PinchMinimumSeconds,pinchMaximumSeconds=TabletopGestureRules.PinchMaximumSeconds;
+        public float fistMinimumSeconds=TabletopGestureRules.FistMinimumSeconds,cooldownSeconds=TabletopGestureRules.RepeatCooldownSeconds;
+        public float reachEnterMeters=GestureReachWindow.EnterMeters,reachExitMeters=GestureReachWindow.ExitMeters,reachGraceSeconds=GestureReachWindow.GraceSeconds;
         public GestureScene[] scenes;
     }
     [Serializable] class GestureScene {
         public string scene,hint;
-        public float palmStableSeconds,palmDriftMeters,sampleGapSeconds,pinchMinimumSeconds,pinchMaximumSeconds,fistHoldSeconds;
-        public float headMaximumSpeedMetersPerSecond,headMaximumAngularSpeedDegreesPerSecond,headSettlingSeconds;
         public string configurationKind;
     }
     static void ExportGestureConfiguration() {
@@ -128,10 +131,7 @@ public static class ParkSharedInteractionChecks
                 if(!receiver || receiver.controller!=defaults || defaults.receiver!=receiver || !ui || ui.controller!=defaults || ui.receiver!=receiver || !receiver.sender || !receiver.transport)
                     throw new Exception("Shared recognition wiring incomplete: "+scene.path+" receiver="+(receiver!=null)+" UI="+(ui!=null)+" sender="+(receiver && receiver.sender)+" TCP="+(receiver && receiver.transport));
                 report.scenes[i]=new GestureScene {
-                    scene=scene.path,hint=defaults.GestureHint,configurationKind="Actual loaded scene controller, including serialized overrides",
-                    palmStableSeconds=defaults.openPalmStableSeconds,palmDriftMeters=defaults.openPalmMaximumDriftMeters,sampleGapSeconds=defaults.handSampleMaximumGapSeconds,
-                    pinchMinimumSeconds=defaults.pinchMinimumSeconds,pinchMaximumSeconds=defaults.pinchMaximumSeconds,fistHoldSeconds=defaults.fistHoldSeconds,
-                    headMaximumSpeedMetersPerSecond=defaults.motionHeadMaximumSpeed,headMaximumAngularSpeedDegreesPerSecond=defaults.motionHeadMaximumAngularSpeed,headSettlingSeconds=defaults.motionHeadSettlingSeconds
+                    scene=scene.path,hint=defaults.GestureHint,configurationKind="Actual loaded scene wiring; live shared rule constants above. Legacy serialized Park gesture tuning fields are not used by production magic recognition."
                 };
                 if(string.IsNullOrEmpty(report.scenes[i].hint))throw new Exception("Missing gesture hint for "+defaults.scenario);
                 } finally {EditorSceneManager.CloseScene(scene,true);}
