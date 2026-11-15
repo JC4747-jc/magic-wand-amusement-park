@@ -98,6 +98,7 @@ namespace MagicMR
         readonly List<Transform> dreamContents=new List<Transform>();
         Transform[] stoppingEffects;
         Transform statueScan;
+        StatueWishGarden statueGarden;
         NaturalBronzeBeast naturalBronze;
         Transform plantFlower;
         float bloomVisibility;
@@ -184,7 +185,7 @@ namespace MagicMR
             if(scenario==ParkScenario.Pet)foreach(var content in dreamContents)content.localScale*=3;
             reward=scenario==ParkScenario.Tree?BuildTreeChest():Part(visual,"Reward chest",PrimitiveType.Cube,new Vector3(.2f,.06f,0),new Vector3(.12f,.08f,.1f),new Color(1,.7f,.1f),false);
             environment=new GameObject("Confirmed-plane environment only").transform; environment.SetParent(transform,false);
-            for(int i=0;i<12;i++) { var lotus=Part(environment,"Virtual lotus",PrimitiveType.Sphere,new Vector3(Mathf.Cos(i)*.5f,0,Mathf.Sin(i)*.5f),new Vector3(.1f,.025f,.1f),new Color(.95f,.55f,.7f),false); }
+            if(scenario==ParkScenario.Statue){statueGarden=environment.gameObject.AddComponent<StatueWishGarden>();statueGarden.Initialize();}
             preview=Part(transform,"Gesture preview",PrimitiveType.Sphere,Vector3.zero,Vector3.one*.012f,Color.cyan,false);
             spell=Part(transform,"Spell transfer",PrimitiveType.Sphere,Vector3.zero,Vector3.one*.018f,Color.yellow,false);
             for(int i=0;i<32;i++) { var p=Part(visual,"Pooled feedback "+i,PrimitiveType.Cube,Vector3.zero,Vector3.one*.018f,Color.yellow,false); p.gameObject.SetActive(false); pool.Add(p); }
@@ -276,6 +277,7 @@ namespace MagicMR
         IEnumerator FadeFantasyEffects() {
             Feedback="Stopping virtual effects";
             var exiting=new List<Transform>{bubble,portal,jellyfish};
+            if(statueGarden)exiting.Add(environment);
             foreach(var p in pool)if(p.gameObject.activeSelf)exiting.Add(p);
             stoppingEffects=exiting.ToArray();stoppingScales=new Vector3[stoppingEffects.Length];
             float jellyOpacity=naturalJellyfish?naturalJellyfish.Visibility:0;
@@ -293,6 +295,7 @@ namespace MagicMR
             state.awake=state.bubble=state.wind=state.rewarded=false;
             if(naturalBronze)naturalBronze.ResetPose();
             if(naturalJellyfish)naturalJellyfish.ResetPose();
+            if(statueGarden)statueGarden.Clear();
             dreamVisibility=0;
             RestoreStoppedScales();particleCount=0;foreach(var p in pool)p.gameObject.SetActive(false);
             ApplyVisibility();Feedback="Virtual effects stopped";
@@ -345,6 +348,7 @@ namespace MagicMR
                 case ParkAction.GrowUp: targetGrowth=Mathf.Clamp01(growthTime+.2f); targetSeason=seasonTime+.25f; break;
                 case ParkAction.GrowDown: targetGrowth=Mathf.Clamp01(growthTime-.2f); targetSeason=seasonTime-.25f; break;
                 case ParkAction.Reward:
+                    if(scenario==ParkScenario.Statue){state.rewarded=true;Feedback="Virtual lotus wish tree unfolding on the confirmed ground";Emit(ParkAction.Reward,12);break;}
                     if(scenario==ParkScenario.Tree&&!magicTree) {
                         state.wind=true;treeGustUntil=Time.unscaledTime+2.4f;
                         windDirection=(hand-transform.position).sqrMagnitude>.001f?(transform.position-hand).normalized:Vector3.right;
@@ -445,6 +449,7 @@ namespace MagicMR
         public void ResetEffects()
         {
             entryProgress=1;
+            if(statueGarden)statueGarden.Clear();
             orientationConfirmed=false;sizeConfirmed=false;
             if(representationFit) { representationFit.localPosition=Vector3.zero;representationFit.localScale=Vector3.one; }
             Cancel(); history.Clear(); state=default; targetGrowth=growthTime=.45f; targetSeason=seasonTime=0; targetColor=new Color(.25f,.65f,.4f); Revision++; Feedback="Reset";
@@ -500,7 +505,9 @@ namespace MagicMR
             for(int i=0;i<dreamContents.Count;i++)dreamContents[i].gameObject.SetActive(i==state.style);
             if(scar)scar.gameObject.SetActive(state.scar && !state.sealedTree);
             reward.gameObject.SetActive(state.rewarded && scenario==ParkScenario.Tree);
-            environment.gameObject.SetActive(state.rewarded && scenario==ParkScenario.Statue && confirmedPlane && environmentAnchor);
+            bool gardenAllowed=scenario==ParkScenario.Statue&&tracked&&confirmedPlane&&environmentAnchor;
+            if(statueGarden)statueGarden.SetRequested(state.rewarded&&gardenAllowed);
+            environment.gameObject.SetActive(gardenAllowed&&(state.rewarded||(statueGarden&&statueGarden.Progress>0)));
             if(jellyfish)jellyfish.gameObject.SetActive(state.awake || (naturalJellyfish && naturalJellyfish.Visibility>0));
             if(portal)portal.gameObject.SetActive(state.bubble);
         }
@@ -563,6 +570,7 @@ namespace MagicMR
         {
             if(!built || !tracked || IsExiting || stoppingEffects!=null)return;
             float dt=Time.unscaledDeltaTime;
+            if(statueGarden)statueGarden.Step(dt,Time.unscaledTime);
             if(scenario==ParkScenario.Bugs) {bugDefeatProgress=Mathf.MoveTowards(bugDefeatProgress,state.rewarded?1:0,dt/.3f);ApplyBugDefeatPose();}
             growthTime=Mathf.MoveTowards(growthTime,targetGrowth,dt*.35f); seasonTime=Mathf.MoveTowards(seasonTime,targetSeason,dt*.2f);
             styleMix=Mathf.MoveTowards(styleMix,state.style/2f,dt);
