@@ -85,8 +85,11 @@ namespace MagicMR
             if(!naturalPetRig)throw new System.InvalidOperationException("Natural pet rig missing: "+modelName);
             naturalPetRig.Initialize();
             foreach(var renderer in model.GetComponentsInChildren<Renderer>()){body.Add(renderer);componentColors[renderer]=Color.white;}
+            petOutline=model.AddComponent<NaturalPetOutline>();petOutline.Initialize(modelName=="BicolorCat");
         }
 
+        NaturalPetOutline petOutline;
+        public bool PetComic=>scenario==ParkScenario.Pet&&state.petComic;
         NaturalPetRig naturalPetRig;
         public bool PetWalking=>naturalPetRig&&naturalPetRig.IsWalking;
         public bool TryPreviewPetWalk(bool enabled)

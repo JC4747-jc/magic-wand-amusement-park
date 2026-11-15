@@ -87,7 +87,7 @@ namespace MagicMR
         public bool RoomCandySelected=>scenario==ParkScenario.Room && state.style==1;
         public int Revision { get; private set; }
 
-        [Serializable] struct State { public int style, affection; public bool awake, rewarded, bubble, sealedTree, scar, wind, bloom; public float growth, season; }
+        [Serializable] struct State { public int style, affection; public bool awake, rewarded, bubble, sealedTree, scar, wind, bloom, petComic; public float growth, season; }
         State state;
         readonly Stack<State> history = new Stack<State>();
         readonly List<Renderer> body = new List<Renderer>();
@@ -313,6 +313,7 @@ namespace MagicMR
             {
                 case ParkAction.Style:
                     if(scenario==ParkScenario.Plant) {SetHighlighted(true);Feedback="Plant selected";break;}
+                    if(scenario==ParkScenario.Pet) {state.petComic=!state.petComic;Feedback=state.petComic?"Pet: manga outline":"Pet: natural appearance";break;}
                     if(scenario==ParkScenario.Room && (state.awake || state.rewarded || state.bubble))
                         yield return FadeFantasyEffects();
                     if(scenario==ParkScenario.Tree && !magicTree) {state.style=1-state.style;Feedback=state.style==1?"Season tree: anime canopy":"Season tree: natural canopy";}
@@ -322,7 +323,6 @@ namespace MagicMR
                         state.style=(state.style+1)%variants;
                         targetColor=state.style==1?new Color(.15f,.16f,.2f):state.style==2?new Color(.9f,.3f,.5f):new Color(.25f,.65f,.4f);
                     }
-                    if(scenario==ParkScenario.Pet)Feedback="Dream content: "+new[]{"Virtual food","Star","Heart"}[state.style];
                     if(scenario==ParkScenario.Room)Feedback="Selected effect: "+(state.style==0?"Jellyfish":"Candy rain; confirm ceiling first");
                     if(scenario==ParkScenario.Statue) {
                         var chapters=story.Split(new[]{'\n'},StringSplitOptions.RemoveEmptyEntries);
@@ -495,6 +495,7 @@ namespace MagicMR
 
         void ApplyVisibility()
         {
+            if(petOutline)petOutline.SetVisible(state.petComic&&tracked);
             if(scenario==ParkScenario.Bugs)foreach(var r in body)if(r)r.enabled=!state.rewarded || bugDefeatProgress<1;
             eyes.gameObject.SetActive(state.awake && !(scenario==ParkScenario.Bugs && state.rewarded) && !(scenario==ParkScenario.Tree&&magicTree));
             if(plantSpeech)plantSpeech.gameObject.SetActive(state.awake);
