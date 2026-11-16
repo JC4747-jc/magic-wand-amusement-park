@@ -6,13 +6,16 @@ using MagicMR;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 [InitializeOnLoad]
 public static class HciSeasonTreeChecks
 {
     const string Key="MagicMR.HciSeasonTree";
     static bool Willow=>SessionState.GetBool(Key+".Willow",false);
-    static string Output=>Path.GetFullPath(Willow?".codex-tmp/hci-willow":".codex-tmp/hci-season-tree");
+    static bool Live=>SessionState.GetBool(Key+".Live",false);
+    static string Output=>Path.GetFullPath(Live?(Willow?".codex-tmp/hci-live-willow":".codex-tmp/hci-live-season-tree"):(Willow?".codex-tmp/hci-willow":".codex-tmp/hci-season-tree"));
+    static ParkSharedInterface shared;static DataLogger logger;static bool menuCaptured;
     static Renderer scarRenderer,trunkRenderer;static Matrix4x4 trunkMatrix;static float minBreath=1,maxBreath;
     static ParkController controller;static ParkActor actor;static Renderer leaves;static Transform face,fit;
     static Vector3 anchor,fitPosition,fitScale;static Quaternion[] rest;
@@ -21,13 +24,64 @@ public static class HciSeasonTreeChecks
     static TabletopGestureRules lighter;static EditDimension expectedDimension;static TabletopHandSample heldSample;static bool holdValid;static double settleSeconds;
     static float minimumEyeHeight=float.PositiveInfinity,maximumEyeHeight;
     static HciSeasonTreeChecks(){EditorApplication.update+=Tick;Application.logMessageReceived+=(m,s,t)=>{if(SessionState.GetBool(Key,false)&&(t==LogType.Error||t==LogType.Exception||t==LogType.Assert))errors++;};}
-    static void Pump(){try{if(controller)FeedTimedHand();if(Willow&&scarRenderer&&scarRenderer.gameObject.activeInHierarchy){var b=new MaterialPropertyBlock();scarRenderer.GetPropertyBlock(b);minBreath=Mathf.Min(minBreath,b.GetFloat("_Breath"));maxBreath=Mathf.Max(maxBreath,b.GetFloat("_Breath"));}if(face&&face.gameObject.activeInHierarchy){float h=face.GetChild(0).localScale.y;minimumEyeHeight=Mathf.Min(minimumEyeHeight,h);maximumEyeHeight=Mathf.Max(maximumEyeHeight,h);}}catch(Exception e){Fail(e);}}
+    static void Pump(){try{if(Live&&controller&&actor)controller.Observe(actor.instanceId,"Tree",anchor);if(controller)FeedTimedHand();if(Willow&&scarRenderer&&scarRenderer.gameObject.activeInHierarchy){var b=new MaterialPropertyBlock();scarRenderer.GetPropertyBlock(b);minBreath=Mathf.Min(minBreath,b.GetFloat("_Breath"));maxBreath=Mathf.Max(maxBreath,b.GetFloat("_Breath"));}if(face&&face.gameObject.activeInHierarchy){float h=face.GetChild(0).localScale.y;minimumEyeHeight=Mathf.Min(minimumEyeHeight,h);maximumEyeHeight=Mathf.Max(maximumEyeHeight,h);}}catch(Exception e){Fail(e);}}
     static void Fail(Exception e){File.WriteAllText(Output+"/result.txt","FAIL: "+e);SessionState.SetBool(Key,false);Debug.LogException(e);EditorApplication.Exit(2);}
     static void Require(bool ok,string why){if(!ok)throw new Exception(why);}
-    public static void Run(){SessionState.SetBool(Key+".Willow",false);Begin();}
-    public static void RunWillow(){SessionState.SetBool(Key+".Willow",true);Begin();}
+    public static void Run(){SessionState.SetBool(Key+".Live",false);SessionState.SetBool(Key+".Willow",false);Begin();}
+    public static void RunWillow(){SessionState.SetBool(Key+".Live",false);SessionState.SetBool(Key+".Willow",true);Begin();}
+    public static void RunLive(){SessionState.SetBool(Key+".Live",true);SessionState.SetBool(Key+".Willow",false);Begin();}
+    public static void RunLiveWillow(){SessionState.SetBool(Key+".Live",true);SessionState.SetBool(Key+".Willow",true);Begin();}
     static void Begin(){Directory.CreateDirectory(Output);File.WriteAllText(Output+"/result.txt","RUNNING\n");SessionState.SetBool(Key,true);SessionState.SetBool(Key+".Done",false);EditorSceneManager.OpenScene("Assets/Scenes/ParkTree.unity");EditorApplication.EnterPlaymode();}
     static void Later(int value,double seconds=1.6){phase=value;settleSeconds=seconds;next=EditorApplication.timeSinceStartup+seconds;}
+    static Button TreeButton(string name)=>UnityEngine.Object.FindObjectsByType<Button>(FindObjectsInactive.Include,FindObjectsSortMode.None).Single(b=>b.name==name);
+    static void Choose(bool fantasy){TreeButton(fantasy?"Fantasy tree":"Natural tree").onClick.Invoke();Require(controller.selected==actor&&actor.magicTree==fantasy&&!actor.virtualTarget,"UI tree choice replaced/relabelled target or failed: "+shared.Feedback);}
+    static void ValidateLiveSelection(){
+        // Synthetic Observe coordinates exercise the production physical-target branch, not YOLO/depth/device accuracy.
+        // The disconnected hardware receiver expires targets every frame; isolate only that source in this fixture.
+        foreach(var input in UnityEngine.Object.FindObjectsByType<Perception.ParkStereoReceiver>(FindObjectsSortMode.None))input.enabled=false;
+        controller.simulation=false;anchor=Camera.main.transform.position+Camera.main.transform.forward*1.35f+Vector3.right*.5f;
+        for(int i=0;i<3;i++)controller.Observe("SYNTHETIC_OBSERVE_TREE","Tree",anchor);
+        var index=anchor-Vector3.forward*.08f;
+        var select=TabletopHandSample.Create(Time.unscaledTime,index-Vector3.up*.04f,index,index+Vector3.right*.02f,index-Vector3.forward*.04f,Vector4.one*.95f,Vector3.right,.02f);
+        controller.ProcessHandSample(select,true);actor=controller.selected;Require(actor&&!actor.virtualTarget&&actor.tracked,"Production point/pinch did not select synthetic physical Tree");
+        controller.ProcessHandSample(default,false);shared=UnityEngine.Object.FindFirstObjectByType<ParkSharedInterface>();Require(shared,"Shared UI absent");
+        logger=DataLogger.Instance;if(!logger)logger=new GameObject("Synthetic tree study logger").AddComponent<DataLogger>();
+        Require(!logger.SessionActive,"Refuse to reuse an existing study session");logger.ConfigureLogging(false,.1f);logger.StartSession("SYNTHETIC_OBSERVE_TREE_"+(Willow?"WILLOW":"SEASON"),"C4");
+        logger.LogEvent("synthetic_fixture",EditDimension.None,-1,-1,-1,notes:"Synthetic recognition coordinates and joint samples; hardware receiver disabled in fixture; no camera, YOLO, depth or PICO measurements");
+        Require(actor.ConfirmOrientation(23)&&actor.FitRepresentation(anchor,anchor+Vector3.up*.6f,true),"Initial fit failed");
+        var fitNode=actor.transform.Find("Manual fit - separate from tracking and animation");var fp=fitNode.localPosition;var fs=fitNode.localScale;var rotation=actor.transform.rotation;string identity=actor.instanceId;
+        Choose(true);Choose(false);
+        Require(actor.instanceId==identity&&actor.transform.position==anchor&&actor.transform.rotation==rotation&&actor.orientationConfirmed&&actor.sizeConfirmed&&fitNode.localPosition==fp&&fitNode.localScale==fs,"Choice lost physical identity or manual placement");
+        int revision=actor.Revision;Choose(false);Require(actor.Revision==revision,"Idempotent choice reset effects");
+        TreeButton("Test awaken").onClick.Invoke();Require(actor.Revision==revision&&!actor.Busy,"Virtual awaken accepted on physical target");
+        shared.replayMode=true;TreeButton("Fantasy tree").onClick.Invoke();Require(!actor.magicTree&&actor.Revision==revision,"Replay changed live experience");shared.replayMode=false;
+        controller.simulation=true;Require(!controller.SetTreeExperience(true)&&!controller.SetVirtualTreeMode(true),"Simulation relabelled physical target");controller.simulation=false;
+        Require(controller.Dispatch(ParkAction.Style,anchor,true)&&actor.Busy,"Busy guard setup failed");Require(!controller.SetTreeExperience(true)&&!actor.magicTree&&actor.Busy,"Choice interrupted busy magic");controller.Dispatch(ParkAction.Reset,anchor,true);
+        Require(controller.RequestFit()&&!controller.SetTreeExperience(true),"Fit guard failed");controller.Dispatch(ParkAction.Reset,anchor,true);
+        Require(controller.RequestManualPlane()&&!controller.SetTreeExperience(true),"Plane guard failed");controller.Dispatch(ParkAction.Reset,anchor,true);
+        var seen=(Dictionary<string,float>)typeof(ParkController).GetField("seen",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic).GetValue(controller);
+        seen[identity]=Time.unscaledTime-controller.lostAfter-1;Require(!controller.SetTreeExperience(true),"Stale target accepted before Update expiry");controller.Observe(identity,"Tree",anchor);
+        var foreign=UnityEngine.Object.Instantiate(actor);foreign.instanceId=identity;controller.selected=foreign;Require(!controller.SetTreeExperience(true),"Foreign instance accepted");controller.selected=actor;UnityEngine.Object.DestroyImmediate(foreign.gameObject);
+        actor.SetTracked(false);Require(!controller.SetTreeExperience(true),"Lost target accepted");for(int i=0;i<3;i++)controller.Observe(identity,"Tree",anchor);Require(actor.tracked,"Target did not recover");
+        actor.gameObject.SetActive(false);Require(!controller.SetTreeExperience(true),"Disabled target accepted");actor.gameObject.SetActive(true);
+        controller.selected=null;Require(!controller.SetTreeExperience(true),"Missing target accepted");controller.selected=actor;
+        var scenario=controller.scenario;controller.scenario=ParkScenario.Pet;Require(!controller.SetTreeExperience(true),"Wrong scenario accepted");controller.scenario=scenario;
+        Choose(Willow);revision=actor.Revision;
+        // A held UI pinch and its release must not become an Appearance spell.
+        controller.SetRightHandUiCapture(true);Require(controller.ProcessHandSample(Frame(Time.unscaledTime,"open",.02f),true)==EditDimension.None,"UI pinch leaked");
+        controller.SetRightHandUiCapture(false);Require(controller.ProcessHandSample(Frame(Time.unscaledTime+.02f,"open",.02f),true)==EditDimension.None,"Held UI pinch leaked");
+        Require(controller.ProcessHandSample(Frame(Time.unscaledTime+.04f,"open"),true)==EditDimension.None&&actor.Revision==revision,"UI release became magic");controller.ProcessHandSample(default,false);
+        File.WriteAllText(Output+"/selection-checks.txt","PASS: production point/pinch selected SYNTHETIC Observe target; UI both modes preserve identity/placement; idempotent choice; virtual-only awaken and replay denied; simulation/physical mismatch, Busy, Fit, Plane, stale, foreign, lost, disabled, missing, wrong scenario rejected; UI pinch/release does not cast. Synthetic fixture, no YOLO/PICO claim.\n");
+    }
+    static void FinishLiveEvidence(){if(!Live)return;logger.EndSession();File.Copy(logger.EventFilePath,Output+"/synthetic-events.csv",true);File.AppendAllText(Output+"/result.txt","Physical-target branch used synthetic Observe coordinates, same selected instance and shared UI experience selector; full effects driven by timed synthetic production hand samples. Not real YOLO/PICO validation.\n");}
+    static void CaptureMenu(){
+        var panel=TreeButton("Natural tree").transform.parent;var camera=new GameObject("Synthetic tree menu review camera").AddComponent<Camera>();
+        camera.orthographic=true;camera.orthographicSize=.29f;camera.nearClipPlane=.01f;camera.farClipPlane=2;camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.16f,.18f,.2f);
+        camera.transform.SetPositionAndRotation(panel.position-panel.forward,panel.rotation);
+        var rt=new RenderTexture(800,800,24);var pixels=new Texture2D(800,800,TextureFormat.RGB24,false);var old=RenderTexture.active;
+        try{Canvas.ForceUpdateCanvases();camera.targetTexture=rt;camera.Render();RenderTexture.active=rt;pixels.ReadPixels(new Rect(0,0,800,800),0,0);pixels.Apply();File.WriteAllBytes(Output+"/menu.png",pixels.EncodeToPNG());}
+        finally{RenderTexture.active=old;UnityEngine.Object.DestroyImmediate(camera.gameObject);UnityEngine.Object.DestroyImmediate(rt);UnityEngine.Object.DestroyImmediate(pixels);}
+    }
     static float Property(string name){var b=new MaterialPropertyBlock();leaves.GetPropertyBlock(b);return b.GetFloat(name);}
     static TabletopHandSample Frame(float t,string shape,float pinch=.08f,Vector3 delta=default){
         var extension=shape=="fist"?Vector4.one*.55f:shape=="point"?new Vector4(.95f,.55f,.55f,.55f):Vector4.one*.95f;
@@ -74,7 +128,8 @@ public static class HciSeasonTreeChecks
             if(phase==0){started=EditorApplication.timeSinceStartup;new GameObject("Synthetic hand frame driver").AddComponent<HciSeasonTreeHandPump>().sample=Pump;Later(1);return;}
             Require(errors==0,"Runtime error");Require(EditorApplication.timeSinceStartup-started<100,"Timeout");if(trace!=null)return;if(EditorApplication.timeSinceStartup<next)return;
             if(phase==1){
-                controller=UnityEngine.Object.FindFirstObjectByType<ParkController>();Require(controller,"Saved ParkTree absent");controller.simulation=true;controller.SpawnVirtual();Require(controller.SetVirtualTreeMode(Willow),"Tree mode unavailable");actor=controller.selected;
+                controller=UnityEngine.Object.FindFirstObjectByType<ParkController>();Require(controller,"Saved ParkTree absent");
+                if(Live)ValidateLiveSelection();else{controller.simulation=true;controller.SpawnVirtual();Require(controller.SetVirtualTreeMode(Willow),"Tree mode unavailable");actor=controller.selected;}
                 Require(actor.ConfirmOrientation(0)&&actor.FitRepresentation(actor.transform.position,actor.transform.position+Vector3.up*.6f,true),"Synthetic fit failed");
                 fit=actor.transform.Find("Manual fit - separate from tracking and animation");fitPosition=fit.localPosition;fitScale=fit.localScale;anchor=actor.transform.position;
                 leaves=actor.GetComponentsInChildren<Renderer>(true).Single(r=>r.sharedMaterial&&r.sharedMaterial.shader.name=="MagicMR/NaturalTreeLeaves");
@@ -82,6 +137,7 @@ public static class HciSeasonTreeChecks
                 scarRenderer=actor.GetComponentsInChildren<Renderer>(true).Single(r=>r.sharedMaterial&&r.sharedMaterial.shader.name=="MagicMR/NaturalBarkMark");trunkRenderer=actor.GetComponentsInChildren<Renderer>().Single(r=>r.name=="Trunk");trunkMatrix=trunkRenderer.localToWorldMatrix;
                 Require(!face.gameObject.activeInHierarchy,"Face visible before B");Require(!ShaderUtil.ShaderHasError(leaves.sharedMaterial.shader)&&!ShaderUtil.ShaderHasError(scarRenderer.sharedMaterial.shader),"Tree shader error");Later(2);return;
             }
+            if(Live&&!menuCaptured){Require(TreeButton("Natural tree").gameObject.activeInHierarchy&&TreeButton("Fantasy tree").gameObject.activeInHierarchy&&TreeButton("Natural tree").interactable&&TreeButton("Fantasy tree").interactable&&!TreeButton("Test awaken").gameObject.activeInHierarchy,"Live shared mode buttons hidden or virtual test exposed");Require(TreeButton(Willow?"Fantasy tree":"Natural tree").GetComponentInChildren<Text>().color==Color.cyan,"Chosen experience not highlighted");CaptureMenu();menuCaptured=true;}
             if(Willow){TickWillow();return;}
             if(phase==2){Capture("00-natural-spring");Cast(EditDimension.Appearance);Later(3);}
             else if(phase==3){Capture("01-anime-spring");Require(Property("_ToonMix")>.99f&&Mathf.Abs(actor.seasonTime)<.001f,"A changed season or lacks anime shading: toon="+Property("_ToonMix")+" season="+actor.seasonTime+" fantasy="+actor.magicTree+" feedback="+actor.Feedback+" busy="+actor.Busy);Cast(EditDimension.Agency);Later(4);}
@@ -98,7 +154,7 @@ public static class HciSeasonTreeChecks
             else if(phase==12){
                 Require(!actor.Busy&&!face.gameObject.activeInHierarchy&&actor.seasonTime==0&&Property("_ToonMix")<.001f,"Mid-action reset leaked effects");
                 Require(minimumEyeHeight<maximumEyeHeight*.5f,"B eyes did not blink");
-                File.WriteAllText(Output+"/result.txt","PASS: saved ParkTree natural mode, synthetic joint traces through production ProcessHandSample match lighter exactly once; A reversible anime canopy without season change; B five-renderer face with measured blink; C summer/autumn/winter/spring including leaf shedding/recovery; D bounded gust with no fantasy chest; Undo; fit/anchor stable; interrupted Reset. 9 review renders, no real YOLO/XR/PICO or Android acceptance.\n");SessionState.SetBool(Key+".Done",true);EditorApplication.ExitPlaymode();
+                File.WriteAllText(Output+"/result.txt","PASS: saved ParkTree natural mode, synthetic joint traces through production ProcessHandSample match lighter exactly once; A reversible anime canopy without season change; B five-renderer face with measured blink; C summer/autumn/winter/spring including leaf shedding/recovery; D bounded gust with no fantasy chest; Undo; fit/anchor stable; interrupted Reset. 9 review renders, no real YOLO/XR/PICO or Android acceptance.\n");FinishLiveEvidence();SessionState.SetBool(Key+".Done",true);EditorApplication.ExitPlaymode();
             }
         }catch(Exception e){Fail(e);}
     }
@@ -112,7 +168,7 @@ public static class HciSeasonTreeChecks
         else if(phase==7){Require(chest.gameObject.activeInHierarchy&&Quaternion.Angle(chest.Find("Hinged lid").localRotation,Quaternion.identity)>100&&!scarRenderer.gameObject.activeInHierarchy,"D did not seal/open chest");Capture("05-sealed");Capture("06-chest-detail");Require(controller.Dispatch(ParkAction.Undo,anchor,true),"Undo seal rejected");Later(8);}
         else if(phase==8){Require(!chest.gameObject.activeInHierarchy&&scarRenderer.gameObject.activeInHierarchy,"Undo did not restore breathing scar");Cast(EditDimension.Appearance);Later(9);}
         else if(phase==9){Require(block.GetColor("_BaseColor").r>.99f&&actor.seasonTime==0,"A did not restore natural style");Require(trunkRenderer.localToWorldMatrix==trunkMatrix&&actor.transform.position==anchor&&fit.localPosition==fitPosition&&fit.localScale==fitScale,"Willow moved fitted trunk or anchor");controller.Dispatch(ParkAction.Reset,anchor,true);holdValid=false;Later(10);}
-        else if(phase==10){Require(!actor.Busy&&!chest.gameObject.activeInHierarchy&&!scarRenderer.gameObject.activeInHierarchy&&Quaternion.Angle(chest.Find("Hinged lid").localRotation,Quaternion.identity)<.01f,"Reset leaked willow effects");File.WriteAllText(Output+"/result.txt","PASS: actual ParkTree fantasy variant; synthetic production hand traces match lighter exactly once. A dark/natural without season change; B bounded branch lash and recovery; C visible bark luminance breathing; D scar prerequisite, seal and hinged chest; Undo restores C; Reset closes chest; fitted trunk and anchor unchanged. Seven Unity renders. Existing small-tree mesh remains a botanical stand-in, not a finished willow; no YOLO/XR/PICO/Android acceptance.\n");SessionState.SetBool(Key+".Done",true);EditorApplication.ExitPlaymode();}
+        else if(phase==10){Require(!actor.Busy&&!chest.gameObject.activeInHierarchy&&!scarRenderer.gameObject.activeInHierarchy&&Quaternion.Angle(chest.Find("Hinged lid").localRotation,Quaternion.identity)<.01f,"Reset leaked willow effects");File.WriteAllText(Output+"/result.txt","PASS: actual ParkTree fantasy variant; synthetic production hand traces match lighter exactly once. A dark/natural without season change; B bounded branch lash and recovery; C visible bark luminance breathing; D scar prerequisite, seal and hinged chest; Undo restores C; Reset closes chest; fitted trunk and anchor unchanged. Seven Unity renders. Existing small-tree mesh remains a botanical stand-in, not a finished willow; no YOLO/XR/PICO/Android acceptance.\n");FinishLiveEvidence();SessionState.SetBool(Key+".Done",true);EditorApplication.ExitPlaymode();}
     }
 }
 

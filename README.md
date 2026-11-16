@@ -1,5 +1,9 @@
 # Magic Wand Amusement Park
 
+## 树木体验选择入口（2026-11-16 源码增量）
+
+已选中的可靠 Tree 目标可在共享菜单选择 **Four seasons / Whomping willow**，保留实物定位和拟合；选择后张手，再用火机共用 A/B/C/D 手势施法。虚拟测试按钮不会在实体目标上直接施法。见 [验证范围与证据](Reports/hci-tree-selection-20261116/README.md)。本项仅编辑器验证，未进入下方已发布 APK；Tree 真实识别权重和 PICO 全链路仍待完成。
+
 ## 最新语音与扑翼 Android 包（2026-11-16）
 
 [下载已核对摘要的 APK](https://github.com/JC4747-jc/magic-wand-amusement-park/releases/tag/hci-voice-wings-validation-20261116)。

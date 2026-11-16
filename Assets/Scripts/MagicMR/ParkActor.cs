@@ -47,12 +47,12 @@ namespace MagicMR
             sizeConfirmed=true;Feedback="Manual nominal height / bottom confirmed; no 3D pose inference";return true;
         }
         static bool FinitePoint(Vector3 p)=>float.IsFinite(p.x)&&float.IsFinite(p.y)&&float.IsFinite(p.z);
-        internal bool SetVirtualTreeMode(bool fantasy)
+        internal bool SetTreeExperience(bool fantasy)
         {
-            if(!built||scenario!=ParkScenario.Tree||!virtualTarget||!tracked||!isActiveAndEnabled||IsExiting)return false;
+            if(!built||scenario!=ParkScenario.Tree||!tracked||!isActiveAndEnabled||IsExiting||Busy)return false;
             var fitPosition=representationFit.localPosition;var fitScale=representationFit.localScale;bool fitted=sizeConfirmed,oriented=orientationConfirmed;
             magicTree=fantasy;ResetEffects();representationFit.localPosition=fitPosition;representationFit.localScale=fitScale;sizeConfirmed=fitted;orientationConfirmed=oriented;
-            Feedback=fantasy?"VIRTUAL fantasy tree; effects reset":"VIRTUAL natural tree; effects reset";return true;
+            Feedback=(virtualTarget?"VIRTUAL ":"Selected Tree: ")+(fantasy?"Whomping willow":"Four seasons")+"; effects reset; open hand before casting";return true;
         }
         public bool orientationConfirmed { get; private set; }
         public bool ConfirmOrientation(float yaw) {

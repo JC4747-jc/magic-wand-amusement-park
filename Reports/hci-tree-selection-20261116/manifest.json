@@ -1,0 +1,92 @@
+{
+  "baseCommit": "31f0c3f00d3f3fc7f1a2c8f9c2794724d0d7dec3",
+  "sourceTree": "6f2726e1fa37965966219a5d516c6e6e31b5dee1",
+  "verifiedProjectFiles": 1635,
+  "mismatches": [],
+  "extras": [],
+  "sourceSHA256": {
+    "Assets/Scripts/MagicMR/ParkActor.cs": "afdb280036bcbe5daf927ab1e516a58001425fc7ab8af26ae5a964ac950aa38d",
+    "Assets/Scripts/MagicMR/ParkController.cs": "7bb90b334e7dcf17f5ac8de8e0a144232a1f3eaa11dec5129a34da25c635b783",
+    "Assets/Scripts/Perception/ParkSharedInterface.cs": "a7c7b6fcb43441c8cf2ddc938ac95ac83c1d93aa864b377b7f7544ab2ea2384c",
+    "Assets/Editor/HciSeasonTreeChecks.cs": "f161c10c9c3c0df9131e9664eb3fd8c808fbc624a048156a5d1a5e6c721fdfb4"
+  },
+  "resources": {
+    "live-season": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.117,
+      "maximumSampledDiskGrowthMiB": 1.54,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "live-willow": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.49,
+      "maximumSampledDiskGrowthMiB": 1.9,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "virtual-season": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.301,
+      "maximumSampledDiskGrowthMiB": 0.81,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "virtual-willow": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.479,
+      "maximumSampledDiskGrowthMiB": 1.04,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "shared": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.396,
+      "maximumSampledDiskGrowthMiB": 0.92,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "conditions": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.545,
+      "maximumSampledDiskGrowthMiB": 1.07,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    }
+  },
+  "unityLogSHA256": {
+    "live-season": "7ac2df5be5a1276dd5a659537997645af70dfaca36540042665e835ccdce6843",
+    "live-willow": "4641cae7d9f1319c041d01636817293f37b82c22e9c1686990942baea1f99e55",
+    "virtual-season": "f330327ece438f024e8b4100b95b6b25984a31a301e469dad53f54fbe51f7738",
+    "virtual-willow": "768b820a2b97d50fd3e30652ce9cb3a0afeb2959df15dcb56f8f4da4e66655ab",
+    "shared": "23f65bf8376a93363acaa328c47ea9500aec0da2b9addea63b802a103c8aaea4",
+    "conditions": "d562a4648ba731acdac111c7bfde9e2e32fc37fd5230cedb217b64570811ea3a"
+  },
+  "syntheticEvents": {
+    "live-season": {
+      "contentChoiceEvents": 2,
+      "acceptedSyntheticSharedGestureEvents": 8,
+      "experience": "four_seasons",
+      "subject": "SYNTHETIC",
+      "realDeviceMeasurements": false
+    },
+    "live-willow": {
+      "contentChoiceEvents": 3,
+      "acceptedSyntheticSharedGestureEvents": 5,
+      "experience": "whomping_willow",
+      "subject": "SYNTHETIC",
+      "realDeviceMeasurements": false
+    }
+  },
+  "initialFailure": "First fixture kept the disconnected hardware receiver running, which correctly expired synthetic targets every frame. Isolated only that input source in the test; production disconnect/expiry guards unchanged. Initial failure log/resources retained locally.",
+  "renderReview": "Inspected actual shared-menu capture (labels/highlight visible, live Test awaken hidden), willow seal/chest and season winter. Existing small-tree stand-in and box-like chest still need art polish.",
+  "limitations": [
+    "Synthetic Observe coordinates, hardware receiver disabled in fixture; not YOLO/depth/PICO accuracy",
+    "No new accepted Tree detector or weights",
+    "No new APK; published voice/wings APK does not contain this source increment",
+    "Willow botanical model, final art, stereo/occlusion/performance and real joint recognition still pending"
+  ],
+  "heavyTasksSerial": true,
+  "newTrainingOrDownloadStarted": false,
+  "mainIndexSHA256": "aab38b747bb2453015b4ce247543cf2dd6aa54d5d5586cf1fcafce46a0398c5a"
+}

@@ -71,7 +71,7 @@ namespace MagicMR
             logger.LogEvent(accepted?"park_action_accepted":"park_action_rejected",ActionDimension(action),
                 finite&&selected?Vector3.Distance(hand,selected.transform.position):-1,-1,-1,
                 finite?(Vector3?)hand:null,
-                $"profile={Profile};target={(selected?selected.instanceId:"none")};mode={(simulation?"virtual_test":"physical")};input={dispatchSource};action={action};reason={reason};velocity_duration=unavailable");
+                $"profile={Profile};target={(selected?selected.instanceId:"none")};experience={TreeExperience};mode={(simulation?"virtual_test":"physical")};input={dispatchSource};action={action};reason={reason};velocity_duration=unavailable");
         }
         public int maxInstances=8;
         public float lostAfter=.65f;
@@ -251,14 +251,32 @@ namespace MagicMR
             if(selected&&selected.species==species)return true;
             Clear();recognitionLock=null;SpawnVirtual(species);return selected&&selected.species==species;
         }
+        public string TreeExperience=>selected&&selected.scenario==ParkScenario.Tree?(selected.magicTree?"whomping_willow":"four_seasons"):"none";
+        // Content selection for an existing target; never fabricates recognition or changes its identity.
+        public bool CanSelectTreeExperience=>scenario==ParkScenario.Tree&&selected&&selected.scenario==ParkScenario.Tree&&
+            selected.tracked&&selected.isActiveAndEnabled&&!selected.IsExiting&&!AnimationBusy&&
+            selected.virtualTarget==simulation&&actors.TryGetValue(selected.instanceId??"",out var owned)&&owned==selected&&
+            (selected.virtualTarget||(seen.TryGetValue(selected.instanceId,out var last)&&Time.unscaledTime-last<=lostAfter));
+        public bool SetTreeExperience(bool fantasy)
+        {
+            if(!CanSelectTreeExperience){status="Select a fresh tracked Tree and finish the current interaction before choosing its experience";return false;}
+            // Even an idempotent UI selection must release gesture ownership, without resetting effects.
+            ResetHandInteraction();
+            if(selected.magicTree==fantasy)return true;
+            bool accepted=selected.SetTreeExperience(fantasy);
+            if(accepted) {
+                ReleaseSurface(selected);status=selected.Feedback;
+                var logger=DataLogger.Instance;
+                if(logger&&logger.SessionActive)logger.LogEvent("park_tree_experience_selected",EditDimension.None,-1,-1,-1,
+                    notes:$"profile={Profile};target={selected.instanceId};experience={TreeExperience};mode={(simulation?"virtual_test":"physical")};input=content_selection;effects_reset=true;placement_preserved=true");
+            }
+            return accepted;
+        }
         public bool SetVirtualTreeMode(bool fantasy)
         {
-            if(!simulation||scenario!=ParkScenario.Tree||FitConfirmationPending||PlaneConfirmationPending)return false;
-            if(!selected){SpawnVirtual();if(!selected)return false;selected.magicTree=fantasy;status=fantasy?"VIRTUAL fantasy tree":"VIRTUAL natural tree";return true;}
-            if(!selected.virtualTarget||!selected.tracked||!selected.isActiveAndEnabled||selected.IsExiting)return false;
-            if(selected.magicTree==fantasy)return true;
-            ResetHandInteraction();ReleaseSurface(selected);
-            bool accepted=selected.SetVirtualTreeMode(fantasy);status=selected.Feedback;return accepted;
+            if(!simulation||scenario!=ParkScenario.Tree||AnimationBusy||(selected&&!selected.virtualTarget))return false;
+            if(!selected)SpawnVirtual();
+            return SetTreeExperience(fantasy);
         }
         public void SpawnVirtual(string recognizedClass)
         {
@@ -376,7 +394,7 @@ namespace MagicMR
                 case "Plane": RequestManualPlane(); break;
                 case "Fit": RequestFit(); break;
                 case "Reset": foreach(var a in actors.Values) { ReleaseSurface(a);a.ResetEffects(); } break;
-                case "TreeMode": if(selected && scenario==ParkScenario.Tree) { ReleaseSurface(selected);selected.ResetEffects(); selected.magicTree=!selected.magicTree; status=selected.magicTree?"MAGIC TREE: A dark | B lash | C breathing scar | D seal/chest":"SEASON TREE: A anime | B awaken | C seasons | D falling foliage"; } break;
+                case "TreeMode": if(selected)SetTreeExperience(!selected.magicTree); break;
                 case "Lighter": Clear(); SceneManager.LoadScene("BridgeStereoFusion"); break;
             }
         }

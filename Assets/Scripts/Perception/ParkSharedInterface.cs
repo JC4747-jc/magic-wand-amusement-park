@@ -118,6 +118,7 @@ namespace MagicMR {
             if(controller)foreach(string test in new[]{"Natural tree","Fantasy tree","Test awaken"}) {
                 string command=test;AddButton(menuRoot.transform,command,new Vector2((treeSimulationButtons.Count-1)*150,-215),()=>Command(command));
                 var button=buttons[buttons.Count-1];button.gameObject.SetActive(false);treeSimulationButtons.Add(button);
+                if(test!="Test awaken")button.GetComponentInChildren<Text>().text=test=="Natural tree"?"Four seasons":"Whomping willow";
             }
             detectionPanel=Panel("Shared YOLO detection",new Vector3(.12f,.1f,1.2f),new Vector2(640,480)).GetComponent<RectTransform>();
             var previewObject=new GameObject("Exact sent frame preview",typeof(RectTransform),typeof(RawImage));
@@ -291,9 +292,10 @@ namespace MagicMR {
                 Feedback=accepted?"SIMULATED awaken input; no gesture or location measurement":"SIMULATION: "+controller.InteractionStatus;return;
             }
             if(command=="Natural tree"||command=="Fantasy tree") {
-                if(!controller||!controller.simulation||replayMode||controller.scenario!=ParkScenario.Tree||(controller.selected&&!controller.selected.virtualTarget)){Feedback="Tree previews require VIRTUAL SIMULATION";return;}
-                bool accepted=controller.SetVirtualTreeMode(command=="Fantasy tree");
-                Feedback=accepted?"VIRTUAL tree: "+(controller.selected.magicTree?"Fantasy":"Natural"):"Finish placement or select a tracked virtual tree";return;
+                if(!controller||replayMode||controller.scenario!=ParkScenario.Tree){Feedback="Choose a tracked Tree outside replay before selecting its experience";return;}
+                bool fantasy=command=="Fantasy tree";
+                bool accepted=controller.simulation?controller.SetVirtualTreeMode(fantasy):controller.SetTreeExperience(fantasy);
+                Feedback=accepted?(controller.selected.virtualTarget?"VIRTUAL ":"Selected Tree: ")+(fantasy?"Whomping willow":"Four seasons")+"; same target; use A/B/C/D to cast":controller.InteractionStatus;return;
             }
             if(command=="Test grow" || command=="Test bloom") {
                 if(!controller || !controller.simulation || replayMode || controller.scenario!=ParkScenario.Plant || !controller.selected || !controller.selected.virtualTarget) {Feedback="Plant animation tests require a selected VIRTUAL SIMULATION target";return;}
@@ -340,9 +342,11 @@ namespace MagicMR {
             bool petPreview=controller&&controller.simulation&&!replayMode&&controller.scenario==ParkScenario.Pet;
             bool bugPreview=controller&&controller.simulation&&!replayMode&&controller.scenario==ParkScenario.Bugs;
             bool treePreview=controller&&controller.simulation&&!replayMode&&controller.scenario==ParkScenario.Tree;
+            bool treeChoice=controller&&!replayMode&&controller.scenario==ParkScenario.Tree&&(treePreview||
+                (controller.selected&&controller.selected.tracked&&controller.selected.isActiveAndEnabled&&!controller.selected.IsExiting&&!controller.selected.virtualTarget));
             bool statuePreview=controller&&controller.simulation&&!replayMode&&controller.scenario==ParkScenario.Statue;
             bool awakenPreview=treePreview||(controller&&controller.simulation&&!replayMode&&(controller.scenario==ParkScenario.Room||controller.scenario==ParkScenario.Statue));
-            bool variantPreview=petPreview||bugPreview||awakenPreview;
+            bool variantPreview=petPreview||bugPreview||awakenPreview||treeChoice;
             if(menuRect&&menuRect.sizeDelta.y!=(variantPreview?485:420))menuRect.sizeDelta=new Vector2(470,variantPreview?485:420);
             foreach(var button in plantSimulationButtons)if(button)button.gameObject.SetActive(controller && controller.simulation && !replayMode && controller.scenario==ParkScenario.Plant);
             foreach(var button in petSimulationButtons)if(button) {
@@ -353,7 +357,12 @@ namespace MagicMR {
             foreach(var button in statueSimulationButtons)if(button)button.gameObject.SetActive(statuePreview);
             foreach(var button in treeSimulationButtons)if(button) {
                 bool awaken=button.name=="Test awaken";
-                button.gameObject.SetActive(awaken?awakenPreview:treePreview);
+                button.gameObject.SetActive(awaken?awakenPreview:treeChoice);
+                if(!awaken) {
+                    button.interactable=controller&&(controller.CanSelectTreeExperience||(treePreview&&!controller.selected&&!controller.AnimationBusy));
+                    bool chosen=controller&&controller.selected&&controller.selected.magicTree==(button.name=="Fantasy tree");
+                    button.GetComponentInChildren<Text>().color=chosen?Color.cyan:Color.white;
+                }
                 if(awaken)button.GetComponent<RectTransform>().anchoredPosition=new Vector2(treePreview||statuePreview?150:0,-215);
             }
             Selection.Tick(Time.unscaledTime,controller && controller.AnimationBusy);
@@ -371,6 +380,7 @@ namespace MagicMR {
                 "\nLocation: "+(simulated?"NOT MEASURED":receiver?receiver.Status:LighterLocation())+
                 "\nTargets: "+Selection.Candidates.Count+" | Selected: "+(Selection.LockedId??(controller && controller.selected?controller.selected.instanceId:"none"))+
                 (controller && controller.scenario==ParkScenario.Bugs && controller.selected?" | Virtual score: "+controller.selected.VirtualScore:"")+
+                (controller && controller.scenario==ParkScenario.Tree && controller.selected?"\nExperience: "+(controller.selected.magicTree?"Whomping willow":"Four seasons"):"")+
                 "\nAuto: "+Selection.automatic+" | "+ShortModelStatus(CurrentFrame?.model_validation)+
                 "\n"+ParkHandTracking.Status+(rightUiCapture?" | R: UI":"")+(leftUiCapture?" | L: UI":"")+" | Gestures: device validation pending"+
                 (controller?"\n"+controller.MotionGestureStatus+" | "+CompactStatus(controller.InteractionStatus):"")+
