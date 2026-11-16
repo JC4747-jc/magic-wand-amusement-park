@@ -1,0 +1,99 @@
+{
+  "baseCommit": "2873c5673be04785930e3fdae431bed6dab7045c",
+  "sourceTree": "59b6093ded65f1fc42caf9b5cddbed5183954087",
+  "verifiedProjectFiles": 1652,
+  "mismatches": [],
+  "extras": [],
+  "sourceSHA256": {
+    "Assets/Editor/CatGaitRevisionChecks.cs": "407f429a22539d9effae81b53b7007ef38a928c1edb3c11500c56eb7c315c673",
+    "Assets/Editor/CatGaitRevisionChecks.cs.meta": "7b06ea0f86e4540cf88f37de86496f41947c4fc68209a70c54b1475cefe83357",
+    "Assets/ThirdParty/NaturalPets/BicolorCat/BicolorCat.fbx": "5b39b1bc5ce258bf3dc0dca1d201a3ad8da3038bb2861ad279b0566914678683",
+    "Assets/ThirdParty/NaturalPets/BicolorCat/source-and-conversion.json": "1df3dce4749f1c84784e3c8a73862874f3ddd9296b9ab7ca4e8917ef480857cd",
+    "Tools/author_cat_gait.py": "084b4b4f409a3c86ec60f75c80abcdb30348621e57f747eebd535268505e0cb3",
+    "Tools/prepare_bicolor_cat.py": "1726a910e30e13e44e20afeac628d391e464f4b047f4cdceabbe428725f134c8",
+    "Tools/cat_gait_trajectory.py": "64a951bd870da0e4ce06d2490f66d849baeac350a3583e1b7c697238e03ba2df",
+    "Tools/test_cat_gait_trajectory.py": "9cc4c5f778b6f74c1b34742277afdef003e3cad0ad3a9f7dcdc56fbc7382f9d9",
+    "Tools/audit_cat_gait_revision.py": "73e02f107284d6aa33b2a2295da8cfbb786dbaf19697c37e017fc6b6acc413b7"
+  },
+  "baselineFBXSHA256": "62b37087d672fe5b58947ccccc719079173e017dea9b1b3c8f20e40cb3410f3d",
+  "candidateFBXSHA256": "5b39b1bc5ce258bf3dc0dca1d201a3ad8da3038bb2861ad279b0566914678683",
+  "assetPreservation": {
+    "status": "PASS_UNCHANGED_CAT_GEOMETRY_RIG_UV_WEIGHTS",
+    "meshes": 3,
+    "bones": 40,
+    "vertices": 5351,
+    "maximumRestMatrixError": 0,
+    "maximumVertexCoordinateError": 0,
+    "maximumWeightError": 0,
+    "maximumUVError": 0,
+    "scope": "Blender FBX import comparison; source mesh indices, material names, bone hierarchy and bind transforms; no animal or PICO acceptance"
+  },
+  "importedWalkEvidence": "NATURAL_CAT_WALK_GEOMETRY_PASS: 193 imported-clip samples at 0.35m fit/37 degree yaw; minimum_ground_m=0.0001240373 maximum_stance_error_m=0.0001545846 loop_seam_m=0 four_paw_lifts_m=0.01917012,0.01917113,0.01917179,0.01916704; original topology/rig, fixed tracking anchor; authored in-place preview, no real animal/hardware claim",
+  "actualAnimatorEvidence": "NATURAL_PET_WALK_UI_PASS: actual scene/buttons, both walk controllers, feed/idle/Undo/Stop/Reset/loss/exit/live gates; 5 captures; actual Animator contact samples=99 max_ground_penetration_m=0",
+  "resources": {
+    "geometry": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.256,
+      "maximumSampledDiskGrowthMiB": 4.95,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "play": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.576,
+      "maximumSampledDiskGrowthMiB": 0.17,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "outline": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.548,
+      "maximumSampledDiskGrowthMiB": 1.07,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "dream": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.545,
+      "maximumSampledDiskGrowthMiB": 0.55,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "shared": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.523,
+      "maximumSampledDiskGrowthMiB": 0.96,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "conditions": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 6.619,
+      "maximumSampledDiskGrowthMiB": 1.17,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    },
+    "asset-audit": {
+      "exitCode": 0,
+      "guardStop": null,
+      "minimumSampledFreeRAMGiB": 7.96,
+      "maximumSampledDiskGrowthMiB": 0.0,
+      "sampleScope": "5-second host snapshots, not continuous peaks"
+    }
+  },
+  "unityAndBlenderLogSHA256": {
+    "geometry-log": "b56bf9b2e55ab737ed16cc67573ccf3d212325d2225ec9bd0e37adbcee1b2f79",
+    "play-log": "ba2bf20c28f0c133c1a145a080fa10fc025eb4684f722dec23b6555eaf3d777b",
+    "outline-log": "efcbedaaf990bfa19e91327a568774c7652bdaad53e620946e5cba19d30c48bf",
+    "dream-log": "1e988611e9e0436b4ae3b267d4cfed61f2d90769eead51ddffdf003edfc14b28",
+    "shared-log": "801715447047f647c2a961888ceefc42b3509359e4944a915dae955fe1c29375",
+    "conditions-log": "064f635abf35e2d6788d6ac890398685d09999991d3a7aafc0b09987f65054b2",
+    "asset-audit-result": "221d24e8736caf758c93fee9947c82b068e7c33e506bc157ca4541174c09029f"
+  },
+  "scope": "Authored 2-second in-place preview trajectory correction; original source licence and source links retained. No autonomous real animal locomotion, eating or sleeping completion, new YOLO weights or PICO acceptance.",
+  "renderReview": "Current Play Mode natural/manga walk captures inspected; inherited scene lighting is dim, coat/shader/light art still requires refinement. Earlier v2 studio preview was consulted, not claimed freshly rendered.",
+  "headsetAccepted": false,
+  "newTrainingOrDownloadStarted": false,
+  "heavyTasksSerial": true,
+  "mainIndexSHA256": "aab38b747bb2453015b4ce247543cf2dd6aa54d5d5586cf1fcafce46a0398c5a"
+}

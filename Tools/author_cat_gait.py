@@ -6,6 +6,7 @@ authored animation, not motion capture or inferred real pet locomotion.
 import math
 import bpy
 from mathutils import Vector, Matrix, Quaternion
+from cat_gait_trajectory import paw_trajectory
 
 
 def author_walk(rig, meshes):
@@ -68,10 +69,7 @@ def author_walk(rig, meshes):
         targets=[];lifts=[]
         for leg in legs:
             p=(t-leg['offset'])%1
-            if p<.65:longitudinal=(p/.65-.5)*.18;lift=0
-            else:
-                swing=(p-.65)/.35;ease=swing*swing*(3-2*swing)
-                longitudinal=(.5-ease)*.18;lift=.055*math.sin(math.pi*swing)**2
+            longitudinal,lift=paw_trajectory(p)
             target=rest[leg['end']].translation+Vector((0,longitudinal,lift))
             targets.append(target);lifts.append(lift)
             max_error=max(max_error,solve(leg,target))

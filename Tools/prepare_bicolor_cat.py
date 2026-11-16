@@ -8,6 +8,7 @@ import hashlib
 import json
 import math
 import sys
+import argparse
 from pathlib import Path
 import bpy
 from mathutils import Vector, Quaternion, Matrix
@@ -16,7 +17,10 @@ root = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(root/'Tools'))
 from author_cat_gait import author_walk
 source = root / '.codex-tmp/asset-candidates/bicolor-cat/source.glb'
-output = root / 'Assets/ThirdParty/NaturalPets/BicolorCat'
+parser=argparse.ArgumentParser()
+parser.add_argument('--output',type=Path,default=root/'Assets/ThirdParty/NaturalPets/BicolorCat')
+args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
+output = args.output.resolve()
 output.mkdir(parents=True, exist_ok=True)
 assert hashlib.sha256(source.read_bytes()).hexdigest() == '4b395ba943d647f4c490c982a70fa2175ef91569615773da7ef3429e427ed21a'
 bpy.ops.object.select_all(action='SELECT')
@@ -153,6 +157,9 @@ bpy.ops.export_scene.fbx(filepath=str(output/'BicolorCat.fbx'), use_selection=Tr
     source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(), triangles=triangles,
     bones=len(rig.data.bones), materials=materials, original_clips_excluded=source_clips,
     clips=['BicolorCat_Idle', 'BicolorCat_Feed','BicolorCat_Walk'],walk_validation=walk_validation,
+    walk_trajectory=dict(revision='cat-contact-v2',stance_fraction=.65,
+        swing='Quintic Hermite longitudinal return matching stance velocity and zero acceleration at contact; sin^3 lift',
+        export='97 pose keys per 2-second cycle; FBX sampling/interpolation is checked separately, not claimed continuously C2'),
     conversion='Original topology, albedo, eyes and 40-bone rig retained. UV2 source normals reprojected into a 1K tangent-space UV0 map for URP. Authored restrained idle/sniff and four-beat in-place walk replace the supplied clip; static whiskers bound to original head. Not motion capture; integration status in DEVELOPMENT_STATUS.md.',
 ), indent=2), encoding='utf-8')
 (output/'LICENSE.txt').write_text('Bicolor Cat - rebuilt and animated by kenchoo\n'
