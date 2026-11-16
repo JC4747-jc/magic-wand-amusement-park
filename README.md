@@ -1,5 +1,9 @@
 # Magic Wand Amusement Park
 
+## 打人柳垂枝与柳叶模型（2026-11-16 源码增量）
+
+打人柳使用独立垂枝/窄柳叶冠层，保留同一现实目标的树干、定位和标定，复用火机共用 A/B/C/D 手势及原抽打、树疤、宝箱流程；四季树仍使用原网格。见 [实际渲染和验证范围](Reports/hci-willow-canopy-20261116/README.md)。这是编辑器验证源码，尚未编入下方旧 APK，真实 YOLO/PICO 和最终美术仍待验收。
+
 ## 树木体验选择入口（2026-11-16 源码增量）
 
 已选中的可靠 Tree 目标可在共享菜单选择 **Four seasons / Whomping willow**，保留实物定位和拟合；选择后张手，再用火机共用 A/B/C/D 手势施法。虚拟测试按钮不会在实体目标上直接施法。见 [验证范围与证据](Reports/hci-tree-selection-20261116/README.md)。本项仅编辑器验证，未进入下方已发布 APK；Tree 真实识别权重和 PICO 全链路仍待完成。

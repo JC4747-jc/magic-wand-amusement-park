@@ -7,6 +7,10 @@ namespace MagicMR
     {
         Transform naturalTreeGrowth;
         Renderer naturalTreeLeaves;
+        SkinnedMeshRenderer treeBranchSkin;
+        SkinnedMeshRenderer seasonTreeLeaves,willowTreeLeaves,willowTreeBranches;
+        WillowCanopyData willowCanopy;
+        bool willowMeshApplied;
         float treeGustUntil=float.PositiveInfinity;
         Transform treeChestLid;
         float treeChestOpen;
@@ -80,6 +84,30 @@ namespace MagicMR
                 if(renderer.sharedMaterial.shader.name=="MagicMR/NaturalTreeLeaves")naturalTreeLeaves=renderer;
             }
             if(!naturalTreeGrowth||!naturalTreeLeaves)throw new System.InvalidOperationException("Tree growth/season representation missing");
+            var leafSkin=naturalTreeLeaves as SkinnedMeshRenderer;
+            foreach(var skin in model.GetComponentsInChildren<SkinnedMeshRenderer>())if(skin!=leafSkin)treeBranchSkin=skin;
+            if(!leafSkin||!treeBranchSkin)throw new System.InvalidOperationException("Tree canopy skin missing");
+            seasonTreeLeaves=leafSkin;
+            willowCanopy=Resources.Load<WillowCanopyData>("MagicMR/NaturalModels/WillowCanopy");
+            if(!willowCanopy||!willowCanopy.leaves||!willowCanopy.branches||!willowCanopy.leafMaterial)
+                throw new System.InvalidOperationException("Authored willow canopy missing; run WillowCanopyAssetBuilder.Run");
+            SkinnedMeshRenderer Canopy(string name,Mesh mesh,Material material,Transform[] bones){
+                var skin=new GameObject(name).AddComponent<SkinnedMeshRenderer>();skin.transform.SetParent(naturalTreeGrowth,false);
+                skin.sharedMesh=mesh;skin.sharedMaterial=material;skin.bones=bones;skin.rootBone=naturalTreeGrowth;skin.quality=SkinQuality.Bone2;
+                float radius=Mathf.Max(mesh.bounds.min.magnitude,mesh.bounds.max.magnitude)*1.3f;skin.localBounds=new Bounds(Vector3.zero,Vector3.one*radius*2);
+                skin.enabled=false;body.Add(skin);componentColors[skin]=Color.white;return skin;
+            }
+            willowTreeLeaves=Canopy("Willow leaves",willowCanopy.leaves,willowCanopy.leafMaterial,leafSkin.bones);
+            willowTreeBranches=Canopy("Willow branches",willowCanopy.branches,treeBranchSkin.sharedMaterial,treeBranchSkin.bones);
+        }
+        void ApplyTreeCanopyVariant()
+        {
+            if(!willowCanopy||!naturalTreeLeaves||willowMeshApplied==magicTree)return;
+            willowMeshApplied=magicTree;
+            seasonTreeLeaves.enabled=treeBranchSkin.enabled=!magicTree;
+            willowTreeLeaves.enabled=willowTreeBranches.enabled=magicTree;
+            naturalTreeLeaves=magicTree?willowTreeLeaves:seasonTreeLeaves;
+            ApplyComponentColors(styleMix*2);
         }
         void ApplyNaturalTreeGrowth()
         {
@@ -103,6 +131,7 @@ namespace MagicMR
         }
         void ResetNaturalTreePose()
         {
+            ApplyTreeCanopyVariant();
             treeChestOpen=0;StepWillowEffects(0,0);
             for(int i=0;i<branches.Count&&i<treeBranchRest.Count;i++)branches[i].localRotation=treeBranchRest[i];
             ApplyNaturalTreeGrowth();ApplyNaturalTreeSeason();

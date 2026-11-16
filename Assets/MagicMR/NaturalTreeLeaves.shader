@@ -8,6 +8,7 @@ Shader "MagicMR/NaturalTreeLeaves"
         _SeasonTint("Season colour",Color)=(0.6,0.3,0.08,1) _SeasonMix("Season mix",Range(0,1))=0
         _LeafCoverage("Retained whole leaves",Range(0,1))=1 _Style("0 natural 1 ink 2 pixel",Float)=0
         _ToonMix("Season tree anime canopy",Range(0,1))=0
+        _LeafVertexTint("Authored leaf colour variation",Range(0,1))=0
     }
     SubShader
     {
@@ -19,17 +20,17 @@ Shader "MagicMR/NaturalTreeLeaves"
         TEXTURE2D(_BaseMap);SAMPLER(sampler_BaseMap);TEXTURE2D(_BumpMap);SAMPLER(sampler_BumpMap);
         TEXTURE2D(_AlphaMap);SAMPLER(sampler_AlphaMap);
         CBUFFER_START(UnityPerMaterial)
-        float4 _BaseMap_ST;half4 _BaseColor,_SeasonTint;float _BumpScale,_SeasonMix,_LeafCoverage,_Style,_Cutoff,_ToonMix;
+        float4 _BaseMap_ST;half4 _BaseColor,_SeasonTint;float _BumpScale,_SeasonMix,_LeafCoverage,_Style,_Cutoff,_ToonMix,_LeafVertexTint;
         CBUFFER_END
         struct Attributes {float4 positionOS:POSITION;float3 normalOS:NORMAL;float4 tangentOS:TANGENT;float2 uv:TEXCOORD0;half4 colour:COLOR;UNITY_VERTEX_INPUT_INSTANCE_ID};
-        struct Varyings {float4 positionCS:SV_POSITION;float3 positionWS:TEXCOORD0;half3 normalWS:TEXCOORD1;half4 tangentWS:TEXCOORD2;float2 uv:TEXCOORD3;half mask:TEXCOORD4;UNITY_VERTEX_OUTPUT_STEREO};
+        struct Varyings {float4 positionCS:SV_POSITION;float3 positionWS:TEXCOORD0;half3 normalWS:TEXCOORD1;half4 tangentWS:TEXCOORD2;float2 uv:TEXCOORD3;half mask:TEXCOORD4;half3 leafTint:TEXCOORD5;UNITY_VERTEX_OUTPUT_STEREO};
         Varyings Vert(Attributes input)
         {
             Varyings output=(Varyings)0;UNITY_SETUP_INSTANCE_ID(input);UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(output);
             VertexNormalInputs basis=GetVertexNormalInputs(input.normalOS,input.tangentOS);
             output.positionWS=TransformObjectToWorld(input.positionOS.xyz);output.positionCS=TransformWorldToHClip(output.positionWS);
             output.normalWS=basis.normalWS;output.tangentWS=half4(basis.tangentWS,input.tangentOS.w*GetOddNegativeScale());
-            output.uv=TRANSFORM_TEX(input.uv,_BaseMap);output.mask=input.colour.a;return output;
+            output.uv=TRANSFORM_TEX(input.uv,_BaseMap);output.mask=input.colour.a;output.leafTint=input.colour.rgb;return output;
         }
         void ClipLeaf(Varyings input){clip(_LeafCoverage-input.mask);clip(SAMPLE_TEXTURE2D(_AlphaMap,sampler_AlphaMap,input.uv).r-_Cutoff);}
         half4 ClipOnly(Varyings input):SV_Target {ClipLeaf(input);return 0;}
@@ -49,7 +50,7 @@ Shader "MagicMR/NaturalTreeLeaves"
                 half3 tangent=normalize(input.tangentWS.xyz),normal=normalize(input.normalWS);
                 half3 bitangent=cross(normal,tangent)*input.tangentWS.w;
                 normal=normalize(TransformTangentToWorld(normalTS,half3x3(tangent,bitangent,normal)))*IS_FRONT_VFACE(front,1,-1);
-                half3 albedo=SAMPLE_TEXTURE2D(_BaseMap,sampler_BaseMap,input.uv).rgb;
+                half3 albedo=SAMPLE_TEXTURE2D(_BaseMap,sampler_BaseMap,input.uv).rgb*lerp(half3(1,1,1),input.leafTint,_LeafVertexTint);
                 half luminance=dot(albedo,half3(.2126,.7152,.0722));
                 albedo=lerp(albedo,_SeasonTint.rgb*luminance*2,_SeasonMix)*_BaseColor.rgb;
                 Light light=GetMainLight(TransformWorldToShadowCoord(input.positionWS));
