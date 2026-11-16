@@ -1,0 +1,138 @@
+{
+  "status": "FOUR_OVERLAYS_VISUALLY_INSPECTED_NOT_TRAINING_APPROVAL",
+  "manifestSHA256": "ee5f6074b900cbb8c8f59cbb4967d1ea9524cd075c2412ffe065752b43983d98",
+  "observations": "See README.md per-image findings; ambiguous first image requires species verification. No label changes or independent test claim.",
+  "records": [
+    {
+      "image_id": "2ed000d799794d71",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\2ed000d799794d71.jpg",
+      "sha256": "eb8b492ba83ddd93fe44acc1e8a882e1b26cea17e453eea8b26374098119d279",
+      "size": [
+        1024,
+        725
+      ],
+      "boxes": [
+        {
+          "class": "Cat",
+          "xyxy_pixels": [
+            298,
+            277,
+            531,
+            427
+          ]
+        },
+        {
+          "class": "Cat",
+          "xyxy_pixels": [
+            449,
+            203,
+            675,
+            427
+          ]
+        },
+        {
+          "class": "bed",
+          "xyxy_pixels": [
+            0,
+            276,
+            1024,
+            725
+          ]
+        }
+      ],
+      "overlay": {
+        "path": ".codex-tmp/yolo-training/manual-box-review-v1/2ed000d799794d71-16a7e5c1827c.jpg",
+        "sha256": "33288bf15fc4a6f7b2c7249719ce0b732984400706126e86b5b80247c1aed16a",
+        "input_sha256": "16a7e5c1827ca829e2ed81ec0c2f593ef78d97967565cf4c69c4bbf3e7c8faf1",
+        "visual_approval": false
+      }
+    },
+    {
+      "image_id": "59987a562d6187c6",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\59987a562d6187c6.jpg",
+      "sha256": "a0a80df65932f8cb7cf7367305372c04aa37f1991436e4f1cb7828c9138f708e",
+      "size": [
+        1024,
+        768
+      ],
+      "boxes": [
+        {
+          "class": "Cat",
+          "xyxy_pixels": [
+            248,
+            144,
+            651,
+            486
+          ]
+        },
+        {
+          "class": "Cat",
+          "xyxy_pixels": [
+            260,
+            269,
+            674,
+            751
+          ]
+        }
+      ],
+      "overlay": {
+        "path": ".codex-tmp/yolo-training/manual-box-review-v1/59987a562d6187c6-7377e1046912.jpg",
+        "sha256": "7f88b6bdfd44ea898f40536ceaeb4822a82971de03942cc78b2cfedc39b1132c",
+        "input_sha256": "7377e10469127a93346b9b51400682fdbaa924c049148197c3776e446c63ba32",
+        "visual_approval": false
+      }
+    },
+    {
+      "image_id": "6e86e224c7e36481",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\6e86e224c7e36481.jpg",
+      "sha256": "e18700cc290920901385281a1b10cbfb72c673d039ad87a05bcd5aab7cc48282",
+      "size": [
+        1024,
+        768
+      ],
+      "boxes": [
+        {
+          "class": "couch",
+          "xyxy_pixels": [
+            0,
+            309,
+            1024,
+            768
+          ]
+        }
+      ],
+      "overlay": {
+        "path": ".codex-tmp/yolo-training/manual-box-review-v1/6e86e224c7e36481-035375f20605.jpg",
+        "sha256": "559273610f1ddfad93e287ef41642ba4d215647307f1781b557a69c68d5f94c7",
+        "input_sha256": "035375f206058809d27536730c15cdc1632ad2673f12dd733ab53cfb2b5c7994",
+        "visual_approval": false
+      }
+    },
+    {
+      "image_id": "326c062e0b66f5af",
+      "local_path": ".codex-tmp\\yolo-training\\openimages-review\\images\\326c062e0b66f5af.jpg",
+      "sha256": "b70411be21754a132e61c7309e2631b38c24dff93fca9f6b218dc49701f44e13",
+      "size": [
+        1024,
+        768
+      ],
+      "boxes": [
+        {
+          "class": "PottedPlant",
+          "xyxy_pixels": [
+            0,
+            0,
+            1024,
+            768
+          ]
+        }
+      ],
+      "overlay": {
+        "path": ".codex-tmp/yolo-training/manual-box-review-v1/326c062e0b66f5af-56b6df69da73.jpg",
+        "sha256": "f8c1671540941592fce12e0b192f375a4d6c0a310757745c9f883d7a6981c651",
+        "input_sha256": "56b6df69da73539a264448bbd72b4414e9150528afe33aeed8f87183fdf0187b",
+        "visual_approval": false
+      }
+    }
+  ]
+}

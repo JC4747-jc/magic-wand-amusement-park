@@ -1,0 +1,2766 @@
+{
+  "status": "DIAGNOSTIC_ONLY_UNAPPROVED_DRAFTS_NOT_HELDOUT_OR_PICO_ACCURACY",
+  "sourceManifestSHA256": "ee5f6074b900cbb8c8f59cbb4967d1ea9524cd075c2412ffe065752b43983d98",
+  "inputTrainingApproved": false,
+  "trainingPerformed": false,
+  "downloads": 0,
+  "deploymentChanged": false,
+  "versions": {
+    "torch": "2.15.0+cpu",
+    "ultralytics": "8.4.212"
+  },
+  "settings": {
+    "imgsz": 416,
+    "confidence": 0.25,
+    "nmsIoU": 0.7,
+    "draftMatchIoU": 0.5,
+    "device": "cpu",
+    "threads": 1
+  },
+  "limitations": [
+    "Draft labels not fully reviewed; counts are diagnostic matches, not accuracy or mAP.",
+    "Public images may overlap model pretraining; no independent holdout claim.",
+    "Only positive draft images used; no negative specificity estimate.",
+    "No PICO camera domain, stereo, real hand or animation validation.",
+    "CPU timing is Windows offline end-to-end, not headset FPS."
+  ],
+  "models": [
+    {
+      "weight": "yolov8n.pt",
+      "weightSHA256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "projectClassesAvailable": [
+        "Cat",
+        "Dog",
+        "PottedPlant",
+        "bed",
+        "chair",
+        "couch",
+        "diningtable"
+      ],
+      "projectClassesMissing": [
+        "BronzeBeast",
+        "Cockroach",
+        "Lighter",
+        "Spider",
+        "Statue",
+        "Tree"
+      ],
+      "images": 41,
+      "draftBoxes": {
+        "Dog": 8,
+        "Spider": 9,
+        "bed": 8,
+        "chair": 4,
+        "Cat": 7,
+        "couch": 3,
+        "Statue": 9,
+        "PottedPlant": 2,
+        "Tree": 1
+      },
+      "matchedDraftBoxes": {
+        "Dog": 8,
+        "bed": 6,
+        "chair": 4,
+        "Cat": 5,
+        "couch": 1,
+        "PottedPlant": 2
+      },
+      "meanCpuSeconds": 0.07092682926890032,
+      "maxCpuSeconds": 1.812999999994645,
+      "timingIncludesFirstCallWarmup": true
+    },
+    {
+      "weight": "yolo26n.pt",
+      "weightSHA256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+      "projectClassesAvailable": [
+        "Cat",
+        "Dog",
+        "PottedPlant",
+        "bed",
+        "chair",
+        "couch",
+        "diningtable"
+      ],
+      "projectClassesMissing": [
+        "BronzeBeast",
+        "Cockroach",
+        "Lighter",
+        "Spider",
+        "Statue",
+        "Tree"
+      ],
+      "images": 41,
+      "draftBoxes": {
+        "Dog": 8,
+        "Spider": 9,
+        "bed": 8,
+        "chair": 4,
+        "Cat": 7,
+        "couch": 3,
+        "Statue": 9,
+        "PottedPlant": 2,
+        "Tree": 1
+      },
+      "matchedDraftBoxes": {
+        "Dog": 8,
+        "bed": 8,
+        "chair": 4,
+        "Cat": 5,
+        "couch": 2,
+        "PottedPlant": 1
+      },
+      "meanCpuSeconds": 0.028975609755966948,
+      "maxCpuSeconds": 0.10899999999674037,
+      "timingIncludesFirstCallWarmup": true
+    }
+  ],
+  "resources": {
+    "minimumSampledAvailableRAMGiB": 7.745037078857422,
+    "maximumSampledRSSMiB": 413.5390625,
+    "seconds": 4.422000000020489,
+    "diskGuardMiB": 128,
+    "ramFloorGiB": 3,
+    "sampling": "before and after each image/model, not continuous peaks"
+  },
+  "records": [
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "1a4ce99db1425ee1",
+      "imageSHA256": "af5f10251d73ecbb6ec3ebe7a360026321cf66156cf7aba995b34f8434dd3de1",
+      "elapsedSeconds": 1.812999999994645,
+      "predictions": [
+        {
+          "class": "Dog",
+          "confidence": 0.9249297976493835,
+          "xyxy": [
+            49.11974334716797,
+            158.89259338378906,
+            937.6309204101562,
+            577.391845703125
+          ]
+        },
+        {
+          "class": "chair",
+          "confidence": 0.5801076889038086,
+          "xyxy": [
+            880.5520629882812,
+            3.0357038974761963,
+            1023.3914794921875,
+            202.05667114257812
+          ]
+        },
+        {
+          "class": "bed",
+          "confidence": 0.2539515197277069,
+          "xyxy": [
+            1.4518479108810425,
+            157.83401489257812,
+            1024.0,
+            673.7319946289062
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Dog",
+          "draftBox": [
+            57,
+            150,
+            940,
+            574
+          ],
+          "bestIoU": 0.9602801474973007,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "1d1ef6def56f4b91",
+      "imageSHA256": "08ea2c4af3b2124bb34618c5fe340aedc00fcb5bca1986d4ae25d6169b9b57cf",
+      "elapsedSeconds": 0.0470000000204891,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            288,
+            166,
+            826,
+            730
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "1d5bb9d9a8a49e84",
+      "imageSHA256": "c8269a3b91afb4da0ede99cd2dcd8b7bd23bffbabbf4002a9305f332bf438359",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [
+        {
+          "class": "bed",
+          "confidence": 0.8846827745437622,
+          "xyxy": [
+            1.6926833391189575,
+            71.93569946289062,
+            863.7528686523438,
+            749.1717529296875
+          ]
+        },
+        {
+          "class": "chair",
+          "confidence": 0.7050267457962036,
+          "xyxy": [
+            829.4365844726562,
+            108.57388305664062,
+            1023.026123046875,
+            491.5593566894531
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "bed",
+          "draftBox": [
+            0,
+            59,
+            869,
+            768
+          ],
+          "bestIoU": 0.9475707494995038,
+          "matchedAtIoU50": true
+        },
+        {
+          "draftClass": "chair",
+          "draftBox": [
+            829,
+            106,
+            1024,
+            458
+          ],
+          "bestIoU": 0.9002951206827965,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "1da59662fc078356",
+      "imageSHA256": "48d04159d3a0e95f1f4d5bf73e8661efe29e4091c5777a9bb2cdcc94d0cc64fa",
+      "elapsedSeconds": 0.01600000000325963,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            46,
+            42,
+            999,
+            729
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "1e868895fdbc938d",
+      "imageSHA256": "1afe94d29eea94785db91402d62a498a9b12bce395fe175b12ede6407d9dff28",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            242,
+            10,
+            947,
+            723
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "1ee2cfb26b6fe8e4",
+      "imageSHA256": "e4a9c713bcf418b28cd32f66ccead9d05d7809e8a11662cb9ce24bc7e5582ff6",
+      "elapsedSeconds": 0.0470000000204891,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            194,
+            0,
+            720,
+            939
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "20b8c9d1facf4f72",
+      "imageSHA256": "3613fb223c1fbf8f873ad6be17a9a497bc6ccc1888e684947c24204fd5971062",
+      "elapsedSeconds": 0.046999999991385266,
+      "predictions": [
+        {
+          "class": "Dog",
+          "confidence": 0.9171349406242371,
+          "xyxy": [
+            272.54510498046875,
+            126.28267669677734,
+            552.5348510742188,
+            890.3151245117188
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Dog",
+          "draftBox": [
+            268,
+            124,
+            555,
+            899
+          ],
+          "bestIoU": 0.9617680165048521,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "28b565f93c252cc0",
+      "imageSHA256": "8189d570c636d9fbea0d04181768034324e76b468618ce9d6ba18922faa5ca53",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [
+        {
+          "class": "Dog",
+          "confidence": 0.7528032064437866,
+          "xyxy": [
+            55.378456115722656,
+            114.49800872802734,
+            967.7767333984375,
+            607.7634887695312
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Dog",
+          "draftBox": [
+            57,
+            110,
+            965,
+            611
+          ],
+          "bestIoU": 0.979888613838179,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "28fc2db2a779aefe",
+      "imageSHA256": "1005e7f4d99af655f684de83fa393a29c84fe6bc12eb79c9315c46001ae285d8",
+      "elapsedSeconds": 0.01600000000325963,
+      "predictions": [
+        {
+          "class": "Dog",
+          "confidence": 0.9235360026359558,
+          "xyxy": [
+            241.62232971191406,
+            83.31407928466797,
+            1023.6403198242188,
+            767.1449584960938
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Dog",
+          "draftBox": [
+            232,
+            67,
+            1024,
+            768
+          ],
+          "bestIoU": 0.9632128159945555,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "2ca2d110708d96b5",
+      "imageSHA256": "3cfefd1b807cdb77806d13264d51c19cf528acac30183fded910093d2aa10332",
+      "elapsedSeconds": 0.031000000017229468,
+      "predictions": [
+        {
+          "class": "Cat",
+          "confidence": 0.9453223347663879,
+          "xyxy": [
+            71.18193817138672,
+            109.06123352050781,
+            706.8030395507812,
+            757.1932983398438
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Cat",
+          "draftBox": [
+            71,
+            106,
+            706,
+            759
+          ],
+          "bestIoU": 0.9910169682386384,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "2da7d83a6b68debc",
+      "imageSHA256": "c1c75ef1a6eb3f3a31a52f6302155421e2bc7da65a73ca41e8a290f4c5731d5d",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            78,
+            48,
+            962,
+            677
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "2e8edb16c6a09beb",
+      "imageSHA256": "039e69f7c1ad3172ed73bf154ad7accb5acbc4063673450a529ca6e11879f4c9",
+      "elapsedSeconds": 0.01600000000325963,
+      "predictions": [
+        {
+          "class": "Cat",
+          "confidence": 0.8724137544631958,
+          "xyxy": [
+            220.67713928222656,
+            23.436397552490234,
+            945.118408203125,
+            679.1775512695312
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Cat",
+          "draftBox": [
+            225,
+            26,
+            963,
+            685
+          ],
+          "bestIoU": 0.9579294534872361,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "2ed000d799794d71",
+      "imageSHA256": "eb8b492ba83ddd93fe44acc1e8a882e1b26cea17e453eea8b26374098119d279",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [
+        {
+          "class": "bed",
+          "confidence": 0.8017750978469849,
+          "xyxy": [
+            0.0,
+            272.3047180175781,
+            1021.8826904296875,
+            714.8309326171875
+          ]
+        },
+        {
+          "class": "Cat",
+          "confidence": 0.493854820728302,
+          "xyxy": [
+            299.1283264160156,
+            206.354248046875,
+            675.627685546875,
+            424.9051818847656
+          ]
+        },
+        {
+          "class": "Dog",
+          "confidence": 0.28899362683296204,
+          "xyxy": [
+            294.4669494628906,
+            208.07223510742188,
+            669.4286499023438,
+            423.1529235839844
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Cat",
+          "draftBox": [
+            298,
+            277,
+            531,
+            427
+          ],
+          "bestIoU": 0.4134956136115772,
+          "matchedAtIoU50": false
+        },
+        {
+          "draftClass": "Cat",
+          "draftBox": [
+            449,
+            203,
+            675,
+            427
+          ],
+          "bestIoU": 0.5914153435497945,
+          "matchedAtIoU50": true
+        },
+        {
+          "draftClass": "bed",
+          "draftBox": [
+            0,
+            276,
+            1024,
+            725
+          ],
+          "bestIoU": 0.9673857390144316,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "2f36f31c87748e5d",
+      "imageSHA256": "1ab660262f7076651001559c780410e13171bc6f4b96e131e3f22b7a86290947",
+      "elapsedSeconds": 0.03200000000651926,
+      "predictions": [
+        {
+          "class": "Dog",
+          "confidence": 0.2966739535331726,
+          "xyxy": [
+            113.75968933105469,
+            125.07579803466797,
+            1023.7514038085938,
+            667.8944702148438
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Dog",
+          "draftBox": [
+            116,
+            125,
+            1024,
+            681
+          ],
+          "bestIoU": 0.9736798732826465,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "37c532e1d1b3fe8e",
+      "imageSHA256": "96dc04a7dd1e8f38874b9d1670471c56551708d48067ba0f8616e61c4c407c9c",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [
+        {
+          "class": "Dog",
+          "confidence": 0.5183423757553101,
+          "xyxy": [
+            215.10772705078125,
+            294.6313781738281,
+            641.072998046875,
+            735.5633544921875
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Dog",
+          "draftBox": [
+            209,
+            290,
+            642,
+            739
+          ],
+          "bestIoU": 0.9660765714073005,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "3ec20e93d8182fcb",
+      "imageSHA256": "40ee52fa7175bcdb704d86481ae07d8a9e0f5f4cfee1e580d975a6b8c2be43a3",
+      "elapsedSeconds": 0.01600000000325963,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            408,
+            158,
+            619,
+            539
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "3f65d9a5db068b25",
+      "imageSHA256": "a401f67bb22d5d4cd902cc6c381615e169756539a17e64ac1b2a2b78d4b76886",
+      "elapsedSeconds": 0.01600000000325963,
+      "predictions": [
+        {
+          "class": "bed",
+          "confidence": 0.873643159866333,
+          "xyxy": [
+            6.283052921295166,
+            110.66593933105469,
+            877.3812866210938,
+            758.0123291015625
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "bed",
+          "draftBox": [
+            0,
+            109,
+            883,
+            768
+          ],
+          "bestIoU": 0.9690757930029382,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "4ac678dd36951a9a",
+      "imageSHA256": "9380de9c778fed6ad92df12567b105d26efe90ad38d102d01ce7d05943dbeb72",
+      "elapsedSeconds": 0.01600000000325963,
+      "predictions": [
+        {
+          "class": "Dog",
+          "confidence": 0.8815869092941284,
+          "xyxy": [
+            62.68735122680664,
+            72.17369079589844,
+            867.8485717773438,
+            623.603515625
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Dog",
+          "draftBox": [
+            55,
+            0,
+            872,
+            633
+          ],
+          "bestIoU": 0.8585139072887713,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "4d1a7164a8e856ad",
+      "imageSHA256": "e0553080403bf6334f41e0c1ca80f98e7794903d605d3a4a288ecd499002ccbf",
+      "elapsedSeconds": 0.046999999991385266,
+      "predictions": [
+        {
+          "class": "PottedPlant",
+          "confidence": 0.41673845052719116,
+          "xyxy": [
+            28.355093002319336,
+            33.96846389770508,
+            990.1097412109375,
+            900.6963500976562
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            28,
+            0,
+            984,
+            922
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "4eb49a1163a8a453",
+      "imageSHA256": "8d8070e60d8c4551c2959d39e33e12836db7c177548e8258d0293398357ba37f",
+      "elapsedSeconds": 0.031000000017229468,
+      "predictions": [
+        {
+          "class": "Cat",
+          "confidence": 0.8856106996536255,
+          "xyxy": [
+            92.87199401855469,
+            60.9617805480957,
+            1020.8296508789062,
+            711.1996459960938
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Cat",
+          "draftBox": [
+            30,
+            58,
+            1024,
+            720
+          ],
+          "bestIoU": 0.916971931320553,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "57a79840e636bb18",
+      "imageSHA256": "eb3fac504f15daa140b822f6874cf24b88377c451cba6710d2f23ce18acf861e",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [
+        {
+          "class": "Dog",
+          "confidence": 0.918747067451477,
+          "xyxy": [
+            112.52523040771484,
+            121.88251495361328,
+            605.47265625,
+            831.0132446289062
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Dog",
+          "draftBox": [
+            109,
+            122,
+            609,
+            831
+          ],
+          "bestIoU": 0.9857156631558213,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "59987a562d6187c6",
+      "imageSHA256": "a0a80df65932f8cb7cf7367305372c04aa37f1991436e4f1cb7828c9138f708e",
+      "elapsedSeconds": 0.03200000000651926,
+      "predictions": [
+        {
+          "class": "Cat",
+          "confidence": 0.9012565016746521,
+          "xyxy": [
+            249.30731201171875,
+            142.56202697753906,
+            670.1839599609375,
+            734.3473510742188
+          ]
+        },
+        {
+          "class": "bed",
+          "confidence": 0.5663270354270935,
+          "xyxy": [
+            0.0,
+            2.205003023147583,
+            909.030517578125,
+            741.232666015625
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Cat",
+          "draftBox": [
+            248,
+            144,
+            651,
+            486
+          ],
+          "bestIoU": 0.5505821315341886,
+          "matchedAtIoU50": true
+        },
+        {
+          "draftClass": "Cat",
+          "draftBox": [
+            260,
+            269,
+            674,
+            751
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "666a614b3123dff9",
+      "imageSHA256": "9fb8c476c28c9b4dc0f48bbcf24385a3f85941c924f4aedfd028b8b4778dff96",
+      "elapsedSeconds": 0.015000000013969839,
+      "predictions": [
+        {
+          "class": "bed",
+          "confidence": 0.9595394730567932,
+          "xyxy": [
+            503.6545715332031,
+            288.732421875,
+            1023.5217895507812,
+            763.2183227539062
+          ]
+        },
+        {
+          "class": "bed",
+          "confidence": 0.9161164164543152,
+          "xyxy": [
+            0.6009615659713745,
+            318.9383239746094,
+            613.4971923828125,
+            763.484130859375
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "bed",
+          "draftBox": [
+            0,
+            317,
+            622,
+            768
+          ],
+          "bestIoU": 0.9712623233297362,
+          "matchedAtIoU50": true
+        },
+        {
+          "draftClass": "bed",
+          "draftBox": [
+            498,
+            288,
+            1024,
+            768
+          ],
+          "bestIoU": 0.9769869505643272,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "850bfdf25e95a3ab",
+      "imageSHA256": "97b5865243e31401b0de7c48df79c922795817e2ce9c8ca0a7216015d67a43f4",
+      "elapsedSeconds": 0.015000000013969839,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            130,
+            17,
+            916,
+            642
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "8aea1f1d12a7dc4f",
+      "imageSHA256": "9ab714c7dadbe7a5e1815dd9b239c2ef5cd3588515ddaeac5aa4fc3691fabaa1",
+      "elapsedSeconds": 0.03200000000651926,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            160,
+            148,
+            850,
+            854
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "c8a4a4786eea0ec5",
+      "imageSHA256": "f7525265668f5e2f9ca16d8160b0af579cf8fc7bf7aa30671a658d7981d697d9",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [
+        {
+          "class": "chair",
+          "confidence": 0.9027138948440552,
+          "xyxy": [
+            399.4906921386719,
+            383.1256103515625,
+            571.307373046875,
+            650.6116333007812
+          ]
+        },
+        {
+          "class": "chair",
+          "confidence": 0.7727159857749939,
+          "xyxy": [
+            558.509033203125,
+            373.8581848144531,
+            685.7182006835938,
+            612.2737426757812
+          ]
+        },
+        {
+          "class": "chair",
+          "confidence": 0.7407712936401367,
+          "xyxy": [
+            910.8270874023438,
+            428.1247863769531,
+            1023.4100341796875,
+            762.125244140625
+          ]
+        },
+        {
+          "class": "diningtable",
+          "confidence": 0.29397955536842346,
+          "xyxy": [
+            273.06793212890625,
+            351.96771240234375,
+            669.772216796875,
+            625.3167114257812
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "chair",
+          "draftBox": [
+            398,
+            384,
+            572,
+            659
+          ],
+          "bestIoU": 0.9543354565989848,
+          "matchedAtIoU50": true
+        },
+        {
+          "draftClass": "chair",
+          "draftBox": [
+            527,
+            371,
+            691,
+            624
+          ],
+          "bestIoU": 0.7309516203106883,
+          "matchedAtIoU50": true
+        },
+        {
+          "draftClass": "chair",
+          "draftBox": [
+            911,
+            419,
+            1024,
+            768
+          ],
+          "bestIoU": 0.9506326822928982,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "74c9a0c1ab44e47f",
+      "imageSHA256": "0e1f40b48f418c8cb2534fae485b194156200544a5a4cc64c0570e91e86a1a0e",
+      "elapsedSeconds": 0.031000000017229468,
+      "predictions": [
+        {
+          "class": "couch",
+          "confidence": 0.7146766781806946,
+          "xyxy": [
+            0.0,
+            606.806396484375,
+            1023.455810546875,
+            1022.7918701171875
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "bed",
+          "draftBox": [
+            0,
+            556,
+            1024,
+            1024
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "1050b3c3f36090a3",
+      "imageSHA256": "c1dcd6878ef9599bf30d2367c283a24414809447eb56992f148ce710bbac69dc",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "couch",
+          "draftBox": [
+            211,
+            357,
+            1024,
+            768
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "15e9f230f8f0609f",
+      "imageSHA256": "ceb66349f26461cada96e6c14b496687aceaf11b3969b723b99570f7cca07133",
+      "elapsedSeconds": 0.01600000000325963,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "bed",
+          "draftBox": [
+            0,
+            727,
+            768,
+            1024
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "3a689e83e0e9f6e9",
+      "imageSHA256": "75f8f5e23fed9e42a44a1089ca82b7cf5da96d7cc993fa23217e810b0ffa5f9a",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [
+        {
+          "class": "bed",
+          "confidence": 0.6178763508796692,
+          "xyxy": [
+            294.44342041015625,
+            627.844482421875,
+            768.0,
+            1022.9619750976562
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "bed",
+          "draftBox": [
+            301,
+            625,
+            768,
+            1024
+          ],
+          "bestIoU": 0.9766903141858423,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "46afaf945caee54c",
+      "imageSHA256": "cedcdafb55aba1366fbed29154082726f5ac8253d68a95ebeb73af08f39303f4",
+      "elapsedSeconds": 0.03200000000651926,
+      "predictions": [
+        {
+          "class": "couch",
+          "confidence": 0.6695243716239929,
+          "xyxy": [
+            0.677734375,
+            324.21282958984375,
+            1024.0,
+            683.8512573242188
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "couch",
+          "draftBox": [
+            0,
+            302,
+            1024,
+            685
+          ],
+          "bestIoU": 0.9383822481716951,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "6e86e224c7e36481",
+      "imageSHA256": "e18700cc290920901385281a1b10cbfb72c673d039ad87a05bcd5aab7cc48282",
+      "elapsedSeconds": 0.015000000013969839,
+      "predictions": [
+        {
+          "class": "bed",
+          "confidence": 0.8342124223709106,
+          "xyxy": [
+            0.0,
+            296.783203125,
+            1024.0,
+            768.0
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "couch",
+          "draftBox": [
+            0,
+            309,
+            1024,
+            768
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "2834df29044b96a1",
+      "imageSHA256": "d68e0d25441f3a97b27d05ae6d1973193e50f04e5d117a33ee4c7b8931297c6e",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            100,
+            134,
+            973,
+            665
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "07251bb443093202",
+      "imageSHA256": "47133561abbcb6c84e971ab16c576f3e2ce41a9f869e51e7f4ef2605fa2384f1",
+      "elapsedSeconds": 0.03200000000651926,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            160,
+            57,
+            694,
+            652
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "3f26f78e96430d20",
+      "imageSHA256": "fd717b7a9d84816c0d45d02f3b103226b6e62220a9b00f4bbda61d967168d223",
+      "elapsedSeconds": 0.014999999984866008,
+      "predictions": [
+        {
+          "class": "PottedPlant",
+          "confidence": 0.45993852615356445,
+          "xyxy": [
+            39.3193359375,
+            318.2480773925781,
+            672.6585083007812,
+            1019.5791625976562
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "PottedPlant",
+          "draftBox": [
+            35,
+            324,
+            685,
+            1024
+          ],
+          "bestIoU": 0.9605240023465474,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "8a1acbd94021367c",
+      "imageSHA256": "5e088860d71c945b87bc0d9c7f2f5d9afbcaab2af996527bbe91592fb218c8f5",
+      "elapsedSeconds": 0.01600000000325963,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            115,
+            48,
+            582,
+            638
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "7d1cb6eec3e2d13f",
+      "imageSHA256": "48e9816f70d6de4c21eb5aad43ece282e039e5f5d8a3ab382c9d07de1b112a77",
+      "elapsedSeconds": 0.015000000013969839,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            89,
+            93,
+            650,
+            1024
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "326c062e0b66f5af",
+      "imageSHA256": "b70411be21754a132e61c7309e2631b38c24dff93fca9f6b218dc49701f44e13",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [
+        {
+          "class": "PottedPlant",
+          "confidence": 0.5015337467193604,
+          "xyxy": [
+            0.0,
+            12.42825984954834,
+            1024.0,
+            759.8942260742188
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "PottedPlant",
+          "draftBox": [
+            0,
+            0,
+            1024,
+            768
+          ],
+          "bestIoU": 0.9732629768550396,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "37ad4393b55ce83f",
+      "imageSHA256": "8dd982d82fc8132e48536a3dc7f6e488de33e131ff5ed25b87584941af8707d1",
+      "elapsedSeconds": 0.03200000000651926,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            146,
+            100,
+            422,
+            1015
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "6dbcd715a2aae68c",
+      "imageSHA256": "aca8d0b6a7aec6e39575a034c45993de5be07d617ae6c321141fac7e970b01b5",
+      "elapsedSeconds": 0.014999999984866008,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            52,
+            4,
+            444,
+            768
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        },
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            417,
+            31,
+            705,
+            712
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        },
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            666,
+            32,
+            768,
+            458
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        },
+        {
+          "draftClass": "Tree",
+          "draftBox": [
+            0,
+            0,
+            361,
+            556
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolov8n.pt",
+      "imageId": "6bb7e70c38657568",
+      "imageSHA256": "8626b4c280876c0ccc4166a15ddbd02609f19e9ff4ae0f111f6af4823edbeb98",
+      "elapsedSeconds": 0.03200000000651926,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            128,
+            104,
+            500,
+            952
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "1a4ce99db1425ee1",
+      "imageSHA256": "af5f10251d73ecbb6ec3ebe7a360026321cf66156cf7aba995b34f8434dd3de1",
+      "elapsedSeconds": 0.10899999999674037,
+      "predictions": [
+        {
+          "class": "Dog",
+          "confidence": 0.9317024350166321,
+          "xyxy": [
+            54.40715026855469,
+            153.67474365234375,
+            931.5084228515625,
+            566.1896362304688
+          ]
+        },
+        {
+          "class": "bed",
+          "confidence": 0.40554115176200867,
+          "xyxy": [
+            1.1146334409713745,
+            160.755859375,
+            1024.0,
+            681.0
+          ]
+        },
+        {
+          "class": "chair",
+          "confidence": 0.34919998049736023,
+          "xyxy": [
+            879.2387084960938,
+            2.134892463684082,
+            1023.6575927734375,
+            199.37088012695312
+          ]
+        },
+        {
+          "class": "couch",
+          "confidence": 0.33899155259132385,
+          "xyxy": [
+            879.5827026367188,
+            1.4570050239562988,
+            1023.1190795898438,
+            196.84349060058594
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Dog",
+          "draftBox": [
+            57,
+            150,
+            940,
+            574
+          ],
+          "bestIoU": 0.9608113281272902,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "1d1ef6def56f4b91",
+      "imageSHA256": "08ea2c4af3b2124bb34618c5fe340aedc00fcb5bca1986d4ae25d6169b9b57cf",
+      "elapsedSeconds": 0.03200000000651926,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            288,
+            166,
+            826,
+            730
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "1d5bb9d9a8a49e84",
+      "imageSHA256": "c8269a3b91afb4da0ede99cd2dcd8b7bd23bffbabbf4002a9305f332bf438359",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [
+        {
+          "class": "chair",
+          "confidence": 0.7859730124473572,
+          "xyxy": [
+            828.2901611328125,
+            111.10291290283203,
+            1024.0,
+            501.70208740234375
+          ]
+        },
+        {
+          "class": "bed",
+          "confidence": 0.7782565355300903,
+          "xyxy": [
+            0.0,
+            69.77268981933594,
+            857.6516723632812,
+            759.8466186523438
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "bed",
+          "draftBox": [
+            0,
+            59,
+            869,
+            768
+          ],
+          "bestIoU": 0.9605954984782682,
+          "matchedAtIoU50": true
+        },
+        {
+          "draftClass": "chair",
+          "draftBox": [
+            829,
+            106,
+            1024,
+            458
+          ],
+          "bestIoU": 0.8735234688608547,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "1da59662fc078356",
+      "imageSHA256": "48d04159d3a0e95f1f4d5bf73e8661efe29e4091c5777a9bb2cdcc94d0cc64fa",
+      "elapsedSeconds": 0.031000000017229468,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            46,
+            42,
+            999,
+            729
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "1e868895fdbc938d",
+      "imageSHA256": "1afe94d29eea94785db91402d62a498a9b12bce395fe175b12ede6407d9dff28",
+      "elapsedSeconds": 0.01600000000325963,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            242,
+            10,
+            947,
+            723
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "1ee2cfb26b6fe8e4",
+      "imageSHA256": "e4a9c713bcf418b28cd32f66ccead9d05d7809e8a11662cb9ce24bc7e5582ff6",
+      "elapsedSeconds": 0.046999999991385266,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            194,
+            0,
+            720,
+            939
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "20b8c9d1facf4f72",
+      "imageSHA256": "3613fb223c1fbf8f873ad6be17a9a497bc6ccc1888e684947c24204fd5971062",
+      "elapsedSeconds": 0.046000000002095476,
+      "predictions": [
+        {
+          "class": "Dog",
+          "confidence": 0.9207170605659485,
+          "xyxy": [
+            273.6033020019531,
+            129.72073364257812,
+            552.9284057617188,
+            885.046630859375
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Dog",
+          "draftBox": [
+            268,
+            124,
+            555,
+            899
+          ],
+          "bestIoU": 0.9485511278521742,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "28b565f93c252cc0",
+      "imageSHA256": "8189d570c636d9fbea0d04181768034324e76b468618ce9d6ba18922faa5ca53",
+      "elapsedSeconds": 0.01600000000325963,
+      "predictions": [
+        {
+          "class": "Dog",
+          "confidence": 0.6457838416099548,
+          "xyxy": [
+            54.34946060180664,
+            116.687744140625,
+            962.720458984375,
+            608.9834594726562
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Dog",
+          "draftBox": [
+            57,
+            110,
+            965,
+            611
+          ],
+          "bestIoU": 0.9773558593081189,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "28fc2db2a779aefe",
+      "imageSHA256": "1005e7f4d99af655f684de83fa393a29c84fe6bc12eb79c9315c46001ae285d8",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [
+        {
+          "class": "Dog",
+          "confidence": 0.9263556599617004,
+          "xyxy": [
+            235.86643981933594,
+            71.28763580322266,
+            1022.9278564453125,
+            765.4790649414062
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Dog",
+          "draftBox": [
+            232,
+            67,
+            1024,
+            768
+          ],
+          "bestIoU": 0.9841123244339074,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "2ca2d110708d96b5",
+      "imageSHA256": "3cfefd1b807cdb77806d13264d51c19cf528acac30183fded910093d2aa10332",
+      "elapsedSeconds": 0.03200000000651926,
+      "predictions": [
+        {
+          "class": "Cat",
+          "confidence": 0.908630907535553,
+          "xyxy": [
+            76.05326080322266,
+            102.63726043701172,
+            721.7846069335938,
+            755.8960571289062
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Cat",
+          "draftBox": [
+            71,
+            106,
+            706,
+            759
+          ],
+          "bestIoU": 0.9585916451001,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "2da7d83a6b68debc",
+      "imageSHA256": "c1c75ef1a6eb3f3a31a52f6302155421e2bc7da65a73ca41e8a290f4c5731d5d",
+      "elapsedSeconds": 0.015000000013969839,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            78,
+            48,
+            962,
+            677
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "2e8edb16c6a09beb",
+      "imageSHA256": "039e69f7c1ad3172ed73bf154ad7accb5acbc4063673450a529ca6e11879f4c9",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [
+        {
+          "class": "Cat",
+          "confidence": 0.930561363697052,
+          "xyxy": [
+            222.8662109375,
+            30.214656829833984,
+            944.3632202148438,
+            676.6050415039062
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Cat",
+          "draftBox": [
+            225,
+            26,
+            963,
+            685
+          ],
+          "bestIoU": 0.9533918368378891,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "2ed000d799794d71",
+      "imageSHA256": "eb8b492ba83ddd93fe44acc1e8a882e1b26cea17e453eea8b26374098119d279",
+      "elapsedSeconds": 0.03200000000651926,
+      "predictions": [
+        {
+          "class": "bed",
+          "confidence": 0.8412659764289856,
+          "xyxy": [
+            2.236478328704834,
+            270.8479309082031,
+            1022.4756469726562,
+            716.8801879882812
+          ]
+        },
+        {
+          "class": "Dog",
+          "confidence": 0.5366785526275635,
+          "xyxy": [
+            299.96710205078125,
+            206.94778442382812,
+            673.8221435546875,
+            423.57574462890625
+          ]
+        },
+        {
+          "class": "Cat",
+          "confidence": 0.48327043652534485,
+          "xyxy": [
+            301.71185302734375,
+            206.25819396972656,
+            672.4253540039062,
+            423.64105224609375
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Cat",
+          "draftBox": [
+            298,
+            277,
+            531,
+            427
+          ],
+          "bestIoU": 0.4104692250792817,
+          "matchedAtIoU50": false
+        },
+        {
+          "draftClass": "Cat",
+          "draftBox": [
+            449,
+            203,
+            675,
+            427
+          ],
+          "bestIoU": 0.5877022583376338,
+          "matchedAtIoU50": true
+        },
+        {
+          "draftClass": "bed",
+          "draftBox": [
+            0,
+            276,
+            1024,
+            725
+          ],
+          "bestIoU": 0.9672515117244053,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "2f36f31c87748e5d",
+      "imageSHA256": "1ab660262f7076651001559c780410e13171bc6f4b96e131e3f22b7a86290947",
+      "elapsedSeconds": 0.014999999984866008,
+      "predictions": [
+        {
+          "class": "Dog",
+          "confidence": 0.6319463849067688,
+          "xyxy": [
+            112.72874450683594,
+            126.01192474365234,
+            1023.0957641601562,
+            677.1275634765625
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Dog",
+          "draftBox": [
+            116,
+            125,
+            1024,
+            681
+          ],
+          "bestIoU": 0.9867044953429337,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "37c532e1d1b3fe8e",
+      "imageSHA256": "96dc04a7dd1e8f38874b9d1670471c56551708d48067ba0f8616e61c4c407c9c",
+      "elapsedSeconds": 0.0470000000204891,
+      "predictions": [
+        {
+          "class": "Dog",
+          "confidence": 0.865368127822876,
+          "xyxy": [
+            217.6905059814453,
+            292.03326416015625,
+            639.8143310546875,
+            735.7893676757812
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Dog",
+          "draftBox": [
+            209,
+            290,
+            642,
+            739
+          ],
+          "bestIoU": 0.9634961130745421,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "3ec20e93d8182fcb",
+      "imageSHA256": "40ee52fa7175bcdb704d86481ae07d8a9e0f5f4cfee1e580d975a6b8c2be43a3",
+      "elapsedSeconds": 0.0159999999741558,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            408,
+            158,
+            619,
+            539
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "3f65d9a5db068b25",
+      "imageSHA256": "a401f67bb22d5d4cd902cc6c381615e169756539a17e64ac1b2a2b78d4b76886",
+      "elapsedSeconds": 0.03200000000651926,
+      "predictions": [
+        {
+          "class": "bed",
+          "confidence": 0.8992338180541992,
+          "xyxy": [
+            7.545372486114502,
+            113.58097839355469,
+            881.1117553710938,
+            762.59375
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "bed",
+          "draftBox": [
+            0,
+            109,
+            883,
+            768
+          ],
+          "bestIoU": 0.9743231866436805,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "4ac678dd36951a9a",
+      "imageSHA256": "9380de9c778fed6ad92df12567b105d26efe90ad38d102d01ce7d05943dbeb72",
+      "elapsedSeconds": 0.014999999984866008,
+      "predictions": [
+        {
+          "class": "Dog",
+          "confidence": 0.8935759663581848,
+          "xyxy": [
+            131.1563262939453,
+            87.29403686523438,
+            847.9645385742188,
+            624.1967163085938
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Dog",
+          "draftBox": [
+            55,
+            0,
+            872,
+            633
+          ],
+          "bestIoU": 0.7441710605020161,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "4d1a7164a8e856ad",
+      "imageSHA256": "e0553080403bf6334f41e0c1ca80f98e7794903d605d3a4a288ecd499002ccbf",
+      "elapsedSeconds": 0.03200000000651926,
+      "predictions": [
+        {
+          "class": "PottedPlant",
+          "confidence": 0.2816721200942993,
+          "xyxy": [
+            25.394081115722656,
+            34.51828384399414,
+            982.8428955078125,
+            912.6722412109375
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            28,
+            0,
+            984,
+            922
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "4eb49a1163a8a453",
+      "imageSHA256": "8d8070e60d8c4551c2959d39e33e12836db7c177548e8258d0293398357ba37f",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [
+        {
+          "class": "Cat",
+          "confidence": 0.9358312487602234,
+          "xyxy": [
+            113.33601379394531,
+            60.543548583984375,
+            1023.8981323242188,
+            711.3339233398438
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Cat",
+          "draftBox": [
+            30,
+            58,
+            1024,
+            720
+          ],
+          "bestIoU": 0.9005468800063309,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "57a79840e636bb18",
+      "imageSHA256": "eb3fac504f15daa140b822f6874cf24b88377c451cba6710d2f23ce18acf861e",
+      "elapsedSeconds": 0.031000000017229468,
+      "predictions": [
+        {
+          "class": "Dog",
+          "confidence": 0.9277860522270203,
+          "xyxy": [
+            115.07884216308594,
+            121.82384490966797,
+            606.0823364257812,
+            829.1722412109375
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Dog",
+          "draftBox": [
+            109,
+            122,
+            609,
+            831
+          ],
+          "bestIoU": 0.9792365151099677,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "59987a562d6187c6",
+      "imageSHA256": "a0a80df65932f8cb7cf7367305372c04aa37f1991436e4f1cb7828c9138f708e",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [
+        {
+          "class": "Cat",
+          "confidence": 0.8200331926345825,
+          "xyxy": [
+            250.20892333984375,
+            142.80551147460938,
+            675.0972900390625,
+            733.471923828125
+          ]
+        },
+        {
+          "class": "bed",
+          "confidence": 0.5657445788383484,
+          "xyxy": [
+            0.0,
+            1.785006046295166,
+            910.3864135742188,
+            749.1966552734375
+          ]
+        },
+        {
+          "class": "couch",
+          "confidence": 0.47678685188293457,
+          "xyxy": [
+            2.451397180557251,
+            1.5042067766189575,
+            940.394287109375,
+            747.398681640625
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "Cat",
+          "draftBox": [
+            248,
+            144,
+            651,
+            486
+          ],
+          "bestIoU": 0.5445298615734744,
+          "matchedAtIoU50": true
+        },
+        {
+          "draftClass": "Cat",
+          "draftBox": [
+            260,
+            269,
+            674,
+            751
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "666a614b3123dff9",
+      "imageSHA256": "9fb8c476c28c9b4dc0f48bbcf24385a3f85941c924f4aedfd028b8b4778dff96",
+      "elapsedSeconds": 0.01600000000325963,
+      "predictions": [
+        {
+          "class": "bed",
+          "confidence": 0.863096296787262,
+          "xyxy": [
+            500.8930358886719,
+            291.8697509765625,
+            1023.6337280273438,
+            765.635498046875
+          ]
+        },
+        {
+          "class": "bed",
+          "confidence": 0.8484161496162415,
+          "xyxy": [
+            0.589768648147583,
+            317.72747802734375,
+            612.690185546875,
+            768.0
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "bed",
+          "draftBox": [
+            0,
+            317,
+            622,
+            768
+          ],
+          "bestIoU": 0.9824969108216263,
+          "matchedAtIoU50": true
+        },
+        {
+          "draftClass": "bed",
+          "draftBox": [
+            498,
+            288,
+            1024,
+            768
+          ],
+          "bestIoU": 0.9808960493311554,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "850bfdf25e95a3ab",
+      "imageSHA256": "97b5865243e31401b0de7c48df79c922795817e2ce9c8ca0a7216015d67a43f4",
+      "elapsedSeconds": 0.031000000017229468,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            130,
+            17,
+            916,
+            642
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "8aea1f1d12a7dc4f",
+      "imageSHA256": "9ab714c7dadbe7a5e1815dd9b239c2ef5cd3588515ddaeac5aa4fc3691fabaa1",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Spider",
+          "draftBox": [
+            160,
+            148,
+            850,
+            854
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "c8a4a4786eea0ec5",
+      "imageSHA256": "f7525265668f5e2f9ca16d8160b0af579cf8fc7bf7aa30671a658d7981d697d9",
+      "elapsedSeconds": 0.01600000000325963,
+      "predictions": [
+        {
+          "class": "chair",
+          "confidence": 0.868824303150177,
+          "xyxy": [
+            400.1186218261719,
+            381.2490234375,
+            567.1110229492188,
+            654.8307495117188
+          ]
+        },
+        {
+          "class": "chair",
+          "confidence": 0.8545994162559509,
+          "xyxy": [
+            557.7156982421875,
+            374.27215576171875,
+            684.4415283203125,
+            615.4437255859375
+          ]
+        },
+        {
+          "class": "chair",
+          "confidence": 0.77413010597229,
+          "xyxy": [
+            911.4345092773438,
+            429.2771911621094,
+            1023.1646728515625,
+            763.1000366210938
+          ]
+        },
+        {
+          "class": "diningtable",
+          "confidence": 0.3890685737133026,
+          "xyxy": [
+            265.3849792480469,
+            362.25164794921875,
+            678.2017822265625,
+            628.9102783203125
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "chair",
+          "draftBox": [
+            398,
+            384,
+            572,
+            659
+          ],
+          "bestIoU": 0.936188080961562,
+          "matchedAtIoU50": true
+        },
+        {
+          "draftClass": "chair",
+          "draftBox": [
+            527,
+            371,
+            691,
+            624
+          ],
+          "bestIoU": 0.7365918099204329,
+          "matchedAtIoU50": true
+        },
+        {
+          "draftClass": "chair",
+          "draftBox": [
+            911,
+            419,
+            1024,
+            768
+          ],
+          "bestIoU": 0.9457636515947834,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "74c9a0c1ab44e47f",
+      "imageSHA256": "0e1f40b48f418c8cb2534fae485b194156200544a5a4cc64c0570e91e86a1a0e",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [
+        {
+          "class": "bed",
+          "confidence": 0.6073464155197144,
+          "xyxy": [
+            0.0,
+            615.7144775390625,
+            1020.8473510742188,
+            1022.683837890625
+          ]
+        },
+        {
+          "class": "couch",
+          "confidence": 0.5146359205245972,
+          "xyxy": [
+            0.0,
+            619.29443359375,
+            1018.8026123046875,
+            1019.719970703125
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "bed",
+          "draftBox": [
+            0,
+            556,
+            1024,
+            1024
+          ],
+          "bestIoU": 0.8669153843717902,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "1050b3c3f36090a3",
+      "imageSHA256": "c1dcd6878ef9599bf30d2367c283a24414809447eb56992f148ce710bbac69dc",
+      "elapsedSeconds": 0.03200000000651926,
+      "predictions": [
+        {
+          "class": "couch",
+          "confidence": 0.8138543963432312,
+          "xyxy": [
+            209.45004272460938,
+            356.0027770996094,
+            1022.8350830078125,
+            768.0
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "couch",
+          "draftBox": [
+            211,
+            357,
+            1024,
+            768
+          ],
+          "bestIoU": 0.9942580742566305,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "15e9f230f8f0609f",
+      "imageSHA256": "ceb66349f26461cada96e6c14b496687aceaf11b3969b723b99570f7cca07133",
+      "elapsedSeconds": 0.015000000013969839,
+      "predictions": [
+        {
+          "class": "bed",
+          "confidence": 0.4727367162704468,
+          "xyxy": [
+            32.517127990722656,
+            729.2529907226562,
+            768.0,
+            1023.4926147460938
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "bed",
+          "draftBox": [
+            0,
+            727,
+            768,
+            1024
+          ],
+          "bestIoU": 0.9487593107099106,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "3a689e83e0e9f6e9",
+      "imageSHA256": "75f8f5e23fed9e42a44a1089ca82b7cf5da96d7cc993fa23217e810b0ffa5f9a",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [
+        {
+          "class": "bed",
+          "confidence": 0.7581174969673157,
+          "xyxy": [
+            297.1289978027344,
+            626.694580078125,
+            768.0,
+            1022.6233520507812
+          ]
+        },
+        {
+          "class": "chair",
+          "confidence": 0.5691112279891968,
+          "xyxy": [
+            378.9415588378906,
+            508.57623291015625,
+            578.6096801757812,
+            645.385009765625
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "bed",
+          "draftBox": [
+            301,
+            625,
+            768,
+            1024
+          ],
+          "bestIoU": 0.9842073057269348,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "46afaf945caee54c",
+      "imageSHA256": "cedcdafb55aba1366fbed29154082726f5ac8253d68a95ebeb73af08f39303f4",
+      "elapsedSeconds": 0.01600000000325963,
+      "predictions": [
+        {
+          "class": "couch",
+          "confidence": 0.845024824142456,
+          "xyxy": [
+            0.0,
+            301.6475524902344,
+            1022.172607421875,
+            685.0
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "couch",
+          "draftBox": [
+            0,
+            302,
+            1024,
+            685
+          ],
+          "bestIoU": 0.9972993314532344,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "6e86e224c7e36481",
+      "imageSHA256": "e18700cc290920901385281a1b10cbfb72c673d039ad87a05bcd5aab7cc48282",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [
+        {
+          "class": "bed",
+          "confidence": 0.6421364545822144,
+          "xyxy": [
+            0.0,
+            301.1751708984375,
+            1024.0,
+            768.0
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "couch",
+          "draftBox": [
+            0,
+            309,
+            1024,
+            768
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "2834df29044b96a1",
+      "imageSHA256": "d68e0d25441f3a97b27d05ae6d1973193e50f04e5d117a33ee4c7b8931297c6e",
+      "elapsedSeconds": 0.03200000000651926,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            100,
+            134,
+            973,
+            665
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "07251bb443093202",
+      "imageSHA256": "47133561abbcb6c84e971ab16c576f3e2ce41a9f869e51e7f4ef2605fa2384f1",
+      "elapsedSeconds": 0.015000000013969839,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            160,
+            57,
+            694,
+            652
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "3f26f78e96430d20",
+      "imageSHA256": "fd717b7a9d84816c0d45d02f3b103226b6e62220a9b00f4bbda61d967168d223",
+      "elapsedSeconds": 0.0159999999741558,
+      "predictions": [
+        {
+          "class": "PottedPlant",
+          "confidence": 0.44499316811561584,
+          "xyxy": [
+            39.81788635253906,
+            325.22039794921875,
+            683.3617553710938,
+            1017.2998657226562
+          ]
+        }
+      ],
+      "draftComparisons": [
+        {
+          "draftClass": "PottedPlant",
+          "draftBox": [
+            35,
+            324,
+            685,
+            1024
+          ],
+          "bestIoU": 0.9788648315587255,
+          "matchedAtIoU50": true
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "8a1acbd94021367c",
+      "imageSHA256": "5e088860d71c945b87bc0d9c7f2f5d9afbcaab2af996527bbe91592fb218c8f5",
+      "elapsedSeconds": 0.031000000017229468,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            115,
+            48,
+            582,
+            638
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "7d1cb6eec3e2d13f",
+      "imageSHA256": "48e9816f70d6de4c21eb5aad43ece282e039e5f5d8a3ab382c9d07de1b112a77",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            89,
+            93,
+            650,
+            1024
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "326c062e0b66f5af",
+      "imageSHA256": "b70411be21754a132e61c7309e2631b38c24dff93fca9f6b218dc49701f44e13",
+      "elapsedSeconds": 0.01600000000325963,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "PottedPlant",
+          "draftBox": [
+            0,
+            0,
+            1024,
+            768
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "37ad4393b55ce83f",
+      "imageSHA256": "8dd982d82fc8132e48536a3dc7f6e488de33e131ff5ed25b87584941af8707d1",
+      "elapsedSeconds": 0.01600000000325963,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            146,
+            100,
+            422,
+            1015
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "6dbcd715a2aae68c",
+      "imageSHA256": "aca8d0b6a7aec6e39575a034c45993de5be07d617ae6c321141fac7e970b01b5",
+      "elapsedSeconds": 0.030999999988125637,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            52,
+            4,
+            444,
+            768
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        },
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            417,
+            31,
+            705,
+            712
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        },
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            666,
+            32,
+            768,
+            458
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        },
+        {
+          "draftClass": "Tree",
+          "draftBox": [
+            0,
+            0,
+            361,
+            556
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    },
+    {
+      "weight": "yolo26n.pt",
+      "imageId": "6bb7e70c38657568",
+      "imageSHA256": "8626b4c280876c0ccc4166a15ddbd02609f19e9ff4ae0f111f6af4823edbeb98",
+      "elapsedSeconds": 0.031000000017229468,
+      "predictions": [],
+      "draftComparisons": [
+        {
+          "draftClass": "Statue",
+          "draftBox": [
+            128,
+            104,
+            500,
+            952
+          ],
+          "bestIoU": 0,
+          "matchedAtIoU50": false
+        }
+      ]
+    }
+  ]
+}

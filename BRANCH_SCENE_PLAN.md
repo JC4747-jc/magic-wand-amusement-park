@@ -1,5 +1,9 @@
 # 全分支整合与场景交付计划
 
+## YOLO 预训练诊断与数据缺口（2026-11-16）
+
+已对现有 yolov8n/yolo26n 各执行 41 张公开候选图的离线推理，并逐图查看四个失败/歧义例。两者类别覆盖项目 7 类，仍缺 Lighter/Tree/Cockroach/Spider/Statue/BronzeBeast 六类；有重叠猫合并、家具分类混淆与强裁切盆栽遗漏，不能仅更换权重宣布全线路完成。标注未全部批准，诊断匹配数不作 mAP/真实 PICO 准确率。见 [对比与审核记录](Reports/hci-pretrained-comparison-20261116/README.md)。本轮无下载/训练/部署改动；后续继续标签审核、独立划分、必要训练和 PICO 实测，美术完善仍须完成。
+
 ## Android 模型动画增量已打包（2026-11-16）
 
 新版 `HciMagicEffectsValidation-20261116.apk` 含此前已接受的宠物描边、石像卡通/全身伸展/荷花许愿树和房间 A/B/C/D 修正。14 场景、签名/CRC/ARM64、40 项既有资源与 7 项新增资源来源核对通过；构建前模型和交互回归通过，修正四个旧检查对描边层及窗口退出集合的过时假设。证据见 [Android 增量报告](Reports/hci-android-effects-20261116/README.md)。没有训练新权重或完成真机验收。下面旧增量中的“未进入 APK”是当时状态，以本次打包范围为准；真实 YOLO/PICO、美术、全部 32 效果及模型任务继续 active。
