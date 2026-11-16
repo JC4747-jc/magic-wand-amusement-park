@@ -1,5 +1,9 @@
 # Magic Wand Amusement Park
 
+## 最新打人柳 Android 验证包（2026-11-16）
+
+树木体验选择入口与垂枝/窄柳叶冠层已编入 `HciWillowValidation-20261116.apk`，1650 项目源文件、14 场景、签名/CRC/ARM64、资源及类型检查通过。见 [构建范围和证据](Reports/hci-android-willow-20261116/README.md)。真实 YOLO/PICO、最终美术和全部 HCI 效果仍待完成。
+
 ## 打人柳垂枝与柳叶模型（2026-11-16 源码增量）
 
 打人柳使用独立垂枝/窄柳叶冠层，保留同一现实目标的树干、定位和标定，复用火机共用 A/B/C/D 手势及原抽打、树疤、宝箱流程；四季树仍使用原网格。见 [实际渲染和验证范围](Reports/hci-willow-canopy-20261116/README.md)。这是编辑器验证源码，尚未编入下方旧 APK，真实 YOLO/PICO 和最终美术仍待验收。

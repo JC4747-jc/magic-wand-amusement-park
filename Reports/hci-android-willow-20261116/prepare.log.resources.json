@@ -1,0 +1,89 @@
+{
+  "unity": "D:/Unity/Hub/Editor/6000.0.33f1/Editor/Unity.exe",
+  "variant": "AllScenes",
+  "requestedBeeThreads": 1,
+  "requestedIl2CppJobs": 1,
+  "exitCode": -1,
+  "guardStop": null,
+  "maximumSampledOwnedRSSMiB": 4502.0,
+  "maximumSampledDiskGrowthMiB": 66.0,
+  "processOwnership": "PID and creation time validated at every parent-child edge",
+  "childCleanup": "Unnamed Windows job with KILL_ON_JOB_CLOSE; no breakaway flags",
+  "maximumAllowedDiskGrowthMiB": 1024,
+  "preparationRequested": true,
+  "outcome": "CODEGEN_DAG_READY_NOT_APK",
+  "preparedDag": "Library/Bee/Playerd3785a9f.dag",
+  "minimumSampledFreeMemoryGiB": 3.222,
+  "maximumSampledCompilerProcesses": 0,
+  "samplingScope": "Five-second snapshots of descendants of this Unity build; not a continuous or complete peak measurement",
+  "backendArguments": [
+    "\"D:\\Unity\\Hub\\Editor\\6000.0.33f1\\Editor\\Data\\bee_backend.exe\" --dont-print-to-structured-log --ipc --defer-dag-verification --dagfile=\"Library/Bee/1300b0aP.dag\" --continue-on-failure --dagfilejson=\"Library\\Bee\\1300b0aP.dag.json\" --profile=\"Library/Bee/backend2.traceevents\" ScriptAssembliesAndTypeDB",
+    "\"D:\\Unity\\Hub\\Editor\\6000.0.33f1\\Editor\\Data\\bee_backend.exe\" --dont-print-to-structured-log --ipc --dagfile=\"Library/Bee/Playerd3785a9f.dag\" --dagfilejson=\"Library\\Bee\\Playerd3785a9f.dag.json\" --profile=\"Library/Bee/backend2.traceevents\" Player",
+    "\"D:\\Unity\\Hub\\Editor\\6000.0.33f1\\Editor\\Data\\bee_backend.exe\" --dont-print-to-structured-log --ipc --dagfile=\"Library/Bee/Playerd3785a9f.dag\" --dagfilejson=\"Library\\Bee\\Playerd3785a9f.dag.json\" --profile=\"Library/Bee/backend3.traceevents\" Player"
+  ],
+  "samples": [
+    {
+      "utc": "2026-11-16T05:50:07.3187140Z",
+      "freeMemoryGiB": 7.127,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 812.47,
+      "diskGrowthMiB": 0.2
+    },
+    {
+      "utc": "2026-11-16T05:50:12.6680162Z",
+      "freeMemoryGiB": 5.728,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2165.46,
+      "diskGrowthMiB": 0.38
+    },
+    {
+      "utc": "2026-11-16T05:50:17.9371694Z",
+      "freeMemoryGiB": 5.359,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2580.34,
+      "diskGrowthMiB": -0.73
+    },
+    {
+      "utc": "2026-11-16T05:50:23.2751880Z",
+      "freeMemoryGiB": 5.255,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2766.88,
+      "diskGrowthMiB": -17.33
+    },
+    {
+      "utc": "2026-11-16T05:50:28.4907483Z",
+      "freeMemoryGiB": 5.202,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2539.51,
+      "diskGrowthMiB": 0.54
+    },
+    {
+      "utc": "2026-11-16T05:50:33.8114099Z",
+      "freeMemoryGiB": 5.202,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2525.98,
+      "diskGrowthMiB": 56.94
+    },
+    {
+      "utc": "2026-11-16T05:50:39.0567693Z",
+      "freeMemoryGiB": 4.337,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 3431.1,
+      "diskGrowthMiB": 48.05
+    },
+    {
+      "utc": "2026-11-16T05:50:44.3292695Z",
+      "freeMemoryGiB": 4.914,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 2817.62,
+      "diskGrowthMiB": 65.76
+    },
+    {
+      "utc": "2026-11-16T05:50:49.6412047Z",
+      "freeMemoryGiB": 3.222,
+      "compilerProcesses": 0,
+      "ownedRSSMiB": 4501.76,
+      "diskGrowthMiB": -546.38
+    }
+  ]
+}
