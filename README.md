@@ -2,6 +2,8 @@
 
 ## 最新语音与扑翼 Android 包（2026-11-16）
 
+[下载已核对摘要的 APK](https://github.com/JC4747-jc/magic-wand-amusement-park/releases/tag/hci-voice-wings-validation-20261116)。
+
 已将植物语音和火机扑翼/咳嗽编入 `HciVoiceWingsValidation-20261116.apk`，14 场景、签名/CRC/ARM64、资源来源核对通过。见 [构建报告](Reports/hci-android-voice-wings-20261116/README.md)。PICO 实时识别、手势、双眼、听感与性能仍待验证；下方旧包为历史记录。
 
 ## 最新 Android 动画增量（2026-11-16）

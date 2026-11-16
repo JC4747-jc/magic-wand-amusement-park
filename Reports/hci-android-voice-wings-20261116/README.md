@@ -17,3 +17,5 @@
 ## 未验收与后续
 
 这是 com.yn.picmagicmr.validation 的 14 场景编译验证包，应用内正式导航范围仍需单独核对。PICO 实时相机/YOLO、真手势、双眼/遮挡、声音听感与性能尚未验收，也没有新增合格 YOLO 权重。植物声音、翅膀膜面等美术仍需精修，全部八用例 32 效果和模型训练/接入 Goal 继续执行。打包成功不代表这些工作完成。
+
+下载：[语音与扑翼 Android 验证包](https://github.com/JC4747-jc/magic-wand-amusement-park/releases/tag/hci-voice-wings-validation-20261116)。上传回执见 [release-receipt.json](release-receipt.json)，GitHub 摘要与本地一致；发布为预览版本，未完成 PICO 真机验收。
