@@ -4,6 +4,8 @@
 
 `HciMagicEffectsValidation-20261116.apk` 已完成 14 场景 Android 构建、签名/CRC/ARM64、40 项既有资源和 7 项新增模型/着色器来源核对。包含宠物描边、石像卡通/伸展/荷花许愿树及房间四维映射。见 [本次构建证据](Reports/hci-android-effects-20261116/README.md)。最低采样可用内存：离线转换 3.658 GiB，最终打包 3.792 GiB，未降低 3 GiB 保护下限。仍需连接 PICO 进行真实 YOLO、真手势、双眼与性能验收；下面旧包描述保留为历史记录。
 
+下载：[Android 动画增量验证包](https://github.com/JC4747-jc/magic-wand-amusement-park/releases/tag/hci-magic-effects-validation-20261116)。GitHub 文件摘要与本地一致；仅声明 Android 静态检查通过。
+
 ## 必须继续完成的交付项（2026-11-16）
 
 真实 YOLO → 定位/选中 → PICO 真手势 → 对象魔法，以及八个 HCI 用例的模型和动画美术完善，均为 [Goal 的必需完成条件](BRANCH_SCENE_PLAN.md)，目前仍未全部验收。Android 包检查通过不代表这些工作已经完成。

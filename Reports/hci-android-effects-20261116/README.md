@@ -18,3 +18,5 @@
 ## 必须继续完成
 
 应用标识 com.yn.picmagicmr.validation，是包含 14 场景的编译验证包，不代表所有场景都有生产导航入口。尚未完成 PICO 安装运行、真实相机 YOLO、真实手势、定位/遮挡、双眼及性能验收；没有新增合格 YOLO 权重。八用例 32 效果的缺项与美术完善、模型训练/大模型下载接入，继续按 BRANCH_SCENE_PLAN.md 的 Goal 执行，不能凭本包宣布完成。
+
+已发布 [Android 动画增量验证包](https://github.com/JC4747-jc/magic-wand-amusement-park/releases/tag/hci-magic-effects-validation-20261116)；上传回执见 [release-receipt.json](release-receipt.json)，服务端摘要与本地一致。发布仍为预览版本，PICO 真机未验收。
