@@ -1,0 +1,24 @@
+{
+    "scene": "BridgeStereoFusion",
+    "scope": "Actual saved scene target and all core actions; spatial/input components temporarily isolated for model review. No synthetic recognition or real hand/anchor acceptance.",
+    "isolatedComponents": [
+        "Perception.LighterUnderAnchorBinder",
+        "Perception.PicoYoloEditorTestSource",
+        "Perception.BridgeTargetPipelineProbe",
+        "MagicMR.TabletopGestureRecognizer",
+        "Perception.StereoYoloLocator",
+        "PicoStereoCapture",
+        "Perception.BridgeGestureBootstrap",
+        "Perception.TcpClient",
+        "Perception.PicoYoloFrameSender",
+        "MagicMR.GestureManager",
+        "Perception.SingleTargetManager",
+        "Perception.AnchorManager",
+        "Perception.DetectionManager",
+        "Perception.LighterGestureTargetGate",
+        "MagicMR.TwoHandScaleGestureDetector",
+        "Unsummoned renderer mask opened only for this isolated model review"
+    ],
+    "frames": 7,
+    "pass": true
+}

@@ -59,6 +59,15 @@ namespace MagicMR
             var gravity = embers.main; gravity.gravityModifier = .012f;
             return ps;
         }
+        public static ParticleSystem CreateAgencyCough(Transform parent)
+        {
+            var ps=Layer(parent,"Agency cough smoke",new Color(.24f,.22f,.20f,.55f),14,.65f,.008f,.018f);
+            Position(ps,parent.position);
+            var emission=ps.emission;emission.SetBursts(System.Array.Empty<ParticleSystem.Burst>());emission.rateOverTime=0;
+            var shape=ps.shape;shape.radius=.002f;
+            var velocity=ps.velocityOverLifetime;velocity.enabled=true;velocity.space=ParticleSystemSimulationSpace.World;velocity.y=.018f;
+            return ps;
+        }
         public static ParticleSystem CreateRingBurst(Transform parent)
         {
             var ps = Layer(parent, "Calibration dew", new Color(.5f, .88f, 1, .9f), 32, .65f, .004f, .075f);
