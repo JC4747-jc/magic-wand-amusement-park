@@ -1,5 +1,9 @@
 # Magic Wand Amusement Park
 
+## 最新语音与扑翼 Android 包（2026-11-16）
+
+已将植物语音和火机扑翼/咳嗽编入 `HciVoiceWingsValidation-20261116.apk`，14 场景、签名/CRC/ARM64、资源来源核对通过。见 [构建报告](Reports/hci-android-voice-wings-20261116/README.md)。PICO 实时识别、手势、双眼、听感与性能仍待验证；下方旧包为历史记录。
+
 ## 最新 Android 动画增量（2026-11-16）
 
 `HciMagicEffectsValidation-20261116.apk` 已完成 14 场景 Android 构建、签名/CRC/ARM64、40 项既有资源和 7 项新增模型/着色器来源核对。包含宠物描边、石像卡通/伸展/荷花许愿树及房间四维映射。见 [本次构建证据](Reports/hci-android-effects-20261116/README.md)。最低采样可用内存：离线转换 3.658 GiB，最终打包 3.792 GiB，未降低 3 GiB 保护下限。仍需连接 PICO 进行真实 YOLO、真手势、双眼与性能验收；下面旧包描述保留为历史记录。
