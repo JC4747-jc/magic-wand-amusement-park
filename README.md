@@ -1,5 +1,9 @@
 # Magic Wand Amusement Park
 
+## 最新猫步态 Android 验证包（2026-11-16）
+
+猫原地步态接地转场 v2 已编入 `HciCatGaitV2Validation-20261116.apk`，保留打人柳、树木体验选择及已接受的效果。1652 个源文件、14 场景、签名/CRC/ARM64、资源和猫动画字节差异检查通过，见 [构建报告](Reports/hci-android-cat-gait-v2-20261116/README.md)。真实 YOLO/PICO、最终美术及全部 HCI 效果仍待完成。
+
 ## 最新打人柳 Android 验证包（2026-11-16）
 
 下载：[HciWillowValidation-20261116.apk](https://github.com/JC4747-jc/magic-wand-amusement-park/releases/download/hci-willow-validation-20261116/HciWillowValidation-20261116.apk)（约 73.9 MiB）。[上传回执](Reports/hci-android-willow-20261116/release-receipt.json)已核对服务器 SHA256；PICO 真机仍未验收。
