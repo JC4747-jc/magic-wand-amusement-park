@@ -1,0 +1,1160 @@
+{
+  "status": "PASS_REAL_WEIGHT_TCP_REPLAY_NOT_INDEPENDENT_ACCURACY_OR_LIVE_PICO",
+  "identities": {
+    "object-detection-demo\\weights\\best_yolo26n_assgn2_v6_50e.pt": "999bca4f5bf96aeed3ac0f1047e31530e4eb4584873c85dd5bd00031fc71fb3a",
+    "object-detection-demo\\scene_profiles.json": "4c3a776c4133c60ff9be810630c1aa7002775230f98a03bb3fdfa020d78f8781",
+    "object-detection-demo\\detector_config.py": "b047405f41cd10523d6e51ab25ee8a1673a8219de8ce4ece7a684277b2f5640b",
+    "object-detection-demo\\tcp_server.py": "10607c9a6a03bfb4e8875b3107f85608e382b90415e232dace093b2bf678acdd"
+  },
+  "frames": [
+    {
+      "image": "Find lighter/test/images/pico_frame_0002_jpg.rf.dfU9jjaN8VTz5NpTrn67.jpg",
+      "imageSHA256": "b51ae03ab4584cba1495e7395419ef8d08df6add788bd9e6e03e308e54080d2e",
+      "pixelSHA256": "55f8f90e78d06a4bc5a8920b2abb916f90b846d6826789a64929689fb6e368a9",
+      "label": "Find lighter/test/labels/pico_frame_0002_jpg.rf.dfU9jjaN8VTz5NpTrn67.txt",
+      "labelSHA256": "e8da54cf8ac3b8670b47dc4b8a15cf3ce25e76780ce89084eb4c8ca2afb66d4e",
+      "size": [
+        1920,
+        1920
+      ],
+      "draftBoxes": [
+        [
+          703.0,
+          1233.0,
+          803.0,
+          1280.0
+        ]
+      ],
+      "exactPixelMatchesToLocalTrainValid": [],
+      "perceptualClosestToLocalTrainValid": [
+        {
+          "image": "Find lighter/train/images/pico_frame_0001_jpg.rf.RNOsdc3cu8iqxKcSdInz.jpg",
+          "hamming": 12
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0136_jpg.rf.A03DVXVDXOxmFwslIaQJ.jpg",
+          "hamming": 19
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0138_jpg.rf.iN3tLQUt5BVsyX49J5zu.jpg",
+          "hamming": 19
+        }
+      ],
+      "perceptualMatchesAtHamming4": []
+    },
+    {
+      "image": "Find lighter/test/images/pico_frame_0003_jpg.rf.eDotnAbqKoh41BCPj1j0.jpg",
+      "imageSHA256": "289b1a0966914d4b1396875bc7c103255496a2c89094df795f71a40b55a90c2c",
+      "pixelSHA256": "c7675eb70c3f9d066645e8961f77f23bdb145d8e7fa202a7eeb04858378dd47d",
+      "label": "Find lighter/test/labels/pico_frame_0003_jpg.rf.eDotnAbqKoh41BCPj1j0.txt",
+      "labelSHA256": "d3f275ccae4ecd19c542b55d4850ccaf2949ecf7946e7bcb72d78d3ff7da38e7",
+      "size": [
+        1920,
+        1920
+      ],
+      "draftBoxes": [
+        [
+          773.0,
+          1214.0,
+          869.0,
+          1256.0
+        ]
+      ],
+      "exactPixelMatchesToLocalTrainValid": [],
+      "perceptualClosestToLocalTrainValid": [
+        {
+          "image": "Find lighter/valid/images/pico_frame_0004_jpg.rf.VQ6Vu2gSRQ5yanY0GJLP.jpg",
+          "hamming": 14
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0138_jpg.rf.iN3tLQUt5BVsyX49J5zu.jpg",
+          "hamming": 19
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0001_jpg.rf.RNOsdc3cu8iqxKcSdInz.jpg",
+          "hamming": 20
+        }
+      ],
+      "perceptualMatchesAtHamming4": []
+    },
+    {
+      "image": "Find lighter/test/images/pico_frame_0010-jpg-274076-1785600775000-0_jpg.rf.pCU1MAaTCJtt9IM6qTjW.jpg",
+      "imageSHA256": "5da19867a117d7e3953360663bbc83c774df17b8e2b8e80f4ca60b433dcc4a69",
+      "pixelSHA256": "03cf6df1c78294e33b1fc014ad0b367aef524c4e0cd90353d7d325b6b0104a54",
+      "label": "Find lighter/test/labels/pico_frame_0010-jpg-274076-1785600775000-0_jpg.rf.pCU1MAaTCJtt9IM6qTjW.txt",
+      "labelSHA256": "ab1df37e6a6faaa029c429485ddc79c4de119afc7bdaaba50dcfeb7d9c1e826c",
+      "size": [
+        1920,
+        1920
+      ],
+      "draftBoxes": [
+        [
+          934.0,
+          976.0,
+          1028.0,
+          1199.0
+        ]
+      ],
+      "exactPixelMatchesToLocalTrainValid": [],
+      "perceptualClosestToLocalTrainValid": [
+        {
+          "image": "Find lighter/train/images/pico_frame_0017_jpg.rf.0QhBlMQIKQswbs1gZxgF.jpg",
+          "hamming": 11
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0018_jpg.rf.NYnpU9BcAXwJuxy6ARqk.jpg",
+          "hamming": 11
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0009_jpg.rf.3sJu9Zz8DHhTBAznbmV6.jpg",
+          "hamming": 14
+        }
+      ],
+      "perceptualMatchesAtHamming4": []
+    },
+    {
+      "image": "Find lighter/test/images/pico_frame_0014_jpg.rf.R4lznm2L53PXRINkH6rp.jpg",
+      "imageSHA256": "1713a071b5e7371f8233a9cb8e0703bb94744a3956bf13d9cfc3e177096b7ebf",
+      "pixelSHA256": "5da0f06fc773c054f7e94b1dc1e5b5fd057f895227e150028a5fc152ff66fd8b",
+      "label": "Find lighter/test/labels/pico_frame_0014_jpg.rf.R4lznm2L53PXRINkH6rp.txt",
+      "labelSHA256": "5fbf9c317f4a418fa3dc83a89d467273e49e231502d2ecebfb93c6cd42b78a31",
+      "size": [
+        1920,
+        1920
+      ],
+      "draftBoxes": [
+        [
+          893.0,
+          1047.0,
+          1017.0,
+          1284.0
+        ]
+      ],
+      "exactPixelMatchesToLocalTrainValid": [],
+      "perceptualClosestToLocalTrainValid": [
+        {
+          "image": "Find lighter/train/images/pico_frame_0059_jpg.rf.PNUJYcYW4MoMHoEnw61v.jpg",
+          "hamming": 17
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0055_jpg.rf.HWrDoEMaWBqnriDr4p0Y.jpg",
+          "hamming": 19
+        },
+        {
+          "image": "Find lighter/valid/images/pico_frame_0084_jpg.rf.SWUq7Vo2oNlGit5zGAZm.jpg",
+          "hamming": 19
+        }
+      ],
+      "perceptualMatchesAtHamming4": []
+    },
+    {
+      "image": "Find lighter/test/images/pico_frame_0019_jpg.rf.EZebZE0gN7xYDbKHRmyb.jpg",
+      "imageSHA256": "cf4a82a6349705c07c2c45a5181ec6cbfaffc60cbe317edf11041c8f9dbf8c5d",
+      "pixelSHA256": "db67a446e6b943ada6db1feb9deb2b5a00d648a3ed2b0cb92229ca0fd025900d",
+      "label": "Find lighter/test/labels/pico_frame_0019_jpg.rf.EZebZE0gN7xYDbKHRmyb.txt",
+      "labelSHA256": "1a35ce01a89c8667f8d93e9caf95c79c9f7c144ffbb158960512d70e32306a5c",
+      "size": [
+        1920,
+        1920
+      ],
+      "draftBoxes": [
+        [
+          808.0,
+          1125.0,
+          1001.0,
+          1188.0
+        ]
+      ],
+      "exactPixelMatchesToLocalTrainValid": [],
+      "perceptualClosestToLocalTrainValid": [
+        {
+          "image": "Find lighter/train/images/pico_frame_0024_jpg.rf.qy5Ge9IAxcemPypNf81o.jpg",
+          "hamming": 5
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0021_jpg.rf.SSSO4jKE1tsxruufQYhT.jpg",
+          "hamming": 6
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0023_jpg.rf.Wguy7oPGDw6RkbOfkqwR.jpg",
+          "hamming": 6
+        }
+      ],
+      "perceptualMatchesAtHamming4": []
+    },
+    {
+      "image": "Find lighter/test/images/pico_frame_0036_jpg.rf.aR1jPGriTNu0yMEN4kGP.jpg",
+      "imageSHA256": "817e4ceb3c48890a84d87ea1891fecc6a2ca1d5fecb2b3a055ff73751fb462e0",
+      "pixelSHA256": "44964cde86e1da83ab107b58f7ac06efbd1b7d2e01280ad2bc2a8a26dd89b507",
+      "label": "Find lighter/test/labels/pico_frame_0036_jpg.rf.aR1jPGriTNu0yMEN4kGP.txt",
+      "labelSHA256": "964baf223e804d5ab317e50c16fb273233bde183c23c9e1b2b05eff26f98fc98",
+      "size": [
+        1920,
+        1920
+      ],
+      "draftBoxes": [
+        [
+          901.0,
+          876.0,
+          968.0,
+          1036.0
+        ]
+      ],
+      "exactPixelMatchesToLocalTrainValid": [],
+      "perceptualClosestToLocalTrainValid": [
+        {
+          "image": "Find lighter/valid/images/pico_frame_0035_jpg.rf.V3eu1K6mfFiUBjKG6ka6.jpg",
+          "hamming": 5
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0033_jpg.rf.axhscRfjMztrLqfUUixL.jpg",
+          "hamming": 11
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0037_jpg.rf.82eCJlMXwszXSMqBgNjg.jpg",
+          "hamming": 13
+        }
+      ],
+      "perceptualMatchesAtHamming4": []
+    },
+    {
+      "image": "Find lighter/test/images/pico_frame_0056_jpg.rf.fgpTdryPDUJ0lc9mg6e9.jpg",
+      "imageSHA256": "685e99dae5b5081b541e809331f63a64e03e5db3c1e8bc7227a7a7950ff99580",
+      "pixelSHA256": "15eba5f63fd87e75fd7e0940543e8de48a0a5a8ddc2dd7fb757536cb9b816f45",
+      "label": "Find lighter/test/labels/pico_frame_0056_jpg.rf.fgpTdryPDUJ0lc9mg6e9.txt",
+      "labelSHA256": "227af3d3b648e1691ccc8c12f13eb615102d3a4c9734386fd3123d2f718ea0dc",
+      "size": [
+        1920,
+        1920
+      ],
+      "draftBoxes": [
+        [
+          962.0000000000001,
+          1051.0,
+          1027.0,
+          1255.0
+        ]
+      ],
+      "exactPixelMatchesToLocalTrainValid": [],
+      "perceptualClosestToLocalTrainValid": [
+        {
+          "image": "Find lighter/train/images/pico_frame_0057_jpg.rf.WadFlG7kWMyuMpC20iWA.jpg",
+          "hamming": 1
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0058_jpg.rf.42o8vbu7lHdkmqaDOmtg.jpg",
+          "hamming": 1
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0055_jpg.rf.HWrDoEMaWBqnriDr4p0Y.jpg",
+          "hamming": 5
+        }
+      ],
+      "perceptualMatchesAtHamming4": [
+        {
+          "image": "Find lighter/train/images/pico_frame_0057_jpg.rf.WadFlG7kWMyuMpC20iWA.jpg",
+          "hamming": 1
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0058_jpg.rf.42o8vbu7lHdkmqaDOmtg.jpg",
+          "hamming": 1
+        }
+      ]
+    },
+    {
+      "image": "Find lighter/test/images/pico_frame_0093_jpg.rf.WiDGVtoK6yja7W9YsCao.jpg",
+      "imageSHA256": "674b5e5bf1705f093169894bfddf276ac4b250a339156e943d32d4b23daacc85",
+      "pixelSHA256": "73ce6488bbe43ce356453112ef30edf5dc481291244b6eb9d8e0865624627575",
+      "label": "Find lighter/test/labels/pico_frame_0093_jpg.rf.WiDGVtoK6yja7W9YsCao.txt",
+      "labelSHA256": "c07ced0333ce51ef1db8698ba7162cf0cd1d3db7265c5078f6ec2a9ecc2061ce",
+      "size": [
+        1920,
+        1920
+      ],
+      "draftBoxes": [
+        [
+          882.0,
+          1120.0,
+          979.0,
+          1212.0
+        ]
+      ],
+      "exactPixelMatchesToLocalTrainValid": [],
+      "perceptualClosestToLocalTrainValid": [
+        {
+          "image": "Find lighter/train/images/pico_frame_0092_jpg.rf.7kvLxDhdavazJ5EdJkWV.jpg",
+          "hamming": 4
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0094_jpg.rf.H4MFH9gyBCgOe06XzWtD.jpg",
+          "hamming": 7
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0091_jpg.rf.4wX0Z1MNIWuxaEdqfwnC.jpg",
+          "hamming": 9
+        }
+      ],
+      "perceptualMatchesAtHamming4": [
+        {
+          "image": "Find lighter/train/images/pico_frame_0092_jpg.rf.7kvLxDhdavazJ5EdJkWV.jpg",
+          "hamming": 4
+        }
+      ]
+    },
+    {
+      "image": "Find lighter/test/images/pico_frame_0108_jpg.rf.Q5cbw4tmD5gZFDpU5kbE.jpg",
+      "imageSHA256": "a9ce370ff380c979cb8099ad4992056101d2523759c0ff6700c4753e4ba7adaa",
+      "pixelSHA256": "94257c00c178673e1e3d20a307159c6fc60af94fdf617d1c049f05bf54368d85",
+      "label": "Find lighter/test/labels/pico_frame_0108_jpg.rf.Q5cbw4tmD5gZFDpU5kbE.txt",
+      "labelSHA256": "3439601085dfff864f2e2e374fefbf31ccc5de79c7a352bbbb27ca72ade47f23",
+      "size": [
+        1920,
+        1920
+      ],
+      "draftBoxes": [
+        [
+          746.0,
+          1170.0,
+          868.0,
+          1234.0
+        ]
+      ],
+      "exactPixelMatchesToLocalTrainValid": [],
+      "perceptualClosestToLocalTrainValid": [
+        {
+          "image": "Find lighter/train/images/pico_frame_0104_jpg.rf.qeUASq6xnNHpKaIrUxIS.jpg",
+          "hamming": 5
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0105_jpg.rf.jDU3v8w98KWezFnSe0od.jpg",
+          "hamming": 5
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0106_jpg.rf.xYKaqnEcFEd79fAt9bI3.jpg",
+          "hamming": 5
+        }
+      ],
+      "perceptualMatchesAtHamming4": []
+    },
+    {
+      "image": "Find lighter/test/images/pico_frame_0109_jpg.rf.v6M6q0HAvXC0lZjzlTrS.jpg",
+      "imageSHA256": "e457285d271a0126b3a915ab8acb1b47b01af2c2db9670fd2275940e70ef2c8d",
+      "pixelSHA256": "ce4c40ae0ce9ec68295e62de78b1aeb0cad10b6ea90a319aa8a0d8f07f083122",
+      "label": "Find lighter/test/labels/pico_frame_0109_jpg.rf.v6M6q0HAvXC0lZjzlTrS.txt",
+      "labelSHA256": "994b1a502074da5ddcd2a64e4c0ac233607a3e69e4e9b467edc7dc95717b60af",
+      "size": [
+        1920,
+        1920
+      ],
+      "draftBoxes": [
+        [
+          777.0,
+          1186.0,
+          900.0,
+          1255.0
+        ]
+      ],
+      "exactPixelMatchesToLocalTrainValid": [],
+      "perceptualClosestToLocalTrainValid": [
+        {
+          "image": "Find lighter/train/images/pico_frame_0069_jpg.rf.OVQ9y6fAadmpx34i0LiT.jpg",
+          "hamming": 11
+        },
+        {
+          "image": "Find lighter/valid/images/pico_frame_0101_jpg.rf.vZqKoo3Ajx7W8ppA5DKM.jpg",
+          "hamming": 11
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0107_jpg.rf.9wkvQNjPEmBRoRbv72NP.jpg",
+          "hamming": 13
+        }
+      ],
+      "perceptualMatchesAtHamming4": []
+    },
+    {
+      "image": "Find lighter/test/images/pico_frame_0119_jpg.rf.uvbO9ACA6h94ULKSNKej.jpg",
+      "imageSHA256": "4d21e9d9f2fa2de2342028ef156806ea86e233eed99f970edb95c82af7a1c432",
+      "pixelSHA256": "5ede4ba6e3f69e0efe50314df675fb77acc1f77d83a2b77c76c336a9486ff6f5",
+      "label": "Find lighter/test/labels/pico_frame_0119_jpg.rf.uvbO9ACA6h94ULKSNKej.txt",
+      "labelSHA256": "f05e67d5cbdbb1d3082c9883f266e9a16c6fe27acc929188b26acedf0cca0a94",
+      "size": [
+        1920,
+        1920
+      ],
+      "draftBoxes": [
+        [
+          907.0,
+          1125.0,
+          945.0,
+          1170.0
+        ]
+      ],
+      "exactPixelMatchesToLocalTrainValid": [],
+      "perceptualClosestToLocalTrainValid": [
+        {
+          "image": "Find lighter/train/images/pico_frame_0118_jpg.rf.v2uc8XHaiRmCNnUzXtqO.jpg",
+          "hamming": 13
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0120_jpg.rf.gkN6ortYOPnZRK7biDfH.jpg",
+          "hamming": 16
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0117_jpg.rf.JFHJMa8B3CpxIr13xx31.jpg",
+          "hamming": 18
+        }
+      ],
+      "perceptualMatchesAtHamming4": []
+    },
+    {
+      "image": "Find lighter/test/images/pico_frame_0121_jpg.rf.lpWBtduLwBneHV2YHxWM.jpg",
+      "imageSHA256": "6ff8ee311b06e440b32d6698e01367ab37b1f4a201feac0103c5bbcfc3bcf54c",
+      "pixelSHA256": "81ee1605465c4a586028dac0c85224e655f0fae1dca32f22d9ba571ffb978554",
+      "label": "Find lighter/test/labels/pico_frame_0121_jpg.rf.lpWBtduLwBneHV2YHxWM.txt",
+      "labelSHA256": "a10bddd910e5431db341cc82b908a8821c3cc6d273e2d90c72c002fd4d562f31",
+      "size": [
+        1920,
+        1920
+      ],
+      "draftBoxes": [
+        [
+          897.0,
+          1123.0,
+          952.0,
+          1196.0
+        ]
+      ],
+      "exactPixelMatchesToLocalTrainValid": [],
+      "perceptualClosestToLocalTrainValid": [
+        {
+          "image": "Find lighter/train/images/pico_frame_0127_jpg.rf.ad4DYijSoBbQT1idMweu.jpg",
+          "hamming": 17
+        },
+        {
+          "image": "Find lighter/valid/images/pico_frame_0140_jpg.rf.PCGhCUSkdoxlZ5TA4pZa.jpg",
+          "hamming": 18
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0114_jpg.rf.TSkCYyWVaB9O0YMNro9A.jpg",
+          "hamming": 19
+        }
+      ],
+      "perceptualMatchesAtHamming4": []
+    },
+    {
+      "image": "Find lighter/test/images/pico_frame_0123_jpg.rf.fcyPdO9BPNcLv0FIQuUO.jpg",
+      "imageSHA256": "68dd4f5d54754f83593c4b7d2b82eb9dca76af533fb6df56c924e6c00cf59ce6",
+      "pixelSHA256": "d5bfa8b8c6a9aaacb02a137944aa1382254eb604fb3598fb921909034e20474c",
+      "label": "Find lighter/test/labels/pico_frame_0123_jpg.rf.fcyPdO9BPNcLv0FIQuUO.txt",
+      "labelSHA256": "1ef687a200bd93d022d9d24f7b536986ed2e0b671961c09e2e8ca9864834a656",
+      "size": [
+        1920,
+        1920
+      ],
+      "draftBoxes": [
+        [
+          848.0,
+          1031.0,
+          940.0,
+          1148.0
+        ]
+      ],
+      "exactPixelMatchesToLocalTrainValid": [],
+      "perceptualClosestToLocalTrainValid": [
+        {
+          "image": "Find lighter/train/images/pico_frame_0122_jpg.rf.Utn6RHLQRu4mtCQ8hZ4z.jpg",
+          "hamming": 14
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0037_jpg.rf.82eCJlMXwszXSMqBgNjg.jpg",
+          "hamming": 20
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0057_jpg.rf.WadFlG7kWMyuMpC20iWA.jpg",
+          "hamming": 21
+        }
+      ],
+      "perceptualMatchesAtHamming4": []
+    },
+    {
+      "image": "Find lighter/test/images/pico_frame_0137_jpg.rf.Sigx7bXUymiYRk9ppeMm.jpg",
+      "imageSHA256": "af929bdf5834ce8400d8953b78dab14599c888e3eb59ac17ac428c2e53671da4",
+      "pixelSHA256": "993f97e321d580dbe406b822b27950a21cecd10e71e6acfd0e33d9e4b86f75fa",
+      "label": "Find lighter/test/labels/pico_frame_0137_jpg.rf.Sigx7bXUymiYRk9ppeMm.txt",
+      "labelSHA256": "bc8b77619c39c7a29feedcc6e6149eaa5b21b6eb1e482594bbae4d8129950fe2",
+      "size": [
+        1920,
+        1920
+      ],
+      "draftBoxes": [
+        [
+          825.0,
+          1090.0,
+          898.0,
+          1158.0
+        ]
+      ],
+      "exactPixelMatchesToLocalTrainValid": [],
+      "perceptualClosestToLocalTrainValid": [
+        {
+          "image": "Find lighter/train/images/pico_frame_0136_jpg.rf.A03DVXVDXOxmFwslIaQJ.jpg",
+          "hamming": 8
+        },
+        {
+          "image": "Find lighter/train/images/pico_frame_0138_jpg.rf.iN3tLQUt5BVsyX49J5zu.jpg",
+          "hamming": 18
+        },
+        {
+          "image": "Find lighter/valid/images/pico_frame_0135_jpg.rf.iTNlTWbyceE9U2dVr5zr.jpg",
+          "hamming": 18
+        }
+      ],
+      "perceptualMatchesAtHamming4": []
+    }
+  ],
+  "responses": [
+    {
+      "session": 0,
+      "image": "Find lighter/test/images/pico_frame_0002_jpg.rf.dfU9jjaN8VTz5NpTrn67.jpg",
+      "elapsedSeconds": 0.0629999999946449,
+      "bestDraftIoU": 0.9007950753671157,
+      "reply": {
+        "frame_id": 1,
+        "timestamp": 100001,
+        "width": 1920,
+        "height": 1920,
+        "scene": "lighter",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Lighter",
+            "class_id": 0,
+            "confidence": 0.8590317964553833,
+            "centerX": 754.4808654785156,
+            "centerY": 1256.6666870117188,
+            "x1": 704.3466796875,
+            "y1": 1231.314453125,
+            "x2": 804.6150512695312,
+            "y2": 1282.0189208984375,
+            "instance_id": "b94f37056ac6:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "class_name": "Lighter",
+            "target_scene": "lighter",
+            "bbox": [
+              704.3466796875,
+              1231.314453125,
+              804.6150512695312,
+              1282.0189208984375
+            ]
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+        "model_validation": "MAIN_BASELINE",
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "session": 0,
+      "image": "Find lighter/test/images/pico_frame_0003_jpg.rf.eDotnAbqKoh41BCPj1j0.jpg",
+      "elapsedSeconds": 0.046000000002095476,
+      "bestDraftIoU": 0.9403007311005914,
+      "reply": {
+        "frame_id": 2,
+        "timestamp": 100002,
+        "width": 1920,
+        "height": 1920,
+        "scene": "lighter",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Lighter",
+            "class_id": 0,
+            "confidence": 0.8569552302360535,
+            "centerX": 821.0701904296875,
+            "centerY": 1234.8460693359375,
+            "x1": 770.5922241210938,
+            "y1": 1213.609130859375,
+            "x2": 871.5481567382812,
+            "y2": 1256.0830078125,
+            "instance_id": "b94f37056ac6:left:2",
+            "track_scope": "session:left:temporal_iou",
+            "class_name": "Lighter",
+            "target_scene": "lighter",
+            "bbox": [
+              770.5922241210938,
+              1213.609130859375,
+              871.5481567382812,
+              1256.0830078125
+            ]
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+        "model_validation": "MAIN_BASELINE",
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "session": 0,
+      "image": "Find lighter/test/images/pico_frame_0010-jpg-274076-1785600775000-0_jpg.rf.pCU1MAaTCJtt9IM6qTjW.jpg",
+      "elapsedSeconds": 0.046999999991385266,
+      "bestDraftIoU": 0.9412724101367508,
+      "reply": {
+        "frame_id": 3,
+        "timestamp": 100003,
+        "width": 1920,
+        "height": 1920,
+        "scene": "lighter",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Lighter",
+            "class_id": 0,
+            "confidence": 0.9087460041046143,
+            "centerX": 982.4097900390625,
+            "centerY": 1088.1836853027344,
+            "x1": 937.450927734375,
+            "y1": 974.7891235351562,
+            "x2": 1027.36865234375,
+            "y2": 1201.5782470703125,
+            "instance_id": "b94f37056ac6:left:3",
+            "track_scope": "session:left:temporal_iou",
+            "class_name": "Lighter",
+            "target_scene": "lighter",
+            "bbox": [
+              937.450927734375,
+              974.7891235351562,
+              1027.36865234375,
+              1201.5782470703125
+            ]
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+        "model_validation": "MAIN_BASELINE",
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "session": 0,
+      "image": "Find lighter/test/images/pico_frame_0014_jpg.rf.R4lznm2L53PXRINkH6rp.jpg",
+      "elapsedSeconds": 0.046999999991385266,
+      "bestDraftIoU": 0.96097581045427,
+      "reply": {
+        "frame_id": 4,
+        "timestamp": 100004,
+        "width": 1920,
+        "height": 1920,
+        "scene": "lighter",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Lighter",
+            "class_id": 0,
+            "confidence": 0.9112786650657654,
+            "centerX": 956.0438842773438,
+            "centerY": 1167.9609375,
+            "x1": 895.2308959960938,
+            "y1": 1048.8819580078125,
+            "x2": 1016.8568725585938,
+            "y2": 1287.0399169921875,
+            "instance_id": "b94f37056ac6:left:3",
+            "track_scope": "session:left:temporal_iou",
+            "class_name": "Lighter",
+            "target_scene": "lighter",
+            "bbox": [
+              895.2308959960938,
+              1048.8819580078125,
+              1016.8568725585938,
+              1287.0399169921875
+            ]
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+        "model_validation": "MAIN_BASELINE",
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "session": 0,
+      "image": "Find lighter/test/images/pico_frame_0019_jpg.rf.EZebZE0gN7xYDbKHRmyb.jpg",
+      "elapsedSeconds": 0.046999999991385266,
+      "bestDraftIoU": 0.9047899419790028,
+      "reply": {
+        "frame_id": 5,
+        "timestamp": 100005,
+        "width": 1920,
+        "height": 1920,
+        "scene": "lighter",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Lighter",
+            "class_id": 0,
+            "confidence": 0.8631671667098999,
+            "centerX": 905.0635986328125,
+            "centerY": 1153.6314697265625,
+            "x1": 808.6005249023438,
+            "y1": 1124.35107421875,
+            "x2": 1001.5266723632812,
+            "y2": 1182.911865234375,
+            "instance_id": "b94f37056ac6:left:4",
+            "track_scope": "session:left:temporal_iou",
+            "class_name": "Lighter",
+            "target_scene": "lighter",
+            "bbox": [
+              808.6005249023438,
+              1124.35107421875,
+              1001.5266723632812,
+              1182.911865234375
+            ]
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+        "model_validation": "MAIN_BASELINE",
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "session": 0,
+      "image": "Find lighter/test/images/pico_frame_0036_jpg.rf.aR1jPGriTNu0yMEN4kGP.jpg",
+      "elapsedSeconds": 0.0470000000204891,
+      "bestDraftIoU": 0.9680043856201668,
+      "reply": {
+        "frame_id": 6,
+        "timestamp": 100006,
+        "width": 1920,
+        "height": 1920,
+        "scene": "lighter",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Lighter",
+            "class_id": 0,
+            "confidence": 0.9235003590583801,
+            "centerX": 934.8494262695312,
+            "centerY": 956.9759826660156,
+            "x1": 902.0286865234375,
+            "y1": 876.7615356445312,
+            "x2": 967.670166015625,
+            "y2": 1037.1904296875,
+            "instance_id": "b94f37056ac6:left:5",
+            "track_scope": "session:left:temporal_iou",
+            "class_name": "Lighter",
+            "target_scene": "lighter",
+            "bbox": [
+              902.0286865234375,
+              876.7615356445312,
+              967.670166015625,
+              1037.1904296875
+            ]
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+        "model_validation": "MAIN_BASELINE",
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "session": 0,
+      "image": "Find lighter/test/images/pico_frame_0056_jpg.rf.fgpTdryPDUJ0lc9mg6e9.jpg",
+      "elapsedSeconds": 0.0470000000204891,
+      "bestDraftIoU": 0.9136741891633471,
+      "reply": {
+        "frame_id": 7,
+        "timestamp": 100007,
+        "width": 1920,
+        "height": 1920,
+        "scene": "lighter",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Lighter",
+            "class_id": 0,
+            "confidence": 0.9038819074630737,
+            "centerX": 994.2740173339844,
+            "centerY": 1154.5231323242188,
+            "x1": 959.2179565429688,
+            "y1": 1051.8868408203125,
+            "x2": 1029.330078125,
+            "y2": 1257.159423828125,
+            "instance_id": "b94f37056ac6:left:3",
+            "track_scope": "session:left:temporal_iou",
+            "class_name": "Lighter",
+            "target_scene": "lighter",
+            "bbox": [
+              959.2179565429688,
+              1051.8868408203125,
+              1029.330078125,
+              1257.159423828125
+            ]
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+        "model_validation": "MAIN_BASELINE",
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "session": 0,
+      "image": "Find lighter/test/images/pico_frame_0093_jpg.rf.WiDGVtoK6yja7W9YsCao.jpg",
+      "elapsedSeconds": 0.046999999991385266,
+      "bestDraftIoU": 0.9420567012325037,
+      "reply": {
+        "frame_id": 8,
+        "timestamp": 100008,
+        "width": 1920,
+        "height": 1920,
+        "scene": "lighter",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Lighter",
+            "class_id": 0,
+            "confidence": 0.6411190629005432,
+            "centerX": 932.75341796875,
+            "centerY": 1165.6103515625,
+            "x1": 884.2192993164062,
+            "y1": 1120.229248046875,
+            "x2": 981.2875366210938,
+            "y2": 1210.991455078125,
+            "instance_id": "b94f37056ac6:left:4",
+            "track_scope": "session:left:temporal_iou",
+            "class_name": "Lighter",
+            "target_scene": "lighter",
+            "bbox": [
+              884.2192993164062,
+              1120.229248046875,
+              981.2875366210938,
+              1210.991455078125
+            ]
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+        "model_validation": "MAIN_BASELINE",
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "session": 0,
+      "image": "Find lighter/test/images/pico_frame_0108_jpg.rf.Q5cbw4tmD5gZFDpU5kbE.jpg",
+      "elapsedSeconds": 0.046999999991385266,
+      "bestDraftIoU": 0.9610745069071535,
+      "reply": {
+        "frame_id": 9,
+        "timestamp": 100009,
+        "width": 1920,
+        "height": 1920,
+        "scene": "lighter",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Lighter",
+            "class_id": 0,
+            "confidence": 0.8164949417114258,
+            "centerX": 806.2098999023438,
+            "centerY": 1202.3023071289062,
+            "x1": 744.3680419921875,
+            "y1": 1171.134521484375,
+            "x2": 868.0517578125,
+            "y2": 1233.4700927734375,
+            "instance_id": "b94f37056ac6:left:6",
+            "track_scope": "session:left:temporal_iou",
+            "class_name": "Lighter",
+            "target_scene": "lighter",
+            "bbox": [
+              744.3680419921875,
+              1171.134521484375,
+              868.0517578125,
+              1233.4700927734375
+            ]
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+        "model_validation": "MAIN_BASELINE",
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "session": 0,
+      "image": "Find lighter/test/images/pico_frame_0109_jpg.rf.v6M6q0HAvXC0lZjzlTrS.jpg",
+      "elapsedSeconds": 0.046999999991385266,
+      "bestDraftIoU": 0.9440630390173982,
+      "reply": {
+        "frame_id": 10,
+        "timestamp": 100010,
+        "width": 1920,
+        "height": 1920,
+        "scene": "lighter",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Lighter",
+            "class_id": 0,
+            "confidence": 0.9086930155754089,
+            "centerX": 838.6466674804688,
+            "centerY": 1222.3905639648438,
+            "x1": 777.2816162109375,
+            "y1": 1188.4029541015625,
+            "x2": 900.01171875,
+            "y2": 1256.378173828125,
+            "instance_id": "b94f37056ac6:left:2",
+            "track_scope": "session:left:temporal_iou",
+            "class_name": "Lighter",
+            "target_scene": "lighter",
+            "bbox": [
+              777.2816162109375,
+              1188.4029541015625,
+              900.01171875,
+              1256.378173828125
+            ]
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+        "model_validation": "MAIN_BASELINE",
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "session": 0,
+      "image": "Find lighter/test/images/pico_frame_0119_jpg.rf.uvbO9ACA6h94ULKSNKej.jpg",
+      "elapsedSeconds": 0.046000000002095476,
+      "bestDraftIoU": 0.8847914223702691,
+      "reply": {
+        "frame_id": 11,
+        "timestamp": 100011,
+        "width": 1920,
+        "height": 1920,
+        "scene": "lighter",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Lighter",
+            "class_id": 0,
+            "confidence": 0.8750244975090027,
+            "centerX": 924.1806945800781,
+            "centerY": 1147.5940551757812,
+            "x1": 906.3574829101562,
+            "y1": 1125.62548828125,
+            "x2": 942.00390625,
+            "y2": 1169.5626220703125,
+            "instance_id": "b94f37056ac6:left:7",
+            "track_scope": "session:left:temporal_iou",
+            "class_name": "Lighter",
+            "target_scene": "lighter",
+            "bbox": [
+              906.3574829101562,
+              1125.62548828125,
+              942.00390625,
+              1169.5626220703125
+            ]
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+        "model_validation": "MAIN_BASELINE",
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "session": 0,
+      "image": "Find lighter/test/images/pico_frame_0121_jpg.rf.lpWBtduLwBneHV2YHxWM.jpg",
+      "elapsedSeconds": 0.046999999991385266,
+      "bestDraftIoU": 0.942342233427479,
+      "reply": {
+        "frame_id": 12,
+        "timestamp": 100012,
+        "width": 1920,
+        "height": 1920,
+        "scene": "lighter",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Lighter",
+            "class_id": 0,
+            "confidence": 0.8956136107444763,
+            "centerX": 924.900390625,
+            "centerY": 1161.162353515625,
+            "x1": 897.7440185546875,
+            "y1": 1124.0311279296875,
+            "x2": 952.0567626953125,
+            "y2": 1198.2935791015625,
+            "instance_id": "b94f37056ac6:left:8",
+            "track_scope": "session:left:temporal_iou",
+            "class_name": "Lighter",
+            "target_scene": "lighter",
+            "bbox": [
+              897.7440185546875,
+              1124.0311279296875,
+              952.0567626953125,
+              1198.2935791015625
+            ]
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+        "model_validation": "MAIN_BASELINE",
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "session": 0,
+      "image": "Find lighter/test/images/pico_frame_0123_jpg.rf.fcyPdO9BPNcLv0FIQuUO.jpg",
+      "elapsedSeconds": 0.046999999991385266,
+      "bestDraftIoU": 0.9509194144547828,
+      "reply": {
+        "frame_id": 13,
+        "timestamp": 100013,
+        "width": 1920,
+        "height": 1920,
+        "scene": "lighter",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Lighter",
+            "class_id": 0,
+            "confidence": 0.9344034790992737,
+            "centerX": 895.7771301269531,
+            "centerY": 1090.1961669921875,
+            "x1": 849.7825927734375,
+            "y1": 1031.7891845703125,
+            "x2": 941.7716674804688,
+            "y2": 1148.6031494140625,
+            "instance_id": "b94f37056ac6:left:9",
+            "track_scope": "session:left:temporal_iou",
+            "class_name": "Lighter",
+            "target_scene": "lighter",
+            "bbox": [
+              849.7825927734375,
+              1031.7891845703125,
+              941.7716674804688,
+              1148.6031494140625
+            ]
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+        "model_validation": "MAIN_BASELINE",
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "session": 0,
+      "image": "Find lighter/test/images/pico_frame_0137_jpg.rf.Sigx7bXUymiYRk9ppeMm.jpg",
+      "elapsedSeconds": 0.046999999991385266,
+      "bestDraftIoU": 0.9625801213368285,
+      "reply": {
+        "frame_id": 14,
+        "timestamp": 100014,
+        "width": 1920,
+        "height": 1920,
+        "scene": "lighter",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Lighter",
+            "class_id": 0,
+            "confidence": 0.9143950343132019,
+            "centerX": 862.4360961914062,
+            "centerY": 1124.2661743164062,
+            "x1": 825.2407836914062,
+            "y1": 1090.705810546875,
+            "x2": 899.6314086914062,
+            "y2": 1157.8265380859375,
+            "instance_id": "b94f37056ac6:left:10",
+            "track_scope": "session:left:temporal_iou",
+            "class_name": "Lighter",
+            "target_scene": "lighter",
+            "bbox": [
+              825.2407836914062,
+              1090.705810546875,
+              899.6314086914062,
+              1157.8265380859375
+            ]
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+        "model_validation": "MAIN_BASELINE",
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "session": 1,
+      "image": "Find lighter/test/images/pico_frame_0002_jpg.rf.dfU9jjaN8VTz5NpTrn67.jpg",
+      "elapsedSeconds": 0.0629999999946449,
+      "bestDraftIoU": 0.9007950753671157,
+      "reply": {
+        "frame_id": 1,
+        "timestamp": 100001,
+        "width": 1920,
+        "height": 1920,
+        "scene": "lighter",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Lighter",
+            "class_id": 0,
+            "confidence": 0.8590317964553833,
+            "centerX": 754.4808654785156,
+            "centerY": 1256.6666870117188,
+            "x1": 704.3466796875,
+            "y1": 1231.314453125,
+            "x2": 804.6150512695312,
+            "y2": 1282.0189208984375,
+            "instance_id": "1b5f0c1b6dc5:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "class_name": "Lighter",
+            "target_scene": "lighter",
+            "bbox": [
+              704.3466796875,
+              1231.314453125,
+              804.6150512695312,
+              1282.0189208984375
+            ]
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+        "model_validation": "MAIN_BASELINE",
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    }
+  ],
+  "summary": {
+    "originalFrames": 14,
+    "requests": 15,
+    "framesWithDetection": 14,
+    "framesWithDraftIoU50": 14,
+    "exactTrainValidOverlapImages": 0,
+    "perceptualFlaggedTestImages": 2,
+    "reconnectFrame1Passed": true
+  },
+  "resources": {
+    "minSampledAvailableRAMGiB": 7.610332489013672,
+    "maxSampledParentServerTreeRSSMiB": 463.37890625,
+    "seconds": 11.202999999979511,
+    "ramFloorGiB": 3,
+    "diskGrowthLimitMiB": 64,
+    "sampling": "Between requests and startup attempts, not continuous peaks"
+  },
+  "limitations": [
+    "PICO provenance inferred from local filenames/export; original capture session identity unavailable.",
+    "v6 training preparation/audits absent locally; historical/pretraining overlap remains unknown even if no local exact duplicate.",
+    "Supplied polygon/box labels not reapproved; derived box IoU is diagnostic only.",
+    "dHash Hamming <=4 flags similarity; not proof of v6 training membership or independent capture.",
+    "Input files replayed individually; tracker IDs across different photos do not prove physical identity.",
+    "No independent holdout accuracy, negative specificity, stereo positioning, live camera, real hand or animation acceptance."
+  ],
+  "trainingPerformed": false,
+  "downloads": 0,
+  "deploymentChanged": false
+}
