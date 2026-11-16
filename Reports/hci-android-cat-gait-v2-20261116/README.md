@@ -11,3 +11,5 @@
 本轮原生编译缓存继续复用，重任务串行，并发 1；启动至少 6 GiB 可用内存，运行下限 3 GiB、项目盘 20 GiB、单任务增长 1 GiB、日志 16 MiB、20 分钟守卫生效。任务 PlayerDataCache 移入备份后重新封包，未删除用户资产、模型或原生缓存。遥测是五秒采样，不是连续峰值；没有训练、下载模型或重启，主工作区 Git 暂存区保持不变。
 
 本地文件为 Builds/Android/HciCatGaitV2Validation-20261116.apk，包标识 com.yn.picmagicmr.validation；它是独立 14 场景编译验证包，正式导航和设备运行仍需验收。PICO 未连接，真实 YOLO、手部、双眼/遮挡、听感、帧率和内存尚无设备结果；场景照明、毛色/描边和其他美术仍需完善。全部八用例 32 效果、训练/适用大模型接入 Goal 保持 active。上传后附服务器摘要回执。
+
+下载：[猫步态 Android 验证包](https://github.com/JC4747-jc/magic-wand-amusement-park/releases/tag/hci-cat-gait-v2-validation-20261116)。服务器摘要与本地 SHA256 一致，见 [上传回执](release-receipt.json)。这是未完成 PICO 验收的预览版本。
