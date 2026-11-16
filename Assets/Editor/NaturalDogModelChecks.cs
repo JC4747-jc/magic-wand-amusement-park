@@ -14,7 +14,7 @@ public static class NaturalDogModelChecks
         {
             var actor=go.GetComponent<ParkActor>();actor.species="Dog";actor.virtualTarget=true;go.SetActive(true);actor.Build();
             var rig=go.GetComponentInChildren<NaturalPetRig>();Require(rig&&rig.headBoneName=="Head","Wolfhound not installed in Dog route");
-            var skins=rig.GetComponentsInChildren<SkinnedMeshRenderer>();Require(skins.Length==1&&skins[0].bones.Length==47,"Dog source rig changed");
+            var skins=NaturalPetModelChecks.SourceSkins(rig);Require(skins.Length==1&&skins[0].bones.Length==47,"Dog source rig changed");
             Require(skins[0].sharedMesh.triangles.Length/3==849,"Dog topology changed");
             var coat=skins[0].sharedMaterial;Require(coat.GetTexture("_BaseMap")&&coat.GetTexture("_BaseMap").name=="Wolfhound_Albedo"&&!coat.IsKeywordEnabled("_NORMALMAP"),"Dog original coat lost");
             go.transform.position=new Vector3(.6f,.05f,-.4f);Require(actor.ConfirmOrientation(37),"Dog yaw rejected");

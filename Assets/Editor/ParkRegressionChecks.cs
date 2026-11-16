@@ -155,9 +155,13 @@ public static class ParkRegressionChecks
                         snapshot=stateField.GetValue(actor);snapshot.GetType().GetField("rewarded").SetValue(snapshot,true);stateField.SetValue(actor,snapshot);
                         typeof(ParkActor).GetMethod("Emit",rainFlags).Invoke(actor,new object[]{ParkAction.Reward,24});
                         actor.SendMessage("Update");
+                        var expectedExit=new System.Collections.Generic.HashSet<Transform>();
+                        foreach(var field in new[]{"bubble","portal","jellyfish"})expectedExit.Add((Transform)typeof(ParkActor).GetField(field,rainFlags).GetValue(actor));
+                        var window=actor.GetComponent<RoomMagicVisual>();Require(window&&window.Window,"Room window missing from effect lifecycle");expectedExit.Add(window.Window);
+                        foreach(var particle in pool)if(particle.gameObject.activeSelf)expectedExit.Add(particle);
                         Require(actor.TryAction(ParkAction.Stop,anchor,true),"Active candy rain could not stop");
                         var exiting=(Transform[])typeof(ParkActor).GetField("stoppingEffects",rainFlags).GetValue(actor);
-                        Require(exiting!=null && exiting.Length==27,"Stop did not include the visible candy pool in its transition");
+                        Require(exiting!=null && exiting.Length==expectedExit.Count && expectedExit.SetEquals(exiting),"Stop did not include the visible candy pool in its transition");
                         Require(actor.TryAction(ParkAction.Stop,anchor,true) && exiting==typeof(ParkActor).GetField("stoppingEffects",rainFlags).GetValue(actor),"Repeated Stop restarted the exit transition");
                         // Complete the exit explicitly, then update within the old particle lifetime.
                         // This catches candy reappearing after a successful fade.

@@ -7,6 +7,23 @@ using UnityEngine;
 public static class NaturalPetModelChecks
 {
     static void Require(bool ok,string message){if(!ok)throw new Exception(message);}
+    public static SkinnedMeshRenderer[] SourceSkins(NaturalPetRig rig)
+    {
+        var shader=Resources.Load<Shader>("MagicMR/PetOutline");
+        Require(shader,"Pet outline shader missing");
+        var all=rig.GetComponentsInChildren<SkinnedMeshRenderer>(true);
+        var shells=all.Where(s=>s.sharedMaterials.Length>0&&s.sharedMaterials.All(m=>m&&m.shader==shader)).ToArray();
+        var sources=all.Except(shells).ToArray();
+        Require(shells.Length>0&&shells.Length<=sources.Length,"Pet outline renderer budget invalid");
+        foreach(var shell in shells)
+        {
+            var source=shell.transform.parent.GetComponent<SkinnedMeshRenderer>();
+            Require(source&&sources.Contains(source),"Outline lacks its source renderer");
+            Require(shell.sharedMesh==source.sharedMesh&&shell.rootBone==source.rootBone&&shell.bones.SequenceEqual(source.bones),"Outline duplicated mesh or changed bone binding");
+            Require(shell.sharedMaterials.Length==source.sharedMesh.subMeshCount&&!shell.enabled,"Idle outline must be hidden with one material per submesh");
+        }
+        return sources;
+    }
     static Bounds Geometry(ParkActor actor)
     {
         bool first=true;var bounds=new Bounds();
@@ -33,7 +50,7 @@ public static class NaturalPetModelChecks
         {
             var actor=go.GetComponent<ParkActor>();actor.species="Cat";actor.virtualTarget=true;go.SetActive(true);actor.Build();
             var rig=go.GetComponentInChildren<NaturalPetRig>();Require(rig,"Natural cat not installed");rig.Initialize();
-            var skins=rig.GetComponentsInChildren<SkinnedMeshRenderer>();
+            var skins=NaturalPetModelChecks.SourceSkins(rig);
             Require(skins.Length==3&&skins.All(s=>s.bones.Length<=40),"Cat skin/bone budget exceeded");
             long triangles=skins.Sum(s=>Enumerable.Range(0,s.sharedMesh.subMeshCount).Sum(i=>(long)s.sharedMesh.GetIndexCount(i)/3));
             Require(triangles==8646,"Source cat topology unexpectedly changed");

@@ -18,7 +18,7 @@ public static class NaturalCatWalkChecks
             go.transform.position=new Vector3(.5f,.1f,-.3f);Require(actor.ConfirmOrientation(37),"Cat walk yaw rejected");
             var bottom=go.transform.position+Vector3.up*.02f;Require(actor.FitRepresentation(bottom,bottom+Vector3.up*.35f,true),"Cat walk fit rejected");
             var rootPosition=go.transform.position;var rootRotation=go.transform.rotation;
-            var skins=rig.GetComponentsInChildren<SkinnedMeshRenderer>();Require(skins.Length==3,"Cat skins changed");
+            var skins=NaturalPetModelChecks.SourceSkins(rig);Require(skins.Length==3,"Cat skins changed");
             var clips=rig.Animator.runtimeAnimatorController.animationClips;
             var walk=clips.Single(c=>c.name.EndsWith("BicolorCat_Walk",StringComparison.Ordinal));Require(Mathf.Abs(walk.length-2)<.002f&&walk.isLooping,"Missing 2s loop");
             clips.Single(c=>c.name.EndsWith("BicolorCat_Idle",StringComparison.Ordinal)).SampleAnimation(rig.Animator.gameObject,0);
