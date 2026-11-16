@@ -336,7 +336,7 @@ namespace MagicMR
                     if(scenario==ParkScenario.Tree&&magicTree){state.wind=true;state.sealedTree=false;state.rewarded=false;treeGustUntil=Time.unscaledTime+2.4f;Feedback="Willow: branch lash and recovery";}
                     // HCI MangaPet B (circle): open the dream, including on repeated casts.
                     if(scenario==ParkScenario.Pet) { state.bubble=true; Feedback="Dream opened; swipe to pop"; }
-                    if(scenario==ParkScenario.Plant)Feedback="Virtual plant: A little light helps me grow.";
+                    if(scenario==ParkScenario.Plant){StartPlantVoice();Feedback="Virtual plant: A little light helps me grow.";}
                     if(scenario==ParkScenario.Tree&&!magicTree)Feedback="Season tree awakened";
                     if(scenario==ParkScenario.Statue) {
                         Feedback=naturalStatueStretch?"Virtual statue: stretching and returning to rest":"Bronze bust awakened; full-body animation pending";
@@ -358,6 +358,7 @@ namespace MagicMR
                     }
                     if(scenario==ParkScenario.Plant) {
                         // Clear the magic, not the confirmed real-world placement or undo snapshot.
+                        StopPlantVoice();
                         state=default;targetGrowth=.45f;targetSeason=0;targetColor=new Color(.25f,.65f,.4f);
                         // Selection is controller navigation state, not a magic effect.
                         particleCount=0;foreach(var p in pool)p.gameObject.SetActive(false);
@@ -378,7 +379,7 @@ namespace MagicMR
                     windDirection=(hand-transform.position).sqrMagnitude>.001f?(transform.position-hand).normalized:Vector3.right;
                     Emit(ParkAction.Wind,24); if(scenario==ParkScenario.Statue) { Feedback=story+"\nSource: "+storySource; if(storyAudio)audioSource.PlayOneShot(storyAudio); } break;
             }
-            audioSource.PlayOneShot(action==ParkAction.Reward?MagicMRAudioFactory.Ding:MagicMRAudioFactory.ResetChime,.5f);
+            if(!(scenario==ParkScenario.Plant&&action==ParkAction.Awaken))audioSource.PlayOneShot(action==ParkAction.Reward?MagicMRAudioFactory.Ding:MagicMRAudioFactory.ResetChime,.5f);
             elapsed=0; float duration=action==ParkAction.Awaken&&naturalStatueStretch?naturalStatueStretch.Duration:Mathf.Max(.3f,transitionSeconds);
             while(elapsed<duration)
             {
@@ -474,7 +475,7 @@ namespace MagicMR
             if(scenario==ParkScenario.Plant && branchRoot)branchRoot.localScale=new Vector3(1,Mathf.Lerp(.15f,1.4f,.45f),1);
             if(built) ApplyVisibility();
         }
-        void Cancel() { if(statueScan)statueScan.gameObject.SetActive(false);if(naturalPetRig)naturalPetRig.ResetPose();if(naturalBronze)naturalBronze.ResetPose();if(naturalStatueStretch)naturalStatueStretch.ResetPose();StopAllCoroutines(); RestoreStoppedScales();motion=null; if(audioSource)audioSource.Stop(); particleCount=0; foreach(var p in pool)if(p)p.gameObject.SetActive(false); if(preview)preview.gameObject.SetActive(false); if(spell)spell.gameObject.SetActive(false); bend=spin=stretch=0; dance=Vector3.zero; }
+        void Cancel() { StopPlantVoice(); if(statueScan)statueScan.gameObject.SetActive(false);if(naturalPetRig)naturalPetRig.ResetPose();if(naturalBronze)naturalBronze.ResetPose();if(naturalStatueStretch)naturalStatueStretch.ResetPose();StopAllCoroutines(); RestoreStoppedScales();motion=null; if(audioSource)audioSource.Stop(); particleCount=0; foreach(var p in pool)if(p)p.gameObject.SetActive(false); if(preview)preview.gameObject.SetActive(false); if(spell)spell.gameObject.SetActive(false); bend=spin=stretch=0; dance=Vector3.zero; }
         public void ExitAndDestroy() {
             if(IsExiting)return;
             if(!Application.isPlaying || !isActiveAndEnabled || !built || !visual) {Destroy(gameObject);return;}

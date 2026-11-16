@@ -29,6 +29,7 @@ namespace MagicMR
             plantSpeech.fontSize=40;plantSpeech.characterSize=unit*.48f;plantSpeech.anchor=TextAnchor.MiddleCenter;
             plantSpeech.alignment=TextAlignment.Center;plantSpeech.color=new Color(.91f,.90f,.78f);
             plantSpeech.gameObject.SetActive(false);
+            BuildPlantVoice();
         }
         void StepPlantDialogue(float now)
         {
@@ -41,7 +42,8 @@ namespace MagicMR
                 Vector3 facing=Vector3.ProjectOnPlane(viewer.transform.position-eyes.position,Vector3.up);
                 if(facing.sqrMagnitude>.0001f)eyes.rotation=Quaternion.LookRotation(facing,Vector3.up);
             }
-            float syllable=state.awake?.25f+.75f*Mathf.Abs(Mathf.Sin(now*6.4f)*Mathf.Sin(now*2.1f)):0;
+            StepPlantVoice();
+            float syllable=PlantVoiceMouth;
             plantMouth.localScale=new Vector3(plantMouthScale.x,plantMouthScale.y*(1+syllable*3),plantMouthScale.z);
         }
         void BuildNaturalPlant()
