@@ -26,12 +26,6 @@
 
 本次通过分离 Unity 与离线 IL2CPP 转换降低重叠内存；转换最低采样可用 RAM 3.827 GiB，随后完整构建最低 4.279 GiB。3 GiB 下限未降低，单编译进程、日志与磁盘增长预算继续生效，保留 Library，无训练或自动重启。后续需要连接 PICO 验证真实输入；Goal 保持 active。
 
-## 当前目标：HCI 魔法乐园（2026-11-15）
-
-开发以 GitHub HCI 分支的八个体验用例及四维手势交互为基线：打火机、打人柳、像素虫、历史石像、出租屋、桌面植物、漫画萌宠、四季树。最新需求来源、现有入口对应、待补交互与完成条件见 [全分支计划顶部](BRANCH_SCENE_PLAN.md)。六个 Park 入口和原场景回归不代表八用例已逐项完成。
-
-用户提供的森林、ProBuilder、Polybrush、itch.io、World Labs、fal 和 image-blaster 图片是制作方法参考；应按上述用例选择性使用。ForestBlockout/ForestStudy 仅为工具与美术候选，不作为独立森林漫游主线。已授权的 YOLO 训练、资源限额和 PICO 实机验收要求继续保留。
-
 ## 当前工作区接续（2026-11-15）
 
 五个远程分支已审查并选择性整合；默认主线提供 Tree、Bugs、Statue、Room、Plant、Pet 六个 Park 内容入口。自然树、十二卷、石雕、双色猫、猎狼犬、阅读角家具已采用有来源和许可记录的模型/原始贴图；昆虫和水母效果使用项目原创几何。视觉方向为自然材质和克制反馈，生成概念图不作为模型交付。
@@ -60,23 +54,7 @@
 
 基于 Unity 和 PICO 的 MR 手势交互项目。当前主线通过 **YOLO 检测真实打火机 + 双目图像估计三维位置**，将虚拟打火机叠加到实物上，再用手势触发碳化、生命化、躲闪、变花和放大效果。
 
-当前默认场景为 `Assets/Scenes/BridgeStereoFusion.unity`，默认跟随模式为 **VisualAverage（1.10.0，最近三帧视觉位置加权平均）**。仓库同时保留桌面卡牌捕捉、AR 图像追踪和早期 MR 场景。
-
-新增独立实验场景 `Assets/Scenes/BridgeStereoPoseFusion.unity`：保留原双目位置，增加 F2G-Pose 旋转通路。录制、Linux 推理环境、构建入口和当前验证限制见 [F2G_POSE.md](F2G_POSE.md)。真实模型推理与头显旋转尚未验收，默认主线不变。
-
-Pose 1.11.1 / 26 已修复通信隔离：通过原 YOLO 回复携带 PC 姿态服务就绪通知，服务不可用时头显不连接姿态端口。五项实机对照测试均无 YOLO 超时，约 6.66–6.78 FPS。WSL／Ubuntu 和独立 CUDA 环境已安装，真实 F2G 官方样例推理通过，预热后约 79–117 ms；完整模型共存与实物旋转仍待验收。
-
-Pose 1.11.2 / 27 已安装：真实模型已对 PICO 打火机帧输出有效姿态，原三帧平均定位也出现锁定。新增 PICO 原始行方向适配、模型启动预热和实测延迟适配；完整服务只监听本机 localhost。最终旋转稳定性仍在实机验收，启动方法与证据见 [F2G_POSE.md](F2G_POSE.md)。
-
-定位修复版 **Magic MR Stereo Repair 1.10.1** 使用独立场景 `Assets/Scenes/BridgeStereoRepair.unity`，完全移除场景中的 F2G 客户端，保留原双目与三帧平滑，并增加限量左右图、检测框及匹配失败诊断。已构建并安装，真实打火机定位和点赞召唤待实机验收；操作与记录见 [STEREO_REPAIR.md](STEREO_REPAIR.md)。
-
-## 开发快照状态（2026-11-09，历史记录）
-
-本分支备份特效与内部结构优化、双目诊断、F2G 姿态实验及检测服务改动，尚未作为稳定版本验收。最新特效说明见 [VFX_POLISH.md](VFX_POLISH.md)。
-
-文中此前的构建、安装与回放结果是对应日期的实验记录，不代表当前全部修改已经重新验证。最近一次 Python 回归尝试出现错误和本机 socket 超时，已停止，原因尚未确定；当前快照未重新完成 Unity 编译和头显验收。旋转稳定性、定位召唤和最新特效需继续验证。
-
-日志、回放图像、APK 和本机推理环境未纳入本次提交。新机器需按文档配置 PICO SDK、Python 与 F2G 环境；文档中 `.codex-tmp/` 的历史证据路径不会随克隆提供。
+当前默认场景为 `Assets/Scenes/BridgeStereoFusion.unity`，默认跟随模式为 **VisualAverage（1.11.0，最近三帧视觉位置加权平均）**。仓库同时保留桌面卡牌捕捉、AR 图像追踪和早期 MR 场景。
 
 ## 当前功能与限制
 
@@ -88,7 +66,7 @@ Pose 1.11.2 / 27 已安装：真实模型已对 PICO 打火机帧输出有效姿
 - Inspector 中可选择 `HybridGrip` 使用历史手部接续模式；它不是当前默认模式。
 - 已有编辑器合成回归检查；定位精度、延迟和遮挡恢复效果仍需 PICO 实机验证，不能把滤波参数或内部误差指标当成实测精度。
 
-详细实现和历史记录见 [STEREO_YOLO.md](STEREO_YOLO.md)。该文件包含多个历史版本，当前行为以顶部 1.10.0 说明和代码为准。
+详细实现和历史记录见 [STEREO_YOLO.md](STEREO_YOLO.md)。该文件包含多个历史版本，当前行为以本分支 1.11.0 说明和代码为准。
 
 ## 环境
 
@@ -101,7 +79,7 @@ Pose 1.11.2 / 27 已安装：真实模型已对 PICO 打火机帧输出有效姿
 | PC 检测 | Python、Ultralytics、OpenCV、PyTorch |
 | 设备连接 | 支持所用 PICO 相机接口的头显，开启手部追踪、USB 调试及相机相关权限 |
 
-`Packages/manifest.json` 中的 PICO SDK 当前引用本地路径 `file:D:/Unity/PICO`，首次打开前需要改为自己的 SDK 位置。
+`Packages/manifest.json` 中的 PICO SDK 已固定到官方 3.4.0 提交 `https://github.com/Pico-Developer/PICO-Unity-Integration-SDK.git#c93a59bab88d337fe0d54140499712897cedbe52`，首次打开会由 Unity Package Manager 下载，无需配置 Windows 本地路径。
 
 ## 快速运行当前 MR 场景
 
@@ -117,13 +95,13 @@ python -m venv .venv
 
 无需预览窗口时，可给最后一条命令加 `--headless`。服务接收的是 **PICO 相机图像**，不是电脑摄像头。
 
-当前定位与姿态服务共用 `object-detection-demo/detector_config.py`，默认 conf=0.399、imgsz=640、iou=0.7，加载的权重为：
+当前 `tcp_server.py` 实际加载的权重为：
 
 ```text
-object-detection-demo/weights/best_yolo26n_assgn2_v6_50e.pt
+object-detection-demo/weights/best_yolo26n_quad_v4_50e.pt
 ```
 
-本开发版本已明确切换到 v6 部署权重；其他训练结果不会自动替换模型。启动时检查控制台输出的权重名称；训练资料与检测工具另见 [object-detection-demo](object-detection-demo/README.md)，默认配置以 `detector_config.py` 为准，更换权重后需重启定位和姿态服务。
+本地 v5 / v6 / v7 训练结果不会自动替换部署模型。启动时检查控制台输出的权重名称；训练资料与检测工具另见 [object-detection-demo](object-detection-demo/README.md)，服务的实际配置以 `tcp_server.py` 为准。
 
 ### 2. 连接头显
 
@@ -147,9 +125,9 @@ adb reverse tcp:5005 tcp:5005
 | 项目 | 菜单构建结果 |
 | --- | --- |
 | APK | `Builds/Android/BridgeStereoFusion.apk` |
-| 应用名 | `Magic MR Stereo YOLO` |
-| Android 包名 | `com.yn.picmagicmr.stereo` |
-| 版本 / versionCode | `1.10.0` / `22` |
+| 应用名 | `Magic MR 优化版` |
+| Android 包名 | `com.yn.picmagicmr.stereo.optimized` |
+| 版本 / versionCode | `1.11.0` / `24` |
 | 构建类型 | Development，关闭自定义签名 |
 
 菜单结束后恢复原来的应用标识、名称、版本和签名选项，因此 Project Settings 中保存的版本号可能与上述 APK 版本不同。菜单也会关闭 Spatial Mesh，当前双目定位不依赖场景网格。
@@ -215,7 +193,7 @@ adb install -r Builds/Android/BridgeStereoFusion.apk
 启用实验会话并生成日志后，可导出：
 
 ```powershell
-adb pull /storage/emulated/0/Android/data/com.yn.picmagicmr.stereo/files/StudyLogs/ ./StudyLogs/
+adb pull /storage/emulated/0/Android/data/com.yn.picmagicmr.stereo.optimized/files/StudyLogs/ ./StudyLogs/
 ```
 
 实际日志位置也可从 `[DataLogger] Session started` 输出中确认。
@@ -263,3 +241,36 @@ adb pull /storage/emulated/0/Android/data/com.yn.picmagicmr.stereo/files/StudyLo
 - `Find lighter/runs/` 下未跟踪的训练输出、检查点、图表和结果归档。
 
 忽略规则保留本地文件，但这些文件不会随克隆下载；复现实验需要另外准备原始数据与相关产物。已被 Git 跟踪的历史训练文件不会因为新增规则而自动移除。不要整体忽略 `Assets/` 或所有 `.meta`，也不要将训练输出目录与实际部署权重目录混淆。
+
+## restore-4d-lighter 1.11.0：以 main 为基础的交互版本
+
+本分支使用 main 的双目视觉跟随场景和统一右手手势规则，保留增强施法光效。不包含旧分支的额外叙事情境。修改和发布只发生在 restore-4d-lighter，main 不受影响。
+
+首次标定要求完整检测框在画面内部、YOLO 置信度至少 0.6、可靠的双目深度和不超过 0.3 秒的图像。连续至少五次测量、持续至少 0.6 秒，并检查中心、真实高度、宽度和底部偏移的稳定性；未满足时继续提示保持直立和静止，不显示模型。站稳后右手在目标附近点赞约 0.3 秒召唤，再张开手掌至少 0.15 秒解锁施法。
+
+右手快速捏合后松开产生烧焦材质与烟雾；伸食指画闭合小圈产生眼睛和呼吸；张掌快速横挥使模型短暂侧向躲闪并返回移动中的实物锚点；握拳后张开隐藏打火机并在底部生成花朵。双手全部张开，在目标附近分别向左、右拉开，单次放大 1.35 倍，累计上限为 3 倍，到达上限后再做一次展示内部示意结构。双手动作期间独占识别，避免同时触发横挥；手回到起始间距或闭合后才能重复。左手在 Reset 按钮附近真实捏合并保持 0.3 秒，会清除效果、尺寸变化和注册信息，然后重新定位和召唤。
+
+施法光效采用 2.5 倍尺寸、1.8 倍持续时间和 1.6 倍亮度；可在 BridgeTest 源场景的 GestureDetectors 上添加 RightHandSpellVfx 后在 Inspector 调整。池容量限制为 80，Reset、禁用和暂停会清除残留光效。
+
+视觉跟随保持首次尺寸与朝向，使用最近三帧加权位置。按直立物体的真实高度检查跟随结果，避免视角俯仰使检测框看起来变短。短暂遮挡时保持最后可靠位置；露出机身后，过期或不可靠测量不移动锚点，较长失踪或大位移需连续三次可靠测量恢复。完全遮挡时无法观察真实移动，不估计旋转。
+
+### 替换虚拟模型
+
+1. 将 FBX、GLB 转换后的 Unity 模型或 prefab 导入 Assets，在 Project 窗口选择模型。
+2. 点击 **Bridge → Use Selected Lighter Model**，编辑生成的 `Assets/Resources/MagicMR/LighterModelSettings.asset`。
+3. 设置 `rotationDegrees`，让模型直立方向为 +Y、正面为 +Z。设置 `metersPerUnit`：米为 1，厘米为 0.01，毫米为 0.001；Unity 导入器已换算成米时保持 1。
+4. 使用 **Bridge → Build Stereo YOLO APK**。构建替换视觉网格，保留 Lighter 根对象、RealityEditor、定位和手势组件；首次标定自动按真实高度缩放并对齐底部。导入 prefab 的脚本和物理碰撞不会接管定位。
+5. 清空配置中的 `modelPrefab` 可恢复默认打火机。不要删除或整体替换场景中的 Lighter 根对象。
+
+这里的模型替换只改变虚拟显示，不改变 YOLO 的 Lighter 类。更换真实识别对象或 YOLO 权重需要另外训练/验证检测与尺寸假设。
+
+### 验证
+
+构建运行 RightHandSpellVfxChecks、StereoIntegrationChecks 和 RequestedInteractionChecks，覆盖手势、光效池、首次完整标定、视觉位置/遮挡恢复、模型底部注册、3 倍放大和内部结构复位。这些是合成回归，不是实测精度报告。实机请测试不同距离与视角，缓慢移动、遮挡后恢复，并观察调试面板状态及 StudyLogs；不可靠深度会保持锚点而非伪造位置。
+
+优化版包名为 `com.yn.picmagicmr.stereo.optimized`，显示名为 `Magic MR 优化版`。可与包名 `com.yn.picmagicmr.stereo` 的 `Magic MR 原版` 同时安装。
+
+
+## Unity animation and bounded YOLO delivery (2026-11-15)
+
+See [integration steps and official references](Reports/GITHUB_INTEGRATION.txt), [delivery checksums](Reports/github-delivery-20261115/delivery-manifest.json), and [offline animation previews](Previews/scene-animation-20261115). The new two-class model is a rejected candidate archive, not a deployment release. Cat/dog already have COCO pretrained classes; headset-domain validation remains pending. The isolated combined restore tree passed 14-scene auditing, natural-model geometry, six legacy coroutine flows, six PlayMode tests, and six rendered saved-scene UI flows. See [combined validation](Reports/github-delivery-20261115/combined-validation/summary.json) for exact scope and guard stops. A fresh combined all-14-scenes APK passed IL2CPP/Gradle packaging, signature/CRC/ARM64, exact scene paths and 40 source bindings. See the combined validation report and low-memory-build.txt. Main/Pose/Repair binaries remain from the main workspace; physical PICO and recognition acceptance are pending.
