@@ -19,3 +19,5 @@
 本地文件为 Builds/Android/HciWillowValidation-20261116.apk，应用标识 com.yn.picmagicmr.validation。这是独立的 14 场景编译验证包，应用导航和头显播放仍需验收。此前报告的“未进入 APK”保留为当时状态，本包包含树木选择和新冠层。
 
 PICO 未连接，未进行实物 YOLO、真实手势、双眼、遮挡、音效听感或帧率/内存设备验收。没有新增合格 YOLO 权重；树干裸枝、暗色冠层与其他美术仍需完善，八用例 32 效果和模型训练/适用大模型接入 Goal 保持 active。GitHub 上传回执将在实际上传并校验后附上。
+
+下载：[打人柳 Android 验证包](https://github.com/JC4747-jc/magic-wand-amusement-park/releases/tag/hci-willow-validation-20261116)。服务器摘要与本地 SHA256 一致，见 [上传回执](release-receipt.json)。这是未完成 PICO 验收的预览版本。

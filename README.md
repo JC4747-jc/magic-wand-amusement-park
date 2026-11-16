@@ -2,6 +2,8 @@
 
 ## 最新打人柳 Android 验证包（2026-11-16）
 
+下载：[HciWillowValidation-20261116.apk](https://github.com/JC4747-jc/magic-wand-amusement-park/releases/download/hci-willow-validation-20261116/HciWillowValidation-20261116.apk)（约 73.9 MiB）。[上传回执](Reports/hci-android-willow-20261116/release-receipt.json)已核对服务器 SHA256；PICO 真机仍未验收。
+
 树木体验选择入口与垂枝/窄柳叶冠层已编入 `HciWillowValidation-20261116.apk`，1650 项目源文件、14 场景、签名/CRC/ARM64、资源及类型检查通过。见 [构建范围和证据](Reports/hci-android-willow-20261116/README.md)。真实 YOLO/PICO、最终美术和全部 HCI 效果仍待完成。
 
 ## 打人柳垂枝与柳叶模型（2026-11-16 源码增量）
