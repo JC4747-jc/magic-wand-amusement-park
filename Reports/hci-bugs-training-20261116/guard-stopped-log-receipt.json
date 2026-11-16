@@ -1,0 +1,32 @@
+{
+  "owner": "magicmr-bounded-training-log-v1",
+  "run_id": "bugs-bootstrap-20261116-a",
+  "status": "FAILED",
+  "status_scope": "Invocation exit only; not accuracy or deployment acceptance",
+  "started_unix": 1794804357.4427214,
+  "prefix_limit_bytes": 1048576,
+  "tail_limit_bytes": 65536,
+  "helper_sha256": "f95157c7d9bb12f1bbafaa40eeb492a0dca49db303095c3e5fecd4b38dc215e7",
+  "cleanup": {
+    "removed": [],
+    "removed_count": 0,
+    "removed_bytes": 0,
+    "removed_manifest_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "remaining_bytes": 0,
+    "limit_bytes": 8388608
+  },
+  "scope": "Python stdout/stderr; no native file-descriptor or external-tool log capture",
+  "error": "RuntimeError: Host RAM floor or process RSS ceiling crossed",
+  "finished_unix": 1794804367.4328127,
+  "received_bytes": 9616,
+  "written_log_bytes": 19232,
+  "log_middle_omitted": false,
+  "cleanup_after": {
+    "removed": [],
+    "removed_count": 0,
+    "removed_bytes": 0,
+    "removed_manifest_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "remaining_bytes": 20142,
+    "limit_bytes": 8388608
+  }
+}

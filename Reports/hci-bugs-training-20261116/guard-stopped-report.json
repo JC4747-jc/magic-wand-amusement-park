@@ -1,0 +1,89 @@
+{
+  "purpose": "BUGS_BOOTSTRAP_NOT_FULL_PROJECT_OR_DEPLOYMENT_ACCEPTANCE",
+  "status": "FAILED",
+  "accepted_for_deployment": false,
+  "run": "/opt/magicmr-yolo/runs/bugs-bootstrap-20261116-a",
+  "runner_sha256": "f188187497d3e33f041e77f90a58e195a10393b71287c779018bc260fa08b534",
+  "limits": {
+    "run_bytes": 134217728,
+    "seconds": 900,
+    "allocator_fraction": 0.55,
+    "workers": 0,
+    "batch": 1
+  },
+  "log_helper_sha256": "f95157c7d9bb12f1bbafaa40eeb492a0dca49db303095c3e5fecd4b38dc215e7",
+  "log_receipt": "/mnt/c/Users/Administrator/Documents/ChatGPT/mr/.codex-tmp/yolo-training/run-logs/bugs-bootstrap-20261116-a.run.json",
+  "overlay_review_sha256": "260f022f14aa6d704a5d4b3a24f43614f3a693e0866161a86da8aa97d04607ca",
+  "dataset_sha256": "ac49f4d5b8382de5e82869aebf78dd639282ddb2a89cc05e9893d4fd4c908345",
+  "split_counts": {
+    "train": {
+      "Spider": 12,
+      "background": 2,
+      "Cockroach": 9
+    },
+    "valid": {
+      "Spider": 3,
+      "background": 2,
+      "Cockroach": 2
+    },
+    "test": {
+      "Spider": 3,
+      "background": 2,
+      "Cockroach": 3
+    }
+  },
+  "versions": {
+    "torch": "2.4.0+cu124",
+    "ultralytics": "8.4.212",
+    "python": "3.10.19"
+  },
+  "stats": {
+    "batches": 23,
+    "optimizer_steps": 17,
+    "parameter_changed": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "losses": {
+          "box_loss": 1.2714626789093018,
+          "cls_loss": 15.274104118347168,
+          "l1_loss": 0.03256634250283241
+        }
+      }
+    ]
+  },
+  "error": "RuntimeError: Host RAM floor or process RSS ceiling crossed",
+  "torch_peak_allocated_bytes": 177532416,
+  "torch_peak_reserved_bytes": 220200960,
+  "resource_samples": [
+    {
+      "elapsed_s": 0.0,
+      "host_free_bytes": 5781864448,
+      "process_rss_bytes": 553168896,
+      "gpu_free_bytes": 5318377472,
+      "torch_allocated_bytes": 0,
+      "torch_reserved_bytes": 0,
+      "run_bytes": 0
+    },
+    {
+      "elapsed_s": 3.952,
+      "host_free_bytes": 4309626880,
+      "process_rss_bytes": 1438588928,
+      "gpu_free_bytes": 5133828096,
+      "torch_allocated_bytes": 54341632,
+      "torch_reserved_bytes": 125829120,
+      "run_bytes": 15576607
+    },
+    {
+      "elapsed_s": 7.324,
+      "host_free_bytes": 3012001792,
+      "process_rss_bytes": 2308423680,
+      "gpu_free_bytes": 4997513216,
+      "torch_allocated_bytes": 112490496,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 15576607
+    }
+  ],
+  "run_bytes": 15576607,
+  "resource_scope": "Callback/5-second samples plus allocator peak, not continuous full-device peak"
+}

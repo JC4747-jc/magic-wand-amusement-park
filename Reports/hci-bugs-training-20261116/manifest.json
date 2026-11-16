@@ -1,0 +1,104 @@
+{
+  "baseCommit": "6dabf8ce4bb00d80bc5b659a515c9d4941c97728",
+  "status": "TRAINING_COMPLETED_MODEL_FAILED_HOLDOUT_NOT_DEPLOYED",
+  "candidateAccepted": false,
+  "sourceSHA256": {
+    "Tools/prepare_bugs_bootstrap.py": "5758b504940f77c117f09b694114f738dbf419e416fdc377408d4e3ac338fbfe",
+    "Tools/train_bugs_bootstrap.py": "dc4f28120dfdc25b34832f0b23a4cf4eab0c53ce37160bca3a8fb82c705f45f2",
+    "Tools/train_bugs_bootstrap_bounded.ps1": "2e75deaf2724d5af440308aefe22c6672df6037658c39d5c5847f975abbf0d78",
+    "Tools/validate_bugs_bootstrap.py": "2e8286870332a9312a962ee63018edc6d3f95266d77b2fb76b7d2a17cbe32de9",
+    "Tools/render_bugs_bootstrap_diagnostics.py": "2e7427099fb211ad6acc1d4af7c1917a4ac776bc526216fc484ebcfa4cd70e3d",
+    "TrainingData/bugs-bootstrap-review-v1.json": "1e0838e81c692a38b265ed7bf7d621341dbc13339a4d0203fe8e7c5e8e686da0",
+    "TrainingData/bugs-bootstrap-split-v1.json": "ac49f4d5b8382de5e82869aebf78dd639282ddb2a89cc05e9893d4fd4c908345",
+    "TrainingData/bugs-bootstrap-overlay-review-v1.json": "260f022f14aa6d704a5d4b3a24f43614f3a693e0866161a86da8aa97d04607ca"
+  },
+  "initialWeightSHA256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "artifactsKeptLocalNotPublished": {
+    "best.pt": {
+      "bytes": 5422270,
+      "sha256": "55977500e75b02efb785e9188f8a5f96b5b3fad449c6f9e6306cfb5d25c913d1"
+    },
+    "last.pt": {
+      "bytes": 5422270,
+      "sha256": "700db3ed239ad5f928e8b9642e6da64b9324382d246ff53188bd64fdc995b9fe"
+    }
+  },
+  "artifactLocalDirectory": ".codex-tmp/yolo-training/artifacts/bugs-bootstrap-20261116-b",
+  "summary": {
+    "spiderOriginalsIndividuallyReviewed": 20,
+    "quarantinedNotNegatives": 2,
+    "frozenImages": 38,
+    "splitCounts": {
+      "train": {
+        "Spider": 12,
+        "background": 2,
+        "Cockroach": 9
+      },
+      "valid": {
+        "Spider": 3,
+        "background": 2,
+        "Cockroach": 2
+      },
+      "test": {
+        "Spider": 3,
+        "background": 2,
+        "Cockroach": 3
+      }
+    },
+    "epochs": 20,
+    "trainingBatches": 460,
+    "optimizerSteps": 454,
+    "validationBestCheckpoint": {
+      "metrics/precision(B)": 0.0011494252873563218,
+      "metrics/recall(B)": 0.16666666666666666,
+      "metrics/mAP50(B)": 0.08375,
+      "metrics/mAP50-95(B)": 0.04187500000000001,
+      "fitness": 0.04187500000000001
+    },
+    "test": {
+      "metrics/precision(B)": 0.0,
+      "metrics/recall(B)": 0.0,
+      "metrics/mAP50(B)": 0.0,
+      "metrics/mAP50-95(B)": 0.0,
+      "fitness": 0.0
+    },
+    "testObjectsMissedAtConf025": 7,
+    "testBackgroundFrames": 2
+  },
+  "resources": {
+    "minimumSampledHostFreeGiB": 3.6606369018554688,
+    "maximumSampledRSSMiB": 2208.0078125,
+    "maximumSampledRunMiB": 64.54663944244385,
+    "finalRunMiB": 25.201669692993164,
+    "callbackDurationSeconds": 79.158,
+    "torchPeakAllocatedMiB": 169.44921875,
+    "cgroup": {
+      "memory.max": "3221225472",
+      "memory.high": "2684354560",
+      "memory.swap.max": "0"
+    },
+    "completedRunLogBytes": 113046,
+    "samplingScope": "Callback/5-second samples plus allocator peak, not continuous full-device peak"
+  },
+  "firstAttempt": {
+    "status": "FAILED",
+    "error": "RuntimeError: Host RAM floor or process RSS ceiling crossed",
+    "minimumSampledHostFreeGiB": 2.805145263671875,
+    "epochs": 1,
+    "testEvaluated": false,
+    "followup": "Waited for host/WSL idle memory reclamation; added 6 GiB pre-import gate, transient cgroup cap/no-swap, disabled train-loader pinning and trimmed unused native allocations. No safety floor lowered or data/test/hyperparameters changed."
+  },
+  "productionProfilesUnchanged": true,
+  "fiveSharedF2GFilesUnchanged": true,
+  "newModelDownloads": 0,
+  "newAPK": false,
+  "PICOConnected": false,
+  "wrapperValidation": "PowerShell syntax parsed; completed run used the same explicit systemd-run/timeout command, cgroup settings verified by the Python process. Wrapper was not rerun to avoid repeated test use.",
+  "limitations": [
+    "Small public-photo bootstrap, not independent PICO validation or sufficient deployment coverage",
+    "Cockroach photos were already used in a separate earlier failed candidate experiment; not a fresh project-wide test benchmark",
+    "No training/deployment acceptance for other eleven target classes",
+    "No device image sequences, real-world tracking stability or HCI gesture measurements"
+  ],
+  "mainIndexSHA256": "aab38b747bb2453015b4ce247543cf2dd6aa54d5d5586cf1fcafce46a0398c5a"
+}

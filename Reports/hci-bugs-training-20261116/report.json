@@ -1,0 +1,961 @@
+{
+  "purpose": "BUGS_BOOTSTRAP_NOT_FULL_PROJECT_OR_DEPLOYMENT_ACCEPTANCE",
+  "status": "CANDIDATE_TRAINED_AND_TESTED_NOT_DEPLOYMENT_ACCEPTED",
+  "accepted_for_deployment": false,
+  "run": "/opt/magicmr-yolo/runs/bugs-bootstrap-20261116-b",
+  "runner_sha256": "dc4f28120dfdc25b34832f0b23a4cf4eab0c53ce37160bca3a8fb82c705f45f2",
+  "limits": {
+    "run_bytes": 134217728,
+    "seconds": 900,
+    "allocator_fraction": 0.55,
+    "workers": 0,
+    "batch": 1
+  },
+  "log_helper_sha256": "f95157c7d9bb12f1bbafaa40eeb492a0dca49db303095c3e5fecd4b38dc215e7",
+  "log_receipt": "/mnt/c/Users/Administrator/Documents/ChatGPT/mr/.codex-tmp/yolo-training/run-logs/bugs-bootstrap-20261116-b.run.json",
+  "cgroup_limits": {
+    "memory.max": "3221225472",
+    "memory.high": "2684354560",
+    "memory.swap.max": "0"
+  },
+  "overlay_review_sha256": "260f022f14aa6d704a5d4b3a24f43614f3a693e0866161a86da8aa97d04607ca",
+  "dataset_sha256": "ac49f4d5b8382de5e82869aebf78dd639282ddb2a89cc05e9893d4fd4c908345",
+  "split_counts": {
+    "train": {
+      "Spider": 12,
+      "background": 2,
+      "Cockroach": 9
+    },
+    "valid": {
+      "Spider": 3,
+      "background": 2,
+      "Cockroach": 2
+    },
+    "test": {
+      "Spider": 3,
+      "background": 2,
+      "Cockroach": 3
+    }
+  },
+  "versions": {
+    "torch": "2.4.0+cu124",
+    "ultralytics": "8.4.212",
+    "python": "3.10.19"
+  },
+  "stats": {
+    "batches": 460,
+    "optimizer_steps": 454,
+    "parameter_changed": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "losses": {
+          "box_loss": 1.2714626789093018,
+          "cls_loss": 15.274104118347168,
+          "l1_loss": 0.03256634250283241
+        }
+      },
+      {
+        "epoch": 2,
+        "losses": {
+          "box_loss": 1.3185092210769653,
+          "cls_loss": 2.6029105186462402,
+          "l1_loss": 0.03701188415288925
+        }
+      },
+      {
+        "epoch": 3,
+        "losses": {
+          "box_loss": 1.3036510944366455,
+          "cls_loss": 2.5799949169158936,
+          "l1_loss": 0.037068773061037064
+        }
+      },
+      {
+        "epoch": 4,
+        "losses": {
+          "box_loss": 1.3273897171020508,
+          "cls_loss": 2.490485906600952,
+          "l1_loss": 0.03756820037961006
+        }
+      },
+      {
+        "epoch": 5,
+        "losses": {
+          "box_loss": 1.43503999710083,
+          "cls_loss": 2.317803382873535,
+          "l1_loss": 0.03699579834938049
+        }
+      },
+      {
+        "epoch": 6,
+        "losses": {
+          "box_loss": 1.384911060333252,
+          "cls_loss": 2.176252841949463,
+          "l1_loss": 0.04094133526086807
+        }
+      },
+      {
+        "epoch": 7,
+        "losses": {
+          "box_loss": 1.4408748149871826,
+          "cls_loss": 2.0478687286376953,
+          "l1_loss": 0.033978089690208435
+        }
+      },
+      {
+        "epoch": 8,
+        "losses": {
+          "box_loss": 1.3607325553894043,
+          "cls_loss": 2.019312620162964,
+          "l1_loss": 0.039535194635391235
+        }
+      },
+      {
+        "epoch": 9,
+        "losses": {
+          "box_loss": 1.4117850065231323,
+          "cls_loss": 2.157071352005005,
+          "l1_loss": 0.04373910650610924
+        }
+      },
+      {
+        "epoch": 10,
+        "losses": {
+          "box_loss": 1.4320571422576904,
+          "cls_loss": 2.1818647384643555,
+          "l1_loss": 0.041031621396541595
+        }
+      },
+      {
+        "epoch": 11,
+        "losses": {
+          "box_loss": 1.3810151815414429,
+          "cls_loss": 2.3160746097564697,
+          "l1_loss": 0.03944020718336105
+        }
+      },
+      {
+        "epoch": 12,
+        "losses": {
+          "box_loss": 1.4094867706298828,
+          "cls_loss": 1.9397789239883423,
+          "l1_loss": 0.04312804341316223
+        }
+      },
+      {
+        "epoch": 13,
+        "losses": {
+          "box_loss": 1.310310959815979,
+          "cls_loss": 2.2508320808410645,
+          "l1_loss": 0.03338862955570221
+        }
+      },
+      {
+        "epoch": 14,
+        "losses": {
+          "box_loss": 1.3751580715179443,
+          "cls_loss": 1.9135926961898804,
+          "l1_loss": 0.03841857612133026
+        }
+      },
+      {
+        "epoch": 15,
+        "losses": {
+          "box_loss": 1.3595757484436035,
+          "cls_loss": 1.846380352973938,
+          "l1_loss": 0.03642692416906357
+        }
+      },
+      {
+        "epoch": 16,
+        "losses": {
+          "box_loss": 1.3911194801330566,
+          "cls_loss": 1.6601269245147705,
+          "l1_loss": 0.03745848312973976
+        }
+      },
+      {
+        "epoch": 17,
+        "losses": {
+          "box_loss": 1.4376252889633179,
+          "cls_loss": 1.9167819023132324,
+          "l1_loss": 0.04200977832078934
+        }
+      },
+      {
+        "epoch": 18,
+        "losses": {
+          "box_loss": 1.3450847864151,
+          "cls_loss": 1.9270908832550049,
+          "l1_loss": 0.03653109818696976
+        }
+      },
+      {
+        "epoch": 19,
+        "losses": {
+          "box_loss": 1.3864227533340454,
+          "cls_loss": 1.7826321125030518,
+          "l1_loss": 0.03895775228738785
+        }
+      },
+      {
+        "epoch": 20,
+        "losses": {
+          "box_loss": 1.3617305755615234,
+          "cls_loss": 1.676533818244934,
+          "l1_loss": 0.03988127410411835
+        }
+      }
+    ]
+  },
+  "artifacts": {
+    "best.pt": {
+      "bytes": 5422270,
+      "sha256": "55977500e75b02efb785e9188f8a5f96b5b3fad449c6f9e6306cfb5d25c913d1"
+    },
+    "last.pt": {
+      "bytes": 5422270,
+      "sha256": "700db3ed239ad5f928e8b9642e6da64b9324382d246ff53188bd64fdc995b9fe"
+    }
+  },
+  "initial_weight_sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "service_config_unchanged": true,
+  "five_shared_dependency_files_unchanged": true,
+  "training": {
+    "epochs": 20,
+    "batch": 1,
+    "workers": 0,
+    "imgsz": 416,
+    "image_cache": false,
+    "amp": true,
+    "seed": 42
+  },
+  "validation_metrics": {
+    "metrics/precision(B)": 0.0011494252873563218,
+    "metrics/recall(B)": 0.16666666666666666,
+    "metrics/mAP50(B)": 0.08375,
+    "metrics/mAP50-95(B)": 0.04187500000000001,
+    "fitness": 0.04187500000000001
+  },
+  "frozen_test_metrics": {
+    "metrics/precision(B)": 0.0,
+    "metrics/recall(B)": 0.0,
+    "metrics/mAP50(B)": 0.0,
+    "metrics/mAP50-95(B)": 0.0,
+    "fitness": 0.0
+  },
+  "per_class_test": [
+    {
+      "Class": "Cockroach",
+      "Images": 3.0,
+      "Instances": 3.0,
+      "Box-P": 0.0,
+      "Box-R": 0.0,
+      "Box-F1": 0.0,
+      "mAP50": 0.0,
+      "mAP75": 0.0,
+      "mAP50-95": 0.0
+    },
+    {
+      "Class": "Spider",
+      "Images": 3.0,
+      "Instances": 4.0,
+      "Box-P": 0.0,
+      "Box-R": 0.0,
+      "Box-F1": 0.0,
+      "mAP50": 0.0,
+      "mAP75": 0.0,
+      "mAP50-95": 0.0
+    }
+  ],
+  "confusion_matrix": {
+    "rows_predicted_columns_actual": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        4,
+        0
+      ]
+    ],
+    "names": [
+      "Cockroach",
+      "Spider",
+      "background"
+    ],
+    "confidence": 0.25,
+    "iou": 0.5,
+    "matching": "Class-agnostic greedy descending IoU, one-to-one, threshold .5; wrong-class matches are off-diagonal, unmatched predictions/targets are background FP/FN."
+  },
+  "test_error_analysis": [
+    {
+      "image": "oi-290e908272641aef",
+      "ground_truth": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            164,
+            77,
+            850,
+            664
+          ],
+          "xyxy_normalized": [
+            0.16015625,
+            0.10461956521739131,
+            0.830078125,
+            0.9021739130434783
+          ]
+        },
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            740,
+            538,
+            891,
+            662
+          ],
+          "xyxy_normalized": [
+            0.72265625,
+            0.7309782608695652,
+            0.8701171875,
+            0.8994565217391305
+          ]
+        }
+      ],
+      "background_only": false,
+      "prediction_count": 0,
+      "detections": [],
+      "unmatched_truth": [
+        0,
+        1
+      ],
+      "single_image_call_ms": 116.62647800000059
+    },
+    {
+      "image": "oi-050a2dbc5e91bb68",
+      "ground_truth": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            260,
+            135,
+            697,
+            861
+          ],
+          "xyxy_normalized": [
+            0.25390625,
+            0.13789581205311544,
+            0.6806640625,
+            0.8794688457609806
+          ]
+        }
+      ],
+      "background_only": false,
+      "prediction_count": 0,
+      "detections": [],
+      "unmatched_truth": [
+        0
+      ],
+      "single_image_call_ms": 21.26086399999849
+    },
+    {
+      "image": "oi-8aea1f1d12a7dc4f",
+      "ground_truth": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            160,
+            148,
+            850,
+            852
+          ],
+          "xyxy_normalized": [
+            0.15625,
+            0.14770459081836326,
+            0.830078125,
+            0.8502994011976048
+          ]
+        }
+      ],
+      "background_only": false,
+      "prediction_count": 0,
+      "detections": [],
+      "unmatched_truth": [
+        0
+      ],
+      "single_image_call_ms": 22.971460999997362
+    },
+    {
+      "image": "oi-1a4ce99db1425ee1",
+      "ground_truth": [],
+      "background_only": true,
+      "prediction_count": 0,
+      "detections": [],
+      "unmatched_truth": [],
+      "single_image_call_ms": 59.08749299999272
+    },
+    {
+      "image": "oi-28b565f93c252cc0",
+      "ground_truth": [],
+      "background_only": true,
+      "prediction_count": 0,
+      "detections": [],
+      "unmatched_truth": [],
+      "single_image_call_ms": 27.35879599998725
+    },
+    {
+      "image": "inat-414820062",
+      "ground_truth": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            225,
+            510,
+            455,
+            885
+          ],
+          "xyxy_normalized": [
+            0.29296875,
+            0.498046875,
+            0.5924479166666666,
+            0.8642578125
+          ]
+        }
+      ],
+      "background_only": false,
+      "prediction_count": 0,
+      "detections": [],
+      "unmatched_truth": [
+        0
+      ],
+      "single_image_call_ms": 69.36042000000953
+    },
+    {
+      "image": "inat-414168220",
+      "ground_truth": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            350,
+            288,
+            646,
+            528
+          ],
+          "xyxy_normalized": [
+            0.341796875,
+            0.3054082714740191,
+            0.630859375,
+            0.559915164369035
+          ]
+        }
+      ],
+      "background_only": false,
+      "prediction_count": 0,
+      "detections": [],
+      "unmatched_truth": [
+        0
+      ],
+      "single_image_call_ms": 67.48471600002404
+    },
+    {
+      "image": "inat-410056471",
+      "ground_truth": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            136,
+            329,
+            398,
+            487
+          ],
+          "xyxy_normalized": [
+            0.17639429312581065,
+            0.3212890625,
+            0.51621271076524,
+            0.4755859375
+          ]
+        }
+      ],
+      "background_only": false,
+      "prediction_count": 0,
+      "detections": [],
+      "unmatched_truth": [
+        0
+      ],
+      "single_image_call_ms": 45.74124399999846
+    }
+  ],
+  "timing_scope": "Eight fine-tuning-holdout single-image calls, including two backgrounds; first call may be cold, not headset or steady-state FPS.",
+  "baseline": "Current bugs profile has no accepted two-class custom weight. Existing COCO weights lack both classes; earlier Cockroach/BronzeBeast experiment is not a comparable baseline. No improvement claimed.",
+  "limitations": [
+    "Small public-photo bootstrap, not independent PICO validation or sufficient deployment coverage",
+    "Cockroach photos were already used in a separate earlier failed candidate experiment; not a fresh project-wide test benchmark",
+    "No training/deployment acceptance for other eleven target classes",
+    "No device image sequences, real-world tracking stability or HCI gesture measurements"
+  ],
+  "torch_peak_allocated_bytes": 177680384,
+  "torch_peak_reserved_bytes": 220200960,
+  "resource_samples": [
+    {
+      "elapsed_s": 0.029,
+      "host_free_bytes": 5676273664,
+      "process_rss_bytes": 553197568,
+      "gpu_free_bytes": 5318377472,
+      "torch_allocated_bytes": 0,
+      "torch_reserved_bytes": 0,
+      "run_bytes": 0
+    },
+    {
+      "elapsed_s": 3.656,
+      "host_free_bytes": 4240117760,
+      "process_rss_bytes": 1438236672,
+      "gpu_free_bytes": 5133828096,
+      "torch_allocated_bytes": 54341632,
+      "torch_reserved_bytes": 125829120,
+      "run_bytes": 15576607
+    },
+    {
+      "elapsed_s": 7.033,
+      "host_free_bytes": 4132925440,
+      "process_rss_bytes": 2210770944,
+      "gpu_free_bytes": 4997513216,
+      "torch_allocated_bytes": 112490496,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 15576607
+    },
+    {
+      "elapsed_s": 8.501,
+      "host_free_bytes": 4079632384,
+      "process_rss_bytes": 2251300864,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112511488,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67676871
+    },
+    {
+      "elapsed_s": 10.868,
+      "host_free_bytes": 4085334016,
+      "process_rss_bytes": 2251476992,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67676871
+    },
+    {
+      "elapsed_s": 11.861,
+      "host_free_bytes": 3930578944,
+      "process_rss_bytes": 2250108928,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67677184
+    },
+    {
+      "elapsed_s": 14.355,
+      "host_free_bytes": 3954511872,
+      "process_rss_bytes": 2249883648,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67677184
+    },
+    {
+      "elapsed_s": 15.289,
+      "host_free_bytes": 3978395648,
+      "process_rss_bytes": 2250199040,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67677437
+    },
+    {
+      "elapsed_s": 17.615,
+      "host_free_bytes": 3973185536,
+      "process_rss_bytes": 2250014720,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67677437
+    },
+    {
+      "elapsed_s": 18.561,
+      "host_free_bytes": 3976118272,
+      "process_rss_bytes": 2250182656,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67678133
+    },
+    {
+      "elapsed_s": 20.94,
+      "host_free_bytes": 4022689792,
+      "process_rss_bytes": 2250113024,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67678133
+    },
+    {
+      "elapsed_s": 21.864,
+      "host_free_bytes": 4031340544,
+      "process_rss_bytes": 2250293248,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67678374
+    },
+    {
+      "elapsed_s": 24.239,
+      "host_free_bytes": 4009066496,
+      "process_rss_bytes": 2250125312,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67678374
+    },
+    {
+      "elapsed_s": 25.168,
+      "host_free_bytes": 4016812032,
+      "process_rss_bytes": 2250280960,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67678621
+    },
+    {
+      "elapsed_s": 27.486,
+      "host_free_bytes": 4024705024,
+      "process_rss_bytes": 2250104832,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67678621
+    },
+    {
+      "elapsed_s": 28.419,
+      "host_free_bytes": 4024819712,
+      "process_rss_bytes": 2250289152,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67678866
+    },
+    {
+      "elapsed_s": 30.797,
+      "host_free_bytes": 4026658816,
+      "process_rss_bytes": 2250334208,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112511488,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67678866
+    },
+    {
+      "elapsed_s": 31.814,
+      "host_free_bytes": 3965988864,
+      "process_rss_bytes": 2250788864,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112511488,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67679114
+    },
+    {
+      "elapsed_s": 34.371,
+      "host_free_bytes": 3979816960,
+      "process_rss_bytes": 2250616832,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112511488,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67679114
+    },
+    {
+      "elapsed_s": 35.302,
+      "host_free_bytes": 3982184448,
+      "process_rss_bytes": 2250805248,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112511488,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67679357
+    },
+    {
+      "elapsed_s": 37.846,
+      "host_free_bytes": 3976011776,
+      "process_rss_bytes": 2250743808,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67679357
+    },
+    {
+      "elapsed_s": 38.96,
+      "host_free_bytes": 3978772480,
+      "process_rss_bytes": 2250899456,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67679606
+    },
+    {
+      "elapsed_s": 41.587,
+      "host_free_bytes": 4180090880,
+      "process_rss_bytes": 2250616832,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67679606
+    },
+    {
+      "elapsed_s": 42.553,
+      "host_free_bytes": 4192563200,
+      "process_rss_bytes": 2250764288,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67679852
+    },
+    {
+      "elapsed_s": 45.009,
+      "host_free_bytes": 4192940032,
+      "process_rss_bytes": 2250743808,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67679852
+    },
+    {
+      "elapsed_s": 45.89,
+      "host_free_bytes": 4185501696,
+      "process_rss_bytes": 2250899456,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67680101
+    },
+    {
+      "elapsed_s": 48.316,
+      "host_free_bytes": 4223758336,
+      "process_rss_bytes": 2250883072,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67680101
+    },
+    {
+      "elapsed_s": 49.265,
+      "host_free_bytes": 4219748352,
+      "process_rss_bytes": 2251063296,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67680341
+    },
+    {
+      "elapsed_s": 51.547,
+      "host_free_bytes": 4221911040,
+      "process_rss_bytes": 2250772480,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67680341
+    },
+    {
+      "elapsed_s": 52.472,
+      "host_free_bytes": 4221857792,
+      "process_rss_bytes": 2250915840,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67680587
+    },
+    {
+      "elapsed_s": 54.888,
+      "host_free_bytes": 4180590592,
+      "process_rss_bytes": 2250768384,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67680587
+    },
+    {
+      "elapsed_s": 55.872,
+      "host_free_bytes": 4208037888,
+      "process_rss_bytes": 2250887168,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67680826
+    },
+    {
+      "elapsed_s": 58.383,
+      "host_free_bytes": 4220604416,
+      "process_rss_bytes": 2250813440,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67680826
+    },
+    {
+      "elapsed_s": 59.321,
+      "host_free_bytes": 4222590976,
+      "process_rss_bytes": 2250936320,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67681074
+    },
+    {
+      "elapsed_s": 61.845,
+      "host_free_bytes": 4218236928,
+      "process_rss_bytes": 2250776576,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67681074
+    },
+    {
+      "elapsed_s": 62.84,
+      "host_free_bytes": 4219621376,
+      "process_rss_bytes": 2250944512,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67681319
+    },
+    {
+      "elapsed_s": 65.386,
+      "host_free_bytes": 4232200192,
+      "process_rss_bytes": 2250776576,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67681319
+    },
+    {
+      "elapsed_s": 66.378,
+      "host_free_bytes": 4230221824,
+      "process_rss_bytes": 2250911744,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67681567
+    },
+    {
+      "elapsed_s": 68.841,
+      "host_free_bytes": 4324626432,
+      "process_rss_bytes": 2250792960,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67681567
+    },
+    {
+      "elapsed_s": 69.753,
+      "host_free_bytes": 4334698496,
+      "process_rss_bytes": 2250944512,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67681812
+    },
+    {
+      "elapsed_s": 72.295,
+      "host_free_bytes": 4106043392,
+      "process_rss_bytes": 2250825728,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67681812
+    },
+    {
+      "elapsed_s": 73.307,
+      "host_free_bytes": 4125970432,
+      "process_rss_bytes": 2250985472,
+      "gpu_free_bytes": 4995416064,
+      "torch_allocated_bytes": 112513024,
+      "torch_reserved_bytes": 220200960,
+      "run_bytes": 67682057
+    },
+    {
+      "elapsed_s": 75.511,
+      "host_free_bytes": 4028272640,
+      "process_rss_bytes": 2310713344,
+      "gpu_free_bytes": 5020581888,
+      "torch_allocated_bytes": 119031808,
+      "torch_reserved_bytes": 195035136,
+      "run_bytes": 26425866
+    },
+    {
+      "elapsed_s": 75.973,
+      "host_free_bytes": 4010352640,
+      "process_rss_bytes": 2311462912,
+      "gpu_free_bytes": 5020581888,
+      "torch_allocated_bytes": 119041536,
+      "torch_reserved_bytes": 195035136,
+      "run_bytes": 26425866
+    },
+    {
+      "elapsed_s": 76.492,
+      "host_free_bytes": 4022382592,
+      "process_rss_bytes": 2311536640,
+      "gpu_free_bytes": 5020581888,
+      "torch_allocated_bytes": 119041536,
+      "torch_reserved_bytes": 195035136,
+      "run_bytes": 26425866
+    },
+    {
+      "elapsed_s": 77.092,
+      "host_free_bytes": 4011347968,
+      "process_rss_bytes": 2311892992,
+      "gpu_free_bytes": 5020581888,
+      "torch_allocated_bytes": 119028736,
+      "torch_reserved_bytes": 195035136,
+      "run_bytes": 26425866
+    },
+    {
+      "elapsed_s": 77.592,
+      "host_free_bytes": 4020768768,
+      "process_rss_bytes": 2311913472,
+      "gpu_free_bytes": 5020581888,
+      "torch_allocated_bytes": 119028736,
+      "torch_reserved_bytes": 195035136,
+      "run_bytes": 26425866
+    },
+    {
+      "elapsed_s": 78.117,
+      "host_free_bytes": 4017508352,
+      "process_rss_bytes": 2313478144,
+      "gpu_free_bytes": 5020581888,
+      "torch_allocated_bytes": 119031808,
+      "torch_reserved_bytes": 195035136,
+      "run_bytes": 26425866
+    },
+    {
+      "elapsed_s": 78.654,
+      "host_free_bytes": 4022927360,
+      "process_rss_bytes": 2315264000,
+      "gpu_free_bytes": 5020581888,
+      "torch_allocated_bytes": 119038464,
+      "torch_reserved_bytes": 195035136,
+      "run_bytes": 26425866
+    },
+    {
+      "elapsed_s": 79.158,
+      "host_free_bytes": 4003950592,
+      "process_rss_bytes": 2314735616,
+      "gpu_free_bytes": 5020581888,
+      "torch_allocated_bytes": 119031808,
+      "torch_reserved_bytes": 195035136,
+      "run_bytes": 26425866
+    }
+  ],
+  "run_bytes": 26425866,
+  "resource_scope": "Callback/5-second samples plus allocator peak, not continuous full-device peak"
+}

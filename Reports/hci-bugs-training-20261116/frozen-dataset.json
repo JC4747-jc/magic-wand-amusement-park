@@ -1,0 +1,1880 @@
+{
+  "version": 1,
+  "purpose": "BUGS_BOOTSTRAP_CANDIDATE_NOT_PROJECT_OR_PICO_ACCEPTANCE",
+  "names": [
+    "Cockroach",
+    "Spider"
+  ],
+  "seed": 42,
+  "review_sha256": "1e0838e81c692a38b265ed7bf7d621341dbc13339a4d0203fe8e7c5e8e686da0",
+  "test_frozen_before_training": true,
+  "accepted_for_deployment": false,
+  "split_counts": {
+    "train": {
+      "Spider": 12,
+      "background": 2,
+      "Cockroach": 9
+    },
+    "valid": {
+      "Spider": 3,
+      "background": 2,
+      "Cockroach": 2
+    },
+    "test": {
+      "Spider": 3,
+      "background": 2,
+      "Cockroach": 3
+    }
+  },
+  "records": [
+    {
+      "key": "oi-850bfdf25e95a3ab",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/850bfdf25e95a3ab.jpg",
+      "sha256": "97b5865243e31401b0de7c48df79c922795817e2ce9c8ca0a7216015d67a43f4",
+      "pixel_sha256": "158f0ff071c65634528d6e72d0acf7a53afcb3273e092f63a7faed8d8c97ebb2",
+      "size": [
+        1024,
+        678
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Jumping spider; include fine leg tips, exclude plastic-container highlights.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            134,
+            16,
+            913,
+            643
+          ],
+          "xyxy_normalized": [
+            0.130859375,
+            0.02359882005899705,
+            0.8916015625,
+            0.948377581120944
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.13069016,
+            0.024444444,
+            0.88986784,
+            0.9444444
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/for_tea_too/5745397128",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/850bfdf25e95a3ab.jpg",
+      "author": "glenngould",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/for_tea_too/",
+        "audit-component-oi-850bfdf25e95a3ab"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-850bfdf25e95a3ab",
+      "split": "train"
+    },
+    {
+      "key": "oi-1d1ef6def56f4b91",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/1d1ef6def56f4b91.jpg",
+      "sha256": "08ea2c4af3b2124bb34618c5fe340aedc00fcb5bca1986d4ae25d6169b9b57cf",
+      "pixel_sha256": "71ec615e26687203d2ac65dba4fdc40cba6c201f600ab53eecb12c3503c68435",
+      "size": [
+        1024,
+        768
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Ground spider beside fabric; include every visible leg tip, exclude shadows.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            297,
+            177,
+            810,
+            729
+          ],
+          "xyxy_normalized": [
+            0.2900390625,
+            0.23046875,
+            0.791015625,
+            0.94921875
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.2921875,
+            0.23333333,
+            0.7890625,
+            0.9458333
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/nukeit1/33325524",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1d1ef6def56f4b91.jpg",
+      "author": "James McCauley",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/nukeit1/",
+        "audit-component-oi-1d1ef6def56f4b91"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-1d1ef6def56f4b91",
+      "split": "train"
+    },
+    {
+      "key": "oi-0b3097261f961399",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/0b3097261f961399.jpg",
+      "sha256": "521f7c6c38faaffb60c089b2d7dc20b3de3febd3d11b3012881c89f975d753bd",
+      "pixel_sha256": "9147f2b75b2720becd00d7732fd76407ba52e13058daf16885a1bdf9cce48ad0",
+      "size": [
+        1024,
+        683
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Orb spider: upper and lower legs clipped by photograph; extend to image boundaries, exclude web.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            230,
+            0,
+            678,
+            683
+          ],
+          "xyxy_normalized": [
+            0.224609375,
+            0.0,
+            0.662109375,
+            1.0
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.22566372,
+            0.028761063,
+            0.65929204,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/premnath/8248128842",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/0b3097261f961399.jpg",
+      "author": "Premnath Thirumalaisamy",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/premnath/",
+        "audit-component-oi-0b3097261f961399"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-0b3097261f961399",
+      "split": "train"
+    },
+    {
+      "key": "oi-1f7bef3366b59a08",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/1f7bef3366b59a08.jpg",
+      "sha256": "a717998a424f895618049632b931a9bac23da4aa3abc56ca011250b62de3459a",
+      "pixel_sha256": "92506d71e6953239cd4bf54d861ba8595a6f6d0027837293db0b03c8671fe54d",
+      "size": [
+        1024,
+        683
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Tarantula on ground; include blurred rear legs and fur, not background rock.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            148,
+            221,
+            802,
+            665
+          ],
+          "xyxy_normalized": [
+            0.14453125,
+            0.3235724743777452,
+            0.783203125,
+            0.9736456808199122
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.14896755,
+            0.3340708,
+            0.7772861,
+            0.96681416
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/tydence/5069936005",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1f7bef3366b59a08.jpg",
+      "author": "Tydence Davis",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/tydence/",
+        "audit-component-oi-1f7bef3366b59a08"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-1f7bef3366b59a08",
+      "split": "train"
+    },
+    {
+      "key": "oi-2da7d83a6b68debc",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/2da7d83a6b68debc.jpg",
+      "sha256": "c1c75ef1a6eb3f3a31a52f6302155421e2bc7da65a73ca41e8a290f4c5731d5d",
+      "pixel_sha256": "b5b01b0bd5ee62dc2c7c91ea31cbf206c33fc738b50ff07735df8368c3ef84d3",
+      "size": [
+        1024,
+        681
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Orange/black tarantula, all visible legs including lower hair tips.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            97,
+            51,
+            953,
+            673
+          ],
+          "xyxy_normalized": [
+            0.0947265625,
+            0.07488986784140969,
+            0.9306640625,
+            0.9882525697503671
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.09425626,
+            0.07538803,
+            0.93078053,
+            0.98226166
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/32547150@N00/756539463",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2da7d83a6b68debc.jpg",
+      "author": "steve lodefink",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/lodefink/",
+        "audit-component-oi-2da7d83a6b68debc"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-2da7d83a6b68debc",
+      "split": "train"
+    },
+    {
+      "key": "oi-290e908272641aef",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/290e908272641aef.jpg",
+      "sha256": "88ffac74220a2a2c8c993d4c863c1f76a9e7c39d2c8219a33091008c72ab4344",
+      "pixel_sha256": "57b88cc8fcec2601839973007555444a2ece7aaf3c2aa37a6289cc123229689f",
+      "size": [
+        1024,
+        736
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Two spiders: keep a separate small instance despite overlapping/interleaved legs.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            164,
+            77,
+            850,
+            664
+          ],
+          "xyxy_normalized": [
+            0.16015625,
+            0.10461956521739131,
+            0.830078125,
+            0.9021739130434783
+          ]
+        },
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            740,
+            538,
+            891,
+            662
+          ],
+          "xyxy_normalized": [
+            0.72265625,
+            0.7309782608695652,
+            0.8701171875,
+            0.8994565217391305
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.16232772,
+            0.104477614,
+            0.8300153,
+            0.90191895
+          ],
+          "occluded": false,
+          "truncated": false
+        },
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.7228178,
+            0.73773986,
+            0.8667688,
+            0.8955224
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/yeomans/475566388",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/290e908272641aef.jpg",
+      "author": "SaraYeomans",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/yeomans/",
+        "audit-component-oi-290e908272641aef"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-290e908272641aef",
+      "split": "test"
+    },
+    {
+      "key": "oi-38b95b228d85e5bb",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/38b95b228d85e5bb.jpg",
+      "sha256": "9ef2efdc9f1ffe9d574d77313e3936291621c260ce97cdedab9ebb0010fb0905",
+      "pixel_sha256": "80ec094ab42c576042e682f1743c860813a6af17634924c56c86572ffd9fed99",
+      "size": [
+        768,
+        1024
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Orb spider: include upper/lower leg tips; web excluded.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            120,
+            200,
+            596,
+            794
+          ],
+          "xyxy_normalized": [
+            0.15625,
+            0.1953125,
+            0.7760416666666666,
+            0.775390625
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.1625,
+            0.2015625,
+            0.7708333,
+            0.7734375
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/41839209@N07/3857840400",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/38b95b228d85e5bb.jpg",
+      "author": "reophax",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/41839209@N07/",
+        "audit-component-oi-38b95b228d85e5bb"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-38b95b228d85e5bb",
+      "split": "train"
+    },
+    {
+      "key": "oi-3b4d1022c2be3076",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/3b4d1022c2be3076.jpg",
+      "sha256": "7d6d95ad858dcef1437c0d155cb8a44abacd81598d9d2f006ea538184571f34c",
+      "pixel_sha256": "db18b15c603d6deeea68126af756684b87dae098a4d6607d442ae8307647a909",
+      "size": [
+        1024,
+        576
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Hairy tarantula partially clipped at left/bottom; visible-extent convention, no inferred missing legs.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            0,
+            5,
+            978,
+            576
+          ],
+          "xyxy_normalized": [
+            0.0,
+            0.008680555555555556,
+            0.955078125,
+            1.0
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.0,
+            0.0,
+            0.94316643,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/timtimes/14386970528",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/3b4d1022c2be3076.jpg",
+      "author": "Tim Fuller",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/timtimes/",
+        "audit-component-oi-3b4d1022c2be3076"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-3b4d1022c2be3076",
+      "split": "valid"
+    },
+    {
+      "key": "oi-4d1a7164a8e856ad",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/4d1a7164a8e856ad.jpg",
+      "sha256": "e0553080403bf6334f41e0c1ca80f98e7794903d605d3a4a288ecd499002ccbf",
+      "pixel_sha256": "27dcc7dbba0206fe21660876410f0dbbfde9690de6bc842918fa7cdd61a0f1f7",
+      "size": [
+        1024,
+        938
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Single brown spider; include long visible legs, exclude cast shadow.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            29,
+            32,
+            984,
+            917
+          ],
+          "xyxy_normalized": [
+            0.0283203125,
+            0.03411513859275053,
+            0.9609375,
+            0.9776119402985075
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.029360967,
+            0.035849057,
+            0.9585492,
+            0.9754717
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/ross_elliott/4579419592",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/4d1a7164a8e856ad.jpg",
+      "author": "Ross Elliott",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/ross_elliott/",
+        "audit-component-oi-4d1a7164a8e856ad"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-4d1a7164a8e856ad",
+      "split": "train"
+    },
+    {
+      "key": "oi-1ee2cfb26b6fe8e4",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/1ee2cfb26b6fe8e4.jpg",
+      "sha256": "e4a9c713bcf418b28cd32f66ccead9d05d7809e8a11662cb9ce24bc7e5582ff6",
+      "pixel_sha256": "dd4d057f6c96becb8d75174c638f2fcd0ea464593717f49fc2d221d57b8b34f0",
+      "size": [
+        883,
+        1024
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Spider on leaf; correct top leg extent, exclude leaf and web.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            196,
+            108,
+            718,
+            939
+          ],
+          "xyxy_normalized": [
+            0.22197055492638731,
+            0.10546875,
+            0.8131370328425821,
+            0.9169921875
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.22178988,
+            0.113902844,
+            0.81128407,
+            0.9128978
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/orangeaurochs/21844812556",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1ee2cfb26b6fe8e4.jpg",
+      "author": "Orangeaurochs",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/orangeaurochs/",
+        "audit-component-oi-1ee2cfb26b6fe8e4"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-1ee2cfb26b6fe8e4",
+      "split": "train"
+    },
+    {
+      "key": "oi-050a2dbc5e91bb68",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/050a2dbc5e91bb68.jpg",
+      "sha256": "8b345d16c6425582cf79d0726c4d6f5d076fa96940b08581da136a8abce58066",
+      "pixel_sha256": "8e36e9e32a26c990ec215726d82656a14819217286abd088376198b5b8b96362",
+      "size": [
+        1024,
+        979
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Soft-focus real spider; include leg tips, exclude surrounding silk.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            260,
+            135,
+            697,
+            861
+          ],
+          "xyxy_normalized": [
+            0.25390625,
+            0.13789581205311544,
+            0.6806640625,
+            0.8794688457609806
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.25618374,
+            0.14232902,
+            0.6766784,
+            0.8780037
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/foqus/14754351204",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/050a2dbc5e91bb68.jpg",
+      "author": "Marco",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/foqus/",
+        "audit-component-oi-050a2dbc5e91bb68"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-050a2dbc5e91bb68",
+      "split": "test"
+    },
+    {
+      "key": "oi-1da59662fc078356",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/1da59662fc078356.jpg",
+      "sha256": "48d04159d3a0e95f1f4d5bf73e8661efe29e4091c5777a9bb2cdcc94d0cc64fa",
+      "pixel_sha256": "3eeba7a4a888bd1caeec0bed1f1b8f5d9f33a33f531d4cce0f90b6880ca92066",
+      "size": [
+        1024,
+        768
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Preserved specimen, anatomically visible Spider; unusual domain retained explicitly, not a living/PICO example.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            44,
+            43,
+            999,
+            729
+          ],
+          "xyxy_normalized": [
+            0.04296875,
+            0.055989583333333336,
+            0.9755859375,
+            0.94921875
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.0453125,
+            0.058333334,
+            0.9734375,
+            0.9458333
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/55957245@N07/5221985247",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1da59662fc078356.jpg",
+      "author": "lcspiderlab",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/55957245@N07/",
+        "audit-component-oi-1da59662fc078356"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-1da59662fc078356",
+      "split": "train"
+    },
+    {
+      "key": "oi-8aea1f1d12a7dc4f",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/8aea1f1d12a7dc4f.jpg",
+      "sha256": "9ab714c7dadbe7a5e1815dd9b239c2ef5cd3588515ddaeac5aa4fc3691fabaa1",
+      "pixel_sha256": "4ec7c73419c0dd40a2562f894ea1928ddeb73f164c4100da3dfbf3658cc59d5e",
+      "size": [
+        1024,
+        1002
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Black spider on light background; include all long leg tips.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            160,
+            148,
+            850,
+            852
+          ],
+          "xyxy_normalized": [
+            0.15625,
+            0.14770459081836326,
+            0.830078125,
+            0.8502994011976048
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.15714286,
+            0.14963503,
+            0.82678574,
+            0.8485401
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/emmajane/255550041",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/8aea1f1d12a7dc4f.jpg",
+      "author": "Emma Jane Hogbin Westby",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/emmajane/",
+        "audit-component-oi-8aea1f1d12a7dc4f"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-8aea1f1d12a7dc4f",
+      "split": "test"
+    },
+    {
+      "key": "oi-69fd61f54406189c",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/69fd61f54406189c.jpg",
+      "sha256": "6a47a037e75865079f257b888a5e6be2b48005c5263f4a657fcfba7eb6174575",
+      "pixel_sha256": "e8be1750d98f29efb42ecdfca1738c8ba080aa83a0c98638f218c8970d62d630",
+      "size": [
+        1024,
+        768
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Dark spider on blue surface; include thin far-right and bottom tips, exclude shadows.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            468,
+            104,
+            823,
+            726
+          ],
+          "xyxy_normalized": [
+            0.45703125,
+            0.13541666666666666,
+            0.8037109375,
+            0.9453125
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.4609375,
+            0.1375,
+            0.7984375,
+            0.94166666
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/bludgeoner86/6449063787",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/69fd61f54406189c.jpg",
+      "author": "Justin Taylor",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/bludgeoner86/",
+        "audit-component-oi-69fd61f54406189c"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-69fd61f54406189c",
+      "split": "valid"
+    },
+    {
+      "key": "oi-50f231b09e848f15",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/50f231b09e848f15.jpg",
+      "sha256": "130cdd2080b29e7b417c48bac1a8f6c1b7397e0eb60ab38f9a9effd2a33888ca",
+      "pixel_sha256": "356f3f794bcd782a958a19653d4d37ab51267c6931049e1963c9169addc47bc8",
+      "size": [
+        1024,
+        679
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Spider in web; upper plant fragment/silk is not an extra leg; visible black leg bends start within box.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            470,
+            85,
+            977,
+            549
+          ],
+          "xyxy_normalized": [
+            0.458984375,
+            0.1251840942562592,
+            0.9541015625,
+            0.8085419734904271
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.4632353,
+            0.1286031,
+            0.95,
+            0.8004435
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/bistrosavage/35308788",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/50f231b09e848f15.jpg",
+      "author": "Doug Bowman",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/bistrosavage/",
+        "audit-component-oi-50f231b09e848f15"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-50f231b09e848f15",
+      "split": "train"
+    },
+    {
+      "key": "oi-1e868895fdbc938d",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/1e868895fdbc938d.jpg",
+      "sha256": "1afe94d29eea94785db91402d62a498a9b12bce395fe175b12ede6407d9dff28",
+      "pixel_sha256": "375785fac2755d00e144b310023098a8102d45e49df1be7e86827d01cf85e84d",
+      "size": [
+        1024,
+        768
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Wall spider; include all stretched legs, exclude shadows.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            243,
+            10,
+            946,
+            724
+          ],
+          "xyxy_normalized": [
+            0.2373046875,
+            0.013020833333333334,
+            0.923828125,
+            0.9427083333333334
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.2390625,
+            0.014583333,
+            0.9203125,
+            0.93958336
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/peteredin/5106088692",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1e868895fdbc938d.jpg",
+      "author": "Peter",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/peteredin/",
+        "audit-component-oi-1e868895fdbc938d"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-1e868895fdbc938d",
+      "split": "valid"
+    },
+    {
+      "key": "oi-3ec20e93d8182fcb",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/3ec20e93d8182fcb.jpg",
+      "sha256": "40ee52fa7175bcdb704d86481ae07d8a9e0f5f4cfee1e580d975a6b8c2be43a3",
+      "pixel_sha256": "612feba54a49e27995dcb9fa8b6a4243ad031f02489aac8b0ed7675dbacfce3d",
+      "size": [
+        1024,
+        683
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Small orb spider; extend right edge for curved leg tip, web excluded.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            404,
+            158,
+            619,
+            537
+          ],
+          "xyxy_normalized": [
+            0.39453125,
+            0.23133235724743778,
+            0.6044921875,
+            0.7862371888726208
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.39666668,
+            0.2325,
+            0.595,
+            0.7825
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/91829349@N00/259405212",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/3ec20e93d8182fcb.jpg",
+      "author": "rjones0856",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/91829349@N00/",
+        "audit-component-oi-3ec20e93d8182fcb"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-3ec20e93d8182fcb",
+      "split": "train"
+    },
+    {
+      "key": "oi-41eec28d727a251d",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/41eec28d727a251d.jpg",
+      "sha256": "05542882f6393ade3fd8360db3312ab07506171587a39b29d7164e242d3909c1",
+      "pixel_sha256": "6b29bad7eea0400a86e55d94c29aa218de8c9e1f723d227800a48c73079c2585",
+      "size": [
+        1024,
+        683
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Upper leg clipped at y=0; include left short leg and bottom tips, exclude long cast shadows.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [
+        {
+          "class": "Spider",
+          "xyxy_pixels": [
+            403,
+            0,
+            634,
+            634
+          ],
+          "xyxy_normalized": [
+            0.3935546875,
+            0.0,
+            0.619140625,
+            0.9282576866764275
+          ]
+        }
+      ],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Spider",
+          "source_class_id": "/m/09kmb",
+          "xyxy": [
+            0.39528024,
+            0.0,
+            0.61651915,
+            0.92256635
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/14583963@N00/17136219010",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/41eec28d727a251d.jpg",
+      "author": "David Short",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/14583963@N00/",
+        "audit-component-oi-41eec28d727a251d"
+      ],
+      "background_only_for": [],
+      "component_id": "oi-41eec28d727a251d",
+      "split": "train"
+    },
+    {
+      "key": "oi-1a4ce99db1425ee1",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/1a4ce99db1425ee1.jpg",
+      "sha256": "af5f10251d73ecbb6ec3ebe7a360026321cf66156cf7aba995b34f8434dd3de1",
+      "pixel_sha256": "51c47b9628f098daf8ee903fcd41d98d5ca39051b58270da912cfcd574a2d372",
+      "size": [
+        1024,
+        681
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Full original reviewed: no visible Spider or Cockroach. Background only for this TWO-CLASS experiment; other project objects remain present.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.055964652,
+            0.22172949,
+            0.916053,
+            0.84035474
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/southpaw2305/3938386160/",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1a4ce99db1425ee1.jpg",
+      "author": "Clare Bell",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/southpaw2305/",
+        "audit-component-oi-1a4ce99db1425ee1"
+      ],
+      "background_only_for": [
+        "Cockroach",
+        "Spider"
+      ],
+      "component_id": "oi-1a4ce99db1425ee1",
+      "split": "test"
+    },
+    {
+      "key": "oi-1d5bb9d9a8a49e84",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/1d5bb9d9a8a49e84.jpg",
+      "sha256": "c8269a3b91afb4da0ede99cd2dcd8b7bd23bffbabbf4002a9305f332bf438359",
+      "pixel_sha256": "ea7a8866b62fca25b2535b41f0e30ac06718bf86fc2b14065c167502de83da59",
+      "size": [
+        1024,
+        768
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Full original reviewed: no visible Spider or Cockroach. Background only for this TWO-CLASS experiment; other project objects remain present.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [],
+      "source_boxes": [
+        {
+          "canonical_candidate": "chair",
+          "source_class_id": "/m/01mzpv",
+          "xyxy": [
+            0.809375,
+            0.14166667,
+            1.0,
+            0.65625
+          ],
+          "occluded": false,
+          "truncated": true
+        },
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.0,
+            0.079166666,
+            0.8421875,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/miran/4142950300",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/1d5bb9d9a8a49e84.jpg",
+      "author": "Miran  Rijavec",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/miran/",
+        "audit-component-oi-1d5bb9d9a8a49e84"
+      ],
+      "background_only_for": [
+        "Cockroach",
+        "Spider"
+      ],
+      "component_id": "oi-1d5bb9d9a8a49e84",
+      "split": "train"
+    },
+    {
+      "key": "oi-3f65d9a5db068b25",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/3f65d9a5db068b25.jpg",
+      "sha256": "a401f67bb22d5d4cd902cc6c381615e169756539a17e64ac1b2a2b78d4b76886",
+      "pixel_sha256": "63c6e0d25bb6bc4d988edd16b345a368d25badb29877bbcec15ec5851b11dfa5",
+      "size": [
+        1024,
+        768
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Full original reviewed: no visible Spider or Cockroach. Background only for this TWO-CLASS experiment; other project objects remain present.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [],
+      "source_boxes": [
+        {
+          "canonical_candidate": "bed",
+          "source_class_id": "/m/03ssj5",
+          "xyxy": [
+            0.0015625,
+            0.14583333,
+            0.859375,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": true
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/camswitzer/5846444657",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/3f65d9a5db068b25.jpg",
+      "author": "Cam Switzer",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/camswitzer/",
+        "audit-component-oi-3f65d9a5db068b25"
+      ],
+      "background_only_for": [
+        "Cockroach",
+        "Spider"
+      ],
+      "component_id": "oi-3f65d9a5db068b25",
+      "split": "train"
+    },
+    {
+      "key": "oi-2ca2d110708d96b5",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/2ca2d110708d96b5.jpg",
+      "sha256": "3cfefd1b807cdb77806d13264d51c19cf528acac30183fded910093d2aa10332",
+      "pixel_sha256": "ada953cc79a4f807c9616ccc38177baa0411e5827e55885b46781c0b5ac42d8e",
+      "size": [
+        1024,
+        778
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Full original reviewed: no visible Spider or Cockroach. Background only for this TWO-CLASS experiment; other project objects remain present.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.07178631,
+            0.13846155,
+            0.6861436,
+            0.9714286
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/121004196@N06/14975531355",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2ca2d110708d96b5.jpg",
+      "author": "muo1417",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/121004196@N06/",
+        "audit-component-oi-2ca2d110708d96b5"
+      ],
+      "background_only_for": [
+        "Cockroach",
+        "Spider"
+      ],
+      "component_id": "oi-2ca2d110708d96b5",
+      "split": "valid"
+    },
+    {
+      "key": "oi-2e8edb16c6a09beb",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/2e8edb16c6a09beb.jpg",
+      "sha256": "039e69f7c1ad3172ed73bf154ad7accb5acbc4063673450a529ca6e11879f4c9",
+      "pixel_sha256": "7df3190c14a1431e65ff836405401a3fdbf80a257e9d0f30e23183073a91dc0e",
+      "size": [
+        1024,
+        685
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Full original reviewed: no visible Spider or Cockroach. Background only for this TWO-CLASS experiment; other project objects remain present.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Cat",
+          "source_class_id": "/m/01yrx",
+          "xyxy": [
+            0.22156574,
+            0.041942604,
+            0.9364845,
+            1.0
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/saralowgren/5296060933",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/2e8edb16c6a09beb.jpg",
+      "author": "SaraLowgren",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/saralowgren/",
+        "audit-component-oi-2e8edb16c6a09beb"
+      ],
+      "background_only_for": [
+        "Cockroach",
+        "Spider"
+      ],
+      "component_id": "oi-2e8edb16c6a09beb",
+      "split": "valid"
+    },
+    {
+      "key": "oi-28b565f93c252cc0",
+      "source_path": ".codex-tmp/yolo-training/openimages-review/images/28b565f93c252cc0.jpg",
+      "sha256": "8189d570c636d9fbea0d04181768034324e76b468618ce9d6ba18922faa5ca53",
+      "pixel_sha256": "96445a3835b310aa610d96ac513bb709b7d6d4da6ce6f4ac89cf8f5c5f987472",
+      "size": [
+        1024,
+        683
+      ],
+      "review": "INDIVIDUAL_FULL_ORIGINAL_REVIEW_20261116",
+      "note": "Full original reviewed: no visible Spider or Cockroach. Background only for this TWO-CLASS experiment; other project objects remain present.",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "boxes": [],
+      "source_boxes": [
+        {
+          "canonical_candidate": "Dog",
+          "source_class_id": "/m/0bt9lr",
+          "xyxy": [
+            0.056047197,
+            0.1659292,
+            0.9424779,
+            0.88716817
+          ],
+          "occluded": false,
+          "truncated": false
+        }
+      ],
+      "source_page": "https://www.flickr.com/photos/78428166@N00/9410501179",
+      "download_url": "https://open-images-dataset.s3.amazonaws.com/validation/28b565f93c252cc0.jpg",
+      "author": "Tony Alter",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "provenance_groups": [
+        "flickr-author-https://www.flickr.com/people/78428166@N00/",
+        "audit-component-oi-28b565f93c252cc0"
+      ],
+      "background_only_for": [
+        "Cockroach",
+        "Spider"
+      ],
+      "component_id": "oi-28b565f93c252cc0",
+      "split": "test"
+    },
+    {
+      "key": "inat-414820062",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-414820062.jpg",
+      "sha256": "896d769f0fbffc41c88a5c93c402c3149e1f7990f0f4099deb36947adcf9b43e",
+      "size": [
+        768,
+        1024
+      ],
+      "boxes": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            225,
+            510,
+            455,
+            885
+          ],
+          "xyxy_normalized": [
+            0.29296875,
+            0.498046875,
+            0.5924479166666666,
+            0.8642578125
+          ]
+        }
+      ],
+      "review": "INHERITED_SHA_BOUND_INDIVIDUAL_REVIEW_V1",
+      "review_evidence": "Individual original photograph and annotation QA plot inspected; review-v1, RGB display.",
+      "source_page": "https://www.inaturalist.org/observations/414820062",
+      "download_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/763720613/large.jpg",
+      "author": "(c) smathichong, some rights reserved (CC BY)",
+      "license": "cc-by",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "provenance_groups": [
+        "inat-observer-2886775",
+        "audit-component-inat-414820062"
+      ],
+      "component_id": "inat-414168220",
+      "split": "test"
+    },
+    {
+      "key": "inat-414168220",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-414168220.jpg",
+      "sha256": "f77ffedcd6bbf20b4c2717aeea3ae473883c0498fa27cd7eaae838141a26d3c6",
+      "size": [
+        1024,
+        943
+      ],
+      "boxes": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            350,
+            288,
+            646,
+            528
+          ],
+          "xyxy_normalized": [
+            0.341796875,
+            0.3054082714740191,
+            0.630859375,
+            0.559915164369035
+          ]
+        }
+      ],
+      "review": "INHERITED_SHA_BOUND_INDIVIDUAL_REVIEW_V1",
+      "review_evidence": "Individual original photograph and annotation QA plot inspected; review-v1, RGB display.",
+      "source_page": "https://www.inaturalist.org/observations/414168220",
+      "download_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/762399729/large.jpg",
+      "author": "(c) smathichong, some rights reserved (CC BY)",
+      "license": "cc-by",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "provenance_groups": [
+        "inat-observer-2886775",
+        "audit-component-inat-414168220"
+      ],
+      "component_id": "inat-414168220",
+      "split": "test"
+    },
+    {
+      "key": "inat-414708372",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-414708372.jpg",
+      "sha256": "cfb0455bf8442614723a578c2b1f6628ba1cf5f4772ee0a83aca5261b944ae25",
+      "size": [
+        1024,
+        683
+      ],
+      "boxes": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            490,
+            382,
+            704,
+            516
+          ],
+          "xyxy_normalized": [
+            0.478515625,
+            0.5592972181551976,
+            0.6875,
+            0.7554904831625183
+          ]
+        }
+      ],
+      "review": "INHERITED_SHA_BOUND_INDIVIDUAL_REVIEW_V1",
+      "review_evidence": "Individual original photograph and annotation QA plot inspected; review-v1, RGB display.",
+      "source_page": "https://www.inaturalist.org/observations/414708372",
+      "download_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/763484694/large.jpg",
+      "author": "(c) Texas Bird Family, some rights reserved (CC BY)",
+      "license": "cc-by",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "provenance_groups": [
+        "inat-observer-7453584",
+        "audit-component-inat-414708372"
+      ],
+      "component_id": "inat-414708372",
+      "split": "train"
+    },
+    {
+      "key": "inat-414319613",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-414319613.jpg",
+      "sha256": "c15e720410b40f404efc66f776456b86f09cd28cca839d83b596aedc69668b99",
+      "size": [
+        768,
+        1024
+      ],
+      "boxes": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            128,
+            345,
+            429,
+            710
+          ],
+          "xyxy_normalized": [
+            0.16666666666666666,
+            0.3369140625,
+            0.55859375,
+            0.693359375
+          ]
+        }
+      ],
+      "review": "INHERITED_SHA_BOUND_INDIVIDUAL_REVIEW_V1",
+      "review_evidence": "Individual original photograph and annotation QA plot inspected; review-v1, RGB display.",
+      "source_page": "https://www.inaturalist.org/observations/414319613",
+      "download_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/762707565/large.jpg",
+      "author": "(c) rhiz, some rights reserved (CC BY)",
+      "license": "cc-by",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "provenance_groups": [
+        "inat-observer-5656810",
+        "audit-component-inat-414319613"
+      ],
+      "component_id": "inat-414319613",
+      "split": "train"
+    },
+    {
+      "key": "inat-414173185",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-414173185.jpg",
+      "sha256": "1eb0460835ae73f28d71561289f1219969683aca16da28aa5835aa02f28d6966",
+      "size": [
+        1024,
+        768
+      ],
+      "boxes": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            205,
+            257,
+            815,
+            650
+          ],
+          "xyxy_normalized": [
+            0.2001953125,
+            0.3346354166666667,
+            0.7958984375,
+            0.8463541666666666
+          ]
+        }
+      ],
+      "review": "INHERITED_SHA_BOUND_INDIVIDUAL_REVIEW_V1",
+      "review_evidence": "Individual original photograph and annotation QA plot inspected; review-v1, RGB display.",
+      "source_page": "https://www.inaturalist.org/observations/414173185",
+      "download_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/762408809/large.jpg",
+      "author": "(c) Kurt Miller, some rights reserved (CC BY-SA)",
+      "license": "cc-by-sa",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "provenance_groups": [
+        "inat-observer-844805",
+        "audit-component-inat-414173185"
+      ],
+      "component_id": "inat-414173185",
+      "split": "train"
+    },
+    {
+      "key": "inat-413955771",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-413955771.jpg",
+      "sha256": "489ebc20a71871e5548e864cbc3c0544117c6fc3d2dde4291dea8adb2a7696bd",
+      "size": [
+        771,
+        1024
+      ],
+      "boxes": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            97,
+            140,
+            541,
+            645
+          ],
+          "xyxy_normalized": [
+            0.125810635538262,
+            0.13671875,
+            0.7016861219195849,
+            0.6298828125
+          ]
+        }
+      ],
+      "review": "INHERITED_SHA_BOUND_INDIVIDUAL_REVIEW_V1",
+      "review_evidence": "Individual original photograph and annotation QA plot inspected; review-v1, RGB display.",
+      "source_page": "https://www.inaturalist.org/observations/413955771",
+      "download_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/761970367/large.jpg",
+      "author": "(c) Martin Tremblay, some rights reserved (CC BY)",
+      "license": "cc-by",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "provenance_groups": [
+        "inat-observer-5957673",
+        "audit-component-inat-413955771"
+      ],
+      "component_id": "inat-413955771",
+      "split": "train"
+    },
+    {
+      "key": "inat-413866317",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-413866317.jpg",
+      "sha256": "7592c06b3a8465332505c21e7aa89951480dd496c519f1e67148caf6e2948609",
+      "size": [
+        768,
+        1024
+      ],
+      "boxes": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            310,
+            435,
+            444,
+            600
+          ],
+          "xyxy_normalized": [
+            0.4036458333333333,
+            0.4248046875,
+            0.578125,
+            0.5859375
+          ]
+        }
+      ],
+      "review": "INHERITED_SHA_BOUND_INDIVIDUAL_REVIEW_V1",
+      "review_evidence": "Individual original photograph and annotation QA plot inspected; review-v1, RGB display.",
+      "source_page": "https://www.inaturalist.org/observations/413866317",
+      "download_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/761785394/large.jpg",
+      "author": "(c) Shaun, some rights reserved (CC BY)",
+      "license": "cc-by",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "provenance_groups": [
+        "inat-observer-686442",
+        "audit-component-inat-413866317"
+      ],
+      "component_id": "inat-413866317",
+      "split": "valid"
+    },
+    {
+      "key": "inat-413807289",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-413807289.jpg",
+      "sha256": "e1e8d7875c4bbc1141fc17fac2cabbd3b2beec8799b8db76810b2a2a04ce8443",
+      "size": [
+        768,
+        1024
+      ],
+      "boxes": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            329,
+            350,
+            510,
+            570
+          ],
+          "xyxy_normalized": [
+            0.4283854166666667,
+            0.341796875,
+            0.6640625,
+            0.556640625
+          ]
+        }
+      ],
+      "review": "INHERITED_SHA_BOUND_INDIVIDUAL_REVIEW_V1",
+      "review_evidence": "Individual original photograph and annotation QA plot inspected; review-v1, RGB display.",
+      "source_page": "https://www.inaturalist.org/observations/413807289",
+      "download_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/761665735/large.jpg",
+      "author": "(c) Marcello Mastroianni Albuquerque Araújo, some rights reserved (CC BY)",
+      "license": "cc-by",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "provenance_groups": [
+        "inat-observer-10338644",
+        "audit-component-inat-413807289"
+      ],
+      "component_id": "inat-413807289",
+      "split": "train"
+    },
+    {
+      "key": "inat-413808525",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-413808525.jpg",
+      "sha256": "6542634cd026d555c12f143b93f1afc1aea72811f60ca76091cc94a2c4aea581",
+      "size": [
+        768,
+        1024
+      ],
+      "boxes": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            344,
+            345,
+            536,
+            789
+          ],
+          "xyxy_normalized": [
+            0.4479166666666667,
+            0.3369140625,
+            0.6979166666666666,
+            0.7705078125
+          ]
+        }
+      ],
+      "review": "INHERITED_SHA_BOUND_INDIVIDUAL_REVIEW_V1",
+      "review_evidence": "Individual original photograph and annotation QA plot inspected; review-v1, RGB display.",
+      "source_page": "https://www.inaturalist.org/observations/413808525",
+      "download_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/761667986/large.jpg",
+      "author": "(c) Marcello Mastroianni Albuquerque Araújo, some rights reserved (CC BY)",
+      "license": "cc-by",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "provenance_groups": [
+        "inat-observer-10338644",
+        "audit-component-inat-413807289"
+      ],
+      "component_id": "inat-413807289",
+      "split": "train"
+    },
+    {
+      "key": "inat-414256437",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-414256437.jpg",
+      "sha256": "bc8f335087b1479b09b25069e8ca78e90e5bd85d15d3fea8d72a0e014f4d6f75",
+      "size": [
+        1024,
+        768
+      ],
+      "boxes": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            324,
+            313,
+            611,
+            481
+          ],
+          "xyxy_normalized": [
+            0.31640625,
+            0.4075520833333333,
+            0.5966796875,
+            0.6263020833333334
+          ]
+        }
+      ],
+      "review": "INHERITED_SHA_BOUND_INDIVIDUAL_REVIEW_V1",
+      "review_evidence": "Individual original photograph and annotation QA plot inspected; review-v1, RGB display.",
+      "source_page": "https://www.inaturalist.org/observations/414256437",
+      "download_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/762578522/large.jpg",
+      "author": "no rights reserved",
+      "license": "cc0",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "provenance_groups": [
+        "inat-observer-6418031",
+        "audit-component-inat-414256437"
+      ],
+      "component_id": "inat-414256437",
+      "split": "train"
+    },
+    {
+      "key": "inat-413336029",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-413336029.jpg",
+      "sha256": "e14b9ce1b7db6b23a4d00d8aa284a012d44a05e172e327a93284dbaf8307b2ff",
+      "size": [
+        824,
+        1024
+      ],
+      "boxes": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            260,
+            270,
+            620,
+            714
+          ],
+          "xyxy_normalized": [
+            0.3155339805825243,
+            0.263671875,
+            0.7524271844660194,
+            0.697265625
+          ]
+        }
+      ],
+      "review": "INHERITED_SHA_BOUND_INDIVIDUAL_REVIEW_V1",
+      "review_evidence": "Individual original photograph and annotation QA plot inspected; review-v1, RGB display.",
+      "source_page": "https://www.inaturalist.org/observations/413336029",
+      "download_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/760722308/large.jpg",
+      "author": "(c) Zaharia Ștefan Theodor, some rights reserved (CC BY)",
+      "license": "cc-by",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "provenance_groups": [
+        "inat-observer-10848067",
+        "audit-component-inat-413336029"
+      ],
+      "component_id": "inat-413336029",
+      "split": "valid"
+    },
+    {
+      "key": "inat-412205156",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-412205156.jpg",
+      "sha256": "52e8935e09f726550347aa0187256f7a18f57375578b3484fca3511be83820da",
+      "size": [
+        768,
+        1024
+      ],
+      "boxes": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            295,
+            116,
+            733,
+            790
+          ],
+          "xyxy_normalized": [
+            0.3841145833333333,
+            0.11328125,
+            0.9544270833333334,
+            0.771484375
+          ]
+        }
+      ],
+      "review": "INHERITED_SHA_BOUND_INDIVIDUAL_REVIEW_V1",
+      "review_evidence": "Individual original photograph and annotation QA plot inspected; review-v1, RGB display.",
+      "source_page": "https://www.inaturalist.org/observations/412205156",
+      "download_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/758433295/large.jpg",
+      "author": "(c) Mark Richman, some rights reserved (CC BY)",
+      "license": "cc-by",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "provenance_groups": [
+        "inat-observer-1136170",
+        "audit-component-inat-412205156"
+      ],
+      "component_id": "inat-412205156",
+      "split": "train"
+    },
+    {
+      "key": "inat-410056471",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-410056471.jpg",
+      "sha256": "bbea64bd5d9fbd696a3404eea8703d5dbca36a0c1bf1aa3140d25923f9de642d",
+      "size": [
+        771,
+        1024
+      ],
+      "boxes": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            136,
+            329,
+            398,
+            487
+          ],
+          "xyxy_normalized": [
+            0.17639429312581065,
+            0.3212890625,
+            0.51621271076524,
+            0.4755859375
+          ]
+        }
+      ],
+      "review": "INHERITED_SHA_BOUND_INDIVIDUAL_REVIEW_V1",
+      "review_evidence": "Individual original photograph and annotation QA plot inspected; review-v1, RGB display.",
+      "source_page": "https://www.inaturalist.org/observations/410056471",
+      "download_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/754084255/large.jpg",
+      "author": "no rights reserved",
+      "license": "cc0",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "provenance_groups": [
+        "inat-observer-5691431",
+        "audit-component-inat-410056471"
+      ],
+      "component_id": "inat-410056471",
+      "split": "test"
+    },
+    {
+      "key": "inat-407564596",
+      "source_path": ".codex-tmp/yolo-training/gap-review/images/inat-407564596.jpg",
+      "sha256": "2bcd2b67df530cf822c2d4b2efd208cb3d6ff4d8d071224a50dafbf832fc37e7",
+      "size": [
+        1024,
+        684
+      ],
+      "boxes": [
+        {
+          "class": "Cockroach",
+          "xyxy_pixels": [
+            303,
+            150,
+            669,
+            589
+          ],
+          "xyxy_normalized": [
+            0.2958984375,
+            0.21929824561403508,
+            0.6533203125,
+            0.8611111111111112
+          ]
+        }
+      ],
+      "review": "INHERITED_SHA_BOUND_INDIVIDUAL_REVIEW_V1",
+      "review_evidence": "Individual original photograph and annotation QA plot inspected; review-v1, RGB display.",
+      "source_page": "https://www.inaturalist.org/observations/407564596",
+      "download_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/748991501/large.jpg",
+      "author": "no rights reserved",
+      "license": "cc0",
+      "status": "APPROVED_FOR_TWO_CLASS_CANDIDATE_ONLY",
+      "provenance_groups": [
+        "inat-observer-10570897",
+        "audit-component-inat-407564596"
+      ],
+      "component_id": "inat-407564596",
+      "split": "train"
+    }
+  ],
+  "group_policy": "Union existing global exact/perceptual audit components with Flickr author or iNaturalist observer across dates; no group shared by fine-tuning splits.",
+  "test_policy": "One evaluation after best checkpoint chosen on validation; no test-based threshold/epoch tuning. These public images may overlap pretrained data; fine-tuning holdout only.",
+  "limitations": [
+    "Small public-photo bootstrap, not independent PICO validation or sufficient deployment coverage",
+    "Cockroach photos were already used in a separate earlier failed candidate experiment; not a fresh project-wide test benchmark",
+    "No training/deployment acceptance for other eleven target classes",
+    "No device image sequences, real-world tracking stability or HCI gesture measurements"
+  ],
+  "preset_experiment": {
+    "initial_weight": "yolo26n.pt",
+    "epochs": 20,
+    "imgsz": 416,
+    "batch": 1,
+    "workers": 0,
+    "cache": false,
+    "lr0": 0.001,
+    "mosaic": 0,
+    "seed": 42,
+    "diagnostic_confidence": 0.25,
+    "diagnostic_iou": 0.5,
+    "deployment_accepted": false
+  }
+}
