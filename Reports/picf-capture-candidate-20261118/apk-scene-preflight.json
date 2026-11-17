@@ -1,0 +1,33 @@
+{
+  "scope": "Historical source scene endpoints plus existing package scene inventory; not device runtime",
+  "runtimeSourceCommit": "fcdce1fc16c5e10f237907a8e12970c47fa48f95",
+  "historicalSceneSha256": "a24e0000eb10ee779def214f1fa15dc44e32ac381162ca598a295b2f0372ec9f",
+  "scene": "Assets/Scenes/BridgeStereoFusion.unity",
+  "connectionFields": [
+    "m_Host: 127.0.0.1",
+    "m_Port: 5005",
+    "m_Host: 127.0.0.1",
+    "m_Port: 5005",
+    "m_AutoConnect: 1",
+    "m_AutoReconnect: 1"
+  ],
+  "packedScenes": [
+    "Assets/Scenes/BridgeStereoFusion.unity",
+    "Assets/Scenes/BridgeStereoPoseFusion.unity",
+    "Assets/Scenes/BridgeStereoRepair.unity",
+    "Assets/Scenes/BridgeTest.unity",
+    "Assets/Scenes/DesktopCaptureDemo.unity",
+    "Assets/Scenes/MagicMR.unity",
+    "Assets/Scenes/ParkBugs.unity",
+    "Assets/Scenes/ParkPet.unity",
+    "Assets/Scenes/ParkPlant.unity",
+    "Assets/Scenes/ParkRoom.unity",
+    "Assets/Scenes/ParkStatue.unity",
+    "Assets/Scenes/ParkTree.unity",
+    "Assets/Scenes/SampleScene.unity",
+    "Assets/Scenes/VstTest.unity"
+  ],
+  "possibleCaptureSetup": "Device localhost:5005 can be forwarded via adb reverse tcp:5005 tcp:15055 after confirming installed package and real camera source. Do not replace PC production port 5005.",
+  "executedAdbReverse": false,
+  "deviceValidated": false
+}

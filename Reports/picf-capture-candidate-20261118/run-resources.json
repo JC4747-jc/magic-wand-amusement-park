@@ -1,0 +1,32 @@
+{
+  "startedAtUtc": "2026-11-17T20:39:54.4209908Z",
+  "mode": "SYNTHETIC_LOOPBACK_SELFTEST",
+  "runId": "picf-loopback-20261118",
+  "exitCode": 0,
+  "guardStop": null,
+  "toolSha256": "d54d9580558bff73d6a3f1a84804435e3fa59b05b6e0c96100a15195e9e40d09",
+  "protocolSha256": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038",
+  "launcherSha256": "3040bceb3e24e0929f631f9d694560a6075ccc66b19e902ec1940e7568c5c40b",
+  "elapsedSeconds": 0.852,
+  "scope": "Owned Job/process-tree/host snapshots; short-lived worker may exit before a live RSS sample. Not continuous peaks or device/model acceptance.",
+  "limits": {
+    "diskGrowthMiB": 64,
+    "sessionBytes": 35651584,
+    "logBytes": 2097152,
+    "initialFreeRAMGiB": 4,
+    "outerSeconds": 150,
+    "freeRAMFloorGiB": 3,
+    "ownedRSSMiB": 512
+  },
+  "samples": [
+    {
+      "seconds": 0.324,
+      "freeRAMGiB": 4.185,
+      "treeRSSMiB": 30.0,
+      "liveOwnedProcesses": 2,
+      "sessionBytes": 0,
+      "logBytes": 0,
+      "diskGrowthMiB": 0.0
+    }
+  ]
+}

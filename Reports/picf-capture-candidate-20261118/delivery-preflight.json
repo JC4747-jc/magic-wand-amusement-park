@@ -1,0 +1,22 @@
+{
+  "remoteBranch": "restore-4d-lighter",
+  "parent": "19298632ba9a0bf4c727c5e036f085eda311bb21",
+  "parentAvailableLocally": true,
+  "dependencies": [
+    {
+      "path": "object-detection-demo/scene_protocol.py",
+      "remoteExists": true,
+      "rawEqual": true,
+      "currentSha256": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038",
+      "remoteSha256": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038",
+      "parserImportsAndSceneASTEqual": true
+    },
+    {
+      "path": "Tools/build_process_job.ps1",
+      "remoteExists": true,
+      "rawEqual": false,
+      "currentSha256": "f84ac62c7598b44a9db3f49ace35803e02f6e64beacf6c1b94650a5911b35cea",
+      "remoteSha256": "3b732402fabbd3751ad5ef3e1f552a5a378dd564bdaff7d02e66bac48776ba57"
+    }
+  ]
+}

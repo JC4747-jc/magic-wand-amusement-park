@@ -1,0 +1,26 @@
+test_actual_loopback_decreasing_frame_id_closes_connection (test_picf_capture.PicfCaptureChecks.test_actual_loopback_decreasing_frame_id_closes_connection) ... ok
+test_actual_loopback_v1_v2_ack_bytes_and_no_provenance_promotion (test_picf_capture.PicfCaptureChecks.test_actual_loopback_v1_v2_ack_bytes_and_no_provenance_promotion) ... ok
+test_all_frames_in_same_capture_family_across_connections (test_picf_capture.PicfCaptureChecks.test_all_frames_in_same_capture_family_across_connections) ... ok
+test_bad_magic_or_version_cannot_be_captured (test_picf_capture.PicfCaptureChecks.test_bad_magic_or_version_cannot_be_captured) ... ok
+test_claimed_pico_origin_never_auto_approved (test_picf_capture.PicfCaptureChecks.test_claimed_pico_origin_never_auto_approved) ... ok
+test_disk_floor_stops_before_jpeg_write (test_picf_capture.PicfCaptureChecks.test_disk_floor_stops_before_jpeg_write) ... ok
+test_duplicate_jpeg_not_saved_and_no_fake_detections (test_picf_capture.PicfCaptureChecks.test_duplicate_jpeg_not_saved_and_no_fake_detections) ... ok
+test_existing_session_not_overwritten (test_picf_capture.PicfCaptureChecks.test_existing_session_not_overwritten) ... ok
+test_header_dimensions_must_match_actual_jpeg (test_picf_capture.PicfCaptureChecks.test_header_dimensions_must_match_actual_jpeg) ... ok
+test_image_and_stored_byte_caps_do_not_overrun (test_picf_capture.PicfCaptureChecks.test_image_and_stored_byte_caps_do_not_overrun) ... ok
+test_loopback_and_explicit_private_peer_only (test_picf_capture.PicfCaptureChecks.test_loopback_and_explicit_private_peer_only) ... ok
+test_non_jpeg_content_rejected (test_picf_capture.PicfCaptureChecks.test_non_jpeg_content_rejected) ... ok
+test_oversized_payload_rejected_after_header_before_payload_read (test_picf_capture.PicfCaptureChecks.test_oversized_payload_rejected_after_header_before_payload_read) ... ok
+test_pixel_and_long_edge_caps_before_payload_read (test_picf_capture.PicfCaptureChecks.test_pixel_and_long_edge_caps_before_payload_read) ... ok
+test_production_parser_v1_v2_fragmented_headers (test_picf_capture.PicfCaptureChecks.test_production_parser_v1_v2_fragmented_headers) ... ok
+test_sampling_interval_skips_different_frame_without_label (test_picf_capture.PicfCaptureChecks.test_sampling_interval_skips_different_frame_without_label) ... ok
+test_scene_mismatch_rejected_before_jpeg_allocation (test_picf_capture.PicfCaptureChecks.test_scene_mismatch_rejected_before_jpeg_allocation) ... ok
+test_truncated_payload_does_not_create_partial_jpeg (test_picf_capture.PicfCaptureChecks.test_truncated_payload_does_not_create_partial_jpeg) ... ok
+test_v1_scene_is_operator_label_and_not_ground_truth (test_picf_capture.PicfCaptureChecks.test_v1_scene_is_operator_label_and_not_ground_truth) ... ok
+test_whole_packet_deadline_not_reset_by_trickle (test_picf_capture.PicfCaptureChecks.test_whole_packet_deadline_not_reset_by_trickle) ... ok
+test_wire_budget_checked_before_next_allocation (test_picf_capture.PicfCaptureChecks.test_wire_budget_checked_before_next_allocation) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.337s
+
+OK

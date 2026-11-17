@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "purpose": "CAPTURE_ONLY_NO_INFERENCE_OR_LABELS",
+  "session_id": "picf-loopback-20261118",
+  "capture_family": "picf-loopback-20261118",
+  "scene": "tree",
+  "declared_source": "editor_synthetic",
+  "device_domain_verified": false,
+  "independent_project_test_eligible": false,
+  "training_approved": false,
+  "split_assigned": false,
+  "accepted_for_deployment": false,
+  "model_loaded": false,
+  "real_yolo_validated": false,
+  "labels_created": false,
+  "sender_timestamp_scope": "Raw sender timestamp; current sender uses UTC after encoding, not exposure time or synchronized latency proof",
+  "started_at_utc": "2026-11-17T20:39:54.763431+00:00",
+  "elapsed_seconds": 0.062,
+  "endpoint": [
+    "127.0.0.1",
+    52303
+  ],
+  "limits": {
+    "images": 4,
+    "jpeg_bytes": 2097152,
+    "pixels": 4194304,
+    "long_edge": 2048,
+    "stored_bytes": 33554432,
+    "wire_bytes": 67108864,
+    "packets": 300,
+    "connections": 4,
+    "seconds": 5,
+    "packet_seconds": 1,
+    "idle_seconds": 1,
+    "min_interval": 0
+  },
+  "source_hashes": {
+    "recorder": "d54d9580558bff73d6a3f1a84804435e3fa59b05b6e0c96100a15195e9e40d09",
+    "protocol_parser": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038"
+  },
+  "packet_attempts": 4,
+  "received_packets": 3,
+  "received_wire_bytes": 2120,
+  "stored_image_bytes": 1354,
+  "connections": 1,
+  "stop_reason": "selftest_peer_disconnected",
+  "records": [
+    {
+      "image": "images/0001.jpg",
+      "sha256": "ea0c64165b1f5cd9d39da10fe254db3ba60a1031cea9ae9b6b14a8b1822c4263",
+      "pixel_sha256": "eda901db93acdd56192fe20857fcbbaee3ea35a783f1da553ec6bccb09485103",
+      "bytes": 677,
+      "width": 64,
+      "height": 48,
+      "frame_id": 1,
+      "sender_timestamp_ms": 1700000000000,
+      "received_at_utc": "2026-11-17T20:39:54.821456+00:00",
+      "connection": 1,
+      "peer": "127.0.0.1",
+      "wire_scene": null,
+      "scene_evidence": "operator_session_only",
+      "capture_family": "picf-loopback-20261118",
+      "annotation_status": "UNREVIEWED_NO_LABEL",
+      "target_presence_verified": false,
+      "device_domain_verified": false,
+      "independent_project_test_eligible": false
+    },
+    {
+      "image": "images/0002.jpg",
+      "sha256": "a601ab159835c565900fd2ce495c096cecde701b728daf1ffdf4bd419decc9d7",
+      "pixel_sha256": "df64a3d5b84f126fc1b7ddfc26f057fce3e41725304aa4dbd3b7db7efdfa558c",
+      "bytes": 677,
+      "width": 64,
+      "height": 48,
+      "frame_id": 2,
+      "sender_timestamp_ms": 1700000000000,
+      "received_at_utc": "2026-11-17T20:39:54.824500+00:00",
+      "connection": 1,
+      "peer": "127.0.0.1",
+      "wire_scene": "tree",
+      "scene_evidence": "wire_profile_only",
+      "capture_family": "picf-loopback-20261118",
+      "annotation_status": "UNREVIEWED_NO_LABEL",
+      "target_presence_verified": false,
+      "device_domain_verified": false,
+      "independent_project_test_eligible": false
+    }
+  ],
+  "events": [
+    {
+      "kind": "frame",
+      "elapsed_seconds": 0.062,
+      "frame_id": 1,
+      "saved": true,
+      "reason": null
+    },
+    {
+      "kind": "frame",
+      "elapsed_seconds": 0.062,
+      "frame_id": 2,
+      "saved": true,
+      "reason": null
+    },
+    {
+      "kind": "frame",
+      "elapsed_seconds": 0.062,
+      "frame_id": 3,
+      "saved": false,
+      "reason": "duplicate_jpeg_sha256"
+    },
+    {
+      "kind": "connection_closed",
+      "elapsed_seconds": 0.062,
+      "error": "EOFError: Peer closed PICF stream"
+    }
+  ]
+}
