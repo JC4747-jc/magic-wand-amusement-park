@@ -15,8 +15,16 @@ namespace MagicMR {
         readonly Dictionary<string,List<DetectionMessage>> sources=new Dictionary<string,List<DetectionMessage>>();
         readonly Dictionary<string,float> sourceTimes=new Dictionary<string,float>();
         readonly Dictionary<string,bool> sourceAutomatic=new Dictionary<string,bool>();
+        readonly List<string> expiredSources=new List<string>();
         public float candidateLifetime=3f;
+        void RemoveExpiredSources(float now) {
+            expiredSources.Clear();
+            foreach(var pair in sourceTimes)if(now-pair.Value>candidateLifetime)expiredSources.Add(pair.Key);
+            foreach(var source in expiredSources) {sources.Remove(source);sourceTimes.Remove(source);sourceAutomatic.Remove(source);}
+            expiredSources.Clear();
+        }
         public void Tick(float now,bool busy) {
+            RemoveExpiredSources(now);
             Candidates.Clear();
             foreach(var pair in sources)if(now-sourceTimes[pair.Key]<=candidateLifetime)Candidates.AddRange(pair.Value);
             if(!Candidates.Exists(d=>d.instance_id==pendingId)) {pendingId=null;confirmations=0;}
@@ -24,6 +32,7 @@ namespace MagicMR {
         }
         public string Update(DetectionFrameMessage frame,float now,bool busy) {
             if(frame==null || frame.scene!="discovery" || frame.status!="OK" || frame.frame_id<=lastFrame)return null;
+            RemoveExpiredSources(now);
             lastFrame=frame.frame_id;
             string source=frame.weights??"default";var current=new List<DetectionMessage>();
             foreach(var d in frame.detections??System.Array.Empty<DetectionMessage>())

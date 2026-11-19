@@ -48,6 +48,6 @@ namespace MagicMR
             int index=Mathf.Min(plantVoiceEnvelope.Length-1,Mathf.FloorToInt(elapsed/plantVoice.length*plantVoiceEnvelope.Length));
             PlantVoiceMouth=Mathf.MoveTowards(PlantVoiceMouth,plantVoiceEnvelope[index],Time.unscaledDeltaTime*12);
         }
-        void OnApplicationPause(bool paused){if(paused&&scenario==ParkScenario.Plant)Cancel();}
+        void OnApplicationPause(bool paused){if(paused&&(scenario==ParkScenario.Plant||scenario==ParkScenario.Statue))Cancel();}
     }
 }

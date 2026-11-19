@@ -1,0 +1,83 @@
+{
+  "source": "https://www.innerscene.com/tools/library/3d-parts/domestic-cat-walking-4e8ff6c2",
+  "license": "CC0-1.0",
+  "original_has_animation": false,
+  "derived_animation": "Authored generic in-place idle/walk; not real animal motion capture",
+  "input_polygon_count": 34388,
+  "output_polygon_count": 24781,
+  "vertices": 15929,
+  "bones": 14,
+  "materials": [
+    {
+      "name": "black",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "roughness": 0.41999998688697815,
+      "albedo": "albedo_0.png"
+    },
+    {
+      "name": "Material",
+      "color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "roughness": 0.5
+    },
+    {
+      "name": "Pet inner ears",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "roughness": 0.800000011920929,
+      "albedo": "albedo_2.png"
+    },
+    {
+      "name": "Short tabby coat",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "roughness": 0.8799999952316284,
+      "albedo": "albedo_3.png"
+    },
+    {
+      "name": "Warm animal iris",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "roughness": 0.1599999964237213,
+      "albedo": "albedo_4.png"
+    },
+    {
+      "name": "white",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "roughness": 0.30000001192092896,
+      "albedo": "albedo_5.png"
+    }
+  ],
+  "clips": [
+    "NaturalCat_Idle",
+    "NaturalCat_Walk"
+  ],
+  "source_sha256": "9eb6747fed5304730b1ab981b647531cabf2a570218c6ea166ceb40d1998ca15",
+  "authored_material": "Original procedural 1K tabby coat, CPU color bake; source palette otherwise retained"
+}

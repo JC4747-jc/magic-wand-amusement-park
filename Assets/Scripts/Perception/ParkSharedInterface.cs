@@ -24,6 +24,9 @@ namespace MagicMR {
         static bool startReplay;
         static bool recordedReplay;
         static bool automaticSwitching=true;
+        static bool requestDemonLighter;
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void ResetLighterVariantRequest() { requestDemonLighter=false; }
         readonly DiscoverySelection replaySelection=new DiscoverySelection();
         readonly List<GameObject> boxes=new List<GameObject>();
         readonly List<Button> buttons=new List<Button>();
@@ -56,6 +59,7 @@ namespace MagicMR {
         Color hoverOriginal;
         string actionFeedback;
         float actionFeedbackUntil;
+        bool interfaceStarted,interfaceInitialized;
 
         XRHandSubsystem hands;
 
@@ -70,11 +74,15 @@ namespace MagicMR {
             candidateSignature=null;
             if(detectionPanel)detectionPanel.gameObject.SetActive(false);
         }
-        void OnEnable() { if(receiver) {receiver.RecognitionAccepted+=Receive;receiver.DiscoverySceneRequested+=DiscoveryRoute;}else if(transport)transport.LineReceived+=Receive; }
+        void OnEnable() {
+            if(receiver) {receiver.RecognitionAccepted+=Receive;receiver.DiscoverySceneRequested+=DiscoveryRoute;}else if(transport)transport.LineReceived+=Receive;
+            if(interfaceStarted)EnsureInterface();
+        }
         void DiscoveryRoute(string profile,string id) { if(profile=="lighter")Route(profile,id); }
         void OnDisable() {
             DesktopPointerCaptured=false;
             if(previewSender)previewSender.EncodedFrameSent-=CacheSentImage;
+            previewSender=null;
             sentImages.Clear();sentImageOrder.Clear();
             if(matchedTexture)Destroy(matchedTexture);matchedTexture=null;
             if(controller)controller.SetRightHandUiCapture(false);
@@ -82,19 +90,25 @@ namespace MagicMR {
             if(controller)controller.SetLeftHandUiCapture(false);
             if(receiver)receiver.RecognitionAccepted-=Receive;else if(transport)transport.LineReceived-=Receive;
             if(receiver)receiver.DiscoverySceneRequested-=DiscoveryRoute;
-            if(statusRoot)Destroy(statusRoot);if(menuRoot)Destroy(menuRoot);
-            if(candidatesRoot)Destroy(candidatesRoot);candidateButtons.Clear();
-            if(detectionPanel)Destroy(detectionPanel.gameObject);
+            RetirePanel(statusRoot);RetirePanel(menuRoot);RetirePanel(candidatesRoot);
+            if(detectionPanel)RetirePanel(detectionPanel.gameObject);
+            statusRoot=null;menuRoot=null;candidatesRoot=null;detectionPanel=null;menuRect=null;status=null;matchedPreview=null;
+            hoveredButton=null;candidateSignature=null;interfaceInitialized=false;
+            candidateButtons.Clear();plantSimulationButtons.Clear();petSimulationButtons.Clear();
+            bugSimulationButtons.Clear();treeSimulationButtons.Clear();statueSimulationButtons.Clear();
             CurrentFrame=null;boxes.Clear();buttons.Clear();
         }
-        void Start() {
-            if(!Camera.main)return;
+        static void RetirePanel(GameObject panel) {if(panel){panel.SetActive(false);Destroy(panel);}}
+        void Start() {interfaceStarted=true;EnsureInterface();}
+        void EnsureInterface() {
+            if(interfaceInitialized||!Camera.main)return;
+            interfaceInitialized=true;
             statusRoot=Panel("Shared status",new Vector3(-.5f,.12f,1.2f),new Vector2(470,300));
             // Main TargetLockDebugUI uses yellow 24px status; PicoCameraPreviewUI uses black .65 background.
             status=Label(statusRoot.transform,"Status",new Vector2(440,270),24);status.color=Color.yellow;
             status.resizeTextForBestFit=true;status.resizeTextMinSize=16;status.resizeTextMaxSize=24;
             menuRoot=Panel("Shared scene menu",new Vector3(-.5f,-.24f,1.2f),new Vector2(470,420));menuRect=menuRoot.GetComponent<RectTransform>();
-            string[] commands={"Entry","Lighter","Tree","Bugs","Statue","Plant","Pet","Room","Auto","Reset","Virtual test","Replay","Confirm room","Fit","Plane","Stop"};
+            string[] commands={"Entry","Lighter","Demon","Tree","Bugs","Statue","Plant","Pet","Room","Auto","Reset","Virtual test","Replay","Confirm room","Fit","Plane","Stop"};
             for(int i=0;i<commands.Length;i++) {
                 string command=commands[i];
                 AddButton(menuRoot.transform,command,new Vector2((i%3-1)*150,170-i/3*65),()=>Command(command));
@@ -133,6 +147,10 @@ namespace MagicMR {
             if(replay)replayLines=replay.text.Split(new[]{'\r','\n'},StringSplitOptions.RemoveEmptyEntries);
             Selection.automatic=automaticSwitching;
             if(controller && startReplay) {startReplay=false;Command("Replay");}
+            if(!controller && requestDemonLighter) {
+                requestDemonLighter=false;
+                SelectDemonLighter();
+            }
         }
         GameObject Panel(string name,Vector3 position,Vector2 size) {
             var go=new GameObject(name,typeof(RectTransform),typeof(Canvas),typeof(Image));
@@ -248,7 +266,7 @@ namespace MagicMR {
             if(profile=="room" && !roomAcknowledged) { Feedback="Confirm room space manually first";return; }
             if(profile=="lighter") {
                 if(!controller) { Feedback="Selected lighter; main tracking and calibration remain active";return; }
-                SceneManager.LoadScene("BridgeStereoFusion");return;
+                requestDemonLighter=false;SceneManager.LoadScene("BridgeStereoFusion");return;
             }
             if(controller && controller.SwitchContent(profile,id)) {
                 Feedback="Selected "+profile+"; waiting for location";
@@ -267,6 +285,11 @@ namespace MagicMR {
             Feedback=replayMode?"REPLAY: JSON frames; no physical location":"LIVE TCP";
         }
         public void Command(string command) {ExecuteCommand(command);ShowActionFeedback();}
+        void SelectDemonLighter() {
+            var lighter=FindFirstObjectByType<RealityEditor>();
+            if(!lighter) {Feedback="Lighter unavailable";return;}
+            Feedback="GitHub snapshot lighter: circle uses eyes, pulse and growl";
+        }
         void ExecuteCommand(string command) {
             if(command=="Preview Cat"||command=="Preview Dog"||command=="Walk in place") {
                 if(!controller||!controller.simulation||replayMode||controller.scenario!=ParkScenario.Pet||(controller.selected&&!controller.selected.virtualTarget)){Feedback="Pet previews require VIRTUAL SIMULATION";return;}
@@ -334,11 +357,18 @@ namespace MagicMR {
             string profile=command.ToLowerInvariant();
             if(profile=="room" && !roomAcknowledged) { Feedback="Use Confirm room before entering Room";return; }
             if(controller && controller.AnimationBusy) { Feedback="Wait for animation or Reset";return; }
-            if(profile=="lighter") { SceneManager.LoadScene("BridgeStereoFusion");return; }
+            if(profile=="demon") {
+                if(!controller)SelectDemonLighter();
+                else {requestDemonLighter=true;SceneManager.LoadScene("BridgeStereoFusion");}
+                return;
+            }
+            if(profile=="lighter") { requestDemonLighter=false;SceneManager.LoadScene("BridgeStereoFusion");return; }
             if(controller) { Selection.Return(Time.unscaledTime);if(receiver)receiver.discoveryMode=false;Route(profile,null); }
             else SceneManager.LoadScene("Park"+command);
         }
         void Update() {
+            if(interfaceStarted&&!interfaceInitialized)EnsureInterface();
+            if(!interfaceInitialized)return;
             bool petPreview=controller&&controller.simulation&&!replayMode&&controller.scenario==ParkScenario.Pet;
             bool bugPreview=controller&&controller.simulation&&!replayMode&&controller.scenario==ParkScenario.Bugs;
             bool treePreview=controller&&controller.simulation&&!replayMode&&controller.scenario==ParkScenario.Tree;

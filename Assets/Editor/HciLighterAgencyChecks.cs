@@ -11,7 +11,7 @@ public static class HciLighterAgencyChecks
     const string Key="MagicMR.LighterAgencyChecks";
     static string Output=>Path.GetFullPath(".codex-tmp/hci-lighter-agency");
     static RealityEditor editor;static LighterAgencyVisual effect;static GameObject root;static Camera camera;
-    static Vector3 anchor;static int phase,errors;static double next,started;static float minimum=100,maximum=-100;
+    static Vector3 anchor,snapshotEyesPosition,snapshotEyesScale;static int phase,errors;static double next,started;static float minimum=100,maximum=-100;
     static Mesh mesh;static int coughs;
     static HciLighterAgencyChecks(){EditorApplication.update+=Tick;Application.logMessageReceived+=(m,s,t)=>{if(SessionState.GetBool(Key,false)&&(t==LogType.Error||t==LogType.Exception||t==LogType.Assert))errors++;};}
     public static void Run(){TabletopGestureChecks.Run();Directory.CreateDirectory(Output);File.WriteAllText(Output+"/result.txt","RUNNING\n");SessionState.SetBool(Key,true);SessionState.SetBool(Key+".Done",false);EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);EditorApplication.EnterPlaymode();}
@@ -40,6 +40,14 @@ public static class HciLighterAgencyChecks
                     body.AddComponent<MeshRenderer>().sharedMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/MagicMR/LighterGeometry/"+mat+".mat");
                 }
                 editor=root.AddComponent<RealityEditor>();root.GetComponent<Rigidbody>().isKinematic=true;editor.RegisterVisualBounds(Vector3.zero,.08f);anchor=root.transform.position;
+                Require(!editor.HciAgencyVisualsEnabled,"Snapshot must be the default Agency style");
+                snapshotEyesPosition=root.transform.Find("AgencyEyes").localPosition;snapshotEyesScale=root.transform.Find("AgencyEyes").localScale;
+                Cast();Require(!root.GetComponent<LighterAgencyVisual>(),"Default B allocated HCI wings");
+                Require(!editor.TrySetHciAgencyVisuals(true),"Style selection interrupted an active cast");
+                Require(root.transform.position==anchor,"Style selection moved the tracking anchor");
+                editor.ResetTarget();
+                var menu=new GameObject("Lighter variant command fixture").AddComponent<ParkSharedInterface>();menu.enabled=false;
+                menu.Command("Demon");Require(editor.HciAgencyVisualsEnabled,"Demon menu did not opt in to HCI style");
                 camera.transform.position=anchor+new Vector3(.14f,.065f,.30f);camera.transform.LookAt(anchor);Cast();effect=root.GetComponent<LighterAgencyVisual>();Require(effect,"B missing decorative component");mesh=effect.SharedWingMesh;Require(mesh.vertexCount==16&&mesh.triangles.Length==36,"Wing mesh budget changed");
                 Require(Array.TrueForAll(mesh.normals,n=>n.sqrMagnitude>.5f),"Degenerate membrane normals");Require(MagicMRAudioFactory.Cough==MagicMRAudioFactory.Cough&&MagicMRAudioFactory.Cough.samples==10143,"Cough audio cache/budget changed");Later(1,.55);return;
             }
@@ -55,7 +63,22 @@ public static class HciLighterAgencyChecks
             else if(phase==6){editor.SendMessage("OnApplicationPause",true);Quiet();Cast();Later(7,.55);}
             else if(phase==7){root.SetActive(false);Quiet();root.SetActive(true);Cast();Later(8,.55);}
             else if(phase==8){editor.TriggerDeconstruction();Quiet();Later(9,1);}
-            else if(phase==9){editor.ResetTarget();Quiet();Require(effect.SharedWingMesh==mesh&&root.GetComponents<LighterAgencyVisual>().Length==1,"Lifetime resource grew");Require(root.GetComponents<AudioSource>().Length==1,"Cough added AudioSource");Capture("Reset");File.WriteAllText(Output+"/result.txt","PASS: real RealityEditor.ApplyDimension B on production mesh fixture with nonuniform authored scale and rotated root; shared 16-vertex/12-triangle membrane, bounded flap, repeated timed cough, max 14 smoke particles, repeat/reset/A/C/D/pause/hide cleanup, fixed Agency root, tabletop gesture regression, no resource growth, single AudioSource; previous coughs="+coughs+"; errors=0. Not live YOLO/hand, saved-scene art or PICO/audible output acceptance.\n");SessionState.SetBool(Key+".Done",true);EditorApplication.ExitPlaymode();}
+            else if(phase==9){
+                editor.ResetTarget();Quiet();Require(effect.SharedWingMesh==mesh&&root.GetComponents<LighterAgencyVisual>().Length==1,"Lifetime resource grew");
+                Require(root.GetComponents<AudioSource>().Length==1,"Cough added AudioSource");Capture("Reset");
+                Require(editor.TrySetHciAgencyVisuals(false),"Snapshot style restore rejected after reset");Cast();Quiet();
+                var eyes=root.transform.Find("AgencyEyes");
+                Require(eyes.gameObject.activeSelf&&eyes.localPosition==snapshotEyesPosition&&eyes.localScale==snapshotEyesScale,"Snapshot eye pose not restored");
+                Require(!editor.TrySetHciAgencyVisuals(true),"Active snapshot cast allowed a style change");Later(10,.3);
+            }
+            else if(phase==10){
+                Quiet();Capture("Snapshot-restored");editor.ResetTarget();
+                Require(editor.TrySetHciAgencyVisuals(true),"Second HCI opt-in rejected");Cast();
+                Require(root.GetComponent<LighterAgencyVisual>()==effect&&effect.SharedWingMesh==mesh,"Style round trip allocated another wing resource");
+                editor.ResetTarget();Quiet();
+                File.WriteAllText(Output+"/result.txt","PASS: explicit HCI opt-in; default/restore snapshot eyes and pulse path; active-cast style guard; production mesh fixture, nonuniform authored scale and rotated root; shared wing mesh, bounded flap/cough/smoke; repeat/reset/A/C/D/pause/hide cleanup; fixed Agency root; tabletop gesture regression; no wing resource growth, single AudioSource; previous coughs="+coughs+"; errors=0. Not live YOLO/hand, saved-scene art or PICO/audible output acceptance.\n");
+                SessionState.SetBool(Key+".Done",true);EditorApplication.ExitPlaymode();
+            }
         }catch(Exception e){SessionState.SetBool(Key,false);File.WriteAllText(Output+"/result.txt","FAIL "+e);Debug.LogException(e);EditorApplication.Exit(1);}
     }
 }

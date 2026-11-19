@@ -18,7 +18,7 @@ namespace MagicMR
         }
         void StepNaturalBug(float time,bool active)
         {
-            if(naturalBugRig)naturalBugRig.Step(time,active);
+            if(naturalBugRig){naturalBugRig.SetPixelStyle(species,state.style==2);naturalBugRig.Step(time,active);}
         }
     }
 }

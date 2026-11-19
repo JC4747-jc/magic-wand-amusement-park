@@ -1,3 +1,5 @@
+> 2026-11-20 整合候选入口：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。本候选的验证范围见 SOURCE_VALIDATION.json，PICO 及全部32效果仍未验收；下方按日期保留的历史下载和结果不代表当前源码树。
+
 # Magic Wand Amusement Park
 
 ## 最新猫步态 Android 验证包（2026-11-16）

@@ -89,8 +89,12 @@ public static class TabletopGestureChecks
         var s = new TabletopGestureRules.Sample { pinch=.02f, fist=true };
         for(int i=0;i<=10;i++) { s.time=i*.1f; Require(rules.Step(s)==EditDimension.None, "Fist fired before opening"); }
         s.time=1.1f; s.fist=false; s.open=true; s.pinch=.08f;
-        Require(rules.Step(s)==EditDimension.Deconstruction, "Held fist must produce flower, not pinch");
-        s.time=1.15f;
+        Require(rules.Step(s)==EditDimension.None, "Overlong fist exceeded HCI burst window");
+        rules.Reset(); s=new TabletopGestureRules.Sample {pinch=.02f,fist=true};
+        for(int i=0;i<=2;i++) {s.time=1.2f+i*.1f;Require(rules.Step(s)==EditDimension.None,"Fist fired before opening");}
+        s.time=1.45f;s.fist=false;s.open=true;s.pinch=.08f;
+        Require(rules.Step(s)==EditDimension.Deconstruction,"Bounded fist-open must produce D, not pinch");
+        s.time=1.5f;
         Require(rules.Step(s)==EditDimension.None, "One opening emitted a second gesture");
 
         rules.Reset(); s=new TabletopGestureRules.Sample {pinch=.02f};

@@ -211,6 +211,7 @@ namespace MagicMR
             }
             selectionHighlight.gameObject.SetActive(false);
             if(scenario==ParkScenario.Plant)BuildPlantDialogue(neutralBounds);
+            if(scenario==ParkScenario.Statue)BuildStatueNarrative();
             if(statueScan) {
                 float radius=Mathf.Max(neutralBounds.extents.x,neutralBounds.extents.z)+.015f;
                 var line=statueScan.GetComponent<LineRenderer>();line.widthMultiplier=.003f;
@@ -296,7 +297,7 @@ namespace MagicMR
         }
         void FinishFantasyExit() {
             state.awake=state.bubble=state.wind=state.rewarded=false;
-            if(naturalBronze)naturalBronze.ResetPose();if(naturalStatueStretch)naturalStatueStretch.ResetPose();
+            if(naturalBronze)naturalBronze.ResetPose();if(naturalStatueStretch)naturalStatueStretch.ResetPose();if(bronzeStretch)bronzeStretch.ResetPose();
             if(naturalJellyfish)naturalJellyfish.ResetPose();if(roomMagic)roomMagic.SetWindow(0);
             if(statueGarden)statueGarden.Clear();
             dreamVisibility=0;
@@ -320,6 +321,7 @@ namespace MagicMR
                 case ParkAction.Style:
                     if(scenario==ParkScenario.Plant) {SetHighlighted(true);Feedback="Plant selected";break;}
                     if(scenario==ParkScenario.Pet) {state.petComic=!state.petComic;Feedback=state.petComic?"Pet: manga outline":"Pet: natural appearance";break;}
+                    if(scenario==ParkScenario.Bugs) {state.style=state.style==2?0:2;Feedback=state.style==2?"Insect: 8bit voxel appearance":"Insect: natural appearance";break;}
                     if(scenario==ParkScenario.Statue) {state.style=1-state.style;Feedback=state.style==1?"Statue: cartoon appearance":"Statue: original material";break;}
                     if(scenario==ParkScenario.Room){state.style=state.style==1?2:1;Feedback=state.style==1?"Room: watercolor wash":"Room: cyber lines";break;}
                     if(scenario==ParkScenario.Tree && !magicTree) {state.style=1-state.style;Feedback=state.style==1?"Season tree: anime canopy":"Season tree: natural canopy";}
@@ -339,7 +341,7 @@ namespace MagicMR
                     if(scenario==ParkScenario.Plant){StartPlantVoice();Feedback="Virtual plant: A little light helps me grow.";}
                     if(scenario==ParkScenario.Tree&&!magicTree)Feedback="Season tree awakened";
                     if(scenario==ParkScenario.Statue) {
-                        Feedback=naturalStatueStretch?"Virtual statue: stretching and returning to rest":"Bronze bust awakened; full-body animation pending";
+                        Feedback=naturalStatueStretch?"Virtual statue: stretching and returning to rest":"Bronze guardian: bowing, stretching and returning to rest";
                     }
                     break;
                 case ParkAction.Pull: state.bubble=scenario==ParkScenario.Pet?!state.bubble:true; break;
@@ -377,14 +379,15 @@ namespace MagicMR
                     if(scenario==ParkScenario.Pet) { state.bubble=false; Emit(ParkAction.Poke,20); Feedback="Dream popped"; break; }
                     state.wind=true;
                     windDirection=(hand-transform.position).sqrMagnitude>.001f?(transform.position-hand).normalized:Vector3.right;
-                    Emit(ParkAction.Wind,24); if(scenario==ParkScenario.Statue) { Feedback=story+"\nSource: "+storySource; if(storyAudio)audioSource.PlayOneShot(storyAudio); } break;
+                    Emit(ParkAction.Wind,24); if(scenario==ParkScenario.Statue) { Feedback=story+"\nSource: "+storySource; StartStatueNarrative(); } break;
             }
             if(!(scenario==ParkScenario.Plant&&action==ParkAction.Awaken))audioSource.PlayOneShot(action==ParkAction.Reward?MagicMRAudioFactory.Ding:MagicMRAudioFactory.ResetChime,.5f);
-            elapsed=0; float duration=action==ParkAction.Awaken&&naturalStatueStretch?naturalStatueStretch.Duration:Mathf.Max(.3f,transitionSeconds);
+            elapsed=0; float duration=action==ParkAction.Awaken&&naturalStatueStretch?naturalStatueStretch.Duration:
+                action==ParkAction.Awaken&&bronzeStretch?bronzeStretch.Duration:Mathf.Max(.3f,transitionSeconds);
             while(elapsed<duration)
             {
                 elapsed+=Time.unscaledDeltaTime; float t=Mathf.Clamp01(elapsed/duration); float pulse=Mathf.Sin(t*Mathf.PI);
-                if(action==ParkAction.Awaken && scenario==ParkScenario.Statue){if(naturalStatueStretch)naturalStatueStretch.Sample(t);else SetScanProgress(t);}
+                if(action==ParkAction.Awaken && scenario==ParkScenario.Statue){if(naturalStatueStretch)naturalStatueStretch.Sample(t);else if(bronzeStretch)bronzeStretch.Sample(t);else SetScanProgress(t);}
                 stretch=action==ParkAction.Awaken?pulse:0;
                 // Willow windup -> bounded side sweep -> recovery; never moves the anchor.
                 bend=0; // Willow B owns the bounded branch-only lash in StepTreeWind.
@@ -465,7 +468,7 @@ namespace MagicMR
             dreamVisibility=0;if(bubble && scenario==ParkScenario.Pet)bubble.localScale=dreamRestScale;
             if(naturalJellyfish)naturalJellyfish.ResetPose();if(roomMagic)roomMagic.SetWindow(0);
             bloomVisibility=0;if(plantFlower) {plantFlower.localScale=Vector3.zero;plantFlower.gameObject.SetActive(false);}
-            if(naturalBronze)naturalBronze.ResetPose();if(naturalStatueStretch)naturalStatueStretch.ResetPose();
+            if(naturalBronze)naturalBronze.ResetPose();if(naturalStatueStretch)naturalStatueStretch.ResetPose();if(bronzeStretch)bronzeStretch.ResetPose();
             if(scenario==ParkScenario.Plant && branchRoot) {branchRoot.localRotation=Quaternion.identity;StepPlantAnimation(0,0);branchRoot.localRotation=Quaternion.identity;}
             bugDefeatProgress=0;ApplyBugDefeatPose();
             windBlend=0;
@@ -475,7 +478,7 @@ namespace MagicMR
             if(scenario==ParkScenario.Plant && branchRoot)branchRoot.localScale=new Vector3(1,Mathf.Lerp(.15f,1.4f,.45f),1);
             if(built) ApplyVisibility();
         }
-        void Cancel() { StopPlantVoice(); if(statueScan)statueScan.gameObject.SetActive(false);if(naturalPetRig)naturalPetRig.ResetPose();if(naturalBronze)naturalBronze.ResetPose();if(naturalStatueStretch)naturalStatueStretch.ResetPose();StopAllCoroutines(); RestoreStoppedScales();motion=null; if(audioSource)audioSource.Stop(); particleCount=0; foreach(var p in pool)if(p)p.gameObject.SetActive(false); if(preview)preview.gameObject.SetActive(false); if(spell)spell.gameObject.SetActive(false); bend=spin=stretch=0; dance=Vector3.zero; }
+        void Cancel() { StopStatueNarrative(); StopPlantVoice(); if(statueScan)statueScan.gameObject.SetActive(false);if(naturalPetRig)naturalPetRig.ResetPose();if(naturalBronze)naturalBronze.ResetPose();if(naturalStatueStretch)naturalStatueStretch.ResetPose();if(bronzeStretch)bronzeStretch.ResetPose();StopAllCoroutines(); RestoreStoppedScales();motion=null; if(audioSource)audioSource.Stop(); particleCount=0; foreach(var p in pool)if(p)p.gameObject.SetActive(false); if(preview)preview.gameObject.SetActive(false); if(spell)spell.gameObject.SetActive(false); bend=spin=stretch=0; dance=Vector3.zero; }
         public void ExitAndDestroy() {
             if(IsExiting)return;
             if(!Application.isPlaying || !isActiveAndEnabled || !built || !visual) {Destroy(gameObject);return;}
@@ -578,6 +581,7 @@ namespace MagicMR
             if(!built || !tracked || IsExiting || stoppingEffects!=null)return;
             float dt=Time.unscaledDeltaTime;
             if(statueGarden)statueGarden.Step(dt,Time.unscaledTime);
+            StepStatueNarrative();
             if(scenario==ParkScenario.Bugs) {bugDefeatProgress=Mathf.MoveTowards(bugDefeatProgress,state.rewarded?1:0,dt/.3f);ApplyBugDefeatPose();}
             growthTime=Mathf.MoveTowards(growthTime,targetGrowth,dt*.35f); seasonTime=Mathf.MoveTowards(seasonTime,targetSeason,dt*.2f);
             styleMix=Mathf.MoveTowards(styleMix,state.style/2f,dt);
@@ -631,7 +635,7 @@ namespace MagicMR
                 if(scenario==ParkScenario.Tree && particleKind!=ParkAction.Wind){p.position=TreeScarWorldPosition+visual.TransformVector(direction*age*.025f+Vector3.up*age*.02f);p.localScale=Vector3.one*.009f*Mathf.Clamp01((1.6f-particleAge)/.3f);}
             }
             ApplyVisibility();
-            if(label) { label.text=scenario+" / "+(virtualTarget?"VIRTUAL TEST":"STEREO TRANSLATION")+"\n"+Feedback+"\n"+(scenario==ParkScenario.Plant?"Moisture: DEMO 55% | no sensor":scenario==ParkScenario.Pet?"Affection (virtual): "+state.affection+" | head "+(reliableHeadPose?"tracked":"approximate"):"Local effects")+"\nOrientation: "+(orientationConfirmed?"manually confirmed":"UNCONFIRMED")+" | "+(sizeConfirmed?"MANUAL nominal height/bottom":"virtual size; bottom uncalibrated"); if(Camera.main)label.transform.rotation=Quaternion.LookRotation(label.transform.position-Camera.main.transform.position); }
+            if(label) { label.text=scenario+" / "+(virtualTarget?"VIRTUAL TEST":"STEREO TRANSLATION")+"\n"+(StatueNarrativeVisible?"Story scroll open; swipe to replay":Feedback)+"\n"+(scenario==ParkScenario.Plant?"Moisture: DEMO 55% | no sensor":scenario==ParkScenario.Pet?"Affection (virtual): "+state.affection+" | head "+(reliableHeadPose?"tracked":"approximate"):"Local effects")+"\nOrientation: "+(orientationConfirmed?"manually confirmed":"UNCONFIRMED")+" | "+(sizeConfirmed?"MANUAL nominal height/bottom":"virtual size; bottom uncalibrated"); if(Camera.main)label.transform.rotation=Quaternion.LookRotation(label.transform.position-Camera.main.transform.position); }
         }
     }
 }

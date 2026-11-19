@@ -1,5 +1,6 @@
-﻿#Requires -Version 7.0
-# Process.Kill(entireProcessTree) requires PowerShell 7; reject older hosts before starting Unity.
+#Requires -Version 7.0
+# Process.Kill(entireProcessTree) is required by the bounded cancellation path.
+# Reject Windows PowerShell 5 before starting Unity rather than failing during cleanup.
 [CmdletBinding()]
 param(
     [string]$UnityPath = 'D:/Unity/Hub/Editor/6000.0.33f1/Editor/Unity.exe',
@@ -8,6 +9,7 @@ param(
     [ValidateSet('Main','Pose','Repair','AllScenes','Probe')] [string]$Variant='Main',
     [ValidateSet(1,2)] [int]$BuildJobs=2,
     [ValidateRange(64,4096)] [int]$MaximumDiskGrowthMiB=4096,
+    [switch]$PrepareCodegen,
     [string]$LogPath
 )
 $ErrorActionPreference = 'Stop'
@@ -60,16 +62,17 @@ try {
     $method = @{Main='Run';Pose='RunPose';Repair='RunRepair';AllScenes='RunAllScenes'}[$Variant]
     $executeMethod = if ($Variant -eq 'Probe') { 'BeeProbeBuild.Run' } else { 'ResourceBoundedAndroidBuild.'+$method }
     $arguments = @('-batchmode', '-quit', '-projectPath', ('"' + $projectDirectory + '"'),
-        '-buildTarget', 'Android', '-job-worker-count', '2', '-executeMethod', $executeMethod,
+        '-buildTarget', 'Android', '-job-worker-count', '1', '-executeMethod', $executeMethod,
         '-logFile', ('"' + $LogPath + '"'))
-    $buildProcess = Start-Process -FilePath $UnityPath -ArgumentList $arguments -WorkingDirectory $projectDirectory -WindowStyle Hidden -PassThru
-    $buildJob=[MagicMRBuildJob]::Attach($buildProcess)
     $samples = [System.Collections.Generic.Queue[object]]::new()
-    $minimumFreeGiB = [double]::PositiveInfinity
+    $minimumFreeGiB = (Get-CimInstance Win32_OperatingSystem).FreePhysicalMemory/1MB
     $maximumCompilerCount = 0
     $backendArguments = [System.Collections.Generic.HashSet[string]]::new()
     $guardStop=$null;$started=Get-Date;$initialDisk=$projectDrive.AvailableFreeSpace
     $maximumOwnedRSSMiB=0;$maximumObservedDiskGrowthMiB=0
+    $codegenPrepared=$false;$preparedDag=$null
+    $buildProcess = Start-Process -FilePath $UnityPath -ArgumentList $arguments -WorkingDirectory $projectDirectory -WindowStyle Hidden -PassThru
+    $buildJob=[MagicMRBuildJob]::Attach($buildProcess)
     while (-not $buildProcess.WaitForExit(5000)) {
         $freeGiB = (Get-CimInstance Win32_OperatingSystem).FreePhysicalMemory / 1MB
         $minimumFreeGiB = [math]::Min($minimumFreeGiB, $freeGiB)
@@ -97,19 +100,34 @@ try {
         elseif(((Get-Date)-$started).TotalSeconds -gt 1200){$guardStop='20-minute build budget exhausted'}
         elseif((Test-Path -LiteralPath $LogPath) -and (Get-Item -LiteralPath $LogPath).Length -gt 16MB){$guardStop='Build log budget above 16 MiB'}
         if($guardStop){$buildProcess.Kill($true);break}
+        if($PrepareCodegen -and @($ownedProcesses|Where-Object {$_.Name -eq 'il2cpp.exe'}).Count){
+            foreach($backend in ($ownedProcesses|Where-Object {$_.Name -eq 'bee_backend.exe'})){
+                $match=[regex]::Match($backend.CommandLine,'--dagfile="?(?<dag>Library[\\/]Bee[\\/]Player[^\s"]+\.dag)"?')
+                if(-not $match.Success){continue}
+                $candidateDag=[IO.Path]::GetFullPath((Join-Path $projectDirectory $match.Groups['dag'].Value))
+                if(-not $candidateDag.StartsWith($projectDirectory+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)){throw 'Prepared DAG escapes this project'}
+                if(-not(Test-Path -LiteralPath $candidateDag -PathType Leaf) -or -not(Test-Path -LiteralPath ($candidateDag+'.json') -PathType Leaf)){throw 'Prepared DAG or its JSON is missing'}
+                $preparedDag=$match.Groups['dag'].Value;$codegenPrepared=$true;break
+            }
+            if(-not $codegenPrepared){throw 'IL2CPP started without an identifiable generated Player DAG'}
+            $buildProcess.Kill($true);break
+        }
     }
     $buildProcess.WaitForExit();$buildProcess.Refresh()
+    $outcome=if($codegenPrepared){'CODEGEN_DAG_READY_NOT_APK'}elseif($buildProcess.ExitCode -eq 0 -and -not $guardStop){'FULL_BUILD_COMPLETED'}else{'BUILD_NOT_COMPLETED'}
     [pscustomobject]@{
         unity=$UnityPath;variant=$Variant;requestedBeeThreads=$BuildJobs;requestedIl2CppJobs=$BuildJobs;exitCode=$buildProcess.ExitCode
         guardStop=$guardStop;maximumSampledOwnedRSSMiB=[math]::Round($maximumOwnedRSSMiB,2);maximumSampledDiskGrowthMiB=[math]::Round($maximumObservedDiskGrowthMiB,2)
         processOwnership='PID and creation time validated at every parent-child edge'
         childCleanup='Unnamed Windows job with KILL_ON_JOB_CLOSE; no breakaway flags'
         maximumAllowedDiskGrowthMiB=$MaximumDiskGrowthMiB
+        preparationRequested=$PrepareCodegen.IsPresent;outcome=$outcome;preparedDag=$preparedDag
         minimumSampledFreeMemoryGiB=[math]::Round($minimumFreeGiB,3);maximumSampledCompilerProcesses=$maximumCompilerCount
         samplingScope='Five-second snapshots of descendants of this Unity build; not a continuous or complete peak measurement'
         backendArguments=@($backendArguments);samples=@($samples.ToArray())
     } | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath ($LogPath+'.resources.json') -Encoding UTF8
     if($guardStop){throw $guardStop}
+    if($codegenPrepared){Write-Output ('ANDROID_CODEGEN_DAG_READY='+$preparedDag);return}
     if ($buildProcess.ExitCode -ne 0) { throw "Android build failed ($($buildProcess.ExitCode)); inspect $LogPath" }
     $apkName = @{Main='BridgeStereoFusion';Pose='BridgeStereoPoseFusion';Repair='BridgeStereoRepair';AllScenes='AllScenesValidation';Probe='BeeProbe'}[$Variant]
     $apkPath = Join-Path $projectDirectory ('Builds/Android/'+$apkName+'.apk')

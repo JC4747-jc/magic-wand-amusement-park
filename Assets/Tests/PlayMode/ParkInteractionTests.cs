@@ -110,16 +110,27 @@ public sealed class ParkInteractionTests
         var actor=Create(ParkScenario.Room);Vector3 anchor=target.transform.position;
         Assert.IsFalse(actor.TryAction(ParkAction.Reward,anchor,true));
         actor.environmentAnchor=target.transform;actor.confirmedPlane=true;
-        Assert.IsFalse(actor.TryAction(ParkAction.Reward,anchor,true),"A confirmed plane must not silently switch Jellyfish to Candy");
+        // HCI Bedroom: A changes room style; D summons candy independently.
+        Assert.AreEqual(0,actor.RoomStyle);
+        Assert.IsTrue(actor.TryAction(ParkAction.Reward,anchor,true),"Confirmed ceiling enables D without first invoking A");
+        yield return Finish(actor);
+        Assert.AreEqual(0,actor.RoomStyle,"Candy D must not silently change style A");
+        Assert.IsFalse(actor.RoomWindowRequested);Assert.IsFalse(actor.RoomLampRequested);
+        Assert.AreEqual("ParkFeedback_Candy",actor.visual.Find("Pooled feedback 0").GetComponent<MeshFilter>().sharedMesh.name);
+        actor.ResetEffects();
+        actor.environmentAnchor=target.transform;actor.confirmedPlane=true;
         Assert.IsTrue(actor.TryAction(ParkAction.Style,anchor,true));yield return Finish(actor);
-        Assert.IsTrue(actor.RoomCandySelected);
+        Assert.AreEqual(1,actor.RoomStyle);
+        Assert.IsFalse(actor.RoomWindowRequested);Assert.IsFalse(actor.RoomLampRequested);
         actor.confirmedPlane=false;
         Assert.IsFalse(actor.TryAction(ParkAction.Reward,anchor,true),"Candy still requires a confirmed plane");
         actor.confirmedPlane=true;
         Assert.IsTrue(actor.TryAction(ParkAction.Reward,anchor,true));yield return new WaitForSecondsRealtime(.5f);
         Assert.AreEqual("ParkFeedback_Candy",actor.visual.Find("Pooled feedback 0").GetComponent<MeshFilter>().sharedMesh.name);
+        Assert.AreEqual(1,actor.RoomStyle,"Candy D must preserve the selected style A");
         actor.enabled=false;yield return null;
         Assert.IsFalse(actor.Busy);Assert.IsFalse(actor.confirmedPlane);Assert.IsNull(actor.environmentAnchor);
-        Assert.IsFalse(actor.visual.Find("Pooled feedback 0").gameObject.activeSelf);Assert.AreEqual(anchor,target.transform.position);
+        Assert.IsFalse(actor.visual.Cast<Transform>().Any(t=>t.name.StartsWith("Pooled feedback ")&&t.gameObject.activeSelf));
+        Assert.AreEqual(anchor,target.transform.position);
     }
 }

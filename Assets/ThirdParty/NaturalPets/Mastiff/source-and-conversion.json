@@ -1,0 +1,84 @@
+{
+  "repository": "https://github.com/0ad/0ad",
+  "commit": "61a3b9507d974084e6badb88a0826bd89a6d5b8b",
+  "license": "CC-BY-SA-3.0",
+  "author": "Wildfire Games",
+  "files": [
+    {
+      "file": "mastiff.dae",
+      "url": "https://raw.githubusercontent.com/0ad/0ad/61a3b9507d974084e6badb88a0826bd89a6d5b8b/binaries/data/mods/public/art/meshes/skeletal/mastiff.dae",
+      "bytes": 240623,
+      "sha256": "b9757b63d2d2c89d56764282808e880cf45ed117f09f40aa40f7264fba0737ba"
+    },
+    {
+      "file": "mastiff_idle_long.dae",
+      "url": "https://raw.githubusercontent.com/0ad/0ad/61a3b9507d974084e6badb88a0826bd89a6d5b8b/binaries/data/mods/public/art/animation/quadraped/mastiff_idle_long.dae",
+      "bytes": 662087,
+      "sha256": "47f3446500aa5814cdabbc41529e730ff8f320c06ed67d1ad5d9577a082fa72f"
+    },
+    {
+      "file": "mastiff_idle2.dae",
+      "url": "https://raw.githubusercontent.com/0ad/0ad/61a3b9507d974084e6badb88a0826bd89a6d5b8b/binaries/data/mods/public/art/animation/quadraped/mastiff_idle2.dae",
+      "bytes": 1239806,
+      "sha256": "6154ae23d25caff524a41b17cd1795ae5c55baa5b34b6fb2610bd57388353c43"
+    },
+    {
+      "file": "mastiff_run.dae",
+      "url": "https://raw.githubusercontent.com/0ad/0ad/61a3b9507d974084e6badb88a0826bd89a6d5b8b/binaries/data/mods/public/art/animation/quadraped/mastiff_run.dae",
+      "bytes": 485435,
+      "sha256": "a7cd1b3042b858a49177a197b7c57bff7d49e41b76c3387a0d284088b99d75cd"
+    },
+    {
+      "file": "mastiff_a_01.png",
+      "url": "https://raw.githubusercontent.com/0ad/0ad/61a3b9507d974084e6badb88a0826bd89a6d5b8b/binaries/data/mods/public/art/textures/skins/skeletal/brit/mastiff_a_01.png",
+      "bytes": 163802,
+      "sha256": "8d97c2bc51b4ced5be040e878733e4d0512a5781a432f8ce0aaa13c1550e8625"
+    },
+    {
+      "file": "LICENSE-art.txt",
+      "url": "https://raw.githubusercontent.com/0ad/0ad/61a3b9507d974084e6badb88a0826bd89a6d5b8b/binaries/data/mods/public/art/LICENSE.txt",
+      "bytes": 1426,
+      "sha256": "ef98babd771c206032e005f3d440a1e610df409d9a9191f03e64deaa4abefbd9"
+    },
+    {
+      "file": "LICENSE-project.txt",
+      "url": "https://raw.githubusercontent.com/0ad/0ad/61a3b9507d974084e6badb88a0826bd89a6d5b8b/LICENSE.txt",
+      "bytes": 3049,
+      "sha256": "cb9eb5e8768328e8086b0d17bd1b95f07b51bc9ab74fa1b509ee09c7894b2f53"
+    }
+  ],
+  "modifications": [
+    "Imported original Collada mesh and three source clips; source animation bind rigs verified equal",
+    "Smooth normals, original topology and 256px coat; nominal 0.7m head height, no physical-scale claim",
+    "Converted FBX axis convention; original master downloads unchanged"
+  ],
+  "clips": [
+    {
+      "name": "Mastiff_Idle",
+      "frames": [
+        0.0,
+        427.99993896484375
+      ],
+      "seconds": 17.833330790201824
+    },
+    {
+      "name": "Mastiff_IdleLook",
+      "frames": [
+        0.0,
+        156.99998474121094
+      ],
+      "seconds": 6.541666030883789
+    },
+    {
+      "name": "Mastiff_RunSource",
+      "frames": [
+        23.0,
+        46.99999237060547
+      ],
+      "seconds": 0.9999996821085612
+    }
+  ],
+  "vertices": 496,
+  "triangles": 880,
+  "bones": 48
+}

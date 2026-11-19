@@ -19,6 +19,8 @@ namespace MagicMR
         Quaternion[] rest;
         readonly List<int> antennaIndices=new List<int>();
         bool ready;
+        Mesh naturalMesh,pixelMesh;
+        Bounds naturalBounds;
         public int LegCount {get{Initialize();return legs.Length;}}
         public SkinnedMeshRenderer Skin {get;private set;}
         public Vector3 FootLocal(int index)=>transform.InverseTransformPoint(legs[index].foot.position);
@@ -27,6 +29,7 @@ namespace MagicMR
         {
             if(ready)return;
             Skin=GetComponentInChildren<SkinnedMeshRenderer>();if(!Skin)throw new InvalidOperationException("Insect skin missing");
+            naturalMesh=Skin.sharedMesh;naturalBounds=Skin.localBounds;
             bones=Skin.bones;rest=new Quaternion[bones.Length];var names=new Dictionary<string,Transform>();
             for(int i=0;i<bones.Length;i++){names.Add(bones[i].name,bones[i]);rest[i]=bones[i].localRotation;if(bones[i].name.StartsWith("Antenna_",StringComparison.Ordinal))antennaIndices.Add(i);}
             var cache=new List<Leg>();
@@ -41,6 +44,18 @@ namespace MagicMR
                 if(leg.upperLength<.00001f||leg.lowerLength<.00001f)throw new InvalidOperationException("Degenerate insect leg chain");cache.Add(leg);
             }
             legs=cache.ToArray();if(legs.Length!=6&&legs.Length!=8)throw new InvalidOperationException("Insect must have six or eight articulated legs");ready=true;
+        }
+        public void SetPixelStyle(string species,bool enabled)
+        {
+            Initialize();
+            if(enabled&&!pixelMesh)
+            {
+                if(species!="Cockroach"&&species!="Spider")throw new InvalidOperationException("Unsupported pixel insect");
+                pixelMesh=Resources.Load<Mesh>("MagicMR/NaturalModels/Pixel"+species);
+                if(!pixelMesh||pixelMesh.bindposes.Length!=bones.Length)throw new InvalidOperationException("Missing or incompatible skinned pixel insect: "+species);
+            }
+            var next=enabled?pixelMesh:naturalMesh;
+            if(Skin.sharedMesh!=next){Skin.sharedMesh=next;Skin.localBounds=enabled?pixelMesh.bounds:naturalBounds;}
         }
         public void ResetPose()
         {

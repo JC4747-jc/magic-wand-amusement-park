@@ -39,7 +39,11 @@ Shader "MagicMR/NaturalCuticle"
                 albedo*=.96+grain*.045+sin(input.uv.y*18+input.uv.x*3)*.025;
                 half specular=pow(saturate(dot(normal,SafeNormalize(light.direction+view))),lerp(130,12,roughness))*.16;
                 half3 colour=albedo*(max(SampleSH(normal),half3(.19,.20,.21))+light.color*diffuse*.8*light.shadowAttenuation)+specular*light.color*light.shadowAttenuation;
-                half3 wash=lerp(half3(.82,.80,.75),half3(.055,.065,.07),1-diffuse);half3 pixel=floor(albedo*5)/5*(.45+floor(diffuse*2)*.3);
+                half3 wash=lerp(half3(.82,.80,.75),half3(.055,.065,.07),1-diffuse);
+                // Flat voxel faces and an RGB 3/3/2-bit palette: 256 possible colours.
+                half3 paletteLevels=half3(7,7,3);
+                half3 pixelBase=input.colour.rgb*_BaseColor.rgb*(.48+floor(diffuse*3)*.22);
+                half3 pixel=floor(saturate(pixelBase)*paletteLevels+.5)/paletteLevels;
                 colour=_Style<1?lerp(colour,wash,saturate(_Style)):lerp(wash,pixel,saturate(_Style-1));return half4(colour,1);
             }
             ENDHLSL

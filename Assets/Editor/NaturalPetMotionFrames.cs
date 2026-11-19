@@ -41,11 +41,21 @@ public static class NaturalPetMotionFrames
     }
     public static void Run()
     {
+        Render(new[]{"CatIdle","CatSniff","CatWalk","DogWalk"},".codex-tmp/pet-motion");
+    }
+    public static void RunCatWalkV2()
+    {
+        BicolorCatAssetBuilder.Install();
+        NaturalCatWalkChecks.Run();
+        Render(new[]{"CatWalk"},".codex-tmp/pet-motion-v2");
+    }
+    static void Render(string[] names,string outputRoot)
+    {
         string previous=UnityEngine.SceneManagement.SceneManager.GetActiveScene().path;bool async=ShaderUtil.allowAsyncCompilation;
         try
         {
             ShaderUtil.allowAsyncCompilation=false;
-            foreach(var name in new[]{"CatIdle","CatSniff","CatWalk","DogWalk"})
+            foreach(var name in names)
             {
                 EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);RenderSettings.ambientMode=AmbientMode.Flat;RenderSettings.ambientLight=new Color(.55f,.55f,.55f);
                 var key=new GameObject("Pet key").AddComponent<Light>();key.type=LightType.Directional;key.intensity=1.4f;key.transform.rotation=Quaternion.Euler(38,-35,0);key.shadows=LightShadows.Soft;key.shadowStrength=.55f;key.shadowBias=.0001f;key.shadowNormalBias=.001f;key.shadowResolution=LightShadowResolution.VeryHigh;
@@ -62,7 +72,7 @@ public static class NaturalPetMotionFrames
                 var camera=new GameObject("Pet motion camera").AddComponent<Camera>();camera.orthographic=true;camera.nearClipPlane=.001f;camera.farClipPlane=5;camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.24f,.26f,.28f);
                 camera.transform.position=bounds.center+new Vector3(.75f,.35f,-1.2f);camera.transform.LookAt(bounds.center);
                 float extent=0;for(int i=0;i<8;i++){var p=camera.transform.InverseTransformPoint(bounds.center+Vector3.Scale(bounds.extents,new Vector3((i&1)==0?-1:1,(i&2)==0?-1:1,(i&4)==0?-1:1)));extent=Mathf.Max(extent,Mathf.Abs(p.x),Mathf.Abs(p.y));}camera.orthographicSize=extent*1.22f;
-                string output=Path.GetFullPath(".codex-tmp/pet-motion/"+name);Directory.CreateDirectory(output);var target=new RenderTexture(640,640,24);var pixels=new Texture2D(640,640,TextureFormat.RGB24,false);var old=RenderTexture.active;
+                string output=Path.GetFullPath(outputRoot+"/"+name);Directory.CreateDirectory(output);var target=new RenderTexture(640,640,24);var pixels=new Texture2D(640,640,TextureFormat.RGB24,false);var old=RenderTexture.active;
                 try
                 {
                     camera.targetTexture=target;camera.Render();camera.Render();long bytes=0;Vector3[][] initial=null;float movement=0;

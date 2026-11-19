@@ -8,6 +8,8 @@ using UnityEngine;
 
 public static class ProjectSceneAudit
 {
+    public static string[] RequiredScenePaths=>new[]{"BridgeTest","BridgeStereoFusion","BridgeStereoPoseFusion","BridgeStereoRepair","MagicMR","VstTest","SampleScene","DesktopCaptureDemo"}
+        .Concat(ParkContentBuilder.Names).Select(n=>"Assets/Scenes/"+n+".unity").ToArray();
     public static void RunWithTimeline()
     {
         Run();ParkNaturalModelChecks.Render();ParkAnimationTimelineChecks.Run();
@@ -42,8 +44,7 @@ public static class ProjectSceneAudit
             // Candidate scenes may coexist with the integrated set. Check required
             // identities rather than rejecting extra scenes or accepting a count
             // that could conceal a missing required scene.
-            var required=new[]{"BridgeTest","BridgeStereoFusion","BridgeStereoPoseFusion","BridgeStereoRepair","MagicMR","VstTest","SampleScene","DesktopCaptureDemo"}
-                .Concat(ParkContentBuilder.Names).Select(n=>"Assets/Scenes/"+n+".unity");
+            var required=RequiredScenePaths;
             var missing=required.Except(paths).ToArray();
             if(missing.Length>0)throw new Exception("Missing integrated project scenes: "+string.Join(", ",missing));
             foreach(var path in paths)

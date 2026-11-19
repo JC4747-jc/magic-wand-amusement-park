@@ -43,3 +43,4 @@ Shader "MagicMR/CharredSurface"
  UsePass "Universal Render Pipeline/Lit/ShadowCaster"
  }
 }
+

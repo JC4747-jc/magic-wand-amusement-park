@@ -27,7 +27,7 @@ namespace MagicMR
 
     /// <summary>
     /// Four-dimensional reality editing controller for MR study targets.
-    /// Appearance (Pinch), Agency (Circle), Rule (Swipe), Deconstruction (Fist鈫扥pen).
+    /// Appearance (Pinch), Agency (Circle), Rule (Swipe), Deconstruction (Fist→Open).
     /// </summary>
     public class RealityEditor : MonoBehaviour
     {
@@ -89,8 +89,10 @@ namespace MagicMR
         Vector3 m_BaseScale;
         float m_CurrentScaleMultiplier = 1f;
         LighterInteriorView m_InteriorView;
-        LighterAgencyVisual m_AgencyVisual;
-        Bounds m_AgencyBodyBounds;
+
+        // Compatibility for existing Park/editor callers. Production visuals stay at the snapshot.
+        public bool HciAgencyVisualsEnabled => false;
+        public bool TrySetHciAgencyVisuals(bool enabled) => !enabled;
         public bool InteriorVisible => m_InteriorView != null && m_InteriorView.Visible;
         Vector3 m_InitialPosition;
         Coroutine m_DodgeReturn;
@@ -221,7 +223,6 @@ namespace MagicMR
                 mat.SetColor("_BaseColor", color);
             if (mat.HasProperty("_Color"))
                 mat.SetColor("_Color", color);
-            if(mat.HasProperty("_Cull"))mat.SetFloat("_Cull",0);
             go.GetComponent<Renderer>().sharedMaterial = mat;
         }
 
@@ -246,8 +247,7 @@ namespace MagicMR
             if (m_ActiveDimension == EditDimension.Agency)
             {
                 ApplyIdlePulse();
-                FaceAgencyViewer();
-                m_AgencyVisual?.Step();
+                MaybePlayGrowl();
             }
 
             if (m_ActiveDimension == EditDimension.Rule)
@@ -440,26 +440,6 @@ namespace MagicMR
             EnterState(EditDimension.Agency);
             SetAllRenderersEnabled(true);
             EnsureAgencyEyes();
-            if(!m_AgencyVisual){
-                bool first=true;var local=new Bounds();
-                foreach(var renderer in m_AllRenderers){
-                    if(!renderer||(m_EyesObject&&renderer.transform.IsChildOf(m_EyesObject.transform)))continue;
-                    var filter=renderer.GetComponent<MeshFilter>();
-                    if(!(renderer is SkinnedMeshRenderer)&&(!filter||!filter.sharedMesh))continue;
-                    var bounds=renderer is SkinnedMeshRenderer skin?skin.localBounds:filter.sharedMesh.bounds;
-                    for(int n=0;n<8;n++){
-                        var sign=new Vector3((n&1)==0?-1:1,(n&2)==0?-1:1,(n&4)==0?-1:1);
-                        var point=transform.InverseTransformPoint(renderer.transform.TransformPoint(bounds.center+Vector3.Scale(bounds.extents,sign)));
-                        if(first){local=new Bounds(point,Vector3.zero);first=false;}else local.Encapsulate(point);
-                    }
-                }
-                if(first)throw new System.InvalidOperationException("Lighter body bounds required for Agency wings");
-                m_AgencyBodyBounds=local;
-                m_EyesObject.transform.localScale=Vector3.one*local.size.y*.5f;
-                m_AgencyVisual=gameObject.AddComponent<LighterAgencyVisual>();m_AgencyVisual.Initialize(local,m_AudioSource);
-            }
-            FaceAgencyViewer();
-            m_AgencyVisual.Begin();
 
             if (m_EyesObject != null)
                 m_EyesObject.SetActive(true);
@@ -467,14 +447,10 @@ namespace MagicMR
             if (m_AgencyAnimator != null && !string.IsNullOrEmpty(m_AliveBoolParameter))
                 m_AgencyAnimator.SetBool(m_AliveBoolParameter, true);
 
-            Debug.Log("[MagicMR] Agency: wings, bounded cough smoke, synthetic cough + eyes.", this);
-        }
+            if (m_AudioSource != null)
+                m_AudioSource.PlayOneShot(MagicMRAudioFactory.Growl, 0.4f);
 
-        void FaceAgencyViewer()
-        {
-            if(!m_AgencyVisual||!m_EyesObject)return;
-            var body=m_AgencyBodyBounds;bool front=!Camera.main||transform.InverseTransformPoint(Camera.main.transform.position).z>=0;
-            m_EyesObject.transform.localPosition=new Vector3(body.center.x,body.min.y+body.size.y*.67f,front?body.max.z+body.size.y*.03f:body.min.z-body.size.y*.03f);
+            Debug.Log("[MagicMR] Agency: alive / pulse + eyes.", this);
         }
 
         public void TriggerRule()
@@ -535,7 +511,7 @@ namespace MagicMR
             {
                 ClearDeconstructionVfx();
                 var vfx = Instantiate(m_DeconstructionVfx, transform.position, transform.rotation);
-                m_ActiveDeconstructionVfx=vfx.gameObject;
+                m_ActiveDeconstructionVfx = vfx.gameObject;
                 Destroy(vfx.gameObject, m_DeconstructionDelay + 1f);
             }
 
@@ -727,6 +703,12 @@ namespace MagicMR
             return found;
         }
 
+        void ClearDeconstructionVfx()
+        {
+            if (m_ActiveDeconstructionVfx != null) Destroy(m_ActiveDeconstructionVfx);
+            m_ActiveDeconstructionVfx = null;
+        }
+
         void ClearFlower()
         {
             if (m_SpawnedFlower == null)
@@ -734,11 +716,6 @@ namespace MagicMR
 
             Destroy(m_SpawnedFlower);
             m_SpawnedFlower = null;
-        }
-        void ClearDeconstructionVfx()
-        {
-            if(m_ActiveDeconstructionVfx!=null)Destroy(m_ActiveDeconstructionVfx);
-            m_ActiveDeconstructionVfx=null;
         }
 
         void RestoreFromDeconstruction()
@@ -749,7 +726,7 @@ namespace MagicMR
                 m_DeconstructionCoroutine = null;
             }
 
-            ClearDeconstructionVfx();ClearFlower();
+            ClearDeconstructionVfx(); ClearFlower();
             m_IsDeconstructed = false;
             SetAllRenderersEnabled(true);
             RestoreOriginalMaterials();
@@ -794,7 +771,6 @@ namespace MagicMR
 
         void EnterState(EditDimension dimension)
         {
-            if(dimension!=EditDimension.Agency&&m_AgencyVisual){m_AgencyVisual.Stop();if(m_AudioSource)m_AudioSource.Stop();}
             if (dimension != EditDimension.Appearance)
             {
                 m_HeatUntil = 0; SetHeat(0);
@@ -998,8 +974,7 @@ namespace MagicMR
 
         public void ResetTarget()
         {
-            m_AgencyVisual?.Stop();
-            if(m_AudioSource!=null)m_AudioSource.Stop();
+            if (m_AudioSource != null) m_AudioSource.Stop();
             m_HeatUntil = 0; SetHeat(0);
             if (GestureManager.Instance != null)
                 GestureManager.Instance.GetComponent<RightHandSpellVfx>()?.Clear();
@@ -1007,8 +982,7 @@ namespace MagicMR
             StopDodge();
             StopAllCoroutines();
             m_DeconstructionCoroutine = null;
-            ClearDeconstructionVfx();
-            ClearFlower();
+            ClearDeconstructionVfx(); ClearFlower();
             m_IsDeconstructed = false;
 
             SetAllRenderersEnabled(true);
@@ -1048,11 +1022,9 @@ namespace MagicMR
 
         void OnDestroy()
         {
-            ClearDeconstructionVfx();ClearFlower();
+            ClearDeconstructionVfx(); ClearFlower();
             m_InteriorView?.Dispose();
         }
-        void OnDisable(){m_AgencyVisual?.Stop();if(m_AudioSource)m_AudioSource.Stop();}
-        void OnApplicationPause(bool paused){if(paused){m_AgencyVisual?.Stop();if(m_AudioSource)m_AudioSource.Stop();}}
     }
 
 }

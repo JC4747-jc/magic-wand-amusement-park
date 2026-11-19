@@ -8,6 +8,18 @@ import subprocess
 import zipfile
 
 
+def all_scene_paths(root):
+    required = {
+        'BridgeTest', 'BridgeStereoFusion', 'BridgeStereoPoseFusion', 'BridgeStereoRepair',
+        'MagicMR', 'VstTest', 'SampleScene', 'DesktopCaptureDemo',
+        'ParkTree', 'ParkBugs', 'ParkStatue', 'ParkRoom', 'ParkPlant', 'ParkPet',
+    }
+    paths = sorted('Assets/Scenes/' + p.name for p in (root / 'Assets/Scenes').glob('*.unity'))
+    missing = sorted(required - {Path(p).stem for p in paths})
+    assert not missing, ('Required scene identities missing', missing)
+    return paths
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--unity-data', type=Path, required=True)
@@ -15,7 +27,9 @@ def main():
                         help='Project whose APKs and BuildReport manifests will be checked')
     parser.add_argument('--variant', action='append', choices=('Main','Pose','Repair','AllScenes'),
                         help='Check only these variants; repeat to select several. Default: Main, Pose, Repair')
-    parser.add_argument('--include-all-scenes',action='store_true',help='Also verify the separate 14-scene compilation artifact')
+    parser.add_argument('--output',type=Path,help='Write results here without replacing another variant report')
+    parser.add_argument('--include-all-scenes',action='store_true',help='Also verify the separate full-scene compilation artifact')
+    parser.add_argument('--require-insect-pixels',action='store_true',help='Require both generated skinned pixel models in the source receipt and packed player data')
     args = parser.parse_args()
     root = args.project_dir.resolve()
     if not (root/'Assets/Scenes').is_dir():
@@ -26,11 +40,13 @@ def main():
     available={'Main':('BridgeStereoFusion','com.yn.picmagicmr.stereo',7),
                'Pose':('BridgeStereoPoseFusion','com.yn.picmagicmr.stereo.pose',1),
                'Repair':('BridgeStereoRepair','com.yn.picmagicmr.stereo.repair',1),
-               'AllScenes':('AllScenesValidation','com.yn.picmagicmr.validation',14)}
+               'AllScenes':('AllScenesValidation','com.yn.picmagicmr.validation',None)}
     selected=args.variant or ['Main','Pose','Repair']
     if args.include_all_scenes:selected=selected+['AllScenes']
     variants=[available[name] for name in dict.fromkeys(selected)]
     for name, package, scenes in variants:
+        if name == 'AllScenesValidation':
+            scenes = len(all_scene_paths(root))
         apk = root/'Builds/Android'/(name+'.apk')
         digest = hashlib.sha256()
         with apk.open('rb') as stream:
@@ -56,6 +72,8 @@ def main():
             'Assets/MagicMR/NaturalTreeScar/Scar.mesh.asset','Assets/MagicMR/NaturalTreeScar/Scar.mat','Assets/MagicMR/NaturalBarkMark.shader',
             'Assets/ThirdParty/NaturalDecor/BronzeBeast/BronzeBeast.fbx','Assets/ThirdParty/NaturalDecor/BronzeBeast/Bronze.mat',
             'Assets/ThirdParty/NaturalDecor/BronzeBeast/bull_head_diff_1k.jpg','Assets/ThirdParty/NaturalDecor/BronzeBeast/bull_head_nor_gl_1k.jpg','Assets/ThirdParty/NaturalDecor/BronzeBeast/Bronze_MetalAO_Smooth.png'}
+        pixel_mesh_sources={'Assets/Resources/MagicMR/NaturalModels/PixelCockroach.asset','Assets/Resources/MagicMR/NaturalModels/PixelSpider.asset'} if args.require_insect_pixels else set()
+        required.update(pixel_mesh_sources)
         assert required.issubset(manifest['sourceAssets']), 'Accepted natural sources missing from BuildReport'
         assert not any(p.startswith('Assets/ThirdParty/NaturalPets/') and not p.startswith(('Assets/ThirdParty/NaturalPets/BicolorCat/','Assets/ThirdParty/NaturalPets/Wolfhound/')) for p in manifest['sourceAssets']), 'Unaccepted pet in BuildReport'
         assert 'Assets/ThirdParty/NaturalPets/BicolorCat/Image_2.png' not in manifest['sourceAssets'], 'Wrong UV2 normal map packed'
@@ -74,13 +92,14 @@ def main():
             assert game_settings.file_size<16*1024*1024, 'Unexpectedly large global scene settings'
             with archive.open(game_settings) as stream:settings=stream.read(16*1024*1024)
             packed_scenes=sorted({value.decode('utf-8') for value in re.findall(rb'Assets/Scenes/[A-Za-z0-9_]+\.unity',settings)})
-            if name=='AllScenesValidation':expected_scenes=sorted('Assets/Scenes/'+p.name for p in (root/'Assets/Scenes').glob('*.unity'))
+            if name=='AllScenesValidation':expected_scenes=all_scene_paths(root)
             elif name=='BridgeStereoFusion':expected_scenes=sorted('Assets/Scenes/'+scene+'.unity' for scene in ['BridgeStereoFusion','ParkTree','ParkBugs','ParkStatue','ParkRoom','ParkPlant','ParkPet'])
             else:expected_scenes=['Assets/Scenes/'+name+'.unity']
             assert len(expected_scenes)==scenes and packed_scenes==expected_scenes, (name,'Packed scene names differ',packed_scenes)
             # Rejected visual candidates must stay outside the player build.
             natural_assets = set()
             pet_animations = set()
+            pixel_models = set()
             for entry in archive.infolist():
                 if not entry.filename.startswith('assets/bin/Data/'):
                     continue
@@ -95,9 +114,13 @@ def main():
                                 natural_assets.add(token.decode())
                         for token in (b'BicolorCat_Walk',b'Wolfhound_WalkSource'):
                             if token.lower() in lower_data:pet_animations.add(token.decode())
+                        if args.require_insect_pixels:
+                            for token in (b'PixelCockroach',b'PixelSpider'):
+                                if token in data:pixel_models.add(token.decode())
                         tail=data[-64:]
             assert len(natural_assets)==5, (name, 'Accepted natural assets missing', natural_assets)
             assert len(pet_animations)==2, (name, 'Pet walk clips absent from player data',pet_animations)
+            if args.require_insect_pixels:assert len(pixel_models)==2, (name,'Skinned pixel models absent from player data',pixel_models)
         badging = subprocess.run([str(build_tools/'aapt.exe'),'dump','badging',str(apk)],
                                  check=True,capture_output=True,text=True,encoding='utf-8',errors='replace').stdout
         assert "package: name='"+package+"'" in badging, name
@@ -106,8 +129,9 @@ def main():
                                     'verify','--verbose',str(apk)],check=True,capture_output=True,text=True).stdout
         results.append(dict(apk=apk.name,bytes=apk.stat().st_size,sha256=digest.hexdigest(),package=package,
                             scene_count=len(levels),packed_scenes=packed_scenes,crc_pass=True,signature_pass=True,unaccepted_candidates_absent=True,
-                            natural_assets=sorted(natural_assets),packed_pet_animations=sorted(pet_animations),packed_source_assets_pass=True,packed_required_sources=sorted(required)))
-    output = root/'.codex-tmp/apk-validation.json'
+                            natural_assets=sorted(natural_assets),packed_pet_animations=sorted(pet_animations),packed_pixel_models=sorted(pixel_models),packed_source_assets_pass=True,packed_required_sources=sorted(required)))
+    output = args.output.resolve() if args.output else root/'.codex-tmp/apk-validation.json'
+    output.parent.mkdir(parents=True,exist_ok=True)
     output.write_text(json.dumps(results,indent=2),encoding='utf-8')
     print(json.dumps(results,indent=2))
 

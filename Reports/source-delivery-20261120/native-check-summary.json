@@ -1,0 +1,70 @@
+{
+  "nunit": {
+    "passed": 6,
+    "failed": 0,
+    "cases": [
+      {
+        "name": "BugRewardFragmentsCoinsAndResetKeepTheTrackedAnchor",
+        "result": "Passed",
+        "duration": "2.017910"
+      },
+      {
+        "name": "ManualFitKeepsTrackingRootAndClearsOnLoss",
+        "result": "Passed",
+        "duration": "0.027632"
+      },
+      {
+        "name": "ManualSurfacesRequireConfirmationAndStayIndependentOfTargets",
+        "result": "Passed",
+        "duration": "0.248835"
+      },
+      {
+        "name": "OrientationConfirmationRequiresTrackingAndClearsOnLossAndReset",
+        "result": "Passed",
+        "duration": "0.004474"
+      },
+      {
+        "name": "PetFeedCancellationOnTargetLossDoesNotCommitAffection",
+        "result": "Passed",
+        "duration": "1.835197"
+      },
+      {
+        "name": "RoomConfirmedSurfaceRewardAndDisableClearAllTransientState",
+        "result": "Passed",
+        "duration": "2.503685"
+      }
+    ],
+    "resources": {
+      "exitCode": 0,
+      "guardStop": null,
+      "sampleCount": 32,
+      "minimumSampledFreeRAMGiB": 7.151142120361328,
+      "maximumSampledRSSMiB": 2475.6953125,
+      "seconds": 24.3833547,
+      "scope": "Sampled observations, not continuous peaks"
+    }
+  },
+  "sixSceneCoroutine": {
+    "markers": [
+      "PARK_PLAYMODE_SCENE_PASS: Tree synthetic command, actual coroutine completion and Reset; no PICO gesture validation",
+      "PARK_PLAYMODE_SCENE_PASS: Bugs synthetic command, actual coroutine completion and Reset; no PICO gesture validation",
+      "PARK_PLAYMODE_SCENE_PASS: Statue synthetic command, actual coroutine completion and Reset; no PICO gesture validation",
+      "PARK_PLAYMODE_ROOM_INDEPENDENCE_PASS: synthetic independent A/B/C/D with real coroutines, bounded candy and Stop/Reset; no YOLO or PICO acceptance",
+      "PARK_PLAYMODE_SCENE_PASS: Room synthetic command, actual coroutine completion and Reset; no PICO gesture validation",
+      "PARK_PLAYMODE_SCENE_PASS: Plant synthetic command, actual coroutine completion and Reset; no PICO gesture validation",
+      "PARK_PLAYMODE_SCENE_PASS: Pet synthetic command, actual coroutine completion and Reset; no PICO gesture validation",
+      "PARK_PLAYMODE_PASS: six real coroutine runs; synthetic inputs, no headset validation"
+    ],
+    "resources": {
+      "exitCode": 0,
+      "guardStop": null,
+      "sampleCount": 50,
+      "minimumSampledFreeRAMGiB": 7.5306549072265625,
+      "maximumSampledRSSMiB": 1568.83203125,
+      "seconds": 37.2217145,
+      "scope": "Sampled observations, not continuous peaks"
+    }
+  },
+  "scope": "Native Editor coroutines and direct synthetic effect commands. No real YOLO target, hand tracking, PICO or new camera-render acceptance.",
+  "legacyOtherEntryPoints": "Other ParkPlayModeChecks.Run* replay entries and RequestedInteractionChecks were not executed"
+}

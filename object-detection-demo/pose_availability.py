@@ -24,10 +24,17 @@ class PoseAvailability:
     def _poll(self):
         while not self.stop.is_set():
             try:
+                deadline=time.monotonic()+.15
                 with socket.create_connection((self.host,self.port),timeout=.15) as client:
                     data=bytearray()
                     while b'\n' not in data and len(data)<1024:
+                        # One budget covers connect and every fragment. A peer
+                        # sending one byte per socket timeout cannot hold polling.
+                        remaining=deadline-time.monotonic()
+                        if remaining<=0:raise TimeoutError('Health reply deadline')
+                        client.settimeout(remaining)
                         part=client.recv(1024-len(data))
+                        if time.monotonic()>=deadline:raise TimeoutError('Health reply deadline')
                         if not part: break
                         data.extend(part)
                     # Require a complete, bounded health message. A truncated

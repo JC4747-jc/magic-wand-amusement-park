@@ -44,9 +44,9 @@ public static class HciSharedGestureChecks
         } else if(dimension==EditDimension.Rule) {
             for(int n=1;n<=12;n++)frames.Add(Frame(clock+n*.02f,"open",.08f,Vector3.right*n*.014f));
         } else {
-            // A long fist must remain D; it must not become Park's old Undo.
-            for(int n=1;n<=45;n++)frames.Add(Frame(clock+n*.02f,"fist",.02f));
-            frames.Add(Frame(clock+.92f,"open"));
+            // HCI fist-open must finish inside StudySpec.FistMaxBurstSeconds; never map it to Undo.
+            for(int n=1;n<=12;n++)frames.Add(Frame(clock+n*.02f,"fist",.02f));
+            frames.Add(Frame(clock+.26f,"open"));
         }
         return frames;
     }

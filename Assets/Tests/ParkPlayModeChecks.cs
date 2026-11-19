@@ -273,7 +273,13 @@ public sealed class ParkPlayModeChecks : MonoBehaviour
             if(failed)break;
             yield return new WaitForSecondsRealtime(.4f);
             try {Require(actor.Revision==revision+1,"Spell did not reach effect commit: "+actor.scenario);}catch(Exception e){Debug.LogException(e);failed=true;}
-            yield return new WaitForSecondsRealtime(actor.transitionSeconds+.5f);
+            // Current native statue stretch is longer than the old transition envelope.
+            float animationDeadline=Time.realtimeSinceStartup+10f;
+            while(actor.Busy && Time.realtimeSinceStartup<animationDeadline)yield return null;
+            try {
+                Require(!actor.Busy,"Animation exceeded ten-second bound: "+actor.scenario);
+                Require(actor.transform.position==anchor,"Animation moved tracking root: "+actor.scenario);
+            }catch(Exception e){Debug.LogException(e);failed=true;}
             if(actor.scenario==ParkScenario.Plant) {
                 try {
                     Require(actor.growthTime>.45f,"Plant summon did not actually grow");
@@ -296,38 +302,39 @@ public sealed class ParkPlayModeChecks : MonoBehaviour
                 var ceiling=new GameObject("Explicit synthetic ceiling anchor");
                 try {
                     actor.ResetEffects();actor.confirmedPlane=true;actor.environmentAnchor=ceiling.transform;
-                    Require(!actor.TryAction(ParkAction.Reward,anchor,true) && !actor.Busy,"Room spawned unselected candy effect");
-                    Require(actor.TryAction(ParkAction.Style,anchor,true),"Room rejected effect selection");
+                    Require(actor.RoomStyle==0,"Room did not reset style A");
+                    Require(actor.TryAction(ParkAction.Reward,anchor,true),"Confirmed ceiling rejected independent candy D");
                 }catch(Exception e){Debug.LogException(e);failed=true;}
                 yield return new WaitForSecondsRealtime(actor.transitionSeconds+.7f);
                 try {
-                    Require(actor.RoomCandySelected,"Room did not select candy before summon");
-                    Require(actor.TryAction(ParkAction.Awaken,anchor,true),"Selected candy did not route the common summon action");
-                }catch(Exception e){Debug.LogException(e);failed=true;}
-                yield return new WaitForSecondsRealtime(3f);
-                try {
-                    Require(!actor.Busy && VisibleParticles(actor)==24,"Actual candy rain failed to persist with bounded pool");
-                    Require(actor.TryAction(ParkAction.Style,anchor,true),"Active candy rain rejected effect switch");
-                }catch(Exception e){Debug.LogException(e);failed=true;}
-                yield return new WaitForSecondsRealtime(actor.transitionSeconds+1f);
-                try {
-                    Require(!actor.Busy && !actor.RoomCandySelected && VisibleParticles(actor)==0,"Switch to jellyfish retained candy or unfinished animation");
-                    Require(actor.confirmedPlane && actor.environmentAnchor==ceiling.transform,"Effect switch discarded confirmed ceiling");
-                    Require(actor.TryAction(ParkAction.Style,anchor,true),"Room could not select candy a second time");
+                    Require(!actor.Busy && VisibleParticles(actor)==24,"Candy D failed to persist in bounded pool");
+                    Require(actor.RoomStyle==0 && !actor.RoomWindowRequested && !actor.RoomLampRequested,"Candy D changed A/B/C");
+                    Require(actor.TryAction(ParkAction.Style,anchor,true),"Room rejected independent style A");
                 }catch(Exception e){Debug.LogException(e);failed=true;}
                 yield return new WaitForSecondsRealtime(actor.transitionSeconds+.7f);
-                try {Require(actor.RoomCandySelected && actor.TryAction(ParkAction.Reward,anchor,true),"Second candy round failed after switch");}catch(Exception e){Debug.LogException(e);failed=true;}
-                yield return new WaitForSecondsRealtime(3f);
                 try {
-                    Require(!actor.Busy && VisibleParticles(actor)==24,"Second candy round did not persist");
-                    Require(actor.TryAction(ParkAction.Stop,anchor,true),"Actual candy rain rejected Stop");
+                    Require(actor.RoomStyle==1 && VisibleParticles(actor)==24,"Style A failed or cleared independent candy D");
+                    Require(actor.confirmedPlane && actor.environmentAnchor==ceiling.transform,"Style A discarded ceiling confirmation");
+                    Require(actor.TryAction(ParkAction.Pull,anchor,true),"Room rejected jellyfish lamp C");
                 }catch(Exception e){Debug.LogException(e);failed=true;}
-                yield return new WaitForSecondsRealtime(.5f);
+                yield return new WaitForSecondsRealtime(actor.transitionSeconds+.7f);
                 try {
-                    Require(!actor.Busy && VisibleParticles(actor)==0,"Actual Stop failed to finish and recycle candy");
-                    Debug.Log("PARK_PLAYMODE_ROOM_LIFECYCLE_PASS: synthetic ceiling, effect selection/switch/re-summon, sustained 24-object pool and completed Stop");
+                    Require(actor.RoomLampRequested && actor.RoomStyle==1 && VisibleParticles(actor)==24,"Lamp C discarded A/D");
+                    Require(actor.TryAction(ParkAction.Awaken,anchor,true),"Room rejected window B");
                 }catch(Exception e){Debug.LogException(e);failed=true;}
-                Destroy(ceiling);
+                yield return new WaitForSecondsRealtime(actor.transitionSeconds+.7f);
+                try {
+                    Require(actor.RoomWindowRequested && actor.RoomLampRequested && actor.RoomStyle==1 && VisibleParticles(actor)==24,"Window B discarded A/C/D");
+                    Require(actor.TryAction(ParkAction.Stop,anchor,true),"Candy D rejected Stop");
+                }catch(Exception e){Debug.LogException(e);failed=true;}
+                yield return new WaitForSecondsRealtime(actor.transitionSeconds+1.5f);
+                try {
+                    Require(!actor.Busy && VisibleParticles(actor)==0,"Stop did not recycle candy pool");
+                    actor.ResetEffects();
+                    Require(actor.RoomStyle==0 && !actor.RoomWindowRequested && !actor.RoomLampRequested && !actor.confirmedPlane && !actor.environmentAnchor,"Reset retained room A/B/C or ceiling state");
+                    Destroy(ceiling);
+                    Debug.Log("PARK_PLAYMODE_ROOM_INDEPENDENCE_PASS: synthetic independent A/B/C/D with real coroutines, bounded candy and Stop/Reset; no YOLO or PICO acceptance");
+                }catch(Exception e){Debug.LogException(e);failed=true;}
             }
             if(actor.scenario==ParkScenario.Pet) {
                 var bubble=actor.visual.Find("Dream bubble");

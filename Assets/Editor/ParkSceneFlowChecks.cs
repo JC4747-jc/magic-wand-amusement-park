@@ -22,6 +22,7 @@ public static class ParkSceneFlowChecks
     static Camera camera;
     static int stage,errors,snapshots;
     static double started,next;
+    static double actionDeadline;
     static Vector3 cameraPosition;
     static Quaternion cameraRotation;
     static float cameraFov;
@@ -115,11 +116,23 @@ public static class ParkSceneFlowChecks
                 else Require(controller.Dispatch(ParkAction.Awaken,original.transform.position,true),"Scene controller rejected animation: "+controller.InteractionStatus);
                 Require(original.Busy,"Actual model coroutine did not start");
                 Click(index==2?"Plant":Profiles[(index+1)%6]);Require(controller.selected==original&&(int)controller.scenario==index&&ui.Feedback.Contains("Wait for animation"),"UI switched while animation busy or missed busy gate");
-                Later(3,1.6);
+                var statueStretch=original.GetComponentInChildren<NaturalStatueStretch>(true);
+                float declaredDuration=index==2&&statueStretch?statueStretch.Duration:Mathf.Max(.3f,original.transitionSeconds);
+                Require(float.IsFinite(declaredDuration)&&declaredDuration>0&&declaredDuration<=10,
+                    "Invalid or out-of-budget scene animation duration: "+declaredDuration);
+                // Motion includes the incoming spell before the authored clip. Wait for the real
+                // coroutine with a finite margin, rather than assuming every action lasts 1.6s.
+                actionDeadline=EditorApplication.timeSinceStartup+declaredDuration+1.2;
+                Debug.Log("PARK_ACTION_WAIT "+ParkContentBuilder.Names[index]+" declaredSeconds="+declaredDuration+" marginSeconds=1.2");
+                Later(3,.1);
             }
             else if(stage==3)
             {
-                Require(!original.Busy&&original.Revision>0,"Scene animation did not finish");
+                if(original.Busy){
+                    Require(EditorApplication.timeSinceStartup<actionDeadline,"Scene animation exceeded its declared duration and margin");
+                    return;
+                }
+                Require(original.Revision>0,"Scene animation did not update its revision");
                 if(index==4)Require(original.PlantBloomVisible,"Actual plant UI bloom not visible");Capture("Action");
                 if(index==3||index==5){Click("Stop");Require(original.Busy,"Stop button did not begin fade");}
                 Later(4,.6);

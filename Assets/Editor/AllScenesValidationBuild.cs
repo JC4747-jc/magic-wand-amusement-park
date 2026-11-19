@@ -15,7 +15,9 @@ public static class AllScenesValidationBuild
         ProjectSceneAudit.Run();StereoIntegrationChecks.Run();F2GPoseChecks.Run();
         const string first="Assets/Scenes/BridgeStereoFusion.unity";
         var scenes=new[]{first}.Concat(AssetDatabase.FindAssets("t:Scene",new[]{"Assets/Scenes"}).Select(AssetDatabase.GUIDToAssetPath).Where(p=>p!=first).OrderBy(p=>p)).ToArray();
-        if(scenes.Length!=14||scenes.Distinct().Count()!=14)throw new Exception("Expected all 14 unique project scenes");
+        var required=ProjectSceneAudit.RequiredScenePaths;
+        if(required.Length!=14||required.Distinct().Count()!=14||scenes.Distinct().Count()!=scenes.Length||required.Any(p=>!scenes.Contains(p)))
+            throw new Exception("All 14 required scene identities must be present; additional project scenes are included, never discarded to match a count");
         string id=PlayerSettings.GetApplicationIdentifier(NamedBuildTarget.Android),product=PlayerSettings.productName,version=PlayerSettings.bundleVersion;
         int code=PlayerSettings.Android.bundleVersionCode;bool signing=PlayerSettings.Android.useCustomKeystore;
         try
@@ -27,7 +29,7 @@ public static class AllScenesValidationBuild
             var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=scenes,target=BuildTarget.Android,locationPathName="Builds/Android/AllScenesValidation.apk",options=BuildOptions.None});
             if(report.summary.result!=BuildResult.Succeeded)throw new Exception("All-scenes validation build failed");
             ResourceBoundedAndroidBuild.RecordAssets(report);
-            Debug.Log("ALL_SCENES_ANDROID_BUILD_PASS: all 14 project scenes compiled/packed; separate validation app ID, no device/navigation acceptance");
+            Debug.Log("ALL_SCENES_ANDROID_BUILD_PASS: "+scenes.Length+" project scenes compiled/packed, all 14 required identities included; separate validation app ID, no device/navigation acceptance");
         }
         finally
         {

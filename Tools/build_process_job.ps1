@@ -28,6 +28,8 @@ public sealed class MagicMRBuildJob : IDisposable
     static extern bool SetInformationJobObject(IntPtr job,int infoClass,ref ExtendedLimits data,uint length);
     [DllImport("kernel32.dll",SetLastError=true)]
     static extern bool AssignProcessToJobObject(IntPtr job,IntPtr process);
+    [DllImport("kernel32.dll",SetLastError=true)]
+    static extern bool IsProcessInJob(IntPtr process,IntPtr job,out bool result);
     [DllImport("kernel32.dll")] static extern bool CloseHandle(IntPtr handle);
     IntPtr handle;
     MagicMRBuildJob(IntPtr value){handle=value;}
@@ -43,6 +45,16 @@ public sealed class MagicMRBuildJob : IDisposable
                 throw new Win32Exception(Marshal.GetLastWin32Error());
             return job;
         }catch{job.Dispose();throw;}
+    }
+    public bool Contains(Process process) {
+        if(handle==IntPtr.Zero)throw new ObjectDisposedException("MagicMRBuildJob");
+        bool result;
+        if(!IsProcessInJob(process.Handle,handle,out result))throw new Win32Exception(Marshal.GetLastWin32Error());
+        return result;
+    }
+    public void Include(Process process) {
+        if(!Contains(process) && !AssignProcessToJobObject(handle,process.Handle))
+            throw new Win32Exception(Marshal.GetLastWin32Error());
     }
     public void Dispose(){IntPtr value=Interlocked.Exchange(ref handle,IntPtr.Zero);if(value!=IntPtr.Zero)CloseHandle(value);GC.SuppressFinalize(this);}
     ~MagicMRBuildJob(){Dispose();}
