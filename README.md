@@ -1,3 +1,5 @@
+> 2026-11-20 出租屋水彩与运动验证源码候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。13张编辑器实际渲染、合成回归及15场景Android包检查通过；火机未改，真实房间、最终美术和PICO仍待验收，APK未上传。
+
 > 2026-11-20 非火机自动路由门禁源码候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。已通过对应原生 Unity 与本地 Android 包检查；APK 未上传，模型质量、PICO 与完整32效果仍待验收。历史下载和结果不代表当前验收范围。
 
 # Magic Wand Amusement Park

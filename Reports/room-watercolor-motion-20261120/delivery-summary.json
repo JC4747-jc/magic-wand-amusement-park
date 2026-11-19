@@ -1,0 +1,140 @@
+{
+  "schema": 1,
+  "checkedAtUtc": "2026-11-19T23:47:39.453017+00:00",
+  "status": "ROOM_SHADER_NATIVE_RENDER_AND_ANDROID_STATIC_VERIFIED_DEVICE_ART_PENDING",
+  "parentCommit": "533ebe214200295fe76843d2140578525214df55",
+  "developmentBaseline": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
+  "sourceChanges": [
+    {
+      "path": "Assets/Editor/HciRoomMagicChecks.cs",
+      "previousSha256": "696cc0158af7e4f2468892888c46e461b442c3026cf5fd1e8bee33236151ed7f",
+      "sha256": "53144df8f234848b2e3834dab7cc3d48cc9d3b02e33d384839abab0e26e5cc95"
+    },
+    {
+      "path": "Assets/Resources/MagicMR/RoomStyle.shader",
+      "previousSha256": "8239a88fd2a932229fea14b87c42abbc8378ee4ded5914d08a9d72ad9f6412aa",
+      "sha256": "21ff4cec97c47495fd241b195e45be4070294ba306a12b35933d7d47804f29b1"
+    }
+  ],
+  "boundedLauncher": {
+    "path": "Tools/run_room_magic_review_bounded.ps1",
+    "sha256": "11a24518205dcbdb0cfb988b0ca9705cc7435e5ea79fbe8dd7006bb5560f25e7",
+    "actuallyUsedForNativePass": true
+  },
+  "native": {
+    "exitCode": 0,
+    "seconds": 44.3607929,
+    "samples": 59,
+    "minimumSampledFreeRamGiB": 7.180084228515625,
+    "maximumSampledOwnedRssMiB": 1903.71484375,
+    "renderCount": 13,
+    "renderDimensions": [
+      960,
+      800
+    ],
+    "allThirteenRendersAndThreeFiguresActuallyViewed": true,
+    "scope": "Saved ParkRoom with synthetic classifier/room calibration, A/B/C/D coexistence and Undo/Stop/loss/recovery/Reset. Not real YOLO/room reconstruction/hands/device acceptance."
+  },
+  "motion": {
+    "C": {
+      "elapsedSeconds": 0.4527348999999994,
+      "phaseStart": 4.96774149,
+      "phaseEnd": 5.98367643,
+      "opacity": 1,
+      "maskAnalysis": "render-analysis.json"
+    },
+    "D": {
+      "elapsedSeconds": 0.4312467999999985,
+      "movingActiveObjects": 24,
+      "activeObjects": 24,
+      "poolCapacity": 32,
+      "maximumSampleDistanceMeters": 0.210375667
+    },
+    "scope": "Two samples establish sampled movement only; no full-cycle smoothness/long-duration/device claim"
+  },
+  "watercolorMetrics": {
+    "books": {
+      "beforeMeanChromaRgb": 10.941487603305784,
+      "afterMeanChromaRgb": 8.827878787878788,
+      "beforeRgbStd": 8.131738815779713,
+      "afterRgbStd": 13.283549892364453
+    },
+    "wall": {
+      "beforeMeanChromaRgb": 16.7469375,
+      "afterMeanChromaRgb": 26.05125,
+      "beforeRgbStd": 4.290379454210445,
+      "afterRgbStd": 7.664603548690158
+    },
+    "seat": {
+      "beforeMeanChromaRgb": 11.148132992327366,
+      "afterMeanChromaRgb": 6.997544757033248,
+      "beforeRgbStd": 5.2449231068882405,
+      "afterRgbStd": 8.16098139125025
+    }
+  },
+  "visualFindings": {
+    "watercolor": "More paper/brush and tonal variation visible, still art candidate",
+    "quantitativeRois": "All before/after metrics retained in render-analysis.json; chroma decreased in books/seat and increased in wall. Higher ROI variation is not aesthetic acceptance.",
+    "remaining": [
+      "Reading-corner proxy is not a reconstructed real bedroom",
+      "Window exterior remains a flat teal view",
+      "PICO readability, actual room fit and long-duration motion pending"
+    ],
+    "userVisualAcceptance": false
+  },
+  "android": {
+    "sha256": "1a685e2f9d8ac8511d080a15fd7ab8220549b82bf43ee78fb84aa010dfbbd231",
+    "bytes": 78059179,
+    "sceneCount": 15,
+    "crc": true,
+    "signature": true,
+    "zipalign4Byte": true,
+    "arm64ElfHeaders": 16,
+    "minSdk": 29,
+    "targetSdk": 35,
+    "RoomStyleSourcePresentInBuildReport": true,
+    "RoomStyleCompiledAndSerialized": true,
+    "minimumSampledFreeRamGiB": 5.076,
+    "maximumSampledOwnedRssMiB": 3546.0,
+    "maximumSampledCompilerProcesses": 0,
+    "guardStop": null,
+    "deviceExecutionValidated": false,
+    "note": "Verifier ran at standard AllScenesValidation.apk basename before exact-byte versioned rename; old default APK restored afterward."
+  },
+  "apkName": "RoomWatercolorValidation-20261120.apk",
+  "apkPublished": false,
+  "nativeUsesNewEditorFixtureButAndroidExcludesEditorCode": true,
+  "androidPlayerInputsComparedToParent": "Only the RoomStyle.shader production source differs; fixture, launcher and documentation are not player code.",
+  "fireDedicatedAssetsEffectsAnimationsWeightsAndMetaUnchanged": true,
+  "productionGestureRulesUnchanged": true,
+  "cyberFragmentUnchanged": true,
+  "localDetailedReportSha256": "e7e3d24f11098d77a30fe295b56e6a1c166fee930bdc8c5995bd70a50452db2b",
+  "nativeResultSha256": "e05fa2e3c516839b56c2f81c000143a2022c51cf7cafac4af8f4c5eb183f475e",
+  "nativeResourcesSha256": "14013b190f31a4ec7e63892b3616386c40f5ed91ec5a9d4ab1b6d2d3f353e967",
+  "androidResourcesSha256": "416b8843648b861d77a5606eaa9b38a0c150d773906d5b6e3a0ad18b53793d9a",
+  "androidBuildReportSha256": "bbff1635117ff2ecbca5a60c4eb1b1cfbc6456e5b3d9ed46bd63c03875e39634",
+  "androidStaticVerificationSha256": "e1e317cbb4d174e87a3a7b024a2beb2cb64c3bd2058fa7bb05e53ac697438e51",
+  "androidExtraChecksSha256": "7aaaa8f15ffbc98b47cd5b9d6e5c505c84fee02ae1514aa6f851e176ffb3947b",
+  "renderHashes": {
+    "00-original.png": "c7bdc295e7a191b16dffea6e2a3b17c39f0f749c8630f151d1d3c73ed606e000",
+    "01-window-opening.png": "ee4d0056c665f1af3457012a69e53a3b15410ae639a535ff2edca12ee377b86b",
+    "02-window-open.png": "12547c1c43b7822158518c6a4df96c632f3a287676eba603af4cc2ab616431d4",
+    "03-lamp-motion.png": "cae6fdc3f442621c24d76d21fa3f9f68e2c87e11298d617c81a6618ec1cac582",
+    "03-lamp-only-a.png": "4baba8d900bf8cab07a770b0d807b9952174b52d0c9ad9b01b4a88df7a578290",
+    "03-lamp-only-b.png": "a9ffa52ce884295e6acde2a92e6228ea1aedbf11a2874cd471d304805e699037",
+    "03-lamp.png": "90c9a1da49546f1e0178553b64dbf6a866d5993c825f1f16faa727abf9b31e3f",
+    "04-watercolor.png": "13a37c218dd3e092498d5c958a217be29c7195951b6b3d24a6f6c6862bbaf824",
+    "05-cyber.png": "cd1b191021446d1779a4a85361db072d6da3d2fe62a64d971baa505aecdf5398",
+    "06-candy-motion.png": "674bffb39cbee17c02c72a32641b0c58e7206fc0eff596d9462ec172c4023dfd",
+    "06-candy.png": "3e1d9e2df22df229ef3ea13cba2e8f449bcc0e2d95c463a9957ee472ceb19d28",
+    "07-stopped.png": "b709c84f5bdde3b129b7c4140ad3a7a91419e5fe324ad1ff779f755cc21f4d2c",
+    "08-reset.png": "5ee1d2bb30e9b3a7cf313adf12dd28066d70bd9f16f9862ed3bc7348f0bb6d7a"
+  },
+  "renderFilesPublished": false,
+  "independentRealWorldAccuracyAccepted": false,
+  "realRoomReconstructionValidated": false,
+  "deviceValidated": false,
+  "finalArtAccepted": false,
+  "fullEightCase32EffectAcceptance": false,
+  "scope": "Synthetic saved-scene classifier/room-volume checks and actual editor camera renders, plus local APK static checks. Two samples prove sampled movement only; ROI metrics are not aesthetic acceptance."
+}
