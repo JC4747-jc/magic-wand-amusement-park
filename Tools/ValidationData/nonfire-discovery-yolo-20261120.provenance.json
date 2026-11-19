@@ -1,0 +1,51 @@
+{
+  "createdAtUtc": "2026-11-19T22:43:22.598573+00:00",
+  "kind": "ACTUAL_ORIGINAL_PICF_DISCOVERY_YOLO_OUTPUT_PUBLIC_DIAGNOSTIC_NOT_TRAINING_OR_DEVICE_ACCEPTANCE",
+  "fixtureSha256": "13a0ce419fce2674716f36bf15db5a36188c91c04d79d167531eaf45349a830a",
+  "originalInferenceReportSha256": "c96dfdbb6b8fc1d04d028ab73c24f1be8d938219129264319d6aa8b5d0d42344",
+  "nativeInputExactBytesMatched": true,
+  "nativeCheckSourceSha256": "34c2e0454b6b452cb60a6ea0060c696976a662632ef65050a19583574f1a0eeb",
+  "checkpointSha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+  "checkpointSource": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolov8n-oiv7.pt",
+  "producer": "Original scene_protocol PICF v2, tcp_server JPEG/YOLO/decode, scene_router discovery and InstanceTracker",
+  "positive": {
+    "imageId": "commons-24407096",
+    "sha256": "50622399ff2f79dc989d5a04f885cc3129dd6ea47e16887700c5208b59042d17",
+    "provenance": {
+      "publisher": "Wikimedia Commons",
+      "page": "https://commons.wikimedia.org/wiki/File:Tree_of_Life_Bahrain.jpg",
+      "licenseRecorded": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "author": "alawadhi3000",
+      "authorProfile": "https://en.wikipedia.org/wiki/en:User:Alawadhi3000",
+      "originalPublisherSha1": "a60737eec2ed5a8092c18338bf50dfe052665d1e"
+    },
+    "repeatFrames": 3,
+    "uniquePositivePhotos": 1,
+    "knownDuplicateBranchFalsePositive": true
+  },
+  "negative": {
+    "parentImageId": "0d0883e0e0436553",
+    "cropSha256": "c65dbe9057d7c6ed87e4fc9be167ec6dfca2289ef8c32952a411dfdcf06b15f1",
+    "provenance": {
+      "publisher": "Open Images/Flickr",
+      "page": "https://www.flickr.com/photos/wneuheisel/15730143342",
+      "licenseRecorded": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "William Neuheisel",
+      "authorProfile": "https://www.flickr.com/people/wneuheisel/",
+      "benchmarkSubset": "validation",
+      "originalPublisherMd5": "trGwlVdnSi1qLbsqXt/YgQ=="
+    },
+    "sourceFamily": "Original train parent only; not independent capture",
+    "frameCount": 1
+  },
+  "frames": 4,
+  "newIndependentProjectCaptures": 0,
+  "pixelsOrModelWeightsIncluded": false,
+  "validation": "UNVALIDATED",
+  "poseAvailable": false,
+  "productionModelActivated": false,
+  "trainingApproved": false,
+  "accuracyAccepted": false,
+  "scope": "Stable IDs and gate regression only. Two boxes are not two correctly detected physical trees. Existing UI confidence filters the lower-confidence duplicate; no threshold tuning in this fixture."
+}

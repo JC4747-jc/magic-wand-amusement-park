@@ -1,4 +1,4 @@
-> 2026-11-20 整合候选入口：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。本候选的验证范围见 SOURCE_VALIDATION.json，PICO 及全部32效果仍未验收；下方按日期保留的历史下载和结果不代表当前源码树。
+> 2026-11-20 非火机自动路由门禁源码候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。已通过对应原生 Unity 与本地 Android 包检查；APK 未上传，模型质量、PICO 与完整32效果仍待验收。历史下载和结果不代表当前验收范围。
 
 # Magic Wand Amusement Park
 

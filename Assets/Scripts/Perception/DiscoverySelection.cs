@@ -14,13 +14,13 @@ namespace MagicMR {
         long lastFrame=-1;
         readonly Dictionary<string,List<DetectionMessage>> sources=new Dictionary<string,List<DetectionMessage>>();
         readonly Dictionary<string,float> sourceTimes=new Dictionary<string,float>();
-        readonly Dictionary<string,bool> sourceAutomatic=new Dictionary<string,bool>();
+        readonly Dictionary<string,string> sourceValidation=new Dictionary<string,string>();
         readonly List<string> expiredSources=new List<string>();
         public float candidateLifetime=3f;
         void RemoveExpiredSources(float now) {
             expiredSources.Clear();
             foreach(var pair in sourceTimes)if(now-pair.Value>candidateLifetime)expiredSources.Add(pair.Key);
-            foreach(var source in expiredSources) {sources.Remove(source);sourceTimes.Remove(source);sourceAutomatic.Remove(source);}
+            foreach(var source in expiredSources) {sources.Remove(source);sourceTimes.Remove(source);sourceValidation.Remove(source);}
             expiredSources.Clear();
         }
         public void Tick(float now,bool busy) {
@@ -38,7 +38,7 @@ namespace MagicMR {
             foreach(var d in frame.detections??System.Array.Empty<DetectionMessage>())
                 if(ValidCandidate(d,frame.width,frame.height) && d.confidence>=minimumConfidence)current.Add(d);
             sources[source]=current;sourceTimes[source]=now;
-            sourceAutomatic[source]=AllowsAutomaticRouting(frame.model_validation);
+            sourceValidation[source]=frame.model_validation;
             Candidates.Clear();foreach(var pair in sources)if(now-sourceTimes[pair.Key]<=candidateLifetime)Candidates.AddRange(pair.Value);
             if(LockedId!=null) {
                 foreach(var d in current)if(d.instance_id==LockedId && d.target_scene==LockedScene) {lastSeen=now;return null;}
@@ -47,7 +47,7 @@ namespace MagicMR {
             }
             if(busy || !automatic || now<nextSwitch || Candidates.Count!=1) {pendingId=null;confirmations=0;return null;}
             var candidate=Candidates[0];
-            foreach(var pair in sources)if(pair.Value.Exists(d=>d.instance_id==candidate.instance_id) && !sourceAutomatic[pair.Key]) {pendingId=null;confirmations=0;return null;}
+            foreach(var pair in sources)if(pair.Value.Exists(d=>d.instance_id==candidate.instance_id) && !AllowsAutomaticRouting(sourceValidation[pair.Key],candidate.target_scene)) {pendingId=null;confirmations=0;return null;}
             if(pendingId!=candidate.instance_id) {pendingId=candidate.instance_id;pendingSince=now;confirmations=1;return null;}
             if(!current.Exists(d=>d.instance_id==candidate.instance_id))return null;
             confirmations++;
@@ -62,6 +62,12 @@ namespace MagicMR {
                 pendingId=null;confirmations=0;return LockedScene;
             }
             return null;
+        }
+        static bool AllowsAutomaticRouting(string validation,string targetScene) {
+            // Keep the frozen lighter policy; non-fire candidates need a validated model.
+            if(targetScene!="lighter" && !string.IsNullOrEmpty(validation) &&
+               validation.IndexOf("UNVALIDATED",System.StringComparison.OrdinalIgnoreCase)>=0)return false;
+            return AllowsAutomaticRouting(validation);
         }
         public static bool AllowsAutomaticRouting(string validation) {
             // Legacy lighter and explicit simulation streams have no marker.
@@ -97,7 +103,7 @@ namespace MagicMR {
                    float.IsFinite(d.x1) && float.IsFinite(d.y1) && float.IsFinite(d.x2) && float.IsFinite(d.y2) &&
                    d.x1>=0 && d.y1>=0 && d.x1<d.x2 && d.y1<d.y2 && d.x2<=width && d.y2<=height;
         }
-        public void Return(float now) {LockedId=null;LockedScene=null;pendingId=null;confirmations=0;Candidates.Clear();sources.Clear();sourceTimes.Clear();sourceAutomatic.Clear();nextSwitch=now+cooldownSeconds;}
+        public void Return(float now) {LockedId=null;LockedScene=null;pendingId=null;confirmations=0;Candidates.Clear();sources.Clear();sourceTimes.Clear();sourceValidation.Clear();nextSwitch=now+cooldownSeconds;}
         // A new input stream may restart its frame counter. Ordinary Reset keeps ordering.
         public void ResetSession(float now) {Return(now);lastFrame=-1;}
     }

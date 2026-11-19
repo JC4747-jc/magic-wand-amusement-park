@@ -1,31 +1,15 @@
-# 当前源码整合候选（2026-11-20）
+# 非火机自动路由门禁：源码候选交付（2026-11-20）
 
-本候选以 restore-4d-lighter@4250bad 为交付父版本，生产源码来自当前 JC 工作区；原始开发基线是 codex/mr-development-snapshot-20261109@8359a0c。原分支没有改写。火机场景、模型、效果与原 YOLO 权重保持既有冻结版本，不训练火机。
+交付父版本为 restore-4d-lighter@b3b7d35792243b3c4f0675db2337e5dfd72f9275；原开发基线仍为 codex/mr-development-snapshot-20261109@8359a0c。仅修改 DiscoverySelection.cs 的非火机自动路由：明确 UNVALIDATED 的目标不能自动切换，火机旧判断原样保留。火机场景、模型、动画、效果与原 YOLO 权重未改；生产 Tree 权重仍空。
 
-## 本候选内容
+42 项完整 C# 状态机检查、来源过期/返回清理/升级后重新满足稳定窗口、Unity Roslyn 71/58 源编译通过。原生 Unity JsonUtility 实际解析原 PICF/discovery/YOLO 的四帧 JSON，验证非火机拒绝及已有共享 UI；可重复有界工具另外运行通过，并按原哈希清理临时探针，1804 项既有工程源文件不变。摘要见 Reports/nonfire-validation-native-20261120/delivery-summary.json。
 
-- Assets/Scenes 包含 15 个保存场景，包含计划要求的 14 个场景；真实 YOLO 生产入口仍为 BridgeStereoFusion。MagicMR/合成输入不代替真实链路验收。
-- XRI 示例由 3.0.5 迁至 3.0.7，保留匹配 GUID，移除 309 个旧示例路径或容器元数据。其他 14 个远端旧源码/meta 保留，其中两个非火机测试按实际 HCI 房间要求修正。
-- 房间 A 为水彩/赛博，B 为落地窗，C 为水母灯，D 为糖果雨。旧测试中 A 先选糖果的前提已移除；测试要求 D 保持 A 样式、效果独立共存、Stop/Reset 回收，仍要求确认平面。依据 pico-hci-yolo-vfx@eae2686 的 HciMeetingScenario.cs 第 50 行及当前生产实现。
-- 所有线路继续要求真实 YOLO 选目标，再按核实过的 HCI 实际手势要求触发对应魔法。是否共用火机手势以实际效果与验证为准。
+回归材料：Tools/NonFireDiscoveryNativeChecks.cs、Tools/run_nonfire_gate_regression.ps1，以及 Tools/ValidationData/nonfire-discovery-yolo-20261120.jsonl 和同名 provenance.json。输入为三帧重复已知公开树图和一帧训练家族背景，不含图片/权重，不用于训练或独立准确率验收。两个检出框包含已知枝冠误报；消息保留 UNVALIDATED 和 pose_available=false。
 
-## 在另一工作区打开
+在已配置 SDK 的隔离 Unity 工程上，运行 Tools/run_nonfire_gate_regression.ps1 -ProjectRoot <隔离工程绝对路径> -RunId <新的唯一名称>。默认 Unity 为 D:/Unity/Hub/Editor/6000.0.33f1/Editor/Unity.exe，可显式覆盖。启动器拒绝已有 Unity/不足6GiB RAM，限制拥有进程、300秒/3GiB空闲RAM/3584MiB RSS/512MiB净盘增长/8MiB日志；只临时导入并按精确哈希删除它创建的检查文件，不覆盖用户源文件或GUID。详细日志由本地 Reports 保留，采样不是连续峰值。
 
-使用 Unity Hub 将完整项目作为工程打开，编辑器版本见 ProjectSettings/ProjectVersion.txt。整个仓库不是 Package Manager 可直接安装的 UPM 包。
+本地 Android：D:/MagicMRSourceCandidate/20261120/Builds/Android/NonFireGateValidation-20261120.apk，78,058,411B，SHA256 bb303d5712b9b39b4a09779e1c7e0e6c86b5ff659645fe08ca6c2a09006a442e。15场景、签名/CRC/打包资源/16 ARM64 ELF/4字节ZIP对齐/min29target35通过；新player元数据包含新路由字段。APK不在源码提交中；旧候选ca9daae4…及主包4a76217e…保持原路径与字节。SDK四项XR预加载移除已归档并恢复，外部包pin只读复核通过。
 
-先按 LOCAL_DEPENDENCIES.md 用 PowerShell 7.2+ 连接已有 PICO SDK 3.4.0 和 Unity MCP 10.3.0，校验完整内容指纹。SDK 本体、模型缓存和本机虚拟环境不复制进交付。PicoRuntimeRequirements.json 和 Editor 守卫会核对 SDK 版本/GUID，确保冷导入未把手部追踪与 VST 静默关闭；不修改 SDK 源码。
+当前 SOURCE_VALIDATION.json 的 sourcePayloadTree 定义为候选完整 Git 树去掉 SOURCE_VALIDATION.json 自身；payloadFiles 只声明显式核对的源码/证据，其他继承路径原样保留，不因此升级为验收通过。提交及远端发布状态由单独回执核对。主工作区索引与 HEAD 不改；不强推，不改 traeye 分支，不进行四小时自动上传。
 
-## 支持的本地检查与构建
-
-- Unity Test Runner：PlayMode 下运行 MagicMR.ParkInteractionTests；修正后的 6 项已通过，覆盖贴合/定向/平面确认、虫子奖励、宠物丢失取消和房间 A/D 独立及禁用清理。
-- ParkPlayModeChecks.Run：六场景真实协程、动作完成/锚点和 Reset，房间 A/B/C/D 共存/回收；修正后的入口已在有界宿主通过。其他 Run* 回放入口本轮未执行，不能沿用旧记录宣称当前通过。
-- Android 使用 Tools/build_android_bounded.ps1 -Variant AllScenes -BuildJobs 1，并按对应工具检查 APK。执行前保存并关闭其他 Unity，检查 RAM/磁盘，一次只运行一个重任务。设置 SDK/NDK/JDK 路径时使用脚本参数，不修改火机。
-- 对应包检查使用 Tools/verify_android_artifacts.py --unity-data <Unity的Data目录> --project-dir <当前项目目录> --variant AllScenes --require-insect-pixels --output <新的报告路径>。
-
-现有 16 个显式交付工具覆盖本地包引导、Android、F2G 有界启动及相关核对；其余父版本 Tools/历史报告原样保留，不表示全部适配或重新验收。修改过或新增但未纳入已验证显式清单的本机工具不自动上传。
-
-## 验收边界
-
-原先 APK 6aa0c952... 对应添加旧源码前的 1836 文件快照，不能充当当前源码树的 Android 证据。当前树的 Android 与最终文件清单须在对应 SOURCE_VALIDATION.json 中另行记录；尚无该报告时保持待验收。
-
-本地编译、合成输入协程、人工看图、APK 检查和 PICO 真机结果分开记录。PICO 安装/启动、真实相机同步、正例 YOLO 姿态与手势端到端、独立数据准确率以及 8 案例/32 效果的最终验收仍未完成。当前候选不能标成正式发布或完整设备通过版本。用户暂不连接头显，不自动重启或终止用户 Unity。
+尚未验收：PICO 安装/启动和真实同步相机/定位/手势到效果全链、独立项目数据与模型部署、最终美术和8案例/32效果。公开新枯树图仍漏检1，旧诊断仍有重复枝冠框。工具/编译/单图/包检查不替代这些验收。

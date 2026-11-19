@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "checkedAtUtc": "2026-11-19T22:47:30.335831+00:00",
+  "status": "SCOPED_NONFIRE_AUTOMATIC_GATE_NATIVE_AND_ANDROID_CHECKED_DEVICE_PENDING",
+  "baselineCommit": "b3b7d35792243b3c4f0675db2337e5dfd72f9275",
+  "productionDelta": {
+    "path": "Assets/Scripts/Perception/DiscoverySelection.cs",
+    "beforeSha256": "6f9a9ad08548b61d14a944f6f5947ebf02154648d813659ffba257373bccce68",
+    "afterSha256": "34eb2fc5fe22f2f00b47f6610ef8aac3bfab55632fa3a57fa2562859c9a6de11"
+  },
+  "managedStateMachineCasesPassed": 42,
+  "sourceExpiryAndFreshStabilityChecksPassed": true,
+  "unityRoslynSourceCounts": [
+    71,
+    58
+  ],
+  "nativeUnity": {
+    "status": "NATIVE_NONFIRE_VALIDATION_CHECKS_PASSED",
+    "scope": "Native Unity JsonUtility and full production discovery policy using original YOLO discovery JSON; existing shared UI regression. No real gestures, TCP/PICO transport, scene art or device acceptance.",
+    "error": "",
+    "frames": 4,
+    "positiveFrames": 3,
+    "positiveSpanSeconds": 2.4049999713897705,
+    "unityJsonUtilityPassed": true,
+    "unvalidatedAutomaticSelectionRejected": true,
+    "sharedInterfaceRegressionPassed": true,
+    "productionModelActivated": false,
+    "deviceValidated": false
+  },
+  "repeatableNativeTool": {
+    "path": "Tools/run_nonfire_gate_regression.ps1",
+    "sha256": "b7b7b29b5498824f6335f74d4a7efb028d72edc8506098f5f385e822b5785f5e",
+    "pass": true,
+    "ownedTemporaryFilesRemoved": true,
+    "projectSourceFilesUnchanged": 1804,
+    "seconds": 12.8624183,
+    "minimumSampledFreeRamGiB": 7.666393280029297,
+    "maximumSampledOwnedRssMiB": 1316.79296875
+  },
+  "android": {
+    "bytes": 78058411,
+    "sha256": "bb303d5712b9b39b4a09779e1c7e0e6c86b5ff659645fe08ca6c2a09006a442e",
+    "sceneCount": 15,
+    "crcPassed": true,
+    "signaturePassed": true,
+    "packedSourceResourcesPassed": true,
+    "arm64ElfHeaders": 16,
+    "zipAlign4BytePassed": true,
+    "minSdk": 29,
+    "targetSdk": 35,
+    "newPolicyFieldPresentOldFieldAbsentInPlayerMetadata": true,
+    "noTemporaryNativeEditorProbeInPlayerMetadata": true,
+    "oldArtifactOriginalPathRestored": true,
+    "verifierOriginalFilenameRemappedByExactHash": true,
+    "deviceExecutionValidated": false
+  },
+  "androidFile": "NonFireGateValidation-20261120.apk",
+  "apkPublished": false,
+  "localDetailedReportSha256": "f9ead8d837cdcc6d4c86916e4dd923160c567eb8675c5ac2935a043cb7b5f463",
+  "localNativeResultSha256": "804d47948d3d060ebf6354ab81fdf08adcc2f1244ee0e2bdf319e397da6fbf02",
+  "fixture": "Tools/ValidationData/nonfire-discovery-yolo-20261120.jsonl",
+  "fixtureSha256": "13a0ce419fce2674716f36bf15db5a36188c91c04d79d167531eaf45349a830a",
+  "sourceFixtureSha256": "34c2e0454b6b452cb60a6ea0060c696976a662632ef65050a19583574f1a0eeb",
+  "fireDedicatedAssetsEffectsAnimationsWeightsAndMetaUnchanged": true,
+  "lighterLegacyPredicateAndManagedTracesUnchanged": true,
+  "productionTreeModelActivated": false,
+  "trainingStarted": false,
+  "publicTreeQualityAccepted": false,
+  "independentProjectAccuracyAccepted": false,
+  "deviceValidated": false,
+  "fullEightCase32EffectAcceptance": false,
+  "knownGaps": [
+    "PICO install/start and real synchronized camera/pose/hand-to-effect chain",
+    "Independent project data and final non-fire model quality/deployment",
+    "Final scene art, rendered visuals and all eight cases/32 effects",
+    "Public Tree dead-tree photo remains FN1 and known Tree branch duplicate remains; production Tree weight is null"
+  ],
+  "scope": "Source regression and package checks. Repeated public JPEG diagnostics are not independent PICO captures; native UI checks are not final rendered art acceptance."
+}

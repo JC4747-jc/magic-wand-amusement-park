@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "checkedAtUtc": "2026-11-19T20:05:44.828852+00:00",
-  "status": "DEVELOPMENT_SOURCE_CANDIDATE_LOCAL_CHECKS_PASSED_DEVICE_AND_FULL_EFFECT_ACCEPTANCE_PENDING",
+  "checkedAtUtc": "2026-11-19T22:47:30.483916+00:00",
+  "status": "SOURCE_CANDIDATE_NONFIRE_AUTO_GATE_NATIVE_AND_ANDROID_VERIFIED_DEVICE_PENDING",
   "repository": "JC4747-jc/magic-wand-amusement-park",
-  "deliveryParent": "4250bad20066ce289e63585d6a2ac3ae160c6c47",
+  "deliveryParent": "b3b7d35792243b3c4f0675db2337e5dfd72f9275",
   "developmentBaseline": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
-  "sourcePayloadTree": "5f2e05a44c9cd14fcf860b5904b7a7b1e66b0a25",
-  "payloadFileCount": 1852,
+  "sourcePayloadTree": "71eb20538b92e34154f770ae1630e226ea039fe1",
+  "payloadFileCount": 1857,
   "payloadFiles": [
     {
       "path": ".gitattributes",
@@ -785,6 +785,14 @@
       "sha256": "4ddac8b9beeb3cf2c21b180008fda694daa272d9128f07969bbfda637b082122"
     },
     {
+      "path": "Assets/Editor/PicoRuntimeFeatureGuard.cs",
+      "sha256": "89ccc0dc5117bec99d0ae1a9ba5e7c692f4b59d720eed7ad74e6f3986f44beeb"
+    },
+    {
+      "path": "Assets/Editor/PicoRuntimeFeatureGuard.cs.meta",
+      "sha256": "36a721b2fa476cb25509936b69e557604fa91c30daa03827ef02afb2b83f578f"
+    },
+    {
       "path": "Assets/Editor/PinchFollowChecks.cs",
       "sha256": "b9866a18c6403af0173038e5a403ca2749cead53773d4321d5ea061f9d4d5e30"
     },
@@ -799,6 +807,14 @@
     {
       "path": "Assets/Editor/ProjectSceneAudit.cs.meta",
       "sha256": "66ecf489bc3e476403c8ac4b95e6ea9cdb62dcca57d30175977d6f917a9afa56"
+    },
+    {
+      "path": "Assets/Editor/RequestedInteractionChecks.cs",
+      "sha256": "393cb20d8b48dd235bf85ea94f53aeec7791a04c1aca4194a9acbdd97634028e"
+    },
+    {
+      "path": "Assets/Editor/RequestedInteractionChecks.cs.meta",
+      "sha256": "7998be3cba2a415bf4867eb0fae8098ba5fa7bb0dc12ce8faa1af663a0f16f7a"
     },
     {
       "path": "Assets/Editor/ResourceBoundedAndroidBuild.cs",
@@ -4569,6 +4585,14 @@
       "sha256": "907824601cb0fc5b37b95d44bb2a32ae91d226daf01269c95022c65cc790cc78"
     },
     {
+      "path": "Assets/Scripts/MagicMR/BimanualScaleGesture.cs",
+      "sha256": "90852ec34cf5205d2d34d88b6dd1458fc7f90f96f1bc49adc27abe65f4b1be40"
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/BimanualScaleGesture.cs.meta",
+      "sha256": "99ee655f78a005c64b9efcab4db7603e19120137df5e2cbc9507efe63d0ae8a5"
+    },
+    {
       "path": "Assets/Scripts/MagicMR/BronzeStretchMath.cs",
       "sha256": "c81a75501206bea3e5779b708c23bf8cba2c72083c945de4c036a16ba490e7f1"
     },
@@ -4703,6 +4727,14 @@
     {
       "path": "Assets/Scripts/MagicMR/LighterInteriorView.cs.meta",
       "sha256": "860d8f3bf38792aecc843686c0be1327bd01b06556e8c0ecd929ada2c6ef21b9"
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/LighterModelSettings.cs",
+      "sha256": "b3e529ca1ce46e635cc897098aced0757be2241b14b579b5aba765a28537f61d"
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/LighterModelSettings.cs.meta",
+      "sha256": "cecf98d583c4c08d331edd55d66b4185179fee3abe7efcb9d3504e1ff2ed34ff"
     },
     {
       "path": "Assets/Scripts/MagicMR/MRGestureController.cs",
@@ -5214,7 +5246,7 @@
     },
     {
       "path": "Assets/Scripts/Perception/DiscoverySelection.cs",
-      "sha256": "6f9a9ad08548b61d14a944f6f5947ebf02154648d813659ffba257373bccce68"
+      "sha256": "34eb2fc5fe22f2f00b47f6610ef8aac3bfab55632fa3a57fa2562859c9a6de11"
     },
     {
       "path": "Assets/Scripts/Perception/DiscoverySelection.cs.meta",
@@ -5675,6 +5707,38 @@
     {
       "path": "Assets/TestData/LighterTest_1.jpg.meta",
       "sha256": "b8ab49dfd91eeda14e34675d35e6b7c643627a77dc907af975d41cec66d8d643"
+    },
+    {
+      "path": "Assets/Tests.meta",
+      "sha256": "41ae6a7c986715bb1e42c84f144f89c2933b36f6a705fb4bf8aa59b9091fca2d"
+    },
+    {
+      "path": "Assets/Tests/ParkPlayModeChecks.cs",
+      "sha256": "e64be149b1ccd828ffe036bbc9c9503d90957e4554158b34baf6187e47d78c96"
+    },
+    {
+      "path": "Assets/Tests/ParkPlayModeChecks.cs.meta",
+      "sha256": "9554af3777c32ea359e53e922147623a3e33bc01336f8e76b2d67ee98cb75985"
+    },
+    {
+      "path": "Assets/Tests/PlayMode.meta",
+      "sha256": "51083dda0ee0175bf5fe720a5ceee06d89e0307a9e551107e544306a699bd110"
+    },
+    {
+      "path": "Assets/Tests/PlayMode/ParkInteractionTests.asmdef",
+      "sha256": "6f51e778e4ad114e75c5cce287fad3872113e04d3141528791dc9c9be843746a"
+    },
+    {
+      "path": "Assets/Tests/PlayMode/ParkInteractionTests.asmdef.meta",
+      "sha256": "9b4dc6e5f6ec7eb54d45e831a261295c90286db0b44343a834a284e3eb760ce7"
+    },
+    {
+      "path": "Assets/Tests/PlayMode/ParkInteractionTests.cs",
+      "sha256": "f437be2f0ac20deb3495b174928de3b7ef69637824f0ddd9a4a9155d97394009"
+    },
+    {
+      "path": "Assets/Tests/PlayMode/ParkInteractionTests.cs.meta",
+      "sha256": "9d529213cdfcc093063ee6d718007906ffac8651d5a6c75c6e2c7f0f590865f3"
     },
     {
       "path": "Assets/ThirdParty.meta",
@@ -7113,6 +7177,10 @@
       "sha256": "f8853353aac1bc6a33d1999b08ec2661abc374402ed4790a0b82eb64585b731e"
     },
     {
+      "path": "ProjectSettings/PicoRuntimeRequirements.json",
+      "sha256": "00e1579694469b7f37bb12d06aaf97318aa163c60902c2611a462aa5af4a06ec"
+    },
+    {
       "path": "ProjectSettings/PresetManager.asset",
       "sha256": "6ba879310e2be2e5ba18702578cda93b26b030ecd88e883fef22ab456a9f9697"
     },
@@ -7173,6 +7241,30 @@
       "sha256": "71f175773593ba28d42bf1af0543b2a465e0316d3b8f435aebf48ea66b31b621"
     },
     {
+      "path": "README.md",
+      "sha256": "e91ad1809a379fbf10fa9935f794dbdac173685a1b11ca6cf0429892850e079a"
+    },
+    {
+      "path": "Reports/nonfire-validation-native-20261120/delivery-summary.json",
+      "sha256": "44f3027669ac6c0dfc5eba9b8ccfd216cd16c68322a7ac435574f7d7ef336863"
+    },
+    {
+      "path": "SOURCE_DELIVERY.md",
+      "sha256": "bd78d4e6bb9fb7478b7ec480cd6181f9ccd1cc98f94d1afb206b5475ba8ce2a2"
+    },
+    {
+      "path": "Tools/NonFireDiscoveryNativeChecks.cs",
+      "sha256": "34c2e0454b6b452cb60a6ea0060c696976a662632ef65050a19583574f1a0eeb"
+    },
+    {
+      "path": "Tools/ValidationData/nonfire-discovery-yolo-20261120.jsonl",
+      "sha256": "13a0ce419fce2674716f36bf15db5a36188c91c04d79d167531eaf45349a830a"
+    },
+    {
+      "path": "Tools/ValidationData/nonfire-discovery-yolo-20261120.provenance.json",
+      "sha256": "522d852c71e5eb42bc8707a550f718ef11fc965005170b9430c94d6c282ddbbd"
+    },
+    {
       "path": "Tools/build_android_bounded.ps1",
       "sha256": "2482db4b3a4459a0b36a3568d02d12455d665767d88762e689032778ee475611"
     },
@@ -7227,6 +7319,10 @@
     {
       "path": "Tools/run_f2g_server_bounded.ps1",
       "sha256": "0e179aab2f81088a25ca5eedf597f9b71e45ddb6e655d188d7395bbb871f201b"
+    },
+    {
+      "path": "Tools/run_nonfire_gate_regression.ps1",
+      "sha256": "b7b7b29b5498824f6335f74d4a7efb028d72edc8506098f5f385e822b5785f5e"
     },
     {
       "path": "Tools/setup_f2g_runtime.py",
@@ -7339,90 +7435,16 @@
     {
       "path": "object-detection-demo/weights/best_yolo26n_assgn2_v6_50e.pt",
       "sha256": "999bca4f5bf96aeed3ac0f1047e31530e4eb4584873c85dd5bd00031fc71fb3a"
-    },
-    {
-      "path": "Assets/Editor/PicoRuntimeFeatureGuard.cs",
-      "sha256": "89ccc0dc5117bec99d0ae1a9ba5e7c692f4b59d720eed7ad74e6f3986f44beeb"
-    },
-    {
-      "path": "Assets/Editor/PicoRuntimeFeatureGuard.cs.meta",
-      "sha256": "36a721b2fa476cb25509936b69e557604fa91c30daa03827ef02afb2b83f578f"
-    },
-    {
-      "path": "ProjectSettings/PicoRuntimeRequirements.json",
-      "sha256": "00e1579694469b7f37bb12d06aaf97318aa163c60902c2611a462aa5af4a06ec"
-    },
-    {
-      "path": "Assets/Editor/RequestedInteractionChecks.cs",
-      "sha256": "393cb20d8b48dd235bf85ea94f53aeec7791a04c1aca4194a9acbdd97634028e"
-    },
-    {
-      "path": "Assets/Editor/RequestedInteractionChecks.cs.meta",
-      "sha256": "7998be3cba2a415bf4867eb0fae8098ba5fa7bb0dc12ce8faa1af663a0f16f7a"
-    },
-    {
-      "path": "Assets/Scripts/MagicMR/BimanualScaleGesture.cs",
-      "sha256": "90852ec34cf5205d2d34d88b6dd1458fc7f90f96f1bc49adc27abe65f4b1be40"
-    },
-    {
-      "path": "Assets/Scripts/MagicMR/BimanualScaleGesture.cs.meta",
-      "sha256": "99ee655f78a005c64b9efcab4db7603e19120137df5e2cbc9507efe63d0ae8a5"
-    },
-    {
-      "path": "Assets/Scripts/MagicMR/LighterModelSettings.cs",
-      "sha256": "b3e529ca1ce46e635cc897098aced0757be2241b14b579b5aba765a28537f61d"
-    },
-    {
-      "path": "Assets/Scripts/MagicMR/LighterModelSettings.cs.meta",
-      "sha256": "cecf98d583c4c08d331edd55d66b4185179fee3abe7efcb9d3504e1ff2ed34ff"
-    },
-    {
-      "path": "Assets/Tests.meta",
-      "sha256": "41ae6a7c986715bb1e42c84f144f89c2933b36f6a705fb4bf8aa59b9091fca2d"
-    },
-    {
-      "path": "Assets/Tests/ParkPlayModeChecks.cs",
-      "sha256": "e64be149b1ccd828ffe036bbc9c9503d90957e4554158b34baf6187e47d78c96"
-    },
-    {
-      "path": "Assets/Tests/ParkPlayModeChecks.cs.meta",
-      "sha256": "9554af3777c32ea359e53e922147623a3e33bc01336f8e76b2d67ee98cb75985"
-    },
-    {
-      "path": "Assets/Tests/PlayMode.meta",
-      "sha256": "51083dda0ee0175bf5fe720a5ceee06d89e0307a9e551107e544306a699bd110"
-    },
-    {
-      "path": "Assets/Tests/PlayMode/ParkInteractionTests.asmdef",
-      "sha256": "6f51e778e4ad114e75c5cce287fad3872113e04d3141528791dc9c9be843746a"
-    },
-    {
-      "path": "Assets/Tests/PlayMode/ParkInteractionTests.asmdef.meta",
-      "sha256": "9b4dc6e5f6ec7eb54d45e831a261295c90286db0b44343a834a284e3eb760ce7"
-    },
-    {
-      "path": "Assets/Tests/PlayMode/ParkInteractionTests.cs",
-      "sha256": "f437be2f0ac20deb3495b174928de3b7ef69637824f0ddd9a4a9155d97394009"
-    },
-    {
-      "path": "Assets/Tests/PlayMode/ParkInteractionTests.cs.meta",
-      "sha256": "9d529213cdfcc093063ee6d718007906ffac8651d5a6c75c6e2c7f0f590865f3"
-    },
-    {
-      "path": "README.md",
-      "sha256": "e754ee787c74cf56626cdaf46272cf65a4e256379e1019ec7ad7b66a1a07da08"
-    },
-    {
-      "path": "SOURCE_DELIVERY.md",
-      "sha256": "cbcd5591e090fa8bec76dad400851d77367d2c1734b6a9712f72bccafb0c3127"
     }
   ],
   "androidApk": {
-    "name": "AllScenesValidation.apk",
-    "bytes": 78053451,
-    "sha256": "ca9daae40bff9e3937a9c7f3051cde3c9178afc76d3fe3a46d53876f13634a58",
+    "name": "NonFireGateValidation-20261120.apk",
+    "bytes": 78058411,
+    "sha256": "bb303d5712b9b39b4a09779e1c7e0e6c86b5ff659645fe08ca6c2a09006a442e",
     "publishedAsset": false,
-    "localArtifact": "D:/MagicMRSourceCandidate/20261120/Builds/Android/AllScenesValidation.apk"
+    "localArtifact": "D:\\MagicMRSourceCandidate\\20261120\\Builds\\Android\\NonFireGateValidation-20261120.apk",
+    "previousCandidateApkRetainedAt": "D:/MagicMRSourceCandidate/20261120/Builds/Android/AllScenesValidation.apk",
+    "previousCandidateSha256": "ca9daae40bff9e3937a9c7f3051cde3c9178afc76d3fe3a46d53876f13634a58"
   },
   "externalPackagePins": [
     {
@@ -7471,7 +7493,9 @@
       "Tools/run_f2g_model_bounded.ps1",
       "Tools/run_f2g_server_bounded.ps1",
       "Tools/setup_f2g_runtime.py",
-      "Tools/verify_android_artifacts.py"
+      "Tools/verify_android_artifacts.py",
+      "Tools/NonFireDiscoveryNativeChecks.cs",
+      "Tools/run_nonfire_gate_regression.ps1"
     ],
     "otherInheritedToolPathsUnchanged": 401,
     "allInheritedToolsAccepted": false
@@ -7492,19 +7516,81 @@
   },
   "preservation": {
     "mainIndexSha256": "aab38b747bb2453015b4ce247543cf2dd6aa54d5d5586cf1fcafce46a0398c5a",
-    "mainExistingSourceFilesUnchanged": 1836,
-    "fireProductionSourceAndWeightUnchanged": true,
+    "mainExistingSourceFilesUnchangedExcept": [
+      "Assets/Scripts/Perception/DiscoverySelection.cs"
+    ],
+    "mainPayloadFilesVerified": 1836,
+    "mainPayloadFilesUnchanged": 1835,
+    "sharedSelectionPolicyChangedForNonFireOnly": true,
+    "lighterLegacyPredicateTextUnchanged": true,
+    "fireScenesModelsAnimationsEffectsAndYoloWeightsUnchanged": true,
     "traeyeBranchesReadOnly": true,
-    "fireYoloSha256": "999bca4f5bf96aeed3ac0f1047e31530e4eb4584873c85dd5bd00031fc71fb3a"
+    "fireYoloSha256": "999bca4f5bf96aeed3ac0f1047e31530e4eb4584873c85dd5bd00031fc71fb3a",
+    "oldCandidateApkRestoredToOriginalPath": true,
+    "mainApkUnchanged": true
   },
   "notAccepted": [
     "PICO device install/start, actual camera synchronization and hand tracking",
     "Real positive YOLO target-to-pose-to-gesture-to-effect chain",
     "Independent real-project accuracy data and completed non-fire training deployment",
     "Final art/comfort and all 8 use cases/32 effects",
-    "Other inherited historical Tools/replay entries"
+    "Other inherited historical Tools/replay entries",
+    "Public Tree dead-tree evaluation remains 0TP/0FP/1FN; known branch duplicate false positive remains; no Tree model activated.",
+    "Source publication is checked by a separate commit/ref receipt; this is not a validated model deployment or live PICO release."
   ],
   "evidence": [
+    {
+      "path": "Tools/NonFireDiscoveryNativeChecks.cs",
+      "sha256": "34c2e0454b6b452cb60a6ea0060c696976a662632ef65050a19583574f1a0eeb"
+    },
+    {
+      "path": "Tools/run_nonfire_gate_regression.ps1",
+      "sha256": "b7b7b29b5498824f6335f74d4a7efb028d72edc8506098f5f385e822b5785f5e"
+    },
+    {
+      "path": "Tools/ValidationData/nonfire-discovery-yolo-20261120.jsonl",
+      "sha256": "13a0ce419fce2674716f36bf15db5a36188c91c04d79d167531eaf45349a830a"
+    },
+    {
+      "path": "Tools/ValidationData/nonfire-discovery-yolo-20261120.provenance.json",
+      "sha256": "522d852c71e5eb42bc8707a550f718ef11fc965005170b9430c94d6c282ddbbd"
+    },
+    {
+      "path": "Reports/nonfire-validation-native-20261120/delivery-summary.json",
+      "sha256": "44f3027669ac6c0dfc5eba9b8ccfd216cd16c68322a7ac435574f7d7ef336863"
+    }
+  ],
+  "baseSourcePayloadTree": "5f2e05a44c9cd14fcf860b5904b7a7b1e66b0a25",
+  "sourceTreeRecalculationPending": false,
+  "nonFireGateDelta": {
+    "path": "Assets/Scripts/Perception/DiscoverySelection.cs",
+    "beforeSha256": "6f9a9ad08548b61d14a944f6f5947ebf02154648d813659ffba257373bccce68",
+    "afterSha256": "34eb2fc5fe22f2f00b47f6610ef8aac3bfab55632fa3a57fa2562859c9a6de11",
+    "managedStateMachineCasesPassed": 42,
+    "sourceExpiryAndFreshStabilityChecksPassed": true,
+    "nativeUnityJsonUtilityAndOriginalSharedUiChecksPassed": true,
+    "nativeReceipt": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\nonfire-validation-native-20261120\\native-gate-20261120\\native-result.json",
+    "nativeReceiptSha256": "804d47948d3d060ebf6354ab81fdf08adcc2f1244ee0e2bdf319e397da6fbf02",
+    "androidStaticChecks": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\nonfire-validation-native-20261120\\android-extra-checks.json",
+    "androidStaticChecksSha256": "aa3e4d7e92826cbf803ba919f4887e2cbed7475bfd8ac431973d1a30bff2e0a6",
+    "newPolicyFieldSeenInPlayerMetadata": true,
+    "productionTreeWeightsStillNull": true,
+    "modelQualityAndDeviceAcceptance": false,
+    "scope": "Candidate-source and package checks only, no model deployment, camera/hand tracking/PICO acceptance or completed 32 effects.",
+    "metadataRegenerationOrder": "Both delivery docs updated first; their payload hashes refreshed next; SOURCE_VALIDATION written last. Runtime and package inputs unchanged.",
+    "repeatableNativeRegressionTool": "Tools/run_nonfire_gate_regression.ps1",
+    "repeatableNativeRegressionPassed": true,
+    "portableSummary": "Reports/nonfire-validation-native-20261120/delivery-summary.json"
+  },
+  "publication": {
+    "target": "restore-4d-lighter",
+    "parent": "b3b7d35792243b3c4f0675db2337e5dfd72f9275",
+    "state": "SCOPED_SOURCE_CANDIDATE_FOR_EXPLICIT_DELIVERY; actual commit/ref receipt is separate",
+    "apkPublished": false,
+    "deviceValidated": false
+  },
+  "sourcePayloadTreeDefinition": "Complete candidate index tree excluding SOURCE_VALIDATION.json itself; only payloadFiles are scoped checked entries, all other inherited paths remain unchanged without new acceptance.",
+  "localDetailedEvidence": [
     {
       "path": "Reports/source-delivery-20261120/android-check-summary.json",
       "sha256": "06a8b13a3b1418a431c8e978d641231d6dc6ff47d4494359230a7709740082e9"
@@ -7512,6 +7598,22 @@
     {
       "path": "Reports/source-delivery-20261120/native-check-summary.json",
       "sha256": "d616c62be4788d10b8bf22b7f6a179401d47021191f538f158a2137c3974506d"
+    },
+    {
+      "path": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\nonfire-validation-native-20261120\\native-gate-20261120\\native-result.json",
+      "sha256": "804d47948d3d060ebf6354ab81fdf08adcc2f1244ee0e2bdf319e397da6fbf02"
+    },
+    {
+      "path": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\nonfire-validation-native-20261120\\android-verification.json",
+      "sha256": "353898f70a52402db85fd59256798259057fb23f6fe3711b9763094a3bac1398"
+    },
+    {
+      "path": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\nonfire-validation-native-20261120\\android-extra-checks.json",
+      "sha256": "aa3e4d7e92826cbf803ba919f4887e2cbed7475bfd8ac431973d1a30bff2e0a6"
+    },
+    {
+      "path": "D:\\MagicMRSourceCandidate\\20261120\\Reports\\NonFireValidation20261120\\dependency-final.json",
+      "sha256": "b8cf3f877236f62c1b1deda3747ef32d16ef04739058f4c400dcb927c1f2a230"
     }
   ]
 }
