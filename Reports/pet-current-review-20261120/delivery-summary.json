@@ -1,0 +1,265 @@
+{
+  "schema": 1,
+  "checkedAtUtc": "2026-11-20T01:15:56.043838+00:00",
+  "status": "CURRENT_PET_NATIVE_INTERACTION_RENDER_AND_SAMPLED_LIMB_MOTION_VERIFIED_DEVICE_ART_PENDING",
+  "parentCommit": "f940e12023ffdc54e8ecbadcaf78f1686afb0dcc",
+  "sourceChanges": [
+    {
+      "path": "Assets/Editor/HciPetOutlineChecks.cs",
+      "beforeSha256": "a3769773af49c06484fd1b4490664efa05996c2b213bbc5b05613c2435dd501c",
+      "sha256": "bed20d1a9197738260bf56781d0baa46adfc96d10613aedc380b0463c38cc8b8"
+    },
+    {
+      "path": "Tools/run_room_magic_review_bounded.ps1",
+      "beforeSha256": "83d8e57d9849c9f44be3c9d45017486c15a5866f142f79e5e8d96e7d76427328",
+      "sha256": "916e8c63b31a0e3240c9d32d57965e1a7f42d8c563e25446919977bce6ea0809"
+    }
+  ],
+  "whyRerun": {
+    "dreamOldInputHashMismatches": 5,
+    "outlineOldInputHashMismatches": 2,
+    "oldSceneAndWolfhoundPrefabWereDifferent": true,
+    "priorScopeReceipt": "Reports/plant-source-delivery-20261120/next-pet-scope.json"
+  },
+  "productionChanged": false,
+  "testInputRepair": {
+    "oldExpired45FistSamplesNotExecuted": true,
+    "reason": "Known prior room regression established that nominal >1.35s exceeds unchanged .04-.55s burst window",
+    "newFistSamples": 3,
+    "derivedFromExistingConstants": true,
+    "actualFistSeconds": {
+      "Cat": 0.124986649,
+      "Dog": 0.124938965
+    },
+    "eventsPerSpecies": 1,
+    "lighterAndPetClassifierOutputComparedForEverySyntheticSample": true,
+    "noProductionGestureRuleChange": true
+  },
+  "native": {
+    "dream": {
+      "run": "pet-dream-current-v1-20261120",
+      "seconds": 36.8768891,
+      "samples": 49,
+      "minimumSampledFreeRamGiB": 7.389442443847656,
+      "maximumSampledOwnedRssMiB": 1952.56640625,
+      "exitCode": 0,
+      "guardStop": null,
+      "resourceReceiptSha256": "9bfecb7bab8f97f8a45fffce292f07bc1de06ec8fa84e35f09a574ebff5d8947"
+    },
+    "outline": {
+      "run": "pet-outline-current-v3-20261120",
+      "seconds": 51.0625798,
+      "samples": 68,
+      "minimumSampledFreeRamGiB": 7.465595245361328,
+      "maximumSampledOwnedRssMiB": 1618.6953125,
+      "exitCode": 0,
+      "guardStop": null,
+      "resourceReceiptSha256": "57e169e60a4b2591dee9375afe9c9db5b7dca74a50a8388862c0aa4897552fe1"
+    }
+  },
+  "dreamScope": "Saved ParkPet Cat+Dog; synthetic actions B opens/idempotent, C pops/rejects empty, undo, D affection/undo, Stop/reopen, Reset, invalid/far/lost rejection and fixed anchor/rotation; six original scene-camera images.",
+  "outlineScope": "Saved ParkPet Cat+Dog; actual shared classifier fed synthetic A/B/C/D samples exactly once; independent comic/dream/pop/affection state and undo; imported shared meshes/bones, winding, same-frame pixel differences; tracked/far/invalid and reset gates; current walking animation flag plus two local-transform samples including all four limb chains; fixed fit/anchor.",
+  "rendering": {
+    "currentNativeImages": 22,
+    "dreamMainSceneImages": 6,
+    "dreamDimensions": [
+      800,
+      600
+    ],
+    "outlineIndependentReviewImages": 16,
+    "outlineDimensions": [
+      800,
+      800
+    ],
+    "allTwentyTwoAndFourQAFiguresActuallyViewed": true,
+    "mainCameraUnchanged": true,
+    "independentReviewCameraFramingChanged": true,
+    "fixedReviewCameraSize": 0.38,
+    "fixedReviewTargetHeight": 0.24,
+    "dogDreamV1ReviewWasCropped": true,
+    "v3ProjectedDreamBoundsCheckedWithinViewportMargin": 0.02,
+    "sameFrameOutlineMetrics": {
+      "Cat": {
+        "sameFrameChangedPixelsAtThreshold8": 5291,
+        "sameFrameMeanAbsoluteRgbDelta": 1.2686864583333333,
+        "sameFrameChangedBounds": [
+          214,
+          374,
+          591,
+          682
+        ]
+      },
+      "Dog": {
+        "sameFrameChangedPixelsAtThreshold8": 4264,
+        "sameFrameMeanAbsoluteRgbDelta": 0.9511578125,
+        "sameFrameChangedBounds": [
+          291,
+          358,
+          513,
+          665
+        ]
+      }
+    },
+    "visualFindings": [
+      "Both species show visible comic silhouette, fish/bone dream icons and pink affection particles.",
+      "Wider fixed review framing retains the dog dream; main scene navigation remains the original camera.",
+      "Dog locomotion appears bounding/airborne in sampled views; this is a visual inference without a foot-contact classification. The WalkSource name does not establish validated natural walking.",
+      "Full-scene UI/model sizes and final aesthetic/readability still require review and PICO evidence."
+    ],
+    "finalArtAccepted": false
+  },
+  "locomotion": {
+    "samples": [
+      {
+        "species": "Cat",
+        "elapsedSeconds": 0.2730826999999998,
+        "movedLocalTransforms": 17,
+        "sampledLocalTransforms": 50,
+        "maximumLocalRotationDeltaDegrees": 33.80555,
+        "movedNames": [
+          "Wolf_ROOTSHJnt_38",
+          "Wolf_l_HindLeg_HipSHJnt_27",
+          "Wolf_l_HindLeg_Knee1SHJnt_26",
+          "Wolf_l_HindLeg_Knee2SHJnt_25",
+          "Wolf_r_HindLeg_HipSHJnt_33",
+          "Wolf_r_HindLeg_Knee1SHJnt_32",
+          "Wolf_r_HindLeg_Knee2SHJnt_31",
+          "Wolf_l_FrontLeg_HipSHJnt_4",
+          "Wolf_l_FrontLeg_KneeSHJnt_3",
+          "Wolf_l_FrontLeg_AnkleSHJnt_2",
+          "Wolf_r_FrontLeg_HipSHJnt_10",
+          "Wolf_r_FrontLeg_KneeSHJnt_9",
+          "Wolf_r_FrontLeg_AnkleSHJnt_8",
+          "Wolf_Tail_01_02SHJnt_37",
+          "Wolf_Tail_01_03SHJnt_36",
+          "Wolf_Tail_01_04SHJnt_35",
+          "Wolf_Tail_01_05SHJnt_34"
+        ],
+        "allFourLimbChainsObservedMoving": true
+      },
+      {
+        "species": "Dog",
+        "elapsedSeconds": 0.2692599999999956,
+        "movedLocalTransforms": 43,
+        "sampledLocalTransforms": 51,
+        "maximumLocalRotationDeltaDegrees": 75.7675858,
+        "movedNames": [
+          "BackIK_L",
+          "BackIK_R",
+          "FrontIK_L",
+          "FrontIK_R",
+          "FrontKnee_L",
+          "FrontKnee_R",
+          "wolfhound",
+          "BackLeg1_L",
+          "BackLeg2_L",
+          "BackLeg3_L",
+          "BackToe_L",
+          "BackLeg1_R",
+          "BackLeg2_R",
+          "BackLeg3_R",
+          "BackToe_R",
+          "spine1",
+          "spine2",
+          "chest",
+          "FrontShoulder_L",
+          "FrontLeg1_L",
+          "FrontLeg2_L",
+          "FrontLeg3_L",
+          "FrontToe_L",
+          "FrontShoulder_R",
+          "FrontLeg1_R",
+          "FrontLeg2_R",
+          "FrontLeg3_R",
+          "FrontToe_R",
+          "Neck1",
+          "Neck2",
+          "Head",
+          "ear1_L",
+          "ear2_L",
+          "ear1_R",
+          "ear2_R",
+          "Jaw1",
+          "Jaw2",
+          "tongue1",
+          "tongue2",
+          "Tail1"
+        ],
+        "allFourLimbChainsObservedMoving": true
+      }
+    ],
+    "scope": "Two local imported-animation transform snapshots per species; excludes global tracking-root motion. All four limb chains observed. Not full-cycle naturalness, foot support/penetration, gait-type or PICO performance acceptance.",
+    "priorCatFbxAssetMatchesGaitV2Report": true,
+    "correspondence": "cat-gait-asset-correspondence.json",
+    "old193PoseCheckNotRerunOrClaimedAsCurrentWholeSceneAcceptance": true,
+    "sniffIsNotFeedingOrSleeping": true,
+    "feedingSleepingAreOptionalPlanExtensions": true,
+    "naturalDogWalkAccepted": false
+  },
+  "refinementHistory": {
+    "outlineV1PassedButReviewDogDreamCroppedAndMotionOnlySingleFrame": true,
+    "outlineV2PassedWithLimbMotionSamples": true,
+    "outlineV3AddsExplicitDreamViewportAndAllFourLimbChecks": true,
+    "legacyLiteralTwelveRenderCountRemoved": true,
+    "initialPatchContextMismatch": "No file edits occurred; read full existing lost-target assertion and retained it when applying the motion extension."
+  },
+  "androidReused": {
+    "sha256": "f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31",
+    "bytes": 78064133,
+    "sceneCount": 15,
+    "staticChecksPreviouslyPassed": true,
+    "newBuildRequired": false,
+    "newBuildRun": false,
+    "reason": "Current 1865 payload differs from the F3C8 build input only in Editor pet outline check and bounded launcher. All runtime assets, source, packages and ProjectSettings still match.",
+    "reference": "Reports/plant-current-review-20261120/verification.json",
+    "deviceExecutionValidated": false
+  },
+  "apkName": "PlantPresentationValidation-20261120.apk",
+  "apkPublished": false,
+  "localDetailedReportSha256": "4ee7bd8f879b95e76b1cd84a45df198f71efe59aef272b03420072588b954ad5",
+  "originalFrameHashes": {
+    "dream-v1/Cat-B-open.png": "bbd5a96f35e1b382173b695ec0b2bf93f36eae8075be751ee7b919ac551a8bc9",
+    "dream-v1/Cat-C-pop.png": "bb8b4d79b26342f5eb288f276ecd4bc4d17d5854803eee0b7010e4ba0cff85d2",
+    "dream-v1/Cat-reset.png": "bed9e439e3c31bd71dc1e6b71c96099202b7848513236fd3dddde616be90579b",
+    "dream-v1/Dog-B-open.png": "5af2203d8ec8f91ce331956a5bd10fddb97c05c05c43ca5da1df28f6dcefccc3",
+    "dream-v1/Dog-C-pop.png": "a013d49743ba71862ba9ab976d1409dad9a9522926e9ed8dc0a3bd480aebe861",
+    "dream-v1/Dog-reset.png": "3fc316a207746f3be7f1144583c83c3296a69ab9d76f41e7e705caaf53cec55f",
+    "outline-v3/Cat-00-natural.png": "24b316c29a76b27cef55efd3c9556f11bf3a01c917b9e7a1a328b7fd7961ff08",
+    "outline-v3/Cat-01-manga.png": "594ef0a7e83c5b4c16d95ab5dac0a65186e58e15e86a3781c6bf213074142319",
+    "outline-v3/Cat-01-same-frame-natural.png": "205873f1614b3e4c85bec3dc49de7c5602c7ce2db5a5668672c0cbc3679de412",
+    "outline-v3/Cat-02-manga-dream.png": "b700de94af4a9d6fa1a01340a1867fc4b0a97b00a6fdcf9402c6ced4c0dd612b",
+    "outline-v3/Cat-03-affection.png": "edef1c8fa7b1bde07e6ffc3e0f952cb63c88bfc17267394ffb3356fcbe6d63fa",
+    "outline-v3/Cat-03-manga-walk-motion.png": "d82575aa05c6532991ce186320974133c8ba15fdaae74d08d5b32528d38f739c",
+    "outline-v3/Cat-03-manga-walk.png": "1a01f40ac27b134f8242885c46381221555a89abe7abe8afd51ea827b4b2840a",
+    "outline-v3/Cat-04-reset.png": "4f3d6d10c9ae88862a86fa029d5da1afdff8c8719a38d732346393963978c3e0",
+    "outline-v3/Dog-00-natural.png": "a182d36f7eacb60b5b01a8a8fc07d4c04acb800687ec51e2155c9ccfb67e3a21",
+    "outline-v3/Dog-01-manga.png": "cde91a46f6142e0b85ef5e6c6b89ccb2745916e4ff12714d990bbdaa34e7aec7",
+    "outline-v3/Dog-01-same-frame-natural.png": "df1a47a9ee6e69b2a4233e57255964718803aba9d1d64e28d5a9bc7f98ec3839",
+    "outline-v3/Dog-02-manga-dream.png": "fb7511f3259e2185b9de436b7f0de174aa8f434814e419d7770eb6b4f5b04ff6",
+    "outline-v3/Dog-03-affection.png": "12170c0fd292995ad2c0be583447097ff60c18877324fb3264232bf3d40c66f6",
+    "outline-v3/Dog-03-manga-walk-motion.png": "cd85cd5d416a87151295ee7ed7d859154a514ed327a145b27cd16db9d94d91cd",
+    "outline-v3/Dog-03-manga-walk.png": "dc0006211fbdb0683deff1dfda062ad980ec0c7a8fedbb42ad8a3bc5408fca7a",
+    "outline-v3/Dog-04-reset.png": "0d0db8081e20992d47846bb8a34fa0ee32c25e29cfb044b4ca2bf5053e0a6a5b"
+  },
+  "originalFramesPublished": false,
+  "publishedQAFigures": [
+    {
+      "path": "Reports/pet-current-review-20261120/pet-core-effects.png",
+      "bytes": 153759,
+      "sha256": "489d194e798618c5561d67e5eddbb7e5c2b99d1436ce28bfde9d5fd2c3166430"
+    },
+    {
+      "path": "Reports/pet-current-review-20261120/pet-walk-samples.png",
+      "bytes": 115456,
+      "sha256": "638c73c986f5ee0ecaf573289ea08e59c6e9c028bbe22f8da7cbcc436678e289"
+    }
+  ],
+  "qaFiguresScope": "Previously viewed composites of actual native images, not final art or physical/PICO evidence.",
+  "fireDedicatedAssetsModelsAnimationsEffectsWeightAndMetaUnchanged": true,
+  "runtimePetModelsClipsControllersTexturesScenesAndGuidsUnchanged": true,
+  "realYoloHandsPicoAccepted": false,
+  "naturalWalkingAccepted": false,
+  "finalArtAccepted": false,
+  "independentModelQualityAccepted": false,
+  "fullEightCase32EffectAcceptance": false
+}

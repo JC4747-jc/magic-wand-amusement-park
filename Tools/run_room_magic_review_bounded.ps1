@@ -4,7 +4,7 @@ param(
     [Parameter(Mandatory=$true)][string]$ProjectRoot,
     [ValidatePattern('^[a-z0-9-]{4,60}$')][string]$RunId='room-current-20261120',
     [string]$EditorOverrideManifest,
-    [ValidateSet('RoomMagic','RoomWindowOwnership','PlantFlow','PlantVoice')][string]$Check='RoomMagic'
+    [ValidateSet('RoomMagic','RoomWindowOwnership','PlantFlow','PlantVoice','PetDream','PetOutline')][string]$Check='RoomMagic'
 )
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot -Parent
@@ -14,6 +14,8 @@ $checks=@{
     RoomWindowOwnership=@{method='RoomWindowOwnershipChecks.Run';pattern='^PASS: owned room window lifecycle;';folder='room-window-ownership';group='room-effect-review-20261120';scope='Native repeated component/owner destruction with an external window parent; no rendering, gesture, real-room, long-duration RAM or PICO acceptance'}
     PlantFlow=@{method='HciPlantFlowChecks.Run';pattern='^PASS [0-9a-f]{32}: saved ParkPlant;';folder='hci-plant-flow';group='plant-effect-review-20261120';scope='Saved ParkPlant synthetic dimension dispatch, fit, effects and lifecycle with actual Unity camera renders; no physical gesture/YOLO/PICO or art acceptance from assertions alone'}
     PlantVoice=@{method='HciPlantVoiceChecks.Run';pattern='^PASS: saved ParkPlant; B speech clip assigned';folder='hci-plant-voice';group='plant-effect-review-20261120';scope='Saved ParkPlant synthetic B dispatch, PCM clip/mouth envelope and stop/recovery state; no microphone, audible-output, physical gesture/YOLO/PICO acceptance'}
+    PetDream=@{method='HciPetDreamChecks.Run';pattern='^PASS [0-9a-f]{32}: saved ParkPet, Cat\+Dog;';folder='hci-pet-dream';group='pet-effect-review-20261120';scope='Saved ParkPet Cat/Dog synthetic action dispatch for dream, pop, affection and lifecycle, with actual Unity camera renders; no physical gestures/YOLO/PICO or final art acceptance'}
+    PetOutline=@{method='HciPetOutlineChecks.Run';pattern='^PASS: saved ParkPet, Cat\+Dog;';folder='hci-pet-outline';group='pet-effect-review-20261120';scope='Saved ParkPet Cat/Dog synthetic shared joint traces, outline pixels/bone following, independent dream/pop/affection and walk state; no physical gestures/YOLO/PICO, feeding/sleeping or final art acceptance'}
 }
 $selectedCheck=$checks[$Check]
 $output=Join-Path $root ('Reports/'+$selectedCheck.group+'/'+$RunId)

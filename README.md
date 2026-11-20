@@ -1,4 +1,4 @@
-> 2026-11-20 植物幼苗与字幕源码候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。12张原生图、流程/语音状态及15场景Android静态检查通过；火机未改，真实手势/听感/PICO/最终美术仍待验收。历史下载不代表当前验收范围，当前APK未上传。
+> 2026-11-20 宠物当前场景检查候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。猫/狗四项HCI合成回归、22张实际图和四肢取样运动已核；火机与运行时未改，真实手势/PICO/最终美术/自然步态仍待验收。沿用现有Android静态证据，当前APK未上传。
 
 # Magic Wand Amusement Park
 

@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "checkedAtUtc": "2026-11-20T00:44:57.304709+00:00",
-  "status": "SOURCE_CANDIDATE_PLANT_NATIVE_RENDER_VOICE_ANDROID_STATIC_VERIFIED_DEVICE_ART_PENDING",
+  "checkedAtUtc": "2026-11-20T01:15:56.054411+00:00",
+  "status": "SOURCE_CANDIDATE_PET_CURRENT_NATIVE_RENDER_SAMPLED_MOTION_VERIFIED_DEVICE_ART_PENDING",
   "repository": "JC4747-jc/magic-wand-amusement-park",
-  "deliveryParent": "6f6df975c036f526bfb7d1f75654d0fa43d74c9d",
+  "deliveryParent": "f940e12023ffdc54e8ecbadcaf78f1686afb0dcc",
   "developmentBaseline": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
-  "sourcePayloadTree": "11e145e7de4f9d500598cf2e72c7fd11d51ee0db",
-  "payloadFileCount": 1870,
+  "sourcePayloadTree": "88ef8daa427cdfba4a760d7bf8b276db346f0835",
+  "payloadFileCount": 1874,
   "payloadFiles": [
     {
       "path": ".gitattributes",
@@ -218,7 +218,7 @@
     },
     {
       "path": "Assets/Editor/HciPetOutlineChecks.cs",
-      "sha256": "a3769773af49c06484fd1b4490664efa05996c2b213bbc5b05613c2435dd501c"
+      "sha256": "bed20d1a9197738260bf56781d0baa46adfc96d10613aedc380b0463c38cc8b8"
     },
     {
       "path": "Assets/Editor/HciPetOutlineChecks.cs.meta",
@@ -7266,11 +7266,27 @@
     },
     {
       "path": "README.md",
-      "sha256": "c84b70d4295ebbfded61e3ef5d688f627a2b8180dc4b72c533576cf2e9dad472"
+      "sha256": "e52634b74a25f67b6fdb563129d650bf4ce10998ea9b893f972156aefb1e36c3"
     },
     {
       "path": "Reports/nonfire-validation-native-20261120/delivery-summary.json",
       "sha256": "44f3027669ac6c0dfc5eba9b8ccfd216cd16c68322a7ac435574f7d7ef336863"
+    },
+    {
+      "path": "Reports/pet-current-review-20261120/delivery-case-status.json",
+      "sha256": "f5b8b9bcdf276a679bffd2dd34823511527df8aa04f5c6d5c71dc025db4dc039"
+    },
+    {
+      "path": "Reports/pet-current-review-20261120/delivery-summary.json",
+      "sha256": "f2b60beaaf33dc7be5111851fa8e8660720f03074d2d83c4a0ebcc701695a9b1"
+    },
+    {
+      "path": "Reports/pet-current-review-20261120/pet-core-effects.png",
+      "sha256": "489d194e798618c5561d67e5eddbb7e5c2b99d1436ce28bfde9d5fd2c3166430"
+    },
+    {
+      "path": "Reports/pet-current-review-20261120/pet-walk-samples.png",
+      "sha256": "638c73c986f5ee0ecaf573289ea08e59c6e9c028bbe22f8da7cbcc436678e289"
     },
     {
       "path": "Reports/plant-current-review-20261120/delivery-case-status.json",
@@ -7298,7 +7314,7 @@
     },
     {
       "path": "SOURCE_DELIVERY.md",
-      "sha256": "e0fd9586c13651829992bf3c36e09e4467cf189696586ad3776efbe6702d5437"
+      "sha256": "7bac14f7e55f675828200a79f96cfcb23cda28c5f418ef30854857729008bc07"
     },
     {
       "path": "Tools/NonFireDiscoveryNativeChecks.cs",
@@ -7374,7 +7390,7 @@
     },
     {
       "path": "Tools/run_room_magic_review_bounded.ps1",
-      "sha256": "83d8e57d9849c9f44be3c9d45017486c15a5866f142f79e5e8d96e7d76427328"
+      "sha256": "916e8c63b31a0e3240c9d32d57965e1a7f42d8c563e25446919977bce6ea0809"
     },
     {
       "path": "Tools/setup_f2g_runtime.py",
@@ -7570,6 +7586,7 @@
   "preservation": {
     "mainIndexSha256": "aab38b747bb2453015b4ce247543cf2dd6aa54d5d5586cf1fcafce46a0398c5a",
     "mainExistingSourceFilesUnchangedExcept": [
+      "Assets/Editor/HciPetOutlineChecks.cs",
       "Assets/Editor/HciPlantFlowChecks.cs",
       "Assets/Editor/HciRoomMagicChecks.cs",
       "Assets/Resources/MagicMR/RoomStyle.shader",
@@ -7578,7 +7595,7 @@
       "Assets/Scripts/Perception/DiscoverySelection.cs"
     ],
     "mainPayloadFilesVerified": 1836,
-    "mainPayloadFilesUnchanged": 1830,
+    "mainPayloadFilesUnchanged": 1829,
     "sharedSelectionPolicyChangedForNonFireOnly": true,
     "lighterLegacyPredicateTextUnchanged": true,
     "fireScenesModelsAnimationsEffectsAndYoloWeightsUnchanged": true,
@@ -7597,7 +7614,8 @@
     "Source publication is checked by a separate commit/ref receipt; this is not a validated model deployment or live PICO release.",
     "Room proxy and flat teal exterior are not real-room or final-art acceptance; two sampled frames do not prove full-cycle motion.",
     "Window is illustrated relief in a proxy room. Two samples and 20 lifetime cycles are not full-cycle motion, long-duration RAM or device acceptance.",
-    "Plant synthetic dimension dispatch, mono PCM state and virtual geometry do not prove actual hand/YOLO input, audible output, device reading comfort or final art."
+    "Plant synthetic dimension dispatch, mono PCM state and virtual geometry do not prove actual hand/YOLO input, audible output, device reading comfort or final art.",
+    "Pet synthetic controller/joint traces, same-frame outline pixels and two local-transform samples are not physical input, natural gait/foot contact or PICO/final-art acceptance."
   ],
   "evidence": [
     {
@@ -7643,9 +7661,25 @@
     {
       "path": "Reports/plant-current-review-20261120/plant-detail-overview.png",
       "sha256": "e91c9669b89c704f38e539bd18c162c584d454acd71a82acf4221274721b1581"
+    },
+    {
+      "path": "Reports/pet-current-review-20261120/delivery-summary.json",
+      "sha256": "f2b60beaaf33dc7be5111851fa8e8660720f03074d2d83c4a0ebcc701695a9b1"
+    },
+    {
+      "path": "Reports/pet-current-review-20261120/delivery-case-status.json",
+      "sha256": "f5b8b9bcdf276a679bffd2dd34823511527df8aa04f5c6d5c71dc025db4dc039"
+    },
+    {
+      "path": "Reports/pet-current-review-20261120/pet-core-effects.png",
+      "sha256": "489d194e798618c5561d67e5eddbb7e5c2b99d1436ce28bfde9d5fd2c3166430"
+    },
+    {
+      "path": "Reports/pet-current-review-20261120/pet-walk-samples.png",
+      "sha256": "638c73c986f5ee0ecaf573289ea08e59c6e9c028bbe22f8da7cbcc436678e289"
     }
   ],
-  "baseSourcePayloadTree": "a254770e7cbcb05482d77917206cf62fd0e49fcb",
+  "baseSourcePayloadTree": "11e145e7de4f9d500598cf2e72c7fd11d51ee0db",
   "sourceTreeRecalculationPending": false,
   "nonFireGateDelta": {
     "path": "Assets/Scripts/Perception/DiscoverySelection.cs",
@@ -7669,8 +7703,8 @@
   },
   "publication": {
     "target": "restore-4d-lighter",
-    "parent": "6f6df975c036f526bfb7d1f75654d0fa43d74c9d",
-    "state": "SCOPED_SOURCE_AND_QA_CANDIDATE; actual commit/ref receipt is separate",
+    "parent": "f940e12023ffdc54e8ecbadcaf78f1686afb0dcc",
+    "state": "SCOPED_EDITOR_CHECK_AND_QA_CANDIDATE; actual commit/ref receipt is separate",
     "apkPublished": false,
     "deviceValidated": false
   },
@@ -7791,6 +7825,34 @@
     ],
     "realHandYoloPicoAccepted": false,
     "audibleOutputAccepted": false,
+    "finalArtAccepted": false
+  },
+  "petCurrentRegressionDelta": {
+    "portableSummary": "Reports/pet-current-review-20261120/delivery-summary.json",
+    "caseStatus": "Reports/pet-current-review-20261120/delivery-case-status.json",
+    "sourceChanges": [
+      {
+        "path": "Assets/Editor/HciPetOutlineChecks.cs",
+        "beforeSha256": "a3769773af49c06484fd1b4490664efa05996c2b213bbc5b05613c2435dd501c",
+        "sha256": "bed20d1a9197738260bf56781d0baa46adfc96d10613aedc380b0463c38cc8b8"
+      },
+      {
+        "path": "Tools/run_room_magic_review_bounded.ps1",
+        "beforeSha256": "83d8e57d9849c9f44be3c9d45017486c15a5866f142f79e5e8d96e7d76427328",
+        "sha256": "916e8c63b31a0e3240c9d32d57965e1a7f42d8c563e25446919977bce6ea0809"
+      }
+    ],
+    "productionChanged": false,
+    "nativeDreamPassed": true,
+    "nativeOutlinePassed": true,
+    "actualNativeImages": 22,
+    "qaFigures": [
+      "Reports/pet-current-review-20261120/pet-core-effects.png",
+      "Reports/pet-current-review-20261120/pet-walk-samples.png"
+    ],
+    "twoSampleAllFourLimbMotionObserved": true,
+    "realHandYoloPicoAccepted": false,
+    "naturalWalkingAccepted": false,
     "finalArtAccepted": false
   }
 }
