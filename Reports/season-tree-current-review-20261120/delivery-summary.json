@@ -1,0 +1,433 @@
+{
+  "schema": 1,
+  "checkedAtUtc": "2026-11-20T01:39:22.007905+00:00",
+  "status": "SEASON_TREE_NATIVE_RENDER_GUST_AND_SYNTHETIC_SELECTION_VERIFIED_DEVICE_ART_PENDING",
+  "parentCommit": "18f829b5215c2495e75b1b5ebad564cb26a56bd4",
+  "sourceChanges": [
+    {
+      "path": "Assets/Editor/HciSeasonTreeChecks.cs",
+      "beforeSha256": "a3eb3e5505301d949b89fd3b144ea9c655d142d2fb660d796479082a358eca0c",
+      "sha256": "3ffa333162accd1cb0aee9573d836ea3e0a404fc7b034ed627cc3fdc9c66ced6"
+    },
+    {
+      "path": "Tools/run_room_magic_review_bounded.ps1",
+      "beforeSha256": "916e8c63b31a0e3240c9d32d57965e1a7f42d8c563e25446919977bce6ea0809",
+      "sha256": "14b3157ce0b376502a9a4a84884fff51783a8c739ae8ddce9052947af58583ca"
+    }
+  ],
+  "whyRerun": {
+    "oldTreeSelectionDeclaredInputs": 4,
+    "oldTreeSelectionMismatches": 3,
+    "changedInputs": [
+      "Assets/Scripts/MagicMR/ParkActor.cs",
+      "Assets/Scripts/Perception/ParkSharedInterface.cs",
+      "Assets/Editor/HciSeasonTreeChecks.cs"
+    ],
+    "oldWillowCanopySpecific18MatchedBeforeEditorFix": true,
+    "canopyScopeExcludesSharedParkActor": true,
+    "unchangedCanopyGeometryAndShaderScopeReusedNotEntireWillowInteraction": true
+  },
+  "productionChanged": false,
+  "testInputRepair": {
+    "oldExpired45FistSamplesNotExecuted": true,
+    "newFistSamples": 3,
+    "derivedFromUnchangedProductionConstants": true,
+    "minimumSeconds": 0.04,
+    "maximumSeconds": 0.55,
+    "actualFistSeconds": {
+      "virtual": 0.124990463,
+      "selection": 0.125
+    },
+    "eventsPerMode": 1,
+    "classifierComparedToLighterForEachSyntheticSample": true
+  },
+  "native": {
+    "virtual": {
+      "run": "season-tree-current-v2-20261120",
+      "seconds": 41.419805,
+      "samples": 55,
+      "minimumSampledFreeRamGiB": 7.366752624511719,
+      "maximumSampledOwnedRssMiB": 1833.2421875,
+      "exitCode": 0,
+      "guardStop": null,
+      "resourceReceiptSha256": "340587b9ca3b3cdd01e11c2fa62ab4021c72db3dce9d6907e5c804457029f52a"
+    },
+    "selection": {
+      "run": "season-tree-selection-current-v2-20261120",
+      "seconds": 39.8449633,
+      "samples": 53,
+      "minimumSampledFreeRamGiB": 7.738849639892578,
+      "maximumSampledOwnedRssMiB": 1921.4765625,
+      "exitCode": 0,
+      "guardStop": null,
+      "resourceReceiptSha256": "bfce4054f2f2818aa644748f6f7e6bce3699ea76b853d4c7eef0c4ec592b2fcc"
+    }
+  },
+  "effectScope": "Saved ParkTree natural experience; A reversible anime canopy without changing season; B five-renderer face with measured blink; C summer/autumn/winter/spring, leaf shedding/recovery; D bounded branch gust/leaf particles with no fantasy chest; Undo, fit/anchor stability and interrupted Reset.",
+  "selectionScope": {
+    "testEntry": "HciSeasonTreeChecks.RunLive",
+    "actualInput": "Synthetic controller.Observe(\"SYNTHETIC_OBSERVE_TREE\", \"Tree\", anchor) and synthetic hand samples; hardware receiver disabled only in fixture.",
+    "productionRealTargetModeBranchExercised": true,
+    "realCameraOrNetworkInput": false,
+    "passed": "Point/pinch selection; natural/fantasy UI choice preserves identity/position/fit and idempotency; virtual-only awaken/replay denied; simulation/physical mismatch, Busy, Fit, Plane, stale, foreign, lost, disabled, missing and wrong scenario gates; UI-held pinch/release does not cast.",
+    "syntheticEventRows": 20,
+    "syntheticSubject": "SYNTHETIC_OBSERVE_TREE_SEASON",
+    "noHumanStudyOrRecognitionAccuracyClaim": true,
+    "sourceStudyLogsPreserved": true
+  },
+  "rendering": {
+    "currentNativeImages": 21,
+    "virtualImages": 10,
+    "selectionImages": 11,
+    "dimensions": [
+      800,
+      800
+    ],
+    "allTwentyOneAndFiveQAFiguresActuallyViewed": true,
+    "independentReviewAndFaceCameras": true,
+    "mainSceneCameraUnchanged": true,
+    "seasonAndBlinkShaderStates": {
+      "virtual-v2": [
+        {
+          "stage": "00-natural-spring",
+          "season": 0.0,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.45,
+          "toon_mix": 0.0,
+          "eye_min": null,
+          "eye_max": 0.0
+        },
+        {
+          "stage": "01-anime-spring",
+          "season": 0.0,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.45,
+          "toon_mix": 1.0,
+          "eye_min": null,
+          "eye_max": 0.0
+        },
+        {
+          "stage": "02-awake",
+          "season": 0.0,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.45,
+          "toon_mix": 1.0,
+          "eye_min": 0.0003501623,
+          "eye_max": 0.00349999988
+        },
+        {
+          "stage": "08-face-detail",
+          "season": 0.0,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.45,
+          "toon_mix": 1.0,
+          "eye_min": 0.0003501623,
+          "eye_max": 0.00349999988
+        },
+        {
+          "stage": "03-summer",
+          "season": 0.25,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.0,
+          "toon_mix": 1.0,
+          "eye_min": 0.0003501623,
+          "eye_max": 0.00349999988
+        },
+        {
+          "stage": "04-autumn",
+          "season": 0.5,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.92,
+          "toon_mix": 1.0,
+          "eye_min": 0.0003501623,
+          "eye_max": 0.00349999988
+        },
+        {
+          "stage": "05-autumn-gust",
+          "season": 0.5,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.92,
+          "toon_mix": 1.0,
+          "eye_min": 0.0003501623,
+          "eye_max": 0.00349999988
+        },
+        {
+          "stage": "05-autumn-gust-motion",
+          "season": 0.5,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.92,
+          "toon_mix": 1.0,
+          "eye_min": 0.0003501623,
+          "eye_max": 0.00349999988
+        },
+        {
+          "stage": "06-winter",
+          "season": 0.75,
+          "leaf_coverage": 0.025,
+          "season_mix": 0.92,
+          "toon_mix": 1.0,
+          "eye_min": 0.0003501623,
+          "eye_max": 0.00349999988
+        },
+        {
+          "stage": "07-return-spring",
+          "season": 1.0,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.45,
+          "toon_mix": 1.0,
+          "eye_min": 0.0003501623,
+          "eye_max": 0.00349999988
+        }
+      ],
+      "selection-v2": [
+        {
+          "stage": "00-natural-spring",
+          "season": 0.0,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.45,
+          "toon_mix": 0.0,
+          "eye_min": null,
+          "eye_max": 0.0
+        },
+        {
+          "stage": "01-anime-spring",
+          "season": 0.0,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.45,
+          "toon_mix": 1.0,
+          "eye_min": null,
+          "eye_max": 0.0
+        },
+        {
+          "stage": "02-awake",
+          "season": 0.0,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.45,
+          "toon_mix": 1.0,
+          "eye_min": 0.0003545976,
+          "eye_max": 0.00349999988
+        },
+        {
+          "stage": "08-face-detail",
+          "season": 0.0,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.45,
+          "toon_mix": 1.0,
+          "eye_min": 0.0003545976,
+          "eye_max": 0.00349999988
+        },
+        {
+          "stage": "03-summer",
+          "season": 0.25,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.0,
+          "toon_mix": 1.0,
+          "eye_min": 0.0003545976,
+          "eye_max": 0.00349999988
+        },
+        {
+          "stage": "04-autumn",
+          "season": 0.5,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.92,
+          "toon_mix": 1.0,
+          "eye_min": 0.0003524099,
+          "eye_max": 0.00349999988
+        },
+        {
+          "stage": "05-autumn-gust",
+          "season": 0.5,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.92,
+          "toon_mix": 1.0,
+          "eye_min": 0.0003524099,
+          "eye_max": 0.00349999988
+        },
+        {
+          "stage": "05-autumn-gust-motion",
+          "season": 0.5,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.92,
+          "toon_mix": 1.0,
+          "eye_min": 0.0003524099,
+          "eye_max": 0.00349999988
+        },
+        {
+          "stage": "06-winter",
+          "season": 0.75,
+          "leaf_coverage": 0.025,
+          "season_mix": 0.92,
+          "toon_mix": 1.0,
+          "eye_min": 0.000350274961,
+          "eye_max": 0.00349999988
+        },
+        {
+          "stage": "07-return-spring",
+          "season": 1.0,
+          "leaf_coverage": 1.0,
+          "season_mix": 0.45,
+          "toon_mix": 1.0,
+          "eye_min": 0.000350274961,
+          "eye_max": 0.00349999988
+        }
+      ]
+    },
+    "fixedCanopyRoi": [
+      150,
+      50,
+      650,
+      510
+    ],
+    "canopyPixelObservations": {
+      "01-anime-spring": {
+        "greenPixels": 67137,
+        "orangePixels": 0,
+        "meanGreenRgb": [
+          99.46805572509766,
+          130.1904296875,
+          61.88639831542969
+        ]
+      },
+      "03-summer": {
+        "greenPixels": 67137,
+        "orangePixels": 0,
+        "meanGreenRgb": [
+          116.26761627197266,
+          146.72755432128906,
+          79.38102722167969
+        ]
+      },
+      "04-autumn": {
+        "greenPixels": 0,
+        "orangePixels": 67137,
+        "meanGreenRgb": null
+      },
+      "06-winter": {
+        "greenPixels": 0,
+        "orangePixels": 5130,
+        "meanGreenRgb": null
+      },
+      "07-return-spring": {
+        "greenPixels": 67137,
+        "orangePixels": 0,
+        "meanGreenRgb": [
+          99.46805572509766,
+          130.1904296875,
+          61.88639831542969
+        ]
+      }
+    },
+    "visualFindings": [
+      "Natural/anime canopy, eye face detail, autumn orange, sparse winter leaves and spring recovery visible.",
+      "Spring and summer green differences are subtle; final style/readability is not accepted.",
+      "Winter uses coverage .025 retaining a few whole leaf cards rather than a completely leaf-free crown.",
+      "Whole-tree review view and face detail are separate cameras, not physical PICO views."
+    ],
+    "finalArtAccepted": false
+  },
+  "sampledGust": {
+    "modes": {
+      "virtual-v2": {
+        "time0": 17.7318974,
+        "time1": 17.9675941,
+        "moving_branches": 5.0,
+        "sampled_branches": 5.0,
+        "max_angle": 0.4698049,
+        "moving_leaves": 24.0,
+        "active_before": 24.0,
+        "active_after": 24.0,
+        "pool": 32.0,
+        "max_distance": 0.04419315,
+        "elapsedSeconds": 0.23569669999999832
+      },
+      "selection-v2": {
+        "time0": 17.7810764,
+        "time1": 18.0155716,
+        "moving_branches": 5.0,
+        "sampled_branches": 5.0,
+        "max_angle": 0.468135953,
+        "moving_leaves": 24.0,
+        "active_before": 24.0,
+        "active_after": 24.0,
+        "pool": 32.0,
+        "max_distance": 0.0439678431,
+        "elapsedSeconds": 0.23449520000000135
+      }
+    },
+    "bothModesMovingBranches": 5,
+    "bothModesMovingLeaves": 24,
+    "activeBeforeAndAfter": 24,
+    "poolCapacity": 32,
+    "settlingToRestPassed": true,
+    "scope": "Two sampled branch rotations and particle positions, one extra real render per mode. Not full-cycle/long-duration/PICO performance."
+  },
+  "refinementHistory": {
+    "v1BothModesPassed": true,
+    "v2AddsNumericRenderStateAndTwoSampleGustEvidence": true,
+    "initialSingleMomentBranchMovementCheckRetained": true,
+    "staleFixedNineRenderCountRemoved": true,
+    "runtimeProductionFixNeeded": false
+  },
+  "androidReused": {
+    "sha256": "f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31",
+    "bytes": 78064133,
+    "sceneCount": 15,
+    "staticChecksPreviouslyPassed": true,
+    "newBuildRequired": false,
+    "newBuildRun": false,
+    "reason": "Only Editor tree check and bounded launcher changed from prior verified source; all runtime/asset/package/settings payload hashes still match the existing f3c8 player input via the prior Pet proof.",
+    "reference": "Reports/plant-current-review-20261120/verification.json",
+    "deviceExecutionValidated": false
+  },
+  "apkName": "PlantPresentationValidation-20261120.apk",
+  "apkPublished": false,
+  "localDetailedReportSha256": "51fb7c42d1da4dfa8ec9177902bfd15c1cb3d9649c8cc69b6810fe9df5c00482",
+  "originalFrameHashes": {
+    "virtual-v2/00-natural-spring.png": "92499eaa920530cdfd2fd142b44d918ba5d41a77a99a1f7f984753ae4ed264d1",
+    "virtual-v2/01-anime-spring.png": "49ffce0ceb6dcb4a943b53649257f5bc6791d9e0ebea8672428430a720546193",
+    "virtual-v2/02-awake.png": "6ca603d1fb7812d9f402d0cbbfcb8f630bbd797a90564120e75a4453eb94ae0d",
+    "virtual-v2/03-summer.png": "f86e611ab8c23af02f7529c6adc78da6d4d9c04d0c1a658aef301c0d2317f612",
+    "virtual-v2/04-autumn.png": "6c9df54bc0f8077649bd4fd41b5c935fa8c195e4c80fbda64b68445b900e1a7f",
+    "virtual-v2/05-autumn-gust-motion.png": "a24a39f34d8a4a09a93e1373ec4e2bff6900e29a7c4dd5d664bffc34cc10bd13",
+    "virtual-v2/05-autumn-gust.png": "94edb73ddc07129ec1d89ba8a2978c683d383c274431d9f62b06b1e600329a1b",
+    "virtual-v2/06-winter.png": "51a7e3b435b0480edbc7c42e44ea40fa0dd702c60ab167229625b43c4fa03eef",
+    "virtual-v2/07-return-spring.png": "d658a9acd778ed1eedd5424d3d513cae3fdfdc98bc0e4c78301829e19cc59312",
+    "virtual-v2/08-face-detail.png": "4d47c5e6ac82a0b4fd8140eefae62b5ab6127c8f8af2a1d4e7e7889c93b09993",
+    "selection-v2/00-natural-spring.png": "80cd4a324344f5f8df3ea9cd710e0ff44afec225012b78cea42d2b957177c2d1",
+    "selection-v2/01-anime-spring.png": "18394fce7510f9ffe58285629395581c5973657b8037fd3c711d5a40e5529ae1",
+    "selection-v2/02-awake.png": "230fc5514fb7aab76bc6f5831693341aebaf257a1b9e731edc76d5e1b0a4e9fc",
+    "selection-v2/03-summer.png": "8989318bb4dfe215abaf454d2d2b907f90914b8d9d0eace59a57bb38fb676202",
+    "selection-v2/04-autumn.png": "03202fe5309b365156dd945c2e426e0e2935ca3bdf363705417e7a0dca683549",
+    "selection-v2/05-autumn-gust-motion.png": "1adf0a7a99caf6f28c59f5b16bd162536b8f157881a0c236632dc3e32e9a330a",
+    "selection-v2/05-autumn-gust.png": "c79ec1344843480a836051913fd1ce0908a6350f7136d1ad35c002f083e88d71",
+    "selection-v2/06-winter.png": "f0ff6971bbc771f19f139f6d85407ea60da7dc4cbb14475d97332215e1d124db",
+    "selection-v2/07-return-spring.png": "b15dbac604afbfb479df3e546a36fca1e8e16f0ce7172a458b2f470ed78ee8d5",
+    "selection-v2/08-face-detail.png": "d5d9e01458522772830c1bdbd073c243a4522b8203d4a2ab2c8d3bac69392f60",
+    "selection-v2/menu.png": "23bfb39899f75db48eaaaddbd5c7722e8ecefd683a890fec03580f87c3360f84"
+  },
+  "originalFramesPublished": false,
+  "publishedQAFigures": [
+    {
+      "path": "Reports/season-tree-current-review-20261120/season-cycle.png",
+      "bytes": 228747,
+      "sha256": "49b3b92a10f5ffd1ba981702da9ba0855f80c89b95374026df8170b5accd88c9"
+    },
+    {
+      "path": "Reports/season-tree-current-review-20261120/tree-core-effects.png",
+      "bytes": 287413,
+      "sha256": "f8ad43c2933332d02ac9b08a57763c0f275efe173e2ec53375e5e992eb1ccc61"
+    },
+    {
+      "path": "Reports/season-tree-current-review-20261120/tree-gust-samples.png",
+      "bytes": 131103,
+      "sha256": "eafd367b9db4828b2be578df964d8b4e5e55eda29265fb5e8098f265d3c9c25e"
+    }
+  ],
+  "qaFiguresScope": "Previously viewed compositions of current native images, not final art or physical/PICO evidence.",
+  "fireDedicatedAssetsModelsAnimationsEffectsWeightAndMetaUnchanged": true,
+  "runtimeTreeModelsClipsMaterialsScenesAndGuidsUnchanged": true,
+  "realYoloHandsPicoAccepted": false,
+  "finalArtAccepted": false,
+  "independentModelQualityAccepted": false,
+  "fullEightCase32EffectAcceptance": false
+}

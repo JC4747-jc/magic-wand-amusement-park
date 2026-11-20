@@ -1,4 +1,4 @@
-> 2026-11-20 宠物当前场景检查候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。猫/狗四项HCI合成回归、22张实际图和四肢取样运动已核；火机与运行时未改，真实手势/PICO/最终美术/自然步态仍待验收。沿用现有Android静态证据，当前APK未上传。
+> 2026-11-20 四季树当前场景检查候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。合成四效果/选择UI、21张原生图和风叶运动取样已核；火机与运行时未改。真实YOLO/手部/PICO、最终美术与模型准确率仍待验收；APK未上传。
 
 # Magic Wand Amusement Park
 

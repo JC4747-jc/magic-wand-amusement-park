@@ -22,6 +22,10 @@ public static class HciSeasonTreeChecks
     static Transform[] branches;static int phase,errors;static double started,next;static float clock;
     static List<TabletopHandSample> trace;static int traceIndex,eventCount;static float nextSampleAt;
     static TabletopGestureRules lighter;static EditDimension expectedDimension;static TabletopHandSample heldSample;static bool holdValid;static double settleSeconds;
+    const float SampleCadenceSeconds=.03f;
+    static int plannedFistSamples;static float fistBeganAt=-1;
+    static bool gustSampled;static float gustSampleTime;static Quaternion[] gustBranchRotations;
+    static List<Transform> gustPool;static Vector3[] gustPositions;static bool[] gustActive;
     static float minimumEyeHeight=float.PositiveInfinity,maximumEyeHeight;
     static HciSeasonTreeChecks(){EditorApplication.update+=Tick;Application.logMessageReceived+=(m,s,t)=>{if(SessionState.GetBool(Key,false)&&(t==LogType.Error||t==LogType.Exception||t==LogType.Assert))errors++;};}
     static void Pump(){try{if(Live&&controller&&actor)controller.Observe(actor.instanceId,"Tree",anchor);if(controller)FeedTimedHand();if(Willow&&scarRenderer&&scarRenderer.gameObject.activeInHierarchy){var b=new MaterialPropertyBlock();scarRenderer.GetPropertyBlock(b);minBreath=Mathf.Min(minBreath,b.GetFloat("_Breath"));maxBreath=Mathf.Max(maxBreath,b.GetFloat("_Breath"));}if(face&&face.gameObject.activeInHierarchy){float h=face.GetChild(0).localScale.y;minimumEyeHeight=Mathf.Min(minimumEyeHeight,h);maximumEyeHeight=Mathf.Max(maximumEyeHeight,h);}}catch(Exception e){Fail(e);}}
@@ -83,6 +87,7 @@ public static class HciSeasonTreeChecks
         finally{RenderTexture.active=old;UnityEngine.Object.DestroyImmediate(camera.gameObject);UnityEngine.Object.DestroyImmediate(rt);UnityEngine.Object.DestroyImmediate(pixels);}
     }
     static float Property(string name){var b=new MaterialPropertyBlock();leaves.GetPropertyBlock(b);return b.GetFloat(name);}
+    static string R(float value)=>value.ToString("R",System.Globalization.CultureInfo.InvariantCulture);
     static TabletopHandSample Frame(float t,string shape,float pinch=.08f,Vector3 delta=default){
         var extension=shape=="fist"?Vector4.one*.55f:shape=="point"?new Vector4(.95f,.55f,.55f,.55f):Vector4.one*.95f;
         var p=actor.transform.position+Vector3.up*.05f+delta;
@@ -96,23 +101,36 @@ public static class HciSeasonTreeChecks
         if(dimension==EditDimension.Appearance){for(int n=1;n<=8;n++)Feed(Frame(clock+n*.02f,"open",.02f));Feed(Frame(clock+.18f,"open"));}
         else if(dimension==EditDimension.Agency){for(int n=0;n<=32;n++){float a=n/32f*Mathf.PI*2;Feed(Frame(clock+.02f+n*.02f,"point",.08f,new Vector3(Mathf.Cos(a),Mathf.Sin(a),0)*.04f));}}
         else if(dimension==EditDimension.Rule){for(int n=1;n<=6;n++)Feed(Frame(clock+n*.03f,"open",.08f,Vector3.right*n*.03f));}
-        else{for(int n=1;n<=45;n++)Feed(Frame(clock+n*.02f,"fist",.02f));Feed(Frame(clock+.92f,"open"));}
+        else{
+            fistBeganAt=-1;plannedFistSamples=Mathf.CeilToInt(TabletopGestureRules.FistMinimumSeconds/SampleCadenceSeconds)+1;
+            Require(plannedFistSamples*TabletopGestureRules.MaximumSampleGapSeconds<TabletopGestureRules.FistMaximumSeconds,"Synthetic D cannot fit the current burst window");
+            for(int n=0;n<plannedFistSamples;n++)Feed(Frame(clock+n*SampleCadenceSeconds,"fist",.02f));Feed(Frame(clock+plannedFistSamples*SampleCadenceSeconds,"open"));
+        }
     }
     static bool FeedTimedHand(){
         if(trace!=null){
             if(Time.unscaledTime<nextSampleAt)return true;
-            var f=trace[traceIndex++];f.gesture.time=Time.unscaledTime;nextSampleAt=Time.unscaledTime+.03f;
+            var f=trace[traceIndex++];f.gesture.time=Time.unscaledTime;nextSampleAt=Time.unscaledTime+SampleCadenceSeconds;
+            if(expectedDimension==EditDimension.Deconstruction&&f.gesture.fist&&fistBeganAt<0)fistBeganAt=f.gesture.time;
             var expected=traceIndex==1?EditDimension.None:lighter.Step(f.gesture);var actual=controller.ProcessHandSample(f,true);
             Require(expected==actual,"Recognition diverged from lighter: sample="+traceIndex+" expected="+expected+" actual="+actual+" time="+f.gesture.time+" status="+controller.InteractionStatus);
             if(actual!=EditDimension.None){eventCount++;Require(actual==expectedDimension&&controller.LastMagicAccepted,"Wrong/rejected gesture: "+controller.InteractionStatus);}
             heldSample=f;holdValid=true;
-            if(traceIndex==trace.Count){Require(eventCount==1,"Gesture was not exactly once: "+expectedDimension+" events="+eventCount);trace=null;next=EditorApplication.timeSinceStartup+settleSeconds;}
+            if(traceIndex==trace.Count){
+                if(expectedDimension==EditDimension.Deconstruction){
+                    float duration=f.gesture.time-fistBeganAt;
+                    Require(fistBeganAt>=0&&duration>=TabletopGestureRules.FistMinimumSeconds&&duration<=TabletopGestureRules.FistMaximumSeconds,"Synthetic D missed existing production window");
+                    File.AppendAllText(Output+"/gesture-timing.txt","D fist_seconds="+duration.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+" samples="+plannedFistSamples+" events="+eventCount+"\n");
+                }
+                Require(eventCount==1,"Gesture was not exactly once: "+expectedDimension+" events="+eventCount);trace=null;next=EditorApplication.timeSinceStartup+settleSeconds;
+            }
             return true;
         }
         if(holdValid){heldSample.gesture.time=Time.unscaledTime;Require(controller.ProcessHandSample(heldSample,true)==EditDimension.None,"Static hand repeated cast");}
         return false;
     }
     static void Capture(string name,bool closeFace=false){
+        File.AppendAllText(Output+"/render-state-samples.txt",name+" season="+R(actor.seasonTime)+" leaf_coverage="+R(Property("_LeafCoverage"))+" season_mix="+R(Property("_SeasonMix"))+" toon_mix="+R(Property("_ToonMix"))+" eye_min="+R(minimumEyeHeight)+" eye_max="+R(maximumEyeHeight)+"\n");
         var camera=new GameObject("Synthetic tree review camera").AddComponent<Camera>();camera.orthographic=true;camera.orthographicSize=.38f;camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.16f,.18f,.20f);camera.nearClipPlane=.01f;
         var target=actor.ConfirmedBottomWorld+Vector3.up*.29f;camera.transform.position=target+new Vector3(0,.10f,-1.2f);camera.transform.LookAt(target);
         if(closeFace){var focus=Willow?scarRenderer.transform:face;camera.orthographicSize=.025f;camera.transform.position=focus.position+focus.forward*.2f;camera.transform.LookAt(focus.position,focus.up);}
@@ -148,7 +166,21 @@ public static class HciSeasonTreeChecks
             else if(phase==5){Require(Mathf.Abs(actor.seasonTime-.25f)<.001f,"C did not select summer");Capture("03-summer");Cast(EditDimension.Rule);Later(6,2);}
             else if(phase==6){Require(Mathf.Abs(actor.seasonTime-.5f)<.001f&&Property("_SeasonMix")>.9f,"C did not select autumn");Capture("04-autumn");Cast(EditDimension.Deconstruction);Later(7,.65);}
             else if(phase==7){
-                Require(branches.Where((t,i)=>Quaternion.Angle(t.localRotation,rest[i])>.1f).Any(),"D did not move branches");Require(!actor.visual.Find("Reward chest").gameObject.activeInHierarchy,"Season D opened fantasy chest");Capture("05-autumn-gust");Later(8,3);
+                Require(!actor.visual.Find("Reward chest").gameObject.activeInHierarchy,"Season D opened fantasy chest");
+                if(!gustSampled){
+                    Require(branches.Where((t,i)=>Quaternion.Angle(t.localRotation,rest[i])>.1f).Any(),"D did not move branches");
+                    gustSampled=true;gustSampleTime=Time.unscaledTime;gustBranchRotations=branches.Select(b=>b.localRotation).ToArray();
+                    var flags=System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance;
+                    gustPool=(List<Transform>)typeof(ParkActor).GetField("pool",flags).GetValue(actor);
+                    Require(gustPool.Count==32,"Wind pool size is not bounded");gustPositions=gustPool.Select(p=>p.position).ToArray();gustActive=gustPool.Select(p=>p.gameObject.activeSelf).ToArray();
+                    Require(gustActive.Any(a=>a),"Wind has no visible leaf particles");Capture("05-autumn-gust");Later(7,.2);return;
+                }
+                int movingBranches=0,movingLeaves=0;float maxAngle=0,maxDistance=0;
+                for(int i=0;i<branches.Length;i++){float angle=Quaternion.Angle(gustBranchRotations[i],branches[i].localRotation);if(angle>.01f)movingBranches++;maxAngle=Mathf.Max(maxAngle,angle);}
+                for(int i=0;i<gustPool.Count;i++)if(gustActive[i]&&gustPool[i].gameObject.activeSelf){float distance=Vector3.Distance(gustPositions[i],gustPool[i].position);if(distance>.0001f)movingLeaves++;maxDistance=Mathf.Max(maxDistance,distance);}
+                Require(movingBranches>0&&movingLeaves>0,"Gust flags changed but branches/leaves did not move between samples");
+                File.AppendAllText(Output+"/gust-motion.txt","time0="+R(gustSampleTime)+" time1="+R(Time.unscaledTime)+" moving_branches="+movingBranches+" sampled_branches="+branches.Length+" max_angle="+R(maxAngle)+" moving_leaves="+movingLeaves+" active_before="+gustActive.Count(a=>a)+" active_after="+gustPool.Count(p=>p.gameObject.activeSelf)+" pool="+gustPool.Count+" max_distance="+R(maxDistance)+"\n");
+                Capture("05-autumn-gust-motion");Later(8,3);
             }
             else if(phase==8){Require(branches.Select((t,i)=>Quaternion.Angle(t.localRotation,rest[i])).Max()<.01f,"Bounded gust did not settle");Require(controller.Dispatch(ParkAction.Undo,anchor,true),"Undo D failed");Cast(EditDimension.Rule);Later(9,2);}
             else if(phase==9){Require(Mathf.Abs(actor.seasonTime-.75f)<.001f&&Property("_LeafCoverage")<.03f,"Winter canopy did not shed");Capture("06-winter");Cast(EditDimension.Rule);Later(10,2);}
@@ -157,7 +189,7 @@ public static class HciSeasonTreeChecks
             else if(phase==12){
                 Require(!actor.Busy&&!face.gameObject.activeInHierarchy&&actor.seasonTime==0&&Property("_ToonMix")<.001f,"Mid-action reset leaked effects");
                 Require(minimumEyeHeight<maximumEyeHeight*.5f,"B eyes did not blink");
-                File.WriteAllText(Output+"/result.txt","PASS: saved ParkTree natural mode, synthetic joint traces through production ProcessHandSample match lighter exactly once; A reversible anime canopy without season change; B five-renderer face with measured blink; C summer/autumn/winter/spring including leaf shedding/recovery; D bounded gust with no fantasy chest; Undo; fit/anchor stable; interrupted Reset. 9 review renders, no real YOLO/XR/PICO or Android acceptance.\n");FinishLiveEvidence();SessionState.SetBool(Key+".Done",true);EditorApplication.ExitPlaymode();
+                File.WriteAllText(Output+"/result.txt","PASS: saved ParkTree natural mode, synthetic joint traces through production ProcessHandSample match lighter exactly once; A reversible anime canopy without season change; B five-renderer face with measured blink; C summer/autumn/winter/spring including leaf shedding/recovery; D bounded gust with no fantasy chest; Undo; fit/anchor stable; interrupted Reset. Actual PNG list and timing/motion receipts retained; no real YOLO/XR/PICO or Android acceptance.\n");FinishLiveEvidence();SessionState.SetBool(Key+".Done",true);EditorApplication.ExitPlaymode();
             }
         }catch(Exception e){Fail(e);}
     }

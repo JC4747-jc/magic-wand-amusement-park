@@ -1,23 +1,25 @@
-# 宠物当前场景回归与渲染：检查候选交付（2026-11-20）
+# 四季树当前场景与合成选择：检查候选交付（2026-11-20）
 
-父版本 restore-4d-lighter@f940e12023ffdc54e8ecbadcaf78f1686afb0dcc，开发基线仍 codex/mr-development-snapshot-20261109@8359a0c。本次只修改Editor HciPetOutlineChecks和有界检查启动器，并附范围摘要、状态表及两张已查看QA图。生产代码、手势、猫狗模型/场景/FBX/Animator/纹理/meta、火机全部保持。
+父版本 restore-4d-lighter@18f829b5215c2495e75b1b5ebad564cb26a56bd4，开发基线仍 codex/mr-development-snapshot-20261109@8359a0c。只改Editor HciSeasonTreeChecks和有界启动器，并附摘要、未完成状态与三幅已查看QA。生产代码/手势、树模型/材质/场景/骨骼/meta及火机不变。旧树种选择报告四源码中三项不同，不能沿用旧pass；打人柳树冠特定代码/几何未变的范围可复用，不外推整个打人柳交互。
 
-旧梦境报告九项中五项、旧轮廓报告八项中两项源码/场景/资源与当前不同。按当前保存ParkPet重新检查Cat和Dog：A漫画轮廓、B梦境、C戳破、D好感+1保持独立；B幂等、空泡戳破拒绝、Undo、Stop/重开、Reset、丢失/远/无效输入门控、锚点与拟合稳定、共享导入网格/骨骼与绕序、同帧描边像素差异均通过。Dream使用合成动作调用；Outline使用实际共享分类器接收合成关节样本，对照原lighter分类器逐样本一致，各次恰好一个事件。不是实际手部或YOLO识别。
+当前保存ParkTree自然体验：A动漫冠层可逆且季节不变；B五renderer脸/实测眨眼；C夏秋冬春与覆盖脱落恢复；D有界枝条风和叶片，不误开幻想宝箱；Undo、拟合/锚点稳定、中断Reset通过。现有共享分类器接收合成关节样本，每样本与lighter分类器比较、每次恰好1事件。过时Editor 45拳超窗未执行，按原常量派生3拳，实际虚拟.124990463秒/选择模式.125秒，均落在未改.04–.55秒窗口。
 
-旧Editor D轨迹45次拳采样名义超过1.35秒，已知超出现有.04–.55秒窗口，未重跑已知失败输入；按原常量派生3拳，实际Cat .124986649秒/Dog .124938965秒，各1事件，生产规则未改。第一次近景把狗泡上缘裁掉；扩大固定QA取景并验证气泡投影边界保留.02视口裕量，原主相机不动。去掉过时的固定12图成功字符串，数量以实际文件和摘要为准。
+![四季候选画面，春夏差异仍需美术复核](Reports/season-tree-current-review-20261120/season-cycle.png)
 
-![实际原生候选效果，非最终美术](Reports/pet-current-review-20261120/pet-core-effects.png)
+![A风格与B拟人近景，复核相机非设备相机](Reports/season-tree-current-review-20261120/tree-core-effects.png)
 
-最终22张实际图（主相机梦境6张800x600、独立复核相机16张800x800）及4幅QA总览已查看。同帧开/关描边阈值8改变Cat5291像素、Dog4264像素。Dream退出0，36.88秒/49采样，最低RAM7.389GiB/RSS1952.57MiB；最终Outline退出0，51.06秒/68采样，最低RAM7.466GiB/RSS1618.70MiB。采样不是连续峰值。
+21张800x800原生图（虚拟10、合成选择11）和五幅QA均实际查看。春夏绿色差异较轻；冬coverage .025保留少量整叶，叶冠ROI秋橙67137像素/冬5130像素；回春恢复。它们不是最终美术或头显可读性验收。脸部为独立近景相机；其眼高包络有实际眨眼记录。
 
-![两次步态取样，非整周期自然性或接地验收](Reports/pet-current-review-20261120/pet-walk-samples.png)
+![风叶两次取样，不代表完整周期或性能](Reports/season-tree-current-review-20261120/tree-gust-samples.png)
 
-约.273秒/.269秒间隔的局部姿态取样，Cat17/50、Dog43/51变换移动，均覆盖四条腿链，排除了只靠全局追踪根移动的替代。只证明所取两次姿态中的导入动画运动；不证明完整周期、自然步态或脚部接地。狗图呈现奔跑/腾空感是视觉推断，未做接地类别测量，不能凭WalkSource名称标成自然走路通过。Cat FBX与旧步态v2资产SHA相同，也不将旧193姿态/原隔离差异升级为当前全部交互验收。Sniff不是吃饭/睡觉；后两项为可选扩展，不能抢占必需四效果。
+约.236/.234秒两次取样，两模式5/5枝条改变局部旋转、24/24活动叶片改变位置，最大位移约.04419/.04397m，对象池固定32，随后枝条复位通过。仅证明取样间运动。虚拟检查41.42秒/55采样（最低RAM7.367GiB/RSS1833.24MiB），合成选择39.84秒/53采样（7.739GiB/1921.48MiB），退出0且资源守卫未触发；采样不是连续峰值。
 
-PowerShell 7：Tools/run_room_magic_review_bounded.ps1 -ProjectRoot <已配置SDK的隔离工程绝对路径> -RunId <唯一名称> -Check PetDream 或 PetOutline。原RoomMagic、RoomWindowOwnership、PlantFlow、PlantVoice四模式保留。输出 Reports/pet-effect-review-20261120/<RunId>，原图在候选 .codex-tmp/hci-pet-dream 或 hci-pet-outline。拒绝覆盖旧结果/已有Unity；需6GiB可用RAM、C盘20GiB/工程盘25GiB；默认Unity D:/Unity/Hub/Editor/6000.0.33f1/Editor/Unity.exe。拥有进程Job单工作线程，限制240秒、最低RAM3GiB、RSS3584MiB、净盘增512MiB、图32MiB、日志8MiB。payload需精确匹配，PASS不替代查看图。
+RunLive只是历史测试方法名：检查在ParkTree中注入SYNTHETIC_OBSERVE_TREE的Observe坐标和关节样本，硬件接收器只在fixture内禁用，不是真相机/TCP/YOLO/PICO输入。验证生产真实目标模式的点选捏合、自然/幻想UI切换不换ID/位置/fit、幂等、虚拟专用Awaken/Replay拒绝、模拟物理混用/Busy/Fit/Plane/过期/外来实例/丢失/禁用/空/错场景门控，以及UI持捏/释放不施法。CSV20行subject全部为SYNTHETIC_OBSERVE_TREE_SEASON，包含synthetic_fixture事件；原StudyLogs保留，不当人类实验或识别准确率证据。
 
-当前1865项冻结输入与原f3c8 Android输入相比，仅Editor和工具两行变化，其余1863项（包括运行时、资源、Packages、ProjectSettings）相同，因此复用 PlantPresentationValidation-20261120.apk 78064133B，SHA256 f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31 的15场景签名CRC/资源/16 ARM64/zipalign/min29target35检查，未重建或上传APK。所有旧包、主索引/HEAD/用户暂存保留；不强推、不改traeye分支/历史，不进行四小时自动上传。
+PowerShell 7：Tools/run_room_magic_review_bounded.ps1 -ProjectRoot <已配置SDK的隔离工程绝对路径> -RunId <唯一名称> -Check SeasonTree；合成选择用 -Check SeasonTreeSelection。原六模式保留。输出Reports/tree-effect-review-20261120/<RunId>，原图位于候选.codex-tmp/hci-season-tree或hci-live-season-tree。拒绝覆盖旧结果/已有Unity；需6GiB可用RAM、C盘20GiB/工程盘25GiB；默认Unity D:/Unity/Hub/Editor/6000.0.33f1/Editor/Unity.exe。单工作线程/拥有进程Job限制240秒、最低RAM3GiB、RSS3584MiB、净盘增512MiB、截图32MiB、日志8MiB。payload需精确匹配，PASS不替代看图。
 
-便携摘要 [Reports/pet-current-review-20261120/delivery-summary.json](Reports/pet-current-review-20261120/delivery-summary.json)；Cat/Dog八个变体效果行仍未完成，见 [Reports/pet-current-review-20261120/delivery-case-status.json](Reports/pet-current-review-20261120/delivery-case-status.json)。本次两图QA哈希在摘要中，其余原图与详细日志留本地。SOURCE_VALIDATION的sourcePayloadTree为完整候选Git树去掉其自身，payloadFiles仅为核对范围，其余继承内容不新增验收。独立索引显式9项，JC4747-jc身份，实际远端状态由单独回执确认。
+1865项冻结输入只改Editor/工具两行，运行时/资产/Packages/ProjectSettings通过前序证明链与f3c8 Android输入相同，复用PlantPresentationValidation-20261120.apk 78064133B SHA256 f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31 的15场景/签名CRC/资源/16 ARM64/zipalign/min29target35静态检查，未重建/上传APK。原有包、主HEAD/暂存和用户文件保留；不强推、不改traeye分支/历史，不进行四小时自动上传。
 
-未完成：真实YOLO→HCI实际手势→效果、PICO/双眼/可读性/性能、最终美术、完整动作自然性与接地、独立项目数据/非火机模型准确率及8案例32效果整体验收。设备按用户安排暂不连接。
+便携摘要 [Reports/season-tree-current-review-20261120/delivery-summary.json](Reports/season-tree-current-review-20261120/delivery-summary.json)；四效果仍未完成 [Reports/season-tree-current-review-20261120/delivery-case-status.json](Reports/season-tree-current-review-20261120/delivery-case-status.json)。三QA图哈希见摘要，其余原图/日志/合成CSV保留本地。SOURCE_VALIDATION的sourcePayloadTree为完整候选Git树去掉其自身；payloadFiles只是已核对范围，其余继承内容不新增验收。独立索引显式10项、JC4747-jc身份，实际远端结果由回执核对。
+
+未完成：真实YOLO→HCI实际手势→效果、PICO/双眼/读距/长期性能、春夏区分及最终美术、独立实拍数据/非火机模型准确率和完整8案例32效果。设备按用户安排暂不连接。

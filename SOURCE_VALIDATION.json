@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "checkedAtUtc": "2026-11-20T01:15:56.054411+00:00",
-  "status": "SOURCE_CANDIDATE_PET_CURRENT_NATIVE_RENDER_SAMPLED_MOTION_VERIFIED_DEVICE_ART_PENDING",
+  "checkedAtUtc": "2026-11-20T01:39:22.020905+00:00",
+  "status": "SOURCE_CANDIDATE_CURRENT_SEASON_TREE_NATIVE_RENDER_SYNTHETIC_SELECTION_VERIFIED_DEVICE_ART_PENDING",
   "repository": "JC4747-jc/magic-wand-amusement-park",
-  "deliveryParent": "f940e12023ffdc54e8ecbadcaf78f1686afb0dcc",
+  "deliveryParent": "18f829b5215c2495e75b1b5ebad564cb26a56bd4",
   "developmentBaseline": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
-  "sourcePayloadTree": "88ef8daa427cdfba4a760d7bf8b276db346f0835",
-  "payloadFileCount": 1874,
+  "sourcePayloadTree": "0780843759ab6c749d6578dfc531ae8c02dfc7d7",
+  "payloadFileCount": 1879,
   "payloadFiles": [
     {
       "path": ".gitattributes",
@@ -250,7 +250,7 @@
     },
     {
       "path": "Assets/Editor/HciSeasonTreeChecks.cs",
-      "sha256": "a3eb3e5505301d949b89fd3b144ea9c655d142d2fb660d796479082a358eca0c"
+      "sha256": "3ffa333162accd1cb0aee9573d836ea3e0a404fc7b034ed627cc3fdc9c66ced6"
     },
     {
       "path": "Assets/Editor/HciSeasonTreeChecks.cs.meta",
@@ -7266,7 +7266,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "e52634b74a25f67b6fdb563129d650bf4ce10998ea9b893f972156aefb1e36c3"
+      "sha256": "9d692fd1e5edd003f3827d102e547495239cb8f2c3363ed43568dec0e5ffe734"
     },
     {
       "path": "Reports/nonfire-validation-native-20261120/delivery-summary.json",
@@ -7313,8 +7313,28 @@
       "sha256": "258a15706290977460fa49229f218c3426a67ffc70b6b43bf7c7357779e68c7c"
     },
     {
+      "path": "Reports/season-tree-current-review-20261120/delivery-case-status.json",
+      "sha256": "8a622891b00482ef2055292d901198f39be836f320a017972db58db4a57ef09f"
+    },
+    {
+      "path": "Reports/season-tree-current-review-20261120/delivery-summary.json",
+      "sha256": "2a9f168ce91e56f96977cbd1ed7f469797db0b591809062bcad4baf4153528de"
+    },
+    {
+      "path": "Reports/season-tree-current-review-20261120/season-cycle.png",
+      "sha256": "49b3b92a10f5ffd1ba981702da9ba0855f80c89b95374026df8170b5accd88c9"
+    },
+    {
+      "path": "Reports/season-tree-current-review-20261120/tree-core-effects.png",
+      "sha256": "f8ad43c2933332d02ac9b08a57763c0f275efe173e2ec53375e5e992eb1ccc61"
+    },
+    {
+      "path": "Reports/season-tree-current-review-20261120/tree-gust-samples.png",
+      "sha256": "eafd367b9db4828b2be578df964d8b4e5e55eda29265fb5e8098f265d3c9c25e"
+    },
+    {
       "path": "SOURCE_DELIVERY.md",
-      "sha256": "7bac14f7e55f675828200a79f96cfcb23cda28c5f418ef30854857729008bc07"
+      "sha256": "1a71e1d381155954a2ea43b5e6e63ed1da4c8b0fd561af4ba797a3616faaaf8b"
     },
     {
       "path": "Tools/NonFireDiscoveryNativeChecks.cs",
@@ -7390,7 +7410,7 @@
     },
     {
       "path": "Tools/run_room_magic_review_bounded.ps1",
-      "sha256": "916e8c63b31a0e3240c9d32d57965e1a7f42d8c563e25446919977bce6ea0809"
+      "sha256": "14b3157ce0b376502a9a4a84884fff51783a8c739ae8ddce9052947af58583ca"
     },
     {
       "path": "Tools/setup_f2g_runtime.py",
@@ -7589,13 +7609,14 @@
       "Assets/Editor/HciPetOutlineChecks.cs",
       "Assets/Editor/HciPlantFlowChecks.cs",
       "Assets/Editor/HciRoomMagicChecks.cs",
+      "Assets/Editor/HciSeasonTreeChecks.cs",
       "Assets/Resources/MagicMR/RoomStyle.shader",
       "Assets/Scripts/MagicMR/ParkActor.NaturalPlants.cs",
       "Assets/Scripts/MagicMR/RoomMagicVisual.cs",
       "Assets/Scripts/Perception/DiscoverySelection.cs"
     ],
     "mainPayloadFilesVerified": 1836,
-    "mainPayloadFilesUnchanged": 1829,
+    "mainPayloadFilesUnchanged": 1828,
     "sharedSelectionPolicyChangedForNonFireOnly": true,
     "lighterLegacyPredicateTextUnchanged": true,
     "fireScenesModelsAnimationsEffectsAndYoloWeightsUnchanged": true,
@@ -7615,7 +7636,8 @@
     "Room proxy and flat teal exterior are not real-room or final-art acceptance; two sampled frames do not prove full-cycle motion.",
     "Window is illustrated relief in a proxy room. Two samples and 20 lifetime cycles are not full-cycle motion, long-duration RAM or device acceptance.",
     "Plant synthetic dimension dispatch, mono PCM state and virtual geometry do not prove actual hand/YOLO input, audible output, device reading comfort or final art.",
-    "Pet synthetic controller/joint traces, same-frame outline pixels and two local-transform samples are not physical input, natural gait/foot contact or PICO/final-art acceptance."
+    "Pet synthetic controller/joint traces, same-frame outline pixels and two local-transform samples are not physical input, natural gait/foot contact or PICO/final-art acceptance.",
+    "Season tree RunLive uses synthetic Observe/joints and labelled synthetic study rows, not physical camera/TCP/YOLO/PICO or human-study evidence."
   ],
   "evidence": [
     {
@@ -7677,9 +7699,29 @@
     {
       "path": "Reports/pet-current-review-20261120/pet-walk-samples.png",
       "sha256": "638c73c986f5ee0ecaf573289ea08e59c6e9c028bbe22f8da7cbcc436678e289"
+    },
+    {
+      "path": "Reports/season-tree-current-review-20261120/delivery-summary.json",
+      "sha256": "2a9f168ce91e56f96977cbd1ed7f469797db0b591809062bcad4baf4153528de"
+    },
+    {
+      "path": "Reports/season-tree-current-review-20261120/delivery-case-status.json",
+      "sha256": "8a622891b00482ef2055292d901198f39be836f320a017972db58db4a57ef09f"
+    },
+    {
+      "path": "Reports/season-tree-current-review-20261120/season-cycle.png",
+      "sha256": "49b3b92a10f5ffd1ba981702da9ba0855f80c89b95374026df8170b5accd88c9"
+    },
+    {
+      "path": "Reports/season-tree-current-review-20261120/tree-core-effects.png",
+      "sha256": "f8ad43c2933332d02ac9b08a57763c0f275efe173e2ec53375e5e992eb1ccc61"
+    },
+    {
+      "path": "Reports/season-tree-current-review-20261120/tree-gust-samples.png",
+      "sha256": "eafd367b9db4828b2be578df964d8b4e5e55eda29265fb5e8098f265d3c9c25e"
     }
   ],
-  "baseSourcePayloadTree": "11e145e7de4f9d500598cf2e72c7fd11d51ee0db",
+  "baseSourcePayloadTree": "88ef8daa427cdfba4a760d7bf8b276db346f0835",
   "sourceTreeRecalculationPending": false,
   "nonFireGateDelta": {
     "path": "Assets/Scripts/Perception/DiscoverySelection.cs",
@@ -7703,7 +7745,7 @@
   },
   "publication": {
     "target": "restore-4d-lighter",
-    "parent": "f940e12023ffdc54e8ecbadcaf78f1686afb0dcc",
+    "parent": "18f829b5215c2495e75b1b5ebad564cb26a56bd4",
     "state": "SCOPED_EDITOR_CHECK_AND_QA_CANDIDATE; actual commit/ref receipt is separate",
     "apkPublished": false,
     "deviceValidated": false
@@ -7853,6 +7895,36 @@
     "twoSampleAllFourLimbMotionObserved": true,
     "realHandYoloPicoAccepted": false,
     "naturalWalkingAccepted": false,
+    "finalArtAccepted": false
+  },
+  "seasonTreeCurrentDelta": {
+    "portableSummary": "Reports/season-tree-current-review-20261120/delivery-summary.json",
+    "caseStatus": "Reports/season-tree-current-review-20261120/delivery-case-status.json",
+    "sourceChanges": [
+      {
+        "path": "Assets/Editor/HciSeasonTreeChecks.cs",
+        "beforeSha256": "a3eb3e5505301d949b89fd3b144ea9c655d142d2fb660d796479082a358eca0c",
+        "sha256": "3ffa333162accd1cb0aee9573d836ea3e0a404fc7b034ed627cc3fdc9c66ced6"
+      },
+      {
+        "path": "Tools/run_room_magic_review_bounded.ps1",
+        "beforeSha256": "916e8c63b31a0e3240c9d32d57965e1a7f42d8c563e25446919977bce6ea0809",
+        "sha256": "14b3157ce0b376502a9a4a84884fff51783a8c739ae8ddce9052947af58583ca"
+      }
+    ],
+    "productionChanged": false,
+    "nativeVirtualPassed": true,
+    "syntheticSelectionPassed": true,
+    "actualNativeImages": 21,
+    "sampledBranchesMoving": 5,
+    "sampledLeavesMoving": 24,
+    "poolCapacity": 32,
+    "qaFigures": [
+      "Reports/season-tree-current-review-20261120/season-cycle.png",
+      "Reports/season-tree-current-review-20261120/tree-core-effects.png",
+      "Reports/season-tree-current-review-20261120/tree-gust-samples.png"
+    ],
+    "realCameraNetworkYoloHandsPicoAccepted": false,
     "finalArtAccepted": false
   }
 }

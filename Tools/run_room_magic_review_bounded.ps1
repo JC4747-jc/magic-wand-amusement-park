@@ -4,7 +4,7 @@ param(
     [Parameter(Mandatory=$true)][string]$ProjectRoot,
     [ValidatePattern('^[a-z0-9-]{4,60}$')][string]$RunId='room-current-20261120',
     [string]$EditorOverrideManifest,
-    [ValidateSet('RoomMagic','RoomWindowOwnership','PlantFlow','PlantVoice','PetDream','PetOutline')][string]$Check='RoomMagic'
+    [ValidateSet('RoomMagic','RoomWindowOwnership','PlantFlow','PlantVoice','PetDream','PetOutline','SeasonTree','SeasonTreeSelection')][string]$Check='RoomMagic'
 )
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot -Parent
@@ -16,6 +16,8 @@ $checks=@{
     PlantVoice=@{method='HciPlantVoiceChecks.Run';pattern='^PASS: saved ParkPlant; B speech clip assigned';folder='hci-plant-voice';group='plant-effect-review-20261120';scope='Saved ParkPlant synthetic B dispatch, PCM clip/mouth envelope and stop/recovery state; no microphone, audible-output, physical gesture/YOLO/PICO acceptance'}
     PetDream=@{method='HciPetDreamChecks.Run';pattern='^PASS [0-9a-f]{32}: saved ParkPet, Cat\+Dog;';folder='hci-pet-dream';group='pet-effect-review-20261120';scope='Saved ParkPet Cat/Dog synthetic action dispatch for dream, pop, affection and lifecycle, with actual Unity camera renders; no physical gestures/YOLO/PICO or final art acceptance'}
     PetOutline=@{method='HciPetOutlineChecks.Run';pattern='^PASS: saved ParkPet, Cat\+Dog;';folder='hci-pet-outline';group='pet-effect-review-20261120';scope='Saved ParkPet Cat/Dog synthetic shared joint traces, outline pixels/bone following, independent dream/pop/affection and walk state; no physical gestures/YOLO/PICO, feeding/sleeping or final art acceptance'}
+    SeasonTree=@{method='HciSeasonTreeChecks.Run';pattern='^PASS: saved ParkTree natural mode,';folder='hci-season-tree';group='tree-effect-review-20261120';scope='Saved ParkTree natural experience, synthetic shared joint traces and manual fit with actual Unity renders; no physical hand/YOLO/PICO or final art acceptance'}
+    SeasonTreeSelection=@{method='HciSeasonTreeChecks.RunLive';pattern='^PASS: saved ParkTree natural mode,';folder='hci-live-season-tree';group='tree-effect-review-20261120';scope='Saved ParkTree real-target-mode selection/UI exercised by synthetic Observe data and joint traces; RunLive is a test name, not physical camera/network/YOLO/PICO evidence'}
 }
 $selectedCheck=$checks[$Check]
 $output=Join-Path $root ('Reports/'+$selectedCheck.group+'/'+$RunId)
