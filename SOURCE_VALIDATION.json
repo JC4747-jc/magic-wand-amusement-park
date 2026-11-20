@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "checkedAtUtc": "2026-11-19T23:47:39.460017+00:00",
-  "status": "SOURCE_CANDIDATE_ROOM_SHADER_NATIVE_AND_ANDROID_STATIC_VERIFIED_DEVICE_ART_PENDING",
+  "checkedAtUtc": "2026-11-20T00:14:30.662082+00:00",
+  "status": "SOURCE_CANDIDATE_WINDOW_RENDER_ANDROID_STATIC_NATIVE_LIFETIME_VERIFIED_DEVICE_ART_PENDING",
   "repository": "JC4747-jc/magic-wand-amusement-park",
-  "deliveryParent": "533ebe214200295fe76843d2140578525214df55",
+  "deliveryParent": "1f443d3b73334406c94053925cd683b20d3cd6e2",
   "developmentBaseline": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
-  "sourcePayloadTree": "d378807a88fd38bb104da61a2aa142136b592b4b",
-  "payloadFileCount": 1859,
+  "sourcePayloadTree": "a254770e7cbcb05482d77917206cf62fd0e49fcb",
+  "payloadFileCount": 1866,
   "payloadFiles": [
     {
       "path": ".gitattributes",
@@ -242,7 +242,7 @@
     },
     {
       "path": "Assets/Editor/HciRoomMagicChecks.cs",
-      "sha256": "53144df8f234848b2e3834dab7cc3d48cc9d3b02e33d384839abab0e26e5cc95"
+      "sha256": "a94487d2ece5cc7601841aa56cd6ba724f07e02c538365abb8c50dcfc4926c43"
     },
     {
       "path": "Assets/Editor/HciRoomMagicChecks.cs.meta",
@@ -855,6 +855,14 @@
     {
       "path": "Assets/Editor/RoomFurnitureAssetBuilder.cs.meta",
       "sha256": "9ebda7c27956980f3d043c2795233d648bbf477062966e06b2020785fdda3b14"
+    },
+    {
+      "path": "Assets/Editor/RoomWindowOwnershipChecks.cs",
+      "sha256": "4bc12229514d01c168cc099b319023f3cca42dd9721c4296af032f19ee9d2aea"
+    },
+    {
+      "path": "Assets/Editor/RoomWindowOwnershipChecks.cs.meta",
+      "sha256": "3ddd3c1c1e23932db97ad64f903400dec9de74d60ce0bd7d3fdc8b305a139ac1"
     },
     {
       "path": "Assets/Editor/SharedInterfaceChecks.cs",
@@ -2019,6 +2027,14 @@
     {
       "path": "Assets/Resources/MagicMR/RoomStyle.shader.meta",
       "sha256": "063836fd1c3fa0a64b077ff2fed2d0d0c679a36187108072d468dd959442a911"
+    },
+    {
+      "path": "Assets/Resources/MagicMR/RoomWindowLandscape.shader",
+      "sha256": "7ecce90183b68a7c48b35fc1f931142ff770de17e4516cafa8746f802cd3ec59"
+    },
+    {
+      "path": "Assets/Resources/MagicMR/RoomWindowLandscape.shader.meta",
+      "sha256": "232de29d689b6e16210b42785161ffd307e41fc2e5e68ce6408de951fcefebf1"
     },
     {
       "path": "Assets/Resources/MagicMR/SoftParticle.shader",
@@ -5066,11 +5082,19 @@
     },
     {
       "path": "Assets/Scripts/MagicMR/RoomMagicVisual.cs",
-      "sha256": "97e53a3a9f2bac5177ececa2583ebccf90f931b5b77cf4b11204429df4339756"
+      "sha256": "755903a8b447db5b235a1f3d260f2a562e58182661cc6f97c53e0d130dce5d68"
     },
     {
       "path": "Assets/Scripts/MagicMR/RoomMagicVisual.cs.meta",
       "sha256": "936a0bb8ec6dc0443587c878db12492703b993e55ffb21d3c181f62813e80114"
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/RoomWindowLandscape.cs",
+      "sha256": "cbd3cbda027c8914b8954e789265b537e6a07320751111ef54a4653db9580fb1"
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/RoomWindowLandscape.cs.meta",
+      "sha256": "42a4d47e258df63e286d07ab3258b11267e751dc1194bf5636b6a968dd8f419d"
     },
     {
       "path": "Assets/Scripts/MagicMR/SnapGestureDetector.cs",
@@ -7242,7 +7266,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "9ea6db5d00419e2508bc6f406ccce17e6f99d0f6f839a6debb7af93f38560ec6"
+      "sha256": "d6185fd23a952bfe7ab0293841dcc74dff67fee87ca49db5f6c1dbd886781e28"
     },
     {
       "path": "Reports/nonfire-validation-native-20261120/delivery-summary.json",
@@ -7253,8 +7277,12 @@
       "sha256": "aabc59c5e11cbdf1218fe7fb15de84b5454437771dd06d58f9d8d2ad08efd32f"
     },
     {
+      "path": "Reports/room-window-landscape-20261120/delivery-summary.json",
+      "sha256": "258a15706290977460fa49229f218c3426a67ffc70b6b43bf7c7357779e68c7c"
+    },
+    {
       "path": "SOURCE_DELIVERY.md",
-      "sha256": "88eadd44f49e66a185241eb2a81a0caacd96eb45322609d25e6a5a01d380c3db"
+      "sha256": "c5e52dde315d5a1b5c95a65c335e3113f370db2a2216917fd4ea75b60dcfebf9"
     },
     {
       "path": "Tools/NonFireDiscoveryNativeChecks.cs",
@@ -7330,7 +7358,7 @@
     },
     {
       "path": "Tools/run_room_magic_review_bounded.ps1",
-      "sha256": "11a24518205dcbdb0cfb988b0ca9705cc7435e5ea79fbe8dd7006bb5560f25e7"
+      "sha256": "3b38d90aa563f09e5935e6c5db95766263c723c702135d5353bd59043749b66f"
     },
     {
       "path": "Tools/setup_f2g_runtime.py",
@@ -7446,11 +7474,11 @@
     }
   ],
   "androidApk": {
-    "name": "RoomWatercolorValidation-20261120.apk",
-    "bytes": 78059179,
-    "sha256": "1a685e2f9d8ac8511d080a15fd7ab8220549b82bf43ee78fb84aa010dfbbd231",
+    "name": "RoomWindowValidation-20261120.apk",
+    "bytes": 78064869,
+    "sha256": "b7da2296950e73765fd2153119f7bb16861054d04a591fc071c904e006f0fe89",
     "publishedAsset": false,
-    "localArtifact": "D:\\MagicMRSourceCandidate\\20261120\\Builds\\Android\\RoomWatercolorValidation-20261120.apk",
+    "localArtifact": "D:\\MagicMRSourceCandidate\\20261120\\Builds\\Android\\RoomWindowValidation-20261120.apk",
     "previousCandidateApkRetainedAt": "D:/MagicMRSourceCandidate/20261120/Builds/Android/AllScenesValidation.apk",
     "previousCandidateSha256": "ca9daae40bff9e3937a9c7f3051cde3c9178afc76d3fe3a46d53876f13634a58"
   },
@@ -7528,10 +7556,11 @@
     "mainExistingSourceFilesUnchangedExcept": [
       "Assets/Editor/HciRoomMagicChecks.cs",
       "Assets/Resources/MagicMR/RoomStyle.shader",
+      "Assets/Scripts/MagicMR/RoomMagicVisual.cs",
       "Assets/Scripts/Perception/DiscoverySelection.cs"
     ],
     "mainPayloadFilesVerified": 1836,
-    "mainPayloadFilesUnchanged": 1833,
+    "mainPayloadFilesUnchanged": 1832,
     "sharedSelectionPolicyChangedForNonFireOnly": true,
     "lighterLegacyPredicateTextUnchanged": true,
     "fireScenesModelsAnimationsEffectsAndYoloWeightsUnchanged": true,
@@ -7548,7 +7577,8 @@
     "Other inherited historical Tools/replay entries",
     "Public Tree dead-tree evaluation remains 0TP/0FP/1FN; known branch duplicate false positive remains; no Tree model activated.",
     "Source publication is checked by a separate commit/ref receipt; this is not a validated model deployment or live PICO release.",
-    "Room proxy and flat teal exterior are not real-room or final-art acceptance; two sampled frames do not prove full-cycle motion."
+    "Room proxy and flat teal exterior are not real-room or final-art acceptance; two sampled frames do not prove full-cycle motion.",
+    "Window is illustrated relief in a proxy room. Two samples and 20 lifetime cycles are not full-cycle motion, long-duration RAM or device acceptance."
   ],
   "evidence": [
     {
@@ -7574,9 +7604,13 @@
     {
       "path": "Reports/room-watercolor-motion-20261120/delivery-summary.json",
       "sha256": "aabc59c5e11cbdf1218fe7fb15de84b5454437771dd06d58f9d8d2ad08efd32f"
+    },
+    {
+      "path": "Reports/room-window-landscape-20261120/delivery-summary.json",
+      "sha256": "258a15706290977460fa49229f218c3426a67ffc70b6b43bf7c7357779e68c7c"
     }
   ],
-  "baseSourcePayloadTree": "71eb20538b92e34154f770ae1630e226ea039fe1",
+  "baseSourcePayloadTree": "d378807a88fd38bb104da61a2aa142136b592b4b",
   "sourceTreeRecalculationPending": false,
   "nonFireGateDelta": {
     "path": "Assets/Scripts/Perception/DiscoverySelection.cs",
@@ -7600,7 +7634,7 @@
   },
   "publication": {
     "target": "restore-4d-lighter",
-    "parent": "533ebe214200295fe76843d2140578525214df55",
+    "parent": "1f443d3b73334406c94053925cd683b20d3cd6e2",
     "state": "SCOPED_SOURCE_CANDIDATE; actual commit/ref receipt is separate",
     "apkPublished": false,
     "deviceValidated": false
@@ -7642,5 +7676,54 @@
     "realRoomValidated": false,
     "deviceValidated": false,
     "finalArtAccepted": false
+  },
+  "roomWindowDelta": {
+    "portableSummary": "Reports/room-window-landscape-20261120/delivery-summary.json",
+    "sources": [
+      {
+        "path": "Assets/Scripts/MagicMR/RoomMagicVisual.cs",
+        "sha256": "755903a8b447db5b235a1f3d260f2a562e58182661cc6f97c53e0d130dce5d68"
+      },
+      {
+        "path": "Assets/Scripts/MagicMR/RoomWindowLandscape.cs",
+        "sha256": "cbd3cbda027c8914b8954e789265b537e6a07320751111ef54a4653db9580fb1"
+      },
+      {
+        "path": "Assets/Scripts/MagicMR/RoomWindowLandscape.cs.meta",
+        "sha256": "42a4d47e258df63e286d07ab3258b11267e751dc1194bf5636b6a968dd8f419d"
+      },
+      {
+        "path": "Assets/Resources/MagicMR/RoomWindowLandscape.shader",
+        "sha256": "7ecce90183b68a7c48b35fc1f931142ff770de17e4516cafa8746f802cd3ec59"
+      },
+      {
+        "path": "Assets/Resources/MagicMR/RoomWindowLandscape.shader.meta",
+        "sha256": "232de29d689b6e16210b42785161ffd307e41fc2e5e68ce6408de951fcefebf1"
+      },
+      {
+        "path": "Assets/Editor/HciRoomMagicChecks.cs",
+        "sha256": "a94487d2ece5cc7601841aa56cd6ba724f07e02c538365abb8c50dcfc4926c43"
+      },
+      {
+        "path": "Assets/Editor/RoomWindowOwnershipChecks.cs",
+        "sha256": "4bc12229514d01c168cc099b319023f3cca42dd9721c4296af032f19ee9d2aea"
+      },
+      {
+        "path": "Assets/Editor/RoomWindowOwnershipChecks.cs.meta",
+        "sha256": "3ddd3c1c1e23932db97ad64f903400dec9de74d60ce0bd7d3fdc8b305a139ac1"
+      },
+      {
+        "path": "Tools/run_room_magic_review_bounded.ps1",
+        "sha256": "3b38d90aa563f09e5935e6c5db95766263c723c702135d5353bd59043749b66f"
+      }
+    ],
+    "nativeRenderCount": 17,
+    "nativePass": true,
+    "nativeOwnershipCyclesPassed": 20,
+    "androidStaticPass": true,
+    "realRoomValidated": false,
+    "deviceValidated": false,
+    "finalArtAccepted": false,
+    "longDurationMemoryValidated": false
   }
 }

@@ -1,3 +1,5 @@
+> 2026-11-20 山湖窗景与资源释放源码候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。房间17张渲染、Android静态检查及20轮原生对象销毁通过；火机不变，真实房间/最终美术/PICO未验收，APK未上传。
+
 > 2026-11-20 出租屋水彩与运动验证源码候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。13张编辑器实际渲染、合成回归及15场景Android包检查通过；火机未改，真实房间、最终美术和PICO仍待验收，APK未上传。
 
 > 2026-11-20 非火机自动路由门禁源码候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。已通过对应原生 Unity 与本地 Android 包检查；APK 未上传，模型质量、PICO 与完整32效果仍待验收。历史下载和结果不代表当前验收范围。

@@ -1,0 +1,219 @@
+{
+  "schema": 1,
+  "checkedAtUtc": "2026-11-20T00:14:30.656082+00:00",
+  "status": "WINDOW_RELIEF_RENDER_ANDROID_STATIC_AND_NATIVE_LIFETIME_VERIFIED_DEVICE_ART_PENDING",
+  "parentCommit": "1f443d3b73334406c94053925cd683b20d3cd6e2",
+  "sourceChanges": [
+    {
+      "path": "Assets/Scripts/MagicMR/RoomMagicVisual.cs",
+      "sha256": "755903a8b447db5b235a1f3d260f2a562e58182661cc6f97c53e0d130dce5d68"
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/RoomWindowLandscape.cs",
+      "sha256": "cbd3cbda027c8914b8954e789265b537e6a07320751111ef54a4653db9580fb1"
+    },
+    {
+      "path": "Assets/Scripts/MagicMR/RoomWindowLandscape.cs.meta",
+      "sha256": "42a4d47e258df63e286d07ab3258b11267e751dc1194bf5636b6a968dd8f419d"
+    },
+    {
+      "path": "Assets/Resources/MagicMR/RoomWindowLandscape.shader",
+      "sha256": "7ecce90183b68a7c48b35fc1f931142ff770de17e4516cafa8746f802cd3ec59"
+    },
+    {
+      "path": "Assets/Resources/MagicMR/RoomWindowLandscape.shader.meta",
+      "sha256": "232de29d689b6e16210b42785161ffd307e41fc2e5e68ce6408de951fcefebf1"
+    },
+    {
+      "path": "Assets/Editor/HciRoomMagicChecks.cs",
+      "sha256": "a94487d2ece5cc7601841aa56cd6ba724f07e02c538365abb8c50dcfc4926c43"
+    },
+    {
+      "path": "Assets/Editor/RoomWindowOwnershipChecks.cs",
+      "sha256": "4bc12229514d01c168cc099b319023f3cca42dd9721c4296af032f19ee9d2aea"
+    },
+    {
+      "path": "Assets/Editor/RoomWindowOwnershipChecks.cs.meta",
+      "sha256": "3ddd3c1c1e23932db97ad64f903400dec9de74d60ce0bd7d3fdc8b305a139ac1"
+    },
+    {
+      "path": "Tools/run_room_magic_review_bounded.ps1",
+      "sha256": "3b38d90aa563f09e5935e6c5db95766263c723c702135d5353bd59043749b66f"
+    }
+  ],
+  "geometry": {
+    "source": "Assets/Scripts/MagicMR/RoomWindowLandscape.cs",
+    "originalProceduralGeometry": true,
+    "vertices": 426,
+    "triangles": 336,
+    "landscapeMeshRenderers": 1,
+    "totalWindowAndFrameRenderers": 7,
+    "previousWindowAndFrameRenderersFromSource": 21,
+    "drawCallOrDevicePerformanceClaim": false,
+    "boundsCheckedMeters": {
+      "xLessThan": 0.36,
+      "yLessThan": 0.52,
+      "zLessThan": 0.025
+    },
+    "colliders": 0,
+    "ownerDestructionReleasesMeshAndOwnedMaterialsInCode": true,
+    "actualRepeatedOwnerDestructionLeakValidation": true,
+    "noTextureDownloadsOrNewRecognitionEntry": true,
+    "actualRepeatedOwnerDestructionScope": "20 native object-lifetime cycles only; no long-duration process RAM/device claim"
+  },
+  "native": {
+    "exitCode": 0,
+    "seconds": 42.9879528,
+    "samples": 57,
+    "minimumSampledFreeRamGiB": 7.5490570068359375,
+    "maximumSampledOwnedRssMiB": 1561.578125,
+    "assertionScope": "Saved ParkRoom, synthetic A/B/C/D, independent modes/coexistence, Undo/Stop/loss/recovery/Reset, stable furniture/material counts, window opening and bounded geometry/shader/property binding",
+    "validDSeconds": [
+      0.125006676,
+      0.125034332
+    ],
+    "sourceInventoryUnchangedDuringNativeRun": true,
+    "captures": 17,
+    "captureDimensions": [
+      960,
+      800
+    ],
+    "allSeventeenRendersAndThreeFiguresActuallyViewed": true
+  },
+  "motion": {
+    "windowIntervalSeconds": 0.4577310000000008,
+    "windowPhaseBefore": 0.1821096,
+    "windowPhaseAfter": 0.264501184,
+    "windowChangedPixelsAtThreshold3": 15152,
+    "windowRois": {
+      "clouds": {
+        "roi": [
+          275,
+          70,
+          465,
+          250
+        ],
+        "pixels": 34200,
+        "changedPixelsThreshold3": 1769,
+        "meanAbsoluteRgbDifference": 0.20084795321637428,
+        "maximumDifference": 7
+      },
+      "lake": {
+        "roi": [
+          295,
+          525,
+          665,
+          695
+        ],
+        "pixels": 62900,
+        "changedPixelsThreshold3": 10483,
+        "meanAbsoluteRgbDifference": 1.4920349761526233,
+        "maximumDifference": 57
+      }
+    },
+    "windowAnimationPixelChangesOutsideObservedFrontalBounds": 0,
+    "lampPhaseBefore": 6.01497459,
+    "lampPhaseAfter": 0.7606816,
+    "lampPhaseWrapped": true,
+    "candyMovingActiveObjects": 24,
+    "candyActiveObjects": 24,
+    "candyPoolCapacity": 32,
+    "candySampleDistanceMaximumMeters": 0.210029721,
+    "sampledMovementOnly": true
+  },
+  "visualFindings": {
+    "actuallyViewed": [
+      "Original room and partial/full window",
+      "Full room and isolated front/oblique window",
+      "A watercolor/cyber, C lamp, D candy and lifecycle/reset renders"
+    ],
+    "improvement": "Sun/clouds and mountain silhouettes now identifiable above/around the chair; separate inspected close-up shows snow, hills, forest and lake. Backdrop no longer receives the diagonal scene shadow.",
+    "remaining": [
+      "Scene is still a proxy reading corner, not a reconstructed real room",
+      "Illustrated relief is not an external 3D world or a passthrough portal",
+      "Chair still occludes much of the view from the existing fixed full-room camera",
+      "Paper/brush realism, long-duration motion quality and PICO readability remain unaccepted"
+    ],
+    "userVisualAcceptance": false
+  },
+  "android": {
+    "bytes": 78064869,
+    "sha256": "b7da2296950e73765fd2153119f7bb16861054d04a591fc071c904e006f0fe89",
+    "sceneCount": 15,
+    "crc": true,
+    "signature": true,
+    "packedSources": true,
+    "zipalign4Byte": true,
+    "arm64ElfHeaders": 16,
+    "minSdk": 29,
+    "targetSdk": 35,
+    "newMeshAndShaderInBuildReport": true,
+    "newShaderCompiledAndSerialized": true,
+    "newClassAndAccessorsInIl2cppMetadata": [
+      "RoomWindowLandscape",
+      "RoomMagicVisual",
+      "get_LandscapePhase",
+      "get_LandscapeRenderer"
+    ],
+    "minimumSampledFreeRamGiB": 3.369,
+    "maximumSampledOwnedRssMiB": 5618.0,
+    "maximumSampledCompilerProcesses": 1,
+    "maximumSampledNetDiskGrowthMiB": 80.0,
+    "samplingCaveat": "Samples are not continuous peaks. Net disk growth is not total I/O or zero wear.",
+    "guardStop": null,
+    "deviceExecutionValidated": false,
+    "standardNameVerifiedBeforeVersionedRename": true,
+    "apkUploaded": false
+  },
+  "apkName": "RoomWindowValidation-20261120.apk",
+  "apkPublished": false,
+  "nativeOwnership": {
+    "cycles": 20,
+    "componentOnlyCycles": 10,
+    "ownerCycles": 10,
+    "baselineMeshes": 0,
+    "baselineMaterials": 0,
+    "maximumObservedMeshes": 1,
+    "maximumObservedMaterials": 2,
+    "meshesMaterialsAndWindowRootsAfterEveryCycle": 0,
+    "seconds": 17.7800582,
+    "minimumSampledFreeRamGiB": 7.526214599609375,
+    "maximumSampledOwnedRssMiB": 1622.9765625,
+    "scope": "Actual Unity deferred Destroy across frames, empty test scene, persistent external parent; 10 component-only and 10 owner destructions. This is native object lifetime evidence, not process-RAM or long-duration PICO performance acceptance.",
+    "nativeResultSha256": "067c116482ee335199946d86cc78f3fa951822729621b7f2eb3272751ebaa0bf"
+  },
+  "renderHashes": {
+    "00-original.png": "c7bdc295e7a191b16dffea6e2a3b17c39f0f749c8630f151d1d3c73ed606e000",
+    "01-window-opening.png": "f23e88d76535e72c90eacc3ba9a77b3c10ecb1388e216d08dee8919176ee2221",
+    "02-window-detail-a.png": "9dad23d291f1f3df36944181408bf098c8bbae982e4b8113d665de709ffdb911",
+    "02-window-detail-b.png": "64d0c19525f427af1759ae963c2b9bbae14a9daac9aa4b5ffc7341b71b94b2eb",
+    "02-window-motion.png": "3a4d934a647dc5101e9ba3b1c7fd048600f3930d63d6d9dc8900412f3615f86c",
+    "02-window-oblique.png": "b88362cce09ff0104d5747e8b2738ef140b1550db3c72611ff8a4fcabdb54fef",
+    "02-window-open.png": "f9a50d26f3008c0bd2c8bfba10f3ddf4c7b65ae3339f91f1bef79486d4d1c087",
+    "03-lamp-motion.png": "24d700231de68636bd559802e901250928eb83cff9907af352a47178937b7526",
+    "03-lamp-only-a.png": "0ff382a81cbe87840a6dcce157203b196b556702ead0a2bbdb5bc0fdfb439372",
+    "03-lamp-only-b.png": "07b0c2cd44a1f34ebe3c39708f8500619099d27c2b52c10e06dae4779654bff6",
+    "03-lamp.png": "a4da6fbe83c763bebd350b2be0e110b4a1938309fc1eff9bd3c31b695478494b",
+    "04-watercolor.png": "0166647da8aeb613c91fe48011c45dfd8d7d84c4aa1daedf07e925f0aea4859e",
+    "05-cyber.png": "b232feb702246af11e8e0fedd7aa0578671478849058e2a4c0eea1bb15f6aedc",
+    "06-candy-motion.png": "f27ec5eae093f174e56db1fe4d86cd8cd8c80b7d00da976b2727b6df63137cc8",
+    "06-candy.png": "424bb425cd0cf1771f9b62d6c483a41e051008a98d81f7e959aa0d288540862a",
+    "07-stopped.png": "b709c84f5bdde3b129b7c4140ad3a7a91419e5fe324ad1ff779f755cc21f4d2c",
+    "08-reset.png": "5ee1d2bb30e9b3a7cf313adf12dd28066d70bd9f16f9862ed3bc7348f0bb6d7a"
+  },
+  "renderFilesPublished": false,
+  "boundedLauncher": "Tools/run_room_magic_review_bounded.ps1",
+  "boundedLauncherSha256": "3b38d90aa563f09e5935e6c5db95766263c723c702135d5353bd59043749b66f",
+  "priorFullSceneNativeLauncherRetainedInLocalEvidence": true,
+  "androidPlayerInputsUnchangedByOwnershipEditorAndToolCheck": true,
+  "fireDedicatedAssetsEffectsAnimationsWeightAndMetaUnchanged": true,
+  "productionGestureRulesUnchanged": true,
+  "localWindowVerificationSha256": "9a8d60fc5a0149b3b3c6f05abddef84e6a2fd8f11de501d2dc82356aaf157fb1",
+  "localOwnershipVerificationSha256": "e74dc42614125976720414cdcdb5fba527ce5831229eb477e1907b6cfd902708",
+  "deviceValidated": false,
+  "realRoomValidated": false,
+  "finalArtAccepted": false,
+  "longDurationMemoryOrFrameRateAccepted": false,
+  "fullEightCase32EffectAcceptance": false,
+  "scope": "Saved-scene synthetic gestures/room volume, actual editor camera images, Android static checks, and 20 native object destruction cycles. Not actual YOLO/real-room/hand/PICO acceptance."
+}

@@ -8,10 +8,13 @@ namespace MagicMR
     public sealed class RoomMagicVisual : MonoBehaviour
     {
         Renderer[] surfaces;Material[][] original,painted;readonly List<Material> owned=new List<Material>();
-        Transform window;float opening;int style;
+        Transform window;float opening,landscapePhase;int style;
+        Mesh landscapeMesh;Renderer landscapeRenderer;MaterialPropertyBlock landscapeProperties;
         public int Style=>style;
         public float WindowProgress=>opening;
         public Transform Window=>window;
+        public float LandscapePhase=>landscapePhase;
+        public Renderer LandscapeRenderer=>landscapeRenderer;
         public int OwnedMaterialCount=>owned.Count;
         public void Initialize(Renderer[] roomSurfaces,Transform parent)
         {
@@ -34,16 +37,14 @@ namespace MagicMR
             window=new GameObject("Virtual floor-to-ceiling window - illustrated landscape").transform;window.SetParent(parent,false);window.localPosition=new Vector3(-.2f,.012f,.242f);
             var lit=Shader.Find("Universal Render Pipeline/Lit");if(!lit)throw new InvalidOperationException("Room window material missing");
             Material Make(string name,Color color){var m=new Material(lit){name=name};m.SetColor("_BaseColor",color);m.SetFloat("_Smoothness",.25f);owned.Add(m);return m;}
-            var frame=Make("Owned window warm brass",new Color(.20f,.17f,.12f));var sky=Make("Owned window blue sky",new Color(.47f,.70f,.77f));
-            // Bounded opaque inset illustration: no claim of real room reconstruction or a portal.
-            Box("Landscape inset",new Vector3(0,.258f,.012f),new Vector3(.32f,.516f,.008f),sky);
-            var distant=Make("Owned window distant hills",new Color(.23f,.40f,.43f));
-            var near=Make("Owned window near hills",new Color(.12f,.26f,.25f));
-            for(int i=0;i<7;i++){
-                float h=.08f+.07f*(.5f+.5f*Mathf.Sin(i*1.7f));
-                Box("Distant ridge "+i,new Vector3(-.135f+i*.045f,h*.5f,.005f),new Vector3(.05f,h,.006f),distant);
-                Box("Near ridge "+i,new Vector3(-.135f+i*.045f,.025f+.012f*Mathf.Cos(i),-.001f),new Vector3(.05f,.07f,.006f),near);
-            }
+            var frame=Make("Owned window warm brass",new Color(.20f,.17f,.12f));
+            var landscapeShader=Resources.Load<Shader>("MagicMR/RoomWindowLandscape");if(!landscapeShader)throw new InvalidOperationException("Room window landscape shader missing");
+            var landscapeMaterial=new Material(landscapeShader){name="Owned room window landscape"};owned.Add(landscapeMaterial);
+            var landscape=new GameObject("Window mountain-lake relief");landscape.transform.SetParent(window,false);
+            landscapeMesh=RoomWindowLandscape.CreateMesh();landscape.AddComponent<MeshFilter>().sharedMesh=landscapeMesh;
+            landscapeRenderer=landscape.AddComponent<MeshRenderer>();landscapeRenderer.sharedMaterial=landscapeMaterial;
+            landscapeRenderer.shadowCastingMode=UnityEngine.Rendering.ShadowCastingMode.Off;landscapeRenderer.receiveShadows=false;
+            landscapeProperties=new MaterialPropertyBlock();
             foreach(float x in new[]{-.17f,0,.17f})Box("Vertical mullion",new Vector3(x,.26f,-.014f),new Vector3(.012f,.52f,.024f),frame);
             foreach(float y in new[]{0f,.26f,.52f})Box("Horizontal rail",new Vector3(0,y,-.014f),new Vector3(.352f,.012f,.024f),frame);
             SetWindow(0);
@@ -57,9 +58,16 @@ namespace MagicMR
             for(int i=0;i<surfaces.Length;i++)if(surfaces[i])surfaces[i].sharedMaterials=value==0?original[i]:painted[i];
             foreach(var m in owned)if(m&&m.HasProperty("_RoomStyle"))m.SetFloat("_RoomStyle",value);
         }
-        public void Step(float dt,bool requested){if(float.IsFinite(dt)&&dt>=0)SetWindow(Mathf.MoveTowards(opening,requested?1:0,Mathf.Min(dt,.1f)/.65f));}
+        public void Step(float dt,bool requested){
+            if(!float.IsFinite(dt)||dt<0)return;
+            float step=Mathf.Min(dt,.1f);SetWindow(Mathf.MoveTowards(opening,requested?1:0,step/.65f));
+            if(window&&window.gameObject.activeSelf&&landscapeRenderer){
+                landscapePhase=Mathf.Repeat(landscapePhase+step*.18f,Mathf.PI*2);
+                landscapeProperties.SetFloat("_LandscapePhase",landscapePhase);landscapeRenderer.SetPropertyBlock(landscapeProperties);
+            }
+        }
         public void SetWindow(float value){opening=float.IsFinite(value)?Mathf.Clamp01(value):0;if(window){window.localScale=new Vector3(1,Mathf.SmoothStep(0,1,opening),1);window.gameObject.SetActive(opening>0);}}
         void OnDisable(){SetStyle(0);SetWindow(0);}
-        void OnDestroy(){foreach(var m in owned)if(m)Destroy(m);}
+        void OnDestroy(){if(window)Destroy(window.gameObject);if(landscapeMesh)Destroy(landscapeMesh);foreach(var m in owned)if(m)Destroy(m);}
     }
 }

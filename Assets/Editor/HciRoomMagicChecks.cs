@@ -14,8 +14,8 @@ public static class HciRoomMagicChecks {
     static Vector3 anchor;static int phase,errors,eventCount,traceIndex,owned;static double started,next;
     static List<TabletopHandSample> trace;static TabletopGestureRules lighter;static EditDimension expectedDimension;static TabletopHandSample held;static bool holdValid;static float sampleAt;
     static bool sawOpening;static Renderer[] furniture;static Material[][] original;static Matrix4x4[] matrices;static List<Transform> pool;
-    static bool lampSampled,candySampled;
-    static float lampPhaseBefore,lampTimeBefore,candyTimeBefore;
+    static bool lampSampled,candySampled,windowSampled;
+    static float lampPhaseBefore,lampTimeBefore,candyTimeBefore,windowPhaseBefore,windowTimeBefore;
     static Vector3[] candyPositionsBefore;
     static HciRoomMagicChecks(){EditorApplication.update+=Tick;Application.logMessageReceived+=(m,s,t)=>{if(SessionState.GetBool(Key,false)&&(t==LogType.Error||t==LogType.Exception||t==LogType.Assert))errors++;};}
     public static void Run(){Directory.CreateDirectory(Output);File.WriteAllText(Output+"/result.txt","RUNNING\n");SessionState.SetBool(Key,true);SessionState.SetBool(Key+".Done",false);EditorSceneManager.OpenScene("Assets/Scenes/ParkRoom.unity");EditorApplication.EnterPlaymode();}
@@ -25,15 +25,21 @@ public static class HciRoomMagicChecks {
     static void Act(ParkAction a)=>Require(controller.Dispatch(a,anchor,true),a+": "+controller.InteractionStatus);
     static void Rain(bool visible){Require(pool.Count==32,"Pool grew");Require(pool.Count(p=>p.gameObject.activeSelf)==(visible?24:0),"Unexpected continuous rain count");if(visible)foreach(var p in pool.Where(p=>p.gameObject.activeSelf))Require(p.position.y<actor.environmentAnchor.position.y&&p.position.y>actor.environmentAnchor.position.y-.35f,"Rain left ceiling fall budget");}
     static void Stable(){Require(actor.transform.position==anchor,"Tracking anchor moved");if(phase<12)for(int i=0;i<furniture.Length;i++)Require(furniture[i].transform.localToWorldMatrix==matrices[i],"Furniture moved during magic");Require(room.OwnedMaterialCount==owned,"Materials grew");}
-    static void Capture(string name,bool jellyOnly=false){
+    static void Capture(string name,bool jellyOnly=false,bool windowOnly=false,float viewOffset=0){
         var camera=new GameObject("Synthetic room review camera").AddComponent<Camera>();camera.orthographic=true;camera.orthographicSize=.52f;camera.nearClipPlane=.01f;camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.14f,.16f,.18f);
         if(jellyOnly)camera.backgroundColor=Color.black;
         var center=actor.visual.TransformPoint(new Vector3(0,.38f,.025f));camera.orthographicSize=.50f*actor.visual.lossyScale.y;
         camera.transform.position=center+new Vector3(.7f,.3f,-1.5f);camera.transform.LookAt(center);
+        if(windowOnly){
+            center=room.Window.TransformPoint(new Vector3(0,.258f,0));camera.orthographicSize=.30f*room.Window.lossyScale.y;
+            camera.transform.position=center+room.Window.TransformDirection(new Vector3(viewOffset,0,-1)).normalized*2;
+            camera.transform.LookAt(center,room.Window.up);camera.backgroundColor=new Color(.10f,.12f,.14f);
+        }
         var rt=new RenderTexture(960,800,24);var pixels=new Texture2D(960,800,TextureFormat.RGB24,false);var old=RenderTexture.active;
         Renderer[] hidden=null;
         try{
             if(jellyOnly){hidden=UnityEngine.Object.FindObjectsByType<Renderer>(FindObjectsSortMode.None).Where(r=>r.enabled&&r!=jelly.Surface).ToArray();foreach(var r in hidden)r.enabled=false;}
+            if(windowOnly){hidden=UnityEngine.Object.FindObjectsByType<Renderer>(FindObjectsSortMode.None).Where(r=>r.enabled&&!r.transform.IsChildOf(room.Window)).ToArray();foreach(var r in hidden)r.enabled=false;}
             camera.targetTexture=rt;camera.Render();RenderTexture.active=rt;pixels.ReadPixels(new Rect(0,0,960,800),0,0);pixels.Apply();File.WriteAllBytes(Output+"/"+name+".png",pixels.EncodeToPNG());
         }
         finally{if(hidden!=null)foreach(var r in hidden)if(r)r.enabled=true;RenderTexture.active=old;UnityEngine.Object.DestroyImmediate(camera.gameObject);UnityEngine.Object.DestroyImmediate(rt);UnityEngine.Object.DestroyImmediate(pixels);}
@@ -94,7 +100,19 @@ public static class HciRoomMagicChecks {
                 furniture=((List<Renderer>)typeof(ParkActor).GetField("body",flags).GetValue(actor)).ToArray();original=furniture.Select(r=>r.sharedMaterials).ToArray();matrices=furniture.Select(r=>r.transform.localToWorldMatrix).ToArray();pool=(List<Transform>)typeof(ParkActor).GetField("pool",flags).GetValue(actor);
                 Require(!controller.Dispatch(ParkAction.Reward,anchor,true),"D accepted without ceiling");Require(controller.RequestManualPlane()&&controller.ConfirmManualPlane(actor.visual.TransformPoint(Vector3.up*.9f),true),"Ceiling confirmation failed");Capture("00-original");Cast(EditDimension.Agency);Later(3);
             }
-            else if(phase==3){Require(sawOpening&&room.WindowProgress>.99f&&actor.RoomWindowRequested&&!actor.RoomLampRequested&&jelly.Visibility==0,"B is not independent window");Rain(false);Capture("02-window-open");Cast(EditDimension.Rule);Later(4);}
+            else if(phase==3){
+                Require(sawOpening&&room.WindowProgress>.99f&&actor.RoomWindowRequested&&!actor.RoomLampRequested&&jelly.Visibility==0,"B is not independent window");Rain(false);
+                var mesh=room.LandscapeRenderer.GetComponent<MeshFilter>().sharedMesh;
+                Require(mesh&&mesh.vertexCount>200&&mesh.vertexCount<1600&&mesh.subMeshCount==1,"Window relief missing or unbounded");
+                Require(mesh.bounds.size.x<.36f&&mesh.bounds.size.y<.52f&&mesh.bounds.size.z<.025f,"Window relief left inset volume");
+                Require(room.LandscapeRenderer.sharedMaterial.shader.name=="MagicMR/RoomWindowLandscape"&&room.LandscapeRenderer.sharedMaterial.shader.isSupported,"Window landscape shader unsupported");
+                Require(room.Window.GetComponentsInChildren<Renderer>(true).Length==7&&room.Window.GetComponentsInChildren<Collider>(true).Length==0,"Window renderer/collider budget changed");
+                var block=new MaterialPropertyBlock();room.LandscapeRenderer.GetPropertyBlock(block);Require(Mathf.Abs(block.GetFloat("_LandscapePhase")-room.LandscapePhase)<.0001f,"Window phase not submitted to GPU");
+                if(!windowSampled){windowSampled=true;windowPhaseBefore=room.LandscapePhase;windowTimeBefore=Time.unscaledTime;Capture("02-window-open");Capture("02-window-detail-a",windowOnly:true);Later(3,.4);return;}
+                Require(room.LandscapePhase>windowPhaseBefore+.03f,"Window cloud/water phase did not advance");
+                File.AppendAllText(Output+"/motion-samples.txt","B time0="+R(windowTimeBefore)+" time1="+R(Time.unscaledTime)+" phase0="+R(windowPhaseBefore)+" phase1="+R(room.LandscapePhase)+" vertices="+mesh.vertexCount+" triangles="+(mesh.triangles.Length/3)+" renderers=7\n");
+                Capture("02-window-motion");Capture("02-window-detail-b",windowOnly:true);Capture("02-window-oblique",windowOnly:true,viewOffset:.45f);Cast(EditDimension.Rule);Later(4);
+            }
             else if(phase==4){
                 Require(actor.RoomLampRequested&&jelly.Visibility>.99f&&room.WindowProgress>.99f,"C did not add lamp");LampUniform();
                 if(!lampSampled){lampSampled=true;lampPhaseBefore=jelly.Phase;lampTimeBefore=Time.unscaledTime;Capture("03-lamp");Capture("03-lamp-only-a",true);Later(4,.4);return;}

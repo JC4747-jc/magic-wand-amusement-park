@@ -3,13 +3,17 @@
 param(
     [Parameter(Mandatory=$true)][string]$ProjectRoot,
     [ValidatePattern('^[a-z0-9-]{4,60}$')][string]$RunId='room-current-20261120',
-    [string]$EditorOverrideManifest
+    [string]$EditorOverrideManifest,
+    [ValidateSet('RoomMagic','RoomWindowOwnership')][string]$Check='RoomMagic'
 )
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot -Parent
 $candidate=(Resolve-Path -LiteralPath $ProjectRoot).Path
 $output=Join-Path $root ('Reports/room-effect-review-20261120/'+$RunId)
-$captures=Join-Path $candidate '.codex-tmp/hci-room-magic'
+$method=if($Check -eq 'RoomWindowOwnership'){'RoomWindowOwnershipChecks.Run'}else{'HciRoomMagicChecks.Run'}
+$resultPrefix=if($Check -eq 'RoomWindowOwnership'){'PASS: owned room window lifecycle;'}else{'PASS: saved ParkRoom;'}
+$scope=if($Check -eq 'RoomWindowOwnership'){'Native repeated component/owner destruction with an external window parent; no rendering, gesture, real-room, long-duration RAM or PICO acceptance'}else{'Saved ParkRoom plus explicitly synthetic gesture/space input, actual Unity camera renders; no real YOLO/room mapping/hands/PICO or visual acceptance from assertions alone'}
+$captures=Join-Path $candidate $(if($Check -eq 'RoomWindowOwnership'){'.codex-tmp/room-window-ownership'}else{'.codex-tmp/hci-room-magic'})
 if(Test-Path -LiteralPath $output){throw 'Existing evidence; inspect before choosing a new run'}
 if(Test-Path -LiteralPath $captures){throw 'Preserve prior captures; never overwrite another run'}
 if(@(Get-Process Unity -ErrorAction SilentlyContinue).Count){throw 'Leave existing Unity processes untouched'}
@@ -54,7 +58,7 @@ $samples=[Collections.Generic.List[object]]::new();$clock=[Diagnostics.Stopwatch
 $freeBefore=$drive.AvailableFreeSpace
 try{
     $argsUnity=@('-batchmode','--burst-disable-compilation','-projectPath',('"'+$candidate+'"'),'-job-worker-count','1',
-        '-executeMethod','HciRoomMagicChecks.Run','-logFile',('"'+$log+'"'))
+        '-executeMethod',$method,'-logFile',('"'+$log+'"'))
     $process=Start-Process -FilePath 'D:/Unity/Hub/Editor/6000.0.33f1/Editor/Unity.exe' -ArgumentList $argsUnity -WorkingDirectory $candidate -WindowStyle Hidden -PassThru
     $birth=$process.StartTime;$job=[MagicMRBuildJob]::Attach($process)
     while(!$process.HasExited){
@@ -75,19 +79,19 @@ try{
     [void]$process.WaitForExit(8000)
     if($stop -or !$process.HasExited -or $process.ExitCode -ne 0 -or !(Test-Path -LiteralPath $result)){throw 'Room review did not complete; preserve source/result/log before retrying'}
     $verdict=Get-Content -LiteralPath $result -Raw -Encoding utf8
-    if($verdict -notmatch '^PASS: saved ParkRoom;'){throw 'Current saved-scene room assertions failed; do not substitute an older pass'}
+    if(!$verdict.StartsWith($resultPrefix,[StringComparison]::Ordinal)){throw 'Current room assertions failed; do not substitute another check or an older pass'}
     foreach($file in $files){if((Get-FileHash -LiteralPath $file.path).Hash.ToLowerInvariant() -ne $file.sha256){throw ('Source changed during review: '+$file.path)}}
     $passed=$true
-    Write-Output 'PASS: current saved ParkRoom play-mode assertions and fresh render files; visual review still required.'
+    Write-Output ('PASS: '+$method+'; '+$scope)
 }finally{
     if($job){$job.Dispose()}
     @{checkedAtUtc=[datetime]::UtcNow.ToString('o');passed=$passed;guardStop=$stop;
       exitCode=$(if($process -and $process.HasExited){$process.ExitCode}else{$null});
-      candidateRoot=$candidate;captures=$captures;check='HciRoomMagicChecks.Run';
+      candidateRoot=$candidate;captures=$captures;check=$method;
       sourceMetadataSha256=(Get-FileHash -LiteralPath $metadataPath).Hash.ToLowerInvariant();
       editorOverride=$override;
       launcherSha256=(Get-FileHash -LiteralPath $PSCommandPath).Hash.ToLowerInvariant();
       seconds=$clock.Elapsed.TotalSeconds;samples=$samples.ToArray();
-      scope='Saved ParkRoom plus explicitly synthetic gesture/space input, actual Unity camera renders; no real YOLO/room mapping/hands/PICO or visual acceptance from assertions alone'}|
+      scope=$scope}|
       ConvertTo-Json -Depth 6|Set-Content -LiteralPath (Join-Path $output 'resources.json') -Encoding utf8
 }
