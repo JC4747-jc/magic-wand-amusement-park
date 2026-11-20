@@ -4,16 +4,21 @@ param(
     [Parameter(Mandatory=$true)][string]$ProjectRoot,
     [ValidatePattern('^[a-z0-9-]{4,60}$')][string]$RunId='room-current-20261120',
     [string]$EditorOverrideManifest,
-    [ValidateSet('RoomMagic','RoomWindowOwnership')][string]$Check='RoomMagic'
+    [ValidateSet('RoomMagic','RoomWindowOwnership','PlantFlow','PlantVoice')][string]$Check='RoomMagic'
 )
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot -Parent
 $candidate=(Resolve-Path -LiteralPath $ProjectRoot).Path
-$output=Join-Path $root ('Reports/room-effect-review-20261120/'+$RunId)
-$method=if($Check -eq 'RoomWindowOwnership'){'RoomWindowOwnershipChecks.Run'}else{'HciRoomMagicChecks.Run'}
-$resultPrefix=if($Check -eq 'RoomWindowOwnership'){'PASS: owned room window lifecycle;'}else{'PASS: saved ParkRoom;'}
-$scope=if($Check -eq 'RoomWindowOwnership'){'Native repeated component/owner destruction with an external window parent; no rendering, gesture, real-room, long-duration RAM or PICO acceptance'}else{'Saved ParkRoom plus explicitly synthetic gesture/space input, actual Unity camera renders; no real YOLO/room mapping/hands/PICO or visual acceptance from assertions alone'}
-$captures=Join-Path $candidate $(if($Check -eq 'RoomWindowOwnership'){'.codex-tmp/room-window-ownership'}else{'.codex-tmp/hci-room-magic'})
+$checks=@{
+    RoomMagic=@{method='HciRoomMagicChecks.Run';pattern='^PASS: saved ParkRoom;';folder='hci-room-magic';group='room-effect-review-20261120';scope='Saved ParkRoom plus explicitly synthetic gesture/space input, actual Unity camera renders; no real YOLO/room mapping/hands/PICO or visual acceptance from assertions alone'}
+    RoomWindowOwnership=@{method='RoomWindowOwnershipChecks.Run';pattern='^PASS: owned room window lifecycle;';folder='room-window-ownership';group='room-effect-review-20261120';scope='Native repeated component/owner destruction with an external window parent; no rendering, gesture, real-room, long-duration RAM or PICO acceptance'}
+    PlantFlow=@{method='HciPlantFlowChecks.Run';pattern='^PASS [0-9a-f]{32}: saved ParkPlant;';folder='hci-plant-flow';group='plant-effect-review-20261120';scope='Saved ParkPlant synthetic dimension dispatch, fit, effects and lifecycle with actual Unity camera renders; no physical gesture/YOLO/PICO or art acceptance from assertions alone'}
+    PlantVoice=@{method='HciPlantVoiceChecks.Run';pattern='^PASS: saved ParkPlant; B speech clip assigned';folder='hci-plant-voice';group='plant-effect-review-20261120';scope='Saved ParkPlant synthetic B dispatch, PCM clip/mouth envelope and stop/recovery state; no microphone, audible-output, physical gesture/YOLO/PICO acceptance'}
+}
+$selectedCheck=$checks[$Check]
+$output=Join-Path $root ('Reports/'+$selectedCheck.group+'/'+$RunId)
+$method=$selectedCheck.method;$resultPattern=$selectedCheck.pattern;$scope=$selectedCheck.scope
+$captures=Join-Path $candidate ('.codex-tmp/'+$selectedCheck.folder)
 if(Test-Path -LiteralPath $output){throw 'Existing evidence; inspect before choosing a new run'}
 if(Test-Path -LiteralPath $captures){throw 'Preserve prior captures; never overwrite another run'}
 if(@(Get-Process Unity -ErrorAction SilentlyContinue).Count){throw 'Leave existing Unity processes untouched'}
@@ -79,7 +84,7 @@ try{
     [void]$process.WaitForExit(8000)
     if($stop -or !$process.HasExited -or $process.ExitCode -ne 0 -or !(Test-Path -LiteralPath $result)){throw 'Room review did not complete; preserve source/result/log before retrying'}
     $verdict=Get-Content -LiteralPath $result -Raw -Encoding utf8
-    if(!$verdict.StartsWith($resultPrefix,[StringComparison]::Ordinal)){throw 'Current room assertions failed; do not substitute another check or an older pass'}
+    if($verdict -cnotmatch $resultPattern){throw 'Current scene assertions failed; do not substitute another check or an older pass'}
     foreach($file in $files){if((Get-FileHash -LiteralPath $file.path).Hash.ToLowerInvariant() -ne $file.sha256){throw ('Source changed during review: '+$file.path)}}
     $passed=$true
     Write-Output ('PASS: '+$method+'; '+$scope)

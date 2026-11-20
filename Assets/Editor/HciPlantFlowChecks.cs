@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using MagicMR;
@@ -19,6 +20,7 @@ public static class HciPlantFlowChecks
     static Vector3 fitPosition,fitScale,anchor;
     static int stage,errors;
     static double next,started;
+    static SkinnedMeshRenderer foliage;static Renderer pot;static Mesh bakedLeaves;static Matrix4x4 potMatrix;static float grownCrownHeight;
     static HciPlantFlowChecks(){EditorApplication.update+=Tick;Application.logMessageReceived+=Log;}
     public static void Run(){
         if(EditorApplication.isPlayingOrWillChangePlaymode)throw new Exception("Idle editor required");
@@ -32,11 +34,35 @@ public static class HciPlantFlowChecks
     static void Later(int value,double seconds=1.5){stage=value;next=EditorApplication.timeSinceStartup+seconds;}
     static void Cast(EditDimension dimension)=>Require(controller.DispatchDimension(dimension,actor.transform.position,true),dimension+": "+controller.InteractionStatus);
     static void Act(ParkAction action)=>Require(controller.Dispatch(action,actor.transform.position,true),action+": "+controller.InteractionStatus);
+    static Bounds PlantGeometry(string name){
+        if(!bakedLeaves)bakedLeaves=new Mesh{name="Owned Editor plant geometry probe"};
+        // Compensate the imported renderer scale before converting the baked local vertices to world space.
+        foliage.BakeMesh(bakedLeaves,true);var vertices=bakedLeaves.vertices;Require(vertices.Length>100,"Plant foliage has no baked geometry");
+        var crown=new Bounds(foliage.transform.TransformPoint(vertices[0]),Vector3.zero);
+        for(int i=1;i<vertices.Length;i++)crown.Encapsulate(foliage.transform.TransformPoint(vertices[i]));
+        Require(crown.size.magnitude<pot.bounds.size.magnitude*6,"Baked geometry does not match the rendered plant scale");
+        float above=crown.max.y-pot.bounds.max.y,scale=fit.lossyScale.y;
+        Require(above>.012f*scale,"Plant leaves are hidden inside the pot: "+name+" / "+above);
+        Require(pot.localToWorldMatrix==potMatrix,"Growth changed the pot transform");
+        float gap=0;if(speech.gameObject.activeInHierarchy){gap=speech.GetComponent<Renderer>().bounds.min.y-crown.max.y;Require(gap>.005f*scale,"Caption intersects animated leaves: "+name+" / "+gap);}
+        if(name=="C-grown")grownCrownHeight=above;
+        if(name=="C-seedling")Require(grownCrownHeight>above*1.8f,"Rendered juvenile/grown foliage is not distinct");
+        File.AppendAllText(Output+"/geometry-samples.txt",name+" growth="+actor.growthTime.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+" crown_above_pot="+above.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+" caption_bottom_gap="+gap.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+" fit_scale="+scale.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+" pot_stable=true\n");
+        crown.Encapsulate(pot.bounds);if(speech.gameObject.activeInHierarchy)crown.Encapsulate(speech.GetComponent<Renderer>().bounds);return crown;
+    }
     static void Capture(string name){
+        var bounds=PlantGeometry(name);
         var camera=Camera.main;var old=camera.targetTexture;var active=RenderTexture.active;
+        Camera detail=null;
         var rt=new RenderTexture(960,720,24);var pixels=new Texture2D(960,720,TextureFormat.RGB24,false);
-        try{camera.targetTexture=rt;camera.Render();RenderTexture.active=rt;pixels.ReadPixels(new Rect(0,0,960,720),0,0);pixels.Apply();File.WriteAllBytes(Output+"/"+name+".png",pixels.EncodeToPNG());}
-        finally{camera.targetTexture=old;RenderTexture.active=active;UnityEngine.Object.DestroyImmediate(rt);UnityEngine.Object.DestroyImmediate(pixels);}
+        try{
+            camera.targetTexture=rt;camera.Render();RenderTexture.active=rt;pixels.ReadPixels(new Rect(0,0,960,720),0,0);pixels.Apply();File.WriteAllBytes(Output+"/"+name+".png",pixels.EncodeToPNG());camera.targetTexture=old;
+            detail=new GameObject("Synthetic plant detail review camera").AddComponent<Camera>();detail.enabled=false;detail.orthographic=true;
+            detail.orthographicSize=bounds.extents.magnitude*1.12f;detail.nearClipPlane=.01f;detail.clearFlags=CameraClearFlags.SolidColor;detail.backgroundColor=new Color(.09f,.11f,.13f);
+            detail.transform.position=bounds.center+(camera.transform.position-actor.transform.position).normalized*2;detail.transform.LookAt(bounds.center,Vector3.up);
+            detail.targetTexture=rt;detail.Render();RenderTexture.active=rt;pixels.ReadPixels(new Rect(0,0,960,720),0,0);pixels.Apply();File.WriteAllBytes(Output+"/"+name+"-detail.png",pixels.EncodeToPNG());
+        }
+        finally{camera.targetTexture=old;RenderTexture.active=active;if(detail)UnityEngine.Object.DestroyImmediate(detail.gameObject);UnityEngine.Object.DestroyImmediate(rt);UnityEngine.Object.DestroyImmediate(pixels);}
     }
     static void Tick(){
         if(!SessionState.GetBool(Key,false))return;
@@ -50,6 +76,9 @@ public static class HciPlantFlowChecks
                 Require(actor.ConfirmOrientation(0)&&actor.FitRepresentation(actor.transform.position,actor.transform.position+Vector3.up*.35f,true),"Synthetic fit failed");
                 fit=actor.transform.Find("Manual fit - separate from tracking and animation");fitPosition=fit.localPosition;fitScale=fit.localScale;anchor=actor.transform.position;
                 selection=fit.Find("Selected virtual target highlight");speech=actor.GetComponentsInChildren<TextMesh>(true).Single(t=>t.name=="Virtual plant dialogue");
+                foliage=actor.visual.GetComponentInChildren<SkinnedMeshRenderer>();
+                var flags=System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance;
+                pot=((List<Renderer>)typeof(ParkActor).GetField("body",flags).GetValue(actor)).OfType<MeshRenderer>().Single();potMatrix=pot.localToWorldMatrix;
                 Require(!speech.gameObject.activeInHierarchy,"Dialogue visible before B");
                 Require(!controller.DispatchDimension(EditDimension.Scale,anchor,true),"Unsupported dimension accepted");
                 Require(!controller.DispatchDimension(EditDimension.Appearance,anchor,false),"Invalid hand accepted");
@@ -67,9 +96,9 @@ public static class HciPlantFlowChecks
                 actor.SetTracked(false);Require(!controller.DispatchDimension(EditDimension.Agency,anchor,true),"Lost target accepted");actor.SetTracked(true);
                 Require(actor.transform.position==anchor,"Magic moved anchor");
                 File.WriteAllText(Output+"/result.txt","PASS "+SessionState.GetString(Key+".Run","")+": saved ParkPlant; A select/no bloom; B labelled dialogue + five face renderers; C grown/seedling; extra Bloom; D clears with fit/orientation retained; Undo D; mid-action Reset; invalid/unsupported/lost gates; anchor fixed; errors=0. Synthetic shared dimension API; physical gestures, audio speech and PICO not validated.\n");
-                SessionState.SetBool(Key+".Done",true);EditorApplication.ExitPlaymode();
+                if(bakedLeaves)UnityEngine.Object.DestroyImmediate(bakedLeaves);SessionState.SetBool(Key+".Done",true);EditorApplication.ExitPlaymode();
             }
             if(actor&&stage>1&&stage<9)Require(actor.visual.localScale==Vector3.one&&actor.transform.position==anchor,"Plant presentation moved/scaled pot");
-        }catch(Exception e){SessionState.SetBool(Key,false);File.WriteAllText(Output+"/result.txt","FAIL "+e);Debug.LogException(e);EditorApplication.Exit(1);}
+        }catch(Exception e){if(bakedLeaves)UnityEngine.Object.DestroyImmediate(bakedLeaves);SessionState.SetBool(Key,false);File.WriteAllText(Output+"/result.txt","FAIL "+e);Debug.LogException(e);EditorApplication.Exit(1);}
     }
 }

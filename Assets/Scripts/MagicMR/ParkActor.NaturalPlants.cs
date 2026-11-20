@@ -10,6 +10,9 @@ namespace MagicMR
         TextMesh plantSpeech;
         Transform plantMouth;
         Vector3 plantMouthScale;
+        Vector3[] plantCrownCorners;
+        Renderer plantSpeechRenderer;
+        float plantCaptionGap;
         void BuildPlantDialogue(Bounds bounds)
         {
             // Small virtual face at pot height; reuse pooled lifetime and shared material.
@@ -28,6 +31,7 @@ namespace MagicMR
             plantSpeech.text="A little light helps me grow.\n(Virtual plant dialogue)";
             plantSpeech.fontSize=40;plantSpeech.characterSize=unit*.48f;plantSpeech.anchor=TextAnchor.MiddleCenter;
             plantSpeech.alignment=TextAlignment.Center;plantSpeech.color=new Color(.91f,.90f,.78f);
+            plantSpeechRenderer=plantSpeech.GetComponent<Renderer>();plantCaptionGap=unit*1.2f;
             plantSpeech.gameObject.SetActive(false);
             BuildPlantVoice();
         }
@@ -42,6 +46,14 @@ namespace MagicMR
                 Vector3 facing=Vector3.ProjectOnPlane(viewer.transform.position-eyes.position,Vector3.up);
                 if(facing.sqrMagnitude>.0001f)eyes.rotation=Quaternion.LookRotation(facing,Vector3.up);
             }
+            // Keep both caption lines above the animated crown, rather than inside grown leaves.
+            if(plantCrownCorners!=null&&plantSpeechRenderer){
+                float top=float.NegativeInfinity;
+                foreach(var corner in plantCrownCorners)top=Mathf.Max(top,branchRoot.TransformPoint(corner).y);
+                Vector3 position=plantSpeech.transform.position;
+                position.y=top+plantCaptionGap*representationFit.lossyScale.y+plantSpeechRenderer.bounds.extents.y;
+                plantSpeech.transform.position=position;
+            }
             StepPlantVoice();
             float syllable=PlantVoiceMouth;
             plantMouth.localScale=new Vector3(plantMouthScale.x,plantMouthScale.y*(1+syllable*3),plantMouthScale.z);
@@ -55,6 +67,11 @@ namespace MagicMR
             if(!branchRoot)throw new System.InvalidOperationException("Natural plant growth pivot missing");
             var skin=branchRoot.GetComponentInChildren<SkinnedMeshRenderer>();
             if(!skin)throw new System.InvalidOperationException("Natural plant skinned foliage missing");
+            var crown=NeutralGeometryBounds(skin);plantCrownCorners=new Vector3[8];
+            for(int i=0;i<8;i++){
+                var corner=crown.center+Vector3.Scale(crown.extents,new Vector3((i&1)==0?-1:1,(i&2)==0?-1:1,(i&4)==0?-1:1));
+                plantCrownCorners[i]=branchRoot.InverseTransformPoint(skin.transform.TransformPoint(corner));
+            }
             foreach(var node in skin.bones)
                 if(node.name.StartsWith("Leaf_")) {naturalPlantLeaves.Add(node);naturalPlantRestRotations.Add(node.localRotation);}
             foreach(var renderer in model.GetComponentsInChildren<Renderer>())
@@ -65,6 +82,11 @@ namespace MagicMR
         }
         void StepNaturalPlant(float now)
         {
+            // A juvenile rosette must remain visible above the unchanged pot rim.
+            // Preserve the existing neutral (.45) and fully-grown silhouettes.
+            float growth=Mathf.Clamp01(growthTime),juvenile=Mathf.Clamp01(growth/.45f);
+            float height=growth<.45f?Mathf.Lerp(.48f,.7125f,juvenile):Mathf.Lerp(.7125f,1.4f,(growth-.45f)/.55f);
+            branchRoot.localScale=new Vector3(Mathf.Lerp(.50f,1,juvenile),height,Mathf.Lerp(.50f,1,juvenile));
             for(int i=0;i<naturalPlantLeaves.Count;i++)
             {
                 float unfolding=Mathf.Lerp(6,0,growthTime);

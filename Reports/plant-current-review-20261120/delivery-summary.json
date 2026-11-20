@@ -1,0 +1,211 @@
+{
+  "schema": 1,
+  "checkedAtUtc": "2026-11-20T00:44:57.292630+00:00",
+  "status": "PLANT_NATIVE_RENDER_VOICE_AND_ANDROID_STATIC_VERIFIED_FINAL_ART_DEVICE_PENDING",
+  "parentCommit": "6f6df975c036f526bfb7d1f75654d0fa43d74c9d",
+  "sourceChanges": [
+    {
+      "path": "Assets/Scripts/MagicMR/ParkActor.NaturalPlants.cs",
+      "beforeSha256": "80a24e520de492c048a658a6f484dc8a3f33392b79e1299d0dd2f74cded47f20",
+      "sha256": "b77b480ffaf477faef462cbf2bda9ee1ad13689feb63938888c9bcfe360226ac"
+    },
+    {
+      "path": "Assets/Editor/HciPlantFlowChecks.cs",
+      "beforeSha256": "f008a661d589a24452aa4909e87f7a5422cbabf16e20a9ad75b05cab9e0752d4",
+      "sha256": "5085de798595701060f5583410dbd8ff335faf6694ae5972ab3120023ecfc80a"
+    },
+    {
+      "path": "Tools/run_room_magic_review_bounded.ps1",
+      "beforeSha256": "3b38d90aa563f09e5935e6c5db95766263c723c702135d5353bd59043749b66f",
+      "sha256": "83d8e57d9849c9f44be3c9d45017486c15a5866f142f79e5e8d96e7d76427328"
+    }
+  ],
+  "whyRerun": {
+    "oldFlowManifest": "Reports/hci-plant-flow-20261115/manifest.json",
+    "oldFlowChangedInputs": 4,
+    "oldVoiceManifest": "Reports/hci-plant-voice-20261116/manifest.json",
+    "oldVoiceChangedInputs": 2,
+    "oldPassingStateTestsDidNotProveCurrentVisualQuality": true
+  },
+  "runtimeDeltaScope": "Plant-only partial class; original neutral (.45) and fully-grown scales retained, minimum juvenile foliage lifted by a visible juvenile scale/width pose, caption follows bounded crown with measured text half height. No pot/fit/anchor or gesture mapping change.",
+  "native": {
+    "flow": {
+      "seconds": 33.0758848,
+      "samples": 44,
+      "minimumSampledFreeRamGiB": 7.357990264892578,
+      "maximumSampledOwnedRssMiB": 1518.6015625,
+      "exitCode": 0,
+      "guardStop": null,
+      "resourceReceiptSha256": "de88512ec854d9c56c4ecd58cb5743de38fdf905d5c3313278489060d9e01ae1"
+    },
+    "voice": {
+      "seconds": 29.9106259,
+      "samples": 40,
+      "minimumSampledFreeRamGiB": 7.818607330322266,
+      "maximumSampledOwnedRssMiB": 1612.42578125,
+      "exitCode": 0,
+      "guardStop": null,
+      "resourceReceiptSha256": "fd94b9dcc478de3e04833d93b51ded622d876bf1491fb0133eb1baf76955fdd2"
+    }
+  },
+  "flowScope": "Saved ParkPlant, synthetic dimension dispatch/fit: A select without bloom; B caption and five face renderers; C grown/juvenile; optional Bloom; D clear with fit/orientation retained; Undo D; mid-action Reset; invalid/unsupported/lost gates; fixed anchor/pot; actual baked crown visibility and subtitle clearance.",
+  "voiceScope": "Saved ParkPlant synthetic B dispatch; bounded mono PCM and mouth-envelope transform; completion/repeat/Undo/D clear/tracking loss/recovery/pause/Reset/disable; one AudioSource. No physical gesture, microphone, audible output or YOLO/PICO acceptance.",
+  "voice": {
+    "clip": {
+      "channels": 1,
+      "sampleRate": 22050,
+      "sampleWidthBytes": 2,
+      "durationSeconds": 2.569251700680272,
+      "sha256": "d33b16b5cced3a3e0617b745d0b0cad0a1963bdac52b8c0a2d6eefbf5bfbb345"
+    },
+    "language": "English, same as existing subtitle",
+    "clipChanged": false,
+    "mouthEnvelopeSamples": 20711,
+    "maximumMouthEnvelope": 0.9743505,
+    "audibleDesktopOrDeviceOutputAccepted": false,
+    "hudCaveat": "Voice captures show LIVE TCP configured mode with disconnected/no matching frame; inputs are still synthetic dimension dispatch."
+  },
+  "rendering": {
+    "actualCaptures": 12,
+    "dimensions": [
+      960,
+      720
+    ],
+    "allTwelveAndThreeFiguresActuallyViewed": true,
+    "mainSceneCameraRetained": true,
+    "detailImagesUseIndependentAutoFraming": true,
+    "detailPixelSizesDoNotEstablishPhysicalGrowthRatio": true,
+    "geometry": [
+      {
+        "stage": "A-select",
+        "growth": 0.45,
+        "crownAbovePotMeters": 0.113816857,
+        "captionBottomGapMeters": 0.0,
+        "fitScale": 1.37922847,
+        "potStable": true
+      },
+      {
+        "stage": "B-dialogue",
+        "growth": 0.45,
+        "crownAbovePotMeters": 0.1129092,
+        "captionBottomGapMeters": 0.0258010626,
+        "fitScale": 1.37922847,
+        "potStable": true
+      },
+      {
+        "stage": "C-grown",
+        "growth": 1.0,
+        "crownAbovePotMeters": 0.247729659,
+        "captionBottomGapMeters": 0.0236488581,
+        "fitScale": 1.37922847,
+        "potStable": true
+      },
+      {
+        "stage": "C-seedling",
+        "growth": 0.0,
+        "crownAbovePotMeters": 0.06799805,
+        "captionBottomGapMeters": 0.025144577,
+        "fitScale": 1.37922847,
+        "potStable": true
+      },
+      {
+        "stage": "D-clear",
+        "growth": 0.45,
+        "crownAbovePotMeters": 0.114029527,
+        "captionBottomGapMeters": 0.0,
+        "fitScale": 1.37922847,
+        "potStable": true
+      }
+    ],
+    "juvenileCrownAbovePotMeters": 0.06799805,
+    "grownCaptionBottomGapMeters": 0.0236488581,
+    "visualFindings": "Juvenile rosette remains visible; adult leaves no longer cross the caption in inspected scene/detail views. Tiny face/speech still need device readability and art review.",
+    "finalArtAccepted": false
+  },
+  "android": {
+    "bytes": 78064133,
+    "sha256": "f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31",
+    "sceneCount": 15,
+    "crc": true,
+    "signature": true,
+    "packedResources": true,
+    "zipalign4Byte": true,
+    "arm64ElfHeaders": 16,
+    "minSdk": 29,
+    "targetSdk": 35,
+    "newPrivatePlantFieldsLinked": [
+      "plantCrownCorners",
+      "plantSpeechRenderer",
+      "plantCaptionGap"
+    ],
+    "runtimePartialListedInSerializedAssetReport": false,
+    "partialSourceHashBoundBySourceInventory": true,
+    "minimumSampledFreeRamGiB": 3.45,
+    "maximumSampledOwnedRssMiB": 5551.0,
+    "maximumSampledCompilerProcesses": 1,
+    "maximumSampledNetDiskGrowthMiB": 0.0,
+    "guardStop": null,
+    "deviceExecutionValidated": false,
+    "apkPublished": false,
+    "standardNameVerifiedBeforeExactByteVersionedRename": true
+  },
+  "apkName": "PlantPresentationValidation-20261120.apk",
+  "apkPublished": false,
+  "nativeOriginalFramesPublished": false,
+  "nativeFrameHashes": {
+    "flow-v4/A-select-detail.png": "4837b1f91364e9b158288829751e8ffb319eaf967f2266a5b8c762d1b346e0f9",
+    "flow-v4/A-select.png": "81706470d033a4575c00c50f6f16f5c8fb562c7295070a9f1d55ef891883072a",
+    "flow-v4/B-dialogue-detail.png": "05d02537d2508ed26fd951334aa2f69a0a7630a4b085440b1aa02c70e31cf962",
+    "flow-v4/B-dialogue.png": "8859ac7b095219946a1e0b12d4662b7a81964aca67b41265ddc553c31f6df537",
+    "flow-v4/C-grown-detail.png": "584e5121f5dd2f01caeb86e0777924279966e8c09c6c2cc5ed134d5c33a872ca",
+    "flow-v4/C-grown.png": "c439ae00e5d4162ccb7b7ad40d5966db96d8246d166e6e1d24827d6bdeb5c9ce",
+    "flow-v4/C-seedling-detail.png": "a27b1dd0db7fb7ab8186bc3ce67b50c39a021d52cf7e44071d90c4dffb1af490",
+    "flow-v4/C-seedling.png": "d2fb75ef62fe9667d9418007a4f0334bc4d91388b37516d16a979d2a8cfb9795",
+    "flow-v4/D-clear-detail.png": "1fc1197f4839e01385a349f89a1b1bfd05d0cc7a2c10389f3398357ac041f59e",
+    "flow-v4/D-clear.png": "4e8fb51cf7ef3dd9c35d9f768833edc3c11fa2ec22aa156154984a833d15551f",
+    "voice-v4/B-finished.png": "fc7845abf07546255ae89155b96163d6230c037a531d682afb588a6ae40e73cc",
+    "voice-v4/B-speaking.png": "756f0acda6b1eea9370875de4b4ca43d831e4163ce53059caa94a13a35670a8a"
+  },
+  "publishedReviewFigures": [
+    {
+      "path": "Reports/plant-current-review-20261120/plant-before-after.png",
+      "bytes": 143388,
+      "sha256": "db6fcbc43b07456f37b3243cabf8f1431094b29b0036ea1283ec2c68b45c6be8"
+    },
+    {
+      "path": "Reports/plant-current-review-20261120/plant-detail-overview.png",
+      "bytes": 232303,
+      "sha256": "e91c9669b89c704f38e539bd18c162c584d454acd71a82acf4221274721b1581"
+    }
+  ],
+  "reviewFiguresScope": "Previously viewed QA compositions of unmodified native captures. Detail cameras are independently framed. Not final-art or physical/PICO evidence.",
+  "localDetailedReportSha256": "9f488d343dd0cb695475aafee8de55258c04ff89072cbf16a83003fa0e047ec4",
+  "resolvedFailures": [
+    {
+      "run": "plant-flow-current-v2-20261120",
+      "reason": "Editor fixture List<Renderer> lacked System.Collections.Generic; compilation stopped before test",
+      "changedPremise": "Added missing Editor using; runtime fix unchanged"
+    },
+    {
+      "run": "plant-flow-current-v3-20261120",
+      "reason": "Default BakeMesh plus local-to-world conversion double-counted imported scale, reporting an impossible 31m crown; caption assertion rejected it",
+      "changedPremise": "Explicit BakeMesh(mesh,true) scale compensation and independent physical-size guard; runtime fix and minimum visibility/caption predicates unchanged",
+      "primaryReference": "https://docs.unity.com/en-us/engine/6000.0/script-reference/unityengine/skinnedmeshrenderer/bakemesh"
+    },
+    {
+      "run": "Android supplementary check",
+      "reason": "Current serialized-asset BuildReport did not enumerate the partial C# source",
+      "changedPremise": "Check the reported ParkActor.cs/clip, exact partial source input hash and three linked new IL2CPP fields; no rebuild",
+      "receipt": "android-partial-source-receipt-resolution.json"
+    }
+  ],
+  "fireDedicatedScenesAssetsModelsAnimationsEffectsWeightAndMetaUnchanged": true,
+  "sharedParkActorMainSourceAndProductionGestureRulesUnchanged": true,
+  "originalPlantModelTextureVoiceClipAndGuidsUnchanged": true,
+  "realYoloHandsPicoAccepted": false,
+  "audibleOutputAccepted": false,
+  "finalArtAccepted": false,
+  "independentModelQualityAccepted": false,
+  "fullEightCase32EffectAcceptance": false,
+  "scope": "Local synthetic dimension dispatch/manual fit, actual camera renders and baked geometry, voice/PCM mouth-envelope state and Android static checks. No real hand or audible-output claim."
+}

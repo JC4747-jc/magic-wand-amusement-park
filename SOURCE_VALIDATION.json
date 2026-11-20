@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "checkedAtUtc": "2026-11-20T00:14:30.662082+00:00",
-  "status": "SOURCE_CANDIDATE_WINDOW_RENDER_ANDROID_STATIC_NATIVE_LIFETIME_VERIFIED_DEVICE_ART_PENDING",
+  "checkedAtUtc": "2026-11-20T00:44:57.304709+00:00",
+  "status": "SOURCE_CANDIDATE_PLANT_NATIVE_RENDER_VOICE_ANDROID_STATIC_VERIFIED_DEVICE_ART_PENDING",
   "repository": "JC4747-jc/magic-wand-amusement-park",
-  "deliveryParent": "1f443d3b73334406c94053925cd683b20d3cd6e2",
+  "deliveryParent": "6f6df975c036f526bfb7d1f75654d0fa43d74c9d",
   "developmentBaseline": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
-  "sourcePayloadTree": "a254770e7cbcb05482d77917206cf62fd0e49fcb",
-  "payloadFileCount": 1866,
+  "sourcePayloadTree": "11e145e7de4f9d500598cf2e72c7fd11d51ee0db",
+  "payloadFileCount": 1870,
   "payloadFiles": [
     {
       "path": ".gitattributes",
@@ -226,7 +226,7 @@
     },
     {
       "path": "Assets/Editor/HciPlantFlowChecks.cs",
-      "sha256": "f008a661d589a24452aa4909e87f7a5422cbabf16e20a9ad75b05cab9e0752d4"
+      "sha256": "5085de798595701060f5583410dbd8ff335faf6694ae5972ab3120023ecfc80a"
     },
     {
       "path": "Assets/Editor/HciPlantFlowChecks.cs.meta",
@@ -4890,7 +4890,7 @@
     },
     {
       "path": "Assets/Scripts/MagicMR/ParkActor.NaturalPlants.cs",
-      "sha256": "80a24e520de492c048a658a6f484dc8a3f33392b79e1299d0dd2f74cded47f20"
+      "sha256": "b77b480ffaf477faef462cbf2bda9ee1ad13689feb63938888c9bcfe360226ac"
     },
     {
       "path": "Assets/Scripts/MagicMR/ParkActor.NaturalPlants.cs.meta",
@@ -7266,11 +7266,27 @@
     },
     {
       "path": "README.md",
-      "sha256": "d6185fd23a952bfe7ab0293841dcc74dff67fee87ca49db5f6c1dbd886781e28"
+      "sha256": "c84b70d4295ebbfded61e3ef5d688f627a2b8180dc4b72c533576cf2e9dad472"
     },
     {
       "path": "Reports/nonfire-validation-native-20261120/delivery-summary.json",
       "sha256": "44f3027669ac6c0dfc5eba9b8ccfd216cd16c68322a7ac435574f7d7ef336863"
+    },
+    {
+      "path": "Reports/plant-current-review-20261120/delivery-case-status.json",
+      "sha256": "8a50e4dcbdc77db2475bd854b78a202455d39c846e9c749370026b83f9c8f2eb"
+    },
+    {
+      "path": "Reports/plant-current-review-20261120/delivery-summary.json",
+      "sha256": "a39e5f8e15383a17f158bb6ba3d42a72c746bdc4686b00212b4f6773b71921f6"
+    },
+    {
+      "path": "Reports/plant-current-review-20261120/plant-before-after.png",
+      "sha256": "db6fcbc43b07456f37b3243cabf8f1431094b29b0036ea1283ec2c68b45c6be8"
+    },
+    {
+      "path": "Reports/plant-current-review-20261120/plant-detail-overview.png",
+      "sha256": "e91c9669b89c704f38e539bd18c162c584d454acd71a82acf4221274721b1581"
     },
     {
       "path": "Reports/room-watercolor-motion-20261120/delivery-summary.json",
@@ -7282,7 +7298,7 @@
     },
     {
       "path": "SOURCE_DELIVERY.md",
-      "sha256": "c5e52dde315d5a1b5c95a65c335e3113f370db2a2216917fd4ea75b60dcfebf9"
+      "sha256": "e0fd9586c13651829992bf3c36e09e4467cf189696586ad3776efbe6702d5437"
     },
     {
       "path": "Tools/NonFireDiscoveryNativeChecks.cs",
@@ -7358,7 +7374,7 @@
     },
     {
       "path": "Tools/run_room_magic_review_bounded.ps1",
-      "sha256": "3b38d90aa563f09e5935e6c5db95766263c723c702135d5353bd59043749b66f"
+      "sha256": "83d8e57d9849c9f44be3c9d45017486c15a5866f142f79e5e8d96e7d76427328"
     },
     {
       "path": "Tools/setup_f2g_runtime.py",
@@ -7474,11 +7490,11 @@
     }
   ],
   "androidApk": {
-    "name": "RoomWindowValidation-20261120.apk",
-    "bytes": 78064869,
-    "sha256": "b7da2296950e73765fd2153119f7bb16861054d04a591fc071c904e006f0fe89",
+    "name": "PlantPresentationValidation-20261120.apk",
+    "bytes": 78064133,
+    "sha256": "f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31",
     "publishedAsset": false,
-    "localArtifact": "D:\\MagicMRSourceCandidate\\20261120\\Builds\\Android\\RoomWindowValidation-20261120.apk",
+    "localArtifact": "D:\\MagicMRSourceCandidate\\20261120\\Builds\\Android\\PlantPresentationValidation-20261120.apk",
     "previousCandidateApkRetainedAt": "D:/MagicMRSourceCandidate/20261120/Builds/Android/AllScenesValidation.apk",
     "previousCandidateSha256": "ca9daae40bff9e3937a9c7f3051cde3c9178afc76d3fe3a46d53876f13634a58"
   },
@@ -7554,13 +7570,15 @@
   "preservation": {
     "mainIndexSha256": "aab38b747bb2453015b4ce247543cf2dd6aa54d5d5586cf1fcafce46a0398c5a",
     "mainExistingSourceFilesUnchangedExcept": [
+      "Assets/Editor/HciPlantFlowChecks.cs",
       "Assets/Editor/HciRoomMagicChecks.cs",
       "Assets/Resources/MagicMR/RoomStyle.shader",
+      "Assets/Scripts/MagicMR/ParkActor.NaturalPlants.cs",
       "Assets/Scripts/MagicMR/RoomMagicVisual.cs",
       "Assets/Scripts/Perception/DiscoverySelection.cs"
     ],
     "mainPayloadFilesVerified": 1836,
-    "mainPayloadFilesUnchanged": 1832,
+    "mainPayloadFilesUnchanged": 1830,
     "sharedSelectionPolicyChangedForNonFireOnly": true,
     "lighterLegacyPredicateTextUnchanged": true,
     "fireScenesModelsAnimationsEffectsAndYoloWeightsUnchanged": true,
@@ -7578,7 +7596,8 @@
     "Public Tree dead-tree evaluation remains 0TP/0FP/1FN; known branch duplicate false positive remains; no Tree model activated.",
     "Source publication is checked by a separate commit/ref receipt; this is not a validated model deployment or live PICO release.",
     "Room proxy and flat teal exterior are not real-room or final-art acceptance; two sampled frames do not prove full-cycle motion.",
-    "Window is illustrated relief in a proxy room. Two samples and 20 lifetime cycles are not full-cycle motion, long-duration RAM or device acceptance."
+    "Window is illustrated relief in a proxy room. Two samples and 20 lifetime cycles are not full-cycle motion, long-duration RAM or device acceptance.",
+    "Plant synthetic dimension dispatch, mono PCM state and virtual geometry do not prove actual hand/YOLO input, audible output, device reading comfort or final art."
   ],
   "evidence": [
     {
@@ -7608,9 +7627,25 @@
     {
       "path": "Reports/room-window-landscape-20261120/delivery-summary.json",
       "sha256": "258a15706290977460fa49229f218c3426a67ffc70b6b43bf7c7357779e68c7c"
+    },
+    {
+      "path": "Reports/plant-current-review-20261120/delivery-summary.json",
+      "sha256": "a39e5f8e15383a17f158bb6ba3d42a72c746bdc4686b00212b4f6773b71921f6"
+    },
+    {
+      "path": "Reports/plant-current-review-20261120/delivery-case-status.json",
+      "sha256": "8a50e4dcbdc77db2475bd854b78a202455d39c846e9c749370026b83f9c8f2eb"
+    },
+    {
+      "path": "Reports/plant-current-review-20261120/plant-before-after.png",
+      "sha256": "db6fcbc43b07456f37b3243cabf8f1431094b29b0036ea1283ec2c68b45c6be8"
+    },
+    {
+      "path": "Reports/plant-current-review-20261120/plant-detail-overview.png",
+      "sha256": "e91c9669b89c704f38e539bd18c162c584d454acd71a82acf4221274721b1581"
     }
   ],
-  "baseSourcePayloadTree": "d378807a88fd38bb104da61a2aa142136b592b4b",
+  "baseSourcePayloadTree": "a254770e7cbcb05482d77917206cf62fd0e49fcb",
   "sourceTreeRecalculationPending": false,
   "nonFireGateDelta": {
     "path": "Assets/Scripts/Perception/DiscoverySelection.cs",
@@ -7634,8 +7669,8 @@
   },
   "publication": {
     "target": "restore-4d-lighter",
-    "parent": "1f443d3b73334406c94053925cd683b20d3cd6e2",
-    "state": "SCOPED_SOURCE_CANDIDATE; actual commit/ref receipt is separate",
+    "parent": "6f6df975c036f526bfb7d1f75654d0fa43d74c9d",
+    "state": "SCOPED_SOURCE_AND_QA_CANDIDATE; actual commit/ref receipt is separate",
     "apkPublished": false,
     "deviceValidated": false
   },
@@ -7725,5 +7760,37 @@
     "deviceValidated": false,
     "finalArtAccepted": false,
     "longDurationMemoryValidated": false
+  },
+  "plantPresentationDelta": {
+    "portableSummary": "Reports/plant-current-review-20261120/delivery-summary.json",
+    "caseStatus": "Reports/plant-current-review-20261120/delivery-case-status.json",
+    "sourceChanges": [
+      {
+        "path": "Assets/Scripts/MagicMR/ParkActor.NaturalPlants.cs",
+        "beforeSha256": "80a24e520de492c048a658a6f484dc8a3f33392b79e1299d0dd2f74cded47f20",
+        "sha256": "b77b480ffaf477faef462cbf2bda9ee1ad13689feb63938888c9bcfe360226ac"
+      },
+      {
+        "path": "Assets/Editor/HciPlantFlowChecks.cs",
+        "beforeSha256": "f008a661d589a24452aa4909e87f7a5422cbabf16e20a9ad75b05cab9e0752d4",
+        "sha256": "5085de798595701060f5583410dbd8ff335faf6694ae5972ab3120023ecfc80a"
+      },
+      {
+        "path": "Tools/run_room_magic_review_bounded.ps1",
+        "beforeSha256": "3b38d90aa563f09e5935e6c5db95766263c723c702135d5353bd59043749b66f",
+        "sha256": "83d8e57d9849c9f44be3c9d45017486c15a5866f142f79e5e8d96e7d76427328"
+      }
+    ],
+    "nativeFlowPassed": true,
+    "nativeVoiceStatePassed": true,
+    "actualRenderCount": 12,
+    "androidStaticPassed": true,
+    "qaFigures": [
+      "Reports/plant-current-review-20261120/plant-before-after.png",
+      "Reports/plant-current-review-20261120/plant-detail-overview.png"
+    ],
+    "realHandYoloPicoAccepted": false,
+    "audibleOutputAccepted": false,
+    "finalArtAccepted": false
   }
 }
