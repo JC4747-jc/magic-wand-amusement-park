@@ -1,4 +1,4 @@
-> 2026-11-20 柳树金币可见性补充：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。七币原本存在，浅角被箱壁遮挡，上方逐币可见；27张当前原生图已查看。只增加Editor诊断，模型/运行时/火机未改。真实YOLO/PICO与最终美术待验，APK未上传。
+> 2026-11-20 像素虫当前B检查候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。两物种×自然/像素外观，八次合成画圈、完整离散舞段/IK/恢复和16图已核；A/C/D仅复用匹配的既有范围。生产运行时/火机未改，真实YOLO/PICO与最终美术待验，APK未上传。
 
 # Magic Wand Amusement Park
 

@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "checkedAtUtc": "2026-11-20T02:51:07.588836+00:00",
-  "status": "SOURCE_CANDIDATE_WILLOW_COIN_SELF_OCCLUSION_VERIFIED_MODEL_PRESERVED_DEVICE_ART_PENDING",
+  "checkedAtUtc": "2026-11-20T03:13:38.010514+00:00",
+  "status": "SOURCE_CANDIDATE_CURRENT_FOUR_VARIANT_BUG_B_NATIVE_JOINTS_VERIFIED_DEVICE_ART_PENDING",
   "repository": "JC4747-jc/magic-wand-amusement-park",
-  "deliveryParent": "340acdc49e1ff18ad63b54f4d73ff6ce4db12e58",
+  "deliveryParent": "86ea6455499612bb11cede6f00d3a0eba5e8ac3d",
   "developmentBaseline": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
-  "sourcePayloadTree": "17a1cda645824f665c069f0b17f4e1c4615104ac",
-  "payloadFileCount": 1895,
+  "sourcePayloadTree": "bcce6fd2ec28e7dcd640286a8eab31e8285f68ab",
+  "payloadFileCount": 1899,
   "payloadFiles": [
     {
       "path": ".gitattributes",
@@ -178,7 +178,7 @@
     },
     {
       "path": "Assets/Editor/HciBugDanceChecks.cs",
-      "sha256": "091953e4e891d7fe52039bac96cbf39cc1fa84f40072bcbbef235cf5284e9693"
+      "sha256": "f07a918eab2ae107a08eb8bb3bd118dcfed314ed9212df56a1ab701be7031715"
     },
     {
       "path": "Assets/Editor/HciBugDanceChecks.cs.meta",
@@ -7266,7 +7266,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "9df2b71eee157e3e32fa6646632921596fd21024ed9a0b1ee2990ef7d48bb93f"
+      "sha256": "a9c671250af3beb5180a0c39a9c5586ccaced9142e09a48a13564e954fb351cd"
     },
     {
       "path": "Reports/bronze-current-review-20261120/bronze-motion-samples.png",
@@ -7279,6 +7279,22 @@
     {
       "path": "Reports/bronze-current-review-20261120/delivery-summary.json",
       "sha256": "ce46d2bdca540dd68ac17889c7e1cd81f4f2cfc33d253184ae442f74f6b36b02"
+    },
+    {
+      "path": "Reports/bug-dance-current-review-20261120/bug-dance-natural-steps.png",
+      "sha256": "4809b5e81099be19f297d0a5e46a1c576182bbbba559dd78491fc8a029717a0b"
+    },
+    {
+      "path": "Reports/bug-dance-current-review-20261120/bug-dance-pixel-steps.png",
+      "sha256": "cf12e45c9e71145319a1bb8a8e157cd7dc3cd655666dd9acf1b74ffac8cb9026"
+    },
+    {
+      "path": "Reports/bug-dance-current-review-20261120/delivery-case-status.json",
+      "sha256": "3a966261830a3045b0fd544445ac09e6c7dd13caab86fb82338e571234f2e6db"
+    },
+    {
+      "path": "Reports/bug-dance-current-review-20261120/delivery-summary.json",
+      "sha256": "3731dd435358df4c0046d920092319619ca8a6deb46100ec666eb6c87fca338d"
     },
     {
       "path": "Reports/nonfire-validation-native-20261120/delivery-summary.json",
@@ -7398,7 +7414,7 @@
     },
     {
       "path": "SOURCE_DELIVERY.md",
-      "sha256": "419f01c3d690bf8f395ec2e4b361757b84434fd088498228331c87cf790156da"
+      "sha256": "c12942b1b029106f2c3216abd30dd5c6ec8ad04f060f52992ed3d4778c653fd7"
     },
     {
       "path": "Tools/NonFireDiscoveryNativeChecks.cs",
@@ -7474,7 +7490,7 @@
     },
     {
       "path": "Tools/run_room_magic_review_bounded.ps1",
-      "sha256": "e7af507cfcdb2f6f5f3884f011d5880570e41ac9614b59f898587dec0c8b2ee3"
+      "sha256": "eb27dc25c8114707f71a39d56984bbbf6a4f666872a8fd6f43e14af8dc2b0195"
     },
     {
       "path": "Tools/setup_f2g_runtime.py",
@@ -7670,6 +7686,7 @@
   "preservation": {
     "mainIndexSha256": "aab38b747bb2453015b4ce247543cf2dd6aa54d5d5586cf1fcafce46a0398c5a",
     "mainExistingSourceFilesUnchangedExcept": [
+      "Assets/Editor/HciBugDanceChecks.cs",
       "Assets/Editor/HciPetOutlineChecks.cs",
       "Assets/Editor/HciPlantFlowChecks.cs",
       "Assets/Editor/HciRoomMagicChecks.cs",
@@ -7682,7 +7699,7 @@
       "Assets/Scripts/Perception/DiscoverySelection.cs"
     ],
     "mainPayloadFilesVerified": 1836,
-    "mainPayloadFilesUnchanged": 1826,
+    "mainPayloadFilesUnchanged": 1825,
     "sharedSelectionPolicyChangedForNonFireOnly": true,
     "lighterLegacyPredicateTextUnchanged": true,
     "fireScenesModelsAnimationsEffectsAndYoloWeightsUnchanged": true,
@@ -7707,7 +7724,8 @@
     "Willow RunLive uses synthetic Observe/joints and labelled synthetic rows; dark style/bark/chest final art, real camera/TCP/YOLO/hands/PICO and independent model quality pending.",
     "Statue checks use synthetic joints/manual plane; human motion does not establish bronze full-body animation; C body-framed screenshots do not establish narrative readability. Reused narrative fixed-camera proof is scoped, not full package/hardware parity.",
     "Current bronze full-body local playback supplement uses synthetic joints/manual ground; body-framed images do not establish full garden view, actual camera/TCP/YOLO/hands/audio/PICO or final art.",
-    "Coin self-occlusion masks cover only two fixed review views and chest-local clearances, not arbitrary physical head poses, perceptual readability, actual camera/YOLO/hands/PICO or final art."
+    "Coin self-occlusion masks cover only two fixed review views and chest-local clearances, not arbitrary physical head poses, perceptual readability, actual camera/YOLO/hands/PICO or final art.",
+    "Current insect B uses timed synthetic joints and four virtual appearance/species cases; setup A is action dispatch. A/C/D old core effect scopes reused only. Physical hand/YOLO/PICO, real insect passthrough visibility and final art remain pending."
   ],
   "evidence": [
     {
@@ -7853,9 +7871,25 @@
     {
       "path": "Reports/willow-coins-review-20261120/chest-visibility-comparison.png",
       "sha256": "9e7bdb216f3486714f4f262ec46012b1a73ecb1e3183bbbd008113780ae85915"
+    },
+    {
+      "path": "Reports/bug-dance-current-review-20261120/delivery-summary.json",
+      "sha256": "3731dd435358df4c0046d920092319619ca8a6deb46100ec666eb6c87fca338d"
+    },
+    {
+      "path": "Reports/bug-dance-current-review-20261120/delivery-case-status.json",
+      "sha256": "3a966261830a3045b0fd544445ac09e6c7dd13caab86fb82338e571234f2e6db"
+    },
+    {
+      "path": "Reports/bug-dance-current-review-20261120/bug-dance-natural-steps.png",
+      "sha256": "4809b5e81099be19f297d0a5e46a1c576182bbbba559dd78491fc8a029717a0b"
+    },
+    {
+      "path": "Reports/bug-dance-current-review-20261120/bug-dance-pixel-steps.png",
+      "sha256": "cf12e45c9e71145319a1bb8a8e157cd7dc3cd655666dd9acf1b74ffac8cb9026"
     }
   ],
-  "baseSourcePayloadTree": "24e6dd72ac7650b07f455b059ee1cefa6e26a556",
+  "baseSourcePayloadTree": "17a1cda645824f665c069f0b17f4e1c4615104ac",
   "sourceTreeRecalculationPending": false,
   "nonFireGateDelta": {
     "path": "Assets/Scripts/Perception/DiscoverySelection.cs",
@@ -7879,8 +7913,8 @@
   },
   "publication": {
     "target": "restore-4d-lighter",
-    "parent": "340acdc49e1ff18ad63b54f4d73ff6ce4db12e58",
-    "state": "SCOPED_EDITOR_COIN_DIAGNOSTIC; actual commit/ref receipt separate",
+    "parent": "86ea6455499612bb11cede6f00d3a0eba5e8ac3d",
+    "state": "SCOPED_EDITOR_BUG_B_CHECK; actual commit/ref receipt separate",
     "apkPublished": false,
     "deviceValidated": false
   },
@@ -8167,6 +8201,35 @@
     "allCoinsVisibleFromUpperView": true,
     "nativeOriginalsViewed": 27,
     "qaFigure": "Reports/willow-coins-review-20261120/chest-visibility-comparison.png",
+    "realCameraYoloHandsPicoAccepted": false,
+    "finalArtAccepted": false
+  },
+  "bugDanceCurrentDelta": {
+    "portableSummary": "Reports/bug-dance-current-review-20261120/delivery-summary.json",
+    "caseStatus": "Reports/bug-dance-current-review-20261120/delivery-case-status.json",
+    "sourceChanges": [
+      {
+        "path": "Assets/Editor/HciBugDanceChecks.cs",
+        "beforeSha256": "091953e4e891d7fe52039bac96cbf39cc1fa84f40072bcbbef235cf5284e9693",
+        "sha256": "f07a918eab2ae107a08eb8bb3bd118dcfed314ed9212df56a1ab701be7031715"
+      },
+      {
+        "path": "Tools/run_room_magic_review_bounded.ps1",
+        "beforeSha256": "e7af507cfcdb2f6f5f3884f011d5880570e41ac9614b59f898587dec0c8b2ee3",
+        "sha256": "eb27dc25c8114707f71a39d56984bbbf6a4f666872a8fd6f43e14af8dc2b0195"
+      }
+    ],
+    "productionChanged": false,
+    "nativeFourCombinationsPassed": true,
+    "timedSyntheticBEvents": 8,
+    "jointRows": 280,
+    "timelineRows": 357,
+    "nativeImagesViewed": 16,
+    "qaFigures": [
+      "Reports/bug-dance-current-review-20261120/bug-dance-natural-steps.png",
+      "Reports/bug-dance-current-review-20261120/bug-dance-pixel-steps.png"
+    ],
+    "reusedACDOriginalScopeOnly": true,
     "realCameraYoloHandsPicoAccepted": false,
     "finalArtAccepted": false
   }

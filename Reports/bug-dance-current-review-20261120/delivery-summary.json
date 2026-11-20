@@ -1,0 +1,298 @@
+{
+  "checkedAtUtc": "2026-11-20T03:13:37.999492+00:00",
+  "sourceParent": "86ea6455499612bb11cede6f00d3a0eba5e8ac3d",
+  "localVerificationSha256": "7098d6d56235d821d3f8f06123aa98ac69c0d9dbe8468d6ce4988fef5d4a16c9",
+  "sourceChanges": [
+    {
+      "path": "Assets/Editor/HciBugDanceChecks.cs",
+      "beforeSha256": "091953e4e891d7fe52039bac96cbf39cc1fa84f40072bcbbef235cf5284e9693",
+      "sha256": "f07a918eab2ae107a08eb8bb3bd118dcfed314ed9212df56a1ab701be7031715"
+    },
+    {
+      "path": "Tools/run_room_magic_review_bounded.ps1",
+      "beforeSha256": "e7af507cfcdb2f6f5f3884f011d5880570e41ac9614b59f898587dec0c8b2ee3",
+      "sha256": "eb27dc25c8114707f71a39d56984bbbf6a4f666872a8fd6f43e14af8dc2b0195"
+    }
+  ],
+  "productionRuntimeAssetsGesturesOrFireChanged": false,
+  "coverage": {
+    "species": [
+      "Cockroach",
+      "Spider"
+    ],
+    "appearances": [
+      "natural",
+      "pixel"
+    ],
+    "combinationCount": 4,
+    "BInput": "Timed synthetic circle hand samples through current ProcessHandSample; matched shared reference at all 280 samples. Pixel setup A is action dispatch, not a physical A gesture test.",
+    "acceptedBGestures": 8,
+    "completeDanceAndMidResetPerCombination": true,
+    "configuredProductionDanceSeconds": 0.7,
+    "existingProductionLeadInSeconds": 0.3,
+    "discretePositionsLocalUnits": [
+      -0.04,
+      0.0,
+      0.04
+    ],
+    "measurements": [
+      {
+        "variant": "Cockroach/natural",
+        "samples": 61.0,
+        "holds": 55.0,
+        "switches": 6.0,
+        "wallClockSeconds": 1.0339,
+        "observedFrameSeconds": 1.0505,
+        "configuredSeconds": 0.7,
+        "danceSeconds": 0.7005,
+        "maxAnchorError": 0.0,
+        "maxIKError": 3.801135e-05
+      },
+      {
+        "variant": "Spider/natural",
+        "samples": 61.0,
+        "holds": 55.0,
+        "switches": 6.0,
+        "wallClockSeconds": 1.0347,
+        "observedFrameSeconds": 1.0525,
+        "configuredSeconds": 0.7,
+        "danceSeconds": 0.7032,
+        "maxAnchorError": 0.0,
+        "maxIKError": 0.0001303777
+      },
+      {
+        "variant": "Cockroach/pixel",
+        "samples": 61.0,
+        "holds": 55.0,
+        "switches": 6.0,
+        "wallClockSeconds": 1.0333,
+        "observedFrameSeconds": 1.05,
+        "configuredSeconds": 0.7,
+        "danceSeconds": 0.7171,
+        "maxAnchorError": 0.0,
+        "maxIKError": 4.438684e-05
+      },
+      {
+        "variant": "Spider/pixel",
+        "samples": 60.0,
+        "holds": 54.0,
+        "switches": 6.0,
+        "wallClockSeconds": 1.0176,
+        "observedFrameSeconds": 1.0343,
+        "configuredSeconds": 0.7,
+        "danceSeconds": 0.7009,
+        "maxAnchorError": 0.0,
+        "maxIKError": 0.0001059815
+      }
+    ],
+    "IKErrorUnit": "Rig-local model units before manual-fit/world scaling, not physical pose accuracy.",
+    "appearanceBeforeB": "Cockroach/natural: style=0; mesh=Cockroach\nSpider/natural: style=0; mesh=Spider\nCockroach/pixel: style=1.99996591; mesh=PixelCockroach\nSpider/pixel: style=2; mesh=PixelSpider"
+  },
+  "native": {
+    "run": "Reports\\bug-effect-review-20261120\\bug-dance-current-v3-20261120",
+    "terminalExit": 0,
+    "seconds": 41.3549061,
+    "resourceSamples": 55,
+    "minimumSampledFreeRamGiB": 7.345729827880859,
+    "maximumSampledOwnedRssMiB": 1548.69921875,
+    "resourcesSha256": "edca46d46e358c8f8a55b8f342d9bf8af70a697582caee3dc3d0f9af1150419e",
+    "sourceInventorySha256": "2dac699519ea120764bbda1055b8a106065b95598fb747e1b77efe66899a61a5",
+    "inputMetadataSha256": "204877c08cef25aaff2a0d75c0f14b29bf0433abb10afffdbe6f250211c2770e",
+    "result": "PASS: saved ParkBugs, Cockroach/Spider natural and pixel, eight exactly-once timed synthetic production B joint traces; complete configured dance, discrete holds/steps, leg IK, appearance/anchor invariance, completed Undo, busy-guarded Undo and immediate Reset. Actual coroutine and camera renders; no physical camera/YOLO/hands/device or final art acceptance.",
+    "timelineRows": 357,
+    "jointRows": 280,
+    "frames": {
+      "v3\\Cockroach-natural-00-before.png": "2e09e4b870b1121b6103a6a5d2efb232703bb1fb2bd9b1f894f5313cb0fdff10",
+      "v3\\Cockroach-natural-01-right-beat.png": "b6045bf491062bfc1063f8e786339a35a4ca0f1a8ac4b241841d56adddf05f7f",
+      "v3\\Cockroach-natural-02-left-beat.png": "aede19d6af458edfc3b64c4bcdb81a0e6019ec103581cd204cce256333ea2553",
+      "v3\\Cockroach-natural-03-return.png": "156f8102229ee9d16ed0f186b92a08f267ceaadae26efa21bd19f6c49d282da5",
+      "v3\\Cockroach-pixel-00-before.png": "0ca5c95e81219b244eef4702eee661590a5c0959e22d505fef91c768a6b48bb3",
+      "v3\\Cockroach-pixel-01-right-beat.png": "f827f87d4a9767ff6356557873a14030265aef15a19fa1287e59ed427f48c096",
+      "v3\\Cockroach-pixel-02-left-beat.png": "b5132f9e2d9ac27835c9cb70f788e2703bf7d5a81be54ebaf8c5772db331f7fb",
+      "v3\\Cockroach-pixel-03-return.png": "edecd2426c7616ccc0ed0a7b0af305ac9014fc9cfc3adb269dadb00df4781771",
+      "v3\\Spider-natural-00-before.png": "ffc877348c2b4e326f41ffd9e92a9243c4488e6b56040e8e38182293dd37de22",
+      "v3\\Spider-natural-01-right-beat.png": "18a4423509129577ed95cbc45fa1cf0c7044f31b1d24b4bdb002ab255c67afab",
+      "v3\\Spider-natural-02-left-beat.png": "83d26046c8edd09697e8b02f1ed8a79fe4ccb8843260d2debbb178a0d6849446",
+      "v3\\Spider-natural-03-return.png": "fe806693c9a75b1c2e7557af7633e276db1f0285cc12c74d3f1593bb5d6e42c5",
+      "v3\\Spider-pixel-00-before.png": "7582273c18298e64f8d1c555ac025645f7c64a68b85ba41bab92ce8fd02e764a",
+      "v3\\Spider-pixel-01-right-beat.png": "23e24190ce71010b5135b9b60180d9874a672156ba2f71adcf7148e075c3ddfb",
+      "v3\\Spider-pixel-02-left-beat.png": "0d2499177ed96fc5f0f89a2e575ac3c1b81015cba9a5ae8a233c681a2ac7674d",
+      "v3\\Spider-pixel-03-return.png": "0acac25947ee6846b5e283692b71ff309f3f47db99293802ba74ecfd6884198d"
+    }
+  },
+  "recovery": "Appearance and recognition anchor invariant during B; full return, completed Undo accepted, mid-dance Undo blocked by existing busy guard, immediate Reset stops and clears visual offset; root never moved.",
+  "reusedACD": {
+    "scope": "Only existing pixel A and C/D native core effect scopes; compare final preparation hashes and original report limitations, not full real-input/PICO acceptance.",
+    "reports": [
+      {
+        "report": "Reports\\bug-pixel-20261119\\verification.json",
+        "sha256": "72701fb3b03f4dd4bf89cff0ca312b4fe09e0b2f061a1e2d9a064bb86a58a797",
+        "status": "LOCAL_PIXEL_MODEL_ANIMATION_RENDER_AND_ANDROID_PACKAGE_CHECKS_PASSED",
+        "editorPath": "Assets\\Editor\\HciBugPixelChecks.cs",
+        "currentEditorSha256": "de66b59aeb5c97fafcadd71ff4549fc58641d214ea4ccb517479ecc91407a1dd",
+        "listedEditorEvidence": [
+          {
+            "path": "Reports/bug-pixel-20261119/sources/Assets/Editor/HciBugPixelChecks.cs",
+            "bytes": 9114,
+            "sha256": "de66b59aeb5c97fafcadd71ff4549fc58641d214ea4ccb517479ecc91407a1dd"
+          }
+        ]
+      },
+      {
+        "report": "Reports\\bug-outcomes-20261119\\verification.json",
+        "sha256": "5e08aa01c23290c2b4876966c21dae75d388901830f986a32302ea337c9c13d6",
+        "status": "LOCAL_SYNTHETIC_JOINT_C_D_EFFECTS_AND_RECOVERY_PASSED",
+        "editorPath": "Assets\\Editor\\HciBugOutcomeChecks.cs",
+        "currentEditorSha256": "6eb85a310cbfd6d46ef3e47e912319c82f222cb2079e3f5d07a78637a7d5591c",
+        "listedEditorEvidence": [
+          {
+            "path": "Reports/bug-outcomes-20261119/sources/Assets/Editor/HciBugOutcomeChecks.cs",
+            "bytes": 17106,
+            "sha256": "6eb85a310cbfd6d46ef3e47e912319c82f222cb2079e3f5d07a78637a7d5591c"
+          }
+        ]
+      }
+    ],
+    "sourceComparisons": [
+      {
+        "preparation": "Reports/bug-pixel-20261119/fixture-settled.json",
+        "preparationSha256": "c30a8499784c8cfd37160ac2b61782078de4727cbac7ed27421a40241049d2b5",
+        "comparisons": {
+          "runtimeTextComparison": {
+            "count": 71,
+            "changed": [
+              "Assets\\Scripts\\MagicMR\\ParkActor.NaturalPlants.cs",
+              "Assets\\Scripts\\MagicMR\\ParkActor.StatueNarrative.cs",
+              "Assets\\Scripts\\MagicMR\\RoomMagicVisual.cs"
+            ]
+          },
+          "applicationTextComparison": {
+            "count": 51,
+            "changed": [
+              "Assets\\Scripts\\Perception\\DiscoverySelection.cs"
+            ]
+          },
+          "assetComparison": {
+            "count": 78,
+            "changed": []
+          }
+        }
+      },
+      {
+        "preparation": "Reports/bug-dance-playback-20261119/fixture-preparation-live.json",
+        "preparationSha256": "813f25ccddf9bfbb837afe46ef9082d18bb413696e83faaa6b5cff71347c42b7",
+        "comparisons": {
+          "runtimeTextComparison": {
+            "count": 71,
+            "changed": [
+              "Assets\\Scripts\\MagicMR\\NaturalInsectRig.cs",
+              "Assets\\Scripts\\MagicMR\\ParkActor.cs",
+              "Assets\\Scripts\\MagicMR\\ParkActor.NaturalBugs.cs",
+              "Assets\\Scripts\\MagicMR\\ParkActor.NaturalPlants.cs",
+              "Assets\\Scripts\\MagicMR\\ParkActor.StatueNarrative.cs",
+              "Assets\\Scripts\\MagicMR\\RoomMagicVisual.cs"
+            ]
+          },
+          "applicationTextComparison": {
+            "count": 51,
+            "changed": [
+              "Assets\\Scripts\\Perception\\DiscoverySelection.cs"
+            ]
+          },
+          "assetComparison": {
+            "count": 62,
+            "changed": []
+          }
+        }
+      },
+      {
+        "preparation": "Reports/bug-outcomes-20261119/fixture-natural.json",
+        "preparationSha256": "330b26fec335aa1fc3c440a56337949ac3558e17699d081bb3f39f586899a1ab",
+        "comparisons": {
+          "runtimeTextComparison": {
+            "count": 71,
+            "changed": [
+              "Assets\\Scripts\\MagicMR\\ParkActor.NaturalPlants.cs",
+              "Assets\\Scripts\\MagicMR\\ParkActor.StatueNarrative.cs",
+              "Assets\\Scripts\\MagicMR\\RoomMagicVisual.cs"
+            ]
+          },
+          "applicationTextComparison": {
+            "count": 51,
+            "changed": [
+              "Assets\\Scripts\\Perception\\DiscoverySelection.cs"
+            ]
+          },
+          "assetComparison": {
+            "count": 78,
+            "changed": []
+          }
+        }
+      }
+    ],
+    "note": "Pixel A settled and C/D natural fixtures match 78 current insect assets and insect runtime; only other-case partials and non-fire selection differ. Reuse only original virtual/local effect and render scopes, not whole project, package parity or real-target pipeline."
+  },
+  "renderReview": {
+    "finalNativeFramesActuallyViewed": 16,
+    "figuresActuallyViewed": [
+      "four-variant-dance-v3-contact-sheet.png",
+      "bug-dance-natural-steps.png",
+      "bug-dance-pixel-steps.png"
+    ],
+    "observation": "Natural and voxel/palette representations remain distinct and fully framed. Both right/left beat states visible relative to stationary anchor markers. Final pre-B images wait for actual shader transition, not its washed intermediate state.",
+    "finalArtAccepted": false
+  },
+  "failureAndRefinementHistory": {
+    "v1": "Terminal 2 at arbitrary >=12 switch floor; actual unchanged production uses six normalized segments over .7s, old guard was >=4. 61 samples/55 holds/6 switches were valid; no production fault established.",
+    "v2": "Restore original >=4 observation floor and retain new complete-duration/both-sign/IK/exact-event guards. Runtime checks passed but actual viewed pixel pre-B frame was still in A material interpolation.",
+    "v3": "Wait for existing validated >1.99 shader style completion threshold, record values and assert style during B. Four current cases pass and final images viewed; no production code changed."
+  },
+  "androidReused": {
+    "path": "D:\\MagicMRSourceCandidate\\20261120\\Builds\\Android\\PlantPresentationValidation-20261120.apk",
+    "sha256": "f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31",
+    "bytes": 78064133,
+    "sceneCount": 15,
+    "newBuildRun": false,
+    "newBuildRequired": false,
+    "reason": "Only bug Editor check and bounded launcher changed vs frozen prior 1865 input. All player/runtime/assets/package/settings bytes unchanged.",
+    "reference": "Reports/android-resume-check-20261120/verification.json",
+    "deviceExecutionValidated": false
+  },
+  "preservation": {
+    "mainHead": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
+    "mainIndexSha256": "aab38b747bb2453015b4ce247543cf2dd6aa54d5d5586cf1fcafce46a0398c5a",
+    "mainBaselineFiles": 1836,
+    "mainExistingDifferencesVsOriginal": [
+      "Assets/Editor/HciBugDanceChecks.cs",
+      "Assets/Editor/HciPetOutlineChecks.cs",
+      "Assets/Editor/HciPlantFlowChecks.cs",
+      "Assets/Editor/HciRoomMagicChecks.cs",
+      "Assets/Editor/HciSeasonTreeChecks.cs",
+      "Assets/Editor/HciStatueGardenChecks.cs",
+      "Assets/Editor/HciStatuePlaybackChecks.cs",
+      "Assets/Resources/MagicMR/RoomStyle.shader",
+      "Assets/Scripts/MagicMR/ParkActor.NaturalPlants.cs",
+      "Assets/Scripts/MagicMR/RoomMagicVisual.cs",
+      "Assets/Scripts/Perception/DiscoverySelection.cs"
+    ],
+    "mainOtherExistingSourcesUnchanged": 1825,
+    "fireDedicatedCodeScenesModelsEffectsAnimationsWeightsAndMetaUnchanged": true,
+    "sharedProductionParkActorNaturalBugRigAndGestureSourcesUnchanged": true,
+    "allCandidate1865HashesMatched": true,
+    "metadataIsFrozenInputNotOutcome": true
+  },
+  "qaFigures": {
+    "Reports/bug-dance-current-review-20261120/bug-dance-natural-steps.png": {
+      "sha256": "4809b5e81099be19f297d0a5e46a1c576182bbbba559dd78491fc8a029717a0b",
+      "bytes": 51172
+    },
+    "Reports/bug-dance-current-review-20261120/bug-dance-pixel-steps.png": {
+      "sha256": "cf12e45c9e71145319a1bb8a8e157cd7dc3cd655666dd9acf1b74ffac8cb9026",
+      "bytes": 69305
+    }
+  },
+  "rawLocalReferencesPublished": false,
+  "realYoloHandsPicoAccepted": false,
+  "finalArtAccepted": false,
+  "fullEightCase32EffectAcceptance": false
+}
