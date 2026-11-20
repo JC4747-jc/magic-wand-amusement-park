@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "checkedAtUtc": "2026-11-20T02:31:35.111117+00:00",
-  "status": "SOURCE_CANDIDATE_CURRENT_BRONZE_PLAYBACK_SUPPLEMENT_VERIFIED_DEVICE_ART_PENDING",
+  "checkedAtUtc": "2026-11-20T02:51:07.588836+00:00",
+  "status": "SOURCE_CANDIDATE_WILLOW_COIN_SELF_OCCLUSION_VERIFIED_MODEL_PRESERVED_DEVICE_ART_PENDING",
   "repository": "JC4747-jc/magic-wand-amusement-park",
-  "deliveryParent": "001cdd6abd36e2bdb6fbab762e9277805acde18b",
+  "deliveryParent": "340acdc49e1ff18ad63b54f4d73ff6ce4db12e58",
   "developmentBaseline": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
-  "sourcePayloadTree": "24e6dd72ac7650b07f455b059ee1cefa6e26a556",
-  "payloadFileCount": 1892,
+  "sourcePayloadTree": "17a1cda645824f665c069f0b17f4e1c4615104ac",
+  "payloadFileCount": 1895,
   "payloadFiles": [
     {
       "path": ".gitattributes",
@@ -250,7 +250,7 @@
     },
     {
       "path": "Assets/Editor/HciSeasonTreeChecks.cs",
-      "sha256": "61ea5c3bbd23f3efcefecf4e55a7301d61947252c881ffd84bfc580e048757c5"
+      "sha256": "6e83d42f7eeaff4b779b93a567594fdf5f8c90b8690155e47021228c77284749"
     },
     {
       "path": "Assets/Editor/HciSeasonTreeChecks.cs.meta",
@@ -7266,7 +7266,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "bdff736594426af74fdb114477cedf780ca77b88f4aae7809ed90e8152ac51fa"
+      "sha256": "9df2b71eee157e3e32fa6646632921596fd21024ed9a0b1ee2990ef7d48bb93f"
     },
     {
       "path": "Reports/bronze-current-review-20261120/bronze-motion-samples.png",
@@ -7365,8 +7365,20 @@
       "sha256": "eae8e9c8c7f0adb404f6122ac18c93fe0e7f4efedfabe933cb4029d42db5761a"
     },
     {
+      "path": "Reports/willow-coins-review-20261120/chest-visibility-comparison.png",
+      "sha256": "9e7bdb216f3486714f4f262ec46012b1a73ecb1e3183bbbd008113780ae85915"
+    },
+    {
+      "path": "Reports/willow-coins-review-20261120/delivery-case-status.json",
+      "sha256": "3fa960cb02c052d2ff9e42399562f453d0e1b0cc30c9a51f9204cd69b9df4016"
+    },
+    {
+      "path": "Reports/willow-coins-review-20261120/delivery-summary.json",
+      "sha256": "8f4d41315769991f26790de9c3578e372e3ae9e583c3bbb2046194e8fe79b88b"
+    },
+    {
       "path": "Reports/willow-current-review-20261120/delivery-case-status.json",
-      "sha256": "f9368772dc13183b9a575367d6ba823cd5b0e62ed380c37c5e7c97a27d1ab4b0"
+      "sha256": "352f98a2717a3395a7808da5942d8ef82824168c6301f2d7381ba54929249bf4"
     },
     {
       "path": "Reports/willow-current-review-20261120/delivery-summary.json",
@@ -7386,7 +7398,7 @@
     },
     {
       "path": "SOURCE_DELIVERY.md",
-      "sha256": "da5687777ff738af52ca19ac4de77514b512dc8a5b5a03f281e6d0e6b3a1b353"
+      "sha256": "419f01c3d690bf8f395ec2e4b361757b84434fd088498228331c87cf790156da"
     },
     {
       "path": "Tools/NonFireDiscoveryNativeChecks.cs",
@@ -7694,7 +7706,8 @@
     "Season tree RunLive uses synthetic Observe/joints and labelled synthetic study rows, not physical camera/TCP/YOLO/PICO or human-study evidence.",
     "Willow RunLive uses synthetic Observe/joints and labelled synthetic rows; dark style/bark/chest final art, real camera/TCP/YOLO/hands/PICO and independent model quality pending.",
     "Statue checks use synthetic joints/manual plane; human motion does not establish bronze full-body animation; C body-framed screenshots do not establish narrative readability. Reused narrative fixed-camera proof is scoped, not full package/hardware parity.",
-    "Current bronze full-body local playback supplement uses synthetic joints/manual ground; body-framed images do not establish full garden view, actual camera/TCP/YOLO/hands/audio/PICO or final art."
+    "Current bronze full-body local playback supplement uses synthetic joints/manual ground; body-framed images do not establish full garden view, actual camera/TCP/YOLO/hands/audio/PICO or final art.",
+    "Coin self-occlusion masks cover only two fixed review views and chest-local clearances, not arbitrary physical head poses, perceptual readability, actual camera/YOLO/hands/PICO or final art."
   ],
   "evidence": [
     {
@@ -7783,7 +7796,7 @@
     },
     {
       "path": "Reports/willow-current-review-20261120/delivery-case-status.json",
-      "sha256": "f9368772dc13183b9a575367d6ba823cd5b0e62ed380c37c5e7c97a27d1ab4b0"
+      "sha256": "352f98a2717a3395a7808da5942d8ef82824168c6301f2d7381ba54929249bf4"
     },
     {
       "path": "Reports/willow-current-review-20261120/willow-core-effects.png",
@@ -7828,9 +7841,21 @@
     {
       "path": "Reports/bronze-current-review-20261120/bronze-motion-samples.png",
       "sha256": "8a5ca2b9e7929c103c67d13b2add1e0422cc89f8bfea827c892eae57e0bcfda0"
+    },
+    {
+      "path": "Reports/willow-coins-review-20261120/delivery-summary.json",
+      "sha256": "8f4d41315769991f26790de9c3578e372e3ae9e583c3bbb2046194e8fe79b88b"
+    },
+    {
+      "path": "Reports/willow-coins-review-20261120/delivery-case-status.json",
+      "sha256": "3fa960cb02c052d2ff9e42399562f453d0e1b0cc30c9a51f9204cd69b9df4016"
+    },
+    {
+      "path": "Reports/willow-coins-review-20261120/chest-visibility-comparison.png",
+      "sha256": "9e7bdb216f3486714f4f262ec46012b1a73ecb1e3183bbbd008113780ae85915"
     }
   ],
-  "baseSourcePayloadTree": "3befc7e58cc22470abe405b23da9407792837cf8",
+  "baseSourcePayloadTree": "24e6dd72ac7650b07f455b059ee1cefa6e26a556",
   "sourceTreeRecalculationPending": false,
   "nonFireGateDelta": {
     "path": "Assets/Scripts/Perception/DiscoverySelection.cs",
@@ -7854,8 +7879,8 @@
   },
   "publication": {
     "target": "restore-4d-lighter",
-    "parent": "001cdd6abd36e2bdb6fbab762e9277805acde18b",
-    "state": "SCOPED_BRONZE_PLAYBACK_SUPPLEMENT; actual commit/ref receipt separate",
+    "parent": "340acdc49e1ff18ad63b54f4d73ff6ce4db12e58",
+    "state": "SCOPED_EDITOR_COIN_DIAGNOSTIC; actual commit/ref receipt separate",
     "apkPublished": false,
     "deviceValidated": false
   },
@@ -8121,6 +8146,27 @@
     "jointRows": 193,
     "actualNativeImages": 6,
     "qaFigure": "Reports/bronze-current-review-20261120/bronze-motion-samples.png",
+    "realCameraYoloHandsPicoAccepted": false,
+    "finalArtAccepted": false
+  },
+  "willowCoinDelta": {
+    "portableSummary": "Reports/willow-coins-review-20261120/delivery-summary.json",
+    "caseStatus": "Reports/willow-coins-review-20261120/delivery-case-status.json",
+    "willowCaseStatus": "Reports/willow-current-review-20261120/delivery-case-status.json",
+    "sourceChanges": [
+      {
+        "path": "Assets/Editor/HciSeasonTreeChecks.cs",
+        "beforeSha256": "61ea5c3bbd23f3efcefecf4e55a7301d61947252c881ffd84bfc580e048757c5",
+        "sha256": "6e83d42f7eeaff4b779b93a567594fdf5f8c90b8690155e47021228c77284749"
+      }
+    ],
+    "productionChanged": false,
+    "coinMeshesExisting": 7,
+    "modelMovedOrRebuilt": false,
+    "frontSelfOcclusionConfirmed": true,
+    "allCoinsVisibleFromUpperView": true,
+    "nativeOriginalsViewed": 27,
+    "qaFigure": "Reports/willow-coins-review-20261120/chest-visibility-comparison.png",
     "realCameraYoloHandsPicoAccepted": false,
     "finalArtAccepted": false
   }

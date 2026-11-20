@@ -1,0 +1,285 @@
+{
+  "checkedAtUtc": "2026-11-20T02:51:07.577838+00:00",
+  "sourceParent": "340acdc49e1ff18ad63b54f4d73ff6ce4db12e58",
+  "localVerificationSha256": "4c7a04f5b760db1242cbc4efb541999acda2d11a09fed7c2e4f779d5a668a40d",
+  "sourceChanges": [
+    {
+      "path": "Assets/Editor/HciSeasonTreeChecks.cs",
+      "beforeSha256": "61ea5c3bbd23f3efcefecf4e55a7301d61947252c881ffd84bfc580e048757c5",
+      "sha256": "6e83d42f7eeaff4b779b93a567594fdf5f8c90b8690155e47021228c77284749"
+    }
+  ],
+  "productionRuntimeAssetsGesturesOrFireChanged": false,
+  "diagnosis": "Existing seven coin meshes are completely self-occluded by the chest from the original low detail camera. Every coin is visible from an upper view and the normal original-material render confirms them. No model/runtime defect established by the earlier empty-looking image.",
+  "native": {
+    "virtual": {
+      "run": "Reports\\tree-effect-review-20261120\\willow-coins-virtual-v2-20261120",
+      "terminalExit": 0,
+      "seconds": 35.2343873,
+      "resourceSamples": 47,
+      "minimumSampledFreeRamGiB": 7.136726379394531,
+      "maximumSampledOwnedRssMiB": 1773.56640625,
+      "resourcesSha256": "23a08e5ce3806336187c2f2133403b11b832580d1a517c806cde2d163a371f1c",
+      "sourceInventorySha256": "852176a8b0f062bee9e41c9f0b36629257eecec32a0a4e70fc0ee81aa0bbcd1d",
+      "inputMetadataSha256": "1ba9d02e710e3cc3fbe0f0f0714bf5b32416c6d66e641afae86d1db46af13136",
+      "result": "PASS: actual ParkTree fantasy variant; synthetic production hand traces match lighter exactly once. A dark/natural without season change; B bounded branch lash, successive rendered motion and recovery; C measured bark luminance breathing; D scar prerequisite, seal and hinged chest; Undo restores C; Reset closes chest; fitted trunk and anchor unchanged before full Reset. Effect renders plus front/upper coin self-occlusion masks and normal upper detail, with separate selection menu when enabled. Authored narrow-leaf/drooping-frond willow canopy on the existing fixed trunk; final art and real YOLO/XR/PICO/Android acceptance remain pending.",
+      "gestureTiming": "D fist_seconds=0.125032425 samples=3 events=1",
+      "motion": "B sample_seconds=0.230667114 max_branch_delta_degrees=33.9402237 branch_count=5\nC breath_min=0.0333103836 breath_max=0.9999971",
+      "frames": {
+        "virtual-v2\\00-natural.png": "08b7abdd7447ca48587a3f40c744daa5c8f38326cc20b7b71194f335990ab7ce",
+        "virtual-v2\\01-dark.png": "8a24eb8ed102a2c4cfd5ec58167bf33b44fc5098e76192f00ac59cb47e14a66c",
+        "virtual-v2\\02-lash-motion.png": "9f0e83c22dae4517d9953d25342b322a026236d2013fc0bebf1698e8da5d9651",
+        "virtual-v2\\02-lash.png": "eba600749148f19babe5daa61dfd386b9cf1c5e4ea9d37c671f71013368bd683",
+        "virtual-v2\\03-breathing-scar.png": "9559852dd6eda67d82243cb746cecf6de808c9ed0b3df532df0768d55f2a7325",
+        "virtual-v2\\04-scar-detail.png": "dacf10a2691dd3d310baf34dafb326ac7f4e9232f89cf308f942863b83ec6e93",
+        "virtual-v2\\05-sealed.png": "38f48871f54c1ad9820c6f49b47e4533face89a8c954218d046ae889160212ab",
+        "virtual-v2\\06-chest-detail.png": "146b9dc63d99c787718d3cc3ac44266fee54633e7a42da59a7242d7e9f3f4d8f",
+        "virtual-v2\\07-treasure-detail.png": "74507556a5c8793b048e79351a56b9ef47c5f617895d87b5962591eadd3b84eb",
+        "virtual-v2\\front-coin-silhouette.png": "297cdd20d53076a9acc3869d1b6c7cbf1e2c429cc71607f54618134855a8eecd",
+        "virtual-v2\\front-coin-visible.png": "455be298ffb647b4e5032658eec21c000a11868790a4b1a0c14d6d99be6f4269",
+        "virtual-v2\\upper-coin-silhouette.png": "23153a32d2904ccc8a2e5fc78b2ac7940d82f617311386cfbd748c5cd1df6de3",
+        "virtual-v2\\upper-coin-visible.png": "c85ffc79bc19d6b7a4f707bdde1ac84f5653d8f1a2af23c9d1b741c4c6cb5562"
+      },
+      "renderCount": 13
+    },
+    "syntheticSelection": {
+      "run": "Reports\\tree-effect-review-20261120\\willow-coins-selection-v2-20261120",
+      "terminalExit": 0,
+      "seconds": 33.9276289,
+      "resourceSamples": 45,
+      "minimumSampledFreeRamGiB": 7.685222625732422,
+      "maximumSampledOwnedRssMiB": 1517.1328125,
+      "resourcesSha256": "e1b6837d12b92cc8340790f84fda4701d1be00fcb5b18c3b6237b04026255311",
+      "sourceInventorySha256": "852176a8b0f062bee9e41c9f0b36629257eecec32a0a4e70fc0ee81aa0bbcd1d",
+      "inputMetadataSha256": "1ba9d02e710e3cc3fbe0f0f0714bf5b32416c6d66e641afae86d1db46af13136",
+      "result": "PASS: actual ParkTree fantasy variant; synthetic production hand traces match lighter exactly once. A dark/natural without season change; B bounded branch lash, successive rendered motion and recovery; C measured bark luminance breathing; D scar prerequisite, seal and hinged chest; Undo restores C; Reset closes chest; fitted trunk and anchor unchanged before full Reset. Effect renders plus front/upper coin self-occlusion masks and normal upper detail, with separate selection menu when enabled. Authored narrow-leaf/drooping-frond willow canopy on the existing fixed trunk; final art and real YOLO/XR/PICO/Android acceptance remain pending.\nPhysical-target branch used synthetic Observe coordinates, same selected instance and shared UI experience selector; full effects driven by timed synthetic production hand samples. Not real YOLO/PICO validation.",
+      "gestureTiming": "D fist_seconds=0.124958038 samples=3 events=1",
+      "motion": "B sample_seconds=0.229732513 max_branch_delta_degrees=33.9636879 branch_count=5\nC breath_min=0.05663979 breath_max=0.9999534",
+      "frames": {
+        "selection-v2\\00-natural.png": "f9710a84bcb4a0018113df7838e77bf0bd307e97b5fd726b890e1b8dcb136992",
+        "selection-v2\\01-dark.png": "cf071c04d5ceb78f348cd134a274d9950a31545f5a171d7d735e19319087ab4d",
+        "selection-v2\\02-lash-motion.png": "580d85721fab5a78d8ffea70672b39cfad29276939f89f9cff3122ca8c2e7459",
+        "selection-v2\\02-lash.png": "6f03ecb2e3fc2ba67c2f8baffc76a8daf2fc3f817089b0e9102ec55c6e6d998a",
+        "selection-v2\\03-breathing-scar.png": "6dbc89689ef559e3c346338fa340474aff01e582eaa5dea28615be935a982a32",
+        "selection-v2\\04-scar-detail.png": "0584e55609c084400b274476501ff955961818509c7d0ae2ef95226d49520cbf",
+        "selection-v2\\05-sealed.png": "d3a80c7f3f40339ce0eb822d19fa07be487a40cb4127c4566dc01470f919dc2b",
+        "selection-v2\\06-chest-detail.png": "8667ed85addcce24bc6baa2d75772beb11da21fb5059652dd9db6ce77ef9d765",
+        "selection-v2\\07-treasure-detail.png": "de8508461718493af86201fb175a6d17ab39708b5c13689044682d32aea22e22",
+        "selection-v2\\front-coin-silhouette.png": "297cdd20d53076a9acc3869d1b6c7cbf1e2c429cc71607f54618134855a8eecd",
+        "selection-v2\\front-coin-visible.png": "455be298ffb647b4e5032658eec21c000a11868790a4b1a0c14d6d99be6f4269",
+        "selection-v2\\menu.png": "503ec48a6c0d18cdad286601f25f031ee923c7d92c738f4c29ef59f7188ab17d",
+        "selection-v2\\upper-coin-silhouette.png": "0b3fe40af24043cce00d02830d044bbc48c1ea2ea49effe696db27975d3dfd51",
+        "selection-v2\\upper-coin-visible.png": "cbac6f48c7285d7a1e4f0592f9b1f5bb866a9f1423397116bfa75affce6894d6"
+      },
+      "renderCount": 14
+    }
+  },
+  "coinEvidence": {
+    "virtual": {
+      "coinCount": 7,
+      "minimumClosedLidClearance": 0.029999978840351105,
+      "minimumFloorClearance": 0.0019999369978904724,
+      "minimumWallClearance": 0.006999913603067398,
+      "stateRestored": true,
+      "views": [
+        {
+          "name": "front",
+          "cameraOffset": {
+            "x": 0.1499999761581421,
+            "y": 0.14000004529953003,
+            "z": -0.30000007152557373
+          },
+          "visiblePixels": 0,
+          "silhouettePixels": 8100,
+          "coinVisiblePixels": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "coinSilhouettePixels": [
+            1153,
+            1153,
+            1169,
+            1157,
+            1144,
+            1166,
+            1158
+          ]
+        },
+        {
+          "name": "upper",
+          "cameraOffset": {
+            "x": 0.11000001430511475,
+            "y": 0.3199999928474426,
+            "z": -0.15999996662139893
+          },
+          "visiblePixels": 10778,
+          "silhouettePixels": 15565,
+          "coinVisiblePixels": [
+            638,
+            632,
+            635,
+            2222,
+            2218,
+            2208,
+            2225
+          ],
+          "coinSilhouettePixels": [
+            2227,
+            2220,
+            2227,
+            2222,
+            2218,
+            2226,
+            2225
+          ]
+        }
+      ],
+      "clearanceUnit": "Chest-local model units before manual fit/world scale, not a hardware distance measurement",
+      "upperVisibleFraction": 0.6924510118856408
+    },
+    "syntheticSelection": {
+      "coinCount": 7,
+      "minimumClosedLidClearance": 0.029999908059835434,
+      "minimumFloorClearance": 0.00200001522898674,
+      "minimumWallClearance": 0.006999913603067398,
+      "stateRestored": true,
+      "views": [
+        {
+          "name": "front",
+          "cameraOffset": {
+            "x": 0.15000003576278687,
+            "y": 0.13999998569488525,
+            "z": -0.30000007152557373
+          },
+          "visiblePixels": 0,
+          "silhouettePixels": 8100,
+          "coinVisiblePixels": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "coinSilhouettePixels": [
+            1153,
+            1153,
+            1169,
+            1157,
+            1144,
+            1166,
+            1158
+          ]
+        },
+        {
+          "name": "upper",
+          "cameraOffset": {
+            "x": 0.11000001430511475,
+            "y": 0.31999993324279785,
+            "z": -0.15999996662139893
+          },
+          "visiblePixels": 10778,
+          "silhouettePixels": 15566,
+          "coinVisiblePixels": [
+            638,
+            632,
+            634,
+            2223,
+            2218,
+            2208,
+            2225
+          ],
+          "coinSilhouettePixels": [
+            2227,
+            2220,
+            2227,
+            2223,
+            2218,
+            2226,
+            2225
+          ]
+        }
+      ],
+      "clearanceUnit": "Chest-local model units before manual fit/world scale, not a hardware distance measurement",
+      "upperVisibleFraction": 0.6924065270461262
+    }
+  },
+  "measurementScope": "800x800 isolated chest geometry: URP unlit white coins/black chest, same pose front and upper; then non-coin geometry disabled for silhouette. Per-coin white/black passes include other coin occlusion. Not scene/hardware visibility at arbitrary head pose or a perceptual readability score.",
+  "geometryClearanceUnits": "Chest-local model units before manual-fit/world scaling; not measured physical hardware distances.",
+  "temporaryState": "Renderer/material-index MaterialPropertyBlocks, shared materials, renderer enabled flags, layers, lid pose, fog, active RT snapshotted/restored in finally. Identity/enabled/layer/lid/HasPropertyBlock checks pass and normal original-material render inspected. Temporary camera/materials/RT/texture destroyed.",
+  "failureHistory": {
+    "v1": "Native terminal 2, no guard stop. White-pixel diagnostic invalid: original gold remained because MaterialPropertyBlocks overrode replacement material. Gold silhouette visibly present; failure did not imply missing coins.",
+    "v2Correction": "Snapshot/clear/restore both renderer-wide and per-material property blocks before white/black mask passes; both current modes pass."
+  },
+  "renderReview": {
+    "finalNativeOriginalsActuallyViewed": 27,
+    "technicalFiguresActuallyViewed": [
+      "virtual-v2-contact-sheet.png",
+      "selection-v2-contact-sheet.png",
+      "chest-visibility-comparison.png",
+      "virtual-v2/07-treasure-detail.png"
+    ],
+    "normalUpperOriginalMaterialShowsCoins": true,
+    "finalArtAccepted": false
+  },
+  "selectionScope": {
+    "input": "Synthetic Observe coordinates and joint samples, not real camera/network/YOLO/physical hands/PICO",
+    "csvRows": 18,
+    "syntheticSubject": "SYNTHETIC_OBSERVE_TREE_WILLOW",
+    "menuAndLifecyclePassed": true
+  },
+  "decision": {
+    "moveOrRebuildCoins": false,
+    "reason": "Source/meshes are present and valid; camera self-occlusion explains the observation. Preserve existing model instead of moving coins for a screenshot.",
+    "runtimeChanged": false,
+    "newAndroidBuildRequired": false
+  },
+  "androidReused": {
+    "path": "D:\\MagicMRSourceCandidate\\20261120\\Builds\\Android\\PlantPresentationValidation-20261120.apk",
+    "sha256": "f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31",
+    "bytes": 78064133,
+    "sceneCount": 15,
+    "newBuildRun": false,
+    "newBuildRequired": false,
+    "reason": "Only Editor diagnostic changed from frozen prior input. All player/runtime/assets/package/settings bytes unchanged.",
+    "reference": "Reports/android-resume-check-20261120/verification.json",
+    "deviceExecutionValidated": false
+  },
+  "preservation": {
+    "mainHead": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
+    "mainIndexSha256": "aab38b747bb2453015b4ce247543cf2dd6aa54d5d5586cf1fcafce46a0398c5a",
+    "mainBaselineFiles": 1836,
+    "mainExistingDifferencesVsOriginal": [
+      "Assets/Editor/HciPetOutlineChecks.cs",
+      "Assets/Editor/HciPlantFlowChecks.cs",
+      "Assets/Editor/HciRoomMagicChecks.cs",
+      "Assets/Editor/HciSeasonTreeChecks.cs",
+      "Assets/Editor/HciStatueGardenChecks.cs",
+      "Assets/Editor/HciStatuePlaybackChecks.cs",
+      "Assets/Resources/MagicMR/RoomStyle.shader",
+      "Assets/Scripts/MagicMR/ParkActor.NaturalPlants.cs",
+      "Assets/Scripts/MagicMR/RoomMagicVisual.cs",
+      "Assets/Scripts/Perception/DiscoverySelection.cs"
+    ],
+    "mainOtherExistingSourcesUnchanged": 1826,
+    "treeRuntimeSourceSha256": "57c06e1894fd9e56a474b9bd220699c353ae78e96a3bb2c04f9aab6e56642956",
+    "treeRuntimeByteIdenticalToBefore": true,
+    "fireDedicatedCodeScenesModelsEffectsAnimationsWeightsAndMetaUnchanged": true,
+    "allCandidate1865HashesMatched": true,
+    "metadataIsFrozenInputNotOutcome": true
+  },
+  "qaFigure": {
+    "path": "Reports/willow-coins-review-20261120/chest-visibility-comparison.png",
+    "sha256": "9e7bdb216f3486714f4f262ec46012b1a73ecb1e3183bbbd008113780ae85915",
+    "bytes": 73529
+  },
+  "realYoloHandsPicoAccepted": false,
+  "finalArtAccepted": false,
+  "fullEightCase32EffectAcceptance": false
+}

@@ -155,10 +155,70 @@ public static class HciSeasonTreeChecks
         var camera=new GameObject("Synthetic tree review camera").AddComponent<Camera>();camera.orthographic=true;camera.orthographicSize=.38f;camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.16f,.18f,.20f);camera.nearClipPlane=.01f;
         var target=actor.ConfirmedBottomWorld+Vector3.up*.29f;camera.transform.position=target+new Vector3(0,.10f,-1.2f);camera.transform.LookAt(target);
         if(closeFace){var focus=Willow?scarRenderer.transform:face;camera.orthographicSize=.025f;camera.transform.position=focus.position+focus.forward*.2f;camera.transform.LookAt(focus.position,focus.up);}
-        if(name=="06-chest-detail"){var chest=actor.visual.Find("Reward chest");camera.orthographicSize=.12f;camera.transform.position=chest.position+new Vector3(.15f,.14f,-.3f);camera.transform.LookAt(chest.position+Vector3.up*.045f);}
+        if(name=="06-chest-detail"||name=="07-treasure-detail")ConfigureChestCamera(camera,actor.visual.Find("Reward chest"),name=="07-treasure-detail");
         var rt=new RenderTexture(800,800,24);var pixels=new Texture2D(800,800,TextureFormat.RGB24,false);var old=RenderTexture.active;
         try{camera.targetTexture=rt;camera.Render();RenderTexture.active=rt;pixels.ReadPixels(new Rect(0,0,800,800),0,0);pixels.Apply();File.WriteAllBytes(Output+"/"+name+".png",pixels.EncodeToPNG());}
         finally{RenderTexture.active=old;UnityEngine.Object.DestroyImmediate(camera.gameObject);UnityEngine.Object.DestroyImmediate(rt);UnityEngine.Object.DestroyImmediate(pixels);}
+    }
+    static void ConfigureChestCamera(Camera camera,Transform chest,bool upper){
+        camera.orthographic=true;camera.aspect=1;camera.orthographicSize=.12f;camera.nearClipPlane=.01f;
+        camera.transform.position=chest.position+(upper?new Vector3(.11f,.32f,-.16f):new Vector3(.15f,.14f,-.3f));
+        camera.transform.LookAt(chest.position+Vector3.up*.045f);
+    }
+    [Serializable] class ChestCoinView {
+        public string name;public Vector3 cameraOffset;public int visiblePixels,silhouettePixels;
+        public int[] coinVisiblePixels,coinSilhouettePixels;
+    }
+    [Serializable] class ChestCoinEvidence {
+        public int coinCount;public float minimumClosedLidClearance,minimumFloorClearance,minimumWallClearance;
+        public bool stateRestored;public ChestCoinView[] views;
+    }
+    static void MeasureChestCoins(Transform chest){
+        var renderers=chest.GetComponentsInChildren<Renderer>();var coins=renderers.Where(r=>r.name=="Treasure coin").ToArray();Require(coins.Length==7,"Expected seven existing coin meshes");
+        var transforms=chest.GetComponentsInChildren<Transform>();var layers=transforms.Select(t=>t.gameObject.layer).ToArray();
+        Require(!UnityEngine.Object.FindObjectsByType<Renderer>(FindObjectsSortMode.None).Any(r=>r.gameObject.layer==31&&!r.transform.IsChildOf(chest)),"Diagnostic layer already in use");
+        var materials=renderers.Select(r=>r.sharedMaterials).ToArray();var enabled=renderers.Select(r=>r.enabled).ToArray();
+        var propertyBlocks=renderers.Select(r=>{var block=new MaterialPropertyBlock();r.GetPropertyBlock(block);return block;}).ToArray();
+        var materialBlocks=renderers.Select((r,i)=>Enumerable.Range(0,materials[i].Length).Select(k=>{var block=new MaterialPropertyBlock();r.GetPropertyBlock(block,k);return block;}).ToArray()).ToArray();
+        var hadBlocks=renderers.Select(r=>r.HasPropertyBlock()).ToArray();
+        Vector3[] Vertices(Renderer renderer){var mesh=renderer.GetComponent<MeshFilter>();Require(mesh&&mesh.sharedMesh,"Chest renderer has no mesh");return mesh.sharedMesh.vertices.Select(v=>chest.InverseTransformPoint(renderer.transform.TransformPoint(v))).ToArray();}
+        var coinPoints=coins.SelectMany(Vertices).ToArray();var lid=chest.Find("Hinged lid");var lidPose=lid.localRotation;float underside;
+        try{lid.localRotation=Quaternion.identity;underside=Vertices(lid.Find("Lid wood").GetComponent<Renderer>()).Min(v=>v.y);}finally{lid.localRotation=lidPose;}
+        float floor=Vertices(chest.Find("Chest floor").GetComponent<Renderer>()).Max(v=>v.y);
+        float innerX=renderers.Where(r=>r.name=="Side wall").SelectMany(Vertices).Min(v=>Mathf.Abs(v.x));
+        float innerZ=renderers.Where(r=>r.name=="Front/back wall").SelectMany(Vertices).Min(v=>Mathf.Abs(v.z));
+        var report=new ChestCoinEvidence{coinCount=coins.Length,minimumClosedLidClearance=underside-coinPoints.Max(v=>v.y),minimumFloorClearance=coinPoints.Min(v=>v.y)-floor,minimumWallClearance=Mathf.Min(innerX-coinPoints.Max(v=>Mathf.Abs(v.x)),innerZ-coinPoints.Max(v=>Mathf.Abs(v.z)))};
+        Require(report.minimumClosedLidClearance>.001f&&report.minimumFloorClearance>=-.0001f&&report.minimumWallClearance>0,"Coin meshes penetrate closed chest");
+        Camera camera=null;Material white=null,black=null;RenderTexture rt=null;Texture2D pixels=null;var old=RenderTexture.active;bool fog=RenderSettings.fog;
+        try{
+            var shader=Shader.Find("Universal Render Pipeline/Unlit");Require(shader,"URP diagnostic shader missing");
+            white=new Material(shader);white.SetColor("_BaseColor",Color.white);black=new Material(shader);black.SetColor("_BaseColor",Color.black);
+            camera=new GameObject("Temporary chest self-occlusion camera").AddComponent<Camera>();camera.cullingMask=1<<31;camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=Color.black;
+            rt=new RenderTexture(800,800,24);pixels=new Texture2D(800,800,TextureFormat.RGBA32,false);camera.targetTexture=rt;RenderSettings.fog=false;
+            foreach(var transform in transforms)transform.gameObject.layer=31;
+            void Paint(Renderer only,bool silhouette){
+                for(int i=0;i<renderers.Length;i++){var renderer=renderers[i];bool coin=coins.Contains(renderer);renderer.enabled=enabled[i]&&(!silhouette||coin);var material=coin&&(only==null||renderer==only)?white:black;renderer.sharedMaterials=Enumerable.Repeat(material,materials[i].Length).ToArray();renderer.SetPropertyBlock(null);for(int k=0;k<materials[i].Length;k++)renderer.SetPropertyBlock(null,k);}
+            }
+            int Render(string file=null){
+                camera.Render();RenderTexture.active=rt;pixels.ReadPixels(new Rect(0,0,800,800),0,0);pixels.Apply();var data=pixels.GetRawTextureData<Color32>();int count=0;
+                for(int i=0;i<data.Length;i++)if(data[i].r>224&&data[i].g>224&&data[i].b>224)count++;
+                if(file!=null)File.WriteAllBytes(Output+"/"+file+".png",pixels.EncodeToPNG());return count;
+            }
+            var views=new List<ChestCoinView>();
+            foreach(bool upper in new[]{false,true}){
+                ConfigureChestCamera(camera,chest,upper);var view=new ChestCoinView{name=upper?"upper":"front",cameraOffset=camera.transform.position-chest.position,coinVisiblePixels=new int[coins.Length],coinSilhouettePixels=new int[coins.Length]};
+                Paint(null,false);view.visiblePixels=Render(view.name+"-coin-visible");Paint(null,true);view.silhouettePixels=Render(view.name+"-coin-silhouette");Require(view.silhouettePixels>0,"Coins absent from diagnostic camera");
+                for(int i=0;i<coins.Length;i++){Paint(coins[i],false);view.coinVisiblePixels[i]=Render();Paint(coins[i],true);view.coinSilhouettePixels[i]=Render();Require(view.coinSilhouettePixels[i]>0,"Coin outside diagnostic view: "+i);}
+                views.Add(view);
+            }
+            report.views=views.ToArray();
+        }finally{
+            for(int i=0;i<renderers.Length;i++){renderers[i].sharedMaterials=materials[i];renderers[i].enabled=enabled[i];renderers[i].SetPropertyBlock(propertyBlocks[i].isEmpty?null:propertyBlocks[i]);for(int k=0;k<materials[i].Length;k++)renderers[i].SetPropertyBlock(materialBlocks[i][k].isEmpty?null:materialBlocks[i][k],k);}
+            for(int i=0;i<transforms.Length;i++)transforms[i].gameObject.layer=layers[i];RenderSettings.fog=fog;RenderTexture.active=old;
+            if(camera)UnityEngine.Object.DestroyImmediate(camera.gameObject);if(rt)UnityEngine.Object.DestroyImmediate(rt);if(pixels)UnityEngine.Object.DestroyImmediate(pixels);if(white)UnityEngine.Object.DestroyImmediate(white);if(black)UnityEngine.Object.DestroyImmediate(black);
+        }
+        report.stateRestored=renderers.Select((r,i)=>r.enabled==enabled[i]&&r.sharedMaterials.SequenceEqual(materials[i])&&r.HasPropertyBlock()==hadBlocks[i]).All(v=>v)&&transforms.Select((t,i)=>t.gameObject.layer==layers[i]).All(v=>v)&&lid.localRotation==lidPose;
+        Require(report.stateRestored,"Chest diagnostic left state changed");File.WriteAllText(Output+"/chest-coins.json",JsonUtility.ToJson(report,true)+"\n");
     }
     static void Tick(){
         if(!SessionState.GetBool(Key,false))return;
@@ -229,10 +289,10 @@ public static class HciSeasonTreeChecks
         }
         else if(phase==5){Require(branches.Select((t,i)=>Quaternion.Angle(t.localRotation,rest[i])).Max()<.01f,"B did not recover");Cast(EditDimension.Rule);Later(6,1.8);}
         else if(phase==6){Require(scarRenderer.gameObject.activeInHierarchy&&maxBreath-minBreath>.5f,"C scar did not breathe");File.AppendAllText(Output+"/willow-motion.txt","C breath_min="+R(minBreath)+" breath_max="+R(maxBreath)+"\n");Capture("03-breathing-scar");Capture("04-scar-detail",true);Cast(EditDimension.Deconstruction);Later(7,1.5);}
-        else if(phase==7){Require(chest.gameObject.activeInHierarchy&&Quaternion.Angle(chest.Find("Hinged lid").localRotation,Quaternion.identity)>100&&!scarRenderer.gameObject.activeInHierarchy,"D did not seal/open chest");Capture("05-sealed");Capture("06-chest-detail");Require(controller.Dispatch(ParkAction.Undo,anchor,true),"Undo seal rejected");Later(8);}
+        else if(phase==7){Require(chest.gameObject.activeInHierarchy&&Quaternion.Angle(chest.Find("Hinged lid").localRotation,Quaternion.identity)>100&&!scarRenderer.gameObject.activeInHierarchy,"D did not seal/open chest");Capture("05-sealed");MeasureChestCoins(chest);Capture("06-chest-detail");Capture("07-treasure-detail");Require(controller.Dispatch(ParkAction.Undo,anchor,true),"Undo seal rejected");Later(8);}
         else if(phase==8){Require(!chest.gameObject.activeInHierarchy&&scarRenderer.gameObject.activeInHierarchy,"Undo did not restore breathing scar");Cast(EditDimension.Appearance);Later(9);}
         else if(phase==9){Require(block.GetColor("_BaseColor").r>.99f&&actor.seasonTime==0,"A did not restore natural style");Require(trunkRenderer.localToWorldMatrix==trunkMatrix&&actor.transform.position==anchor&&fit.localPosition==fitPosition&&fit.localScale==fitScale,"Willow moved fitted trunk or anchor");controller.Dispatch(ParkAction.Reset,anchor,true);holdValid=false;Later(10);}
-        else if(phase==10){Require(!actor.Busy&&!chest.gameObject.activeInHierarchy&&!scarRenderer.gameObject.activeInHierarchy&&Quaternion.Angle(chest.Find("Hinged lid").localRotation,Quaternion.identity)<.01f,"Reset leaked willow effects");File.WriteAllText(Output+"/result.txt","PASS: actual ParkTree fantasy variant; synthetic production hand traces match lighter exactly once. A dark/natural without season change; B bounded branch lash, successive rendered motion and recovery; C measured bark luminance breathing; D scar prerequisite, seal and hinged chest; Undo restores C; Reset closes chest; fitted trunk and anchor unchanged before full Reset. Eight effect renders plus separate selection menu when enabled. Authored narrow-leaf/drooping-frond willow canopy on the existing fixed trunk; final art and real YOLO/XR/PICO/Android acceptance remain pending.\n");FinishLiveEvidence();SessionState.SetBool(Key+".Done",true);EditorApplication.ExitPlaymode();}
+        else if(phase==10){Require(!actor.Busy&&!chest.gameObject.activeInHierarchy&&!scarRenderer.gameObject.activeInHierarchy&&Quaternion.Angle(chest.Find("Hinged lid").localRotation,Quaternion.identity)<.01f,"Reset leaked willow effects");File.WriteAllText(Output+"/result.txt","PASS: actual ParkTree fantasy variant; synthetic production hand traces match lighter exactly once. A dark/natural without season change; B bounded branch lash, successive rendered motion and recovery; C measured bark luminance breathing; D scar prerequisite, seal and hinged chest; Undo restores C; Reset closes chest; fitted trunk and anchor unchanged before full Reset. Effect renders plus front/upper coin self-occlusion masks and normal upper detail, with separate selection menu when enabled. Authored narrow-leaf/drooping-frond willow canopy on the existing fixed trunk; final art and real YOLO/XR/PICO/Android acceptance remain pending.\n");FinishLiveEvidence();SessionState.SetBool(Key+".Done",true);EditorApplication.ExitPlaymode();}
     }
 }
 

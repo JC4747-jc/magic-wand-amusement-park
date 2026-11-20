@@ -1,4 +1,4 @@
-> 2026-11-20 青铜兽动作补充候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。现有18骨骼模型当前原生协程、六图及中断恢复已核，石像B本地状态已补充；生产运行时/火机不变。真实YOLO/手部/PICO与最终美术待验，APK未上传。
+> 2026-11-20 柳树金币可见性补充：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。七币原本存在，浅角被箱壁遮挡，上方逐币可见；27张当前原生图已查看。只增加Editor诊断，模型/运行时/火机未改。真实YOLO/PICO与最终美术待验，APK未上传。
 
 # Magic Wand Amusement Park
 
