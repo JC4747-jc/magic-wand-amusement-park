@@ -1,0 +1,390 @@
+{
+  "checkedAtUtc": "2026-11-20T03:49:13.576685+00:00",
+  "status": "CURRENT_EIGHT_ORIGINAL_STARTUPS_AND_DESKTOP_CAPTURE_NATIVE_SCOPES_VERIFIED",
+  "previousGoalTurn": "Progress: bug B source/QA publication and scoped 32-effect/15-scene gap index v1 verified.",
+  "sourceParent": "restore-4d-lighter@943e87faecda9f6f0fc33e2ae1a75c69ea89bf67",
+  "changes": [
+    {
+      "path": "Tools/run_room_magic_review_bounded.ps1",
+      "beforeSha256": "eb27dc25c8114707f71a39d56984bbbf6a4f666872a8fd6f43e14af8dc2b0195",
+      "sha256": "0bca9390005ec099a6611702ea4542121cba03d279bf5bb1023467fb19478d61"
+    }
+  ],
+  "productionRuntimeAssetsOrGestureRulesChanged": false,
+  "existingEditorProbesChanged": false,
+  "native": {
+    "startup": {
+      "run": "Reports\\scene-startup-review-20261120\\original-eight-startup-v1-20261120",
+      "terminalExit": 0,
+      "seconds": 63.3823849,
+      "resourceSamples": 83,
+      "minimumSampledFreeRamGiB": 6.744144439697266,
+      "maximumSampledOwnedRssMiB": 2643.9453125,
+      "inputMetadataSha256": "fc29ae127afcee2cb477273c22e94b215e8a747281f9413e8f59c62e31a0a7b3",
+      "resourcesSha256": "cec0a467e67b6e3077a08b2abe5b55591df773683d1dcf79152c32342b3e144c",
+      "sourceInventorySha256": "2dac699519ea120764bbda1055b8a106065b95598fb747e1b77efe66899a61a5"
+    },
+    "capture": {
+      "run": "Reports\\scene-startup-review-20261120\\original-capture-timeline-v1-20261120",
+      "terminalExit": 0,
+      "seconds": 17.1606238,
+      "resourceSamples": 23,
+      "minimumSampledFreeRamGiB": 7.523120880126953,
+      "maximumSampledOwnedRssMiB": 1741.03125,
+      "inputMetadataSha256": "8e58b330fe2e70039d8fab76f5f945232dc4fab671c49c7cfc9776e8de258097",
+      "resourcesSha256": "d475ecb6c442a9fed1e0a04afd50d2e233c7e26daea6b78cde2d776324d1bf2e",
+      "sourceInventorySha256": "2dac699519ea120764bbda1055b8a106065b95598fb747e1b77efe66899a61a5"
+    }
+  },
+  "sceneRecords": [
+    {
+      "scene": "BridgeStereoFusion",
+      "report": "Reports\\scene-evidence-audit-20261120\\startup-v1\\BridgeStereoFusion.json",
+      "reportSha256": "9161bea599e2f11f2a9b125de6268002ee9497aff2fbaa52e945c433d94c2ebe",
+      "screenshot": "Reports\\scene-evidence-audit-20261120\\startup-v1\\BridgeStereoFusion.png",
+      "screenshotSha256": "ab4b4b8dca898a9dd592bfbeefee9bf7356be4703999199f45623a0fe5df8dbb",
+      "errors": 0,
+      "warnings": 1,
+      "changedPixels": 23359,
+      "cameraInputStatus": "Idle",
+      "cameraHasRealFrame": false,
+      "editorImageStatus": "NOT_CONFIGURED",
+      "editorImageSending": false,
+      "scope": "Unmodified scene, actual Windows Editor Play Mode startup; no real camera/hand/AR/network service success claim"
+    },
+    {
+      "scene": "BridgeStereoPoseFusion",
+      "report": "Reports\\scene-evidence-audit-20261120\\startup-v1\\BridgeStereoPoseFusion.json",
+      "reportSha256": "d16352bb28a06188dddf14bcbda1e9e4ca12956d413b505591441d32ee0d7e5e",
+      "screenshot": "Reports\\scene-evidence-audit-20261120\\startup-v1\\BridgeStereoPoseFusion.png",
+      "screenshotSha256": "44ca989c42d9854e0c936a0b59ed43d0ee3f8ea0354c9d7b0f883720dbc5837c",
+      "errors": 0,
+      "warnings": 1,
+      "changedPixels": 9612,
+      "cameraInputStatus": "Idle",
+      "cameraHasRealFrame": false,
+      "editorImageStatus": "NOT_CONFIGURED",
+      "editorImageSending": false,
+      "scope": "Unmodified scene, actual Windows Editor Play Mode startup; no real camera/hand/AR/network service success claim"
+    },
+    {
+      "scene": "BridgeStereoRepair",
+      "report": "Reports\\scene-evidence-audit-20261120\\startup-v1\\BridgeStereoRepair.json",
+      "reportSha256": "b0b471f3df2ace5fc886618754a336ae9f3599679dbdce6665e1b166663e1c3d",
+      "screenshot": "Reports\\scene-evidence-audit-20261120\\startup-v1\\BridgeStereoRepair.png",
+      "screenshotSha256": "861b3a9bc6781cb61d317421f0231547aee9c5b5529c77a41bd310c28ef7ad00",
+      "errors": 0,
+      "warnings": 1,
+      "changedPixels": 9450,
+      "cameraInputStatus": "Idle",
+      "cameraHasRealFrame": false,
+      "editorImageStatus": "NOT_CONFIGURED",
+      "editorImageSending": false,
+      "scope": "Unmodified scene, actual Windows Editor Play Mode startup; no real camera/hand/AR/network service success claim"
+    },
+    {
+      "scene": "BridgeTest",
+      "report": "Reports\\scene-evidence-audit-20261120\\startup-v1\\BridgeTest.json",
+      "reportSha256": "f03bf9e9188f38c962ad72be2bf05bf0187ad97c552c749b71ab56fd2c105821",
+      "screenshot": "Reports\\scene-evidence-audit-20261120\\startup-v1\\BridgeTest.png",
+      "screenshotSha256": "50b4d8f341ba1944c18d377577660e4e4cd093895a5697195af6a6020d9084da",
+      "errors": 0,
+      "warnings": 1,
+      "changedPixels": 90,
+      "cameraInputStatus": "UnsupportedPlatform",
+      "cameraHasRealFrame": false,
+      "editorImageStatus": "NOT_CONFIGURED",
+      "editorImageSending": false,
+      "scope": "Unmodified scene, actual Windows Editor Play Mode startup; no real camera/hand/AR/network service success claim"
+    },
+    {
+      "scene": "DesktopCaptureDemo",
+      "report": "Reports\\scene-evidence-audit-20261120\\startup-v1\\DesktopCaptureDemo.json",
+      "reportSha256": "afa40051e21b0767fecb9e3d70d7d04ba220bd524aa5138f87b4e46978b27d63",
+      "screenshot": "Reports\\scene-evidence-audit-20261120\\startup-v1\\DesktopCaptureDemo.png",
+      "screenshotSha256": "657e62cf9c177a833dba60c100e7b3b17f54407377e5bc0ea20662358ddc7cf4",
+      "errors": 0,
+      "warnings": 0,
+      "changedPixels": 120291,
+      "cameraInputStatus": "NO_CAMERA_COMPONENT",
+      "cameraHasRealFrame": false,
+      "editorImageStatus": "NO_EDITOR_SOURCE",
+      "editorImageSending": false,
+      "scope": "Unmodified scene, actual Windows Editor Play Mode startup; no real camera/hand/AR/network service success claim"
+    },
+    {
+      "scene": "MagicMR",
+      "report": "Reports\\scene-evidence-audit-20261120\\startup-v1\\MagicMR.json",
+      "reportSha256": "53fb3fd298a9bb6bf28c1f2e9db59a73a5641d8efa4630e851b6afd34f528f9e",
+      "screenshot": "Reports\\scene-evidence-audit-20261120\\startup-v1\\MagicMR.png",
+      "screenshotSha256": "83a139c6150258cfa825af2d6cb5c1215bbb06223fc61445c27f67a3cddbe84a",
+      "errors": 0,
+      "warnings": 0,
+      "changedPixels": 12713,
+      "cameraInputStatus": "NO_CAMERA_COMPONENT",
+      "cameraHasRealFrame": false,
+      "editorImageStatus": "NO_EDITOR_SOURCE",
+      "editorImageSending": false,
+      "scope": "Unmodified scene, actual Windows Editor Play Mode startup; no real camera/hand/AR/network service success claim"
+    },
+    {
+      "scene": "SampleScene",
+      "report": "Reports\\scene-evidence-audit-20261120\\startup-v1\\SampleScene.json",
+      "reportSha256": "c7a5910d587d71e1e7c223601a9e11a7604c1ccdb00ff2bcb382f7a2fa803364",
+      "screenshot": "Reports\\scene-evidence-audit-20261120\\startup-v1\\SampleScene.png",
+      "screenshotSha256": "21ce4c88287798dad8fd7d462068372865538e8270bb7db7cb2051e95f76bfcc",
+      "errors": 0,
+      "warnings": 4,
+      "changedPixels": 125931,
+      "cameraInputStatus": "NO_CAMERA_COMPONENT",
+      "cameraHasRealFrame": false,
+      "editorImageStatus": "NO_EDITOR_SOURCE",
+      "editorImageSending": false,
+      "scope": "Unmodified scene, actual Windows Editor Play Mode startup; no real camera/hand/AR/network service success claim"
+    },
+    {
+      "scene": "VstTest",
+      "report": "Reports\\scene-evidence-audit-20261120\\startup-v1\\VstTest.json",
+      "reportSha256": "8348bd46fe670e763239c47c9b7538f718badf5144cc45104b734808a02ec430",
+      "screenshot": "Reports\\scene-evidence-audit-20261120\\startup-v1\\VstTest.png",
+      "screenshotSha256": "c543c8c41ed2b1d232e173981fdbbf8647175c4b9c8f3585be9b8667b456a1f4",
+      "errors": 0,
+      "warnings": 0,
+      "changedPixels": 8464,
+      "cameraInputStatus": "NO_CAMERA_COMPONENT",
+      "cameraHasRealFrame": false,
+      "editorImageStatus": "NO_EDITOR_SOURCE",
+      "editorImageSending": false,
+      "scope": "Unmodified scene, actual Windows Editor Play Mode startup; no real camera/hand/AR/network service success claim"
+    }
+  ],
+  "warningGroups": [
+    {
+      "message": "[Bridge] Connect failed: PC connection timed out",
+      "scenes": [
+        "BridgeStereoFusion",
+        "BridgeStereoPoseFusion",
+        "BridgeStereoRepair",
+        "BridgeTest"
+      ]
+    },
+    {
+      "message": "No active UnityEngine.XR.ARSubsystems.XRSessionSubsystem is available. This feature is either not supported on the current platform, or you may need to enable a provider in <b>Project Settings</b> > <b>XR Plug-in Management</b>.",
+      "scenes": [
+        "SampleScene"
+      ]
+    },
+    {
+      "message": "No active UnityEngine.XR.XRInputSubsystem is available. Please ensure that a valid loader configuration exists in the XR project settings.",
+      "scenes": [
+        "SampleScene"
+      ]
+    },
+    {
+      "message": "No active UnityEngine.XR.ARSubsystems.XRImageTrackingSubsystem is available. This feature is either not supported on the current platform, or you may need to enable a provider in <b>Project Settings</b> > <b>XR Plug-in Management</b>.",
+      "scenes": [
+        "SampleScene"
+      ]
+    },
+    {
+      "message": "No active UnityEngine.XR.ARSubsystems.XRCameraSubsystem is available. This feature is either not supported on the current platform, or you may need to enable a provider in <b>Project Settings</b> > <b>XR Plug-in Management</b>.",
+      "scenes": [
+        "SampleScene"
+      ]
+    }
+  ],
+  "startupScope": "Existing LegacySceneStartupProbe.Run, never UpgradeAndRun: original saved scene startup for 2.5s and original-camera snapshot only. No scene maintenance, code/asset edits, effect dispatch or new synthetic production entry.",
+  "visualReview": {
+    "currentOriginalStartupImagesActuallyViewed": 8,
+    "currentCapturedCardActuallyViewed": true,
+    "historicalForestImagesReviewed": 4,
+    "findings": {
+      "bridge": "UI/no actual camera frame; BridgeTest nearly black. This does not prove recognition/pose, model placement or meaningful real-world rendering.",
+      "MagicMR": "Original lighter/calibration image observed only; independent calibration is not production Bridge validation and no four-dimension effect acceptance follows.",
+      "desktopSample": "Sky/target cube in original views; captured card is actual own-scene gray cube, not reconstructed model or real-camera input.",
+      "VstTest": "Editor test color/quad, not PICO passthrough."
+    }
+  },
+  "captureWorkflow": {
+    "scene": "Assets/Scenes/DesktopCaptureDemo.unity",
+    "result": "PASS: actual DesktopCaptureDemo bindings, nonblank rendered snapshot, duplicate request, mid-flight reset, unscaled completion, disable/re-enable, retarget cleanup. No backend request or device claim.",
+    "snapshotSha256": "174a2136964f336a925f1617bf5febd3a25fa589a0f524be6e1470c59c664b56",
+    "scope": "Actual CaptureTo2D public API and coroutine: assigned source/card/backpack, target in viewport, nonblank own-camera texture, duplicate rejection, mid-flight reset, completion while timeScale0, disable/re-enable and retarget restoration. No backend or physical input.",
+    "sampleSceneWorkflowProven": false
+  },
+  "forestCandidateScope": {
+    "reference": "Reports\\forest-blockout-20261115\\manifest.json",
+    "sha256": "6892dff2691351220025955eefee0c93cfb23607d58d1391ef50ee1bb9b9b7e7",
+    "status": "blockout_geometry_and_scripted_play_pass",
+    "sourceHashes": 21,
+    "currentMatches": 18,
+    "currentDifferences": [
+      "Packages/manifest.json",
+      "Packages/packages-lock.json",
+      "Assets/Editor/ForestBlockoutPlayChecks.cs"
+    ],
+    "scope": "Historical blockout geometry/render/scripted movement and collision only. Candidate research asset retained; not an independent HCI production scene or finished forest art. No new forest native run.",
+    "planRules": {
+      "file": "BRANCH_SCENE_PLAN.md",
+      "sha256": "0e95436e0579be83569b11b322de4686d30b6f7b5514324fa915b09c9783ee93",
+      "lines": [
+        297,
+        380
+      ],
+      "instruction": "ForestBlockout/ForestStudy downgraded to candidate research assets; select useful ParkTree resources only; do not expand forest project/mainline or formal APK."
+    },
+    "historicalPicturesViewedNow": {
+      "overview.png": "9eb44e0b1c5627ad644812f019fa78037f3f40796d59496dcfc8c95efcf869a8",
+      "eye-level.png": "04689983b0ad69073f565c05ccb552086e1fc56e78f88511d702d4ded17b5f9a",
+      "play-finish.png": "7287c97297bf517dc7f06b0d6aa726d0e66b6a1467f3daba2b7a7a1f9814234b",
+      "play-reset.png": "8b43d6344e9456174373245d6fe9ec3a470b7ceeb8512bae244ffc3ba0d289a3"
+    },
+    "validationApkScope": "Existing AllScenesValidation contains this scene for compile/package validation; this is not a formal production APK release and none was uploaded."
+  },
+  "fireHistoricalScope": {
+    "reference": "Reports/lighter-snapshot-native-20261118/first-pass-review.json",
+    "referenceSha256": "f3d81bfbff83d8fccfe10e5edbf90037019efd8eb8f1f0915a35a9a9f8f10919",
+    "oldFixturePreparationSha256": "cc9b89109fcaa164d0b9134ff977117a7939c354f8b6b8d063817df38a863a96",
+    "currentComparisons": {
+      "runtimeTextComparison": {
+        "count": 71,
+        "changed": [
+          "Assets\\Scripts\\MagicMR\\FullBodyBronzeBeast.cs",
+          "Assets\\Scripts\\MagicMR\\NaturalInsectRig.cs",
+          "Assets\\Scripts\\MagicMR\\ParkActor.cs",
+          "Assets\\Scripts\\MagicMR\\ParkActor.NaturalBugs.cs",
+          "Assets\\Scripts\\MagicMR\\ParkActor.NaturalPlants.cs",
+          "Assets\\Scripts\\MagicMR\\ParkActor.StatueNarrative.cs",
+          "Assets\\Scripts\\MagicMR\\RoomMagicVisual.cs"
+        ]
+      },
+      "applicationTextComparison": {
+        "count": 51,
+        "changed": [
+          "Assets\\Scripts\\Perception\\DiscoverySelection.cs",
+          "Assets\\Scripts\\Perception\\ParkSharedInterface.cs"
+        ]
+      },
+      "assetComparison": {
+        "count": 63,
+        "changed": [
+          "Assets\\Scenes\\BridgeStereoFusion.unity"
+        ]
+      }
+    },
+    "oldReviewVisualAcceptance": false,
+    "oldReviewCurrentEffectAcceptanceReused": false,
+    "reason": "Historical controller/numerical pass and six viewed frames exist, but visual acceptance was false and generic fixture comparisons do not bind every fire-specific resource after restoration. Listed other-case runtime changes do not themselves prove frozen fire failure. Current original-scene startup is not A/B/C/D semantic/effect acceptance.",
+    "genericSourceDifferencesNotUsedAsFireFailureClaim": true
+  },
+  "gapInventoryV2": {
+    "path": "Reports/delivery-gap-index-20261120/inventory-v2.json",
+    "sha256": "0d18b7fcdd83c24994d1f4d9993e46369cf4aaa53c8935e486e5a6958cbb04f6",
+    "readable": "Reports/delivery-gap-index-20261120/CASE_SCENE_STATUS-v2.md",
+    "readableSha256": "52052ee6e5df30a8f769330d8f8a314ce58af055cdfa93b211e15456c7746cf5",
+    "v1Preserved": true,
+    "cases": 8,
+    "effects": 32,
+    "scopedLocalEffectRowsStill": 28,
+    "requiredFormalScenes": 14,
+    "originalCurrentStartupScenes": 8,
+    "parkScenesWithOriginalScopedNativeCaseRecords": 6,
+    "retainedResearchScene": 1,
+    "isFullGoalAcceptance": false,
+    "published": false
+  },
+  "preservation": {
+    "mainHead": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
+    "mainIndexSha256": "aab38b747bb2453015b4ce247543cf2dd6aa54d5d5586cf1fcafce46a0398c5a",
+    "mainBaselineFiles": 1836,
+    "mainExistingDifferencesVsOriginal": [
+      "Assets/Editor/HciBugDanceChecks.cs",
+      "Assets/Editor/HciPetOutlineChecks.cs",
+      "Assets/Editor/HciPlantFlowChecks.cs",
+      "Assets/Editor/HciRoomMagicChecks.cs",
+      "Assets/Editor/HciSeasonTreeChecks.cs",
+      "Assets/Editor/HciStatueGardenChecks.cs",
+      "Assets/Editor/HciStatuePlaybackChecks.cs",
+      "Assets/Resources/MagicMR/RoomStyle.shader",
+      "Assets/Scripts/MagicMR/ParkActor.NaturalPlants.cs",
+      "Assets/Scripts/MagicMR/RoomMagicVisual.cs",
+      "Assets/Scripts/Perception/DiscoverySelection.cs"
+    ],
+    "mainOtherExistingSourcesUnchanged": 1825,
+    "allCandidate1865HashesMatched": true,
+    "candidateMetadataFrozenInputNotOutcome": true,
+    "originalSceneFilesModelsRuntimeAndMetaUnchanged": true,
+    "fireCodeScenesModelsEffectsAnimationsWeightsAndMetaUnchanged": true,
+    "newSourceStartupProbeAndCaptureProbeByteUnchanged": true
+  },
+  "androidReused": {
+    "path": "D:\\MagicMRSourceCandidate\\20261120\\Builds\\Android\\PlantPresentationValidation-20261120.apk",
+    "sha256": "f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31",
+    "bytes": 78064133,
+    "sceneCount": 15,
+    "newBuildRun": false,
+    "newBuildRequired": false,
+    "reason": "Only bounded launcher modes added; existing probes and every player/runtime/asset/package/settings input unchanged.",
+    "reference": "Reports/android-resume-check-20261120/verification.json",
+    "deviceExecutionValidated": false
+  },
+  "sourceUploadedThisTurn": false,
+  "apkUploaded": false,
+  "newTrainingOrDownload": false,
+  "devicePolledOrConnected": false,
+  "realYoloHandsPicoValidated": false,
+  "finalArtAccepted": false,
+  "fullEightCase32EffectAcceptance": false,
+  "goalComplete": false,
+  "next": "Publish explicit launcher/native scope summary and versioned index. Check the SampleScene-specific capture workflow and remaining real-input/model-quality/art gaps; do not upgrade the candidate forest or alter original fire. Source startup is insufficient for end-to-end acceptance.",
+  "evidence": {
+    "preparation-before.json": {
+      "sha256": "1c125dea2ec8d9cc59a361f09bc3da165e1f917f6ca517a946feec6de45dd405",
+      "bytes": 859
+    },
+    "candidate-input-v1.json": {
+      "sha256": "fc29ae127afcee2cb477273c22e94b215e8a747281f9413e8f59c62e31a0a7b3",
+      "bytes": 359539
+    },
+    "candidate-input-v2.json": {
+      "sha256": "8e58b330fe2e70039d8fab76f5f945232dc4fab671c49c7cfc9776e8de258097",
+      "bytes": 359683
+    },
+    "launcher-before.ps1": {
+      "sha256": "eb27dc25c8114707f71a39d56984bbbf6a4f666872a8fd6f43e14af8dc2b0195",
+      "bytes": 12364
+    },
+    "scene-components.json": {
+      "sha256": "10224d69d20c524c94b1e2363bee7d53736c1ed063149b175c1db9cc0a23e01d",
+      "bytes": 116939
+    },
+    "forest-scope.json": {
+      "sha256": "f4f9112d5b5ea5a74d07380886c10402b670a893d63434d6a27b5af3eeb695ae",
+      "bytes": 1574
+    },
+    "fire-old-native-binding.json": {
+      "sha256": "114c000653c65d8a693912667a0ce59d3b171d1eb77d7144d4445de324b3c8f9",
+      "bytes": 1688
+    },
+    "eight-original-startup-contact-sheet.png": {
+      "sha256": "930861c9d92caf3988f65c7ac65db26bd9a950ff2f3a306c12e86d17c0ecbd67",
+      "bytes": 61386
+    },
+    "historical-forest-blockout-review.png": {
+      "sha256": "f918c66d4a05b07fe4b6c6229c0d336e8e9c61dad4291d93415ecd22a7cd7653",
+      "bytes": 130159
+    },
+    "capture-v1/result.txt": {
+      "sha256": "3854649beffb0e767bd2d2a9d541441e08d557e26758ece92f0a1d320a3fb1f4",
+      "bytes": 201
+    },
+    "capture-v1/captured-card.png": {
+      "sha256": "174a2136964f336a925f1617bf5febd3a25fa589a0f524be6e1470c59c664b56",
+      "bytes": 3039
+    }
+  },
+  "originalLocalVerificationSha256": "e85315cf328f4d9dc0cca02e67891dcb387c8e292bdba0186216a8deb036e677",
+  "originalLocalVerificationPath": "Reports/scene-evidence-audit-20261120/verification.json",
+  "rawLocalReferencesPublished": false,
+  "publicationScope": "Portable exact historical/current scoped report. Referenced raw run logs/inventories remain local; listed PNG and v3 index paths are published separately. Not full device/final-art acceptance."
+}

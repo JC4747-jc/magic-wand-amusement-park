@@ -1,0 +1,128 @@
+{
+  "checkedAtUtc": "2026-11-20T04:04:55.415176+00:00",
+  "status": "BOTH_ORIGINAL_CAPTURE_SCENE_NATIVE_LIFECYCLES_VERIFIED",
+  "previousGoalTurn": "Android source/static recheck completed; new evidence preserved, player inputs unchanged.",
+  "sourceParent": "restore-4d-lighter@943e87faecda9f6f0fc33e2ae1a75c69ea89bf67",
+  "changes": [
+    "Assets/Editor/CaptureDemoTimelineChecks.cs"
+  ],
+  "why": "Desktop-only reset button and RawImage-parent assumptions made the Editor check invalid for SampleScene.",
+  "repair": "Preserve actual Desktop reset callback; Sample uses existing ResetCapture API. Assert actual RawImage.activeInHierarchy and backpack visibility, including disable cleanup.",
+  "failures": [
+    {
+      "run": "original-sample-capture-v1-20261120",
+      "cause": "Sample has no Desktop-only CaptureResetButton."
+    },
+    {
+      "run": "original-sample-capture-v2-20261120",
+      "cause": "Editor incorrectly asserted shared Canvas parent inactive after reset."
+    },
+    {
+      "run": "original-sample-capture-v3-20261120",
+      "cause": "Editor compile CS0103 from one missed Card reference; corrected before v4."
+    }
+  ],
+  "scope": [
+    "Original scene bindings",
+    "Own-camera nonflat snapshot and all target bounds inside viewport",
+    "Duplicate capture denied",
+    "Mid-flight reset and recapture",
+    "Unscaled animation at timeScale zero",
+    "Completion state",
+    "Disable, re-enable and retarget cleanup",
+    "Backpack UI remains visible after reset"
+  ],
+  "runs": {
+    "SampleScene": {
+      "passed": true,
+      "seconds": 18.7776432,
+      "sampleCount": 25,
+      "minimumSampledFreeRamGiB": 7.362888336181641,
+      "maximumSampledOwnedRssMiB": 1569.13671875,
+      "resources": {
+        "path": "Reports/scene-startup-review-20261120/original-sample-capture-v4-20261120/resources.json",
+        "sha256": "ba02075b8efc1101a8705fc5ad483f3aaf175932daade16964e585e57b1cbcf0"
+      },
+      "sourceInputs": {
+        "path": "Reports/scene-startup-review-20261120/original-sample-capture-v4-20261120/source-inputs.json",
+        "sha256": "b4760ec0dcc8b2db3a4aa76f1aed2276e0bf9194ebc95e3b4e172afcae852cb3"
+      },
+      "unityLog": {
+        "path": "Reports/scene-startup-review-20261120/original-sample-capture-v4-20261120/unity.log",
+        "sha256": "73285b4367e3e274af8b8a3ec01bb1e3a8bc001743f598b1d0fc413796f1d46d"
+      },
+      "result": {
+        "path": "Reports/sample-capture-review-20261120/SampleScene-v4/result.txt",
+        "sha256": "bdc9ba08a8dd255268fb1a63f6b5af0808aee0d2f13bc4a2d280f3c48ca94301"
+      },
+      "snapshot": {
+        "path": "Reports/sample-capture-review-20261120/SampleScene-v4/captured-card.png",
+        "sha256": "72cca314c0946a46b1ef409608e8f95a56db0ef15bb9c2a18554f81580b6ce67"
+      },
+      "resetSource": "SampleScene has no DesktopCaptureDemo reset button; actual CaptureTo2D.ResetCapture API invoked. No button, keyboard or AR input claim.",
+      "snapshotActuallyViewed": true,
+      "observedVisual": "Single plain gray cube against sky/ground; original camera, no polished art claim."
+    },
+    "DesktopCaptureDemo": {
+      "passed": true,
+      "seconds": 17.1862754,
+      "sampleCount": 23,
+      "minimumSampledFreeRamGiB": 7.671566009521484,
+      "maximumSampledOwnedRssMiB": 1615.75390625,
+      "resources": {
+        "path": "Reports/scene-startup-review-20261120/original-desktop-capture-v4-20261120/resources.json",
+        "sha256": "03a2a91594eae4ebdf928f1632288fa5c7237fa832fab012ff814bb39bf0d991"
+      },
+      "sourceInputs": {
+        "path": "Reports/scene-startup-review-20261120/original-desktop-capture-v4-20261120/source-inputs.json",
+        "sha256": "396390b4ffc6ff3475596e5fc2a2b5baa8f785a20406ce5005a3dd018c11ea3f"
+      },
+      "unityLog": {
+        "path": "Reports/scene-startup-review-20261120/original-desktop-capture-v4-20261120/unity.log",
+        "sha256": "a791361dec8e27c24d7c3417030656481d62a816f8d3f15469b17b5a5fa49ed0"
+      },
+      "result": {
+        "path": "Reports/sample-capture-review-20261120/DesktopCaptureDemo-v4/result.txt",
+        "sha256": "3854649beffb0e767bd2d2a9d541441e08d557e26758ece92f0a1d320a3fb1f4"
+      },
+      "snapshot": {
+        "path": "Reports/sample-capture-review-20261120/DesktopCaptureDemo-v4/captured-card.png",
+        "sha256": "174a2136964f336a925f1617bf5febd3a25fa589a0f524be6e1470c59c664b56"
+      },
+      "resetSource": "Actual DesktopCaptureDemo reset button callback invoked.",
+      "snapshotActuallyViewed": true,
+      "observedVisual": "Single dark gray cube against black background; original capture camera."
+    }
+  },
+  "inputs": {
+    "manifest": {
+      "path": "Reports/sample-capture-review-20261120/candidate-input-v4.json",
+      "sha256": "cad0bdd0ab291cbbdcc3a24b77e9c62b0ecb1ec0a9e7014cdbdecff2f5472b51"
+    },
+    "candidatePayloadCount": 1865,
+    "allHashesMatched": true,
+    "editorSha256": "c63b20bd898a93ee96d1d0b5918181f644f0a25310492f5e32949b6e9de12d63",
+    "launcherSha256": "7d8bc2133eba3b30be6409489c077c4a86ba2dc9adeb39bf44ef7a460d336745"
+  },
+  "preservation": {
+    "mainInputFilesCompared": 1796,
+    "onlyEditorChanged": true,
+    "mainIndexSha256": "aab38b747bb2453015b4ce247543cf2dd6aa54d5d5586cf1fcafce46a0398c5a",
+    "fireRuntimeScenesModelsAnimationsEffectsWeightsAndMetaUnchanged": true,
+    "allOtherMainInputsUnchanged": true,
+    "candidateIsSeparateSnapshot": true,
+    "apkSha256": "f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31"
+  },
+  "limitations": [
+    "Sample reset API does not prove button or keyboard input.",
+    "No physical camera, AR provider, backend, YOLO, hand, PICO or final art acceptance.",
+    "Desktop preview does not replace production BridgeStereoFusion verification."
+  ],
+  "newAndroidBuildTrainingDownloadOrDeviceConnection": false,
+  "sourceUploadedThisReport": false,
+  "goalComplete": false,
+  "originalLocalVerificationSha256": "0281f77df0443109e8baabdf8c4a9c6920dd554124be40e8091d353abae56eee",
+  "originalLocalVerificationPath": "Reports/sample-capture-review-20261120/verification.json",
+  "rawLocalReferencesPublished": false,
+  "publicationScope": "Portable exact historical/current scoped report. Referenced raw run logs/inventories remain local; listed PNG and v3 index paths are published separately. Not full device/final-art acceptance."
+}

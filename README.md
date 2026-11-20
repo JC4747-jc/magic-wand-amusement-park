@@ -1,4 +1,4 @@
-> 2026-11-20 像素虫当前B检查候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。两物种×自然/像素外观，八次合成画圈、完整离散舞段/IK/恢复和16图已核；A/C/D仅复用匹配的既有范围。生产运行时/火机未改，真实YOLO/PICO与最终美术待验，APK未上传。
+> 2026-11-20 原入口与捕获流程检查候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。原八入口启动、两个捕获场景及缺口v3已按各自输入范围核验；真实YOLO/HCI/PICO/最终美术仍待验，生产/火机/APK未改。
 
 # Magic Wand Amusement Park
 

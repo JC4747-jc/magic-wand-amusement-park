@@ -1,17 +1,20 @@
-# 像素虫当前 B：四组合原生检查候选（2026-11-20）
+# 原入口启动与捕获流程：有范围的源码候选（2026-11-20）
 
-父版本 restore-4d-lighter@86ea6455499612bb11cede6f00d3a0eba5e8ac3d，开发基线仍 codex/mr-development-snapshot-20261109@8359a0c。仅扩展HciBugDanceChecks Editor检查和十五模式有界启动器，并附摘要、四项范围表与两QA图。生产手势/识别链路/运行时、虫模型/骨骼/贴图/场景/meta及火机未改；traeye原分支只读，历史不改写。
+父版本 restore-4d-lighter@943e87faecda9f6f0fc33e2ae1a75c69ea89bf67；开发基线仍 codex/mr-development-snapshot-20261109@8359a0c。仅修改 CaptureDemoTimelineChecks 编辑器检查及有界启动器，并交付三个证据摘要、缺口表 v3 与三张实际 Unity 图。原场景、生产运行时、识别/手势、模型、meta 和火机完全不改。traeye 分支只读，旧提交不改写；本次提交使用 JC4747-jc。
 
-当前保存ParkBugs，蟑螂/蜘蛛×自然/像素四组合，每组合一次完整B和一次中途Reset：280条带真实游戏时间戳的合成画圈样本经生产ProcessHandSample，逐次匹配参照规则，八次Agency各只触发一次。357轨迹行仅有x=-.04/0/.04、y/z和识别锚点零漂；原生产配置为.7秒舞段+.3秒引导，实测舞段约.700–.717秒、每组合6次切换/54–55次保持，IK最大.0001303777小于原.0008阈值（rig局部单位，不是硬件姿态误差）。外观、完整回位/Undo、Busy中Undo拒绝和立即Reset均通过。
+八个原入口各自原相机启动记录为独立的既有当前输入：8 场景零错误，图已逐张查看；Bridge 四入口各有 PC 连接超时，Sample 有四项 Windows XR/AR provider 警告，全部没有真实相机帧。未执行维护、升级或效果注入。黑背景/UI 不证明 YOLO 或 PICO 成功。合成图仅把实际捕获并排展示，不替代运行模型。
 
-v3终态0、41.35秒/55次资源采样，最小空闲RAM7.35GiB、最大所属RSS1548.70MiB（采样不是连续峰值）。稳定外观下16张真实原生图及两QA已查看，pixel前置_style>1.99和Pixel网格在B中保持。Pixel前置A通过动作回调设置，不是实际A手势验收；B是合成关节入口，不是物理手/相机/YOLO输入。
+两个捕获场景在同一新版输入分别原生 Play：SampleScene 及 DesktopCaptureDemo 终态均为 0。绑定、实际非空截图和完整目标边界、重复拦截、中途复位/重用、timeScale=0 下完成、禁用/启用与换目标清理通过，复位后背包仍显示。Desktop 调用原场景真实复位按钮回调；Sample 没有该按钮，调用既有 ResetCapture API，不主张按钮/键盘/AR 验收。
 
-保留修正记录：v1新增的12切换门槛不符合既有六段生产配置而失败，恢复原>=4观察下限，保留新增完整时长/双向/IK/八单事件条件，不改生产。v2动作检查通过但before图捕在A材质插值中；v3采用现有Pixel检查的_style>1.99完成条件再截图，并记录属性值，未改生产材质。
+修正的是检查脚本的场景假设：Sample 卡片直接位于共享 Canvas 下，不能把父 Canvas 当卡片并要求其隐藏。现在检查实际 RawImage.activeInHierarchy。保留 v1 按钮缺失、v2 Canvas 假设及 v3 一处漏引用造成的 CS0103 失败；v4 两场景通过。没有为测试添加生产 UI 或更换入口。两张卡片图已查看，仍只是灰立方体，不是最终美术。
 
-A像素蒙皮/首次切换与恢复，C眩晕/D虚拟金币的既有原生范围限定复用：两旧Editor哈希匹配，78虫资源与虫核心runtime匹配，差异为其他案例partial与非火机选择。完整原始报告/日志/图片仅留本地；便携摘要内保留来源哈希/范围，不宣称全工程、包配置或硬件完全一致。B旧live准备另有骨骼/Actor/虫partial变化，故本次补当前B而非原样沿用旧pass。
+- [原八入口摘要](Reports/scene-evidence-audit-20261120/delivery-summary.json)：原始输入版本及范围保持，不把本次新 Editor 哈希套用到旧执行。
+- [两捕获场景摘要](Reports/sample-capture-review-20261120/delivery-summary.json)：各自来源输入/资源采样/截图 SHA 和 API 与按钮的区别。
+- [Android 复核摘要](Reports/android-close-resume-20261120/delivery-summary.json)：与构建输入相比只有六个 Editor 检查和启动器变化，玩家输入不变。
+- [场景及 32 效果缺口表](Reports/delivery-gap-index-20261120/CASE_SCENE_STATUS-v3.md) 与 [结构化 v3](Reports/delivery-gap-index-20261120/inventory-v3.json)。v1/v2 原记录仍在本地保留；未发布的原始日志路径仅为本地交接引用。
 
-便携摘要 [Reports/bug-dance-current-review-20261120/delivery-summary.json](Reports/bug-dance-current-review-20261120/delivery-summary.json)；A/B/C/D范围与未完成状态 [Reports/bug-dance-current-review-20261120/delivery-case-status.json](Reports/bug-dance-current-review-20261120/delivery-case-status.json)。两QA哈希见摘要；完整原图/关节CSV/轨迹/失败记录保留本地。
+Android 沿用 PlantPresentationValidation-20261120.apk（78064133 字节，SHA256 f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31）；签名、CRC、zipalign4、15 场景、16 个 ARM64 ELF、min29/target35 再核通过。没有重复重建或上传 APK。打包 15 场景不等于把森林研究资产扩为正式项目；ForestBlockout/ForestStudy 继续按计划仅供选择性复用。
 
-沿用已核Android包 PlantPresentationValidation-20261120.apk，78064133B，SHA256 f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31；15场景/CRC/签名/zipalign4/16个ARM64已核。仅Editor/启动器变化，玩家运行时/资产/包配置未变，不重建/上传APK；静态包检查不证明设备运行。
+所有本地范围不能替代真实 YOLO→实际 HCI 手势→魔法、PICO VST/双眼/遮挡/性能、独立采集/模型质量或最终美术验收。火机四效果仍不因启动成功而判完整通过。用户暂不接设备；无定时四小时提交。完整 Goal 未完成。
 
-SOURCE_VALIDATION.sourcePayloadTree为完整候选树去掉元数据自身；payloadFiles只是已核范围，继承内容不新增验收。独立索引显式九项、JC4747-jc身份，实际提交/远端文件哈希见独立回执。真实YOLO→实际HCI手势→效果、PICO透视中真实昆虫仍可见/双眼/性能、最终美术、独立采集/非火机模型质量与完整8案例32效果仍待验；头显暂不连接，不自动定时提交。
+SOURCE_VALIDATION.sourcePayloadTree 是完整候选树排除元数据自身；payloadFiles 只描述已核范围，继承内容不会自动获得新增验收。显式清单、来源/产物 SHA、身份与远端文件字节核验见独立发布回执；不动主索引或当前分支。

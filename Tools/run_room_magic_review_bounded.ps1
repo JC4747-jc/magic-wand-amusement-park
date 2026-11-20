@@ -4,7 +4,7 @@ param(
     [Parameter(Mandatory=$true)][string]$ProjectRoot,
     [ValidatePattern('^[a-z0-9-]{4,60}$')][string]$RunId='room-current-20261120',
     [string]$EditorOverrideManifest,
-    [ValidateSet('RoomMagic','RoomWindowOwnership','PlantFlow','PlantVoice','PetDream','PetOutline','SeasonTree','SeasonTreeSelection','WillowTree','WillowTreeSelection','StatueStyle','StatuePlayback','StatueGarden','BronzePlayback','BugDance')][string]$Check='RoomMagic'
+    [ValidateSet('RoomMagic','RoomWindowOwnership','PlantFlow','PlantVoice','PetDream','PetOutline','SeasonTree','SeasonTreeSelection','WillowTree','WillowTreeSelection','StatueStyle','StatuePlayback','StatueGarden','BronzePlayback','BugDance','LegacyStartup','CaptureTimeline','SampleCaptureTimeline')][string]$Check='RoomMagic'
 )
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot -Parent
@@ -25,6 +25,9 @@ $checks=@{
     StatueGarden=@{method='HciStatueGardenChecks.Run';pattern='^PASS: saved ParkStatue standing human and bronze;';folder='hci-statue-garden';group='statue-effect-review-20261120';scope='Saved ParkStatue human/bronze garden, synthetic A/D traces and confirmed manual plane; no physical room/YOLO/hands/PICO or final art acceptance'}
     BronzePlayback=@{method='HciBronzePlaybackChecks.Run';pattern='^PASS: saved ParkStatue BronzeBeast;';folder='hci-bronze-playback';group='statue-effect-review-20261120';scope='Saved ParkStatue bronze full-body coroutine, synthetic A/B/D joint traces, confirmed test plane, anchor/fit and interruption lifecycle; no physical camera/YOLO/hands/audio/PICO or final art acceptance'}
     BugDance=@{method='HciBugDanceChecks.Run';pattern='^PASS: saved ParkBugs, Cockroach/Spider natural and pixel,';folder='hci-bug-dance';group='bug-effect-review-20261120';scope='Saved ParkBugs, both species and appearances; timed synthetic production B joint traces, complete coroutine, discrete steps, IK, fit/anchor and Reset; no physical camera/YOLO/hands/PICO or final art acceptance'}
+    LegacyStartup=@{method='LegacySceneStartupProbe.Run';pattern='^PROBE_COMPLETE: 8 actual scene startups; 0 error logs\.';folder='legacy-startup';group='scene-startup-review-20261120';scope='Unmodified eight saved legacy/bridge/capture scene Windows Editor startups and original-camera snapshots only; no scene maintenance, effect dispatch, real camera/YOLO/hands/PICO or final visual acceptance'}
+    CaptureTimeline=@{method='CaptureDemoTimelineChecks.Run';pattern='^PASS: actual DesktopCaptureDemo bindings,';folder='capture-animation-timeline';group='scene-startup-review-20261120';scope='Original DesktopCaptureDemo own-camera snapshot and capture/card/backpack animation/reset/disable/retarget lifecycle; no backend request, physical camera/hand/YOLO/PICO or final art acceptance'}
+    SampleCaptureTimeline=@{method='CaptureDemoTimelineChecks.RunSample';pattern='^PASS: actual SampleScene bindings,';folder='sample-capture-animation-timeline';group='scene-startup-review-20261120';scope='Original SampleScene own-camera snapshot and capture/card/backpack animation/reset/disable/retarget lifecycle; no AR provider/backend, physical camera/hand/YOLO/PICO or final art acceptance'}
 }
 $selectedCheck=$checks[$Check]
 $output=Join-Path $root ('Reports/'+$selectedCheck.group+'/'+$RunId)

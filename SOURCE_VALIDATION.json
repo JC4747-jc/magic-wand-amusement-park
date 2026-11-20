@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "checkedAtUtc": "2026-11-20T03:13:38.010514+00:00",
-  "status": "SOURCE_CANDIDATE_CURRENT_FOUR_VARIANT_BUG_B_NATIVE_JOINTS_VERIFIED_DEVICE_ART_PENDING",
+  "checkedAtUtc": "2026-11-20T04:07:27.473867+00:00",
+  "status": "SCOPED_ORIGINAL_STARTUP_AND_CAPTURE_EVIDENCE_V3_DEVICE_ART_PENDING",
   "repository": "JC4747-jc/magic-wand-amusement-park",
-  "deliveryParent": "86ea6455499612bb11cede6f00d3a0eba5e8ac3d",
+  "deliveryParent": "943e87faecda9f6f0fc33e2ae1a75c69ea89bf67",
   "developmentBaseline": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
-  "sourcePayloadTree": "bcce6fd2ec28e7dcd640286a8eab31e8285f68ab",
-  "payloadFileCount": 1899,
+  "sourcePayloadTree": "5b95f2624c4c12e0f75085e92e6a1b9e71cab53d",
+  "payloadFileCount": 1907,
   "payloadFiles": [
     {
       "path": ".gitattributes",
@@ -106,7 +106,7 @@
     },
     {
       "path": "Assets/Editor/CaptureDemoTimelineChecks.cs",
-      "sha256": "0b1e308e2d5969a77752a8f4ce8286f24697a6a978f581069afc82360669408f"
+      "sha256": "c63b20bd898a93ee96d1d0b5918181f644f0a25310492f5e32949b6e9de12d63"
     },
     {
       "path": "Assets/Editor/CaptureDemoTimelineChecks.cs.meta",
@@ -7266,7 +7266,11 @@
     },
     {
       "path": "README.md",
-      "sha256": "a9c671250af3beb5180a0c39a9c5586ccaced9142e09a48a13564e954fb351cd"
+      "sha256": "fa7ffcad1449f9a1009c2480dd1e83687e9586bfb01b33dd992769b6f565db30"
+    },
+    {
+      "path": "Reports/android-close-resume-20261120/delivery-summary.json",
+      "sha256": "bab9e08f0e109957118891bc11cd9989f67e442008aa40cb559353008573db86"
     },
     {
       "path": "Reports/bronze-current-review-20261120/bronze-motion-samples.png",
@@ -7295,6 +7299,14 @@
     {
       "path": "Reports/bug-dance-current-review-20261120/delivery-summary.json",
       "sha256": "3731dd435358df4c0046d920092319619ca8a6deb46100ec666eb6c87fca338d"
+    },
+    {
+      "path": "Reports/delivery-gap-index-20261120/CASE_SCENE_STATUS-v3.md",
+      "sha256": "0f1de2cf6dbf578a087058cc83a81b9f3c9841b19217ea6c854a9a3028ef73c1"
+    },
+    {
+      "path": "Reports/delivery-gap-index-20261120/inventory-v3.json",
+      "sha256": "b1f6992355ee30c4d47587259b069c954a4b2adffdfec6bb7c80e7d839e56806"
     },
     {
       "path": "Reports/nonfire-validation-native-20261120/delivery-summary.json",
@@ -7339,6 +7351,26 @@
     {
       "path": "Reports/room-window-landscape-20261120/delivery-summary.json",
       "sha256": "258a15706290977460fa49229f218c3426a67ffc70b6b43bf7c7357779e68c7c"
+    },
+    {
+      "path": "Reports/sample-capture-review-20261120/DesktopCaptureDemo-v4/captured-card.png",
+      "sha256": "174a2136964f336a925f1617bf5febd3a25fa589a0f524be6e1470c59c664b56"
+    },
+    {
+      "path": "Reports/sample-capture-review-20261120/SampleScene-v4/captured-card.png",
+      "sha256": "72cca314c0946a46b1ef409608e8f95a56db0ef15bb9c2a18554f81580b6ce67"
+    },
+    {
+      "path": "Reports/sample-capture-review-20261120/delivery-summary.json",
+      "sha256": "fa5d68d2ac86c1021fc5710d4eaf5d3aaed3506304dd78424627617a82ad711a"
+    },
+    {
+      "path": "Reports/scene-evidence-audit-20261120/delivery-summary.json",
+      "sha256": "d4feaff42713ca7193cf704c043e49c08026c06d70c336b28cf7044b93c881f5"
+    },
+    {
+      "path": "Reports/scene-evidence-audit-20261120/eight-original-startup-contact-sheet.png",
+      "sha256": "930861c9d92caf3988f65c7ac65db26bd9a950ff2f3a306c12e86d17c0ecbd67"
     },
     {
       "path": "Reports/season-tree-current-review-20261120/delivery-case-status.json",
@@ -7414,7 +7446,7 @@
     },
     {
       "path": "SOURCE_DELIVERY.md",
-      "sha256": "c12942b1b029106f2c3216abd30dd5c6ec8ad04f060f52992ed3d4778c653fd7"
+      "sha256": "595d0ae2a422214146aa0359f2645a9e10635850002f1cb6ddfb91455de47740"
     },
     {
       "path": "Tools/NonFireDiscoveryNativeChecks.cs",
@@ -7490,7 +7522,7 @@
     },
     {
       "path": "Tools/run_room_magic_review_bounded.ps1",
-      "sha256": "eb27dc25c8114707f71a39d56984bbbf6a4f666872a8fd6f43e14af8dc2b0195"
+      "sha256": "7d8bc2133eba3b30be6409489c077c4a86ba2dc9adeb39bf44ef7a460d336745"
     },
     {
       "path": "Tools/setup_f2g_runtime.py",
@@ -7686,6 +7718,7 @@
   "preservation": {
     "mainIndexSha256": "aab38b747bb2453015b4ce247543cf2dd6aa54d5d5586cf1fcafce46a0398c5a",
     "mainExistingSourceFilesUnchangedExcept": [
+      "Assets/Editor/CaptureDemoTimelineChecks.cs",
       "Assets/Editor/HciBugDanceChecks.cs",
       "Assets/Editor/HciPetOutlineChecks.cs",
       "Assets/Editor/HciPlantFlowChecks.cs",
@@ -7699,7 +7732,7 @@
       "Assets/Scripts/Perception/DiscoverySelection.cs"
     ],
     "mainPayloadFilesVerified": 1836,
-    "mainPayloadFilesUnchanged": 1825,
+    "mainPayloadFilesUnchanged": 1824,
     "sharedSelectionPolicyChangedForNonFireOnly": true,
     "lighterLegacyPredicateTextUnchanged": true,
     "fireScenesModelsAnimationsEffectsAndYoloWeightsUnchanged": true,
@@ -7725,7 +7758,8 @@
     "Statue checks use synthetic joints/manual plane; human motion does not establish bronze full-body animation; C body-framed screenshots do not establish narrative readability. Reused narrative fixed-camera proof is scoped, not full package/hardware parity.",
     "Current bronze full-body local playback supplement uses synthetic joints/manual ground; body-framed images do not establish full garden view, actual camera/TCP/YOLO/hands/audio/PICO or final art.",
     "Coin self-occlusion masks cover only two fixed review views and chest-local clearances, not arbitrary physical head poses, perceptual readability, actual camera/YOLO/hands/PICO or final art.",
-    "Current insect B uses timed synthetic joints and four virtual appearance/species cases; setup A is action dispatch. A/C/D old core effect scopes reused only. Physical hand/YOLO/PICO, real insect passthrough visibility and final art remain pending."
+    "Current insect B uses timed synthetic joints and four virtual appearance/species cases; setup A is action dispatch. A/C/D old core effect scopes reused only. Physical hand/YOLO/PICO, real insect passthrough visibility and final art remain pending.",
+    "Original startup and desktop/API capture checks do not establish physical camera/AR/YOLO/HCI/PICO or final art. Fire remains frozen."
   ],
   "evidence": [
     {
@@ -7887,9 +7921,41 @@
     {
       "path": "Reports/bug-dance-current-review-20261120/bug-dance-pixel-steps.png",
       "sha256": "cf12e45c9e71145319a1bb8a8e157cd7dc3cd655666dd9acf1b74ffac8cb9026"
+    },
+    {
+      "path": "Reports/scene-evidence-audit-20261120/delivery-summary.json",
+      "sha256": "d4feaff42713ca7193cf704c043e49c08026c06d70c336b28cf7044b93c881f5"
+    },
+    {
+      "path": "Reports/sample-capture-review-20261120/delivery-summary.json",
+      "sha256": "fa5d68d2ac86c1021fc5710d4eaf5d3aaed3506304dd78424627617a82ad711a"
+    },
+    {
+      "path": "Reports/android-close-resume-20261120/delivery-summary.json",
+      "sha256": "bab9e08f0e109957118891bc11cd9989f67e442008aa40cb559353008573db86"
+    },
+    {
+      "path": "Reports/scene-evidence-audit-20261120/eight-original-startup-contact-sheet.png",
+      "sha256": "930861c9d92caf3988f65c7ac65db26bd9a950ff2f3a306c12e86d17c0ecbd67"
+    },
+    {
+      "path": "Reports/sample-capture-review-20261120/SampleScene-v4/captured-card.png",
+      "sha256": "72cca314c0946a46b1ef409608e8f95a56db0ef15bb9c2a18554f81580b6ce67"
+    },
+    {
+      "path": "Reports/sample-capture-review-20261120/DesktopCaptureDemo-v4/captured-card.png",
+      "sha256": "174a2136964f336a925f1617bf5febd3a25fa589a0f524be6e1470c59c664b56"
+    },
+    {
+      "path": "Reports/delivery-gap-index-20261120/inventory-v3.json",
+      "sha256": "b1f6992355ee30c4d47587259b069c954a4b2adffdfec6bb7c80e7d839e56806"
+    },
+    {
+      "path": "Reports/delivery-gap-index-20261120/CASE_SCENE_STATUS-v3.md",
+      "sha256": "0f1de2cf6dbf578a087058cc83a81b9f3c9841b19217ea6c854a9a3028ef73c1"
     }
   ],
-  "baseSourcePayloadTree": "17a1cda645824f665c069f0b17f4e1c4615104ac",
+  "baseSourcePayloadTree": "bcce6fd2ec28e7dcd640286a8eab31e8285f68ab",
   "sourceTreeRecalculationPending": false,
   "nonFireGateDelta": {
     "path": "Assets/Scripts/Perception/DiscoverySelection.cs",
@@ -7913,8 +7979,8 @@
   },
   "publication": {
     "target": "restore-4d-lighter",
-    "parent": "86ea6455499612bb11cede6f00d3a0eba5e8ac3d",
-    "state": "SCOPED_EDITOR_BUG_B_CHECK; actual commit/ref receipt separate",
+    "parent": "943e87faecda9f6f0fc33e2ae1a75c69ea89bf67",
+    "state": "SCOPED_EDITOR_AND_EVIDENCE; actual commit/ref receipt separate",
     "apkPublished": false,
     "deviceValidated": false
   },
@@ -8231,6 +8297,40 @@
     ],
     "reusedACDOriginalScopeOnly": true,
     "realCameraYoloHandsPicoAccepted": false,
+    "finalArtAccepted": false
+  },
+  "sceneCaptureDelta": {
+    "sourceChanges": {
+      "Assets/Editor/CaptureDemoTimelineChecks.cs": {
+        "before": "0b1e308e2d5969a77752a8f4ce8286f24697a6a978f581069afc82360669408f",
+        "after": "c63b20bd898a93ee96d1d0b5918181f644f0a25310492f5e32949b6e9de12d63"
+      },
+      "Tools/run_room_magic_review_bounded.ps1": {
+        "before": "eb27dc25c8114707f71a39d56984bbbf6a4f666872a8fd6f43e14af8dc2b0195",
+        "after": "7d8bc2133eba3b30be6409489c077c4a86ba2dc9adeb39bf44ef7a460d336745"
+      }
+    },
+    "portableSummaries": [
+      "Reports/scene-evidence-audit-20261120/delivery-summary.json",
+      "Reports/sample-capture-review-20261120/delivery-summary.json",
+      "Reports/android-close-resume-20261120/delivery-summary.json"
+    ],
+    "gapIndex": [
+      "Reports/delivery-gap-index-20261120/inventory-v3.json",
+      "Reports/delivery-gap-index-20261120/CASE_SCENE_STATUS-v3.md"
+    ],
+    "nativeFigures": [
+      "Reports/scene-evidence-audit-20261120/eight-original-startup-contact-sheet.png",
+      "Reports/sample-capture-review-20261120/SampleScene-v4/captured-card.png",
+      "Reports/sample-capture-review-20261120/DesktopCaptureDemo-v4/captured-card.png"
+    ],
+    "editorOnly": true,
+    "originalScenesChanged": false,
+    "productionOrFireChanged": false,
+    "sampleApiResetNotInputAcceptance": true,
+    "desktopActualButtonCallback": true,
+    "rawLocalLogsPublished": false,
+    "realYoloHandsPicoAccepted": false,
     "finalArtAccepted": false
   }
 }

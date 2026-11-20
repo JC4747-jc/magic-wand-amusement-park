@@ -11,17 +11,20 @@ public static class CaptureDemoTimelineChecks
     static CaptureTo2D capture;
     static int stage;
     static double started,phaseStart;
-    static readonly string Output=Path.GetFullPath(".codex-tmp/capture-animation-timeline");
+    static string Output=>Path.GetFullPath(SessionState.GetString(Key+".Output",".codex-tmp/capture-animation-timeline"));
     static CaptureDemoTimelineChecks() {EditorApplication.update+=Tick;}
-    public static void Run()
+    public static void Run()=>Begin("DesktopCaptureDemo",".codex-tmp/capture-animation-timeline");
+    public static void RunSample()=>Begin("SampleScene",".codex-tmp/sample-capture-animation-timeline");
+    static void Begin(string scene,string output)
     {
         if(EditorApplication.isPlayingOrWillChangePlaymode)throw new Exception("An idle editor is required");
+        SessionState.SetString(Key+".Case",scene);SessionState.SetString(Key+".Output",output);
         SessionState.SetString(Key+".Scene",UnityEngine.SceneManagement.SceneManager.GetActiveScene().path);
         SessionState.SetInt(Key+".Exit",-1);SessionState.SetBool(Key,true);
-        Directory.CreateDirectory(Output);EditorSceneManager.OpenScene("Assets/Scenes/DesktopCaptureDemo.unity");EditorApplication.EnterPlaymode();
+        Directory.CreateDirectory(Output);EditorSceneManager.OpenScene("Assets/Scenes/"+scene+".unity");EditorApplication.EnterPlaymode();
     }
     static void Require(bool ok,string reason) {if(!ok)throw new Exception(reason);}
-    static Transform Card=>capture.card2DUI.transform.parent;
+    static bool CardVisible=>capture.card2DUI.gameObject.activeInHierarchy;
     static void Tick()
     {
         if(!SessionState.GetBool(Key,false))return;
@@ -42,30 +45,37 @@ public static class CaptureDemoTimelineChecks
                 Require(capture&&capture.target3DObject&&capture.card2DUI&&capture.backpackIcon&&capture.captureCamera,"Actual desktop scene bindings incomplete");
                 Time.timeScale=0;
                 Require(capture.TryCapture()&&!capture.TryCapture(),"Single capture guard failed");
-                Require(capture.IsCaptured&&capture.IsAnimating&&!capture.target3DObject.activeSelf&&Card.gameObject.activeSelf,"Capture did not show card and hide source");
+                Require(capture.IsCaptured&&capture.IsAnimating&&!capture.target3DObject.activeSelf&&CardVisible,"Capture did not show card and hide source");
                 Snapshot();stage=2;phaseStart=EditorApplication.timeSinceStartup;
             }
             else if(stage==2 && elapsed>.2)
             {
-                var reset=GameObject.Find("CaptureResetButton").GetComponent<UnityEngine.UI.Button>();
-                Require(reset,"Actual desktop reset control missing");reset.onClick.Invoke();
-                Require(capture.target3DObject.activeSelf&&!capture.IsCaptured&&!capture.IsAnimating&&!Card.gameObject.activeSelf,"Mid-flight reset failed");
+                if(SessionState.GetString(Key+".Case","DesktopCaptureDemo")=="DesktopCaptureDemo"){
+                    var control=GameObject.Find("CaptureResetButton");Require(control,"Actual desktop reset control missing");
+                    var reset=control.GetComponent<UnityEngine.UI.Button>();Require(reset,"Actual desktop reset button missing");reset.onClick.Invoke();
+                    File.WriteAllText(Path.Combine(Output,"reset-source.txt"),"Actual DesktopCaptureDemo reset button callback invoked.\n");
+                }else{
+                    capture.ResetCapture();
+                    File.WriteAllText(Path.Combine(Output,"reset-source.txt"),"SampleScene has no DesktopCaptureDemo reset button; actual CaptureTo2D.ResetCapture API invoked. No button, keyboard or AR input claim.\n");
+                }
+                Require(capture.target3DObject.activeSelf&&!capture.IsCaptured&&!capture.IsAnimating&&!CardVisible,"Mid-flight reset failed");
+                Require(capture.backpackIcon.gameObject.activeInHierarchy,"Reset hid the shared backpack UI");
                 Require(capture.TryCapture(),"Reset could not start another capture");stage=3;phaseStart=EditorApplication.timeSinceStartup;
             }
             else if(stage==3 && elapsed>1.8)
             {
-                Require(capture.IsCaptured&&!capture.IsAnimating&&!Card.gameObject.activeSelf&&!capture.target3DObject.activeSelf,"Animation did not complete while timeScale=0");
+                Require(capture.IsCaptured&&!capture.IsAnimating&&!CardVisible&&!capture.target3DObject.activeSelf,"Animation did not complete while timeScale=0");
                 capture.ResetCapture();Require(capture.TryCapture(),"Completed capture could not reset");stage=4;phaseStart=EditorApplication.timeSinceStartup;
             }
             else if(stage==4 && elapsed>.2)
             {
-                capture.enabled=false;Require(!capture.IsCaptured&&!capture.IsAnimating&&capture.target3DObject.activeSelf&&!Card.gameObject.activeSelf,"Disable left a hidden source or running animation");
+                capture.enabled=false;Require(!capture.IsCaptured&&!capture.IsAnimating&&capture.target3DObject.activeSelf&&!CardVisible,"Disable left a hidden source or running animation");
                 capture.enabled=true;Require(capture.TryCapture(),"Re-enable could not capture");
                 var original=capture.target3DObject;var replacement=new GameObject("Retarget fixture");capture.SetTarget(replacement);
                 Require(original.activeSelf&&!capture.IsCaptured&&!capture.IsAnimating,"Retarget failed to restore previous object");capture.SetTarget(original);UnityEngine.Object.Destroy(replacement);
                 Time.timeScale=1;
-                File.WriteAllText(Path.Combine(Output,"result.txt"),"PASS: actual DesktopCaptureDemo bindings, nonblank rendered snapshot, duplicate request, mid-flight reset, unscaled completion, disable/re-enable, retarget cleanup. No backend request or device claim.\n");
-                Debug.Log("CAPTURE_PLAYMODE_TIMELINE_PASS: actual desktop scene, snapshot, reset/cancel/reuse, unscaled completion, retarget");Finish(0);
+                File.WriteAllText(Path.Combine(Output,"result.txt"),"PASS: actual "+SessionState.GetString(Key+".Case","DesktopCaptureDemo")+" bindings, nonblank rendered snapshot, duplicate request, mid-flight reset, unscaled completion, disable/re-enable, retarget cleanup. No backend request or device claim.\n");
+                Debug.Log("CAPTURE_PLAYMODE_TIMELINE_PASS: "+SessionState.GetString(Key+".Case","")+", snapshot, reset/cancel/reuse, unscaled completion, retarget");Finish(0);
             }
         }
         catch(Exception error) {Debug.LogException(error);File.WriteAllText(Path.Combine(Output,"result.txt"),"FAIL: "+error);Time.timeScale=1;Finish(1);}
