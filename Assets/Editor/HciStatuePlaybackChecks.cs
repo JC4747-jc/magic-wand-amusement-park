@@ -36,20 +36,22 @@ public static class HciStatuePlaybackChecks
         if(Time.unscaledTime-lastRecorded>.05f){lastRecorded=Time.unscaledTime;records.Add(FormattableString.Invariant($"{Time.unscaledTime:F4},{animation.Progress:F4},{hand.position.y-restHand.y:F6},{l:F7},{r:F7},{p:F7},{actor.Busy}"));}
     }
     static TabletopHandSample Frame(string shape,float pinch=.08f,Vector3 delta=default){var extension=shape=="fist"?Vector4.one*.55f:shape=="point"?new Vector4(.95f,.55f,.55f,.55f):Vector4.one*.95f;var p=anchor+Vector3.up*.05f+delta;return TabletopHandSample.Create(0,p,p+Vector3.up*.04f,p+Vector3.up*.04f+Vector3.right*pinch,p-Vector3.up*.02f,extension,Vector3.right,pinch);}
+    const float SampleCadenceSeconds=.03f;
+    static int plannedFistSamples;static float fistBeganAt=-1;
     static void Cast(EditDimension dimension){
-        controller.ProcessHandSample(default,false);holdValid=false;eventCount=0;traceIndex=0;sampleAt=Time.unscaledTime;lighter=new TabletopGestureRules();expectedDimension=dimension;trace=new List<TabletopHandSample>{Frame("open"),Frame("open")};
+        controller.ProcessHandSample(default,false);holdValid=false;eventCount=0;traceIndex=0;fistBeganAt=-1;sampleAt=Time.unscaledTime;lighter=new TabletopGestureRules();expectedDimension=dimension;trace=new List<TabletopHandSample>{Frame("open"),Frame("open")};
         if(dimension==EditDimension.Appearance){for(int n=1;n<=8;n++)trace.Add(Frame("open",.02f));trace.Add(Frame("open"));}
         else if(dimension==EditDimension.Agency){for(int n=0;n<=32;n++){float a=n/32f*Mathf.PI*2;trace.Add(Frame("point",.08f,new Vector3(Mathf.Cos(a),Mathf.Sin(a),0)*.04f));}}
         else if(dimension==EditDimension.Rule){for(int n=1;n<=6;n++)trace.Add(Frame("open",.08f,Vector3.right*n*.03f));}
-        else{for(int n=1;n<=45;n++)trace.Add(Frame("fist",.02f));trace.Add(Frame("open"));}
+        else{plannedFistSamples=Mathf.CeilToInt(TabletopGestureRules.FistMinimumSeconds/SampleCadenceSeconds)+1;Require((plannedFistSamples+1)*SampleCadenceSeconds<TabletopGestureRules.FistMaximumSeconds,"No safe synthetic D sampling window");for(int n=0;n<plannedFistSamples;n++)trace.Add(Frame("fist",.02f));trace.Add(Frame("open"));}
     }
     static void Pump(){try{
         if(!controller)return;
-        if(trace!=null){if(Time.unscaledTime<sampleAt)return;var f=trace[traceIndex++];f.gesture.time=Time.unscaledTime;sampleAt=Time.unscaledTime+.03f;
+        if(trace!=null){if(Time.unscaledTime<sampleAt)return;var f=trace[traceIndex++];f.gesture.time=Time.unscaledTime;sampleAt=Time.unscaledTime+SampleCadenceSeconds;if(expectedDimension==EditDimension.Deconstruction&&traceIndex==3)fistBeganAt=f.gesture.time;
             var expected=traceIndex==1?EditDimension.None:lighter.Step(f.gesture);var actual=controller.ProcessHandSample(f,true);
             Require(expected==actual,"Statue recognition differs from lighter: "+expected+"/"+actual+" "+controller.InteractionStatus);
             if(actual!=EditDimension.None){eventCount++;Require(actual==expectedDimension&&controller.LastMagicAccepted,"Wrong/rejected spell");}
-            held=f;holdValid=true;if(traceIndex==trace.Count){Require(eventCount==1,"Expected one gesture event, got "+eventCount);trace=null;next=EditorApplication.timeSinceStartup+1.2;}
+            held=f;holdValid=true;if(traceIndex==trace.Count){if(expectedDimension==EditDimension.Deconstruction){float duration=f.gesture.time-fistBeganAt;Require(fistBeganAt>=0&&duration>=TabletopGestureRules.FistMinimumSeconds&&duration<=TabletopGestureRules.FistMaximumSeconds,"Synthetic D missed production window");File.AppendAllText(Output+"/gesture-timing.txt",FormattableString.Invariant($"{actor.species}: D fist_seconds={duration:R} samples={plannedFistSamples} events={eventCount}\n"));}Require(eventCount==1,"Expected one gesture event, got "+eventCount);trace=null;next=EditorApplication.timeSinceStartup+1.2;}
         }else if(holdValid){held.gesture.time=Time.unscaledTime;Require(controller.ProcessHandSample(held,true)==EditDimension.None,"Held hand repeated spell");}
     }catch(Exception e){Fail(e);}}
     static Color32[] Capture(string name){

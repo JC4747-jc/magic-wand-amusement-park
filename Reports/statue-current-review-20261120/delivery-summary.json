@@ -1,0 +1,302 @@
+{
+  "checkedAtUtc": "2026-11-20T02:19:53.842074+00:00",
+  "sourceParent": "2148b2632b7b88b6eb413e8d9f5945a304c8af7b",
+  "localVerificationSha256": "339217520cf2aa68860d97cdcb6ef36ad7645ac55f1addf1f4d1102e45b10eec",
+  "sourceChanges": [
+    {
+      "path": "Assets/Editor/HciStatuePlaybackChecks.cs",
+      "beforeSha256": "571c6e46dc712dc74271a1d614103d9231f09cba96ed24dbb159b2a9e6e12536",
+      "sha256": "dbdcaeff5c2747167dfb2b68a9192fd2affef080cdecafc46e18cdbc953be8b7"
+    },
+    {
+      "path": "Assets/Editor/HciStatueGardenChecks.cs",
+      "beforeSha256": "7b29bfae0bbc9164ec99b744b48a0a3f74da35aaa6e7d4bfba1a2eda21946035",
+      "sha256": "ed3d8852e33326676dadd0165fcfdc8de1a5d771ddd01162bb57781f70c5c148"
+    },
+    {
+      "path": "Tools/run_room_magic_review_bounded.ps1",
+      "beforeSha256": "935bf18fb7a7858d25bdaf86ad84e38eb1bce526018f6e0eb48c19e6c8a3fe26",
+      "sha256": "33e2c521ec496296dd13f9015df7bbe1a86679fa7f3e82d8fb44197709e6a6d3"
+    }
+  ],
+  "productionRuntimeAssetsGesturesOrFireChanged": false,
+  "native": {
+    "style": {
+      "run": "Reports\\statue-effect-review-20261120\\statue-style-current-v1-20261120",
+      "terminalExit": 0,
+      "seconds": 55.6930171,
+      "resourceSamples": 74,
+      "minimumSampledFreeRamGiB": 7.392768859863281,
+      "maximumSampledOwnedRssMiB": 1515.10546875,
+      "resourcesSha256": "46ca30a1645a03b7408d89eede55e2cafa6680d30caa15cda640edf1966b87e4",
+      "sourceInventorySha256": "34b29203506235537cc84fb7eb178d6963887f125b81ec3f18e5683eecaa77e5",
+      "inputMetadataSha256": "fe299e4f560fc91801bc630bcc3541a03d99290cfaae9dac87f5e386a2a549fe",
+      "result": "PASS: saved ParkStatue, standing human + bronze; synthetic production A/B/C joint traces match lighter exactly once; A reversible cartoon material rather than story selection; B/C preserve appearance; C retains story/source; original albedo and exact shared material restoration; bounded material count; same-frame visible pixel checks; invalid/far/lost rejection; Undo/Reset; stable fit/anchor; zero runtime errors; ten camera renders. Editor only. Human B full stretching and D lotus/wish-tree lifecycle have separate validation; bronze full-body animation remains pending; no real YOLO/XR/PICO/Android acceptance.",
+      "renderCount": 10,
+      "frames": {
+        "style-v1\\BronzeBeast-00-original.png": "138ffa1798d12667eff5d00daa0ce88e26df451b0ce1395945d6d7751c0f3103",
+        "style-v1\\BronzeBeast-01-cartoon.png": "177cdb3c1642b77529d4fce5732c48fac06010256e4865d4be1051492bcc8f29",
+        "style-v1\\BronzeBeast-01-same-frame-original.png": "138ffa1798d12667eff5d00daa0ce88e26df451b0ce1395945d6d7751c0f3103",
+        "style-v1\\BronzeBeast-02-after-story.png": "4aaa855b955c8506e1ae54254536ed6b24d44eaf39144e4de96707dce8de6b44",
+        "style-v1\\BronzeBeast-03-reset.png": "25314fe699981c6ded62236443e156eb7a5f7d4b9a6b2e91e996b9e2601181c8",
+        "style-v1\\Statue-00-original.png": "ad44024f25b6ea436ea03cbcccf1cca16f1683d7314b307712cab96e99413fc2",
+        "style-v1\\Statue-01-cartoon.png": "46a6539f4bd0959e369d866b2389772c23bfeaaee0fdb8115aa312faa3dce9fa",
+        "style-v1\\Statue-01-same-frame-original.png": "894edd672710c5ea7a53ab2de5bc02072881917d3f772754f5b67209907de408",
+        "style-v1\\Statue-02-after-story.png": "1dbb3c219ae4dc86ceab80109f8e7726c98b37a97a6cfc1b342be7c769b5dd79",
+        "style-v1\\Statue-03-reset.png": "184f53814c69235630ecf3658757e5e48da9325dba144d5fa2a141c1c65b0533"
+      }
+    },
+    "playback": {
+      "run": "Reports\\statue-effect-review-20261120\\statue-playback-current-v1-20261120",
+      "terminalExit": 0,
+      "seconds": 48.7256622,
+      "resourceSamples": 65,
+      "minimumSampledFreeRamGiB": 7.643302917480469,
+      "maximumSampledOwnedRssMiB": 1507.03125,
+      "resourcesSha256": "f2e3fdd9003f18a9e991010b3cb9f6905f91104129efb00afb6e80c5c7c5dd0a",
+      "sourceInventorySha256": "2a709d9351af103d9325751cf88238cc6b9d98c30cf9569725a185bed6f6a7bd",
+      "inputMetadataSha256": "fe299e4f560fc91801bc630bcc3541a03d99290cfaae9dac87f5e386a2a549fe",
+      "result": "PASS: saved ParkStatue full-body human; production synthetic A/B/D hand traces match lighter once; live PlayableGraph stretch and return; 794 observed frames, hand rise 0.220m at 0.4m fit; feet/pelvis <0.1mm drift; root/fit unchanged; A/D preserved; Undo; mid-play Stop/Reset/tracking-loss; graph teardown/recreate; variant switch cleanup; six live camera renders; zero runtime errors. Bronze full-body animation, real YOLO/PICO and Android remain pending.",
+      "renderCount": 6,
+      "frames": {
+        "playback-v1\\Statue-00-idle.png": "ad44024f25b6ea436ea03cbcccf1cca16f1683d7314b307712cab96e99413fc2",
+        "playback-v1\\Statue-01-before-stretch.png": "6c3bd54f448479d6d269000ba1226c7dda8bf2c078a4d53776db17cf3cf27988",
+        "playback-v1\\Statue-02-stretch.png": "7337f1cf0662446343f37c10eb5d77730a9e8376bc42ceddf24eb41987c2efb4",
+        "playback-v1\\Statue-03-returned.png": "401c2f291d7f175af48ae046f50833a2e0a439f0f959de127fe8ddd9ce2edced",
+        "playback-v1\\Statue-04-stopped.png": "93422cf7a9d205ed7d597d41e2c14644d7e82399e0c824aaa9c7d08d613ddc91",
+        "playback-v1\\Statue-05-retracked-return.png": "ad44024f25b6ea436ea03cbcccf1cca16f1683d7314b307712cab96e99413fc2"
+      }
+    },
+    "garden": {
+      "run": "Reports\\statue-effect-review-20261120\\statue-garden-current-v1-20261120",
+      "terminalExit": 0,
+      "seconds": 66.4338418,
+      "resourceSamples": 89,
+      "minimumSampledFreeRamGiB": 7.7787322998046875,
+      "maximumSampledOwnedRssMiB": 1485.15625,
+      "resourcesSha256": "da806f30fc8a0fa9730c05ef473aac3b7caa33061d7f2b78205786e7bc85e689",
+      "sourceInventorySha256": "34b29203506235537cc84fb7eb178d6963887f125b81ec3f18e5683eecaa77e5",
+      "inputMetadataSha256": "fe299e4f560fc91801bc630bcc3541a03d99290cfaae9dac87f5e386a2a549fe",
+      "result": "PASS: saved ParkStatue standing human and bronze; production synthetic A/D joints equal lighter rules exactly once; D requires finite manually confirmed ground; six layered morphing lotus flowers and seven wish ribbons; progressive growth; A unchanged; Undo/Stop (including opening)/Reset/invalid plane/target loss clear garden; three shared meshes and one material reused; wish ribbons sway; no colliders; tracked root and fit unchanged; zero runtime/shader errors; eight camera renders. Editor only, synthetic manual ground is not room reconstruction or real YOLO/PICO acceptance.",
+      "renderCount": 8,
+      "frames": {
+        "garden-v1\\BronzeBeast-01-opening.png": "6808a79a7f1ae10c6deff3be95d4369d146f15c294f68a0a5c53f07ef75a3d5b",
+        "garden-v1\\BronzeBeast-02-open.png": "ad7b98e16a7c931a227fa6cf0088dee47c754822e03511d14ac7070770e66e1e",
+        "garden-v1\\BronzeBeast-03-lotus-detail.png": "b63098ee0353b07d00e775a7f67860c85e6175f178e73dccbb5a1e40258880ab",
+        "garden-v1\\BronzeBeast-04-reset.png": "f6e89f9888e6efb9521a98701093397f0bab668adecafbdea918674c76272101",
+        "garden-v1\\Statue-01-opening.png": "e49dceb9a61c8a51418bd6015173b57499aa70addad7ee364eaabc6d26ea741c",
+        "garden-v1\\Statue-02-open.png": "00767d1a82b8f38d5055e5a75b0dc4a05184b3f0cd2a5babff5528a39d8c4388",
+        "garden-v1\\Statue-03-lotus-detail.png": "4c99b855fa7ac9249ce8fb45604d00056955da5eb3051d2044c6a724a8ca2b1d",
+        "garden-v1\\Statue-04-reset.png": "22b33c68d91b6807a38c7ace9d9901d6831d42e5d59428df6a2b33c0eb9038df"
+      }
+    }
+  },
+  "testInputRepair": "Only obsolete Editor 45-fist traces replaced with count derived from existing production time constants and unchanged .03 nominal cadence. Actual durations/assertions logged; production rules unchanged.",
+  "timedSyntheticD": [
+    {
+      "scope": "playback-v1",
+      "variant": "Statue",
+      "fistSeconds": 0.125012875,
+      "samples": 3,
+      "events": 1
+    },
+    {
+      "scope": "garden-v1",
+      "variant": "Statue",
+      "fistSeconds": 0.125226021,
+      "samples": 3,
+      "events": 1
+    },
+    {
+      "scope": "garden-v1",
+      "variant": "Statue",
+      "fistSeconds": 0.12498951,
+      "samples": 3,
+      "events": 1
+    },
+    {
+      "scope": "garden-v1",
+      "variant": "Statue",
+      "fistSeconds": 0.125862122,
+      "samples": 3,
+      "events": 1
+    },
+    {
+      "scope": "garden-v1",
+      "variant": "Statue",
+      "fistSeconds": 0.125091553,
+      "samples": 3,
+      "events": 1
+    },
+    {
+      "scope": "garden-v1",
+      "variant": "Statue",
+      "fistSeconds": 0.124961853,
+      "samples": 3,
+      "events": 1
+    },
+    {
+      "scope": "garden-v1",
+      "variant": "BronzeBeast",
+      "fistSeconds": 0.125015259,
+      "samples": 3,
+      "events": 1
+    },
+    {
+      "scope": "garden-v1",
+      "variant": "BronzeBeast",
+      "fistSeconds": 0.1249733,
+      "samples": 3,
+      "events": 1
+    },
+    {
+      "scope": "garden-v1",
+      "variant": "BronzeBeast",
+      "fistSeconds": 0.124996185,
+      "samples": 3,
+      "events": 1
+    },
+    {
+      "scope": "garden-v1",
+      "variant": "BronzeBeast",
+      "fistSeconds": 0.124977112,
+      "samples": 3,
+      "events": 1
+    },
+    {
+      "scope": "garden-v1",
+      "variant": "BronzeBeast",
+      "fistSeconds": 0.125022888,
+      "samples": 3,
+      "events": 1
+    }
+  ],
+  "humanMotion": {
+    "trajectoryRows": 200,
+    "trajectorySha256": "c0a9390d13a234b1d3c73cb823a4a626ec69c6a666ecd976b62f4da1cf5e9c32",
+    "observedFrames": 794,
+    "maximumSampledTrajectoryHandRiseMetres": 0.219523,
+    "maximumSampledTrajectoryDriftMetres": {
+      "leftFootDrift": 0.0,
+      "rightFootDrift": 0.0,
+      "pelvisDrift": 0.0
+    },
+    "fittedHeightMetres": 0.4,
+    "allObservedFrameGuardThresholdMetres": 0.0001,
+    "rootAndFitUnchanged": true,
+    "completeStretchReturnAndMidAnimationLifecyclePassed": true,
+    "bronzeFullBodyProvenByThisRun": false
+  },
+  "appearance": {
+    "humanSameFramePixelsChanged": 18948,
+    "bronzeSameFramePixelsChanged": 102308,
+    "threshold": 4000,
+    "bothMaterialsReversible": true
+  },
+  "gardenScope": {
+    "variants": [
+      "Statue",
+      "BronzeBeast"
+    ],
+    "manualFiniteGroundRequired": true,
+    "lotusCount": 6,
+    "wishRibbonCount": 7,
+    "sharedMeshCount": 3,
+    "sharedMaterialCount": 1,
+    "progressiveGrowthAndRibbonMotion": true,
+    "undoStopIncludingOpeningResetInvalidPlaneLostTargetCleanupPassed": true,
+    "collidersAdded": false,
+    "realRoomReconstructionProven": false
+  },
+  "narrativeReuse": {
+    "runtimeTextComparison": {
+      "count": 71,
+      "changed": [
+        "Assets\\Scripts\\MagicMR\\ParkActor.NaturalPlants.cs",
+        "Assets\\Scripts\\MagicMR\\RoomMagicVisual.cs"
+      ]
+    },
+    "applicationTextComparison": {
+      "count": 51,
+      "changed": [
+        "Assets\\Scripts\\Perception\\DiscoverySelection.cs"
+      ]
+    },
+    "assetComparison": {
+      "count": 86,
+      "changed": []
+    },
+    "reference": "Reports\\statue-narrative-layout-20261120\\verification.json",
+    "referenceSha256": "3a094ab7529bba7e2f8a556b656970e59d9942d82a3372798b07aad735dd42b2",
+    "evidenceCount": 15,
+    "evidenceHashMismatches": [],
+    "currentNarrativeRuntimeAndFixtureMatchFixed2": true,
+    "current86StatueAssetsMatchFixed2": true,
+    "reuseScope": "Only existing fixed-camera narrative layout/raster readability and its original local lifecycle scope; not full current source/package/hardware parity or B/D acceptance.",
+    "otherCurrentDifferences": "NaturalPlants/RoomMagicVisual and non-fire DiscoverySelection changed; statue geometry/material/narrative sources remain equal. Packages/old APK not used as current whole-project proof."
+  },
+  "renderReview": {
+    "nativeFramesActuallyViewed": 24,
+    "technicalFiguresActuallyViewed": [
+      "style-v1-contact-sheet.png",
+      "playback-v1-contact-sheet.png",
+      "garden-v1-contact-sheet.png",
+      "statue-style-comparison.png",
+      "statue-motion-samples.png",
+      "statue-garden-effects.png"
+    ],
+    "observation": "Natural/cartoon materials visually distinct. Human arms raise and return while feet remain planted. Human/bronze lotus flowers visibly unfold; stylized wish tree and ribbons present. Style-review camera follows statue body and crops C side panel; no narrative readability claim from those images.",
+    "finalArtAccepted": false,
+    "remaining": "Real-background lighting/placement, stereo viewing and final art; bronze full-body acceptance not covered by human playback run."
+  },
+  "androidReused": {
+    "path": "D:\\MagicMRSourceCandidate\\20261120\\Builds\\Android\\PlantPresentationValidation-20261120.apk",
+    "sha256": "f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31",
+    "bytes": 78064133,
+    "sceneCount": 15,
+    "newBuildRequired": false,
+    "newBuildRun": false,
+    "reason": "Only two Editor check files and bounded launcher changed vs frozen 1865 prior input. All player/runtime/assets/package/settings bytes remain identical.",
+    "reference": "Reports/android-resume-check-20261120/verification.json",
+    "deviceExecutionValidated": false
+  },
+  "preservation": {
+    "mainHead": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
+    "mainIndexSha256": "aab38b747bb2453015b4ce247543cf2dd6aa54d5d5586cf1fcafce46a0398c5a",
+    "mainBaselineFiles": 1836,
+    "mainExistingDifferencesVsOriginal": [
+      "Assets/Editor/HciPetOutlineChecks.cs",
+      "Assets/Editor/HciPlantFlowChecks.cs",
+      "Assets/Editor/HciRoomMagicChecks.cs",
+      "Assets/Editor/HciSeasonTreeChecks.cs",
+      "Assets/Editor/HciStatueGardenChecks.cs",
+      "Assets/Editor/HciStatuePlaybackChecks.cs",
+      "Assets/Resources/MagicMR/RoomStyle.shader",
+      "Assets/Scripts/MagicMR/ParkActor.NaturalPlants.cs",
+      "Assets/Scripts/MagicMR/RoomMagicVisual.cs",
+      "Assets/Scripts/Perception/DiscoverySelection.cs"
+    ],
+    "mainOtherExistingSourcesUnchanged": 1826,
+    "fireDedicatedCodeScenesModelsEffectsAnimationsWeightsAndMetaUnchanged": true,
+    "sharedProductionParkActorAndGestureSourcesUnchanged": true,
+    "allCandidate1865InputHashesMatched": true,
+    "metadataIsFrozenInputNotOutcome": true
+  },
+  "qaFigures": {
+    "Reports/statue-current-review-20261120/statue-style-comparison.png": {
+      "sha256": "eae8e9c8c7f0adb404f6122ac18c93fe0e7f4efedfabe933cb4029d42db5761a",
+      "bytes": 155129
+    },
+    "Reports/statue-current-review-20261120/statue-motion-samples.png": {
+      "sha256": "e9520a62783a62000a2c00f6f4a688642715ea7a58f53459c4358480e599860a",
+      "bytes": 119330
+    },
+    "Reports/statue-current-review-20261120/statue-garden-effects.png": {
+      "sha256": "1f468ed678b098e5c2f74a5e829625e2fd0e6333473581ea78f3bb7c37e33c9c",
+      "bytes": 176751
+    }
+  },
+  "realYoloHandsPicoAccepted": false,
+  "finalArtAccepted": false,
+  "fullEightCase32EffectAcceptance": false
+}

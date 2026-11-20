@@ -28,20 +28,22 @@ public static class HciStatueGardenChecks
     static void Open(){Require(garden.gameObject.activeInHierarchy&&garden.Progress>.99f,"Garden not open: "+garden.Progress+" active="+garden.gameObject.activeInHierarchy);Require(garden.transform.position==ground,"Garden moved from confirmed ground");Require(actor.transform.position==anchor&&fit.localPosition==fitPosition&&fit.localScale==fitScale,"Garden moved tracked object/fit");Require(garden.VertexCount==vertices&&garden.TriangleCount==triangles,"Geometry grew");Require(garden.GetComponentsInChildren<MeshFilter>(true).Select(m=>m.sharedMesh).Distinct().SequenceEqual(meshes),"Meshes replaced");Require(garden.GetComponentsInChildren<Renderer>(true).All(m=>m.sharedMaterial==material),"Materials duplicated");}
     static void Closed(){Require(!garden.gameObject.activeInHierarchy&&garden.Progress==0,"Garden not cleared");}
     static TabletopHandSample Frame(string shape,float pinch=.08f,Vector3 delta=default){var extension=shape=="fist"?Vector4.one*.55f:shape=="point"?new Vector4(.95f,.55f,.55f,.55f):Vector4.one*.95f;var p=anchor+Vector3.up*.05f+delta;return TabletopHandSample.Create(0,p,p+Vector3.up*.04f,p+Vector3.up*.04f+Vector3.right*pinch,p-Vector3.up*.02f,extension,Vector3.right,pinch);}
+    const float SampleCadenceSeconds=.03f;
+    static int plannedFistSamples;static float fistBeganAt=-1;
     static void Cast(EditDimension dimension){
-        controller.ProcessHandSample(default,false);holdValid=false;eventCount=0;traceIndex=0;sampleAt=Time.unscaledTime;lighter=new TabletopGestureRules();expectedDimension=dimension;trace=new List<TabletopHandSample>{Frame("open"),Frame("open")};
+        controller.ProcessHandSample(default,false);holdValid=false;eventCount=0;traceIndex=0;fistBeganAt=-1;sampleAt=Time.unscaledTime;lighter=new TabletopGestureRules();expectedDimension=dimension;trace=new List<TabletopHandSample>{Frame("open"),Frame("open")};
         if(dimension==EditDimension.Appearance){for(int n=1;n<=8;n++)trace.Add(Frame("open",.02f));trace.Add(Frame("open"));}
         else if(dimension==EditDimension.Agency){for(int n=0;n<=32;n++){float a=n/32f*Mathf.PI*2;trace.Add(Frame("point",.08f,new Vector3(Mathf.Cos(a),Mathf.Sin(a),0)*.04f));}}
         else if(dimension==EditDimension.Rule){for(int n=1;n<=6;n++)trace.Add(Frame("open",.08f,Vector3.right*n*.03f));}
-        else{for(int n=1;n<=45;n++)trace.Add(Frame("fist",.02f));trace.Add(Frame("open"));}
+        else{plannedFistSamples=Mathf.CeilToInt(TabletopGestureRules.FistMinimumSeconds/SampleCadenceSeconds)+1;Require((plannedFistSamples+1)*SampleCadenceSeconds<TabletopGestureRules.FistMaximumSeconds,"No safe synthetic D sampling window");for(int n=0;n<plannedFistSamples;n++)trace.Add(Frame("fist",.02f));trace.Add(Frame("open"));}
     }
     static void Pump(){try{
         if(!controller)return;
-        if(trace!=null){if(Time.unscaledTime<sampleAt)return;var f=trace[traceIndex++];f.gesture.time=Time.unscaledTime;sampleAt=Time.unscaledTime+.03f;
+        if(trace!=null){if(Time.unscaledTime<sampleAt)return;var f=trace[traceIndex++];f.gesture.time=Time.unscaledTime;sampleAt=Time.unscaledTime+SampleCadenceSeconds;if(expectedDimension==EditDimension.Deconstruction&&traceIndex==3)fistBeganAt=f.gesture.time;
             var expected=traceIndex==1?EditDimension.None:lighter.Step(f.gesture);var actual=controller.ProcessHandSample(f,true);
             Require(expected==actual,"Statue recognition differs from lighter: "+expected+"/"+actual+" "+controller.InteractionStatus);
             if(actual!=EditDimension.None){eventCount++;Require(actual==expectedDimension&&controller.LastMagicAccepted,"Wrong/rejected spell");}
-            held=f;holdValid=true;if(traceIndex==trace.Count){Require(eventCount==1,"Expected one gesture event, got "+eventCount);trace=null;next=EditorApplication.timeSinceStartup+2.2;}
+            held=f;holdValid=true;if(traceIndex==trace.Count){if(expectedDimension==EditDimension.Deconstruction){float duration=f.gesture.time-fistBeganAt;Require(fistBeganAt>=0&&duration>=TabletopGestureRules.FistMinimumSeconds&&duration<=TabletopGestureRules.FistMaximumSeconds,"Synthetic D missed production window");File.AppendAllText(Output+"/gesture-timing.txt",FormattableString.Invariant($"{actor.species}: D fist_seconds={duration:R} samples={plannedFistSamples} events={eventCount}\n"));}Require(eventCount==1,"Expected one gesture event, got "+eventCount);trace=null;next=EditorApplication.timeSinceStartup+2.2;}
         }else if(holdValid){held.gesture.time=Time.unscaledTime;Require(controller.ProcessHandSample(held,true)==EditDimension.None,"Held hand repeated spell");}
     }catch(Exception e){Fail(e);}}
     static void Capture(string name,bool detail=false){

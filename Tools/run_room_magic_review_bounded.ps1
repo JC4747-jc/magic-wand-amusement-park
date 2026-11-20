@@ -4,7 +4,7 @@ param(
     [Parameter(Mandatory=$true)][string]$ProjectRoot,
     [ValidatePattern('^[a-z0-9-]{4,60}$')][string]$RunId='room-current-20261120',
     [string]$EditorOverrideManifest,
-    [ValidateSet('RoomMagic','RoomWindowOwnership','PlantFlow','PlantVoice','PetDream','PetOutline','SeasonTree','SeasonTreeSelection','WillowTree','WillowTreeSelection')][string]$Check='RoomMagic'
+    [ValidateSet('RoomMagic','RoomWindowOwnership','PlantFlow','PlantVoice','PetDream','PetOutline','SeasonTree','SeasonTreeSelection','WillowTree','WillowTreeSelection','StatueStyle','StatuePlayback','StatueGarden')][string]$Check='RoomMagic'
 )
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot -Parent
@@ -20,6 +20,9 @@ $checks=@{
     SeasonTreeSelection=@{method='HciSeasonTreeChecks.RunLive';pattern='^PASS: saved ParkTree natural mode,';folder='hci-live-season-tree';group='tree-effect-review-20261120';scope='Saved ParkTree real-target-mode selection/UI exercised by synthetic Observe data and joint traces; RunLive is a test name, not physical camera/network/YOLO/PICO evidence'}
     WillowTree=@{method='HciSeasonTreeChecks.RunWillow';pattern='^PASS: actual ParkTree fantasy variant;';folder='hci-willow';group='tree-effect-review-20261120';scope='Saved ParkTree willow effects, synthetic production joint traces, fit and lifecycle with actual Unity renders; no physical hand/YOLO/PICO or final art acceptance'}
     WillowTreeSelection=@{method='HciSeasonTreeChecks.RunLiveWillow';pattern='^PASS: actual ParkTree fantasy variant;';folder='hci-live-willow';group='tree-effect-review-20261120';scope='Saved ParkTree willow real-target-mode selection/UI exercised by synthetic Observe data and joint traces; no physical camera/network/YOLO/PICO evidence'}
+    StatueStyle=@{method='HciStatueStyleChecks.Run';pattern='^PASS: saved ParkStatue, standing human';folder='hci-statue-style';group='statue-effect-review-20261120';scope='Saved ParkStatue human/bronze style, synthetic A/B/C traces and fitted geometry; no physical YOLO/hands/PICO or final art acceptance'}
+    StatuePlayback=@{method='HciStatuePlaybackChecks.Run';pattern='^PASS: saved ParkStatue full-body human;';folder='hci-statue-playback';group='statue-effect-review-20261120';scope='Saved ParkStatue full-body animation, synthetic A/B/D traces, fitted anchor and pose lifecycle; no physical hand/YOLO/PICO or final art acceptance'}
+    StatueGarden=@{method='HciStatueGardenChecks.Run';pattern='^PASS: saved ParkStatue standing human and bronze;';folder='hci-statue-garden';group='statue-effect-review-20261120';scope='Saved ParkStatue human/bronze garden, synthetic A/D traces and confirmed manual plane; no physical room/YOLO/hands/PICO or final art acceptance'}
 }
 $selectedCheck=$checks[$Check]
 $output=Join-Path $root ('Reports/'+$selectedCheck.group+'/'+$RunId)

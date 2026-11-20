@@ -1,15 +1,15 @@
-# 打人柳当前场景与合成选择：检查候选交付（2026-11-20）
+# 石像当前场景原生检查候选交付（2026-11-20）
 
-父版本 restore-4d-lighter@25ec573f5e7f3e021bd9f2e05f9f143f031e00ac，开发基线仍 codex/mr-development-snapshot-20261109@8359a0c。仅改变树Editor检查和十模式有界启动器，附四行未完成状态、摘要与三幅已查看QA；生产运行时/识别链路/手势、树模型/材质/场景/骨骼/meta和火机未改。traeye原分支只读，历史提交不改写。
+父版本 restore-4d-lighter@2148b2632b7b88b6eb413e8d9f5945a304c8af7b，开发基线仍 codex/mr-development-snapshot-20261109@8359a0c。只改两个Editor检查中的过时D握拳测试输入和十三模式有界启动器；生产识别链路、手势、运行时代码、模型/骨骼/贴图/场景/meta及火机未改。traeye原分支只读、历史不改写。
 
-当前保存ParkTree打人柳：A自然/暗色可逆且不改变季节；B枝条抽击、双时序图与回位；C树皮痕迹和明暗呼吸参数；D须先有C，封印后关闭痕迹、打开铰链宝箱；Undo恢复C，Reset关闭宝箱/痕迹和重置盖子，拟合/树干/锚点不漂移。虚拟v2与合成选择v6均终态0，各约35.29秒；现有分类器逐样本和参照分类器比对、每次恰好一事件，D握拳约0.125秒（三样本），原规则未改。
+在已保存的ParkStatue上串行运行Style/Playback/Garden，均终态0，分别55.69/48.73/66.43秒。10+6+8张实际原生渲染和三QA已查看。A卡通材质可逆，同帧人体18948/青铜102308像素变化；人体B实际PlayableGraph伸展/回位，794观察帧、200行轨迹，0.4m拟合下手抬升约0.219523m，脚/骨盆逐观察帧守卫<0.1mm，根/拟合不漂移，保留先前A/D、Undo、途中Stop/Reset/丢失/图重建/变体清理通过。人体B结果不证明青铜全身动作。
 
-查看了8+9张最终原生图。B相隔约0.23秒，最大枝条旋转差约34度；C采样参数变化>0.5。菜单截图相机早期漏掉了独立Shared status面板；v6依据实际UI源码同时取两个面板与文字顶点，2360顶点在边界内，顶部完整状态已实际查看。截图断言通过不等于美术完成：暗色真实背景对比、树皮痕迹表现和宝箱精细度仍待完善。
+D在人体/青铜两变体上须有限手工确认地面；六朵分层莲花、七许愿条、渐进生长/摆动、三共享网格一材质、无碰撞体，以及Undo/Stop含开启中/Reset/无效平面/丢失清理通过。旧45拳测试按0.03s节拍会超生产时限，改用未变常量派生三拳；11条实际时戳合成D约0.125s、各一事件。生产规则未改，手工地面不等于真实房间重建。
 
-RunLiveWillow为测试名：合成Observe坐标与合成关节输入，硬件接收在测试中停用；同一实例经共享UI选择/切换，虚拟动作在实体模式拒绝，仲裁/失效条件检查通过。18条CSV全部是SYNTHETIC_OBSERVE_TREE_WILLOW，不是相机/TCP/真实YOLO、真实手或人类实验数据。截图中的LIVE TCP仅表示配置，实际显示disconnected/stale。
+C：当前Style检查验证合成路由和生命周期，但其相机仅框石像主体，侧面板被裁，不能证明阅读布局。仅复用本日既有叙事固定视角验收：修正后的叙事运行时和Editor两源码、86石像资源、15证据哈希仍匹配，最小独立栅格间隙30px。其他植物/房间/选择源码和包差异不冒充全工程或设备对应；任意角度/距离/双眼阅读仍待验。
 
-Android沿用本地PlantPresentationValidation-20261120.apk，78064133字节，SHA256 f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31；15场景/CRC/签名/zipalign4/16个ARM64 ELF已核。当前只改Editor/启动器，玩家运行时输入不变，未重复构建、未上传APK；包检查不能证明设备运行或真实链路效果。
+沿用已核Android包 PlantPresentationValidation-20261120.apk，78064133B，SHA256 f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31。15场景、CRC、签名、zipalign4、16个ARM64 ELF已核；当前仅Editor/启动器输入变化，玩家代码/资源/包配置不变，不重复构建，不上传APK。静态包检查不证明PICO运行。
 
-便携证据 [Reports/willow-current-review-20261120/delivery-summary.json](Reports/willow-current-review-20261120/delivery-summary.json)；四项状态 [Reports/willow-current-review-20261120/delivery-case-status.json](Reports/willow-current-review-20261120/delivery-case-status.json)。三QA的哈希见摘要，其余原图/日志/合成CSV保留本地。SOURCE_VALIDATION.sourcePayloadTree为完整候选树去掉元数据自身；payloadFiles为已核范围，其他继承内容不新增验收。独立索引显式十项，JC4747-jc身份；实际远端结果以单独回执为准。
+便携摘要 [Reports/statue-current-review-20261120/delivery-summary.json](Reports/statue-current-review-20261120/delivery-summary.json)；四项范围/未完成状态 [Reports/statue-current-review-20261120/delivery-case-status.json](Reports/statue-current-review-20261120/delivery-case-status.json)。三QA哈希见摘要，完整原图/轨迹/资源日志留本地。SOURCE_VALIDATION.sourcePayloadTree为完整候选树去掉元数据自身；payloadFiles只是已核范围，其他继承内容不新增验收。独立索引显式十一项，JC4747-jc身份；实际提交/远端哈希由独立回执核对。
 
-尚未完成：真实YOLO→HCI实际手势→效果、PICO双眼/读距/性能/生命周期、最终美术、独立实拍与非火机模型质量、完整8案例32效果。头显按用户安排暂不连接，不自动定时提交。
+未完成：真实YOLO→实际HCI手势→效果、PICO双眼/读距/生命周期/性能、最终美术、青铜全身动作证据、独立采集与非火机模型质量、完整8案例32效果。头显按用户安排暂不连接，不自动定时提交。

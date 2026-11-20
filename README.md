@@ -1,4 +1,4 @@
-> 2026-11-20 打人柳当前检查候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。虚拟/合成选择、17张原生图、枝条双取样/树皮呼吸和完整菜单截图已核；火机/运行时未改。真实YOLO/手部/PICO、最终美术与模型准确率仍待验收；APK未上传。
+> 2026-11-20 石像当前场景检查候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。外观/人体动作/两变体花园三项原生合成检查、24图和三QA已核；火机/运行时未改。真实YOLO/手部/PICO、青铜全身动作与最终美术仍待验，APK未上传。
 
 # Magic Wand Amusement Park
 
