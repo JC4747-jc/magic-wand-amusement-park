@@ -1,25 +1,15 @@
-# 四季树当前场景与合成选择：检查候选交付（2026-11-20）
+# 打人柳当前场景与合成选择：检查候选交付（2026-11-20）
 
-父版本 restore-4d-lighter@18f829b5215c2495e75b1b5ebad564cb26a56bd4，开发基线仍 codex/mr-development-snapshot-20261109@8359a0c。只改Editor HciSeasonTreeChecks和有界启动器，并附摘要、未完成状态与三幅已查看QA。生产代码/手势、树模型/材质/场景/骨骼/meta及火机不变。旧树种选择报告四源码中三项不同，不能沿用旧pass；打人柳树冠特定代码/几何未变的范围可复用，不外推整个打人柳交互。
+父版本 restore-4d-lighter@25ec573f5e7f3e021bd9f2e05f9f143f031e00ac，开发基线仍 codex/mr-development-snapshot-20261109@8359a0c。仅改变树Editor检查和十模式有界启动器，附四行未完成状态、摘要与三幅已查看QA；生产运行时/识别链路/手势、树模型/材质/场景/骨骼/meta和火机未改。traeye原分支只读，历史提交不改写。
 
-当前保存ParkTree自然体验：A动漫冠层可逆且季节不变；B五renderer脸/实测眨眼；C夏秋冬春与覆盖脱落恢复；D有界枝条风和叶片，不误开幻想宝箱；Undo、拟合/锚点稳定、中断Reset通过。现有共享分类器接收合成关节样本，每样本与lighter分类器比较、每次恰好1事件。过时Editor 45拳超窗未执行，按原常量派生3拳，实际虚拟.124990463秒/选择模式.125秒，均落在未改.04–.55秒窗口。
+当前保存ParkTree打人柳：A自然/暗色可逆且不改变季节；B枝条抽击、双时序图与回位；C树皮痕迹和明暗呼吸参数；D须先有C，封印后关闭痕迹、打开铰链宝箱；Undo恢复C，Reset关闭宝箱/痕迹和重置盖子，拟合/树干/锚点不漂移。虚拟v2与合成选择v6均终态0，各约35.29秒；现有分类器逐样本和参照分类器比对、每次恰好一事件，D握拳约0.125秒（三样本），原规则未改。
 
-![四季候选画面，春夏差异仍需美术复核](Reports/season-tree-current-review-20261120/season-cycle.png)
+查看了8+9张最终原生图。B相隔约0.23秒，最大枝条旋转差约34度；C采样参数变化>0.5。菜单截图相机早期漏掉了独立Shared status面板；v6依据实际UI源码同时取两个面板与文字顶点，2360顶点在边界内，顶部完整状态已实际查看。截图断言通过不等于美术完成：暗色真实背景对比、树皮痕迹表现和宝箱精细度仍待完善。
 
-![A风格与B拟人近景，复核相机非设备相机](Reports/season-tree-current-review-20261120/tree-core-effects.png)
+RunLiveWillow为测试名：合成Observe坐标与合成关节输入，硬件接收在测试中停用；同一实例经共享UI选择/切换，虚拟动作在实体模式拒绝，仲裁/失效条件检查通过。18条CSV全部是SYNTHETIC_OBSERVE_TREE_WILLOW，不是相机/TCP/真实YOLO、真实手或人类实验数据。截图中的LIVE TCP仅表示配置，实际显示disconnected/stale。
 
-21张800x800原生图（虚拟10、合成选择11）和五幅QA均实际查看。春夏绿色差异较轻；冬coverage .025保留少量整叶，叶冠ROI秋橙67137像素/冬5130像素；回春恢复。它们不是最终美术或头显可读性验收。脸部为独立近景相机；其眼高包络有实际眨眼记录。
+Android沿用本地PlantPresentationValidation-20261120.apk，78064133字节，SHA256 f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31；15场景/CRC/签名/zipalign4/16个ARM64 ELF已核。当前只改Editor/启动器，玩家运行时输入不变，未重复构建、未上传APK；包检查不能证明设备运行或真实链路效果。
 
-![风叶两次取样，不代表完整周期或性能](Reports/season-tree-current-review-20261120/tree-gust-samples.png)
+便携证据 [Reports/willow-current-review-20261120/delivery-summary.json](Reports/willow-current-review-20261120/delivery-summary.json)；四项状态 [Reports/willow-current-review-20261120/delivery-case-status.json](Reports/willow-current-review-20261120/delivery-case-status.json)。三QA的哈希见摘要，其余原图/日志/合成CSV保留本地。SOURCE_VALIDATION.sourcePayloadTree为完整候选树去掉元数据自身；payloadFiles为已核范围，其他继承内容不新增验收。独立索引显式十项，JC4747-jc身份；实际远端结果以单独回执为准。
 
-约.236/.234秒两次取样，两模式5/5枝条改变局部旋转、24/24活动叶片改变位置，最大位移约.04419/.04397m，对象池固定32，随后枝条复位通过。仅证明取样间运动。虚拟检查41.42秒/55采样（最低RAM7.367GiB/RSS1833.24MiB），合成选择39.84秒/53采样（7.739GiB/1921.48MiB），退出0且资源守卫未触发；采样不是连续峰值。
-
-RunLive只是历史测试方法名：检查在ParkTree中注入SYNTHETIC_OBSERVE_TREE的Observe坐标和关节样本，硬件接收器只在fixture内禁用，不是真相机/TCP/YOLO/PICO输入。验证生产真实目标模式的点选捏合、自然/幻想UI切换不换ID/位置/fit、幂等、虚拟专用Awaken/Replay拒绝、模拟物理混用/Busy/Fit/Plane/过期/外来实例/丢失/禁用/空/错场景门控，以及UI持捏/释放不施法。CSV20行subject全部为SYNTHETIC_OBSERVE_TREE_SEASON，包含synthetic_fixture事件；原StudyLogs保留，不当人类实验或识别准确率证据。
-
-PowerShell 7：Tools/run_room_magic_review_bounded.ps1 -ProjectRoot <已配置SDK的隔离工程绝对路径> -RunId <唯一名称> -Check SeasonTree；合成选择用 -Check SeasonTreeSelection。原六模式保留。输出Reports/tree-effect-review-20261120/<RunId>，原图位于候选.codex-tmp/hci-season-tree或hci-live-season-tree。拒绝覆盖旧结果/已有Unity；需6GiB可用RAM、C盘20GiB/工程盘25GiB；默认Unity D:/Unity/Hub/Editor/6000.0.33f1/Editor/Unity.exe。单工作线程/拥有进程Job限制240秒、最低RAM3GiB、RSS3584MiB、净盘增512MiB、截图32MiB、日志8MiB。payload需精确匹配，PASS不替代看图。
-
-1865项冻结输入只改Editor/工具两行，运行时/资产/Packages/ProjectSettings通过前序证明链与f3c8 Android输入相同，复用PlantPresentationValidation-20261120.apk 78064133B SHA256 f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31 的15场景/签名CRC/资源/16 ARM64/zipalign/min29target35静态检查，未重建/上传APK。原有包、主HEAD/暂存和用户文件保留；不强推、不改traeye分支/历史，不进行四小时自动上传。
-
-便携摘要 [Reports/season-tree-current-review-20261120/delivery-summary.json](Reports/season-tree-current-review-20261120/delivery-summary.json)；四效果仍未完成 [Reports/season-tree-current-review-20261120/delivery-case-status.json](Reports/season-tree-current-review-20261120/delivery-case-status.json)。三QA图哈希见摘要，其余原图/日志/合成CSV保留本地。SOURCE_VALIDATION的sourcePayloadTree为完整候选Git树去掉其自身；payloadFiles只是已核对范围，其余继承内容不新增验收。独立索引显式10项、JC4747-jc身份，实际远端结果由回执核对。
-
-未完成：真实YOLO→HCI实际手势→效果、PICO/双眼/读距/长期性能、春夏区分及最终美术、独立实拍数据/非火机模型准确率和完整8案例32效果。设备按用户安排暂不连接。
+尚未完成：真实YOLO→HCI实际手势→效果、PICO双眼/读距/性能/生命周期、最终美术、独立实拍与非火机模型质量、完整8案例32效果。头显按用户安排暂不连接，不自动定时提交。

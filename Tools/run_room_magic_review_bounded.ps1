@@ -4,7 +4,7 @@ param(
     [Parameter(Mandatory=$true)][string]$ProjectRoot,
     [ValidatePattern('^[a-z0-9-]{4,60}$')][string]$RunId='room-current-20261120',
     [string]$EditorOverrideManifest,
-    [ValidateSet('RoomMagic','RoomWindowOwnership','PlantFlow','PlantVoice','PetDream','PetOutline','SeasonTree','SeasonTreeSelection')][string]$Check='RoomMagic'
+    [ValidateSet('RoomMagic','RoomWindowOwnership','PlantFlow','PlantVoice','PetDream','PetOutline','SeasonTree','SeasonTreeSelection','WillowTree','WillowTreeSelection')][string]$Check='RoomMagic'
 )
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot -Parent
@@ -18,6 +18,8 @@ $checks=@{
     PetOutline=@{method='HciPetOutlineChecks.Run';pattern='^PASS: saved ParkPet, Cat\+Dog;';folder='hci-pet-outline';group='pet-effect-review-20261120';scope='Saved ParkPet Cat/Dog synthetic shared joint traces, outline pixels/bone following, independent dream/pop/affection and walk state; no physical gestures/YOLO/PICO, feeding/sleeping or final art acceptance'}
     SeasonTree=@{method='HciSeasonTreeChecks.Run';pattern='^PASS: saved ParkTree natural mode,';folder='hci-season-tree';group='tree-effect-review-20261120';scope='Saved ParkTree natural experience, synthetic shared joint traces and manual fit with actual Unity renders; no physical hand/YOLO/PICO or final art acceptance'}
     SeasonTreeSelection=@{method='HciSeasonTreeChecks.RunLive';pattern='^PASS: saved ParkTree natural mode,';folder='hci-live-season-tree';group='tree-effect-review-20261120';scope='Saved ParkTree real-target-mode selection/UI exercised by synthetic Observe data and joint traces; RunLive is a test name, not physical camera/network/YOLO/PICO evidence'}
+    WillowTree=@{method='HciSeasonTreeChecks.RunWillow';pattern='^PASS: actual ParkTree fantasy variant;';folder='hci-willow';group='tree-effect-review-20261120';scope='Saved ParkTree willow effects, synthetic production joint traces, fit and lifecycle with actual Unity renders; no physical hand/YOLO/PICO or final art acceptance'}
+    WillowTreeSelection=@{method='HciSeasonTreeChecks.RunLiveWillow';pattern='^PASS: actual ParkTree fantasy variant;';folder='hci-live-willow';group='tree-effect-review-20261120';scope='Saved ParkTree willow real-target-mode selection/UI exercised by synthetic Observe data and joint traces; no physical camera/network/YOLO/PICO evidence'}
 }
 $selectedCheck=$checks[$Check]
 $output=Join-Path $root ('Reports/'+$selectedCheck.group+'/'+$RunId)

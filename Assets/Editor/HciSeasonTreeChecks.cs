@@ -24,6 +24,7 @@ public static class HciSeasonTreeChecks
     static TabletopGestureRules lighter;static EditDimension expectedDimension;static TabletopHandSample heldSample;static bool holdValid;static double settleSeconds;
     const float SampleCadenceSeconds=.03f;
     static int plannedFistSamples;static float fistBeganAt=-1;
+    static Quaternion[] willowLashRotations;static float willowLashTime;
     static bool gustSampled;static float gustSampleTime;static Quaternion[] gustBranchRotations;
     static List<Transform> gustPool;static Vector3[] gustPositions;static bool[] gustActive;
     static float minimumEyeHeight=float.PositiveInfinity,maximumEyeHeight;
@@ -80,8 +81,28 @@ public static class HciSeasonTreeChecks
     static void FinishLiveEvidence(){if(!Live)return;logger.EndSession();File.Copy(logger.EventFilePath,Output+"/synthetic-events.csv",true);File.AppendAllText(Output+"/result.txt","Physical-target branch used synthetic Observe coordinates, same selected instance and shared UI experience selector; full effects driven by timed synthetic production hand samples. Not real YOLO/PICO validation.\n");}
     static void CaptureMenu(){
         var panel=TreeButton("Natural tree").transform.parent;var camera=new GameObject("Synthetic tree menu review camera").AddComponent<Camera>();
-        camera.orthographic=true;camera.orthographicSize=.29f;camera.nearClipPlane=.01f;camera.farClipPlane=2;camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.16f,.18f,.2f);
-        camera.transform.SetPositionAndRotation(panel.position-panel.forward,panel.rotation);
+        camera.orthographic=true;camera.aspect=1;camera.nearClipPlane=.01f;camera.farClipPlane=2;camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.16f,.18f,.2f);
+        Canvas.ForceUpdateCanvases();
+        var corners=new List<Vector3>();var bounds=new Bounds();bool hasBounds=false;
+        var statusPanel=GameObject.Find("Shared status");Require(statusPanel,"Shared status panel missing");
+        var reviewPanels=new[]{panel,statusPanel.transform};
+        Action<Vector3> include=point=>{corners.Add(point);var local=Quaternion.Inverse(panel.rotation)*(point-panel.position);if(!hasBounds){bounds=new Bounds(local,Vector3.zero);hasBounds=true;}else bounds.Encapsulate(local);};
+        foreach(var reviewPanel in reviewPanels)foreach(var rect in reviewPanel.GetComponentsInChildren<RectTransform>()){
+            if(!rect.gameObject.activeInHierarchy)continue;var world=new Vector3[4];rect.GetWorldCorners(world);
+            foreach(var point in world)include(point);
+        }
+        int glyphVertices=0;
+        foreach(var reviewPanel in reviewPanels)foreach(var text in reviewPanel.GetComponentsInChildren<Text>()){
+            if(!text.isActiveAndEnabled)continue;
+            foreach(var vertex in text.cachedTextGenerator.verts){include(text.transform.TransformPoint(vertex.position/text.pixelsPerUnit));glyphVertices++;}
+        }
+        Require(glyphVertices>0,"Menu text geometry unavailable");
+        Require(hasBounds,"Menu has no active geometry");
+        camera.orthographicSize=Mathf.Max(bounds.extents.y,bounds.extents.x)+.025f;
+        var center=panel.position+panel.rotation*new Vector3(bounds.center.x,bounds.center.y,0);
+        camera.transform.SetPositionAndRotation(center-panel.forward,panel.rotation);
+        foreach(var point in corners){var viewport=camera.WorldToViewportPoint(point);Require(viewport.x>.01f&&viewport.x<.99f&&viewport.y>.01f&&viewport.y<.99f,"Menu framing clipped active UI geometry");}
+        File.WriteAllText(Output+"/menu-framing.txt","PASS: both separate status/menu panels; all "+corners.Count+" active UI rectangle/glyph vertices within 1% viewport margin; glyph_vertices="+glyphVertices+" orthographic_size="+R(camera.orthographicSize)+"\n");
         var rt=new RenderTexture(800,800,24);var pixels=new Texture2D(800,800,TextureFormat.RGB24,false);var old=RenderTexture.active;
         try{Canvas.ForceUpdateCanvases();camera.targetTexture=rt;camera.Render();RenderTexture.active=rt;pixels.ReadPixels(new Rect(0,0,800,800),0,0);pixels.Apply();File.WriteAllBytes(Output+"/menu.png",pixels.EncodeToPNG());}
         finally{RenderTexture.active=old;UnityEngine.Object.DestroyImmediate(camera.gameObject);UnityEngine.Object.DestroyImmediate(rt);UnityEngine.Object.DestroyImmediate(pixels);}
@@ -197,13 +218,21 @@ public static class HciSeasonTreeChecks
         var chest=actor.visual.Find("Reward chest");var block=new MaterialPropertyBlock();leaves.GetPropertyBlock(block);
         if(phase==2){Require(!controller.DispatchDimension(EditDimension.Deconstruction,anchor,true),"D accepted before scar reveal");Capture("00-natural");Cast(EditDimension.Appearance);Later(3);}
         else if(phase==3){Require(block.GetColor("_BaseColor").r<.6f&&actor.seasonTime==0,"A did not darken or changed season");Capture("01-dark");Cast(EditDimension.Agency);Later(4,.75);}
-        else if(phase==4){Require(branches.Where((t,i)=>Quaternion.Angle(t.localRotation,rest[i])>2).Any(),"B did not lash branches");Require(!scarRenderer.gameObject.activeInHierarchy&&!face.gameObject.activeInHierarchy,"B showed C scar or natural-tree face");Capture("02-lash");Later(5,2.5);}
+        else if(phase==4){Require(branches.Where((t,i)=>Quaternion.Angle(t.localRotation,rest[i])>2).Any(),"B did not lash branches");Require(!scarRenderer.gameObject.activeInHierarchy&&!face.gameObject.activeInHierarchy,"B showed C scar or natural-tree face");Capture("02-lash");willowLashRotations=branches.Select(t=>t.localRotation).ToArray();willowLashTime=Time.unscaledTime;Later(41,.22);}
+        else if(phase==41){
+            float elapsed=Time.unscaledTime-willowLashTime;
+            float movement=branches.Select((t,i)=>Quaternion.Angle(t.localRotation,willowLashRotations[i])).Max();
+            Require(elapsed>.15f&&movement>.01f,"B successive native frames did not move");
+            Capture("02-lash-motion");
+            File.WriteAllText(Output+"/willow-motion.txt","B sample_seconds="+R(elapsed)+" max_branch_delta_degrees="+R(movement)+" branch_count="+branches.Length+"\n");
+            Later(5,2.5);
+        }
         else if(phase==5){Require(branches.Select((t,i)=>Quaternion.Angle(t.localRotation,rest[i])).Max()<.01f,"B did not recover");Cast(EditDimension.Rule);Later(6,1.8);}
-        else if(phase==6){Require(scarRenderer.gameObject.activeInHierarchy&&maxBreath-minBreath>.5f,"C scar did not breathe");Capture("03-breathing-scar");Capture("04-scar-detail",true);Cast(EditDimension.Deconstruction);Later(7,1.5);}
+        else if(phase==6){Require(scarRenderer.gameObject.activeInHierarchy&&maxBreath-minBreath>.5f,"C scar did not breathe");File.AppendAllText(Output+"/willow-motion.txt","C breath_min="+R(minBreath)+" breath_max="+R(maxBreath)+"\n");Capture("03-breathing-scar");Capture("04-scar-detail",true);Cast(EditDimension.Deconstruction);Later(7,1.5);}
         else if(phase==7){Require(chest.gameObject.activeInHierarchy&&Quaternion.Angle(chest.Find("Hinged lid").localRotation,Quaternion.identity)>100&&!scarRenderer.gameObject.activeInHierarchy,"D did not seal/open chest");Capture("05-sealed");Capture("06-chest-detail");Require(controller.Dispatch(ParkAction.Undo,anchor,true),"Undo seal rejected");Later(8);}
         else if(phase==8){Require(!chest.gameObject.activeInHierarchy&&scarRenderer.gameObject.activeInHierarchy,"Undo did not restore breathing scar");Cast(EditDimension.Appearance);Later(9);}
         else if(phase==9){Require(block.GetColor("_BaseColor").r>.99f&&actor.seasonTime==0,"A did not restore natural style");Require(trunkRenderer.localToWorldMatrix==trunkMatrix&&actor.transform.position==anchor&&fit.localPosition==fitPosition&&fit.localScale==fitScale,"Willow moved fitted trunk or anchor");controller.Dispatch(ParkAction.Reset,anchor,true);holdValid=false;Later(10);}
-        else if(phase==10){Require(!actor.Busy&&!chest.gameObject.activeInHierarchy&&!scarRenderer.gameObject.activeInHierarchy&&Quaternion.Angle(chest.Find("Hinged lid").localRotation,Quaternion.identity)<.01f,"Reset leaked willow effects");File.WriteAllText(Output+"/result.txt","PASS: actual ParkTree fantasy variant; synthetic production hand traces match lighter exactly once. A dark/natural without season change; B bounded branch lash and recovery; C visible bark luminance breathing; D scar prerequisite, seal and hinged chest; Undo restores C; Reset closes chest; fitted trunk and anchor unchanged before full Reset. Seven Unity renders. Authored narrow-leaf/drooping-frond willow canopy on the existing fixed trunk; final art and real YOLO/XR/PICO/Android acceptance remain pending.\n");FinishLiveEvidence();SessionState.SetBool(Key+".Done",true);EditorApplication.ExitPlaymode();}
+        else if(phase==10){Require(!actor.Busy&&!chest.gameObject.activeInHierarchy&&!scarRenderer.gameObject.activeInHierarchy&&Quaternion.Angle(chest.Find("Hinged lid").localRotation,Quaternion.identity)<.01f,"Reset leaked willow effects");File.WriteAllText(Output+"/result.txt","PASS: actual ParkTree fantasy variant; synthetic production hand traces match lighter exactly once. A dark/natural without season change; B bounded branch lash, successive rendered motion and recovery; C measured bark luminance breathing; D scar prerequisite, seal and hinged chest; Undo restores C; Reset closes chest; fitted trunk and anchor unchanged before full Reset. Eight effect renders plus separate selection menu when enabled. Authored narrow-leaf/drooping-frond willow canopy on the existing fixed trunk; final art and real YOLO/XR/PICO/Android acceptance remain pending.\n");FinishLiveEvidence();SessionState.SetBool(Key+".Done",true);EditorApplication.ExitPlaymode();}
     }
 }
 
