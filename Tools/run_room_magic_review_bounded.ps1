@@ -4,7 +4,7 @@ param(
     [Parameter(Mandatory=$true)][string]$ProjectRoot,
     [ValidatePattern('^[a-z0-9-]{4,60}$')][string]$RunId='room-current-20261120',
     [string]$EditorOverrideManifest,
-    [ValidateSet('RoomMagic','RoomWindowOwnership','PlantFlow','PlantVoice','PetDream','PetOutline','SeasonTree','SeasonTreeSelection','WillowTree','WillowTreeSelection','StatueStyle','StatuePlayback','StatueGarden')][string]$Check='RoomMagic'
+    [ValidateSet('RoomMagic','RoomWindowOwnership','PlantFlow','PlantVoice','PetDream','PetOutline','SeasonTree','SeasonTreeSelection','WillowTree','WillowTreeSelection','StatueStyle','StatuePlayback','StatueGarden','BronzePlayback')][string]$Check='RoomMagic'
 )
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot -Parent
@@ -23,6 +23,7 @@ $checks=@{
     StatueStyle=@{method='HciStatueStyleChecks.Run';pattern='^PASS: saved ParkStatue, standing human';folder='hci-statue-style';group='statue-effect-review-20261120';scope='Saved ParkStatue human/bronze style, synthetic A/B/C traces and fitted geometry; no physical YOLO/hands/PICO or final art acceptance'}
     StatuePlayback=@{method='HciStatuePlaybackChecks.Run';pattern='^PASS: saved ParkStatue full-body human;';folder='hci-statue-playback';group='statue-effect-review-20261120';scope='Saved ParkStatue full-body animation, synthetic A/B/D traces, fitted anchor and pose lifecycle; no physical hand/YOLO/PICO or final art acceptance'}
     StatueGarden=@{method='HciStatueGardenChecks.Run';pattern='^PASS: saved ParkStatue standing human and bronze;';folder='hci-statue-garden';group='statue-effect-review-20261120';scope='Saved ParkStatue human/bronze garden, synthetic A/D traces and confirmed manual plane; no physical room/YOLO/hands/PICO or final art acceptance'}
+    BronzePlayback=@{method='HciBronzePlaybackChecks.Run';pattern='^PASS: saved ParkStatue BronzeBeast;';folder='hci-bronze-playback';group='statue-effect-review-20261120';scope='Saved ParkStatue bronze full-body coroutine, synthetic A/B/D joint traces, confirmed test plane, anchor/fit and interruption lifecycle; no physical camera/YOLO/hands/audio/PICO or final art acceptance'}
 }
 $selectedCheck=$checks[$Check]
 $output=Join-Path $root ('Reports/'+$selectedCheck.group+'/'+$RunId)

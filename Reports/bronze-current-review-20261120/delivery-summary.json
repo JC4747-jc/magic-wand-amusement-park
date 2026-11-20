@@ -1,0 +1,136 @@
+{
+  "checkedAtUtc": "2026-11-20T02:31:35.101088+00:00",
+  "sourceParent": "001cdd6abd36e2bdb6fbab762e9277805acde18b",
+  "localVerificationSha256": "dd619c0bd72f7314dda70bce0f6b27fbef00b5d5e3be78d22232ef42ca023a39",
+  "sourceChanges": [
+    {
+      "path": "Tools/run_room_magic_review_bounded.ps1",
+      "beforeSha256": "33e2c521ec496296dd13f9015df7bbe1a86679fa7f3e82d8fb44197709e6a6d3",
+      "sha256": "e7af507cfcdb2f6f5f3884f011d5880570e41ac9614b59f898587dec0c8b2ee3"
+    }
+  ],
+  "productionRuntimeAssetsGesturesOrFireChanged": false,
+  "existingBronzeEditorCheckChanged": false,
+  "native": {
+    "run": "Reports\\statue-effect-review-20261120\\bronze-playback-current-v1-20261120",
+    "resourcesSha256": "06662bd7adb33789e49146837225514a5f9ae2e0b6ab8d97ef2dd19bc37ef457",
+    "sourceInventorySha256": "2a709d9351af103d9325751cf88238cc6b9d98c30cf9569725a185bed6f6a7bd",
+    "inputMetadataSha256": "88a364c21810224f88bdd43bd143ab1371a65e89c205dc057593d38cd8d9af27",
+    "terminalExit": 0,
+    "seconds": 49.848167,
+    "resourceSamples": 66,
+    "minimumSampledFreeRamGiB": 7.691139221191406,
+    "maximumSampledOwnedRssMiB": 1471.33984375,
+    "result": "PASS: saved ParkStatue BronzeBeast; synthetic production A/B/D traces each match shared rules once; 7 accepted spells; live B coroutine observed 1331 frames, first cycle 5.717s, head motion 0.071000m, max four-foot drift 0.000000179m; root/fit stable; A/D preserved; Undo; mid-play Stop/Reset/loss; retrack; variant cleanup; six real live-state renders. Not live YOLO, physical hand, real audio, Android or PICO acceptance.",
+    "frames": {
+      "playback-v1\\00-idle.png": "2ac6d276755c31fb59b7f1f1a8cbe17a8f65eb9688aac411b59cb97a7a43422c",
+      "playback-v1\\01-before-B.png": "11740ab471b259ea1e41254cd212fe662a4a62c7386527aa53fff7b0f4108ae6",
+      "playback-v1\\02-live-stretch.png": "406a3f23fbc29cf8d78d4a000881ade83b215ce9818afedbc7d9a4271d1fbd60",
+      "playback-v1\\03-returned.png": "ee1eb623aa7cfb9d25cad0c855485857d4d1ef4b83879d47764cd0d54f55f954",
+      "playback-v1\\04-stopped.png": "1092358577c1293c822bfdef630cae4b90e02e01d727c79adcd1b0360d730037",
+      "playback-v1\\05-retracked-return.png": "2ac6d276755c31fb59b7f1f1a8cbe17a8f65eb9688aac411b59cb97a7a43422c"
+    }
+  },
+  "motion": {
+    "boneCount": 18,
+    "footCount": 4,
+    "observedFrames": 1331,
+    "trajectoryRows": 334,
+    "firstCycleObservedSeconds": 5.717,
+    "maximumSampledTrajectoryHeadMotionMetres": 0.0710004,
+    "maximumObservedFootDriftMetresFromResult": 1.79e-07,
+    "rootAndFitStable": true,
+    "completeCycleReturnAndPoseRestChecks": true,
+    "aAndDRemainedAcrossBAndUndo": true,
+    "midPlayStopResetLossRetrackAndVariantCleanup": true
+  },
+  "syntheticInput": {
+    "jointRows": 193,
+    "allExpectedAndActualDimensionsEqual": true,
+    "acceptedSpells": 7,
+    "events": [
+      {
+        "dimension": "Appearance",
+        "time": 6.66666
+      },
+      {
+        "dimension": "Deconstruction",
+        "time": 8.12499
+      },
+      {
+        "dimension": "Agency",
+        "time": 10.95791
+      },
+      {
+        "dimension": "Agency",
+        "time": 19.19554
+      },
+      {
+        "dimension": "Agency",
+        "time": 23.61718
+      },
+      {
+        "dimension": "Agency",
+        "time": 28.01935
+      },
+      {
+        "dimension": "Agency",
+        "time": 32.43606
+      }
+    ],
+    "DActualFistSeconds": 0.16664000000000012,
+    "DFistSamples": 4,
+    "source": "Synthetic joint samples and manually confirmed plane; no camera/TCP/YOLO/physical hand/real audio/room reconstruction."
+  },
+  "renderReview": {
+    "nativeOriginalsActuallyViewed": 6,
+    "figuresActuallyViewed": [
+      "playback-v1-contact-sheet.png",
+      "bronze-motion-samples.png"
+    ],
+    "observation": "Full bronze model stretches through its body and raises the head, then visibly returns; planted feet, natural/cartoon style and cleanup images inspected.",
+    "cameraScope": "Bronze body framing; garden/tree clipped at image edges. Full garden composition is covered separately by the current StatueGarden run; these six images do not prove it.",
+    "finalArtAccepted": false
+  },
+  "androidReused": {
+    "path": "D:\\MagicMRSourceCandidate\\20261120\\Builds\\Android\\PlantPresentationValidation-20261120.apk",
+    "sha256": "f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31",
+    "bytes": 78064133,
+    "sceneCount": 15,
+    "newBuildRequired": false,
+    "newBuildRun": false,
+    "reason": "Only bounded launcher changed vs prior exact 1865 input; existing Editor check and all player/runtime/assets/package/settings bytes unchanged.",
+    "reference": "Reports/android-resume-check-20261120/verification.json",
+    "deviceExecutionValidated": false
+  },
+  "preservation": {
+    "mainHead": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
+    "mainIndexSha256": "aab38b747bb2453015b4ce247543cf2dd6aa54d5d5586cf1fcafce46a0398c5a",
+    "mainBaselineFiles": 1836,
+    "mainExistingDifferencesVsOriginal": [
+      "Assets/Editor/HciPetOutlineChecks.cs",
+      "Assets/Editor/HciPlantFlowChecks.cs",
+      "Assets/Editor/HciRoomMagicChecks.cs",
+      "Assets/Editor/HciSeasonTreeChecks.cs",
+      "Assets/Editor/HciStatueGardenChecks.cs",
+      "Assets/Editor/HciStatuePlaybackChecks.cs",
+      "Assets/Resources/MagicMR/RoomStyle.shader",
+      "Assets/Scripts/MagicMR/ParkActor.NaturalPlants.cs",
+      "Assets/Scripts/MagicMR/RoomMagicVisual.cs",
+      "Assets/Scripts/Perception/DiscoverySelection.cs"
+    ],
+    "mainOtherExistingSourcesUnchanged": 1826,
+    "fireDedicatedCodeScenesModelsEffectsAnimationsWeightsAndMetaUnchanged": true,
+    "sharedProductionParkActorAndGestureSourcesUnchanged": true,
+    "allCandidate1865HashesMatched": true,
+    "metadataIsFrozenInputNotOutcome": true
+  },
+  "qaFigure": {
+    "path": "Reports/bronze-current-review-20261120/bronze-motion-samples.png",
+    "sha256": "8a5ca2b9e7929c103c67d13b2add1e0422cc89f8bfea827c892eae57e0bcfda0",
+    "bytes": 144630
+  },
+  "realYoloHandsPicoAccepted": false,
+  "finalArtAccepted": false,
+  "fullEightCase32EffectAcceptance": false
+}

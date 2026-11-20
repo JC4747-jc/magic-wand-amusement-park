@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "checkedAtUtc": "2026-11-20T02:19:53.854073+00:00",
-  "status": "SOURCE_CANDIDATE_CURRENT_STATUE_NATIVE_SYNTHETIC_VERIFIED_DEVICE_ART_PENDING",
+  "checkedAtUtc": "2026-11-20T02:31:35.111117+00:00",
+  "status": "SOURCE_CANDIDATE_CURRENT_BRONZE_PLAYBACK_SUPPLEMENT_VERIFIED_DEVICE_ART_PENDING",
   "repository": "JC4747-jc/magic-wand-amusement-park",
-  "deliveryParent": "2148b2632b7b88b6eb413e8d9f5945a304c8af7b",
+  "deliveryParent": "001cdd6abd36e2bdb6fbab762e9277805acde18b",
   "developmentBaseline": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
-  "sourcePayloadTree": "3befc7e58cc22470abe405b23da9407792837cf8",
-  "payloadFileCount": 1889,
+  "sourcePayloadTree": "24e6dd72ac7650b07f455b059ee1cefa6e26a556",
+  "payloadFileCount": 1892,
   "payloadFiles": [
     {
       "path": ".gitattributes",
@@ -7266,7 +7266,19 @@
     },
     {
       "path": "README.md",
-      "sha256": "6e429c61e761d2fd619b1c82644a5915cace81a861f495418f9ad9d4ef75e1dc"
+      "sha256": "bdff736594426af74fdb114477cedf780ca77b88f4aae7809ed90e8152ac51fa"
+    },
+    {
+      "path": "Reports/bronze-current-review-20261120/bronze-motion-samples.png",
+      "sha256": "8a5ca2b9e7929c103c67d13b2add1e0422cc89f8bfea827c892eae57e0bcfda0"
+    },
+    {
+      "path": "Reports/bronze-current-review-20261120/delivery-case-status.json",
+      "sha256": "d092a553a82dcb474e2ab18f02d50476e7089c78c497ce205fc15248982cc531"
+    },
+    {
+      "path": "Reports/bronze-current-review-20261120/delivery-summary.json",
+      "sha256": "ce46d2bdca540dd68ac17889c7e1cd81f4f2cfc33d253184ae442f74f6b36b02"
     },
     {
       "path": "Reports/nonfire-validation-native-20261120/delivery-summary.json",
@@ -7334,7 +7346,7 @@
     },
     {
       "path": "Reports/statue-current-review-20261120/delivery-case-status.json",
-      "sha256": "5368d96867ecbab9cecb683412c1b522e0b4a341bb92aa999b0f7f6fff630a50"
+      "sha256": "20ab5ac1cfd5f7303f7ec2fe34a33579dc66dbcf52be8d65622192df50821930"
     },
     {
       "path": "Reports/statue-current-review-20261120/delivery-summary.json",
@@ -7374,7 +7386,7 @@
     },
     {
       "path": "SOURCE_DELIVERY.md",
-      "sha256": "49fc55670e60a41b50479d7152399129073c8c7b16282e905c8589a7acbd097e"
+      "sha256": "da5687777ff738af52ca19ac4de77514b512dc8a5b5a03f281e6d0e6b3a1b353"
     },
     {
       "path": "Tools/NonFireDiscoveryNativeChecks.cs",
@@ -7450,7 +7462,7 @@
     },
     {
       "path": "Tools/run_room_magic_review_bounded.ps1",
-      "sha256": "33e2c521ec496296dd13f9015df7bbe1a86679fa7f3e82d8fb44197709e6a6d3"
+      "sha256": "e7af507cfcdb2f6f5f3884f011d5880570e41ac9614b59f898587dec0c8b2ee3"
     },
     {
       "path": "Tools/setup_f2g_runtime.py",
@@ -7681,7 +7693,8 @@
     "Pet synthetic controller/joint traces, same-frame outline pixels and two local-transform samples are not physical input, natural gait/foot contact or PICO/final-art acceptance.",
     "Season tree RunLive uses synthetic Observe/joints and labelled synthetic study rows, not physical camera/TCP/YOLO/PICO or human-study evidence.",
     "Willow RunLive uses synthetic Observe/joints and labelled synthetic rows; dark style/bark/chest final art, real camera/TCP/YOLO/hands/PICO and independent model quality pending.",
-    "Statue checks use synthetic joints/manual plane; human motion does not establish bronze full-body animation; C body-framed screenshots do not establish narrative readability. Reused narrative fixed-camera proof is scoped, not full package/hardware parity."
+    "Statue checks use synthetic joints/manual plane; human motion does not establish bronze full-body animation; C body-framed screenshots do not establish narrative readability. Reused narrative fixed-camera proof is scoped, not full package/hardware parity.",
+    "Current bronze full-body local playback supplement uses synthetic joints/manual ground; body-framed images do not establish full garden view, actual camera/TCP/YOLO/hands/audio/PICO or final art."
   ],
   "evidence": [
     {
@@ -7790,7 +7803,7 @@
     },
     {
       "path": "Reports/statue-current-review-20261120/delivery-case-status.json",
-      "sha256": "5368d96867ecbab9cecb683412c1b522e0b4a341bb92aa999b0f7f6fff630a50"
+      "sha256": "20ab5ac1cfd5f7303f7ec2fe34a33579dc66dbcf52be8d65622192df50821930"
     },
     {
       "path": "Reports/statue-current-review-20261120/statue-style-comparison.png",
@@ -7803,9 +7816,21 @@
     {
       "path": "Reports/statue-current-review-20261120/statue-garden-effects.png",
       "sha256": "1f468ed678b098e5c2f74a5e829625e2fd0e6333473581ea78f3bb7c37e33c9c"
+    },
+    {
+      "path": "Reports/bronze-current-review-20261120/delivery-summary.json",
+      "sha256": "ce46d2bdca540dd68ac17889c7e1cd81f4f2cfc33d253184ae442f74f6b36b02"
+    },
+    {
+      "path": "Reports/bronze-current-review-20261120/delivery-case-status.json",
+      "sha256": "d092a553a82dcb474e2ab18f02d50476e7089c78c497ce205fc15248982cc531"
+    },
+    {
+      "path": "Reports/bronze-current-review-20261120/bronze-motion-samples.png",
+      "sha256": "8a5ca2b9e7929c103c67d13b2add1e0422cc89f8bfea827c892eae57e0bcfda0"
     }
   ],
-  "baseSourcePayloadTree": "aa85c44421a2d04012eab759f687bf7228f8ff9a",
+  "baseSourcePayloadTree": "3befc7e58cc22470abe405b23da9407792837cf8",
   "sourceTreeRecalculationPending": false,
   "nonFireGateDelta": {
     "path": "Assets/Scripts/Perception/DiscoverySelection.cs",
@@ -7829,8 +7854,8 @@
   },
   "publication": {
     "target": "restore-4d-lighter",
-    "parent": "2148b2632b7b88b6eb413e8d9f5945a304c8af7b",
-    "state": "SCOPED_EDITOR_CHECK_AND_QA_CANDIDATE; actual commit/ref receipt separate",
+    "parent": "001cdd6abd36e2bdb6fbab762e9277805acde18b",
+    "state": "SCOPED_BRONZE_PLAYBACK_SUPPLEMENT; actual commit/ref receipt separate",
     "apkPublished": false,
     "deviceValidated": false
   },
@@ -8075,6 +8100,28 @@
     ],
     "realCameraYoloHandsPicoAccepted": false,
     "bronzeFullBodyProvenByThisRun": false,
+    "finalArtAccepted": false
+  },
+  "bronzeCurrentDelta": {
+    "portableSummary": "Reports/bronze-current-review-20261120/delivery-summary.json",
+    "caseStatus": "Reports/bronze-current-review-20261120/delivery-case-status.json",
+    "statueCaseStatus": "Reports/statue-current-review-20261120/delivery-case-status.json",
+    "sourceChanges": [
+      {
+        "path": "Tools/run_room_magic_review_bounded.ps1",
+        "beforeSha256": "33e2c521ec496296dd13f9015df7bbe1a86679fa7f3e82d8fb44197709e6a6d3",
+        "sha256": "e7af507cfcdb2f6f5f3884f011d5880570e41ac9614b59f898587dec0c8b2ee3"
+      }
+    ],
+    "productionChanged": false,
+    "existingEditorCheckChanged": false,
+    "nativeCurrentBronzeFullBodyPassed": true,
+    "observedFrames": 1331,
+    "trajectoryRows": 334,
+    "jointRows": 193,
+    "actualNativeImages": 6,
+    "qaFigure": "Reports/bronze-current-review-20261120/bronze-motion-samples.png",
+    "realCameraYoloHandsPicoAccepted": false,
     "finalArtAccepted": false
   }
 }

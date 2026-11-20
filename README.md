@@ -1,4 +1,4 @@
-> 2026-11-20 石像当前场景检查候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。外观/人体动作/两变体花园三项原生合成检查、24图和三QA已核；火机/运行时未改。真实YOLO/手部/PICO、青铜全身动作与最终美术仍待验，APK未上传。
+> 2026-11-20 青铜兽动作补充候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。现有18骨骼模型当前原生协程、六图及中断恢复已核，石像B本地状态已补充；生产运行时/火机不变。真实YOLO/手部/PICO与最终美术待验，APK未上传。
 
 # Magic Wand Amusement Park
 
