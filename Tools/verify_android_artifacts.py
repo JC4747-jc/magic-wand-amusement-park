@@ -78,12 +78,29 @@ def main():
         assert not any(p.startswith('Assets/ThirdParty/NaturalPets/') and not p.startswith(('Assets/ThirdParty/NaturalPets/BicolorCat/','Assets/ThirdParty/NaturalPets/Wolfhound/')) for p in manifest['sourceAssets']), 'Unaccepted pet in BuildReport'
         assert 'Assets/ThirdParty/NaturalPets/BicolorCat/Image_2.png' not in manifest['sourceAssets'], 'Wrong UV2 normal map packed'
         assert not any(p.startswith(('Assets/ThirdParty/NaturalDecor/ReadingChair/','Assets/ThirdParty/NaturalDecor/CeramicVase/','Assets/ThirdParty/NaturalDecor/BronzeBeast/')) and p.endswith('_arm_1k.jpg') for p in manifest['sourceAssets']), 'Unused original ARM map packed'
+        authored_dog_path='Assets/ThirdParty/NaturalPets/Wolfhound/WolfhoundFourBeatWalk.anim'
+        expected_dog_walk=b'Wolfhound_WalkSource'
+        authored_dog_binding=None
+        if authored_dog_path in manifest['sourceAssets']:
+            clip=root/authored_dog_path
+            guid_match=re.search(r'^guid: ([0-9a-f]{32})$',Path(str(clip)+'.meta').read_text(encoding='utf-8'),re.M)
+            assert guid_match, 'Authored dog animation GUID missing'
+            guid=guid_match.group(1)
+            controller=(clip.parent/'Wolfhound.controller').read_text(encoding='utf-8')
+            states=[block for block in controller.split('---') if re.search(r'^  m_Name: Walk in place$',block,re.M)]
+            assert len(states)==1 and 'guid: '+guid+', type: 2' in states[0], 'Saved dog walk state does not reference the authored clip'
+            assert re.search(r'^  m_Name: WolfhoundFourBeatWalk$',clip.read_text(encoding='utf-8'),re.M), 'Authored dog clip identity differs'
+            expected_dog_walk=b'WolfhoundFourBeatWalk'
+            authored_dog_binding=dict(source=authored_dog_path,sha256=hashlib.sha256(clip.read_bytes()).hexdigest(),guid=guid,packed_data='assets/bin/Data/'+guid)
         with zipfile.ZipFile(apk) as archive:
             assert archive.testzip() is None, 'APK ZIP CRC failure: '+name
+            if authored_dog_binding:
+                assert expected_dog_walk in archive.read(authored_dog_binding['packed_data']), 'Exact authored dog GUID data/name absent from APK'
             credits=archive.read('assets/MagicMRAssetCredits.txt').decode('utf-8')
             assert all(token in credits for token in ['kenchoo','guillaume bolis','https://creativecommons.org/licenses/by/4.0/','UV2 normals reprojected']), 'Cat attribution or changes absent from APK'
             assert 'four-beat in-place walk' in credits, 'Authored cat gait modification absent from APK credits'
             assert all(token in credits for token in ['Wildfire Games','https://creativecommons.org/licenses/by-sa/3.0/','restrained sniff','61a3b9507d974084e6badb88a0826bd89a6d5b8b']), 'Wolfhound attribution or changes absent from APK'
+            if authored_dog_binding:assert 'Wolfhound authored four-beat in-place preview' in credits, 'Authored dog modification credit absent'
             assert all(token in credits for token in ['Modern Arm Chair 01','Vibrant Nordic','Ceramic Vase 01','R=metal, G=AO, A=smoothness']), 'Room prop provenance/conversion absent from APK'
             assert all(token in credits for token in ['Bull Head by Tina','two-bone virtual head/neck rig','not an identified museum artifact']), 'Bronze source/rig modification attribution absent from APK'
             levels = sorted(n for n in archive.namelist() if re.fullmatch(r'assets/bin/Data/level\d+',n))
@@ -112,7 +129,7 @@ def main():
                         for token in (b'Haworthia', b'MarbleBust', b'wood_table_001', b'rough_linen', b'beige_wall_002'):
                             if token.lower() in lower_data:
                                 natural_assets.add(token.decode())
-                        for token in (b'BicolorCat_Walk',b'Wolfhound_WalkSource'):
+                        for token in (b'BicolorCat_Walk',expected_dog_walk):
                             if token.lower() in lower_data:pet_animations.add(token.decode())
                         if args.require_insect_pixels:
                             for token in (b'PixelCockroach',b'PixelSpider'):
@@ -129,7 +146,7 @@ def main():
                                     'verify','--verbose',str(apk)],check=True,capture_output=True,text=True).stdout
         results.append(dict(apk=apk.name,bytes=apk.stat().st_size,sha256=digest.hexdigest(),package=package,
                             scene_count=len(levels),packed_scenes=packed_scenes,crc_pass=True,signature_pass=True,unaccepted_candidates_absent=True,
-                            natural_assets=sorted(natural_assets),packed_pet_animations=sorted(pet_animations),packed_pixel_models=sorted(pixel_models),packed_source_assets_pass=True,packed_required_sources=sorted(required)))
+                            natural_assets=sorted(natural_assets),packed_pet_animations=sorted(pet_animations),authored_dog_binding=authored_dog_binding,packed_pixel_models=sorted(pixel_models),packed_source_assets_pass=True,packed_required_sources=sorted(required)))
     output = args.output.resolve() if args.output else root/'.codex-tmp/apk-validation.json'
     output.parent.mkdir(parents=True,exist_ok=True)
     output.write_text(json.dumps(results,indent=2),encoding='utf-8')

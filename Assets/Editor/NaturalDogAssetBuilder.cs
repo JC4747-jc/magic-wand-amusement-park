@@ -57,7 +57,8 @@ public static class NaturalDogAssetBuilder
         if(!controller.parameters.Any(p=>p.name=="Sniff"))controller.AddParameter("Sniff",AnimatorControllerParameterType.Trigger);
         var enter=idle.AddTransition(sniff);enter.hasExitTime=false;enter.duration=.08f;enter.AddCondition(AnimatorConditionMode.If,0,"Sniff");
         var leave=sniff.AddTransition(idle);leave.hasExitTime=true;leave.exitTime=.95f;leave.duration=.08f;EditorUtility.SetDirty(controller);
-        NaturalPetAnimatorBuilder.Configure(controller,idle,sniff,Clip("Wolfhound_WalkSource"));
+        var authoredWalk=AssetDatabase.LoadAssetAtPath<AnimationClip>(NaturalDogWalkAuthor.ClipPath);
+        NaturalPetAnimatorBuilder.Configure(controller,idle,sniff,authoredWalk?authoredWalk:Clip("Wolfhound_WalkSource"));
         var scene=EditorSceneManager.NewPreviewScene();
         try
         {

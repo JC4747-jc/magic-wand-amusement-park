@@ -1,0 +1,439 @@
+{
+  "checkedAtUtc": "2026-11-20T04:57:39.310814+00:00",
+  "status": "AUTHORED_DOG_FOUR_BEAT_SAVED_CONTROLLER_NATIVE_REGRESSION_AND_ANDROID_VERIFIED",
+  "previousGoalTurnClassification": "progress: actual two-bone normal-frame geometry established 48/128 unsupported samples and ruled out old manual/instant-camera methods; next action is actual authored four-beat clip, not another unchanged diagnosis",
+  "sourceParent": "restore-4d-lighter@bc27d84ed46ad990a122cb20053652bab3c5acaa",
+  "milestone": "Replace original bounding/unsupported dog in-place gait with an authored four-beat clip on the existing licensed rig, preserve HCI and original model/source animations.",
+  "changes": {
+    "Assets/Editor/NaturalDogGaitReview.cs": "5e7159794c72972ea3d7d2d182c1fbe404d3fac9fce85750ce600303dc7517a1",
+    "Assets/Editor/NaturalDogGaitReview.cs.meta": "34d2cac69de8991b8dc3e0fa758a61353a9fcd7bc2692d9db79a24d64a5e83e0",
+    "Assets/Editor/NaturalDogWalkAuthor.cs": "587f0a31ad4c1b4634a50897ced1602fbdd393c6779e6a2c8789350134c20b1e",
+    "Assets/Editor/NaturalDogWalkAuthor.cs.meta": "96d0ee4e97e471ebe82c1645f75dd33adee1ffad0f72728be224c8005573c385",
+    "Assets/Editor/NaturalDogAssetBuilder.cs": "6e7ae9a8a5b69e85776c1468ba340ef85810029a6fef7848528ce6f4ed1dbea2",
+    "Assets/ThirdParty/NaturalPets/Wolfhound/WolfhoundFourBeatWalk.anim": "cffab0f9938bcc2685097e6a3903642e13b9e6eec88e1526212abdcaa1c6202b",
+    "Assets/ThirdParty/NaturalPets/Wolfhound/WolfhoundFourBeatWalk.anim.meta": "fa38c76a7a78315fc314a49728c1dce0925248fa5338a94d8713f5ee461e174d",
+    "Assets/ThirdParty/NaturalPets/Wolfhound/Wolfhound.controller": "4408e80163b2c6f804d20470ac8cf79f76efee86ef12165611059e67ec51bcca",
+    "Assets/ThirdParty/NaturalPets/Wolfhound/source-and-conversion.json": "2a85e6f56d066a25e01ce1ae4bf8f747259acd86878e61a2e10cd998505a4f41",
+    "Assets/StreamingAssets/MagicMRAssetCredits.txt": "297048b5fd5b3a4ee54b868e64cc4ee9b4ad35bf981e36f702eb333ed204f89e",
+    "Tools/run_room_magic_review_bounded.ps1": "9c409ead4b7f11d07ef477c26fb82bd1b793ac63cd56ad5abfd2b76e6d5194e5",
+    "Tools/verify_android_artifacts.py": "d00911bc6a520136d9af85967e01b716174839130bfb26300aeefa5cccde4920"
+  },
+  "runtimeDeltaScope": "New animation and existing dog controller Walk motion; existing source model, rig, mesh, textures, HCI/runtime C# and scene files unchanged. Editor builder prefers authored clip on reinstall; provenance and credits updated.",
+  "authoredAnimation": {
+    "sourcePath": "Assets/ThirdParty/NaturalPets/Wolfhound/Wolfhound.fbx",
+    "sourceSha256": "a031608bb288f20b86932b1c93bf2d826c2dca6eeb21c3d361b971030e683781",
+    "clipPath": "Assets/ThirdParty/NaturalPets/Wolfhound/WolfhoundFourBeatWalk.anim",
+    "clipSha256": "cffab0f9938bcc2685097e6a3903642e13b9e6eec88e1526212abdcaa1c6202b",
+    "skinQuality": "Auto",
+    "projectSkinWeights": "TwoBones",
+    "solver": "Analytic hip/knee IK with neutral-pose knee pole and fixed ankle/toe world orientation; no iterative CCD branch choices.",
+    "samples": 49,
+    "bones": 47,
+    "warmupCycles": 0,
+    "duration": 1.600000023841858,
+    "height": 0.6999998092651367,
+    "stride": 0.09799997508525848,
+    "clearance": 0.04549998417496681,
+    "bodyLowering": 0.027999991551041603,
+    "maximumStanceSoleError": 1.1920928955078125e-07,
+    "maximumToeTargetError": 1.7393556106526376e-07,
+    "maximumJointRotationFromIdle": 69.36797332763672,
+    "maximumLoopClosureAngle": 0.0,
+    "scope": "Authored smooth four-beat in-place candidate on original licensed rig. No training, original FBX/source clips/controller untouched. Evaluated actual Unity two-bone bake at authoring samples; live interpolation, foot support, knee readability, transitions and production integration remain unaccepted."
+  },
+  "baseline": {
+    "reference": {
+      "path": "Reports/dog-gait-review-20261120/verification.json",
+      "sha256": "0c4ab5e9f7c7c1936bc8879c225fe284fa18f6e04277c4edc31181b937c123c1"
+    },
+    "samples": 128,
+    "unsupportedSamples": 48,
+    "maximumMeshGapSceneUnits": 0.029965460300445557,
+    "scope": "Actual original TwoBones normal-frame geometry; original source file/controller retained in before backups. Complete two-cycle runs are compared, not matched phases or biological motion capture."
+  },
+  "native": {
+    "installed": {
+      "run": "Reports/pet-effect-review-20261120/dog-walk-installed-v2-20261120",
+      "seconds": 21.4802255,
+      "sampleCount": 28,
+      "minimumSampledFreeRamGiB": 7.353588104248047,
+      "maximumSampledOwnedRssMiB": 1645.77734375,
+      "resources": {
+        "path": "Reports/pet-effect-review-20261120/dog-walk-installed-v2-20261120/resources.json",
+        "sha256": "129c1936f8f0db5f2adf45abd6299a90a01ec7240d9214c85382d03e99fd44be"
+      },
+      "sourceInputs": {
+        "path": "Reports/pet-effect-review-20261120/dog-walk-installed-v2-20261120/source-inputs.json",
+        "sha256": "b1ec01e9bff029440ab9deabd3fcb67d5f290dc5ece314e2191e680ce7e530df"
+      },
+      "unityLog": {
+        "path": "Reports/pet-effect-review-20261120/dog-walk-installed-v2-20261120/unity.log",
+        "sha256": "7ba9ada45ab2d8c493ac3993c74de24b9e6fe12676d3463db909ebdc9421bf3b"
+      },
+      "result": {
+        "path": "Reports/dog-walk-authoring-20261120/installed-v2/result.txt",
+        "sha256": "39d227cf0c76e4b151bb0af9ee7166c22a4fd0a5828a52df6abd1623784c591c"
+      },
+      "nativeFrameHashes": {
+        "00-idle.png": "5e2799d078c0ba8d5124ac84f7f22869014a1ecfe935b73961682e6234e83c6c",
+        "07-return-idle.png": "94c0401ffe91300ab3ca62d94d8eb692eb5f916bc43fb15498fcdfac730780f8",
+        "walk-00.png": "41fc818e8f8c741b4aa02a1ba03e78992e98cb538a49743a29a21edaff64c363",
+        "walk-01.png": "4638288994710139004b5799499bdb95db9c4dc91c29a74443fca141820aefe5",
+        "walk-02.png": "319793e24e50c8dd3642084f2baf3eda7cc8d4d122f5bbb5c2fa090e5d0a25fa",
+        "walk-03.png": "2b59b822ef5121e886a0ca1b5a229260ec294a870f6938ad341d0e4ca6866b9e",
+        "walk-04.png": "bca59a24d8f98060ea3e9ed90557012d5cde953765da9f44c32b5c602b922238",
+        "walk-05.png": "91f8e70c378e48285d6f2ee04880169297074d721b8f3fb32334a4bb714b01b0"
+      }
+    },
+    "lifecycle": {
+      "run": "Reports/pet-effect-review-20261120/dog-walk-lifecycle-v1-20261120",
+      "seconds": 23.5060564,
+      "sampleCount": 31,
+      "minimumSampledFreeRamGiB": 7.386180877685547,
+      "maximumSampledOwnedRssMiB": 1515.96875,
+      "resources": {
+        "path": "Reports/pet-effect-review-20261120/dog-walk-lifecycle-v1-20261120/resources.json",
+        "sha256": "1d475be14fe1bc10dd5ae24a46b2c5ddfacdb179c74f0f8bcc36e4d733f3241c"
+      },
+      "sourceInputs": {
+        "path": "Reports/pet-effect-review-20261120/dog-walk-lifecycle-v1-20261120/source-inputs.json",
+        "sha256": "b1ec01e9bff029440ab9deabd3fcb67d5f290dc5ece314e2191e680ce7e530df"
+      },
+      "unityLog": {
+        "path": "Reports/pet-effect-review-20261120/dog-walk-lifecycle-v1-20261120/unity.log",
+        "sha256": "cb147a3348896eab757e874da97b748e2245ea7c85bbe3445c57d2cab240f338"
+      },
+      "result": {
+        "path": "Reports/dog-walk-authoring-20261120/lifecycle-v1/result.txt",
+        "sha256": "1ffd4676c52c8ee29ee42569fed4f611f00c293a6c974ce5a2ab64a0a4737e25"
+      },
+      "nativeFrameHashes": {
+        "Cat-Feed.png": "e61d15f2ef73223b64a2008e6e25e4f3d9c0521829a117f9ca2bfb1cdf16ff13",
+        "Cat-Idle.png": "3370bf304ef08ba0fb9a11a7df0a75042dde55b087c953efc130c5d6db0e497c",
+        "Cat-Mid.png": "201346b2f6a6da3beb25854a70f7c6200922f9c04d3f1af15ea76087abfd450a",
+        "Cat-Walk.png": "9d6aae506e2a44dbdfa2e27876a97bea263626fb4c68b2290db6339530194eb7",
+        "Dog-Walk.png": "748faaf7099dfcfa8727e89fc6e3c87d401463313342871cade0577878e523ba"
+      }
+    },
+    "hci": {
+      "run": "Reports/pet-effect-review-20261120/dog-walk-hci-outline-v1-20261120",
+      "seconds": 49.3438896,
+      "sampleCount": 65,
+      "minimumSampledFreeRamGiB": 7.399829864501953,
+      "maximumSampledOwnedRssMiB": 1512.83203125,
+      "resources": {
+        "path": "Reports/pet-effect-review-20261120/dog-walk-hci-outline-v1-20261120/resources.json",
+        "sha256": "03045c5f3a180d2a70b4b56d6054a8431f19c75bb65495da9780b994deebfee7"
+      },
+      "sourceInputs": {
+        "path": "Reports/pet-effect-review-20261120/dog-walk-hci-outline-v1-20261120/source-inputs.json",
+        "sha256": "b1ec01e9bff029440ab9deabd3fcb67d5f290dc5ece314e2191e680ce7e530df"
+      },
+      "unityLog": {
+        "path": "Reports/pet-effect-review-20261120/dog-walk-hci-outline-v1-20261120/unity.log",
+        "sha256": "d955454b9e4164c686f45cb4992697eb655dae7ba22a9210a127632e0b8c5e92"
+      },
+      "result": {
+        "path": "Reports/dog-walk-authoring-20261120/hci-outline-v1/result.txt",
+        "sha256": "7de26d3391ea9b44e8f409a961d169bf19b9c53f0380bb55b4a563e362bf02f0"
+      },
+      "nativeFrameHashes": {
+        "Cat-00-natural.png": "2481b48823077d7cd3b966f75218bbccdd8ffe535c0604a96c9c5aca3098c69c",
+        "Cat-01-manga.png": "d80b16d396431ac3e6abc5d8e7f79edde2bea47225fec8fe2d455d825b75d7ff",
+        "Cat-01-same-frame-natural.png": "fb1fbfb36677390cc75f8d6ad8d344288fd6c3bf6257743347644b0440c71d9e",
+        "Cat-02-manga-dream.png": "768857785d622e06988c65e3979ed840bdb0577662cac9665dbec8ec1b92c0b4",
+        "Cat-03-affection.png": "eae8d9f0ec943abda46783ea671ff5d0835f7b7d5bd07734ca8e1e51e10a4d03",
+        "Cat-03-manga-walk-motion.png": "013dc0aac41454d05f62f319906f22664dfb10431b8a4f11640f47a541eda7ee",
+        "Cat-03-manga-walk.png": "5dc38455655a61a91ed02300c9b3b6554fbf6175bac54bdd06b2d382b48d9787",
+        "Cat-04-reset.png": "15c93b9154eb808f1a869a97816c248bf9c9d8c697dabd41074149b98fd43cb3",
+        "Dog-00-natural.png": "806f8ae9fbb1760497493718d196c7a738c9469324b8450f6c41903bc493af25",
+        "Dog-01-manga.png": "b9455bceb8fc177c733ac807bc225b940b58b11eef9a958b111511083d97d14d",
+        "Dog-01-same-frame-natural.png": "e4a94252d02bd0c13dae8d2b3ae9840d71c21193ea0908efb1a41cb259b86591",
+        "Dog-02-manga-dream.png": "bf63267f6897d40f76cf8063ce65da7c28917c309920d7a0446b43883cb08dec",
+        "Dog-03-affection.png": "9c1e2b0703e731db0c8f94849419e3eea1f9f3c2d7b3ec55bceb88ccf8859a21",
+        "Dog-03-manga-walk-motion.png": "1a28691edb0f5babda56da0502f342941c2b3fd908626cda23cc1e8702376cad",
+        "Dog-03-manga-walk.png": "bfd02bc514511ce2b4d246ac49d2bf5598038bc850dff461c8a6997bf7aef84c",
+        "Dog-04-reset.png": "03cc887d156d9cc555ed109996009934dd7c726b9a63d08809a57cec23e123b8"
+      }
+    }
+  },
+  "installedGait": {
+    "rows": 191,
+    "unsupportedRows": 0,
+    "frames": 8,
+    "measuredCycles": 2.004901647567749,
+    "floorY": 0.9176281094551086,
+    "standingHeight": 0.2673102021217346,
+    "contactTolerance": 0.005346204154193401,
+    "minimumMeshGap": -2.2590160369873047e-05,
+    "maximumMeshGap": 5.960464477539063e-08,
+    "maximumPenetration": 2.2590160369873047e-05,
+    "maximumBakedMeshWorldError": 0.008219989947974682,
+    "footNames": [
+      "FrontToe_L",
+      "FrontToe_R",
+      "BackToe_L",
+      "BackToe_R"
+    ],
+    "footVertexCounts": [
+      38,
+      38,
+      44,
+      44
+    ],
+    "supportRows": [
+      165,
+      166,
+      166,
+      166
+    ],
+    "footPathLength": [
+      0.20673537254333496,
+      0.19363056123256683,
+      0.19435197114944458,
+      0.2061557173728943
+    ],
+    "geometryMethod": "Unity BakeMesh(mesh,true), then renderer.TransformPoint; manual four-weight LBS discrepancy recorded separately, not used as actual support geometry.",
+    "rendererSkinQuality": "Auto",
+    "projectSkinWeights": "TwoBones",
+    "authoredOverrideUsed": false,
+    "minimumSimultaneousSupport": 3,
+    "savedAuthoredControllerUsed": true,
+    "maximumConsecutiveBoneDegreesPerSecond": 358.6470947265625,
+    "scope": "Actual saved ParkPet virtual Dog; original Walk button callback; two source animation cycles and world-space linear-blend-skinned paw groups. Fixed tracking root. Contact is geometry proximity, not force sensing or calibrated physical contact. Independent side camera and temporary floor/markers for review only. No physical input, YOLO, PICO or naturalness acceptance."
+  },
+  "qualifiedLocalScope": [
+    "Saved controller without runtime clip override",
+    "Original virtual Dog/Walk button callbacks and ray geometry",
+    "Two complete live Animator cycles with actual TwoBones BakeMesh geometry",
+    "At least three paw groups near idle reference plane at every recorded loop sample",
+    "No tracking-root/fit movement; loop and idle return",
+    "Observed joint speed below unchanged 900 degree/s guard",
+    "Cat/Dog original UI lifecycle: Stop/Undo/Reset/tracking loss/exit/live-mode guards",
+    "Saved ParkPet Cat/Dog synthetic A/B/C/D production traces, outline/dream/pop/affection independence, fit/anchor, winding, same-frame pixels and Reset"
+  ],
+  "rendering": {
+    "nativeFrames": 29,
+    "installedGaitFrames": 8,
+    "hciFrames": 16,
+    "lifecycleFrames": 5,
+    "allTwentyNineActuallyViewedViaFourQAImages": true,
+    "figures": [
+      {
+        "path": "Reports/dog-walk-authoring-20261120/dog-four-beat-installed-frames.png",
+        "sha256": "778cdcfa997cb3fb0b15290e5bd3b6436e03c6ef0ae39eca83a20df645bfae5b"
+      },
+      {
+        "path": "Reports/dog-walk-authoring-20261120/dog-four-beat-ground-comparison.png",
+        "sha256": "ed1b41508162bc0c64d6390eb7d4675be9e48e34e473cb3786131ccaf5f8528b"
+      },
+      {
+        "path": "Reports/dog-walk-authoring-20261120/hci-outline-v1-frames.png",
+        "sha256": "18e096fd5d378da9161b8a24af5ef8f0257c2001d41e8ec9bcb11cde7ad08122"
+      },
+      {
+        "path": "Reports/dog-walk-authoring-20261120/lifecycle-v1-frames.png",
+        "sha256": "d283cc7076dcd64411ac4d09b8a3495ce953124e987fa5ca8a8520a60c823956"
+      }
+    ],
+    "findings": [
+      "Original airborne tucked-leg frames replaced with a basic authored in-place four-beat preview; all eight installed frames including idle return inspected.",
+      "Comic hull, dream fish/bone and affection particles remain visible on both species.",
+      "Full-scene models remain small beside the existing virtual-test panel; no new full-scene readability or final art acceptance.",
+      "Biological naturalness, real ground friction/contact, feeding, sleeping and physical/PICO input are not established by this clip."
+    ],
+    "finalArtAccepted": false
+  },
+  "failureHistory": [
+    {
+      "version": "author-v1",
+      "cause": "CS1061: importer root-lock settings do not belong to AnimationClipSettings; removed unsupported settings; no tracking-root curves authored."
+    },
+    {
+      "version": "author-v2",
+      "cause": "Importer preview idle duplicate; filter __preview exactly as existing builder."
+    },
+    {
+      "version": "author-v3 / installed-v1",
+      "cause": "Independent three-link CCD key poses met sole guards but actual saved-controller joint speed reached 4301.597 deg/s; rejected."
+    },
+    {
+      "version": "author-v4",
+      "cause": "Continuous CCD warmup drifted to a 179-degree fold; unchanged joint-angle guard rejected before asset creation."
+    },
+    {
+      "version": "author-v5",
+      "cause": "Preflight only: orphan meta removed by prior Unity startup. Restored exact original 188-byte meta/hash/GUID; no v5 Unity run."
+    },
+    {
+      "version": "author-v6",
+      "cause": "Analytic solve sole correction residual 0.00198926 exceeded unchanged 0.0014 source guard; no new asset accepted."
+    },
+    {
+      "version": "author-v7",
+      "cause": "20 sole corrections converged, but 0.0436 target reach error exposed hind hips outside spine1. Source Collada hierarchy showed BackLeg1 siblings under wolfhound."
+    },
+    {
+      "version": "author-v8",
+      "resolution": "Analytic hip/knee solve with neutral pole; constant imported skeleton stance posture includes all four hips, independently solved paw targets remain on reference floor. No framewise whole-model height clamping. Exact loop closure, sole/target/angle guards passed."
+    },
+    {
+      "version": "APK verifier v1",
+      "cause": "Legacy literal Wolfhound_WalkSource expected after intentional replacement. Verifier now requires APK-bound BuildReport, saved controller GUID, exact packed GUID data/name and new modification credit; both new and unchanged legacy packages pass."
+    }
+  ],
+  "android": {
+    "path": "D:\\MagicMRSourceCandidate\\20261120\\Builds\\Android\\DogFourBeatValidation-20261120.apk",
+    "bytes": 78008507,
+    "sha256": "ed111617feea1bf88fb2f2b14163f4fdbe051262c2f4864de3329b5d8049bd59",
+    "buildResources": {
+      "path": "Reports/dog-walk-authoring-20261120/android-v1.log.resources.json",
+      "sha256": "2638c622bd56d71baf5f72d1c31ad1fd09d7fbbbcb9f6085ae055097915ed16b"
+    },
+    "buildReport": {
+      "path": "Reports/dog-walk-authoring-20261120/android-buildreport-assets-v1.json",
+      "sha256": "50c9d430e040530489616d3a82325bc14a8cf51c21b81ad6cb189d9f42abdd25"
+    },
+    "verification": {
+      "path": "Reports/dog-walk-authoring-20261120/android-verification-v2.json",
+      "sha256": "274c0a05537f7357b87cb3f53869d6e5ae20c1dcc242049827832b16bc4d2b2b"
+    },
+    "extraChecks": {
+      "path": "Reports/dog-walk-authoring-20261120/android-extra-checks-v1.json",
+      "sha256": "f072e10abfcef80c9bcd39a54f7897a132dc11630cd2149d7e75df5fcb75fe3a"
+    },
+    "legacyVerifierRegression": {
+      "path": "Reports/dog-walk-authoring-20261120/android-legacy-verifier-regression.json",
+      "sha256": "75c0f0b4500cfca5a1459168badc2bcba12bec4fa420f1164880a8457e2fd42b"
+    },
+    "newClipPacked": {
+      "source": "Assets/ThirdParty/NaturalPets/Wolfhound/WolfhoundFourBeatWalk.anim",
+      "sha256": "cffab0f9938bcc2685097e6a3903642e13b9e6eec88e1526212abdcaa1c6202b",
+      "guid": "3cc6091b514eaf942bd9f535c2b9f408",
+      "packed_data": "assets/bin/Data/3cc6091b514eaf942bd9f535c2b9f408"
+    },
+    "sceneCount": 15,
+    "signatureCrcZipalignArm64Passed": true,
+    "minSdk": 29,
+    "targetSdk": 35,
+    "minimumSampledFreeRamGiB": 5.079,
+    "maximumSampledOwnedRssMiB": 3453.0,
+    "maximumSampledCompilerProcesses": 0,
+    "maximumSampledDiskGrowthMiB": 72.0,
+    "oldDefaultAndAllExistingVersionedApksPreserved": true,
+    "knownPicoFourPreloadSettingsRestored": true,
+    "deviceExecutionValidated": false,
+    "apkUploaded": false
+  },
+  "inputs": {
+    "nativeAndBuildFrozenInput": {
+      "path": "Reports/dog-walk-authoring-20261120/installed-input-v2.json",
+      "sha256": "9177216af84b0493ed00076ef533972e01ae2ff727b1851c73440df3cd514613"
+    },
+    "postBuildCurrentInput": {
+      "path": "Reports/dog-walk-authoring-20261120/post-build-input-v3.json",
+      "sha256": "a15a35205325b64cb74e31d789dfdc774106f402b57720e5577b92b43943d014"
+    },
+    "onlyPostBuildPayloadDifference": "Tools/verify_android_artifacts.py",
+    "candidatePayloadCount": 1871,
+    "allCandidateHashesMatched": true
+  },
+  "preservation": {
+    "explicitSources": [
+      "Assets/Editor/NaturalDogGaitReview.cs",
+      "Assets/Editor/NaturalDogGaitReview.cs.meta",
+      "Assets/Editor/NaturalDogWalkAuthor.cs",
+      "Assets/Editor/NaturalDogWalkAuthor.cs.meta",
+      "Assets/Editor/NaturalDogAssetBuilder.cs",
+      "Assets/ThirdParty/NaturalPets/Wolfhound/WolfhoundFourBeatWalk.anim",
+      "Assets/ThirdParty/NaturalPets/Wolfhound/WolfhoundFourBeatWalk.anim.meta",
+      "Assets/ThirdParty/NaturalPets/Wolfhound/Wolfhound.controller",
+      "Assets/ThirdParty/NaturalPets/Wolfhound/source-and-conversion.json",
+      "Assets/StreamingAssets/MagicMRAssetCredits.txt",
+      "Tools/run_room_magic_review_bounded.ps1",
+      "Tools/verify_android_artifacts.py"
+    ],
+    "allMainCandidateSourceBytesMatched": true,
+    "changedExistingMainInputs": [
+      "Assets/Editor/NaturalDogAssetBuilder.cs",
+      "Assets/Editor/NaturalDogGaitReview.cs",
+      "Assets/StreamingAssets/MagicMRAssetCredits.txt",
+      "Assets/ThirdParty/NaturalPets/Wolfhound/Wolfhound.controller",
+      "Assets/ThirdParty/NaturalPets/Wolfhound/source-and-conversion.json"
+    ],
+    "newMainInputs": [
+      "Assets/Editor/NaturalDogWalkAuthor.cs",
+      "Assets/Editor/NaturalDogWalkAuthor.cs.meta",
+      "Assets/ThirdParty/NaturalPets/Wolfhound/WolfhoundFourBeatWalk.anim",
+      "Assets/ThirdParty/NaturalPets/Wolfhound/WolfhoundFourBeatWalk.anim.meta"
+    ],
+    "otherExistingMainInputsPreserved": 1793,
+    "mainIndexUnchanged": true,
+    "fireEdited": false,
+    "mainIndexSha256": "aab38b747bb2453015b4ce247543cf2dd6aa54d5d5586cf1fcafce46a0398c5a",
+    "mainHead": "8359a0cb7c700a0d6f91b6804fae9cb6758c33b2",
+    "fireCodeScenesModelsEffectsAnimationsWeightsAndMetaUnchanged": true,
+    "fireWeightSha256": "999bca4f5bf96aeed3ac0f1047e31530e4eb4584873c85dd5bd00031fc71fb3a",
+    "candidateIsSeparateCuratedSnapshotNotExactDirtyMainWorkspace": true,
+    "allSourceScenesAndExistingMetaGuidsPreserved": true
+  },
+  "sourceUploadedThisReport": false,
+  "newTrainingOrDownload": false,
+  "devicePolledOrConnected": false,
+  "allEightCases32EffectsAccepted": false,
+  "goalComplete": false,
+  "next": "Curate explicit verified source/asset delta and scoped native/Android evidence to restore-4d-lighter; continue remaining final art, independent non-fire data/model quality, mandatory scene and real YOLO/HCI/PICO gaps. Do not relabel sniff as feeding/sleeping or this preview as motion-captured/physical walking.",
+  "originalLocalVerificationSha256": "1b73fad320efcc7085cf5297529ef63d07c08cb79950ae10f3058c519d1f2851",
+  "sourceChangesAgainstPublishedParent": {
+    "Assets/Editor/NaturalDogGaitReview.cs": {
+      "before": null,
+      "after": "5e7159794c72972ea3d7d2d182c1fbe404d3fac9fce85750ce600303dc7517a1"
+    },
+    "Assets/Editor/NaturalDogGaitReview.cs.meta": {
+      "before": null,
+      "after": "34d2cac69de8991b8dc3e0fa758a61353a9fcd7bc2692d9db79a24d64a5e83e0"
+    },
+    "Assets/Editor/NaturalDogWalkAuthor.cs": {
+      "before": null,
+      "after": "587f0a31ad4c1b4634a50897ced1602fbdd393c6779e6a2c8789350134c20b1e"
+    },
+    "Assets/Editor/NaturalDogWalkAuthor.cs.meta": {
+      "before": null,
+      "after": "96d0ee4e97e471ebe82c1645f75dd33adee1ffad0f72728be224c8005573c385"
+    },
+    "Assets/Editor/NaturalDogAssetBuilder.cs": {
+      "before": "73882d81749f4273a0ece67a94a1927d9dd4341600f697b6a883a18690e085ab",
+      "after": "6e7ae9a8a5b69e85776c1468ba340ef85810029a6fef7848528ce6f4ed1dbea2"
+    },
+    "Assets/ThirdParty/NaturalPets/Wolfhound/WolfhoundFourBeatWalk.anim": {
+      "before": null,
+      "after": "cffab0f9938bcc2685097e6a3903642e13b9e6eec88e1526212abdcaa1c6202b"
+    },
+    "Assets/ThirdParty/NaturalPets/Wolfhound/WolfhoundFourBeatWalk.anim.meta": {
+      "before": null,
+      "after": "fa38c76a7a78315fc314a49728c1dce0925248fa5338a94d8713f5ee461e174d"
+    },
+    "Assets/ThirdParty/NaturalPets/Wolfhound/Wolfhound.controller": {
+      "before": "4c1bf79389b5a17e28405f55bca45e1dd958857047a2c3f22ecbf228487427cb",
+      "after": "4408e80163b2c6f804d20470ac8cf79f76efee86ef12165611059e67ec51bcca"
+    },
+    "Assets/ThirdParty/NaturalPets/Wolfhound/source-and-conversion.json": {
+      "before": "7ab222717dc0d1aaa234d7f81f09d578ff9af700e72c908f01498f98eebd8860",
+      "after": "2a85e6f56d066a25e01ce1ae4bf8f747259acd86878e61a2e10cd998505a4f41"
+    },
+    "Assets/StreamingAssets/MagicMRAssetCredits.txt": {
+      "before": "5b70cea6bdb2e06adbd95e310589b0e14f4b76cf36fc986487d222e5c727829a",
+      "after": "297048b5fd5b3a4ee54b868e64cc4ee9b4ad35bf981e36f702eb333ed204f89e"
+    },
+    "Tools/run_room_magic_review_bounded.ps1": {
+      "before": "7d8bc2133eba3b30be6409489c077c4a86ba2dc9adeb39bf44ef7a460d336745",
+      "after": "9c409ead4b7f11d07ef477c26fb82bd1b793ac63cd56ad5abfd2b76e6d5194e5"
+    },
+    "Tools/verify_android_artifacts.py": {
+      "before": "a51d9475404422afdb66e8829896e842efb1b0596c31090f72e9a657dd560077",
+      "after": "d00911bc6a520136d9af85967e01b716174839130bfb26300aeefa5cccde4920"
+    }
+  },
+  "rawLocalReferencesPublished": false,
+  "publicationScope": "Portable input/asset/native/Android summary; raw logs, source inventories, individual capture files and APK remain local. Three named QA figures and v4 index are included. Actual publication commit/ref receipt separate. Not physical YOLO/HCI/PICO or final art acceptance."
+}

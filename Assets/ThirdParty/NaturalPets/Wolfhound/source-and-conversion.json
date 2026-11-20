@@ -118,5 +118,16 @@
   "unity_walk_validation": {
     "log": ".codex-tmp/pet-walk-actual-transition-ground.log",
     "scope": "Actual saved ParkPet Cat/Dog/Walk button callbacks, original source walk active, Undo/Stop/Reset/exit/physical-live gates; virtual in-place preview, no headset acceptance"
+  },
+  "authoredUnityWalk": {
+    "asset": "WolfhoundFourBeatWalk.anim",
+    "sha256": "cffab0f9938bcc2685097e6a3903642e13b9e6eec88e1526212abdcaa1c6202b",
+    "authorship": "MagicMR project authored four-beat in-place preview; existing licensed skeleton/mesh retained, no training or motion capture",
+    "license": "CC BY-SA 3.0 derivative of the original Wolfhound rig",
+    "durationSeconds": 1.6,
+    "keyPoses": 49,
+    "method": "Four phase-offset C2 paw trajectories, analytic hip/knee IK with neutral knee poles and fixed ankle/toe orientation; actual Unity TwoBones baked-sole correction. Constant imported skeleton stance posture includes all four hips; recognition root unchanged.",
+    "qualificationAtCreation": "V8 baked-key-pose sole/target/rotation/exact-loop guards passed; later saved-controller/native/Android qualification recorded separately in Reports/dog-walk-authoring-20261120.",
+    "originalImportedClipsRetained": true
   }
 }

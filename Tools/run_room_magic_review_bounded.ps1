@@ -4,12 +4,17 @@ param(
     [Parameter(Mandatory=$true)][string]$ProjectRoot,
     [ValidatePattern('^[a-z0-9-]{4,60}$')][string]$RunId='room-current-20261120',
     [string]$EditorOverrideManifest,
-    [ValidateSet('RoomMagic','RoomWindowOwnership','PlantFlow','PlantVoice','PetDream','PetOutline','SeasonTree','SeasonTreeSelection','WillowTree','WillowTreeSelection','StatueStyle','StatuePlayback','StatueGarden','BronzePlayback','BugDance','LegacyStartup','CaptureTimeline','SampleCaptureTimeline')][string]$Check='RoomMagic'
+    [ValidateSet('RoomMagic','RoomWindowOwnership','PlantFlow','PlantVoice','PetDream','PetOutline','SeasonTree','SeasonTreeSelection','WillowTree','WillowTreeSelection','StatueStyle','StatuePlayback','StatueGarden','BronzePlayback','BugDance','LegacyStartup','CaptureTimeline','SampleCaptureTimeline','DogGait','DogWalkAuthor','DogWalkAcceptance','DogWalkInstalled','PetWalkLifecycle')][string]$Check='RoomMagic'
 )
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot -Parent
 $candidate=(Resolve-Path -LiteralPath $ProjectRoot).Path
 $checks=@{
+    DogWalkInstalled=@{method='NaturalDogGaitReview.RunInstalled';pattern='^PASS: actual saved ParkPet authored four-beat walk;';folder='dog-gait-review';group='pet-effect-review-20261120';scope='Saved ParkPet original Dog/Walk callbacks and saved authored dog controller without clip override; actual TwoBones support, joint speed, root/fit and idle checks over two cycles, normal-frame review renders; no physical contact, YOLO/HCI/PICO or final art acceptance'}
+    PetWalkLifecycle=@{method='NaturalPetWalkPlayChecks.RunUIOnly';pattern='^PASS: actual saved ParkPet, original camera/input;';folder='pet-walk-play';group='pet-effect-review-20261120';scope='Saved original ParkPet Cat/Dog/Walk callbacks, skin movement, idle/Stop/Undo/Reset/loss/exit/live gates; old Cat manual-LBS ground scope not upgraded to actual player two-bone contact; no physical pointer/hand/YOLO/PICO or final art acceptance'}
+    DogWalkAcceptance=@{method='NaturalDogGaitReview.RunAuthored';pattern='^PASS: actual saved ParkPet authored four-beat walk;';folder='dog-gait-review';group='pet-effect-review-20261120';scope='Original ParkPet virtual Dog/Walk callbacks, temporary runtime-only authored-clip override; actual TwoBones skin support for two live cycles and return idle; normal-frame independent renders, saved controller unchanged; no physical contact/YOLO/HCI/PICO or final art acceptance'}
+    DogWalkAuthor=@{method='NaturalDogWalkAuthor.Run';pattern='^PASS: authored dog four-beat candidate;';folder='dog-walk-authoring';group='pet-effect-review-20261120';scope='Generate/revise only the owned four-beat clip in isolated D candidate with actual baked stance/target/rotation guards; preserve existing meta/GUID and original FBX/controller/production/fire; live quality and integration unaccepted';generated=@('Assets/ThirdParty/NaturalPets/Wolfhound/WolfhoundFourBeatWalk.anim','Assets/ThirdParty/NaturalPets/Wolfhound/WolfhoundFourBeatWalk.anim.meta');changed=@('Assets/ThirdParty/NaturalPets/Wolfhound/WolfhoundFourBeatWalk.anim')}
+    DogGait=@{method='NaturalDogGaitReview.Run';pattern='^PASS: actual saved ParkPet dog gait measured;';folder='dog-gait-review';group='pet-effect-review-20261120';scope='Saved ParkPet virtual Dog and original Walk callback, two live Animator cycles, four skinned paw groups and temporary independent side-camera renders; geometry diagnostic only, no physical contact, natural walking, YOLO/HCI/PICO or final art acceptance'}
     RoomMagic=@{method='HciRoomMagicChecks.Run';pattern='^PASS: saved ParkRoom;';folder='hci-room-magic';group='room-effect-review-20261120';scope='Saved ParkRoom plus explicitly synthetic gesture/space input, actual Unity camera renders; no real YOLO/room mapping/hands/PICO or visual acceptance from assertions alone'}
     RoomWindowOwnership=@{method='RoomWindowOwnershipChecks.Run';pattern='^PASS: owned room window lifecycle;';folder='room-window-ownership';group='room-effect-review-20261120';scope='Native repeated component/owner destruction with an external window parent; no rendering, gesture, real-room, long-duration RAM or PICO acceptance'}
     PlantFlow=@{method='HciPlantFlowChecks.Run';pattern='^PASS [0-9a-f]{32}: saved ParkPlant;';folder='hci-plant-flow';group='plant-effect-review-20261120';scope='Saved ParkPlant synthetic dimension dispatch, fit, effects and lifecycle with actual Unity camera renders; no physical gesture/YOLO/PICO or art acceptance from assertions alone'}
@@ -99,7 +104,14 @@ try{
     if($stop -or !$process.HasExited -or $process.ExitCode -ne 0 -or !(Test-Path -LiteralPath $result)){throw 'Room review did not complete; preserve source/result/log before retrying'}
     $verdict=Get-Content -LiteralPath $result -Raw -Encoding utf8
     if($verdict -cnotmatch $resultPattern){throw 'Current scene assertions failed; do not substitute another check or an older pass'}
-    foreach($file in $files){if((Get-FileHash -LiteralPath $file.path).Hash.ToLowerInvariant() -ne $file.sha256){throw ('Source changed during review: '+$file.path)}}
+    $allowedChanged=@(foreach($path in $selectedCheck.changed){[IO.Path]::GetFullPath((Join-Path $candidate $path))})
+    $changedAssets=@(foreach($file in $files){$actual=(Get-FileHash -LiteralPath $file.path).Hash.ToLowerInvariant();if($actual -ne $file.sha256){if($file.path -notin $allowedChanged){throw ('Source changed during review: '+$file.path)};@{path=$file.path;previousSha256=$file.sha256;sha256=$actual}}})
+    $knownPaths=[Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+    foreach($file in $files){[void]$knownPaths.Add($file.path)}
+    $newFiles=@(foreach($name in @('Assets','Packages','ProjectSettings')){Get-ChildItem -LiteralPath (Join-Path $candidate $name) -Recurse -File|Where-Object {!$knownPaths.Contains($_.FullName)}})
+    $expectedGenerated=@(foreach($path in $selectedCheck.generated){$absolute=[IO.Path]::GetFullPath((Join-Path $candidate $path));if(!$knownPaths.Contains($absolute)){$absolute}})
+    if($newFiles.Count -ne $expectedGenerated.Count -or ($newFiles.Count -gt 0 -and @(Compare-Object @($newFiles.FullName|Sort-Object) @($expectedGenerated|Sort-Object)).Count)){throw 'Unexpected new source files during review; preserve outputs and inspect'}
+    $generatedAssets=@(foreach($file in $newFiles){if($file.Length -gt 2MB){throw 'Generated asset exceeds explicit 2 MiB budget'};@{path=$file.FullName;bytes=$file.Length;sha256=(Get-FileHash -LiteralPath $file.FullName).Hash.ToLowerInvariant()}})
     $passed=$true
     Write-Output ('PASS: '+$method+'; '+$scope)
 }finally{
@@ -109,6 +121,8 @@ try{
       candidateRoot=$candidate;captures=$captures;check=$method;
       sourceMetadataSha256=(Get-FileHash -LiteralPath $metadataPath).Hash.ToLowerInvariant();
       editorOverride=$override;
+      generatedAssets=$generatedAssets;
+      changedAssets=$changedAssets;
       launcherSha256=(Get-FileHash -LiteralPath $PSCommandPath).Hash.ToLowerInvariant();
       seconds=$clock.Elapsed.TotalSeconds;samples=$samples.ToArray();
       scope=$scope}|

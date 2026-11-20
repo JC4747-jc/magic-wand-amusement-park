@@ -1,20 +1,21 @@
-# 原入口启动与捕获流程：有范围的源码候选（2026-11-20）
+# 狗四拍原地行走：已核本地范围的源码候选（2026-11-20）
 
-父版本 restore-4d-lighter@943e87faecda9f6f0fc33e2ae1a75c69ea89bf67；开发基线仍 codex/mr-development-snapshot-20261109@8359a0c。仅修改 CaptureDemoTimelineChecks 编辑器检查及有界启动器，并交付三个证据摘要、缺口表 v3 与三张实际 Unity 图。原场景、生产运行时、识别/手势、模型、meta 和火机完全不改。traeye 分支只读，旧提交不改写；本次提交使用 JC4747-jc。
+父版本 restore-4d-lighter@bc27d84ed46ad990a122cb20053652bab3c5acaa，基线仍 codex/mr-development-snapshot-20261109@8359a0c。新增独立 WolfhoundFourBeatWalk.anim（1.6 秒/49 关键姿态）并让既有狗控制器的 Walk in place 状态引用它；原 FBX、47 骨骼/849 三角面模型、贴图、源动作、运行时 HCI/识别/手势代码、原场景和火机全部保留。旧源动作仍在 FBX 内。新动画沿用现有 Wolfhound 骨骼授权并补充 CC BY-SA 3.0 修改说明。
 
-八个原入口各自原相机启动记录为独立的既有当前输入：8 场景零错误，图已逐张查看；Bridge 四入口各有 PC 连接超时，Sample 有四项 Windows XR/AR provider 警告，全部没有真实相机帧。未执行维护、升级或效果注入。黑背景/UI 不证明 YOLO 或 PICO 成功。合成图仅把实际捕获并排展示，不替代运行模型。
+制作的是实际可运行的 Unity 动画资产：四脚错相位的平滑轨迹，以原中立膝盖弯曲方向为约束做解析髋/膝求解，脚踝/趾姿态固定，并按实际 TwoBones 蒙皮校正脚底。静态站姿调整包括四个髋关节，为腿部弯曲留余量；四脚目标独立保持参考平面，识别根/尺寸锚点不移动，没有逐帧把整个模型上下挪动以掩盖腾空。编辑器安装器以后优先复用新动作，现有模型/meta GUID 不改。
 
-两个捕获场景在同一新版输入分别原生 Play：SampleScene 及 DesktopCaptureDemo 终态均为 0。绑定、实际非空截图和完整目标边界、重复拦截、中途复位/重用、timeScale=0 下完成、禁用/启用与换目标清理通过，复位后背包仍显示。Desktop 调用原场景真实复位按钮回调；Sample 没有该按钮，调用既有 ResetCapture API，不主张按钮/键盘/AR 验收。
+当前原保存 ParkPet 经原 Virtual test/Preview Dog/Walk 按钮及射线回调，保存控制器直接播放，无临时 override。两完整周期 191 个实际 BakeMesh/正常 LateUpdate 采样始终至少三脚接近参考平面，零全脚离地；最低网格下穿约 0.00002259 场景单位，最大连续骨骼角速度 358.65 度/秒，固定根/尺寸和返回待机通过。原动作两周期 128 采样有 48 个全网格离参考地面，最大约 0.02997；比较完整周期而非匹配相位，不将采样数比例当连续时长比例或标定物理厘米。
 
-修正的是检查脚本的场景假设：Sample 卡片直接位于共享 Canvas 下，不能把父 Canvas 当卡片并要求其隐藏。现在检查实际 RawImage.activeInHierarchy。保留 v1 按钮缺失、v2 Canvas 假设及 v3 一处漏引用造成的 CS0103 失败；v4 两场景通过。没有为测试添加生产 UI 或更换入口。两张卡片图已查看，仍只是灰立方体，不是最终美术。
+原 Cat/Dog 行走按钮、Stop/Undo/Reset/跟踪丢失/退出/live 限制回归通过；Pet A/B/C/D 的生产分类器合成关节轨迹、漫画轮廓/梦境/戳破/好感独立状态、同帧像素/共享骨骼、fit/anchor 和 Reset 再核通过。8 步态+5 原相机生命周期+16 HCI 原生图共 29 张已查看。旧猫手算落地检查不升级为实际 TwoBones 物理落地验收。主场景模型/UI 仍需最终可读性和美术验收，不把基本原地预览说成真实动物运动捕捉、地面摩擦或完整生物动作。
 
-- [原八入口摘要](Reports/scene-evidence-audit-20261120/delivery-summary.json)：原始输入版本及范围保持，不把本次新 Editor 哈希套用到旧执行。
-- [两捕获场景摘要](Reports/sample-capture-review-20261120/delivery-summary.json)：各自来源输入/资源采样/截图 SHA 和 API 与按钮的区别。
-- [Android 复核摘要](Reports/android-close-resume-20261120/delivery-summary.json)：与构建输入相比只有六个 Editor 检查和启动器变化，玩家输入不变。
-- [场景及 32 效果缺口表](Reports/delivery-gap-index-20261120/CASE_SCENE_STATUS-v3.md) 与 [结构化 v3](Reports/delivery-gap-index-20261120/inventory-v3.json)。v1/v2 原记录仍在本地保留；未发布的原始日志路径仅为本地交接引用。
+关键失败保留在本地：独立 CCD 姿态虽然落地，却被实际 4301.597 度/秒关节突变护栏拒绝；连续 CCD 又被 179 度折叠护栏拒绝。最终改用中立膝盖方向约束的解析求解，并核对源骨架发现后髋不属于 spine1 子树，改为四髋共同的骨架站姿。原有脚底/可达性/角度/首尾/实际速度门槛均未放宽。一次孤立 meta 被 Unity 移除后，恢复原精确 188 字节/哈希/GUID；后续只在原资产对象内更新，现有 GUID 保持。编辑器 API/预览 clip 选择失败也有记录，不重试旧失败前提。
 
-Android 沿用 PlantPresentationValidation-20261120.apk（78064133 字节，SHA256 f3c8553d646f9871631dd023da4eafb45c3d3719cb4857965afaa1505f40fe31）；签名、CRC、zipalign4、15 场景、16 个 ARM64 ELF、min29/target35 再核通过。没有重复重建或上传 APK。打包 15 场景不等于把森林研究资产扩为正式项目；ForestBlockout/ForestStudy 继续按计划仅供选择性复用。
+新 Android 本地候选 DogFourBeatValidation-20261120.apk：78008507 字节，SHA256 ed111617feea1bf88fb2f2b14163f4fdbe051262c2f4864de3329b5d8049bd59。BuildReport 列出新动作，保存控制器/动画 GUID 3cc6091b514eaf942bd9f535c2b9f408 与包内同 GUID 数据及 WolfhoundFourBeatWalk 名称相符；签名、CRC、15 场景、16 个 ARM64、zipalign4、min29/target35 通过。检查器据 APK 绑定的 BuildReport 选择旧/新动作期望，旧包仍识别 Wolfhound_WalkSource。已恢复 SDK 已知四项预加载副作用及旧默认 APK/旧报告，所有已存在版本包保留。无 APK 上传/安装/PICO 执行。
 
-所有本地范围不能替代真实 YOLO→实际 HCI 手势→魔法、PICO VST/双眼/遮挡/性能、独立采集/模型质量或最终美术验收。火机四效果仍不因启动成功而判完整通过。用户暂不接设备；无定时四小时提交。完整 Goal 未完成。
+- [便携证据与来源/输入/产物 SHA 摘要](Reports/dog-walk-authoring-20261120/delivery-summary.json)。原日志、源清单、失败和逐帧图只保留本地，摘要中的原始路径不代表全部发布。
+- [新步态八帧](Reports/dog-walk-authoring-20261120/dog-four-beat-installed-frames.png)、[新旧全网格离地曲线](Reports/dog-walk-authoring-20261120/dog-four-beat-ground-comparison.png)、[宠物 HCI 画面](Reports/dog-walk-authoring-20261120/hci-outline-v1-frames.png) 均来自实际 Unity 输出。
+- [缺口表 v4](Reports/delivery-gap-index-20261120/CASE_SCENE_STATUS-v4.md) 与 [结构化索引](Reports/delivery-gap-index-20261120/inventory-v4.json)；旧版本保持各自输入范围，不因本次狗增量升级为全工程重跑。
 
-SOURCE_VALIDATION.sourcePayloadTree 是完整候选树排除元数据自身；payloadFiles 只描述已核范围，继承内容不会自动获得新增验收。显式清单、来源/产物 SHA、身份与远端文件字节核验见独立发布回执；不动主索引或当前分支。
+十二个显式源码/资产文件与候选逐字节一致后接入当前 mr；保留其他用户暂存/删除/未跟踪内容，主 HEAD/索引不动。独立索引以 JC4747-jc 身份发表，其他分支尤其 traeye 不动，历史不改写，无定时四小时提交。SOURCE_VALIDATION.sourcePayloadTree 是完整候选树排除元数据自身；payloadFiles 仅为受限已核范围，继承内容不会自动新增验收。
+
+真实 YOLO→实际 HCI 手势→魔法、PICO VST/双眼/遮挡/性能、独立数据和非火机模型质量、最终美术及完整 8 案例/32 效果仍待完成。嗅探不算进食或睡眠，新步态不代表这些缺口消失；头显仍按用户安排暂不接。火机原码/外观/效果/权重及 meta 继续冻结，完整 Goal 未完成。

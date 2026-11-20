@@ -1,4 +1,4 @@
-> 2026-11-20 原入口与捕获流程检查候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。原八入口启动、两个捕获场景及缺口v3已按各自输入范围核验；真实YOLO/HCI/PICO/最终美术仍待验，生产/火机/APK未改。
+> 2026-11-20 狗四拍原地行走源码候选：[SOURCE_DELIVERY.md](SOURCE_DELIVERY.md)。原模型/源动作保留，新动作已接保存控制器；真实Unity循环/生命周期/宠物HCI合成回归及Android包检查通过。火机与原场景不改，真实YOLO/PICO、物理接触及最终美术待验，APK未上传。
 
 # Magic Wand Amusement Park
 
