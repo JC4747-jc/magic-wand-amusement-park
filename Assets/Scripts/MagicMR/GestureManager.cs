@@ -97,8 +97,11 @@ namespace MagicMR
             BindDetectors();
             FindFirstObjectByType<LighterAnchorManager>()?.BindPinchHoldListener();
 
-            if (m_AutoStartSession && DataLogger.Instance != null)
-                DataLogger.Instance.StartSession(m_SubjectId, m_Condition, m_TrialId);
+            var logger=DataLogger.Instance;
+            if(logger!=null&&logger.SessionActive)
+                ConfigureSession(logger.SubjectId,logger.Condition,logger.TrialId,ExperimentConditionSwitcher.DimensionsFor(logger.ConditionId));
+            else if(m_AutoStartSession&&logger!=null)
+                logger.StartSession(m_SubjectId,m_Condition,m_TrialId);
 
             Debug.Log(
                 $"[MagicMR] GestureManager ready editor={(m_RealityEditor != null)} " +
@@ -116,8 +119,8 @@ namespace MagicMR
 
         void OnDestroy()
         {
-            if (m_AutoStartSession && DataLogger.Instance != null && DataLogger.Instance.SessionActive)
-                DataLogger.Instance.EndSession();
+            // Scene-owned managers join the persistent session. Only explicit
+            // EndSession or logger/application shutdown closes its files.
             if (Instance == this)
                 Instance = null;
         }

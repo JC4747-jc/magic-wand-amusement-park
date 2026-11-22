@@ -41,6 +41,9 @@ namespace MagicMR
         public bool SessionActive => m_SessionActive;
         public string Condition => m_Condition;
         public int ConditionId => m_ConditionId;
+        public string SubjectId => m_SubjectId;
+        public int TrialId => m_TrialId;
+        public string TrajectoryFilePath => m_TrajectoryFilePath;
 
         void Awake()
         {
@@ -57,32 +60,40 @@ namespace MagicMR
         void OnDestroy()
         {
             if (Instance == this)
+            {
+                EndSession();
                 Instance = null;
+            }
         }
+        void OnApplicationQuit() => EndSession();
 
         public void ConfigureLogging(bool logHandTrajectory, float trajectorySampleInterval)
         {
             m_LogHandTrajectory = logHandTrajectory;
-            m_TrajectorySampleInterval = trajectorySampleInterval;
+            m_TrajectorySampleInterval = float.IsFinite(trajectorySampleInterval) ? Mathf.Clamp(trajectorySampleInterval,.05f,10f) : .1f;
         }
 
         public void StartSession(string subjectId, string condition, int trialId = 1)
         {
+            // The persistent logger owns a session across content/scene changes.
+            // A joining controller must not overwrite its identity or files.
+            if(m_SessionActive)return;
             m_SubjectId = string.IsNullOrWhiteSpace(subjectId) ? "S00" : subjectId.Trim();
             m_Condition = string.IsNullOrWhiteSpace(condition) ? "All" : condition.Trim();
             m_ConditionId = InferConditionId(m_Condition);
             m_TrialId = Mathf.Max(1, trialId);
 
-            var stamp = DateTime.Now.ToString("yyyyMMdd_HHmmss", CultureInfo.InvariantCulture);
+            var stamp = DateTime.UtcNow.ToString("yyyyMMdd_HHmmss_fff", CultureInfo.InvariantCulture)+"_"+Guid.NewGuid().ToString("N");
             var folder = Path.Combine(Application.persistentDataPath, "StudyLogs");
             Directory.CreateDirectory(folder);
 
-            m_EventFilePath = Path.Combine(folder, $"{m_FilePrefix}_{m_SubjectId}_{stamp}_events.csv");
-            m_TrajectoryFilePath = Path.Combine(folder, $"{m_FilePrefix}_{m_SubjectId}_{stamp}_trajectory.csv");
+            var stem=SafeFilePart(m_FilePrefix)+"_"+SafeFilePart(m_SubjectId)+"_"+stamp;
+            m_EventFilePath = Path.Combine(folder, stem+"_events.csv");
+            m_TrajectoryFilePath = Path.Combine(folder, stem+"_trajectory.csv");
 
-            File.WriteAllText(m_EventFilePath, EventHeader + Environment.NewLine, Encoding.UTF8);
+            WriteNewHeader(m_EventFilePath,EventHeader);
             if (m_LogHandTrajectory)
-                File.WriteAllText(m_TrajectoryFilePath, TrajectoryHeader + Environment.NewLine, Encoding.UTF8);
+                WriteNewHeader(m_TrajectoryFilePath,TrajectoryHeader);
 
             m_SessionActive = true;
             m_NextTrajectorySampleTime = Time.time;
@@ -152,11 +163,13 @@ namespace MagicMR
         {
             if (!m_SessionActive || !m_LogHandTrajectory || string.IsNullOrEmpty(m_TrajectoryFilePath))
                 return;
+            if(!TabletopHandSample.Finite(handPosition)||!TabletopHandSample.Finite(targetPosition))return;
 
             if (Time.time < m_NextTrajectorySampleTime)
                 return;
 
-            m_NextTrajectorySampleTime = Time.time + m_TrajectorySampleInterval;
+            float interval=float.IsFinite(m_TrajectorySampleInterval)?Mathf.Clamp(m_TrajectorySampleInterval,.05f,10f):.1f;
+            m_NextTrajectorySampleTime = Time.time + interval;
             var distance = Vector3.Distance(handPosition, targetPosition);
             var line = string.Join(",",
                 Format(Time.time),
@@ -185,10 +198,23 @@ namespace MagicMR
             if (string.IsNullOrEmpty(value))
                 return "";
 
-            if (value.Contains(",") || value.Contains("\""))
+            if (value.Contains(",") || value.Contains("\"") || value.Contains("\r") || value.Contains("\n"))
                 return "\"" + value.Replace("\"", "\"\"") + "\"";
 
             return value;
+        }
+        static string SafeFilePart(string value) {
+            if(string.IsNullOrWhiteSpace(value))return "study";
+            var invalid=Path.GetInvalidFileNameChars();var result=new StringBuilder();
+            foreach(char c in value) {
+                if(result.Length>=64)break;
+                result.Append(char.IsControl(c)||c=='/'||c=='\\'||Array.IndexOf(invalid,c)>=0?'_':c);
+            }
+            return result.ToString().TrimEnd('.',' ');
+        }
+        static void WriteNewHeader(string path,string header) {
+            using(var stream=new FileStream(path,FileMode.CreateNew,FileAccess.Write,FileShare.Read))
+            using(var writer=new StreamWriter(stream,Encoding.UTF8))writer.WriteLine(header);
         }
 
         static int InferConditionId(string condition)

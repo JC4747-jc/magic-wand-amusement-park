@@ -8,6 +8,12 @@ namespace Perception
     [Serializable]
     public class DetectionMessage
     {
+        public int class_id;
+        public string class_name;
+        public string instance_id;
+        public string target_scene;
+        public string track_scope;
+        public float[] bbox;
         public string @class;
         public float confidence;
         public float centerX;
@@ -25,6 +31,12 @@ namespace Perception
     [Serializable]
     public class DetectionFrameMessage
     {
+        public string status;
+        public string scene;
+        public string model_validation;
+        public string weights;
+        public string replay_image_base64;
+        public string replay_image_kind;
         public long frame_id;
         public long timestamp;
         public int width;

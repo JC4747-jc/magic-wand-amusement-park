@@ -1,0 +1,133 @@
+{
+  "repository": "https://github.com/0ad/0ad",
+  "commit": "61a3b9507d974084e6badb88a0826bd89a6d5b8b",
+  "license": "CC-BY-SA-3.0",
+  "author": "Wildfire Games",
+  "files": [
+    {
+      "file": "wolfhound.dae",
+      "url": "https://raw.githubusercontent.com/0ad/0ad/61a3b9507d974084e6badb88a0826bd89a6d5b8b/binaries/data/mods/public/art/meshes/skeletal/wolfhound.dae",
+      "bytes": 279024,
+      "sha256": "8fe6b9cc6f48cbbaedcd8a6b4accaea9418e12533a1f69273ce15e84e75030fc"
+    },
+    {
+      "file": "wolfhound_idle_long.dae",
+      "url": "https://raw.githubusercontent.com/0ad/0ad/61a3b9507d974084e6badb88a0826bd89a6d5b8b/binaries/data/mods/public/art/animation/quadraped/wolfhound_idle_long.dae",
+      "bytes": 588049,
+      "sha256": "489ffcbe58efe19bb340da438cf6de93486b560bafb14407875d5a7c1c6bc1a3"
+    },
+    {
+      "file": "wolfhound_idle1.dae",
+      "url": "https://raw.githubusercontent.com/0ad/0ad/61a3b9507d974084e6badb88a0826bd89a6d5b8b/binaries/data/mods/public/art/animation/quadraped/wolfhound_idle1.dae",
+      "bytes": 817815,
+      "sha256": "9c8b3e82171177e5515bf600b062844c0453dde4c99400975d203bc8b7479a5b"
+    },
+    {
+      "file": "wolfhound_walk.dae",
+      "url": "https://raw.githubusercontent.com/0ad/0ad/61a3b9507d974084e6badb88a0826bd89a6d5b8b/binaries/data/mods/public/art/animation/quadraped/wolfhound_walk.dae",
+      "bytes": 524824,
+      "sha256": "4758e427e4f61814a75970cb06622b434ee22ef0c7b95fa59d57307b1877343e"
+    },
+    {
+      "file": "wolfhound.png",
+      "url": "https://raw.githubusercontent.com/0ad/0ad/61a3b9507d974084e6badb88a0826bd89a6d5b8b/binaries/data/mods/public/art/textures/skins/skeletal/brit/wolfhound.png",
+      "bytes": 163612,
+      "sha256": "224d97abecc0e71cc9e69bbd7e732cd41365fd5700b4c69fb57ce989f9228078"
+    },
+    {
+      "file": "LICENSE-art.txt",
+      "bytes": 1426,
+      "sha256": "ef98babd771c206032e005f3d440a1e610df409d9a9191f03e64deaa4abefbd9"
+    },
+    {
+      "file": "LICENSE-project.txt",
+      "bytes": 3049,
+      "sha256": "cb9eb5e8768328e8086b0d17bd1b95f07b51bc9ab74fa1b509ee09c7894b2f53"
+    }
+  ],
+  "modifications": [
+    "Imported original Collada mesh and three source clips; source animation bind rigs verified equal",
+    "New 2.5s restrained head/upper-neck sniff from the source neutral pose; original clip rotation modes preserved",
+    "Smooth normals, original topology and 256px coat; nominal 0.7m head height, no physical-scale claim",
+    "Converted FBX axis convention; original master downloads unchanged",
+    "Unity URP material/controller and yaw-only heading alignment; 0.35m nominal preview height; dog Resources prefab and head-bound fantasy interactions",
+    "Unity virtual walk/idle toggle reuses the original source walk; feed/Undo/Stop/Reset/loss/exit interrupt walking; no source topology or animation changes"
+  ],
+  "clips": [
+    {
+      "name": "Wolfhound_Idle",
+      "frames": [
+        0.0,
+        480.0
+      ],
+      "seconds": 20.0
+    },
+    {
+      "name": "Wolfhound_IdleLook",
+      "frames": [
+        0.0,
+        231.0
+      ],
+      "seconds": 9.625
+    },
+    {
+      "name": "Wolfhound_WalkSource",
+      "frames": [
+        25.99999237060547,
+        52.00000762939453
+      ],
+      "seconds": 1.083333969116211
+    },
+    {
+      "name": "Wolfhound_Feed",
+      "frames": [
+        1,
+        61
+      ],
+      "seconds": 2.5,
+      "authorship": "MagicMR restrained sniff; source neutral pose, feet and tracking root held"
+    }
+  ],
+  "sniffValidation": {
+    "frames": [
+      1,
+      16,
+      31,
+      46,
+      61
+    ],
+    "footVertices": 56,
+    "maximumFootDisplacementMeters": 0.0,
+    "maximumHeadTipDisplacementMeters": 0.0031928822059337893,
+    "scope": "Blender evaluated skin at nominal scale; Unity validation pending"
+  },
+  "vertices": 438,
+  "triangles": 849,
+  "bones": 47,
+  "unityValidation": {
+    "version": "6000.0.33f1",
+    "log": ".codex-tmp/natural-dog-integration-final.log",
+    "sourceTriangles": 849,
+    "sourceBones": 47,
+    "staticSamples": 5,
+    "sniffMaximumFootDisplacementMeters": 0.0,
+    "sniffMaximumSkinDisplacementMeters": 0.01271678,
+    "sniffMaximumHeadRotationDegrees": 8.291719,
+    "scope": "Static imported-clip samples with independent linear blend skinning at a confirmed 37-degree yaw and 0.35m fit; actual Cat/Dog Play Mode lifecycle and ten rendered frames. No real head or headset validation."
+  },
+  "unity_walk_validation": {
+    "log": ".codex-tmp/pet-walk-actual-transition-ground.log",
+    "scope": "Actual saved ParkPet Cat/Dog/Walk button callbacks, original source walk active, Undo/Stop/Reset/exit/physical-live gates; virtual in-place preview, no headset acceptance"
+  },
+  "authoredUnityWalk": {
+    "asset": "WolfhoundFourBeatWalk.anim",
+    "sha256": "cffab0f9938bcc2685097e6a3903642e13b9e6eec88e1526212abdcaa1c6202b",
+    "authorship": "MagicMR project authored four-beat in-place preview; existing licensed skeleton/mesh retained, no training or motion capture",
+    "license": "CC BY-SA 3.0 derivative of the original Wolfhound rig",
+    "durationSeconds": 1.6,
+    "keyPoses": 49,
+    "method": "Four phase-offset C2 paw trajectories, analytic hip/knee IK with neutral knee poles and fixed ankle/toe orientation; actual Unity TwoBones baked-sole correction. Constant imported skeleton stance posture includes all four hips; recognition root unchanged.",
+    "qualificationAtCreation": "V8 baked-key-pose sole/target/rotation/exact-loop guards passed; later saved-controller/native/Android qualification recorded separately in Reports/dog-walk-authoring-20261120.",
+    "originalImportedClipsRetained": true
+  }
+}

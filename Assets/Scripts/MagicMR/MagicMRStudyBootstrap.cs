@@ -333,14 +333,18 @@ namespace MagicMR
             var root = GameObject.Find("GestureDetectors");
             var go = root != null ? root : new GameObject("StudySystem");
 
-            logger ??= go.GetComponent<DataLogger>() ?? go.AddComponent<DataLogger>();
+            // Only the logger persists. Keeping it on GestureDetectors would also
+            // preserve the old scene's detectors/manager and duplicate consumers.
+            if(logger==null)logger=new GameObject("Study DataLogger").AddComponent<DataLogger>();
             manager ??= go.GetComponent<GestureManager>() ?? go.AddComponent<GestureManager>();
             fsm ??= go.GetComponent<MRGestureController>() ?? go.AddComponent<MRGestureController>();
             var poseBridge = go.GetComponent<PicoHandPoseGestureBridge>() ??
                              go.AddComponent<PicoHandPoseGestureBridge>();
 
             logger.ConfigureLogging(StudySpec.LogHandTrajectory, StudySpec.TrajectorySampleInterval);
-            manager.ConfigureSession(m_SubjectId, m_Condition, m_TrialId, m_EnabledDimensions);
+            if(logger.SessionActive)
+                manager.ConfigureSession(logger.SubjectId,logger.Condition,logger.TrialId,ExperimentConditionSwitcher.DimensionsFor(logger.ConditionId));
+            else manager.ConfigureSession(m_SubjectId,m_Condition,m_TrialId,m_EnabledDimensions);
             manager.RebindDetectors();
             Debug.Log(
                 $"[MagicMR] Study system ready (FSM={fsm != null}, HandPoseBridge={poseBridge != null}).",

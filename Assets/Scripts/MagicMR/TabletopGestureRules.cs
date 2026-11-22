@@ -7,13 +7,14 @@ namespace MagicMR
     {
         public const float EnterMeters = .20f;
         public const float ExitMeters = .32f;
+        public const float GraceSeconds = .65f;
         float nearAt = -100;
         public bool Allowed { get; private set; }
         public bool Observe(bool valid, float distance, float now)
         {
-            if (!valid || !float.IsFinite(distance)) { Reset(); return false; }
+            if (!valid || !float.IsFinite(distance) || distance < 0 || !float.IsFinite(now)) { Reset(); return false; }
             if (distance <= EnterMeters) nearAt = now;
-            Allowed = distance <= EnterMeters || (distance <= ExitMeters && now - nearAt <= .65f);
+            Allowed = distance <= EnterMeters || (distance <= ExitMeters && now - nearAt <= GraceSeconds);
             return Allowed;
         }
         public void Reset() { Allowed = false; nearAt = -100; }
@@ -23,6 +24,13 @@ namespace MagicMR
     public sealed class TabletopGestureRules
     {
         public const float RepeatCooldownSeconds = .35f;
+        public const float MaximumSampleGapSeconds = .15f;
+        public const float PinchEnterMeters = .035f, PinchReleaseMeters = .060f;
+        public const float PinchMinimumSeconds = .04f, PinchMaximumSeconds = .85f;
+        // HCI production FistBurst/PICO pose bridge use the same bounded fist-open window.
+        public const float FistMinimumSeconds = StudySpec.FistMinHoldSeconds;
+        public const float FistMaximumSeconds = StudySpec.FistMaxBurstSeconds;
+        public const float FistRepeatCooldownSeconds = .65f;
         public struct Sample
         {
             public float time, pinch;
@@ -32,7 +40,7 @@ namespace MagicMR
         public string Status { get; private set; } = "Show right hand";
         enum Mode { Idle, Pinch, Fist }
         Mode mode;
-        float began, lastClosed, cooldownUntil, lastTime = -100;
+        float began, cooldownUntil, lastTime = -100, lastFistFireTime = -100;
         bool fistArmed;
         readonly List<Vector3> circle = new List<Vector3>();
         float circleBegan;
@@ -43,34 +51,46 @@ namespace MagicMR
         public void Reset()
         {
             mode = Mode.Idle; circle.Clear(); swiping = false;
-            fistArmed = false; lastTime = -100; cooldownUntil = 0;
+            fistArmed = false; lastTime = lastFistFireTime = -100; cooldownUntil = 0;
             Status = "Show right hand";
         }
 
         public EditDimension Step(Sample s)
         {
-            if (s.time - lastTime > .15f) { mode = Mode.Idle; circle.Clear(); swiping = false; fistArmed = false; }
+            if (!float.IsFinite(s.time) || !float.IsFinite(s.pinch) || s.pinch < 0 ||
+                !TabletopHandSample.Finite(s.index) || !TabletopHandSample.Finite(s.palm) ||
+                !TabletopHandSample.Finite(s.swipeAxis) || s.time < lastTime) {
+                Reset(); Status="Invalid or out-of-order hand sample"; return EditDimension.None;
+            }
+            if (s.time - lastTime > MaximumSampleGapSeconds) { mode = Mode.Idle; circle.Clear(); swiping = false; fistArmed = false; }
             lastTime = s.time;
             if (s.time < cooldownUntil) { Status = "Done - pause before next action"; return EditDimension.None; }
 
             if (s.fist)
             {
                 if (mode != Mode.Fist) { began = s.time; fistArmed = false; }
-                mode = Mode.Fist; lastClosed = s.time;
-                fistArmed |= s.time - began >= .12f;
+                mode = Mode.Fist;
+                float held = s.time - began;
+                fistArmed = held >= FistMinimumSeconds && held <= FistMaximumSeconds;
                 circle.Clear(); swiping = false;
-                Status = fistArmed ? "Fist ready - open fingers" : "Hold fist briefly";
+                Status = held > FistMaximumSeconds ? "Fist expired - relax and retry" :
+                    fistArmed ? "Fist ready - open fingers" : "Hold fist briefly";
                 return EditDimension.None;
             }
             if (mode == Mode.Fist)
             {
-                if (s.time - lastClosed > .7f) { mode = Mode.Idle; Status = "Open fingers sooner"; return EditDimension.None; }
-                if (s.open && fistArmed) return Fire(EditDimension.Deconstruction, s.time);
+                if (s.time - began > FistMaximumSeconds) { mode = Mode.Idle; fistArmed = false; Status = "Open fingers sooner"; return EditDimension.None; }
+                if (s.open) {
+                    // Evaluate at release as well: a valid short hold need not include a frame at the minimum.
+                    mode = Mode.Idle;
+                    if (s.time - began >= FistMinimumSeconds) return Fire(EditDimension.Deconstruction, s.time);
+                    fistArmed = false; Status = "Hold fist briefly"; return EditDimension.None;
+                }
                 Status = "Open all fingers";
                 return EditDimension.None;
             }
 
-            if (s.pinch <= .035f)
+            if (s.pinch <= PinchEnterMeters)
             {
                 if (mode != Mode.Pinch) began = s.time;
                 mode = Mode.Pinch; circle.Clear(); swiping = false;
@@ -79,9 +99,9 @@ namespace MagicMR
             }
             if (mode == Mode.Pinch)
             {
-                if (s.pinch < .060f) return EditDimension.None;
+                if (s.pinch < PinchReleaseMeters) return EditDimension.None;
                 mode = Mode.Idle;
-                if (s.time - began >= .04f && s.time - began <= .85f)
+                if (s.time - began >= PinchMinimumSeconds && s.time - began <= PinchMaximumSeconds)
                     return Fire(EditDimension.Appearance, s.time);
                 Status = "Pinch then release within 0.85s";
                 return EditDimension.None;
@@ -121,6 +141,13 @@ namespace MagicMR
         EditDimension Fire(EditDimension d, float time)
         {
             mode = Mode.Idle; circle.Clear(); swiping = false; fistArmed = false;
+            if (d == EditDimension.Deconstruction) {
+                if (time - lastFistFireTime <= FistRepeatCooldownSeconds) {
+                    Status = "Done - pause before next fist-open";
+                    return EditDimension.None;
+                }
+                lastFistFireTime = time;
+            }
             cooldownUntil = time + RepeatCooldownSeconds; Status = "Recognized: " + d;
             return d;
         }

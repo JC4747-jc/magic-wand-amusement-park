@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using Perception;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
@@ -104,6 +105,7 @@ public static class BridgeStereoBuild
         crossText.rectTransform.sizeDelta = new Vector2(50,50);
         var settings = PXR_ProjectSetting.GetProjectConfig();
         settings.videoSeeThrough = true; settings.spatialMesh = false; settings.secureMR = false;
+        if (!withPose && !repair) ParkContentBuilder.AttachSharedInterfaceToActiveScene();
         EditorUtility.SetDirty(settings);
         string scenePath = repair ? "Assets/Scenes/BridgeStereoRepair.unity" : withPose ? "Assets/Scenes/BridgeStereoPoseFusion.unity" : "Assets/Scenes/BridgeStereoFusion.unity";
         EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(), scenePath);
@@ -111,12 +113,17 @@ public static class BridgeStereoBuild
             throw new Exception("Position repair must not contain an F2G client");
         if (withPose || repair) { AssetDatabase.SaveAssets(); return; }
         // The ordinary Unity Build/Build And Run must now run the integrated main scene.
-        var scenes = new System.Collections.Generic.List<EditorBuildSettingsScene>();
+        var scenes = new System.Collections.Generic.List<EditorBuildSettingsScene> {
+            new EditorBuildSettingsScene("Assets/Scenes/BridgeStereoFusion.unity",true) };
         foreach (var entry in EditorBuildSettings.scenes)
             if (entry.path != "Assets/Scenes/BridgeStereoFusion.unity")
-                scenes.Add(new EditorBuildSettingsScene(entry.path, false));
-        scenes.Add(new EditorBuildSettingsScene("Assets/Scenes/BridgeStereoFusion.unity", true));
+                scenes.Add(new EditorBuildSettingsScene(entry.path,
+                    ParkContentBuilder.Names.Any(n => entry.path == "Assets/Scenes/" + n + ".unity")));
+        foreach (var name in ParkContentBuilder.Names)
+            if (!scenes.Any(s => s.path == "Assets/Scenes/" + name + ".unity"))
+                scenes.Add(new EditorBuildSettingsScene("Assets/Scenes/" + name + ".unity", true));
         EditorBuildSettings.scenes = scenes.ToArray();
+        ParkSharedInteractionChecks.CheckDefaultBuildEntry();
         AssetDatabase.SaveAssets();
     }
     [MenuItem("Bridge/Build Stereo YOLO APK")]
@@ -148,11 +155,15 @@ public static class BridgeStereoBuild
         PlayerSettings.bundleVersion = repair ? "1.10.1" : withPose ? "1.11.2" : "1.10.0";
         PlayerSettings.Android.bundleVersionCode = repair ? 25 : withPose ? 27 : 22;
         var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions {
-            scenes = new[] { repair ? "Assets/Scenes/BridgeStereoRepair.unity" : withPose ? "Assets/Scenes/BridgeStereoPoseFusion.unity" : "Assets/Scenes/BridgeStereoFusion.unity" },
+            scenes = (withPose || repair)
+                ? new[] { repair ? "Assets/Scenes/BridgeStereoRepair.unity" : "Assets/Scenes/BridgeStereoPoseFusion.unity" }
+                : new[] { "Assets/Scenes/BridgeStereoFusion.unity" }
+                    .Concat(ParkContentBuilder.Names.Select(n => "Assets/Scenes/" + n + ".unity")).ToArray(),
             locationPathName = repair ? "Builds/Android/BridgeStereoRepair.apk" : withPose ? "Builds/Android/BridgeStereoPoseFusion.apk" : "Builds/Android/BridgeStereoFusion.apk",
             target = BuildTarget.Android, options = BuildOptions.Development });
         Debug.Log("BRIDGE_STEREO_BUILD=" + report.summary.result);
         if (report.summary.result != BuildResult.Succeeded) throw new Exception("Stereo integration build failed");
+        ResourceBoundedAndroidBuild.RecordAssets(report);
         }
         finally
         {

@@ -97,8 +97,9 @@ namespace MagicMR
 
         public void SetDeskReferenceHeight(float worldY)
         {
+            if (!float.IsFinite(worldY)) return;
             m_DeskPlaneY = worldY;
-            Debug.Log($"[MagicMR] Desk reference height set to {worldY:F2}.", this);
+            // Updated every frame by CalibrationRitual: do not write a log per frame.
         }
 
         void Awake()

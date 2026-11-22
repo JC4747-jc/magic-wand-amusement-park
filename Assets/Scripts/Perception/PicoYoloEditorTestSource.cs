@@ -24,6 +24,8 @@ namespace Perception
 
         float m_NextSendTime;
         bool m_Started;
+        public bool IsSending => m_Started;
+        public string Status {get;private set;} = "STOPPED";
         float m_NextConnectWarnTime;
 
         void Awake()
@@ -38,6 +40,12 @@ namespace Perception
         {
             if (!m_AutoStart)
                 return;
+            if(m_TestImage==null)
+            {
+                Status="NOT_CONFIGURED";
+                Debug.Log("[EditorTestSource] Optional test image is not configured; sender remains stopped. Assign an image before Begin.");
+                return;
+            }
             Begin();
         }
 
@@ -79,18 +87,21 @@ namespace Perception
         {
             if (m_Sender == null)
             {
+                Status="SENDER_MISSING";
                 Debug.LogError("[EditorTestSource] PicoYoloFrameSender missing.");
                 return;
             }
 
             if (m_TestImage == null)
             {
+                Status="IMAGE_MISSING";
                 Debug.LogError(
                     "[EditorTestSource] Test Image is null. Drag a lighter Texture2D into the Inspector.");
                 return;
             }
 
             m_Started = true;
+            Status="SENDING";
             m_NextSendTime = 0f;
             Debug.Log(
                 $"[EditorTestSource] Started | image={m_TestImage.name} " +
@@ -102,8 +113,10 @@ namespace Perception
         public void StopSending()
         {
             m_Started = false;
+            Status="STOPPED";
             Debug.Log("[EditorTestSource] Stopped.");
         }
+        void OnDisable(){m_Started=false;Status="STOPPED";}
 #else
         void Awake()
         {

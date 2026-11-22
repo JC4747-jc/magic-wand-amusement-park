@@ -2,9 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
-#if UNITY_RENDER_PIPELINE_UNIVERSAL
 using UnityEngine.Rendering.Universal;
-#endif
 
 /// <summary>
 /// 电脑端 Demo：自动创建 CaptureCamera、Canvas、卡牌与背包，并连线 CaptureTo2D。
@@ -167,14 +165,15 @@ public class CaptureDemoBootstrap : MonoBehaviour
         _captureCamera.nearClipPlane = 0.1f;
         _captureCamera.farClipPlane = 10f;
         _captureCamera.depth = -10;
-        _captureCamera.enabled = true;
+        // Render only when capturing; the card retains the snapshot afterwards.
+        _captureCamera.enabled = false;
+        _captureCamera.allowHDR = false;
 
-#if UNITY_RENDER_PIPELINE_UNIVERSAL
         var urpData = camGo.AddComponent<UniversalAdditionalCameraData>();
         urpData.renderType = CameraRenderType.Base;
         urpData.requiresColorTexture = false;
         urpData.requiresDepthTexture = false;
-#endif
+        urpData.renderPostProcessing = false;
 
         if (cardRenderTexture == null)
             cardRenderTexture = Resources.Load<RenderTexture>("CardTexture");
@@ -200,6 +199,7 @@ public class CaptureDemoBootstrap : MonoBehaviour
         if (existingCard != null && existingCard.TryGetComponent<RawImage>(out var existingRaw))
         {
             var bp = GameObject.Find("Backpack_Icon");
+            if(existingRaw.canvas != null)EnsureResetControl(existingRaw.canvas.transform);
             return (existingRaw, bp != null ? bp.transform : null);
         }
 
@@ -272,7 +272,23 @@ public class CaptureDemoBootstrap : MonoBehaviour
                 new Vector2(0.5f, 0.5f));
         }
 
+        EnsureResetControl(canvasGo.transform);
         return (raw, backpackGo.transform);
+    }
+
+    void EnsureResetControl(Transform parent)
+    {
+        if(parent.Find("CaptureResetButton") != null)return;
+        var go=new GameObject("CaptureResetButton",typeof(RectTransform),typeof(Image),typeof(Button));
+        go.transform.SetParent(parent,false);
+        var rect=go.GetComponent<RectTransform>();rect.anchorMin=rect.anchorMax=rect.pivot=Vector2.zero;
+        rect.anchoredPosition=new Vector2(32,28);rect.sizeDelta=new Vector2(200,52);
+        go.GetComponent<Image>().color=new Color(.08f,.11f,.14f,.94f);
+        go.GetComponent<Button>().onClick.AddListener(_capture.ResetCapture);
+        var label=new GameObject("Label",typeof(RectTransform),typeof(Text)).GetComponent<Text>();
+        label.transform.SetParent(go.transform,false);label.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+        label.text="Reset (R)";label.fontSize=24;label.alignment=TextAnchor.MiddleCenter;label.color=Color.white;label.raycastTarget=false;
+        label.rectTransform.anchorMin=Vector2.zero;label.rectTransform.anchorMax=Vector2.one;label.rectTransform.offsetMin=label.rectTransform.offsetMax=Vector2.zero;
     }
 
     static void EnsureEventSystem()

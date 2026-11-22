@@ -282,11 +282,20 @@ namespace Perception
             pairGapMs = rightTimestamp == 0 ? -1f : (float)(Math.Abs(rightTimestamp-timestamp)/1e6);
             capturedAt = captureTime;
             pendingId = sender.LastSentFrameId; sentAt = Time.realtimeSinceStartup; waiting = true;
+            // Record the accepted capture synchronously, while the capture owner
+            // still holds these exact buffers. Detection replies arrive too late.
+            var recorder=PicoStereoCapture.Active;
+            if(recorder && recorder.locator==this)
+                recorder.RecordAcceptedPose(pendingId,captureTimestampNs,capturePose,cameraPose,
+                    sender.LastSentTimestampMs,sender.LastSentSceneId);
         }
         void OnDetection(DetectionFrame frame)
         {
             if (frame.frameId != pendingId) return;
             lastReplyAt=Time.realtimeSinceStartup;lastReplyAgeMs=(lastReplyAt-capturedAt)*1000;
+            var recorder = PicoStereoCapture.Active;
+            if (recorder && recorder.locator == this)
+                recorder.RecordAcceptedReply(frame.frameId, frame.rawJson);
             replyStatus = $"{lastReplyAgeMs:F0} ms capture age";
             waiting = false;
             bool hasLighter = false;

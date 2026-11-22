@@ -12,6 +12,19 @@ namespace MagicMR
         static AudioClip s_Growl;
         static AudioClip s_Shatter;
         static AudioClip s_ResetChime;
+        static AudioClip s_Cough;
+        public static AudioClip Cough => s_Cough ??= MakeCough();
+        static AudioClip MakeCough()
+        {
+            const int rate=22050;var samples=new float[10143];var random=new System.Random(73);float filtered=0;
+            for(int n=0;n<samples.Length;n++){
+                float t=n/(float)rate;
+                float envelope=Mathf.Exp(-Mathf.Pow((t-.09f)/.045f,2))+Mathf.Exp(-Mathf.Pow((t-.27f)/.055f,2))*.75f;
+                filtered=Mathf.Lerp(filtered,(float)(random.NextDouble()*2-1),.35f);
+                samples[n]=envelope*(filtered*.65f+Mathf.Sin(t*2*Mathf.PI*105)*.12f);
+            }
+            var clip=AudioClip.Create("MagicMR synthetic double cough",samples.Length,1,rate,false);clip.SetData(samples,0);return clip;
+        }
 
         public static AudioClip Ding => s_Ding ??= MakeTone(0.18f, 880f, 0.55f, fadeOut: true, harmonics: 2);
         public static AudioClip Whoosh => s_Whoosh ??= MakeNoiseSweep(0.22f, 0.35f);

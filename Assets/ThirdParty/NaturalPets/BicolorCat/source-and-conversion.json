@@ -1,0 +1,70 @@
+{
+  "author": "kenchoo; original cat by guillaume bolis",
+  "license": "CC-BY-4.0",
+  "source": "https://sketchfab.com/3d-models/bicolor-cat-e623a618ca344a8393d7ba4d63ec23cf",
+  "original": "https://skfb.ly/6TKqH",
+  "mirror": "https://github.com/code4fukui/vr-cats",
+  "mirror_commit": "0b5f3b586cdcda2d33cca54b34ce80f52f46376c",
+  "source_sha256": "4b395ba943d647f4c490c982a70fa2175ef91569615773da7ef3429e427ed21a",
+  "triangles": 8646,
+  "bones": 40,
+  "materials": [
+    {
+      "name": "cat_diffuse",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "roughness": 0.8,
+      "normalUV": 0,
+      "albedo": "Image_0.png",
+      "normal": "BicolorCat_UV0_Normal.png"
+    },
+    {
+      "name": "material",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "roughness": 0.8,
+      "normalUV": 0,
+      "albedo": "Image_0.png"
+    }
+  ],
+  "original_clips_excluded": [
+    "Animation"
+  ],
+  "clips": [
+    "BicolorCat_Idle",
+    "BicolorCat_Feed",
+    "BicolorCat_Walk"
+  ],
+  "walk_validation": {
+    "seconds": 2,
+    "keySamples": 97,
+    "validationSamples": 193,
+    "ikEndpointErrorMeters": 1.9530478222045384e-07,
+    "minimumSkinWorldZ": -0.0018434574594721198,
+    "neutralFloorWorldZ": -0.001988769508898258,
+    "maximumStanceSurfaceHeightErrorMeters": 0.0001638642279431224,
+    "loopSkinErrorMeters": 0.0,
+    "maximumLegLiftMeters": {
+      "lH": 0.021644611480375886,
+      "lF": 0.021673169030049788,
+      "rH": 0.021311207445564584,
+      "rF": 0.024138575208487723
+    },
+    "scope": "Blender evaluated skin at source scale; authored slow in-place gait, no measured animal or hardware acceptance"
+  },
+  "conversion": "Original topology, albedo, eyes and 40-bone rig retained. UV2 source normals reprojected into a 1K tangent-space UV0 map for URP. Authored restrained idle/sniff and four-beat in-place walk replace the supplied clip; static whiskers bound to original head. Not motion capture; integration status in DEVELOPMENT_STATUS.md.",
+  "walk_trajectory": {
+    "revision": "cat-contact-v2",
+    "stance_fraction": 0.65,
+    "swing": "Quintic Hermite longitudinal return matching stance velocity and zero acceleration at contact; sin^3 lift",
+    "export": "97 pose keys per 2-second cycle; FBX sampling/interpolation is checked separately, not claimed continuously C2"
+  }
+}

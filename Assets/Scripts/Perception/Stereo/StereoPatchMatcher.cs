@@ -30,6 +30,7 @@ public static class StereoPatchMatcher
     {
         public bool valid;
         public float disparity;
+        public int integerDisparity;
         public float confidence;
         public int verticalOffset;
         public float texture;
@@ -49,7 +50,7 @@ public static class StereoPatchMatcher
 
     public static Estimate EstimateDepth(byte[] leftGray, byte[] rightGray, int width, int height,
         int centerX, int centerY, float focalLengthPixels, float baselineMeters, int spreadX = 24, int spreadY = 16,
-        Sample[] samples = null)
+        Sample[] samples = null, bool checkLeftRight = false)
     {
         var result = new Estimate
         {
@@ -77,7 +78,19 @@ public static class StereoPatchMatcher
         {
             int x = centerX + Math.Sign(SampleOffsetX[i]) * spreadX;
             int y = centerY + Math.Sign(SampleOffsetY[i]) * spreadY;
-            Match match = MatchPoint(leftGray, rightGray, width, height, x, y);
+            Match match = MatchPoint(leftGray, rightGray, width, height, x, y, -1);
+            if (checkLeftRight && match.valid)
+            {
+                Match reverse = MatchPoint(rightGray, leftGray, width, height, x - match.integerDisparity,
+                    y + match.verticalOffset, 1);
+                // Compare discrete patch centers before using subpixel disparity for depth.
+                if (!reverse.valid || Math.Abs(match.integerDisparity - reverse.integerDisparity) > 1
+                    || Math.Abs(match.verticalOffset + reverse.verticalOffset) > 1)
+                {
+                    match.valid = false;
+                    match.reason = "LEFT_RIGHT_INCONSISTENT";
+                }
+            }
             if (samples != null && i < samples.Length)
                 samples[i] = new Sample { x = x, y = y, valid = match.valid, disparity = match.disparity,
                     confidence = match.confidence, texture = match.texture, verticalOffset = match.verticalOffset,
@@ -145,10 +158,11 @@ public static class StereoPatchMatcher
         return result;
     }
 
-    static Match MatchPoint(byte[] left, byte[] right, int width, int height, int x, int y)
+    static Match MatchPoint(byte[] left, byte[] right, int width, int height, int x, int y, int direction)
     {
         var result = new Match { reason = "PATCH_OUT_OF_BOUNDS" };
-        int maxDisparity = Math.Min(MaxDisparity, x - PatchRadiusX - 1);
+        int available = direction < 0 ? x - PatchRadiusX - 1 : width - x - PatchRadiusX - 2;
+        int maxDisparity = Math.Min(MaxDisparity, available);
         if (x - PatchRadiusX < 0 || x + PatchRadiusX >= width ||
             maxDisparity <= MinDisparity || y - PatchRadiusY - MaxVerticalOffset < 0 ||
             y + PatchRadiusY + MaxVerticalOffset >= height)
@@ -174,8 +188,7 @@ public static class StereoPatchMatcher
 
         for (int disparity = MinDisparity; disparity <= maxDisparity; disparity++)
         {
-            int rightX = x - disparity;
-            if (rightX - PatchRadiusX < 0) continue;
+            int rightX = x + direction * disparity;
             for (int dy = -MaxVerticalOffset; dy <= MaxVerticalOffset; dy++)
             {
                 int rightY = y + dy;
@@ -243,6 +256,7 @@ public static class StereoPatchMatcher
         result.valid = true;
         result.reason = "OK";
         result.disparity = bestDisparity + subpixel;
+        result.integerDisparity = bestDisparity;
         result.confidence = confidence;
         result.verticalOffset = offsets[bestDisparity];
         return result;

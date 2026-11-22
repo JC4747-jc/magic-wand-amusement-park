@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "scope": "Existing exact local package contents; no package redistribution or automatic downloads",
+  "fingerprintFormat": "UTF-8 lines ordered by ordinal relative path: path TAB decimal bytes TAB lowercase SHA256 LF",
+  "excludedPathComponents": [
+    ".git",
+    "Library",
+    "Temp",
+    "__pycache__"
+  ],
+  "limits": {
+    "filesPerPackage": 5000,
+    "bytesPerPackage": 536870912
+  },
+  "packages": [
+    {
+      "name": "com.unity.xr.picoxr",
+      "version": "3.4.0",
+      "relativeDirectory": ".local-packages/pico-sdk",
+      "manifestReference": "file:../.local-packages/pico-sdk",
+      "packageJsonSha256": "9976137e744996e4d0f3c277bb0238a53a8f45ea5780143977826e1f87d293f6",
+      "fileCount": 1463,
+      "totalBytes": 307273109,
+      "contentFingerprintSha256": "0565663367a239626b6f80d319cfaf1e665baefbed86c0eeed05b89116baa251"
+    },
+    {
+      "name": "com.coplaydev.unity-mcp",
+      "version": "10.3.0",
+      "relativeDirectory": ".local-packages/unity-mcp",
+      "manifestReference": "file:../.local-packages/unity-mcp",
+      "packageJsonSha256": "65664d3e1da6a8ad45dbad7fcc8e25141947674e388aa19fa6c647233b739bd9",
+      "fileCount": 744,
+      "totalBytes": 3818964,
+      "contentFingerprintSha256": "0b466b04e4edb63030b07756950d304f47e9673b235092699b99a8a80b1e620e"
+    }
+  ]
+}

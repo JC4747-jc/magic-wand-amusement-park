@@ -89,6 +89,10 @@ namespace MagicMR
         Vector3 m_BaseScale;
         float m_CurrentScaleMultiplier = 1f;
         LighterInteriorView m_InteriorView;
+
+        // Compatibility for existing Park/editor callers. Production visuals stay at the snapshot.
+        public bool HciAgencyVisualsEnabled => false;
+        public bool TrySetHciAgencyVisuals(bool enabled) => !enabled;
         public bool InteriorVisible => m_InteriorView != null && m_InteriorView.Visible;
         Vector3 m_InitialPosition;
         Coroutine m_DodgeReturn;
@@ -99,6 +103,7 @@ namespace MagicMR
         int m_EvasionFailureCount;
         Coroutine m_DeconstructionCoroutine;
         GameObject m_SpawnedFlower;
+        GameObject m_ActiveDeconstructionVfx;
         Vector3 m_FlowerSupportPoint;
         float m_FlowerHeight = .11f;
         Vector3 m_FlowerLighterSize = new Vector3(.025f,.08f,.012f);
@@ -504,7 +509,9 @@ namespace MagicMR
 
             if (m_DeconstructionVfx != null)
             {
+                ClearDeconstructionVfx();
                 var vfx = Instantiate(m_DeconstructionVfx, transform.position, transform.rotation);
+                m_ActiveDeconstructionVfx = vfx.gameObject;
                 Destroy(vfx.gameObject, m_DeconstructionDelay + 1f);
             }
 
@@ -696,6 +703,12 @@ namespace MagicMR
             return found;
         }
 
+        void ClearDeconstructionVfx()
+        {
+            if (m_ActiveDeconstructionVfx != null) Destroy(m_ActiveDeconstructionVfx);
+            m_ActiveDeconstructionVfx = null;
+        }
+
         void ClearFlower()
         {
             if (m_SpawnedFlower == null)
@@ -713,7 +726,7 @@ namespace MagicMR
                 m_DeconstructionCoroutine = null;
             }
 
-            ClearFlower();
+            ClearDeconstructionVfx(); ClearFlower();
             m_IsDeconstructed = false;
             SetAllRenderersEnabled(true);
             RestoreOriginalMaterials();
@@ -961,6 +974,7 @@ namespace MagicMR
 
         public void ResetTarget()
         {
+            if (m_AudioSource != null) m_AudioSource.Stop();
             m_HeatUntil = 0; SetHeat(0);
             if (GestureManager.Instance != null)
                 GestureManager.Instance.GetComponent<RightHandSpellVfx>()?.Clear();
@@ -968,7 +982,7 @@ namespace MagicMR
             StopDodge();
             StopAllCoroutines();
             m_DeconstructionCoroutine = null;
-            ClearFlower();
+            ClearDeconstructionVfx(); ClearFlower();
             m_IsDeconstructed = false;
 
             SetAllRenderersEnabled(true);
@@ -1008,6 +1022,7 @@ namespace MagicMR
 
         void OnDestroy()
         {
+            ClearDeconstructionVfx(); ClearFlower();
             m_InteriorView?.Dispose();
         }
     }

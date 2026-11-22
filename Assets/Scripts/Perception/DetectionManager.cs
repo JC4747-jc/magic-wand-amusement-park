@@ -100,7 +100,7 @@ namespace Perception
                 TryAdd(dto, timestamp, events);
             }
 
-            var frame = new DetectionFrame(events, timestamp, frameId, width, height);
+            var frame = new DetectionFrame(events, timestamp, frameId, width, height, json);
             if (AcceptFrame != null && !AcceptFrame(frame)) return;
             PoseAvailable = poseAvailable; PoseModelReady = poseModelReady;
             PoseAdvertisementAt = Time.realtimeSinceStartup;

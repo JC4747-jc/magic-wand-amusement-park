@@ -1,0 +1,7 @@
+# Shell entry points run under WSL even when checked out on Windows.
+*.sh text eol=lf
+
+# Preserve Unity input bytes recorded in the delivery manifests.
+Assets/** -text
+Packages/** -text
+ProjectSettings/** -text

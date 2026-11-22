@@ -78,9 +78,28 @@ public static class FlowerModelBuilder
     }
     static void Part(Transform parent,string name,Geometry geometry,Material material)
     {
-        var go=new GameObject(name); go.transform.SetParent(parent,false);
-        go.AddComponent<MeshFilter>().sharedMesh=geometry.Save(name);
-        go.AddComponent<MeshRenderer>().sharedMaterial=material;
+        var part=Child(parent,name);var go=part.gameObject;
+        part.localPosition=Vector3.zero;part.localRotation=Quaternion.identity;part.localScale=Vector3.one;
+        var filter=go.GetComponent<MeshFilter>();if(!filter)filter=go.AddComponent<MeshFilter>();filter.sharedMesh=geometry.Save(name);
+        var renderer=go.GetComponent<MeshRenderer>();if(!renderer)renderer=go.AddComponent<MeshRenderer>();renderer.sharedMaterial=material;
+    }
+    static Transform Child(Transform parent,string name)
+    {
+        var child=parent.Find(name);if(child)return child;
+        child=new GameObject(name).transform;child.SetParent(parent,false);return child;
+    }
+    public static void CheckStablePartReferences()
+    {
+        Generate();
+        string[] paths={"Stem","Leaves","Blossom","Blossom/LayeredPetals","Blossom/GoldenStamens","Base"};
+        string[] ids=new string[paths.Length];
+        var before=AssetDatabase.LoadAssetAtPath<GameObject>(Prefab);
+        for(int i=0;i<paths.Length;i++)ids[i]=GlobalObjectId.GetGlobalObjectIdSlow(before.transform.Find(paths[i])).ToString();
+        Generate();var after=AssetDatabase.LoadAssetAtPath<GameObject>(Prefab);
+        for(int i=0;i<paths.Length;i++)
+            if(GlobalObjectId.GetGlobalObjectIdSlow(after.transform.Find(paths[i])).ToString()!=ids[i])
+                throw new Exception("Flower regeneration invalidated part reference: "+paths[i]);
+        Debug.Log("FLOWER_STABLE_REFERENCES_PASS: repeated generation retains all six named part IDs");
     }
     [MenuItem("Bridge/Rebuild Compact Flower")]
     public static void Generate()
@@ -96,7 +115,6 @@ public static class FlowerModelBuilder
         var root=PrefabUtility.LoadPrefabContents(Prefab);
         try
         {
-            while(root.transform.childCount>0) UnityEngine.Object.DestroyImmediate(root.transform.GetChild(0).gameObject);
             root.transform.localScale=Vector3.one;
             var stem=new Geometry();
             stem.Grid(24,32,(t,w)=>new Vector3(.009f*Mathf.Cos(w*Mathf.PI*2),t*.061f,.009f*Mathf.Sin(w*Mathf.PI*2)),
@@ -113,7 +131,7 @@ public static class FlowerModelBuilder
                     (t,w)=>Color.Lerp(new Color(.09f,.27f,.055f),new Color(.43f,.58f,.13f),.3f*t+.55f*Mathf.Pow(1-Mathf.Abs(w*2-1),12)));
             }
             Part(root.transform,"Leaves",leaves,material);
-            var bloom=new GameObject("Blossom").transform; bloom.SetParent(root.transform,false);
+            var bloom=Child(root.transform,"Blossom");
             bloom.localPosition=Vector3.up*.061f; bloom.localRotation=Quaternion.Euler(-18,0,0);
             bloom.localScale=Vector3.one*1.6f;
             var petals=new Geometry();
@@ -143,7 +161,7 @@ public static class FlowerModelBuilder
                 center.Grid(2,6,(t,w)=>new Vector3(origin.x+Mathf.Cos(w*Mathf.PI*2)*.00055f,.004f+t*.009f,origin.z+Mathf.Sin(w*Mathf.PI*2)*.00055f),(t,w)=>new Color(.95f,.60f,.12f));
             }
             Part(bloom,"GoldenStamens",center,material);
-            var basePoint=new GameObject("Base"); basePoint.transform.SetParent(root.transform,false);
+            Child(root.transform,"Base");
             PrefabUtility.SaveAsPrefabAsset(root,Prefab);
         }
         finally { PrefabUtility.UnloadPrefabContents(root); }

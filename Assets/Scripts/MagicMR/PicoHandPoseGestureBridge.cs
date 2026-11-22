@@ -56,9 +56,7 @@ namespace MagicMR
         [SerializeField]
         float m_LeftResetHoldSeconds = StudySpec.LeftResetHoldSeconds;
 
-        float m_FistStartTime = -1f;
-        bool m_InFist;
-        float m_LastDeconstructionTime;
+        readonly HciFistOpenWindow m_RightFistWindow = new HciFistOpenWindow();
         float m_LeftResetAccumulated;
         float m_NextDiagTime;
 
@@ -79,6 +77,8 @@ namespace MagicMR
 
         protected override void OnDisable()
         {
+            m_RightFistWindow.ResetTracking();
+            m_LeftResetAccumulated = 0f;
             base.OnDisable();
             if (Instance == this)
                 Instance = null;
@@ -90,15 +90,25 @@ namespace MagicMR
             XRHandSubsystem.UpdateSuccessFlags updateSuccessFlags,
             XRHandSubsystem.UpdateType updateType)
         {
-            if (!m_Enabled)
+            if (updateType != XRHandSubsystem.UpdateType.Dynamic)
                 return;
+            if (!m_Enabled)
+            {
+                m_RightFistWindow.ResetTracking();
+                m_LeftResetAccumulated = 0f;
+                return;
+            }
 
             if ((updateSuccessFlags & XRHandSubsystem.UpdateSuccessFlags.RightHandJoints) != 0)
                 UpdateRightFistOpen(subsystem.rightHand);
+            else
+                m_RightFistWindow.ResetTracking();
 
             if (m_OwnLeftReset &&
                 (updateSuccessFlags & XRHandSubsystem.UpdateSuccessFlags.LeftHandJoints) != 0)
                 UpdateLeftReset(subsystem.leftHand);
+            else
+                m_LeftResetAccumulated = 0f;
         }
 
         protected override void ProcessHand(XRHand hand)
@@ -109,55 +119,33 @@ namespace MagicMR
         void UpdateRightFistOpen(XRHand hand)
         {
             if (!hand.isTracked)
+            {
+                m_RightFistWindow.ResetTracking();
                 return;
+            }
 
             var now = Time.unscaledTime;
             var isFist = MatchesRightFist(hand);
             var isOpen = MatchesRightOpen(hand);
 
-            if (now >= m_NextDiagTime && (isFist || m_InFist || isOpen))
+            if (now >= m_NextDiagTime && (isFist || m_RightFistWindow.InFist || isOpen))
             {
                 m_NextDiagTime = now + 0.7f;
                 TryFingerAngles(hand, HandFinger.Index, out var flex, out var curl);
                 Debug.Log(
-                    $"[MagicMR] HandPose right fist={isFist} open={isOpen} inFist={m_InFist} " +
+                    $"[MagicMR] HandPose right fist={isFist} open={isOpen} inFist={m_RightFistWindow.InFist} " +
                     $"indexFlex={flex:F0} indexCurl={curl:F0} configs=" +
                     $"{ConfigLabel(m_FistConfig, PicoHandPoseSpec.FistConfigName)}/" +
                     $"{ConfigLabel(m_OpenConfig, PicoHandPoseSpec.OpenConfigName)}");
             }
 
-            if (isFist)
+            var held = m_RightFistWindow.HeldSeconds(now);
+            if (m_RightFistWindow.Step(now, true, isFist, isOpen, m_MinFistHoldSeconds, m_MaxBurstSeconds))
             {
-                if (!m_InFist)
-                {
-                    m_InFist = true;
-                    m_FistStartTime = now;
-                }
-
-                return;
-            }
-
-            if (!m_InFist)
-                return;
-
-            var held = now - m_FistStartTime;
-            if (held > m_MaxBurstSeconds)
-            {
-                m_InFist = false;
-                return;
-            }
-
-            if (!isOpen)
-                return;
-
-            if (held >= m_MinFistHoldSeconds && now - m_LastDeconstructionTime > 0.65f)
-            {
-                m_LastDeconstructionTime = now;
                 Debug.Log($"[MagicMR] HandPose fist-burst held={held:F2}s → Notify(Deconstruction).");
                 GestureManager.Notify(EditDimension.Deconstruction, "handpose_fist_burst");
             }
 
-            m_InFist = false;
         }
 
         void UpdateLeftReset(XRHand hand)

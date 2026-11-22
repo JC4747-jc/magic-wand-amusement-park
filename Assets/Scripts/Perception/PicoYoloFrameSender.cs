@@ -48,6 +48,11 @@ namespace Perception
         byte[] m_PicfPacketBuffer;
 
         public uint LastSentFrameId { get; private set; }
+        public long LastSentTimestampMs { get; private set; }
+        public byte LastSentSceneId { get; private set; }
+        public event Action<uint, byte[]> EncodedFrameSent;
+        // Profile zero retains the existing lighter/F2G v1 protocol.
+        public byte SceneProfile { get; set; }
         public int LastSentWidth { get; private set; }
         public int LastSentHeight { get; private set; }
         public int LastJpegBytes { get; private set; }
@@ -167,13 +172,15 @@ namespace Perception
 
             uint frameId = m_NextFrameId++;
             long timestampMs = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+            byte sceneId = SceneProfile;
 
-            int packetLen = PicfHeaderSize + jpeg.Length;
+            int packetLen = PicfHeaderSize + (sceneId > 0 ? 1 : 0) + jpeg.Length;
             byte[] packet = RentPicfPacketBuffer(packetLen);
             int o = 0;
             Buffer.BlockCopy(Magic, 0, packet, o, 4);
             o += 4;
-            packet[o++] = (byte)ProtocolVersion;
+            packet[o++] = sceneId > 0 ? (byte)2 : (byte)ProtocolVersion;
+            if (sceneId > 0) packet[o++] = sceneId;
             WriteU32LE(packet, ref o, frameId);
             WriteI64LE(packet, ref o, timestampMs);
             WriteU32LE(packet, ref o, (uint)width);
@@ -185,9 +192,14 @@ namespace Perception
                 return false;
 
             LastSentFrameId = frameId;
+            LastSentTimestampMs = timestampMs;
+            LastSentSceneId = sceneId;
             LastSentWidth = width;
             LastSentHeight = height;
             LastJpegBytes = jpeg.Length;
+            // The encoded array is owned by this frame; consumers must bound caches.
+            try { EncodedFrameSent?.Invoke(frameId, jpeg); }
+            catch (Exception error) { Debug.LogWarning("Sent-frame preview listener: " + error.Message); }
 
             if (m_LogEveryFrame)
             {

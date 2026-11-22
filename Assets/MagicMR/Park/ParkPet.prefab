@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4415059600203503880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2800118000674704831}
+  - component: {fileID: 8195917945054015060}
+  m_Layer: 0
+  m_Name: ParkPet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2800118000674704831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415059600203503880}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8195917945054015060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415059600203503880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba7effbf4a04b85844c490e7410067c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MagicMR::MagicMR.ParkActor
+  scenario: 5
+  species: Cat
+  magicTree: 0
+  interactionRadius: 0.65
+  cooldown: 0.45
+  transitionSeconds: 0.7
+  environmentRadius: 0.6
+  headOffset: 0.38
+  reliableHeadPose: 0
+  confirmedPlane: 0
+  environmentAnchor: {fileID: 0}
+  headAnchor: {fileID: 0}
+  story: 'I watched the seasons from a quiet pedestal.
+
+    One night, a wind carried a seed to my feet.
+
+    I woke to shelter its first leaf.
+
+    Now each visitor helps my little garden grow.'
+  storySource: Original fantasy; this monument's history is not identified
+  storyAudio: {fileID: 0}
+  virtualTarget: 1
+  instanceId: 
+  tracked: 1
+  visual: {fileID: 0}
+  sharedMaterial: {fileID: 2100000, guid: 79128c03e5277d74cb9b4b55c2ae68cb, type: 2}
+  label: {fileID: 0}
+  seasonTime: 0
+  growthTime: 0.45
+  windDirection: {x: 1, y: 0, z: 0}
+  windStrength: 0.2
