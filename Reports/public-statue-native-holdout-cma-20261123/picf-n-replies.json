@@ -1,0 +1,549 @@
+[
+  {
+    "key": "cma-128299",
+    "duration_ms": 1120.38,
+    "source_sha256": "94e6802edba6e6ff8f6574fb19fc27ed404d5ec168b25d529bdcd00940d54219",
+    "boxes": [],
+    "reply": {
+      "frame_id": 1,
+      "timestamp": 1795385968454,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-statue-native-holdout-cma-20261123\\candidate-n\\yolov8n-oiv7.pt",
+      "weights_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+      "model_validation": "ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "cohort": "stone_human",
+    "matched": false,
+    "proposals": []
+  },
+  {
+    "key": "cma-141655",
+    "duration_ms": 55.87,
+    "source_sha256": "530c2f3630f4d1939762c508c48925918844bdf1f3bcabababe3c07eda7531b1",
+    "boxes": [],
+    "reply": {
+      "frame_id": 2,
+      "timestamp": 1795385969575,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-statue-native-holdout-cma-20261123\\candidate-n\\yolov8n-oiv7.pt",
+      "weights_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+      "model_validation": "ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "cohort": "stone_human",
+    "matched": false,
+    "proposals": []
+  },
+  {
+    "key": "cma-108312",
+    "duration_ms": 46.64,
+    "source_sha256": "823f8ea6bd9e9e159f6567f735f4d2e80a02cce396db3ae7cd908a45f6e75ab6",
+    "boxes": [],
+    "reply": {
+      "frame_id": 3,
+      "timestamp": 1795385969631,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-statue-native-holdout-cma-20261123\\candidate-n\\yolov8n-oiv7.pt",
+      "weights_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+      "model_validation": "ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "cohort": "stone_human",
+    "matched": false,
+    "proposals": []
+  },
+  {
+    "key": "cma-141653",
+    "duration_ms": 48.55,
+    "source_sha256": "3c8f63ed87c6d590d5c32e78eca12456c2e89259a70de580a21dae56a3360c06",
+    "boxes": [],
+    "reply": {
+      "frame_id": 4,
+      "timestamp": 1795385969678,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-statue-native-holdout-cma-20261123\\candidate-n\\yolov8n-oiv7.pt",
+      "weights_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+      "model_validation": "ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "cohort": "stone_human",
+    "matched": false,
+    "proposals": []
+  },
+  {
+    "key": "cma-147166",
+    "duration_ms": 49.06,
+    "source_sha256": "183f862f1ae14a4293585e2f2e528ba0774d10ed1ddd33af3112666a60a73cbd",
+    "boxes": [
+      {
+        "class": "Statue",
+        "confidence": 0.42524808645248413,
+        "xyxy_normalized": [
+          0.39412248134613037,
+          0.05122801462809245,
+          0.5960050582885742,
+          0.7708678563435872
+        ],
+        "instance_id": "737bc56db250:left:1"
+      }
+    ],
+    "reply": {
+      "frame_id": 5,
+      "timestamp": 1795385969727,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "Statue",
+          "class_id": 442,
+          "confidence": 0.42524808645248413,
+          "centerX": 316.84081268310547,
+          "centerY": 197.30300903320312,
+          "x1": 252.23838806152344,
+          "y1": 24.589447021484375,
+          "x2": 381.4432373046875,
+          "y2": 370.0165710449219,
+          "class_name": "Statue",
+          "bbox": [
+            252.23838806152344,
+            24.589447021484375,
+            381.4432373046875,
+            370.0165710449219
+          ],
+          "instance_id": "737bc56db250:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "statue"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-statue-native-holdout-cma-20261123\\candidate-n\\yolov8n-oiv7.pt",
+      "weights_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+      "model_validation": "ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "cohort": "stone_human",
+    "matched": false,
+    "proposals": [
+      {
+        "class": "Statue",
+        "confidence": 0.42524808645248413,
+        "xyxy_normalized": [
+          0.39412248134613037,
+          0.05122801462809245,
+          0.5960050582885742,
+          0.7708678563435872
+        ],
+        "instance_id": "737bc56db250:left:1",
+        "truth_iou": 0.6091120685111362,
+        "matched": false,
+        "unmatched": false
+      }
+    ]
+  },
+  {
+    "key": "cma-160295",
+    "duration_ms": 56.24,
+    "source_sha256": "0d9ff15df6c56f4541b906579625dd3b3f8e96aba393e3b818583265fe4414e5",
+    "boxes": [
+      {
+        "class": "Statue",
+        "confidence": 0.6060037612915039,
+        "xyxy_normalized": [
+          0.30786569118499757,
+          0.10626754760742188,
+          0.6813236236572265,
+          0.909719975789388
+        ],
+        "instance_id": "737bc56db250:left:1"
+      }
+    ],
+    "reply": {
+      "frame_id": 6,
+      "timestamp": 1795385969776,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "Statue",
+          "class_id": 442,
+          "confidence": 0.6060037612915039,
+          "centerX": 316.5405807495117,
+          "centerY": 243.83700561523438,
+          "x1": 197.03404235839844,
+          "y1": 51.0084228515625,
+          "x2": 436.047119140625,
+          "y2": 436.66558837890625,
+          "class_name": "Statue",
+          "bbox": [
+            197.03404235839844,
+            51.0084228515625,
+            436.047119140625,
+            436.66558837890625
+          ],
+          "instance_id": "737bc56db250:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "statue"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-statue-native-holdout-cma-20261123\\candidate-n\\yolov8n-oiv7.pt",
+      "weights_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+      "model_validation": "ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "cohort": "bronze_animals",
+    "matched": false,
+    "proposals": [
+      {
+        "class": "Statue",
+        "confidence": 0.6060037612915039,
+        "xyxy_normalized": [
+          0.30786569118499757,
+          0.10626754760742188,
+          0.6813236236572265,
+          0.909719975789388
+        ],
+        "instance_id": "737bc56db250:left:1",
+        "truth_iou": 0,
+        "matched": false,
+        "unmatched": true
+      }
+    ]
+  },
+  {
+    "key": "cma-156117",
+    "duration_ms": 43.61,
+    "source_sha256": "7cb751122e0c6d52dad6308d1f9cefd8da0f3a99d80af6c3b1a617224732598e",
+    "boxes": [
+      {
+        "class": "Statue",
+        "confidence": 0.5954532623291016,
+        "xyxy_normalized": [
+          0.2022395133972168,
+          0.16171722412109374,
+          0.7701692581176758,
+          0.8876702626546223
+        ],
+        "instance_id": "737bc56db250:left:1"
+      }
+    ],
+    "reply": {
+      "frame_id": 7,
+      "timestamp": 1795385969833,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "Statue",
+          "class_id": 442,
+          "confidence": 0.5954532623291016,
+          "centerX": 311.1708068847656,
+          "centerY": 251.85299682617188,
+          "x1": 129.43328857421875,
+          "y1": 77.624267578125,
+          "x2": 492.9083251953125,
+          "y2": 426.08172607421875,
+          "class_name": "Statue",
+          "bbox": [
+            129.43328857421875,
+            77.624267578125,
+            492.9083251953125,
+            426.08172607421875
+          ],
+          "instance_id": "737bc56db250:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "statue"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-statue-native-holdout-cma-20261123\\candidate-n\\yolov8n-oiv7.pt",
+      "weights_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+      "model_validation": "ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "cohort": "bronze_animals",
+    "matched": false,
+    "proposals": [
+      {
+        "class": "Statue",
+        "confidence": 0.5954532623291016,
+        "xyxy_normalized": [
+          0.2022395133972168,
+          0.16171722412109374,
+          0.7701692581176758,
+          0.8876702626546223
+        ],
+        "instance_id": "737bc56db250:left:1",
+        "truth_iou": 0,
+        "matched": false,
+        "unmatched": true
+      }
+    ]
+  },
+  {
+    "key": "cma-120297",
+    "duration_ms": 43.77,
+    "source_sha256": "2138cb7c6cd7085d7133c634fd44622ae8605d8e556434212838c47ab58bb12e",
+    "boxes": [],
+    "reply": {
+      "frame_id": 8,
+      "timestamp": 1795385969877,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-statue-native-holdout-cma-20261123\\candidate-n\\yolov8n-oiv7.pt",
+      "weights_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+      "model_validation": "ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "cohort": "bronze_animals",
+    "matched": false,
+    "proposals": []
+  },
+  {
+    "key": "cma-119731",
+    "duration_ms": 48.36,
+    "source_sha256": "832a26d928c1b555c85e56787dbc708467729d968f6fa911cee8dd8ed59c36e6",
+    "boxes": [],
+    "reply": {
+      "frame_id": 9,
+      "timestamp": 1795385969921,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-statue-native-holdout-cma-20261123\\candidate-n\\yolov8n-oiv7.pt",
+      "weights_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+      "model_validation": "ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "cohort": "bronze_animals",
+    "matched": false,
+    "proposals": []
+  },
+  {
+    "key": "cma-135567",
+    "duration_ms": 47.67,
+    "source_sha256": "cd9f5398f206400c8a5089895ff5f3a9c7d815081feed994f1aab320a7eac7d2",
+    "boxes": [],
+    "reply": {
+      "frame_id": 10,
+      "timestamp": 1795385969970,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-statue-native-holdout-cma-20261123\\candidate-n\\yolov8n-oiv7.pt",
+      "weights_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+      "model_validation": "ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "cohort": "ceramic_animals",
+    "matched": false,
+    "proposals": []
+  },
+  {
+    "key": "cma-138880",
+    "duration_ms": 48.9,
+    "source_sha256": "44248c7dc911590b0cf6b0f538913cb6494e6aa38a84a5aaba7bc5994e46e22c",
+    "boxes": [],
+    "reply": {
+      "frame_id": 11,
+      "timestamp": 1795385970018,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-statue-native-holdout-cma-20261123\\candidate-n\\yolov8n-oiv7.pt",
+      "weights_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+      "model_validation": "ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "cohort": "terracotta_human",
+    "matched": false,
+    "proposals": []
+  },
+  {
+    "key": "cma-155539",
+    "duration_ms": 44.5,
+    "source_sha256": "ed353765fe142f70aa720964d1fa8a4e9de3d0964049ae9921b4e672d942744c",
+    "boxes": [],
+    "reply": {
+      "frame_id": 12,
+      "timestamp": 1795385970068,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-statue-native-holdout-cma-20261123\\candidate-n\\yolov8n-oiv7.pt",
+      "weights_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+      "model_validation": "ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "cohort": "ceramic_animals",
+    "matched": false,
+    "proposals": []
+  },
+  {
+    "key": "cma-166455",
+    "duration_ms": 42.85,
+    "source_sha256": "c00a554864a8abc8fcdafcc98a9b5759ebacab2953158a61646c7a09b3033c9a",
+    "boxes": [],
+    "reply": {
+      "frame_id": 13,
+      "timestamp": 1795385970112,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-statue-native-holdout-cma-20261123\\candidate-n\\yolov8n-oiv7.pt",
+      "weights_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+      "model_validation": "ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "cohort": "terracotta_human",
+    "matched": false,
+    "proposals": []
+  },
+  {
+    "key": "cma-94677",
+    "duration_ms": 45.01,
+    "source_sha256": "92bad22bfd3b87c810124d1ea66e2d35de02ad6d818bf2baa4b91e76e316d289",
+    "boxes": [],
+    "reply": {
+      "frame_id": 14,
+      "timestamp": 1795385970156,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-statue-native-holdout-cma-20261123\\candidate-n\\yolov8n-oiv7.pt",
+      "weights_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+      "model_validation": "ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "cohort": "stone_decor",
+    "matched": false,
+    "proposals": []
+  },
+  {
+    "key": "cma-155650",
+    "duration_ms": 48.88,
+    "source_sha256": "94b645cb6e7adff0b747e92064b2f1b38cdf2f4c202898fe331b60b4b5087253",
+    "boxes": [],
+    "reply": {
+      "frame_id": 15,
+      "timestamp": 1795385970202,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-statue-native-holdout-cma-20261123\\candidate-n\\yolov8n-oiv7.pt",
+      "weights_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+      "model_validation": "ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "cohort": "stone_decor",
+    "matched": false,
+    "proposals": []
+  },
+  {
+    "key": "cma-170780",
+    "duration_ms": 47.9,
+    "source_sha256": "5a7fbf5ecdcd241f3470122385d7a754abfcd5e95ade3c912f1ae969a77afde8",
+    "boxes": [],
+    "reply": {
+      "frame_id": 16,
+      "timestamp": 1795385970251,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-statue-native-holdout-cma-20261123\\candidate-n\\yolov8n-oiv7.pt",
+      "weights_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+      "model_validation": "ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "cohort": "stone_decor",
+    "matched": false,
+    "proposals": []
+  }
+]

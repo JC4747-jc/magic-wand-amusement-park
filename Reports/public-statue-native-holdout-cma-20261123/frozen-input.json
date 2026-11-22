@@ -1,0 +1,383 @@
+{
+  "runtime_source": "90928aef682fa714e7baacf8b8d2ca2980681027",
+  "intake_sha256": "30a2130022e86e432aced7bc8d9e75cbaa37d095be36217c5b469d880ae15718",
+  "box_review_sha256": "26e5ccc63363a209e25b2c60627d3ac0d429bbaad704d702a73a599be9d3fe11",
+  "excluded_before_inference": {
+    "145377": "dHash distance 4 to older project photo cma-1971.134.jpg"
+  },
+  "scope": "Artwork-level project holdout on one museum. Prior works from the same museum and original OIV7 pretraining provenance limit independence.",
+  "cohort_counts": {
+    "stone_human": 5,
+    "bronze_animals": 4,
+    "ceramic_animals": 2,
+    "terracotta_human": 2,
+    "stone_decor": 3
+  },
+  "deduplication": {
+    "prior_manifests": {
+      "TrainingData/statue-cma-review-batch1-v1.json": "3d2904ba01e1e17d0d44a7465acf8168dabdba6566cd1a8f456b75f82a00368e",
+      "TrainingData/statue-cma-review-batch2-v1.json": "c4cc26531a8fc926bc72ede6a532ef04a7616aa6cdce011876cdcc76294a2436",
+      "TrainingData/statue-external-benchmark-v1.json": "33d24dc1ca2af8775f3796ecc7bc43c5ae782ffa0a98678d49b8529a6dc81d50",
+      "TrainingData/statue-local-review-v1.json": "6cfa6ec97056abc7cc28ec7e0c9dce3ab38c9a93afa4976dcefa42b1df3ac736",
+      "TrainingData/statue-local-review-v2.json": "8bfa17257bc88706128a53cfc5d235e70c0543d3caa555d1d995dd23ec4bd12e",
+      "TrainingData/statue-material-crop-diagnostic-plan-20261122.json": "8d9fd4da1d96066d77e88e74662dcfcc1d62cf6a9fe5c1eb6efe4e016c2cef66",
+      "TrainingData/statue-material-diagnostic-20261122.json": "7168e939d9a2d6e99b3762762d0853c75ed6698960e63f66c5b7ff988b756b0c",
+      "TrainingData/statue-material-getty-20261122.json": "59109a9bea402a14efe9d6ad5ae6fcf47c455b36384c986628a5c65e71993292",
+      "TrainingData/statue-model-scope-v1.json": "403f93d90da15d6666d89d56621f9b6fe158947154216bee1754f5ba2f3c7e0f",
+      "TrainingData/statue-model-scope-v2.json": "28442b9ba3627c331040ba7985f80928154756c49dcb5353b3c0f138c968eb80",
+      "TrainingData/statue-model-scope-v3.json": "88c31c37b08949aa81305b7bf90ff3010a2e515fa17ae6eab0de1ee9511ff2b9",
+      "TrainingData/statue-model-scope-v4.json": "26c0fad518408f38882a20b858f7db36d0fbc2fafac009e2d646f8a4b4ede5e6",
+      "TrainingData/statue-model-scope-v5.json": "bbd8d7354f8e5c886cd812ca74eaada56423e21da3a55e97709162c1c139ea8a",
+      "TrainingData/statue-profile-split-v1.json": "c056431a070af00c46d0e5bf831b4b28b7613242c284e3f87501a67a0ca0f093",
+      "TrainingData/statue-profile-split-v2.json": "46d413c030fa60490686ff853a39d71dd075beb5b1b553742bd8c952018982b1",
+      "TrainingData/statue-profile-split-v3.json": "fa3461c2209597bcf2729620921ab27609d0f331e4bc8ef8d735cc2216bc55f0",
+      "TrainingData/statue-profile-split-v4.json": "2ff3bee8f183db168cd5477f2f43282893a56c8f125fd9997a2f1e5ae548f6da",
+      "TrainingData/statue-training-preset-v1.json": "14e43928b91d12d771c9d699a1d18cb454bb206c5d8c2d830e3ba333b9f62119",
+      "TrainingData/statue-training-preset-v2.json": "499299481752694de1ee6e0dedf753a3727b78f5874afb707134ccc1638b947f",
+      "TrainingData/statue-training-preset-v3.json": "cf6fef450224ed6be3d7833c4c714b6ddfd65d0c587bbfd856c853f722b9ba45",
+      "TrainingData/statue-training-preset-v4.json": "45868d8ff58f508014775764029d28dbe8ead3606680f4ab2353f0acb45f5cae",
+      "Reports/statue-cma-data-20261121/source-intake.json": "c965a01350c3f1fedebcc9d99f0c7c3b6ef3295c9aa5df99e8b44a0465ead708",
+      "Reports/statue-external-holdout-20261121/source-intake.json": "329103a38feefa3eb18250805be36c9fa9406b78e31d7dcc73d11094b7bf92be",
+      "Reports/statue-field-train-20261121/source-intake.json": "71d91c8992c4940f3bb41923cd932517b39c47e53d3dc27cebe2017e63d44987",
+      "Reports/statue-material-train-20261122/source-intake.json": "5386fe9d8800f383fb6892cc0a244b76459287b56b1b8e3d5ba9efcbc576999f",
+      "Reports/statue-walters-material-20261123/acquisition.json": "e0f9cefeb2be371e15bf406f58f7b55fcf8496d25389089a66ee63185ce05855",
+      "Reports/statue-walters-material-20261123/pre-inference-manifest.json": "e13c855cf7bdeee8652d360a517af443e7b0f15d665914630001949a73bd28fc"
+    },
+    "prior_unique_encoded_images": 149,
+    "image_pair_count": 2504,
+    "encoded_exact": 0,
+    "decoded_exact": 0,
+    "dhash_distance_5_or_less": []
+  },
+  "frames": [
+    {
+      "id": "128299",
+      "key": "cma-128299",
+      "accession_number": "1951.288",
+      "title": "Portrait Bust of a Girl",
+      "technique": "marble",
+      "object_url": "https://clevelandart.org/art/1951.288",
+      "source_url": "https://openaccess-cdn.clevelandart.org/1951.288/1951.288_web.jpg",
+      "license": "CC0",
+      "source_sha256": "4ac10ee8fc437b2308b2488514bb73289118f4e90ce61cf1d2ed53826361148c",
+      "source_size": [
+        631,
+        893
+      ],
+      "source_path": ".codex-tmp/native-sculpture-holdout-20261123/frames/128299.jpg",
+      "sha256": "94e6802edba6e6ff8f6574fb19fc27ed404d5ec168b25d529bdcd00940d54219",
+      "cohort": "stone_human",
+      "truth_px": [
+        197,
+        51,
+        426,
+        351
+      ]
+    },
+    {
+      "id": "141655",
+      "key": "cma-141655",
+      "accession_number": "1965.245",
+      "title": "Portrait Bust of an Aristocratic Man",
+      "technique": "marble",
+      "object_url": "https://clevelandart.org/art/1965.245",
+      "source_url": "https://openaccess-cdn.clevelandart.org/1965.245/1965.245_web.jpg",
+      "license": "CC0",
+      "source_sha256": "c7cd62e7dcd726490bac2bd872aa7a8ee4350627f4be598a00bab17135b58dc1",
+      "source_size": [
+        555,
+        893
+      ],
+      "source_path": ".codex-tmp/native-sculpture-holdout-20261123/frames/141655.jpg",
+      "sha256": "530c2f3630f4d1939762c508c48925918844bdf1f3bcabababe3c07eda7531b1",
+      "cohort": "stone_human",
+      "truth_px": [
+        189,
+        33,
+        449,
+        400
+      ]
+    },
+    {
+      "id": "108312",
+      "key": "cma-108312",
+      "accession_number": "1925.943",
+      "title": "Portrait Bust of the Empress Claudia Octavia",
+      "technique": "marble",
+      "object_url": "https://clevelandart.org/art/1925.943",
+      "source_url": "https://openaccess-cdn.clevelandart.org/1925.943/1925.943_web.jpg",
+      "license": "CC0",
+      "source_sha256": "a75e76e9944644781778abfca1738ac1afb1a982e81c616c0bd088ae2c6f535b",
+      "source_size": [
+        651,
+        893
+      ],
+      "source_path": ".codex-tmp/native-sculpture-holdout-20261123/frames/108312.jpg",
+      "sha256": "823f8ea6bd9e9e159f6567f735f4d2e80a02cce396db3ae7cd908a45f6e75ab6",
+      "cohort": "stone_human",
+      "truth_px": [
+        184,
+        34,
+        444,
+        454
+      ]
+    },
+    {
+      "id": "141653",
+      "key": "cma-141653",
+      "accession_number": "1965.243",
+      "title": "Portrait Bust of an Aristocratic Woman",
+      "technique": "marble",
+      "object_url": "https://clevelandart.org/art/1965.243",
+      "source_url": "https://openaccess-cdn.clevelandart.org/1965.243/1965.243_web.jpg",
+      "license": "CC0",
+      "source_sha256": "d14ebf5d0a39ccec48798428b4145ac9c4a3f7fc195de25238fa0736fdacab68",
+      "source_size": [
+        495,
+        893
+      ],
+      "source_path": ".codex-tmp/native-sculpture-holdout-20261123/frames/141653.jpg",
+      "sha256": "3c8f63ed87c6d590d5c32e78eca12456c2e89259a70de580a21dae56a3360c06",
+      "cohort": "stone_human",
+      "truth_px": [
+        187,
+        36,
+        452,
+        403
+      ]
+    },
+    {
+      "id": "147166",
+      "key": "cma-147166",
+      "accession_number": "1973.106",
+      "title": "Krishna Lifting Mount Govardhan",
+      "technique": "Sandstone",
+      "object_url": "https://clevelandart.org/art/1973.106",
+      "source_url": "https://openaccess-cdn.clevelandart.org/1973.106/1973.106_web.jpg",
+      "license": "CC0",
+      "source_sha256": "f012c64318c47fed208420288ee1a67390f4f74c83f2e4997bdb86ee1fb01938",
+      "source_size": [
+        672,
+        900
+      ],
+      "source_path": ".codex-tmp/native-sculpture-holdout-20261123/frames/147166.jpg",
+      "sha256": "183f862f1ae14a4293585e2f2e528ba0774d10ed1ddd33af3112666a60a73cbd",
+      "cohort": "stone_human",
+      "truth_px": [
+        247,
+        17,
+        419,
+        443
+      ]
+    },
+    {
+      "id": "160295",
+      "key": "cma-160295",
+      "accession_number": "1998.173",
+      "title": "Statuette of a Horse",
+      "technique": "bronze",
+      "object_url": "https://clevelandart.org/art/1998.173",
+      "source_url": "https://openaccess-cdn.clevelandart.org/1998.173/1998.173_web.jpg",
+      "license": "CC0",
+      "source_sha256": "c3b45623574da5bcd87beb349b556a6639c5c216e11b1eeb4b41a631cc3be41c",
+      "source_size": [
+        900,
+        897
+      ],
+      "source_path": ".codex-tmp/native-sculpture-holdout-20261123/frames/160295.jpg",
+      "sha256": "0d9ff15df6c56f4541b906579625dd3b3f8e96aba393e3b818583265fe4414e5",
+      "cohort": "bronze_animals",
+      "truth_px": null
+    },
+    {
+      "id": "156117",
+      "key": "cma-156117",
+      "accession_number": "1991.49",
+      "title": "Statuette of a Horse",
+      "technique": "bronze",
+      "object_url": "https://clevelandart.org/art/1991.49",
+      "source_url": "https://openaccess-cdn.clevelandart.org/1991.49/1991.49_web.jpg",
+      "license": "CC0",
+      "source_sha256": "366bc55f5663a5eef9c012e50f1c26145ae2fc1a5bebf60ce32e813ea8bce68a",
+      "source_size": [
+        750,
+        655
+      ],
+      "source_path": ".codex-tmp/native-sculpture-holdout-20261123/frames/156117.jpg",
+      "sha256": "7cb751122e0c6d52dad6308d1f9cefd8da0f3a99d80af6c3b1a617224732598e",
+      "cohort": "bronze_animals",
+      "truth_px": null
+    },
+    {
+      "id": "120297",
+      "key": "cma-120297",
+      "accession_number": "1941.15",
+      "title": "Deer",
+      "technique": "bronze",
+      "object_url": "https://clevelandart.org/art/1941.15",
+      "source_url": "https://openaccess-cdn.clevelandart.org/1941.15/1941.15_web.jpg",
+      "license": "CC0",
+      "source_sha256": "e878b4021d3e84dcd79e3bf94604558b867fbfaf628cad68cb980081ebf9fa47",
+      "source_size": [
+        1145,
+        893
+      ],
+      "source_path": ".codex-tmp/native-sculpture-holdout-20261123/frames/120297.jpg",
+      "sha256": "2138cb7c6cd7085d7133c634fd44622ae8605d8e556434212838c47ab58bb12e",
+      "cohort": "bronze_animals",
+      "truth_px": null
+    },
+    {
+      "id": "119731",
+      "key": "cma-119731",
+      "accession_number": "1940.566",
+      "title": "Axis Deer",
+      "technique": "bronze",
+      "object_url": "https://clevelandart.org/art/1940.566",
+      "source_url": "https://openaccess-cdn.clevelandart.org/1940.566/1940.566_web.jpg",
+      "license": "CC0",
+      "source_sha256": "2ce7fd79d428b2a8f74bcef1f6d5b58a6a39feb9cc5a2034eb971585fc79ded3",
+      "source_size": [
+        1148,
+        893
+      ],
+      "source_path": ".codex-tmp/native-sculpture-holdout-20261123/frames/119731.jpg",
+      "sha256": "832a26d928c1b555c85e56787dbc708467729d968f6fa911cee8dd8ed59c36e6",
+      "cohort": "bronze_animals",
+      "truth_px": null
+    },
+    {
+      "id": "135567",
+      "key": "cma-135567",
+      "accession_number": "1958.93",
+      "title": "Animal",
+      "technique": "terracotta",
+      "object_url": "https://clevelandart.org/art/1958.93",
+      "source_url": "https://openaccess-cdn.clevelandart.org/1958.93/1958.93_web.jpg",
+      "license": "CC0",
+      "source_sha256": "4fa06a1178ed85f4e629a3e26cf15226a7af277cd0b4ec41b10c8e8ea924681e",
+      "source_size": [
+        1148,
+        893
+      ],
+      "source_path": ".codex-tmp/native-sculpture-holdout-20261123/frames/135567.jpg",
+      "sha256": "cd9f5398f206400c8a5089895ff5f3a9c7d815081feed994f1aab320a7eac7d2",
+      "cohort": "ceramic_animals",
+      "truth_px": null
+    },
+    {
+      "id": "138880",
+      "key": "cma-138880",
+      "accession_number": "1963.251",
+      "title": "Satyress and Child",
+      "technique": "terracotta",
+      "object_url": "https://clevelandart.org/art/1963.251",
+      "source_url": "https://openaccess-cdn.clevelandart.org/1963.251/1963.251_web.jpg",
+      "license": "CC0",
+      "source_sha256": "b5f48d708bd6918fd8b68e9d7e11dbba847550b44437f886ff231e50404aa0bf",
+      "source_size": [
+        750,
+        735
+      ],
+      "source_path": ".codex-tmp/native-sculpture-holdout-20261123/frames/138880.jpg",
+      "sha256": "44248c7dc911590b0cf6b0f538913cb6494e6aa38a84a5aaba7bc5994e46e22c",
+      "cohort": "terracotta_human",
+      "truth_px": null
+    },
+    {
+      "id": "155539",
+      "key": "cma-155539",
+      "accession_number": "1990.250",
+      "title": "Dog Head",
+      "technique": "earthenware, asphalt and resin paint",
+      "object_url": "https://clevelandart.org/art/1990.250",
+      "source_url": "https://openaccess-cdn.clevelandart.org/1990.250/1990.250_web.jpg",
+      "license": "CC0",
+      "source_sha256": "bc935acddac6fd8fc81dbac53e51583b0c262b7a02b2a3378fa1b6963051531c",
+      "source_size": [
+        750,
+        748
+      ],
+      "source_path": ".codex-tmp/native-sculpture-holdout-20261123/frames/155539.jpg",
+      "sha256": "ed353765fe142f70aa720964d1fa8a4e9de3d0964049ae9921b4e672d942744c",
+      "cohort": "ceramic_animals",
+      "truth_px": null
+    },
+    {
+      "id": "166455",
+      "key": "cma-166455",
+      "accession_number": "2008.21",
+      "title": "Standing figurine holding an animal (dog?)",
+      "technique": "ceramic and pigment",
+      "object_url": "https://clevelandart.org/art/2008.21",
+      "source_url": "https://openaccess-cdn.clevelandart.org/2008.21/2008.21_web.jpg",
+      "license": "CC0",
+      "source_sha256": "121a9136d7ee5b7b72a473359730dc3b951b5bc158dd58634568bafc5e0b8293",
+      "source_size": [
+        636,
+        900
+      ],
+      "source_path": ".codex-tmp/native-sculpture-holdout-20261123/frames/166455.jpg",
+      "sha256": "c00a554864a8abc8fcdafcc98a9b5759ebacab2953158a61646c7a09b3033c9a",
+      "cohort": "terracotta_human",
+      "truth_px": null
+    },
+    {
+      "id": "94677",
+      "key": "cma-94677",
+      "accession_number": "1915.334.2",
+      "title": "Fang Xuanling Pedestal",
+      "technique": "marble",
+      "object_url": "https://clevelandart.org/art/1915.334.2",
+      "source_url": "https://openaccess-cdn.clevelandart.org/1915.334.2/1915.334.2_web.jpg",
+      "license": "CC0",
+      "source_sha256": "f2a231721bc9b64570283f0ab10299eab173b9704a453aa34b5e0967b037b9cc",
+      "source_size": [
+        900,
+        772
+      ],
+      "source_path": ".codex-tmp/native-sculpture-holdout-20261123/frames/94677.jpg",
+      "sha256": "92bad22bfd3b87c810124d1ea66e2d35de02ad6d818bf2baa4b91e76e316d289",
+      "cohort": "stone_decor",
+      "truth_px": null
+    },
+    {
+      "id": "155650",
+      "key": "cma-155650",
+      "accession_number": "1990.9",
+      "title": "Carved Stone Vessel",
+      "technique": "marble",
+      "object_url": "https://clevelandart.org/art/1990.9",
+      "source_url": "https://openaccess-cdn.clevelandart.org/1990.9/1990.9_web.jpg",
+      "license": "CC0",
+      "source_sha256": "b387f13b913cc05c508a3d7c9b3cf8ea13bb13cabc601c80e5c633def720c9cd",
+      "source_size": [
+        900,
+        762
+      ],
+      "source_path": ".codex-tmp/native-sculpture-holdout-20261123/frames/155650.jpg",
+      "sha256": "94b645cb6e7adff0b747e92064b2f1b38cdf2f4c202898fe331b60b4b5087253",
+      "cohort": "stone_decor",
+      "truth_px": null
+    },
+    {
+      "id": "170780",
+      "key": "cma-170780",
+      "accession_number": "2013.29",
+      "title": "Carved Bowl",
+      "technique": "stone (travertine)",
+      "object_url": "https://clevelandart.org/art/2013.29",
+      "source_url": "https://openaccess-cdn.clevelandart.org/2013.29/2013.29_web.jpg",
+      "license": "CC0",
+      "source_sha256": "eba735cadbdc07767ef3950071bc965df5e10c207584146cb3c146a6f9d25382",
+      "source_size": [
+        1263,
+        822
+      ],
+      "source_path": ".codex-tmp/native-sculpture-holdout-20261123/frames/170780.jpg",
+      "sha256": "5a7fbf5ecdcd241f3470122385d7a754abfcd5e95ade3c912f1ae969a77afde8",
+      "cohort": "stone_decor",
+      "truth_px": null
+    }
+  ]
+}
