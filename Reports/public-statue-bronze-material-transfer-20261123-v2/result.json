@@ -1,0 +1,471 @@
+{
+  "scope": "Offline fixed-crop diagnostic on prior detector replies. No production score changes.",
+  "cohort_sizes": {
+    "museum": 16,
+    "outdoor": 44
+  },
+  "proposal_count": 50,
+  "model_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+  "source_commit": "68f298962d6726b7f1b702d1383f93b605c2705f",
+  "worker_sha256": "f7e34d496b8d1b6655fd07eeb3c16fed3368d5be7d7022558753c8c4ffa3833e",
+  "scores_sha256": "186dc61e1caf5b887c848c00f309adcd58ac80938f309c89db9aab8d77fe0ea3",
+  "protocol_sha256": "d0d0e38bd66f46a58c0fb2cdb162863745f2be28d1e1c37a84fb0280b32967cc",
+  "summary": {
+    "museum": {
+      "0.399": {
+        "raw": {
+          "hits_by_scope": {
+            "bronze_animals": 4
+          },
+          "unmatched_by_scope": {
+            "ceramic_animals": 2,
+            "terracotta_human": 1,
+            "stone_human": 1,
+            "bronze_animals": 1
+          },
+          "total_true_by_scope": {
+            "bronze_animals": 4
+          },
+          "accepted_proposals": 9,
+          "hit_keys": [
+            "cma-119731",
+            "cma-120297",
+            "cma-156117",
+            "cma-160295"
+          ]
+        },
+        "material_only": {
+          "hits_by_scope": {
+            "bronze_animals": 4
+          },
+          "unmatched_by_scope": {
+            "bronze_animals": 1
+          },
+          "total_true_by_scope": {
+            "bronze_animals": 4
+          },
+          "accepted_proposals": 5,
+          "hit_keys": [
+            "cma-119731",
+            "cma-120297",
+            "cma-156117",
+            "cma-160295"
+          ]
+        },
+        "material_and_animal": {
+          "hits_by_scope": {
+            "bronze_animals": 4
+          },
+          "unmatched_by_scope": {
+            "bronze_animals": 1
+          },
+          "total_true_by_scope": {
+            "bronze_animals": 4
+          },
+          "accepted_proposals": 5,
+          "hit_keys": [
+            "cma-119731",
+            "cma-120297",
+            "cma-156117",
+            "cma-160295"
+          ]
+        }
+      },
+      "0.5": {
+        "raw": {
+          "hits_by_scope": {
+            "bronze_animals": 4
+          },
+          "unmatched_by_scope": {
+            "ceramic_animals": 2,
+            "terracotta_human": 1,
+            "stone_human": 1,
+            "bronze_animals": 1
+          },
+          "total_true_by_scope": {
+            "bronze_animals": 4
+          },
+          "accepted_proposals": 9,
+          "hit_keys": [
+            "cma-119731",
+            "cma-120297",
+            "cma-156117",
+            "cma-160295"
+          ]
+        },
+        "material_only": {
+          "hits_by_scope": {
+            "bronze_animals": 4
+          },
+          "unmatched_by_scope": {
+            "bronze_animals": 1
+          },
+          "total_true_by_scope": {
+            "bronze_animals": 4
+          },
+          "accepted_proposals": 5,
+          "hit_keys": [
+            "cma-119731",
+            "cma-120297",
+            "cma-156117",
+            "cma-160295"
+          ]
+        },
+        "material_and_animal": {
+          "hits_by_scope": {
+            "bronze_animals": 4
+          },
+          "unmatched_by_scope": {
+            "bronze_animals": 1
+          },
+          "total_true_by_scope": {
+            "bronze_animals": 4
+          },
+          "accepted_proposals": 5,
+          "hit_keys": [
+            "cma-119731",
+            "cma-120297",
+            "cma-156117",
+            "cma-160295"
+          ]
+        }
+      }
+    },
+    "outdoor": {
+      "0.399": {
+        "raw": {
+          "hits_by_scope": {
+            "ordered_monos": 21,
+            "rectified": 11,
+            "other_monos": 9
+          },
+          "unmatched_by_scope": {},
+          "total_true_by_scope": {
+            "ordered_monos": 23,
+            "other_monos": 9,
+            "rectified": 12
+          },
+          "accepted_proposals": 41,
+          "hit_keys": [
+            "mono-020",
+            "mono-022",
+            "mono-029",
+            "mono-031",
+            "mono-049",
+            "mono-051",
+            "mono-052",
+            "mono-053",
+            "mono-054",
+            "mono-055",
+            "mono-056",
+            "mono-057",
+            "mono-058",
+            "mono-059",
+            "mono-060",
+            "mono-061",
+            "mono-062",
+            "mono-063",
+            "mono-064",
+            "mono-065",
+            "mono-066",
+            "mono-067",
+            "mono-068",
+            "mono-069",
+            "mono-070",
+            "mono-087",
+            "mono-089",
+            "mono-120",
+            "mono-140",
+            "mono-150",
+            "pair-020-022-left",
+            "pair-020-022-right",
+            "pair-029-031-left",
+            "pair-029-031-right",
+            "pair-057-059-left",
+            "pair-057-059-right",
+            "pair-062-065-left",
+            "pair-062-065-right",
+            "pair-067-070-left",
+            "pair-087-089-left",
+            "pair-087-089-right"
+          ]
+        },
+        "material_only": {
+          "hits_by_scope": {
+            "ordered_monos": 21,
+            "rectified": 11,
+            "other_monos": 9
+          },
+          "unmatched_by_scope": {},
+          "total_true_by_scope": {
+            "ordered_monos": 23,
+            "other_monos": 9,
+            "rectified": 12
+          },
+          "accepted_proposals": 41,
+          "hit_keys": [
+            "mono-020",
+            "mono-022",
+            "mono-029",
+            "mono-031",
+            "mono-049",
+            "mono-051",
+            "mono-052",
+            "mono-053",
+            "mono-054",
+            "mono-055",
+            "mono-056",
+            "mono-057",
+            "mono-058",
+            "mono-059",
+            "mono-060",
+            "mono-061",
+            "mono-062",
+            "mono-063",
+            "mono-064",
+            "mono-065",
+            "mono-066",
+            "mono-067",
+            "mono-068",
+            "mono-069",
+            "mono-070",
+            "mono-087",
+            "mono-089",
+            "mono-120",
+            "mono-140",
+            "mono-150",
+            "pair-020-022-left",
+            "pair-020-022-right",
+            "pair-029-031-left",
+            "pair-029-031-right",
+            "pair-057-059-left",
+            "pair-057-059-right",
+            "pair-062-065-left",
+            "pair-062-065-right",
+            "pair-067-070-left",
+            "pair-087-089-left",
+            "pair-087-089-right"
+          ]
+        },
+        "material_and_animal": {
+          "hits_by_scope": {
+            "ordered_monos": 21,
+            "rectified": 11,
+            "other_monos": 9
+          },
+          "unmatched_by_scope": {},
+          "total_true_by_scope": {
+            "ordered_monos": 23,
+            "other_monos": 9,
+            "rectified": 12
+          },
+          "accepted_proposals": 41,
+          "hit_keys": [
+            "mono-020",
+            "mono-022",
+            "mono-029",
+            "mono-031",
+            "mono-049",
+            "mono-051",
+            "mono-052",
+            "mono-053",
+            "mono-054",
+            "mono-055",
+            "mono-056",
+            "mono-057",
+            "mono-058",
+            "mono-059",
+            "mono-060",
+            "mono-061",
+            "mono-062",
+            "mono-063",
+            "mono-064",
+            "mono-065",
+            "mono-066",
+            "mono-067",
+            "mono-068",
+            "mono-069",
+            "mono-070",
+            "mono-087",
+            "mono-089",
+            "mono-120",
+            "mono-140",
+            "mono-150",
+            "pair-020-022-left",
+            "pair-020-022-right",
+            "pair-029-031-left",
+            "pair-029-031-right",
+            "pair-057-059-left",
+            "pair-057-059-right",
+            "pair-062-065-left",
+            "pair-062-065-right",
+            "pair-067-070-left",
+            "pair-087-089-left",
+            "pair-087-089-right"
+          ]
+        }
+      },
+      "0.5": {
+        "raw": {
+          "hits_by_scope": {
+            "ordered_monos": 21,
+            "rectified": 10,
+            "other_monos": 6
+          },
+          "unmatched_by_scope": {},
+          "total_true_by_scope": {
+            "ordered_monos": 23,
+            "other_monos": 9,
+            "rectified": 12
+          },
+          "accepted_proposals": 37,
+          "hit_keys": [
+            "mono-022",
+            "mono-029",
+            "mono-031",
+            "mono-049",
+            "mono-051",
+            "mono-052",
+            "mono-053",
+            "mono-054",
+            "mono-055",
+            "mono-056",
+            "mono-057",
+            "mono-058",
+            "mono-059",
+            "mono-060",
+            "mono-061",
+            "mono-062",
+            "mono-063",
+            "mono-064",
+            "mono-065",
+            "mono-066",
+            "mono-067",
+            "mono-068",
+            "mono-069",
+            "mono-070",
+            "mono-087",
+            "mono-089",
+            "mono-150",
+            "pair-020-022-right",
+            "pair-029-031-left",
+            "pair-029-031-right",
+            "pair-057-059-left",
+            "pair-057-059-right",
+            "pair-062-065-left",
+            "pair-062-065-right",
+            "pair-067-070-left",
+            "pair-087-089-left",
+            "pair-087-089-right"
+          ]
+        },
+        "material_only": {
+          "hits_by_scope": {
+            "ordered_monos": 21,
+            "rectified": 10,
+            "other_monos": 6
+          },
+          "unmatched_by_scope": {},
+          "total_true_by_scope": {
+            "ordered_monos": 23,
+            "other_monos": 9,
+            "rectified": 12
+          },
+          "accepted_proposals": 37,
+          "hit_keys": [
+            "mono-022",
+            "mono-029",
+            "mono-031",
+            "mono-049",
+            "mono-051",
+            "mono-052",
+            "mono-053",
+            "mono-054",
+            "mono-055",
+            "mono-056",
+            "mono-057",
+            "mono-058",
+            "mono-059",
+            "mono-060",
+            "mono-061",
+            "mono-062",
+            "mono-063",
+            "mono-064",
+            "mono-065",
+            "mono-066",
+            "mono-067",
+            "mono-068",
+            "mono-069",
+            "mono-070",
+            "mono-087",
+            "mono-089",
+            "mono-150",
+            "pair-020-022-right",
+            "pair-029-031-left",
+            "pair-029-031-right",
+            "pair-057-059-left",
+            "pair-057-059-right",
+            "pair-062-065-left",
+            "pair-062-065-right",
+            "pair-067-070-left",
+            "pair-087-089-left",
+            "pair-087-089-right"
+          ]
+        },
+        "material_and_animal": {
+          "hits_by_scope": {
+            "ordered_monos": 21,
+            "rectified": 10,
+            "other_monos": 6
+          },
+          "unmatched_by_scope": {},
+          "total_true_by_scope": {
+            "ordered_monos": 23,
+            "other_monos": 9,
+            "rectified": 12
+          },
+          "accepted_proposals": 37,
+          "hit_keys": [
+            "mono-022",
+            "mono-029",
+            "mono-031",
+            "mono-049",
+            "mono-051",
+            "mono-052",
+            "mono-053",
+            "mono-054",
+            "mono-055",
+            "mono-056",
+            "mono-057",
+            "mono-058",
+            "mono-059",
+            "mono-060",
+            "mono-061",
+            "mono-062",
+            "mono-063",
+            "mono-064",
+            "mono-065",
+            "mono-066",
+            "mono-067",
+            "mono-068",
+            "mono-069",
+            "mono-070",
+            "mono-087",
+            "mono-089",
+            "mono-150",
+            "pair-020-022-right",
+            "pair-029-031-left",
+            "pair-029-031-right",
+            "pair-057-059-left",
+            "pair-057-059-right",
+            "pair-062-065-left",
+            "pair-062-065-right",
+            "pair-067-070-left",
+            "pair-087-089-left",
+            "pair-087-089-right"
+          ]
+        }
+      }
+    }
+  }
+}

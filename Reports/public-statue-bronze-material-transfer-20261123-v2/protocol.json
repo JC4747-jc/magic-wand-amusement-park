@@ -1,0 +1,44 @@
+{
+  "prior_material_protocol_sha256": "ce082d64a2d913d95e2846d915a073445610016505b1b75b4d0958da7a8ae6c5",
+  "model_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+  "source_commit": "68f298962d6726b7f1b702d1383f93b605c2705f",
+  "source_files": {
+    "Reports/public-statue-native-holdout-cma-20261123/frozen-input.json": "8cf62ddc0eac3c149e73b9b9e7369a06e201673b48a2639b580d6714ac81a802",
+    "Reports/public-statue-native-holdout-cma-20261123/picf-visual-replies.json": "b6bc3a0fa3325c84dd7f6005a393df41d12fec0f819545faa3255758b78fb620",
+    "Reports/public-statue-bronze-horse-20261123/frozen-input.json": "e65300df7724e8e23fe44498337d28de756296d61c414d23a928057886918b70",
+    "Reports/public-statue-bronze-horse-20261123/picf-replies.json": "518dffd657cdd10584ccc236f0c8906b0202238962d5da43f480f07dd63b89ef"
+  },
+  "prompts": {
+    "Bronze": [
+      "a museum photograph of a cast bronze animal sculpture",
+      "a bronze animal figurine cast in metal",
+      "an antique bronze animal statue with natural metal patina",
+      "a sculpture of an animal made of bronze metal"
+    ],
+    "Ceramic": [
+      "a museum photograph of a ceramic animal sculpture",
+      "a ceramic animal figurine made of fired clay",
+      "an antique animal statue made of glazed earthenware",
+      "a sculpture of an animal made of pottery or porcelain"
+    ],
+    "Animal": [
+      "a photograph of an animal sculpture",
+      "an animal figurine",
+      "a statue depicting a non-human animal",
+      "a sculpted animal with animal anatomy"
+    ],
+    "Human": [
+      "a photograph of a human sculpture",
+      "a human figurine",
+      "a statue depicting a person",
+      "a sculpted person with human anatomy"
+    ]
+  },
+  "score_thresholds": [
+    0.399,
+    0.5
+  ],
+  "iou_threshold": 0.5,
+  "acceptance": "Arithmetic mean cosine within each prompt group. Keep on nonnegative Bronze minus Ceramic, with or without nonnegative Animal minus Human. Never relabel.",
+  "crop": "Raw PICF proposal rounded down on top-left and up on bottom-right at 640x480, then stock CLIP preprocess."
+}
