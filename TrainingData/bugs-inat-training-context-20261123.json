@@ -1,0 +1,1225 @@
+{
+  "purpose": "Reviewed training-only append for the two-class insect development detector.",
+  "independent_holdout_sha256": "d14e66a6fe083405be07e5e142d5b33c37fae12f49119d34dc13158b607ff613",
+  "acquisition_sha256": "eb9162449928e6a20a94d27a64fdbb274ba49846ed43c5b9282c589762417928",
+  "frozen_registries": {
+    ".codex-tmp/yolo-training/bugs-inat-context-window-20261122/acquisition.json": "e3a102a13565e1803d13cfcfd1bf985280d8dbe9027c6ef4e81d71ba66bd42dd",
+    ".codex-tmp/yolo-training/bugs-inat-development-20261122/acquisition.json": "ec35214399c830c86d4154f6ddbf8ffdaaad5d79c0f39bf00ad78f40e241fa2f",
+    ".codex-tmp/yolo-training/bugs-inat-development-v2-20261122/acquisition.json": "d0fc20496ee2e82ed2bf678fc65c0f4d079ac8e6aa450394be2f570207fe941c",
+    ".codex-tmp/yolo-training/bugs-inat-development-v3-20261122/acquisition.json": "b67104d2edf9e648fee497a7bff2153390aae03a5f6dfd9f5e4f0403b51df62f",
+    ".codex-tmp/yolo-training/bugs-inat-small-field-20261122/acquisition.json": "2bd6f5bbfd986a8d5cec396f50e79fefd2f2a3ad95eaca72cd505d6d35d7810e",
+    ".codex-tmp/yolo-training/bugs-inat-small-indoor-20261122/acquisition.json": "ea52b9650a77acec0f6242a30a30db2150f464276dd8c65e2d10026cd5dff9d4",
+    ".codex-tmp/yolo-training/bugs-inat-small-indoor-ccby-20261122/acquisition.json": "d0ed9db694d40a0e6a97f303023351daeccf9e8122a3315bb671dfc6c6117d87",
+    ".codex-tmp/yolo-training/bugs-inat-small-spider-20261122/acquisition.json": "984508e6c5e6142a455af47f6b174604b853201157c6c04957ec1c4d939db445",
+    ".codex-tmp/yolo-training/bugs-small-target-independent-20261122/acquisition.json": "0b1dc11beddcadf313edc2b2e96f42fe8383694ab3b0641362624e4df0b07eea",
+    ".codex-tmp/yolo-training/bugs-small-target-roaches-20261122/acquisition.json": "b364fbf8e4f29965fcacb9aa7dfb42975e22daaa22196a939855ac77436a5df3",
+    ".codex-tmp/yolo-training/source-metadata/bugs-small-spider-candidates-20261122-v2.json": "e7ee9c0cc67488d035907df0240746224b2a18286e78a8a70eb3c8fc36d10b05",
+    ".codex-tmp/yolo-training/source-metadata/bugs-small-spider-candidates-20261122.json": "4480fa37932e851a29f008035dd1383ae7714859317553a57d6864a3c242a33e",
+    "Reports/hci-bugs-training-20261116/frozen-dataset.json": "ac49f4d5b8382de5e82869aebf78dd639282ddb2a89cc05e9893d4fd4c908345",
+    "Reports/hci-bugs-training-20261116/image-credits.json": "8ffc6522a54174453bdfa579e5e469323df77c89f877f9e4cdec7f34e3228211",
+    "Reports/public-bugs-independent-photos-20261123-v2/frozen-input.json": "d14e66a6fe083405be07e5e142d5b33c37fae12f49119d34dc13158b607ff613",
+    "TrainingData/bugs-bootstrap-overlay-review-v1.json": "260f022f14aa6d704a5d4b3a24f43614f3a693e0866161a86da8aa97d04607ca",
+    "TrainingData/bugs-bootstrap-review-v1.json": "1e0838e81c692a38b265ed7bf7d621341dbc13339a4d0203fe8e7c5e8e686da0",
+    "TrainingData/bugs-bootstrap-split-v1.json": "ac49f4d5b8382de5e82869aebf78dd639282ddb2a89cc05e9893d4fd4c908345",
+    "TrainingData/bugs-context-development-preset-v3.json": "02fa0e28576b705d48acc8613dcfa0193f1ade376b9368f6ff9e422312cb175b",
+    "TrainingData/bugs-context-review-v3.json": "9fd18cc614d1b9f21a9ca040acda27d073e0a6f323e456df846c502f02f8df8b",
+    "TrainingData/bugs-context-split-v2.json": "43193c61586693c9f90234a204e36dc4b1a18989f694bab1dd355e78b007071c",
+    "TrainingData/bugs-context-training-preset-v2.json": "653791cf11835e4ee55de43ce8e6037847dd5dfc73d379706f4c09e4c12af70a",
+    "TrainingData/bugs-field-review-v2.json": "b7a014bee7a8858485262f13749d9f977425cff139229b1b16cee35379edef50",
+    "TrainingData/bugs-field-scale-candidates-20261122.json": "351fab727a2ac9aa11499cf27372bd51ab3bade96b361ae0565a03408db1a44f",
+    "TrainingData/bugs-field-scale-training-plan-20261122.json": "cadff8b3d1364782dfe07ebc97557850a98b0120676284a07f5b87a5a1e84c50",
+    "TrainingData/bugs-fit-pilot-plan-20261122.json": "0833af7c460c89a5f454e45e91cb167c45f8dd9f1c8239ac77be5aed13dfec24",
+    "TrainingData/bugs-inat-camera-development-preset-20261122.json": "be2704788b53447cebbfd268279a51c0687562e828c5075d836c98d3f2c1be90",
+    "TrainingData/bugs-inat-context-comparison-preset-20261122.json": "2c79d5f70d604c5219aea8d21c2c8430a9c4ce5d14a9b6f555817abf2b0f56d2",
+    "TrainingData/bugs-inat-context-comparison-split-20261122.json": "d063ae8c9ce9da0c02f0c8fddc7fa1e35c8832a89c67d93cd4392de46a7650e8",
+    "TrainingData/bugs-inat-context-window-review-20261122.json": "a1968ea6e3e4d786be471b98e62c138a9155cb707b70b1239f1bfb897e84a82c",
+    "TrainingData/bugs-inat-development-review-20261122.json": "0ce87325ff67dc05033f4fb445f1b5f70a14f6e7a97ed05e7e74ab12c701f46d",
+    "TrainingData/bugs-inat-development-split-20261122.json": "3f0f24d8f99e68781f9f4b5198f802e84c391a6843eb27e5578fcecdf374be95",
+    "TrainingData/bugs-independent-context-positive-candidates-20261122.json": "cae6f7262ab1f8b077b5129b9ffe1c64c88ec6dda456e4b8448363848853c6d5",
+    "TrainingData/bugs-pet-training-negative-candidates-20261122.json": "4753b153d5b72eda46b9f45a1aebb6e4b3f6ee07969be8ea18f3b653d94ef011",
+    "TrainingData/bugs-red-edge-negative-candidates-20261122.json": "7a5d194f616650ef4c7afc34467a67d8e39ba7837f6f85b3f3d2eef519347a37",
+    "TrainingData/bugs-red-edge-training-plan-20261122.json": "8055256bbd722318a33586b07c1a8e6ed38c3e07d4786fb1cd09392ddfae37b8"
+  },
+  "transfer_bytes": 18585859,
+  "previous_images_checked": 233,
+  "bbox_convention": "640×480 reference, visible body and legs, excluding antennae and web.",
+  "staged": {
+    "counts": {
+      "train": 118,
+      "valid": 16
+    },
+    "appended": 22,
+    "merged_records_sha256": "7cd3efd6433b1ef08e12a96efbfdf790a100d0e139153bcbae31088eb26ffb04",
+    "manifest": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/merged-records.json",
+    "data_yaml": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/staged/data.yaml",
+    "data_yaml_sha256": "497d8ef8919eb4fa17d5f0a3c79b48544a0cc1cd1e1ba70740fc65f175164ffd",
+    "original_validation_image_and_label_count": 16,
+    "label_hashes": {
+      "train/labels/oi-850bfdf25e95a3ab.txt": "78523265c0fe80e89175d1aa27f04fc7939f9e22167d470359001dfb153be996",
+      "train/labels/oi-1d1ef6def56f4b91.txt": "282ff6e00e9b3c59aa571b0cb6e84c9c57638843cfb738961529f71df799e817",
+      "train/labels/oi-0b3097261f961399.txt": "cc5a0874762ef46043ba445b00a9ad13ce5cd64b4f5f09c9f4d16f2648b4b8bd",
+      "train/labels/oi-1f7bef3366b59a08.txt": "f3a6e848fde2da04e5595e3e3b62d73fa1863c39f4731902717f942426a66549",
+      "train/labels/oi-38b95b228d85e5bb.txt": "7b1e47f70f875b2adb02e520d0e5325aa3d7c6975dc30383190c38db75ab0330",
+      "valid/labels/oi-3b4d1022c2be3076.txt": "b80c0f7fc2fe27ac2d46aba5313d313caca47fc3632904967282fb514f4ef952",
+      "train/labels/oi-1ee2cfb26b6fe8e4.txt": "568ed215ca765651d4083b44f2c18d7cea4960f145b54cc585d0c2c429a65f9c",
+      "valid/labels/oi-69fd61f54406189c.txt": "41fe89360d4b134f3ded42ec9cd9a48dd230458677fb94987a40df1173240b85",
+      "train/labels/oi-50f231b09e848f15.txt": "05ad43504d559bc5e62a7a4f38c2954bc0da137dcbf3b84afbeb4de24b3657af",
+      "valid/labels/oi-1e868895fdbc938d.txt": "e12b020e688ad9e9950ccd05c00b0f8750374b1a69e80174439615dd2bc412a2",
+      "train/labels/oi-3ec20e93d8182fcb.txt": "2d7b9a0932f0980167996a1d123d96ecc899d294d6e4aa0405316d45cbb664d1",
+      "train/labels/oi-41eec28d727a251d.txt": "780af24a185b7dddbb75b700de1bf64e4ab1546c92bb770231180474634c7915",
+      "train/labels/oi-1d5bb9d9a8a49e84.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/oi-3f65d9a5db068b25.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "valid/labels/oi-2ca2d110708d96b5.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "valid/labels/oi-2e8edb16c6a09beb.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/inat-414708372.txt": "508e6323091959ff9e0819177262d59c33da6670d5e58a01060ec2d4b78c84d4",
+      "train/labels/inat-414319613.txt": "38a6d5a5ec825bd6e80595209ba0d01c965464f7dcd1617afea7015ce40dab36",
+      "train/labels/inat-414173185.txt": "134522b43dbaa474efb6adcea0e06a6ba29ef73d60985d6dba4ef4307c020062",
+      "train/labels/inat-413955771.txt": "9b83f8ac1111e00502f4ac4b02aef40b061226a497ce65de0ce0ebb7619a925b",
+      "valid/labels/inat-413866317.txt": "20c2e1590a35bcbce60dc3c9f73790a78401e1bfb4994955bb4186f487ab0e8e",
+      "train/labels/inat-413807289.txt": "3150dc7e36e2d9cc88802312ebe773769579bb5920e2ddfbc6432dd65e1a90be",
+      "train/labels/inat-413808525.txt": "372018664dab0fcbb52536e2c5bea7c044d9154becace26f94c089c35a00f776",
+      "train/labels/inat-414256437.txt": "58ad75374d03a4fbe682ce03dc63adc7b702d1ab2a50bbce95d166b605779002",
+      "valid/labels/inat-413336029.txt": "3f93eee755014a0b5d59149ccd5c10be295b62a185e76dba70472c604d94923b",
+      "train/labels/inat-407564596.txt": "f61ac66e01cf51ff9cd4f040b66364ad9574621ab9203b459c19314ac63d0893",
+      "train/labels/oi-5176cca60e245e3a.txt": "16f6ff5e8c63439c63f0904899ce5e80e4904e93232ef1d6cb0c8accf2e6d80d",
+      "train/labels/oi-0808bb2b3a4c4806.txt": "e2a93f4f23c8ca62e4317fcf169210f3636f26fc56857dbec5368209fddd1ed6",
+      "train/labels/oi-4c9770d8e47923f7.txt": "1e7d73dfceda608eced02d02e34395a706e7bea379cb4c4d5a0f447448e14a25",
+      "train/labels/oi-f4bc503126e6a120.txt": "78bb2dd9f5fbb4f7b9b52ad38f6d27171139b7132ce5e6caba8bce34c78a7518",
+      "train/labels/oi-0d9bfd132c9713ef.txt": "a948d9a50619687a8a7aa126c4637f6461e5d3d2c0c03253a89d606cfd3dd63f",
+      "train/labels/inat-413566989.txt": "db98583b2792fb3af632a3335a7cd784292032c1a5ff8d11e3806746bf06230c",
+      "train/labels/inat-413463271.txt": "2ca78e4f3be422b1122312c93bc4366994914e439c50e45527b8b70fd4fc1505",
+      "train/labels/inat-413117525.txt": "338b172b2cfb8836a1914eeea24e4236431c66b8df31261c25d77410620e9910",
+      "train/labels/inat-407476867.txt": "5222b2f0f4d731c0c5b12238f85505d1cd7e545e48959cdeb99db3107607dc04",
+      "train/labels/inat-407074275.txt": "1f9aa2baf601210b58bd97232ba2ca8481076c223c1e45510a91c384f1f4dc40",
+      "train/labels/oi-906aef475253614e.txt": "8a9b235b657095e7bdb7d69a7bfb02214edce1bf7afb06e03ca0187633865af4",
+      "train/labels/oi-013908ead6313e68.txt": "5bd1068d490fe92cd7fa0de1cb77f16fa8e87519df7924c63f4590523268511c",
+      "train/labels/oi-d9b8febc234466da.txt": "a238eff72f8a9a37e9d5008742147c83018692f5aafd59fb2339d83055bd0ed3",
+      "train/labels/oi-8d72713149d8a80f.txt": "080b6f74cc70f9eaf757cfffc10f775d0d8cfec9a162e032d65069f87ebbeb6e",
+      "train/labels/inat-412911056.txt": "a2dd3b6ef2d7386854bbc89846e916006fe5f92dafa0820a384317a02546d78f",
+      "train/labels/inat-406306045.txt": "525f048242b8e43c7f05ab67fab46ca92165d428fac9ba97cade8af8ae1e4766",
+      "train/labels/inat-404185081.txt": "caaa80c21a0f29ae9a96e55691c07cf23dd997a200a5e88571ebee2ba5443e78",
+      "train/labels/inat-404139179.txt": "b68b6382dcde0d6970395701c9e106ed58781db2ec704402e892818bd263e011",
+      "train/labels/inat-402366316.txt": "5c5c4509bdb8085f9f7a8d7e1c3c60238fcf3f0ac439595f6b4341ef78d25f02",
+      "train/labels/oi-102d28afba48a4b3.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/oi-ab40e0b2d821b440.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/oi-f3ae51c746781e5f.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/oi-8fe72eeea90087b1.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/oi-d8ef4bdbe1efe59b.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/oi-f443370194c5f693.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/oi-489076e07c213206.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/oi-45ed28848e14e7e2.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/oi-091af8d4a3c6c6f1.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "valid/labels/inat-photo-764263371.txt": "90ab0989b93cfb92efe6eb7b4167e3215a09d3146f1ccb497313760ab471dfa9",
+      "train/labels/inat-photo-758973482.txt": "ffdb6720aa4a4c73f80d50d0ad568ea2b0d017527d357fe7a46609fbaf0a7e61",
+      "valid/labels/inat-photo-728694053.txt": "ccad1e682184b5dcc20cfb0d5f4ff7ee63e51b1bf46c231c651f29d783a6a20d",
+      "train/labels/inat-photo-763815130.txt": "ed5f3b575fd3b6727f037402764783dcbd00ce770af990ef3038faa071bc90c2",
+      "train/labels/inat-photo-758797971.txt": "94dd26a755727ec3265ba1282d4b2a22fa1d82b375ef8e7e00b06ed6f344bb18",
+      "train/labels/inat-photo-757559118.txt": "7a26f2202dd6e4ae359ab3e2f14e8d8b81528a1eaec0c8eaad6e96dd2bef69a8",
+      "train/labels/inat-photo-755279132.txt": "664ddbd66d110bef75f99d823de9499be278a245fa91dcca59dfc64edba10ee3",
+      "train/labels/inat-photo-731170110.txt": "dfe5ca1c8e920d0e25c78000d957c7edb466a9579e2ff22414248bf88bb8d514",
+      "valid/labels/inat-photo-650680888.txt": "442d3acaab5cf2c9a535df9d2500d9616625244f0d47abed2529977f2428107e",
+      "train/labels/inat-photo-643908810.txt": "51ef2decf43a5b838bef84384205b1d09bf29fb45a7eb79003d065a6769d7f29",
+      "train/labels/inat-photo-632103681.txt": "4c3737736c048607aa6fa2fdbed2650c0348fd2aefe49b2921c2cd0c1786a016",
+      "valid/labels/inat-photo-760908156.txt": "460f6cccbc236474d0a93ee7c93c4e803455f69c41226d961a6eb7e6c3c21e65",
+      "train/labels/inat-photo-755845025.txt": "1ef02824b8fc88bac6605a7272ffaa8e62fcfda06fd057cc5df910507bf9f997",
+      "train/labels/inat-photo-755530248.txt": "00b8deb24b8a2979500e40c1fa00d530e76c7dc01d5481940e356ed9d92c7273",
+      "train/labels/inat-photo-754893044.txt": "cf845ca5a55d834910adb905226dcd147dc63015a83289a3f68a03480809712d",
+      "train/labels/inat-photo-759033422.txt": "ee388aaa9a9785da62c77f89cdc7231a680bbd50fe3bcea6e0aca4750d226ef4",
+      "train/labels/inat-photo-752842077.txt": "13fca16722e384defe9dde2ad46e8d01351c21e53c4360b4e84ac7b5e8c0b6a8",
+      "train/labels/inat-photo-737715330.txt": "171e18586b54f6a3a89cf82e0d36b90b0db00581f6922a089b713ee77402ac24",
+      "valid/labels/inat-photo-735254588.txt": "ad1eea41340a059ad95e955fca0f5589ce7e3e92ca33771277bdb1f15743c149",
+      "valid/labels/inat-photo-757893830.txt": "ff5bb2e5f41c7e9ebb073514c63a6c710c0edcc04ecaf4fd422cf1e8b2931ec2",
+      "train/labels/inat-photo-748964634.txt": "e5716d267ff1bb8828532e713471d722e8dff46d840899f1d910522492d4b022",
+      "train/labels/inat-photo-762537535.txt": "3d692ba418b2375e9d9900a0011104cacdfcd94e5b7c34198debbe8502dd39fb",
+      "train/labels/inat-photo-761996783.txt": "2367bf173c042aa77df4a0705459fc5c915ad62a4e9d1b5c2f8a0fa86168b050",
+      "train/labels/inat-photo-760441097.txt": "2d475ab4c3207ab263791781509e347f97b335da1020dede192893b814e5bdd0",
+      "train/labels/inat-photo-760202274.txt": "a2f7c4faab70dc3e23c219311c83f8380f69d92316c1512c36122e8bf53bd2dd",
+      "valid/labels/inat-photo-765910507.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/inat-photo-759942165.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/inat-photo-756286138.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/inat-photo-659700565.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "valid/labels/inat-photo-660083066.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/inat-photo-632180270.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/inat-photo-755738570.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "valid/labels/inat-photo-753600813.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/inat-photo-749825303.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/inat-photo-746683950.txt": "3e80c4a164c9ea42f72df95f7af25370bbe08728b36f8aa87ce3fb7a469a5abb",
+      "train/labels/inat-photo-414091176.txt": "f374e85c71cf9c95e00c38fba8bf42de633c581f17fdeed2b2667b6501629677",
+      "train/labels/inat-photo-80695738.txt": "5f074f0ff5067ad6abcf39dd2b356959482a785e1d310cdcc7bc847e5e9dc67d",
+      "train/labels/inat-photo-764250609.txt": "80f178e6b359b2a9c0ec299703b8e31a401a1756d2fe550c299388a50074ba92",
+      "train/labels/inat-photo-763709334.txt": "061c47fc78e7b591a6ec1bdf2ea34a938702fec883a8e7cec47f7b7104d5fc44",
+      "train/labels/inat-photo-761796218.txt": "b4be17fed8bb66570fffaace58b7f002e85fe646ea02b17609930bf2fa36a146",
+      "train/labels/inat-photo-745847632.txt": "2511be6d5fa5675adde4170932ed298ef7ea60dbeaa46ea711e7463c0134a544",
+      "train/labels/inat-photo-377757160.txt": "3dbe6ec29c65c256312892813a986b8aa416722712328a0a23af42db46445148",
+      "train/labels/inat-photo-269872189.txt": "73f39cf63f95881c8890f9e5cc24ed0e54dec19f873d08d900a38a09b37cea54",
+      "train/labels/inat-photo-120931504.txt": "757e57f7c8458f921b8b46598315b7d2e4679f819adc76799def96b7f7fa939e",
+      "train/labels/inat-photo-609508594.txt": "230f3aa6f86cfe412cc505f998db6b3b4f9ec243a8dfdf523bd1aec71243155c",
+      "train/labels/oi-34a430164080b5bd.txt": "9a1aeeb309548b3dd8187aea8ead65047a662035e95ca710e632b11207477f5b",
+      "train/labels/petneg-70d084caffbe49bb.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/petneg-87939b8b25ebdf29.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/petneg-bdd827df4ebaa702.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/petneg-533f1c7a8f8f6a8e.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/petneg-0f731adcd7458c2b.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/petneg-df547ecbec4313ca.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/red-edge-potting-bench.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/red-edge-painted-curb.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/red-edge-red-toolbox.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/red-edge-planter-madison.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/red-edge-garden-pots.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/red-edge-potting-soil.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/inat-photo-317256697.txt": "977c1f5381a66db6a3b09248bfc05ce25b787134a70c736de6a103579d9764d6",
+      "train/labels/inat-photo-126796499.txt": "e0c9fba4cdb93e7e51485b73574a15713af00057208fb85c293d4b2963da0b25",
+      "train/labels/inat-photo-748786573.txt": "1e152cdce25f344a573b4129afea9a6d5e6231dea3dabbd8b015ea7273b370f2",
+      "train/labels/inat-photo-746536852.txt": "5c0aff7e4406dbb166f1daae9a9b1e78103ac9353c74a7958b059c6f184e1ab7",
+      "train/labels/inat-photo-765190286.txt": "0b4172a7f1b3d8a662fdd1fad957f4aae6470d32f372eb63db52075ce9ccf79a",
+      "train/labels/inat-photo-762855541.txt": "6555a08e6c2434bbab0e9216b548ec0d3df76988a00a3bc4e0c920616db4bdee",
+      "train/labels/inat-photo-761659287.txt": "107deb814d252537e2ffdd0b2a87edb1641407263f2fd9c5b80490d8243dc5ca",
+      "train/labels/inat-photo-760619817.txt": "ed9887106a6f572245c8181cd0aa57b4a42fdb8fb097dc44077cafc069513274",
+      "train/labels/inat-photo-757141147.txt": "bcc0737dd567f3c6d1f5cb6e2b91f5444ba79d17796f791447e1680ec816faa0",
+      "train/labels/inat-photo-744908917.txt": "df3f35d82df30e1cc19e9423ff51ca8667d9f5750509ebbd42172691e4a629ae",
+      "train/labels/inat-photo-720575053.txt": "78da09c2ad505bc2b2d557604e66d33db4668ebb722624eed5694551344f7c94",
+      "train/labels/inat-photo-713040864.txt": "aebeb04e41bfdbb3374079caefceadb86866e5b2bf5f506dcb95123c6004e765",
+      "train/labels/inat-photo-711697781.txt": "2deedac0267fbdfd2d5b8cf39ab59061e606048535df2f716ab173e5f2a588e4",
+      "train/labels/inat-photo-547338677.txt": "6401f5b44b24bfd8403fbb0ebf6c56f5c71a970f006082a1622b9517632705ca",
+      "train/labels/inat-photo-467877009.txt": "5b669b485ee3a116631defcf33fb00e69873a1b16b2ea25c6e7dac46b2a0d8b3",
+      "train/labels/inat-photo-693780629.txt": "617063b62bddfaa4447d6d55bef24f6a415fc5de0ec26ce3298068f8d8c17008",
+      "train/labels/inat-photo-666161489.txt": "458f52fd3cc6de15609eb504a7911537053cab872fc9804d4968749b592c41e1",
+      "train/labels/inat-photo-538963195.txt": "fe3515ba608c804bde78e71a9994953789999e0945b318480641e5414408a3c6",
+      "train/labels/inat-photo-609845118.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/inat-photo-582785175.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/inat-photo-758187651.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train/labels/inat-photo-757171511.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "staged_bytes": 8562402
+  },
+  "rows": [
+    {
+      "key": "inat-photo-317256697",
+      "taxon": "Socca pustulosa",
+      "class_name": "Spider",
+      "photo": 317256697,
+      "context_query": "on the wall",
+      "observation": 182005576,
+      "author": "nibus",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-7249985",
+      "source_page": "https://www.inaturalist.org/observations/182005576",
+      "photo_page": "https://www.inaturalist.org/photos/317256697",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/317256697/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "6cf0419e6449e2c09cfb7cd992f58cccf1bfb10620093c15f065e4ceba9eb39c",
+      "pixel_sha256": "46a855cb9b96297dcc7a9bc053f1eab99d2f5010240169cc064e0036556b0401",
+      "size": [
+        768,
+        1024
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-317256697.jpg",
+      "bytes": 167265,
+      "prior_dhash_distance": 17,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-317256697.jpg",
+      "camera_sha256": "dc9eac59d3c995b266e2fd31e352b58eca5d078e4849a29a208cd1a3e014f0a5",
+      "xyxy_camera_px": [
+        334,
+        239,
+        370,
+        294
+      ],
+      "targets": [
+        {
+          "class": "Spider",
+          "xyxy_normalized": [
+            0.521875,
+            0.4979166666666667,
+            0.578125,
+            0.6125
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-317256697.txt",
+      "label_sha256": "977c1f5381a66db6a3b09248bfc05ce25b787134a70c736de6a103579d9764d6"
+    },
+    {
+      "key": "inat-photo-126796499",
+      "taxon": "Celaenia excavata",
+      "class_name": "Spider",
+      "photo": 126796499,
+      "context_query": "on the wall",
+      "observation": 77526123,
+      "author": "claudiarose",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-746590",
+      "source_page": "https://www.inaturalist.org/observations/77526123",
+      "photo_page": "https://www.inaturalist.org/photos/126796499",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/126796499/large.jpeg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "da011c65be195d12432621e5945f518a971ae15cb861121dd2449dfc203cc295",
+      "pixel_sha256": "d5019ce9376e0b22b9d5b773a879746f39f0f64a4753794f132a0c5725f01bcb",
+      "size": [
+        1024,
+        1024
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-126796499.jpg",
+      "bytes": 800348,
+      "prior_dhash_distance": 22,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-126796499.jpg",
+      "camera_sha256": "435c19d49d60b26409e8df339759d36a4d2427d49a8176d23c17aad5445e7901",
+      "xyxy_camera_px": [
+        211,
+        190,
+        386,
+        366
+      ],
+      "targets": [
+        {
+          "class": "Spider",
+          "xyxy_normalized": [
+            0.3296875,
+            0.3958333333333333,
+            0.603125,
+            0.7625
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-126796499.txt",
+      "label_sha256": "e0c9fba4cdb93e7e51485b73574a15713af00057208fb85c293d4b2963da0b25"
+    },
+    {
+      "key": "inat-photo-748786573",
+      "taxon": "Pholcus phalangioides",
+      "class_name": "Spider",
+      "photo": 748786573,
+      "context_query": null,
+      "observation": 407459637,
+      "author": "hemo_noises",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-2855236",
+      "source_page": "https://www.inaturalist.org/observations/407459637",
+      "photo_page": "https://www.inaturalist.org/photos/748786573",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/748786573/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "7f322b6fe5f19b3f677c607d83d34fd451864dc49a1b8ba3a52402814b6e6cab",
+      "pixel_sha256": "3cb28838f5861776bf5fa1f2435fa0ce254a470e6ba011573064ced75c6f886a",
+      "size": [
+        768,
+        1024
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-748786573.jpg",
+      "bytes": 464503,
+      "prior_dhash_distance": 16,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-748786573.jpg",
+      "camera_sha256": "934ca6f3309aa9e091d0c9f21ebbfb3b7a91e159c7a3db6170ef9e60af94373e",
+      "xyxy_camera_px": [
+        186,
+        174,
+        447,
+        457
+      ],
+      "targets": [
+        {
+          "class": "Spider",
+          "xyxy_normalized": [
+            0.290625,
+            0.3625,
+            0.6984375,
+            0.9520833333333333
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-748786573.txt",
+      "label_sha256": "1e152cdce25f344a573b4129afea9a6d5e6231dea3dabbd8b015ea7273b370f2"
+    },
+    {
+      "key": "inat-photo-748296106",
+      "taxon": "Pholcus phalangioides",
+      "class_name": "Spider",
+      "photo": 748296106,
+      "context_query": null,
+      "observation": 407218712,
+      "author": "arthurpearson24",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-7759513",
+      "source_page": "https://www.inaturalist.org/observations/407218712",
+      "photo_page": "https://www.inaturalist.org/photos/748296106",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/748296106/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "196cf7b10fa5b7246603f8f46f0f41bc82cbca6019e20747f7b0ce56f4eda00c",
+      "pixel_sha256": "d7caa10dd72ed6765796c52e838a17405fce12848bce12d71d56cbcc6cd91da1",
+      "size": [
+        461,
+        1024
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-748296106.jpg",
+      "bytes": 238692,
+      "prior_dhash_distance": 13,
+      "decision": "hold",
+      "review_note": "The spider overlaps a dark unidentified body and a second arthropod. Excluded pending instance review.",
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-748296106.jpg",
+      "camera_sha256": "1340aeb35369dba4144218895fde594be3158e2e08bf3e1402d77c01788532a5",
+      "xyxy_camera_px": null,
+      "targets": []
+    },
+    {
+      "key": "inat-photo-746536852",
+      "taxon": "Pholcus phalangioides",
+      "class_name": "Spider",
+      "photo": 746536852,
+      "context_query": null,
+      "observation": 406350268,
+      "author": "alansch0",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-9417113",
+      "source_page": "https://www.inaturalist.org/observations/406350268",
+      "photo_page": "https://www.inaturalist.org/photos/746536852",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/746536852/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "f814ef23095acc77659330f82d545ff2a58134d0b4294b81661e371f74f2f0db",
+      "pixel_sha256": "8f7bbf404b1b6479154f88132c14a2f6b18dcf415478dfa5249a16e4702bf54a",
+      "size": [
+        1024,
+        681
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-746536852.jpg",
+      "bytes": 340972,
+      "prior_dhash_distance": 17,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-746536852.jpg",
+      "camera_sha256": "6cd23a313445596b3ba436be2d1553731fbec16099abf38ea029ad6f6c86e91b",
+      "xyxy_camera_px": [
+        37,
+        86,
+        414,
+        449
+      ],
+      "targets": [
+        {
+          "class": "Spider",
+          "xyxy_normalized": [
+            0.0578125,
+            0.17916666666666667,
+            0.646875,
+            0.9354166666666667
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-746536852.txt",
+      "label_sha256": "5c0aff7e4406dbb166f1daae9a9b1e78103ac9353c74a7958b059c6f184e1ab7"
+    },
+    {
+      "key": "inat-photo-765190286",
+      "taxon": "Salticus scenicus",
+      "class_name": "Spider",
+      "photo": 765190286,
+      "context_query": null,
+      "observation": 415544102,
+      "author": "drew_baxter",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-5403537",
+      "source_page": "https://www.inaturalist.org/observations/415544102",
+      "photo_page": "https://www.inaturalist.org/photos/765190286",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/765190286/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "4e597dd0191ffb40378c1ece6d2028cef8d878d92c5cffb7dae726d523200a52",
+      "pixel_sha256": "c5f4196f6c76b5f66f3dfab31a0e3a00079e36de96e88747118d7a4ae4d97e76",
+      "size": [
+        973,
+        1024
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-765190286.jpg",
+      "bytes": 318618,
+      "prior_dhash_distance": 18,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-765190286.jpg",
+      "camera_sha256": "a19a8b9fa5ff336143f979b6042ebccf6b6af295a3fa19f97d5ef2ac447be2c7",
+      "xyxy_camera_px": [
+        249,
+        185,
+        418,
+        351
+      ],
+      "targets": [
+        {
+          "class": "Spider",
+          "xyxy_normalized": [
+            0.3890625,
+            0.3854166666666667,
+            0.653125,
+            0.73125
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-765190286.txt",
+      "label_sha256": "0b4172a7f1b3d8a662fdd1fad957f4aae6470d32f372eb63db52075ce9ccf79a"
+    },
+    {
+      "key": "inat-photo-762855541",
+      "taxon": "Salticus scenicus",
+      "class_name": "Spider",
+      "photo": 762855541,
+      "context_query": null,
+      "observation": 414393326,
+      "author": "ben142",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-8953913",
+      "source_page": "https://www.inaturalist.org/observations/414393326",
+      "photo_page": "https://www.inaturalist.org/photos/762855541",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/762855541/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "b29098df9da3d87aa83f90751d8c5c65de441b205813872a5fe627ba8492d744",
+      "pixel_sha256": "21c7d37c1f31b877cf4b0ead55c24071d8c97f3d25f90592976f0a1c1ddde99d",
+      "size": [
+        342,
+        342
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-762855541.jpg",
+      "bytes": 112144,
+      "prior_dhash_distance": 20,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-762855541.jpg",
+      "camera_sha256": "8088f6e6f76ed15c5808829e561ff1953ff95270e45830e5f872a9b593652377",
+      "xyxy_camera_px": [
+        102,
+        62,
+        543,
+        419
+      ],
+      "targets": [
+        {
+          "class": "Spider",
+          "xyxy_normalized": [
+            0.159375,
+            0.12916666666666668,
+            0.8484375,
+            0.8729166666666667
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-762855541.txt",
+      "label_sha256": "6555a08e6c2434bbab0e9216b548ec0d3df76988a00a3bc4e0c920616db4bdee"
+    },
+    {
+      "key": "inat-photo-761659287",
+      "taxon": "Salticus scenicus",
+      "class_name": "Spider",
+      "photo": 761659287,
+      "context_query": null,
+      "observation": 413804203,
+      "author": "spinky_archaeognatha",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-10963153",
+      "source_page": "https://www.inaturalist.org/observations/413804203",
+      "photo_page": "https://www.inaturalist.org/photos/761659287",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/761659287/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "be306a1bd87b22738910c526ca389726607998541ee8ee8420595c9517e3e4f0",
+      "pixel_sha256": "90630bd07244d290020adb0f18daaf510f0471621571d8c82fb12ffd65426c85",
+      "size": [
+        576,
+        1024
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-761659287.jpg",
+      "bytes": 441170,
+      "prior_dhash_distance": 11,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-761659287.jpg",
+      "camera_sha256": "68e61a137fb2e86a6f30bbebc7a52ea8240df7bd359e1cae41bec77a55de18b2",
+      "xyxy_camera_px": [
+        333,
+        151,
+        365,
+        193
+      ],
+      "targets": [
+        {
+          "class": "Spider",
+          "xyxy_normalized": [
+            0.5203125,
+            0.3145833333333333,
+            0.5703125,
+            0.40208333333333335
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-761659287.txt",
+      "label_sha256": "107deb814d252537e2ffdd0b2a87edb1641407263f2fd9c5b80490d8243dc5ca"
+    },
+    {
+      "key": "inat-photo-760619817",
+      "taxon": "Tegenaria domestica",
+      "class_name": "Spider",
+      "photo": 760619817,
+      "context_query": null,
+      "observation": 413284138,
+      "author": "klemetti",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-8233927",
+      "source_page": "https://www.inaturalist.org/observations/413284138",
+      "photo_page": "https://www.inaturalist.org/photos/760619817",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/760619817/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "4d57e58e86bfefbd04803391ad17b5485cc4c78992cabb8c0a1991503d459fc4",
+      "pixel_sha256": "130d69a9d81eda996797b453f0de3b351750b845b8f25ce06fd5770c134f122e",
+      "size": [
+        768,
+        1024
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-760619817.jpg",
+      "bytes": 257779,
+      "prior_dhash_distance": 18,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-760619817.jpg",
+      "camera_sha256": "14fb997eb013f71ec9f5c938f858f20cabaece9307f59c488428eb65566128ef",
+      "xyxy_camera_px": [
+        208,
+        169,
+        345,
+        307
+      ],
+      "targets": [
+        {
+          "class": "Spider",
+          "xyxy_normalized": [
+            0.325,
+            0.35208333333333336,
+            0.5390625,
+            0.6395833333333333
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-760619817.txt",
+      "label_sha256": "ed9887106a6f572245c8181cd0aa57b4a42fdb8fb097dc44077cafc069513274"
+    },
+    {
+      "key": "inat-photo-757141147",
+      "taxon": "Tegenaria domestica",
+      "class_name": "Spider",
+      "photo": 757141147,
+      "context_query": null,
+      "observation": 411570180,
+      "author": "sambuckton",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-2947560",
+      "source_page": "https://www.inaturalist.org/observations/411570180",
+      "photo_page": "https://www.inaturalist.org/photos/757141147",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/757141147/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "973492bd828e83f86bbe5f37cd642690c3de61f8f6e813ad448a55b742f33878",
+      "pixel_sha256": "9bb3023c681f6b0a4dab74116a0bbf220a927b9c6b895c09e3854ccbbbe3915a",
+      "size": [
+        1024,
+        768
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-757141147.jpg",
+      "bytes": 169999,
+      "prior_dhash_distance": 14,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-757141147.jpg",
+      "camera_sha256": "0d60ab5231cf3fcd220ee27573bd536eae7c748cfa9d0f6b1f2e54f124139260",
+      "xyxy_camera_px": [
+        218,
+        113,
+        406,
+        367
+      ],
+      "targets": [
+        {
+          "class": "Spider",
+          "xyxy_normalized": [
+            0.340625,
+            0.23541666666666666,
+            0.634375,
+            0.7645833333333333
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-757141147.txt",
+      "label_sha256": "bcc0737dd567f3c6d1f5cb6e2b91f5444ba79d17796f791447e1680ec816faa0"
+    },
+    {
+      "key": "inat-photo-744908917",
+      "taxon": "Tegenaria domestica",
+      "class_name": "Spider",
+      "photo": 744908917,
+      "context_query": null,
+      "observation": 405537992,
+      "author": "giorgio169",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-5846286",
+      "source_page": "https://www.inaturalist.org/observations/405537992",
+      "photo_page": "https://www.inaturalist.org/photos/744908917",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/744908917/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "38f3691bc5263bb1a50d58ef6897fff60bf4473396758ef1eadbee1ca39b5244",
+      "pixel_sha256": "b98aed45b1c83a3008b45de2460e7dc9ead9062791245cce7dd8397d6b629204",
+      "size": [
+        925,
+        1024
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-744908917.jpg",
+      "bytes": 383390,
+      "prior_dhash_distance": 17,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-744908917.jpg",
+      "camera_sha256": "cbc2b7cdcfd0daf9837fb20dbcae6cb60f1e3b68466c826e5c47ca004225b0e4",
+      "xyxy_camera_px": [
+        165,
+        0,
+        504,
+        451
+      ],
+      "targets": [
+        {
+          "class": "Spider",
+          "xyxy_normalized": [
+            0.2578125,
+            0.0,
+            0.7875,
+            0.9395833333333333
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-744908917.txt",
+      "label_sha256": "df3f35d82df30e1cc19e9423ff51ca8667d9f5750509ebbd42172691e4a629ae"
+    },
+    {
+      "key": "inat-photo-720575053",
+      "taxon": "Blattella germanica",
+      "class_name": "Cockroach",
+      "photo": 720575053,
+      "context_query": null,
+      "observation": 393143980,
+      "author": "yaroslaveremin",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-8292316",
+      "source_page": "https://www.inaturalist.org/observations/393143980",
+      "photo_page": "https://www.inaturalist.org/photos/720575053",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/720575053/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "5c1659140aea7967d5136feaff5d6b917ef96a47e1999bb3ebad4f708acb413c",
+      "pixel_sha256": "d9e3bf31f2bedd24a75a0be0d54c50b0344223c780f233a2010a448143be1f77",
+      "size": [
+        856,
+        1024
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-720575053.jpg",
+      "bytes": 617891,
+      "prior_dhash_distance": 20,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-720575053.jpg",
+      "camera_sha256": "1c0e7cca2b736c9854428f56720861546f8710653fdd7828dbdad03b72395488",
+      "xyxy_camera_px": [
+        233,
+        134,
+        461,
+        374
+      ],
+      "targets": [
+        {
+          "class": "Cockroach",
+          "xyxy_normalized": [
+            0.3640625,
+            0.2791666666666667,
+            0.7203125,
+            0.7791666666666667
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-720575053.txt",
+      "label_sha256": "78da09c2ad505bc2b2d557604e66d33db4668ebb722624eed5694551344f7c94"
+    },
+    {
+      "key": "inat-photo-713040864",
+      "taxon": "Blattella germanica",
+      "class_name": "Cockroach",
+      "photo": 713040864,
+      "context_query": null,
+      "observation": 389280455,
+      "author": "normorality-zhou",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-5760205",
+      "source_page": "https://www.inaturalist.org/observations/389280455",
+      "photo_page": "https://www.inaturalist.org/photos/713040864",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/713040864/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "bf1130d98176c9cca9fe5d74c36328b7c07f526660a800a9dd510018630f490b",
+      "pixel_sha256": "bab410b1dfb175fcf6bda2001be4b59c983bf293b31ec79d58c29a899c6a17ff",
+      "size": [
+        576,
+        1024
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-713040864.jpg",
+      "bytes": 381262,
+      "prior_dhash_distance": 23,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-713040864.jpg",
+      "camera_sha256": "6fb7b70d65a95940231b3e17c02f166e31be721798cd4ca54d64eba4c2efbec2",
+      "xyxy_camera_px": [
+        306,
+        255,
+        350,
+        297
+      ],
+      "targets": [
+        {
+          "class": "Cockroach",
+          "xyxy_normalized": [
+            0.478125,
+            0.53125,
+            0.546875,
+            0.61875
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-713040864.txt",
+      "label_sha256": "aebeb04e41bfdbb3374079caefceadb86866e5b2bf5f506dcb95123c6004e765"
+    },
+    {
+      "key": "inat-photo-711697781",
+      "taxon": "Blattella germanica",
+      "class_name": "Cockroach",
+      "photo": 711697781,
+      "context_query": null,
+      "observation": 388580541,
+      "author": "ollief09",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-7339890",
+      "source_page": "https://www.inaturalist.org/observations/388580541",
+      "photo_page": "https://www.inaturalist.org/photos/711697781",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/711697781/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "5df56c643e87c7bcc1f0739afd5ebeb4c61f7df1a6e492fd0a9cc01e88afd53d",
+      "pixel_sha256": "17a5c3912c15c1258f4fb9f341b72779a9de818dcd52c0728b6891eaa760f462",
+      "size": [
+        1024,
+        768
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-711697781.jpg",
+      "bytes": 764554,
+      "prior_dhash_distance": 13,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-711697781.jpg",
+      "camera_sha256": "0effe83406054e551c2dbbc13c2efbac808a33cc4778cc377f10e168c2cd8556",
+      "xyxy_camera_px": [
+        329,
+        239,
+        365,
+        273
+      ],
+      "targets": [
+        {
+          "class": "Cockroach",
+          "xyxy_normalized": [
+            0.5140625,
+            0.4979166666666667,
+            0.5703125,
+            0.56875
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-711697781.txt",
+      "label_sha256": "2deedac0267fbdfd2d5b8cf39ab59061e606048535df2f716ab173e5f2a588e4"
+    },
+    {
+      "key": "inat-photo-547338677",
+      "taxon": "Supella longipalpa",
+      "class_name": "Cockroach",
+      "photo": 547338677,
+      "context_query": null,
+      "observation": 303659785,
+      "author": "brechtverstraete",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-3167151",
+      "source_page": "https://www.inaturalist.org/observations/303659785",
+      "photo_page": "https://www.inaturalist.org/photos/547338677",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/547338677/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "22bdb2f97811e01cec175378173ddbfa61c63d038b6abd11dc01eed25b46ebf5",
+      "pixel_sha256": "f5e4cf16280867601b0743ef7ac0058f8b134e7965f7948bc70439cac0b9c32c",
+      "size": [
+        576,
+        1024
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-547338677.jpg",
+      "bytes": 327874,
+      "prior_dhash_distance": 17,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-547338677.jpg",
+      "camera_sha256": "ca52df9996c5469914659a823cfe93b18f01a48c047c939d705f7b47b603fb59",
+      "xyxy_camera_px": [
+        267,
+        186,
+        367,
+        279
+      ],
+      "targets": [
+        {
+          "class": "Cockroach",
+          "xyxy_normalized": [
+            0.4171875,
+            0.3875,
+            0.5734375,
+            0.58125
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-547338677.txt",
+      "label_sha256": "6401f5b44b24bfd8403fbb0ebf6c56f5c71a970f006082a1622b9517632705ca"
+    },
+    {
+      "key": "inat-photo-467877009",
+      "taxon": "Supella longipalpa",
+      "class_name": "Cockroach",
+      "photo": 467877009,
+      "context_query": null,
+      "observation": 260523521,
+      "author": "adamwargon",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-8036609",
+      "source_page": "https://www.inaturalist.org/observations/260523521",
+      "photo_page": "https://www.inaturalist.org/photos/467877009",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/467877009/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "90be34c9df8e4de1ca362c94d49dfe10f3e552047784cfc0d3d620313060188a",
+      "pixel_sha256": "9e99e09fe6f1913ca51520e2be7e15cc5fa9801fa70e63431803370456c823bd",
+      "size": [
+        698,
+        931
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-467877009.jpg",
+      "bytes": 479360,
+      "prior_dhash_distance": 19,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-467877009.jpg",
+      "camera_sha256": "53b64a0a17d11149786484ca63581bf98c0834aa6fd33e09b44d134073ed26ac",
+      "xyxy_camera_px": [
+        255,
+        157,
+        423,
+        366
+      ],
+      "targets": [
+        {
+          "class": "Cockroach",
+          "xyxy_normalized": [
+            0.3984375,
+            0.32708333333333334,
+            0.6609375,
+            0.7625
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-467877009.txt",
+      "label_sha256": "5b669b485ee3a116631defcf33fb00e69873a1b16b2ea25c6e7dac46b2a0d8b3"
+    },
+    {
+      "key": "inat-photo-693780629",
+      "taxon": "Parcoblatta virginica",
+      "class_name": "Cockroach",
+      "photo": 693780629,
+      "context_query": null,
+      "observation": 379287120,
+      "author": "sgtbird08",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-1334078",
+      "source_page": "https://www.inaturalist.org/observations/379287120",
+      "photo_page": "https://www.inaturalist.org/photos/693780629",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/693780629/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "c3c0617150a7a53dcf36265837e2da2d3c8222043c7e5e21b6495aa2ec7cb6ce",
+      "pixel_sha256": "eeb59e0d6ea1bc44024552a987bb210a2e684c10f159d4181150d400fdcac10a",
+      "size": [
+        1024,
+        973
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-693780629.jpg",
+      "bytes": 913379,
+      "prior_dhash_distance": 19,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-693780629.jpg",
+      "camera_sha256": "f673a2b4077aa9fd62afeaa4fdc907e4ba5f55ca73281dbb6267762c83d31907",
+      "xyxy_camera_px": [
+        158,
+        102,
+        430,
+        304
+      ],
+      "targets": [
+        {
+          "class": "Cockroach",
+          "xyxy_normalized": [
+            0.246875,
+            0.2125,
+            0.671875,
+            0.6333333333333333
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-693780629.txt",
+      "label_sha256": "617063b62bddfaa4447d6d55bef24f6a415fc5de0ec26ce3298068f8d8c17008"
+    },
+    {
+      "key": "inat-photo-666161489",
+      "taxon": "Parcoblatta virginica",
+      "class_name": "Cockroach",
+      "photo": 666161489,
+      "context_query": null,
+      "observation": 364893704,
+      "author": "jennifer68460",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-7152060",
+      "source_page": "https://www.inaturalist.org/observations/364893704",
+      "photo_page": "https://www.inaturalist.org/photos/666161489",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/666161489/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "4579cd5b82e67e5b9930ad8a0f7ad516238e8c32503d6b837a77b3619fe00210",
+      "pixel_sha256": "023e2917406f16d31ea659bc1c3a958f05621d8e3827157f420e0d6a34dc818a",
+      "size": [
+        576,
+        1024
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-666161489.jpg",
+      "bytes": 484469,
+      "prior_dhash_distance": 19,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-666161489.jpg",
+      "camera_sha256": "e955f289f20f92dff7fd0e031558fa437329bdba87b687be0e5413c125c76dd7",
+      "xyxy_camera_px": [
+        246,
+        181,
+        382,
+        272
+      ],
+      "targets": [
+        {
+          "class": "Cockroach",
+          "xyxy_normalized": [
+            0.384375,
+            0.3770833333333333,
+            0.596875,
+            0.5666666666666667
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-666161489.txt",
+      "label_sha256": "458f52fd3cc6de15609eb504a7911537053cab872fc9804d4968749b592c41e1"
+    },
+    {
+      "key": "inat-photo-538963195",
+      "taxon": "Parcoblatta virginica",
+      "class_name": "Cockroach",
+      "photo": 538963195,
+      "context_query": null,
+      "observation": 299165329,
+      "author": "potatocthulhu",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-4159873",
+      "source_page": "https://www.inaturalist.org/observations/299165329",
+      "photo_page": "https://www.inaturalist.org/photos/538963195",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/538963195/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "3304cd6220683bfd2f743f0162dcf539e09bc8d564e018a759d0c9e7e6d7b9d4",
+      "pixel_sha256": "03ae1920ace751d8d0246a085dbe2188854d359d28a7323ca57cdd654fdd52c3",
+      "size": [
+        577,
+        1024
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-538963195.jpg",
+      "bytes": 541596,
+      "prior_dhash_distance": 18,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-538963195.jpg",
+      "camera_sha256": "9ba2b51fe5717367cda4415fdea224aeca049431ec4bc9ef4dcabb3d9adc238d",
+      "xyxy_camera_px": [
+        317,
+        186,
+        384,
+        299
+      ],
+      "targets": [
+        {
+          "class": "Cockroach",
+          "xyxy_normalized": [
+            0.4953125,
+            0.3875,
+            0.6,
+            0.6229166666666667
+          ]
+        }
+      ],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-538963195.txt",
+      "label_sha256": "fe3515ba608c804bde78e71a9994953789999e0945b318480641e5414408a3c6"
+    },
+    {
+      "key": "inat-photo-609845118",
+      "taxon": "Lepisma saccharinum",
+      "class_name": "Other",
+      "photo": 609845118,
+      "context_query": null,
+      "observation": 335672769,
+      "author": "dissectedfrog",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-8588769",
+      "source_page": "https://www.inaturalist.org/observations/335672769",
+      "photo_page": "https://www.inaturalist.org/photos/609845118",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/609845118/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "609ee1a85dcf81e225b654c44f45940e83c26c8ac0bae72f3bf306474a0472f2",
+      "pixel_sha256": "db7e3d3367e4664e69f8dddb33b27f434b78aab173ea79cc405e0f3493c8e665",
+      "size": [
+        575,
+        1024
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-609845118.jpg",
+      "bytes": 432421,
+      "prior_dhash_distance": 20,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-609845118.jpg",
+      "camera_sha256": "813008e3dcae2aeab73c1fceae42a3f99ddbb0a1723d88432ec2c90a9035a227",
+      "xyxy_camera_px": null,
+      "targets": [],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-609845118.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "key": "inat-photo-582785175",
+      "taxon": "Lepisma saccharinum",
+      "class_name": "Other",
+      "photo": 582785175,
+      "context_query": null,
+      "observation": 322180895,
+      "author": "centaurea_c",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-4688047",
+      "source_page": "https://www.inaturalist.org/observations/322180895",
+      "photo_page": "https://www.inaturalist.org/photos/582785175",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/582785175/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "e386ac1d03a5771480bf5184def7428ea2c97e37236c245c952e9ca184a5132b",
+      "pixel_sha256": "8ead063d7e41ec309f5a352241597851176f6153fd74d079472054dc89ae73d8",
+      "size": [
+        1024,
+        949
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-582785175.jpg",
+      "bytes": 556376,
+      "prior_dhash_distance": 14,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-582785175.jpg",
+      "camera_sha256": "e00dda4c389fc20758a2cd00c275b05b7fbb2902a309e0fd021b65dcbcc4a931",
+      "xyxy_camera_px": null,
+      "targets": [],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-582785175.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "key": "inat-photo-758187651",
+      "taxon": "Phalangium opilio",
+      "class_name": "Other",
+      "photo": 758187651,
+      "context_query": null,
+      "observation": 412084294,
+      "author": "szhang",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-225355",
+      "source_page": "https://www.inaturalist.org/observations/412084294",
+      "photo_page": "https://www.inaturalist.org/photos/758187651",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/758187651/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "75dde09602d09728a912cd59cef9d839de71fbad9228badbf74fb40edff81717",
+      "pixel_sha256": "c57c3d14de40737c5dc33880f61134326c5eec3a27ee5e8c280e22ed4cc33397",
+      "size": [
+        768,
+        1024
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-758187651.jpg",
+      "bytes": 392170,
+      "prior_dhash_distance": 20,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-758187651.jpg",
+      "camera_sha256": "0a62069deb4d572b8bcee937182954da9d25738b2c79f93f21cdd5991ea717b4",
+      "xyxy_camera_px": null,
+      "targets": [],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-758187651.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "key": "inat-photo-757171511",
+      "taxon": "Phalangium opilio",
+      "class_name": "Other",
+      "photo": 757171511,
+      "context_query": null,
+      "observation": 411576145,
+      "author": "meaupton",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-6237323",
+      "source_page": "https://www.inaturalist.org/observations/411576145",
+      "photo_page": "https://www.inaturalist.org/photos/757171511",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/757171511/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "dc05f71a95c5ea1488ad948b5fd8bd99b92c95ed1a15e88d7b780ee6bd151bb4",
+      "pixel_sha256": "3471de4e6b63474ea864b5f1012d6de7b8bf53b2062590266f1d6d551a7af5b8",
+      "size": [
+        768,
+        1024
+      ],
+      "source_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/images/inat-photo-757171511.jpg",
+      "bytes": 250831,
+      "prior_dhash_distance": 19,
+      "decision": "train",
+      "review_note": null,
+      "camera_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/frames/inat-photo-757171511.jpg",
+      "camera_sha256": "7f107a17e67c0164d8a4d60e35236b67e326e1a8839bb8768bcceff704c92c4d",
+      "xyxy_camera_px": null,
+      "targets": [],
+      "label_path": ".codex-tmp/yolo-training/bugs-inat-training-context-20261123/labels/inat-photo-757171511.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "accepted_for_deployment": false
+}
