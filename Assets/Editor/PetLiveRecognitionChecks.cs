@@ -18,13 +18,19 @@ public static partial class PetLiveRecognitionChecks
     const string Running = "MagicMR.PetLiveRecognitionChecks";
     const string Metric = Running + ".Metric";
     const string HeadContact = Running + ".HeadContact";
+    const string DogMetric = Running + ".DogMetric";
     static bool Calibrated => SessionState.GetBool(Metric, false);
     static bool CheckingHeadContact => SessionState.GetBool(HeadContact, false);
+    static bool CheckingDogMetric => SessionState.GetBool(DogMetric, false);
+    static string MetricSpecies => CheckingDogMetric ? "Dog" : "Cat";
     static string Input => CheckingHeadContact ? ".codex-tmp/pet-live-head-fixture" :
+        CheckingDogMetric ? ".codex-tmp/pet-live-dog-metric-fixture" :
         Calibrated ? ".codex-tmp/pet-live-metric-fixture" : ".codex-tmp/pet-live-recognition-fixture";
     static string Output => CheckingHeadContact ? ".codex-tmp/pet-live-head-checks" :
+        CheckingDogMetric ? ".codex-tmp/pet-live-dog-metric-checks" :
         Calibrated ? ".codex-tmp/pet-live-metric-checks" : ".codex-tmp/pet-live-recognition-checks";
-    static string Weights => Calibrated ? CandidateWeights : "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36";
+    static string Weights => Calibrated && !CheckingDogMetric ?
+        CandidateWeights : "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36";
     static readonly List<string> replies = new();
     static readonly List<string> trace = new();
     static ParkStereoReceiver receiver;
@@ -48,11 +54,13 @@ public static partial class PetLiveRecognitionChecks
     public static void Run() => Begin(false);
     public static void RunCalibrated() => Begin(true);
     public static void RunHeadContact() => Begin(true, true);
+    public static void RunCalibratedDog() => Begin(true, dogMetric: true);
 
-    static void Begin(bool calibrated, bool headContact = false)
+    static void Begin(bool calibrated, bool headContact = false, bool dogMetric = false)
     {
         SessionState.SetBool(Metric, calibrated);
         SessionState.SetBool(HeadContact, headContact);
+        SessionState.SetBool(DogMetric, dogMetric);
         Require(Directory.Exists(Input) && !Directory.Exists(Output), "Pet fixture or output path is invalid.");
         Directory.CreateDirectory(Output);
         File.WriteAllText(Path.Combine(Output, "result.txt"), "RUNNING");

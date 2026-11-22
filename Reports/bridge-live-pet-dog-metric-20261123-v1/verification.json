@@ -1,0 +1,100 @@
+{
+  "sourceBase": "d175a8e3525ea8070319d80de94767b4b98c4583",
+  "checkedAtUtc": "2026-11-22T19:21:46.6462801Z",
+  "publicInput": {
+    "source": "https://www.cs.cmu.edu/~totalrecon/totalrecon_rawdata.tar.gz",
+    "archive": 2101387633,
+    "verifiedPrefixMiB": 384,
+    "downloadedThisMilestoneMiB": 256,
+    "etag": "\"7d40a171-60327e103e280\"",
+    "observedReprojectionMediansPx": {
+      "supplied": 8.9293,
+      "inverse": 515.0497,
+      "translationTimes0.2": 80.5983,
+      "translationTimes5": 379.9937
+    },
+    "sourceSubject": "humandog-stereo000-animal",
+    "baselineM": 0.30094676582480867,
+    "sourceFrames": 55,
+    "releaseOfflineCounts": {
+      "frames": 55,
+      "correctDogs": 54,
+      "spatialBodies": 22,
+      "visibleShape": 5,
+      "singleEyeShape": 3,
+      "eyesConfirmed": 0,
+      "singleEyeConfirmed": 0
+    }
+  },
+  "metricDog": {
+    "samples": [
+      {
+        "sourceFrame": 147,
+        "stereoM": 2.264,
+        "lidarM": 2.18,
+        "samples": 6
+      },
+      {
+        "sourceFrame": 148,
+        "stereoM": 2.335,
+        "lidarM": 2.179,
+        "samples": 6
+      },
+      {
+        "sourceFrame": 149,
+        "stereoM": 2.315,
+        "lidarM": 2.222,
+        "samples": 8
+      }
+    ],
+    "frameReplies": 44,
+    "warmup": 1,
+    "sessionId": "1b2b3f412baf:left:1",
+    "weightsSha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+    "verifiedEffects": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "shortLossReset": true
+  },
+  "regressionCat": {
+    "frameReplies": 37,
+    "catCandidateWeights": "85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5",
+    "sessionId": "5ca78fd685af:left:1"
+  },
+  "verificationSource": {
+    "Assets/Editor/PetLiveRecognitionChecks.cs": "a0e68a6f4443e39df40a049ef7f9282cd445497bee40e2d504933c91794eee0a",
+    "Assets/Editor/PetLiveRecognitionMetric.cs": "9c263b3c6732750fc9abbb1279495adf214aba129a466a763f8b8e3ae449537a",
+    "Tools/run_room_magic_review_bounded.ps1": "72e46232d1996e15c5f5890c6b71c963c434dc769c34b62fc101b3d442e42abe"
+  },
+  "inspectedPublicFramesLocalOnlySha256": "89aab9808fbc66f5f00c909f38756780e0608a919f8a211f861925718f2a930f",
+  "artifactSha256": {
+    "Reports/bridge-live-pet-dog-metric-20261123-v1/editor-input.json": "39feb8d4768ce6938dfb5d74fe1fed9c0dd13c13a58a830120b157360dc694f7",
+    "Reports/bridge-live-pet-dog-metric-20261123-v1/restoration.json": "e17481c4f924dc304d713e15b8cd3f6613ef3db721cc3b28e3633dbef52e7e0f",
+    "Reports/bridge-live-pet-dog-metric-20261123-v1/captures/trace.txt": "a380da999027851c866adcb8d7a4e08c9926b272ac9f341282cddeced034c74a",
+    "Reports/bridge-live-pet-dog-metric-20261123-v1/captures/live-picf-replies.jsonl": "157cac2411dc575745285bbd3e35914092e1b483565411ff9f0faee5f5f4fde8",
+    "Reports/bridge-live-pet-dog-metric/bridge-live-pet-dog-metric-20261123-v1/resources.json": "80d52cc42e316c5e90ceeb750d643b0e3dbb031e7a6f3f1d518f0921c6862a38",
+    "Reports/bridge-live-pet-dog-metric-20261123-v1/service-resources.json": "64cfff5c4ae7981e13c2d075b494692528509eac39827e083aa1d2a865fb5cd9",
+    "Reports/bridge-live-pet-metric-20261123-v6/captures/trace.txt": "7b4d0f2e8a7ee25da762579fd197ab3c345661290ea138c7d714b3e1e2737888",
+    "Reports/bridge-live-pet-metric/bridge-live-pet-metric-20261123-v6/resources.json": "e781404d8cc857584356cb8901f98e7d6ce2e2afbcdaa793990bea7c30e4333e",
+    "Reports/pet-totalrecon-dog-input-20261123-v1/acquisition.json": "507b7aca0e30c9e2d21ed089965c86482ebd4a62ce1ee01da0a478444781dbfc",
+    "Reports/pet-totalrecon-dog-input-20261123-v1/sample-input.json": "4fb5fc5d5fc542db49047f01c5847f9258fdc6b86b2ceea75912c482212e1dea",
+    "Reports/pet-totalrecon-dog-input-20261123-v1/carried-calibration.json": "b6bb1f0b138a9d20be88775f42083b5af0d79eae9b3ec1c25083f1b6b8188a7d",
+    "Reports/public-pet-metric-dog-20261123-v1/result.json": "e310e8157ac78446d4e072a0263e0e6049fc403bd8f01711dae757d13b84a736",
+    "Reports/public-pet-metric-dog-20261123-v1/picf.json": "db43031cf9c1a56746a0c13e96351b6576f9b3571371b5adabc5c6bf09a57471",
+    "Reports/public-pet-metric-dog-20261123-v1/resources.json": "17943535c30d0977b9eb3d67a880d5a97009e7943a7528465c4c38fbab814e49",
+    "Reports/bridge-live-pet-dog-metric-20261123-v1/captures/Appearance.png": "046e90eaf704d329646a2ac4ae613a5a9fc70f43a8a81b8e1b232580e5512424",
+    "Reports/bridge-live-pet-dog-metric-20261123-v1/captures/Agency.png": "80fb3571cad650e41954cd1ac9c4ee99ab3f3f4d3ba920cafc6bb4a83170ef45",
+    "Reports/bridge-live-pet-dog-metric-20261123-v1/captures/Rule.png": "14012c23ef0b17f1fab54b7d7d7dc4cfc43a12139e8d8ab0addb53465b5032b0",
+    "Reports/bridge-live-pet-dog-metric-20261123-v1/captures/Deconstruction.png": "24ff000bf40cb2b3d5847d48934250a8936a6470a164c07322c5360c9a70fb40"
+  },
+  "resources": {
+    "minCapturedFreeRAMGiB": 5.914,
+    "maxCandidateDiskGrowthMiB": 0,
+    "transferMinRecordedRAMGiB": 8.544,
+    "guardsStopped": false
+  },
+  "scope": "One real calibrated dog optical subject. Saved Bridge sends real PICF, receives default YOLO and performs measured stereo placement. Editor supplies camera/head pose and synthetic shared hand samples. No automatic pet head, real hand or PICO verification."
+}

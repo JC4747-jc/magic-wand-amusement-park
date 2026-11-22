@@ -70,11 +70,11 @@ public static partial class PetLiveRecognitionChecks
 
     static void ObserveMetricReply(DetectionFrameMessage packet, string raw)
     {
-        var hit = packet.detections.Single(d => d.class_name == "Cat" && d.confidence >= .5f);
-        Require(packet.detections.All(d => d.class_name != "Dog" || d.confidence < .5f),
+        var hit = packet.detections.Single(d => d.class_name == MetricSpecies && d.confidence >= .5f);
+        Require(packet.detections.All(d => d.class_name == MetricSpecies || d.confidence < .5f),
             "The candidate emitted a competing high-confidence wrong species.");
         if (frame == 0) id = hit.instance_id;
-        Require(!string.IsNullOrEmpty(id) && hit.instance_id == id, "Live metric Cat ID changed.");
+        Require(!string.IsNullOrEmpty(id) && hit.instance_id == id, "Live metric pet ID changed.");
         int i = frame % 3;
         int x = Mathf.RoundToInt((hit.x1 + hit.x2) * .5f);
         int y = Mathf.RoundToInt((hit.y1 + hit.y2) * .5f);
@@ -90,7 +90,7 @@ public static partial class PetLiveRecognitionChecks
             "Saved receiver rejected the metric frame: " + receiver.Status);
         var actor = UnityEngine.Object.FindObjectsByType<ParkActor>(FindObjectsInactive.Include, FindObjectsSortMode.None)
             .Single(a => a.instanceId == id);
-        Require(!actor.virtualTarget && actor.species == "Cat" && Mathf.Abs(actor.transform.position.z - measured.depthMeters) < .16f,
+        Require(!actor.virtualTarget && actor.species == MetricSpecies && Mathf.Abs(actor.transform.position.z - measured.depthMeters) < .16f,
             "Original receiver did not deliver the expected physical translation.");
         if (frame < 3)
         {
@@ -116,11 +116,11 @@ public static partial class PetLiveRecognitionChecks
         {
             Require(metricActor.tracked && !metricActor.virtualTarget, "Only a tracked physical actor can be selected.");
             Require(controller.ProcessHandSample(MetricHand(Point,.02f,-Vector3.forward*.09f), true) == EditDimension.None &&
-                    controller.selected == metricActor, "Shared point/pinch did not select the live Cat.");
+                    controller.selected == metricActor, "Shared point/pinch did not select the live pet.");
             dream = metricActor.GetComponentsInChildren<Transform>(true).Single(item => item.name == "Dream bubble");
             Require(metricActor.ConfirmOrientation(0f), "Manual orientation confirmation failed.");
             nextSpell = now + .35f;
-            trace.Add("Selected the actual tracked Cat with desktop point/pinch.");
+            trace.Add($"Selected the actual tracked {MetricSpecies} with desktop point/pinch.");
             return;
         }
         if (lossStart >= 0)
@@ -143,9 +143,9 @@ public static partial class PetLiveRecognitionChecks
                 "The same Pet did not recover with its saved state.");
             Require(controller.Dispatch(ParkAction.Reset,metricActor.InteractionCenter,true) &&
                 !metricActor.PetComic && metricActor.Affection == 0, "Pet Reset left stale effects.");
-            Require(errors == 0, "Unity logged an error in the calibrated Cat case.");
+            Require(errors == 0, "Unity logged an error in the calibrated pet case.");
             trace.Add($"Same ID recovered after three fresh stereo frames; Reset cleared the effects after {frame} warm replies.");
-            Finish(0, "PASS: saved BridgeStereoFusion located the live calibrated Cat and completed Pet A/B/C/D.");
+            Finish(0, $"PASS: saved BridgeStereoFusion located the live calibrated {MetricSpecies} and completed Pet A/B/C/D.");
             return;
         }
         if (handSamples != null)
@@ -183,7 +183,7 @@ public static partial class PetLiveRecognitionChecks
             }
             return;
         }
-        Require(metricActor.tracked && controller.selected == metricActor, "The selected live Cat left tracking during the interaction.");
+        Require(metricActor.tracked && controller.selected == metricActor, "The selected live pet left tracking during the interaction.");
         if (spell > 0) VerifyMetricEffect(spell - 1);
         if (spell == spells.Length)
         {
@@ -239,7 +239,7 @@ public static partial class PetLiveRecognitionChecks
             $"A did not enable the manga outline: comic={metricActor.PetComic}, active={metricActor.visual.gameObject.activeInHierarchy}, tracked={metricActor.tracked}, shells={enabledShells}/{(outline ? outline.ShellCount : 0)}, revision={metricActor.Revision}, feedback={metricActor.Feedback}.");
         Require(bubble == (completed == 1), $"Dream was {(bubble ? "visible" : "hidden")} after {label}.");
         Require(metricActor.Affection == (completed == 3 ? 1 : 0), "Expected one affection increment only after D.");
-        trace.Add($"{label}: outline={metricActor.PetComic}, dream={bubble}, affection={metricActor.Affection}, live Cat={id}.");
+        trace.Add($"{label}: outline={metricActor.PetComic}, dream={bubble}, affection={metricActor.Affection}, live {MetricSpecies}={id}.");
     }
 
     static void CaptureMetric(string label)
