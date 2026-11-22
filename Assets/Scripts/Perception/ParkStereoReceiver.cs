@@ -20,8 +20,14 @@ namespace Perception
         public float maxAge=.3f;
         public float maxRecognitionAge=1.5f;
         public float minDepth=.2f, maxDepth=3f;
+        [Tooltip("Optional per-frame pet head candidate service on the detector host. Zero disables it.")]
+        [SerializeField] int petHeadPort;
+        PetStereoHeadClient petHead;
+        byte[] headRgb;
+        long headRgbFrame, headRgbTimestamp;
         public string Status { get; private set; }="NO_TARGET";
         public float AcceptedResultAge {get;private set;}
+        public string PetHeadStatus => petHead?.Status ?? "Inactive";
         struct Sample { public long ns; public Pose pose; }
         readonly List<Sample> poses=new List<Sample>(180);
         Texture2D texture;
@@ -46,7 +52,7 @@ namespace Perception
 #endif
         }
         void OnEnable() { if(transport)transport.LineReceived+=Receive; }
-        void OnDisable() { if(transport)transport.LineReceived-=Receive; waiting=false; poses.Clear(); controller?.ExpirePhysicalTargets(); }
+        void OnDisable() { if(transport)transport.LineReceived-=Receive; waiting=false; poses.Clear(); EndHeadSession(); controller?.ExpirePhysicalTargets(); }
         void OnDestroy() { if(texture)Destroy(texture); clock?.Dispose(); }
         void Update()
         {
@@ -61,6 +67,7 @@ namespace Perception
             else if(waiting && Time.realtimeSinceStartup-capturedAt>maxRecognitionAge) { waiting=false; Status="DETECTION_STALE"; controller?.ExpirePhysicalTargets(); }
             else if(waiting && Time.realtimeSinceStartup-capturedAt>maxAge) {Status="LOCATION_RESULT_STALE: recognition pending";controller?.ExpirePhysicalTargets();}
             if(lastReply>0 && Time.realtimeSinceStartup-lastReply>.65f)controller?.ExpirePhysicalTargets();
+            PollHeadSession();
         }
         public void AcceptPair(byte[] rgba,byte[] l,byte[] r,XrCameraIntrinsics k,XrCameraExtrinsics e,float separation,long timestamp)
         {
@@ -79,6 +86,7 @@ namespace Perception
             left=l; right=r; intrinsics=new Vector4(k.focalLength.X,k.focalLength.Y,k.principalPoint.X,k.principalPoint.Y); baseline=separation;
             cameraPose=new Pose(new Vector3(e.pose.Position.X,e.pose.Position.Y,e.pose.Position.Z),new Quaternion(e.pose.Orientation.X,e.pose.Orientation.Y,e.pose.Orientation.Z,e.pose.Orientation.W).normalized);
             expected=sender.LastSentFrameId; capturedAt=Time.realtimeSinceStartup-age; waiting=true;
+            RememberHeadImage(rgba);
             var recorder=PicoStereoCapture.Active;
             if(capturePoseValid && recorder && recorder.parkReceiver==this)
                 recorder.RecordAcceptedPose(expected,timestamp,capturePose,cameraPose,sender.LastSentTimestampMs,sender.LastSentSceneId);
@@ -108,16 +116,20 @@ namespace Perception
                 Status=discovery.LockedId==null?"RECOGNITION_ENTRY: choose a candidate; location not ready":"CLASS_RECOGNIZED: "+discovery.LockedScene+"; location not ready";
                 if(discovery.LockedId==null || discovery.LockedScene!=controller.Profile)return;
             }
-            if(!string.IsNullOrEmpty(f.status) && f.status!="OK") { Status=f.status; controller.ExpirePhysicalTargets(); return; }
-            if(f.scene!=controller.Profile && !(discoveryMode && f.scene=="discovery")) { Status="SCENE_MISMATCH"; controller.ExpirePhysicalTargets(); return; }
-            if(f.detections==null || f.detections.Length==0) { Status="NO_TARGET"; controller.ExpirePhysicalTargets(); return; }
+            if(!string.IsNullOrEmpty(f.status) && f.status!="OK") { Status=f.status; RejectHead(); controller.ExpirePhysicalTargets(); return; }
+            if(f.scene!=controller.Profile && !(discoveryMode && f.scene=="discovery")) { Status="SCENE_MISMATCH"; RejectHead(); controller.ExpirePhysicalTargets(); return; }
+            if(f.detections==null || f.detections.Length==0) { Status="NO_TARGET"; RejectHead(); controller.ExpirePhysicalTargets(); return; }
             if(!RecognitionReplyPolicy.AcceptSpatial(resultAge,maxAge,capturePoseValid,headTracked)) {
                 Status=!capturePoseValid?"CAPTURE_POSE_UNAVAILABLE: recognition only":!headTracked?"HEAD_TRACKING_LOST: recognition only":"LOCATION_RESULT_STALE: recognition only";
-                controller.ExpirePhysicalTargets();return;
+                RejectHead();controller.ExpirePhysicalTargets();return;
             }
             bool located=false;
             string stereoFailure=null;
             float stereoFailureConfidence=0;
+            DetectionMessage headDetection=null;
+            Vector4 headBox=default;
+            float headDisparity=0;
+            int potentialHeads=0;
             Status="NO_RELIABLE_TARGET";
             foreach(var d in f.detections) {
                 if(discoveryMode && (d.instance_id!=discovery.LockedId || d.target_scene!=controller.Profile))continue;
@@ -146,13 +158,33 @@ namespace Perception
                 Vector3 optical=new Vector3((u-intrinsics.z)*estimate.depthMeters/intrinsics.x,(v-intrinsics.w)*estimate.depthMeters/intrinsics.y,estimate.depthMeters);
                 Vector3 world=capturePose.position+capturePose.rotation*StereoFusionGeometry.OpticalToHead(optical,cameraPose);
                 controller.Observe(d.instance_id,cls,world); located=true;
+                if(petHeadPort>0 && controller.PhysicalPetForHead(d.instance_id)) {
+                    potentialHeads++;
+                    headDetection=d;headBox=new Vector4(d.x1,y1,d.x2,y2);headDisparity=estimate.disparityPixels;
+                }
             }
             if(located) { Status="TRANSLATION_ONLY: "+f.model_validation+"; confirm orientation / virtual scale"; Debug.Log($"[ParkDetection] frame={f.frame_id} capture_to_reply_ms={(Time.realtimeSinceStartup-capturedAt)*1000:F1} (PICO clock correlated)"); }
             else {
                 if(stereoFailure!=null)Status="DEPTH_UNRELIABLE: "+stereoFailure;
                 controller.ExpirePhysicalTargets();
             }
+            if(potentialHeads==1 && f.frame_id==headRgbFrame && f.timestamp==headRgbTimestamp && headRgb!=null && f.scene=="pet")
+                petHead.Offer(controller.PhysicalPetForHead(headDetection.instance_id),f.frame_id,f.timestamp,
+                    headRgb,left,right,headBox,headDisparity,intrinsics,baseline,capturePose,cameraPose,capturedAt,maxAge);
+            else RejectHead();
+            headRgb=null;
         }
+        void RememberHeadImage(byte[] rgba)
+        {
+            if(petHeadPort<=0 || controller.scenario!=ParkScenario.Pet || discoveryMode || rgba?.Length!=640*480*4) return;
+            petHead ??= new PetStereoHeadClient(transport.Host,petHeadPort);
+            headRgb=rgba;
+            headRgbFrame=sender.LastSentFrameId;
+            headRgbTimestamp=sender.LastSentTimestampMs;
+        }
+        void PollHeadSession() => petHead?.Poll(controller,capturePoseValid && headTracked && transport && transport.IsConnected,maxAge);
+        void RejectHead() { petHead?.Reset(); headRgb=null; }
+        void EndHeadSession() { petHead?.Dispose();petHead=null;headRgb=null; }
         string DepthFailure(StereoPatchMatcher.Estimate estimate)
         {
             if(!estimate.valid)return estimate.reason;

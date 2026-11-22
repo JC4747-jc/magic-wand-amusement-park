@@ -334,6 +334,13 @@ namespace MagicMR
             // Never silently switch the selected instance on each frame.
             status="2D class + stereo translation. Point to select; Place confirms virtual orientation.";
         }
+        public ParkActor PhysicalPetForHead(string id)
+        {
+            if (scenario != ParkScenario.Pet || simulation || string.IsNullOrEmpty(id) ||
+                (!string.IsNullOrEmpty(recognitionLock) && id != recognitionLock) ||
+                (selected && selected.instanceId != id)) return null;
+            return actors.TryGetValue(id, out var actor) && actor && !actor.virtualTarget ? actor : null;
+        }
         public void ExpirePhysicalTargets() { foreach(var pair in actors)if(!pair.Value.virtualTarget) { pair.Value.SetTracked(false);ReleaseSurface(pair.Value);confirmations[pair.Key]=0; } }
         public bool RequestFit() {
             if(!selected || !selected.tracked || selected.Busy)return false;

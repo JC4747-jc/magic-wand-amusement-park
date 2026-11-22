@@ -18,7 +18,7 @@ namespace Perception
         bool disposed;
 
         public async Task<string> ExchangeAsync(string host, int port, byte[] header,
-            byte[] left, byte[] right, int deadlineMs)
+            byte[] left, byte[] right, int deadlineMs, bool compress = true)
         {
             using (var deadline = CancellationTokenSource.CreateLinkedTokenSource(lifetime.Token))
             {
@@ -41,7 +41,8 @@ namespace Perception
                     await WriteBlock(stream, header, token).ConfigureAwait(false);
                     if (left != null)
                     {
-                        byte[] packedLeft = Compress(left, token), packedRight = Compress(right, token);
+                        byte[] packedLeft = compress ? Compress(left, token) : left;
+                        byte[] packedRight = compress ? Compress(right, token) : right;
                         token.ThrowIfCancellationRequested();
                         await WriteBlock(stream, packedLeft, token).ConfigureAwait(false);
                         await WriteBlock(stream, packedRight, token).ConfigureAwait(false);

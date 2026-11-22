@@ -16,6 +16,18 @@ Windows CPU 验证使用 6 条火机回包、2 条房间回包、2 条盆栽回�
 
 Windows 本机或经过已配置的 USB 转发时使用上面的回环配置。相机采集和设备连接以当前 Unity 工程的部署说明为准。F2G 姿态服务有独立入口 [pose_bridge.py](pose_bridge.py)。本次验证的功能是 TCP 图像检测，PICO 现场速度、深度、实际手势以及全部场景的检测和训练验收仍待完成。
 
+## 可选宠物头位服务
+
+宠物头位服务使用独立连接。`ParkPet` 保存场景的 `petHeadPort` 默认为零。仅在隔离的宠物测试配置中设置端口，接收器会使用既有检测器的主机地址。服务在打开端口前校验 PC 上已有的 OpenMMLab AP-10K SimCC `end2end.onnx`。[模型验证记录](../Reports/public-pet-head-sequence-20261123-v2/verification.json) · [独立入口验证](../Reports/pet-head-portable-20261123-v1/README.md)
+
+使用 Python 3.11 或更高版本，以及环境中已有的 OpenCV 和 NumPy。默认监听本机 `127.0.0.1:15006`。
+
+```powershell
+.venv/Scripts/python.exe object-detection-demo/pet_head_bridge.py --model D:/models/pet-head/end2end.onnx
+```
+
+服务一次处理一个连接。`pet-head-v1` 请求携带长度前缀的 JSON 和左右图块，返回会话、帧号、采集时间及检测 ID。Unity 候选保留三帧确认和从采集起算的 300 ms 时限。PICO 双目方向、无线总时延与真实接触仍待真机验证。
+
 ## 独立电脑摄像头演示
 
 `python object-detection-demo/detect_webcam.py` 使用电脑摄像头。它使用独立的早期模型配置。
