@@ -13,12 +13,14 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [InitializeOnLoad]
-public static class PetLiveRecognitionChecks
+public static partial class PetLiveRecognitionChecks
 {
     const string Running = "MagicMR.PetLiveRecognitionChecks";
-    const string Input = ".codex-tmp/pet-live-recognition-fixture";
-    const string Output = ".codex-tmp/pet-live-recognition-checks";
-    const string Weights = "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36";
+    const string Metric = Running + ".Metric";
+    static bool Calibrated => SessionState.GetBool(Metric, false);
+    static string Input => Calibrated ? ".codex-tmp/pet-live-metric-fixture" : ".codex-tmp/pet-live-recognition-fixture";
+    static string Output => Calibrated ? ".codex-tmp/pet-live-metric-checks" : ".codex-tmp/pet-live-recognition-checks";
+    static string Weights => Calibrated ? CandidateWeights : "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36";
     static readonly List<string> replies = new();
     static readonly List<string> trace = new();
     static ParkStereoReceiver receiver;
@@ -39,8 +41,12 @@ public static class PetLiveRecognitionChecks
         };
     }
 
-    public static void Run()
+    public static void Run() => Begin(false);
+    public static void RunCalibrated() => Begin(true);
+
+    static void Begin(bool calibrated)
     {
+        SessionState.SetBool(Metric, calibrated);
         Require(Directory.Exists(Input) && !Directory.Exists(Output), "Pet fixture or output path is invalid.");
         Directory.CreateDirectory(Output);
         File.WriteAllText(Path.Combine(Output, "result.txt"), "RUNNING");
@@ -60,6 +66,7 @@ public static class PetLiveRecognitionChecks
         SessionState.SetBool(Running, false);
         if (receiver && receiver.transport) receiver.transport.LineReceived -= Receive;
         if (photo) UnityEngine.Object.DestroyImmediate(photo);
+        if (Calibrated) SaveMetricCaptures();
         File.WriteAllLines(Path.Combine(Output, "live-picf-replies.jsonl"), replies);
         File.WriteAllLines(Path.Combine(Output, "trace.txt"), trace);
         File.WriteAllText(Path.Combine(Output, "result.txt"), message);
@@ -81,12 +88,14 @@ public static class PetLiveRecognitionChecks
             }
             if (SceneManager.GetActiveScene().name != "ParkPet") return;
             if (!receiver) BindReceiver();
+            if (Calibrated) StepMetric();
+            if (finished) return;
             if (waiting)
             {
                 Require(now - sentAt < (warm ? 2f : 10f), "Pet PICF reply timed out.");
                 return;
             }
-            if (receiver.transport.IsConnected && now >= nextFrame) Send();
+            if (receiver.transport.IsConnected && now >= nextFrame && (!Calibrated || !withholdMetricFrames)) Send();
         }
         catch (Exception ex)
         {
@@ -128,6 +137,7 @@ public static class PetLiveRecognitionChecks
         transport.LineReceived += Receive;
         transport.ConnectIfNeeded();
         photo = new Texture2D(2, 2, TextureFormat.RGB24, false);
+        if (Calibrated) LoadMetricFixture();
         trace.Add("Saved Pet scene bound its original sender, TCP transport, receiver and shared menu.");
     }
 
@@ -140,17 +150,20 @@ public static class PetLiveRecognitionChecks
 
     static void Send()
     {
-        Require(photo.LoadImage(File.ReadAllBytes(Path.Combine(Input, $"{frame + 1:D2}.png"))) &&
-                photo.width == 640 && photo.height == 480, "Pet optical fixture has the wrong dimensions.");
-        if (!receiver.sender.TrySendTexture(photo, respectSenderRateLimit: false)) return;
+        if (!Calibrated)
+            Require(photo.LoadImage(File.ReadAllBytes(Path.Combine(Input, $"{frame + 1:D2}.png"))) &&
+                    photo.width == 640 && photo.height == 480, "Pet optical fixture has the wrong dimensions.");
+        var inputPhoto = Calibrated ? metricPhotos[frame % metricPhotos.Length] : photo;
+        if (!receiver.sender.TrySendTexture(inputPhoto, respectSenderRateLimit: false)) return;
         waiting = true;
         sentAt = Time.realtimeSinceStartup;
         CalibratedParkReplayChecks.Set(receiver, "waiting", true);
         CalibratedParkReplayChecks.Set(receiver, "expected", receiver.sender.LastSentFrameId);
         CalibratedParkReplayChecks.Set(receiver, "capturedAt", sentAt);
         // Public stereo colour images lack a metric calibration. Exercise both recognition-only fallbacks.
-        CalibratedParkReplayChecks.Set(receiver, "capturePoseValid", frame >= 6);
-        CalibratedParkReplayChecks.Set(receiver, "headTracked", frame < 6);
+        CalibratedParkReplayChecks.Set(receiver, "capturePoseValid", Calibrated || frame >= 6);
+        CalibratedParkReplayChecks.Set(receiver, "headTracked", Calibrated || frame < 6);
+        if (Calibrated) SetMetricPair();
     }
 
     static void Receive(string raw)
@@ -168,6 +181,12 @@ public static class PetLiveRecognitionChecks
             if (!warm)
             {
                 warm = true;
+                return;
+            }
+            if (Calibrated)
+            {
+                ObserveMetricReply(packet, raw);
+                frame++;
                 return;
             }
 

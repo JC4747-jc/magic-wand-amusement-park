@@ -1,0 +1,174 @@
+{
+  "sourceBase": "4ea05d40c1a5731a610fee80639f7ad76cc0fe63",
+  "checkedAtUtc": "2026-11-22T18:34:35.2437090Z",
+  "testedInputCount": 1858,
+  "publicResearchDataset": "Total-Recon humancat-stereo000-animal",
+  "publicCameraFrames": [
+    {
+      "source": 180,
+      "baseline": 0.33678092770964874,
+      "referenceM": 2.7715771198272705,
+      "files": {
+        "left.gray": "3ada9f5ddcf6f88d8aaca5a8302f9b683169a6e5527a8e5a69d0e963f94380c5",
+        "right.gray": "e7c6375d7fc2ef9a717c79f52d658b7966061a0d86379b887f0c47e5a2f6cc88",
+        "sender.png": "dab276cb28ecb3ed19d77c7fe7924db556e0e140de6a7fdf66ee3910dd8f2bd8"
+      },
+      "lidarSha256": "b5ee0389719b77844e4be0b343ff9f837b171d3fcf5a76219c39467483b47ffc"
+    },
+    {
+      "source": 181,
+      "baseline": 0.33678092770964874,
+      "referenceM": 2.7578113079071045,
+      "files": {
+        "left.gray": "409b43754c88fb81d9dfacbcbd07e944b4959d08aa2f3459d554dc401c5758d8",
+        "right.gray": "c0a5f2fbc7208ef7b085319568955c1424a9152e463a39cdb3665b3cd0119cd5",
+        "sender.png": "a82b79b16e3b74f01b22dd687a5f8f380c19c9325c4f672c4e45ffe63a34d06d"
+      },
+      "lidarSha256": "667099ae769795419a7d6819bc07daa112c5670490f6d43689fb7e23d80c7736"
+    },
+    {
+      "source": 182,
+      "baseline": 0.33678092770964874,
+      "referenceM": 2.6613876819610596,
+      "files": {
+        "left.gray": "1f4ff6ec233f7804d8a4f524decc4a58d707e15f58856e66831ed362f5342468",
+        "right.gray": "60d7da5f90dc38ca2491557da420db2b2614004190d58f27cbd330726a9f28f0",
+        "sender.png": "c4bc23ea93759dc706710a95357ff00f30b7f4a6e06184d9db7e947c48449bd8"
+      },
+      "lidarSha256": "66c864e52a5e8cb01ce6ee01edf61d61c19518de522fc8f05b5937644ef9cbc8"
+    }
+  ],
+  "fixedFixtureOptics": {
+    "fx": 425,
+    "fy": 425,
+    "cx": 320,
+    "cy": 190,
+    "baselineM": 0.33678092770964874,
+    "width": 640,
+    "height": 480
+  },
+  "registration": {
+    "frames": 12,
+    "pairedSiftBeforeDepthGate": 2572,
+    "medianOfPerImageMedianPx": {
+      "published": 5.3286,
+      "inverse": 522.3213,
+      "rawSeparateWorld": 402.9743,
+      "unitTimesPoint2": 78.1608,
+      "unitTimes5": 355.9263
+    },
+    "lzfseDecoderWheelSha256": "df37eb150f3aaa1f9cf34ad0de691d3451e96ca43f267f506bc51a41f86dcd35"
+  },
+  "actualLivePicf": {
+    "replies": 37,
+    "warmupReplies": 1,
+    "CatId": "dc29546703e9:left:1",
+    "candidateWeightsSha256": "85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5",
+    "localProfileSha256": "9366b1f4b937e412b5021af9a109f30e90e1e2c65774035662df868c9a3852c5",
+    "resources": {
+      "minSampledFreeRAMGiB": 5.784,
+      "maxUnityRSSMiB": 1699.6,
+      "maxServiceRSSMiB": 845.42,
+      "maxCandidateDiskGrowthMiB": 0,
+      "guardStopped": false
+    }
+  },
+  "originalProfileControl": {
+    "replies": 13,
+    "warmupReplies": 1,
+    "weightsSha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+    "resources": {
+      "minSampledFreeRAMGiB": 6.201,
+      "maxUnityRSSMiB": 1621.92,
+      "maxServiceRSSMiB": 767.19,
+      "maxCandidateDiskGrowthMiB": 0,
+      "guardStopped": false
+    }
+  },
+  "heldOutFreiburg": {
+    "yolov8n": {
+      "counts": {
+        "Cat@0.25": {
+          "total": 18,
+          "correct": 8,
+          "wrong": 9
+        },
+        "Cat@0.5": {
+          "total": 18,
+          "correct": 7,
+          "wrong": 6
+        },
+        "Dog@0.25": {
+          "total": 18,
+          "correct": 18,
+          "wrong": 0
+        },
+        "Dog@0.5": {
+          "total": 18,
+          "correct": 18,
+          "wrong": 0
+        }
+      },
+      "rawSha256": "92f4c558d3077dcc4baa25504c3b30715b497d9bbe008f36bce3d55800e28df9"
+    },
+    "yolo11s": {
+      "counts": {
+        "Cat@0.25": {
+          "total": 18,
+          "correct": 8,
+          "wrong": 10
+        },
+        "Cat@0.5": {
+          "total": 18,
+          "correct": 7,
+          "wrong": 8
+        },
+        "Dog@0.25": {
+          "total": 18,
+          "correct": 18,
+          "wrong": 0
+        },
+        "Dog@0.5": {
+          "total": 18,
+          "correct": 18,
+          "wrong": 0
+        }
+      },
+      "rawSha256": "c85bf11d5bfdd15636cc06a3f195f8560fa7ffb1c6913544ff10a54bab759053"
+    }
+  },
+  "sceneAndRuntimeSha256": {
+    "Assets/Scenes/BridgeStereoFusion.unity": "7b5225e4d20ae51a04917c44186fc02e346b1492da461a517bfefad96a5c8581",
+    "Assets/Scenes/ParkPet.unity": "fc4d5e9eb1a0973d392faceee5cce02cde41da0a18e3d6161b80cfc051aa1fd7",
+    "Assets/Scripts/Perception/ParkStereoReceiver.cs": "a54566a30a995417e36cc6d29e2bf3200cac665b29fd5dd8392792681ceebe74",
+    "Assets/Scripts/Perception/Stereo/StereoPatchMatcher.cs": "7a2a18030a955834a828b0afcb1e2b9acff384a9afd1ecb0122af1e06e8fa51a",
+    "Assets/Scripts/MagicMR/ParkController.cs": "9e8818177b7870f77faeca838cc88f286beba954fd3decbbeea8332a65f758c5",
+    "Assets/Scripts/MagicMR/ParkActor.cs": "3dc90e15422ae89940e584203ce8a03fce3f8fdd52a9cc8eebdbec5c675d0b4d"
+  },
+  "checkedEditorAssets": {
+    "Assets/Editor/PetLiveRecognitionChecks.cs": "6788d5c8f3d3c0294dd631a06e7df3b6dd005ef499e4f10b20cf6916eb0b5b02",
+    "Assets/Editor/PetLiveRecognitionMetric.cs": "579da3052789f5749d6582c04efc8ef979451357ef2af9bd02df95762f4ee371",
+    "Assets/Editor/PetLiveRecognitionMetric.cs.meta": "6783ec5d78f3977de88824789097d5c2be5477c27bda57d6b50d89896640d9f1",
+    "Tools/run_room_magic_review_bounded.ps1": "51eff352af3cac16f8b1d8749240d53d4fba78a266c969f41d0a32095309ec08"
+  },
+  "artifactSha256": {
+    "Reports/bridge-live-pet-metric-20261123-v4/editor-input.json": "4f35174f520760e4321360789c0d6145fd131b386f720484068dea03bfd4dc57",
+    "Reports/bridge-live-pet-metric-20261123-v4/restoration.json": "6ce62083e2fcc13a691586735c38bc4efa0c33c4c919917b6aa24ac49145d91b",
+    "Reports/bridge-live-pet-metric-20261123-v4/captures/live-picf-replies.jsonl": "e1ecaed1f4f113e0bb1153aafe461bf04c6eaf46d34b97a084f733571a0c1f59",
+    "Reports/bridge-live-pet-metric-20261123-v4/captures/trace.txt": "39cf3bcc2b8741db3394b0acc2c2be886af663bd8067392ce086683859580cb8",
+    "Reports/bridge-live-pet-metric/bridge-live-pet-metric-20261123-v4/unity.log": "96087632d849b57cf3e113ad936fb56f27280e4ea8d7329e53aeb0168fdfbd6b",
+    "Reports/bridge-live-pet-metric/bridge-live-pet-metric-20261123-v4/resources.json": "4cb1f4d663c9d7d340f55eeef13e64c9b02fffe0b8a0ab7203f86f340be0dc0a",
+    "Reports/bridge-live-pet-metric-20261123-v4/service-resources.json": "47d44bf808eaaa61e382bb61a8f878649f302454bf4f0f5119438f4bc1e64368",
+    "Reports/bridge-live-pet-20261123-v2/editor-input.json": "b643828bb547235ec824a83855fbf4b6f2a4da40c52fa3ba4b0a393f70a49dc1",
+    "Reports/bridge-live-pet-20261123-v2/captures/trace.txt": "d9d4be7fd911277aff0a360d6be593c702cf6a2aad2ea583dbbee129dac49323",
+    "Reports/bridge-live-pet-20261123-v2/captures/live-picf-replies.jsonl": "b574bc1a591a82ef8042da942761bface70f709229c374bf15bba6d152676a34",
+    "Reports/bridge-live-pet/bridge-live-pet-20261123-v2/resources.json": "dc91d4969a6cbe8f6f4e424311b66f8e9d7e6fffb6ac4f8850257231b9afac83",
+    "Reports/pet-totalrecon-metric-20261123-v2/registration.json": "c9f9f7cd26d17a4b2148e2e6379eb66cebca6fc29eb867309b08bdb3917abaf0",
+    "Reports/pet-totalrecon-metric-20261123-v2/matcher-verification.json": "01a23e9e0849f6eaf818862a6fd466f74abb92127e47a1c44d09ff9a6f173f03",
+    "Reports/bridge-live-pet-metric-20261123-v4/captures/Appearance.png": "df92bfafb6b8a29cc57de66e6707db02254e573a76aaacb67ccd6a2cc4d3c69a",
+    "Reports/bridge-live-pet-metric-20261123-v4/captures/Agency.png": "10f1294a55b93a8cf015b381c69bb5cff12857a61cd698e993dfe1a080c50d95",
+    "Reports/bridge-live-pet-metric-20261123-v4/captures/Rule.png": "066e46acaa617c58b6c7c32113b4983015d6a4de75c7f6ccf6247241040a6e11",
+    "Reports/bridge-live-pet-metric-20261123-v4/captures/Deconstruction.png": "3bdd23e79af35cd651e557871e3b9cdb0b4bb3da1184c24efcd8b48ebdc6fe23"
+  },
+  "acceptanceScope": "Public paired RGB with LiDAR centre reference, supplied editor camera/head pose and synthetic shared hand samples. Cat only for metric chain. No PICO, original Pet-head touch, real hand or release model promotion."
+}
