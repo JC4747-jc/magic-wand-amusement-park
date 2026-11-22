@@ -1,0 +1,1047 @@
+diff --git a/Assets/Editor/PetLiveRecognitionAutomaticHead.cs b/Assets/Editor/PetLiveRecognitionAutomaticHead.cs
+new file mode 100644
+index 0000000..68aa00a
+--- /dev/null
++++ b/Assets/Editor/PetLiveRecognitionAutomaticHead.cs
+@@ -0,0 +1,230 @@
++using System;
++using System.Linq;
++using System.Reflection;
++using MagicMR;
++using Perception;
++using UnityEngine;
++
++public static partial class PetLiveRecognitionChecks
++{
++    static int probeIndex, headContinuity, confirmedBeforeDelay, confirmedAfterDelay;
++    static float probeLastAccepted = -1f;
++    static Transform probeAnchor;
++    static string probeIdentity;
++    static float waitForRuntimeUntil;
++    static int resumeAt;
++    static string runtimeStatus;
++    static readonly MethodInfo PollHead = typeof(ParkStereoReceiver).GetMethod("PollHeadSession",BindingFlags.Instance|BindingFlags.NonPublic);
++    static readonly MethodInfo RememberHead = typeof(ParkStereoReceiver).GetMethod("RememberHeadImage",BindingFlags.Instance|BindingFlags.NonPublic);
++    static readonly PropertyInfo HeadStatus = typeof(ParkStereoReceiver).GetProperty("PetHeadStatus");
++
++    static void RememberRuntimeImage(Texture2D image)
++    {
++        Color32[] pixels = image.GetPixels32();
++        var rgba = new byte[pixels.Length*4];
++        for (int i=0, j=0; i<pixels.Length; i++, j+=4)
++        {
++            rgba[j]=pixels[i].r; rgba[j+1]=pixels[i].g; rgba[j+2]=pixels[i].b; rgba[j+3]=pixels[i].a;
++        }
++        RememberHead.Invoke(receiver,new object[]{rgba});
++    }
++
++    static ParkActor RuntimeActor(string id) => UnityEngine.Object.FindObjectsByType<ParkActor>(
++        FindObjectsInactive.Include,FindObjectsSortMode.None).SingleOrDefault(a => a.instanceId==id);
++
++    static void StepRuntimeHead()
++    {
++        PollHead.Invoke(receiver,null);
++        string status=(string)HeadStatus.GetValue(receiver);
++        if (runtimeStatus!=status)
++        {
++            runtimeStatus=status;
++            trace.Add(runtimeStatus);
++        }
++        if (!withholdMetricFrames) return;
++        float now=Time.realtimeSinceStartup;
++        if (resumeAt == optics.probeDelayIndex+1)
++        {
++            if (now < waitForRuntimeUntil) return;
++            Require(metricActor && !metricActor.reliableHeadPose && !metricActor.headAnchor,"An unconfirmed or expired head remained attached.");
++            controller.ExpirePhysicalTargets();
++            CalibratedParkReplayChecks.Set(receiver,"headTracked",false);
++            PollHead.Invoke(receiver,null);
++            trace.Add("Expired before late sidecar result; cleared tracking, then restarted three-frame confirmation.");
++        }
++        else
++        {
++            if (!metricActor || !metricActor.reliableHeadPose || !metricActor.headAnchor)
++            {
++                Require(now < waitForRuntimeUntil,"Runtime head did not attach after three measured captures.");
++                return;
++            }
++            Require(metricActor.tracked && metricActor.headAnchor.position.z > 1.35f && metricActor.headAnchor.position.z < 1.65f,
++                "Runtime head was not projected through the captured camera pose at metric depth.");
++            trace.Add(FormattableString.Invariant($"Runtime head attached to {metricActor.instanceId} at {metricActor.headAnchor.position.z:F3} m; capture to anchor below {receiver.maxAge*1000:F0} ms."));
++        }
++        withholdMetricFrames=false;
++    }
++
++    static void ObserveRuntimeBody(DetectionFrameMessage packet, string raw)
++    {
++        var hit = packet.detections.Single(d=>d.class_name=="Cat" && d.confidence>=.5f);
++        if (!warm)
++        {
++            // Warm native matching JIT without observing a target or offering a head request.
++            StereoPatchMatcher.EstimateDepth(leftGray[0],rightGray[0],640,480,
++                Mathf.RoundToInt((hit.x1+hit.x2)*.5f),Mathf.RoundToInt((hit.y1+hit.y2)*.5f),
++                optics.intrinsics[0],optics.baseline,16,16);
++            warm=true;
++            probeIndex++;
++            return;
++        }
++        nextFrame=sentAt+.20f;
++        receiver.Receive(raw);
++        Require(receiver.Status.StartsWith("TRANSLATION_ONLY:",StringComparison.Ordinal),"Unusable runtime head body: "+receiver.Status);
++        trace.Add(FormattableString.Invariant($"Body PICF {packet.frame_id}, source {optics.sourceFrames[probeIndex]} {hit.instance_id}: {receiver.AcceptedResultAge*1000:F1} ms."));
++        if (probeIndex == optics.sourceFrames.Length-1)
++        {
++            var nextActor = RuntimeActor(hit.instance_id);
++            Require(metricActor && hit.instance_id != metricActor.instanceId && nextActor &&
++                    !metricActor.headAnchor && !metricActor.reliableHeadPose &&
++                    !nextActor.headAnchor && !nextActor.reliableHeadPose && errors==0,
++                "Runtime target switch was not isolated from previous head state.");
++            trace.Add("A new detector ID cleared the old head and received no head on its first observation.");
++            Finish(0,"PASS: saved BridgeStereoFusion attached runtime Pet head from capture-bound stereo and cleared it on timeout and ID change.");
++            return;
++        }
++        metricActor=RuntimeActor(hit.instance_id);
++        if (probeIndex==optics.probeDelayIndex-4)
++        {
++            Require(metricActor && metricActor.tracked &&
++                    controller.ProcessHandSample(MetricHand(Point,.02f,-Vector3.forward*.09f),true)==EditDimension.None &&
++                    controller.selected==metricActor, "Could not select a stable cat through the shared point-pinch input.");
++            CalibratedParkReplayChecks.Set(receiver,"petHeadPort",15006);
++            trace.Add($"Selected {metricActor.instanceId} through the shared desktop point-pinch input; enabled the head candidate.");
++        }
++        if (probeIndex==optics.probeDelayIndex-1 || probeIndex==optics.probeDelayIndex ||
++            probeIndex==optics.sourceFrames.Length-2)
++        {
++            withholdMetricFrames=true;
++            resumeAt=probeIndex+1;
++            waitForRuntimeUntil=sentAt+(probeIndex==optics.probeDelayIndex ? .50f : .30f);
++        }
++        probeIndex++;
++    }
++
++    [Serializable]
++    sealed class AutomaticHeadReply
++    {
++        public AutomaticHeadCandidate head_probe;
++    }
++
++    [Serializable]
++    sealed class AutomaticHeadCandidate
++    {
++        public int source_frame;
++        public long frame_id;
++        public long timestamp;
++        public string instance_id;
++        public bool verified;
++        public float x, y, depth, pc_ms;
++    }
++
++    static void ClearAutomaticHead()
++    {
++        headContinuity = 0;
++        probeLastAccepted = -1f;
++        if (metricActor)
++        {
++            metricActor.reliableHeadPose = false;
++            metricActor.headAnchor = null;
++        }
++        if (probeAnchor) UnityEngine.Object.Destroy(probeAnchor.gameObject);
++        probeAnchor = null;
++    }
++
++    static void StepAutomaticHead()
++    {
++        if (probeLastAccepted >= 0f && Time.realtimeSinceStartup - probeLastAccepted > receiver.maxAge)
++        {
++            ClearAutomaticHead();
++            trace.Add("Candidate head expired while the frame was in flight.");
++        }
++    }
++
++    static void ObserveAutomaticHead(DetectionFrameMessage packet, string raw)
++    {
++        var candidate = JsonUtility.FromJson<AutomaticHeadReply>(raw).head_probe;
++        Require(candidate != null && candidate.source_frame == optics.sourceFrames[probeIndex] &&
++                candidate.frame_id == packet.frame_id && candidate.timestamp == packet.timestamp,
++                "Candidate is not bound to the saved sender's frame and source image.");
++        if (!warm)
++        {
++            warm = true;
++            probeIndex++;
++            return;
++        }
++        nextFrame = sentAt + .10f;
++        receiver.Receive(raw);
++        float age = receiver.AcceptedResultAge;
++        trace.Add(FormattableString.Invariant($"PICF {packet.frame_id}, source {candidate.source_frame}: {age*1000:F1} ms, PC {candidate.pc_ms:F1} ms; head evidence {candidate.verified}; {receiver.Status}"));
++        bool bodyLocated = receiver.Status.StartsWith("TRANSLATION_ONLY:", StringComparison.Ordinal);
++        bool idMatches = packet.detections.Count(d => d.class_name == optics.probeSpecies && d.confidence >= .5f && d.instance_id == candidate.instance_id) == 1;
++        if (probeIndex == optics.probeDelayIndex)
++        {
++            Require(confirmedBeforeDelay > 0 && candidate.verified && age > receiver.maxAge && !bodyLocated,
++                "An injected delayed reply must have genuine head evidence but fail the spatial deadline.");
++            ClearAutomaticHead();
++            Require(!metricActor || (!metricActor.reliableHeadPose && !metricActor.headAnchor), "Expired head remained on the actor.");
++        }
++        else if (probeIndex == optics.sourceFrames.Length - 1)
++        {
++            bool changed = optics.probeSpecies == "Cat";
++            if (changed)
++                Require(bodyLocated && candidate.verified && idMatches && candidate.instance_id != probeIdentity &&
++                        metricActor && metricActor.reliableHeadPose && metricActor.headAnchor,
++                    "The previous head must be active when a fresh, different detector ID arrives.");
++            else Require(!candidate.verified, "Geometrically inconsistent face was accepted.");
++            ClearAutomaticHead();
++            if (changed)
++            {
++                var nextActor = UnityEngine.Object.FindObjectsByType<ParkActor>(FindObjectsInactive.Include, FindObjectsSortMode.None)
++                    .Single(a => a.instanceId == candidate.instance_id);
++                Require(!metricActor.reliableHeadPose && !metricActor.headAnchor &&
++                        !nextActor.reliableHeadPose && !nextActor.headAnchor,
++                    "Changing detector ID retained the old head or bypassed the new head's confirmation.");
++                trace.Add($"Cleared {probeIdentity} head on identity change to {candidate.instance_id}; new head was not confirmed.");
++            }
++        }
++        else if (candidate.verified && bodyLocated && idMatches && age <= receiver.maxAge)
++        {
++            var actor = UnityEngine.Object.FindObjectsByType<ParkActor>(FindObjectsInactive.Include, FindObjectsSortMode.None)
++                .Single(a => a.instanceId == candidate.instance_id);
++            Require(actor.species == optics.probeSpecies && !actor.virtualTarget, "Candidate bound to the wrong actor.");
++            if (probeIdentity != candidate.instance_id) ClearAutomaticHead();
++            probeIdentity = candidate.instance_id;
++            metricActor = actor;
++            probeLastAccepted = Time.realtimeSinceStartup;
++            if (++headContinuity >= 3 && actor.tracked)
++            {
++                if (!probeAnchor) probeAnchor = new GameObject("Automatic head research fixture").transform;
++                var k = optics.intrinsics;
++                var optical = new Vector3((candidate.x-k[2])*candidate.depth/k[0],(candidate.y-k[3])*candidate.depth/k[1],candidate.depth);
++                probeAnchor.position = StereoFusionGeometry.OpticalToHead(optical,new Pose(Vector3.zero,Quaternion.Euler(180,0,0)));
++                metricActor.headAnchor = probeAnchor;
++                metricActor.reliableHeadPose = true;
++                if (probeIndex < optics.probeDelayIndex) confirmedBeforeDelay++;
++                else confirmedAfterDelay++;
++                trace.Add(FormattableString.Invariant($"Applied {probeIdentity} head after {headContinuity} fresh frames at depth {candidate.depth:F3} m."));
++            }
++        }
++        else ClearAutomaticHead();
++        probeIndex++;
++        if (probeIndex == optics.sourceFrames.Length)
++        {
++            Require(errors == 0 && confirmedBeforeDelay > 0 && confirmedAfterDelay > 0 && !probeAnchor,
++                "Fresh automatic head failed to establish at least twice, or stale data survived.");
++            Finish(0,"PASS: saved BridgeStereoFusion verified frame-bound candidate Pet head, latency and expiry.");
++        }
++    }
++}
+diff --git a/Assets/Editor/PetLiveRecognitionAutomaticHead.cs.meta b/Assets/Editor/PetLiveRecognitionAutomaticHead.cs.meta
+new file mode 100644
+index 0000000..84e32a7
+--- /dev/null
++++ b/Assets/Editor/PetLiveRecognitionAutomaticHead.cs.meta
+@@ -0,0 +1,2 @@
++fileFormatVersion: 2
++guid: f5b8e45c6350498c88b04cd70630065d
+diff --git a/Assets/Editor/PetLiveRecognitionChecks.cs b/Assets/Editor/PetLiveRecognitionChecks.cs
+index a7f27b6..30a299f 100644
+--- a/Assets/Editor/PetLiveRecognitionChecks.cs
++++ b/Assets/Editor/PetLiveRecognitionChecks.cs
+@@ -19,17 +19,24 @@ public static partial class PetLiveRecognitionChecks
+     const string Metric = Running + ".Metric";
+     const string HeadContact = Running + ".HeadContact";
+     const string DogMetric = Running + ".DogMetric";
++    const string AutomaticHead = Running + ".AutomaticHead";
++    const string RuntimeHead = Running + ".RuntimeHead";
+     static bool Calibrated => SessionState.GetBool(Metric, false);
+     static bool CheckingHeadContact => SessionState.GetBool(HeadContact, false);
+     static bool CheckingDogMetric => SessionState.GetBool(DogMetric, false);
++    static bool CheckingAutomaticHead => SessionState.GetBool(AutomaticHead, false);
++    static bool CheckingRuntimeHead => SessionState.GetBool(RuntimeHead, false);
+     static string MetricSpecies => CheckingDogMetric ? "Dog" : "Cat";
+-    static string Input => CheckingHeadContact ? ".codex-tmp/pet-live-head-fixture" :
++    static string Input => CheckingAutomaticHead ? ".codex-tmp/pet-live-auto-head-fixture" :
++        CheckingHeadContact ? ".codex-tmp/pet-live-head-fixture" :
+         CheckingDogMetric ? ".codex-tmp/pet-live-dog-metric-fixture" :
+         Calibrated ? ".codex-tmp/pet-live-metric-fixture" : ".codex-tmp/pet-live-recognition-fixture";
+-    static string Output => CheckingHeadContact ? ".codex-tmp/pet-live-head-checks" :
++    static string Output => CheckingRuntimeHead ? ".codex-tmp/pet-live-runtime-head-checks" :
++        CheckingAutomaticHead ? ".codex-tmp/pet-live-auto-head-checks" :
++        CheckingHeadContact ? ".codex-tmp/pet-live-head-checks" :
+         CheckingDogMetric ? ".codex-tmp/pet-live-dog-metric-checks" :
+         Calibrated ? ".codex-tmp/pet-live-metric-checks" : ".codex-tmp/pet-live-recognition-checks";
+-    static string Weights => Calibrated && !CheckingDogMetric ?
++    static string Weights => Calibrated && (!CheckingDogMetric || (CheckingAutomaticHead && optics?.probeSpecies == "Cat")) ?
+         CandidateWeights : "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36";
+     static readonly List<string> replies = new();
+     static readonly List<string> trace = new();
+@@ -55,12 +62,16 @@ public static partial class PetLiveRecognitionChecks
+     public static void RunCalibrated() => Begin(true);
+     public static void RunHeadContact() => Begin(true, true);
+     public static void RunCalibratedDog() => Begin(true, dogMetric: true);
++    public static void RunAutomaticHead() => Begin(true, dogMetric: true, automaticHead: true);
++    public static void RunRuntimeHead() => Begin(true, dogMetric: true, automaticHead: true, runtimeHead: true);
+ 
+-    static void Begin(bool calibrated, bool headContact = false, bool dogMetric = false)
++    static void Begin(bool calibrated, bool headContact = false, bool dogMetric = false, bool automaticHead = false, bool runtimeHead = false)
+     {
+         SessionState.SetBool(Metric, calibrated);
+         SessionState.SetBool(HeadContact, headContact);
+         SessionState.SetBool(DogMetric, dogMetric);
++        SessionState.SetBool(AutomaticHead, automaticHead);
++        SessionState.SetBool(RuntimeHead, runtimeHead);
+         Require(Directory.Exists(Input) && !Directory.Exists(Output), "Pet fixture or output path is invalid.");
+         Directory.CreateDirectory(Output);
+         File.WriteAllText(Path.Combine(Output, "result.txt"), "RUNNING");
+@@ -80,7 +91,7 @@ public static partial class PetLiveRecognitionChecks
+         SessionState.SetBool(Running, false);
+         if (receiver && receiver.transport) receiver.transport.LineReceived -= Receive;
+         if (photo) UnityEngine.Object.DestroyImmediate(photo);
+-        if (Calibrated) SaveMetricCaptures();
++        if (Calibrated && !CheckingAutomaticHead) SaveMetricCaptures();
+         File.WriteAllLines(Path.Combine(Output, "live-picf-replies.jsonl"), replies);
+         File.WriteAllLines(Path.Combine(Output, "trace.txt"), trace);
+         File.WriteAllText(Path.Combine(Output, "result.txt"), message);
+@@ -102,7 +113,9 @@ public static partial class PetLiveRecognitionChecks
+             }
+             if (SceneManager.GetActiveScene().name != "ParkPet") return;
+             if (!receiver) BindReceiver();
+-            if (CheckingHeadContact) StepHeadContact();
++            if (CheckingRuntimeHead) StepRuntimeHead();
++            else if (CheckingAutomaticHead) StepAutomaticHead();
++            else if (CheckingHeadContact) StepHeadContact();
+             else if (Calibrated) StepMetric();
+             if (finished) return;
+             if (waiting)
+@@ -148,7 +161,7 @@ public static partial class PetLiveRecognitionChecks
+         transport.DisconnectSocket();
+         SetTransportField(transport, "m_AutoReconnect", false);
+         SetTransportField(transport, "m_Host", IPAddress.Loopback.ToString());
+-        SetTransportField(transport, "m_Port", 5005);
++        SetTransportField(transport, "m_Port", CheckingAutomaticHead ? 15005 : 5005);
+         transport.LineReceived += Receive;
+         transport.ConnectIfNeeded();
+         photo = new Texture2D(2, 2, TextureFormat.RGB24, false);
+@@ -169,16 +182,19 @@ public static partial class PetLiveRecognitionChecks
+             Require(photo.LoadImage(File.ReadAllBytes(Path.Combine(Input, $"{frame + 1:D2}.png"))) &&
+                     photo.width == 640 && photo.height == 480, "Pet optical fixture has the wrong dimensions.");
+         var inputPhoto = Calibrated ? metricPhotos[frame % metricPhotos.Length] : photo;
+-        if (!receiver.sender.TrySendTexture(inputPhoto, respectSenderRateLimit: false)) return;
++        if (CheckingAutomaticHead) inputPhoto = metricPhotos[probeIndex];
++        var captureTime = Time.realtimeSinceStartup;
++        if (!receiver.sender.TrySendTexture(inputPhoto, respectSenderRateLimit: CheckingAutomaticHead)) return;
+         waiting = true;
+         sentAt = Time.realtimeSinceStartup;
+         CalibratedParkReplayChecks.Set(receiver, "waiting", true);
+         CalibratedParkReplayChecks.Set(receiver, "expected", receiver.sender.LastSentFrameId);
+-        CalibratedParkReplayChecks.Set(receiver, "capturedAt", sentAt);
++        CalibratedParkReplayChecks.Set(receiver, "capturedAt", CheckingAutomaticHead ? captureTime : sentAt);
+         // Public stereo colour images lack a metric calibration. Exercise both recognition-only fallbacks.
+         CalibratedParkReplayChecks.Set(receiver, "capturePoseValid", Calibrated || frame >= 6);
+         CalibratedParkReplayChecks.Set(receiver, "headTracked", Calibrated || frame < 6);
+         if (Calibrated) SetMetricPair();
++        if (CheckingRuntimeHead) RememberRuntimeImage(inputPhoto);
+     }
+ 
+     static void Receive(string raw)
+@@ -193,6 +209,16 @@ public static partial class PetLiveRecognitionChecks
+                     raw.Contains(Weights), "Live Pet reply does not match its sent frame and YOLO weights.");
+             waiting = false;
+             nextFrame = Time.realtimeSinceStartup + .12f;
++            if (CheckingRuntimeHead)
++            {
++                ObserveRuntimeBody(packet, raw);
++                return;
++            }
++            if (CheckingAutomaticHead)
++            {
++                ObserveAutomaticHead(packet, raw);
++                return;
++            }
+             if (!warm)
+             {
+                 warm = true;
+diff --git a/Assets/Editor/PetLiveRecognitionMetric.cs b/Assets/Editor/PetLiveRecognitionMetric.cs
+index 740b68d..9349678 100644
+--- a/Assets/Editor/PetLiveRecognitionMetric.cs
++++ b/Assets/Editor/PetLiveRecognitionMetric.cs
+@@ -33,17 +33,21 @@ public static partial class PetLiveRecognitionChecks
+         public float baseline;
+         public int[] sourceFrames;
+         public float[] lidarM;
++        public string probeSpecies;
++        public int probeDelayIndex;
+     }
+ 
+     static void LoadMetricFixture()
+     {
+         optics = JsonUtility.FromJson<MetricFixture>(File.ReadAllText(Path.Combine(Input, "input.json")));
+-        Require(optics.sourceFrames.Length == 3 && optics.lidarM.Length == 3 && optics.intrinsics.Length == 4 &&
+-                optics.baseline > 0f, "Expected three calibrated source frames and independent LiDAR readings.");
+-        metricPhotos = new Texture2D[3];
+-        leftGray = new byte[3][];
+-        rightGray = new byte[3][];
+-        for (int i = 0; i < 3; i++)
++        int count = optics.sourceFrames.Length;
++        Require((CheckingAutomaticHead ? count >= 9 && optics.probeDelayIndex > 3 && optics.probeDelayIndex < count-3
++                                       : count == 3 && optics.lidarM.Length == 3) &&
++                optics.intrinsics.Length == 4 && optics.baseline > 0f, "Calibrated frame inventory does not match the test.");
++        metricPhotos = new Texture2D[count];
++        leftGray = new byte[count][];
++        rightGray = new byte[count][];
++        for (int i = 0; i < count; i++)
+         {
+             var dir = Path.Combine(Input, optics.sourceFrames[i].ToString("D5"));
+             var texture = new Texture2D(2, 2, TextureFormat.RGB24, false);
+@@ -58,12 +62,13 @@ public static partial class PetLiveRecognitionChecks
+         CalibratedParkReplayChecks.Set(receiver, "baseline", optics.baseline);
+         CalibratedParkReplayChecks.Set(receiver, "capturePose", new Pose(Vector3.zero, Quaternion.identity));
+         CalibratedParkReplayChecks.Set(receiver, "cameraPose", new Pose(Vector3.zero, Quaternion.Euler(180,0,0)));
+-        trace.Add("Calibrated offline stereo with independent LiDAR reference and supplied desktop pose.");
++        trace.Add(CheckingAutomaticHead ? "Calibrated stereo with a supplied desktop pose; independent optical head coordinates only."
++                                        : "Calibrated offline stereo with independent LiDAR reference and supplied desktop pose.");
+     }
+ 
+     static void SetMetricPair()
+     {
+-        int i = frame % 3;
++        int i = CheckingAutomaticHead ? probeIndex : frame % 3;
+         CalibratedParkReplayChecks.Set(receiver, "left", leftGray[i]);
+         CalibratedParkReplayChecks.Set(receiver, "right", rightGray[i]);
+     }
+diff --git a/Assets/Scripts/MagicMR/ParkController.cs b/Assets/Scripts/MagicMR/ParkController.cs
+index cfeb6cd..840c429 100644
+--- a/Assets/Scripts/MagicMR/ParkController.cs
++++ b/Assets/Scripts/MagicMR/ParkController.cs
+@@ -334,6 +334,13 @@ namespace MagicMR
+             // Never silently switch the selected instance on each frame.
+             status="2D class + stereo translation. Point to select; Place confirms virtual orientation.";
+         }
++        public ParkActor PhysicalPetForHead(string id)
++        {
++            if (scenario != ParkScenario.Pet || simulation || string.IsNullOrEmpty(id) ||
++                (!string.IsNullOrEmpty(recognitionLock) && id != recognitionLock) ||
++                (selected && selected.instanceId != id)) return null;
++            return actors.TryGetValue(id, out var actor) && actor && !actor.virtualTarget ? actor : null;
++        }
+         public void ExpirePhysicalTargets() { foreach(var pair in actors)if(!pair.Value.virtualTarget) { pair.Value.SetTracked(false);ReleaseSurface(pair.Value);confirmations[pair.Key]=0; } }
+         public bool RequestFit() {
+             if(!selected || !selected.tracked || selected.Busy)return false;
+diff --git a/Assets/Scripts/Perception/ParkStereoReceiver.cs b/Assets/Scripts/Perception/ParkStereoReceiver.cs
+index 7d4b988..76e8580 100644
+--- a/Assets/Scripts/Perception/ParkStereoReceiver.cs
++++ b/Assets/Scripts/Perception/ParkStereoReceiver.cs
+@@ -20,8 +20,14 @@ namespace Perception
+         public float maxAge=.3f;
+         public float maxRecognitionAge=1.5f;
+         public float minDepth=.2f, maxDepth=3f;
++        [Tooltip("Optional per-frame pet head candidate service on the detector host. Zero disables it.")]
++        [SerializeField] int petHeadPort;
++        PetStereoHeadClient petHead;
++        byte[] headRgb;
++        long headRgbFrame, headRgbTimestamp;
+         public string Status { get; private set; }="NO_TARGET";
+         public float AcceptedResultAge {get;private set;}
++        public string PetHeadStatus => petHead?.Status ?? "Inactive";
+         struct Sample { public long ns; public Pose pose; }
+         readonly List<Sample> poses=new List<Sample>(180);
+         Texture2D texture;
+@@ -46,7 +52,7 @@ namespace Perception
+ #endif
+         }
+         void OnEnable() { if(transport)transport.LineReceived+=Receive; }
+-        void OnDisable() { if(transport)transport.LineReceived-=Receive; waiting=false; poses.Clear(); controller?.ExpirePhysicalTargets(); }
++        void OnDisable() { if(transport)transport.LineReceived-=Receive; waiting=false; poses.Clear(); EndHeadSession(); controller?.ExpirePhysicalTargets(); }
+         void OnDestroy() { if(texture)Destroy(texture); clock?.Dispose(); }
+         void Update()
+         {
+@@ -61,6 +67,7 @@ namespace Perception
+             else if(waiting && Time.realtimeSinceStartup-capturedAt>maxRecognitionAge) { waiting=false; Status="DETECTION_STALE"; controller?.ExpirePhysicalTargets(); }
+             else if(waiting && Time.realtimeSinceStartup-capturedAt>maxAge) {Status="LOCATION_RESULT_STALE: recognition pending";controller?.ExpirePhysicalTargets();}
+             if(lastReply>0 && Time.realtimeSinceStartup-lastReply>.65f)controller?.ExpirePhysicalTargets();
++            PollHeadSession();
+         }
+         public void AcceptPair(byte[] rgba,byte[] l,byte[] r,XrCameraIntrinsics k,XrCameraExtrinsics e,float separation,long timestamp)
+         {
+@@ -79,6 +86,7 @@ namespace Perception
+             left=l; right=r; intrinsics=new Vector4(k.focalLength.X,k.focalLength.Y,k.principalPoint.X,k.principalPoint.Y); baseline=separation;
+             cameraPose=new Pose(new Vector3(e.pose.Position.X,e.pose.Position.Y,e.pose.Position.Z),new Quaternion(e.pose.Orientation.X,e.pose.Orientation.Y,e.pose.Orientation.Z,e.pose.Orientation.W).normalized);
+             expected=sender.LastSentFrameId; capturedAt=Time.realtimeSinceStartup-age; waiting=true;
++            RememberHeadImage(rgba);
+             var recorder=PicoStereoCapture.Active;
+             if(capturePoseValid && recorder && recorder.parkReceiver==this)
+                 recorder.RecordAcceptedPose(expected,timestamp,capturePose,cameraPose,sender.LastSentTimestampMs,sender.LastSentSceneId);
+@@ -108,16 +116,20 @@ namespace Perception
+                 Status=discovery.LockedId==null?"RECOGNITION_ENTRY: choose a candidate; location not ready":"CLASS_RECOGNIZED: "+discovery.LockedScene+"; location not ready";
+                 if(discovery.LockedId==null || discovery.LockedScene!=controller.Profile)return;
+             }
+-            if(!string.IsNullOrEmpty(f.status) && f.status!="OK") { Status=f.status; controller.ExpirePhysicalTargets(); return; }
+-            if(f.scene!=controller.Profile && !(discoveryMode && f.scene=="discovery")) { Status="SCENE_MISMATCH"; controller.ExpirePhysicalTargets(); return; }
+-            if(f.detections==null || f.detections.Length==0) { Status="NO_TARGET"; controller.ExpirePhysicalTargets(); return; }
++            if(!string.IsNullOrEmpty(f.status) && f.status!="OK") { Status=f.status; RejectHead(); controller.ExpirePhysicalTargets(); return; }
++            if(f.scene!=controller.Profile && !(discoveryMode && f.scene=="discovery")) { Status="SCENE_MISMATCH"; RejectHead(); controller.ExpirePhysicalTargets(); return; }
++            if(f.detections==null || f.detections.Length==0) { Status="NO_TARGET"; RejectHead(); controller.ExpirePhysicalTargets(); return; }
+             if(!RecognitionReplyPolicy.AcceptSpatial(resultAge,maxAge,capturePoseValid,headTracked)) {
+                 Status=!capturePoseValid?"CAPTURE_POSE_UNAVAILABLE: recognition only":!headTracked?"HEAD_TRACKING_LOST: recognition only":"LOCATION_RESULT_STALE: recognition only";
+-                controller.ExpirePhysicalTargets();return;
++                RejectHead();controller.ExpirePhysicalTargets();return;
+             }
+             bool located=false;
+             string stereoFailure=null;
+             float stereoFailureConfidence=0;
++            DetectionMessage headDetection=null;
++            Vector4 headBox=default;
++            float headDisparity=0;
++            int potentialHeads=0;
+             Status="NO_RELIABLE_TARGET";
+             foreach(var d in f.detections) {
+                 if(discoveryMode && (d.instance_id!=discovery.LockedId || d.target_scene!=controller.Profile))continue;
+@@ -146,13 +158,33 @@ namespace Perception
+                 Vector3 optical=new Vector3((u-intrinsics.z)*estimate.depthMeters/intrinsics.x,(v-intrinsics.w)*estimate.depthMeters/intrinsics.y,estimate.depthMeters);
+                 Vector3 world=capturePose.position+capturePose.rotation*StereoFusionGeometry.OpticalToHead(optical,cameraPose);
+                 controller.Observe(d.instance_id,cls,world); located=true;
++                if(petHeadPort>0 && controller.PhysicalPetForHead(d.instance_id)) {
++                    potentialHeads++;
++                    headDetection=d;headBox=new Vector4(d.x1,y1,d.x2,y2);headDisparity=estimate.disparityPixels;
++                }
+             }
+             if(located) { Status="TRANSLATION_ONLY: "+f.model_validation+"; confirm orientation / virtual scale"; Debug.Log($"[ParkDetection] frame={f.frame_id} capture_to_reply_ms={(Time.realtimeSinceStartup-capturedAt)*1000:F1} (PICO clock correlated)"); }
+             else {
+                 if(stereoFailure!=null)Status="DEPTH_UNRELIABLE: "+stereoFailure;
+                 controller.ExpirePhysicalTargets();
+             }
++            if(potentialHeads==1 && f.frame_id==headRgbFrame && f.timestamp==headRgbTimestamp && headRgb!=null && f.scene=="pet")
++                petHead.Offer(controller.PhysicalPetForHead(headDetection.instance_id),f.frame_id,f.timestamp,
++                    headRgb,left,right,headBox,headDisparity,intrinsics,baseline,capturePose,cameraPose,capturedAt,maxAge);
++            else RejectHead();
++            headRgb=null;
++        }
++        void RememberHeadImage(byte[] rgba)
++        {
++            if(petHeadPort<=0 || controller.scenario!=ParkScenario.Pet || discoveryMode || rgba?.Length!=640*480*4) return;
++            petHead ??= new PetStereoHeadClient(transport.Host,petHeadPort);
++            headRgb=rgba;
++            headRgbFrame=sender.LastSentFrameId;
++            headRgbTimestamp=sender.LastSentTimestampMs;
+         }
++        void PollHeadSession() => petHead?.Poll(controller,capturePoseValid && headTracked && transport && transport.IsConnected,maxAge);
++        void RejectHead() { petHead?.Reset(); headRgb=null; }
++        void EndHeadSession() { petHead?.Dispose();petHead=null;headRgb=null; }
+         string DepthFailure(StereoPatchMatcher.Estimate estimate)
+         {
+             if(!estimate.valid)return estimate.reason;
+diff --git a/Assets/Scripts/Perception/PetStereoHeadClient.cs b/Assets/Scripts/Perception/PetStereoHeadClient.cs
+new file mode 100644
+index 0000000..efb9913
+--- /dev/null
++++ b/Assets/Scripts/Perception/PetStereoHeadClient.cs
+@@ -0,0 +1,197 @@
++using System;
++using System.Text;
++using System.Threading.Tasks;
++using MagicMR;
++using UnityEngine;
++
++namespace Perception
++{
++    /// <summary>Optional head estimator for the synchronized pair that produced an accepted Pet detection.</summary>
++    internal sealed class PetStereoHeadClient : IDisposable
++    {
++        const int PairWidth = 640, PairHeight = 480;
++        const float MaxGap = .24f;
++        const int Confirmations = 3;
++
++        readonly string host;
++        readonly int port;
++        readonly PoseTransport transport = new();
++        readonly PoseRetryPolicy retry = new();
++        readonly string session = Guid.NewGuid().ToString("N");
++        Pending operation;
++        ParkActor target;
++        Transform anchor;
++        int generation, confirmations;
++        long lastFrame;
++        float lastSample = float.NegativeInfinity, anchorCapture;
++        public string Status { get; private set; } = "Idle";
++
++        [Serializable]
++        internal sealed class Request
++        {
++            public string schema = "pet-head-v1", session, instance_id;
++            public long frame_id, timestamp;
++            public int width = PairWidth, height = PairHeight;
++            public float x1, y1, x2, y2, disparity, focal, baseline;
++            public int left_x, left_w, right_x, right_w, top, crop_h;
++        }
++
++        [Serializable]
++        internal sealed class Reply
++        {
++            public string schema, session, instance_id;
++            public long frame_id, timestamp;
++            public bool verified;
++            public float x, y, disparity;
++        }
++
++        sealed class Pending
++        {
++            public Task<string> reply;
++            public Request request;
++            public int generation;
++            public Pose head, camera;
++            public Vector4 optics;
++            public float captureTime;
++        }
++
++        public PetStereoHeadClient(string host, int port) { this.host = host; this.port = port; }
++
++        public void Offer(ParkActor actor, long frame, long timestamp, byte[] rgba, byte[] left, byte[] right, Vector4 box,
++            float disparity, Vector4 optics, float baseline, Pose head, Pose camera, float captureTime, float limit)
++        {
++            var now = Time.realtimeSinceStartup;
++            if (!actor || rgba?.Length != PairWidth*PairHeight*4 || left?.Length != PairWidth*PairHeight ||
++                right?.Length != PairWidth*PairHeight || !float.IsFinite(disparity) || disparity < 2 || disparity >= 120)
++            {
++                Reset();
++                return;
++            }
++            if (target != actor) { Reset(); target = actor; }
++            var remaining = Mathf.FloorToInt((limit - (now - captureTime))*1000);
++            if (operation != null || remaining <= 0 || !retry.CanAttempt(now))
++            {
++                Status=$"Skipped {frame}: {(operation!=null ? "busy" : remaining<=0 ? "aged" : "backoff")}";
++                return;
++            }
++            var request = new Request {
++                session=session, frame_id=frame, timestamp=timestamp, instance_id=actor.instanceId,
++                x1=box.x, y1=box.y, x2=box.z, y2=box.w, disparity=disparity, focal=optics.x, baseline=baseline
++            };
++            float radius=Mathf.Max(box.z-box.x,box.w-box.y)*.625f+8f;
++            float x=(box.x+box.z)*.5f, y=(box.y+box.w)*.5f;
++            request.left_x=Mathf.Clamp(Mathf.FloorToInt(x-radius),0,PairWidth);
++            request.left_w=Mathf.Clamp(Mathf.CeilToInt(x+radius),0,PairWidth)-request.left_x;
++            request.right_x=Mathf.Clamp(Mathf.FloorToInt(x-disparity-radius),0,PairWidth);
++            request.right_w=Mathf.Clamp(Mathf.CeilToInt(x-disparity+radius),0,PairWidth)-request.right_x;
++            request.top=Mathf.Clamp(Mathf.FloorToInt(y-radius),0,PairHeight);
++            request.crop_h=Mathf.Clamp(Mathf.CeilToInt(y+radius),0,PairHeight)-request.top;
++            if (request.left_w < 12 || request.right_w < 12 || request.crop_h < 12) { Reset(); return; }
++            byte[] header = Encoding.UTF8.GetBytes(JsonUtility.ToJson(request));
++            operation = new Pending {
++                request=request, head=head, camera=camera, optics=optics, captureTime=captureTime, generation=generation,
++                reply=Task.Run(() => transport.ExchangeAsync(host,port,header,
++                    Crop(rgba,request.left_x,request.top,request.left_w,request.crop_h,4),
++                    Crop(right,request.right_x,request.top,request.right_w,request.crop_h,1),remaining,compress:false))
++            };
++            Status=$"Sent {frame}; budget {remaining} ms";
++        }
++
++        static byte[] Crop(byte[] image, int x, int y, int width, int height, int channels)
++        {
++            int rowBytes=width*channels;
++            var crop=new byte[rowBytes*height];
++            for (int row=0; row<height; row++)
++                Buffer.BlockCopy(image,((y+row)*PairWidth+x)*channels,crop,row*rowBytes,rowBytes);
++            return crop;
++        }
++
++        internal static bool Matches(Request request, Reply reply) => reply != null && reply.schema == request.schema &&
++            reply.session == request.session && reply.instance_id == request.instance_id &&
++            reply.frame_id == request.frame_id && reply.timestamp == request.timestamp;
++
++        public void Poll(ParkController controller, bool captureAvailable, float limit)
++        {
++            float now = Time.realtimeSinceStartup;
++            if (!captureAvailable || (target && controller.PhysicalPetForHead(target.instanceId) != target) ||
++                (anchor && (!target || !target.tracked || target.headAnchor != anchor))) Reset();
++            else if (anchor && now - anchorCapture > limit) ClearAnchor();
++            if (operation == null || !operation.reply.IsCompleted) return;
++            var completed = operation;
++            operation = null;
++            if (completed.reply.IsFaulted || completed.reply.IsCanceled)
++            {
++                _ = completed.reply.Exception;
++                if (completed.generation == generation)
++                {
++                    // A frame deadline can surface as a socket fault on some transports.
++                    // Reserve reconnect backoff for faults that arrived before that deadline.
++                    if (!completed.reply.IsCanceled && now-completed.captureTime < limit-.02f) retry.Fail(now);
++                    Reset();
++                    Status=$"Failed {completed.request.frame_id}: {completed.reply.Exception?.GetBaseException().Message ?? "deadline"}";
++                }
++                return;
++            }
++            if (completed.generation != generation || !target) return;
++            Reply reply;
++            try { reply = JsonUtility.FromJson<Reply>(completed.reply.Result); }
++            catch (ArgumentException) { Reset(); return; }
++            var request = completed.request;
++            float age = now - completed.captureTime;
++            if (!Matches(request,reply) || !RecognitionReplyPolicy.AcceptSpatial(age,limit,true,captureAvailable) ||
++                request.frame_id <= lastFrame || !reply.verified || !InRange(reply,request))
++            {
++                Reset();
++                Status=$"Rejected {request.frame_id}; age {age*1000:F1} ms, verified {reply?.verified}, bound {Matches(request,reply)}";
++                return;
++            }
++            retry.Reset();
++            confirmations = completed.captureTime > lastSample && completed.captureTime-lastSample <= MaxGap ?
++                Math.Min(confirmations+1,Confirmations) : 1;
++            lastFrame = request.frame_id;
++            lastSample = completed.captureTime;
++            Status=$"Accepted {lastFrame}; age {age*1000:F1} ms, confirmations {confirmations}";
++            if (confirmations < Confirmations || !target.tracked) return;
++            var k = completed.optics;
++            float depth = request.focal*request.baseline/reply.disparity;
++            var optical = new Vector3((reply.x-k.z)*depth/k.x,(reply.y-k.w)*depth/k.y,depth);
++            Vector3 world = completed.head.position + completed.head.rotation*StereoFusionGeometry.OpticalToHead(optical,completed.camera);
++            if (!float.IsFinite(world.x) || !float.IsFinite(world.y) || !float.IsFinite(world.z)) { Reset(); return; }
++            if (!anchor) anchor = new GameObject("Pet stereo head").transform;
++            anchor.position = world;
++            anchorCapture = completed.captureTime;
++            target.headAnchor = anchor;
++            target.reliableHeadPose = true;
++        }
++
++        static bool InRange(Reply reply, Request request)
++        {
++            if (!(reply.x >= 0 && reply.x < PairWidth && reply.y >= 0 && reply.y < PairHeight &&
++                  reply.disparity>=2 && reply.disparity<120)) return false;
++            float scale = request.focal*request.baseline;
++            float depth = scale/reply.disparity;
++            return depth>=.2f && depth<=3.7f && Mathf.Abs(depth-scale/request.disparity)<=.70f;
++        }
++
++        void ClearAnchor()
++        {
++            if (!anchor) return;
++            if (target && target.headAnchor == anchor) { target.headAnchor = null; target.reliableHeadPose = false; }
++            UnityEngine.Object.Destroy(anchor.gameObject);
++            anchor = null;
++        }
++
++        public void Reset()
++        {
++            ClearAnchor();
++            generation++;
++            target = null;
++            confirmations = 0;
++            lastFrame = 0;
++            lastSample = float.NegativeInfinity;
++            Status = "Idle";
++        }
++
++        public void Dispose() { Reset();transport.Dispose(); }
++    }
++}
+diff --git a/Assets/Scripts/Perception/PetStereoHeadClient.cs.meta b/Assets/Scripts/Perception/PetStereoHeadClient.cs.meta
+new file mode 100644
+index 0000000..f27ae14
+--- /dev/null
++++ b/Assets/Scripts/Perception/PetStereoHeadClient.cs.meta
+@@ -0,0 +1,2 @@
++fileFormatVersion: 2
++guid: 79f6e472080d4e42a8d935afcb82ce14
+diff --git a/Assets/Scripts/Perception/Stereo/PoseTransport.cs b/Assets/Scripts/Perception/Stereo/PoseTransport.cs
+index d8b5535..edebca9 100644
+--- a/Assets/Scripts/Perception/Stereo/PoseTransport.cs
++++ b/Assets/Scripts/Perception/Stereo/PoseTransport.cs
+@@ -18,7 +18,7 @@ namespace Perception
+         bool disposed;
+ 
+         public async Task<string> ExchangeAsync(string host, int port, byte[] header,
+-            byte[] left, byte[] right, int deadlineMs)
++            byte[] left, byte[] right, int deadlineMs, bool compress = true)
+         {
+             using (var deadline = CancellationTokenSource.CreateLinkedTokenSource(lifetime.Token))
+             {
+@@ -41,7 +41,8 @@ namespace Perception
+                     await WriteBlock(stream, header, token).ConfigureAwait(false);
+                     if (left != null)
+                     {
+-                        byte[] packedLeft = Compress(left, token), packedRight = Compress(right, token);
++                        byte[] packedLeft = compress ? Compress(left, token) : left;
++                        byte[] packedRight = compress ? Compress(right, token) : right;
+                         token.ThrowIfCancellationRequested();
+                         await WriteBlock(stream, packedLeft, token).ConfigureAwait(false);
+                         await WriteBlock(stream, packedRight, token).ConfigureAwait(false);
+diff --git a/Tools/check_pet_head_live_service.py b/Tools/check_pet_head_live_service.py
+new file mode 100644
+index 0000000..aed2529
+--- /dev/null
++++ b/Tools/check_pet_head_live_service.py
+@@ -0,0 +1,138 @@
++"""Loopback-only probe over the unmodified PICF YOLO service and real Unity JPEGs."""
++import hashlib
++import json
++import os
++from pathlib import Path
++import socket
++import struct
++import sys
++import threading
++import time
++from argparse import Namespace
++
++import cv2
++import numpy as np
++
++from check_pet_head_ap10k import MODEL, head_pixels, read, sha
++from check_pet_head_body_window import inputs, two_eye_local
++from check_pet_head_camera_inputs import pxr_luminance
++
++
++SCHEDULE = (32,32,33,34,35,35,32,33,34,35,150)
++STAGE = Path('D:/MagicMRSourceCandidate/mr-jc-pet-metric-review-20261123')
++
++
++def contained_dog_crop(small, large):
++    if small['class'] != 'dog' or large['class'] != 'dog' or min(small['confidence'],large['confidence']) < .5:
++        return False
++    sw,sh = small['x2']-small['x1'],small['y2']-small['y1']
++    lw,lh = large['x2']-large['x1'],large['y2']-large['y1']
++    if not 0 < sw <= lw*1.02 or not 0 < sh <= lh*.85:
++        return False
++    ix = max(0,min(small['x2'],large['x2'])-max(small['x1'],large['x1']))
++    iy = max(0,min(small['y2'],large['y2'])-max(small['y1'],large['y1']))
++    return .95 <= sw/lw and ix*iy >= .98*sw*sh and abs(small['y1']-large['y1']) <= .03*lh
++
++
++def main():
++    sys.path.insert(0,str(STAGE))
++    import tcp_server as server
++    import torch
++    from scene_protocol import SCENES
++
++    torch.set_num_threads(1)
++    cv2.setNumThreads(2)
++    runtime = os.environ.get('PET_HEAD_REVIEW_RUNTIME') == '1'
++    if runtime and os.environ.get('PET_HEAD_SEPARATE_PROCESS')!='1':
++        from serve_pet_stereo_head_candidate import main as serve_head
++        threading.Thread(target=serve_head,args=(Namespace(detector_root=STAGE,host='127.0.0.1',port=15006,
++                                                               editor_check=True,delay_frame=8),),daemon=True).start()
++    model = MODEL/'end2end.onnx'
++    assert sha(model)==read(MODEL/'model-source.json')['onnxSha256']
++    assert sha(STAGE/'yolov8n.pt')=='f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36'
++    net = None if runtime else cv2.dnn.readNetFromONNX(str(model))
++    is_cat=os.environ.get('PET_HEAD_REVIEW_CAT')=='1'
++    schedule=(30,30,31,32,30,31,32,32,30,31,32,249) if runtime else (30,30,31,32,32,30,31,32,249) if is_cat else SCHEDULE
++    delay_index=4 if is_cat else 5
++    species='Cat' if is_cat else 'Dog'
++    if is_cat:
++        assert sha(STAGE/'yolo11s.pt')=='85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5'
++        server.PROFILE_CONFIG=STAGE/'pet-metric-profiles.json'
++    iou = float(os.environ.get('PET_HEAD_REVIEW_IOU',server.DEFAULT_IOU))
++    assert iou in (server.DEFAULT_IOU,.65)
++    merge_contained = os.environ.get('PET_HEAD_REVIEW_CONTAINED') == '1'
++    original = server.detections_from_result
++    if merge_contained:
++        def collapse_diagnostic_crops(result):
++            detections = original(result)
++            return [d for d in detections if not any(contained_dog_crop(d,other) for other in detections)]
++        server.detections_from_result = collapse_diagnostic_crops
++    requested_device=os.environ.get('PET_HEAD_REVIEW_DETECTOR_DEVICE','cpu') if runtime else 'cpu'
++    device=server.resolve_device(requested_device)
++    config = server.InferenceConfig(requested_device,False,640,server.DEFAULT_CONF,iou,8)
++    frames = {}
++    for row in inputs():
++        group='metricCat:localCanary:' if is_cat else 'metricDog:'
++        if row['key'].startswith(group) and row['sourceFrame'] in schedule:
++            image,right = [cv2.imread(str(path.with_suffix('.png'))) for path in row['files']]
++            thumb = cv2.resize(image,(80,60),interpolation=cv2.INTER_AREA).astype(np.int16)
++            gray = [pxr_luminance(frame) for frame in (image,right)]
++            frames[row['sourceFrame']] = row,thumb,gray
++    assert set(frames)==set(schedule)
++
++    with socket.socket() as listener:
++        listener.bind(('127.0.0.1',15005))
++        listener.listen(1)
++        listener.settimeout(100)
++        print(f'READY 15005 IoU={iou} contained={merge_contained} device={device}',flush=True)
++        client,_ = listener.accept()
++        direct,peer = socket.socketpair()
++        worker = threading.Thread(target=server.serve_client,args=(peer,None,device,config,True),daemon=True)
++        worker.start()
++        with client,direct,direct.makefile('rb') as stream:
++            client.settimeout(25)
++            direct.settimeout(18)
++            for index,source in enumerate(schedule):
++                frame,timestamp,w,h,jpeg,scene=server.read_pico_frame(client,include_scene=True)
++                started=time.perf_counter()
++                assert (frame,w,h,scene)==(index+1,640,480,'pet')
++                image = cv2.imdecode(np.frombuffer(jpeg,dtype=np.uint8),cv2.IMREAD_COLOR)
++                thumb = cv2.resize(image,(80,60),interpolation=cv2.INTER_AREA).astype(np.int16)
++                scores = {n:float(np.mean(np.abs(thumb-data[1]))) for n,data in frames.items()}
++                assert min(scores,key=scores.get)==source and scores[source]<5,scores
++                direct.sendall(b'PICF'+bytes((2,SCENES.index(scene)))+struct.pack('<IqIII',frame,timestamp,w,h,len(jpeg))+jpeg)
++                reply=json.loads(stream.readline(32769))
++                assert (reply['frame_id'],reply['timestamp'],reply['scene'],reply['status'])==(frame,timestamp,'pet','OK')
++                if runtime:
++                    client.sendall((json.dumps(reply,separators=(',',':'))+'\n').encode())
++                    print(json.dumps(dict(frame=frame,source=source,pcMs=(time.perf_counter()-started)*1000,
++                                          jpegSha256=hashlib.sha256(jpeg).hexdigest(),sourceThumbDistance=scores[source])),flush=True)
++                    continue
++                hits=[d for d in reply['detections'] if d['class_name']==species and d['confidence']>=.5]
++                candidate=dict(frame_id=frame,timestamp=timestamp,source_frame=source,verified=False)
++                row,_,gray=frames[source]
++                if len(hits)==1:
++                    hit=hits[0]
++                    box=np.array([hit[k] for k in ('x1','y1','x2','y2')])
++                    disparity=row['scale']/row['bodyM']
++                    right_color=cv2.cvtColor(gray[1],cv2.COLOR_GRAY2BGR)
++                    left=head_pixels(net,image,box)
++                    right=head_pixels(net,right_color,box-[disparity,0,disparity,0])
++                    semantic,matches,pose_d=two_eye_local(row,left,right,images=gray)
++                    if semantic and ('nose' in matches or len(matches)>=2):
++                        x,y=left['nose']['xy']
++                        d=round(x)-matches['nose'][0] if 'nose' in matches else pose_d
++                        candidate.update(instance_id=hit['instance_id'],verified=True,x=x,y=y,depth=row['scale']/d)
++                candidate['pc_ms']=(time.perf_counter()-started)*1000
++                if index==delay_index:
++                    time.sleep(.33)
++                reply['head_probe']=candidate
++                client.sendall((json.dumps(reply,separators=(',',':'))+'\n').encode())
++                print(json.dumps(dict(candidate=candidate,jpegSha256=hashlib.sha256(jpeg).hexdigest(),
++                                      sourceThumbDistance=scores[source],injectedDelay=index==delay_index)),flush=True)
++        worker.join(5)
++        assert not worker.is_alive(), 'YOLO service failed to leave its fixture connection'
++
++
++if __name__=='__main__':
++    main()
+diff --git a/Tools/run_room_magic_review_bounded.ps1 b/Tools/run_room_magic_review_bounded.ps1
+index 0d29c9c..2338be6 100644
+--- a/Tools/run_room_magic_review_bounded.ps1
++++ b/Tools/run_room_magic_review_bounded.ps1
+@@ -5,7 +5,7 @@ param(
+     [ValidatePattern('^[a-z0-9-]{4,60}$')][string]$RunId='room-current-20261120',
+     [string]$EditorOverrideManifest,
+     [string]$ProjectInputManifest,
+-    [ValidateSet('RoomMagic','RoomPhotoScene','RoomWindowOwnership','PlantFlow','PlantVoice','PetDream','PetOutline','SeasonTree','SeasonTreeSelection','WillowTree','WillowTreeSelection','StatueStyle','StatuePlayback','StatueGarden','BronzePlayback','BugDance','LegacyStartup','CaptureTimeline','SampleCaptureTimeline','DogGait','DogWalkAuthor','DogWalkAcceptance','DogWalkInstalled','PetWalkLifecycle','CalibratedParkReplay','CalibratedRoomChain','BridgeRoomChain','BridgeRoomLivePicf','BridgePlantLivePicf','BridgePetLivePicf','BridgePetMetricPicf','BridgePetDogMetric','BridgePetHeadContact','PetContactLifecycle','BridgeRoutes','AndroidBuildPreflight','CalibratedPlantChain','CalibratedRoomVariants','CalibratedFurnitureHoldout','CalibratedTreeRange','KenyaTreeInteractionRange','Miti360TreeSelection','Miti360SeasonTreeHci','Miti360WillowTreeHci','Miti360SeasonTreeNightFill','Miti360WillowTreeNightFill','ParkTreeDepthFeedback','BridgeTreeEntry','LighterSavedEffects')][string]$Check='RoomMagic'
++    [ValidateSet('RoomMagic','RoomPhotoScene','RoomWindowOwnership','PlantFlow','PlantVoice','PetDream','PetOutline','SeasonTree','SeasonTreeSelection','WillowTree','WillowTreeSelection','StatueStyle','StatuePlayback','StatueGarden','BronzePlayback','BugDance','LegacyStartup','CaptureTimeline','SampleCaptureTimeline','DogGait','DogWalkAuthor','DogWalkAcceptance','DogWalkInstalled','PetWalkLifecycle','CalibratedParkReplay','CalibratedRoomChain','BridgeRoomChain','BridgeRoomLivePicf','BridgePlantLivePicf','BridgePetLivePicf','BridgePetMetricPicf','BridgePetDogMetric','BridgePetHeadContact','BridgePetAutomaticHead','BridgePetRuntimeHead','PetContactLifecycle','BridgeRoutes','AndroidBuildPreflight','CalibratedPlantChain','CalibratedRoomVariants','CalibratedFurnitureHoldout','CalibratedTreeRange','KenyaTreeInteractionRange','Miti360TreeSelection','Miti360SeasonTreeHci','Miti360WillowTreeHci','Miti360SeasonTreeNightFill','Miti360WillowTreeNightFill','ParkTreeDepthFeedback','BridgeTreeEntry','LighterSavedEffects')][string]$Check='RoomMagic'
+ )
+ $ErrorActionPreference='Stop'
+ $root=Split-Path $PSScriptRoot -Parent
+@@ -23,6 +23,8 @@ $checks=@{
+     BridgePetLivePicf=@{method='PetLiveRecognitionChecks.Run';pattern='^PASS: saved BridgeStereoFusion sent live Pet PICF,';folder='pet-live-recognition-checks';group='bridge-live-pet';scope='Saved Bridge to ParkPet with live optical YOLO recognition, candidate continuity and capture/head pose gates. No metric placement or headset acceptance'}
+     BridgePetMetricPicf=@{method='PetLiveRecognitionChecks.RunCalibrated';pattern='^PASS: saved BridgeStereoFusion located the live calibrated Cat';folder='pet-live-metric-checks';group='bridge-live-pet-metric';scope='Real optical Cat with a local canary model, RGB stereo against independent LiDAR, synthetic pose and hands, A/B/C/D and short recovery. No default profile or PICO acceptance'}
+     BridgePetDogMetric=@{method='PetLiveRecognitionChecks.RunCalibratedDog';pattern='^PASS: saved BridgeStereoFusion located the live calibrated Dog';folder='pet-live-dog-metric-checks';group='bridge-live-pet-dog-metric';scope='Default released YOLO dog with calibrated stereo and independent LiDAR, Editor pose and shared synthetic A/B/C/D. No headset acceptance'}
++    BridgePetRuntimeHead=@{method='PetLiveRecognitionChecks.RunRuntimeHead';pattern='^PASS: saved BridgeStereoFusion attached runtime Pet head';folder='pet-live-runtime-head-checks';group='bridge-live-pet-head';scope='Editor feeds saved receiver stereo frames and tests scene runtime head transport, freshness, expiry and ID changes.'}
++    BridgePetAutomaticHead=@{method='PetLiveRecognitionChecks.RunAutomaticHead';pattern='^PASS: saved BridgeStereoFusion verified frame-bound candidate Pet head';folder='pet-live-auto-head-checks';group='bridge-live-pet-head';scope='Original Mono editor sender and receiver, live PC YOLO, same-frame head candidate, expiry and reacquisition. No PICO validation'}
+     BridgePetHeadContact=@{method='PetLiveRecognitionChecks.RunHeadContact';pattern='^PASS: saved BridgeStereoFusion enforced Pet contact';folder='pet-live-head-checks';group='bridge-live-pet-head';scope='Real optical Cat body and locally supplied independent metric head, contact separation and loss. No automatic head pose or PICO acceptance'}
+     PetContactLifecycle=@{method='NaturalPetPlayChecks.Run';pattern='^PASS:';folder='natural-pet-play';group='pet-contact-lifecycle';scope='Cat/Dog outline, dream, feed and lifecycle with explicit provision of an Editor head fixture'}
+     CalibratedRoomChain=@{method='CalibratedRoomMagicChainChecks.Run';pattern='^PASS: saved ParkRoom actual PICF and stereo replay selected the tracked chair,';folder='park-room-chain-checks';group='park-room-chain-20261121';scope='Saved ParkRoom with calibrated public images, original PICF responses and real C# tracking, synthetic test poses, selection/calibration and shared A/B/C/D. No headset acceptance'}
+diff --git a/Tools/serve_pet_stereo_head_candidate.py b/Tools/serve_pet_stereo_head_candidate.py
+new file mode 100644
+index 0000000..25fb6d8
+--- /dev/null
++++ b/Tools/serve_pet_stereo_head_candidate.py
+@@ -0,0 +1,110 @@
++"""Opt-in head-only sidecar; ParkPet's PICF detector connection stays independent."""
++import argparse
++import math
++from pathlib import Path
++import socket
++import struct
++import sys
++import time
++
++import cv2
++import numpy as np
++
++from check_pet_head_ap10k import MODEL, head_pixels, read, sha
++from check_pet_head_body_window import two_eye_local
++from check_pet_head_camera_inputs import pxr_luminance
++
++
++def validate(header):
++    if (header['schema']!='pet-head-v1' or (header['width'],header['height'])!=(640,480) or
++        not isinstance(header['session'],str) or len(header['session'])!=32 or
++        not isinstance(header['instance_id'],str) or not 0<len(header['instance_id'])<=128 or
++        type(header['frame_id']) is not int or header['frame_id']<=0 or
++        type(header['timestamp']) is not int or header['timestamp']<=0):
++        raise ValueError('Invalid Pet stereo request identity')
++    x1,y1,x2,y2,d,f,b=(header[name] for name in ('x1','y1','x2','y2','disparity','focal','baseline'))
++    if not (all(math.isfinite(v) for v in (x1,y1,x2,y2,d,f,b)) and 0<=x1<x2<=640 and 0<=y1<y2<=480 and
++            min(x2-x1,y2-y1)>=12 and 2<=d<120 and f>0 and b>0 and .2<=f*b/d<=3.):
++        raise ValueError('Invalid Pet stereo calibration or box')
++    return np.array([x1,y1,x2,y2]),d,f*b
++
++
++def read_crop(client, header, eye, channels, recv_exact):
++    x,w,y,h=(header[k] for k in (f'{eye}_x',f'{eye}_w','top','crop_h'))
++    if (not all(type(v) is int for v in (x,w,y,h)) or not (w>=12 and h>=12 and
++            0<=x<x+w<=640 and 0<=y<y+h<=480)):
++        raise ValueError('Invalid Pet head crop dimensions')
++    count=struct.unpack('<I',recv_exact(client,4))[0]
++    if count!=w*h*channels:
++        raise ValueError('Incorrect Pet head crop data size')
++    crop=np.frombuffer(recv_exact(client,count),np.uint8).reshape(h,w,channels)
++    image=np.zeros((480,640,channels),dtype=np.uint8)
++    image[y:y+h,x:x+w]=crop
++    return image if channels>1 else image[:,:,0]
++
++
++def estimate(net, header, box, disparity, scale, rgba, gray_right):
++    left=cv2.cvtColor(rgba,cv2.COLOR_RGBA2BGR)
++    right=cv2.cvtColor(gray_right,cv2.COLOR_GRAY2BGR)
++    views=head_pixels(net,left,box),head_pixels(net,right,box-[disparity,0,disparity,0])
++    row=dict(disparityCeiling=120,bodyM=scale/disparity,scale=scale)
++    geometry,matches,pose_disparity=two_eye_local(row,*views,images=(pxr_luminance(left),gray_right))
++    record={key:header[key] for key in ('schema','session','frame_id','timestamp','instance_id')}
++    record.update(verified=geometry and ('nose' in matches or len(matches)>=2))
++    if record['verified']:
++        x,y=views[0]['nose']['xy']
++        d=round(x)-matches['nose'][0] if 'nose' in matches else pose_disparity
++        record.update(x=x,y=y,disparity=d)
++    return record
++
++
++def main(args):
++    sys.path.insert(0,str(args.detector_root.resolve()))
++    from pose_bridge import receive_json, recv_exact, send_json
++
++    cv2.setNumThreads(2)
++    weight=MODEL/'end2end.onnx'
++    assert sha(weight)==read(MODEL/'model-source.json')['onnxSha256']
++    net=cv2.dnn.readNetFromONNX(str(weight))
++    # Warm only the operator graph, without issuing or recording any estimator result.
++    net.setInput(np.zeros((1,3,256,256),dtype=np.float32))
++    net.forward(('simcc_x','simcc_y'))
++    with socket.socket() as server:
++        server.bind((args.host,args.port))
++        server.listen(1)
++        print(f'PET HEAD READY {args.port}',flush=True)
++        while True:
++            client,_=server.accept()
++            with client:
++                client.settimeout(2)
++                while True:
++                    header=None
++                    try:
++                        header=receive_json(client)
++                        started=time.perf_counter()
++                        box,disparity,scale=validate(header)
++                        left=read_crop(client,header,'left',4,recv_exact)
++                        right=read_crop(client,header,'right',1,recv_exact)
++                        reply=estimate(net,header,box,disparity,scale,left,right)
++                        if args.editor_check:
++                            print({**reply,'disparityUsed':disparity,'sidecarMs':round((time.perf_counter()-started)*1000,1)},flush=True)
++                        if args.delay_frame==reply['frame_id']:
++                            time.sleep(.33)
++                        send_json(client,reply)
++                    except (EOFError,OSError,ValueError,TypeError,KeyError) as error:
++                        if args.editor_check and header is not None:
++                            print(f'Head request {header.get("frame_id")} stopped: {error}',flush=True)
++                        break
++
++
++if __name__=='__main__':
++    parser=argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--detector-root',type=Path,required=True)
++    parser.add_argument('--host',default='127.0.0.1')
++    parser.add_argument('--port',type=int,default=15006)
++    parser.add_argument('--editor-check',action='store_true')
++    parser.add_argument('--delay-frame',type=int,default=0)
++    options=parser.parse_args()
++    if options.delay_frame and (not options.editor_check or options.host!='127.0.0.1'):
++        parser.error('Fault injection requires an isolated Editor replay')
++    main(options)
