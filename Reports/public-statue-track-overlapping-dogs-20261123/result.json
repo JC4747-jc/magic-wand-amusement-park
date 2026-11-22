@@ -1,0 +1,606 @@
+{
+  "source_commit": "1542ab3dfe097804450d71ddd8817a0b41539c8e",
+  "runtime_sha256": {
+    "tcp_server.py": "10607c9a6a03bfb4e8875b3107f85608e382b90415e232dace093b2bf678acdd",
+    "scene_router.py": "147401103ced6e6a06ca526d434669edd36b5e1e55630f23a0a099689a3bca11",
+    "scene_protocol.py": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038",
+    "detector_config.py": "b047405f41cd10523d6e51ab25ee8a1673a8219de8ce4ece7a684277b2f5640b",
+    "pose_availability.py": "10eef6f52a4ae9afca8b16e51be2179b83c0a30d1b498ac98cd969d0129367ee",
+    "discovery.py": "f17f4b4525e969ae6dc22523d5a520207280106ebd61dc103b880fee52f88747",
+    "model_artifact.py": "521b330e8b38ee6a93fe6475e168d8dc90aa9a6bcad035db8d17e07ee1060cab",
+    "scene_profiles.json": "4c3a776c4133c60ff9be810630c1aa7002775230f98a03bb3fdfa020d78f8781"
+  },
+  "image_sha256": "f94d6d8a3c684a97a33c023b6fad401a1176236afbf0e23697e49fa6d9a74340",
+  "worker_sha256": "1ddfdb5ec008751d9795090439b3440c6c4b6e715b5b9ac87e34cc8511c3c525",
+  "entries": [
+    {
+      "key": "window-1",
+      "duration_ms": 1152.596400002949,
+      "jpeg_sha256": "0277d659be3b7ff51d3978a0f95aba80c846a81d3da6229cadbc33c3b1fa4c98",
+      "source_crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "approximate_truth_px": [
+        [
+          0.0,
+          241.875,
+          483.125,
+          480.0
+        ],
+        [
+          315.625,
+          181.25,
+          640.0,
+          360.0
+        ]
+      ],
+      "reply": {
+        "frame_id": 1,
+        "timestamp": 1795391006697,
+        "width": 640,
+        "height": 480,
+        "scene": "pet",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Dog",
+            "class_id": 16,
+            "confidence": 0.9419835209846497,
+            "centerX": 479.48236083984375,
+            "centerY": 271.0419616699219,
+            "x1": 319.4451904296875,
+            "y1": 180.955078125,
+            "x2": 639.51953125,
+            "y2": 361.12884521484375,
+            "class_name": "Dog",
+            "bbox": [
+              319.4451904296875,
+              180.955078125,
+              639.51953125,
+              361.12884521484375
+            ],
+            "instance_id": "ff4a69a88d9c:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "pet"
+          },
+          {
+            "class": "Dog",
+            "class_id": 16,
+            "confidence": 0.8855190873146057,
+            "centerX": 241.21067810058594,
+            "centerY": 343.261962890625,
+            "x1": 0.348541259765625,
+            "y1": 240.60678100585938,
+            "x2": 482.07281494140625,
+            "y2": 445.9171447753906,
+            "class_name": "Dog",
+            "bbox": [
+              0.348541259765625,
+              240.60678100585938,
+              482.07281494140625,
+              445.9171447753906
+            ],
+            "instance_id": "ff4a69a88d9c:left:2",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "pet"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\yolov8n.pt",
+        "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+        "model_validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "key": "window-2",
+      "duration_ms": 34.512300000642426,
+      "jpeg_sha256": "5c95c5d8a60f4c3e2319e5d357091cab46cb5136b31ab48d84f823204ad8bcf9",
+      "source_crop": [
+        0,
+        48,
+        1024,
+        768
+      ],
+      "approximate_truth_px": [
+        [
+          0.0,
+          226.0,
+          483.125,
+          480.0
+        ],
+        [
+          315.625,
+          161.33333333333334,
+          640.0,
+          352.0
+        ]
+      ],
+      "reply": {
+        "frame_id": 2,
+        "timestamp": 1795391007858,
+        "width": 640,
+        "height": 480,
+        "scene": "pet",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Dog",
+            "class_id": 16,
+            "confidence": 0.9302840828895569,
+            "centerX": 479.269775390625,
+            "centerY": 257.6094970703125,
+            "x1": 319.18194580078125,
+            "y1": 160.65322875976562,
+            "x2": 639.3576049804688,
+            "y2": 354.5657653808594,
+            "class_name": "Dog",
+            "bbox": [
+              319.18194580078125,
+              160.65322875976562,
+              639.3576049804688,
+              354.5657653808594
+            ],
+            "instance_id": "ff4a69a88d9c:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "pet"
+          },
+          {
+            "class": "Dog",
+            "class_id": 16,
+            "confidence": 0.8711400032043457,
+            "centerX": 241.84864807128906,
+            "centerY": 338.1871643066406,
+            "x1": 0.532318115234375,
+            "y1": 225.491455078125,
+            "x2": 483.16497802734375,
+            "y2": 450.88287353515625,
+            "class_name": "Dog",
+            "bbox": [
+              0.532318115234375,
+              225.491455078125,
+              483.16497802734375,
+              450.88287353515625
+            ],
+            "instance_id": "ff4a69a88d9c:left:2",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "pet"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\yolov8n.pt",
+        "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+        "model_validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "key": "window-3",
+      "duration_ms": 36.58240000368096,
+      "jpeg_sha256": "65340fc8f5f900087cee9d93f2ebe67d99fc8a24c32e640da98f3b660a1c93d1",
+      "source_crop": [
+        12,
+        112,
+        1024,
+        768
+      ],
+      "approximate_truth_px": [
+        [
+          0.0,
+          201.21951219512195,
+          481.2648221343874,
+          480.0
+        ],
+        [
+          311.7786561264822,
+          130.2439024390244,
+          640.0,
+          339.5121951219512
+        ]
+      ],
+      "reply": {
+        "frame_id": 3,
+        "timestamp": 1795391007897,
+        "width": 640,
+        "height": 480,
+        "scene": "pet",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Dog",
+            "class_id": 16,
+            "confidence": 0.9100123047828674,
+            "centerX": 477.0984802246094,
+            "centerY": 236.50613403320312,
+            "x1": 314.74200439453125,
+            "y1": 129.67950439453125,
+            "x2": 639.4549560546875,
+            "y2": 343.332763671875,
+            "class_name": "Dog",
+            "bbox": [
+              314.74200439453125,
+              129.67950439453125,
+              639.4549560546875,
+              343.332763671875
+            ],
+            "instance_id": "ff4a69a88d9c:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "pet"
+          },
+          {
+            "class": "Dog",
+            "class_id": 16,
+            "confidence": 0.8315618634223938,
+            "centerX": 240.03627014160156,
+            "centerY": 336.3541259765625,
+            "x1": 0.0,
+            "y1": 199.50314331054688,
+            "x2": 480.0725402832031,
+            "y2": 473.2051086425781,
+            "class_name": "Dog",
+            "bbox": [
+              0.0,
+              199.50314331054688,
+              480.0725402832031,
+              473.2051086425781
+            ],
+            "instance_id": "ff4a69a88d9c:left:2",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "pet"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\yolov8n.pt",
+        "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+        "model_validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "key": "window-4",
+      "duration_ms": 34.12849998858292,
+      "jpeg_sha256": "43a29d3b829372a7fb0d6ec75726696d8389e1ef768980168915035786f6c5e5",
+      "source_crop": [
+        0,
+        182,
+        1010,
+        768
+      ],
+      "approximate_truth_px": [
+        [
+          0.0,
+          167.91808873720137,
+          489.8217821782178,
+          480.0
+        ],
+        [
+          320.0,
+          88.46416382252559,
+          640.0,
+          322.73037542662115
+        ]
+      ],
+      "reply": {
+        "frame_id": 4,
+        "timestamp": 1795391007938,
+        "width": 640,
+        "height": 480,
+        "scene": "pet",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Dog",
+            "class_id": 16,
+            "confidence": 0.8996802568435669,
+            "centerX": 480.7096252441406,
+            "centerY": 207.52627563476562,
+            "x1": 321.65570068359375,
+            "y1": 88.70574951171875,
+            "x2": 639.7635498046875,
+            "y2": 326.3468017578125,
+            "class_name": "Dog",
+            "bbox": [
+              321.65570068359375,
+              88.70574951171875,
+              639.7635498046875,
+              326.3468017578125
+            ],
+            "instance_id": "ff4a69a88d9c:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "pet"
+          },
+          {
+            "class": "Dog",
+            "class_id": 16,
+            "confidence": 0.846865177154541,
+            "centerX": 245.04522705078125,
+            "centerY": 322.9997863769531,
+            "x1": 0.0,
+            "y1": 166.57232666015625,
+            "x2": 490.0904541015625,
+            "y2": 479.42724609375,
+            "class_name": "Dog",
+            "bbox": [
+              0.0,
+              166.57232666015625,
+              490.0904541015625,
+              479.42724609375
+            ],
+            "instance_id": "ff4a69a88d9c:left:2",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "pet"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\yolov8n.pt",
+        "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+        "model_validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "key": "window-5",
+      "duration_ms": 38.37700000440236,
+      "jpeg_sha256": "2c2dd1ee2c217cbab9398ad232a63888be6032db9803180186824fd3d909a26f",
+      "source_crop": [
+        28,
+        215,
+        1024,
+        768
+      ],
+      "approximate_truth_px": [
+        [
+          0.0,
+          149.29475587703436,
+          478.714859437751,
+          480.0
+        ],
+        [
+          306.50602409638554,
+          65.0994575045208,
+          640.0,
+          313.34538878842676
+        ]
+      ],
+      "reply": {
+        "frame_id": 5,
+        "timestamp": 1795391007977,
+        "width": 640,
+        "height": 480,
+        "scene": "pet",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Dog",
+            "class_id": 16,
+            "confidence": 0.8783129453659058,
+            "centerX": 471.21337890625,
+            "centerY": 191.326904296875,
+            "x1": 302.690673828125,
+            "y1": 64.9345703125,
+            "x2": 639.736083984375,
+            "y2": 317.71923828125,
+            "class_name": "Dog",
+            "bbox": [
+              302.690673828125,
+              64.9345703125,
+              639.736083984375,
+              317.71923828125
+            ],
+            "instance_id": "ff4a69a88d9c:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "pet"
+          },
+          {
+            "class": "Dog",
+            "class_id": 16,
+            "confidence": 0.788311779499054,
+            "centerX": 239.963623046875,
+            "centerY": 307.0946578979492,
+            "x1": 0.0,
+            "y1": 136.48741149902344,
+            "x2": 479.92724609375,
+            "y2": 477.701904296875,
+            "class_name": "Dog",
+            "bbox": [
+              0.0,
+              136.48741149902344,
+              479.92724609375,
+              477.701904296875
+            ],
+            "instance_id": "ff4a69a88d9c:left:2",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "pet"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\yolov8n.pt",
+        "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+        "model_validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "key": "window-6",
+      "duration_ms": 30.746499993256293,
+      "jpeg_sha256": "65340fc8f5f900087cee9d93f2ebe67d99fc8a24c32e640da98f3b660a1c93d1",
+      "source_crop": [
+        12,
+        112,
+        1024,
+        768
+      ],
+      "approximate_truth_px": [
+        [
+          0.0,
+          201.21951219512195,
+          481.2648221343874,
+          480.0
+        ],
+        [
+          311.7786561264822,
+          130.2439024390244,
+          640.0,
+          339.5121951219512
+        ]
+      ],
+      "reply": {
+        "frame_id": 6,
+        "timestamp": 1795391008019,
+        "width": 640,
+        "height": 480,
+        "scene": "pet",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Dog",
+            "class_id": 16,
+            "confidence": 0.9100123047828674,
+            "centerX": 477.0984802246094,
+            "centerY": 236.50613403320312,
+            "x1": 314.74200439453125,
+            "y1": 129.67950439453125,
+            "x2": 639.4549560546875,
+            "y2": 343.332763671875,
+            "class_name": "Dog",
+            "bbox": [
+              314.74200439453125,
+              129.67950439453125,
+              639.4549560546875,
+              343.332763671875
+            ],
+            "instance_id": "ff4a69a88d9c:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "pet"
+          },
+          {
+            "class": "Dog",
+            "class_id": 16,
+            "confidence": 0.8315618634223938,
+            "centerX": 240.03627014160156,
+            "centerY": 336.3541259765625,
+            "x1": 0.0,
+            "y1": 199.50314331054688,
+            "x2": 480.0725402832031,
+            "y2": 473.2051086425781,
+            "class_name": "Dog",
+            "bbox": [
+              0.0,
+              199.50314331054688,
+              480.0725402832031,
+              473.2051086425781
+            ],
+            "instance_id": "ff4a69a88d9c:left:2",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "pet"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\yolov8n.pt",
+        "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+        "model_validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    },
+    {
+      "key": "window-7",
+      "duration_ms": 35.92680000292603,
+      "jpeg_sha256": "0277d659be3b7ff51d3978a0f95aba80c846a81d3da6229cadbc33c3b1fa4c98",
+      "source_crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "approximate_truth_px": [
+        [
+          0.0,
+          241.875,
+          483.125,
+          480.0
+        ],
+        [
+          315.625,
+          181.25,
+          640.0,
+          360.0
+        ]
+      ],
+      "reply": {
+        "frame_id": 7,
+        "timestamp": 1795391008055,
+        "width": 640,
+        "height": 480,
+        "scene": "pet",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "Dog",
+            "class_id": 16,
+            "confidence": 0.9419835209846497,
+            "centerX": 479.48236083984375,
+            "centerY": 271.0419616699219,
+            "x1": 319.4451904296875,
+            "y1": 180.955078125,
+            "x2": 639.51953125,
+            "y2": 361.12884521484375,
+            "class_name": "Dog",
+            "bbox": [
+              319.4451904296875,
+              180.955078125,
+              639.51953125,
+              361.12884521484375
+            ],
+            "instance_id": "ff4a69a88d9c:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "pet"
+          },
+          {
+            "class": "Dog",
+            "class_id": 16,
+            "confidence": 0.8855190873146057,
+            "centerX": 241.21067810058594,
+            "centerY": 343.261962890625,
+            "x1": 0.348541259765625,
+            "y1": 240.60678100585938,
+            "x2": 482.07281494140625,
+            "y2": 445.9171447753906,
+            "class_name": "Dog",
+            "bbox": [
+              0.348541259765625,
+              240.60678100585938,
+              482.07281494140625,
+              445.9171447753906
+            ],
+            "instance_id": "ff4a69a88d9c:left:2",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "pet"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\object-detection-demo\\yolov8n.pt",
+        "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+        "model_validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      }
+    }
+  ],
+  "scope": "Seven windows of one Open Images validation photo, kept separate from independent holdouts."
+}
