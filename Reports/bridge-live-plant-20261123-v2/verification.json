@@ -1,0 +1,45 @@
+{
+  "parent": "17f3b190ae699b8e3b13c4a4a7964a574b978eac",
+  "plantReplies": 109,
+  "plantInstances": 2,
+  "trackedRightPotDepthM": 2.20263052,
+  "trackedLeftPotDepthM": 1.85985935,
+  "roomControlReplies": 72,
+  "roomControlEditorPassed": true,
+  "headsetVerified": false,
+  "productionAssetsChanged": false,
+  "runtimeSourceFiles": {
+    "Assets/Editor/CalibratedRoomMagicChainChecks.cs": "d425d2b1c8e44f8a95184e3347bff5035e0f05b6526d2bf093d54769e87f510b",
+    "Tools/run_room_magic_review_bounded.ps1": "22bb790aa4aebc453521bf28650742d07ccc770fe7ac0d539755dc9a2c3cfd25"
+  },
+  "fixture": [
+    {
+      "path": "input.json",
+      "sha256": "f9579460eb3a9efbcb580f9c947892d80b821f4988860cec88ea29a0fc2a6b64"
+    },
+    {
+      "path": "left.gray",
+      "sha256": "15651c6f5e42c7835d5ea7415c753eec75b2d39fe748245bfeccb64aaf614893"
+    },
+    {
+      "path": "right.gray",
+      "sha256": "8e5ace8811e8d4a85b770ec9a912091f928adf38666028c2cc427a03cea80b3d"
+    }
+  ],
+  "colorFrameSha256": "26ab6b03b7035daec6bf238c93e907266d2307049431206a626ebcbaf4a7e172",
+  "sourceManifestSha256": "0716e2874c00893c60559a23cd40dd40ff966294ee61d400c6d8cb8cc1443608",
+  "rawRepliesSha256": "6108b70ee941fed78e8ec485ce9e9662104cb705dfb2d26fc66dd7956d4c3903",
+  "resources": {
+    "plantLowFreeRAMGiB": 5.8756103515625,
+    "plantHighUnityRSSMiB": 1668.84765625,
+    "plantHighServiceRSSMiB": 765.93,
+    "plantHighDiskGrowthMiB": 1,
+    "roomControlLowFreeRAMGiB": 6.148468017578125
+  },
+  "evidence": {
+    "Reports/bridge-live-plant-20261123-v2/README.md": "07274eca71e5d4bb3377ddd153e0d695abb3c77f2b2283deef91628310cf869a",
+    "Reports/bridge-live-plant-20261123-v2/captures/trace.txt": "33ce1f1cd16c9b200e0400b259f58c45745d226c3d17a2a40ebe93b1c6070755",
+    "Reports/bridge-live-plant-20261123-v2/captures/point-flower-brush-active.png": "bf4a8eca6a4fea740dbaffa69159d6fa7001d2cd5d10eea2e6822710cdd6d046",
+    "Reports/bridge-live-plant-20261123-v2/captures/recognized-plant-point-flower.png": "af914e458372778d835c8ef9b4a5a766a35607292a9ccededb6d00fc22f035a2"
+  }
+}

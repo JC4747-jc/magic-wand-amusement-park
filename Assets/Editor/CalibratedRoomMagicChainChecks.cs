@@ -58,7 +58,7 @@ public static partial class CalibratedRoomMagicChainChecks
     static string pendingId;
     static int recognizedBeforePending;
     static float entryStarted = -1;
-    static bool bridgeRoomRequested;
+    static bool bridgeContentRequested;
     static float nextReply, nextHand, readyAt, started;
     static float previousHand = -1;
     static bool lastWindowRequest;
@@ -100,6 +100,7 @@ public static partial class CalibratedRoomMagicChainChecks
     }
 
     public static void RunLiveFromBridge() => Begin(false, fromBridge:true, live:true);
+    public static void RunLivePlantFromBridge() => Begin(true, fromBridge:true, live:true);
 
     static void Begin(bool plant, bool variants = false, bool fromBridge = false, bool live = false)
     {
@@ -145,27 +146,33 @@ public static partial class CalibratedRoomMagicChainChecks
         EditorApplication.Exit(code);
     }
 
-    static bool EnterRoomFromBridge()
+    static bool EnterFromBridge()
     {
         if (entryStarted < 0) entryStarted = Time.unscaledTime;
-        Require(Time.unscaledTime-entryStarted < 10, "The saved Bridge room menu did not load ParkRoom.");
-        if (bridgeRoomRequested) return SceneManager.GetActiveScene().name == "ParkRoom";
+        string command=Plant?"Plant":"Room";
+        string scene=Plant?"ParkPlant":"ParkRoom";
+        Require(Time.unscaledTime-entryStarted < 10, "The saved Bridge menu did not load "+scene+".");
+        if (bridgeContentRequested) return SceneManager.GetActiveScene().name == scene;
         var buttons = UnityEngine.Object.FindObjectsByType<Button>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
-        var room = buttons.SingleOrDefault(button => button.name == "Room");
+        var content = buttons.SingleOrDefault(button => button.name == command);
         var confirm = buttons.SingleOrDefault(button => button.name == "Confirm room");
-        if (!room || !confirm) return false;
+        if (!content || (!Plant && !confirm)) return false;
         var ui = UnityEngine.Object.FindFirstObjectByType<ParkSharedInterface>();
         Require(SceneManager.GetActiveScene().name == "BridgeStereoFusion" && ui && !ui.controller &&
                 UnityEngine.Object.FindFirstObjectByType<StereoYoloLocator>(),
             "Expected the existing Bridge capture and recognition entry.");
         CheckXrCamera();
-        room.onClick.Invoke();
-        Require(ui.Feedback.Contains("Confirm room") && SceneManager.GetActiveScene().name == "BridgeStereoFusion",
-            "The saved Room button bypassed the room acknowledgement.");
-        confirm.onClick.Invoke();
-        room.onClick.Invoke();
-        bridgeRoomRequested = true;
-        transitions.Add("Saved Bridge Room button required Confirm room, then routed into ParkRoom.");
+        if (!Plant)
+        {
+            content.onClick.Invoke();
+            Require(ui.Feedback.Contains("Confirm room") && SceneManager.GetActiveScene().name == "BridgeStereoFusion",
+                "The saved Room button bypassed the room acknowledgement.");
+            confirm.onClick.Invoke();
+        }
+        content.onClick.Invoke();
+        bridgeContentRequested = true;
+        transitions.Add(Plant ? "Saved Bridge Plant button routed into ParkPlant." :
+            "Saved Bridge Room button required Confirm room, then routed into ParkRoom.");
         return false;
     }
 
@@ -201,7 +208,7 @@ public static partial class CalibratedRoomMagicChainChecks
             {
                 SetTransportField(transport, "m_Port", 5005);
                 livePhoto = new Texture2D(2,2,TextureFormat.RGB24,false);
-                Require(livePhoto.LoadImage(File.ReadAllBytes(".codex-tmp/bridge-room-live-picf.png")) &&
+                Require(livePhoto.LoadImage(File.ReadAllBytes(Plant?".codex-tmp/bridge-plant-live-picf.png":".codex-tmp/bridge-room-live-picf.png")) &&
                         livePhoto.width==640 && livePhoto.height==480, "Expected the calibrated colour frame.");
                 // Match the hardware raw row order before the sender's normal vertical flip.
                 var pixels = livePhoto.GetPixels32();
@@ -210,8 +217,8 @@ public static partial class CalibratedRoomMagicChainChecks
                     Array.Copy(pixels,row*640,flipped,(479-row)*640,640);
                 livePhoto.SetPixels32(flipped);
                 livePhoto.Apply();
-                receiver.sender.SceneProfile=4;
-                transitions.Add("The saved ParkRoom sender and transport connect to the live YOLO service.");
+                receiver.sender.SceneProfile=(byte)((int)controller.scenario+1);
+                transitions.Add("The saved "+controller.scenario+" sender and transport connect to the live YOLO service.");
             }
             else
             {
@@ -269,7 +276,7 @@ public static partial class CalibratedRoomMagicChainChecks
         var f=JsonUtility.FromJson<DetectionFrameMessage>(raw);
         var sender=receiver.sender;
         Require(liveWaiting && f.frame_id==sender.LastSentFrameId && f.timestamp==sender.LastSentTimestampMs &&
-                f.scene=="room" && f.status=="OK" && f.width==640 && f.height==480 &&
+                f.scene==(Plant?"plant":"room") && f.status=="OK" && f.width==640 && f.height==480 &&
                 raw.Contains("f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36"),
             "The live PICF response did not match the sent frame or detector.");
         liveWaiting=false;
@@ -277,13 +284,16 @@ public static partial class CalibratedRoomMagicChainChecks
         if (!liveWarmed)
         {
             liveWarmed=true;
-            transitions.Add("The first live room reply loaded the real model; spatial timing starts on the warm frames.");
+            transitions.Add("The first live reply loaded the real model; spatial timing starts on the warm frames.");
             return;
         }
 
-        Require(f.detections.Length==1 && f.detections[0].class_name=="chair", "Unexpected live candidates.");
-        var id=f.detections[0].instance_id;
-        if (target) Require(target.instanceId==id, "The live detector changed the chair ID before reacquisition.");
+        Require(f.detections.Length==(Plant?2:1) &&
+                f.detections.All(d => d.class_name==(Plant?"PottedPlant":"chair")), "Unexpected live candidates.");
+        // The calibrated fixture labels the right-hand pot as the selected subject.
+        var id=f.detections.OrderByDescending(d => d.centerX).First().instance_id;
+        if (target) Require(target.instanceId==id, "The live detector changed the selected candidate ID.");
+        if (Plant && replyIndex==1) RecordPlantCandidates(f);
         var before=recognized;
         receiver.Receive(raw);
         Require(recognized==before+1, "A warm live reply was skipped by the saved receiver.");
@@ -381,7 +391,7 @@ public static partial class CalibratedRoomMagicChainChecks
         anchor = target.transform.position;
         Require(!controller.selected, "Recognition selected an actor without the user's gesture.");
         if (FromBridge)
-            Require(roomDetectionPanel.activeInHierarchy, "The live Room preview was hidden before selection.");
+            Require(roomDetectionPanel.activeInHierarchy, "The live detection preview was hidden before selection.");
         var point = new Vector4(.95f,.55f,.55f,.55f);
         Require(controller.ProcessHandSample(Hand(point,.02f,-Vector3.forward*.09f), true) == EditDimension.None &&
                 controller.selected == target, "Point and pinch did not select the YOLO-tracked actor.");
@@ -757,9 +767,9 @@ public static partial class CalibratedRoomMagicChainChecks
             RenderTexture.active = surface;
             pixels.ReadPixels(new Rect(0,0,960,800),0,0);
             pixels.Apply();
-            if(particlesOnly)
+            if(particlesOnly || (Live && Plant && filename!=null))
             {
-                // Compress after gesture replay so PNG encoding cannot starve the tracked samples.
+                // Compress after replay so PNG encoding cannot starve the tracked samples.
                 stagedPhotoCaptures.Add(filename,pixels);
                 pixels=null;
             }
@@ -832,7 +842,7 @@ public static partial class CalibratedRoomMagicChainChecks
         {
             if (!initialized)
             {
-                if (!FromBridge || EnterRoomFromBridge()) Initialize();
+                if (!FromBridge || EnterFromBridge()) Initialize();
                 return;
             }
             float now = Time.unscaledTime;
@@ -863,7 +873,9 @@ public static partial class CalibratedRoomMagicChainChecks
                     Require(!target.PlantVoiceActive && !target.sizeConfirmed && !target.orientationConfirmed,
                         "Expired plant retained playback or fit.");
                     transitions.Add("Withheld replies; tracked plant expired.");
-                    Finish(0,"PASS: saved ParkPlant actual PICF and stereo replay selected one tracked plant, verified shared A/B/C/D and target expiry.");
+                    Finish(0,Live
+                        ? "PASS: saved BridgeStereoFusion sent live Plant PICF, verified point flower and target expiry."
+                        : "PASS: saved ParkPlant actual PICF and stereo replay selected one tracked plant, verified shared A/B/C/D and target expiry.");
                     return;
                 }
                 Require(target.RoomStyle == 0 && !target.RoomWindowRequested && !target.RoomWindowWallPlaced && !target.RoomLampRequested &&
@@ -884,8 +896,9 @@ public static partial class CalibratedRoomMagicChainChecks
                 Finish(0,"PASS: saved ParkRoom actual PICF and stereo replay selected the tracked chair, A/B/C/D coexisted, and target expiry cleared effects.");
                 return;
             }
-            Require(target.tracked && controller.selected == target && Vector3.Distance(target.transform.position,anchor)<.001f,
-                "Room magic changed target identity or tracking placement.");
+            float targetShift=Vector3.Distance(target.transform.position,anchor);
+            Require(target.tracked && controller.selected == target && targetShift<.001f,
+                $"Magic target changed: tracked={target.tracked}, selected={controller.selected==target}, shift={targetShift:R} m.");
             if (lastWindowRequest != target.RoomWindowRequested)
             {
                 lastWindowRequest = target.RoomWindowRequested;
@@ -914,7 +927,7 @@ public static partial class CalibratedRoomMagicChainChecks
                 plantUi.Command("Plant effects");
                 Require(!target.PointFlowerMode && !pointFlower.Active && controller.selected==target,
                     "Original menu did not restore default Plant on the same instance.");
-                transitions.Add($"{recognized} recorded real PICF replies maintained the selected instance.");
+                transitions.Add($"{recognized} {(Live?"live":"recorded")} real PICF replies maintained the selected instance.");
                 withholdingReplies = true;
                 return;
             }
