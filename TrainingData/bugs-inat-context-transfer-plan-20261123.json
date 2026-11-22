@@ -1,0 +1,16 @@
+{
+  "purpose": "Train a fresh two-class detection head and fine-tune nano-scale COCO features on the frozen 118/16 development split.",
+  "source_commit": "cb6cadee5028fbb972fbefda14208b9819effa26",
+  "append_manifest": "TrainingData/bugs-inat-training-context-20261123.json",
+  "append_manifest_sha256": "50e40d59ac3a38786f46c8e2ebb017d5ec3b54d042288e4e5faddb3301f4c2b8",
+  "merged_records_sha256": "7cd3efd6433b1ef08e12a96efbfdf790a100d0e139153bcbae31088eb26ffb04",
+  "initial_weight": "yolo11n.pt",
+  "initial_weight_sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+  "previous_candidate": ".codex-tmp/yolo-training/artifacts/bugs-win-red-edge-20261122/best.pt",
+  "previous_candidate_sha256": "89c17282155b4a3b1d6baa3b4c479a07a98cae7400293cf65a06b8792e5ba409",
+  "epochs": 20,
+  "batch": 2,
+  "training_options": {"imgsz": 640, "lr0": 0.0005, "lrf": 0.2, "cos_lr": true, "warmup_epochs": 1.0, "warmup_bias_lr": 0.0005, "rect": true, "translate": 0.08, "scale": 0.2},
+  "paired_confidence": [0.05, 0.399, 0.5, 0.65],
+  "independent_followup": "Select best.pt by native development validation fitness before reading the held-out PICF test; last.pt is a convergence diagnostic only."
+}
