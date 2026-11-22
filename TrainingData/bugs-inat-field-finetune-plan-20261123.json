@@ -1,0 +1,14 @@
+{
+  "purpose": "Continue the two-class candidate on the enlarged 153/26 split, retaining old and new field validation cohorts.",
+  "source_commit": "a853c18c370800743c51b81bed607e1c6ae6069d",
+  "append_manifest": "TrainingData/bugs-inat-field-context-20261123-v2.json",
+  "append_manifest_sha256": "47e2c63c98c3d3383d6cc3700ebc95ece55d9f9f34f0c0f5d879f97a5f93d858",
+  "merged_records_sha256": "2c0aac831602b4b48acb62b8b13c189f867d6be8150cc48f29d563f2f0c80a66",
+  "initial_weight": ".codex-tmp/yolo-training/artifacts/bugs-win-context-transfer-20261123/best.pt",
+  "initial_weight_sha256": "5bf57931da3b2d7107c908572d471297fa4540b72651c71a1e5e854f575f95dd",
+  "epochs": 60,
+  "batch": 2,
+  "training_options": {"imgsz": 640, "lr0": 0.00035, "lrf": 0.2, "cos_lr": true, "warmup_epochs": 1.0, "warmup_bias_lr": 0.00035, "rect": true, "translate": 0.08, "scale": 0.30},
+  "paired_confidence": [0.05, 0.399, 0.5, 0.65],
+  "selection": "Select best.pt by native development validation fitness; report the old and new development cohorts and each covered cross-label box at fixed thresholds."
+}
