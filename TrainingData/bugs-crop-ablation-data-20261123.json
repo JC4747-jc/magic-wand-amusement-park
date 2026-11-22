@@ -1,0 +1,1103 @@
+{
+  "source_commit": "24d632bed9c83b918986489049e3ed20208a8bb8",
+  "original_split": {
+    "train": 153,
+    "valid": 26
+  },
+  "each_split": {
+    "train": 177,
+    "valid": 26
+  },
+  "source_records_sha256": "2c0aac831602b4b48acb62b8b13c189f867d6be8150cc48f29d563f2f0c80a66",
+  "original_tile_px": 384,
+  "fixed_origins": [
+    [
+      0,
+      0
+    ],
+    [
+      256,
+      0
+    ],
+    [
+      0,
+      96
+    ],
+    [
+      256,
+      96
+    ]
+  ],
+  "minimum_label_margin_px": 12,
+  "retained_source_count": 24,
+  "added_small_targets": {
+    "Cockroach": 4,
+    "Spider": 6
+  },
+  "pairs": [
+    {
+      "key": "crop-pair-inat-photo-347498848",
+      "parent_key": "inat-photo-347498848",
+      "parent_sha256": "c8b7449e0d389e2241ef2edd76961887aa40b058530a27d6891dbe7236f4c604",
+      "class": "Cockroach",
+      "source_width": 21.0,
+      "origin": [
+        0,
+        96
+      ],
+      "edge_clearance_px": 94.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-347498848.jpg",
+          "sha256": "c8b7449e0d389e2241ef2edd76961887aa40b058530a27d6891dbe7236f4c604",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-347498848.txt",
+          "label_sha256": "edd1f32ec4ccabfeb9f6bfeb9a52b55f102a961a032466c0df54a9413144d1d7",
+          "xyxy": [
+            269.0,
+            212.0,
+            290.0,
+            239.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-347498848.jpg",
+          "sha256": "0a69a4ea07e4f0635af5c130bd9d17287708277276f9abaf9aaa4e068aa1f312",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-347498848.txt",
+          "label_sha256": "255e8775e6517a4125374c2586359f2a2bd3c7c8aa50c3507187382eddb41d35",
+          "xyxy": [
+            416.25,
+            145.0,
+            442.5,
+            178.75
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-photo-711697781",
+      "parent_key": "inat-photo-711697781",
+      "parent_sha256": "0effe83406054e551c2dbbc13c2efbac808a33cc4778cc377f10e168c2cd8556",
+      "class": "Cockroach",
+      "source_width": 36.0,
+      "origin": [
+        256,
+        96
+      ],
+      "edge_clearance_px": 73.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-711697781.jpg",
+          "sha256": "0effe83406054e551c2dbbc13c2efbac808a33cc4778cc377f10e168c2cd8556",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-711697781.txt",
+          "label_sha256": "2deedac0267fbdfd2d5b8cf39ab59061e606048535df2f716ab173e5f2a588e4",
+          "xyxy": [
+            329.0,
+            239.0,
+            365.0,
+            273.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-711697781.jpg",
+          "sha256": "4376df329e73c2f30d600c125652b8cf6f2eaddabfe03d69e6300f3bcbbf3b85",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-711697781.txt",
+          "label_sha256": "6d2bd0ad409eee24f0ec28c288093292346c3bcc8623ae2ff2fb01f9dbdbf16c",
+          "xyxy": [
+            171.25,
+            178.75,
+            216.25,
+            221.25
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-photo-713040864",
+      "parent_key": "inat-photo-713040864",
+      "parent_sha256": "6fb7b70d65a95940231b3e17c02f166e31be721798cd4ca54d64eba4c2efbec2",
+      "class": "Cockroach",
+      "source_width": 44.0,
+      "origin": [
+        256,
+        96
+      ],
+      "edge_clearance_px": 50.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-713040864.jpg",
+          "sha256": "6fb7b70d65a95940231b3e17c02f166e31be721798cd4ca54d64eba4c2efbec2",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-713040864.txt",
+          "label_sha256": "aebeb04e41bfdbb3374079caefceadb86866e5b2bf5f506dcb95123c6004e765",
+          "xyxy": [
+            306.0,
+            255.0,
+            350.0,
+            297.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-713040864.jpg",
+          "sha256": "efe7781e414f04708270444fbf2f3bc8531cbc688986ad1e4e7dd2f415146ce6",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-713040864.txt",
+          "label_sha256": "8b5a52747c7d7ce64de37f778b2e1d8c109bec14a6da5950cae97d446eeb3c91",
+          "xyxy": [
+            142.5,
+            198.75,
+            197.5,
+            251.25
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-photo-745847632",
+      "parent_key": "inat-photo-745847632",
+      "parent_sha256": "5eeaa9b82e131081a306fc763d4297230620ad18ea7b95064f952967b5b4d2eb",
+      "class": "Cockroach",
+      "source_width": 59.0,
+      "origin": [
+        256,
+        96
+      ],
+      "edge_clearance_px": 43.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-745847632.jpg",
+          "sha256": "5eeaa9b82e131081a306fc763d4297230620ad18ea7b95064f952967b5b4d2eb",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-745847632.txt",
+          "label_sha256": "2511be6d5fa5675adde4170932ed298ef7ea60dbeaa46ea711e7463c0134a544",
+          "xyxy": [
+            299.0,
+            204.0,
+            358.0,
+            312.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-745847632.jpg",
+          "sha256": "fff550f4ee87c2434ebb2ac3c50169cfd27c3b90e1bcc643b47775a87d8015f7",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-745847632.txt",
+          "label_sha256": "0943ee9f687bfe3a56bde6ab0a533366275d401f8cc367b7bfc89acf6772edc3",
+          "xyxy": [
+            133.75,
+            135.0,
+            207.5,
+            270.0
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-photo-538963195",
+      "parent_key": "inat-photo-538963195",
+      "parent_sha256": "9ba2b51fe5717367cda4415fdea224aeca049431ec4bc9ef4dcabb3d9adc238d",
+      "class": "Cockroach",
+      "source_width": 67.0,
+      "origin": [
+        256,
+        96
+      ],
+      "edge_clearance_px": 61.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-538963195.jpg",
+          "sha256": "9ba2b51fe5717367cda4415fdea224aeca049431ec4bc9ef4dcabb3d9adc238d",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-538963195.txt",
+          "label_sha256": "fe3515ba608c804bde78e71a9994953789999e0945b318480641e5414408a3c6",
+          "xyxy": [
+            317.0,
+            186.0,
+            384.0,
+            299.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-538963195.jpg",
+          "sha256": "4ea3a7489317e4e299227b1fe6cdc583f5bac4a536db58bd1f4b0eb6df0b751b",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-538963195.txt",
+          "label_sha256": "6c6ef0c85fbb3e9a2e5833806d6930b6cb7060687b3ad5dcc7b00df7911ec2e0",
+          "xyxy": [
+            156.25,
+            112.5,
+            240.0,
+            253.75
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-photo-720309638",
+      "parent_key": "inat-photo-720309638",
+      "parent_sha256": "e56c654e4f29f5a0b56a69e111eb5a23afdadc883661aea769b401d4b3a31da7",
+      "class": "Cockroach",
+      "source_width": 67.0,
+      "origin": [
+        0,
+        96
+      ],
+      "edge_clearance_px": 52.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-720309638.jpg",
+          "sha256": "e56c654e4f29f5a0b56a69e111eb5a23afdadc883661aea769b401d4b3a31da7",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-720309638.txt",
+          "label_sha256": "4f714766868ba2663235ab17a7db1c1059f4174ebdbf93a60aa20c1145bf8502",
+          "xyxy": [
+            265.0,
+            202.0,
+            332.0,
+            245.99999999999997
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-720309638.jpg",
+          "sha256": "9d61b329c22b6fdd789a2d2603be63641b388afbf0f2bd5eba6b91d5a033fcc0",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-720309638.txt",
+          "label_sha256": "c2938cc12e267f235ce1faca5629f5b816ed2840d95f52b7587ebb363dc3dec7",
+          "xyxy": [
+            411.25,
+            132.5,
+            495.0,
+            187.49999999999997
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-photo-269872189",
+      "parent_key": "inat-photo-269872189",
+      "parent_sha256": "70c8d34f4090666a07f5cfa713a94e9478f777e1814ef77bcd460cc7c3d88c83",
+      "class": "Cockroach",
+      "source_width": 76.0,
+      "origin": [
+        0,
+        96
+      ],
+      "edge_clearance_px": 44.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-269872189.jpg",
+          "sha256": "70c8d34f4090666a07f5cfa713a94e9478f777e1814ef77bcd460cc7c3d88c83",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-269872189.txt",
+          "label_sha256": "73f39cf63f95881c8890f9e5cc24ed0e54dec19f873d08d900a38a09b37cea54",
+          "xyxy": [
+            264.0,
+            202.0,
+            340.0,
+            249.00000000000003
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-269872189.jpg",
+          "sha256": "3ad003acb48dbe759948d0f3033980609b715d4bd390f708d5b497cb57d90a02",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-269872189.txt",
+          "label_sha256": "8c342da4d50d862860999bcd8ce8106252d72ca094c76b733cc6fe7df7b4475c",
+          "xyxy": [
+            410.0,
+            132.5,
+            505.0,
+            191.25000000000003
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-413463271",
+      "parent_key": "inat-413463271",
+      "parent_sha256": "5c1a05b343d62d9a61c72109914a49d69b3e400e300befe959574c4452908fdb",
+      "class": "Cockroach",
+      "source_width": 77.0,
+      "origin": [
+        256,
+        96
+      ],
+      "edge_clearance_px": 34.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-413463271.jpg",
+          "sha256": "5c1a05b343d62d9a61c72109914a49d69b3e400e300befe959574c4452908fdb",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-413463271.txt",
+          "label_sha256": "2ca78e4f3be422b1122312c93bc4366994914e439c50e45527b8b70fd4fc1505",
+          "xyxy": [
+            290.0,
+            174.0,
+            367.0,
+            265.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-413463271.jpg",
+          "sha256": "db40e5a5a2a6bb9c501f22d0046acda3bd7b331c6723864a1b1da2a52c1c9c05",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-413463271.txt",
+          "label_sha256": "0070f8e6741eebada36164cf7971669d4a9ccc98037ff7704a719d5919e8a5aa",
+          "xyxy": [
+            122.5,
+            97.5,
+            218.75,
+            211.25
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-photo-755279132",
+      "parent_key": "inat-photo-755279132",
+      "parent_sha256": "94628a56fa7010ccb001d9b8cf8bf354b50ca855651337d4acff6af8bb829ff4",
+      "class": "Cockroach",
+      "source_width": 78.0,
+      "origin": [
+        0,
+        96
+      ],
+      "edge_clearance_px": 34.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-755279132.jpg",
+          "sha256": "94628a56fa7010ccb001d9b8cf8bf354b50ca855651337d4acff6af8bb829ff4",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-755279132.txt",
+          "label_sha256": "664ddbd66d110bef75f99d823de9499be278a245fa91dcca59dfc64edba10ee3",
+          "xyxy": [
+            272.0,
+            139.0,
+            350.0,
+            224.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-755279132.jpg",
+          "sha256": "099ae284c21a9c314cb11fc6c826e0857420ab58414f0bf8d1195f7f9d0a77ed",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-755279132.txt",
+          "label_sha256": "a6655e9bc0a675fe421f26095bfbe019dbf58f2ecece36cb9cc631378e0b0722",
+          "xyxy": [
+            420.0,
+            53.75,
+            517.5,
+            160.0
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-407074275",
+      "parent_key": "inat-407074275",
+      "parent_sha256": "add787ba827879be679e59c28011eef114d001bb7e24e1c11f71844bab838cf5",
+      "class": "Cockroach",
+      "source_width": 79.0,
+      "origin": [
+        0,
+        96
+      ],
+      "edge_clearance_px": 36.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-407074275.jpg",
+          "sha256": "add787ba827879be679e59c28011eef114d001bb7e24e1c11f71844bab838cf5",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-407074275.txt",
+          "label_sha256": "1f9aa2baf601210b58bd97232ba2ca8481076c223c1e45510a91c384f1f4dc40",
+          "xyxy": [
+            269.0,
+            163.0,
+            348.0,
+            269.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-407074275.jpg",
+          "sha256": "2a177c4c2dae245390cd99575416f2c6dbb7133bd7ea7f41e7d43f8425fe4066",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-407074275.txt",
+          "label_sha256": "4e4b9edc7b9269d2c8322cf60692260949bb860b8330ac0209e7f0bc91e694c7",
+          "xyxy": [
+            416.25,
+            83.75,
+            515.0,
+            216.25
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-413807289",
+      "parent_key": "inat-413807289",
+      "parent_sha256": "eb4e651d126454b65932605f850367d60f69a3f52c9e4913180216d4949d1464",
+      "class": "Cockroach",
+      "source_width": 85.0,
+      "origin": [
+        256,
+        96
+      ],
+      "edge_clearance_px": 38.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-413807289.jpg",
+          "sha256": "eb4e651d126454b65932605f850367d60f69a3f52c9e4913180216d4949d1464",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-413807289.txt",
+          "label_sha256": "3150dc7e36e2d9cc88802312ebe773769579bb5920e2ddfbc6432dd65e1a90be",
+          "xyxy": [
+            294.0,
+            164.0,
+            379.0,
+            267.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-413807289.jpg",
+          "sha256": "bca562abc9e268bf80fd0663593b02d8fc54d8fb83997d61ca3a00a4951e0402",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-413807289.txt",
+          "label_sha256": "d6f38f80420d2b3a4424d8c9afb7a89a866431a387c7f7ecd7630a020927caff",
+          "xyxy": [
+            127.5,
+            85.0,
+            233.75,
+            213.75
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-413808525",
+      "parent_key": "inat-413808525",
+      "parent_sha256": "e8b028735e54b1a01ce503c5d6682ff240e387d1f1941d4183edc3ba0104426f",
+      "class": "Cockroach",
+      "source_width": 90.0,
+      "origin": [
+        256,
+        96
+      ],
+      "edge_clearance_px": 45.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-413808525.jpg",
+          "sha256": "e8b028735e54b1a01ce503c5d6682ff240e387d1f1941d4183edc3ba0104426f",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-413808525.txt",
+          "label_sha256": "372018664dab0fcbb52536e2c5bea7c044d9154becace26f94c089c35a00f776",
+          "xyxy": [
+            301.0,
+            162.0,
+            391.0,
+            370.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-413808525.jpg",
+          "sha256": "956e74faf1359a6634d30e421ad9b16e1c4ea302185ff1ea699e71252cb9dc02",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-413808525.txt",
+          "label_sha256": "7bcbd16f02a68fe7a2a1e7cd2e82bdc4ac30c24bbcdba853584c0716d61a3ebe",
+          "xyxy": [
+            136.25,
+            82.5,
+            248.75,
+            342.5
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-photo-761659287",
+      "parent_key": "inat-photo-761659287",
+      "parent_sha256": "68e61a137fb2e86a6f30bbebc7a52ea8240df7bd359e1cae41bec77a55de18b2",
+      "class": "Spider",
+      "source_width": 32.0,
+      "origin": [
+        256,
+        0
+      ],
+      "edge_clearance_px": 77.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-761659287.jpg",
+          "sha256": "68e61a137fb2e86a6f30bbebc7a52ea8240df7bd359e1cae41bec77a55de18b2",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-761659287.txt",
+          "label_sha256": "107deb814d252537e2ffdd0b2a87edb1641407263f2fd9c5b80490d8243dc5ca",
+          "xyxy": [
+            333.0,
+            151.0,
+            365.0,
+            193.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-761659287.jpg",
+          "sha256": "69e0ef4d990d6ef85b905dc550d1ef4cfa2f966e646b85282e373de09b09cee8",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-761659287.txt",
+          "label_sha256": "141ea3b9383083b1be471e6c01bae3462fafbeda6e620e000905f9546c42fe70",
+          "xyxy": [
+            176.25,
+            188.75,
+            216.25,
+            241.25
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-photo-609881585",
+      "parent_key": "inat-photo-609881585",
+      "parent_sha256": "e912bec73cd87a0741298aacb3c33478a9508d8d9584c1418461240a63e84752",
+      "class": "Spider",
+      "source_width": 34.0,
+      "origin": [
+        0,
+        96
+      ],
+      "edge_clearance_px": 61.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-609881585.jpg",
+          "sha256": "e912bec73cd87a0741298aacb3c33478a9508d8d9584c1418461240a63e84752",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-609881585.txt",
+          "label_sha256": "318d69120f090fc00c7d445259c1265fc9e659da16e14013982a48024da81c5f",
+          "xyxy": [
+            289.0,
+            278.0,
+            323.0,
+            315.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-609881585.jpg",
+          "sha256": "5d849118d3ea1bb079389ab06931b1736cd71c116765dee00c56c8913ef1c275",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-609881585.txt",
+          "label_sha256": "5bc94141cb63307b8f001568b2c3a1bc6ccf5f8bda0e01b083c4c5a014f0611e",
+          "xyxy": [
+            441.25,
+            227.5,
+            483.75,
+            273.75
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-photo-317256697",
+      "parent_key": "inat-photo-317256697",
+      "parent_sha256": "dc9eac59d3c995b266e2fd31e352b58eca5d078e4849a29a208cd1a3e014f0a5",
+      "class": "Spider",
+      "source_width": 36.0,
+      "origin": [
+        256,
+        96
+      ],
+      "edge_clearance_px": 78.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-317256697.jpg",
+          "sha256": "dc9eac59d3c995b266e2fd31e352b58eca5d078e4849a29a208cd1a3e014f0a5",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-317256697.txt",
+          "label_sha256": "977c1f5381a66db6a3b09248bfc05ce25b787134a70c736de6a103579d9764d6",
+          "xyxy": [
+            334.0,
+            239.0,
+            370.0,
+            294.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-317256697.jpg",
+          "sha256": "c8ef7dc4b21ab45a061f7cb4dd29ccc60dc7b4f29b3b9f47a8f755735835a075",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-317256697.txt",
+          "label_sha256": "43ee3dcabd99ce7c624dfb5a6fc70402d99c12a737c860f53c72344a5c9e9650",
+          "xyxy": [
+            177.5,
+            178.75,
+            222.5,
+            247.5
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-photo-679293994",
+      "parent_key": "inat-photo-679293994",
+      "parent_sha256": "fb3fabe6e02e90a5415ae530e86578c0bb5ee5e554542c9d9971fbe4bf0e84be",
+      "class": "Spider",
+      "source_width": 47.0,
+      "origin": [
+        256,
+        96
+      ],
+      "edge_clearance_px": 48.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-679293994.jpg",
+          "sha256": "fb3fabe6e02e90a5415ae530e86578c0bb5ee5e554542c9d9971fbe4bf0e84be",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-679293994.txt",
+          "label_sha256": "490e41c826549f5869d637275a3e58108e25f931c29d6d0e5bebe41028c8bf11",
+          "xyxy": [
+            304.0,
+            222.0,
+            351.0,
+            296.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-679293994.jpg",
+          "sha256": "59b73831306cd79aeebed4b1e23489b83dea01e812ce065bc5ddd54de9529025",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-679293994.txt",
+          "label_sha256": "fffaa1d7663a5ddb5ca74d15f834a6da37ebc8cd38bd0edcaa5300d1b268fc4e",
+          "xyxy": [
+            140.0,
+            157.5,
+            198.75,
+            250.0
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-photo-377757160",
+      "parent_key": "inat-photo-377757160",
+      "parent_sha256": "9f28ec253dbfd8fcd2321c2c0969b064a60dfad58038672ef4af069a62f492ff",
+      "class": "Spider",
+      "source_width": 50.0,
+      "origin": [
+        0,
+        96
+      ],
+      "edge_clearance_px": 55.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-377757160.jpg",
+          "sha256": "9f28ec253dbfd8fcd2321c2c0969b064a60dfad58038672ef4af069a62f492ff",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-377757160.txt",
+          "label_sha256": "3dbe6ec29c65c256312892813a986b8aa416722712328a0a23af42db46445148",
+          "xyxy": [
+            279.0,
+            196.0,
+            329.0,
+            241.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-377757160.jpg",
+          "sha256": "f4cc1c0315d3f436b14cafadf801263f9836941765d31d607b2ff29a0d12e360",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-377757160.txt",
+          "label_sha256": "af42ccea3bc20cf47d2ec680fb5dcc7676d658a512c79f2e0067a3d554818238",
+          "xyxy": [
+            428.75,
+            125.0,
+            491.25,
+            181.25
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-photo-753768923",
+      "parent_key": "inat-photo-753768923",
+      "parent_sha256": "4b3e065e955abf4d187971bcef6a42f460f864432c18c9c6b36fabd190ba4d25",
+      "class": "Spider",
+      "source_width": 62.0,
+      "origin": [
+        0,
+        96
+      ],
+      "edge_clearance_px": 97.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-753768923.jpg",
+          "sha256": "4b3e065e955abf4d187971bcef6a42f460f864432c18c9c6b36fabd190ba4d25",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-753768923.txt",
+          "label_sha256": "f746fbe2699453df70d2199c625a1d34b67afbcbe55d4c4e6b4e2280744b93a4",
+          "xyxy": [
+            208.0,
+            193.0,
+            270.0,
+            292.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-753768923.jpg",
+          "sha256": "f5bc866111b46846e8d998436b1631c17ad48f900e7bf8b1c2d9df8ebd446669",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-753768923.txt",
+          "label_sha256": "6258e421e681b2dc47b50b862531c20577ad1b271574c20490d0f59b66f353e3",
+          "xyxy": [
+            340.0,
+            121.25,
+            417.5,
+            245.0
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-oi-906aef475253614e",
+      "parent_key": "oi-906aef475253614e",
+      "parent_sha256": "29aa5cffbec84abf90e975fe985b35096aaa15bbb64f103475ce83bec78dea78",
+      "class": "Spider",
+      "source_width": 77.0,
+      "origin": [
+        0,
+        96
+      ],
+      "edge_clearance_px": 38.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-oi-906aef475253614e.jpg",
+          "sha256": "29aa5cffbec84abf90e975fe985b35096aaa15bbb64f103475ce83bec78dea78",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-oi-906aef475253614e.txt",
+          "label_sha256": "8a9b235b657095e7bdb7d69a7bfb02214edce1bf7afb06e03ca0187633865af4",
+          "xyxy": [
+            269.0,
+            181.0,
+            346.0,
+            280.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-oi-906aef475253614e.jpg",
+          "sha256": "41bedcdca32e8bbb0eb110e688e046394da81757e7ff213545ecf2093ea8264c",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-oi-906aef475253614e.txt",
+          "label_sha256": "41490aa7123baba15f8b980f4bf668bb706a3b515ee31a44dd0a7787d0a084ed",
+          "xyxy": [
+            416.25,
+            106.25,
+            512.5,
+            230.0
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-photo-759033422",
+      "parent_key": "inat-photo-759033422",
+      "parent_sha256": "0cfa7ad736cbfce8f45804024f3b730c73ef06227d655b6a2caa070edf850176",
+      "class": "Spider",
+      "source_width": 86.0,
+      "origin": [
+        0,
+        96
+      ],
+      "edge_clearance_px": 60.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-759033422.jpg",
+          "sha256": "0cfa7ad736cbfce8f45804024f3b730c73ef06227d655b6a2caa070edf850176",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-759033422.txt",
+          "label_sha256": "ee388aaa9a9785da62c77f89cdc7231a680bbd50fe3bcea6e0aca4750d226ef4",
+          "xyxy": [
+            238.0,
+            194.0,
+            324.0,
+            322.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-759033422.jpg",
+          "sha256": "8449317fd8412f5bbcc3730fbf40c2235835bfc1fac9edf2c68889c7665a8dd4",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-759033422.txt",
+          "label_sha256": "ecd2f1b701308d5dde72b25d9cb40f8515799cca9cb493bdb378d3d7506de196",
+          "xyxy": [
+            377.5,
+            122.5,
+            485.0,
+            282.5
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-oi-5176cca60e245e3a",
+      "parent_key": "oi-5176cca60e245e3a",
+      "parent_sha256": "2320f618a4037ca6eee21e7f9bd64c5a8f462641de70da5190381b7100fdbf9a",
+      "class": "Spider",
+      "source_width": 99.0,
+      "origin": [
+        0,
+        96
+      ],
+      "edge_clearance_px": 44.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-oi-5176cca60e245e3a.jpg",
+          "sha256": "2320f618a4037ca6eee21e7f9bd64c5a8f462641de70da5190381b7100fdbf9a",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-oi-5176cca60e245e3a.txt",
+          "label_sha256": "16f6ff5e8c63439c63f0904899ce5e80e4904e93232ef1d6cb0c8accf2e6d80d",
+          "xyxy": [
+            241.0,
+            201.0,
+            340.0,
+            286.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-oi-5176cca60e245e3a.jpg",
+          "sha256": "4396bacaa76c81f4906f73031ea8574de1080fc70bfe639825eb8fecc9200151",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-oi-5176cca60e245e3a.txt",
+          "label_sha256": "b9cbb41202ae09cbee59ad09ada5e81d123512761c781fc718197e2c73ecb658",
+          "xyxy": [
+            381.25,
+            131.25,
+            505.0,
+            237.5
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-inat-photo-730592240",
+      "parent_key": "inat-photo-730592240",
+      "parent_sha256": "fa3c01ce0530679e02b916d9c8a10c18e06204aae025b748675e8f2b60267f27",
+      "class": "Spider",
+      "source_width": 108.0,
+      "origin": [
+        0,
+        96
+      ],
+      "edge_clearance_px": 12.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-730592240.jpg",
+          "sha256": "fa3c01ce0530679e02b916d9c8a10c18e06204aae025b748675e8f2b60267f27",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-inat-photo-730592240.txt",
+          "label_sha256": "f955b5a90b7880a7ab37b71afa299a44b0004a621e72e5aad48ac007e0ab3d82",
+          "xyxy": [
+            264.0,
+            130.0,
+            372.0,
+            340.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-730592240.jpg",
+          "sha256": "a9e43b924f47787a603591eb48f4be7aa76801bba0310de547c491c2004a4433",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-inat-photo-730592240.txt",
+          "label_sha256": "c554d26acfa636376957c72e0fe37ea0e073913b01759f4ceb25f9428bf1e3ab",
+          "xyxy": [
+            410.0,
+            42.5,
+            545.0,
+            305.0
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-oi-0808bb2b3a4c4806",
+      "parent_key": "oi-0808bb2b3a4c4806",
+      "parent_sha256": "b5c481319c8f6779eb4875fec0321f40c2da8f67b2fb28c4ad055ed7aaf80e76",
+      "class": "Spider",
+      "source_width": 110.0,
+      "origin": [
+        0,
+        96
+      ],
+      "edge_clearance_px": 12.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-oi-0808bb2b3a4c4806.jpg",
+          "sha256": "b5c481319c8f6779eb4875fec0321f40c2da8f67b2fb28c4ad055ed7aaf80e76",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-oi-0808bb2b3a4c4806.txt",
+          "label_sha256": "e2a93f4f23c8ca62e4317fcf169210f3636f26fc56857dbec5368209fddd1ed6",
+          "xyxy": [
+            262.0,
+            154.0,
+            372.0,
+            281.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-oi-0808bb2b3a4c4806.jpg",
+          "sha256": "67354174a490bc8a37c7c092b07ea767e79788bec59ece2a65c2c2d27be59fb8",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-oi-0808bb2b3a4c4806.txt",
+          "label_sha256": "6a6f41d1a40a349b8ca8aa429661cc5de56943f84a6c9ceda2f8a0e071bf9429",
+          "xyxy": [
+            407.5,
+            72.5,
+            545.0,
+            231.25
+          ]
+        }
+      }
+    },
+    {
+      "key": "crop-pair-oi-34a430164080b5bd",
+      "parent_key": "oi-34a430164080b5bd",
+      "parent_sha256": "468f17ddb98227a3825d687637fc42059f2ac2e6addcf2bf1a464dd98501575f",
+      "class": "Spider",
+      "source_width": 111.0,
+      "origin": [
+        0,
+        0
+      ],
+      "edge_clearance_px": 119.0,
+      "padded_inner_rect": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "variants": {
+        "control": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-oi-34a430164080b5bd.jpg",
+          "sha256": "468f17ddb98227a3825d687637fc42059f2ac2e6addcf2bf1a464dd98501575f",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/control/crop-pair-oi-34a430164080b5bd.txt",
+          "label_sha256": "9a1aeeb309548b3dd8187aea8ead65047a662035e95ca710e632b11207477f5b",
+          "xyxy": [
+            154.0,
+            174.0,
+            265.0,
+            254.0
+          ]
+        },
+        "context": {
+          "image": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-oi-34a430164080b5bd.jpg",
+          "sha256": "25d803ca061c20f0c73a96a07951c8b37d80fe8bb57b0b73a6f675996bbbcf8f",
+          "label": ".codex-tmp/yolo-training/bugs-crop-ablation-20261123/context/crop-pair-oi-34a430164080b5bd.txt",
+          "label_sha256": "46869496ba1dfa670c9b230fe364e394a71ea79a688a2506372cebfe48dec79a",
+          "xyxy": [
+            272.5,
+            217.5,
+            411.25,
+            317.5
+          ]
+        }
+      }
+    }
+  ],
+  "backend_shape": [
+    640,
+    480
+  ],
+  "content_scale_factor": 1.25,
+  "control": "Exact repeated original frame and label for each selected source.",
+  "context": "Resize fixed crop with the normal camera letterbox and transform coordinates.",
+  "acceptance": "Development-only paired comparison. Train paths added only."
+}

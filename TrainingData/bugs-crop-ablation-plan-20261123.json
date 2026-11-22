@@ -1,0 +1,13 @@
+{
+  "purpose": "Compare one fixed crop per selected real image with repetition of the same full images at equal label and update budgets.",
+  "source_commit": "24d632bed9c83b918986489049e3ed20208a8bb8",
+  "manifest": "TrainingData/bugs-crop-ablation-data-20261123.json",
+  "manifest_sha256": "ea428367c670cb3c38d20ad00f66ec8390675906316ff5397e6905c4a00ffb45",
+  "initial_weight": ".codex-tmp/yolo-training/artifacts/bugs-win-field-finetune-20261123/best.pt",
+  "initial_weight_sha256": "9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89",
+  "epochs": 25,
+  "batch": 2,
+  "training_options": {"imgsz": 640, "lr0": 0.0002, "lrf": 0.2, "cos_lr": true, "warmup_epochs": 1.0, "warmup_bias_lr": 0.0002, "rect": true, "translate": 0.08, "scale": 0.30},
+  "paired_confidence": [0.05, 0.399, 0.5, 0.65],
+  "selection": "Choose the best development checkpoint per arm. Compare against the sealed 15+21+17 regressions at the existing PICF thresholds; the photos have been evaluated in preceding work."
+}

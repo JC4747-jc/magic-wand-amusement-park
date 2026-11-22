@@ -1,0 +1,6707 @@
+{
+  "arms": {
+    "control": {
+      "candidate_sha256": "e856b36e2639a1da0419e0c4fba6623bac2f454a001b4143fa1b1b5732c8fc99",
+      "training_report_sha256": "add9ade2215f7b37dc17dce0bb88a53d5374f6199464e15527cde76ea3712a5a",
+      "cohorts": {
+        "original_regression": {
+          "cases": [
+            {
+              "photo": 760525610,
+              "class": "Spider",
+              "bbox": [
+                276,
+                130,
+                402,
+                371
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 52.59,
+              "tiles_ms": 214.13
+            },
+            {
+              "photo": 759640339,
+              "class": "Spider",
+              "bbox": [
+                226,
+                191,
+                319,
+                333
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 38.45,
+              "tiles_ms": 192.35
+            },
+            {
+              "photo": 759615311,
+              "class": "Spider",
+              "bbox": [
+                234,
+                168,
+                346,
+                321
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 35.51,
+              "tiles_ms": 162.42000000000002
+            },
+            {
+              "photo": 1921864,
+              "class": "Spider",
+              "bbox": [
+                280,
+                187,
+                333,
+                268
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5291348695755005,
+                    "xyxy_normalized": [
+                      0.42847428321838377,
+                      0.4083849589029948,
+                      0.5236364841461182,
+                      0.5766749064127604
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.7066756634324374
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 32.64,
+              "tiles_ms": 158.89
+            },
+            {
+              "photo": 733237526,
+              "class": "Spider",
+              "bbox": [
+                224,
+                270,
+                303,
+                337
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5032792687416077,
+                    "xyxy_normalized": [
+                      0.35146679878234866,
+                      0.5359147389729818,
+                      0.46995015144348146,
+                      0.707443110148112
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.7869845367057015
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.6279944777488708,
+                    "xyxy_normalized": [
+                      0.33469202518463137,
+                      0.541430123647054,
+                      0.5048595905303955,
+                      0.7151078224182129
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.5829883030641417
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 32.86,
+              "tiles_ms": 167.95
+            },
+            {
+              "photo": 725233767,
+              "class": "Spider",
+              "bbox": [
+                159,
+                165,
+                463,
+                365
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.7414935231208801,
+                    "xyxy_normalized": [
+                      0.2082700252532959,
+                      0.32203826904296873,
+                      0.6963420391082764,
+                      0.7658164978027344
+                    ],
+                    "max_iou": 0.8189502349695437
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 36.5,
+              "tiles_ms": 160.36
+            },
+            {
+              "photo": 739586629,
+              "class": "Cockroach",
+              "bbox": [
+                276,
+                246,
+                360,
+                295
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 31.73,
+              "tiles_ms": 162.1
+            },
+            {
+              "photo": 762888641,
+              "class": "Cockroach",
+              "bbox": [
+                274,
+                170,
+                401,
+                274
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 32.28,
+              "tiles_ms": 253.98
+            },
+            {
+              "photo": 754828408,
+              "class": "Cockroach",
+              "bbox": [
+                165,
+                164,
+                375,
+                359
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.7775592803955078,
+                    "xyxy_normalized": [
+                      0.2920074939727783,
+                      0.24237823486328125,
+                      0.5983914852142334,
+                      0.7081005096435546
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.6400218389275527
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.6178638935089111,
+                    "xyxy_normalized": [
+                      0.37226052284240724,
+                      0.24563732147216796,
+                      0.6,
+                      0.5773701667785645
+                    ],
+                    "max_iou": 0.31778654395170075
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 36.74,
+              "tiles_ms": 182.07999999999998
+            },
+            {
+              "photo": 673723157,
+              "class": "Cockroach",
+              "bbox": [
+                266,
+                143,
+                466,
+                324
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5815035104751587,
+                    "xyxy_normalized": [
+                      0.4573347091674805,
+                      0.33559977213541664,
+                      0.7078258514404296,
+                      0.6956947326660157
+                    ],
+                    "max_iou": 0.6910673051608497
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 34.12,
+              "tiles_ms": 168.6
+            },
+            {
+              "photo": 667717051,
+              "class": "Cockroach",
+              "bbox": [
+                282,
+                153,
+                344,
+                238
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 33.05,
+              "tiles_ms": 173.99
+            },
+            {
+              "photo": 616417797,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.6421365737915039,
+                    "xyxy_normalized": [
+                      0.2563499450683594,
+                      0.3866971492767334,
+                      0.6,
+                      0.7104740142822266
+                    ],
+                    "max_iou": 0
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 34.45,
+              "tiles_ms": 165.19
+            },
+            {
+              "photo": 613401463,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 32.34,
+              "tiles_ms": 153.92000000000002
+            },
+            {
+              "photo": 760882266,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.5375605225563049,
+                    "xyxy_normalized": [
+                      0.09744033813476563,
+                      0.12478129069010417,
+                      0.9645217895507813,
+                      0.9532880147298177
+                    ],
+                    "max_iou": 0
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 36.29,
+              "tiles_ms": 154.57999999999998
+            },
+            {
+              "photo": 760421429,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 30.5,
+              "tiles_ms": 159.02
+            }
+          ],
+          "totals": {
+            "whole": {
+              "classes": {
+                "Cockroach": {
+                  "tp": 1,
+                  "fp": 2,
+                  "fn": 4
+                },
+                "Spider": {
+                  "tp": 2,
+                  "fp": 1,
+                  "fn": 4
+                }
+              },
+              "median_pc_ms": 34.12,
+              "negative_frames_with_proposals": 1,
+              "small_targets": {
+                "Cockroach": {
+                  "labeled": 1,
+                  "matched": 0
+                },
+                "Spider": {
+                  "labeled": 1,
+                  "matched": 1
+                }
+              },
+              "cross_class_overlaps": {
+                "Spider_as_Cockroach": 1,
+                "Cockroach_as_Spider": 1
+              },
+              "target_strata": {
+                "64_to_144": {
+                  "Spider": {
+                    "labeled": 4,
+                    "matched": 1
+                  },
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 0
+                  }
+                },
+                "clear_12": {
+                  "Spider": {
+                    "labeled": 5,
+                    "matched": 2
+                  },
+                  "Cockroach": {
+                    "labeled": 3,
+                    "matched": 0
+                  }
+                },
+                "under_64": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 1
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                },
+                "over_144": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 1
+                  }
+                },
+                "no_complete_tile": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                },
+                "within_12_of_edge": {
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 1
+                  }
+                }
+              }
+            },
+            "tiles": {
+              "classes": {
+                "Cockroach": {
+                  "tp": 0,
+                  "fp": 2,
+                  "fn": 5
+                },
+                "Spider": {
+                  "tp": 1,
+                  "fp": 0,
+                  "fn": 5
+                }
+              },
+              "median_pc_ms": 165.19,
+              "negative_frames_with_proposals": 1,
+              "small_targets": {
+                "Cockroach": {
+                  "labeled": 1,
+                  "matched": 0
+                },
+                "Spider": {
+                  "labeled": 1,
+                  "matched": 0
+                }
+              },
+              "cross_class_overlaps": {},
+              "target_strata": {
+                "64_to_144": {
+                  "Spider": {
+                    "labeled": 4,
+                    "matched": 1
+                  },
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 0
+                  }
+                },
+                "clear_12": {
+                  "Spider": {
+                    "labeled": 5,
+                    "matched": 1
+                  },
+                  "Cockroach": {
+                    "labeled": 3,
+                    "matched": 0
+                  }
+                },
+                "under_64": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                },
+                "over_144": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 0
+                  }
+                },
+                "no_complete_tile": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                },
+                "within_12_of_edge": {
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 0
+                  }
+                }
+              }
+            }
+          },
+          "replies": 76,
+          "allowed": [
+            "Cockroach",
+            "Spider"
+          ],
+          "model_metadata_sha256": "65ac8a95782160a392d53b024ea07eed8b6b5f7c54f45a91f4c3dec4a99a8a10"
+        },
+        "specialist_regression": {
+          "cases": [
+            {
+              "photo": 763103702,
+              "class": "Spider",
+              "bbox": [
+                210,
+                148,
+                428,
+                415
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.6527025699615479,
+                    "xyxy_normalized": [
+                      0.3060575485229492,
+                      0.29843680063883465,
+                      0.6600405693054199,
+                      0.6812461853027344
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.6151712027912513
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.8626689910888672,
+                    "xyxy_normalized": [
+                      0.4,
+                      0.2795873006184896,
+                      0.631100344657898,
+                      0.6084713617960612
+                    ],
+                    "max_iou": 0.3536786711626776
+                  },
+                  {
+                    "class": "Spider",
+                    "confidence": 0.6566470861434937,
+                    "xyxy_normalized": [
+                      0.4,
+                      0.20937455495198568,
+                      0.8020245552062988,
+                      0.7562422434488932
+                    ],
+                    "max_iou": 0.41659438106668123
+                  },
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.5507959127426147,
+                    "xyxy_normalized": [
+                      0.42805244624614713,
+                      0.3083144823710124,
+                      0.6047580957412719,
+                      0.5580223083496094
+                    ],
+                    "max_iou": 0.23286039104865042
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 2,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 40.44,
+              "tiles_ms": 182.29
+            },
+            {
+              "photo": 757881124,
+              "class": "Spider",
+              "bbox": [
+                61,
+                99,
+                580,
+                385
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 36.68,
+              "tiles_ms": 177.45
+            },
+            {
+              "photo": 749421085,
+              "class": "Spider",
+              "bbox": [
+                240,
+                149,
+                382,
+                382
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.686702311038971,
+                    "xyxy_normalized": [
+                      0.4,
+                      0.2524874130884806,
+                      0.7559244871139527,
+                      0.7950965881347656
+                    ],
+                    "max_iou": 0.46454468324585163
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 32.92,
+              "tiles_ms": 157.78
+            },
+            {
+              "photo": 764208733,
+              "class": "Spider",
+              "bbox": [
+                139,
+                60,
+                542,
+                406
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5531210899353027,
+                    "xyxy_normalized": [
+                      0.18684651851654052,
+                      0.0,
+                      0.7447399139404297,
+                      0.9086987813313802
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.6549962846400305
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5272237062454224,
+                    "xyxy_normalized": [
+                      0.4,
+                      0.2107113649447759,
+                      0.7510395050048828,
+                      0.7493148803710937
+                    ],
+                    "max_iou": 0.41654818225431484
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 35.89,
+              "tiles_ms": 158.68
+            },
+            {
+              "photo": 762142850,
+              "class": "Spider",
+              "bbox": [
+                223,
+                135,
+                477,
+                379
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 32.37,
+              "tiles_ms": 168.14
+            },
+            {
+              "photo": 760705478,
+              "class": "Spider",
+              "bbox": [
+                284,
+                233,
+                349,
+                278
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 36.32,
+              "tiles_ms": 168.95999999999998
+            },
+            {
+              "photo": 748502223,
+              "class": "Spider",
+              "bbox": [
+                236,
+                115,
+                390,
+                301
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.9128583669662476,
+                    "xyxy_normalized": [
+                      0.36189653873443606,
+                      0.2055020014444987,
+                      0.6147235870361328,
+                      0.6283636728922526
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.8721488193100376
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 36.1,
+              "tiles_ms": 178.17000000000002
+            },
+            {
+              "photo": 745024311,
+              "class": "Spider",
+              "bbox": [
+                140,
+                0,
+                503,
+                367
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 43.09,
+              "tiles_ms": 166.41
+            },
+            {
+              "photo": 743699597,
+              "class": "Spider",
+              "bbox": [
+                194,
+                193,
+                374,
+                325
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.770890474319458,
+                    "xyxy_normalized": [
+                      0.0,
+                      0.11871019999186198,
+                      0.6977798461914062,
+                      1.0
+                    ],
+                    "max_iou": 0.12577318522383238
+                  },
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5577548742294312,
+                    "xyxy_normalized": [
+                      0.025701904296875,
+                      0.20298900604248046,
+                      0.5756392478942871,
+                      1.0
+                    ],
+                    "max_iou": 0.1700476125622122
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 2,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.6556975841522217,
+                    "xyxy_normalized": [
+                      0.15603082180023192,
+                      0.2,
+                      0.6,
+                      0.7505052566528321
+                    ],
+                    "max_iou": 0.31645425071323924
+                  },
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5947981476783752,
+                    "xyxy_normalized": [
+                      0.0,
+                      0.3242929140726725,
+                      0.5085554122924805,
+                      0.8456814448038737
+                    ],
+                    "max_iou": 0.19752555049786708
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 2,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 32.05,
+              "tiles_ms": 164.34
+            },
+            {
+              "photo": 763382991,
+              "class": "Spider",
+              "bbox": [
+                218,
+                121,
+                382,
+                310
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.8380778431892395,
+                    "xyxy_normalized": [
+                      0.34302687644958496,
+                      0.22258307139078776,
+                      0.5885779857635498,
+                      0.6438597361246745
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.8895794365049102
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 34.19,
+              "tiles_ms": 161.66
+            },
+            {
+              "photo": 762951698,
+              "class": "Spider",
+              "bbox": [
+                326,
+                98,
+                392,
+                278
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 31.81,
+              "tiles_ms": 173.53
+            },
+            {
+              "photo": 762659061,
+              "class": "Spider",
+              "bbox": [
+                152,
+                51,
+                547,
+                347
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.6703099012374878,
+                    "xyxy_normalized": [
+                      0.24188406467437745,
+                      0.11369048754374186,
+                      0.6845331192016602,
+                      0.5964367548624675
+                    ],
+                    "max_iou": 0.5614497205692792
+                  },
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.6046572327613831,
+                    "xyxy_normalized": [
+                      0.13808915615081788,
+                      0.043298594156901044,
+                      0.6762800216674805,
+                      0.6225761413574219
+                    ],
+                    "max_iou": 0.4863676913239355
+                  },
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.5103639960289001,
+                    "xyxy_normalized": [
+                      0.22194347381591797,
+                      0.08447640736897787,
+                      0.7438607215881348,
+                      0.6961085001627604
+                    ],
+                    "max_iou": 0.7445825153529121
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 3,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 32.27,
+              "tiles_ms": 159.7
+            },
+            {
+              "photo": 729995394,
+              "class": "Cockroach",
+              "bbox": [
+                155,
+                136,
+                418,
+                312
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.6954793930053711,
+                    "xyxy_normalized": [
+                      0.4,
+                      0.26044567426045734,
+                      0.6698401689529419,
+                      0.5582674344380697
+                    ],
+                    "max_iou": 0.4310515368568951
+                  },
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.5530635714530945,
+                    "xyxy_normalized": [
+                      0.24572291374206542,
+                      0.24013789494832358,
+                      0.6,
+                      0.5819571812947592
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.6373986952322508
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 1,
+                    "fp": 1,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 32.12,
+              "tiles_ms": 178.76
+            },
+            {
+              "photo": 729685407,
+              "class": "Cockroach",
+              "bbox": [
+                228,
+                35,
+                347,
+                194
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 31.04,
+              "tiles_ms": 168.76999999999998
+            },
+            {
+              "photo": 724152811,
+              "class": "Cockroach",
+              "bbox": [
+                252,
+                140,
+                447,
+                453
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 29.37,
+              "tiles_ms": 163.74
+            },
+            {
+              "photo": 754143299,
+              "class": "Cockroach",
+              "bbox": [
+                193,
+                158,
+                363,
+                333
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.6047754287719727,
+                    "xyxy_normalized": [
+                      0.18221087455749513,
+                      0.4767379442850749,
+                      0.56430082321167,
+                      1.0
+                    ],
+                    "max_iou": 0.23781199144352047
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.590068519115448,
+                    "xyxy_normalized": [
+                      0.168520724773407,
+                      0.10090359052022298,
+                      0.5264542102813721,
+                      0.5956090927124024
+                    ],
+                    "max_iou": 0.2800118478417326
+                  },
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.5613534450531006,
+                    "xyxy_normalized": [
+                      0.4,
+                      0.2,
+                      0.6171019554138184,
+                      0.47703399658203127
+                    ],
+                    "max_iou": 0.18690867248177498
+                  },
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.5462720394134521,
+                    "xyxy_normalized": [
+                      0.2189861297607422,
+                      0.5161300659179687,
+                      0.544307804107666,
+                      0.8
+                    ],
+                    "max_iou": 0.2951660431288468
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 2,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 31.8,
+              "tiles_ms": 160.54
+            },
+            {
+              "photo": 735345271,
+              "class": "Cockroach",
+              "bbox": [
+                210,
+                74,
+                422,
+                306
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.7603911757469177,
+                    "xyxy_normalized": [
+                      0.36879265308380127,
+                      0.14239184061686197,
+                      0.6628567695617675,
+                      0.619068717956543
+                    ],
+                    "max_iou": 0.8178224423670194
+                  },
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.6170704960823059,
+                    "xyxy_normalized": [
+                      0.35422482490539553,
+                      0.17895838419596355,
+                      0.6708146572113037,
+                      0.7376405715942382
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.710082584757546
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 32.46,
+              "tiles_ms": 155.83
+            },
+            {
+              "photo": 756077480,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 32.81,
+              "tiles_ms": 159.78
+            },
+            {
+              "photo": 752738216,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 34.0,
+              "tiles_ms": 180.86
+            },
+            {
+              "photo": 566059493,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 31.25,
+              "tiles_ms": 152.85
+            },
+            {
+              "photo": 535648156,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 34.26,
+              "tiles_ms": 161.79
+            }
+          ],
+          "totals": {
+            "whole": {
+              "classes": {
+                "Cockroach": {
+                  "tp": 1,
+                  "fp": 4,
+                  "fn": 4
+                },
+                "Spider": {
+                  "tp": 4,
+                  "fp": 3,
+                  "fn": 8
+                }
+              },
+              "median_pc_ms": 32.81,
+              "negative_frames_with_proposals": 0,
+              "small_targets": {
+                "Cockroach": {
+                  "labeled": 0,
+                  "matched": 0
+                },
+                "Spider": {
+                  "labeled": 0,
+                  "matched": 0
+                }
+              },
+              "cross_class_overlaps": {
+                "Spider_as_Cockroach": 2,
+                "Cockroach_as_Spider": 1
+              },
+              "target_strata": {
+                "over_144": {
+                  "Spider": {
+                    "labeled": 9,
+                    "matched": 4
+                  },
+                  "Cockroach": {
+                    "labeled": 4,
+                    "matched": 1
+                  }
+                },
+                "no_complete_tile": {
+                  "Spider": {
+                    "labeled": 7,
+                    "matched": 3
+                  },
+                  "Cockroach": {
+                    "labeled": 3,
+                    "matched": 1
+                  }
+                },
+                "64_to_144": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                },
+                "within_12_of_edge": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 1
+                  }
+                },
+                "clear_12": {
+                  "Spider": {
+                    "labeled": 2,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 0
+                  }
+                }
+              }
+            },
+            "tiles": {
+              "classes": {
+                "Cockroach": {
+                  "tp": 1,
+                  "fp": 4,
+                  "fn": 4
+                },
+                "Spider": {
+                  "tp": 0,
+                  "fp": 7,
+                  "fn": 12
+                }
+              },
+              "median_pc_ms": 164.34,
+              "negative_frames_with_proposals": 0,
+              "small_targets": {
+                "Cockroach": {
+                  "labeled": 0,
+                  "matched": 0
+                },
+                "Spider": {
+                  "labeled": 0,
+                  "matched": 0
+                }
+              },
+              "cross_class_overlaps": {},
+              "target_strata": {
+                "over_144": {
+                  "Spider": {
+                    "labeled": 9,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 4,
+                    "matched": 1
+                  }
+                },
+                "no_complete_tile": {
+                  "Spider": {
+                    "labeled": 7,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 3,
+                    "matched": 1
+                  }
+                },
+                "64_to_144": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                },
+                "within_12_of_edge": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  }
+                },
+                "clear_12": {
+                  "Spider": {
+                    "labeled": 2,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 0
+                  }
+                }
+              }
+            }
+          },
+          "replies": 106,
+          "allowed": [
+            "Cockroach",
+            "Spider"
+          ],
+          "model_metadata_sha256": "65ac8a95782160a392d53b024ea07eed8b6b5f7c54f45a91f4c3dec4a99a8a10"
+        },
+        "independent": {
+          "cases": [
+            {
+              "photo": 757716647,
+              "class": "Spider",
+              "bbox": [
+                156,
+                73,
+                395,
+                292
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 40.35,
+              "tiles_ms": 164.56
+            },
+            {
+              "photo": 763461901,
+              "class": "Spider",
+              "bbox": [
+                238,
+                182,
+                318,
+                270
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 31.28,
+              "tiles_ms": 161.6
+            },
+            {
+              "photo": 756063321,
+              "class": "Spider",
+              "bbox": [
+                308,
+                72,
+                368,
+                175
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.7046273946762085,
+                    "xyxy_normalized": [
+                      0.5064624309539795,
+                      0.2447228749593099,
+                      0.555430555343628,
+                      0.354654057820638
+                    ],
+                    "max_iou": 0.2675882916861372
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 32.11,
+              "tiles_ms": 174.5
+            },
+            {
+              "photo": 733925555,
+              "class": "Spider",
+              "bbox": [
+                236,
+                146,
+                378,
+                290
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.9309940338134766,
+                    "xyxy_normalized": [
+                      0.3784376382827759,
+                      0.29390430450439453,
+                      0.5889503479003906,
+                      0.6133043924967448
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.8939415836977745
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 33.63,
+              "tiles_ms": 167.88
+            },
+            {
+              "photo": 701476963,
+              "class": "Spider",
+              "bbox": [
+                264,
+                194,
+                347,
+                264
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 38.75,
+              "tiles_ms": 174.41
+            },
+            {
+              "photo": 763861554,
+              "class": "Spider",
+              "bbox": [
+                108,
+                85,
+                595,
+                352
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.6371909976005554,
+                    "xyxy_normalized": [
+                      0.0,
+                      0.3943251927693685,
+                      0.2695831537246704,
+                      0.7463624954223633
+                    ],
+                    "max_iou": 0.0706278031132034
+                  },
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.5272489190101624,
+                    "xyxy_normalized": [
+                      0.5138989567756653,
+                      0.6604254404703777,
+                      0.8592734813690186,
+                      0.9673175811767578
+                    ],
+                    "max_iou": 0.049953072672303214
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 2,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 35.18,
+              "tiles_ms": 174.91
+            },
+            {
+              "photo": 758942322,
+              "class": "Spider",
+              "bbox": [
+                181,
+                73,
+                430,
+                400
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 35.79,
+              "tiles_ms": 167.10000000000002
+            },
+            {
+              "photo": 717426325,
+              "class": "Cockroach",
+              "bbox": [
+                286,
+                234,
+                344,
+                283
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 33.32,
+              "tiles_ms": 162.88
+            },
+            {
+              "photo": 716156084,
+              "class": "Cockroach",
+              "bbox": [
+                309,
+                170,
+                519,
+                287
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.7452108860015869,
+                    "xyxy_normalized": [
+                      0.4570146381855011,
+                      0.3015714963277181,
+                      0.7962143898010254,
+                      0.5900195439656576
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.7113860601112124
+                  },
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.5048018097877502,
+                    "xyxy_normalized": [
+                      0.5900802493095398,
+                      0.36720590591430663,
+                      0.8151984214782715,
+                      0.5485038121541341
+                    ],
+                    "max_iou": 0.49584504025688303
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 1,
+                    "fp": 1,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 32.53,
+              "tiles_ms": 172.19
+            },
+            {
+              "photo": 658236526,
+              "class": "Cockroach",
+              "bbox": [
+                226,
+                0,
+                398,
+                312
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.6284660696983337,
+                    "xyxy_normalized": [
+                      0.3704157114028931,
+                      0.16628424326578775,
+                      0.6610935211181641,
+                      0.714099375406901
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.5729643450772028
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 32.53,
+              "tiles_ms": 159.35
+            },
+            {
+              "photo": 653893184,
+              "class": "Cockroach",
+              "bbox": [
+                210,
+                64,
+                404,
+                431
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 33.6,
+              "tiles_ms": 159.73
+            },
+            {
+              "photo": 754130567,
+              "class": "Cockroach",
+              "bbox": [
+                241,
+                184,
+                316,
+                268
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.8510583639144897,
+                    "xyxy_normalized": [
+                      0.4023181438446045,
+                      0.4056475321451823,
+                      0.49236092567443845,
+                      0.5499692916870117
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.6336674234622878
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.9535174369812012,
+                    "xyxy_normalized": [
+                      0.41233325004577637,
+                      0.403483517964681,
+                      0.4893125057220459,
+                      0.5506728808085124
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.5524981074984228
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 31.52,
+              "tiles_ms": 178.68
+            },
+            {
+              "photo": 753078708,
+              "class": "Cockroach",
+              "bbox": [
+                205,
+                190,
+                380,
+                296
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.7141759395599365,
+                    "xyxy_normalized": [
+                      0.14785012006759643,
+                      0.1907747745513916,
+                      0.6,
+                      0.7339359919230143
+                    ],
+                    "max_iou": 0.24587339032912514
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 35.22,
+              "tiles_ms": 161.57
+            },
+            {
+              "photo": 752258700,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 35.08,
+              "tiles_ms": 169.48
+            },
+            {
+              "photo": 748833013,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.6504013538360596,
+                    "xyxy_normalized": [
+                      0.3614884614944458,
+                      0.2649838924407959,
+                      0.6847500801086426,
+                      0.7517715454101562
+                    ],
+                    "max_iou": 0
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 30.29,
+              "tiles_ms": 154.85
+            },
+            {
+              "photo": 678892502,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 34.15,
+              "tiles_ms": 164.65
+            },
+            {
+              "photo": 663894895,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5333507061004639,
+                    "xyxy_normalized": [
+                      0.4,
+                      0.35783867835998534,
+                      0.8454485416412354,
+                      0.7442350387573242
+                    ],
+                    "max_iou": 0
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 31.03,
+              "tiles_ms": 160.94
+            }
+          ],
+          "totals": {
+            "whole": {
+              "classes": {
+                "Cockroach": {
+                  "tp": 2,
+                  "fp": 0,
+                  "fn": 4
+                },
+                "Spider": {
+                  "tp": 1,
+                  "fp": 1,
+                  "fn": 6
+                }
+              },
+              "median_pc_ms": 33.6,
+              "negative_frames_with_proposals": 1,
+              "small_targets": {
+                "Cockroach": {
+                  "labeled": 1,
+                  "matched": 0
+                },
+                "Spider": {
+                  "labeled": 1,
+                  "matched": 0
+                }
+              },
+              "cross_class_overlaps": {},
+              "target_strata": {
+                "over_144": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 4,
+                    "matched": 1
+                  }
+                },
+                "no_complete_tile": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 1
+                  }
+                },
+                "64_to_144": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 1
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 1
+                  }
+                },
+                "clear_12": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 3,
+                    "matched": 1
+                  }
+                },
+                "under_64": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                },
+                "within_12_of_edge": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 1
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                }
+              }
+            },
+            "tiles": {
+              "classes": {
+                "Cockroach": {
+                  "tp": 2,
+                  "fp": 4,
+                  "fn": 4
+                },
+                "Spider": {
+                  "tp": 0,
+                  "fp": 2,
+                  "fn": 7
+                }
+              },
+              "median_pc_ms": 164.65,
+              "negative_frames_with_proposals": 1,
+              "small_targets": {
+                "Cockroach": {
+                  "labeled": 1,
+                  "matched": 0
+                },
+                "Spider": {
+                  "labeled": 1,
+                  "matched": 0
+                }
+              },
+              "cross_class_overlaps": {},
+              "target_strata": {
+                "over_144": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 4,
+                    "matched": 1
+                  }
+                },
+                "no_complete_tile": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 0
+                  }
+                },
+                "64_to_144": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 1
+                  }
+                },
+                "clear_12": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 3,
+                    "matched": 2
+                  }
+                },
+                "under_64": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                },
+                "within_12_of_edge": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                }
+              }
+            }
+          },
+          "replies": 86,
+          "allowed": [
+            "Cockroach",
+            "Spider"
+          ],
+          "model_metadata_sha256": "65ac8a95782160a392d53b024ea07eed8b6b5f7c54f45a91f4c3dec4a99a8a10"
+        }
+      }
+    },
+    "context": {
+      "candidate_sha256": "e223febe0f0868a5d0aca082aca9ff645aa5c186ce4935ac701e9ac9fbdb43f6",
+      "training_report_sha256": "a5bd4b39e3d7290230058e46a4890c5e5526b9e2f3c2118eec42e954d186d0be",
+      "cohorts": {
+        "original_regression": {
+          "cases": [
+            {
+              "photo": 760525610,
+              "class": "Spider",
+              "bbox": [
+                276,
+                130,
+                402,
+                371
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.6067031025886536,
+                    "xyxy_normalized": [
+                      0.3864253520965576,
+                      0.18936583201090496,
+                      0.7094300746917724,
+                      0.8106816609700521
+                    ],
+                    "max_iou": 0.49254406026359737
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 33.86,
+              "tiles_ms": 170.46
+            },
+            {
+              "photo": 759640339,
+              "class": "Spider",
+              "bbox": [
+                226,
+                191,
+                319,
+                333
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 33.16,
+              "tiles_ms": 158.95999999999998
+            },
+            {
+              "photo": 759615311,
+              "class": "Spider",
+              "bbox": [
+                234,
+                168,
+                346,
+                321
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 33.01,
+              "tiles_ms": 163.96
+            },
+            {
+              "photo": 1921864,
+              "class": "Spider",
+              "bbox": [
+                280,
+                187,
+                333,
+                268
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5151851773262024,
+                    "xyxy_normalized": [
+                      0.41971378326416015,
+                      0.38984063466389973,
+                      0.5440431594848633,
+                      0.5755661646525065
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.6037137293787237
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5423709750175476,
+                    "xyxy_normalized": [
+                      0.4274665355682373,
+                      0.37565159797668457,
+                      0.5301743984222412,
+                      0.5942682266235352
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.6223759353583012
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 31.9,
+              "tiles_ms": 171.15
+            },
+            {
+              "photo": 733237526,
+              "class": "Spider",
+              "bbox": [
+                224,
+                270,
+                303,
+                337
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 35.54,
+              "tiles_ms": 177.68
+            },
+            {
+              "photo": 725233767,
+              "class": "Spider",
+              "bbox": [
+                159,
+                165,
+                463,
+                365
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.6026138067245483,
+                    "xyxy_normalized": [
+                      0.26839802265167234,
+                      0.33384968439737955,
+                      0.7374403953552247,
+                      0.7902421315511068
+                    ],
+                    "max_iou": 0.8525772667100738
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 35.05,
+              "tiles_ms": 169.01
+            },
+            {
+              "photo": 739586629,
+              "class": "Cockroach",
+              "bbox": [
+                276,
+                246,
+                360,
+                295
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 35.9,
+              "tiles_ms": 179.66
+            },
+            {
+              "photo": 762888641,
+              "class": "Cockroach",
+              "bbox": [
+                274,
+                170,
+                401,
+                274
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5825420618057251,
+                    "xyxy_normalized": [
+                      0.4155064016580582,
+                      0.2578935146331787,
+                      0.810221529006958,
+                      0.6424423217773437
+                    ],
+                    "max_iou": 0.2832569727684094
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 36.56,
+              "tiles_ms": 165.09
+            },
+            {
+              "photo": 754828408,
+              "class": "Cockroach",
+              "bbox": [
+                165,
+                164,
+                375,
+                359
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.7024704813957214,
+                    "xyxy_normalized": [
+                      0.2811034440994263,
+                      0.25016212463378906,
+                      0.6069775581359863,
+                      0.7393267313639323
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.706879588615618
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 30.85,
+              "tiles_ms": 168.97
+            },
+            {
+              "photo": 673723157,
+              "class": "Cockroach",
+              "bbox": [
+                266,
+                143,
+                466,
+                324
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5630058646202087,
+                    "xyxy_normalized": [
+                      0.4406101226806641,
+                      0.3104967753092448,
+                      0.7162004470825195,
+                      0.7349580764770508
+                    ],
+                    "max_iou": 0.7476314534087702
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 34.3,
+              "tiles_ms": 159.5
+            },
+            {
+              "photo": 667717051,
+              "class": "Cockroach",
+              "bbox": [
+                282,
+                153,
+                344,
+                238
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 34.8,
+              "tiles_ms": 165.17000000000002
+            },
+            {
+              "photo": 616417797,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.5109825134277344,
+                    "xyxy_normalized": [
+                      0.10755019187927246,
+                      0.30035927295684817,
+                      0.4994193553924561,
+                      0.6434267679850261
+                    ],
+                    "max_iou": 0
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 32.66,
+              "tiles_ms": 175.14999999999998
+            },
+            {
+              "photo": 613401463,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 38.76,
+              "tiles_ms": 162.88
+            },
+            {
+              "photo": 760882266,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 33.53,
+              "tiles_ms": 165.27
+            },
+            {
+              "photo": 760421429,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 32.58,
+              "tiles_ms": 161.94
+            }
+          ],
+          "totals": {
+            "whole": {
+              "classes": {
+                "Cockroach": {
+                  "tp": 1,
+                  "fp": 1,
+                  "fn": 4
+                },
+                "Spider": {
+                  "tp": 1,
+                  "fp": 2,
+                  "fn": 5
+                }
+              },
+              "median_pc_ms": 33.86,
+              "negative_frames_with_proposals": 0,
+              "small_targets": {
+                "Cockroach": {
+                  "labeled": 1,
+                  "matched": 0
+                },
+                "Spider": {
+                  "labeled": 1,
+                  "matched": 1
+                }
+              },
+              "cross_class_overlaps": {
+                "Spider_as_Cockroach": 1,
+                "Cockroach_as_Spider": 1
+              },
+              "target_strata": {
+                "64_to_144": {
+                  "Spider": {
+                    "labeled": 4,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 0
+                  }
+                },
+                "clear_12": {
+                  "Spider": {
+                    "labeled": 5,
+                    "matched": 1
+                  },
+                  "Cockroach": {
+                    "labeled": 3,
+                    "matched": 0
+                  }
+                },
+                "under_64": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 1
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                },
+                "over_144": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 1
+                  }
+                },
+                "no_complete_tile": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                },
+                "within_12_of_edge": {
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 1
+                  }
+                }
+              }
+            },
+            "tiles": {
+              "classes": {
+                "Cockroach": {
+                  "tp": 0,
+                  "fp": 1,
+                  "fn": 5
+                },
+                "Spider": {
+                  "tp": 1,
+                  "fp": 1,
+                  "fn": 5
+                }
+              },
+              "median_pc_ms": 165.27,
+              "negative_frames_with_proposals": 1,
+              "small_targets": {
+                "Cockroach": {
+                  "labeled": 1,
+                  "matched": 0
+                },
+                "Spider": {
+                  "labeled": 1,
+                  "matched": 1
+                }
+              },
+              "cross_class_overlaps": {},
+              "target_strata": {
+                "64_to_144": {
+                  "Spider": {
+                    "labeled": 4,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 0
+                  }
+                },
+                "clear_12": {
+                  "Spider": {
+                    "labeled": 5,
+                    "matched": 1
+                  },
+                  "Cockroach": {
+                    "labeled": 3,
+                    "matched": 0
+                  }
+                },
+                "under_64": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 1
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                },
+                "over_144": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 0
+                  }
+                },
+                "no_complete_tile": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                },
+                "within_12_of_edge": {
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 0
+                  }
+                }
+              }
+            }
+          },
+          "replies": 76,
+          "allowed": [
+            "Cockroach",
+            "Spider"
+          ],
+          "model_metadata_sha256": "cfd8e076105ee0821375a872fb57f00e4c3e79135b6f70211e31cf6bb22418a8"
+        },
+        "specialist_regression": {
+          "cases": [
+            {
+              "photo": 763103702,
+              "class": "Spider",
+              "bbox": [
+                210,
+                148,
+                428,
+                415
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.6365501284599304,
+                    "xyxy_normalized": [
+                      0.3517266273498535,
+                      0.28321997324625653,
+                      0.6248866081237793,
+                      0.6910395940144857
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.5324639082706323
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.8657839298248291,
+                    "xyxy_normalized": [
+                      0.4048115827143192,
+                      0.2943375587463379,
+                      0.6213924646377563,
+                      0.6025997161865234
+                    ],
+                    "max_iou": 0.3310711185987655
+                  },
+                  {
+                    "class": "Spider",
+                    "confidence": 0.6789857149124146,
+                    "xyxy_normalized": [
+                      0.4,
+                      0.2202288826306661,
+                      0.8013341426849365,
+                      0.763730239868164
+                    ],
+                    "max_iou": 0.42911451828425773
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 2,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 40.97,
+              "tiles_ms": 167.68
+            },
+            {
+              "photo": 757881124,
+              "class": "Spider",
+              "bbox": [
+                61,
+                99,
+                580,
+                385
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5971639752388,
+                    "xyxy_normalized": [
+                      0.17084770202636718,
+                      0.23700606028238932,
+                      0.8008644104003906,
+                      0.7862466176350912
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.7161475110595333
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 34.99,
+              "tiles_ms": 168.32
+            },
+            {
+              "photo": 749421085,
+              "class": "Spider",
+              "bbox": [
+                240,
+                149,
+                382,
+                382
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.6943923234939575,
+                    "xyxy_normalized": [
+                      0.4,
+                      0.2753892183303833,
+                      0.8108314990997314,
+                      0.8126578013102214
+                    ],
+                    "max_iou": 0.4103988361682325
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 35.05,
+              "tiles_ms": 164.51
+            },
+            {
+              "photo": 764208733,
+              "class": "Spider",
+              "bbox": [
+                139,
+                60,
+                542,
+                406
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.6755951046943665,
+                    "xyxy_normalized": [
+                      0.16206912994384765,
+                      0.07984943389892578,
+                      0.8185749053955078,
+                      0.9370030085245769
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.743407333516929
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 35.81,
+              "tiles_ms": 168.70000000000002
+            },
+            {
+              "photo": 762142850,
+              "class": "Spider",
+              "bbox": [
+                223,
+                135,
+                477,
+                379
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.7450050115585327,
+                    "xyxy_normalized": [
+                      0.3318035125732422,
+                      0.3011285146077474,
+                      0.6885164260864258,
+                      0.7754611968994141
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.7694835106289357
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 35.15,
+              "tiles_ms": 169.61
+            },
+            {
+              "photo": 760705478,
+              "class": "Spider",
+              "bbox": [
+                284,
+                233,
+                349,
+                278
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 33.49,
+              "tiles_ms": 168.23000000000002
+            },
+            {
+              "photo": 748502223,
+              "class": "Spider",
+              "bbox": [
+                236,
+                115,
+                390,
+                301
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.9123162031173706,
+                    "xyxy_normalized": [
+                      0.369101881980896,
+                      0.22103506724039715,
+                      0.6123430252075195,
+                      0.6304261525472005
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.9336996764178895
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 35.11,
+              "tiles_ms": 159.96
+            },
+            {
+              "photo": 745024311,
+              "class": "Spider",
+              "bbox": [
+                140,
+                0,
+                503,
+                367
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 34.6,
+              "tiles_ms": 184.64
+            },
+            {
+              "photo": 743699597,
+              "class": "Spider",
+              "bbox": [
+                194,
+                193,
+                374,
+                325
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.7643807530403137,
+                    "xyxy_normalized": [
+                      0.0,
+                      0.15695282618204753,
+                      0.7342644691467285,
+                      1.0
+                    ],
+                    "max_iou": 0.1249455619912152
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.6365398168563843,
+                    "xyxy_normalized": [
+                      0.13890163898468016,
+                      0.2,
+                      0.6,
+                      0.7309569994608561
+                    ],
+                    "max_iou": 0.315916490410416
+                  },
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.5834185481071472,
+                    "xyxy_normalized": [
+                      0.1419932007789612,
+                      0.25787982940673826,
+                      0.4944568157196045,
+                      0.6300106048583984
+                    ],
+                    "max_iou": 0.2644672282136993
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 35.27,
+              "tiles_ms": 168.26999999999998
+            },
+            {
+              "photo": 763382991,
+              "class": "Spider",
+              "bbox": [
+                218,
+                121,
+                382,
+                310
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.766573965549469,
+                    "xyxy_normalized": [
+                      0.3332688331604004,
+                      0.23227458000183104,
+                      0.5922876358032226,
+                      0.6931378046671549
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.8177370601752184
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.509221076965332,
+                    "xyxy_normalized": [
+                      0.4,
+                      0.25744239886601766,
+                      0.6285439014434815,
+                      0.6610379854838053
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.6553725390264261
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 32.37,
+              "tiles_ms": 170.11
+            },
+            {
+              "photo": 762951698,
+              "class": "Spider",
+              "bbox": [
+                326,
+                98,
+                392,
+                278
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 34.61,
+              "tiles_ms": 190.56
+            },
+            {
+              "photo": 762659061,
+              "class": "Spider",
+              "bbox": [
+                152,
+                51,
+                547,
+                347
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.697776198387146,
+                    "xyxy_normalized": [
+                      0.25974202156066895,
+                      0.15447484652201335,
+                      0.7869826793670655,
+                      0.687144915262858
+                    ],
+                    "max_iou": 0.7379035367478162
+                  },
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.6887261867523193,
+                    "xyxy_normalized": [
+                      0.057222604751586914,
+                      0.06098658243815104,
+                      0.6772415161132812,
+                      0.636140505472819
+                    ],
+                    "max_iou": 0.46215645537926003
+                  },
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.6511278748512268,
+                    "xyxy_normalized": [
+                      0.20390870571136474,
+                      0.07774295806884765,
+                      0.7216590881347656,
+                      0.6555036544799805
+                    ],
+                    "max_iou": 0.6426307436978828
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 3,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5153393149375916,
+                    "xyxy_normalized": [
+                      0.4,
+                      0.24770225683848063,
+                      0.8953317642211914,
+                      0.7725005467732747
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.5090393424576541
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 45.38,
+              "tiles_ms": 199.23000000000002
+            },
+            {
+              "photo": 729995394,
+              "class": "Cockroach",
+              "bbox": [
+                155,
+                136,
+                418,
+                312
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.5714145302772522,
+                    "xyxy_normalized": [
+                      0.4,
+                      0.26001903613408406,
+                      0.6739101648330689,
+                      0.547919241587321
+                    ],
+                    "max_iou": 0.4119848058210629
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 37.73,
+              "tiles_ms": 220.35000000000002
+            },
+            {
+              "photo": 729685407,
+              "class": "Cockroach",
+              "bbox": [
+                228,
+                35,
+                347,
+                194
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 43.46,
+              "tiles_ms": 173.36
+            },
+            {
+              "photo": 724152811,
+              "class": "Cockroach",
+              "bbox": [
+                252,
+                140,
+                447,
+                453
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 38.48,
+              "tiles_ms": 177.84
+            },
+            {
+              "photo": 754143299,
+              "class": "Cockroach",
+              "bbox": [
+                193,
+                158,
+                363,
+                333
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.6500280499458313,
+                    "xyxy_normalized": [
+                      0.4,
+                      0.5405923843383789,
+                      0.6659817457199096,
+                      0.8
+                    ],
+                    "max_iou": 0.18259495341713405
+                  },
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5344090461730957,
+                    "xyxy_normalized": [
+                      0.08829559087753296,
+                      0.11089248657226562,
+                      0.5540090084075928,
+                      0.6044126510620117
+                    ],
+                    "max_iou": 0.27016262507750494
+                  },
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.5034067034721375,
+                    "xyxy_normalized": [
+                      0.4,
+                      0.0891931136449178,
+                      0.5812941312789917,
+                      0.4764520327250163
+                    ],
+                    "max_iou": 0.17289175874327448
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 2,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 33.07,
+              "tiles_ms": 166.24
+            },
+            {
+              "photo": 735345271,
+              "class": "Cockroach",
+              "bbox": [
+                210,
+                74,
+                422,
+                306
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.7880263328552246,
+                    "xyxy_normalized": [
+                      0.37531042098999023,
+                      0.1416600545247396,
+                      0.6657485008239746,
+                      0.6196542739868164
+                    ],
+                    "max_iou": 0.7931966706978715
+                  },
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.7011317014694214,
+                    "xyxy_normalized": [
+                      0.3465085506439209,
+                      0.1778409957885742,
+                      0.6701158046722412,
+                      0.7407484690348307
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.7246638523393414
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 32.99,
+              "tiles_ms": 168.65
+            },
+            {
+              "photo": 756077480,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 33.2,
+              "tiles_ms": 173.57999999999998
+            },
+            {
+              "photo": 752738216,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 37.7,
+              "tiles_ms": 176.9
+            },
+            {
+              "photo": 566059493,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 33.37,
+              "tiles_ms": 165.86
+            },
+            {
+              "photo": 535648156,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 35.53,
+              "tiles_ms": 160.81
+            }
+          ],
+          "totals": {
+            "whole": {
+              "classes": {
+                "Cockroach": {
+                  "tp": 1,
+                  "fp": 3,
+                  "fn": 4
+                },
+                "Spider": {
+                  "tp": 6,
+                  "fp": 2,
+                  "fn": 6
+                }
+              },
+              "median_pc_ms": 35.11,
+              "negative_frames_with_proposals": 0,
+              "small_targets": {
+                "Cockroach": {
+                  "labeled": 0,
+                  "matched": 0
+                },
+                "Spider": {
+                  "labeled": 0,
+                  "matched": 0
+                }
+              },
+              "cross_class_overlaps": {
+                "Spider_as_Cockroach": 2,
+                "Cockroach_as_Spider": 1
+              },
+              "target_strata": {
+                "over_144": {
+                  "Spider": {
+                    "labeled": 9,
+                    "matched": 6
+                  },
+                  "Cockroach": {
+                    "labeled": 4,
+                    "matched": 1
+                  }
+                },
+                "no_complete_tile": {
+                  "Spider": {
+                    "labeled": 7,
+                    "matched": 5
+                  },
+                  "Cockroach": {
+                    "labeled": 3,
+                    "matched": 1
+                  }
+                },
+                "64_to_144": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                },
+                "within_12_of_edge": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 1
+                  }
+                },
+                "clear_12": {
+                  "Spider": {
+                    "labeled": 2,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 0
+                  }
+                }
+              }
+            },
+            "tiles": {
+              "classes": {
+                "Cockroach": {
+                  "tp": 0,
+                  "fp": 4,
+                  "fn": 5
+                },
+                "Spider": {
+                  "tp": 2,
+                  "fp": 5,
+                  "fn": 10
+                }
+              },
+              "median_pc_ms": 168.7,
+              "negative_frames_with_proposals": 0,
+              "small_targets": {
+                "Cockroach": {
+                  "labeled": 0,
+                  "matched": 0
+                },
+                "Spider": {
+                  "labeled": 0,
+                  "matched": 0
+                }
+              },
+              "cross_class_overlaps": {},
+              "target_strata": {
+                "over_144": {
+                  "Spider": {
+                    "labeled": 9,
+                    "matched": 2
+                  },
+                  "Cockroach": {
+                    "labeled": 4,
+                    "matched": 0
+                  }
+                },
+                "no_complete_tile": {
+                  "Spider": {
+                    "labeled": 7,
+                    "matched": 1
+                  },
+                  "Cockroach": {
+                    "labeled": 3,
+                    "matched": 0
+                  }
+                },
+                "64_to_144": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                },
+                "within_12_of_edge": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 1
+                  }
+                },
+                "clear_12": {
+                  "Spider": {
+                    "labeled": 2,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 0
+                  }
+                }
+              }
+            }
+          },
+          "replies": 106,
+          "allowed": [
+            "Cockroach",
+            "Spider"
+          ],
+          "model_metadata_sha256": "cfd8e076105ee0821375a872fb57f00e4c3e79135b6f70211e31cf6bb22418a8"
+        },
+        "independent": {
+          "cases": [
+            {
+              "photo": 757716647,
+              "class": "Spider",
+              "bbox": [
+                156,
+                73,
+                395,
+                292
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 41.16,
+              "tiles_ms": 163.51999999999998
+            },
+            {
+              "photo": 763461901,
+              "class": "Spider",
+              "bbox": [
+                238,
+                182,
+                318,
+                270
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 35.39,
+              "tiles_ms": 155.79999999999998
+            },
+            {
+              "photo": 756063321,
+              "class": "Spider",
+              "bbox": [
+                308,
+                72,
+                368,
+                175
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.8127500414848328,
+                    "xyxy_normalized": [
+                      0.507483434677124,
+                      0.23193073272705078,
+                      0.5563396453857422,
+                      0.3525410016377767
+                    ],
+                    "max_iou": 0.2929117557573858
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 33.63,
+              "tiles_ms": 175.48
+            },
+            {
+              "photo": 733925555,
+              "class": "Spider",
+              "bbox": [
+                236,
+                146,
+                378,
+                290
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.8990465998649597,
+                    "xyxy_normalized": [
+                      0.3792263031005859,
+                      0.2961842219034831,
+                      0.5905611991882325,
+                      0.6174869537353516
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.8921537385521929
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 37.78,
+              "tiles_ms": 172.15
+            },
+            {
+              "photo": 701476963,
+              "class": "Spider",
+              "bbox": [
+                264,
+                194,
+                347,
+                264
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 37.93,
+              "tiles_ms": 173.61
+            },
+            {
+              "photo": 763861554,
+              "class": "Spider",
+              "bbox": [
+                108,
+                85,
+                595,
+                352
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 34.77,
+              "tiles_ms": 172.70999999999998
+            },
+            {
+              "photo": 758942322,
+              "class": "Spider",
+              "bbox": [
+                181,
+                73,
+                430,
+                400
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  }
+                }
+              },
+              "whole_ms": 36.59,
+              "tiles_ms": 170.57999999999998
+            },
+            {
+              "photo": 717426325,
+              "class": "Cockroach",
+              "bbox": [
+                286,
+                234,
+                344,
+                283
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 38.06,
+              "tiles_ms": 185.36
+            },
+            {
+              "photo": 716156084,
+              "class": "Cockroach",
+              "bbox": [
+                309,
+                170,
+                519,
+                287
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 47.9,
+              "tiles_ms": 179.63
+            },
+            {
+              "photo": 658236526,
+              "class": "Cockroach",
+              "bbox": [
+                226,
+                0,
+                398,
+                312
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.7213373184204102,
+                    "xyxy_normalized": [
+                      0.40535507202148435,
+                      0.19750900268554689,
+                      0.6313348770141601,
+                      0.7471731821695964
+                    ],
+                    "max_iou": 0.4876060832197424
+                  },
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.5740646123886108,
+                    "xyxy_normalized": [
+                      0.3690124273300171,
+                      0.1821783701578776,
+                      0.6114429473876953,
+                      0.6671793619791667
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.6341223454489029
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 1,
+                    "fp": 1,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.684692919254303,
+                    "xyxy_normalized": [
+                      0.4017126655206084,
+                      0.22614545822143556,
+                      0.6314138174057007,
+                      0.5938365300496419
+                    ],
+                    "max_iou": 0.4542877091804489
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 36.15,
+              "tiles_ms": 172.44
+            },
+            {
+              "photo": 653893184,
+              "class": "Cockroach",
+              "bbox": [
+                210,
+                64,
+                404,
+                431
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 33.33,
+              "tiles_ms": 170.54
+            },
+            {
+              "photo": 754130567,
+              "class": "Cockroach",
+              "bbox": [
+                241,
+                184,
+                316,
+                268
+              ],
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.90033358335495,
+                    "xyxy_normalized": [
+                      0.38897180557250977,
+                      0.40509910583496095,
+                      0.49193992614746096,
+                      0.5315610249837239
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.6349553926850829
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Cockroach",
+                    "confidence": 0.9635879993438721,
+                    "xyxy_normalized": [
+                      0.4124398283660412,
+                      0.4020440737406413,
+                      0.4886125326156616,
+                      0.55125945409139
+                    ],
+                    "matched_truth": 0,
+                    "matched_iou": 0.5542345892304313
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 1,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 34.44,
+              "tiles_ms": 163.25
+            },
+            {
+              "photo": 753078708,
+              "class": "Cockroach",
+              "bbox": [
+                205,
+                190,
+                380,
+                296
+              ],
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5566449165344238,
+                    "xyxy_normalized": [
+                      0.11026977300643921,
+                      0.2565945823987325,
+                      0.6,
+                      0.7383972803751627
+                    ],
+                    "max_iou": 0.25591548479170745
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 1
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 33.69,
+              "tiles_ms": 172.73
+            },
+            {
+              "photo": 752258700,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 34.8,
+              "tiles_ms": 169.36
+            },
+            {
+              "photo": 748833013,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 37.06,
+              "tiles_ms": 166.82
+            },
+            {
+              "photo": 678892502,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 30.85,
+              "tiles_ms": 163.53
+            },
+            {
+              "photo": 663894895,
+              "class": "Other",
+              "bbox": null,
+              "whole": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.6325549483299255,
+                    "xyxy_normalized": [
+                      0.2230897903442383,
+                      0.3006438891092936,
+                      0.8938173294067383,
+                      0.9128288269042969
+                    ],
+                    "max_iou": 0
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 1,
+                    "fn": 0
+                  }
+                }
+              },
+              "tiles": {
+                "boxes": [
+                  {
+                    "class": "Spider",
+                    "confidence": 0.6195435523986816,
+                    "xyxy_normalized": [
+                      0.2801927328109741,
+                      0.35454088846842446,
+                      0.6,
+                      0.6965988159179688
+                    ],
+                    "max_iou": 0
+                  },
+                  {
+                    "class": "Spider",
+                    "confidence": 0.5818465352058411,
+                    "xyxy_normalized": [
+                      0.4252127081155777,
+                      0.3702793757120768,
+                      0.8363560199737549,
+                      0.726785437266032
+                    ],
+                    "max_iou": 0
+                  }
+                ],
+                "ignored": [],
+                "counts": {
+                  "Cockroach": {
+                    "tp": 0,
+                    "fp": 0,
+                    "fn": 0
+                  },
+                  "Spider": {
+                    "tp": 0,
+                    "fp": 2,
+                    "fn": 0
+                  }
+                }
+              },
+              "whole_ms": 33.67,
+              "tiles_ms": 163.72
+            }
+          ],
+          "totals": {
+            "whole": {
+              "classes": {
+                "Cockroach": {
+                  "tp": 2,
+                  "fp": 1,
+                  "fn": 4
+                },
+                "Spider": {
+                  "tp": 1,
+                  "fp": 1,
+                  "fn": 6
+                }
+              },
+              "median_pc_ms": 35.39,
+              "negative_frames_with_proposals": 1,
+              "small_targets": {
+                "Cockroach": {
+                  "labeled": 1,
+                  "matched": 0
+                },
+                "Spider": {
+                  "labeled": 1,
+                  "matched": 0
+                }
+              },
+              "cross_class_overlaps": {},
+              "target_strata": {
+                "over_144": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 4,
+                    "matched": 1
+                  }
+                },
+                "no_complete_tile": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 1
+                  }
+                },
+                "64_to_144": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 1
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 1
+                  }
+                },
+                "clear_12": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 3,
+                    "matched": 1
+                  }
+                },
+                "under_64": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                },
+                "within_12_of_edge": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 1
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                }
+              }
+            },
+            "tiles": {
+              "classes": {
+                "Cockroach": {
+                  "tp": 1,
+                  "fp": 2,
+                  "fn": 5
+                },
+                "Spider": {
+                  "tp": 0,
+                  "fp": 3,
+                  "fn": 7
+                }
+              },
+              "median_pc_ms": 170.58,
+              "negative_frames_with_proposals": 1,
+              "small_targets": {
+                "Cockroach": {
+                  "labeled": 1,
+                  "matched": 0
+                },
+                "Spider": {
+                  "labeled": 1,
+                  "matched": 0
+                }
+              },
+              "cross_class_overlaps": {},
+              "target_strata": {
+                "over_144": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 4,
+                    "matched": 0
+                  }
+                },
+                "no_complete_tile": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 2,
+                    "matched": 0
+                  }
+                },
+                "64_to_144": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 1
+                  }
+                },
+                "clear_12": {
+                  "Spider": {
+                    "labeled": 3,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 3,
+                    "matched": 1
+                  }
+                },
+                "under_64": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                },
+                "within_12_of_edge": {
+                  "Spider": {
+                    "labeled": 1,
+                    "matched": 0
+                  },
+                  "Cockroach": {
+                    "labeled": 1,
+                    "matched": 0
+                  }
+                }
+              }
+            }
+          },
+          "replies": 86,
+          "allowed": [
+            "Cockroach",
+            "Spider"
+          ],
+          "model_metadata_sha256": "cfd8e076105ee0821375a872fb57f00e4c3e79135b6f70211e31cf6bb22418a8"
+        }
+      }
+    }
+  },
+  "runtime_source": "90928aef682fa714e7baacf8b8d2ca2980681027",
+  "runtime_sha256": {
+    "tcp_server.py": "10607c9a6a03bfb4e8875b3107f85608e382b90415e232dace093b2bf678acdd",
+    "scene_router.py": "147401103ced6e6a06ca526d434669edd36b5e1e55630f23a0a099689a3bca11",
+    "scene_protocol.py": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038",
+    "detector_config.py": "b047405f41cd10523d6e51ab25ee8a1673a8219de8ce4ece7a684277b2f5640b",
+    "pose_availability.py": "10eef6f52a4ae9afca8b16e51be2179b83c0a30d1b498ac98cd969d0129367ee",
+    "discovery.py": "f17f4b4525e969ae6dc22523d5a520207280106ebd61dc103b880fee52f88747",
+    "model_artifact.py": "521b330e8b38ee6a93fe6475e168d8dc90aa9a6bcad035db8d17e07ee1060cab",
+    "scene_profiles.json": "4c3a776c4133c60ff9be810630c1aa7002775230f98a03bb3fdfa020d78f8781"
+  },
+  "input_manifests": {
+    "original_regression": {
+      "sha256": "d14e66a6fe083405be07e5e142d5b33c37fae12f49119d34dc13158b607ff613",
+      "images": 15
+    },
+    "specialist_regression": {
+      "sha256": "ef288910d3107cc6082284b468f505241fa229b36ef6c081a9a521322039a913",
+      "images": 21
+    },
+    "independent": {
+      "sha256": "9ed994c780399b54bea4dae369b15e6ac2d436b03f63fb1ba11c1b7dedbd2253",
+      "images": 17
+    }
+  },
+  "reply_threshold": 0.399,
+  "score_threshold": 0.5,
+  "device": "cpu",
+  "worker_sha256": "fe948f70859d6955209031fb6b8e88c3f30c26d40ef161b8ca7e4dca38b10b33"
+}
