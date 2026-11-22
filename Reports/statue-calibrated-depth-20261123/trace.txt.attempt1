@@ -1,0 +1,9 @@
+pair-493-494 frame=1 status=LOW_DETECTION_CONFIDENCE tracked=False
+pair-493-494 frame=2 status=LOW_DETECTION_CONFIDENCE tracked=False
+pair-493-494 frame=3 status=LOW_DETECTION_CONFIDENCE tracked=False
+pair-494-495 frame=1 status=TRANSLATION_ONLY: ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED; confirm orientation / virtual scale tracked=False
+pair-494-495 frame=2 status=TRANSLATION_ONLY: ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED; confirm orientation / virtual scale tracked=False
+pair-494-495 frame=3 status=TRANSLATION_ONLY: ETH3D_NATIVE_SCULPTURE_TEST_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED; confirm orientation / virtual scale tracked=True
+System.InvalidOperationException: pair-494-495 actor identity or depth disagrees with the production matcher
+  at StatueCalibratedDepthChecks.Check (System.String input, System.Collections.Generic.List`1[T] trace) [0x00584] in D:\MagicMRSourceCandidate\20261120\Assets\Editor\StatueCalibratedDepthChecks.cs:112 
+  at StatueCalibratedDepthChecks.Run () [0x0004d] in D:\MagicMRSourceCandidate\20261120\Assets\Editor\StatueCalibratedDepthChecks.cs:32 

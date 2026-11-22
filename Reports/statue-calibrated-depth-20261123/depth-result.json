@@ -1,0 +1,299 @@
+{
+  "scope": "Published C# matcher and exact receiver depth gate executed with .NET and archived real PICF left boxes. No Unity lifecycle or live camera.",
+  "source_commit": "384039a4313240b62b0ebae742916fabb21cc712",
+  "source_sha256": {
+    "receiver": "c6e8f3cd2979314fcbc0ec8057b777bbca9dae4c07e56a21389ca291ab73c24e",
+    "matcher": "7a2a18030a955834a828b0afcb1e2b9acff384a9afd1ecb0122af1e06e8fa51a",
+    "scene": "d0239d6f5a5fc529a7a2183309f690e56d1739aeafa2eb00b9d55ef5bad72082",
+    "camera_gray": "882e59194149ed89a3d1b4f3ab9e4fafbdbdc56d4d8a2bc2d449f2e4166b904d"
+  },
+  "capture_sha256": "00ba783c58e5b0a48d5a41e45d56cb08cb6c20a7393e00cc328a03369a623c37",
+  "frozen_frames_sha256": "41fcb24d55540b3923c89b22fbe0673f70c80418866d0528cb96c4f67c1c7822",
+  "raw_picf_sha256": "adca7d120148dfdb9ecc8ae2e204c9d5fe3601e4a2c55b6ead4d08a70b58fda2",
+  "worker_sha256": "e84507a51e8d88084e36a9dcfc8758d93ca1f86ab5a21646799d8526b9cdfd3c",
+  "compiled_program_sha256": "af934538400119b647a988244f3e03e1e78b7401db0403cb7b16b02b687c9236",
+  "scene_depth_range_m": [
+    0.2,
+    3.0
+  ],
+  "pairs": {
+    "pair-493-494": {
+      "intrinsics": [
+        160.59275014692426,
+        160.59275014692426,
+        251.8880295753479,
+        241.19639587402344
+      ],
+      "baselineMetres": 0.6386912850849827,
+      "gray": {
+        "left": "e82c60ce39ea18b61d8af217f558997a19ce9c41ac57438940bfcc0f87e37813",
+        "right": "55d973431e6927917bdef17a7289c1709fad50c6678ebedda58689e6689a7cbc"
+      },
+      "left_proposals": [
+        {
+          "confidence": 0.4431092143058777,
+          "box": [
+            235.64480590820312,
+            113.62734985351562,
+            360.6618347167969,
+            332.451904296875
+          ]
+        }
+      ],
+      "reference_surface_z_median": 2.139716866563806,
+      "matcher": {
+        "reviewed_box_control": {
+          "depth_m": 2.1735146,
+          "failure": null,
+          "confidence": 0.25951558,
+          "accepted_samples": 7,
+          "patch_center_px": [
+            298,
+            226
+          ],
+          "patch_spread_px": [
+            24,
+            16
+          ],
+          "depth_delta_to_reference_region_m": 0.033797733436193855
+        },
+        "reviewed_box_control_reverse_check": {
+          "depth_m": 2.1816695,
+          "failure": null,
+          "confidence": 0.2433692,
+          "accepted_samples": 6,
+          "patch_center_px": [
+            298,
+            226
+          ],
+          "patch_spread_px": [
+            24,
+            16
+          ],
+          "depth_delta_to_reference_region_m": 0.04195263343619393
+        }
+      }
+    },
+    "pair-494-495": {
+      "intrinsics": [
+        184.7950995043066,
+        184.7950995043066,
+        299.4730110168457,
+        241.83660316467285
+      ],
+      "baselineMetres": 0.5846269291207637,
+      "gray": {
+        "left": "9844c3cfaab58e6c5e8468ba14a1ba056ca9c9a1faf109be97c0f9540d781c41",
+        "right": "fc214d543efe61a7b1e1ac8e867bc99094906e08e1d7a8f5bd5c02b3f404b84a"
+      },
+      "left_proposals": [
+        {
+          "confidence": 0.5971980094909668,
+          "box": [
+            251.77313232421875,
+            92.86227416992188,
+            383.940673828125,
+            342.06103515625
+          ]
+        }
+      ],
+      "reference_surface_z_median": 2.131777810726482,
+      "matcher": {
+        "reviewed_box_control": {
+          "depth_m": 2.17964,
+          "failure": null,
+          "confidence": 0.2943429,
+          "accepted_samples": 6,
+          "patch_center_px": [
+            324,
+            217
+          ],
+          "patch_spread_px": [
+            24,
+            16
+          ],
+          "depth_delta_to_reference_region_m": 0.04786218927351804
+        },
+        "reviewed_box_control_reverse_check": {
+          "depth_m": 2.1578805,
+          "failure": null,
+          "confidence": 0.31518152,
+          "accepted_samples": 5,
+          "patch_center_px": [
+            324,
+            217
+          ],
+          "patch_spread_px": [
+            24,
+            16
+          ],
+          "depth_delta_to_reference_region_m": 0.02610268927351811
+        },
+        "real_picf_box_1": {
+          "depth_m": 1.99393,
+          "failure": null,
+          "confidence": 0.17324188,
+          "accepted_samples": 6,
+          "patch_center_px": [
+            318,
+            217
+          ],
+          "patch_spread_px": [
+            24,
+            16
+          ],
+          "depth_delta_to_reference_region_m": -0.137847810726482
+        },
+        "real_picf_box_1_reverse_check": {
+          "depth_m": 2.0643294,
+          "failure": "too few consistent stereo patches",
+          "confidence": 0.2420131,
+          "accepted_samples": 4,
+          "patch_center_px": [
+            318,
+            217
+          ],
+          "patch_spread_px": [
+            24,
+            16
+          ],
+          "depth_delta_to_reference_region_m": -0.06744841072648189
+        }
+      }
+    },
+    "pair-495-496": {
+      "intrinsics": [
+        72.53801999533734,
+        72.53801999533734,
+        192.0716245174408,
+        241.79814338684082
+      ],
+      "baselineMetres": 0.5711218575496424,
+      "gray": {
+        "left": "cd44e9a389320f43c5c708199133587486e5fa9c7f9647c90c4094ea4905d945",
+        "right": "b03c14b5d14000d07064907d3c35d98e7fd3b3ae785204c9da1f383fb6fa1bee"
+      },
+      "left_proposals": [],
+      "reference_surface_z_median": 1.893786724180809,
+      "matcher": {
+        "reviewed_box_control": {
+          "depth_m": 1.8576914,
+          "failure": null,
+          "confidence": 0.24866632,
+          "accepted_samples": 6,
+          "patch_center_px": [
+            226,
+            236
+          ],
+          "patch_spread_px": [
+            17,
+            16
+          ],
+          "depth_delta_to_reference_region_m": -0.036095324180809074
+        },
+        "reviewed_box_control_reverse_check": {
+          "depth_m": 1.8128514,
+          "failure": null,
+          "confidence": 0.21472393,
+          "accepted_samples": 5,
+          "patch_center_px": [
+            226,
+            236
+          ],
+          "patch_spread_px": [
+            17,
+            16
+          ],
+          "depth_delta_to_reference_region_m": -0.08093532418080907
+        }
+      }
+    },
+    "pair-496-497": {
+      "intrinsics": [
+        190.73647440174125,
+        190.73647440174125,
+        355.937331199646,
+        243.00310707092285
+      ],
+      "baselineMetres": 0.5590601157907767,
+      "gray": {
+        "left": "89eb8fe26e5e58f1b178ab356226bedb9d1bf8a61cecaf78dd10c45ce78c2f58",
+        "right": "4dbdc976d9c89311be5f52467499bd74512886e6f36744ac5ba1943c37a1b66d"
+      },
+      "left_proposals": [
+        {
+          "confidence": 0.6616308689117432,
+          "box": [
+            280.6516418457031,
+            78.7037353515625,
+            425.0542907714844,
+            359.60198974609375
+          ]
+        }
+      ],
+      "reference_surface_z_median": 1.9486838741538435,
+      "matcher": {
+        "reviewed_box_control": {
+          "depth_m": 1.9390672,
+          "failure": null,
+          "confidence": 0.4117647,
+          "accepted_samples": 7,
+          "patch_center_px": [
+            352,
+            220
+          ],
+          "patch_spread_px": [
+            24,
+            16
+          ],
+          "depth_delta_to_reference_region_m": -0.009616674153843485
+        },
+        "reviewed_box_control_reverse_check": {
+          "depth_m": 1.9390672,
+          "failure": null,
+          "confidence": 0.4117647,
+          "accepted_samples": 7,
+          "patch_center_px": [
+            352,
+            220
+          ],
+          "patch_spread_px": [
+            24,
+            16
+          ],
+          "depth_delta_to_reference_region_m": -0.009616674153843485
+        },
+        "real_picf_box_1": {
+          "depth_m": 1.938759,
+          "failure": null,
+          "confidence": 0.37704918,
+          "accepted_samples": 7,
+          "patch_center_px": [
+            353,
+            219
+          ],
+          "patch_spread_px": [
+            24,
+            16
+          ],
+          "depth_delta_to_reference_region_m": -0.009924874153843577
+        },
+        "real_picf_box_1_reverse_check": {
+          "depth_m": 1.9251928,
+          "failure": null,
+          "confidence": 0.4663024,
+          "accepted_samples": 6,
+          "patch_center_px": [
+            353,
+            219
+          ],
+          "patch_spread_px": [
+            24,
+            16
+          ],
+          "depth_delta_to_reference_region_m": -0.02349107415384344
+        }
+      }
+    }
+  }
+}
