@@ -47,7 +47,14 @@ public static class NaturalPetPlayChecks
         Require(contents.Length==3&&contents.Count(t=>t.gameObject.activeSelf)==1&&contents[index].gameObject.activeSelf,"Dream selection incorrect: "+actor.species);
         Require(bubble.gameObject.activeSelf&&bubble.localScale.x>.19f,"Dream bubble failed to finish opening");
     }
-    static void Action(ParkAction action){foreach(var a in actors)Require(a.TryAction(action,a.transform.position,true),a.species+" rejected "+action+": "+a.Feedback);}
+    static void Action(ParkAction action)
+    {
+        foreach(var a in actors)
+        {
+            var point=action==ParkAction.Feed && !a.virtualTarget ? a.headAnchor.position : a.transform.position;
+            Require(a.TryAction(action,point,true),a.species+" rejected "+action+": "+a.Feedback);
+        }
+    }
     static void Next(){stage++;phase=probe.SimulatedSeconds;}
     static void Tick()
     {
@@ -96,13 +103,16 @@ public static class NaturalPetPlayChecks
                     }
                     foreach(var pet in actors){var rig=pet.GetComponentInChildren<NaturalPetRig>();Require(Vector3.Distance(Bubble(pet).position,rig.Head.position+Vector3.up*.12f)<.002f,"Virtual dream is detached from model head: "+pet.species);}
                     Action(ParkAction.Style);break;
-                case 3:foreach(var a in actors){Content(a,1);Capture(a,"Star");}Action(ParkAction.Style);break;
-                case 4:foreach(var a in actors){Content(a,2);Capture(a,"Heart");}Action(ParkAction.Style);break;
+                case 3:foreach(var a in actors){Content(a,0);Require(a.PetComic,"Manga outline was not enabled");Capture(a,"Manga");}Action(ParkAction.Style);break;
+                case 4:foreach(var a in actors){Content(a,0);Require(!a.PetComic,"Manga outline was not disabled");Capture(a,"Natural");}Action(ParkAction.Style);break;
                 case 5:
                     foreach(var a in actors)
                     {
                         Content(a,0);var head=new GameObject("Synthetic verified head - test only");testHeads.Add(head);
                         head.transform.position=a.transform.position+Vector3.up*.3f;a.headAnchor=head.transform;a.reliableHeadPose=true;a.virtualTarget=false;
+                        Require(!a.TryAction(ParkAction.Feed,a.transform.position,true) &&
+                                !a.TryAction(ParkAction.Poke,a.transform.position,true),
+                            "A verified head authorized contact at the body: "+a.species);
                     }
                     Action(ParkAction.Feed);break;
                 case 6:
@@ -131,7 +141,7 @@ public static class NaturalPetPlayChecks
                     foreach(var head in testHeads)UnityEngine.Object.Destroy(head);break;
                 case 12:
                     Require(actors.All(a=>!a)&&UnityEngine.Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None).Length==0,"Pet exit leaked actor/audio");
-                    File.WriteAllText(Path.Combine(Output,"result.txt"),"PASS: natural Cat/Wolfhound actual Play Mode entry; food/star/heart follow each imported head; physical-head gates including null anchor; synthetic verified feed; both sniff states; affection/Undo/Poke/reward/Stop/Reset; tracking loss invalidates head proof while preserving dream; recovery/exit/audio cleanup. Ten rendered frames. No real head or headset validation.\n");
+                    File.WriteAllText(Path.Combine(Output,"result.txt"),"PASS: natural Cat/Wolfhound actual Play Mode entry; dream follows each imported head and keeps content under manga toggles; physical-head gates including null anchor; synthetic verified feed; both sniff states; affection/Undo/Poke/reward/Stop/Reset; tracking loss invalidates head proof while preserving dream; recovery/exit/audio cleanup. Ten rendered frames. No real head or headset validation.\n");
                     Debug.Log("NATURAL_PET_PLAYMODE_PASS: two species, ten actual frames, dream/feed/sniff/Undo/Poke/reward/Stop/Reset/head gates/loss/recovery/exit");Finish(0);return;
             }
             File.AppendAllText(Path.Combine(Output,"samples.txt"),"stage="+stage+" update_elapsed="+elapsed+" total_frames="+probe.Frames+"\n");Next();

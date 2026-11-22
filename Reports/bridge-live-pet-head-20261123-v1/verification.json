@@ -1,0 +1,440 @@
+{
+  "sourceBase": "f776dd527419717606e5506db32d3dffaa2aa36f",
+  "recordedAtUtc": "2026-11-22T18:48:03.0518237Z",
+  "publicFrames": [
+    {
+      "source": 250,
+      "baseline": 0.33678092770964874,
+      "referenceM": 2.0858120918273926,
+      "files": {
+        "left.gray": "801aad8d0817550dafa96d4fa2df4dcc0a225599f8a951871cf3bab0112d88f4",
+        "right.gray": "13a0f8677d83711237dc442051eb944b06f46bf0971342b74661bad125773d55",
+        "sender.png": "d3fad427b610c5fd9f9a3c9cc21a5cfc25d1c9da75e0cebd90c2e172154934a2"
+      },
+      "lidarSha256": "c6235baf38300d0855de49eb5f79e482f3d6f46836d3b4d9f7e88db809a91e82",
+      "editorHeadInputSha256": "5f9fa061c4f31e1753f92bdb2af5f6b8d7edc1b89fbba88db867f8ba217bc2fc"
+    },
+    {
+      "source": 251,
+      "baseline": 0.33678092770964874,
+      "referenceM": 2.1168901920318604,
+      "files": {
+        "left.gray": "7b17061c156611d688f8891646d0cd50bde352907cb93eac6b0cb9ed76cf6a5b",
+        "right.gray": "1a2c69b948149dd6ce9a133cc200fbaf8502bcc7f478a8264597011f04ab639d",
+        "sender.png": "5e8b8434f759b8ba580987076e3d97dc9b9b53217011ff77cebdb264ce558bc6"
+      },
+      "lidarSha256": "87c7e4d04571e6c8764df50d1b4096c840f68dc2c890d93ba76d70999335ccab"
+    },
+    {
+      "source": 252,
+      "baseline": 0.33678092770964874,
+      "referenceM": 2.0558269023895264,
+      "files": {
+        "left.gray": "bc16b6c7445614a77614132f2a1a505f59d7bba865f082bd62a1f35b8ce83b53",
+        "right.gray": "b6f2a4f1aef0a266de3824bdd6e797c6249fd1c9c73db912bb3c74ace8a09601",
+        "sender.png": "2217c18c547e7b69d5058f41a63f8c3b239ae637849bade22fbc32bb138efd1a"
+      },
+      "lidarSha256": "c3adb5cd7725b5629a478854ee97856a9f20c02020b154e3a75931221e786497"
+    }
+  ],
+  "segmentationScope": "Manual landmarks reviewed on rectified paired frames of the same public cat. Body YOLO+stereo and depth are real replay; head anchor is supplied only by Editor fixture. Physical hand traces are synthetic.",
+  "headDiagnostic": {
+    "weightSha256": "1cfd1c86e0d9e5d5f95178bcd95ee9a4e8386a624cd3c57519f27ff58cac7f28",
+    "faceVisiblePasses": 5,
+    "faceVisibleWithValidBody": 9,
+    "faceUnavailablePasses": 1,
+    "faceUnavailableWithValidBody": 8,
+    "falseAcceptFrame": 195,
+    "poseMsMedian": 146.41,
+    "validationSamples": [
+      {
+        "frame": 195,
+        "bodyTrackedByProbe": true,
+        "validFacialReference": false,
+        "faceUnavailable": true,
+        "bodyM": 2.4740644,
+        "left": {
+          "left_eye": {
+            "xy": [
+              438.71392944455147,
+              243.40943244099617
+            ],
+            "score": 0.7128485441207886
+          },
+          "right_eye": {
+            "xy": [
+              432.6123487353325,
+              244.20529079437256
+            ],
+            "score": 0.6490168571472168
+          },
+          "nose": {
+            "xy": [
+              441.897362858057,
+              242.34828796982765
+            ],
+            "score": 0.6950538158416748
+          }
+        },
+        "right": {
+          "left_eye": {
+            "xy": [
+              379.7998491823673,
+              243.6747185587883
+            ],
+            "score": 0.601632833480835
+          },
+          "right_eye": {
+            "xy": [
+              378.7387047111988,
+              243.94000467658043
+            ],
+            "score": 0.6377419829368591
+          },
+          "nose": {
+            "xy": [
+              384.8402854204178,
+              243.40943244099617
+            ],
+            "score": 0.5640581250190735
+          }
+        },
+        "peaks": {
+          "nose": {
+            "dx": 57.05707743763924,
+            "dy": -1.061144471168518,
+            "score": 0.5640581250190735
+          },
+          "left_eye": {
+            "dx": 58.91408026218414,
+            "dy": -0.2652861177921295,
+            "score": 0.601632833480835
+          },
+          "right_eye": {
+            "dx": 53.87364402413368,
+            "dy": 0.2652861177921295,
+            "score": 0.6377419829368591
+          }
+        },
+        "passesHeadGate": true,
+        "reference": null,
+        "poseMs": 153.75,
+        "proposedNoseM": 2.508573882583408
+      },
+      {
+        "frame": 250,
+        "bodyTrackedByProbe": true,
+        "validFacialReference": true,
+        "faceUnavailable": false,
+        "bodyM": 2.1323354,
+        "left": {
+          "left_eye": {
+            "xy": [
+              397.09532698988914,
+              290.494649708271
+            ],
+            "score": 1.2252674102783203
+          },
+          "right_eye": {
+            "xy": [
+              386.4826754331589,
+              289.4676189124584
+            ],
+            "score": 1.2894319295883179
+          },
+          "nose": {
+            "xy": [
+              390.2484550178051,
+              296.65683448314667
+            ],
+            "score": 1.3738961219787598
+          }
+        },
+        "right": {
+          "left_eye": {
+            "xy": [
+              321.4122558236122,
+              291.86402410268784
+            ],
+            "score": 1.1013827323913574
+          },
+          "right_eye": {
+            "xy": [
+              313.19600945711136,
+              291.17933690547943
+            ],
+            "score": 1.1346590518951416
+          },
+          "nose": {
+            "xy": [
+              315.934758245945,
+              297.3415216803551
+            ],
+            "score": 1.130843997001648
+          }
+        },
+        "peaks": {
+          "nose": {
+            "dx": 74.31369677186012,
+            "dy": -0.6846871972084045,
+            "score": 1.130843997001648
+          },
+          "left_eye": {
+            "dx": 75.68307116627693,
+            "dy": -1.369374394416809,
+            "score": 1.1013827323913574
+          },
+          "right_eye": {
+            "dx": 73.28666597604752,
+            "dy": -1.7117179930210114,
+            "score": 1.1346590518951416
+          }
+        },
+        "passesHeadGate": true,
+        "reference": {
+          "manualNoseStereoM": 1.9084252570213445,
+          "manualNoseLidarM": 2.029541492462158,
+          "leftNoseErrorPx": 1.8193186540038053,
+          "rightNoseErrorPx": 1.3431071831149115
+        },
+        "poseMs": 147.17,
+        "proposedNoseM": 1.9260499812841991
+      },
+      {
+        "frame": 251,
+        "bodyTrackedByProbe": true,
+        "validFacialReference": true,
+        "faceUnavailable": false,
+        "bodyM": 2.1006684,
+        "left": {
+          "left_eye": {
+            "xy": [
+              395.1109434366226,
+              294.13051891326904
+            ],
+            "score": 1.071286916732788
+          },
+          "right_eye": {
+            "xy": [
+              384.4170786142349,
+              292.45960253477097
+            ],
+            "score": 1.259211778640747
+          },
+          "nose": {
+            "xy": [
+              387.7589113712311,
+              299.4774513244629
+            ],
+            "score": 1.2373106479644775
+          }
+        },
+        "right": {
+          "left_eye": {
+            "xy": [
+              319.95675736665726,
+              294.46470218896866
+            ],
+            "score": 0.8777943849563599
+          },
+          "right_eye": {
+            "xy": [
+              311.26799219846725,
+              294.7988854646683
+            ],
+            "score": 1.0372545719146729
+          },
+          "nose": {
+            "xy": [
+              313.9414584040642,
+              300.48000115156174
+            ],
+            "score": 0.9158620834350586
+          }
+        },
+        "peaks": {
+          "nose": {
+            "dx": 73.8174529671669,
+            "dy": -1.0025498270988464,
+            "score": 0.9158620834350586
+          },
+          "left_eye": {
+            "dx": 75.15418606996536,
+            "dy": -0.3341832756996155,
+            "score": 0.8777943849563599
+          },
+          "right_eye": {
+            "dx": 73.14908641576767,
+            "dy": -2.3392829298973083,
+            "score": 1.0372545719146729
+          }
+        },
+        "passesHeadGate": true,
+        "reference": {
+          "manualNoseStereoM": 1.934214787521633,
+          "manualNoseLidarM": 2.043790817260742,
+          "leftNoseErrorPx": 1.9295500513375314,
+          "rightNoseErrorPx": 1.1622871486112842
+        },
+        "poseMs": 138.66,
+        "proposedNoseM": 1.9389980082388394
+      },
+      {
+        "frame": 252,
+        "bodyTrackedByProbe": true,
+        "validFacialReference": true,
+        "faceUnavailable": false,
+        "bodyM": 2.0147195,
+        "left": {
+          "left_eye": {
+            "xy": [
+              401.0084097981453,
+              296.1265742480755
+            ],
+            "score": 0.7979799509048462
+          },
+          "right_eye": {
+            "xy": [
+              390.0514310002327,
+              293.7297351360321
+            ],
+            "score": 0.8643202781677246
+          },
+          "nose": {
+            "xy": [
+              392.1058645248413,
+              300.2354412972927
+            ],
+            "score": 0.8902267217636108
+          }
+        },
+        "right": {
+          "left_eye": {
+            "xy": [
+              325.5140463411808,
+              299.5506301224232
+            ],
+            "score": 0.5439522862434387
+          },
+          "right_eye": {
+            "xy": [
+              319.35074576735497,
+              299.5506301224232
+            ],
+            "score": 0.6274615526199341
+          },
+          "nose": {
+            "xy": [
+              320.0355569422245,
+              301.6050636470318
+            ],
+            "score": 0.39023154973983765
+          }
+        },
+        "peaks": {
+          "nose": {
+            "dx": 72.0703075826168,
+            "dy": -1.3696223497390747,
+            "score": 0.39023154973983765
+          },
+          "left_eye": {
+            "dx": 75.49436345696449,
+            "dy": -3.4240558743476868,
+            "score": 0.5439522862434387
+          },
+          "right_eye": {
+            "dx": 70.70068523287773,
+            "dy": -5.8208949863910675,
+            "score": 0.6274615526199341
+          }
+        },
+        "passesHeadGate": false,
+        "reference": {
+          "manualNoseStereoM": 1.9607108805013813,
+          "manualNoseLidarM": 2.0176899433135986,
+          "leftNoseErrorPx": 2.5887094494273932,
+          "rightNoseErrorPx": 1.6958767173717606
+        },
+        "poseMs": 144.41,
+        "proposedNoseM": 1.9860036550076265
+      }
+    ]
+  },
+  "liveBody": {
+    "replies": 23,
+    "warmup": 1,
+    "id": "4b408a1625a7:left:1",
+    "modelSha256": "85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5"
+  },
+  "sharedGestureControl": {
+    "verified": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "traceSha256": "5075fb113fcf6098bfd3c8812b8a8719458e49d4f3b80499390a37a13d674445"
+  },
+  "touch": {
+    "radiusMeters": 0.1,
+    "dreamHeadLiftMeters": 0.12,
+    "farSampleMeters": 0.15,
+    "editorCases": [
+      "missingHead",
+      "bodyNotHead",
+      "farFromHead",
+      "headFeed",
+      "farFromDream",
+      "dreamPoke",
+      "trackingLost",
+      "bodyRecoveryDoesNotRestoreHead"
+    ]
+  },
+  "resources": {
+    "minSampledRAMGiB": 5.58,
+    "unityHeadDiskGrowthMiB": 1,
+    "androidPackMinimumSampledFreeMemoryGiB": 4.348,
+    "androidPackMaximumSampledDiskGrowthMiB": 76.0
+  },
+  "android": {
+    "apkSha256": "1800b75689e2c2bf6cf298a54de02f21f6846a1c98c5462ddba22a8c230b6e0e",
+    "scenes": 15,
+    "arm64Libraries": 16,
+    "signature": true,
+    "crc": true,
+    "zipalign": true,
+    "petHeadContactGuardCompiled": true
+  },
+  "checkedSource": {
+    "Assets/Scripts/MagicMR/ParkActor.cs": "3b1e47162943a517ae2aa8a53481c799f97ee19945f8b9794eaa3dc5e3795ffd",
+    "Assets/Editor/NaturalPetPlayChecks.cs": "5fafd5f3310f218b6fd75e21c687392db6c0e255eddf645fef04f0fba928faa5",
+    "Assets/Editor/PetLiveRecognitionChecks.cs": "1fcc3763ef58e570587207a9ec6156b780b27836e5cee342b6f717a5cf59bc3b",
+    "Assets/Editor/PetLiveRecognitionHead.cs": "573a9a8054e7ff2a5f432edfa6416da78cdf56537d4f300fb0003e198ce9bd61",
+    "Assets/Editor/PetLiveRecognitionHead.cs.meta": "7b4b9b8b2ceecdacc37090bf1a0e84555e5f5de57631f16e1647f8544df133e5",
+    "Tools/run_room_magic_review_bounded.ps1": "23b3e828e470f897205403fe49b5e5b20268223d2889c4da611f1311db80d644"
+  },
+  "artifactSha256": {
+    "Reports/bridge-live-pet-head-20261123-v1/editor-input.json": "c02dfd30dd4ba9d93b38f4de06e2205555dbaa97aa7be0882ad1709b09824b4e",
+    "Reports/bridge-live-pet-head-20261123-v1/captures/live-picf-replies.jsonl": "d65138633f4f7a8f4976080b42498a90d17050692f4a65180e666c81abd27018",
+    "Reports/bridge-live-pet-head-20261123-v1/captures/trace.txt": "9036dbafe2aa8236db586ce7995407878f3e88e2607b6949bbee421f2cce0b40",
+    "Reports/bridge-live-pet-head-20261123-v1/restoration.json": "81b9d2960fda9bb1bfa9f52e49813d8065c22aa35ffbbb7e869ecf7ffcc7b982",
+    "Reports/bridge-live-pet-head/bridge-live-pet-head-20261123-v1/unity.log": "35ce0e1124c2ff7d65079382426d769053872c0c9b4b10aebcab72d70e81d86c",
+    "Reports/bridge-live-pet-head/bridge-live-pet-head-20261123-v1/resources.json": "091d2deaacacfd66e37545fa8118ad1f6f8a3d08c76e49fc7eba4cfa990407af",
+    "Reports/pet-contact-lifecycle/pet-contact-lifecycle-20261123-v2/resources.json": "527f80378efd74e74fe944194eb33dd71618064b29cb030c4a4eb353f176169f",
+    "Reports/pet-contact-lifecycle-20261123-v2/editor-input.json": "f3012263b0a58779bd2c398d3b75b112b970ccf8199f31a5f0ba20fde1ff94c0",
+    "Reports/pet-contact-lifecycle-20261123-v2/captures/result.txt": "87e628ecde8d74691174ca14c300d87af2f1670133fa352a039349cbf7addcd1",
+    "Reports/pet-contact-lifecycle-20261123-v2/captures/Cat-Feed.png": "6f957d5938d62403fa5c75ed6404fba0515d165246d3d08c575f6f5c87613f60",
+    "Reports/pet-contact-lifecycle-20261123-v2/captures/Dog-Feed.png": "f24585127fd6069914aa34f58a6defc7b517fb44a6aff27f317d57f1d1532b2a",
+    "Reports/pet-head-metric-20261123-v1/manual-reference.json": "2e001f44992f181e7a4fbe956a387dbebb1e78af7db1b74d97feefbdbd09067f",
+    "Reports/pet-head-metric-20261123-v1/pose-evidence.json": "c26ebddbc4733becfe4fca3bd0017dd195e89db3665d3341065fbba1eb63b7ca",
+    "Reports/pet-head-metric-20261123-v1/body-match-results.json": "491b0df3bd4b434f790834bd7b9d0eb499f47b58f95d33ba3f9460d5a442147a",
+    "Reports/bridge-live-pet-head-20261123-v1/android-v2/input.json": "01b1e5a4007078f3a496f5eaf1a4898764e26a92ddcb2ab80d636ac24907cd9b",
+    "Reports/bridge-live-pet-head-20261123-v1/android-v2/restoration.json": "73458d1c8cc350a75b4f98dee878b4657fa2763450624365ebe69db14c5d1a28",
+    "Reports/bridge-live-pet-head-20261123-v1/android-v2/acceptance.json": "23e6404874edb2d4ddc2329c88fd81f01624df5500631f25372ce3382295c65b",
+    "Reports/bridge-live-pet-head-20261123-v1/android-v2/structure.json": "451e80ad790d8bc7151bcd742e742001d2639b0cde0d560fb082975b70aece1f",
+    "Reports/bridge-live-pet-head-20261123-v1/android-v2/pack.log.resources.json": "494d1298e4c69efa54640a52f8c6b71e4dea39f8fd6dc3f0001bfd5c59528a8d",
+    "Reports/bridge-live-pet-metric-20261123-v5/captures/trace.txt": "5075fb113fcf6098bfd3c8812b8a8719458e49d4f3b80499390a37a13d674445",
+    "Reports/bridge-live-pet-metric/bridge-live-pet-metric-20261123-v5/resources.json": "1720f7fd47d2dcb0c2207f0dfbd536412a95d746bca85a6fac7371ee2ea47e20"
+  },
+  "picoVerified": false
+}

@@ -17,9 +17,13 @@ public static partial class PetLiveRecognitionChecks
 {
     const string Running = "MagicMR.PetLiveRecognitionChecks";
     const string Metric = Running + ".Metric";
+    const string HeadContact = Running + ".HeadContact";
     static bool Calibrated => SessionState.GetBool(Metric, false);
-    static string Input => Calibrated ? ".codex-tmp/pet-live-metric-fixture" : ".codex-tmp/pet-live-recognition-fixture";
-    static string Output => Calibrated ? ".codex-tmp/pet-live-metric-checks" : ".codex-tmp/pet-live-recognition-checks";
+    static bool CheckingHeadContact => SessionState.GetBool(HeadContact, false);
+    static string Input => CheckingHeadContact ? ".codex-tmp/pet-live-head-fixture" :
+        Calibrated ? ".codex-tmp/pet-live-metric-fixture" : ".codex-tmp/pet-live-recognition-fixture";
+    static string Output => CheckingHeadContact ? ".codex-tmp/pet-live-head-checks" :
+        Calibrated ? ".codex-tmp/pet-live-metric-checks" : ".codex-tmp/pet-live-recognition-checks";
     static string Weights => Calibrated ? CandidateWeights : "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36";
     static readonly List<string> replies = new();
     static readonly List<string> trace = new();
@@ -43,10 +47,12 @@ public static partial class PetLiveRecognitionChecks
 
     public static void Run() => Begin(false);
     public static void RunCalibrated() => Begin(true);
+    public static void RunHeadContact() => Begin(true, true);
 
-    static void Begin(bool calibrated)
+    static void Begin(bool calibrated, bool headContact = false)
     {
         SessionState.SetBool(Metric, calibrated);
+        SessionState.SetBool(HeadContact, headContact);
         Require(Directory.Exists(Input) && !Directory.Exists(Output), "Pet fixture or output path is invalid.");
         Directory.CreateDirectory(Output);
         File.WriteAllText(Path.Combine(Output, "result.txt"), "RUNNING");
@@ -88,7 +94,8 @@ public static partial class PetLiveRecognitionChecks
             }
             if (SceneManager.GetActiveScene().name != "ParkPet") return;
             if (!receiver) BindReceiver();
-            if (Calibrated) StepMetric();
+            if (CheckingHeadContact) StepHeadContact();
+            else if (Calibrated) StepMetric();
             if (finished) return;
             if (waiting)
             {

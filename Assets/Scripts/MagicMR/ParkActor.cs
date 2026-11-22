@@ -156,6 +156,8 @@ namespace MagicMR
         readonly List<Vector3> bugRestScales=new List<Vector3>();
         readonly List<Transform> plantPetals=new List<Transform>();
         public bool PlantBloomVisible=>plantFlower && plantFlower.gameObject.activeInHierarchy;
+        const float PetDreamHeadLift=.12f;
+        const float PetTouchRadius=.10f;
         float dreamVisibility;
         float windBlend;
         Vector3 dreamRestScale=Vector3.one*.2f;
@@ -311,9 +313,19 @@ namespace MagicMR
                 motion=StartCoroutine(StopFantasy());return true;
             }
             float radius=virtualTarget?virtualInteractionRadius:interactionRadius;
-            if(!isActiveAndEnabled || !tracked || !valid || !float.IsFinite(radius) || radius<=0 || Vector3.Distance(hand,InteractionCenter)>radius) { Feedback="Blocked: target / tracking / distance"; return false; }
-            if(scenario==ParkScenario.Pet && !virtualTarget && (!reliableHeadPose || !headAnchor || !FinitePoint(headAnchor.position)) && (action==ParkAction.Poke || action==ParkAction.Feed)) {
-                Feedback="Blocked: pet head position is not verified; use virtual dream controls";return false;
+            if(!isActiveAndEnabled || !tracked || !valid || !float.IsFinite(radius) || radius<=0) { Feedback="Blocked: target / tracking / distance"; return false; }
+            Vector3 interactionPoint=InteractionCenter;
+            bool physicalPetContact=scenario==ParkScenario.Pet && !virtualTarget && (action==ParkAction.Poke || action==ParkAction.Feed);
+            if(physicalPetContact) {
+                if(!reliableHeadPose || !headAnchor || !FinitePoint(headAnchor.position)) {
+                    Feedback="Blocked: pet head position is not verified; use virtual dream controls";return false;
+                }
+                interactionPoint=headAnchor.position;
+                if(action==ParkAction.Poke)interactionPoint+=Vector3.up*PetDreamHeadLift;
+                radius=Mathf.Min(radius,PetTouchRadius);
+            }
+            if(Vector3.Distance(hand,interactionPoint)>radius) {
+                Feedback=physicalPetContact?"Blocked: hand outside pet contact range":"Blocked: target / tracking / distance";return false;
             }
             if(Busy || Time.unscaledTime-acceptedAt<cooldown) { Feedback="Blocked: transition / cooldown"; return false; }
             if(roomPortalMode&&roomPortals){bool accepted=roomPortals.TryAction(action,hand);Feedback=roomPortals.Status;if(accepted){acceptedAt=Time.unscaledTime;Revision++;}return accepted;}
@@ -675,8 +687,8 @@ namespace MagicMR
             if(portal)portal.localScale=new Vector3(Mathf.Lerp(portal.localScale.x,state.bubble?.6f:.01f,dt*4),.45f,.02f);
             if(bubble && scenario==ParkScenario.Pet) {
                 StepDreamTransition(dt);
-                if(reliableHeadPose && headAnchor)bubble.position=headAnchor.position+Vector3.up*.12f;
-                else if(virtualTarget && naturalPetRig)bubble.position=naturalPetRig.Head.position+Vector3.up*.12f;
+                if(reliableHeadPose && headAnchor)bubble.position=headAnchor.position+Vector3.up*PetDreamHeadLift;
+                else if(virtualTarget && naturalPetRig)bubble.position=naturalPetRig.Head.position+Vector3.up*PetDreamHeadLift;
                 else bubble.localPosition=Vector3.up*headOffset;
                 // Face only the flat dream content toward the viewer; never rotate the tracking anchor.
                 var viewer=Camera.main;
