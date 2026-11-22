@@ -1,0 +1,2576 @@
+{
+  "pair-020-022/reviewed_box_control": {
+    "Id": "pair-020-022/reviewed_box_control",
+    "estimate": {
+      "valid": true,
+      "disparityPixels": 81.673225,
+      "depthMeters": 3.077241,
+      "confidence": 0.120181404,
+      "validRatio": 0.5555556,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 5,
+      "attemptedSamples": 9,
+      "matchedSamples": 8,
+      "reason": "OK"
+    },
+    "failure": null,
+    "samples": [
+      {
+        "x": 245,
+        "y": 217,
+        "valid": true,
+        "inlier": false,
+        "disparity": 2.5572917,
+        "confidence": 0.027149322,
+        "texture": 12.380953,
+        "verticalOffset": 1,
+        "reason": "OK"
+      },
+      {
+        "x": 269,
+        "y": 217,
+        "valid": false,
+        "inlier": false,
+        "disparity": 75,
+        "confidence": 0.013667426,
+        "texture": 9.238095,
+        "verticalOffset": 1,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 293,
+        "y": 217,
+        "valid": true,
+        "inlier": true,
+        "disparity": 72.91143,
+        "confidence": 0.06791444,
+        "texture": 50.920635,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 245,
+        "y": 233,
+        "valid": true,
+        "inlier": true,
+        "disparity": 81.673225,
+        "confidence": 0.120181404,
+        "texture": 11.460318,
+        "verticalOffset": 4,
+        "reason": "OK"
+      },
+      {
+        "x": 269,
+        "y": 233,
+        "valid": true,
+        "inlier": true,
+        "disparity": 82.98889,
+        "confidence": 0.14814815,
+        "texture": 4.873016,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 293,
+        "y": 233,
+        "valid": true,
+        "inlier": true,
+        "disparity": 64.5,
+        "confidence": 0.030395137,
+        "texture": 8.8412695,
+        "verticalOffset": -2,
+        "reason": "OK"
+      },
+      {
+        "x": 245,
+        "y": 249,
+        "valid": true,
+        "inlier": true,
+        "disparity": 84.4829,
+        "confidence": 0.16853933,
+        "texture": 7.8095236,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 269,
+        "y": 249,
+        "valid": true,
+        "inlier": false,
+        "disparity": 3.832681,
+        "confidence": 0.5163853,
+        "texture": 30.25397,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 293,
+        "y": 249,
+        "valid": true,
+        "inlier": false,
+        "disparity": 98.81661,
+        "confidence": 0.049889136,
+        "texture": 20.015873,
+        "verticalOffset": 4,
+        "reason": "OK"
+      }
+    ]
+  },
+  "pair-020-022/reviewed_box_control_reverse": {
+    "Id": "pair-020-022/reviewed_box_control_reverse",
+    "estimate": {
+      "valid": true,
+      "disparityPixels": 82.98889,
+      "depthMeters": 3.0284557,
+      "confidence": 0.120181404,
+      "validRatio": 0.5555556,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 5,
+      "attemptedSamples": 9,
+      "matchedSamples": 6,
+      "reason": "OK"
+    },
+    "failure": null,
+    "samples": [
+      {
+        "x": 245,
+        "y": 217,
+        "valid": false,
+        "inlier": false,
+        "disparity": 2.5572917,
+        "confidence": 0.027149322,
+        "texture": 12.380953,
+        "verticalOffset": 1,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 269,
+        "y": 217,
+        "valid": false,
+        "inlier": false,
+        "disparity": 75,
+        "confidence": 0.013667426,
+        "texture": 9.238095,
+        "verticalOffset": 1,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 293,
+        "y": 217,
+        "valid": false,
+        "inlier": false,
+        "disparity": 72.91143,
+        "confidence": 0.06791444,
+        "texture": 50.920635,
+        "verticalOffset": 0,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 245,
+        "y": 233,
+        "valid": true,
+        "inlier": true,
+        "disparity": 81.673225,
+        "confidence": 0.120181404,
+        "texture": 11.460318,
+        "verticalOffset": 4,
+        "reason": "OK"
+      },
+      {
+        "x": 269,
+        "y": 233,
+        "valid": true,
+        "inlier": true,
+        "disparity": 82.98889,
+        "confidence": 0.14814815,
+        "texture": 4.873016,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 293,
+        "y": 233,
+        "valid": true,
+        "inlier": true,
+        "disparity": 64.5,
+        "confidence": 0.030395137,
+        "texture": 8.8412695,
+        "verticalOffset": -2,
+        "reason": "OK"
+      },
+      {
+        "x": 245,
+        "y": 249,
+        "valid": true,
+        "inlier": true,
+        "disparity": 84.4829,
+        "confidence": 0.16853933,
+        "texture": 7.8095236,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 269,
+        "y": 249,
+        "valid": true,
+        "inlier": false,
+        "disparity": 3.832681,
+        "confidence": 0.5163853,
+        "texture": 30.25397,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 293,
+        "y": 249,
+        "valid": true,
+        "inlier": true,
+        "disparity": 98.81661,
+        "confidence": 0.049889136,
+        "texture": 20.015873,
+        "verticalOffset": 4,
+        "reason": "OK"
+      }
+    ]
+  },
+  "pair-029-031/reviewed_box_control": {
+    "Id": "pair-029-031/reviewed_box_control",
+    "estimate": {
+      "valid": false,
+      "disparityPixels": 0,
+      "depthMeters": 0,
+      "confidence": 0,
+      "validRatio": 0.22222222,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 2,
+      "attemptedSamples": 9,
+      "matchedSamples": 5,
+      "reason": "Stereo matches disagree on disparity"
+    },
+    "failure": "Stereo matches disagree on disparity",
+    "samples": [
+      {
+        "x": 397,
+        "y": 206,
+        "valid": false,
+        "inlier": false,
+        "disparity": 62,
+        "confidence": 0.00952381,
+        "texture": 6.5873017,
+        "verticalOffset": 5,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 421,
+        "y": 206,
+        "valid": false,
+        "inlier": false,
+        "disparity": 62,
+        "confidence": 0.0070921984,
+        "texture": 4.4126983,
+        "verticalOffset": 5,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 445,
+        "y": 206,
+        "valid": true,
+        "inlier": true,
+        "disparity": 87.847824,
+        "confidence": 0.046428572,
+        "texture": 6.952381,
+        "verticalOffset": 5,
+        "reason": "OK"
+      },
+      {
+        "x": 397,
+        "y": 222,
+        "valid": true,
+        "inlier": false,
+        "disparity": 96.51786,
+        "confidence": 0.25587466,
+        "texture": 7.84127,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 421,
+        "y": 222,
+        "valid": true,
+        "inlier": true,
+        "disparity": 75.29487,
+        "confidence": 0.063025214,
+        "texture": 5.4444447,
+        "verticalOffset": -3,
+        "reason": "OK"
+      },
+      {
+        "x": 445,
+        "y": 222,
+        "valid": false,
+        "inlier": false,
+        "disparity": 0,
+        "confidence": 0,
+        "texture": 2.4761906,
+        "verticalOffset": 0,
+        "reason": "LOW_TEXTURE"
+      },
+      {
+        "x": 397,
+        "y": 238,
+        "valid": false,
+        "inlier": false,
+        "disparity": 10,
+        "confidence": 0.010548524,
+        "texture": 8.539682,
+        "verticalOffset": -4,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 421,
+        "y": 238,
+        "valid": true,
+        "inlier": false,
+        "disparity": 3.7907894,
+        "confidence": 0.041398343,
+        "texture": 20.095238,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 445,
+        "y": 238,
+        "valid": true,
+        "inlier": false,
+        "disparity": 3.6663287,
+        "confidence": 0.1256175,
+        "texture": 38.079365,
+        "verticalOffset": -1,
+        "reason": "OK"
+      }
+    ]
+  },
+  "pair-029-031/reviewed_box_control_reverse": {
+    "Id": "pair-029-031/reviewed_box_control_reverse",
+    "estimate": {
+      "valid": false,
+      "disparityPixels": 0,
+      "depthMeters": 0,
+      "confidence": 0,
+      "validRatio": 0,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 0,
+      "attemptedSamples": 9,
+      "matchedSamples": 1,
+      "reason": "Only 1/9 textured matches"
+    },
+    "failure": "Only 1/9 textured matches",
+    "samples": [
+      {
+        "x": 397,
+        "y": 206,
+        "valid": false,
+        "inlier": false,
+        "disparity": 62,
+        "confidence": 0.00952381,
+        "texture": 6.5873017,
+        "verticalOffset": 5,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 421,
+        "y": 206,
+        "valid": false,
+        "inlier": false,
+        "disparity": 62,
+        "confidence": 0.0070921984,
+        "texture": 4.4126983,
+        "verticalOffset": 5,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 445,
+        "y": 206,
+        "valid": false,
+        "inlier": false,
+        "disparity": 87.847824,
+        "confidence": 0.046428572,
+        "texture": 6.952381,
+        "verticalOffset": 5,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 397,
+        "y": 222,
+        "valid": true,
+        "inlier": false,
+        "disparity": 96.51786,
+        "confidence": 0.25587466,
+        "texture": 7.84127,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 421,
+        "y": 222,
+        "valid": false,
+        "inlier": false,
+        "disparity": 75.29487,
+        "confidence": 0.063025214,
+        "texture": 5.4444447,
+        "verticalOffset": -3,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 445,
+        "y": 222,
+        "valid": false,
+        "inlier": false,
+        "disparity": 0,
+        "confidence": 0,
+        "texture": 2.4761906,
+        "verticalOffset": 0,
+        "reason": "LOW_TEXTURE"
+      },
+      {
+        "x": 397,
+        "y": 238,
+        "valid": false,
+        "inlier": false,
+        "disparity": 10,
+        "confidence": 0.010548524,
+        "texture": 8.539682,
+        "verticalOffset": -4,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 421,
+        "y": 238,
+        "valid": false,
+        "inlier": false,
+        "disparity": 3.7907894,
+        "confidence": 0.041398343,
+        "texture": 20.095238,
+        "verticalOffset": 0,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 445,
+        "y": 238,
+        "valid": false,
+        "inlier": false,
+        "disparity": 3.6663287,
+        "confidence": 0.1256175,
+        "texture": 38.079365,
+        "verticalOffset": -1,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      }
+    ]
+  },
+  "pair-029-031/picf_match": {
+    "Id": "pair-029-031/picf_match",
+    "estimate": {
+      "valid": true,
+      "disparityPixels": 96.20408,
+      "depthMeters": 2.4215708,
+      "confidence": 0.20970696,
+      "validRatio": 0.33333334,
+      "verticalOffsetPixels": 1,
+      "acceptedSamples": 3,
+      "attemptedSamples": 9,
+      "matchedSamples": 4,
+      "reason": "OK"
+    },
+    "failure": "too few consistent stereo patches",
+    "samples": [
+      {
+        "x": 399,
+        "y": 205,
+        "valid": true,
+        "inlier": false,
+        "disparity": 42.155556,
+        "confidence": 0.16,
+        "texture": 7.3492064,
+        "verticalOffset": 3,
+        "reason": "OK"
+      },
+      {
+        "x": 423,
+        "y": 205,
+        "valid": false,
+        "inlier": false,
+        "disparity": 48,
+        "confidence": 0.00591716,
+        "texture": 6.3968253,
+        "verticalOffset": 5,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 447,
+        "y": 205,
+        "valid": true,
+        "inlier": true,
+        "disparity": 89.951614,
+        "confidence": 0.11898017,
+        "texture": 10.111111,
+        "verticalOffset": 1,
+        "reason": "OK"
+      },
+      {
+        "x": 399,
+        "y": 221,
+        "valid": true,
+        "inlier": true,
+        "disparity": 96.20408,
+        "confidence": 0.3019943,
+        "texture": 8.396826,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 423,
+        "y": 221,
+        "valid": false,
+        "inlier": false,
+        "disparity": 91,
+        "confidence": 0.019607844,
+        "texture": 5.0793653,
+        "verticalOffset": 0,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 447,
+        "y": 221,
+        "valid": false,
+        "inlier": false,
+        "disparity": 0,
+        "confidence": 0,
+        "texture": 3.015873,
+        "verticalOffset": 0,
+        "reason": "LOW_TEXTURE"
+      },
+      {
+        "x": 399,
+        "y": 237,
+        "valid": false,
+        "inlier": false,
+        "disparity": 82,
+        "confidence": 0.002008032,
+        "texture": 9.539682,
+        "verticalOffset": 0,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 423,
+        "y": 237,
+        "valid": true,
+        "inlier": true,
+        "disparity": 107.90476,
+        "confidence": 0.20970696,
+        "texture": 26.36508,
+        "verticalOffset": 5,
+        "reason": "OK"
+      },
+      {
+        "x": 447,
+        "y": 237,
+        "valid": false,
+        "inlier": false,
+        "disparity": 41,
+        "confidence": 0.0136103155,
+        "texture": 30.031746,
+        "verticalOffset": 2,
+        "reason": "AMBIGUOUS_MATCH"
+      }
+    ]
+  },
+  "pair-029-031/picf_match_reverse": {
+    "Id": "pair-029-031/picf_match_reverse",
+    "estimate": {
+      "valid": false,
+      "disparityPixels": 0,
+      "depthMeters": 0,
+      "confidence": 0,
+      "validRatio": 0,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 0,
+      "attemptedSamples": 9,
+      "matchedSamples": 2,
+      "reason": "Only 2/9 textured matches"
+    },
+    "failure": "Only 2/9 textured matches",
+    "samples": [
+      {
+        "x": 399,
+        "y": 205,
+        "valid": false,
+        "inlier": false,
+        "disparity": 42.155556,
+        "confidence": 0.16,
+        "texture": 7.3492064,
+        "verticalOffset": 3,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 423,
+        "y": 205,
+        "valid": false,
+        "inlier": false,
+        "disparity": 48,
+        "confidence": 0.00591716,
+        "texture": 6.3968253,
+        "verticalOffset": 5,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 447,
+        "y": 205,
+        "valid": true,
+        "inlier": false,
+        "disparity": 89.951614,
+        "confidence": 0.11898017,
+        "texture": 10.111111,
+        "verticalOffset": 1,
+        "reason": "OK"
+      },
+      {
+        "x": 399,
+        "y": 221,
+        "valid": true,
+        "inlier": false,
+        "disparity": 96.20408,
+        "confidence": 0.3019943,
+        "texture": 8.396826,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 423,
+        "y": 221,
+        "valid": false,
+        "inlier": false,
+        "disparity": 91,
+        "confidence": 0.019607844,
+        "texture": 5.0793653,
+        "verticalOffset": 0,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 447,
+        "y": 221,
+        "valid": false,
+        "inlier": false,
+        "disparity": 0,
+        "confidence": 0,
+        "texture": 3.015873,
+        "verticalOffset": 0,
+        "reason": "LOW_TEXTURE"
+      },
+      {
+        "x": 399,
+        "y": 237,
+        "valid": false,
+        "inlier": false,
+        "disparity": 82,
+        "confidence": 0.002008032,
+        "texture": 9.539682,
+        "verticalOffset": 0,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 423,
+        "y": 237,
+        "valid": false,
+        "inlier": false,
+        "disparity": 107.90476,
+        "confidence": 0.20970696,
+        "texture": 26.36508,
+        "verticalOffset": 5,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 447,
+        "y": 237,
+        "valid": false,
+        "inlier": false,
+        "disparity": 41,
+        "confidence": 0.0136103155,
+        "texture": 30.031746,
+        "verticalOffset": 2,
+        "reason": "AMBIGUOUS_MATCH"
+      }
+    ]
+  },
+  "pair-057-059/reviewed_box_control": {
+    "Id": "pair-057-059/reviewed_box_control",
+    "estimate": {
+      "valid": true,
+      "disparityPixels": 64.83945,
+      "depthMeters": 3.8780913,
+      "confidence": 0.41805556,
+      "validRatio": 0.7777778,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 7,
+      "attemptedSamples": 9,
+      "matchedSamples": 8,
+      "reason": "OK"
+    },
+    "failure": null,
+    "samples": [
+      {
+        "x": 433,
+        "y": 175,
+        "valid": true,
+        "inlier": true,
+        "disparity": 65.57576,
+        "confidence": 0.36918604,
+        "texture": 6.6666665,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 457,
+        "y": 175,
+        "valid": false,
+        "inlier": false,
+        "disparity": 12,
+        "confidence": 0.0049751243,
+        "texture": 4.126984,
+        "verticalOffset": -4,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 481,
+        "y": 175,
+        "valid": true,
+        "inlier": false,
+        "disparity": 105.12626,
+        "confidence": 0.064261556,
+        "texture": 15.650794,
+        "verticalOffset": 4,
+        "reason": "OK"
+      },
+      {
+        "x": 433,
+        "y": 191,
+        "valid": true,
+        "inlier": true,
+        "disparity": 66.686,
+        "confidence": 0.4192872,
+        "texture": 37.968254,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 457,
+        "y": 191,
+        "valid": true,
+        "inlier": true,
+        "disparity": 65.01351,
+        "confidence": 0.40521327,
+        "texture": 15.555555,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 481,
+        "y": 191,
+        "valid": true,
+        "inlier": true,
+        "disparity": 63.49052,
+        "confidence": 0.41805556,
+        "texture": 18.793652,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 433,
+        "y": 207,
+        "valid": true,
+        "inlier": true,
+        "disparity": 64.71,
+        "confidence": 0.4027927,
+        "texture": 18.396826,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 457,
+        "y": 207,
+        "valid": true,
+        "inlier": true,
+        "disparity": 64.83945,
+        "confidence": 0.48989898,
+        "texture": 4.3333335,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 481,
+        "y": 207,
+        "valid": true,
+        "inlier": true,
+        "disparity": 63.96802,
+        "confidence": 0.42892358,
+        "texture": 22.539682,
+        "verticalOffset": 0,
+        "reason": "OK"
+      }
+    ]
+  },
+  "pair-057-059/reviewed_box_control_reverse": {
+    "Id": "pair-057-059/reviewed_box_control_reverse",
+    "estimate": {
+      "valid": true,
+      "disparityPixels": 64.83945,
+      "depthMeters": 3.8780913,
+      "confidence": 0.41805556,
+      "validRatio": 0.7777778,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 7,
+      "attemptedSamples": 9,
+      "matchedSamples": 7,
+      "reason": "OK"
+    },
+    "failure": null,
+    "samples": [
+      {
+        "x": 433,
+        "y": 175,
+        "valid": true,
+        "inlier": true,
+        "disparity": 65.57576,
+        "confidence": 0.36918604,
+        "texture": 6.6666665,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 457,
+        "y": 175,
+        "valid": false,
+        "inlier": false,
+        "disparity": 12,
+        "confidence": 0.0049751243,
+        "texture": 4.126984,
+        "verticalOffset": -4,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 481,
+        "y": 175,
+        "valid": false,
+        "inlier": false,
+        "disparity": 105.12626,
+        "confidence": 0.064261556,
+        "texture": 15.650794,
+        "verticalOffset": 4,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 433,
+        "y": 191,
+        "valid": true,
+        "inlier": true,
+        "disparity": 66.686,
+        "confidence": 0.4192872,
+        "texture": 37.968254,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 457,
+        "y": 191,
+        "valid": true,
+        "inlier": true,
+        "disparity": 65.01351,
+        "confidence": 0.40521327,
+        "texture": 15.555555,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 481,
+        "y": 191,
+        "valid": true,
+        "inlier": true,
+        "disparity": 63.49052,
+        "confidence": 0.41805556,
+        "texture": 18.793652,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 433,
+        "y": 207,
+        "valid": true,
+        "inlier": true,
+        "disparity": 64.71,
+        "confidence": 0.4027927,
+        "texture": 18.396826,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 457,
+        "y": 207,
+        "valid": true,
+        "inlier": true,
+        "disparity": 64.83945,
+        "confidence": 0.48989898,
+        "texture": 4.3333335,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 481,
+        "y": 207,
+        "valid": true,
+        "inlier": true,
+        "disparity": 63.96802,
+        "confidence": 0.42892358,
+        "texture": 22.539682,
+        "verticalOffset": 0,
+        "reason": "OK"
+      }
+    ]
+  },
+  "pair-057-059/picf_match": {
+    "Id": "pair-057-059/picf_match",
+    "estimate": {
+      "valid": true,
+      "disparityPixels": 64.34788,
+      "depthMeters": 3.907717,
+      "confidence": 0.37415862,
+      "validRatio": 0.6666667,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 6,
+      "attemptedSamples": 9,
+      "matchedSamples": 7,
+      "reason": "OK"
+    },
+    "failure": null,
+    "samples": [
+      {
+        "x": 430,
+        "y": 178,
+        "valid": true,
+        "inlier": true,
+        "disparity": 65.95,
+        "confidence": 0.5292842,
+        "texture": 10.555555,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 454,
+        "y": 178,
+        "valid": true,
+        "inlier": true,
+        "disparity": 64.79331,
+        "confidence": 0.19632769,
+        "texture": 37.015873,
+        "verticalOffset": -5,
+        "reason": "OK"
+      },
+      {
+        "x": 478,
+        "y": 178,
+        "valid": true,
+        "inlier": false,
+        "disparity": 19.120232,
+        "confidence": 0.4546875,
+        "texture": 13.523809,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 430,
+        "y": 194,
+        "valid": true,
+        "inlier": true,
+        "disparity": 66.85825,
+        "confidence": 0.5842848,
+        "texture": 41.650795,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 454,
+        "y": 194,
+        "valid": true,
+        "inlier": true,
+        "disparity": 63.784885,
+        "confidence": 0.29200652,
+        "texture": 14.126985,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 478,
+        "y": 194,
+        "valid": true,
+        "inlier": true,
+        "disparity": 63.75,
+        "confidence": 0.4563107,
+        "texture": 16.52381,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 430,
+        "y": 210,
+        "valid": false,
+        "inlier": false,
+        "disparity": 49,
+        "confidence": 0.019695614,
+        "texture": 34.79365,
+        "verticalOffset": 1,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 454,
+        "y": 210,
+        "valid": false,
+        "inlier": false,
+        "disparity": 0,
+        "confidence": 0,
+        "texture": 2.8412697,
+        "verticalOffset": 0,
+        "reason": "LOW_TEXTURE"
+      },
+      {
+        "x": 478,
+        "y": 210,
+        "valid": true,
+        "inlier": true,
+        "disparity": 63.90244,
+        "confidence": 0.1743638,
+        "texture": 31.36508,
+        "verticalOffset": -1,
+        "reason": "OK"
+      }
+    ]
+  },
+  "pair-057-059/picf_match_reverse": {
+    "Id": "pair-057-059/picf_match_reverse",
+    "estimate": {
+      "valid": true,
+      "disparityPixels": 64.86744,
+      "depthMeters": 3.8764176,
+      "confidence": 0.49279743,
+      "validRatio": 0.44444445,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 4,
+      "attemptedSamples": 9,
+      "matchedSamples": 5,
+      "reason": "OK"
+    },
+    "failure": "too few consistent stereo patches",
+    "samples": [
+      {
+        "x": 430,
+        "y": 178,
+        "valid": true,
+        "inlier": true,
+        "disparity": 65.95,
+        "confidence": 0.5292842,
+        "texture": 10.555555,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 454,
+        "y": 178,
+        "valid": false,
+        "inlier": false,
+        "disparity": 64.79331,
+        "confidence": 0.19632769,
+        "texture": 37.015873,
+        "verticalOffset": -5,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 478,
+        "y": 178,
+        "valid": true,
+        "inlier": false,
+        "disparity": 19.120232,
+        "confidence": 0.4546875,
+        "texture": 13.523809,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 430,
+        "y": 194,
+        "valid": true,
+        "inlier": true,
+        "disparity": 66.85825,
+        "confidence": 0.5842848,
+        "texture": 41.650795,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 454,
+        "y": 194,
+        "valid": true,
+        "inlier": true,
+        "disparity": 63.784885,
+        "confidence": 0.29200652,
+        "texture": 14.126985,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 478,
+        "y": 194,
+        "valid": true,
+        "inlier": true,
+        "disparity": 63.75,
+        "confidence": 0.4563107,
+        "texture": 16.52381,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 430,
+        "y": 210,
+        "valid": false,
+        "inlier": false,
+        "disparity": 49,
+        "confidence": 0.019695614,
+        "texture": 34.79365,
+        "verticalOffset": 1,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 454,
+        "y": 210,
+        "valid": false,
+        "inlier": false,
+        "disparity": 0,
+        "confidence": 0,
+        "texture": 2.8412697,
+        "verticalOffset": 0,
+        "reason": "LOW_TEXTURE"
+      },
+      {
+        "x": 478,
+        "y": 210,
+        "valid": false,
+        "inlier": false,
+        "disparity": 63.90244,
+        "confidence": 0.1743638,
+        "texture": 31.36508,
+        "verticalOffset": -1,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      }
+    ]
+  },
+  "pair-062-065/reviewed_box_control": {
+    "Id": "pair-062-065/reviewed_box_control",
+    "estimate": {
+      "valid": true,
+      "disparityPixels": 112.18834,
+      "depthMeters": 2.5193849,
+      "confidence": 0.12896636,
+      "validRatio": 0.6666667,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 6,
+      "attemptedSamples": 9,
+      "matchedSamples": 9,
+      "reason": "OK"
+    },
+    "failure": null,
+    "samples": [
+      {
+        "x": 387,
+        "y": 177,
+        "valid": true,
+        "inlier": false,
+        "disparity": 63.37,
+        "confidence": 0.05140187,
+        "texture": 7.873016,
+        "verticalOffset": 2,
+        "reason": "OK"
+      },
+      {
+        "x": 411,
+        "y": 177,
+        "valid": true,
+        "inlier": false,
+        "disparity": 24.445454,
+        "confidence": 0.025761124,
+        "texture": 7.6825395,
+        "verticalOffset": -2,
+        "reason": "OK"
+      },
+      {
+        "x": 435,
+        "y": 177,
+        "valid": true,
+        "inlier": true,
+        "disparity": 112.83714,
+        "confidence": 0.03723404,
+        "texture": 17.174603,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 387,
+        "y": 193,
+        "valid": true,
+        "inlier": true,
+        "disparity": 102.06364,
+        "confidence": 0.13157895,
+        "texture": 4.0634923,
+        "verticalOffset": 2,
+        "reason": "OK"
+      },
+      {
+        "x": 411,
+        "y": 193,
+        "valid": true,
+        "inlier": true,
+        "disparity": 111.187775,
+        "confidence": 0.12635379,
+        "texture": 12.31746,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 435,
+        "y": 193,
+        "valid": true,
+        "inlier": true,
+        "disparity": 113.773506,
+        "confidence": 0.1553288,
+        "texture": 19.84127,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 387,
+        "y": 209,
+        "valid": true,
+        "inlier": false,
+        "disparity": 11.542056,
+        "confidence": 0.1281106,
+        "texture": 23.84127,
+        "verticalOffset": 2,
+        "reason": "OK"
+      },
+      {
+        "x": 411,
+        "y": 209,
+        "valid": true,
+        "inlier": true,
+        "disparity": 111.53953,
+        "confidence": 0.109140515,
+        "texture": 43.904762,
+        "verticalOffset": 2,
+        "reason": "OK"
+      },
+      {
+        "x": 435,
+        "y": 209,
+        "valid": true,
+        "inlier": true,
+        "disparity": 114.151375,
+        "confidence": 0.583499,
+        "texture": 26.095238,
+        "verticalOffset": 0,
+        "reason": "OK"
+      }
+    ]
+  },
+  "pair-062-065/reviewed_box_control_reverse": {
+    "Id": "pair-062-065/reviewed_box_control_reverse",
+    "estimate": {
+      "valid": false,
+      "disparityPixels": 0,
+      "depthMeters": 0,
+      "confidence": 0,
+      "validRatio": 0.22222222,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 2,
+      "attemptedSamples": 9,
+      "matchedSamples": 3,
+      "reason": "Stereo matches disagree on disparity"
+    },
+    "failure": "Stereo matches disagree on disparity",
+    "samples": [
+      {
+        "x": 387,
+        "y": 177,
+        "valid": false,
+        "inlier": false,
+        "disparity": 63.37,
+        "confidence": 0.05140187,
+        "texture": 7.873016,
+        "verticalOffset": 2,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 411,
+        "y": 177,
+        "valid": false,
+        "inlier": false,
+        "disparity": 24.445454,
+        "confidence": 0.025761124,
+        "texture": 7.6825395,
+        "verticalOffset": -2,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 435,
+        "y": 177,
+        "valid": false,
+        "inlier": false,
+        "disparity": 112.83714,
+        "confidence": 0.03723404,
+        "texture": 17.174603,
+        "verticalOffset": -1,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 387,
+        "y": 193,
+        "valid": false,
+        "inlier": false,
+        "disparity": 102.06364,
+        "confidence": 0.13157895,
+        "texture": 4.0634923,
+        "verticalOffset": 2,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 411,
+        "y": 193,
+        "valid": false,
+        "inlier": false,
+        "disparity": 111.187775,
+        "confidence": 0.12635379,
+        "texture": 12.31746,
+        "verticalOffset": 0,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 435,
+        "y": 193,
+        "valid": true,
+        "inlier": true,
+        "disparity": 113.773506,
+        "confidence": 0.1553288,
+        "texture": 19.84127,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 387,
+        "y": 209,
+        "valid": true,
+        "inlier": false,
+        "disparity": 11.542056,
+        "confidence": 0.1281106,
+        "texture": 23.84127,
+        "verticalOffset": 2,
+        "reason": "OK"
+      },
+      {
+        "x": 411,
+        "y": 209,
+        "valid": false,
+        "inlier": false,
+        "disparity": 111.53953,
+        "confidence": 0.109140515,
+        "texture": 43.904762,
+        "verticalOffset": 2,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 435,
+        "y": 209,
+        "valid": true,
+        "inlier": true,
+        "disparity": 114.151375,
+        "confidence": 0.583499,
+        "texture": 26.095238,
+        "verticalOffset": 0,
+        "reason": "OK"
+      }
+    ]
+  },
+  "pair-062-065/picf_match": {
+    "Id": "pair-062-065/picf_match",
+    "estimate": {
+      "valid": true,
+      "disparityPixels": 113.01773,
+      "depthMeters": 2.500896,
+      "confidence": 0.12135922,
+      "validRatio": 0.7777778,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 7,
+      "attemptedSamples": 9,
+      "matchedSamples": 9,
+      "reason": "OK"
+    },
+    "failure": null,
+    "samples": [
+      {
+        "x": 384,
+        "y": 176,
+        "valid": true,
+        "inlier": false,
+        "disparity": 63.695404,
+        "confidence": 0.06462035,
+        "texture": 12.111111,
+        "verticalOffset": 1,
+        "reason": "OK"
+      },
+      {
+        "x": 408,
+        "y": 176,
+        "valid": true,
+        "inlier": true,
+        "disparity": 97.66216,
+        "confidence": 0.030245747,
+        "texture": 15.619047,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 432,
+        "y": 176,
+        "valid": true,
+        "inlier": true,
+        "disparity": 113.01773,
+        "confidence": 0.12135922,
+        "texture": 18.682539,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 384,
+        "y": 192,
+        "valid": true,
+        "inlier": true,
+        "disparity": 113.80137,
+        "confidence": 0.096491225,
+        "texture": 5.174603,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 408,
+        "y": 192,
+        "valid": true,
+        "inlier": true,
+        "disparity": 110.166664,
+        "confidence": 0.49053356,
+        "texture": 19.777779,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 432,
+        "y": 192,
+        "valid": true,
+        "inlier": true,
+        "disparity": 113.34049,
+        "confidence": 0.08926418,
+        "texture": 19.857143,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 384,
+        "y": 208,
+        "valid": true,
+        "inlier": false,
+        "disparity": 10.7254095,
+        "confidence": 0.031657357,
+        "texture": 24.015873,
+        "verticalOffset": -2,
+        "reason": "OK"
+      },
+      {
+        "x": 408,
+        "y": 208,
+        "valid": true,
+        "inlier": true,
+        "disparity": 105.27551,
+        "confidence": 0.15992813,
+        "texture": 39.142857,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 432,
+        "y": 208,
+        "valid": true,
+        "inlier": true,
+        "disparity": 114.30645,
+        "confidence": 0.59409595,
+        "texture": 7.5396824,
+        "verticalOffset": 0,
+        "reason": "OK"
+      }
+    ]
+  },
+  "pair-062-065/picf_match_reverse": {
+    "Id": "pair-062-065/picf_match_reverse",
+    "estimate": {
+      "valid": true,
+      "disparityPixels": 113.17911,
+      "depthMeters": 2.4973302,
+      "confidence": 0.14064367,
+      "validRatio": 0.6666667,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 6,
+      "attemptedSamples": 9,
+      "matchedSamples": 6,
+      "reason": "OK"
+    },
+    "failure": null,
+    "samples": [
+      {
+        "x": 384,
+        "y": 176,
+        "valid": false,
+        "inlier": false,
+        "disparity": 63.695404,
+        "confidence": 0.06462035,
+        "texture": 12.111111,
+        "verticalOffset": 1,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 408,
+        "y": 176,
+        "valid": false,
+        "inlier": false,
+        "disparity": 97.66216,
+        "confidence": 0.030245747,
+        "texture": 15.619047,
+        "verticalOffset": -1,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 432,
+        "y": 176,
+        "valid": true,
+        "inlier": true,
+        "disparity": 113.01773,
+        "confidence": 0.12135922,
+        "texture": 18.682539,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 384,
+        "y": 192,
+        "valid": true,
+        "inlier": true,
+        "disparity": 113.80137,
+        "confidence": 0.096491225,
+        "texture": 5.174603,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 408,
+        "y": 192,
+        "valid": true,
+        "inlier": true,
+        "disparity": 110.166664,
+        "confidence": 0.49053356,
+        "texture": 19.777779,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 432,
+        "y": 192,
+        "valid": true,
+        "inlier": true,
+        "disparity": 113.34049,
+        "confidence": 0.08926418,
+        "texture": 19.857143,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 384,
+        "y": 208,
+        "valid": false,
+        "inlier": false,
+        "disparity": 10.7254095,
+        "confidence": 0.031657357,
+        "texture": 24.015873,
+        "verticalOffset": -2,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 408,
+        "y": 208,
+        "valid": true,
+        "inlier": true,
+        "disparity": 105.27551,
+        "confidence": 0.15992813,
+        "texture": 39.142857,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 432,
+        "y": 208,
+        "valid": true,
+        "inlier": true,
+        "disparity": 114.30645,
+        "confidence": 0.59409595,
+        "texture": 7.5396824,
+        "verticalOffset": 0,
+        "reason": "OK"
+      }
+    ]
+  },
+  "pair-067-070/reviewed_box_control": {
+    "Id": "pair-067-070/reviewed_box_control",
+    "estimate": {
+      "valid": true,
+      "disparityPixels": 92.63525,
+      "depthMeters": 2.5506778,
+      "confidence": 0.044733044,
+      "validRatio": 0.5555556,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 5,
+      "attemptedSamples": 9,
+      "matchedSamples": 9,
+      "reason": "OK"
+    },
+    "failure": null,
+    "samples": [
+      {
+        "x": 301,
+        "y": 185,
+        "valid": true,
+        "inlier": true,
+        "disparity": 71.3018,
+        "confidence": 0.08397338,
+        "texture": 54.68254,
+        "verticalOffset": -4,
+        "reason": "OK"
+      },
+      {
+        "x": 322,
+        "y": 185,
+        "valid": true,
+        "inlier": true,
+        "disparity": 113.297295,
+        "confidence": 0.04010877,
+        "texture": 31.539682,
+        "verticalOffset": 5,
+        "reason": "OK"
+      },
+      {
+        "x": 343,
+        "y": 185,
+        "valid": true,
+        "inlier": true,
+        "disparity": 91.31102,
+        "confidence": 0.044733044,
+        "texture": 33.126984,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 301,
+        "y": 201,
+        "valid": true,
+        "inlier": false,
+        "disparity": 115.5,
+        "confidence": 0.2733189,
+        "texture": 7.095238,
+        "verticalOffset": 5,
+        "reason": "OK"
+      },
+      {
+        "x": 322,
+        "y": 201,
+        "valid": true,
+        "inlier": false,
+        "disparity": 64.97414,
+        "confidence": 0.24470589,
+        "texture": 34.57143,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 343,
+        "y": 201,
+        "valid": true,
+        "inlier": true,
+        "disparity": 92.63525,
+        "confidence": 0.09865471,
+        "texture": 29.095238,
+        "verticalOffset": 1,
+        "reason": "OK"
+      },
+      {
+        "x": 301,
+        "y": 217,
+        "valid": true,
+        "inlier": false,
+        "disparity": 5.1177607,
+        "confidence": 0.53097343,
+        "texture": 19.142857,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 322,
+        "y": 217,
+        "valid": true,
+        "inlier": false,
+        "disparity": 6.8779526,
+        "confidence": 0.12823674,
+        "texture": 13.206349,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 343,
+        "y": 217,
+        "valid": true,
+        "inlier": true,
+        "disparity": 96.09667,
+        "confidence": 0.04267701,
+        "texture": 18.682539,
+        "verticalOffset": 0,
+        "reason": "OK"
+      }
+    ]
+  },
+  "pair-067-070/reviewed_box_control_reverse": {
+    "Id": "pair-067-070/reviewed_box_control_reverse",
+    "estimate": {
+      "valid": false,
+      "disparityPixels": 0,
+      "depthMeters": 0,
+      "confidence": 0,
+      "validRatio": 0,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 0,
+      "attemptedSamples": 9,
+      "matchedSamples": 2,
+      "reason": "Only 2/9 textured matches"
+    },
+    "failure": "Only 2/9 textured matches",
+    "samples": [
+      {
+        "x": 301,
+        "y": 185,
+        "valid": false,
+        "inlier": false,
+        "disparity": 71.3018,
+        "confidence": 0.08397338,
+        "texture": 54.68254,
+        "verticalOffset": -4,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 322,
+        "y": 185,
+        "valid": false,
+        "inlier": false,
+        "disparity": 113.297295,
+        "confidence": 0.04010877,
+        "texture": 31.539682,
+        "verticalOffset": 5,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 343,
+        "y": 185,
+        "valid": false,
+        "inlier": false,
+        "disparity": 91.31102,
+        "confidence": 0.044733044,
+        "texture": 33.126984,
+        "verticalOffset": -1,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 301,
+        "y": 201,
+        "valid": false,
+        "inlier": false,
+        "disparity": 115.5,
+        "confidence": 0.2733189,
+        "texture": 7.095238,
+        "verticalOffset": 5,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 322,
+        "y": 201,
+        "valid": false,
+        "inlier": false,
+        "disparity": 64.97414,
+        "confidence": 0.24470589,
+        "texture": 34.57143,
+        "verticalOffset": -1,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 343,
+        "y": 201,
+        "valid": true,
+        "inlier": false,
+        "disparity": 92.63525,
+        "confidence": 0.09865471,
+        "texture": 29.095238,
+        "verticalOffset": 1,
+        "reason": "OK"
+      },
+      {
+        "x": 301,
+        "y": 217,
+        "valid": true,
+        "inlier": false,
+        "disparity": 5.1177607,
+        "confidence": 0.53097343,
+        "texture": 19.142857,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 322,
+        "y": 217,
+        "valid": false,
+        "inlier": false,
+        "disparity": 6.8779526,
+        "confidence": 0.12823674,
+        "texture": 13.206349,
+        "verticalOffset": 0,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 343,
+        "y": 217,
+        "valid": false,
+        "inlier": false,
+        "disparity": 96.09667,
+        "confidence": 0.04267701,
+        "texture": 18.682539,
+        "verticalOffset": 0,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      }
+    ]
+  },
+  "pair-067-070/picf_match": {
+    "Id": "pair-067-070/picf_match",
+    "estimate": {
+      "valid": true,
+      "disparityPixels": 83.467926,
+      "depthMeters": 2.8308198,
+      "confidence": 0.23008016,
+      "validRatio": 0.44444445,
+      "verticalOffsetPixels": -0.5,
+      "acceptedSamples": 4,
+      "attemptedSamples": 9,
+      "matchedSamples": 8,
+      "reason": "OK"
+    },
+    "failure": "too few consistent stereo patches",
+    "samples": [
+      {
+        "x": 306,
+        "y": 186,
+        "valid": true,
+        "inlier": false,
+        "disparity": 107.98864,
+        "confidence": 0.03152789,
+        "texture": 22.920635,
+        "verticalOffset": 5,
+        "reason": "OK"
+      },
+      {
+        "x": 324,
+        "y": 186,
+        "valid": true,
+        "inlier": false,
+        "disparity": 112.981705,
+        "confidence": 0.07791096,
+        "texture": 22.15873,
+        "verticalOffset": 5,
+        "reason": "OK"
+      },
+      {
+        "x": 342,
+        "y": 186,
+        "valid": true,
+        "inlier": true,
+        "disparity": 90.62941,
+        "confidence": 0.23809524,
+        "texture": 25.11111,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 306,
+        "y": 202,
+        "valid": true,
+        "inlier": true,
+        "disparity": 76.30645,
+        "confidence": 0.22206506,
+        "texture": 14.920635,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 324,
+        "y": 202,
+        "valid": true,
+        "inlier": true,
+        "disparity": 63.43919,
+        "confidence": 0.08178138,
+        "texture": 29.571428,
+        "verticalOffset": -2,
+        "reason": "OK"
+      },
+      {
+        "x": 342,
+        "y": 202,
+        "valid": true,
+        "inlier": true,
+        "disparity": 91.96381,
+        "confidence": 0.29864255,
+        "texture": 28.507936,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 306,
+        "y": 218,
+        "valid": true,
+        "inlier": false,
+        "disparity": 5.366142,
+        "confidence": 0.18122555,
+        "texture": 18.539682,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 324,
+        "y": 218,
+        "valid": false,
+        "inlier": false,
+        "disparity": 8,
+        "confidence": 0.007960199,
+        "texture": 17.031746,
+        "verticalOffset": 1,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 342,
+        "y": 218,
+        "valid": true,
+        "inlier": false,
+        "disparity": 14.841772,
+        "confidence": 0.042290747,
+        "texture": 20.936508,
+        "verticalOffset": -1,
+        "reason": "OK"
+      }
+    ]
+  },
+  "pair-067-070/picf_match_reverse": {
+    "Id": "pair-067-070/picf_match_reverse",
+    "estimate": {
+      "valid": false,
+      "disparityPixels": 0,
+      "depthMeters": 0,
+      "confidence": 0,
+      "validRatio": 0.22222222,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 2,
+      "attemptedSamples": 9,
+      "matchedSamples": 3,
+      "reason": "Stereo matches disagree on disparity"
+    },
+    "failure": "Stereo matches disagree on disparity",
+    "samples": [
+      {
+        "x": 306,
+        "y": 186,
+        "valid": false,
+        "inlier": false,
+        "disparity": 107.98864,
+        "confidence": 0.03152789,
+        "texture": 22.920635,
+        "verticalOffset": 5,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 324,
+        "y": 186,
+        "valid": false,
+        "inlier": false,
+        "disparity": 112.981705,
+        "confidence": 0.07791096,
+        "texture": 22.15873,
+        "verticalOffset": 5,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 342,
+        "y": 186,
+        "valid": false,
+        "inlier": false,
+        "disparity": 90.62941,
+        "confidence": 0.23809524,
+        "texture": 25.11111,
+        "verticalOffset": -1,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 306,
+        "y": 202,
+        "valid": true,
+        "inlier": true,
+        "disparity": 76.30645,
+        "confidence": 0.22206506,
+        "texture": 14.920635,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 324,
+        "y": 202,
+        "valid": false,
+        "inlier": false,
+        "disparity": 63.43919,
+        "confidence": 0.08178138,
+        "texture": 29.571428,
+        "verticalOffset": -2,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 342,
+        "y": 202,
+        "valid": true,
+        "inlier": true,
+        "disparity": 91.96381,
+        "confidence": 0.29864255,
+        "texture": 28.507936,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 306,
+        "y": 218,
+        "valid": true,
+        "inlier": false,
+        "disparity": 5.366142,
+        "confidence": 0.18122555,
+        "texture": 18.539682,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 324,
+        "y": 218,
+        "valid": false,
+        "inlier": false,
+        "disparity": 8,
+        "confidence": 0.007960199,
+        "texture": 17.031746,
+        "verticalOffset": 1,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 342,
+        "y": 218,
+        "valid": false,
+        "inlier": false,
+        "disparity": 14.841772,
+        "confidence": 0.042290747,
+        "texture": 20.936508,
+        "verticalOffset": -1,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      }
+    ]
+  },
+  "pair-087-089/reviewed_box_control": {
+    "Id": "pair-087-089/reviewed_box_control",
+    "estimate": {
+      "valid": true,
+      "disparityPixels": 80.829414,
+      "depthMeters": 3.5324101,
+      "confidence": 0.0929432,
+      "validRatio": 0.5555556,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 5,
+      "attemptedSamples": 9,
+      "matchedSamples": 7,
+      "reason": "OK"
+    },
+    "failure": null,
+    "samples": [
+      {
+        "x": 258,
+        "y": 166,
+        "valid": false,
+        "inlier": false,
+        "disparity": 50,
+        "confidence": 0.0060753343,
+        "texture": 57.095238,
+        "verticalOffset": -4,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 282,
+        "y": 166,
+        "valid": true,
+        "inlier": true,
+        "disparity": 82.02941,
+        "confidence": 0.051980197,
+        "texture": 23.47619,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 306,
+        "y": 166,
+        "valid": true,
+        "inlier": true,
+        "disparity": 93.81148,
+        "confidence": 0.0929432,
+        "texture": 9.968254,
+        "verticalOffset": 4,
+        "reason": "OK"
+      },
+      {
+        "x": 258,
+        "y": 182,
+        "valid": true,
+        "inlier": false,
+        "disparity": 29.07971,
+        "confidence": 0.029761905,
+        "texture": 9,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 282,
+        "y": 182,
+        "valid": true,
+        "inlier": true,
+        "disparity": 80.829414,
+        "confidence": 0.054545455,
+        "texture": 4.4126983,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 306,
+        "y": 182,
+        "valid": true,
+        "inlier": true,
+        "disparity": 80.5,
+        "confidence": 0.44642857,
+        "texture": 5.6666665,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 258,
+        "y": 198,
+        "valid": true,
+        "inlier": true,
+        "disparity": 63.612904,
+        "confidence": 0.1261634,
+        "texture": 20.269842,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 282,
+        "y": 198,
+        "valid": false,
+        "inlier": false,
+        "disparity": 2,
+        "confidence": 0,
+        "texture": 31.317461,
+        "verticalOffset": 2,
+        "reason": "DISPARITY_AT_SEARCH_LIMIT"
+      },
+      {
+        "x": 306,
+        "y": 198,
+        "valid": true,
+        "inlier": false,
+        "disparity": 10.573593,
+        "confidence": 0.084791385,
+        "texture": 31.412699,
+        "verticalOffset": 0,
+        "reason": "OK"
+      }
+    ]
+  },
+  "pair-087-089/reviewed_box_control_reverse": {
+    "Id": "pair-087-089/reviewed_box_control_reverse",
+    "estimate": {
+      "valid": false,
+      "disparityPixels": 0,
+      "depthMeters": 0,
+      "confidence": 0,
+      "validRatio": 0.22222222,
+      "verticalOffsetPixels": 0,
+      "acceptedSamples": 2,
+      "attemptedSamples": 9,
+      "matchedSamples": 3,
+      "reason": "Stereo matches disagree on disparity"
+    },
+    "failure": "Stereo matches disagree on disparity",
+    "samples": [
+      {
+        "x": 258,
+        "y": 166,
+        "valid": false,
+        "inlier": false,
+        "disparity": 50,
+        "confidence": 0.0060753343,
+        "texture": 57.095238,
+        "verticalOffset": -4,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 282,
+        "y": 166,
+        "valid": false,
+        "inlier": false,
+        "disparity": 82.02941,
+        "confidence": 0.051980197,
+        "texture": 23.47619,
+        "verticalOffset": 0,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 306,
+        "y": 166,
+        "valid": false,
+        "inlier": false,
+        "disparity": 93.81148,
+        "confidence": 0.0929432,
+        "texture": 9.968254,
+        "verticalOffset": 4,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 258,
+        "y": 182,
+        "valid": false,
+        "inlier": false,
+        "disparity": 29.07971,
+        "confidence": 0.029761905,
+        "texture": 9,
+        "verticalOffset": -1,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 282,
+        "y": 182,
+        "valid": true,
+        "inlier": true,
+        "disparity": 80.829414,
+        "confidence": 0.054545455,
+        "texture": 4.4126983,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 306,
+        "y": 182,
+        "valid": true,
+        "inlier": true,
+        "disparity": 80.5,
+        "confidence": 0.44642857,
+        "texture": 5.6666665,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 258,
+        "y": 198,
+        "valid": false,
+        "inlier": false,
+        "disparity": 63.612904,
+        "confidence": 0.1261634,
+        "texture": 20.269842,
+        "verticalOffset": 0,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 282,
+        "y": 198,
+        "valid": false,
+        "inlier": false,
+        "disparity": 2,
+        "confidence": 0,
+        "texture": 31.317461,
+        "verticalOffset": 2,
+        "reason": "DISPARITY_AT_SEARCH_LIMIT"
+      },
+      {
+        "x": 306,
+        "y": 198,
+        "valid": true,
+        "inlier": false,
+        "disparity": 10.573593,
+        "confidence": 0.084791385,
+        "texture": 31.412699,
+        "verticalOffset": 0,
+        "reason": "OK"
+      }
+    ]
+  },
+  "pair-087-089/picf_match": {
+    "Id": "pair-087-089/picf_match",
+    "estimate": {
+      "valid": true,
+      "disparityPixels": 78.218155,
+      "depthMeters": 3.6503372,
+      "confidence": 0.24444444,
+      "validRatio": 0.5555556,
+      "verticalOffsetPixels": -1,
+      "acceptedSamples": 5,
+      "attemptedSamples": 9,
+      "matchedSamples": 6,
+      "reason": "OK"
+    },
+    "failure": null,
+    "samples": [
+      {
+        "x": 265,
+        "y": 164,
+        "valid": true,
+        "inlier": true,
+        "disparity": 78.218155,
+        "confidence": 0.525641,
+        "texture": 59.31746,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 289,
+        "y": 164,
+        "valid": false,
+        "inlier": false,
+        "disparity": 81,
+        "confidence": 0.0027027028,
+        "texture": 33.650795,
+        "verticalOffset": 1,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 313,
+        "y": 164,
+        "valid": true,
+        "inlier": true,
+        "disparity": 76.00267,
+        "confidence": 0.16666667,
+        "texture": 11.253968,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 265,
+        "y": 180,
+        "valid": false,
+        "inlier": false,
+        "disparity": 79,
+        "confidence": 0.004830918,
+        "texture": 8.428572,
+        "verticalOffset": 1,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 289,
+        "y": 180,
+        "valid": false,
+        "inlier": false,
+        "disparity": 0,
+        "confidence": 0,
+        "texture": 3.7301588,
+        "verticalOffset": 0,
+        "reason": "LOW_TEXTURE"
+      },
+      {
+        "x": 313,
+        "y": 180,
+        "valid": true,
+        "inlier": true,
+        "disparity": 81.49412,
+        "confidence": 0.3690476,
+        "texture": 7.2063494,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 265,
+        "y": 196,
+        "valid": true,
+        "inlier": true,
+        "disparity": 79.74535,
+        "confidence": 0.24444444,
+        "texture": 11.4920635,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 289,
+        "y": 196,
+        "valid": true,
+        "inlier": true,
+        "disparity": 68.59524,
+        "confidence": 0.029013539,
+        "texture": 29.571428,
+        "verticalOffset": -2,
+        "reason": "OK"
+      },
+      {
+        "x": 313,
+        "y": 196,
+        "valid": true,
+        "inlier": false,
+        "disparity": 10.879733,
+        "confidence": 0.4861461,
+        "texture": 24.777779,
+        "verticalOffset": 1,
+        "reason": "OK"
+      }
+    ]
+  },
+  "pair-087-089/picf_match_reverse": {
+    "Id": "pair-087-089/picf_match_reverse",
+    "estimate": {
+      "valid": true,
+      "disparityPixels": 78.98175,
+      "depthMeters": 3.6150458,
+      "confidence": 0.30674604,
+      "validRatio": 0.44444445,
+      "verticalOffsetPixels": -0.5,
+      "acceptedSamples": 4,
+      "attemptedSamples": 9,
+      "matchedSamples": 5,
+      "reason": "OK"
+    },
+    "failure": "too few consistent stereo patches",
+    "samples": [
+      {
+        "x": 265,
+        "y": 164,
+        "valid": true,
+        "inlier": true,
+        "disparity": 78.218155,
+        "confidence": 0.525641,
+        "texture": 59.31746,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 289,
+        "y": 164,
+        "valid": false,
+        "inlier": false,
+        "disparity": 81,
+        "confidence": 0.0027027028,
+        "texture": 33.650795,
+        "verticalOffset": 1,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 313,
+        "y": 164,
+        "valid": false,
+        "inlier": false,
+        "disparity": 76.00267,
+        "confidence": 0.16666667,
+        "texture": 11.253968,
+        "verticalOffset": -1,
+        "reason": "LEFT_RIGHT_INCONSISTENT"
+      },
+      {
+        "x": 265,
+        "y": 180,
+        "valid": false,
+        "inlier": false,
+        "disparity": 79,
+        "confidence": 0.004830918,
+        "texture": 8.428572,
+        "verticalOffset": 1,
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "x": 289,
+        "y": 180,
+        "valid": false,
+        "inlier": false,
+        "disparity": 0,
+        "confidence": 0,
+        "texture": 3.7301588,
+        "verticalOffset": 0,
+        "reason": "LOW_TEXTURE"
+      },
+      {
+        "x": 313,
+        "y": 180,
+        "valid": true,
+        "inlier": true,
+        "disparity": 81.49412,
+        "confidence": 0.3690476,
+        "texture": 7.2063494,
+        "verticalOffset": 0,
+        "reason": "OK"
+      },
+      {
+        "x": 265,
+        "y": 196,
+        "valid": true,
+        "inlier": true,
+        "disparity": 79.74535,
+        "confidence": 0.24444444,
+        "texture": 11.4920635,
+        "verticalOffset": -1,
+        "reason": "OK"
+      },
+      {
+        "x": 289,
+        "y": 196,
+        "valid": true,
+        "inlier": true,
+        "disparity": 68.59524,
+        "confidence": 0.029013539,
+        "texture": 29.571428,
+        "verticalOffset": -2,
+        "reason": "OK"
+      },
+      {
+        "x": 313,
+        "y": 196,
+        "valid": true,
+        "inlier": false,
+        "disparity": 10.879733,
+        "confidence": 0.4861461,
+        "texture": 24.777779,
+        "verticalOffset": 1,
+        "reason": "OK"
+      }
+    ]
+  }
+}

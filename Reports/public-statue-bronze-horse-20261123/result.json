@@ -1,0 +1,138 @@
+{
+  "runtime_commit": "90928aef682fa714e7baacf8b8d2ca2980681027",
+  "runtime_sha256": {
+    "tcp_server.py": "10607c9a6a03bfb4e8875b3107f85608e382b90415e232dace093b2bf678acdd",
+    "scene_router.py": "147401103ced6e6a06ca526d434669edd36b5e1e55630f23a0a099689a3bca11",
+    "scene_protocol.py": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038",
+    "detector_config.py": "b047405f41cd10523d6e51ab25ee8a1673a8219de8ce4ece7a684277b2f5640b",
+    "pose_availability.py": "10eef6f52a4ae9afca8b16e51be2179b83c0a30d1b498ac98cd969d0129367ee",
+    "discovery.py": "f17f4b4525e969ae6dc22523d5a520207280106ebd61dc103b880fee52f88747",
+    "model_artifact.py": "521b330e8b38ee6a93fe6475e168d8dc90aa9a6bcad035db8d17e07ee1060cab",
+    "scene_profiles.json": "4c3a776c4133c60ff9be810630c1aa7002775230f98a03bb3fdfa020d78f8781"
+  },
+  "model_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+  "archive_sha256": "ae6cd0b695f9b4e5054fc4fd1e0daab87daab155d3d37958b5d3edae75d46b8f",
+  "capture_sha256": "53e2989d97b9fb9c8107186a8964c8c391964aa45c4672d260b9fc0217d6b960",
+  "frozen_input_sha256": "e65300df7724e8e23fe44498337d28de756296d61c414d23a928057886918b70",
+  "raw_picf_sha256": "518dffd657cdd10584ccc236f0c8906b0202238962d5da43f480f07dd63b89ef",
+  "worker_sha256": "a8448db422a8ae2587a6dfa2aee0cbed5f1d0436bdf0b6a226c43d08cc533dff",
+  "reply_confidence": 0.399,
+  "score_confidence_and_iou": 0.5,
+  "groups": {
+    "ordered_monos": {
+      "frames": 23,
+      "hits": 21,
+      "match_ids": {
+        "1ba600f5dffb:left:1": 21
+      },
+      "match_runs": [
+        1,
+        20
+      ],
+      "longest_contiguous_same_id_run": 20,
+      "unmatched_by_class": {}
+    },
+    "other_monos": {
+      "frames": 9,
+      "hits": 6,
+      "match_ids": {
+        "468a321dc21d:left:1": 5,
+        "468a321dc21d:left:4": 1
+      },
+      "match_runs": [
+        5,
+        1
+      ],
+      "longest_contiguous_same_id_run": 5,
+      "unmatched_by_class": {}
+    },
+    "rectified": {
+      "frames": 12,
+      "hits": 10,
+      "match_ids": {
+        "f69fab0ab5e3:left:1": 1,
+        "f69fab0ab5e3:left:2": 5,
+        "f69fab0ab5e3:left:3": 1,
+        "f69fab0ab5e3:left:4": 2,
+        "f69fab0ab5e3:left:5": 1
+      },
+      "match_runs": [
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1
+      ],
+      "longest_contiguous_same_id_run": 2,
+      "unmatched_by_class": {}
+    }
+  },
+  "rectified_geometry": [
+    {
+      "key": "pair-020-022",
+      "shared_points_in_view": 1231,
+      "core_box_correspondences": 256,
+      "all_observed_vertical_p95_px": 0.34699181789802935,
+      "core_observed_disparity_p50_px": 83.1471247352673,
+      "core_depth_over_baseline_p50": 3.0249288244999355,
+      "left_match": false,
+      "right_match": true
+    },
+    {
+      "key": "pair-029-031",
+      "shared_points_in_view": 1340,
+      "core_box_correspondences": 409,
+      "all_observed_vertical_p95_px": 0.3382010100972521,
+      "core_observed_disparity_p50_px": 84.26733030625536,
+      "core_depth_over_baseline_p50": 2.780556486843213,
+      "left_match": true,
+      "right_match": true
+    },
+    {
+      "key": "pair-057-059",
+      "shared_points_in_view": 1126,
+      "core_box_correspondences": 358,
+      "all_observed_vertical_p95_px": 0.48279915332305734,
+      "core_observed_disparity_p50_px": 60.79660246309504,
+      "core_depth_over_baseline_p50": 4.1301445518063,
+      "left_match": true,
+      "right_match": true
+    },
+    {
+      "key": "pair-062-065",
+      "shared_points_in_view": 1333,
+      "core_box_correspondences": 154,
+      "all_observed_vertical_p95_px": 0.48409126497245414,
+      "core_observed_disparity_p50_px": 109.16587883167385,
+      "core_depth_over_baseline_p50": 2.5894125780001263,
+      "left_match": true,
+      "right_match": true
+    },
+    {
+      "key": "pair-067-070",
+      "shared_points_in_view": 662,
+      "core_box_correspondences": 74,
+      "all_observed_vertical_p95_px": 0.4466769163487524,
+      "core_observed_disparity_p50_px": 91.37098752607179,
+      "core_depth_over_baseline_p50": 2.580814826152846,
+      "left_match": true,
+      "right_match": false
+    },
+    {
+      "key": "pair-087-089",
+      "shared_points_in_view": 1275,
+      "core_box_correspondences": 118,
+      "all_observed_vertical_p95_px": 0.350930329308369,
+      "core_observed_disparity_p50_px": 80.22671641786592,
+      "core_depth_over_baseline_p50": 3.561702744575534,
+      "left_match": true,
+      "right_match": true
+    }
+  ],
+  "excluded_pairs": [
+    "pair-052-050: only 0 consistent shared in-bounds points"
+  ],
+  "scope": "One bronze horse from real camera motion. Camera SfM reconstruction relative scale only."
+}

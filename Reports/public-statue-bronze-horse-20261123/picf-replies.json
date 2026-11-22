@@ -1,0 +1,3076 @@
+{
+  "ordered_monos": [
+    {
+      "key": "mono-048",
+      "duration_ms": 1404.18,
+      "source_sha256": "d8f861c37e46665172cabc970616b65a45664f8184dfb0a6730c79fe86154ca6",
+      "boxes": [],
+      "reply": {
+        "frame_id": 1,
+        "timestamp": 1795388045360,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 48,
+      "match_id": null,
+      "proposals": []
+    },
+    {
+      "key": "mono-049",
+      "duration_ms": 118.62,
+      "source_sha256": "4a0db794936cf8f7d2b56089738ab16062c4a9de900a4f64be3137ef5ea7e40a",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.5428990125656128,
+          "xyxy_normalized": [
+            0.5811832427978516,
+            0.13533636728922527,
+            0.8792387962341308,
+            0.6984732945760092
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 2,
+        "timestamp": 1795388046765,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.5428990125656128,
+            "centerX": 467.3350524902344,
+            "centerY": 200.11431884765625,
+            "x1": 371.957275390625,
+            "y1": 64.96145629882812,
+            "x2": 562.7128295898438,
+            "y2": 335.2671813964844,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              371.957275390625,
+              64.96145629882812,
+              562.7128295898438,
+              335.2671813964844
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 49,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.5428990125656128,
+          "xyxy_normalized": [
+            0.5811832427978516,
+            0.13533636728922527,
+            0.8792387962341308,
+            0.6984732945760092
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.811481823219211,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-050",
+      "duration_ms": 102.34,
+      "source_sha256": "7db2c21d320458dca9dcdc0dc0f1bb1b47e95328efc775950a6ebe418adb64e7",
+      "boxes": [],
+      "reply": {
+        "frame_id": 3,
+        "timestamp": 1795388046883,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 50,
+      "match_id": null,
+      "proposals": []
+    },
+    {
+      "key": "mono-051",
+      "duration_ms": 103.53,
+      "source_sha256": "32742881185f76f21ebd206bdab45834df93f492295f5dfd4bd5aaf37d4be8f0",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9267587661743164,
+          "xyxy_normalized": [
+            0.49776010513305663,
+            0.20013103485107422,
+            0.7945089340209961,
+            0.690584945678711
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 4,
+        "timestamp": 1795388046986,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.9267587661743164,
+            "centerX": 413.5260925292969,
+            "centerY": 213.77183532714844,
+            "x1": 318.56646728515625,
+            "y1": 96.06289672851562,
+            "x2": 508.4857177734375,
+            "y2": 331.48077392578125,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              318.56646728515625,
+              96.06289672851562,
+              508.4857177734375,
+              331.48077392578125
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 51,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9267587661743164,
+          "xyxy_normalized": [
+            0.49776010513305663,
+            0.20013103485107422,
+            0.7945089340209961,
+            0.690584945678711
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.7633015243507799,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-052",
+      "duration_ms": 109.11,
+      "source_sha256": "3fbf2d47209c27eaeab8c7ff0676af3e0c6194331a4a4718df79280c4a842bd8",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8289193511009216,
+          "xyxy_normalized": [
+            0.48238134384155273,
+            0.21815822919209799,
+            0.7773144721984864,
+            0.6819426218668619
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 5,
+        "timestamp": 1795388047091,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.8289193511009216,
+            "centerX": 403.1026611328125,
+            "centerY": 216.0242042541504,
+            "x1": 308.72406005859375,
+            "y1": 104.71595001220703,
+            "x2": 497.48126220703125,
+            "y2": 327.33245849609375,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              308.72406005859375,
+              104.71595001220703,
+              497.48126220703125,
+              327.33245849609375
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 52,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8289193511009216,
+          "xyxy_normalized": [
+            0.48238134384155273,
+            0.21815822919209799,
+            0.7773144721984864,
+            0.6819426218668619
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.8471698008804736,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-053",
+      "duration_ms": 105.97,
+      "source_sha256": "b9d7c122da8d5f9e0d0b6b72ded1b976928788fba3d45c6999a7ba9943b47194",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8996492028236389,
+          "xyxy_normalized": [
+            0.4447793960571289,
+            0.22761306762695313,
+            0.7492197036743165,
+            0.6722467422485352
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 6,
+        "timestamp": 1795388047200,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.8996492028236389,
+            "centerX": 382.0797119140625,
+            "centerY": 215.9663543701172,
+            "x1": 284.6588134765625,
+            "y1": 109.2542724609375,
+            "x2": 479.5006103515625,
+            "y2": 322.6784362792969,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              284.6588134765625,
+              109.2542724609375,
+              479.5006103515625,
+              322.6784362792969
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 53,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8996492028236389,
+          "xyxy_normalized": [
+            0.4447793960571289,
+            0.22761306762695313,
+            0.7492197036743165,
+            0.6722467422485352
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.7056738320478128,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-054",
+      "duration_ms": 104.96,
+      "source_sha256": "de1e1a9ed29d28190d59476b91ba44c360c0fb75ae124fd1163a3dce31a5c750",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.959945559501648,
+          "xyxy_normalized": [
+            0.4419888496398926,
+            0.23173109690348306,
+            0.7393304824829101,
+            0.652690569559733
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 7,
+        "timestamp": 1795388047307,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.959945559501648,
+            "centerX": 378.0221862792969,
+            "centerY": 212.26119995117188,
+            "x1": 282.87286376953125,
+            "y1": 111.23092651367188,
+            "x2": 473.1715087890625,
+            "y2": 313.2914733886719,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              282.87286376953125,
+              111.23092651367188,
+              473.1715087890625,
+              313.2914733886719
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 54,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.959945559501648,
+          "xyxy_normalized": [
+            0.4419888496398926,
+            0.23173109690348306,
+            0.7393304824829101,
+            0.652690569559733
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.675482622436855,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-055",
+      "duration_ms": 105.17,
+      "source_sha256": "c4e3d6eb86bffa017731294de9896991d5aee29bc2c82e5f0c120787bdf9a5a0",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8478816747665405,
+          "xyxy_normalized": [
+            0.411225700378418,
+            0.17453880310058595,
+            0.7256682395935059,
+            0.6003464380900065
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 8,
+        "timestamp": 1795388047413,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.8478816747665405,
+            "centerX": 363.8060607910156,
+            "centerY": 185.9724578857422,
+            "x1": 263.1844482421875,
+            "y1": 83.77862548828125,
+            "x2": 464.42767333984375,
+            "y2": 288.1662902832031,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              263.1844482421875,
+              83.77862548828125,
+              464.42767333984375,
+              288.1662902832031
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 55,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8478816747665405,
+          "xyxy_normalized": [
+            0.411225700378418,
+            0.17453880310058595,
+            0.7256682395935059,
+            0.6003464380900065
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.7068505384689601,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-056",
+      "duration_ms": 105.9,
+      "source_sha256": "49fac5a0b8ffe4c4b82db7de13b80fd06b6e5430130d2835dc40938ca614fbb2",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9644567966461182,
+          "xyxy_normalized": [
+            0.38995933532714844,
+            0.15545825958251952,
+            0.7137810707092285,
+            0.5660678227742513
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 9,
+        "timestamp": 1795388047518,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.9644567966461182,
+            "centerX": 353.1969299316406,
+            "centerY": 173.166259765625,
+            "x1": 249.573974609375,
+            "y1": 74.61996459960938,
+            "x2": 456.81988525390625,
+            "y2": 271.7125549316406,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              249.573974609375,
+              74.61996459960938,
+              456.81988525390625,
+              271.7125549316406
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 56,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9644567966461182,
+          "xyxy_normalized": [
+            0.38995933532714844,
+            0.15545825958251952,
+            0.7137810707092285,
+            0.5660678227742513
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.8072457186689987,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-057",
+      "duration_ms": 106.1,
+      "source_sha256": "35a91456e963f6bf0e6365a55f6e26b05583f53bb3c720d1e92b90fdacce5dc3",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9720494747161865,
+          "xyxy_normalized": [
+            0.38031229972839353,
+            0.16708329518636067,
+            0.700049352645874,
+            0.569857660929362
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 10,
+        "timestamp": 1795388047625,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.9720494747161865,
+            "centerX": 345.7157287597656,
+            "centerY": 176.86582946777344,
+            "x1": 243.39987182617188,
+            "y1": 80.19998168945312,
+            "x2": 448.0315856933594,
+            "y2": 273.53167724609375,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              243.39987182617188,
+              80.19998168945312,
+              448.0315856933594,
+              273.53167724609375
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 57,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9720494747161865,
+          "xyxy_normalized": [
+            0.38031229972839353,
+            0.16708329518636067,
+            0.700049352645874,
+            0.569857660929362
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.870446561201423,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-058",
+      "duration_ms": 119.66,
+      "source_sha256": "c336e08a89d956db142569716ad575c5253fd4ce8fbdc733c4f3648c204fe832",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9547111988067627,
+          "xyxy_normalized": [
+            0.36927146911621095,
+            0.17734533945719402,
+            0.6845038414001465,
+            0.5626881917317709
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 11,
+        "timestamp": 1795388047731,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.9547111988067627,
+            "centerX": 337.2080993652344,
+            "centerY": 177.60804748535156,
+            "x1": 236.333740234375,
+            "y1": 85.12576293945312,
+            "x2": 438.08245849609375,
+            "y2": 270.09033203125,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              236.333740234375,
+              85.12576293945312,
+              438.08245849609375,
+              270.09033203125
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 58,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9547111988067627,
+          "xyxy_normalized": [
+            0.36927146911621095,
+            0.17734533945719402,
+            0.6845038414001465,
+            0.5626881917317709
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.837436618670879,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-059",
+      "duration_ms": 116.1,
+      "source_sha256": "7ba7cfdbd7c36a36b8677b8604628a7e5c32c49edd8798e057697f01e6c79969",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9670321941375732,
+          "xyxy_normalized": [
+            0.35008463859558103,
+            0.19263623555501302,
+            0.6643825054168702,
+            0.5781339645385742
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 12,
+        "timestamp": 1795388047851,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.9670321941375732,
+            "centerX": 324.6294860839844,
+            "centerY": 184.98484802246094,
+            "x1": 224.05416870117188,
+            "y1": 92.46539306640625,
+            "x2": 425.2048034667969,
+            "y2": 277.5043029785156,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              224.05416870117188,
+              92.46539306640625,
+              425.2048034667969,
+              277.5043029785156
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 59,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9670321941375732,
+          "xyxy_normalized": [
+            0.35008463859558103,
+            0.19263623555501302,
+            0.6643825054168702,
+            0.5781339645385742
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.8069527194614656,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-060",
+      "duration_ms": 102.5,
+      "source_sha256": "403f23cfe9e3d838abd0dbf66e1217351f925cae529ab024974d82b7b6cbf815",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9774027466773987,
+          "xyxy_normalized": [
+            0.35824830532073976,
+            0.19618568420410157,
+            0.6636932373046875,
+            0.575070571899414
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 13,
+        "timestamp": 1795388047968,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.9774027466773987,
+            "centerX": 327.0212936401367,
+            "centerY": 185.10150146484375,
+            "x1": 229.27891540527344,
+            "y1": 94.16912841796875,
+            "x2": 424.763671875,
+            "y2": 276.03387451171875,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              229.27891540527344,
+              94.16912841796875,
+              424.763671875,
+              276.03387451171875
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 60,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9774027466773987,
+          "xyxy_normalized": [
+            0.35824830532073976,
+            0.19618568420410157,
+            0.6636932373046875,
+            0.575070571899414
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.7900396800125639,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-061",
+      "duration_ms": 100.34,
+      "source_sha256": "37e5ad0e9aec102ff44f4a75cf20f68516cb93034033369754f5ff82c01cda5f",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.940626323223114,
+          "xyxy_normalized": [
+            0.3849336624145508,
+            0.1917897383371989,
+            0.692387866973877,
+            0.5770807902018229
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 14,
+        "timestamp": 1795388048071,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.940626323223114,
+            "centerX": 344.7428894042969,
+            "centerY": 184.52892684936523,
+            "x1": 246.3575439453125,
+            "y1": 92.05907440185547,
+            "x2": 443.12823486328125,
+            "y2": 276.998779296875,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              246.3575439453125,
+              92.05907440185547,
+              443.12823486328125,
+              276.998779296875
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 61,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.940626323223114,
+          "xyxy_normalized": [
+            0.3849336624145508,
+            0.1917897383371989,
+            0.692387866973877,
+            0.5770807902018229
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.7521850663571361,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-062",
+      "duration_ms": 104.67,
+      "source_sha256": "73c93e332a7b1460cc90e601e0773f9537d72faf4d735f37b28c87ce3fb1f8f5",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9840160608291626,
+          "xyxy_normalized": [
+            0.3951977014541626,
+            0.18440589904785157,
+            0.6978466033935546,
+            0.5812253952026367
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 15,
+        "timestamp": 1795388048172,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.9840160608291626,
+            "centerX": 349.77417755126953,
+            "centerY": 183.7515106201172,
+            "x1": 252.92652893066406,
+            "y1": 88.51483154296875,
+            "x2": 446.621826171875,
+            "y2": 278.9881896972656,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              252.92652893066406,
+              88.51483154296875,
+              446.621826171875,
+              278.9881896972656
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 62,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9840160608291626,
+          "xyxy_normalized": [
+            0.3951977014541626,
+            0.18440589904785157,
+            0.6978466033935546,
+            0.5812253952026367
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.7855091492979934,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-063",
+      "duration_ms": 104.38,
+      "source_sha256": "42cc0a44e73c8145d2bc1bb6fd710114d861edaacb571e56b688f2aaecd22cdf",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9448626637458801,
+          "xyxy_normalized": [
+            0.4007349967956543,
+            0.1790008544921875,
+            0.6966614723205566,
+            0.5811627705891927
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 16,
+        "timestamp": 1795388048277,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.9448626637458801,
+            "centerX": 351.1668701171875,
+            "centerY": 182.43927001953125,
+            "x1": 256.47039794921875,
+            "y1": 85.92041015625,
+            "x2": 445.86334228515625,
+            "y2": 278.9581298828125,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              256.47039794921875,
+              85.92041015625,
+              445.86334228515625,
+              278.9581298828125
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 63,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9448626637458801,
+          "xyxy_normalized": [
+            0.4007349967956543,
+            0.1790008544921875,
+            0.6966614723205566,
+            0.5811627705891927
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.7909820667425881,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-064",
+      "duration_ms": 105.98,
+      "source_sha256": "40a67227c2f577d09ae3f8fe66badd7ae5afb84669784398160536ebb00b6d09",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9609497785568237,
+          "xyxy_normalized": [
+            0.3626080513000488,
+            0.18034865061442057,
+            0.6318899154663086,
+            0.5682452519734701
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 17,
+        "timestamp": 1795388048382,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.9609497785568237,
+            "centerX": 318.2393493652344,
+            "centerY": 179.66253662109375,
+            "x1": 232.06915283203125,
+            "y1": 86.56735229492188,
+            "x2": 404.4095458984375,
+            "y2": 272.7577209472656,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              232.06915283203125,
+              86.56735229492188,
+              404.4095458984375,
+              272.7577209472656
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 64,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9609497785568237,
+          "xyxy_normalized": [
+            0.3626080513000488,
+            0.18034865061442057,
+            0.6318899154663086,
+            0.5682452519734701
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.7149759652122104,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-065",
+      "duration_ms": 106.66,
+      "source_sha256": "63aafdf3bab165995ce8969f328be721760b0642b7c8c27d15616923e749d11e",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9644731283187866,
+          "xyxy_normalized": [
+            0.2923286437988281,
+            0.188052241007487,
+            0.5386098861694336,
+            0.5606335957845052
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 18,
+        "timestamp": 1795388048488,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.9644731283187866,
+            "centerX": 265.90032958984375,
+            "centerY": 179.68460083007812,
+            "x1": 187.09033203125,
+            "y1": 90.26507568359375,
+            "x2": 344.7103271484375,
+            "y2": 269.1041259765625,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              187.09033203125,
+              90.26507568359375,
+              344.7103271484375,
+              269.1041259765625
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 65,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9644731283187866,
+          "xyxy_normalized": [
+            0.2923286437988281,
+            0.188052241007487,
+            0.5386098861694336,
+            0.5606335957845052
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.6023207314944485,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-066",
+      "duration_ms": 101.57,
+      "source_sha256": "60e33d38c18b71fd01928487c2f9cd1bf576ccab93cc2bafa79be8ec254beab7",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8005379438400269,
+          "xyxy_normalized": [
+            0.29407761096954343,
+            0.2038986365000407,
+            0.5266236305236817,
+            0.5496813456217448
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 19,
+        "timestamp": 1795388048596,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.8005379438400269,
+            "centerX": 262.62439727783203,
+            "centerY": 180.85919570922852,
+            "x1": 188.2096710205078,
+            "y1": 97.87134552001953,
+            "x2": 337.03912353515625,
+            "y2": 263.8470458984375,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              188.2096710205078,
+              97.87134552001953,
+              337.03912353515625,
+              263.8470458984375
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 66,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8005379438400269,
+          "xyxy_normalized": [
+            0.29407761096954343,
+            0.2038986365000407,
+            0.5266236305236817,
+            0.5496813456217448
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.5915160838589703,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-067",
+      "duration_ms": 105.19,
+      "source_sha256": "ffce0aaf78ca2942d86e60fc810e8907936ddcfcfc1c596e5db14a2aa32c6027",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8405070304870605,
+          "xyxy_normalized": [
+            0.34457352161407473,
+            0.21525160471598306,
+            0.5358401298522949,
+            0.537985102335612
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 20,
+        "timestamp": 1795388048697,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.8405070304870605,
+            "centerX": 281.7323684692383,
+            "centerY": 180.7768096923828,
+            "x1": 220.5270538330078,
+            "y1": 103.32077026367188,
+            "x2": 342.93768310546875,
+            "y2": 258.23284912109375,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              220.5270538330078,
+              103.32077026367188,
+              342.93768310546875,
+              258.23284912109375
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 67,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8405070304870605,
+          "xyxy_normalized": [
+            0.34457352161407473,
+            0.21525160471598306,
+            0.5358401298522949,
+            0.537985102335612
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.6128922125029768,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-068",
+      "duration_ms": 103.41,
+      "source_sha256": "fbfc6fbeff456685b961ae8b2300b36e7a872fe0f835049cd2afab3a8aa64fe5",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9302766919136047,
+          "xyxy_normalized": [
+            0.37911696434020997,
+            0.21811582247416178,
+            0.5500789165496827,
+            0.5373231887817382
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 21,
+        "timestamp": 1795388048803,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.9302766919136047,
+            "centerX": 297.3426818847656,
+            "centerY": 181.30536270141602,
+            "x1": 242.63485717773438,
+            "y1": 104.69559478759766,
+            "x2": 352.0505065917969,
+            "y2": 257.9151306152344,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              242.63485717773438,
+              104.69559478759766,
+              352.0505065917969,
+              257.9151306152344
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 68,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9302766919136047,
+          "xyxy_normalized": [
+            0.37911696434020997,
+            0.21811582247416178,
+            0.5500789165496827,
+            0.5373231887817382
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.7127812506591023,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-069",
+      "duration_ms": 104.04,
+      "source_sha256": "abc4c8b6a4949554669eeea47af8533fa8cbc49278c965ae93677f06f594e2aa",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9619952440261841,
+          "xyxy_normalized": [
+            0.397590708732605,
+            0.2142156918843587,
+            0.5559573173522949,
+            0.5328620592753093
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 22,
+        "timestamp": 1795388048908,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.9619952440261841,
+            "centerX": 305.13536834716797,
+            "centerY": 179.2986602783203,
+            "x1": 254.4580535888672,
+            "y1": 102.82353210449219,
+            "x2": 355.81268310546875,
+            "y2": 255.77378845214844,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              254.4580535888672,
+              102.82353210449219,
+              355.81268310546875,
+              255.77378845214844
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 69,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9619952440261841,
+          "xyxy_normalized": [
+            0.397590708732605,
+            0.2142156918843587,
+            0.5559573173522949,
+            0.5328620592753093
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.6827967127636511,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-070",
+      "duration_ms": 107.74,
+      "source_sha256": "124fdd722f5f294047d2632e32959e3c7ba57ed3a1a6110a21fcec2ed248ca84",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.5507605075836182,
+          "xyxy_normalized": [
+            0.4177848815917969,
+            0.21574511528015136,
+            0.5546069145202637,
+            0.5256101608276367
+          ],
+          "instance_id": "1ba600f5dffb:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 23,
+        "timestamp": 1795388049012,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.5507605075836182,
+            "centerX": 311.1653747558594,
+            "centerY": 177.92526626586914,
+            "x1": 267.38232421875,
+            "y1": 103.55765533447266,
+            "x2": 354.94842529296875,
+            "y2": 252.29287719726562,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              267.38232421875,
+              103.55765533447266,
+              354.94842529296875,
+              252.29287719726562
+            ],
+            "instance_id": "1ba600f5dffb:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 70,
+      "match_id": "1ba600f5dffb:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.5507605075836182,
+          "xyxy_normalized": [
+            0.4177848815917969,
+            0.21574511528015136,
+            0.5546069145202637,
+            0.5256101608276367
+          ],
+          "instance_id": "1ba600f5dffb:left:1",
+          "truth_iou": 0.7607572120872477,
+          "matched": true
+        }
+      ]
+    }
+  ],
+  "other_monos": [
+    {
+      "key": "mono-020",
+      "duration_ms": 279.84,
+      "source_sha256": "7e8f21e46f1129570b7fe0c0caf240d98ac85e2ce8bf10124f5484b69b62aa4a",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.48650020360946655,
+          "xyxy_normalized": [
+            0.2728085517883301,
+            0.3377428690592448,
+            0.5737037658691406,
+            0.7557613372802734
+          ],
+          "instance_id": "468a321dc21d:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 1,
+        "timestamp": 1795388049124,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.48650020360946655,
+            "centerX": 270.8839416503906,
+            "centerY": 262.4410095214844,
+            "x1": 174.59747314453125,
+            "y1": 162.1165771484375,
+            "x2": 367.17041015625,
+            "y2": 362.76544189453125,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              174.59747314453125,
+              162.1165771484375,
+              367.17041015625,
+              362.76544189453125
+            ],
+            "instance_id": "468a321dc21d:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 20,
+      "match_id": null,
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.48650020360946655,
+          "xyxy_normalized": [
+            0.2728085517883301,
+            0.3377428690592448,
+            0.5737037658691406,
+            0.7557613372802734
+          ],
+          "instance_id": "468a321dc21d:left:1",
+          "truth_iou": 0.7981397420520199,
+          "matched": false
+        }
+      ]
+    },
+    {
+      "key": "mono-022",
+      "duration_ms": 102.16,
+      "source_sha256": "a144eb8b270a9cf6936adc83cd2c82ea05e74331a4c98e8811d72db352ac7880",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8441106677055359,
+          "xyxy_normalized": [
+            0.25683908462524413,
+            0.223024050394694,
+            0.6277594566345215,
+            0.7189490636189778
+          ],
+          "instance_id": "468a321dc21d:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 2,
+        "timestamp": 1795388049404,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.8441106677055359,
+            "centerX": 283.071533203125,
+            "centerY": 226.07354736328125,
+            "x1": 164.37701416015625,
+            "y1": 107.05154418945312,
+            "x2": 401.76605224609375,
+            "y2": 345.0955505371094,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              164.37701416015625,
+              107.05154418945312,
+              401.76605224609375,
+              345.0955505371094
+            ],
+            "instance_id": "468a321dc21d:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 22,
+      "match_id": "468a321dc21d:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8441106677055359,
+          "xyxy_normalized": [
+            0.25683908462524413,
+            0.223024050394694,
+            0.6277594566345215,
+            0.7189490636189778
+          ],
+          "instance_id": "468a321dc21d:left:1",
+          "truth_iou": 0.896968852206237,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-029",
+      "duration_ms": 104.43,
+      "source_sha256": "003e38eaa2f800e377702439e1a38bb03aab0c1064a0bcf1d2a85585667ac48f",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.5210965871810913,
+          "xyxy_normalized": [
+            0.19310712814331055,
+            0.14397722880045574,
+            0.6925835609436035,
+            0.7320785522460938
+          ],
+          "instance_id": "468a321dc21d:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 3,
+        "timestamp": 1795388049507,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.5210965871810913,
+            "centerX": 283.4210205078125,
+            "centerY": 210.25338745117188,
+            "x1": 123.58856201171875,
+            "y1": 69.10906982421875,
+            "x2": 443.25347900390625,
+            "y2": 351.397705078125,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              123.58856201171875,
+              69.10906982421875,
+              443.25347900390625,
+              351.397705078125
+            ],
+            "instance_id": "468a321dc21d:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 29,
+      "match_id": "468a321dc21d:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.5210965871810913,
+          "xyxy_normalized": [
+            0.19310712814331055,
+            0.14397722880045574,
+            0.6925835609436035,
+            0.7320785522460938
+          ],
+          "instance_id": "468a321dc21d:left:1",
+          "truth_iou": 0.8913957360940988,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-031",
+      "duration_ms": 101.98,
+      "source_sha256": "36a530d23002f21625429e5ea75edebb25a346fb16b35cb344cffeb5d83f323d",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.6365073323249817,
+          "xyxy_normalized": [
+            0.19161009788513184,
+            0.17584279378255208,
+            0.6296811580657959,
+            0.7331251780192057
+          ],
+          "instance_id": "468a321dc21d:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 4,
+        "timestamp": 1795388049612,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.6365073323249817,
+            "centerX": 262.8132019042969,
+            "centerY": 218.15231323242188,
+            "x1": 122.63046264648438,
+            "y1": 84.404541015625,
+            "x2": 402.9959411621094,
+            "y2": 351.90008544921875,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              122.63046264648438,
+              84.404541015625,
+              402.9959411621094,
+              351.90008544921875
+            ],
+            "instance_id": "468a321dc21d:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 31,
+      "match_id": "468a321dc21d:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.6365073323249817,
+          "xyxy_normalized": [
+            0.19161009788513184,
+            0.17584279378255208,
+            0.6296811580657959,
+            0.7331251780192057
+          ],
+          "instance_id": "468a321dc21d:left:1",
+          "truth_iou": 0.9172763737270321,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-087",
+      "duration_ms": 97.98,
+      "source_sha256": "2b981719744b2547574bfefaf45f8f159012abf53bdd43167e10b9d91f3eb1ae",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.837296724319458,
+          "xyxy_normalized": [
+            0.2896988868713379,
+            0.14773120880126953,
+            0.5647581100463868,
+            0.49307785034179685
+          ],
+          "instance_id": "468a321dc21d:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 5,
+        "timestamp": 1795388049714,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.837296724319458,
+            "centerX": 273.4262390136719,
+            "centerY": 153.79417419433594,
+            "x1": 185.40728759765625,
+            "y1": 70.91098022460938,
+            "x2": 361.4451904296875,
+            "y2": 236.6773681640625,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              185.40728759765625,
+              70.91098022460938,
+              361.4451904296875,
+              236.6773681640625
+            ],
+            "instance_id": "468a321dc21d:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 87,
+      "match_id": "468a321dc21d:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.837296724319458,
+          "xyxy_normalized": [
+            0.2896988868713379,
+            0.14773120880126953,
+            0.5647581100463868,
+            0.49307785034179685
+          ],
+          "instance_id": "468a321dc21d:left:1",
+          "truth_iou": 0.9350502459329381,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-089",
+      "duration_ms": 101.19,
+      "source_sha256": "b998a84b66bb1ac04fad630692e8308eb56a0906f501b4161a8712fb3f481f13",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8225409984588623,
+          "xyxy_normalized": [
+            0.2782414436340332,
+            0.1702344258626302,
+            0.5379866600036621,
+            0.5053289413452149
+          ],
+          "instance_id": "468a321dc21d:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 6,
+        "timestamp": 1795388049813,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.8225409984588623,
+            "centerX": 261.1929931640625,
+            "centerY": 162.1352081298828,
+            "x1": 178.07452392578125,
+            "y1": 81.7125244140625,
+            "x2": 344.31146240234375,
+            "y2": 242.55789184570312,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              178.07452392578125,
+              81.7125244140625,
+              344.31146240234375,
+              242.55789184570312
+            ],
+            "instance_id": "468a321dc21d:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 89,
+      "match_id": "468a321dc21d:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8225409984588623,
+          "xyxy_normalized": [
+            0.2782414436340332,
+            0.1702344258626302,
+            0.5379866600036621,
+            0.5053289413452149
+          ],
+          "instance_id": "468a321dc21d:left:1",
+          "truth_iou": 0.8307816669855156,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "mono-120",
+      "duration_ms": 105.12,
+      "source_sha256": "120c80b094ec7a6dbfb0b909e771512ecca27946085050c0108d995acfaf134c",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.4791140854358673,
+          "xyxy_normalized": [
+            0.3780967712402344,
+            0.30626907348632815,
+            0.9022771835327148,
+            0.8676260630289714
+          ],
+          "instance_id": "468a321dc21d:left:2"
+        }
+      ],
+      "reply": {
+        "frame_id": 7,
+        "timestamp": 1795388049915,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.4791140854358673,
+            "centerX": 409.71966552734375,
+            "centerY": 281.7348327636719,
+            "x1": 241.98193359375,
+            "y1": 147.0091552734375,
+            "x2": 577.4573974609375,
+            "y2": 416.46051025390625,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              241.98193359375,
+              147.0091552734375,
+              577.4573974609375,
+              416.46051025390625
+            ],
+            "instance_id": "468a321dc21d:left:2",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 120,
+      "match_id": null,
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.4791140854358673,
+          "xyxy_normalized": [
+            0.3780967712402344,
+            0.30626907348632815,
+            0.9022771835327148,
+            0.8676260630289714
+          ],
+          "instance_id": "468a321dc21d:left:2",
+          "truth_iou": 0.8496374085202077,
+          "matched": false
+        }
+      ]
+    },
+    {
+      "key": "mono-140",
+      "duration_ms": 103.58,
+      "source_sha256": "052171d22b104bd2ddb1c231a7f158848a2dbcbfd4c8914c41d20fb563e67773",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.44647300243377686,
+          "xyxy_normalized": [
+            0.3235337257385254,
+            0.1308492660522461,
+            0.6139130592346191,
+            0.8682755788167318
+          ],
+          "instance_id": "468a321dc21d:left:3"
+        }
+      ],
+      "reply": {
+        "frame_id": 8,
+        "timestamp": 1795388050020,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.44647300243377686,
+            "centerX": 299.98297119140625,
+            "centerY": 239.7899627685547,
+            "x1": 207.06158447265625,
+            "y1": 62.807647705078125,
+            "x2": 392.90435791015625,
+            "y2": 416.77227783203125,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              207.06158447265625,
+              62.807647705078125,
+              392.90435791015625,
+              416.77227783203125
+            ],
+            "instance_id": "468a321dc21d:left:3",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 140,
+      "match_id": null,
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.44647300243377686,
+          "xyxy_normalized": [
+            0.3235337257385254,
+            0.1308492660522461,
+            0.6139130592346191,
+            0.8682755788167318
+          ],
+          "instance_id": "468a321dc21d:left:3",
+          "truth_iou": 0.827052422155944,
+          "matched": false
+        }
+      ]
+    },
+    {
+      "key": "mono-150",
+      "duration_ms": 105.96,
+      "source_sha256": "e9d186ac79a2fe092c959fa0bf763b6d9dfe813fd490016b31f47a81cd7182f5",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.850418746471405,
+          "xyxy_normalized": [
+            0.2626018762588501,
+            0.1323849360148112,
+            0.8873395919799805,
+            0.7866458892822266
+          ],
+          "instance_id": "468a321dc21d:left:4"
+        }
+      ],
+      "reply": {
+        "frame_id": 9,
+        "timestamp": 1795388050125,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.850418746471405,
+            "centerX": 367.9812698364258,
+            "centerY": 220.56739807128906,
+            "x1": 168.06520080566406,
+            "y1": 63.544769287109375,
+            "x2": 567.8973388671875,
+            "y2": 377.59002685546875,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              168.06520080566406,
+              63.544769287109375,
+              567.8973388671875,
+              377.59002685546875
+            ],
+            "instance_id": "468a321dc21d:left:4",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 150,
+      "match_id": "468a321dc21d:left:4",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.850418746471405,
+          "xyxy_normalized": [
+            0.2626018762588501,
+            0.1323849360148112,
+            0.8873395919799805,
+            0.7866458892822266
+          ],
+          "instance_id": "468a321dc21d:left:4",
+          "truth_iou": 0.9348923146574263,
+          "matched": true
+        }
+      ]
+    }
+  ],
+  "rectified": [
+    {
+      "key": "pair-020-022-left",
+      "duration_ms": 284.34,
+      "source_sha256": "ccb63b6e31d9eb06faef8006b8e4cd8b79987ed7d961efe0e3e913f761b8ed25",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.4551200866699219,
+          "xyxy_normalized": [
+            0.3080126762390137,
+            0.3277714411417643,
+            0.5162117004394531,
+            0.6521765391031901
+          ],
+          "instance_id": "f69fab0ab5e3:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 1,
+        "timestamp": 1795388050236,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.4551200866699219,
+            "centerX": 263.7518005371094,
+            "centerY": 235.18751525878906,
+            "x1": 197.12811279296875,
+            "y1": 157.33029174804688,
+            "x2": 330.37548828125,
+            "y2": 313.04473876953125,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              197.12811279296875,
+              157.33029174804688,
+              330.37548828125,
+              313.04473876953125
+            ],
+            "instance_id": "f69fab0ab5e3:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 20,
+      "match_id": null,
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.4551200866699219,
+          "xyxy_normalized": [
+            0.3080126762390137,
+            0.3277714411417643,
+            0.5162117004394531,
+            0.6521765391031901
+          ],
+          "instance_id": "f69fab0ab5e3:left:1",
+          "truth_iou": 0.8561042000008995,
+          "matched": false
+        }
+      ]
+    },
+    {
+      "key": "pair-020-022-right",
+      "duration_ms": 102.43,
+      "source_sha256": "39d5c6478b3072812426f3f97616e6be62e7678011057e8ba2d9508c59e24058",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9677015542984009,
+          "xyxy_normalized": [
+            0.17478066682815552,
+            0.3258246103922526,
+            0.42317924499511717,
+            0.653628921508789
+          ],
+          "instance_id": "f69fab0ab5e3:left:1"
+        }
+      ],
+      "reply": {
+        "frame_id": 2,
+        "timestamp": 1795388050520,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.9677015542984009,
+            "centerX": 191.34717178344727,
+            "centerY": 235.06884765625,
+            "x1": 111.85962677001953,
+            "y1": 156.39581298828125,
+            "x2": 270.834716796875,
+            "y2": 313.74188232421875,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              111.85962677001953,
+              156.39581298828125,
+              270.834716796875,
+              313.74188232421875
+            ],
+            "instance_id": "f69fab0ab5e3:left:1",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 22,
+      "match_id": "f69fab0ab5e3:left:1",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9677015542984009,
+          "xyxy_normalized": [
+            0.17478066682815552,
+            0.3258246103922526,
+            0.42317924499511717,
+            0.653628921508789
+          ],
+          "instance_id": "f69fab0ab5e3:left:1",
+          "truth_iou": 0.8459857121906287,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "pair-029-031-left",
+      "duration_ms": 107.66,
+      "source_sha256": "d25418566bf3139cabbb9a2f456056a00fdc9bdfe67838bbe08bff9c5d3684c9",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8811762928962708,
+          "xyxy_normalized": [
+            0.5011842727661133,
+            0.27881285349527996,
+            0.8215383529663086,
+            0.6433664957682291
+          ],
+          "instance_id": "f69fab0ab5e3:left:2"
+        }
+      ],
+      "reply": {
+        "frame_id": 3,
+        "timestamp": 1795388050623,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.8811762928962708,
+            "centerX": 423.271240234375,
+            "centerY": 221.3230438232422,
+            "x1": 320.7579345703125,
+            "y1": 133.83016967773438,
+            "x2": 525.7845458984375,
+            "y2": 308.81591796875,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              320.7579345703125,
+              133.83016967773438,
+              525.7845458984375,
+              308.81591796875
+            ],
+            "instance_id": "f69fab0ab5e3:left:2",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 29,
+      "match_id": "f69fab0ab5e3:left:2",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8811762928962708,
+          "xyxy_normalized": [
+            0.5011842727661133,
+            0.27881285349527996,
+            0.8215383529663086,
+            0.6433664957682291
+          ],
+          "instance_id": "f69fab0ab5e3:left:2",
+          "truth_iou": 0.87829844797354,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "pair-029-031-right",
+      "duration_ms": 108.39,
+      "source_sha256": "11169a398fb72fc74dc617fef080d812aaab3032985f15376941f2cc17960f91",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.876063346862793,
+          "xyxy_normalized": [
+            0.36695835590362547,
+            0.27807343800862633,
+            0.7057345390319825,
+            0.6456154505411784
+          ],
+          "instance_id": "f69fab0ab5e3:left:2"
+        }
+      ],
+      "reply": {
+        "frame_id": 4,
+        "timestamp": 1795388050731,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.876063346862793,
+            "centerX": 343.26172637939453,
+            "centerY": 221.68533325195312,
+            "x1": 234.8533477783203,
+            "y1": 133.47525024414062,
+            "x2": 451.67010498046875,
+            "y2": 309.8954162597656,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              234.8533477783203,
+              133.47525024414062,
+              451.67010498046875,
+              309.8954162597656
+            ],
+            "instance_id": "f69fab0ab5e3:left:2",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 31,
+      "match_id": "f69fab0ab5e3:left:2",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.876063346862793,
+          "xyxy_normalized": [
+            0.36695835590362547,
+            0.27807343800862633,
+            0.7057345390319825,
+            0.6456154505411784
+          ],
+          "instance_id": "f69fab0ab5e3:left:2",
+          "truth_iou": 0.8587205527247779,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "pair-057-059-left",
+      "duration_ms": 110.82,
+      "source_sha256": "430096f8147582c0481b888b10ca1cc13ea143a79e80a4de6ec67b7d8b7b8fee",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8931495547294617,
+          "xyxy_normalized": [
+            0.603113842010498,
+            0.27036431630452473,
+            0.8169157028198242,
+            0.5370459874471029
+          ],
+          "instance_id": "f69fab0ab5e3:left:3"
+        }
+      ],
+      "reply": {
+        "frame_id": 5,
+        "timestamp": 1795388050840,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.8931495547294617,
+            "centerX": 454.4094543457031,
+            "centerY": 193.77847290039062,
+            "x1": 385.99285888671875,
+            "y1": 129.77487182617188,
+            "x2": 522.8260498046875,
+            "y2": 257.7820739746094,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              385.99285888671875,
+              129.77487182617188,
+              522.8260498046875,
+              257.7820739746094
+            ],
+            "instance_id": "f69fab0ab5e3:left:3",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 57,
+      "match_id": "f69fab0ab5e3:left:3",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8931495547294617,
+          "xyxy_normalized": [
+            0.603113842010498,
+            0.27036431630452473,
+            0.8169157028198242,
+            0.5370459874471029
+          ],
+          "instance_id": "f69fab0ab5e3:left:3",
+          "truth_iou": 0.8693485174931591,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "pair-057-059-right",
+      "duration_ms": 100.97,
+      "source_sha256": "7d9f50a16bc44eb37b4215b7e8de4ba2e24e23a5ae64080ca33ab633e5c189bd",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9618808627128601,
+          "xyxy_normalized": [
+            0.49633636474609377,
+            0.2696244557698568,
+            0.727989387512207,
+            0.5377349853515625
+          ],
+          "instance_id": "f69fab0ab5e3:left:4"
+        }
+      ],
+      "reply": {
+        "frame_id": 6,
+        "timestamp": 1795388050952,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.9618808627128601,
+            "centerX": 391.78424072265625,
+            "centerY": 193.76626586914062,
+            "x1": 317.6552734375,
+            "y1": 129.41973876953125,
+            "x2": 465.9132080078125,
+            "y2": 258.11279296875,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              317.6552734375,
+              129.41973876953125,
+              465.9132080078125,
+              258.11279296875
+            ],
+            "instance_id": "f69fab0ab5e3:left:4",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 59,
+      "match_id": "f69fab0ab5e3:left:4",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9618808627128601,
+          "xyxy_normalized": [
+            0.49633636474609377,
+            0.2696244557698568,
+            0.727989387512207,
+            0.5377349853515625
+          ],
+          "instance_id": "f69fab0ab5e3:left:4",
+          "truth_iou": 0.7997890010530448,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "pair-062-065-left",
+      "duration_ms": 100.35,
+      "source_sha256": "177ab7de2fb59d5f4401d79eddec66510803ae49baf50a74d2f49abd560e31d2",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9307065606117249,
+          "xyxy_normalized": [
+            0.5238545417785645,
+            0.257188351949056,
+            0.7498574256896973,
+            0.5429779052734375
+          ],
+          "instance_id": "f69fab0ab5e3:left:4"
+        }
+      ],
+      "reply": {
+        "frame_id": 7,
+        "timestamp": 1795388051053,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.9307065606117249,
+            "centerX": 407.58782958984375,
+            "centerY": 192.03990173339844,
+            "x1": 335.26690673828125,
+            "y1": 123.45040893554688,
+            "x2": 479.90875244140625,
+            "y2": 260.62939453125,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              335.26690673828125,
+              123.45040893554688,
+              479.90875244140625,
+              260.62939453125
+            ],
+            "instance_id": "f69fab0ab5e3:left:4",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 62,
+      "match_id": "f69fab0ab5e3:left:4",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9307065606117249,
+          "xyxy_normalized": [
+            0.5238545417785645,
+            0.257188351949056,
+            0.7498574256896973,
+            0.5429779052734375
+          ],
+          "instance_id": "f69fab0ab5e3:left:4",
+          "truth_iou": 0.8843742943592842,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "pair-062-065-right",
+      "duration_ms": 102.81,
+      "source_sha256": "04c127bf6567efa28889744deb04ff1108dddc26cc1a243fae33dce1236c0e23",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9410116672515869,
+          "xyxy_normalized": [
+            0.36172008514404297,
+            0.25780118306477867,
+            0.5721595764160157,
+            0.5445645650227865
+          ],
+          "instance_id": "f69fab0ab5e3:left:2"
+        }
+      ],
+      "reply": {
+        "frame_id": 8,
+        "timestamp": 1795388051154,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.9410116672515869,
+            "centerX": 298.84149169921875,
+            "centerY": 192.56777954101562,
+            "x1": 231.5008544921875,
+            "y1": 123.74456787109375,
+            "x2": 366.18212890625,
+            "y2": 261.3909912109375,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              231.5008544921875,
+              123.74456787109375,
+              366.18212890625,
+              261.3909912109375
+            ],
+            "instance_id": "f69fab0ab5e3:left:2",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 65,
+      "match_id": "f69fab0ab5e3:left:2",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.9410116672515869,
+          "xyxy_normalized": [
+            0.36172008514404297,
+            0.25780118306477867,
+            0.5721595764160157,
+            0.5445645650227865
+          ],
+          "instance_id": "f69fab0ab5e3:left:2",
+          "truth_iou": 0.8469661784515586,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "pair-067-070-left",
+      "duration_ms": 105.67,
+      "source_sha256": "45680e37d095e4638991c5a931949c87d432eba9fe1830cc510effb411cf4bf6",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.6928173899650574,
+          "xyxy_normalized": [
+            0.4450181007385254,
+            0.3228557586669922,
+            0.566380786895752,
+            0.5193037668863932
+          ],
+          "instance_id": "f69fab0ab5e3:left:2"
+        }
+      ],
+      "reply": {
+        "frame_id": 9,
+        "timestamp": 1795388051257,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.6928173899650574,
+            "centerX": 323.64764404296875,
+            "centerY": 202.1182861328125,
+            "x1": 284.81158447265625,
+            "y1": 154.97076416015625,
+            "x2": 362.48370361328125,
+            "y2": 249.26580810546875,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              284.81158447265625,
+              154.97076416015625,
+              362.48370361328125,
+              249.26580810546875
+            ],
+            "instance_id": "f69fab0ab5e3:left:2",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 67,
+      "match_id": "f69fab0ab5e3:left:2",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.6928173899650574,
+          "xyxy_normalized": [
+            0.4450181007385254,
+            0.3228557586669922,
+            0.566380786895752,
+            0.5193037668863932
+          ],
+          "instance_id": "f69fab0ab5e3:left:2",
+          "truth_iou": 0.7566214760011141,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "pair-067-070-right",
+      "duration_ms": 113.66,
+      "source_sha256": "40aeb512f321912e39a650d054a0d936d62f91ed55ea4fecfbedb82bb35a3ab0",
+      "boxes": [],
+      "reply": {
+        "frame_id": 10,
+        "timestamp": 1795388051364,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 70,
+      "match_id": null,
+      "proposals": []
+    },
+    {
+      "key": "pair-087-089-left",
+      "duration_ms": 150.63,
+      "source_sha256": "504ece3215b22d34b285c030f9a9f8aebaca14ec2159c7f0842f3cb3f4b6330f",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8380103707313538,
+          "xyxy_normalized": [
+            0.3509955406188965,
+            0.2450557231903076,
+            0.5528342247009277,
+            0.5037473678588867
+          ],
+          "instance_id": "f69fab0ab5e3:left:2"
+        }
+      ],
+      "reply": {
+        "frame_id": 11,
+        "timestamp": 1795388051478,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.8380103707313538,
+            "centerX": 289.22552490234375,
+            "centerY": 179.71274185180664,
+            "x1": 224.63714599609375,
+            "y1": 117.62674713134766,
+            "x2": 353.81390380859375,
+            "y2": 241.79873657226562,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              224.63714599609375,
+              117.62674713134766,
+              353.81390380859375,
+              241.79873657226562
+            ],
+            "instance_id": "f69fab0ab5e3:left:2",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 87,
+      "match_id": "f69fab0ab5e3:left:2",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.8380103707313538,
+          "xyxy_normalized": [
+            0.3509955406188965,
+            0.2450557231903076,
+            0.5528342247009277,
+            0.5037473678588867
+          ],
+          "instance_id": "f69fab0ab5e3:left:2",
+          "truth_iou": 0.8454797857058457,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "key": "pair-087-089-right",
+      "duration_ms": 107.15,
+      "source_sha256": "85838f238bd68f30ee64e4f42e211de1cd1a0a3b579257e79eaf2b6315c81f6e",
+      "boxes": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.5858896970748901,
+          "xyxy_normalized": [
+            0.23672585487365722,
+            0.24859752655029296,
+            0.4342494487762451,
+            0.5046125411987304
+          ],
+          "instance_id": "f69fab0ab5e3:left:5"
+        }
+      ],
+      "reply": {
+        "frame_id": 12,
+        "timestamp": 1795388051629,
+        "width": 640,
+        "height": 480,
+        "scene": "statue",
+        "status": "OK",
+        "detections": [
+          {
+            "class": "BronzeBeast",
+            "class_id": 1,
+            "confidence": 0.5858896970748901,
+            "centerX": 214.71209716796875,
+            "centerY": 180.77041625976562,
+            "x1": 151.50454711914062,
+            "y1": 119.32681274414062,
+            "x2": 277.9196472167969,
+            "y2": 242.21401977539062,
+            "class_name": "BronzeBeast",
+            "bbox": [
+              151.50454711914062,
+              119.32681274414062,
+              277.9196472167969,
+              242.21401977539062
+            ],
+            "instance_id": "f69fab0ab5e3:left:5",
+            "track_scope": "session:left:temporal_iou",
+            "target_scene": "statue"
+          }
+        ],
+        "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+        "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+        "model_validation": "BRONZE_HORSE_TNT_RESEARCH_ONLY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+        "discovery_model_budget": 1,
+        "resident_model_limit": 2,
+        "pose_available": false,
+        "pose_model_ready": false
+      },
+      "original": 89,
+      "match_id": "f69fab0ab5e3:left:5",
+      "proposals": [
+        {
+          "class": "BronzeBeast",
+          "confidence": 0.5858896970748901,
+          "xyxy_normalized": [
+            0.23672585487365722,
+            0.24859752655029296,
+            0.4342494487762451,
+            0.5046125411987304
+          ],
+          "instance_id": "f69fab0ab5e3:left:5",
+          "truth_iou": 0.8529850076827747,
+          "matched": true
+        }
+      ]
+    }
+  ]
+}

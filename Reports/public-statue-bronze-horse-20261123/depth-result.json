@@ -1,0 +1,277 @@
+{
+  "source_commit": "aec1ff18c93e87046d357ab151d7ac08f050a28d",
+  "source_sha256": {
+    "receiver": "c6e8f3cd2979314fcbc0ec8057b777bbca9dae4c07e56a21389ca291ab73c24e",
+    "matcher": "7a2a18030a955834a828b0afcb1e2b9acff384a9afd1ecb0122af1e06e8fa51a",
+    "scene": "d0239d6f5a5fc529a7a2183309f690e56d1739aeafa2eb00b9d55ef5bad72082",
+    "camera_gray": "882e59194149ed89a3d1b4f3ab9e4fafbdbdc56d4d8a2bc2d449f2e4166b904d"
+  },
+  "capture_sha256": "53e2989d97b9fb9c8107186a8964c8c391964aa45c4672d260b9fc0217d6b960",
+  "picf_result_sha256": "eb5fdb60786a476e1f9832c45c0571bd894a7155ff91679977521d3bb5510e21",
+  "frozen_input_sha256": "e65300df7724e8e23fe44498337d28de756296d61c414d23a928057886918b70",
+  "worker_sha256": "dee1f8381eefe178f25e6916d2b58bd492c3cc601ffffb3dba666b635d132235",
+  "compiled_program_sha256": "af934538400119b647a988244f3e03e1e78b7401db0403cb7b16b02b687c9236",
+  "pairs": {
+    "pair-020-022": {
+      "gray_sha256": {
+        "left": "7445b3ef26ae95efc396daa095fc64037ba69e19a49ccf8d5db470ef7c28f72d",
+        "right": "1d855046e125d040c2131d15b634fc5a945576b4b999ed55a81eb29225568ce9"
+      },
+      "matched_detectors": {
+        "left": false,
+        "right": true
+      },
+      "reference_core_disparity_px": 83.1471247352673,
+      "reference_core_depth_over_baseline": 3.0249288244999355,
+      "outcomes": {
+        "reviewed_box_control": {
+          "patch_gate": true,
+          "accepted_samples": 5,
+          "confidence": 0.120181404,
+          "disparity_px": 81.673225,
+          "depth_over_baseline": 3.0772408995227294,
+          "difference_from_core_median_disparity_px": -1.4738997352672953
+        },
+        "reviewed_box_control_reverse": {
+          "patch_gate": true,
+          "accepted_samples": 5,
+          "confidence": 0.120181404,
+          "disparity_px": 82.98889,
+          "depth_over_baseline": 3.0284558374732122,
+          "difference_from_core_median_disparity_px": -0.1582347352672997
+        }
+      }
+    },
+    "pair-029-031": {
+      "gray_sha256": {
+        "left": "2f24e81421b6c4895037f26833f0500660671c7e1e9a43e8e863aa50f2846782",
+        "right": "f3b1540e31bfeaa8a46b9aec12f3b27c69eaf4d1de01716e02cc15fe25b9f11d"
+      },
+      "matched_detectors": {
+        "left": true,
+        "right": true
+      },
+      "reference_core_disparity_px": 84.26733030625536,
+      "reference_core_depth_over_baseline": 2.780556486843213,
+      "outcomes": {
+        "reviewed_box_control": {
+          "patch_gate": false,
+          "accepted_samples": 2,
+          "confidence": 0,
+          "disparity_px": 0,
+          "depth_over_baseline": null,
+          "difference_from_core_median_disparity_px": null
+        },
+        "reviewed_box_control_reverse": {
+          "patch_gate": false,
+          "accepted_samples": 0,
+          "confidence": 0,
+          "disparity_px": 0,
+          "depth_over_baseline": null,
+          "difference_from_core_median_disparity_px": null
+        },
+        "picf_match": {
+          "patch_gate": false,
+          "accepted_samples": 3,
+          "confidence": 0.20970696,
+          "disparity_px": 96.20408,
+          "depth_over_baseline": 2.4215708157180016,
+          "difference_from_core_median_disparity_px": 11.936749693744645
+        },
+        "picf_match_reverse": {
+          "patch_gate": false,
+          "accepted_samples": 0,
+          "confidence": 0,
+          "disparity_px": 0,
+          "depth_over_baseline": null,
+          "difference_from_core_median_disparity_px": null
+        }
+      }
+    },
+    "pair-057-059": {
+      "gray_sha256": {
+        "left": "1698c2e1068f2ef76187309d6d1694c539aba4c70ec6b88690e7a088cd1ce875",
+        "right": "c0075dd3b16c0c73d54aecf3590a8d8574f193224d6ced9d27cce04acb5411f6"
+      },
+      "matched_detectors": {
+        "left": true,
+        "right": true
+      },
+      "reference_core_disparity_px": 60.79660246309504,
+      "reference_core_depth_over_baseline": 4.1301445518063,
+      "outcomes": {
+        "reviewed_box_control": {
+          "patch_gate": true,
+          "accepted_samples": 7,
+          "confidence": 0.41805556,
+          "disparity_px": 64.83945,
+          "depth_over_baseline": 3.878091117637285,
+          "difference_from_core_median_disparity_px": 4.042847536904958
+        },
+        "reviewed_box_control_reverse": {
+          "patch_gate": true,
+          "accepted_samples": 7,
+          "confidence": 0.41805556,
+          "disparity_px": 64.83945,
+          "depth_over_baseline": 3.878091117637285,
+          "difference_from_core_median_disparity_px": 4.042847536904958
+        },
+        "picf_match": {
+          "patch_gate": true,
+          "accepted_samples": 6,
+          "confidence": 0.37415862,
+          "disparity_px": 64.34788,
+          "depth_over_baseline": 3.9077168527927704,
+          "difference_from_core_median_disparity_px": 3.551277536904962
+        },
+        "picf_match_reverse": {
+          "patch_gate": false,
+          "accepted_samples": 4,
+          "confidence": 0.49279743,
+          "disparity_px": 64.86744,
+          "depth_over_baseline": 3.8764177392770067,
+          "difference_from_core_median_disparity_px": 4.0708375369049605
+        }
+      }
+    },
+    "pair-062-065": {
+      "gray_sha256": {
+        "left": "c4f1058aa97adcae5626edade64ec96f30b32c5de87dcefacd6d02539d72f741",
+        "right": "167ae82657098678a22735bb0d0d0f046a33585433385699f05b1557e461f2d7"
+      },
+      "matched_detectors": {
+        "left": true,
+        "right": true
+      },
+      "reference_core_disparity_px": 109.16587883167385,
+      "reference_core_depth_over_baseline": 2.5894125780001263,
+      "outcomes": {
+        "reviewed_box_control": {
+          "patch_gate": true,
+          "accepted_samples": 6,
+          "confidence": 0.12896636,
+          "disparity_px": 112.18834,
+          "depth_over_baseline": 2.5193847381914574,
+          "difference_from_core_median_disparity_px": 3.0224611683261458
+        },
+        "reviewed_box_control_reverse": {
+          "patch_gate": false,
+          "accepted_samples": 2,
+          "confidence": 0,
+          "disparity_px": 0,
+          "depth_over_baseline": null,
+          "difference_from_core_median_disparity_px": null
+        },
+        "picf_match": {
+          "patch_gate": true,
+          "accepted_samples": 7,
+          "confidence": 0.12135922,
+          "disparity_px": 113.01773,
+          "depth_over_baseline": 2.500896024004678,
+          "difference_from_core_median_disparity_px": 3.8518511683261494
+        },
+        "picf_match_reverse": {
+          "patch_gate": true,
+          "accepted_samples": 6,
+          "confidence": 0.14064367,
+          "disparity_px": 113.17911,
+          "depth_over_baseline": 2.497330042611523,
+          "difference_from_core_median_disparity_px": 4.0132311683261435
+        }
+      }
+    },
+    "pair-067-070": {
+      "gray_sha256": {
+        "left": "a3189bfc4897630def76e4785728508c851123a3d48b012952f4203354fe023f",
+        "right": "bce6d2e953b13ffe8d4cea72404c74469e21d3e328e1169bdd40f2bd9bf801e7"
+      },
+      "matched_detectors": {
+        "left": true,
+        "right": false
+      },
+      "reference_core_disparity_px": 91.37098752607179,
+      "reference_core_depth_over_baseline": 2.580814826152846,
+      "outcomes": {
+        "reviewed_box_control": {
+          "patch_gate": true,
+          "accepted_samples": 5,
+          "confidence": 0.044733044,
+          "disparity_px": 92.63525,
+          "depth_over_baseline": 2.5506775007192966,
+          "difference_from_core_median_disparity_px": 1.2642624739282127
+        },
+        "reviewed_box_control_reverse": {
+          "patch_gate": false,
+          "accepted_samples": 0,
+          "confidence": 0,
+          "disparity_px": 0,
+          "depth_over_baseline": null,
+          "difference_from_core_median_disparity_px": null
+        },
+        "picf_match": {
+          "patch_gate": false,
+          "accepted_samples": 4,
+          "confidence": 0.23008016,
+          "disparity_px": 83.467926,
+          "depth_over_baseline": 2.83081968453975,
+          "difference_from_core_median_disparity_px": -7.903061526071781
+        },
+        "picf_match_reverse": {
+          "patch_gate": false,
+          "accepted_samples": 2,
+          "confidence": 0,
+          "disparity_px": 0,
+          "depth_over_baseline": null,
+          "difference_from_core_median_disparity_px": null
+        }
+      }
+    },
+    "pair-087-089": {
+      "gray_sha256": {
+        "left": "66be201fba72e79ef226950adf99c9f9e1068d89a51a0637fe62bf787ebfd1a9",
+        "right": "0b21e54e00c2c5ef20e4f6d3e90b8fa9634ea01fa0d9970c404b6e756c803438"
+      },
+      "matched_detectors": {
+        "left": true,
+        "right": true
+      },
+      "reference_core_disparity_px": 80.22671641786592,
+      "reference_core_depth_over_baseline": 3.561702744575534,
+      "outcomes": {
+        "reviewed_box_control": {
+          "patch_gate": true,
+          "accepted_samples": 5,
+          "confidence": 0.0929432,
+          "disparity_px": 80.829414,
+          "depth_over_baseline": 3.5324100487359265,
+          "difference_from_core_median_disparity_px": 0.6026975821340841
+        },
+        "reviewed_box_control_reverse": {
+          "patch_gate": false,
+          "accepted_samples": 2,
+          "confidence": 0,
+          "disparity_px": 0,
+          "depth_over_baseline": null,
+          "difference_from_core_median_disparity_px": null
+        },
+        "picf_match": {
+          "patch_gate": true,
+          "accepted_samples": 5,
+          "confidence": 0.24444444,
+          "disparity_px": 78.218155,
+          "depth_over_baseline": 3.650337114791782,
+          "difference_from_core_median_disparity_px": -2.00856141786592
+        },
+        "picf_match_reverse": {
+          "patch_gate": false,
+          "accepted_samples": 4,
+          "confidence": 0.30674604,
+          "disparity_px": 78.98175,
+          "depth_over_baseline": 3.6150456814015435,
+          "difference_from_core_median_disparity_px": -1.2449664178659106
+        }
+      }
+    }
+  },
+  "scope": "Original C# matching with a unit baseline. Compare disparity and texture gates, no metre-scale result."
+}
