@@ -38,7 +38,7 @@ import struct
 import subprocess
 import threading
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 
 import cv2
@@ -47,8 +47,11 @@ import torch
 from ultralytics import YOLO
 from pose_availability import PoseAvailability
 from detector_config import WEIGHTS_PATH, DEFAULT_CONF, DEFAULT_IMGSZ, DEFAULT_IOU, load_detector
+from scene_protocol import read_packet, InstanceTracker
+from scene_router import SceneRouter
 
 POSE_AVAILABILITY = PoseAvailability()
+PROFILE_CONFIG = Path(__file__).with_name('scene_profiles.json')
 
 HOST = "0.0.0.0"
 PORT = 5005
@@ -79,6 +82,7 @@ class DecodedFrame:
   width: int
   height: int
   image: np.ndarray
+  scene: str | None = None
 
 
 class LatestFrameBuffer:
@@ -370,24 +374,10 @@ def read_exact(conn: socket.socket, n: int) -> bytes:
   return bytes(buf)
 
 
-def read_pico_frame(conn: socket.socket) -> tuple[int, int, int, int, bytes]:
+def read_pico_frame(conn: socket.socket, *, include_scene=False):
   """Returns frame_id, timestamp_ms, width, height, jpeg_bytes."""
-  magic = read_exact(conn, 4)
-  if magic != MAGIC:
-    raise ValueError(f"bad magic {magic!r}; expected {MAGIC!r}")
-
-  version = read_exact(conn, 1)[0]
-  if version != VERSION:
-    raise ValueError(f"unsupported protocol version {version}")
-
-  frame_id, timestamp, width, height, jpeg_len = struct.unpack(
-    "<IqIII", read_exact(conn, 4 + 8 + 4 + 4 + 4)
-  )
-  if jpeg_len <= 0 or jpeg_len > 20_000_000:
-    raise ValueError(f"invalid jpeg_len={jpeg_len}")
-
-  jpeg = read_exact(conn, jpeg_len)
-  return frame_id, timestamp, width, height, jpeg
+  packet = read_packet(lambda count: read_exact(conn, count))
+  return packet if include_scene else packet[:5]
 
 
 def detections_from_result(result) -> list[dict]:
@@ -406,6 +396,7 @@ def detections_from_result(result) -> list[dict]:
     payloads.append(
       {
         "class": label,
+        "class_id": cls_id,
         "confidence": conf,
         "centerX": (x1 + x2) * 0.5,
         "centerY": (y1 + y2) * 0.5,
@@ -457,7 +448,7 @@ def receiver_loop(
   try:
     while not stop_event.is_set():
       t_recv0 = time.perf_counter()
-      frame_id, timestamp, hdr_w, hdr_h, jpeg = read_pico_frame(conn)
+      frame_id, timestamp, hdr_w, hdr_h, jpeg, scene = read_pico_frame(conn, include_scene=True)
       recv_ms = (time.perf_counter() - t_recv0) * 1000.0
       perf.record_recv(recv_ms)
 
@@ -467,6 +458,7 @@ def receiver_loop(
       perf.record_decode(decode_ms)
       if decoded is None:
         continue
+      decoded = replace(decoded, scene=scene)
 
       dropped_before = buffer.dropped_frames
       buffer.publish(decoded)
@@ -490,6 +482,7 @@ def run_yolo_predict(
   image: np.ndarray,
   resolved_device: str,
   config: InferenceConfig,
+  classes=None,
 ):
   use_half = config.half and resolved_device != "cpu"
   predict_kwargs: dict = {
@@ -503,6 +496,8 @@ def run_yolo_predict(
   }
   if use_half:
     predict_kwargs["half"] = True
+  if classes is not None:
+    predict_kwargs['classes'] = classes
   with torch.inference_mode():
     return model.predict(**predict_kwargs)
 
@@ -527,6 +522,8 @@ def inference_loop(
   config: InferenceConfig,
 ) -> None:
   last_generation = 0
+  router = None
+  lighter_tracks = InstanceTracker()
   try:
     while not stop_event.is_set():
       frame, generation = buffer.wait_for_newer(last_generation, stop_event)
@@ -536,10 +533,17 @@ def inference_loop(
       t_total0 = time.perf_counter()
 
       t_infer0 = time.perf_counter()
-      results = run_yolo_predict(model, frame.image, resolved_device, config)
+      routed_payload = None
+      if frame.scene not in (None, 'lighter'):
+        if router is None:
+          router = SceneRouter(model, WEIGHTS_PATH, PROFILE_CONFIG, run_yolo_predict, detections_from_result, config, resolved_device)
+        routed_payload, result = router.infer(frame)
+      else:
+        result = run_yolo_predict(model, frame.image, resolved_device, config)[0]
       total_inference_ms = (time.perf_counter() - t_infer0) * 1000.0
-      record_yolo_speed(perf, results[0], total_inference_ms)
-      perf.record_inference_done()
+      if result is not None:
+        record_yolo_speed(perf, result, total_inference_ms)
+        perf.record_inference_done()
 
       if buffer.generation() != generation:
         perf.record_stale_skip()
@@ -549,16 +553,20 @@ def inference_loop(
         perf.maybe_flush()
         continue
 
-      result = results[0]
-      detections = detections_from_result(result)
+      if routed_payload is None:
+        detections = lighter_tracks.assign(detections_from_result(result), frame.frame_id, time.monotonic())
+        for detection in detections:
+          detection.update(class_name=detection['class'], target_scene='lighter',
+                           bbox=[detection[k] for k in ('x1','y1','x2','y2')])
+        routed_payload = dict(scene='lighter', status='OK', detections=detections,
+                              weights=str(WEIGHTS_PATH), model_validation='MAIN_BASELINE', **POSE_AVAILABILITY.snapshot())
 
       payload = {
         "frame_id": frame.frame_id,
         "timestamp": frame.timestamp,
         "width": frame.width,
         "height": frame.height,
-        "detections": detections,
-        **POSE_AVAILABILITY.snapshot(),
+        **routed_payload,
       }
 
       t_json0 = time.perf_counter()
@@ -580,7 +588,7 @@ def inference_loop(
       last_generation = generation
       perf.maybe_flush()
 
-      if not headless:
+      if not headless and result is not None:
         annotated = result.plot()
         cv2.imshow("YOLO Debug (PICO Camera)", annotated)
         if cv2.waitKey(1) & 0xFF == ord("q"):
@@ -632,6 +640,8 @@ def serve_client(conn, model, resolved_device, config, headless):
 
 def parse_args() -> argparse.Namespace:
   parser = argparse.ArgumentParser(description="PICO PICF JPEG -> YOLO TCP bridge")
+  parser.add_argument("--profiles", type=Path, default=PROFILE_CONFIG,
+    help="Local v2 scene profile configuration; missing weights never trigger downloads")
   parser.add_argument("--host", default=HOST, help="Listener address; use 127.0.0.1 for local ADB forwarding")
   parser.add_argument(
     "--headless",
@@ -676,7 +686,9 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
+  global PROFILE_CONFIG
   args = parse_args()
+  PROFILE_CONFIG = args.profiles.resolve()
   headless = args.headless
   config = InferenceConfig(
     device=args.device,

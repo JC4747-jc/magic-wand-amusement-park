@@ -1,0 +1,407 @@
+{
+  "checkedAtUtc": "2026-11-22T17:10:38.031534+00:00",
+  "phase": "PASS",
+  "branch": "0e95cba667516cbeed3380ed2788d12d92b28779",
+  "knownIntegrationSource": "312fc0d5495a7cbfb5cd6c58da471078ecf78a77",
+  "inputs": {
+    "object-detection-demo/tcp_server.py": "10607c9a6a03bfb4e8875b3107f85608e382b90415e232dace093b2bf678acdd",
+    "object-detection-demo/detector_config.py": "b047405f41cd10523d6e51ab25ee8a1673a8219de8ce4ece7a684277b2f5640b",
+    "object-detection-demo/pose_availability.py": "10eef6f52a4ae9afca8b16e51be2179b83c0a30d1b498ac98cd969d0129367ee",
+    "object-detection-demo/scene_protocol.py": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038",
+    "object-detection-demo/scene_router.py": "c8d4b39bd7d7e4896d5cb58a2dded67cfb614c3fd6963b9660d6defd29111cc8",
+    "object-detection-demo/scene_profiles.json": "4c3a776c4133c60ff9be810630c1aa7002775230f98a03bb3fdfa020d78f8781",
+    "object-detection-demo/discovery.py": "f17f4b4525e969ae6dc22523d5a520207280106ebd61dc103b880fee52f88747",
+    "object-detection-demo/model_artifact.py": "521b330e8b38ee6a93fe6475e168d8dc90aa9a6bcad035db8d17e07ee1060cab",
+    "object-detection-demo/requirements.txt": "8d891755a4346b81eb10b6a38076dfaacc44c1be80dfc4bf0d45af2101f2ebf7",
+    "object-detection-demo/yolov8n.pt": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+    "object-detection-demo/weights/best_yolo26n_assgn2_v6_50e.pt": "999bca4f5bf96aeed3ac0f1047e31530e4eb4584873c85dd5bd00031fc71fb3a"
+  },
+  "replies": [
+    {
+      "version": 1,
+      "scene": "lighter",
+      "photoSha256": "5327967ba3554b2ee3bb3c4f5c0882ded3c152e41992fb5e38f945db08ba00af",
+      "frame": 1,
+      "timestamp": 1795367005080,
+      "status": "OK",
+      "modelSha256": null,
+      "detections": [
+        {
+          "className": "Lighter",
+          "target": "lighter",
+          "bbox": [
+            830.1046142578125,
+            1168.5399169921875,
+            915.82177734375,
+            1210.5369873046875
+          ],
+          "confidence": 0.8512521386146545,
+          "id": "e0b94c516ae0:left:1"
+        }
+      ],
+      "roundtripMs": 94.0
+    },
+    {
+      "version": 1,
+      "scene": "lighter",
+      "photoSha256": "f5ecea0fd73d57a3a829ac6658d9abcd5adb8eb6e9cdeb3c154f4cb4646852a3",
+      "frame": 2,
+      "timestamp": 1795367005160,
+      "status": "OK",
+      "modelSha256": null,
+      "detections": [
+        {
+          "className": "Lighter",
+          "target": "lighter",
+          "bbox": [
+            884.3031005859375,
+            1120.6451416015625,
+            961.2484130859375,
+            1191.325927734375
+          ],
+          "confidence": 0.9020161032676697,
+          "id": "e0b94c516ae0:left:2"
+        }
+      ],
+      "roundtripMs": 47.0
+    },
+    {
+      "version": 1,
+      "scene": "lighter",
+      "photoSha256": "730b915cbd000da9bcba9b2298dd6b1f06f98d1716be8f72dbb7ae66b42ac06b",
+      "frame": 3,
+      "timestamp": 1795367005240,
+      "status": "OK",
+      "modelSha256": null,
+      "detections": [
+        {
+          "className": "Lighter",
+          "target": "lighter",
+          "bbox": [
+            861.863525390625,
+            994.9290771484375,
+            912.087158203125,
+            1271.5684814453125
+          ],
+          "confidence": 0.8845168948173523,
+          "id": "e0b94c516ae0:left:3"
+        }
+      ],
+      "roundtripMs": 47.0
+    },
+    {
+      "version": 1,
+      "scene": "lighter",
+      "photoSha256": "a70d701c096c609203990c29d1cc52dcc07ac5f16c194d2b0ff36f54642ccdb4",
+      "frame": 4,
+      "timestamp": 1795367005320,
+      "status": "OK",
+      "modelSha256": null,
+      "detections": [
+        {
+          "className": "Lighter",
+          "target": "lighter",
+          "bbox": [
+            872.1099243164062,
+            1098.205078125,
+            942.375732421875,
+            1132.2198486328125
+          ],
+          "confidence": 0.8262131214141846,
+          "id": "e0b94c516ae0:left:4"
+        }
+      ],
+      "roundtripMs": 47.0
+    },
+    {
+      "version": 1,
+      "scene": "lighter",
+      "photoSha256": "d12fa1b1ef7bbe6303903d019f6ccf0279f15a10df65f6eccb20db2a04259cc8",
+      "frame": 5,
+      "timestamp": 1795367005400,
+      "status": "OK",
+      "modelSha256": null,
+      "detections": [
+        {
+          "className": "Lighter",
+          "target": "lighter",
+          "bbox": [
+            888.3549194335938,
+            1040.524658203125,
+            925.1990356445312,
+            1129.008544921875
+          ],
+          "confidence": 0.5056791305541992,
+          "id": "e0b94c516ae0:left:4"
+        }
+      ],
+      "roundtripMs": 47.0
+    },
+    {
+      "version": 2,
+      "scene": "lighter",
+      "photoSha256": "5327967ba3554b2ee3bb3c4f5c0882ded3c152e41992fb5e38f945db08ba00af",
+      "frame": 6,
+      "timestamp": 1795367005480,
+      "status": "OK",
+      "modelSha256": null,
+      "detections": [
+        {
+          "className": "Lighter",
+          "target": "lighter",
+          "bbox": [
+            830.1046142578125,
+            1168.5399169921875,
+            915.82177734375,
+            1210.5369873046875
+          ],
+          "confidence": 0.8512521386146545,
+          "id": "e0b94c516ae0:left:1"
+        }
+      ],
+      "roundtripMs": 62.0
+    },
+    {
+      "version": 2,
+      "scene": "room",
+      "photoSha256": "53c6fb4bda1c757c90610ff889ec3f0f582bce835b4eb578e24fad08350da694",
+      "frame": 7,
+      "timestamp": 1795367005560,
+      "status": "OK",
+      "modelSha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "detections": [
+        {
+          "className": "chair",
+          "target": "room",
+          "bbox": [
+            376.476318359375,
+            257.7647705078125,
+            477.2613525390625,
+            351.3028564453125
+          ],
+          "confidence": 0.7064086198806763,
+          "id": "b78204839d4c:left:1"
+        }
+      ],
+      "roundtripMs": 109.0
+    },
+    {
+      "version": 2,
+      "scene": "room",
+      "photoSha256": "53c6fb4bda1c757c90610ff889ec3f0f582bce835b4eb578e24fad08350da694",
+      "frame": 8,
+      "timestamp": 1795367005640,
+      "status": "OK",
+      "modelSha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "detections": [
+        {
+          "className": "chair",
+          "target": "room",
+          "bbox": [
+            376.476318359375,
+            257.7647705078125,
+            477.2613525390625,
+            351.3028564453125
+          ],
+          "confidence": 0.7064086198806763,
+          "id": "b78204839d4c:left:1"
+        }
+      ],
+      "roundtripMs": 32.0
+    },
+    {
+      "version": 2,
+      "scene": "plant",
+      "photoSha256": "f3d27b92c7bab68a505f9e3864310001e0624bc5da53e72b3cbbd7ab6b414f78",
+      "frame": 9,
+      "timestamp": 1795367005720,
+      "status": "OK",
+      "modelSha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "detections": [
+        {
+          "className": "PottedPlant",
+          "target": "plant",
+          "bbox": [
+            306.84307861328125,
+            200.9783935546875,
+            390.8677978515625,
+            275.85638427734375
+          ],
+          "confidence": 0.44834133982658386,
+          "id": "6e1a116931b1:left:1"
+        }
+      ],
+      "roundtripMs": 47.0
+    },
+    {
+      "version": 2,
+      "scene": "plant",
+      "photoSha256": "f3d27b92c7bab68a505f9e3864310001e0624bc5da53e72b3cbbd7ab6b414f78",
+      "frame": 10,
+      "timestamp": 1795367005800,
+      "status": "OK",
+      "modelSha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "detections": [
+        {
+          "className": "PottedPlant",
+          "target": "plant",
+          "bbox": [
+            306.84307861328125,
+            200.9783935546875,
+            390.8677978515625,
+            275.85638427734375
+          ],
+          "confidence": 0.44834133982658386,
+          "id": "6e1a116931b1:left:1"
+        }
+      ],
+      "roundtripMs": 31.0
+    },
+    {
+      "version": 2,
+      "scene": "pet",
+      "photoSha256": "3c6967ffdfbb9502b9b6421e8514fae6c817ab0c534e38da27ce95c973543afd",
+      "frame": 11,
+      "timestamp": 1795367005880,
+      "status": "OK",
+      "modelSha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "detections": [
+        {
+          "className": "Dog",
+          "target": "pet",
+          "bbox": [
+            379.4549560546875,
+            131.71481323242188,
+            827.4336547851562,
+            526.4447021484375
+          ],
+          "confidence": 0.9147826433181763,
+          "id": "38aa0811e4d3:left:1"
+        }
+      ],
+      "roundtripMs": 62.0
+    },
+    {
+      "version": 2,
+      "scene": "tree",
+      "photoSha256": "53c6fb4bda1c757c90610ff889ec3f0f582bce835b4eb578e24fad08350da694",
+      "frame": 12,
+      "timestamp": 1795367005960,
+      "status": "SCENE_NOT_CONFIGURED: validated weights required for tree",
+      "modelSha256": null,
+      "detections": [],
+      "roundtripMs": 0.0
+    },
+    {
+      "version": 2,
+      "scene": "bugs",
+      "photoSha256": "53c6fb4bda1c757c90610ff889ec3f0f582bce835b4eb578e24fad08350da694",
+      "frame": 13,
+      "timestamp": 1795367006040,
+      "status": "SCENE_NOT_CONFIGURED: validated weights required for bugs",
+      "modelSha256": null,
+      "detections": [],
+      "roundtripMs": 0.0
+    },
+    {
+      "version": 2,
+      "scene": "statue",
+      "photoSha256": "53c6fb4bda1c757c90610ff889ec3f0f582bce835b4eb578e24fad08350da694",
+      "frame": 14,
+      "timestamp": 1795367006120,
+      "status": "SCENE_NOT_CONFIGURED: validated weights required for statue",
+      "modelSha256": null,
+      "detections": [],
+      "roundtripMs": 0.0
+    },
+    {
+      "version": 2,
+      "scene": "discovery",
+      "photoSha256": "3c6967ffdfbb9502b9b6421e8514fae6c817ab0c534e38da27ce95c973543afd",
+      "frame": 15,
+      "timestamp": 1795367006200,
+      "status": "OK",
+      "modelSha256": "999bca4f5bf96aeed3ac0f1047e31530e4eb4584873c85dd5bd00031fc71fb3a",
+      "detections": [],
+      "roundtripMs": 78.0
+    },
+    {
+      "version": 2,
+      "scene": "discovery",
+      "photoSha256": "3c6967ffdfbb9502b9b6421e8514fae6c817ab0c534e38da27ce95c973543afd",
+      "frame": 16,
+      "timestamp": 1795367006280,
+      "status": "OK",
+      "modelSha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "detections": [
+        {
+          "className": "Dog",
+          "target": "pet",
+          "bbox": [
+            379.4549560546875,
+            131.71481323242188,
+            827.4336547851562,
+            526.4447021484375
+          ],
+          "confidence": 0.9147826433181763,
+          "id": "fcca0c3b54bb:left:1"
+        }
+      ],
+      "roundtripMs": 32.0
+    }
+  ],
+  "samples": [
+    {
+      "elapsed": 0.0,
+      "freeRAMGiB": 8.576,
+      "taskRSSMiB": 8.08
+    },
+    {
+      "elapsed": 0.36,
+      "freeRAMGiB": 8.193,
+      "taskRSSMiB": 370.75
+    },
+    {
+      "elapsed": 0.735,
+      "freeRAMGiB": 8.091,
+      "taskRSSMiB": 465.37
+    },
+    {
+      "elapsed": 1.094,
+      "freeRAMGiB": 8.063,
+      "taskRSSMiB": 492.39
+    },
+    {
+      "elapsed": 1.469,
+      "freeRAMGiB": 8.013,
+      "taskRSSMiB": 566.05
+    },
+    {
+      "elapsed": 1.828,
+      "freeRAMGiB": 7.939,
+      "taskRSSMiB": 621.65
+    },
+    {
+      "elapsed": 2.172,
+      "freeRAMGiB": 7.903,
+      "taskRSSMiB": 646.21
+    },
+    {
+      "elapsed": 2.547,
+      "freeRAMGiB": 7.877,
+      "taskRSSMiB": 684.44
+    },
+    {
+      "elapsed": 2.906,
+      "freeRAMGiB": 7.81,
+      "taskRSSMiB": 765.89
+    },
+    {
+      "elapsed": 3.266,
+      "freeRAMGiB": 7.786,
+      "taskRSSMiB": 788.1
+    }
+  ],
+  "guardStops": [],
+  "executionScope": "production Python listener, real photos, PICF requests generated on desktop, CPU inference; no new headset or accuracy acceptance"
+}

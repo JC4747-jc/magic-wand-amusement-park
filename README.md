@@ -1,6 +1,6 @@
 # 魔法乐园 · mr/jc
 
-当前分支包含已核对的 Unity 工程源码。安装 Unity 6000.0.33f1，并按 [本地依赖说明](LOCAL_DEPENDENCIES.md) 接入固定版本的 PICO SDK 和 Unity MCP 后，从 Unity Hub 打开工程。真实识别入口位于 `Assets/Scenes/BridgeStereoFusion.unity`。
+当前分支包含已核对的 Unity 工程源码。安装 Unity 6000.0.33f1，并按 [本地依赖说明](LOCAL_DEPENDENCIES.md) 接入固定版本的 PICO SDK 和 Unity MCP 后，从 Unity Hub 打开工程。真实识别入口位于 `Assets/Scenes/BridgeStereoFusion.unity`。 PC 检测服务的配置与启动方式见 [PC 检测服务](object-detection-demo/README.md)。
 
 出租屋直接透视实景。雪山天鹅湖、水母、传送门和降雪的证据见 [出租屋实景透视](Reports/room-passthrough-20261123-v2/README.md)。已核对 1,854 项 Editor 输入和 1,848 项 Android 生产输入。最新 APK 通过签名、CRC、对齐和包内资源检查。PICO 实拍识别、实手势和双眼验收待完成。[工程源码校验表](Reports/mr-jc-integrated-source-20261123/source-inputs.json)
 

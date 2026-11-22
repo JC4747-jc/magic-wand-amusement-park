@@ -24,13 +24,27 @@ class PoseAvailability:
     def _poll(self):
         while not self.stop.is_set():
             try:
+                deadline=time.monotonic()+.15
                 with socket.create_connection((self.host,self.port),timeout=.15) as client:
                     data=bytearray()
                     while b'\n' not in data and len(data)<1024:
+                        # One budget covers connect and every fragment. A peer
+                        # sending one byte per socket timeout cannot hold polling.
+                        remaining=deadline-time.monotonic()
+                        if remaining<=0:raise TimeoutError('Health reply deadline')
+                        client.settimeout(remaining)
                         part=client.recv(1024-len(data))
+                        if time.monotonic()>=deadline:raise TimeoutError('Health reply deadline')
                         if not part: break
                         data.extend(part)
-                    value=json.loads(data)
+                    # Require a complete, bounded health message. A truncated
+                    # reply or a valid JSON scalar must not kill the monitor.
+                    line, separator, _ = data.partition(b'\n')
+                    if not separator:
+                        raise ValueError('Incomplete health reply')
+                    value=json.loads(line)
+                    if not isinstance(value, dict):
+                        raise ValueError('Health reply must be an object')
                     valid=value.get('version')==2
                     mismatch = (self.expected_detector is not None and value.get('pose_ready') is True
                                 and value.get('detector') != self.expected_detector)
