@@ -1,0 +1,22 @@
+BridgeStereoFusion retained one active XR Origin perspective camera, Both eyes, RGBA clear=(0,0,0,0), no camera stack, HDR, MSAA or postprocessing.
+Saved Bridge Room button required Confirm room, then routed into ParkRoom.
+ParkRoom retained one active XR Origin perspective camera, Both eyes, RGBA clear=(0,0,0,0), no camera stack, HDR, MSAA or postprocessing.
+The saved ParkRoom sender and transport connect to the live YOLO service.
+The first live room reply loaded the real model; spatial timing starts on the warm frames.
+Selected original detector instance 9a731cc56667:left:1 by synthetic point/pinch after three stereo observations.
+The live detection preview was visible before selection and yielded to the tracked room; Place window remained usable.
+The live Place window menu used two synthetic corner pinches and held world position during a target shift. The ceiling anchor was unchanged.
+Hand sample cadence gap 0.3665681s at room time 1.25248s, reply 6.
+Accepted Appearance once using live frames through reply 9.
+Accepted Agency once using live frames through reply 25.
+Window requested=True at room time 4.292449s, reply 26, Room photo gathers at casting hand, then releases into the virtual window.
+Accepted Rule once using live frames through reply 44.
+Accepted Deconstruction once using live frames through reply 53.
+Final effect state: style=1, window=True/1, lamp=True/1, feedback=Room: candy rain below confirmed ceiling.
+All four effects coexisted; 59 valid live responses refreshed exactly one target.
+Hand sample cadence gap 0.13729s at room time 9.486865s, reply 60.
+Withheld replies; production target timeout cleared A/B/C/D and manual plane.
+While its last frame was still fresh, the live detection preview returned after the selected Room expired.
+Restored Room 9a731cc56667:left:1 after 3 acknowledged replies; detection preview yielded again and B still required wall placement.
+Accepted Appearance once using live frames through reply 65.
+Fresh A changed the recovered Room style; old B/C/D and the manual plane remained cleared.

@@ -11,6 +11,11 @@ from model_artifact import verify_artifact
 from scene_protocol import InstanceTracker, load_profile, native_class_filter
 
 
+# Park actors stop tracking after 0.65 s. Keep an overlapping detector ID
+# long enough for a brief dropout and the next fresh observation.
+PARK_TRACK_REACQUIRE_SECONDS = 1.5
+
+
 class SceneRouter:
     def __init__(self, main_model, main_path, config_path, predict, decode, config, device, loader=None):
         self.main_model, self.main_path = main_model, Path(main_path).resolve()
@@ -87,7 +92,9 @@ class SceneRouter:
                 model, profile, digest = self._model(path, profile)
                 config = replace(self.config, conf=profile.get('confidence', self.config.conf), max_det=detection_limit(profile.get('max_det', 8)))
                 validation = profile['validation']
-                tracker = self.trackers.setdefault(scene, InstanceTracker())
+                tracker = self.trackers.get(scene)
+                if tracker is None:
+                    tracker = self.trackers[scene] = InstanceTracker(ttl=PARK_TRACK_REACQUIRE_SECONDS)
             classes = native_class_filter(model.names, profile)
             result = self.predict(model, frame.image, self.device, config, classes)[0]
             detections = []

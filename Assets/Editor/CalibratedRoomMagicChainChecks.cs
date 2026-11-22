@@ -22,10 +22,12 @@ public static partial class CalibratedRoomMagicChainChecks
     const string PlantRun = Running + ".Plant";
     const string VariantRun = Running + ".Variants";
     const string BridgeRun = Running + ".Bridge";
+    const string LiveRun = Running + ".Live";
     const float HandStep = .03f;
     static bool Plant => SessionState.GetBool(PlantRun, false);
     static bool Variants => SessionState.GetBool(VariantRun, false);
     static bool FromBridge => SessionState.GetBool(BridgeRun, false);
+    static bool Live => SessionState.GetBool(LiveRun, false);
     static string Input => Path.GetFullPath(Plant ? ".codex-tmp/park-plant-chain-fixture" : ".codex-tmp/park-room-chain-fixture");
     static string Output => Path.GetFullPath(Plant ? ".codex-tmp/park-plant-chain-checks" :
         Variants ? ".codex-tmp/park-room-variants-checks" :
@@ -39,6 +41,10 @@ public static partial class CalibratedRoomMagicChainChecks
     static int replyIndex, recognized, spellIndex, spellEvents, handIndex, errors;
     static int recoveryReplyCount = -1;
     static bool capturedPalm, capturedRelease;
+    static Texture2D livePhoto;
+    static bool liveWaiting, liveWarmed;
+    static float liveSentAt;
+    static readonly List<string> liveReplies = new();
     static readonly Dictionary<string, Texture2D> stagedPhotoCaptures = new();
     static bool initialized, selectedByPinch, withholdingReplies;
     static bool recoveryCasting;
@@ -93,11 +99,14 @@ public static partial class CalibratedRoomMagicChainChecks
         Begin(false, fromBridge:true);
     }
 
-    static void Begin(bool plant, bool variants = false, bool fromBridge = false)
+    public static void RunLiveFromBridge() => Begin(false, fromBridge:true, live:true);
+
+    static void Begin(bool plant, bool variants = false, bool fromBridge = false, bool live = false)
     {
         SessionState.SetBool(PlantRun, plant);
         SessionState.SetBool(VariantRun, variants);
         SessionState.SetBool(BridgeRun, fromBridge);
+        SessionState.SetBool(LiveRun, live);
         if (!Directory.Exists(Input) || Directory.Exists(Output))
             throw new InvalidOperationException("Expected an existing replay fixture and an empty output path.");
         Directory.CreateDirectory(Output);
@@ -124,7 +133,13 @@ public static partial class CalibratedRoomMagicChainChecks
         File.WriteAllLines(Path.Combine(Output, "trace.txt"), transitions);
         File.WriteAllText(Path.Combine(Output, "result.txt"), message);
         SessionState.SetBool(Running, false);
-        if (receiver && FromBridge) receiver.transport.LineReceived -= receiver.Receive;
+        if (receiver && FromBridge)
+        {
+            if (Live) receiver.transport.LineReceived -= ReceiveLive;
+            else receiver.transport.LineReceived -= receiver.Receive;
+        }
+        if (Live) File.WriteAllLines(Path.Combine(Output,"live-picf-replies.jsonl"),liveReplies);
+        if (livePhoto) UnityEngine.Object.DestroyImmediate(livePhoto);
         loopbackPeer?.Dispose();
         loopback?.Stop();
         EditorApplication.Exit(code);
@@ -176,19 +191,40 @@ public static partial class CalibratedRoomMagicChainChecks
             Require(detectionPanel, "ParkRoom did not create the normal detection preview panel.");
             roomDetectionPanel = detectionPanel.gameObject;
             var transport = receiver.transport;
-            transport.LineReceived += receiver.Receive;
+            if (Live) transport.LineReceived += ReceiveLive;
+            else transport.LineReceived += receiver.Receive;
             transport.AutoConnect = false;
             transport.DisconnectSocket();
             SetTransportField(transport, "m_AutoReconnect", false);
             SetTransportField(transport, "m_Host", IPAddress.Loopback.ToString());
-            loopback = new TcpListener(IPAddress.Loopback, 0);
-            loopback.Start(1);
-            SetTransportField(transport, "m_Port", ((IPEndPoint)loopback.LocalEndpoint).Port);
+            if (Live)
+            {
+                SetTransportField(transport, "m_Port", 5005);
+                livePhoto = new Texture2D(2,2,TextureFormat.RGB24,false);
+                Require(livePhoto.LoadImage(File.ReadAllBytes(".codex-tmp/bridge-room-live-picf.png")) &&
+                        livePhoto.width==640 && livePhoto.height==480, "Expected the calibrated colour frame.");
+                // Match the hardware raw row order before the sender's normal vertical flip.
+                var pixels = livePhoto.GetPixels32();
+                var flipped = new Color32[pixels.Length];
+                for (int row=0; row<480; row++)
+                    Array.Copy(pixels,row*640,flipped,(479-row)*640,640);
+                livePhoto.SetPixels32(flipped);
+                livePhoto.Apply();
+                receiver.sender.SceneProfile=4;
+                transitions.Add("The saved ParkRoom sender and transport connect to the live YOLO service.");
+            }
+            else
+            {
+                loopback = new TcpListener(IPAddress.Loopback, 0);
+                loopback.Start(1);
+                SetTransportField(transport, "m_Port", ((IPEndPoint)loopback.LocalEndpoint).Port);
+            }
             transport.ConnectIfNeeded();
         }
         config = JsonUtility.FromJson<ReplayConfig>(File.ReadAllText(Path.Combine(Input, "input.json")));
-        replies = Enumerable.Range(1, config.hostSeconds.Length)
-            .Select(index => File.ReadAllText(Path.Combine(Input, $"reply-{index}.json"))).ToArray();
+        if (!Live)
+            replies = Enumerable.Range(1, config.hostSeconds.Length)
+                .Select(index => File.ReadAllText(Path.Combine(Input, $"reply-{index}.json"))).ToArray();
         var k = config.intrinsics;
         CalibratedParkReplayChecks.Set(receiver, "left", File.ReadAllBytes(Path.Combine(Input, "left.gray")));
         CalibratedParkReplayChecks.Set(receiver, "right", File.ReadAllBytes(Path.Combine(Input, "right.gray")));
@@ -209,8 +245,59 @@ public static partial class CalibratedRoomMagicChainChecks
         field.SetValue(transport, value);
     }
 
+    static void PumpLiveRecognition(float now)
+    {
+        if (withholdingReplies || now < nextReply || !receiver.transport.IsConnected) return;
+        if (liveWaiting)
+        {
+            Require(now-liveSentAt < (liveWarmed ? 1.5f : 8f), "The live detector did not answer the pending PICF frame.");
+            return;
+        }
+        if (!receiver.sender.TrySendTexture(livePhoto,respectSenderRateLimit:false)) return;
+        liveSentAt=now;
+        liveWaiting=true;
+        CalibratedParkReplayChecks.Set(receiver, "waiting", true);
+        CalibratedParkReplayChecks.Set(receiver, "expected", receiver.sender.LastSentFrameId);
+        CalibratedParkReplayChecks.Set(receiver, "capturedAt", Time.realtimeSinceStartup);
+        CalibratedParkReplayChecks.Set(receiver, "capturePoseValid", true);
+        CalibratedParkReplayChecks.Set(receiver, "headTracked", true);
+        nextReply=now+.14f;
+    }
+
+    static void ReceiveLive(string raw)
+    {
+        var f=JsonUtility.FromJson<DetectionFrameMessage>(raw);
+        var sender=receiver.sender;
+        Require(liveWaiting && f.frame_id==sender.LastSentFrameId && f.timestamp==sender.LastSentTimestampMs &&
+                f.scene=="room" && f.status=="OK" && f.width==640 && f.height==480 &&
+                raw.Contains("f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36"),
+            "The live PICF response did not match the sent frame or detector.");
+        liveWaiting=false;
+        liveReplies.Add(raw);
+        if (!liveWarmed)
+        {
+            liveWarmed=true;
+            transitions.Add("The first live room reply loaded the real model; spatial timing starts on the warm frames.");
+            return;
+        }
+
+        Require(f.detections.Length==1 && f.detections[0].class_name=="chair", "Unexpected live candidates.");
+        var id=f.detections[0].instance_id;
+        if (target) Require(target.instanceId==id, "The live detector changed the chair ID before reacquisition.");
+        var before=recognized;
+        receiver.Receive(raw);
+        Require(recognized==before+1, "A warm live reply was skipped by the saved receiver.");
+        CheckRecognizedActor(id,before);
+        replyIndex++;
+    }
+
     static void PumpRecognition(float now)
     {
+        if (Live)
+        {
+            PumpLiveRecognition(now);
+            return;
+        }
         if (pendingId != null)
         {
             if (recognized == recognizedBeforePending) return;
@@ -418,7 +505,7 @@ public static partial class CalibratedRoomMagicChainChecks
         nextHand = now + HandStep;
         if (handIndex < handTrace.Length) return;
         Require(spellEvents == 1, "Expected exactly one shared gesture event: " + PlannedSpell);
-        transitions.Add($"Accepted {PlannedSpell} once using recorded frames through reply {replyIndex}.");
+        transitions.Add($"Accepted {PlannedSpell} once using {(Live?"live":"recorded")} frames through reply {replyIndex}.");
         handTrace = null;
         spellIndex++;
         readyAt = now + (Variants ? 1.2f : pointFlower ? 1.05f :
@@ -733,7 +820,9 @@ public static partial class CalibratedRoomMagicChainChecks
         Require(target.RoomStyle == 1,
             "A fresh shared A gesture did not apply to the recovered Room.");
         transitions.Add("Fresh A changed the recovered Room style; old B/C/D and the manual plane remained cleared.");
-        Finish(0,"PASS: saved BridgeStereoFusion acknowledged Room, routed to ParkRoom, replayed PICF over saved TCP, and verified four tracked effects, expiry and same-instance recovery.");
+        Finish(0,Live
+            ? "PASS: saved BridgeStereoFusion sent live Room PICF, rendered four effects, and reacquired the same target."
+            : "PASS: saved BridgeStereoFusion acknowledged Room, routed to ParkRoom, replayed PICF over saved TCP, and verified four tracked effects, expiry and same-instance recovery.");
     }
 
     static void Tick()
@@ -831,7 +920,7 @@ public static partial class CalibratedRoomMagicChainChecks
             }
             Capture();
             CheckEffects();
-            transitions.Add($"All four effects coexisted; {recognized} valid recorded responses refreshed exactly one target.");
+            transitions.Add($"All four effects coexisted; {recognized} valid {(Live?"live":"recorded")} responses refreshed exactly one target.");
             withholdingReplies = true;
         }
         catch (Exception failure)

@@ -7,6 +7,7 @@ import struct
 import tempfile
 from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 
 from scene_protocol import read_packet
 from scene_router import SceneRouter
@@ -74,6 +75,14 @@ class SceneRouterTests(unittest.TestCase):
         self.assertTrue(failed['status'].startswith('MODEL_CHANGED_RESTART_REQUIRED'))
         self.assertEqual(failed['detections'],[])
         self.assertEqual(len(self.calls),2)
+
+    def test_park_target_keeps_id_across_brief_observation_dropout(self):
+        with patch('scene_router.time.monotonic', side_effect=[10, 10.82, 12.5]):
+            before = self.infer('plant', 1)['detections'][0]['instance_id']
+            reacquired = self.infer('plant', 2)['detections'][0]['instance_id']
+            expired = self.infer('plant', 3)['detections'][0]['instance_id']
+        self.assertEqual(reacquired, before)
+        self.assertNotEqual(expired, before)
 
     def test_v1_v2_packet_boundaries_and_unknown_profile(self):
         for scene_id in (None,0,4,7):
