@@ -1,0 +1,841 @@
+{
+  "utc": "2026-11-22T20:51:35Z",
+  "base": "90928aef682fa714e7baacf8b8d2ca2980681027",
+  "frame_dimensions": [
+    640,
+    480
+  ],
+  "tile_dimensions": [
+    384,
+    384
+  ],
+  "origins": [
+    [
+      0,
+      0
+    ],
+    [
+      256,
+      0
+    ],
+    [
+      0,
+      96
+    ],
+    [
+      256,
+      96
+    ]
+  ],
+  "match_and_dedup_iou": 0.5,
+  "label_convention": "Manually marked whole JPEG; visible body and legs, excluding antennae and web.",
+  "ambiguity_policy": "Ignore an unmatched proposal with center inside the premarked cup-rim region.",
+  "worker_sha256": "f48b5963751453fcefd4accc9526b9e5d83820242fe585b3524d930cd3cd33fd",
+  "candidates": {
+    "v16": {
+      "sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+      "reply": 0.65,
+      "score": 0.65
+    },
+    "visual": {
+      "sha256": "d65d1eff108b76a19f2e3eaa12b7b083314781a1d1926ca975cff5be79183888",
+      "reply": 0.399,
+      "score": 0.5
+    }
+  },
+  "frozenRegistries": {
+    ".codex-tmp/yolo-training/bugs-inat-context-window-20261122/acquisition.json": "e3a102a13565e1803d13cfcfd1bf985280d8dbe9027c6ef4e81d71ba66bd42dd",
+    ".codex-tmp/yolo-training/bugs-inat-development-20261122/acquisition.json": "ec35214399c830c86d4154f6ddbf8ffdaaad5d79c0f39bf00ad78f40e241fa2f",
+    ".codex-tmp/yolo-training/bugs-inat-development-v2-20261122/acquisition.json": "d0fc20496ee2e82ed2bf678fc65c0f4d079ac8e6aa450394be2f570207fe941c",
+    ".codex-tmp/yolo-training/bugs-inat-development-v3-20261122/acquisition.json": "b67104d2edf9e648fee497a7bff2153390aae03a5f6dfd9f5e4f0403b51df62f",
+    ".codex-tmp/yolo-training/bugs-inat-small-field-20261122/acquisition.json": "2bd6f5bbfd986a8d5cec396f50e79fefd2f2a3ad95eaca72cd505d6d35d7810e",
+    ".codex-tmp/yolo-training/bugs-inat-small-indoor-20261122/acquisition.json": "ea52b9650a77acec0f6242a30a30db2150f464276dd8c65e2d10026cd5dff9d4",
+    ".codex-tmp/yolo-training/bugs-inat-small-indoor-ccby-20261122/acquisition.json": "d0ed9db694d40a0e6a97f303023351daeccf9e8122a3315bb671dfc6c6117d87",
+    ".codex-tmp/yolo-training/bugs-inat-small-spider-20261122/acquisition.json": "984508e6c5e6142a455af47f6b174604b853201157c6c04957ec1c4d939db445",
+    ".codex-tmp/yolo-training/bugs-small-target-independent-20261122/acquisition.json": "0b1dc11beddcadf313edc2b2e96f42fe8383694ab3b0641362624e4df0b07eea",
+    ".codex-tmp/yolo-training/bugs-small-target-roaches-20261122/acquisition.json": "b364fbf8e4f29965fcacb9aa7dfb42975e22daaa22196a939855ac77436a5df3",
+    ".codex-tmp/yolo-training/source-metadata/bugs-small-spider-candidates-20261122-v2.json": "e7ee9c0cc67488d035907df0240746224b2a18286e78a8a70eb3c8fc36d10b05",
+    ".codex-tmp/yolo-training/source-metadata/bugs-small-spider-candidates-20261122.json": "4480fa37932e851a29f008035dd1383ae7714859317553a57d6864a3c242a33e",
+    "Reports/hci-bugs-training-20261116/frozen-dataset.json": "ac49f4d5b8382de5e82869aebf78dd639282ddb2a89cc05e9893d4fd4c908345",
+    "Reports/hci-bugs-training-20261116/image-credits.json": "8ffc6522a54174453bdfa579e5e469323df77c89f877f9e4cdec7f34e3228211",
+    "TrainingData/bugs-bootstrap-overlay-review-v1.json": "260f022f14aa6d704a5d4b3a24f43614f3a693e0866161a86da8aa97d04607ca",
+    "TrainingData/bugs-bootstrap-review-v1.json": "1e0838e81c692a38b265ed7bf7d621341dbc13339a4d0203fe8e7c5e8e686da0",
+    "TrainingData/bugs-bootstrap-split-v1.json": "ac49f4d5b8382de5e82869aebf78dd639282ddb2a89cc05e9893d4fd4c908345",
+    "TrainingData/bugs-context-development-preset-v3.json": "02fa0e28576b705d48acc8613dcfa0193f1ade376b9368f6ff9e422312cb175b",
+    "TrainingData/bugs-context-review-v3.json": "9fd18cc614d1b9f21a9ca040acda27d073e0a6f323e456df846c502f02f8df8b",
+    "TrainingData/bugs-context-split-v2.json": "43193c61586693c9f90234a204e36dc4b1a18989f694bab1dd355e78b007071c",
+    "TrainingData/bugs-context-training-preset-v2.json": "653791cf11835e4ee55de43ce8e6037847dd5dfc73d379706f4c09e4c12af70a",
+    "TrainingData/bugs-field-review-v2.json": "b7a014bee7a8858485262f13749d9f977425cff139229b1b16cee35379edef50",
+    "TrainingData/bugs-field-scale-candidates-20261122.json": "351fab727a2ac9aa11499cf27372bd51ab3bade96b361ae0565a03408db1a44f",
+    "TrainingData/bugs-field-scale-training-plan-20261122.json": "cadff8b3d1364782dfe07ebc97557850a98b0120676284a07f5b87a5a1e84c50",
+    "TrainingData/bugs-fit-pilot-plan-20261122.json": "0833af7c460c89a5f454e45e91cb167c45f8dd9f1c8239ac77be5aed13dfec24",
+    "TrainingData/bugs-inat-camera-development-preset-20261122.json": "be2704788b53447cebbfd268279a51c0687562e828c5075d836c98d3f2c1be90",
+    "TrainingData/bugs-inat-context-comparison-preset-20261122.json": "2c79d5f70d604c5219aea8d21c2c8430a9c4ce5d14a9b6f555817abf2b0f56d2",
+    "TrainingData/bugs-inat-context-comparison-split-20261122.json": "d063ae8c9ce9da0c02f0c8fddc7fa1e35c8832a89c67d93cd4392de46a7650e8",
+    "TrainingData/bugs-inat-context-window-review-20261122.json": "a1968ea6e3e4d786be471b98e62c138a9155cb707b70b1239f1bfb897e84a82c",
+    "TrainingData/bugs-inat-development-review-20261122.json": "0ce87325ff67dc05033f4fb445f1b5f70a14f6e7a97ed05e7e74ab12c701f46d",
+    "TrainingData/bugs-inat-development-split-20261122.json": "3f0f24d8f99e68781f9f4b5198f802e84c391a6843eb27e5578fcecdf374be95",
+    "TrainingData/bugs-independent-context-positive-candidates-20261122.json": "cae6f7262ab1f8b077b5129b9ffe1c64c88ec6dda456e4b8448363848853c6d5",
+    "TrainingData/bugs-pet-training-negative-candidates-20261122.json": "4753b153d5b72eda46b9f45a1aebb6e4b3f6ee07969be8ea18f3b653d94ef011",
+    "TrainingData/bugs-red-edge-negative-candidates-20261122.json": "7a5d194f616650ef4c7afc34467a67d8e39ba7837f6f85b3f3d2eef519347a37",
+    "TrainingData/bugs-red-edge-training-plan-20261122.json": "8055256bbd722318a33586b07c1a8e6ed38c3e07d4786fb1cd09392ddfae37b8"
+  },
+  "activeQueries": [
+    [
+      "Spiders",
+      "Spider",
+      3,
+      47535,
+      "orb web",
+      []
+    ],
+    [
+      "Spiders",
+      "Spider",
+      3,
+      47535,
+      "fence",
+      []
+    ],
+    [
+      "Parasteatoda tepidariorum",
+      "Spider",
+      2,
+      null,
+      null,
+      []
+    ],
+    [
+      "Blatta orientalis",
+      "Cockroach",
+      2,
+      null,
+      null,
+      []
+    ],
+    [
+      "Ectobius pallidus",
+      "Cockroach",
+      2,
+      null,
+      null,
+      []
+    ],
+    [
+      "Ischnoptera deropeltiformis",
+      "Cockroach",
+      2,
+      null,
+      null,
+      []
+    ],
+    [
+      "Blattodea",
+      "Cockroach",
+      3,
+      81769,
+      "garage floor",
+      [
+        81770,
+        82232,
+        180744
+      ]
+    ],
+    [
+      "Lepisma saccharinum",
+      "Other",
+      2,
+      null,
+      null,
+      []
+    ],
+    [
+      "Phalangium opilio",
+      "Other",
+      2,
+      null,
+      null,
+      []
+    ]
+  ],
+  "transferBytes": 14215127,
+  "events": [
+    {
+      "taxon": "Spiders",
+      "taxon_id": 47535,
+      "query": "orb web",
+      "result_count": 931,
+      "candidates": [
+        {
+          "observation": 413238123,
+          "photo": 760525610,
+          "result": "saved_unreviewed"
+        },
+        {
+          "observation": 412800635,
+          "photo": 759640339,
+          "result": "saved_unreviewed"
+        },
+        {
+          "observation": 412787823,
+          "photo": 759615311,
+          "result": "saved_unreviewed"
+        }
+      ]
+    },
+    {
+      "taxon": "Spiders",
+      "taxon_id": 47535,
+      "query": "fence",
+      "result_count": 12,
+      "candidates": [
+        {
+          "observation": 1551457,
+          "photo": 1921864,
+          "result": "saved_unreviewed"
+        }
+      ]
+    },
+    {
+      "taxon": "Parasteatoda tepidariorum",
+      "taxon_id": null,
+      "query": null,
+      "result_count": 173,
+      "candidates": [
+        {
+          "observation": 399641585,
+          "photo": 733237526,
+          "result": "saved_unreviewed"
+        },
+        {
+          "observation": 395518933,
+          "photo": 725233767,
+          "result": "saved_unreviewed"
+        }
+      ]
+    },
+    {
+      "taxon": "Blatta orientalis",
+      "taxon_id": null,
+      "query": null,
+      "result_count": 162,
+      "candidates": [
+        {
+          "observation": 413341466,
+          "photo": 760732369,
+          "result": "saved_unreviewed"
+        },
+        {
+          "observation": 402851714,
+          "photo": 739586629,
+          "result": "saved_unreviewed"
+        }
+      ]
+    },
+    {
+      "taxon": "Ectobius pallidus",
+      "taxon_id": null,
+      "query": null,
+      "result_count": 92,
+      "candidates": [
+        {
+          "observation": 414409739,
+          "photo": 762888641,
+          "result": "saved_unreviewed"
+        },
+        {
+          "observation": 410423605,
+          "photo": 754828408,
+          "result": "saved_unreviewed"
+        }
+      ]
+    },
+    {
+      "taxon": "Ischnoptera deropeltiformis",
+      "taxon_id": null,
+      "query": null,
+      "result_count": 21,
+      "candidates": [
+        {
+          "observation": 368851091,
+          "photo": 673723157,
+          "result": "saved_unreviewed"
+        },
+        {
+          "observation": 365709454,
+          "photo": 667717051,
+          "result": "saved_unreviewed"
+        }
+      ]
+    },
+    {
+      "taxon": "Blattodea",
+      "taxon_id": 81769,
+      "query": "garage floor",
+      "result_count": 1,
+      "candidates": []
+    },
+    {
+      "taxon": "Lepisma saccharinum",
+      "taxon_id": null,
+      "query": null,
+      "result_count": 112,
+      "candidates": [
+        {
+          "observation": 338912107,
+          "photo": 616417797,
+          "result": "saved_unreviewed"
+        },
+        {
+          "observation": 337427690,
+          "photo": 613401463,
+          "result": "saved_unreviewed"
+        }
+      ]
+    },
+    {
+      "taxon": "Phalangium opilio",
+      "taxon_id": null,
+      "query": null,
+      "result_count": 1081,
+      "candidates": [
+        {
+          "observation": 413416950,
+          "photo": 760882266,
+          "result": "saved_unreviewed"
+        },
+        {
+          "observation": 413189906,
+          "photo": 760421429,
+          "result": "saved_unreviewed"
+        }
+      ]
+    }
+  ],
+  "records": [
+    {
+      "key": "inat-photo-760525610",
+      "taxon": "Argiope trifasciata",
+      "class_name": "Spider",
+      "photo": 760525610,
+      "context_query": "orb web",
+      "observation": 413238123,
+      "author": "chris_and_pamela_pipes",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-19402",
+      "source_page": "https://www.inaturalist.org/observations/413238123",
+      "photo_page": "https://www.inaturalist.org/photos/760525610",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/760525610/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "8e9b3ecc02f07948e0c6975151a24d14931a86b7773204e2f04fb90f718ed7a5",
+      "pixel_sha256": "075decbedd656d0a653246e67b74cf57689374a612b2ec0f389b7110fb1b30a5",
+      "size": [
+        768,
+        1024
+      ],
+      "source_path": ".codex-tmp/bugs-independent-photo-holdout-20261123/images/inat-photo-760525610.jpg",
+      "bytes": 264452,
+      "prior_dhash_distance": 29,
+      "frame_sha256": "4ab56c1b9f9c53978122468396ce7629b30186c124cc50bba8a1766b75f24ef3",
+      "bbox": [
+        276,
+        130,
+        402,
+        371
+      ],
+      "ambiguous_region": null,
+      "excluded": null
+    },
+    {
+      "key": "inat-photo-759640339",
+      "taxon": "Argiope lobata",
+      "class_name": "Spider",
+      "photo": 759640339,
+      "context_query": "orb web",
+      "observation": 412800635,
+      "author": "thomas_des_bois",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-4151693",
+      "source_page": "https://www.inaturalist.org/observations/412800635",
+      "photo_page": "https://www.inaturalist.org/photos/759640339",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/759640339/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "2017c28a24f078a96807351a6f185902574b049d55daa631357650a40bbab52c",
+      "pixel_sha256": "2e8e79ebb1276458f596d0c947a4b44a5761768750b18d03f9663928638e9fed",
+      "size": [
+        768,
+        1024
+      ],
+      "source_path": ".codex-tmp/bugs-independent-photo-holdout-20261123/images/inat-photo-759640339.jpg",
+      "bytes": 350784,
+      "prior_dhash_distance": 24,
+      "frame_sha256": "b935520706fafc165a62b7cc17288e4d60ab8507558a5b684470fccfb79006fe",
+      "bbox": [
+        226,
+        191,
+        319,
+        333
+      ],
+      "ambiguous_region": null,
+      "excluded": null
+    },
+    {
+      "key": "inat-photo-759615311",
+      "taxon": "Argiope trifasciata",
+      "class_name": "Spider",
+      "photo": 759615311,
+      "context_query": "orb web",
+      "observation": 412787823,
+      "author": "pattylane",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-1031585",
+      "source_page": "https://www.inaturalist.org/observations/412787823",
+      "photo_page": "https://www.inaturalist.org/photos/759615311",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/759615311/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "310f2bbb8c018050f75575d91cd7a1cd0558dc1ba965883b22c5dea4424ef884",
+      "pixel_sha256": "1d7b7608d479687563b29e124637e098ffb5c764b9779f409e6dde167b0bbf1a",
+      "size": [
+        688,
+        1024
+      ],
+      "source_path": ".codex-tmp/bugs-independent-photo-holdout-20261123/images/inat-photo-759615311.jpg",
+      "bytes": 772354,
+      "prior_dhash_distance": 25,
+      "frame_sha256": "71ebcff1561230a7ec2750d7394a32c69a554d79d887554c8af4f3dc628d5518",
+      "bbox": [
+        234,
+        168,
+        346,
+        321
+      ],
+      "ambiguous_region": null,
+      "excluded": null
+    },
+    {
+      "key": "inat-photo-1921864",
+      "taxon": "Socca pustulosa",
+      "class_name": "Spider",
+      "photo": 1921864,
+      "context_query": "fence",
+      "observation": 1551457,
+      "author": "sunita",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-58203",
+      "source_page": "https://www.inaturalist.org/observations/1551457",
+      "photo_page": "https://www.inaturalist.org/photos/1921864",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/1921864/large.JPG",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "f6861a991f78b76e6030fe1ce051b5db733230b4b2d5c5cd493d00253b5ed1e6",
+      "pixel_sha256": "1ddc5114839b4bcda8a5d84790a90dc41b1dd56eb6c38377aca925aabb34f06c",
+      "size": [
+        1024,
+        768
+      ],
+      "source_path": ".codex-tmp/bugs-independent-photo-holdout-20261123/images/inat-photo-1921864.jpg",
+      "bytes": 97044,
+      "prior_dhash_distance": 21,
+      "frame_sha256": "da3fd417016dc39d665d85617b34ef03b60ba23b0563d08a0508f57425d7d702",
+      "bbox": [
+        280,
+        187,
+        333,
+        268
+      ],
+      "ambiguous_region": null,
+      "excluded": null
+    },
+    {
+      "key": "inat-photo-733237526",
+      "taxon": "Parasteatoda tepidariorum",
+      "class_name": "Spider",
+      "photo": 733237526,
+      "context_query": null,
+      "observation": 399641585,
+      "author": "keystone-acres",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-8540227",
+      "source_page": "https://www.inaturalist.org/observations/399641585",
+      "photo_page": "https://www.inaturalist.org/photos/733237526",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/733237526/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "83162fc3cdb1850b8d0257e9618372e85e527aa105b09d88f6b04cf4ac46249a",
+      "pixel_sha256": "7868267a9c6ca7813704b3148bc18bd03a99f9f99a00afb61fa6dc0959a322bf",
+      "size": [
+        768,
+        1024
+      ],
+      "source_path": ".codex-tmp/bugs-independent-photo-holdout-20261123/images/inat-photo-733237526.jpg",
+      "bytes": 409008,
+      "prior_dhash_distance": 29,
+      "frame_sha256": "c67b0866176192483b4026286e102a82c3ba2ab8ee7cfedbb648cf785ac79329",
+      "bbox": [
+        224,
+        270,
+        303,
+        337
+      ],
+      "ambiguous_region": null,
+      "excluded": null
+    },
+    {
+      "key": "inat-photo-725233767",
+      "taxon": "Parasteatoda tepidariorum",
+      "class_name": "Spider",
+      "photo": 725233767,
+      "context_query": null,
+      "observation": 395518933,
+      "author": "linum_voluntamagnum",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-2108083",
+      "source_page": "https://www.inaturalist.org/observations/395518933",
+      "photo_page": "https://www.inaturalist.org/photos/725233767",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/725233767/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "a1d258f1dc7fd04f25b46702e275a4fd90179413a8e18f0922830e40a03cede8",
+      "pixel_sha256": "597fad78fd61b85e81cf3be093e93ce9780cf56442ffc135f1cddad1c32774f9",
+      "size": [
+        1024,
+        759
+      ],
+      "source_path": ".codex-tmp/bugs-independent-photo-holdout-20261123/images/inat-photo-725233767.jpg",
+      "bytes": 387606,
+      "prior_dhash_distance": 22,
+      "frame_sha256": "f1de4bd31999a4273dad7b50670c1fa77a382da5d37588fc253b34f0c81a0d1b",
+      "bbox": [
+        159,
+        165,
+        463,
+        365
+      ],
+      "ambiguous_region": null,
+      "excluded": null
+    },
+    {
+      "key": "inat-photo-760732369",
+      "taxon": "Blatta orientalis",
+      "class_name": "Cockroach",
+      "photo": 760732369,
+      "context_query": null,
+      "observation": 413341466,
+      "author": "pbaff",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-7942891",
+      "source_page": "https://www.inaturalist.org/observations/413341466",
+      "photo_page": "https://www.inaturalist.org/photos/760732369",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/760732369/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "de60def5c927bcc3023f79857c8895699ce10dd1a6e4e33924c53c3843d6f82e",
+      "pixel_sha256": "3f23a97ba0438710487138ed7392c759d872670829ca2667a94ee159a78d256a",
+      "size": [
+        771,
+        1024
+      ],
+      "source_path": ".codex-tmp/bugs-independent-photo-holdout-20261123/images/inat-photo-760732369.jpg",
+      "bytes": 646380,
+      "prior_dhash_distance": 25,
+      "frame_sha256": "d2fa9712f8d4d896a1da3c3ff463626f7daae5baf9d88dd29221e3e96d39fb93",
+      "bbox": null,
+      "ambiguous_region": null,
+      "excluded": "Multiple overlapping roaches; single-instance label could not be frozen."
+    },
+    {
+      "key": "inat-photo-739586629",
+      "taxon": "Blatta orientalis",
+      "class_name": "Cockroach",
+      "photo": 739586629,
+      "context_query": null,
+      "observation": 402851714,
+      "author": "ofmiceandmachines",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-1430433",
+      "source_page": "https://www.inaturalist.org/observations/402851714",
+      "photo_page": "https://www.inaturalist.org/photos/739586629",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/739586629/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "f134716ebec9e37d4deb8fc6d1ce3ebce90fa9aeb782a433c51238096fe435a3",
+      "pixel_sha256": "7a049e5546a5a297a4196ef3e2ef38ac34ca18e3e923d2102af947721fb7af0f",
+      "size": [
+        771,
+        1024
+      ],
+      "source_path": ".codex-tmp/bugs-independent-photo-holdout-20261123/images/inat-photo-739586629.jpg",
+      "bytes": 345042,
+      "prior_dhash_distance": 27,
+      "frame_sha256": "1fe8e3c23b273ad9e4eb43ff71141e7b5aaf60052a6e7dd6b16280bfea064b5b",
+      "bbox": [
+        276,
+        246,
+        360,
+        295
+      ],
+      "ambiguous_region": [
+        323,
+        345,
+        407,
+        420
+      ],
+      "excluded": null
+    },
+    {
+      "key": "inat-photo-762888641",
+      "taxon": "Ectobius pallidus",
+      "class_name": "Cockroach",
+      "photo": 762888641,
+      "context_query": null,
+      "observation": 414409739,
+      "author": "ryman56",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-2058936",
+      "source_page": "https://www.inaturalist.org/observations/414409739",
+      "photo_page": "https://www.inaturalist.org/photos/762888641",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/762888641/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "3f52c14f3584a31c0c69a4e91d872b89bb7cf530b82f1a74561b1bc5b54795b0",
+      "pixel_sha256": "881a5ae571d3ea4f3542a2177c82175d1b429567b01a91fc83a9db8c0ed0272f",
+      "size": [
+        768,
+        1024
+      ],
+      "source_path": ".codex-tmp/bugs-independent-photo-holdout-20261123/images/inat-photo-762888641.jpg",
+      "bytes": 236433,
+      "prior_dhash_distance": 25,
+      "frame_sha256": "24bf690cfad01960af7f572f257aafaf00111aac73c7fe5e48154325115df373",
+      "bbox": [
+        274,
+        170,
+        401,
+        274
+      ],
+      "ambiguous_region": null,
+      "excluded": null
+    },
+    {
+      "key": "inat-photo-754828408",
+      "taxon": "Ectobius pallidus",
+      "class_name": "Cockroach",
+      "photo": 754828408,
+      "context_query": null,
+      "observation": 410423605,
+      "author": "kristinpiston",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-493290",
+      "source_page": "https://www.inaturalist.org/observations/410423605",
+      "photo_page": "https://www.inaturalist.org/photos/754828408",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/754828408/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "fd6ccac2a631fa4e2d7c160422362b4c372e42b00549a755c2e2a7a9a0bdc8d3",
+      "pixel_sha256": "c269c368227cec5bb4aa45a1fc05f7ed9f00ef47927ca2e581825c37da0ab2c2",
+      "size": [
+        882,
+        1024
+      ],
+      "source_path": ".codex-tmp/bugs-independent-photo-holdout-20261123/images/inat-photo-754828408.jpg",
+      "bytes": 337598,
+      "prior_dhash_distance": 24,
+      "frame_sha256": "e513d1bba42aecbaa11401ce62c914d875a67191a041680223da998d1610f336",
+      "bbox": [
+        165,
+        164,
+        375,
+        359
+      ],
+      "ambiguous_region": null,
+      "excluded": null
+    },
+    {
+      "key": "inat-photo-673723157",
+      "taxon": "Ischnoptera deropeltiformis",
+      "class_name": "Cockroach",
+      "photo": 673723157,
+      "context_query": null,
+      "observation": 368851091,
+      "author": "kemper",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-517807",
+      "source_page": "https://www.inaturalist.org/observations/368851091",
+      "photo_page": "https://www.inaturalist.org/photos/673723157",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/673723157/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "682a6b3eaa106528cedc2f6c879e3171a961f4cfbe6fca44d031171d235d6a67",
+      "pixel_sha256": "cf90a26be73ce8cbc7cbd605b6e32a36951afea77033614d8cc97f916086ee8f",
+      "size": [
+        768,
+        1024
+      ],
+      "source_path": ".codex-tmp/bugs-independent-photo-holdout-20261123/images/inat-photo-673723157.jpg",
+      "bytes": 978429,
+      "prior_dhash_distance": 24,
+      "frame_sha256": "9d91daf6444cf222b951c6731d37525de55d3ed4e220415b1d1bcdd79a7740c5",
+      "bbox": [
+        266,
+        143,
+        466,
+        324
+      ],
+      "ambiguous_region": null,
+      "excluded": null
+    },
+    {
+      "key": "inat-photo-667717051",
+      "taxon": "Ischnoptera deropeltiformis",
+      "class_name": "Cockroach",
+      "photo": 667717051,
+      "context_query": null,
+      "observation": 365709454,
+      "author": "skylar_schell",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-8781964",
+      "source_page": "https://www.inaturalist.org/observations/365709454",
+      "photo_page": "https://www.inaturalist.org/photos/667717051",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/667717051/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "5f9569de55bd64bf77fae9cef2d08306886641a8361487bc6a2dc2aabc8371a3",
+      "pixel_sha256": "36d1d384e5dc640b5082eb753fd6f2361525da1c86c9807cf907409b8a47a3ab",
+      "size": [
+        768,
+        1024
+      ],
+      "source_path": ".codex-tmp/bugs-independent-photo-holdout-20261123/images/inat-photo-667717051.jpg",
+      "bytes": 309951,
+      "prior_dhash_distance": 22,
+      "frame_sha256": "47f0210b27e4ed94086aab58c606cd7b16788ac3d28c256b8ee93cd417de9ade",
+      "bbox": [
+        282,
+        153,
+        344,
+        238
+      ],
+      "ambiguous_region": null,
+      "excluded": null
+    },
+    {
+      "key": "inat-photo-616417797",
+      "taxon": "Lepisma saccharinum",
+      "class_name": "Other",
+      "photo": 616417797,
+      "context_query": null,
+      "observation": 338912107,
+      "author": "chimpers",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-6450284",
+      "source_page": "https://www.inaturalist.org/observations/338912107",
+      "photo_page": "https://www.inaturalist.org/photos/616417797",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/616417797/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "2e01b07bd410ed10c8b9cd6ac1296a71c09a30535c78a60b000147c8e5111fab",
+      "pixel_sha256": "2ce164728e0c22cd4d21212b7ef6fa59a6554a5436bcb524bc6e3f58b10c26a4",
+      "size": [
+        1024,
+        768
+      ],
+      "source_path": ".codex-tmp/bugs-independent-photo-holdout-20261123/images/inat-photo-616417797.jpg",
+      "bytes": 770467,
+      "prior_dhash_distance": 22,
+      "frame_sha256": "9c577b00e65cc3f9e6f49dff2475037f36a5caba96711dfe41dc57ee7cc8c77f",
+      "bbox": null,
+      "ambiguous_region": null,
+      "excluded": null
+    },
+    {
+      "key": "inat-photo-613401463",
+      "taxon": "Lepisma saccharinum",
+      "class_name": "Other",
+      "photo": 613401463,
+      "context_query": null,
+      "observation": 337427690,
+      "author": "bayathread",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-1436853",
+      "source_page": "https://www.inaturalist.org/observations/337427690",
+      "photo_page": "https://www.inaturalist.org/photos/613401463",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/613401463/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "1259b1b81294d6cfc4033b67072efd70ccfa4b51d7a3d78f9f2c922fda20c45b",
+      "pixel_sha256": "ef6067b2534ff266366973f1dc4123d7147a0fe3db9c733b238a9a75ba3d1d18",
+      "size": [
+        1024,
+        923
+      ],
+      "source_path": ".codex-tmp/bugs-independent-photo-holdout-20261123/images/inat-photo-613401463.jpg",
+      "bytes": 418710,
+      "prior_dhash_distance": 20,
+      "frame_sha256": "be230c701f6dfead5b1a137837b84aba9d1cd2db109657ba5ccce8a85c9a0cce",
+      "bbox": null,
+      "ambiguous_region": null,
+      "excluded": null
+    },
+    {
+      "key": "inat-photo-760882266",
+      "taxon": "Phalangium opilio",
+      "class_name": "Other",
+      "photo": 760882266,
+      "context_query": null,
+      "observation": 413416950,
+      "author": "nanclo",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-1874670",
+      "source_page": "https://www.inaturalist.org/observations/413416950",
+      "photo_page": "https://www.inaturalist.org/photos/760882266",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/760882266/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "7a3a8a0cf5b04bc25788d2724d1d0e2801dc134b15022acd293ca175bab43116",
+      "pixel_sha256": "9f7e8ea0d0baab362f89a8ff3fa3ae5ce8615620144cceafebc3e124b2b437af",
+      "size": [
+        1024,
+        768
+      ],
+      "source_path": ".codex-tmp/bugs-independent-photo-holdout-20261123/images/inat-photo-760882266.jpg",
+      "bytes": 825805,
+      "prior_dhash_distance": 25,
+      "frame_sha256": "0a61a027943810878b0c79d50807dcab8e0ce9b9c0204c64646d74c792214999",
+      "bbox": null,
+      "ambiguous_region": null,
+      "excluded": null
+    },
+    {
+      "key": "inat-photo-760421429",
+      "taxon": "Phalangium opilio",
+      "class_name": "Other",
+      "photo": 760421429,
+      "context_query": null,
+      "observation": 413189906,
+      "author": "natural_lucas",
+      "media_attribution": "no rights reserved",
+      "source_group": "inat-observer-10007395",
+      "source_page": "https://www.inaturalist.org/observations/413189906",
+      "photo_page": "https://www.inaturalist.org/photos/760421429",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/760421429/large.jpg",
+      "license_code": "cc0",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "215a1ad72c183bfaf833185be2ac73c9db92fdc10af4b4b435f80cf0aedbc4ea",
+      "pixel_sha256": "181ce5328adf2511ab6ed4cf60cfd9bd7761d1fc4314c494ed93905480889339",
+      "size": [
+        771,
+        1024
+      ],
+      "source_path": ".codex-tmp/bugs-independent-photo-holdout-20261123/images/inat-photo-760421429.jpg",
+      "bytes": 261621,
+      "prior_dhash_distance": 21,
+      "frame_sha256": "8ec698f6fe5c07fb77ba16b80cd8c96dbde1d2ef1e0a8137803660e0817266bf",
+      "bbox": null,
+      "ambiguous_region": null,
+      "excluded": null
+    }
+  ]
+}
