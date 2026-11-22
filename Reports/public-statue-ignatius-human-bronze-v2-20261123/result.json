@@ -1,0 +1,1559 @@
+{
+  "source_commit": "3c4e634e11d19788c8c209a506edbbcd76ede830",
+  "replayed_runtime_commit": "90928aef682fa714e7baacf8b8d2ca2980681027",
+  "runtime_sha256": {
+    "tcp_server.py": "10607c9a6a03bfb4e8875b3107f85608e382b90415e232dace093b2bf678acdd",
+    "scene_router.py": "147401103ced6e6a06ca526d434669edd36b5e1e55630f23a0a099689a3bca11",
+    "scene_protocol.py": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038",
+    "detector_config.py": "b047405f41cd10523d6e51ab25ee8a1673a8219de8ce4ece7a684277b2f5640b",
+    "pose_availability.py": "10eef6f52a4ae9afca8b16e51be2179b83c0a30d1b498ac98cd969d0129367ee",
+    "discovery.py": "f17f4b4525e969ae6dc22523d5a520207280106ebd61dc103b880fee52f88747",
+    "model_artifact.py": "521b330e8b38ee6a93fe6475e168d8dc90aa9a6bcad035db8d17e07ee1060cab",
+    "scene_profiles.json": "4c3a776c4133c60ff9be810630c1aa7002775230f98a03bb3fdfa020d78f8781"
+  },
+  "weight_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+  "frozen_input_sha256": "6bbdc73d702729a87f9e39d2a7a4cdab22c4e4e00e2bc0d261ffd384af91f4b9",
+  "raw_picf_sha256": "dbf14e323134fb02177bf2e7ffbf91d932a69a68ab47221819f027e17f3ffd5c",
+  "worker_sha256": "e12d901cf919c2994f87f97a085fa4cb34ee27fa3df3ae407355b99a7ba24bb4",
+  "results": {
+    "0.399": {
+      "scenes": {
+        "full": 13,
+        "clipped": 10,
+        "detail_only": 2
+      },
+      "matches": {
+        "full": 12,
+        "clipped": 9
+      },
+      "proposal_classes": {
+        "Statue": 27
+      },
+      "consecutive_matches": 11,
+      "consecutive_id_runs": [
+        [
+          {
+            "view": 48,
+            "id": "6c0598bce59d:left:2"
+          }
+        ],
+        [
+          {
+            "view": 49,
+            "id": "6c0598bce59d:left:4"
+          }
+        ],
+        [
+          {
+            "view": 50,
+            "id": "6c0598bce59d:left:5"
+          }
+        ],
+        [
+          {
+            "view": 51,
+            "id": "6c0598bce59d:left:6"
+          }
+        ],
+        [
+          {
+            "view": 52,
+            "id": "6c0598bce59d:left:8"
+          },
+          {
+            "view": 53,
+            "id": "6c0598bce59d:left:8"
+          }
+        ],
+        [
+          {
+            "view": 54,
+            "id": "6c0598bce59d:left:9"
+          }
+        ],
+        [
+          {
+            "view": 55,
+            "id": "6c0598bce59d:left:1"
+          },
+          {
+            "view": 56,
+            "id": "6c0598bce59d:left:1"
+          },
+          {
+            "view": 57,
+            "id": "6c0598bce59d:left:1"
+          }
+        ],
+        [
+          {
+            "view": 58,
+            "id": "6c0598bce59d:left:11"
+          }
+        ]
+      ],
+      "rows": {
+        "view-001": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9218627214431763,
+            "xyxy_normalized": [
+              0.4190692901611328,
+              0.20931278282487897,
+              0.5589456558227539,
+              0.7047610860475352
+            ],
+            "instance_id": "6c0598bce59d:left:1",
+            "iou": 0.5991363251127112
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9218627214431763,
+              "xyxy_normalized": [
+                0.4190692901611328,
+                0.20931278282487897,
+                0.5589456558227539,
+                0.7047610860475352
+              ],
+              "instance_id": "6c0598bce59d:left:1",
+              "iou": 0.5991363251127112
+            },
+            {
+              "class": "Statue",
+              "confidence": 0.4310861825942993,
+              "xyxy_normalized": [
+                0.3813327312469482,
+                0.2085883556956976,
+                0.5591483592987061,
+                0.8469797913457306
+              ],
+              "instance_id": "6c0598bce59d:left:2",
+              "iou": 0.8646414237107339
+            }
+          ]
+        },
+        "view-012": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.7727466225624084,
+            "xyxy_normalized": [
+              0.4171055793762207,
+              0.0004151250275088028,
+              0.5886134147644043,
+              0.5972719864106514
+            ],
+            "instance_id": "6c0598bce59d:left:1",
+            "iou": 0.8184639202253338
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.7727466225624084,
+              "xyxy_normalized": [
+                0.4171055793762207,
+                0.0004151250275088028,
+                0.5886134147644043,
+                0.5972719864106514
+              ],
+              "instance_id": "6c0598bce59d:left:1",
+              "iou": 0.8184639202253338
+            }
+          ]
+        },
+        "view-024": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.5096936225891113,
+            "xyxy_normalized": [
+              0.3012382984161377,
+              0.0005007461762764084,
+              0.4683194160461426,
+              0.6077356472821303
+            ],
+            "instance_id": "6c0598bce59d:left:3",
+            "iou": 0.9341785039258272
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.5096936225891113,
+              "xyxy_normalized": [
+                0.3012382984161377,
+                0.0005007461762764084,
+                0.4683194160461426,
+                0.6077356472821303
+              ],
+              "instance_id": "6c0598bce59d:left:3",
+              "iou": 0.9341785039258272
+            }
+          ]
+        },
+        "view-036": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.822863757610321,
+            "xyxy_normalized": [
+              0.46420912742614745,
+              0.000941101933868838,
+              0.6412977695465087,
+              0.5965756698393486
+            ],
+            "instance_id": "6c0598bce59d:left:1",
+            "iou": 0.7490898463275372
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.822863757610321,
+              "xyxy_normalized": [
+                0.46420912742614745,
+                0.000941101933868838,
+                0.6412977695465087,
+                0.5965756698393486
+              ],
+              "instance_id": "6c0598bce59d:left:1",
+              "iou": 0.7490898463275372
+            }
+          ]
+        },
+        "view-048": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.6511079668998718,
+            "xyxy_normalized": [
+              0.38454384803771974,
+              0.03464535995268486,
+              0.5622636318206787,
+              0.9431472993232835
+            ],
+            "instance_id": "6c0598bce59d:left:2",
+            "iou": 0.7046100233164763
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.6511079668998718,
+              "xyxy_normalized": [
+                0.38454384803771974,
+                0.03464535995268486,
+                0.5622636318206787,
+                0.9431472993232835
+              ],
+              "instance_id": "6c0598bce59d:left:2",
+              "iou": 0.7046100233164763
+            }
+          ]
+        },
+        "view-049": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.8334689140319824,
+            "xyxy_normalized": [
+              0.3668788433074951,
+              0.05008544921875,
+              0.5276784420013427,
+              0.7401313889194542
+            ],
+            "instance_id": "6c0598bce59d:left:4",
+            "iou": 0.5556833950702915
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.8334689140319824,
+              "xyxy_normalized": [
+                0.3668788433074951,
+                0.05008544921875,
+                0.5276784420013427,
+                0.7401313889194542
+              ],
+              "instance_id": "6c0598bce59d:left:4",
+              "iou": 0.5556833950702915
+            },
+            {
+              "class": "Statue",
+              "confidence": 0.6802288293838501,
+              "xyxy_normalized": [
+                0.36457931995391846,
+                0.04724310216769366,
+                0.5480610847473144,
+                0.992882441131162
+              ],
+              "instance_id": "6c0598bce59d:left:5",
+              "iou": 0.8529813527186197
+            }
+          ]
+        },
+        "view-050": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.8895781636238098,
+            "xyxy_normalized": [
+              0.3396272659301758,
+              0.04691205091879402,
+              0.5381109237670898,
+              0.9945940044564261
+            ],
+            "instance_id": "6c0598bce59d:left:5",
+            "iou": 0.8717412051790593
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.8895781636238098,
+              "xyxy_normalized": [
+                0.3396272659301758,
+                0.04691205091879402,
+                0.5381109237670898,
+                0.9945940044564261
+              ],
+              "instance_id": "6c0598bce59d:left:5",
+              "iou": 0.8717412051790593
+            },
+            {
+              "class": "Statue",
+              "confidence": 0.7174540162086487,
+              "xyxy_normalized": [
+                0.34076454639434817,
+                0.05014442121478873,
+                0.5225975990295411,
+                0.7537638919454225
+              ],
+              "instance_id": "6c0598bce59d:left:4",
+              "iou": 0.596180364020351
+            }
+          ]
+        },
+        "view-051": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.95586097240448,
+            "xyxy_normalized": [
+              0.3338629961013794,
+              0.03726969974141725,
+              0.532498836517334,
+              0.7981971418353874
+            ],
+            "instance_id": "6c0598bce59d:left:6",
+            "iou": 0.6275713332671805
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.95586097240448,
+              "xyxy_normalized": [
+                0.3338629961013794,
+                0.03726969974141725,
+                0.532498836517334,
+                0.7981971418353874
+              ],
+              "instance_id": "6c0598bce59d:left:6",
+              "iou": 0.6275713332671805
+            },
+            {
+              "class": "Statue",
+              "confidence": 0.5796820521354675,
+              "xyxy_normalized": [
+                0.3154915809631348,
+                0.034304938517825706,
+                0.5425607681274414,
+                1.0
+              ],
+              "instance_id": "6c0598bce59d:left:7",
+              "iou": 0.906298861273298
+            }
+          ]
+        },
+        "view-052": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9785603880882263,
+            "xyxy_normalized": [
+              0.2701579093933105,
+              0.021752757757482394,
+              0.4921311378479004,
+              0.825920341384243
+            ],
+            "instance_id": "6c0598bce59d:left:8",
+            "iou": 0.6287538928144643
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9785603880882263,
+              "xyxy_normalized": [
+                0.2701579093933105,
+                0.021752757757482394,
+                0.4921311378479004,
+                0.825920341384243
+              ],
+              "instance_id": "6c0598bce59d:left:8",
+              "iou": 0.6287538928144643
+            }
+          ]
+        },
+        "view-053": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9238000512123108,
+            "xyxy_normalized": [
+              0.2640491008758545,
+              0.021925289530149647,
+              0.49593043327331543,
+              0.828828623597051
+            ],
+            "instance_id": "6c0598bce59d:left:8",
+            "iou": 0.5968810028355893
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9238000512123108,
+              "xyxy_normalized": [
+                0.2640491008758545,
+                0.021925289530149647,
+                0.49593043327331543,
+                0.828828623597051
+              ],
+              "instance_id": "6c0598bce59d:left:8",
+              "iou": 0.5968810028355893
+            }
+          ]
+        },
+        "view-054": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9310141801834106,
+            "xyxy_normalized": [
+              0.35635783672332766,
+              0.056185547734650086,
+              0.5600489616394043,
+              0.7663192534110915
+            ],
+            "instance_id": "6c0598bce59d:left:9",
+            "iou": 0.5184170248628842
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9310141801834106,
+              "xyxy_normalized": [
+                0.35635783672332766,
+                0.056185547734650086,
+                0.5600489616394043,
+                0.7663192534110915
+              ],
+              "instance_id": "6c0598bce59d:left:9",
+              "iou": 0.5184170248628842
+            },
+            {
+              "class": "Statue",
+              "confidence": 0.4525914490222931,
+              "xyxy_normalized": [
+                0.29230048656463625,
+                0.05374394806338028,
+                0.5632346153259278,
+                0.9930701887103873
+              ],
+              "instance_id": "6c0598bce59d:left:10",
+              "iou": 0.7796474877729173
+            }
+          ]
+        },
+        "view-055": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9678975939750671,
+            "xyxy_normalized": [
+              0.4463298797607422,
+              0.08787987937389964,
+              0.6389986991882324,
+              0.7580287879621479
+            ],
+            "instance_id": "6c0598bce59d:left:1",
+            "iou": 0.5781956943008919
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9678975939750671,
+              "xyxy_normalized": [
+                0.4463298797607422,
+                0.08787987937389964,
+                0.6389986991882324,
+                0.7580287879621479
+              ],
+              "instance_id": "6c0598bce59d:left:1",
+              "iou": 0.5781956943008919
+            }
+          ]
+        },
+        "view-056": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9707411527633667,
+            "xyxy_normalized": [
+              0.5119098663330078,
+              0.09519851039832747,
+              0.6987669944763184,
+              0.7564668037522007
+            ],
+            "instance_id": "6c0598bce59d:left:1",
+            "iou": 0.5506540372813394
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9707411527633667,
+              "xyxy_normalized": [
+                0.5119098663330078,
+                0.09519851039832747,
+                0.6987669944763184,
+                0.7564668037522007
+              ],
+              "instance_id": "6c0598bce59d:left:1",
+              "iou": 0.5506540372813394
+            }
+          ]
+        },
+        "view-057": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9735161066055298,
+            "xyxy_normalized": [
+              0.4666404724121094,
+              0.10451453840228873,
+              0.6450870513916016,
+              0.7419210084727113
+            ],
+            "instance_id": "6c0598bce59d:left:1",
+            "iou": 0.528604371411928
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9735161066055298,
+              "xyxy_normalized": [
+                0.4666404724121094,
+                0.10451453840228873,
+                0.6450870513916016,
+                0.7419210084727113
+              ],
+              "instance_id": "6c0598bce59d:left:1",
+              "iou": 0.528604371411928
+            }
+          ]
+        },
+        "view-058": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9688398838043213,
+            "xyxy_normalized": [
+              0.4149289131164551,
+              0.09162752393265845,
+              0.595360279083252,
+              0.7508642062334947
+            ],
+            "instance_id": "6c0598bce59d:left:11",
+            "iou": 0.5770135676588226
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9688398838043213,
+              "xyxy_normalized": [
+                0.4149289131164551,
+                0.09162752393265845,
+                0.595360279083252,
+                0.7508642062334947
+              ],
+              "instance_id": "6c0598bce59d:left:11",
+              "iou": 0.5770135676588226
+            }
+          ]
+        },
+        "view-059": {
+          "group": "full",
+          "match": null,
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.977663516998291,
+              "xyxy_normalized": [
+                0.3516075134277344,
+                0.09746833049075704,
+                0.5279942512512207,
+                0.7766182053257042
+              ],
+              "instance_id": "6c0598bce59d:left:12",
+              "iou": 0.47890231953777823
+            }
+          ]
+        },
+        "view-072": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9579878449440002,
+            "xyxy_normalized": [
+              0.3625248670578003,
+              3.7480743838028167e-05,
+              0.6195622444152832,
+              0.9940085827464789
+            ],
+            "instance_id": "6c0598bce59d:left:13",
+            "iou": 0.753858287473235
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9579878449440002,
+              "xyxy_normalized": [
+                0.3625248670578003,
+                3.7480743838028167e-05,
+                0.6195622444152832,
+                0.9940085827464789
+              ],
+              "instance_id": "6c0598bce59d:left:13",
+              "iou": 0.753858287473235
+            }
+          ]
+        },
+        "view-084": {
+          "group": "clipped",
+          "match": null,
+          "proposals": []
+        },
+        "view-096": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.7237179279327393,
+            "xyxy_normalized": [
+              0.5178170680999756,
+              0.048452200016505284,
+              0.6603525638580322,
+              0.7843505859375
+            ],
+            "instance_id": "6c0598bce59d:left:1",
+            "iou": 0.7467850096061748
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.7237179279327393,
+              "xyxy_normalized": [
+                0.5178170680999756,
+                0.048452200016505284,
+                0.6603525638580322,
+                0.7843505859375
+              ],
+              "instance_id": "6c0598bce59d:left:1",
+              "iou": 0.7467850096061748
+            }
+          ]
+        },
+        "view-120": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9307962656021118,
+            "xyxy_normalized": [
+              0.363740348815918,
+              0.05100793972821303,
+              0.5414799690246582,
+              0.8520529303752201
+            ],
+            "instance_id": "6c0598bce59d:left:14",
+            "iou": 0.7824146827358834
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9307962656021118,
+              "xyxy_normalized": [
+                0.363740348815918,
+                0.05100793972821303,
+                0.5414799690246582,
+                0.8520529303752201
+              ],
+              "instance_id": "6c0598bce59d:left:14",
+              "iou": 0.7824146827358834
+            }
+          ]
+        },
+        "view-144": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9405505657196045,
+            "xyxy_normalized": [
+              0.3252865314483643,
+              0.0,
+              0.7413957118988037,
+              0.9995615784551056
+            ],
+            "instance_id": "6c0598bce59d:left:13",
+            "iou": 0.5208545314107973
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9405505657196045,
+              "xyxy_normalized": [
+                0.3252865314483643,
+                0.0,
+                0.7413957118988037,
+                0.9995615784551056
+              ],
+              "instance_id": "6c0598bce59d:left:13",
+              "iou": 0.5208545314107973
+            }
+          ]
+        },
+        "view-168": {
+          "group": "detail_only",
+          "match": null,
+          "proposals": []
+        },
+        "view-192": {
+          "group": "detail_only",
+          "match": null,
+          "proposals": []
+        },
+        "view-228": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.571109414100647,
+            "xyxy_normalized": [
+              0.35285980701446534,
+              0.002162879621478873,
+              0.5780871391296387,
+              0.7325978453730194
+            ],
+            "instance_id": "6c0598bce59d:left:9",
+            "iou": 0.5679079833026854
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.571109414100647,
+              "xyxy_normalized": [
+                0.35285980701446534,
+                0.002162879621478873,
+                0.5780871391296387,
+                0.7325978453730194
+              ],
+              "instance_id": "6c0598bce59d:left:9",
+              "iou": 0.5679079833026854
+            }
+          ]
+        },
+        "view-263": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9824420809745789,
+            "xyxy_normalized": [
+              0.3614649772644043,
+              0.1606263066681338,
+              0.6260969161987304,
+              0.9978156291263204
+            ],
+            "instance_id": "6c0598bce59d:left:15",
+            "iou": 0.8251177963235439
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9824420809745789,
+              "xyxy_normalized": [
+                0.3614649772644043,
+                0.1606263066681338,
+                0.6260969161987304,
+                0.9978156291263204
+              ],
+              "instance_id": "6c0598bce59d:left:15",
+              "iou": 0.8251177963235439
+            }
+          ]
+        }
+      }
+    },
+    "0.5": {
+      "scenes": {
+        "full": 13,
+        "clipped": 10,
+        "detail_only": 2
+      },
+      "matches": {
+        "full": 12,
+        "clipped": 9
+      },
+      "proposal_classes": {
+        "Statue": 25
+      },
+      "consecutive_matches": 11,
+      "consecutive_id_runs": [
+        [
+          {
+            "view": 48,
+            "id": "6c0598bce59d:left:2"
+          }
+        ],
+        [
+          {
+            "view": 49,
+            "id": "6c0598bce59d:left:4"
+          }
+        ],
+        [
+          {
+            "view": 50,
+            "id": "6c0598bce59d:left:5"
+          }
+        ],
+        [
+          {
+            "view": 51,
+            "id": "6c0598bce59d:left:6"
+          }
+        ],
+        [
+          {
+            "view": 52,
+            "id": "6c0598bce59d:left:8"
+          },
+          {
+            "view": 53,
+            "id": "6c0598bce59d:left:8"
+          }
+        ],
+        [
+          {
+            "view": 54,
+            "id": "6c0598bce59d:left:9"
+          }
+        ],
+        [
+          {
+            "view": 55,
+            "id": "6c0598bce59d:left:1"
+          },
+          {
+            "view": 56,
+            "id": "6c0598bce59d:left:1"
+          },
+          {
+            "view": 57,
+            "id": "6c0598bce59d:left:1"
+          }
+        ],
+        [
+          {
+            "view": 58,
+            "id": "6c0598bce59d:left:11"
+          }
+        ]
+      ],
+      "rows": {
+        "view-001": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9218627214431763,
+            "xyxy_normalized": [
+              0.4190692901611328,
+              0.20931278282487897,
+              0.5589456558227539,
+              0.7047610860475352
+            ],
+            "instance_id": "6c0598bce59d:left:1",
+            "iou": 0.5991363251127112
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9218627214431763,
+              "xyxy_normalized": [
+                0.4190692901611328,
+                0.20931278282487897,
+                0.5589456558227539,
+                0.7047610860475352
+              ],
+              "instance_id": "6c0598bce59d:left:1",
+              "iou": 0.5991363251127112
+            }
+          ]
+        },
+        "view-012": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.7727466225624084,
+            "xyxy_normalized": [
+              0.4171055793762207,
+              0.0004151250275088028,
+              0.5886134147644043,
+              0.5972719864106514
+            ],
+            "instance_id": "6c0598bce59d:left:1",
+            "iou": 0.8184639202253338
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.7727466225624084,
+              "xyxy_normalized": [
+                0.4171055793762207,
+                0.0004151250275088028,
+                0.5886134147644043,
+                0.5972719864106514
+              ],
+              "instance_id": "6c0598bce59d:left:1",
+              "iou": 0.8184639202253338
+            }
+          ]
+        },
+        "view-024": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.5096936225891113,
+            "xyxy_normalized": [
+              0.3012382984161377,
+              0.0005007461762764084,
+              0.4683194160461426,
+              0.6077356472821303
+            ],
+            "instance_id": "6c0598bce59d:left:3",
+            "iou": 0.9341785039258272
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.5096936225891113,
+              "xyxy_normalized": [
+                0.3012382984161377,
+                0.0005007461762764084,
+                0.4683194160461426,
+                0.6077356472821303
+              ],
+              "instance_id": "6c0598bce59d:left:3",
+              "iou": 0.9341785039258272
+            }
+          ]
+        },
+        "view-036": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.822863757610321,
+            "xyxy_normalized": [
+              0.46420912742614745,
+              0.000941101933868838,
+              0.6412977695465087,
+              0.5965756698393486
+            ],
+            "instance_id": "6c0598bce59d:left:1",
+            "iou": 0.7490898463275372
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.822863757610321,
+              "xyxy_normalized": [
+                0.46420912742614745,
+                0.000941101933868838,
+                0.6412977695465087,
+                0.5965756698393486
+              ],
+              "instance_id": "6c0598bce59d:left:1",
+              "iou": 0.7490898463275372
+            }
+          ]
+        },
+        "view-048": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.6511079668998718,
+            "xyxy_normalized": [
+              0.38454384803771974,
+              0.03464535995268486,
+              0.5622636318206787,
+              0.9431472993232835
+            ],
+            "instance_id": "6c0598bce59d:left:2",
+            "iou": 0.7046100233164763
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.6511079668998718,
+              "xyxy_normalized": [
+                0.38454384803771974,
+                0.03464535995268486,
+                0.5622636318206787,
+                0.9431472993232835
+              ],
+              "instance_id": "6c0598bce59d:left:2",
+              "iou": 0.7046100233164763
+            }
+          ]
+        },
+        "view-049": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.8334689140319824,
+            "xyxy_normalized": [
+              0.3668788433074951,
+              0.05008544921875,
+              0.5276784420013427,
+              0.7401313889194542
+            ],
+            "instance_id": "6c0598bce59d:left:4",
+            "iou": 0.5556833950702915
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.8334689140319824,
+              "xyxy_normalized": [
+                0.3668788433074951,
+                0.05008544921875,
+                0.5276784420013427,
+                0.7401313889194542
+              ],
+              "instance_id": "6c0598bce59d:left:4",
+              "iou": 0.5556833950702915
+            },
+            {
+              "class": "Statue",
+              "confidence": 0.6802288293838501,
+              "xyxy_normalized": [
+                0.36457931995391846,
+                0.04724310216769366,
+                0.5480610847473144,
+                0.992882441131162
+              ],
+              "instance_id": "6c0598bce59d:left:5",
+              "iou": 0.8529813527186197
+            }
+          ]
+        },
+        "view-050": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.8895781636238098,
+            "xyxy_normalized": [
+              0.3396272659301758,
+              0.04691205091879402,
+              0.5381109237670898,
+              0.9945940044564261
+            ],
+            "instance_id": "6c0598bce59d:left:5",
+            "iou": 0.8717412051790593
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.8895781636238098,
+              "xyxy_normalized": [
+                0.3396272659301758,
+                0.04691205091879402,
+                0.5381109237670898,
+                0.9945940044564261
+              ],
+              "instance_id": "6c0598bce59d:left:5",
+              "iou": 0.8717412051790593
+            },
+            {
+              "class": "Statue",
+              "confidence": 0.7174540162086487,
+              "xyxy_normalized": [
+                0.34076454639434817,
+                0.05014442121478873,
+                0.5225975990295411,
+                0.7537638919454225
+              ],
+              "instance_id": "6c0598bce59d:left:4",
+              "iou": 0.596180364020351
+            }
+          ]
+        },
+        "view-051": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.95586097240448,
+            "xyxy_normalized": [
+              0.3338629961013794,
+              0.03726969974141725,
+              0.532498836517334,
+              0.7981971418353874
+            ],
+            "instance_id": "6c0598bce59d:left:6",
+            "iou": 0.6275713332671805
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.95586097240448,
+              "xyxy_normalized": [
+                0.3338629961013794,
+                0.03726969974141725,
+                0.532498836517334,
+                0.7981971418353874
+              ],
+              "instance_id": "6c0598bce59d:left:6",
+              "iou": 0.6275713332671805
+            },
+            {
+              "class": "Statue",
+              "confidence": 0.5796820521354675,
+              "xyxy_normalized": [
+                0.3154915809631348,
+                0.034304938517825706,
+                0.5425607681274414,
+                1.0
+              ],
+              "instance_id": "6c0598bce59d:left:7",
+              "iou": 0.906298861273298
+            }
+          ]
+        },
+        "view-052": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9785603880882263,
+            "xyxy_normalized": [
+              0.2701579093933105,
+              0.021752757757482394,
+              0.4921311378479004,
+              0.825920341384243
+            ],
+            "instance_id": "6c0598bce59d:left:8",
+            "iou": 0.6287538928144643
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9785603880882263,
+              "xyxy_normalized": [
+                0.2701579093933105,
+                0.021752757757482394,
+                0.4921311378479004,
+                0.825920341384243
+              ],
+              "instance_id": "6c0598bce59d:left:8",
+              "iou": 0.6287538928144643
+            }
+          ]
+        },
+        "view-053": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9238000512123108,
+            "xyxy_normalized": [
+              0.2640491008758545,
+              0.021925289530149647,
+              0.49593043327331543,
+              0.828828623597051
+            ],
+            "instance_id": "6c0598bce59d:left:8",
+            "iou": 0.5968810028355893
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9238000512123108,
+              "xyxy_normalized": [
+                0.2640491008758545,
+                0.021925289530149647,
+                0.49593043327331543,
+                0.828828623597051
+              ],
+              "instance_id": "6c0598bce59d:left:8",
+              "iou": 0.5968810028355893
+            }
+          ]
+        },
+        "view-054": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9310141801834106,
+            "xyxy_normalized": [
+              0.35635783672332766,
+              0.056185547734650086,
+              0.5600489616394043,
+              0.7663192534110915
+            ],
+            "instance_id": "6c0598bce59d:left:9",
+            "iou": 0.5184170248628842
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9310141801834106,
+              "xyxy_normalized": [
+                0.35635783672332766,
+                0.056185547734650086,
+                0.5600489616394043,
+                0.7663192534110915
+              ],
+              "instance_id": "6c0598bce59d:left:9",
+              "iou": 0.5184170248628842
+            }
+          ]
+        },
+        "view-055": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9678975939750671,
+            "xyxy_normalized": [
+              0.4463298797607422,
+              0.08787987937389964,
+              0.6389986991882324,
+              0.7580287879621479
+            ],
+            "instance_id": "6c0598bce59d:left:1",
+            "iou": 0.5781956943008919
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9678975939750671,
+              "xyxy_normalized": [
+                0.4463298797607422,
+                0.08787987937389964,
+                0.6389986991882324,
+                0.7580287879621479
+              ],
+              "instance_id": "6c0598bce59d:left:1",
+              "iou": 0.5781956943008919
+            }
+          ]
+        },
+        "view-056": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9707411527633667,
+            "xyxy_normalized": [
+              0.5119098663330078,
+              0.09519851039832747,
+              0.6987669944763184,
+              0.7564668037522007
+            ],
+            "instance_id": "6c0598bce59d:left:1",
+            "iou": 0.5506540372813394
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9707411527633667,
+              "xyxy_normalized": [
+                0.5119098663330078,
+                0.09519851039832747,
+                0.6987669944763184,
+                0.7564668037522007
+              ],
+              "instance_id": "6c0598bce59d:left:1",
+              "iou": 0.5506540372813394
+            }
+          ]
+        },
+        "view-057": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9735161066055298,
+            "xyxy_normalized": [
+              0.4666404724121094,
+              0.10451453840228873,
+              0.6450870513916016,
+              0.7419210084727113
+            ],
+            "instance_id": "6c0598bce59d:left:1",
+            "iou": 0.528604371411928
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9735161066055298,
+              "xyxy_normalized": [
+                0.4666404724121094,
+                0.10451453840228873,
+                0.6450870513916016,
+                0.7419210084727113
+              ],
+              "instance_id": "6c0598bce59d:left:1",
+              "iou": 0.528604371411928
+            }
+          ]
+        },
+        "view-058": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9688398838043213,
+            "xyxy_normalized": [
+              0.4149289131164551,
+              0.09162752393265845,
+              0.595360279083252,
+              0.7508642062334947
+            ],
+            "instance_id": "6c0598bce59d:left:11",
+            "iou": 0.5770135676588226
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9688398838043213,
+              "xyxy_normalized": [
+                0.4149289131164551,
+                0.09162752393265845,
+                0.595360279083252,
+                0.7508642062334947
+              ],
+              "instance_id": "6c0598bce59d:left:11",
+              "iou": 0.5770135676588226
+            }
+          ]
+        },
+        "view-059": {
+          "group": "full",
+          "match": null,
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.977663516998291,
+              "xyxy_normalized": [
+                0.3516075134277344,
+                0.09746833049075704,
+                0.5279942512512207,
+                0.7766182053257042
+              ],
+              "instance_id": "6c0598bce59d:left:12",
+              "iou": 0.47890231953777823
+            }
+          ]
+        },
+        "view-072": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9579878449440002,
+            "xyxy_normalized": [
+              0.3625248670578003,
+              3.7480743838028167e-05,
+              0.6195622444152832,
+              0.9940085827464789
+            ],
+            "instance_id": "6c0598bce59d:left:13",
+            "iou": 0.753858287473235
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9579878449440002,
+              "xyxy_normalized": [
+                0.3625248670578003,
+                3.7480743838028167e-05,
+                0.6195622444152832,
+                0.9940085827464789
+              ],
+              "instance_id": "6c0598bce59d:left:13",
+              "iou": 0.753858287473235
+            }
+          ]
+        },
+        "view-084": {
+          "group": "clipped",
+          "match": null,
+          "proposals": []
+        },
+        "view-096": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.7237179279327393,
+            "xyxy_normalized": [
+              0.5178170680999756,
+              0.048452200016505284,
+              0.6603525638580322,
+              0.7843505859375
+            ],
+            "instance_id": "6c0598bce59d:left:1",
+            "iou": 0.7467850096061748
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.7237179279327393,
+              "xyxy_normalized": [
+                0.5178170680999756,
+                0.048452200016505284,
+                0.6603525638580322,
+                0.7843505859375
+              ],
+              "instance_id": "6c0598bce59d:left:1",
+              "iou": 0.7467850096061748
+            }
+          ]
+        },
+        "view-120": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9307962656021118,
+            "xyxy_normalized": [
+              0.363740348815918,
+              0.05100793972821303,
+              0.5414799690246582,
+              0.8520529303752201
+            ],
+            "instance_id": "6c0598bce59d:left:14",
+            "iou": 0.7824146827358834
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9307962656021118,
+              "xyxy_normalized": [
+                0.363740348815918,
+                0.05100793972821303,
+                0.5414799690246582,
+                0.8520529303752201
+              ],
+              "instance_id": "6c0598bce59d:left:14",
+              "iou": 0.7824146827358834
+            }
+          ]
+        },
+        "view-144": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9405505657196045,
+            "xyxy_normalized": [
+              0.3252865314483643,
+              0.0,
+              0.7413957118988037,
+              0.9995615784551056
+            ],
+            "instance_id": "6c0598bce59d:left:13",
+            "iou": 0.5208545314107973
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9405505657196045,
+              "xyxy_normalized": [
+                0.3252865314483643,
+                0.0,
+                0.7413957118988037,
+                0.9995615784551056
+              ],
+              "instance_id": "6c0598bce59d:left:13",
+              "iou": 0.5208545314107973
+            }
+          ]
+        },
+        "view-168": {
+          "group": "detail_only",
+          "match": null,
+          "proposals": []
+        },
+        "view-192": {
+          "group": "detail_only",
+          "match": null,
+          "proposals": []
+        },
+        "view-228": {
+          "group": "full",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.571109414100647,
+            "xyxy_normalized": [
+              0.35285980701446534,
+              0.002162879621478873,
+              0.5780871391296387,
+              0.7325978453730194
+            ],
+            "instance_id": "6c0598bce59d:left:9",
+            "iou": 0.5679079833026854
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.571109414100647,
+              "xyxy_normalized": [
+                0.35285980701446534,
+                0.002162879621478873,
+                0.5780871391296387,
+                0.7325978453730194
+              ],
+              "instance_id": "6c0598bce59d:left:9",
+              "iou": 0.5679079833026854
+            }
+          ]
+        },
+        "view-263": {
+          "group": "clipped",
+          "match": {
+            "class": "Statue",
+            "confidence": 0.9824420809745789,
+            "xyxy_normalized": [
+              0.3614649772644043,
+              0.1606263066681338,
+              0.6260969161987304,
+              0.9978156291263204
+            ],
+            "instance_id": "6c0598bce59d:left:15",
+            "iou": 0.8251177963235439
+          },
+          "proposals": [
+            {
+              "class": "Statue",
+              "confidence": 0.9824420809745789,
+              "xyxy_normalized": [
+                0.3614649772644043,
+                0.1606263066681338,
+                0.6260969161987304,
+                0.9978156291263204
+              ],
+              "instance_id": "6c0598bce59d:left:15",
+              "iou": 0.8251177963235439
+            }
+          ]
+        }
+      }
+    }
+  },
+  "scope": "25 recorded frames from one statue. 12 consecutively indexed sampled photographs. No metric depth or field validation."
+}

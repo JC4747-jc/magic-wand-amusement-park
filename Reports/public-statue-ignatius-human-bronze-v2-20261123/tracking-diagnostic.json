@@ -1,0 +1,641 @@
+{
+  "source": "3c4e634e11d19788c8c209a506edbbcd76ede830",
+  "tracker_sha256": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038",
+  "router_sha256": "147401103ced6e6a06ca526d434669edd36b5e1e55630f23a0a099689a3bca11",
+  "router_track_ttl_seconds": 1.5,
+  "raw_picf_sha256": "dbf14e323134fb02177bf2e7ffbf91d932a69a68ab47221819f027e17f3ffd5c",
+  "policy": "Original route TTL and association rules. Estimates assignment time from packet timestamp and reply latency. Oracle keeps the single highest-IoU ground-truth-matching box (confidence >= .50) per view.",
+  "raw_id_agreement": 25,
+  "raw_longest_eligible_id": 3,
+  "oracle_longest_eligible_id": 5,
+  "raw": [
+    {
+      "key": "view-001",
+      "observed_ids": [
+        1,
+        2
+      ],
+      "reassigned_ids": [
+        1,
+        2
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-012",
+      "observed_ids": [
+        1
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-024",
+      "observed_ids": [
+        3
+      ],
+      "reassigned_ids": [
+        3
+      ],
+      "matched_reassigned_ids": [
+        3
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-036",
+      "observed_ids": [
+        1
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-048",
+      "observed_ids": [
+        2
+      ],
+      "reassigned_ids": [
+        2
+      ],
+      "matched_reassigned_ids": [
+        2
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-049",
+      "observed_ids": [
+        4,
+        5
+      ],
+      "reassigned_ids": [
+        4,
+        5
+      ],
+      "matched_reassigned_ids": [
+        4,
+        5
+      ],
+      "overlapping_truth_candidates": 2
+    },
+    {
+      "key": "view-050",
+      "observed_ids": [
+        5,
+        4
+      ],
+      "reassigned_ids": [
+        5,
+        4
+      ],
+      "matched_reassigned_ids": [
+        5,
+        4
+      ],
+      "overlapping_truth_candidates": 2
+    },
+    {
+      "key": "view-051",
+      "observed_ids": [
+        6,
+        7
+      ],
+      "reassigned_ids": [
+        6,
+        7
+      ],
+      "matched_reassigned_ids": [
+        6,
+        7
+      ],
+      "overlapping_truth_candidates": 2
+    },
+    {
+      "key": "view-052",
+      "observed_ids": [
+        8
+      ],
+      "reassigned_ids": [
+        8
+      ],
+      "matched_reassigned_ids": [
+        8
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-053",
+      "observed_ids": [
+        8
+      ],
+      "reassigned_ids": [
+        8
+      ],
+      "matched_reassigned_ids": [
+        8
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-054",
+      "observed_ids": [
+        9,
+        10
+      ],
+      "reassigned_ids": [
+        9,
+        10
+      ],
+      "matched_reassigned_ids": [
+        9
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-055",
+      "observed_ids": [
+        1
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-056",
+      "observed_ids": [
+        1
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-057",
+      "observed_ids": [
+        1
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-058",
+      "observed_ids": [
+        11
+      ],
+      "reassigned_ids": [
+        11
+      ],
+      "matched_reassigned_ids": [
+        11
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-059",
+      "observed_ids": [
+        12
+      ],
+      "reassigned_ids": [
+        12
+      ],
+      "matched_reassigned_ids": [],
+      "overlapping_truth_candidates": 0
+    },
+    {
+      "key": "view-072",
+      "observed_ids": [
+        13
+      ],
+      "reassigned_ids": [
+        13
+      ],
+      "matched_reassigned_ids": [
+        13
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-084",
+      "observed_ids": [],
+      "reassigned_ids": [],
+      "matched_reassigned_ids": [],
+      "overlapping_truth_candidates": 0
+    },
+    {
+      "key": "view-096",
+      "observed_ids": [
+        1
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-120",
+      "observed_ids": [
+        14
+      ],
+      "reassigned_ids": [
+        14
+      ],
+      "matched_reassigned_ids": [
+        14
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-144",
+      "observed_ids": [
+        13
+      ],
+      "reassigned_ids": [
+        13
+      ],
+      "matched_reassigned_ids": [
+        13
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-168",
+      "observed_ids": [],
+      "reassigned_ids": [],
+      "matched_reassigned_ids": [],
+      "overlapping_truth_candidates": 0
+    },
+    {
+      "key": "view-192",
+      "observed_ids": [],
+      "reassigned_ids": [],
+      "matched_reassigned_ids": [],
+      "overlapping_truth_candidates": 0
+    },
+    {
+      "key": "view-228",
+      "observed_ids": [
+        9
+      ],
+      "reassigned_ids": [
+        9
+      ],
+      "matched_reassigned_ids": [
+        9
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-263",
+      "observed_ids": [
+        15
+      ],
+      "reassigned_ids": [
+        15
+      ],
+      "matched_reassigned_ids": [
+        15
+      ],
+      "overlapping_truth_candidates": 1
+    }
+  ],
+  "oracle": [
+    {
+      "key": "view-001",
+      "observed_ids": [
+        1,
+        2
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-012",
+      "observed_ids": [
+        1
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-024",
+      "observed_ids": [
+        3
+      ],
+      "reassigned_ids": [
+        2
+      ],
+      "matched_reassigned_ids": [
+        2
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-036",
+      "observed_ids": [
+        1
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-048",
+      "observed_ids": [
+        2
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-049",
+      "observed_ids": [
+        4,
+        5
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 2
+    },
+    {
+      "key": "view-050",
+      "observed_ids": [
+        5,
+        4
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 2
+    },
+    {
+      "key": "view-051",
+      "observed_ids": [
+        6,
+        7
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 2
+    },
+    {
+      "key": "view-052",
+      "observed_ids": [
+        8
+      ],
+      "reassigned_ids": [
+        3
+      ],
+      "matched_reassigned_ids": [
+        3
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-053",
+      "observed_ids": [
+        8
+      ],
+      "reassigned_ids": [
+        3
+      ],
+      "matched_reassigned_ids": [
+        3
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-054",
+      "observed_ids": [
+        9,
+        10
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-055",
+      "observed_ids": [
+        1
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-056",
+      "observed_ids": [
+        1
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-057",
+      "observed_ids": [
+        1
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-058",
+      "observed_ids": [
+        11
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-059",
+      "observed_ids": [
+        12
+      ],
+      "reassigned_ids": [],
+      "matched_reassigned_ids": [],
+      "overlapping_truth_candidates": 0
+    },
+    {
+      "key": "view-072",
+      "observed_ids": [
+        13
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-084",
+      "observed_ids": [],
+      "reassigned_ids": [],
+      "matched_reassigned_ids": [],
+      "overlapping_truth_candidates": 0
+    },
+    {
+      "key": "view-096",
+      "observed_ids": [
+        1
+      ],
+      "reassigned_ids": [
+        1
+      ],
+      "matched_reassigned_ids": [
+        1
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-120",
+      "observed_ids": [
+        14
+      ],
+      "reassigned_ids": [
+        3
+      ],
+      "matched_reassigned_ids": [
+        3
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-144",
+      "observed_ids": [
+        13
+      ],
+      "reassigned_ids": [
+        4
+      ],
+      "matched_reassigned_ids": [
+        4
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-168",
+      "observed_ids": [],
+      "reassigned_ids": [],
+      "matched_reassigned_ids": [],
+      "overlapping_truth_candidates": 0
+    },
+    {
+      "key": "view-192",
+      "observed_ids": [],
+      "reassigned_ids": [],
+      "matched_reassigned_ids": [],
+      "overlapping_truth_candidates": 0
+    },
+    {
+      "key": "view-228",
+      "observed_ids": [
+        9
+      ],
+      "reassigned_ids": [
+        3
+      ],
+      "matched_reassigned_ids": [
+        3
+      ],
+      "overlapping_truth_candidates": 1
+    },
+    {
+      "key": "view-263",
+      "observed_ids": [
+        15
+      ],
+      "reassigned_ids": [
+        5
+      ],
+      "matched_reassigned_ids": [
+        5
+      ],
+      "overlapping_truth_candidates": 1
+    }
+  ]
+}
