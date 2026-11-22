@@ -1,0 +1,521 @@
+{
+  "source_commit": "2afff1db3a46327c0abccae6e58b2b70422f4686",
+  "prior_source_manifests": {
+    "Reports/public-statue-bronze-horse-20261123/frozen-input.json": "e65300df7724e8e23fe44498337d28de756296d61c414d23a928057886918b70",
+    "Reports/public-statue-bronze-material-inline-20261123/frozen-input.json": "277f543649893c668267b75c94adecc82210753a332900034cb5eba8803b30ae",
+    "Reports/public-statue-eth3d-20261123/frozen-input.json": "41fcb24d55540b3923c89b22fbe0673f70c80418866d0528cb96c4f67c1c7822",
+    "Reports/public-statue-eth3d-native-20261123/frozen-input.json": "41fcb24d55540b3923c89b22fbe0673f70c80418866d0528cb96c4f67c1c7822",
+    "Reports/public-statue-native-holdout-cma-20261123/frozen-input.json": "8cf62ddc0eac3c149e73b9b9e7369a06e201673b48a2639b580d6714ac81a802",
+    "Reports/statue-cma-data-20261121/source-intake.json": "c965a01350c3f1fedebcc9d99f0c7c3b6ef3295c9aa5df99e8b44a0465ead708",
+    "Reports/statue-external-holdout-20261121/source-intake.json": "329103a38feefa3eb18250805be36c9fa9406b78e31d7dcc73d11094b7bf92be",
+    "Reports/statue-field-train-20261121/source-intake.json": "71d91c8992c4940f3bb41923cd932517b39c47e53d3dc27cebe2017e63d44987",
+    "Reports/statue-material-train-20261122/source-intake.json": "5386fe9d8800f383fb6892cc0a244b76459287b56b1b8e3d5ba9efcbc576999f",
+    "Reports/statue-walters-material-20261123/acquisition.json": "e0f9cefeb2be371e15bf406f58f7b55fcf8496d25389089a66ee63185ce05855",
+    "Reports/statue-walters-material-20261123/pre-inference-manifest.json": "e13c855cf7bdeee8652d360a517af443e7b0f15d665914630001949a73bd28fc",
+    "TrainingData/statue-cma-review-batch1-v1.json": "3d2904ba01e1e17d0d44a7465acf8168dabdba6566cd1a8f456b75f82a00368e",
+    "TrainingData/statue-cma-review-batch2-v1.json": "c4cc26531a8fc926bc72ede6a532ef04a7616aa6cdce011876cdcc76294a2436",
+    "TrainingData/statue-external-benchmark-v1.json": "33d24dc1ca2af8775f3796ecc7bc43c5ae782ffa0a98678d49b8529a6dc81d50",
+    "TrainingData/statue-local-review-v1.json": "6cfa6ec97056abc7cc28ec7e0c9dce3ab38c9a93afa4976dcefa42b1df3ac736",
+    "TrainingData/statue-local-review-v2.json": "8bfa17257bc88706128a53cfc5d235e70c0543d3caa555d1d995dd23ec4bd12e",
+    "TrainingData/statue-material-crop-diagnostic-plan-20261122.json": "8d9fd4da1d96066d77e88e74662dcfcc1d62cf6a9fe5c1eb6efe4e016c2cef66",
+    "TrainingData/statue-material-diagnostic-20261122.json": "7168e939d9a2d6e99b3762762d0853c75ed6698960e63f66c5b7ff988b756b0c",
+    "TrainingData/statue-material-getty-20261122.json": "59109a9bea402a14efe9d6ad5ae6fcf47c455b36384c986628a5c65e71993292",
+    "TrainingData/statue-model-scope-v1.json": "403f93d90da15d6666d89d56621f9b6fe158947154216bee1754f5ba2f3c7e0f",
+    "TrainingData/statue-model-scope-v2.json": "28442b9ba3627c331040ba7985f80928154756c49dcb5353b3c0f138c968eb80",
+    "TrainingData/statue-model-scope-v3.json": "88c31c37b08949aa81305b7bf90ff3010a2e515fa17ae6eab0de1ee9511ff2b9",
+    "TrainingData/statue-model-scope-v4.json": "26c0fad518408f38882a20b858f7db36d0fbc2fafac009e2d646f8a4b4ede5e6",
+    "TrainingData/statue-model-scope-v5.json": "bbd8d7354f8e5c886cd812ca74eaada56423e21da3a55e97709162c1c139ea8a",
+    "TrainingData/statue-profile-split-v1.json": "c056431a070af00c46d0e5bf831b4b28b7613242c284e3f87501a67a0ca0f093",
+    "TrainingData/statue-profile-split-v2.json": "46d413c030fa60490686ff853a39d71dd075beb5b1b553742bd8c952018982b1",
+    "TrainingData/statue-profile-split-v3.json": "fa3461c2209597bcf2729620921ab27609d0f331e4bc8ef8d735cc2216bc55f0",
+    "TrainingData/statue-profile-split-v4.json": "2ff3bee8f183db168cd5477f2f43282893a56c8f125fd9997a2f1e5ae548f6da",
+    "TrainingData/statue-training-preset-v1.json": "14e43928b91d12d771c9d699a1d18cb454bb206c5d8c2d830e3ba333b9f62119",
+    "TrainingData/statue-training-preset-v2.json": "499299481752694de1ee6e0dedf753a3727b78f5874afb707134ccc1638b947f",
+    "TrainingData/statue-training-preset-v3.json": "cf6fef450224ed6be3d7833c4c714b6ddfd65d0c587bbfd856c853f722b9ba45",
+    "TrainingData/statue-training-preset-v4.json": "45868d8ff58f508014775764029d28dbe8ead3606680f4ab2353f0acb45f5cae"
+  },
+  "prior_unique_images": 222,
+  "pair_count": 3199,
+  "near_distance_5_or_less": [],
+  "exact": [],
+  "counts": {
+    "bronze": 7,
+    "ceramic": 7
+  },
+  "expected_instances": {
+    "bronze": 8,
+    "ceramic": 7
+  },
+  "review_sha256": "6e0764fa0234c919fe63fa02a9c64e6e4d0387fab2d103d238183af05690e3e7",
+  "scope": "Taxonomically matched new project holdout, separate objects, two sources. Material is the museum's catalogue description.",
+  "frames": [
+    {
+      "id": "149127",
+      "accession": "1977.57",
+      "title": "Standing Horse",
+      "type": "Sculpture",
+      "material": "bronze",
+      "license": "CC0",
+      "source": "https://openaccess-cdn.clevelandart.org/1977.57/1977.57_web.jpg",
+      "page": "https://clevelandart.org/art/1977.57",
+      "metadata_query": "https://openaccess-api.clevelandart.org/api/artworks/?q=bronze+horse&limit=30&has_image=1",
+      "source_sha256": "9ece03fe9eb5481469423015bbfaaffb0c000c449cc437fdc412b9e8158f5d9b",
+      "shape": [
+        900,
+        780
+      ],
+      "source_path": ".codex-tmp/bronze-lookalikes-20261123/frames/149127.jpg",
+      "sha256": "87f33667c7a9225b1543c4dafa6f1194b366f889e80249b7285ac3f1a9665cdb",
+      "raw_bytes": 104879,
+      "frame_padding": [
+        43,
+        0
+      ],
+      "family": "horse",
+      "truth_material": "bronze",
+      "boxes_px": [
+        [
+          160,
+          88,
+          416,
+          443
+        ]
+      ]
+    },
+    {
+      "id": "129215",
+      "accession": "1952.108",
+      "title": "Horse",
+      "type": "Sculpture",
+      "material": "bronze",
+      "license": "CC0",
+      "source": "https://openaccess-cdn.clevelandart.org/1952.108/1952.108_web.jpg",
+      "page": "https://clevelandart.org/art/1952.108",
+      "metadata_query": "https://openaccess-api.clevelandart.org/api/artworks/?q=bronze+horse&limit=30&has_image=1",
+      "source_sha256": "9cbcafd9fc9f8f1ac066a10081000949a539fa4c4cb06c96c1b2c56d57aa65d5",
+      "shape": [
+        870,
+        893
+      ],
+      "source_path": ".codex-tmp/bronze-lookalikes-20261123/frames/129215.jpg",
+      "sha256": "5f2117130fb50f21ca6d10a5986f0312ed838ad88c37aeaf2f2d8dfed8fdd333",
+      "raw_bytes": 387267,
+      "frame_padding": [
+        86,
+        0
+      ],
+      "family": "horse",
+      "truth_material": "bronze",
+      "boxes_px": [
+        [
+          144,
+          45,
+          485,
+          451
+        ]
+      ]
+    },
+    {
+      "id": "153635",
+      "accession": "1987.160",
+      "title": "Dog-shaped Paperweight",
+      "type": "Sculpture",
+      "material": "gilt bronze",
+      "license": "CC0",
+      "source": "https://openaccess-cdn.clevelandart.org/1987.160/1987.160_web.jpg",
+      "page": "https://clevelandart.org/art/1987.160",
+      "metadata_query": "https://openaccess-api.clevelandart.org/api/artworks/?q=bronze+dog&limit=30&has_image=1",
+      "source_sha256": "9588f34301117bc89f6f6b566bc40890d127b068ebbdbc982f10f64c024bd796",
+      "shape": [
+        900,
+        610
+      ],
+      "source_path": ".codex-tmp/bronze-lookalikes-20261123/frames/153635.jpg",
+      "sha256": "6e8e0f96aa0e3f8e147553874031eee37f4fff79ba49889914a5afec395ea15c",
+      "raw_bytes": 197642,
+      "frame_padding": [
+        0,
+        23
+      ],
+      "family": "dog",
+      "truth_material": "bronze",
+      "boxes_px": [
+        [
+          123,
+          163,
+          507,
+          381
+        ]
+      ]
+    },
+    {
+      "id": "136502",
+      "accession": "1960.74",
+      "title": "Sitting Dog Scratching Himself",
+      "type": "Sculpture",
+      "material": "bronze ",
+      "license": "CC0",
+      "source": "https://openaccess-cdn.clevelandart.org/1960.74/1960.74_web.jpg",
+      "page": "https://clevelandart.org/art/1960.74",
+      "metadata_query": "https://openaccess-api.clevelandart.org/api/artworks/?q=bronze+dog&limit=30&has_image=1",
+      "source_sha256": "ff39414fcb5b12d28e369ef2e1dce77e0723d7212e82edcb6df8f2169d702f8e",
+      "shape": [
+        750,
+        631
+      ],
+      "source_path": ".codex-tmp/bronze-lookalikes-20261123/frames/136502.jpg",
+      "sha256": "d8ce6522e764ddfcf8a3637c9cfaee35cd7081011575db15b519a05ad8984494",
+      "raw_bytes": 48040,
+      "frame_padding": [
+        34,
+        0
+      ],
+      "family": "dog",
+      "truth_material": "bronze",
+      "boxes_px": [
+        [
+          131,
+          80,
+          541,
+          456
+        ]
+      ]
+    },
+    {
+      "id": "105617",
+      "accession": "1923.727",
+      "title": "Pair of Hounds",
+      "type": "Sculpture",
+      "material": "bronze",
+      "license": "CC0",
+      "source": "https://openaccess-cdn.clevelandart.org/1923.727/1923.727_web.jpg",
+      "page": "https://clevelandart.org/art/1923.727",
+      "metadata_query": "https://openaccess-api.clevelandart.org/api/artworks/?q=bronze+dog&limit=30&has_image=1",
+      "source_sha256": "e1d08b85ee955c736665e37410b689bc28dca3706c5502bbca56181978877ecb",
+      "shape": [
+        784,
+        900
+      ],
+      "source_path": ".codex-tmp/bronze-lookalikes-20261123/frames/105617.jpg",
+      "sha256": "746a5649592ea57bf4f786df2babbfed7c820a40ee006578300ee010d098f5b3",
+      "raw_bytes": 133141,
+      "frame_padding": [
+        111,
+        0
+      ],
+      "family": "dog",
+      "truth_material": "bronze",
+      "boxes_px": [
+        [
+          165,
+          35,
+          280,
+          347
+        ],
+        [
+          349,
+          32,
+          477,
+          347
+        ]
+      ]
+    },
+    {
+      "id": "155584",
+      "accession": "1990.32",
+      "title": "Nanny Goat",
+      "type": "Sculpture",
+      "material": "bronze",
+      "license": "CC0",
+      "source": "https://openaccess-cdn.clevelandart.org/1990.32/1990.32_web.jpg",
+      "page": "https://clevelandart.org/art/1990.32",
+      "metadata_query": "https://openaccess-api.clevelandart.org/api/artworks/?q=bronze+ram&limit=30&has_image=1",
+      "source_sha256": "7b0da21d43e5def680b9704dee66e0c1192c274cc4d9893f9de66ecd3475b320",
+      "shape": [
+        788,
+        900
+      ],
+      "source_path": ".codex-tmp/bronze-lookalikes-20261123/frames/155584.jpg",
+      "sha256": "3d870025d1048fdd1957cdfca1d94a40c9d3e4c4b8ea67e7f897944144a6b128",
+      "raw_bytes": 128952,
+      "frame_padding": [
+        110,
+        0
+      ],
+      "family": "caprine",
+      "truth_material": "bronze",
+      "boxes_px": [
+        [
+          141,
+          61,
+          488,
+          408
+        ]
+      ]
+    },
+    {
+      "id": "107180",
+      "accession": "1925.1181",
+      "title": "Zun in the Shape of a Ram",
+      "type": "Sculpture",
+      "material": "bronze",
+      "license": "CC0",
+      "source": "https://openaccess-cdn.clevelandart.org/1925.1181/1925.1181_web.jpg",
+      "page": "https://clevelandart.org/art/1925.1181",
+      "metadata_query": "https://openaccess-api.clevelandart.org/api/artworks/?q=bronze+ram&limit=30&has_image=1",
+      "source_sha256": "c01a22138c63be3ef3af2510a0b82dbc2afacadedc4d56884ed48ead300ff8e7",
+      "shape": [
+        900,
+        801
+      ],
+      "source_path": ".codex-tmp/bronze-lookalikes-20261123/frames/107180.jpg",
+      "sha256": "5eb531c4c3b5d0948ee7c631b6c846862fb8a21d560d4e34a8a1f55d48c8ef8e",
+      "raw_bytes": 95658,
+      "frame_padding": [
+        50,
+        0
+      ],
+      "family": "caprine",
+      "truth_material": "bronze",
+      "boxes_px": [
+        [
+          195,
+          131,
+          435,
+          411
+        ]
+      ]
+    },
+    {
+      "id": "132819",
+      "accession": "1955.295",
+      "title": "Horse",
+      "type": "Sculpture",
+      "material": "glazed earthenware, sancai (three-color) ware",
+      "license": "CC0",
+      "source": "https://openaccess-cdn.clevelandart.org/1955.295/1955.295_web.jpg",
+      "page": "https://clevelandart.org/art/1955.295",
+      "metadata_query": "https://openaccess-api.clevelandart.org/api/artworks/?q=glazed+horse&limit=30&has_image=1",
+      "source_sha256": "06c857913472c80bfd72d1dd0ae212871a1dde36437fd09ad2ef7ad23c2ae706",
+      "shape": [
+        947,
+        893
+      ],
+      "source_path": ".codex-tmp/bronze-lookalikes-20261123/frames/132819.jpg",
+      "sha256": "7cc6d0bc7c9a4f703e72bbecec3af3c67c8de0f08163d660a7c83101a187d0e9",
+      "raw_bytes": 82110,
+      "frame_padding": [
+        65,
+        0
+      ],
+      "family": "horse",
+      "truth_material": "ceramic",
+      "boxes_px": [
+        [
+          139,
+          64,
+          523,
+          456
+        ]
+      ]
+    },
+    {
+      "id": "152315",
+      "accession": "1985.178",
+      "title": "Horse Head",
+      "type": "Ceramic",
+      "material": "terracotta",
+      "license": "CC0",
+      "source": "https://openaccess-cdn.clevelandart.org/1985.178/1985.178_web.jpg",
+      "page": "https://clevelandart.org/art/1985.178",
+      "metadata_query": "https://openaccess-api.clevelandart.org/api/artworks/?q=terracotta+horse&limit=30&has_image=1",
+      "source_sha256": "b54a5ade5329a5ced049dcb3615c62d22b70edf68804b28821e568f75e728063",
+      "shape": [
+        825,
+        893
+      ],
+      "source_path": ".codex-tmp/bronze-lookalikes-20261123/frames/152315.jpg",
+      "sha256": "9e26b271317d13dcae224337679f1b48c34e7c49b1122f6991c21bb4580b1c2b",
+      "raw_bytes": 414064,
+      "frame_padding": [
+        98,
+        0
+      ],
+      "family": "horse",
+      "truth_material": "ceramic",
+      "boxes_px": [
+        [
+          147,
+          56,
+          464,
+          443
+        ]
+      ]
+    },
+    {
+      "id": "151077",
+      "accession": "1983.1",
+      "title": "Dog",
+      "type": "Sculpture",
+      "material": "earthenware with lead glaze",
+      "license": "CC0",
+      "source": "https://openaccess-cdn.clevelandart.org/1983.1/1983.1_web.jpg",
+      "page": "https://clevelandart.org/art/1983.1",
+      "metadata_query": "https://openaccess-api.clevelandart.org/api/artworks/?q=glazed+dog&limit=30&has_image=1",
+      "source_sha256": "a97fd9a9d8bf97cee80ee062ca98f21b4e1b453ee297ceaa0bd87af624216f61",
+      "shape": [
+        750,
+        640
+      ],
+      "source_path": ".codex-tmp/bronze-lookalikes-20261123/frames/151077.jpg",
+      "sha256": "0522db40c35f320758fdfa50ac33d89d080827dc919b8fb0b1c0d894d158c42b",
+      "raw_bytes": 34505,
+      "frame_padding": [
+        39,
+        0
+      ],
+      "family": "dog",
+      "truth_material": "ceramic",
+      "boxes_px": [
+        [
+          133,
+          43,
+          525,
+          448
+        ]
+      ]
+    },
+    {
+      "id": "146992",
+      "accession": "1972.368.21",
+      "title": "Figure from a Crèche: Sitting Ram",
+      "type": "Sculpture",
+      "material": "painted terracotta",
+      "license": "CC0",
+      "source": "https://openaccess-cdn.clevelandart.org/1972.368.21/1972.368.21_web.jpg",
+      "page": "https://clevelandart.org/art/1972.368.21",
+      "metadata_query": "https://openaccess-api.clevelandart.org/api/artworks/?q=terracotta+ram&limit=30&has_image=1",
+      "source_sha256": "b0e294bcc4d202a8160c2c7a8bd7e073174013b24f54d4dcfa8e0e3bbdeaf43f",
+      "shape": [
+        900,
+        652
+      ],
+      "source_path": ".codex-tmp/bronze-lookalikes-20261123/frames/146992.jpg",
+      "sha256": "2c5ab6b9e14bc005af308d5fa4c14368ef8d020152ae481fda36f75e3daddd22",
+      "raw_bytes": 136577,
+      "frame_padding": [
+        0,
+        8
+      ],
+      "family": "caprine",
+      "truth_material": "ceramic",
+      "boxes_px": [
+        [
+          69,
+          83,
+          547,
+          437
+        ]
+      ]
+    },
+    {
+      "id": "130529",
+      "accession": "1953.269",
+      "title": "Figure of a Monkey on a Dog",
+      "type": "Ceramic",
+      "material": "soft-paste porcelain with enamel decoration",
+      "license": "CC0",
+      "source": "https://openaccess-cdn.clevelandart.org/1953.269/1953.269_web.jpg",
+      "page": "https://clevelandart.org/art/1953.269",
+      "metadata_query": "https://openaccess-api.clevelandart.org/api/artworks/?q=porcelain+hound&limit=30&has_image=1",
+      "source_sha256": "ebc6fca25601486b44645e65f82e0a64a9db368394d0a1ad98f872643ddadef8",
+      "shape": [
+        735,
+        893
+      ],
+      "source_path": ".codex-tmp/bronze-lookalikes-20261123/frames/130529.jpg",
+      "sha256": "0b7f0134ae9dd1e1bf1079d8b5efaacd751f64e3227e4f4711e17deedc408456",
+      "raw_bytes": 315244,
+      "frame_padding": [
+        122,
+        0
+      ],
+      "family": "dog",
+      "truth_material": "ceramic",
+      "boxes_px": [
+        [
+          157,
+          35,
+          437,
+          373
+        ]
+      ]
+    },
+    {
+      "id": "r-567",
+      "accession": "AK-MAK-567",
+      "title": "Sitting dog",
+      "institution": "Rijksmuseum",
+      "material": "porselein met emailkleuren",
+      "license": "Public Domain",
+      "source": "https://iiif.micr.io/RvYxQ/full/900,/0/default.jpg",
+      "page": "https://www.rijksmuseum.nl/nl/collectie/object/Hond--041e28fed84b3bd8beac3d7469b3271a",
+      "metadata_sha256": "704f3a033742c2b69beea2dcfcbc43a5dc1467f0fb8dad5974289f8f2f77f578",
+      "source_sha256": "8b887ec7e578a94ae66388c173af775e4b1c40dad02307cb32206fb6fbefebd6",
+      "shape": [
+        900,
+        649
+      ],
+      "source_path": ".codex-tmp/bronze-lookalikes-20261123/frames/r-567.jpg",
+      "sha256": "c9bfe3c342540bf67f0b87c13206e9a244b40c25ebdf93c94363f51251031875",
+      "raw_bytes": 34220,
+      "frame_padding": [
+        0,
+        9
+      ],
+      "family": "dog",
+      "truth_material": "ceramic",
+      "boxes_px": [
+        [
+          123,
+          184,
+          453,
+          392
+        ]
+      ]
+    },
+    {
+      "id": "r-1809",
+      "accession": "AK-MAK-1809",
+      "title": "Monkey riding backwards on a horse",
+      "institution": "Rijksmuseum",
+      "material": "donkerbruin geglazuurd wit aardewerk",
+      "license": "Public Domain",
+      "source": "https://iiif.micr.io/MCgdP/full/900,/0/default.jpg",
+      "page": "https://www.rijksmuseum.nl/nl/collectie/object/Aap-rijdt-achteruit-op-een-paard--f7fca3e570cdadc52a3b7c9082f0c2b3",
+      "metadata_sha256": "e1c030cc72df7fb57b133ad3793825ac01c0139f8fd18555784c1c600438da20",
+      "source_sha256": "e8042bffb158a9e1efaa4caa033d820087f1d0d6a5c3207150a8c594244dee19",
+      "shape": [
+        900,
+        1074
+      ],
+      "source_path": ".codex-tmp/bronze-lookalikes-20261123/frames/r-1809.jpg",
+      "sha256": "7b683f0852e5375e3247d8cc9f4487cbbd8374f53599c0716a1171656506cdb3",
+      "raw_bytes": 39709,
+      "frame_padding": [
+        119,
+        0
+      ],
+      "family": "horse",
+      "truth_material": "ceramic",
+      "boxes_px": [
+        [
+          229,
+          171,
+          411,
+          371
+        ]
+      ]
+    }
+  ]
+}

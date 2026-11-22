@@ -1,0 +1,945 @@
+{
+  "source_commit": "2afff1db3a46327c0abccae6e58b2b70422f4686",
+  "runtime_commit": "90928aef682fa714e7baacf8b8d2ca2980681027",
+  "runtime_sha256": {
+    "tcp_server.py": "10607c9a6a03bfb4e8875b3107f85608e382b90415e232dace093b2bf678acdd",
+    "scene_router.py": "147401103ced6e6a06ca526d434669edd36b5e1e55630f23a0a099689a3bca11",
+    "scene_protocol.py": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038",
+    "detector_config.py": "b047405f41cd10523d6e51ab25ee8a1673a8219de8ce4ece7a684277b2f5640b",
+    "pose_availability.py": "10eef6f52a4ae9afca8b16e51be2179b83c0a30d1b498ac98cd969d0129367ee",
+    "discovery.py": "f17f4b4525e969ae6dc22523d5a520207280106ebd61dc103b880fee52f88747",
+    "model_artifact.py": "521b330e8b38ee6a93fe6475e168d8dc90aa9a6bcad035db8d17e07ee1060cab",
+    "scene_profiles.json": "4c3a776c4133c60ff9be810630c1aa7002775230f98a03bb3fdfa020d78f8781"
+  },
+  "detector_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+  "clip_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+  "material_protocol_sha256": "d0d0e38bd66f46a58c0fb2cdb162863745f2be28d1e1c37a84fb0280b32967cc",
+  "worker_sha256": "0f56fb2103c159a7e2ab61f8d4cbb7fe993a55f3b0b35e5c89fd90aac3e10a08",
+  "frozen_input_sha256": "07369e4324c0c856d226495e0eae85448deb97faf0d1bfd4bc26739bcd28a0f7",
+  "raw_picf_sha256": "a387083eb80c19237667d63274cd11c69a0a7c72f173f089daf0c0106ba4ff46",
+  "proposal_scores_sha256": "a43e38dd60a35c2bdb2e6cac085745ac977aa0820f2f00b4decf48627ffda0e1",
+  "category_counts": {
+    "bronze": 7,
+    "ceramic": 7
+  },
+  "truth_instances": {
+    "bronze": 8,
+    "ceramic": 7
+  },
+  "groups": {
+    "0.399": {
+      "raw": {
+        "positive_photo_hits": 6,
+        "match_instances": 6,
+        "false_on_bronze": 0,
+        "false_on_ceramic": 5,
+        "ceramic_images_triggered": 5,
+        "photos": {
+          "149127": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.9417935630352101,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "129215": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.9167379083624829,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "153635": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8379074206651916,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "136502": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8836451059026311,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "105617": {
+            "truth_instances": 2,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "155584": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.887032942774516,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "107180": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8725281582289333,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "132819": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 1,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": null,
+                "matched_target": null,
+                "matched": false
+              }
+            ]
+          },
+          "152315": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 1,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": null,
+                "matched_target": null,
+                "matched": false
+              }
+            ]
+          },
+          "151077": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 1,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": null,
+                "matched_target": null,
+                "matched": false
+              }
+            ]
+          },
+          "146992": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 1,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": null,
+                "matched_target": null,
+                "matched": false
+              }
+            ]
+          },
+          "130529": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "r-567": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 1,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": null,
+                "matched_target": null,
+                "matched": false
+              }
+            ]
+          },
+          "r-1809": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          }
+        }
+      },
+      "full": {
+        "positive_photo_hits": 6,
+        "match_instances": 6,
+        "false_on_bronze": 0,
+        "false_on_ceramic": 1,
+        "ceramic_images_triggered": 1,
+        "photos": {
+          "149127": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.9417935630352101,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "129215": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.9167379083624829,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "153635": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8379074206651916,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "136502": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8836451059026311,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "105617": {
+            "truth_instances": 2,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "155584": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.887032942774516,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "107180": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8725281582289333,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "132819": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "152315": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "151077": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "146992": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 1,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": null,
+                "matched_target": null,
+                "matched": false
+              }
+            ]
+          },
+          "130529": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "r-567": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "r-1809": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          }
+        }
+      },
+      "trim": {
+        "positive_photo_hits": 6,
+        "match_instances": 6,
+        "false_on_bronze": 0,
+        "false_on_ceramic": 1,
+        "ceramic_images_triggered": 1,
+        "photos": {
+          "149127": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.9417935630352101,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "129215": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.9167379083624829,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "153635": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8379074206651916,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "136502": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8836451059026311,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "105617": {
+            "truth_instances": 2,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "155584": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.887032942774516,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "107180": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8725281582289333,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "132819": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "152315": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "151077": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "146992": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 1,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": null,
+                "matched_target": null,
+                "matched": false
+              }
+            ]
+          },
+          "130529": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "r-567": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "r-1809": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          }
+        }
+      }
+    },
+    "0.5": {
+      "raw": {
+        "positive_photo_hits": 6,
+        "match_instances": 6,
+        "false_on_bronze": 0,
+        "false_on_ceramic": 5,
+        "ceramic_images_triggered": 5,
+        "photos": {
+          "149127": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.9417935630352101,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "129215": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.9167379083624829,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "153635": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8379074206651916,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "136502": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8836451059026311,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "105617": {
+            "truth_instances": 2,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "155584": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.887032942774516,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "107180": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8725281582289333,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "132819": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 1,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": null,
+                "matched_target": null,
+                "matched": false
+              }
+            ]
+          },
+          "152315": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 1,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": null,
+                "matched_target": null,
+                "matched": false
+              }
+            ]
+          },
+          "151077": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 1,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": null,
+                "matched_target": null,
+                "matched": false
+              }
+            ]
+          },
+          "146992": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 1,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": null,
+                "matched_target": null,
+                "matched": false
+              }
+            ]
+          },
+          "130529": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "r-567": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 1,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": null,
+                "matched_target": null,
+                "matched": false
+              }
+            ]
+          },
+          "r-1809": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          }
+        }
+      },
+      "full": {
+        "positive_photo_hits": 6,
+        "match_instances": 6,
+        "false_on_bronze": 0,
+        "false_on_ceramic": 1,
+        "ceramic_images_triggered": 1,
+        "photos": {
+          "149127": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.9417935630352101,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "129215": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.9167379083624829,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "153635": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8379074206651916,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "136502": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8836451059026311,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "105617": {
+            "truth_instances": 2,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "155584": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.887032942774516,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "107180": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8725281582289333,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "132819": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "152315": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "151077": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "146992": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 1,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": null,
+                "matched_target": null,
+                "matched": false
+              }
+            ]
+          },
+          "130529": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "r-567": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "r-1809": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          }
+        }
+      },
+      "trim": {
+        "positive_photo_hits": 6,
+        "match_instances": 6,
+        "false_on_bronze": 0,
+        "false_on_ceramic": 1,
+        "ceramic_images_triggered": 1,
+        "photos": {
+          "149127": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.9417935630352101,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "129215": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.9167379083624829,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "153635": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8379074206651916,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "136502": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8836451059026311,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "105617": {
+            "truth_instances": 2,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "155584": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.887032942774516,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "107180": {
+            "truth_instances": 1,
+            "matches": 1,
+            "unmatched_boxes": 0,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": 0.8725281582289333,
+                "matched_target": 0,
+                "matched": true
+              }
+            ]
+          },
+          "132819": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "152315": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "151077": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "146992": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 1,
+            "boxes": [
+              {
+                "box_index": 0,
+                "match_iou": null,
+                "matched_target": null,
+                "matched": false
+              }
+            ]
+          },
+          "130529": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "r-567": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          },
+          "r-1809": {
+            "truth_instances": 0,
+            "matches": 0,
+            "unmatched_boxes": 0,
+            "boxes": []
+          }
+        }
+      }
+    }
+  },
+  "raw_reply_count": 14,
+  "scope": "New artwork holdout from two museums. Same detector and frozen crop/CLIP policies; no production enabled."
+}
