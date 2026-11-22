@@ -1,0 +1,48 @@
+{
+  "runtime_source": "90928aef682fa714e7baacf8b8d2ca2980681027",
+  "runtime_sha256": {
+    "tcp_server.py": "10607c9a6a03bfb4e8875b3107f85608e382b90415e232dace093b2bf678acdd",
+    "scene_router.py": "147401103ced6e6a06ca526d434669edd36b5e1e55630f23a0a099689a3bca11",
+    "scene_protocol.py": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038",
+    "detector_config.py": "b047405f41cd10523d6e51ab25ee8a1673a8219de8ce4ece7a684277b2f5640b",
+    "pose_availability.py": "10eef6f52a4ae9afca8b16e51be2179b83c0a30d1b498ac98cd969d0129367ee",
+    "discovery.py": "f17f4b4525e969ae6dc22523d5a520207280106ebd61dc103b880fee52f88747",
+    "model_artifact.py": "521b330e8b38ee6a93fe6475e168d8dc90aa9a6bcad035db8d17e07ee1060cab",
+    "scene_profiles.json": "4c3a776c4133c60ff9be810630c1aa7002775230f98a03bb3fdfa020d78f8781"
+  },
+  "frozen_input_sha256": "41fcb24d55540b3923c89b22fbe0673f70c80418866d0528cb96c4f67c1c7822",
+  "worker_sha256": "fea0ce10ea351b016ca4170fe83ed958d36a9d54e7e7f5c4959f8f7c88aba87c",
+  "results": {
+    "n": {
+      "mono": {
+        "frames": 5,
+        "matched": 4,
+        "unmatched_by_class": {}
+      },
+      "rectified": {
+        "frames": 8,
+        "matched": 1,
+        "unmatched_by_class": {}
+      }
+    },
+    "m": {
+      "mono": {
+        "frames": 5,
+        "matched": 5,
+        "unmatched_by_class": {}
+      },
+      "rectified": {
+        "frames": 8,
+        "matched": 5,
+        "unmatched_by_class": {}
+      }
+    }
+  },
+  "model_sha256": {
+    "n": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+    "m": "21ffa3718c577ac23e708e4c0544c49a20682efa03914d5f816166b54e8fd3fe"
+  },
+  "reply_threshold": 0.399,
+  "score_threshold": 0.5,
+  "scope": "Native Sculpture only on one stone statue. CPU PICF. No Unity run."
+}

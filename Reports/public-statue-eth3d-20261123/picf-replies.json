@@ -1,0 +1,506 @@
+[
+  {
+    "key": "mono-493",
+    "duration_ms": 1354.54,
+    "source_sha256": "0af152f24471e8784056d080bc6b8b393fffb0714709f07d1b9aae923bd01764",
+    "boxes": [
+      {
+        "class": "Statue",
+        "confidence": 0.6397417783737183,
+        "xyxy_normalized": [
+          0.34394800662994385,
+          0.08761437733968098,
+          0.603458023071289,
+          0.72875550587972
+        ],
+        "instance_id": "49321629447a:left:1"
+      }
+    ],
+    "reply": {
+      "frame_id": 1,
+      "timestamp": 1795385302547,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "Statue",
+          "class_id": 0,
+          "confidence": 0.6397417783737183,
+          "centerX": 303.16992950439453,
+          "centerY": 195.92877197265625,
+          "x1": 220.12672424316406,
+          "y1": 42.054901123046875,
+          "x2": 386.213134765625,
+          "y2": 349.8026428222656,
+          "class_name": "Statue",
+          "bbox": [
+            220.12672424316406,
+            42.054901123046875,
+            386.213134765625,
+            349.8026428222656
+          ],
+          "instance_id": "49321629447a:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "statue"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+      "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+      "model_validation": "STATUE_ETH3D_CALIBRATED_PHOTO_REPLAY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "proposals": [
+      {
+        "class": "Statue",
+        "confidence": 0.6397417783737183,
+        "xyxy_normalized": [
+          0.34394800662994385,
+          0.08761437733968098,
+          0.603458023071289,
+          0.72875550587972
+        ],
+        "instance_id": "49321629447a:left:1",
+        "truth_iou": 0.80823399375738,
+        "matched": true
+      }
+    ],
+    "matched": true
+  },
+  {
+    "key": "mono-494",
+    "duration_ms": 128.36,
+    "source_sha256": "7c10a8ef5e0c65b8f1d41b94030af68ed7f459a8b1c5154f0618454ab8dca8d2",
+    "boxes": [
+      {
+        "class": "Statue",
+        "confidence": 0.4815550446510315,
+        "xyxy_normalized": [
+          0.31701714992523194,
+          0.07880223592122396,
+          0.5936962127685547,
+          0.7502155303955078
+        ],
+        "instance_id": "49321629447a:left:1"
+      }
+    ],
+    "reply": {
+      "frame_id": 2,
+      "timestamp": 1795385303903,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "Statue",
+          "class_id": 0,
+          "confidence": 0.4815550446510315,
+          "centerX": 291.4282760620117,
+          "centerY": 198.96426391601562,
+          "x1": 202.89097595214844,
+          "y1": 37.8250732421875,
+          "x2": 379.965576171875,
+          "y2": 360.10345458984375,
+          "class_name": "Statue",
+          "bbox": [
+            202.89097595214844,
+            37.8250732421875,
+            379.965576171875,
+            360.10345458984375
+          ],
+          "instance_id": "49321629447a:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "statue"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+      "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+      "model_validation": "STATUE_ETH3D_CALIBRATED_PHOTO_REPLAY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "proposals": [
+      {
+        "class": "Statue",
+        "confidence": 0.4815550446510315,
+        "xyxy_normalized": [
+          0.31701714992523194,
+          0.07880223592122396,
+          0.5936962127685547,
+          0.7502155303955078
+        ],
+        "instance_id": "49321629447a:left:1",
+        "truth_iou": 0.8342686909624702,
+        "matched": false
+      }
+    ],
+    "matched": false
+  },
+  {
+    "key": "mono-495",
+    "duration_ms": 108.79,
+    "source_sha256": "dd369029b8d228ddf4aec5318313dcd23c2da219dd6285671f6db37d536ac7bb",
+    "boxes": [
+      {
+        "class": "Statue",
+        "confidence": 0.42766866087913513,
+        "xyxy_normalized": [
+          0.3097744703292847,
+          0.08017120361328126,
+          0.5945244789123535,
+          0.769832992553711
+        ],
+        "instance_id": "49321629447a:left:1"
+      }
+    ],
+    "reply": {
+      "frame_id": 3,
+      "timestamp": 1795385304032,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "Statue",
+          "class_id": 0,
+          "confidence": 0.42766866087913513,
+          "centerX": 289.3756637573242,
+          "centerY": 204.00100708007812,
+          "x1": 198.2556610107422,
+          "y1": 38.482177734375,
+          "x2": 380.49566650390625,
+          "y2": 369.51983642578125,
+          "class_name": "Statue",
+          "bbox": [
+            198.2556610107422,
+            38.482177734375,
+            380.49566650390625,
+            369.51983642578125
+          ],
+          "instance_id": "49321629447a:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "statue"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+      "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+      "model_validation": "STATUE_ETH3D_CALIBRATED_PHOTO_REPLAY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "proposals": [
+      {
+        "class": "Statue",
+        "confidence": 0.42766866087913513,
+        "xyxy_normalized": [
+          0.3097744703292847,
+          0.08017120361328126,
+          0.5945244789123535,
+          0.769832992553711
+        ],
+        "instance_id": "49321629447a:left:1",
+        "truth_iou": 0.8232799030864114,
+        "matched": false
+      }
+    ],
+    "matched": false
+  },
+  {
+    "key": "mono-496",
+    "duration_ms": 108.72,
+    "source_sha256": "5c0a80681e36b1a2a068906a7c524835505b994e7eee2568c2732d64957c8df6",
+    "boxes": [],
+    "reply": {
+      "frame_id": 4,
+      "timestamp": 1795385304141,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+      "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+      "model_validation": "STATUE_ETH3D_CALIBRATED_PHOTO_REPLAY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "proposals": [],
+    "matched": false
+  },
+  {
+    "key": "mono-497",
+    "duration_ms": 112.45,
+    "source_sha256": "67dfe9edf066a810fb2b9d241f12e2ba63a3a9c294932d3db093c10f627519c7",
+    "boxes": [],
+    "reply": {
+      "frame_id": 5,
+      "timestamp": 1795385304250,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+      "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+      "model_validation": "STATUE_ETH3D_CALIBRATED_PHOTO_REPLAY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "proposals": [],
+    "matched": false
+  },
+  {
+    "key": "pair-493-494-left",
+    "duration_ms": 110.79,
+    "source_sha256": "4ce31c3d10bc38d930d35721f4274df2e94bc2dd082047611e1d55ed093f6b93",
+    "boxes": [],
+    "reply": {
+      "frame_id": 6,
+      "timestamp": 1795385304363,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+      "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+      "model_validation": "STATUE_ETH3D_CALIBRATED_PHOTO_REPLAY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "proposals": [],
+    "matched": false
+  },
+  {
+    "key": "pair-493-494-right",
+    "duration_ms": 131.44,
+    "source_sha256": "8339dcc5432881b35ffd7e99abfa6cfd8ba39fc885d0d5629e5accb688ecd6bf",
+    "boxes": [
+      {
+        "class": "Statue",
+        "confidence": 0.4395889937877655,
+        "xyxy_normalized": [
+          0.29995150566101075,
+          0.24030073483784994,
+          0.47537980079650877,
+          0.6264582316080729
+        ],
+        "instance_id": "49321629447a:left:1"
+      }
+    ],
+    "reply": {
+      "frame_id": 7,
+      "timestamp": 1795385304474,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "Statue",
+          "class_id": 0,
+          "confidence": 0.4395889937877655,
+          "centerX": 248.10601806640625,
+          "centerY": 208.02215194702148,
+          "x1": 191.96896362304688,
+          "y1": 115.34435272216797,
+          "x2": 304.2430725097656,
+          "y2": 300.699951171875,
+          "class_name": "Statue",
+          "bbox": [
+            191.96896362304688,
+            115.34435272216797,
+            304.2430725097656,
+            300.699951171875
+          ],
+          "instance_id": "49321629447a:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "statue"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+      "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+      "model_validation": "STATUE_ETH3D_CALIBRATED_PHOTO_REPLAY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "proposals": [
+      {
+        "class": "Statue",
+        "confidence": 0.4395889937877655,
+        "xyxy_normalized": [
+          0.29995150566101075,
+          0.24030073483784994,
+          0.47537980079650877,
+          0.6264582316080729
+        ],
+        "instance_id": "49321629447a:left:1",
+        "truth_iou": 0.8054662224116709,
+        "matched": false
+      }
+    ],
+    "matched": false
+  },
+  {
+    "key": "pair-494-495-left",
+    "duration_ms": 103.65,
+    "source_sha256": "97bc569e89ffbfb453da7a2acba06623e61d08bb6eb8c80b47902bc1e73ce819",
+    "boxes": [],
+    "reply": {
+      "frame_id": 8,
+      "timestamp": 1795385304606,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+      "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+      "model_validation": "STATUE_ETH3D_CALIBRATED_PHOTO_REPLAY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "proposals": [],
+    "matched": false
+  },
+  {
+    "key": "pair-494-495-right",
+    "duration_ms": 104.5,
+    "source_sha256": "7736283b7777990d1b23ccd2297e2e18abb0600e63ebf2f8203e8115f0a793c8",
+    "boxes": [],
+    "reply": {
+      "frame_id": 9,
+      "timestamp": 1795385304710,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+      "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+      "model_validation": "STATUE_ETH3D_CALIBRATED_PHOTO_REPLAY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "proposals": [],
+    "matched": false
+  },
+  {
+    "key": "pair-495-496-left",
+    "duration_ms": 102.4,
+    "source_sha256": "68a1ca0fef985b2c41b1905811d2222a813f437336320473669d8b6b9e61f586",
+    "boxes": [],
+    "reply": {
+      "frame_id": 10,
+      "timestamp": 1795385304815,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+      "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+      "model_validation": "STATUE_ETH3D_CALIBRATED_PHOTO_REPLAY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "proposals": [],
+    "matched": false
+  },
+  {
+    "key": "pair-495-496-right",
+    "duration_ms": 102.4,
+    "source_sha256": "8f693be899c983a6af39591b0abad5730806f5b148bb02908fc281f8ca8f3338",
+    "boxes": [],
+    "reply": {
+      "frame_id": 11,
+      "timestamp": 1795385304918,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+      "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+      "model_validation": "STATUE_ETH3D_CALIBRATED_PHOTO_REPLAY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "proposals": [],
+    "matched": false
+  },
+  {
+    "key": "pair-496-497-left",
+    "duration_ms": 113.01,
+    "source_sha256": "54b62e87bfcb6a1c8aaa648f51bb7125233f5d715dfbf161d4f0bc5fe7b91295",
+    "boxes": [],
+    "reply": {
+      "frame_id": 12,
+      "timestamp": 1795385305021,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+      "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+      "model_validation": "STATUE_ETH3D_CALIBRATED_PHOTO_REPLAY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "proposals": [],
+    "matched": false
+  },
+  {
+    "key": "pair-496-497-right",
+    "duration_ms": 114.82,
+    "source_sha256": "9ba38468f32073af5be8e6dabf9e59746d67e1afc88934b752d0c9f45f068728",
+    "boxes": [],
+    "reply": {
+      "frame_id": 13,
+      "timestamp": 1795385305134,
+      "width": 640,
+      "height": 480,
+      "scene": "statue",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\.codex-tmp\\yolo-training\\artifacts\\statue-visual-context-picf-20261122\\candidate\\yoloe-statue-visual.pt",
+      "weights_sha256": "ee4a6dd64f65f3ae05c5f630f19044560372bdbab69d2a7302940ebc26d7e8c6",
+      "model_validation": "STATUE_ETH3D_CALIBRATED_PHOTO_REPLAY; artifact:PICF_REPLAY_CANDIDATE_NOT_DEPLOYMENT_ACCEPTED",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    },
+    "proposals": [],
+    "matched": false
+  }
+]
