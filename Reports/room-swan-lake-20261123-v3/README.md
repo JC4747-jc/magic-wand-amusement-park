@@ -1,5 +1,7 @@
 # 出租屋 · 雪山天鹅湖与水母灯
 
+当前出租屋使用实景透视。请查阅[新版源码与验证](../room-passthrough-20261123-v2/README.md)。以下记录保留此前的微缩样式。
+
 在 BridgeStereoFusion 选择出租屋并完成墙面定位后，B 魔法让照片化成 1,536 个采样其原色的粒子，旋入施法手掌，再沿弧线飞到定位处。湖面从中心展开，边缘留下细碎空隙。原创湖景采用浅浮雕表现近水和远山的视差。C 魔法独立唤起头顶的水母灯，伞盖收缩，触须随漂移动作摆动。房间保留完整微缩墙面、窗洞、椅子、圆桌和储物柜。
 
 [手掌聚拢](captures/swan-lake-palm.png) · [粒子释放](captures/swan-lake-release.png) · [墙上湖景](captures/swan-lake-wall.png) · [水母灯与房间](captures/recognized-room-effects.png)

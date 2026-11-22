@@ -1,0 +1,49 @@
+{
+  "parent": "40257d51db67a83390f77924ca69bcb1c21385e5",
+  "patchBase": "312fc0d5495a7cbfb5cd6c58da471078ecf78a77",
+  "patchSha256": "c684675023bd743702860475c6b7db6eb015a8ffdd05b49561d33ac271f9b0f2",
+  "reconstructedTree": "5b3597acac816235abcc2a944461677d2f476123",
+  "changedAfterSwanLake": {
+    "Assets/Editor/CalibratedRoomMagicChainChecks.cs": "942af9f6f746af12df827ff4696bd6fe224d2e5d70b2a426d3fbecddbfe7b95a",
+    "Assets/Editor/CalibratedRoomMagicVariants.cs": "c04dd6eed956fce69ab08b8a3151e3f0aac2b40bae1b0836c93361a1d7ed37d7",
+    "Assets/Scripts/MagicMR/ParkActor.NaturalModels.cs": "ca9ca57d8d5fb897a4e2aa6c49d9c5fb8cd71918418fb3ed0ca7d8fa0187a60a",
+    "Assets/Scripts/MagicMR/ParkActor.cs": "3dc90e15422ae89940e584203ce8a03fce3f8fdd52a9cc8eebdbec5c675d0b4d",
+    "Assets/Scripts/MagicMR/ParkController.cs": "9e8818177b7870f77faeca838cc88f286beba954fd3decbbeea8332a65f758c5",
+    "Assets/Scripts/MagicMR/RoomMagicVisual.cs": "c756d97f13e901aa4f268a30381ead64ed9011bfa35e0102841b087533953ca3"
+  },
+  "verifiedEditorInputCount": 1854,
+  "reviews": [
+    {
+      "testedAtUtc": "2026-11-22T16:55:33.6589320Z",
+      "scope": "Saved Bridge Room buttons and original ParkRoom TCP component; public PICF and stereo, synthetic pose and gestures. No headset acceptance",
+      "sha256": "3ef8bb356f92919a4bf191032cf7217360fdf0a1167a3d5cfa4028e8c8ebd7e9",
+      "sampleCount": 39,
+      "minFreeRAMGiB": 6.180728912353516,
+      "maxTaskRSSMiB": 1646.984375,
+      "maxNetDiskGrowthMiB": 1
+    },
+    {
+      "testedAtUtc": "2026-11-22T16:56:19.0387412Z",
+      "scope": "Actual calibrated public PICF and C# room tracking, same target menu switches, portal seed and snow via shared synthetic hands. No headset or physical hand claim",
+      "sha256": "a70b8a8e3077930096064d050cc54a8356e0f8563f444ea87614073ff97cfb7a",
+      "sampleCount": 45,
+      "minFreeRAMGiB": 6.550136566162109,
+      "maxTaskRSSMiB": 1612.38671875,
+      "maxNetDiskGrowthMiB": 0
+    }
+  ],
+  "picoVerified": false,
+  "evidence": {
+    "Reports/room-passthrough-20261123-v2/captures/passthrough-idle.png": "7889cae8ea3c30c34ff33a2d91b45b5fb00f6a503d2e2fec39a70e222302a294",
+    "Reports/room-passthrough-20261123-v2/captures/recognized-room-effects.png": "df1024925114712985e0cd040fdc1aa21fd4af2777b232bccc26ae441cfa3209",
+    "Reports/room-passthrough-20261123-v2/captures/result.txt": "7959ec1cfc6fec0f682c8703fce3bc34e5104aab09077f25c10eb3b568201f0c",
+    "Reports/room-passthrough-20261123-v2/captures/swan-lake-palm.png": "d5a306ded5616b469c37a0bb2f41c55e5612a9205b7f88213373e0ddcf97c952",
+    "Reports/room-passthrough-20261123-v2/captures/swan-lake-release.png": "688ec39d276f042d982e288d87c914733c205b4c310dd8d8ba7b669f717ab522",
+    "Reports/room-passthrough-20261123-v2/captures/swan-lake-wall.png": "6577e1d023c7b3f2da2be265f0b42c7c716debf8b4e2fdb46b37e4fe2ec83a77",
+    "Reports/room-passthrough-20261123-v2/captures/trace.txt": "10054c9f8e11b97462a90c04cb86bc6856d5747ef90f7a7a1ddb94e406530181",
+    "Reports/room-passthrough-20261123-v3/captures/portal-perspective.png": "1cfaee66ddbeb1b5a8d607da990077cdd3f0c7ca78f16c78b8e26af8a67fcfd1",
+    "Reports/room-passthrough-20261123-v3/captures/snow-room-perspective.png": "77861759057cffdb8caa8f526839bba07fcfd924f8a60ec8667340eb7fc27cb9",
+    "Reports/room-passthrough-20261123-v3/captures/result.txt": "4f79b94a172ec918718747f206159a3c93e1999f52400a5878b72ae0bb91b69c",
+    "Reports/room-passthrough-20261123-v3/captures/trace.txt": "64a59972e0d1f899b2109f898f9d752534bcef71e1e9413a81718e53b74871c0"
+  }
+}
