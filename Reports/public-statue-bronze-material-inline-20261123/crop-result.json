@@ -1,0 +1,59 @@
+{
+  "source_commit": "e3aaf32afe82d5a6493e0fe301edddc54ec3567c",
+  "decisions": {
+    "historic_detector": {
+      "0": {
+        "bronze_hits": [
+          "54.149",
+          "54.1565",
+          "54.2378"
+        ],
+        "unmatched": {
+          "2009.20.23": 1
+        }
+      },
+      "0.06": {
+        "bronze_hits": [
+          "54.149",
+          "54.1558",
+          "54.1565",
+          "54.2378"
+        ],
+        "unmatched": {
+          "49.2731": 1,
+          "2009.20.23": 1
+        }
+      }
+    },
+    "current_detector": {
+      "0": {
+        "bronze_hits": [
+          "54.149",
+          "54.1565",
+          "54.2378"
+        ],
+        "unmatched": {
+          "2009.20.23": 1
+        }
+      },
+      "0.06": {
+        "bronze_hits": [
+          "54.149",
+          "54.1558",
+          "54.1565",
+          "54.2378"
+        ],
+        "unmatched": {
+          "49.2731": 1,
+          "2009.20.23": 1
+        }
+      }
+    }
+  },
+  "margins_sha256": "35eca6dbcd9be00dca9d97e94f47269b7c1dd6e02dd95382f7a92adeb2f97356",
+  "current_pc_result_sha256": "08a547f8d87a6c556944566fa1d86a9ccaad1d5e58905a37d8aa3f9fea3f0658",
+  "historical_result_sha256": "d6c52797fbb1c5d5b095d7121f31f361ac43118f0c839938f1c8157b9f743842",
+  "model_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+  "worker_sha256": "c3ce0d83581e8565a6accb7840216ef1f87b9d10d1d5c639d82f2ba3e0776957",
+  "scope": "Exploratory factorial on known negative samples. Same JPEG decoding and CLIP prompts with two old/new detector boxes and old 6% or current zero trim."
+}
