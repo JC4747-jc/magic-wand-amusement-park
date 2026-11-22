@@ -1,0 +1,339 @@
+{
+  "sourceBase": "2510a5c9630ae8750704bfc51d409ae03f58eaaa",
+  "inputs": {
+    "tcp_server.py": "10607c9a6a03bfb4e8875b3107f85608e382b90415e232dace093b2bf678acdd",
+    "detector_config.py": "b047405f41cd10523d6e51ab25ee8a1673a8219de8ce4ece7a684277b2f5640b",
+    "pose_availability.py": "10eef6f52a4ae9afca8b16e51be2179b83c0a30d1b498ac98cd969d0129367ee",
+    "scene_protocol.py": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038",
+    "scene_router.py": "147401103ced6e6a06ca526d434669edd36b5e1e55630f23a0a099689a3bca11",
+    "scene_profiles.json": "4c3a776c4133c60ff9be810630c1aa7002775230f98a03bb3fdfa020d78f8781",
+    "discovery.py": "f17f4b4525e969ae6dc22523d5a520207280106ebd61dc103b880fee52f88747",
+    "model_artifact.py": "521b330e8b38ee6a93fe6475e168d8dc90aa9a6bcad035db8d17e07ee1060cab",
+    "test_scene_router.py": "f8da16c2d92ca8eefaf64a54f8dd4b2734fc0955bb8d86c516eec23f4574ede1",
+    "yolov8n.pt": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+    "weights/best_yolo26n_assgn2_v6_50e.pt": "999bca4f5bf96aeed3ac0f1047e31530e4eb4584873c85dd5bd00031fc71fb3a",
+    "yolo11s.pt": "85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5",
+    "pet-metric-profiles.json": "9366b1f4b937e412b5021af9a109f30e90e1e2c65774035662df868c9a3852c5"
+  },
+  "testLogSha256": "048e310ddc06ba926d35c3848ae2f0aa1313fdae6f926aeb7f2feb70ab888435",
+  "serviceLogSha256": "a8134d8b02b7b8821066983013a35fdac043f7ca541e6c9850a68eee1e4ae9a9",
+  "samples": [
+    {
+      "elapsed": 0.0,
+      "freeRAMGiB": 8.54,
+      "serviceRSSMiB": 7.98
+    },
+    {
+      "elapsed": 0.406,
+      "freeRAMGiB": 8.148,
+      "serviceRSSMiB": 376.82
+    },
+    {
+      "elapsed": 0.828,
+      "freeRAMGiB": 8.043,
+      "serviceRSSMiB": 471.96
+    },
+    {
+      "elapsed": 1.25,
+      "freeRAMGiB": 8.009,
+      "serviceRSSMiB": 500.69
+    },
+    {
+      "elapsed": 1.656,
+      "freeRAMGiB": 7.919,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 2.062,
+      "freeRAMGiB": 7.854,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 2.484,
+      "freeRAMGiB": 7.887,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 2.89,
+      "freeRAMGiB": 7.814,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 3.296,
+      "freeRAMGiB": 7.797,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 3.718,
+      "freeRAMGiB": 7.749,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 4.125,
+      "freeRAMGiB": 7.701,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 4.546,
+      "freeRAMGiB": 7.681,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 4.953,
+      "freeRAMGiB": 7.676,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 5.359,
+      "freeRAMGiB": 7.665,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 5.781,
+      "freeRAMGiB": 7.665,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 6.187,
+      "freeRAMGiB": 7.593,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 6.593,
+      "freeRAMGiB": 7.546,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 7.0,
+      "freeRAMGiB": 7.336,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 7.421,
+      "freeRAMGiB": 7.3,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 7.828,
+      "freeRAMGiB": 7.306,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 8.234,
+      "freeRAMGiB": 7.338,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 8.64,
+      "freeRAMGiB": 7.341,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 9.046,
+      "freeRAMGiB": 7.341,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 9.468,
+      "freeRAMGiB": 7.297,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 9.875,
+      "freeRAMGiB": 7.201,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 10.281,
+      "freeRAMGiB": 7.15,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 10.687,
+      "freeRAMGiB": 7.039,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 11.093,
+      "freeRAMGiB": 6.972,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 11.5,
+      "freeRAMGiB": 6.848,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 11.937,
+      "freeRAMGiB": 6.778,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 12.343,
+      "freeRAMGiB": 6.7,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 12.75,
+      "freeRAMGiB": 6.759,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 13.156,
+      "freeRAMGiB": 6.531,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 13.578,
+      "freeRAMGiB": 6.547,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 13.984,
+      "freeRAMGiB": 6.516,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 14.39,
+      "freeRAMGiB": 6.335,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 14.796,
+      "freeRAMGiB": 6.325,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 15.218,
+      "freeRAMGiB": 6.052,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 15.64,
+      "freeRAMGiB": 6.148,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 16.046,
+      "freeRAMGiB": 6.252,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 16.453,
+      "freeRAMGiB": 6.135,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 16.859,
+      "freeRAMGiB": 6.185,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 17.265,
+      "freeRAMGiB": 6.172,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 17.687,
+      "freeRAMGiB": 6.148,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 18.109,
+      "freeRAMGiB": 6.11,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 18.515,
+      "freeRAMGiB": 5.936,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 18.937,
+      "freeRAMGiB": 5.973,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 19.343,
+      "freeRAMGiB": 5.925,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 19.75,
+      "freeRAMGiB": 6.014,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 20.156,
+      "freeRAMGiB": 6.007,
+      "serviceRSSMiB": 582.25
+    },
+    {
+      "elapsed": 20.578,
+      "freeRAMGiB": 5.932,
+      "serviceRSSMiB": 660.25
+    },
+    {
+      "elapsed": 21.0,
+      "freeRAMGiB": 5.829,
+      "serviceRSSMiB": 750.65
+    },
+    {
+      "elapsed": 21.421,
+      "freeRAMGiB": 5.808,
+      "serviceRSSMiB": 774.78
+    },
+    {
+      "elapsed": 21.828,
+      "freeRAMGiB": 5.808,
+      "serviceRSSMiB": 789.89
+    },
+    {
+      "elapsed": 22.234,
+      "freeRAMGiB": 5.76,
+      "serviceRSSMiB": 860.08
+    },
+    {
+      "elapsed": 22.64,
+      "freeRAMGiB": 5.752,
+      "serviceRSSMiB": 854.97
+    },
+    {
+      "elapsed": 23.046,
+      "freeRAMGiB": 5.75,
+      "serviceRSSMiB": 857.91
+    },
+    {
+      "elapsed": 23.468,
+      "freeRAMGiB": 5.767,
+      "serviceRSSMiB": 857.91
+    },
+    {
+      "elapsed": 23.89,
+      "freeRAMGiB": 5.856,
+      "serviceRSSMiB": 838.49
+    },
+    {
+      "elapsed": 24.296,
+      "freeRAMGiB": 5.858,
+      "serviceRSSMiB": 857.92
+    },
+    {
+      "elapsed": 24.718,
+      "freeRAMGiB": 5.859,
+      "serviceRSSMiB": 857.92
+    },
+    {
+      "elapsed": 25.125,
+      "freeRAMGiB": 5.911,
+      "serviceRSSMiB": 740.46
+    },
+    {
+      "elapsed": 25.531,
+      "freeRAMGiB": 7.35,
+      "serviceRSSMiB": 171.11
+    }
+  ],
+  "guardStops": [],
+  "nativeExit": 0
+}
