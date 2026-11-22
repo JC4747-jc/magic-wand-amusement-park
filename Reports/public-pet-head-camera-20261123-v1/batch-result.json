@@ -1,0 +1,57 @@
+{
+  "keys": [
+    "metricDog:releasedYolo:32",
+    "metricDog:releasedYolo:33",
+    "metricDog:releasedYolo:34",
+    "metricDog:releasedYolo:35",
+    "metricCat:localCanary:32",
+    "metricCat:localCanary:251",
+    "independent:reviewedBody:cat040-0008",
+    "independent:reviewedBody:dog034-0012"
+  ],
+  "measurements": [
+    {
+      "threads": 1,
+      "batch": false,
+      "count": 16,
+      "medianMs": 146.50750000146218,
+      "p95Ms": 154.59702499720152,
+      "parity": null
+    },
+    {
+      "threads": 1,
+      "batch": true,
+      "count": 16,
+      "medianMs": 142.92004999879282,
+      "p95Ms": 149.7600250004325,
+      "parity": {
+        "maxPeakIndexShift": 0,
+        "maxScoreDelta": 0.0
+      }
+    },
+    {
+      "threads": 2,
+      "batch": false,
+      "count": 16,
+      "medianMs": 83.9501500086044,
+      "p95Ms": 85.92832499925862,
+      "parity": {
+        "maxPeakIndexShift": 0,
+        "maxScoreDelta": 0.0
+      }
+    },
+    {
+      "threads": 2,
+      "batch": true,
+      "count": 16,
+      "medianMs": 86.51955000095768,
+      "p95Ms": 91.82677500211867,
+      "parity": {
+        "maxPeakIndexShift": 0,
+        "maxScoreDelta": 0.0
+      }
+    }
+  ],
+  "modelSha256": "1cfd1c86e0d9e5d5f95178bcd95ee9a4e8386a624cd3c57519f27ff58cac7f28",
+  "scope": "Cropped AP-10K inference only, warm CPU, no capture, detector, transport or stereo"
+}

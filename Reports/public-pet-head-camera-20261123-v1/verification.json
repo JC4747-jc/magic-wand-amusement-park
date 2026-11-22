@@ -1,0 +1,37 @@
+{
+  "sourceBase": "e54396818681c8491be1b48270b9f5168a20773d",
+  "checkedAtUtc": "2026-11-22T19:42:37.8498464Z",
+  "confirmedDogFrames": [
+    34,
+    35
+  ],
+  "scope": "Same saved detector boxes and optical stereo frames. Offline pose inference and measured CPU crop latency. No real-time Unity/PICO verification.",
+  "reproducedInputPairs": 57,
+  "modelSha256": "1cfd1c86e0d9e5d5f95178bcd95ee9a4e8386a624cd3c57519f27ff58cac7f28",
+  "sourceSha256": {
+    "Tools/check_pet_head_camera_inputs.py": "4795b3a471718e581ea8a9ab2824d578435d9ca9253ab70a8ede18102d443f9e",
+    "Tools/check_pet_head_batch.py": "c1a9c28b23ab6d95b0565811e356d501ee9a671eea674a7f1c46c42729f95630",
+    "Tools/check_pet_head_body_window.py": "f4e814a9bc150fcaa7431559158099f3532b49962ec94bf5293f6b0c548cc007",
+    "Tools/check_pet_head_ap10k.py": "1cf2299e59e5cc8c501b92137271fe3b748e98d6525c76e1decd988f3c8d6e95",
+    "Tools/run_public_room_plant_bounded.ps1": "fedd8e5405150bdbfdf9b4bc6b7eff93c7694f6991ce3aadaf4bc9dab21220eb",
+    "Assets/Scenes/ParkPet.unity": "fc4d5e9eb1a0973d392faceee5cce02cde41da0a18e3d6161b80cfc051aa1fd7",
+    "Assets/Scripts/Perception/ParkStereoReceiver.cs": "a54566a30a995417e36cc6d29e2bf3200cac665b29fd5dd8392792681ceebe74",
+    "Assets/Scripts/Perception/PicoYoloFrameSender.cs": "c70d7b1e5c587e6fcf10fb546f60736093fa5dc04b8da34e7f834312e2a77b01",
+    "Assets/Scripts/Perception/Stereo/PicoStereoCapture.cs": "882e59194149ed89a3d1b4f3ab9e4fafbdbdc56d4d8a2bc2d449f2e4166b904d"
+  },
+  "inputSha256": {
+    "Reports/public-pet-head-window-20261123-v2/result.json": "aa8e523be2da534f518df7a26ce0e58306f0031e41f5c337ae239d8f34279372",
+    "Reports/public-pet-metric-dog-20261123-v1/result.json": "e310e8157ac78446d4e072a0263e0e6049fc403bd8f01711dae757d13b84a736",
+    "Reports/public-pet-head-continuity-20261123-v2/result.json": "6b37c14031b8cfa56aa5d86a8265e667af3c8f6b5375521a8026aa7dbd8a96af",
+    "Reports/public-pet-head-visibility-20261123-v2/result.json": "83d57c163cafd98f21f28fdbf69321451101952d67b65390d06335b4c257c9a5",
+    "Reports/public-pet-head-visibility-20261123-v2/picf.json": "0d47b462a931267df341de59bebb459f6036b6fed47b1fce8b3726f1bfe2a0ac",
+    "Reports/pet-tile-20261121/holdout-truth.json": "e01bcb83bbb2dd2f17dd4acfdbeac833e57562b9003194f2e97b0001c4905744"
+  },
+  "reportSha256": {
+    "README.md": "083dfa4791e02b483fd7e5f737e7266cfaac129d4fb50a91da171e30907fc9de",
+    "result.json": "6a05d66d7dbe4ab8f97604d47c972c77fc2ccb2f6f1007ccfa8b5e2a5ad872a2",
+    "batch-result.json": "b0617c2ff5094504e16eb59b9cc326a416e17f8da23200b85f7d73f68a06309d",
+    "resources.json": "23faf279d9632fc61fe221d9e7deffe285cfcdf70e616a8a389e09f7e3d87ef9",
+    "batch-resources.json": "1566c12a5cb0033d946598450a4ddde8041549fe7403bbd956379f0233d7cc9d"
+  }
+}
