@@ -1,0 +1,109 @@
+{
+  "source": "https://polyhaven.com/a/ceramic_vase_01",
+  "license": "CC0-1.0",
+  "info": {
+    "type": 2,
+    "tags": [
+      "pot",
+      "clean",
+      "tall",
+      "modern",
+      "fancy",
+      "decor"
+    ],
+    "name": "Ceramic Vase 01",
+    "categories": [
+      "vases",
+      "containers",
+      "decorative"
+    ],
+    "authors": {
+      "James Ray Cock": "All"
+    },
+    "date_published": 1623767601,
+    "staging": null,
+    "max_resolution": [
+      8192,
+      8192
+    ],
+    "polycount": 2548,
+    "texel_density": 12083.371395475848,
+    "dimensions": [
+      204.87193763256073,
+      206.37669414281845,
+      401.379804010503
+    ],
+    "files_hash": "989b1a754be36032e5d643c9c333a08e218c65cf",
+    "description": "Free 8K Ceramic Vase 01 - a tall, modern glossy white pot with an elegant fluted rim and clean lines; a fancy decorative vase/container for stylish interiors.",
+    "category_id": "bda68bac-fe45-5d4f-aab6-ea0162d45774",
+    "category": "Decor & Art/Vases & Vessels/Ceramic Vases",
+    "attributes": {
+      "condition": [
+        "clean"
+      ],
+      "material": [
+        "ceramic"
+      ]
+    },
+    "img_version": "ff07fd46",
+    "download_count": 20467,
+    "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/ceramic_vase_01.png?width=256&height=256&format=webp&v=ff07fd46"
+  },
+  "files": [
+    {
+      "path": "ceramic_vase_01_1k.gltf",
+      "bytes": 2706,
+      "sha256": "4e2c69eb5bbccf86e9fbf92af438464669d804c1f0eae041ee28651a5b57d91e",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/ceramic_vase_01/ceramic_vase_01_1k.gltf"
+    },
+    {
+      "path": "textures/ceramic_vase_01_nor_gl_1k.jpg",
+      "bytes": 36504,
+      "sha256": "c35b59d15e0f08db44b0bc8a5870bc65ae781819e5abf0447996d0faf05b7722",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_01/ceramic_vase_01_nor_gl_1k.jpg"
+    },
+    {
+      "path": "textures/ceramic_vase_01_diff_1k.jpg",
+      "bytes": 32351,
+      "sha256": "5f7d22178b74a59fe92aa0ccc958b897e2fb80df514eb28b97000097c0e71beb",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_01/ceramic_vase_01_diff_1k.jpg"
+    },
+    {
+      "path": "textures/ceramic_vase_01_arm_1k.jpg",
+      "bytes": 74240,
+      "sha256": "121469880a7900513717685e9035dfc1b04613f85c778ab4e9dba98c1675d660",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_01/ceramic_vase_01_arm_1k.jpg"
+    },
+    {
+      "path": "ceramic_vase_01.bin",
+      "bytes": 272656,
+      "sha256": "56ffadcafff3f56538d04b0b43c06c9704baeec2ac3ec286ef01c313c82906f0",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/ceramic_vase_01/ceramic_vase_01.bin"
+    }
+  ],
+  "total_bytes": 418457,
+  "resolution": "1k",
+  "triangles": 10296,
+  "meshes": 1,
+  "materials": [
+    {
+      "name": "ceramic_vase_01",
+      "albedo": "ceramic_vase_01_diff_1k.jpg",
+      "packed": "ceramic_vase_01_URP_MetalAO_Smooth.png",
+      "maximumPackingError": 1.1920928955078125e-07,
+      "normal": "ceramic_vase_01_nor_gl_1k.jpg"
+    }
+  ],
+  "modifications": [
+    "Original mesh, UV and 1K diffuse/GL normal retained; FBX conversion",
+    "ARM numeric channel repack to URP R=metal/G=AO/A=smoothness; original ARM retained",
+    "Unity display normalization/front alignment applied by asset builder; no measured room reconstruction"
+  ],
+  "local_validation": {
+    "unity": "6000.0.33f1",
+    "log": ".codex-tmp/room-detail-lifecycle-validation.log",
+    "room_static_triangles": 24204,
+    "room_static_renderers": 9,
+    "scope": "Original prop geometry/PBR/nominal supported base, room window rays/shared cache, actual room lifecycle and six-scene timeline; four Android packages contain 32 verified sources. Not measured room reconstruction or headset acceptance."
+  }
+}
