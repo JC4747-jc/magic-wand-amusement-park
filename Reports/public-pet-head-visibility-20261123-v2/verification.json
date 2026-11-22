@@ -1,0 +1,255 @@
+{
+  "sourceBase": "02c9b935f5e1aebfde8c388cee5fabf11b94588e",
+  "checkedAtUtc": [
+    "2026-11-22T19:07:42.6775313Z",
+    "2026-11-22T19:08:00.0788991Z"
+  ],
+  "independentSubjects": [
+    "cat024",
+    "cat040",
+    "dog021",
+    "dog034"
+  ],
+  "blindLabels": {
+    "visible": 5,
+    "unavailable": 12,
+    "indeterminate": 7
+  },
+  "holdoutCounts": {
+    "reviewedBody": {
+      "visible": {
+        "frames": 5,
+        "matchingBody": 5,
+        "counts": {
+          "legacy": 5,
+          "faceShape": 5,
+          "textureAgreement": 4,
+          "confirmed": 4,
+          "singleEyeShape": 4,
+          "singleEyeConfirmed": 3
+        }
+      },
+      "unavailable": {
+        "frames": 12,
+        "matchingBody": 12,
+        "counts": {
+          "legacy": 3,
+          "faceShape": 0,
+          "textureAgreement": 0,
+          "confirmed": 0,
+          "singleEyeShape": 1,
+          "singleEyeConfirmed": 0
+        }
+      },
+      "indeterminate": {
+        "frames": 7,
+        "matchingBody": 7,
+        "counts": {
+          "legacy": 6,
+          "faceShape": 5,
+          "textureAgreement": 4,
+          "confirmed": 0,
+          "singleEyeShape": 1,
+          "singleEyeConfirmed": 0
+        }
+      }
+    },
+    "releasedYolo": {
+      "visible": {
+        "frames": 5,
+        "matchingBody": 1,
+        "counts": {
+          "legacy": 0,
+          "faceShape": 0,
+          "textureAgreement": 0,
+          "confirmed": 0,
+          "singleEyeShape": 0,
+          "singleEyeConfirmed": 0
+        }
+      },
+      "unavailable": {
+        "frames": 12,
+        "matchingBody": 9,
+        "counts": {
+          "legacy": 1,
+          "faceShape": 0,
+          "textureAgreement": 0,
+          "confirmed": 0,
+          "singleEyeShape": 0,
+          "singleEyeConfirmed": 0
+        }
+      },
+      "indeterminate": {
+        "frames": 7,
+        "matchingBody": 5,
+        "counts": {
+          "legacy": 2,
+          "faceShape": 2,
+          "textureAgreement": 1,
+          "confirmed": 0,
+          "singleEyeShape": 0,
+          "singleEyeConfirmed": 0
+        }
+      }
+    },
+    "metricDevelopment": {
+      "visible": {
+        "frames": 12,
+        "matchingBody": 9,
+        "counts": {
+          "legacy": 5,
+          "faceShape": 5,
+          "textureAgreement": 5,
+          "confirmed": 0,
+          "singleEyeShape": 8,
+          "singleEyeConfirmed": 1
+        }
+      },
+      "unavailable": {
+        "frames": 9,
+        "matchingBody": 8,
+        "counts": {
+          "legacy": 1,
+          "faceShape": 0,
+          "textureAgreement": 0,
+          "confirmed": 0,
+          "singleEyeShape": 0,
+          "singleEyeConfirmed": 0
+        }
+      },
+      "indeterminate": {
+        "frames": 0,
+        "matchingBody": 0,
+        "counts": {
+          "legacy": 0,
+          "faceShape": 0,
+          "textureAgreement": 0,
+          "confirmed": 0,
+          "singleEyeShape": 0,
+          "singleEyeConfirmed": 0
+        }
+      }
+    }
+  },
+  "timedMetric": {
+    "releasedYolo:cat segment 29": {
+      "frames": 11,
+      "correctCat": 0,
+      "body": 0,
+      "faceShape": 0,
+      "texture": 0,
+      "confirmed": 0,
+      "singleEyeShape": 0,
+      "singleEyeConfirmed": 0
+    },
+    "releasedYolo:cat segment 244": {
+      "frames": 15,
+      "correctCat": 0,
+      "body": 0,
+      "faceShape": 0,
+      "texture": 0,
+      "confirmed": 0,
+      "singleEyeShape": 0,
+      "singleEyeConfirmed": 0
+    },
+    "releasedYolo:cat segment 366": {
+      "frames": 13,
+      "correctCat": 2,
+      "body": 2,
+      "faceShape": 0,
+      "texture": 0,
+      "confirmed": 0,
+      "singleEyeShape": 2,
+      "singleEyeConfirmed": 0
+    },
+    "localCanary:cat segment 29": {
+      "frames": 11,
+      "correctCat": 5,
+      "body": 4,
+      "faceShape": 4,
+      "texture": 4,
+      "confirmed": 1,
+      "singleEyeShape": 4,
+      "singleEyeConfirmed": 1
+    },
+    "localCanary:cat segment 244": {
+      "frames": 15,
+      "correctCat": 5,
+      "body": 5,
+      "faceShape": 4,
+      "texture": 3,
+      "confirmed": 1,
+      "singleEyeShape": 3,
+      "singleEyeConfirmed": 1
+    },
+    "localCanary:cat segment 366": {
+      "frames": 13,
+      "correctCat": 6,
+      "body": 4,
+      "faceShape": 0,
+      "texture": 0,
+      "confirmed": 0,
+      "singleEyeShape": 2,
+      "singleEyeConfirmed": 0
+    }
+  },
+  "confirmedMetricFrames": [
+    {
+      "sourceFrame": 32,
+      "sessionIdentity": "aa3dd725148d:left:2",
+      "frames": [
+        30,
+        31,
+        32
+      ],
+      "actualIntervalMs": 156.0,
+      "stereoM": 1.467570878609417,
+      "lidarM": 1.5368937253952026,
+      "absErrorM": 0.0693228467857856,
+      "rightReprojectionErrorPx": 1.527016329833987
+    },
+    {
+      "sourceFrame": 251,
+      "sessionIdentity": "19db52090703:left:2",
+      "frames": [
+        249,
+        250,
+        251
+      ],
+      "actualIntervalMs": 156.0,
+      "stereoM": 1.9147813097530244,
+      "lidarM": 2.044473648071289,
+      "absErrorM": 0.12969233831826465,
+      "rightReprojectionErrorPx": 1.539599176583272
+    }
+  ],
+  "localInspectedOverlaySha256": "436a328567dd2d8d4530a3dea3e509e5747b9f430b7cbe27d43fe313c24fc404",
+  "temporalCases": 4,
+  "modelSha256": "1cfd1c86e0d9e5d5f95178bcd95ee9a4e8386a624cd3c57519f27ff58cac7f28",
+  "sourceSha256": {
+    "Tools/run_public_room_plant_bounded.ps1": "4fdff76610b39713a7936a3df961b6ee389a02e72b7a6dfe5c5fdba87f714b74",
+    "Tools/check_pet_head_visibility.py": "17fa49f9d92f93c2150a7175bf0b475cc5ae33cad3fcb9b83ce2708edcaeafc8",
+    "Tools/check_pet_head_continuity.py": "0fc9e25fc9f5ba8e18eaf567b3d0321e32ab2e03ec84fc7abd33c1bdedd61e85",
+    "Tools/check_pet_head_ap10k.py": "1cf2299e59e5cc8c501b92137271fe3b748e98d6525c76e1decd988f3c8d6e95",
+    "Tools/check_pet_stereo_pixels.py": "6b8cd697f203372b9c62bde8671783e2326eb0c22b8cade03404114adaffd689"
+  },
+  "artifactSha256": {
+    "Reports/public-pet-head-visibility-20261123-v2/protocol.json": "feee1bc0766c512fcfdfd6535a44f61cffe680936b83b270723d50fcca2a4604",
+    "Reports/public-pet-head-visibility-20261123-v2/picf.json": "0d47b462a931267df341de59bebb459f6036b6fed47b1fce8b3726f1bfe2a0ac",
+    "Reports/public-pet-head-visibility-20261123-v2/result.json": "83d57c163cafd98f21f28fdbf69321451101952d67b65390d06335b4c257c9a5",
+    "Reports/public-pet-head-visibility-20261123-v2/resources.json": "0cdeb727a31ce8caa6d43d053ccd8cd224f9f463db0259e7c80783d4153378ac",
+    "Reports/public-pet-head-visibility-20261123-v2/timing-sanity.json": "832a1ef80bcacbc8dcd5fe0f316a99e2b4e3279297e8297ba3a043963e1a8704",
+    "Reports/public-pet-head-continuity-20261123-v2/picf.json": "b5e08fdcac5d4a406af6a156dc5956b9d33cbc01e1d380a0578620423de1b1d6",
+    "Reports/public-pet-head-continuity-20261123-v2/result.json": "6b37c14031b8cfa56aa5d86a8265e667af3c8f6b5375521a8026aa7dbd8a96af",
+    "Reports/public-pet-head-continuity-20261123-v2/resources.json": "dd25c4f4d425a884602bb1f97be69f870f70ee1d6a0eb5c9fc6c715b474cf273",
+    "TrainingData/pet-head-new-subjects-20261123.json": "fb96c4908c0f7c0304c018e99949930f75f80641e5814e6056c8d627080a2a2c",
+    "Reports/bridge-live-pet-20261123-v1/totalrecon-head-continuity-39.json": "712ab8d0bc0ca045a0091fb96dbfd89f8fb638dd728eb1a116b1817eb05c1645"
+  },
+  "resources": {
+    "minSampledRAMGiB": 7.333,
+    "maxSampledOwnedRssMiB": 1208.03,
+    "maxSampledReportOutputMiB": 14.93,
+    "guardStopped": false
+  },
+  "scope": "Canary PC inference and research gates on prerecorded public optical footage. Metric results cover one cat. Independent four-animal holdout has no metric calibration. No automatic scene contact, head pose deployment or PICO acceptance."
+}

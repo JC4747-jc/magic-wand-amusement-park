@@ -1,0 +1,35 @@
+{
+  "release": "02c9b935f5e1aebfde8c388cee5fabf11b94588e",
+  "serviceSha256": {
+    "tcp_server.py": "10607c9a6a03bfb4e8875b3107f85608e382b90415e232dace093b2bf678acdd",
+    "scene_protocol.py": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038",
+    "scene_router.py": "147401103ced6e6a06ca526d434669edd36b5e1e55630f23a0a099689a3bca11",
+    "discovery.py": "f17f4b4525e969ae6dc22523d5a520207280106ebd61dc103b880fee52f88747",
+    "pose_availability.py": "10eef6f52a4ae9afca8b16e51be2179b83c0a30d1b498ac98cd969d0129367ee",
+    "detector_config.py": "b047405f41cd10523d6e51ab25ee8a1673a8219de8ce4ece7a684277b2f5640b",
+    "model_artifact.py": "521b330e8b38ee6a93fe6475e168d8dc90aa9a6bcad035db8d17e07ee1060cab",
+    "scene_profiles.json": "4c3a776c4133c60ff9be810630c1aa7002775230f98a03bb3fdfa020d78f8781",
+    "yolov8n.pt": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36"
+  },
+  "matcherSha256": "7a2a18030a955834a828b0afcb1e2b9acff384a9afd1ecb0122af1e06e8fa51a",
+  "modelSha256": "1cfd1c86e0d9e5d5f95178bcd95ee9a4e8386a624cd3c57519f27ff58cac7f28",
+  "independentTruthSha256": "e01bcb83bbb2dd2f17dd4acfdbeac833e57562b9003194f2e97b0001c4905744",
+  "labelsSha256": "fb96c4908c0f7c0304c018e99949930f75f80641e5814e6056c8d627080a2a2c",
+  "calibratedInputSha256": "c26ebddbc4733becfe4fca3bd0017dd195e89db3665d3341065fbba1eb63b7ca",
+  "existingHeadProbeSha256": "2af9bb56d4d8e6c922659996d6be2c53cf3f4ba64e74693fa99ddac33a60e7fb",
+  "minFaceEyeSpanPx": 4.0,
+  "nasalAlong": [
+    -0.25,
+    1.25
+  ],
+  "nasalBelow": [
+    0.12,
+    1.5
+  ],
+  "textureReprojectionPx": 3.0,
+  "eyeNoseDisparityMaxPx": 2.5,
+  "poseMinRawPeak": 0.5,
+  "confirmations": 3,
+  "maxGapMs": 240,
+  "singleEyeMethod": "Left-view AP-10K and three mutually checked stereo patches."
+}
