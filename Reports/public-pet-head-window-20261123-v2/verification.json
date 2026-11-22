@@ -1,0 +1,38 @@
+{
+  "sourceBase": "8fcf541b02497d1f8974856ae60dc964acadbfdb",
+  "checkedAtUtc": "2026-11-22T19:35:20.7001729Z",
+  "scope": "Offline original PICF and keypoint output replay. Native stereo parity, research gates and optical references only.",
+  "reproducedNativeNoseSamples": 57,
+  "confirmedDogFrames": [
+    34,
+    35
+  ],
+  "confirmedCandidateCatFrames": [
+    32,
+    251
+  ],
+  "sourceSha256": {
+    "Assets/Scripts/Perception/Stereo/StereoPatchMatcher.cs": "7a2a18030a955834a828b0afcb1e2b9acff384a9afd1ecb0122af1e06e8fa51a",
+    "Tools/check_pet_head_body_window.py": "80228baa18910ff1aca3c07c622a33893c04b3bffec95832df2b32eea5af1532",
+    "Tools/check_pet_head_visibility.py": "17fa49f9d92f93c2150a7175bf0b475cc5ae33cad3fcb9b83ce2708edcaeafc8",
+    "Tools/check_pet_head_ap10k.py": "1cf2299e59e5cc8c501b92137271fe3b748e98d6525c76e1decd988f3c8d6e95",
+    "Tools/check_pet_metric_dog.py": "a06833370adbff448c74cc6abcabe0b102c80bec693503975e82620fb61ddc4a",
+    "Tools/run_public_room_plant_bounded.ps1": "f56b4cea81bd1047db67e86c92ed2896501878690b39e0f39ad7e0b4c6f4b7ef"
+  },
+  "inputSha256": {
+    "Reports/public-pet-metric-dog-20261123-v1/result.json": "e310e8157ac78446d4e072a0263e0e6049fc403bd8f01711dae757d13b84a736",
+    "Reports/public-pet-head-continuity-20261123-v2/result.json": "6b37c14031b8cfa56aa5d86a8265e667af3c8f6b5375521a8026aa7dbd8a96af",
+    "Reports/public-pet-head-visibility-20261123-v2/result.json": "83d57c163cafd98f21f28fdbf69321451101952d67b65390d06335b4c257c9a5",
+    "TrainingData/pet-dog-metric-nose-reference-20261123.json": "3f579760e076f4c9c3be8a72f098b40c6fd7b9af755267632fd93c966436fb41",
+    "TrainingData/pet-head-new-subjects-20261123.json": "fb96c4908c0f7c0304c018e99949930f75f80641e5814e6056c8d627080a2a2c"
+  },
+  "resultSha256": {
+    "README.md": "5486fd2062a1ee9e7389db44674a28a947ffd5de036fdd8294e4bea3f72007e5",
+    "dog-nose-reference.json": "3f579760e076f4c9c3be8a72f098b40c6fd7b9af755267632fd93c966436fb41",
+    "result.json": "aa8e523be2da534f518df7a26ce0e58306f0031e41f5c337ae239d8f34279372",
+    "resources.json": "349a9c2618ade6359d9a645aa046ead5e0ebe3a15b1a1a3dcb97fa54affead74"
+  },
+  "nativeDiagnosticsSha256": "ab112cb8951b39e5ecd2ac078c9ec482d3c7f1603883fbf87c16440f316b551c",
+  "minimumSampledAvailableRamGiB": 8.367965698242188,
+  "largestSampledReportBytes": 373212.0
+}
