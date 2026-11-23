@@ -1,0 +1,382 @@
+[
+  {
+    "session": 1,
+    "scene": "discovery",
+    "version": 2,
+    "source": "Assets/TestData/LighterTest_1.jpg",
+    "source_sha256": "b51ae03ab4584cba1495e7395419ef8d08df6add788bd9e6e03e308e54080d2e",
+    "request_sha256": "2754b56e95e7408710d0aa78c50f40db611b22e80f04ba9f660f2bd7b8a7188a",
+    "roundtrip_ms": 113.81,
+    "reply": {
+      "frame_id": 1,
+      "timestamp": 1795394078496,
+      "width": 640,
+      "height": 640,
+      "scene": "discovery",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "Lighter",
+          "class_id": 0,
+          "confidence": 0.8705354928970337,
+          "centerX": 251.38623046875,
+          "centerY": 418.34051513671875,
+          "x1": 234.47509765625,
+          "y1": 410.00335693359375,
+          "x2": 268.29736328125,
+          "y2": 426.67767333984375,
+          "class_name": "Lighter",
+          "bbox": [
+            234.47509765625,
+            410.00335693359375,
+            268.29736328125,
+            426.67767333984375
+          ],
+          "instance_id": "adac624270a7:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "lighter"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-discovery-20261123\\service\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+      "weights_sha256": "999bca4f5bf96aeed3ac0f1047e31530e4eb4584873c85dd5bd00031fc71fb3a",
+      "model_validation": "lighter:MAIN_BASELINE",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "discovery",
+    "version": 2,
+    "source": "Assets/TestData/LighterTest_1.jpg",
+    "source_sha256": "b51ae03ab4584cba1495e7395419ef8d08df6add788bd9e6e03e308e54080d2e",
+    "request_sha256": "2754b56e95e7408710d0aa78c50f40db611b22e80f04ba9f660f2bd7b8a7188a",
+    "roundtrip_ms": 126.03,
+    "reply": {
+      "frame_id": 2,
+      "timestamp": 1795394078610,
+      "width": 640,
+      "height": 640,
+      "scene": "discovery",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-discovery-20261123\\service\\yolov8n.pt",
+      "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "model_validation": "pet:PUBLIC_BASELINE_ONLY_PICO_PENDING; plant:PUBLIC_BASELINE_ONLY_PICO_PENDING",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "discovery",
+    "version": 2,
+    "source": ".codex-tmp/stereo-room-plant-20261121/Jadeplant/im0.png",
+    "source_sha256": "f8248440b1c3421e01343983a0724db70e64af32235e9d145d1c808615417a76",
+    "request_sha256": "24014a35e4963e785b10e7d6ae0c117f886cbff13da7ad935d3df6ea3b702e2d",
+    "roundtrip_ms": 53.88,
+    "reply": {
+      "frame_id": 3,
+      "timestamp": 1795394078736,
+      "width": 640,
+      "height": 483,
+      "scene": "discovery",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-discovery-20261123\\service\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+      "weights_sha256": "999bca4f5bf96aeed3ac0f1047e31530e4eb4584873c85dd5bd00031fc71fb3a",
+      "model_validation": "lighter:MAIN_BASELINE",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "discovery",
+    "version": 2,
+    "source": ".codex-tmp/stereo-room-plant-20261121/Jadeplant/im0.png",
+    "source_sha256": "f8248440b1c3421e01343983a0724db70e64af32235e9d145d1c808615417a76",
+    "request_sha256": "24014a35e4963e785b10e7d6ae0c117f886cbff13da7ad935d3df6ea3b702e2d",
+    "roundtrip_ms": 48.55,
+    "reply": {
+      "frame_id": 4,
+      "timestamp": 1795394078790,
+      "width": 640,
+      "height": 483,
+      "scene": "discovery",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "PottedPlant",
+          "class_id": 58,
+          "confidence": 0.5838854312896729,
+          "centerX": 379.2219543457031,
+          "centerY": 233.06893920898438,
+          "x1": 159.73529052734375,
+          "y1": 6.50689697265625,
+          "x2": 598.7086181640625,
+          "y2": 459.6309814453125,
+          "class_name": "PottedPlant",
+          "bbox": [
+            159.73529052734375,
+            6.50689697265625,
+            598.7086181640625,
+            459.6309814453125
+          ],
+          "instance_id": "febc3794bd4b:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "plant"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-discovery-20261123\\service\\yolov8n.pt",
+      "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "model_validation": "pet:PUBLIC_BASELINE_ONLY_PICO_PENDING; plant:PUBLIC_BASELINE_ONLY_PICO_PENDING",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "discovery",
+    "version": 2,
+    "source": ".codex-tmp/yolo-training/openimages-review/images/3e29db8ad34c5261.jpg",
+    "source_sha256": "f94d6d8a3c684a97a33c023b6fad401a1176236afbf0e23697e49fa6d9a74340",
+    "request_sha256": "2bbaf2252cad5725aed8d9975e3888ae2bc8053592b189b091a625e0dd83ba4f",
+    "roundtrip_ms": 33.58,
+    "reply": {
+      "frame_id": 5,
+      "timestamp": 1795394078839,
+      "width": 640,
+      "height": 480,
+      "scene": "discovery",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-discovery-20261123\\service\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+      "weights_sha256": "999bca4f5bf96aeed3ac0f1047e31530e4eb4584873c85dd5bd00031fc71fb3a",
+      "model_validation": "lighter:MAIN_BASELINE",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "discovery",
+    "version": 2,
+    "source": ".codex-tmp/yolo-training/openimages-review/images/3e29db8ad34c5261.jpg",
+    "source_sha256": "f94d6d8a3c684a97a33c023b6fad401a1176236afbf0e23697e49fa6d9a74340",
+    "request_sha256": "2bbaf2252cad5725aed8d9975e3888ae2bc8053592b189b091a625e0dd83ba4f",
+    "roundtrip_ms": 42.28,
+    "reply": {
+      "frame_id": 6,
+      "timestamp": 1795394078873,
+      "width": 640,
+      "height": 480,
+      "scene": "discovery",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "Dog",
+          "class_id": 16,
+          "confidence": 0.9312931299209595,
+          "centerX": 479.5154113769531,
+          "centerY": 271.17407989501953,
+          "x1": 319.44781494140625,
+          "y1": 180.9257354736328,
+          "x2": 639.5830078125,
+          "y2": 361.42242431640625,
+          "class_name": "Dog",
+          "bbox": [
+            319.44781494140625,
+            180.9257354736328,
+            639.5830078125,
+            361.42242431640625
+          ],
+          "instance_id": "febc3794bd4b:left:2",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "pet"
+        },
+        {
+          "class": "Dog",
+          "class_id": 16,
+          "confidence": 0.8812905550003052,
+          "centerX": 241.05462646484375,
+          "centerY": 345.17791748046875,
+          "x1": 0.0914306640625,
+          "y1": 240.30718994140625,
+          "x2": 482.017822265625,
+          "y2": 450.04864501953125,
+          "class_name": "Dog",
+          "bbox": [
+            0.0914306640625,
+            240.30718994140625,
+            482.017822265625,
+            450.04864501953125
+          ],
+          "instance_id": "febc3794bd4b:left:3",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "pet"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-discovery-20261123\\service\\yolov8n.pt",
+      "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "model_validation": "pet:PUBLIC_BASELINE_ONLY_PICO_PENDING; plant:PUBLIC_BASELINE_ONLY_PICO_PENDING",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "discovery",
+    "version": 2,
+    "source": ".codex-tmp/yolo-training/openimages-review/images/3e29db8ad34c5261.jpg",
+    "source_sha256": "f94d6d8a3c684a97a33c023b6fad401a1176236afbf0e23697e49fa6d9a74340",
+    "request_sha256": "2bbaf2252cad5725aed8d9975e3888ae2bc8053592b189b091a625e0dd83ba4f",
+    "roundtrip_ms": 30.95,
+    "reply": {
+      "frame_id": 7,
+      "timestamp": 1795394078915,
+      "width": 640,
+      "height": 480,
+      "scene": "discovery",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-discovery-20261123\\service\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+      "weights_sha256": "999bca4f5bf96aeed3ac0f1047e31530e4eb4584873c85dd5bd00031fc71fb3a",
+      "model_validation": "lighter:MAIN_BASELINE",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "discovery",
+    "version": 2,
+    "source": ".codex-tmp/yolo-training/openimages-review/images/3e29db8ad34c5261.jpg",
+    "source_sha256": "f94d6d8a3c684a97a33c023b6fad401a1176236afbf0e23697e49fa6d9a74340",
+    "request_sha256": "2bbaf2252cad5725aed8d9975e3888ae2bc8053592b189b091a625e0dd83ba4f",
+    "roundtrip_ms": 37.21,
+    "reply": {
+      "frame_id": 8,
+      "timestamp": 1795394078946,
+      "width": 640,
+      "height": 480,
+      "scene": "discovery",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "Dog",
+          "class_id": 16,
+          "confidence": 0.9312931299209595,
+          "centerX": 479.5154113769531,
+          "centerY": 271.17407989501953,
+          "x1": 319.44781494140625,
+          "y1": 180.9257354736328,
+          "x2": 639.5830078125,
+          "y2": 361.42242431640625,
+          "class_name": "Dog",
+          "bbox": [
+            319.44781494140625,
+            180.9257354736328,
+            639.5830078125,
+            361.42242431640625
+          ],
+          "instance_id": "febc3794bd4b:left:2",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "pet"
+        },
+        {
+          "class": "Dog",
+          "class_id": 16,
+          "confidence": 0.8812905550003052,
+          "centerX": 241.05462646484375,
+          "centerY": 345.17791748046875,
+          "x1": 0.0914306640625,
+          "y1": 240.30718994140625,
+          "x2": 482.017822265625,
+          "y2": 450.04864501953125,
+          "class_name": "Dog",
+          "bbox": [
+            0.0914306640625,
+            240.30718994140625,
+            482.017822265625,
+            450.04864501953125
+          ],
+          "instance_id": "febc3794bd4b:left:3",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "pet"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-discovery-20261123\\service\\yolov8n.pt",
+      "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "model_validation": "pet:PUBLIC_BASELINE_ONLY_PICO_PENDING; plant:PUBLIC_BASELINE_ONLY_PICO_PENDING",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "discovery",
+    "version": 2,
+    "source": ".codex-tmp/stereo-playroom-20261121/Playroom/im0.png",
+    "source_sha256": "8063ce1fef9c5cc36c9c61f3f22dee26e7287af9044df6fb0bfa6d4b3fde9d1e",
+    "request_sha256": "115448ebabdd8bb799ebe0cbf435c15cbf0337ef294be6ee397eef4c0f4bb27f",
+    "roundtrip_ms": 46.94,
+    "reply": {
+      "frame_id": 9,
+      "timestamp": 1795394078983,
+      "width": 640,
+      "height": 436,
+      "scene": "discovery",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-discovery-20261123\\service\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+      "weights_sha256": "999bca4f5bf96aeed3ac0f1047e31530e4eb4584873c85dd5bd00031fc71fb3a",
+      "model_validation": "lighter:MAIN_BASELINE",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "discovery",
+    "version": 2,
+    "source": ".codex-tmp/stereo-playroom-20261121/Playroom/im0.png",
+    "source_sha256": "8063ce1fef9c5cc36c9c61f3f22dee26e7287af9044df6fb0bfa6d4b3fde9d1e",
+    "request_sha256": "115448ebabdd8bb799ebe0cbf435c15cbf0337ef294be6ee397eef4c0f4bb27f",
+    "roundtrip_ms": 43.18,
+    "reply": {
+      "frame_id": 10,
+      "timestamp": 1795394079030,
+      "width": 640,
+      "height": 436,
+      "scene": "discovery",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-discovery-20261123\\service\\yolov8n.pt",
+      "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "model_validation": "pet:PUBLIC_BASELINE_ONLY_PICO_PENDING; plant:PUBLIC_BASELINE_ONLY_PICO_PENDING",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  }
+]

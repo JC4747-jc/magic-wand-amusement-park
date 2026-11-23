@@ -1,0 +1,215 @@
+{
+  "package": {
+    "apk_source": "9b557b3e22f5e213e41754ede9cdc32d9faed9e0",
+    "checked_branch_commit": "1d4cc538f61938096e0da429f8843cce429d0d3a",
+    "sha256": "c9f9ea3399cd6523bda9c21f0ab75bada6635bba4ae3eaa64518532bc1c7e5d9",
+    "package": "com.yn.picmagicmr.validation",
+    "activity": "com.unity3d.player.UnityPlayerActivity",
+    "packaged_scenes": 15,
+    "arm64_libraries": 16,
+    "required_permissions_observed": [
+      "android.permission.INTERNET",
+      "android.permission.CAMERA",
+      "com.picovr.permission.HAND_TRACKING"
+    ],
+    "endpoints": {
+      "BridgeStereoFusion": {
+        "host": "127.0.0.1",
+        "port": 5005,
+        "scene_sha256": "7b5225e4d20ae51a04917c44186fc02e346b1492da461a517bfefad96a5c8581"
+      },
+      "ParkTree": {
+        "host": "127.0.0.1",
+        "port": 5005,
+        "scene_sha256": "301f85fb626b2fde4f5c3cb9413d2b29781e6e8b36175db24cb95281b18ed2b3"
+      },
+      "ParkBugs": {
+        "host": "127.0.0.1",
+        "port": 5005,
+        "scene_sha256": "1ad0469ed39d6b1c9e6b72b3954303181fa44458eab4f52312d0d25b0ed3fa7c"
+      },
+      "ParkStatue": {
+        "host": "127.0.0.1",
+        "port": 5005,
+        "scene_sha256": "d0239d6f5a5fc529a7a2183309f690e56d1739aeafa2eb00b9d55ef5bad72082"
+      },
+      "ParkRoom": {
+        "host": "127.0.0.1",
+        "port": 5005,
+        "scene_sha256": "bc81999694f43d44cd6c8acbe454e30bd12241b6ce16092c0c574b74273b6e3e"
+      },
+      "ParkPlant": {
+        "host": "127.0.0.1",
+        "port": 5005,
+        "scene_sha256": "1ea928f0e611068a5be592fa315c5d2828e1853e5713f36bcc23a023b5b845cb"
+      },
+      "ParkPet": {
+        "host": "127.0.0.1",
+        "port": 5005,
+        "scene_sha256": "fc4d5e9eb1a0973d392faceee5cce02cde41da0a18e3d6161b80cfc051aa1fd7"
+      }
+    },
+    "adb_statuses": [],
+    "release_url": "https://github.com/JC4747-jc/magic-wand-amusement-park/releases/download/mr-jc-pet-head-android-20261123/PetHeadPortableCandidate-20261123.apk"
+  },
+  "service_source_sha256": {
+    "tcp_server.py": "10607c9a6a03bfb4e8875b3107f85608e382b90415e232dace093b2bf678acdd",
+    "scene_router.py": "147401103ced6e6a06ca526d434669edd36b5e1e55630f23a0a099689a3bca11",
+    "scene_protocol.py": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038",
+    "detector_config.py": "b047405f41cd10523d6e51ab25ee8a1673a8219de8ce4ece7a684277b2f5640b",
+    "pose_availability.py": "10eef6f52a4ae9afca8b16e51be2179b83c0a30d1b498ac98cd969d0129367ee",
+    "discovery.py": "f17f4b4525e969ae6dc22523d5a520207280106ebd61dc103b880fee52f88747",
+    "model_artifact.py": "521b330e8b38ee6a93fe6475e168d8dc90aa9a6bcad035db8d17e07ee1060cab",
+    "scene_profiles.json": "4c3a776c4133c60ff9be810630c1aa7002775230f98a03bb3fdfa020d78f8781",
+    "weights/best_yolo26n_assgn2_v6_50e.pt": "999bca4f5bf96aeed3ac0f1047e31530e4eb4584873c85dd5bd00031fc71fb3a",
+    "yolov8n.pt": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36"
+  },
+  "reply_count": 13,
+  "raw_picf_sha256": "1b8b6b3061195b23cbf8ba84b56fcfa47d7f62f6ba3f09e71c76d8f1bb2c4327",
+  "worker_sha256": "183579c9bddcf2e3abba456e457b2f6b0a539734f78fd24cccd791065dfdd6f6",
+  "routes": {
+    "lighter": [
+      {
+        "session": 1,
+        "status": "OK",
+        "classes": [
+          "Lighter"
+        ],
+        "ids": [
+          "f26a82b313b7:left:1"
+        ]
+      },
+      {
+        "session": 2,
+        "status": "OK",
+        "classes": [
+          "Lighter"
+        ],
+        "ids": [
+          "d2faa7cb39ab:left:1"
+        ]
+      }
+    ],
+    "tree": [
+      {
+        "session": 1,
+        "status": "SCENE_NOT_CONFIGURED: validated weights required for tree",
+        "classes": [],
+        "ids": []
+      }
+    ],
+    "bugs": [
+      {
+        "session": 1,
+        "status": "SCENE_NOT_CONFIGURED: validated weights required for bugs",
+        "classes": [],
+        "ids": []
+      }
+    ],
+    "statue": [
+      {
+        "session": 1,
+        "status": "SCENE_NOT_CONFIGURED: validated weights required for statue",
+        "classes": [],
+        "ids": []
+      }
+    ],
+    "room": [
+      {
+        "session": 1,
+        "status": "OK",
+        "classes": [
+          "chair",
+          "chair"
+        ],
+        "ids": [
+          "8c0666734539:left:1",
+          "8c0666734539:left:2"
+        ]
+      },
+      {
+        "session": 1,
+        "status": "OK",
+        "classes": [
+          "chair",
+          "chair"
+        ],
+        "ids": [
+          "8c0666734539:left:1",
+          "8c0666734539:left:2"
+        ]
+      },
+      {
+        "session": 2,
+        "status": "OK",
+        "classes": [
+          "chair",
+          "chair"
+        ],
+        "ids": [
+          "fcbb656f2a2e:left:1",
+          "fcbb656f2a2e:left:2"
+        ]
+      }
+    ],
+    "plant": [
+      {
+        "session": 1,
+        "status": "OK",
+        "classes": [
+          "PottedPlant"
+        ],
+        "ids": [
+          "fc7ae5552cef:left:1"
+        ]
+      }
+    ],
+    "pet": [
+      {
+        "session": 1,
+        "status": "OK",
+        "classes": [
+          "Dog",
+          "Dog"
+        ],
+        "ids": [
+          "2ee982482015:left:1",
+          "2ee982482015:left:2"
+        ]
+      },
+      {
+        "session": 1,
+        "status": "OK",
+        "classes": [
+          "Dog",
+          "Dog"
+        ],
+        "ids": [
+          "2ee982482015:left:1",
+          "2ee982482015:left:2"
+        ]
+      },
+      {
+        "session": 2,
+        "status": "OK",
+        "classes": [
+          "Dog",
+          "Dog"
+        ],
+        "ids": [
+          "6d9473368b98:left:1",
+          "6d9473368b98:left:2"
+        ]
+      }
+    ],
+    "discovery": [
+      {
+        "session": 1,
+        "status": "OK",
+        "classes": [],
+        "ids": []
+      }
+    ]
+  },
+  "scope": "Original production PC CLI on localhost TCP 5005, prerecorded actual photographs, two client sessions."
+}

@@ -1,0 +1,630 @@
+[
+  {
+    "session": 1,
+    "scene": "lighter",
+    "version": 2,
+    "source": "Assets/TestData/LighterTest_1.jpg",
+    "source_sha256": "b51ae03ab4584cba1495e7395419ef8d08df6add788bd9e6e03e308e54080d2e",
+    "request_sha256": "2754b56e95e7408710d0aa78c50f40db611b22e80f04ba9f660f2bd7b8a7188a",
+    "roundtrip_ms": 75.73,
+    "reply": {
+      "frame_id": 1,
+      "timestamp": 1795394000644,
+      "width": 640,
+      "height": 640,
+      "scene": "lighter",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "Lighter",
+          "class_id": 0,
+          "confidence": 0.8705354928970337,
+          "centerX": 251.38623046875,
+          "centerY": 418.34051513671875,
+          "x1": 234.47509765625,
+          "y1": 410.00335693359375,
+          "x2": 268.29736328125,
+          "y2": 426.67767333984375,
+          "instance_id": "f26a82b313b7:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "class_name": "Lighter",
+          "target_scene": "lighter",
+          "bbox": [
+            234.47509765625,
+            410.00335693359375,
+            268.29736328125,
+            426.67767333984375
+          ]
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-readiness-v2-20261123\\service\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+      "model_validation": "MAIN_BASELINE",
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "tree",
+    "version": 2,
+    "source": ".codex-tmp/yolo-training/tree-willow-review-20261121/inaturalist-images/inat-661523481.jpg",
+    "source_sha256": "e15a456bf7a9d1511d227db499ff138efd047daf9b3cbe478d771c22a582e4a7",
+    "request_sha256": "113fff438224a648ef237620e1d17f840c4904282c496791ef67b4c7cdcefe43",
+    "roundtrip_ms": 2.52,
+    "reply": {
+      "frame_id": 2,
+      "timestamp": 1795394000720,
+      "width": 375,
+      "height": 500,
+      "scene": "tree",
+      "status": "SCENE_NOT_CONFIGURED: validated weights required for tree",
+      "detections": [],
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "bugs",
+    "version": 2,
+    "source": ".codex-tmp/yolo-training/bugs-house-context-20261123/prepared/inat-photo-676171383.jpg",
+    "source_sha256": "c1d3a07465e983241c3f00b5566c3b0813ea960a1146e04ea433eb2871c2c765",
+    "request_sha256": "769e246864f57cf7cbfefbad30668a1a1ef1dfe7cb95e5734aa560c81c548f24",
+    "roundtrip_ms": 1.77,
+    "reply": {
+      "frame_id": 3,
+      "timestamp": 1795394000722,
+      "width": 640,
+      "height": 480,
+      "scene": "bugs",
+      "status": "SCENE_NOT_CONFIGURED: validated weights required for bugs",
+      "detections": [],
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "statue",
+    "version": 2,
+    "source": ".codex-tmp/ignatius-statue-20261123/frames/view-048.jpg",
+    "source_sha256": "d0c0281609d5d0175b73fd2e3045db612b9f6452e462541158ec2cbcdbe2aa17",
+    "request_sha256": "2ef3ae8fcbb1e3f5d3a31afedb14c99a64cf66caebc649df9fead56e0485eff8",
+    "roundtrip_ms": 1.74,
+    "reply": {
+      "frame_id": 4,
+      "timestamp": 1795394000724,
+      "width": 640,
+      "height": 355,
+      "scene": "statue",
+      "status": "SCENE_NOT_CONFIGURED: validated weights required for statue",
+      "detections": [],
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "room",
+    "version": 2,
+    "source": ".codex-tmp/stereo-playroom-20261121/Playroom/im0.png",
+    "source_sha256": "8063ce1fef9c5cc36c9c61f3f22dee26e7287af9044df6fb0bfa6d4b3fde9d1e",
+    "request_sha256": "115448ebabdd8bb799ebe0cbf435c15cbf0337ef294be6ee397eef4c0f4bb27f",
+    "roundtrip_ms": 119.34,
+    "reply": {
+      "frame_id": 5,
+      "timestamp": 1795394000726,
+      "width": 640,
+      "height": 436,
+      "scene": "room",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "chair",
+          "class_id": 56,
+          "confidence": 0.9323936700820923,
+          "centerX": 506.433349609375,
+          "centerY": 345.68701171875,
+          "x1": 411.315185546875,
+          "y1": 257.14935302734375,
+          "x2": 601.551513671875,
+          "y2": 434.22467041015625,
+          "class_name": "chair",
+          "bbox": [
+            411.315185546875,
+            257.14935302734375,
+            601.551513671875,
+            434.22467041015625
+          ],
+          "instance_id": "8c0666734539:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "room"
+        },
+        {
+          "class": "chair",
+          "class_id": 56,
+          "confidence": 0.8020386695861816,
+          "centerX": 251.62939453125,
+          "centerY": 335.2138977050781,
+          "x1": 175.32830810546875,
+          "y1": 237.63043212890625,
+          "x2": 327.93048095703125,
+          "y2": 432.79736328125,
+          "class_name": "chair",
+          "bbox": [
+            175.32830810546875,
+            237.63043212890625,
+            327.93048095703125,
+            432.79736328125
+          ],
+          "instance_id": "8c0666734539:left:2",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "room"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-readiness-v2-20261123\\service\\yolov8n.pt",
+      "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "model_validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "plant",
+    "version": 2,
+    "source": ".codex-tmp/stereo-room-plant-20261121/Jadeplant/im0.png",
+    "source_sha256": "f8248440b1c3421e01343983a0724db70e64af32235e9d145d1c808615417a76",
+    "request_sha256": "24014a35e4963e785b10e7d6ae0c117f886cbff13da7ad935d3df6ea3b702e2d",
+    "roundtrip_ms": 55.0,
+    "reply": {
+      "frame_id": 6,
+      "timestamp": 1795394000845,
+      "width": 640,
+      "height": 483,
+      "scene": "plant",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "PottedPlant",
+          "class_id": 58,
+          "confidence": 0.5838854312896729,
+          "centerX": 379.2219543457031,
+          "centerY": 233.06893920898438,
+          "x1": 159.73529052734375,
+          "y1": 6.50689697265625,
+          "x2": 598.7086181640625,
+          "y2": 459.6309814453125,
+          "class_name": "PottedPlant",
+          "bbox": [
+            159.73529052734375,
+            6.50689697265625,
+            598.7086181640625,
+            459.6309814453125
+          ],
+          "instance_id": "fc7ae5552cef:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "plant"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-readiness-v2-20261123\\service\\yolov8n.pt",
+      "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "model_validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "pet",
+    "version": 2,
+    "source": ".codex-tmp/yolo-training/openimages-review/images/3e29db8ad34c5261.jpg",
+    "source_sha256": "f94d6d8a3c684a97a33c023b6fad401a1176236afbf0e23697e49fa6d9a74340",
+    "request_sha256": "2bbaf2252cad5725aed8d9975e3888ae2bc8053592b189b091a625e0dd83ba4f",
+    "roundtrip_ms": 51.62,
+    "reply": {
+      "frame_id": 7,
+      "timestamp": 1795394000900,
+      "width": 640,
+      "height": 480,
+      "scene": "pet",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "Dog",
+          "class_id": 16,
+          "confidence": 0.9312931299209595,
+          "centerX": 479.5154113769531,
+          "centerY": 271.17407989501953,
+          "x1": 319.44781494140625,
+          "y1": 180.9257354736328,
+          "x2": 639.5830078125,
+          "y2": 361.42242431640625,
+          "class_name": "Dog",
+          "bbox": [
+            319.44781494140625,
+            180.9257354736328,
+            639.5830078125,
+            361.42242431640625
+          ],
+          "instance_id": "2ee982482015:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "pet"
+        },
+        {
+          "class": "Dog",
+          "class_id": 16,
+          "confidence": 0.8812905550003052,
+          "centerX": 241.05462646484375,
+          "centerY": 345.17791748046875,
+          "x1": 0.0914306640625,
+          "y1": 240.30718994140625,
+          "x2": 482.017822265625,
+          "y2": 450.04864501953125,
+          "class_name": "Dog",
+          "bbox": [
+            0.0914306640625,
+            240.30718994140625,
+            482.017822265625,
+            450.04864501953125
+          ],
+          "instance_id": "2ee982482015:left:2",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "pet"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-readiness-v2-20261123\\service\\yolov8n.pt",
+      "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "model_validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "discovery",
+    "version": 2,
+    "source": ".codex-tmp/stereo-room-plant-20261121/Jadeplant/im0.png",
+    "source_sha256": "f8248440b1c3421e01343983a0724db70e64af32235e9d145d1c808615417a76",
+    "request_sha256": "24014a35e4963e785b10e7d6ae0c117f886cbff13da7ad935d3df6ea3b702e2d",
+    "roundtrip_ms": 73.05,
+    "reply": {
+      "frame_id": 8,
+      "timestamp": 1795394000952,
+      "width": 640,
+      "height": 483,
+      "scene": "discovery",
+      "status": "OK",
+      "detections": [],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-readiness-v2-20261123\\service\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+      "weights_sha256": "999bca4f5bf96aeed3ac0f1047e31530e4eb4584873c85dd5bd00031fc71fb3a",
+      "model_validation": "lighter:MAIN_BASELINE",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "pet",
+    "version": 2,
+    "source": ".codex-tmp/yolo-training/openimages-review/images/3e29db8ad34c5261.jpg",
+    "source_sha256": "f94d6d8a3c684a97a33c023b6fad401a1176236afbf0e23697e49fa6d9a74340",
+    "request_sha256": "2bbaf2252cad5725aed8d9975e3888ae2bc8053592b189b091a625e0dd83ba4f",
+    "roundtrip_ms": 37.91,
+    "reply": {
+      "frame_id": 9,
+      "timestamp": 1795394001025,
+      "width": 640,
+      "height": 480,
+      "scene": "pet",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "Dog",
+          "class_id": 16,
+          "confidence": 0.9312931299209595,
+          "centerX": 479.5154113769531,
+          "centerY": 271.17407989501953,
+          "x1": 319.44781494140625,
+          "y1": 180.9257354736328,
+          "x2": 639.5830078125,
+          "y2": 361.42242431640625,
+          "class_name": "Dog",
+          "bbox": [
+            319.44781494140625,
+            180.9257354736328,
+            639.5830078125,
+            361.42242431640625
+          ],
+          "instance_id": "2ee982482015:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "pet"
+        },
+        {
+          "class": "Dog",
+          "class_id": 16,
+          "confidence": 0.8812905550003052,
+          "centerX": 241.05462646484375,
+          "centerY": 345.17791748046875,
+          "x1": 0.0914306640625,
+          "y1": 240.30718994140625,
+          "x2": 482.017822265625,
+          "y2": 450.04864501953125,
+          "class_name": "Dog",
+          "bbox": [
+            0.0914306640625,
+            240.30718994140625,
+            482.017822265625,
+            450.04864501953125
+          ],
+          "instance_id": "2ee982482015:left:2",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "pet"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-readiness-v2-20261123\\service\\yolov8n.pt",
+      "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "model_validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 1,
+    "scene": "room",
+    "version": 2,
+    "source": ".codex-tmp/stereo-playroom-20261121/Playroom/im0.png",
+    "source_sha256": "8063ce1fef9c5cc36c9c61f3f22dee26e7287af9044df6fb0bfa6d4b3fde9d1e",
+    "request_sha256": "115448ebabdd8bb799ebe0cbf435c15cbf0337ef294be6ee397eef4c0f4bb27f",
+    "roundtrip_ms": 31.88,
+    "reply": {
+      "frame_id": 10,
+      "timestamp": 1795394001063,
+      "width": 640,
+      "height": 436,
+      "scene": "room",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "chair",
+          "class_id": 56,
+          "confidence": 0.9323936700820923,
+          "centerX": 506.433349609375,
+          "centerY": 345.68701171875,
+          "x1": 411.315185546875,
+          "y1": 257.14935302734375,
+          "x2": 601.551513671875,
+          "y2": 434.22467041015625,
+          "class_name": "chair",
+          "bbox": [
+            411.315185546875,
+            257.14935302734375,
+            601.551513671875,
+            434.22467041015625
+          ],
+          "instance_id": "8c0666734539:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "room"
+        },
+        {
+          "class": "chair",
+          "class_id": 56,
+          "confidence": 0.8020386695861816,
+          "centerX": 251.62939453125,
+          "centerY": 335.2138977050781,
+          "x1": 175.32830810546875,
+          "y1": 237.63043212890625,
+          "x2": 327.93048095703125,
+          "y2": 432.79736328125,
+          "class_name": "chair",
+          "bbox": [
+            175.32830810546875,
+            237.63043212890625,
+            327.93048095703125,
+            432.79736328125
+          ],
+          "instance_id": "8c0666734539:left:2",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "room"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-readiness-v2-20261123\\service\\yolov8n.pt",
+      "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "model_validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 2,
+    "scene": "lighter",
+    "version": 1,
+    "source": "Assets/TestData/LighterTest_1.jpg",
+    "source_sha256": "b51ae03ab4584cba1495e7395419ef8d08df6add788bd9e6e03e308e54080d2e",
+    "request_sha256": "2754b56e95e7408710d0aa78c50f40db611b22e80f04ba9f660f2bd7b8a7188a",
+    "roundtrip_ms": 55.12,
+    "reply": {
+      "frame_id": 1,
+      "timestamp": 1795394001096,
+      "width": 640,
+      "height": 640,
+      "scene": "lighter",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "Lighter",
+          "class_id": 0,
+          "confidence": 0.8705354928970337,
+          "centerX": 251.38623046875,
+          "centerY": 418.34051513671875,
+          "x1": 234.47509765625,
+          "y1": 410.00335693359375,
+          "x2": 268.29736328125,
+          "y2": 426.67767333984375,
+          "instance_id": "d2faa7cb39ab:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "class_name": "Lighter",
+          "target_scene": "lighter",
+          "bbox": [
+            234.47509765625,
+            410.00335693359375,
+            268.29736328125,
+            426.67767333984375
+          ]
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-readiness-v2-20261123\\service\\weights\\best_yolo26n_assgn2_v6_50e.pt",
+      "model_validation": "MAIN_BASELINE",
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 2,
+    "scene": "room",
+    "version": 2,
+    "source": ".codex-tmp/stereo-playroom-20261121/Playroom/im0.png",
+    "source_sha256": "8063ce1fef9c5cc36c9c61f3f22dee26e7287af9044df6fb0bfa6d4b3fde9d1e",
+    "request_sha256": "115448ebabdd8bb799ebe0cbf435c15cbf0337ef294be6ee397eef4c0f4bb27f",
+    "roundtrip_ms": 121.76,
+    "reply": {
+      "frame_id": 2,
+      "timestamp": 1795394001151,
+      "width": 640,
+      "height": 436,
+      "scene": "room",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "chair",
+          "class_id": 56,
+          "confidence": 0.9323936700820923,
+          "centerX": 506.433349609375,
+          "centerY": 345.68701171875,
+          "x1": 411.315185546875,
+          "y1": 257.14935302734375,
+          "x2": 601.551513671875,
+          "y2": 434.22467041015625,
+          "class_name": "chair",
+          "bbox": [
+            411.315185546875,
+            257.14935302734375,
+            601.551513671875,
+            434.22467041015625
+          ],
+          "instance_id": "fcbb656f2a2e:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "room"
+        },
+        {
+          "class": "chair",
+          "class_id": 56,
+          "confidence": 0.8020386695861816,
+          "centerX": 251.62939453125,
+          "centerY": 335.2138977050781,
+          "x1": 175.32830810546875,
+          "y1": 237.63043212890625,
+          "x2": 327.93048095703125,
+          "y2": 432.79736328125,
+          "class_name": "chair",
+          "bbox": [
+            175.32830810546875,
+            237.63043212890625,
+            327.93048095703125,
+            432.79736328125
+          ],
+          "instance_id": "fcbb656f2a2e:left:2",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "room"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-readiness-v2-20261123\\service\\yolov8n.pt",
+      "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "model_validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  },
+  {
+    "session": 2,
+    "scene": "pet",
+    "version": 2,
+    "source": ".codex-tmp/yolo-training/openimages-review/images/3e29db8ad34c5261.jpg",
+    "source_sha256": "f94d6d8a3c684a97a33c023b6fad401a1176236afbf0e23697e49fa6d9a74340",
+    "request_sha256": "2bbaf2252cad5725aed8d9975e3888ae2bc8053592b189b091a625e0dd83ba4f",
+    "roundtrip_ms": 46.74,
+    "reply": {
+      "frame_id": 3,
+      "timestamp": 1795394001273,
+      "width": 640,
+      "height": 480,
+      "scene": "pet",
+      "status": "OK",
+      "detections": [
+        {
+          "class": "Dog",
+          "class_id": 16,
+          "confidence": 0.9312931299209595,
+          "centerX": 479.5154113769531,
+          "centerY": 271.17407989501953,
+          "x1": 319.44781494140625,
+          "y1": 180.9257354736328,
+          "x2": 639.5830078125,
+          "y2": 361.42242431640625,
+          "class_name": "Dog",
+          "bbox": [
+            319.44781494140625,
+            180.9257354736328,
+            639.5830078125,
+            361.42242431640625
+          ],
+          "instance_id": "6d9473368b98:left:1",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "pet"
+        },
+        {
+          "class": "Dog",
+          "class_id": 16,
+          "confidence": 0.8812905550003052,
+          "centerX": 241.05462646484375,
+          "centerY": 345.17791748046875,
+          "x1": 0.0914306640625,
+          "y1": 240.30718994140625,
+          "x2": 482.017822265625,
+          "y2": 450.04864501953125,
+          "class_name": "Dog",
+          "bbox": [
+            0.0914306640625,
+            240.30718994140625,
+            482.017822265625,
+            450.04864501953125
+          ],
+          "instance_id": "6d9473368b98:left:2",
+          "track_scope": "session:left:temporal_iou",
+          "target_scene": "pet"
+        }
+      ],
+      "weights": "C:\\Users\\Administrator\\Documents\\ChatGPT\\mr\\Reports\\public-room-plant-adb-bridge-readiness-v2-20261123\\service\\yolov8n.pt",
+      "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "model_validation": "PUBLIC_BASELINE_ONLY_PICO_PENDING",
+      "discovery_model_budget": 1,
+      "resident_model_limit": 2,
+      "pose_available": false,
+      "pose_model_ready": false
+    }
+  }
+]
