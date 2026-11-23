@@ -1,0 +1,701 @@
+{
+  "source_commit": "c750e39803824243c680dba2890d16979cfdba93",
+  "source_sha256": {
+    "receiver": "c6e8f3cd2979314fcbc0ec8057b777bbca9dae4c07e56a21389ca291ab73c24e",
+    "matcher": "7a2a18030a955834a828b0afcb1e2b9acff384a9afd1ecb0122af1e06e8fa51a",
+    "scene": "301f85fb626b2fde4f5c3cb9413d2b29781e6e8b36175db24cb95281b18ed2b3",
+    "camera_gray": "882e59194149ed89a3d1b4f3ab9e4fafbdbdc56d4d8a2bc2d449f2e4166b904d"
+  },
+  "pilot_result_sha256": "b449ecb6539874546e5e34ea977aa576202ab7f4be883b0cd9f0ee8c2572f6da",
+  "confirmation_manifest_sha256": "79554307925187427caa204d634e17ff4ab5c9bad414a10ef2f0f4d2d7d53e25",
+  "worker_sha256": "8361708b75bf1b4a192c5fc454f305d51b081108d3b431138239d33035da94a5",
+  "range_m": [
+    0.2,
+    3.0
+  ],
+  "boxes": {
+    "pilot/000001/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        213,
+        151,
+        362,
+        359
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_08_15_stereo_182_left.jpg",
+      "wide_candidate": {
+        "failure": "outside_interaction_range",
+        "depth_m": 3.014641730729745,
+        "matches": 43,
+        "inliers": 43,
+        "bands": 3,
+        "foreground_inliers": 43
+      },
+      "original_failure": "target at 3.02 m is outside interaction range (0.20-3.00 m)",
+      "original_depth_m": 3.0170398,
+      "original_samples": 9
+    },
+    "pilot/000002/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        230,
+        76,
+        477,
+        362
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_08_28_stereo_363_left.jpg",
+      "wide_candidate": {
+        "failure": null,
+        "depth_m": 1.6443500349434972,
+        "matches": 48,
+        "inliers": 46,
+        "bands": 3,
+        "foreground_inliers": 46
+      },
+      "original_failure": null,
+      "original_depth_m": 1.629897,
+      "original_samples": 5
+    },
+    "pilot/000002/n-0": {
+      "target_iou": 0.9225769919715081,
+      "bbox": [
+        231.6829833984375,
+        70.49447631835938,
+        476.06884765625,
+        377.4364318847656
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_08_28_stereo_363_left.jpg",
+      "wide_candidate": {
+        "failure": null,
+        "depth_m": 1.6443500349434972,
+        "matches": 44,
+        "inliers": 43,
+        "bands": 3,
+        "foreground_inliers": 43
+      },
+      "original_failure": null,
+      "original_depth_m": 1.6600517,
+      "original_samples": 8
+    },
+    "pilot/000002/m-0": {
+      "target_iou": 0.9233687232906498,
+      "bbox": [
+        228.5523681640625,
+        67.99118041992188,
+        475.903076171875,
+        374.6455383300781
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_08_28_stereo_363_left.jpg",
+      "wide_candidate": {
+        "failure": null,
+        "depth_m": 1.6443500349434972,
+        "matches": 47,
+        "inliers": 45,
+        "bands": 3,
+        "foreground_inliers": 45
+      },
+      "original_failure": null,
+      "original_depth_m": 1.6326789,
+      "original_samples": 5
+    },
+    "pilot/000002/m-1": {
+      "target_iou": 0.012953416501841158,
+      "bbox": [
+        4.77020263671875,
+        75.03094482421875,
+        237.85028076171875,
+        262.097900390625
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_08_28_stereo_363_left.jpg",
+      "wide_candidate": {
+        "failure": "outside_interaction_range",
+        "depth_m": 30.14641730729745,
+        "matches": 63,
+        "inliers": 63,
+        "bands": 3,
+        "foreground_inliers": 0
+      },
+      "original_failure": "Estimated depth is outside 0.20-10.0 m",
+      "original_depth_m": 30.602066,
+      "original_samples": 9
+    },
+    "pilot/000003/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        208,
+        103,
+        475,
+        379
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_08_35_stereo_354_left.jpg",
+      "wide_candidate": {
+        "failure": "too_few_cross_checked_matches",
+        "matches": 3
+      },
+      "original_failure": null,
+      "original_depth_m": 1.9196588,
+      "original_samples": 7
+    },
+    "pilot/000004/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        278,
+        134,
+        494,
+        359
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_08_36_stereo_369_left.jpg",
+      "wide_candidate": {
+        "failure": null,
+        "depth_m": 2.318955177484419,
+        "matches": 11,
+        "inliers": 10,
+        "bands": 3,
+        "foreground_inliers": 10
+      },
+      "original_failure": "Stereo matches disagree on disparity",
+      "original_depth_m": null,
+      "original_samples": 2
+    },
+    "pilot/000005/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        208,
+        146,
+        406,
+        408
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_08_48_stereo_350_left.jpg",
+      "wide_candidate": {
+        "failure": "too_few_cross_checked_matches",
+        "matches": 7
+      },
+      "original_failure": "too few consistent stereo patches",
+      "original_depth_m": 2.2099278,
+      "original_samples": 4
+    },
+    "pilot/000006/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        207,
+        152,
+        372,
+        409
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_08_55_stereo_293_left.jpg",
+      "wide_candidate": {
+        "failure": null,
+        "depth_m": 2.826226622559136,
+        "matches": 49,
+        "inliers": 44,
+        "bands": 3,
+        "foreground_inliers": 39
+      },
+      "original_failure": null,
+      "original_depth_m": 2.8491104,
+      "original_samples": 6
+    },
+    "pilot/000007/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        210,
+        118,
+        385,
+        420
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_09_17_stereo_574_left.jpg",
+      "wide_candidate": {
+        "failure": "insufficient_consensus",
+        "depth_m": 12.919893131698908,
+        "matches": 17,
+        "inliers": 6,
+        "bands": 2,
+        "foreground_inliers": 0
+      },
+      "original_failure": "too few consistent stereo patches",
+      "original_depth_m": 3.1400163,
+      "original_samples": 3
+    },
+    "pilot/000007/m-0": {
+      "target_iou": 0.906870413167231,
+      "bbox": [
+        203.5405731201172,
+        112.57675170898438,
+        380.35552978515625,
+        414.6468200683594
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_09_17_stereo_574_left.jpg",
+      "wide_candidate": {
+        "failure": "insufficient_consensus",
+        "depth_m": 3.118594893858357,
+        "matches": 19,
+        "inliers": 7,
+        "bands": 2,
+        "foreground_inliers": 7
+      },
+      "original_failure": "too few consistent stereo patches",
+      "original_depth_m": 3.136106,
+      "original_samples": 4
+    },
+    "pilot/000008/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        229,
+        95,
+        411,
+        413
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_09_39_stereo_399_left.jpg",
+      "wide_candidate": {
+        "failure": "too_few_cross_checked_matches",
+        "matches": 8
+      },
+      "original_failure": "too few consistent stereo patches",
+      "original_depth_m": 5.270802,
+      "original_samples": 3
+    },
+    "pilot/000008/n-0": {
+      "target_iou": 0.8288695216917238,
+      "bbox": [
+        223.37615966796875,
+        91.6064453125,
+        440.2322998046875,
+        412.30133056640625
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_09_39_stereo_399_left.jpg",
+      "wide_candidate": {
+        "failure": "too_few_cross_checked_matches",
+        "matches": 9
+      },
+      "original_failure": "too few consistent stereo patches",
+      "original_depth_m": 5.683938,
+      "original_samples": 3
+    },
+    "pilot/000008/n-1": {
+      "target_iou": 0.0,
+      "bbox": [
+        19.748947143554688,
+        77.63339233398438,
+        201.94044494628906,
+        303.05224609375
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_09_39_stereo_399_left.jpg",
+      "wide_candidate": {
+        "failure": "too_few_cross_checked_matches",
+        "matches": 6
+      },
+      "original_failure": "Only 1/9 textured matches",
+      "original_depth_m": null,
+      "original_samples": 0
+    },
+    "pilot/000008/m-0": {
+      "target_iou": 0.7676391611958809,
+      "bbox": [
+        221.8332061767578,
+        92.04977416992188,
+        443.89788818359375,
+        392.0733642578125
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_09_39_stereo_399_left.jpg",
+      "wide_candidate": {
+        "failure": "insufficient_consensus",
+        "depth_m": 5.652453245118272,
+        "matches": 10,
+        "inliers": 8,
+        "bands": 3,
+        "foreground_inliers": 8
+      },
+      "original_failure": "Stereo matches disagree on disparity",
+      "original_depth_m": null,
+      "original_samples": 0
+    },
+    "pilot/000008/m-1": {
+      "target_iou": 0.0,
+      "bbox": [
+        16.996612548828125,
+        76.26117706298828,
+        202.49069213867188,
+        304.260498046875
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_09_39_stereo_399_left.jpg",
+      "wide_candidate": {
+        "failure": "too_few_cross_checked_matches",
+        "matches": 7
+      },
+      "original_failure": "Stereo matches disagree on disparity",
+      "original_depth_m": null,
+      "original_samples": 0
+    },
+    "pilot/000009/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        229,
+        149,
+        342,
+        375
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_09_44_stereo_471_left.jpg",
+      "wide_candidate": {
+        "failure": "outside_interaction_range",
+        "depth_m": 3.118594893858357,
+        "matches": 24,
+        "inliers": 24,
+        "bands": 3,
+        "foreground_inliers": 24
+      },
+      "original_failure": "Stereo matches disagree on disparity",
+      "original_depth_m": null,
+      "original_samples": 0
+    },
+    "confirmation/000001/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        255,
+        170,
+        477,
+        390
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_08_28_stereo_355_left.jpg",
+      "wide_candidate": {
+        "failure": null,
+        "depth_m": 2.659977997702716,
+        "matches": 27,
+        "inliers": 27,
+        "bands": 3,
+        "foreground_inliers": 26
+      },
+      "original_failure": "too few consistent stereo patches",
+      "original_depth_m": 1.0093558,
+      "original_samples": 3
+    },
+    "confirmation/000002/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        145,
+        115,
+        404,
+        372
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_08_56_stereo_270_left.jpg",
+      "wide_candidate": {
+        "failure": "insufficient_consensus",
+        "depth_m": 2.91739522328685,
+        "matches": 35,
+        "inliers": 19,
+        "bands": 2,
+        "foreground_inliers": 19
+      },
+      "original_failure": null,
+      "original_depth_m": 2.9988296,
+      "original_samples": 6
+    },
+    "confirmation/000002/n-0": {
+      "target_iou": 0.8533,
+      "bbox": [
+        140.3254852294922,
+        110.4775390625,
+        408.87310791015625,
+        399.62274169921875
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_08_56_stereo_270_left.jpg",
+      "wide_candidate": {
+        "failure": "insufficient_consensus",
+        "depth_m": 2.91739522328685,
+        "matches": 33,
+        "inliers": 14,
+        "bands": 2,
+        "foreground_inliers": 14
+      },
+      "original_failure": "target at 3.20 m is outside interaction range (0.20-3.00 m)",
+      "original_depth_m": 3.1953773,
+      "original_samples": 7
+    },
+    "confirmation/000003/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        219,
+        163,
+        369,
+        361
+      ],
+      "source": "Terrestrial/Phase_1/images/stereo/2024_09_43_stereo_446_left.jpg",
+      "wide_candidate": {
+        "failure": "insufficient_consensus",
+        "depth_m": 2.826226622559136,
+        "matches": 15,
+        "inliers": 14,
+        "bands": 2,
+        "foreground_inliers": 14
+      },
+      "original_failure": "too few consistent stereo patches",
+      "original_depth_m": 2.8192823,
+      "original_samples": 4
+    },
+    "confirmation/000004/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        229,
+        108,
+        420,
+        368
+      ],
+      "source": "Terrestrial/Phase_2/images/stereo/2025_02_28_stereo_608_left.jpg",
+      "wide_candidate": {
+        "failure": null,
+        "depth_m": 2.085449091424165,
+        "matches": 28,
+        "inliers": 28,
+        "bands": 3,
+        "foreground_inliers": 28
+      },
+      "original_failure": null,
+      "original_depth_m": 2.0701716,
+      "original_samples": 8
+    },
+    "confirmation/000005/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        279,
+        113,
+        364,
+        355
+      ],
+      "source": "Terrestrial/Phase_2/images/stereo/2025_02_35_stereo_588_left.jpg",
+      "wide_candidate": {
+        "failure": "too_few_cross_checked_matches",
+        "matches": 2
+      },
+      "original_failure": "too few consistent stereo patches",
+      "original_depth_m": 1.4736702,
+      "original_samples": 4
+    },
+    "confirmation/000006/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        257,
+        125,
+        371,
+        357
+      ],
+      "source": "Terrestrial/Phase_2/images/stereo/2025_02_35_stereo_600_left.jpg",
+      "wide_candidate": {
+        "failure": "insufficient_consensus",
+        "depth_m": 2.182446723583428,
+        "matches": 19,
+        "inliers": 19,
+        "bands": 2,
+        "foreground_inliers": 18
+      },
+      "original_failure": "Stereo matches disagree on disparity",
+      "original_depth_m": null,
+      "original_samples": 2
+    },
+    "confirmation/000007/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        175,
+        135,
+        372,
+        408
+      ],
+      "source": "Terrestrial/Phase_2/images/stereo/2025_02_41_stereo_342_left.jpg",
+      "wide_candidate": {
+        "failure": "insufficient_consensus",
+        "depth_m": 7.507616729126993,
+        "matches": 10,
+        "inliers": 10,
+        "bands": 2,
+        "foreground_inliers": 0
+      },
+      "original_failure": "Stereo matches disagree on disparity",
+      "original_depth_m": null,
+      "original_samples": 0
+    },
+    "confirmation/000008/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        177,
+        120,
+        433,
+        395
+      ],
+      "source": "Terrestrial/Phase_2/images/stereo/2025_02_48_stereo_315_left.jpg",
+      "wide_candidate": {
+        "failure": "too_few_cross_checked_matches",
+        "matches": 0
+      },
+      "original_failure": "Stereo matches disagree on disparity",
+      "original_depth_m": null,
+      "original_samples": 2
+    },
+    "confirmation/000008/n-0": {
+      "target_iou": 0.3128,
+      "bbox": [
+        5.70904541015625,
+        61.84674072265625,
+        639.5623779296875,
+        417.34515380859375
+      ],
+      "source": "Terrestrial/Phase_2/images/stereo/2025_02_48_stereo_315_left.jpg",
+      "original_failure": "size_or_clip_gate",
+      "wide_candidate": {
+        "failure": "size_or_clip_gate"
+      }
+    },
+    "confirmation/000009/annotation": {
+      "target_iou": 1.0,
+      "bbox": [
+        234,
+        76,
+        374,
+        373
+      ],
+      "source": "Terrestrial/Phase_2/images/stereo/2025_02_52_stereo_244_left.jpg",
+      "wide_candidate": {
+        "failure": "insufficient_consensus",
+        "depth_m": 2.9326627848152316,
+        "matches": 11,
+        "inliers": 10,
+        "bands": 2,
+        "foreground_inliers": 10
+      },
+      "original_failure": "Stereo matches disagree on disparity",
+      "original_depth_m": null,
+      "original_samples": 2
+    }
+  },
+  "reference": {
+    "pilot/000001": {
+      "checked_mask_matches": 98,
+      "depth_p25_p50_p75_m": [
+        2.91739522328685,
+        3.014641730729745,
+        3.014641730729745
+      ]
+    },
+    "pilot/000002": {
+      "checked_mask_matches": 252,
+      "depth_p25_p50_p75_m": [
+        1.6149866414623635,
+        1.659575498230011,
+        1.7064009796583461
+      ]
+    },
+    "pilot/000003": {
+      "checked_mask_matches": 21,
+      "depth_p25_p50_p75_m": [
+        1.7392163831133145,
+        1.8841510817060907,
+        1.9660706939541814
+      ]
+    },
+    "pilot/000004": {
+      "checked_mask_matches": 35,
+      "depth_p25_p50_p75_m": [
+        2.2058354127290816,
+        2.2609812980473087,
+        2.379980313734009
+      ]
+    },
+    "pilot/000005": {
+      "checked_mask_matches": 21,
+      "depth_p25_p50_p75_m": [
+        2.2058354127290816,
+        2.2609812980473087,
+        2.318955177484419
+      ]
+    },
+    "pilot/000006": {
+      "checked_mask_matches": 128,
+      "depth_p25_p50_p75_m": [
+        2.7405833915724953,
+        2.7405833915724953,
+        2.91739522328685
+      ]
+    },
+    "pilot/000007": {
+      "checked_mask_matches": 62,
+      "depth_p25_p50_p75_m": [
+        3.014641730729745,
+        3.118594893858357,
+        3.118594893858357
+      ]
+    },
+    "pilot/000008": {
+      "checked_mask_matches": 63,
+      "depth_p25_p50_p75_m": [
+        5.319955995405432,
+        5.652453245118272,
+        5.652453245118272
+      ]
+    },
+    "pilot/000009": {
+      "checked_mask_matches": 47,
+      "depth_p25_p50_p75_m": [
+        3.014641730729745,
+        3.118594893858357,
+        3.118594893858357
+      ]
+    },
+    "confirmation/000001": {
+      "checked_mask_matches": 117,
+      "depth_p25_p50_p75_m": [
+        2.5839786263397815,
+        2.659977997702716,
+        2.659977997702716
+      ]
+    },
+    "confirmation/000002": {
+      "checked_mask_matches": 145,
+      "depth_p25_p50_p75_m": [
+        2.91739522328685,
+        2.91739522328685,
+        3.118594893858357
+      ]
+    },
+    "confirmation/000003": {
+      "checked_mask_matches": 28,
+      "depth_p25_p50_p75_m": [
+        2.826226622559136,
+        2.826226622559136,
+        2.826226622559136
+      ]
+    },
+    "confirmation/000004": {
+      "checked_mask_matches": 100,
+      "depth_p25_p50_p75_m": [
+        2.040113241610596,
+        2.040113241610596,
+        2.085449091424165
+      ]
+    },
+    "confirmation/000005": {
+      "checked_mask_matches": 0,
+      "depth_p25_p50_p75_m": null
+    },
+    "confirmation/000006": {
+      "checked_mask_matches": 21,
+      "depth_p25_p50_p75_m": [
+        2.182446723583428,
+        2.182446723583428,
+        2.182446723583428
+      ]
+    },
+    "confirmation/000007": {
+      "checked_mask_matches": 0,
+      "depth_p25_p50_p75_m": null
+    },
+    "confirmation/000008": {
+      "checked_mask_matches": 0,
+      "depth_p25_p50_p75_m": null
+    },
+    "confirmation/000009": {
+      "checked_mask_matches": 20,
+      "depth_p25_p50_p75_m": [
+        2.9326627848152316,
+        2.9326627848152316,
+        2.9326627848152316
+      ]
+    }
+  }
+}
