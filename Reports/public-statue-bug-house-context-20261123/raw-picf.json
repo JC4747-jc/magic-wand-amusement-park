@@ -1,0 +1,587 @@
+{
+  "field": {
+    "development_photos": [
+      {
+        "key": "inat-photo-96396536",
+        "media_ms": 0,
+        "request_sha256": "5635770c4ef1720ba8119387d1be5c1d0261731740b285d57f058c5f1e297bbe",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 1219.84,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 1, \"timestamp\": 1795392845076, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "inat-photo-11434440",
+        "media_ms": 40,
+        "request_sha256": "c440c8dac9d88b73605c85a53d472ddaeea265f1d85ff9a5c7c7f7d1df72fc3b",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 43.83,
+        "boxes": [
+          {
+            "class": "Spider",
+            "confidence": 0.6201878190040588,
+            "xyxy_normalized": [
+              0.2247311592102051,
+              0.06278031667073568,
+              0.6980260848999024,
+              0.9007112503051757
+            ]
+          },
+          {
+            "class": "Spider",
+            "confidence": 0.4623836576938629,
+            "xyxy_normalized": [
+              0.16490840911865234,
+              0.08225390116373697,
+              0.7782937049865722,
+              0.9805939992268881
+            ]
+          }
+        ],
+        "reply_wire": "{\"frame_id\": 2, \"timestamp\": 1795392846295, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [{\"class\": \"Spider\", \"class_id\": 1, \"confidence\": 0.6201878190040588, \"centerX\": 295.2823181152344, \"centerY\": 231.23797607421875, \"x1\": 143.82794189453125, \"y1\": 30.134552001953125, \"x2\": 446.7366943359375, \"y2\": 432.3414001464844, \"class_name\": \"Spider\", \"bbox\": [143.82794189453125, 30.134552001953125, 446.7366943359375, 432.3414001464844], \"instance_id\": \"59e78cb18662:left:1\", \"track_scope\": \"session:left:temporal_iou\", \"target_scene\": \"bugs\"}, {\"class\": \"Spider\", \"class_id\": 1, \"confidence\": 0.4623836576938629, \"centerX\": 301.8246765136719, \"centerY\": 255.08349609375, \"x1\": 105.5413818359375, \"y1\": 39.48187255859375, \"x2\": 498.10797119140625, \"y2\": 470.68511962890625, \"class_name\": \"Spider\", \"bbox\": [105.5413818359375, 39.48187255859375, 498.10797119140625, 470.68511962890625], \"instance_id\": \"59e78cb18662:left:2\", \"track_scope\": \"session:left:temporal_iou\", \"target_scene\": \"bugs\"}], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "inat-photo-765125223",
+        "media_ms": 80,
+        "request_sha256": "71da58e66f77e4616ccb377742a735e476fda54ebf36c817bd5ab16194c8d95d",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 33.64,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 3, \"timestamp\": 1795392846340, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "inat-photo-729171053",
+        "media_ms": 120,
+        "request_sha256": "77b91ab64de6fffcd3b6e6890a3eaa1c3091a8c9e34c73910ebdd1cd1804210d",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 31.92,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 4, \"timestamp\": 1795392846384, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "inat-photo-673357561",
+        "media_ms": 160,
+        "request_sha256": "ca64ef206880fb526d558b36831f0bff62d91ce843fd779fc3e4bf76972e1141",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 32.42,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 5, \"timestamp\": 1795392846425, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "inat-photo-150557722",
+        "media_ms": 200,
+        "request_sha256": "ba0b979b3a8da0f6d92de7e8dc910b53db9d5b4ccc68038124958e526f3fc659",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 32.12,
+        "boxes": [
+          {
+            "class": "Cockroach",
+            "confidence": 0.7548216581344604,
+            "xyxy_normalized": [
+              0.4428265571594238,
+              0.4929157257080078,
+              0.5699524879455566,
+              0.6715159098307292
+            ]
+          }
+        ],
+        "reply_wire": "{\"frame_id\": 6, \"timestamp\": 1795392846468, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [{\"class\": \"Cockroach\", \"class_id\": 0, \"confidence\": 0.7548216581344604, \"centerX\": 324.08929443359375, \"centerY\": 279.4635925292969, \"x1\": 283.40899658203125, \"y1\": 236.59954833984375, \"x2\": 364.76959228515625, \"y2\": 322.32763671875, \"class_name\": \"Cockroach\", \"bbox\": [283.40899658203125, 236.59954833984375, 364.76959228515625, 322.32763671875], \"instance_id\": \"59e78cb18662:left:3\", \"track_scope\": \"session:left:temporal_iou\", \"target_scene\": \"bugs\"}], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "inat-photo-743142516",
+        "media_ms": 240,
+        "request_sha256": "156675e6966c50dbf0a9096cce027a0258a2a0f829b16e080d04a1a55352fe6b",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 37.19,
+        "boxes": [
+          {
+            "class": "Spider",
+            "confidence": 0.6919031739234924,
+            "xyxy_normalized": [
+              0.3730943202972412,
+              0.35952841440836586,
+              0.620853853225708,
+              0.6472122192382812
+            ]
+          }
+        ],
+        "reply_wire": "{\"frame_id\": 7, \"timestamp\": 1795392846500, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [{\"class\": \"Spider\", \"class_id\": 1, \"confidence\": 0.6919031739234924, \"centerX\": 318.06341552734375, \"centerY\": 241.6177520751953, \"x1\": 238.78036499023438, \"y1\": 172.57363891601562, \"x2\": 397.3464660644531, \"y2\": 310.661865234375, \"class_name\": \"Spider\", \"bbox\": [238.78036499023438, 172.57363891601562, 397.3464660644531, 310.661865234375], \"instance_id\": \"59e78cb18662:left:4\", \"track_scope\": \"session:left:temporal_iou\", \"target_scene\": \"bugs\"}], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      }
+    ],
+    "PMC11950236": [
+      {
+        "key": "soft-crevice-0127",
+        "media_ms": 2117,
+        "request_sha256": "a547242f2443f779ed0b140de97c59a058092eb1a3d95be77c85256e303d9b3b",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 130.33,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 1, \"timestamp\": 1795392846542, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "soft-crevice-0205",
+        "media_ms": 3417,
+        "request_sha256": "137dc88a77a8d8f4a3a0460610a7ce57a51ec574ecd51575bc5220231a38dc22",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 34.91,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 2, \"timestamp\": 1795392847833, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "soft-crevice-0274",
+        "media_ms": 4567,
+        "request_sha256": "e50dd138b8ffd6b4538d719b03aa15cbb791dda90f34c77784a16f06528146bb",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 50.94,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 3, \"timestamp\": 1795392848987, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "soft-crevice-0315",
+        "media_ms": 5250,
+        "request_sha256": "31195c5e8cfd49cc006105ae3db6b8b4d8935b3e32b3b66d2c5e788024216947",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 32.5,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 4, \"timestamp\": 1795392849675, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "soft-crevice-0379",
+        "media_ms": 6317,
+        "request_sha256": "034955cfe8424c92aa3c73dfe324d64049a88d359e512bc7933d2d27f7faa624",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 34.13,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 5, \"timestamp\": 1795392850744, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "soft-crevice-0466",
+        "media_ms": 7767,
+        "request_sha256": "09f52076503cf32586daf2363a8f5b7c724a556abc56e2376ccfb6624d222aab",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 37.32,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 6, \"timestamp\": 1795392852197, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "soft-crevice-0528",
+        "media_ms": 8800,
+        "request_sha256": "81ebf19336747635f24222348c07f95ef02d4a5f70b62b4b5f63c55f7fc24cc2",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 32.61,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 7, \"timestamp\": 1795392853223, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      }
+    ],
+    "PMC12289928": [
+      {
+        "key": "legged-crawler-0345",
+        "media_ms": 6905,
+        "request_sha256": "dd1b0260980a80a8753965c4594e1e8837f082b1e23cc5449b077a76be44e104",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 124.55,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 1, \"timestamp\": 1795392853258, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "legged-crawler-0505",
+        "media_ms": 10107,
+        "request_sha256": "6bce267e1e964ac3f90f05fb73567a7ecc86f581c9e7d9f4c1576ae421a902bd",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 34.38,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 2, \"timestamp\": 1795392856461, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "legged-crawler-0665",
+        "media_ms": 13309,
+        "request_sha256": "2ac939e656adf84cc3f73df163ef81c7952074b17b9a63272d4f3f25b144462b",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 38.39,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 3, \"timestamp\": 1795392859667, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "legged-crawler-0825",
+        "media_ms": 16511,
+        "request_sha256": "71cf16e7ba2e7562c6a4922486b70a967e608bd9d2841197acddb76276e52b28",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 38.58,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 4, \"timestamp\": 1795392862861, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "legged-crawler-0985",
+        "media_ms": 19713,
+        "request_sha256": "9cef4a565188d7914a7a3458af3584f8258425d303f1f88ff59cde92c4dd7e17",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 55.37,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 5, \"timestamp\": 1795392866071, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "legged-crawler-1100",
+        "media_ms": 22015,
+        "request_sha256": "63476859f7dec9c45efffb55afa39f6e86d701aa5fba0fc71c476a7ffdb584a3",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 50.67,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 6, \"timestamp\": 1795392868367, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "legged-crawler-1200",
+        "media_ms": 24016,
+        "request_sha256": "71ed5f294cecb176b3c62b2c714f1fc8558424f5b60df447fc6e65235f245582",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 32.05,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 7, \"timestamp\": 1795392870372, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\ChatGPT\\\\mr\\\\Reports\\\\public-bugs-field-finetune-picf-20261123\\\\candidate\\\\best.pt\", \"weights_sha256\": \"9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89\", \"model_validation\": \"INSECT_FIELD_PHOTO_REPLAY; artifact:FIELD_DEVELOPMENT_CHECKPOINT_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      }
+    ]
+  },
+  "roach_v16": {
+    "development_photos": [
+      {
+        "key": "inat-photo-96396536",
+        "media_ms": 0,
+        "request_sha256": "5635770c4ef1720ba8119387d1be5c1d0261731740b285d57f058c5f1e297bbe",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 388.75,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 1, \"timestamp\": 1795392870519, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "inat-photo-11434440",
+        "media_ms": 40,
+        "request_sha256": "c440c8dac9d88b73605c85a53d472ddaeea265f1d85ff9a5c7c7f7d1df72fc3b",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 193.81,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 2, \"timestamp\": 1795392870908, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "inat-photo-765125223",
+        "media_ms": 80,
+        "request_sha256": "71da58e66f77e4616ccb377742a735e476fda54ebf36c817bd5ab16194c8d95d",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 192.03,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 3, \"timestamp\": 1795392871103, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "inat-photo-729171053",
+        "media_ms": 120,
+        "request_sha256": "77b91ab64de6fffcd3b6e6890a3eaa1c3091a8c9e34c73910ebdd1cd1804210d",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 200.84,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 4, \"timestamp\": 1795392871295, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "inat-photo-673357561",
+        "media_ms": 160,
+        "request_sha256": "ca64ef206880fb526d558b36831f0bff62d91ce843fd779fc3e4bf76972e1141",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 198.19,
+        "boxes": [
+          {
+            "class": "Cockroach",
+            "confidence": 0.8901079893112183,
+            "xyxy_normalized": [
+              0.31420559883117677,
+              0.4335744539896647,
+              0.5799968242645264,
+              0.6441472371419271
+            ]
+          }
+        ],
+        "reply_wire": "{\"frame_id\": 5, \"timestamp\": 1795392871497, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [{\"class\": \"Cockroach\", \"class_id\": 0, \"confidence\": 0.8901079893112183, \"centerX\": 286.144775390625, \"centerY\": 258.65320587158203, \"x1\": 201.09158325195312, \"y1\": 208.11573791503906, \"x2\": 371.1979675292969, \"y2\": 309.190673828125, \"class_name\": \"Cockroach\", \"bbox\": [201.09158325195312, 208.11573791503906, 371.1979675292969, 309.190673828125], \"instance_id\": \"dba6e2483ef2:left:1\", \"track_scope\": \"session:left:temporal_iou\", \"target_scene\": \"bugs\"}], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "inat-photo-150557722",
+        "media_ms": 200,
+        "request_sha256": "ba0b979b3a8da0f6d92de7e8dc910b53db9d5b4ccc68038124958e526f3fc659",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 195.49,
+        "boxes": [
+          {
+            "class": "Cockroach",
+            "confidence": 0.8920267820358276,
+            "xyxy_normalized": [
+              0.441110897064209,
+              0.49882113138834633,
+              0.5757427215576172,
+              0.7121714274088542
+            ]
+          }
+        ],
+        "reply_wire": "{\"frame_id\": 6, \"timestamp\": 1795392871695, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [{\"class\": \"Cockroach\", \"class_id\": 0, \"confidence\": 0.8920267820358276, \"centerX\": 325.3931579589844, \"centerY\": 290.6382141113281, \"x1\": 282.31097412109375, \"y1\": 239.43414306640625, \"x2\": 368.475341796875, \"y2\": 341.84228515625, \"class_name\": \"Cockroach\", \"bbox\": [282.31097412109375, 239.43414306640625, 368.475341796875, 341.84228515625], \"instance_id\": \"dba6e2483ef2:left:1\", \"track_scope\": \"session:left:temporal_iou\", \"target_scene\": \"bugs\"}], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "inat-photo-743142516",
+        "media_ms": 240,
+        "request_sha256": "156675e6966c50dbf0a9096cce027a0258a2a0f829b16e080d04a1a55352fe6b",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 194.67,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 7, \"timestamp\": 1795392871891, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      }
+    ],
+    "PMC11950236": [
+      {
+        "key": "soft-crevice-0127",
+        "media_ms": 2117,
+        "request_sha256": "a547242f2443f779ed0b140de97c59a058092eb1a3d95be77c85256e303d9b3b",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 402.0,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 1, \"timestamp\": 1795392872094, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "soft-crevice-0205",
+        "media_ms": 3417,
+        "request_sha256": "137dc88a77a8d8f4a3a0460610a7ce57a51ec574ecd51575bc5220231a38dc22",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 195.09,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 2, \"timestamp\": 1795392873406, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "soft-crevice-0274",
+        "media_ms": 4567,
+        "request_sha256": "e50dd138b8ffd6b4538d719b03aa15cbb791dda90f34c77784a16f06528146bb",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 187.12,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 3, \"timestamp\": 1795392874564, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "soft-crevice-0315",
+        "media_ms": 5250,
+        "request_sha256": "31195c5e8cfd49cc006105ae3db6b8b4d8935b3e32b3b66d2c5e788024216947",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 191.18,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 4, \"timestamp\": 1795392875248, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "soft-crevice-0379",
+        "media_ms": 6317,
+        "request_sha256": "034955cfe8424c92aa3c73dfe324d64049a88d359e512bc7933d2d27f7faa624",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 188.77,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 5, \"timestamp\": 1795392876303, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "soft-crevice-0466",
+        "media_ms": 7767,
+        "request_sha256": "09f52076503cf32586daf2363a8f5b7c724a556abc56e2376ccfb6624d222aab",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 185.73,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 6, \"timestamp\": 1795392877756, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "soft-crevice-0528",
+        "media_ms": 8800,
+        "request_sha256": "81ebf19336747635f24222348c07f95ef02d4a5f70b62b4b5f63c55f7fc24cc2",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 188.37,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 7, \"timestamp\": 1795392878788, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      }
+    ],
+    "PMC12289928": [
+      {
+        "key": "legged-crawler-0345",
+        "media_ms": 6905,
+        "request_sha256": "dd1b0260980a80a8753965c4594e1e8837f082b1e23cc5449b077a76be44e104",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 390.88,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 1, \"timestamp\": 1795392878979, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "legged-crawler-0505",
+        "media_ms": 10107,
+        "request_sha256": "6bce267e1e964ac3f90f05fb73567a7ecc86f581c9e7d9f4c1576ae421a902bd",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 208.91,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 2, \"timestamp\": 1795392882183, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "legged-crawler-0665",
+        "media_ms": 13309,
+        "request_sha256": "2ac939e656adf84cc3f73df163ef81c7952074b17b9a63272d4f3f25b144462b",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 183.83,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 3, \"timestamp\": 1795392885376, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "legged-crawler-0825",
+        "media_ms": 16511,
+        "request_sha256": "71cf16e7ba2e7562c6a4922486b70a967e608bd9d2841197acddb76276e52b28",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 198.15,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 4, \"timestamp\": 1795392888591, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "legged-crawler-0985",
+        "media_ms": 19713,
+        "request_sha256": "9cef4a565188d7914a7a3458af3584f8258425d303f1f88ff59cde92c4dd7e17",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 191.6,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 5, \"timestamp\": 1795392891789, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "legged-crawler-1100",
+        "media_ms": 22015,
+        "request_sha256": "63476859f7dec9c45efffb55afa39f6e86d701aa5fba0fc71c476a7ffdb584a3",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 194.67,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 6, \"timestamp\": 1795392894095, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      },
+      {
+        "key": "legged-crawler-1200",
+        "media_ms": 24016,
+        "request_sha256": "71ed5f294cecb176b3c62b2c714f1fc8558424f5b60df447fc6e65235f245582",
+        "origin": [
+          0,
+          0
+        ],
+        "duration_ms": 192.96,
+        "boxes": [],
+        "reply_wire": "{\"frame_id\": 7, \"timestamp\": 1795392896104, \"width\": 640, \"height\": 480, \"scene\": \"bugs\", \"status\": \"OK\", \"detections\": [], \"weights\": \"D:\\\\MagicMRTraining\\\\bugs-v16-20261123\\\\best.pt\", \"weights_sha256\": \"c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5\", \"model_validation\": \"PUBLIC_PILOT_TEST_PASSED_PICO_PENDING; artifact:LOCAL_TEST_PASSED_PICO_PENDING\", \"discovery_model_budget\": 1, \"resident_model_limit\": 2, \"pose_available\": false, \"pose_model_ready\": false}\n"
+      }
+    ]
+  }
+}
