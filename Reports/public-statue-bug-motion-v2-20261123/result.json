@@ -1,0 +1,1828 @@
+{
+  "baseline": "8517cc196b1c4876250f4a47fa9ef42f39b23e5c",
+  "runtime_commit": "90928aef682fa714e7baacf8b8d2ca2980681027",
+  "runtime_sha256": {
+    "tcp_server.py": "10607c9a6a03bfb4e8875b3107f85608e382b90415e232dace093b2bf678acdd",
+    "scene_router.py": "147401103ced6e6a06ca526d434669edd36b5e1e55630f23a0a099689a3bca11",
+    "scene_protocol.py": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038",
+    "detector_config.py": "b047405f41cd10523d6e51ab25ee8a1673a8219de8ce4ece7a684277b2f5640b",
+    "pose_availability.py": "10eef6f52a4ae9afca8b16e51be2179b83c0a30d1b498ac98cd969d0129367ee",
+    "discovery.py": "f17f4b4525e969ae6dc22523d5a520207280106ebd61dc103b880fee52f88747",
+    "model_artifact.py": "521b330e8b38ee6a93fe6475e168d8dc90aa9a6bcad035db8d17e07ee1060cab",
+    "scene_profiles.json": "4c3a776c4133c60ff9be810630c1aa7002775230f98a03bb3fdfa020d78f8781"
+  },
+  "frozen_input_sha256": "31e3893e7027eff2b32f69026089a173c4706f5b5c55dfd2f81221f55f5031d6",
+  "worker_sha256": "f69803278449da5b3e64565685d21252c52ff10a1b41183b63721a48f15ea334",
+  "raw_picf_sha256": "fbf04349fb5f87943d4954a1b6063cd55976198b3bedc090c676f3503587143c",
+  "models": {
+    "field": {
+      "weight_sha256": "9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89",
+      "profile_sha256": "1cac53f2209b51d43b96c941d379de0428c421f3fd700a3da8a0350d19b2f83e",
+      "reply_threshold": 0.399,
+      "score_threshold": 0.5,
+      "groups": {
+        "roach-fast": {
+          "frames": 13,
+          "expected_class": "Cockroach",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            96,
+            144
+          ],
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 34.7,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "roach-fast-0002",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0004",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0006",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0008",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0010",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0012",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0014",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0016",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0018",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0020",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0022",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0024",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0026",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "roach-slow": {
+          "frames": 13,
+          "expected_class": "Cockroach",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            105,
+            157
+          ],
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 37.09,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "roach-slow-0253",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0258",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0263",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0268",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0273",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0278",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0283",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0288",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0293",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0298",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0303",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0308",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0313",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "spider-jump": {
+          "frames": 13,
+          "expected_class": "Spider",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            147,
+            205
+          ],
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 33.2,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "spider-jump-0982",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-0988",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-0994",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1000",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1006",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1012",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1018",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1024",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1030",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1036",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1042",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1048",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1054",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "spider-rise": {
+          "frames": 13,
+          "expected_class": "Spider",
+          "hits": 3,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 3,
+          "recoveries": [],
+          "width_range_px": [
+            163,
+            163
+          ],
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 33.91,
+          "raw_class_counts": {
+            "Spider": 6
+          },
+          "observed": [
+            {
+              "key": "spider-rise-0564",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0571",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0578",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0585",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0592",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0599",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0606",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0613",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0620",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0627",
+              "match": {
+                "label": "Spider",
+                "id": "8edff694c5b6:left:1",
+                "confidence": 0.5521581768989563,
+                "iou": 0.7455825516458454
+              },
+              "proposals": [
+                {
+                  "label": "Spider",
+                  "id": "8edff694c5b6:left:1",
+                  "confidence": 0.5521581768989563,
+                  "iou": 0.7455825516458454
+                }
+              ]
+            },
+            {
+              "key": "spider-rise-0634",
+              "match": {
+                "label": "Spider",
+                "id": "8edff694c5b6:left:1",
+                "confidence": 0.5078797936439514,
+                "iou": 0.7404203423950484
+              },
+              "proposals": [
+                {
+                  "label": "Spider",
+                  "id": "8edff694c5b6:left:1",
+                  "confidence": 0.5078797936439514,
+                  "iou": 0.7404203423950484
+                }
+              ]
+            },
+            {
+              "key": "spider-rise-0641",
+              "match": {
+                "label": "Spider",
+                "id": "8edff694c5b6:left:1",
+                "confidence": 0.5616621375083923,
+                "iou": 0.7390502067323717
+              },
+              "proposals": [
+                {
+                  "label": "Spider",
+                  "id": "8edff694c5b6:left:1",
+                  "confidence": 0.5616621375083923,
+                  "iou": 0.7390502067323717
+                }
+              ]
+            },
+            {
+              "key": "spider-rise-0648",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "robot-negative": {
+          "frames": 9,
+          "expected_class": null,
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": null,
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 33.3,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "robot-negative-0112",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0118",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0124",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0130",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0136",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0142",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0148",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0154",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0160",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "roach-slow-half-scale": {
+          "frames": 13,
+          "expected_class": "Cockroach",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            53,
+            79
+          ],
+          "small_truths": 4,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 33.72,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "roach-slow-half-scale-0253",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0258",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0263",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0268",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0273",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0278",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0283",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0288",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0293",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0298",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0303",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0308",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0313",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "spider-jump-half-scale": {
+          "frames": 13,
+          "expected_class": "Spider",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            73,
+            102
+          ],
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 32.79,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "spider-jump-half-scale-0982",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-0988",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-0994",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1000",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1006",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1012",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1018",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1024",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1030",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1036",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1042",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1048",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1054",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        }
+      }
+    },
+    "roach_v16": {
+      "weight_sha256": "c9d651319f7df5e25e14066405a4fedd6b521cee684837bda35e642832911eb5",
+      "profile_sha256": "642fedb3d0e386199bab04de15bc9d7a64590b19fd12bfce7ba087b4daf9bf48",
+      "reply_threshold": 0.65,
+      "score_threshold": 0.65,
+      "groups": {
+        "roach-fast": {
+          "frames": 13,
+          "expected_class": "Cockroach",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            96,
+            144
+          ],
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 204.53,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "roach-fast-0002",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0004",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0006",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0008",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0010",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0012",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0014",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0016",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0018",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0020",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0022",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0024",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0026",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "roach-slow": {
+          "frames": 13,
+          "expected_class": "Cockroach",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            105,
+            157
+          ],
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 207.78,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "roach-slow-0253",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0258",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0263",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0268",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0273",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0278",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0283",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0288",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0293",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0298",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0303",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0308",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0313",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "spider-jump": {
+          "frames": 13,
+          "expected_class": "Spider",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            147,
+            205
+          ],
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 206.73,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "spider-jump-0982",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-0988",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-0994",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1000",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1006",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1012",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1018",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1024",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1030",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1036",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1042",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1048",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1054",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "spider-rise": {
+          "frames": 13,
+          "expected_class": "Spider",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            163,
+            163
+          ],
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 206.78,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "spider-rise-0564",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0571",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0578",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0585",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0592",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0599",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0606",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0613",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0620",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0627",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0634",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0641",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0648",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "robot-negative": {
+          "frames": 9,
+          "expected_class": null,
+          "hits": 0,
+          "unmatched_boxes": 4,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": null,
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 210.72,
+          "raw_class_counts": {
+            "Cockroach": 4
+          },
+          "observed": [
+            {
+              "key": "robot-negative-0112",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0118",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0124",
+              "match": null,
+              "proposals": [
+                {
+                  "label": "Cockroach",
+                  "id": "56bce5b8cf27:left:1",
+                  "confidence": 0.8944739103317261,
+                  "iou": null
+                }
+              ]
+            },
+            {
+              "key": "robot-negative-0130",
+              "match": null,
+              "proposals": [
+                {
+                  "label": "Cockroach",
+                  "id": "56bce5b8cf27:left:1",
+                  "confidence": 0.9433398246765137,
+                  "iou": null
+                }
+              ]
+            },
+            {
+              "key": "robot-negative-0136",
+              "match": null,
+              "proposals": [
+                {
+                  "label": "Cockroach",
+                  "id": "56bce5b8cf27:left:1",
+                  "confidence": 0.9056602120399475,
+                  "iou": null
+                }
+              ]
+            },
+            {
+              "key": "robot-negative-0142",
+              "match": null,
+              "proposals": [
+                {
+                  "label": "Cockroach",
+                  "id": "56bce5b8cf27:left:1",
+                  "confidence": 0.7569320797920227,
+                  "iou": null
+                }
+              ]
+            },
+            {
+              "key": "robot-negative-0148",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0154",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0160",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "roach-slow-half-scale": {
+          "frames": 13,
+          "expected_class": "Cockroach",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            53,
+            79
+          ],
+          "small_truths": 4,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 205.56,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "roach-slow-half-scale-0253",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0258",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0263",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0268",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0273",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0278",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0283",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0288",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0293",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0298",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0303",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0308",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0313",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "spider-jump-half-scale": {
+          "frames": 13,
+          "expected_class": "Spider",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            73,
+            102
+          ],
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 203.74,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "spider-jump-half-scale-0982",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-0988",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-0994",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1000",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1006",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1012",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1018",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1024",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1030",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1036",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1042",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1048",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1054",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        }
+      }
+    },
+    "spider_oiv7_m": {
+      "weight_sha256": "21ffa3718c577ac23e708e4c0544c49a20682efa03914d5f816166b54e8fd3fe",
+      "profile_sha256": "9770c86a2b01d4cf04bff0d70c7e221034f904bbf9e3a9ddaa2b1f95cfd36647",
+      "reply_threshold": 0.399,
+      "score_threshold": 0.5,
+      "groups": {
+        "roach-fast": {
+          "frames": 13,
+          "expected_class": "Cockroach",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            96,
+            144
+          ],
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 214.68,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "roach-fast-0002",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0004",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0006",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0008",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0010",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0012",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0014",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0016",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0018",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0020",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0022",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0024",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-fast-0026",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "roach-slow": {
+          "frames": 13,
+          "expected_class": "Cockroach",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            105,
+            157
+          ],
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 219.67,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "roach-slow-0253",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0258",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0263",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0268",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0273",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0278",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0283",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0288",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0293",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0298",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0303",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0308",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-0313",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "spider-jump": {
+          "frames": 13,
+          "expected_class": "Spider",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            147,
+            205
+          ],
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 218.36,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "spider-jump-0982",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-0988",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-0994",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1000",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1006",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1012",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1018",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1024",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1030",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1036",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1042",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1048",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-1054",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "spider-rise": {
+          "frames": 13,
+          "expected_class": "Spider",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            163,
+            163
+          ],
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 217.69,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "spider-rise-0564",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0571",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0578",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0585",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0592",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0599",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0606",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0613",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0620",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0627",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0634",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0641",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-rise-0648",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "robot-negative": {
+          "frames": 9,
+          "expected_class": null,
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": null,
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 221.33,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "robot-negative-0112",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0118",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0124",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0130",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0136",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0142",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0148",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0154",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "robot-negative-0160",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "roach-slow-half-scale": {
+          "frames": 13,
+          "expected_class": "Cockroach",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            53,
+            79
+          ],
+          "small_truths": 4,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 219.64,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "roach-slow-half-scale-0253",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0258",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0263",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0268",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0273",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0278",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0283",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0288",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0293",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0298",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0303",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0308",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "roach-slow-half-scale-0313",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        },
+        "spider-jump-half-scale": {
+          "frames": 13,
+          "expected_class": "Spider",
+          "hits": 0,
+          "unmatched_boxes": 0,
+          "wrong_class_frames": 0,
+          "longest_wrong_class_frames": 0,
+          "longest_same_id_frames": 0,
+          "recoveries": [],
+          "width_range_px": [
+            73,
+            102
+          ],
+          "small_truths": 0,
+          "small_hits": 0,
+          "median_reply_ms_excluding_first": 210.9,
+          "raw_class_counts": {},
+          "observed": [
+            {
+              "key": "spider-jump-half-scale-0982",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-0988",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-0994",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1000",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1006",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1012",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1018",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1024",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1030",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1036",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1042",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1048",
+              "match": null,
+              "proposals": []
+            },
+            {
+              "key": "spider-jump-half-scale-1054",
+              "match": null,
+              "proposals": []
+            }
+          ]
+        }
+      }
+    }
+  },
+  "scope": "PC real-video replay and explicitly derived half-scale clips; no deployment."
+}
