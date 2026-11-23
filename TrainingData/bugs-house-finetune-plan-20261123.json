@@ -1,0 +1,23 @@
+{
+  "purpose": "Continue the two-class insect candidate on the frozen indoor development increment.",
+  "source_commit": "9d8efd736d526893f678c678c8a26cea40187900",
+  "append_manifest": "TrainingData/bugs-house-context-20261123.json",
+  "append_manifest_sha256": "91a0703d97acf44606e28fff0867428181f687e066899c366d63eefdb677db3b",
+  "initial_weight": ".codex-tmp/yolo-training/artifacts/bugs-win-field-finetune-20261123/best.pt",
+  "initial_weight_sha256": "9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89",
+  "epochs": 20,
+  "batch": 2,
+  "training_options": {
+    "imgsz": 640,
+    "lr0": 0.00035,
+    "lrf": 0.2,
+    "cos_lr": true,
+    "warmup_epochs": 1.0,
+    "warmup_bias_lr": 0.00035,
+    "rect": true,
+    "translate": 0.08,
+    "scale": 0.30
+  },
+  "paired_confidence": [0.05, 0.399, 0.5, 0.65],
+  "selection": "Use native validation on the frozen 33-image development set. Freeze best.pt before replaying protected photographs and motion."
+}

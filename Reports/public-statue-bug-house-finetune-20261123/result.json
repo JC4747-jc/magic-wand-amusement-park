@@ -1,0 +1,2580 @@
+{
+  "source_commit": "9d8efd736d526893f678c678c8a26cea40187900",
+  "runtime_source": "90928aef682fa714e7baacf8b8d2ca2980681027",
+  "runtime_sha256": {
+    "tcp_server.py": "10607c9a6a03bfb4e8875b3107f85608e382b90415e232dace093b2bf678acdd",
+    "scene_router.py": "147401103ced6e6a06ca526d434669edd36b5e1e55630f23a0a099689a3bca11",
+    "scene_protocol.py": "c8a2efe2a94cb5ec47874a8d6157c22de74ec7dcc4302e662e1943a8414f8038",
+    "detector_config.py": "b047405f41cd10523d6e51ab25ee8a1673a8219de8ce4ece7a684277b2f5640b",
+    "pose_availability.py": "10eef6f52a4ae9afca8b16e51be2179b83c0a30d1b498ac98cd969d0129367ee",
+    "discovery.py": "f17f4b4525e969ae6dc22523d5a520207280106ebd61dc103b880fee52f88747",
+    "model_artifact.py": "521b330e8b38ee6a93fe6475e168d8dc90aa9a6bcad035db8d17e07ee1060cab",
+    "scene_profiles.json": "4c3a776c4133c60ff9be810630c1aa7002775230f98a03bb3fdfa020d78f8781"
+  },
+  "training_report_sha256": "ac10ba63106b9166a718322da4fd08da5d72dbc417bfcb45fc0fe0fab6165569",
+  "dataset_sha256": "91a0703d97acf44606e28fff0867428181f687e066899c366d63eefdb677db3b",
+  "raw_picf_sha256": "7ddadd19227c11aad70f7caa1f232c471bd09c48d12ce061eb454e2f67ce5123",
+  "worker_sha256": "08922356e1c2414375ed16458005eb4d41bfd4fe8d366c58d814d49fb995f74f",
+  "initial_weight_sha256": "9426311260a9c21f5dc66830781d7bccaa931c88176f8796fabf201415619b89",
+  "candidate_weight_sha256": "a44be972be92b58c74ed0b44b3e9ef8d86d37cac5247a87d1bf03635410f5344",
+  "old_photo_wire_sha256": {
+    "independent": "6960223a5f13d803ce8bb288f9eb70f1860d251b240da42f5c27a1f4a6fc7f19",
+    "specialist_regression": "2436ea321f49ceb551e79325c9b9089f54fd624d6dd72443a32c6496a1659eae",
+    "original_regression": "8b8f4104ff8cdc5c638d739d348f76f724d7df8492cdcaa4e2bfc549e7579e7b"
+  },
+  "motion_manifest_sha256": "31e3893e7027eff2b32f69026089a173c4706f5b5c55dfd2f81221f55f5031d6",
+  "motion_wire_sha256": "fbf04349fb5f87943d4954a1b6063cd55976198b3bedc090c676f3503587143c",
+  "threshold": 0.5,
+  "match_iou": 0.5,
+  "groups": {
+    "original_regression": {
+      "before": {
+        "frames": 15,
+        "expected_class": "Spider",
+        "hits": 3,
+        "unmatched_boxes": 0,
+        "wrong_class_frames": 0,
+        "width_range_px": [
+          53,
+          304
+        ],
+        "small_truths": 2,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 33.05,
+        "raw_class_counts": {
+          "Spider": 7,
+          "Cockroach": 1
+        },
+        "observed": [
+          {
+            "key": "inat-photo-760525610",
+            "match": {
+              "label": "Spider",
+              "id": "61965d0b9574:left:1",
+              "confidence": 0.5660431385040283,
+              "iou": 0.5071729554434637
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "61965d0b9574:left:1",
+                "confidence": 0.5660431385040283,
+                "iou": 0.5071729554434637
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-759640339",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-759615311",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-1921864",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-733237526",
+            "match": {
+              "label": "Spider",
+              "id": "61965d0b9574:left:6",
+              "confidence": 0.5051223635673523,
+              "iou": 0.6389404415295552
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "61965d0b9574:left:6",
+                "confidence": 0.5051223635673523,
+                "iou": 0.6389404415295552
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-725233767",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-739586629",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-762888641",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-754828408",
+            "match": {
+              "label": "Cockroach",
+              "id": "61965d0b9574:left:9",
+              "confidence": 0.6254063844680786,
+              "iou": 0.7019357950691351
+            },
+            "proposals": [
+              {
+                "label": "Cockroach",
+                "id": "61965d0b9574:left:9",
+                "confidence": 0.6254063844680786,
+                "iou": 0.7019357950691351
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-673723157",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-667717051",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-616417797",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-613401463",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-760882266",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-760421429",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 4
+          },
+          "Spider": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 4
+          }
+        },
+        "negative_hits": 0
+      },
+      "candidate": {
+        "frames": 15,
+        "expected_class": "Spider",
+        "hits": 2,
+        "unmatched_boxes": 1,
+        "wrong_class_frames": 1,
+        "width_range_px": [
+          53,
+          304
+        ],
+        "small_truths": 2,
+        "small_hits": 1,
+        "median_reply_ms_excluding_first": 33.8,
+        "raw_class_counts": {
+          "Cockroach": 2,
+          "Spider": 3
+        },
+        "observed": [
+          {
+            "key": "inat-photo-760525610",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-759640339",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-759615311",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-1921864",
+            "match": {
+              "label": "Spider",
+              "id": "eddc16dd7402:left:2",
+              "confidence": 0.5261853337287903,
+              "iou": 0.7439735858446475
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "eddc16dd7402:left:2",
+                "confidence": 0.5261853337287903,
+                "iou": 0.7439735858446475
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-733237526",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-725233767",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-739586629",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-762888641",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-754828408",
+            "match": {
+              "label": "Cockroach",
+              "id": "eddc16dd7402:left:4",
+              "confidence": 0.8566777110099792,
+              "iou": 0.7347974598183822
+            },
+            "proposals": [
+              {
+                "label": "Cockroach",
+                "id": "eddc16dd7402:left:4",
+                "confidence": 0.8566777110099792,
+                "iou": 0.7347974598183822
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-673723157",
+            "match": null,
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "eddc16dd7402:left:5",
+                "confidence": 0.571422278881073,
+                "iou": 0.7689703021966499
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-667717051",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-616417797",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-613401463",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-760882266",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-760421429",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 4
+          },
+          "Spider": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 5
+          }
+        },
+        "negative_hits": 0
+      }
+    },
+    "specialist_regression": {
+      "before": {
+        "frames": 21,
+        "expected_class": "Spider",
+        "hits": 5,
+        "unmatched_boxes": 7,
+        "wrong_class_frames": 2,
+        "width_range_px": [
+          65,
+          519
+        ],
+        "small_truths": 0,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 33.85,
+        "raw_class_counts": {
+          "Spider": 12,
+          "Cockroach": 4
+        },
+        "observed": [
+          {
+            "key": "inat-photo-763103702",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-757881124",
+            "match": {
+              "label": "Spider",
+              "id": "55e3f9d3d88b:left:6",
+              "confidence": 0.5709308981895447,
+              "iou": 0.7027842403667114
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "55e3f9d3d88b:left:6",
+                "confidence": 0.5709308981895447,
+                "iou": 0.7027842403667114
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-749421085",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-764208733",
+            "match": {
+              "label": "Spider",
+              "id": "55e3f9d3d88b:left:6",
+              "confidence": 0.6454516053199768,
+              "iou": 0.6988510022749658
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "55e3f9d3d88b:left:6",
+                "confidence": 0.6454516053199768,
+                "iou": 0.6988510022749658
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-762142850",
+            "match": {
+              "label": "Spider",
+              "id": "55e3f9d3d88b:left:1",
+              "confidence": 0.6479653120040894,
+              "iou": 0.777117894506615
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "55e3f9d3d88b:left:1",
+                "confidence": 0.6479653120040894,
+                "iou": 0.777117894506615
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-760705478",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-748502223",
+            "match": {
+              "label": "Spider",
+              "id": "55e3f9d3d88b:left:1",
+              "confidence": 0.8589709401130676,
+              "iou": 0.9094658770777855
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "55e3f9d3d88b:left:1",
+                "confidence": 0.8589709401130676,
+                "iou": 0.9094658770777855
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-745024311",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-743699597",
+            "match": null,
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "55e3f9d3d88b:left:6",
+                "confidence": 0.6160198450088501,
+                "iou": 0.14606903718826406
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-763382991",
+            "match": {
+              "label": "Spider",
+              "id": "55e3f9d3d88b:left:1",
+              "confidence": 0.7919113039970398,
+              "iou": 0.8789341260466003
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "55e3f9d3d88b:left:1",
+                "confidence": 0.7919113039970398,
+                "iou": 0.8789341260466003
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-762951698",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-762659061",
+            "match": null,
+            "proposals": [
+              {
+                "label": "Cockroach",
+                "id": "55e3f9d3d88b:left:8",
+                "confidence": 0.6464983224868774,
+                "iou": 0.4328284610852683
+              },
+              {
+                "label": "Cockroach",
+                "id": "55e3f9d3d88b:left:9",
+                "confidence": 0.5910657644271851,
+                "iou": 0.6486125355570478
+              },
+              {
+                "label": "Cockroach",
+                "id": "55e3f9d3d88b:left:10",
+                "confidence": 0.5310623645782471,
+                "iou": 0.8261513783937567
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-729995394",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-729685407",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-724152811",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-754143299",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-735345271",
+            "match": null,
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "55e3f9d3d88b:left:1",
+                "confidence": 0.7453333139419556,
+                "iou": 0.7140257572298029
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-756077480",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-752738216",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-566059493",
+            "match": null,
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "55e3f9d3d88b:left:1",
+                "confidence": 0.6465543508529663,
+                "iou": null
+              },
+              {
+                "label": "Spider",
+                "id": "55e3f9d3d88b:left:13",
+                "confidence": 0.5007385015487671,
+                "iou": null
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-535648156",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 3,
+            "fn": 5
+          },
+          "Spider": {
+            "tp": 5,
+            "fp": 4,
+            "fn": 7
+          }
+        },
+        "negative_hits": 1
+      },
+      "candidate": {
+        "frames": 21,
+        "expected_class": "Spider",
+        "hits": 4,
+        "unmatched_boxes": 1,
+        "wrong_class_frames": 1,
+        "width_range_px": [
+          65,
+          519
+        ],
+        "small_truths": 0,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 34.0,
+        "raw_class_counts": {
+          "Spider": 6,
+          "Cockroach": 2
+        },
+        "observed": [
+          {
+            "key": "inat-photo-763103702",
+            "match": {
+              "label": "Spider",
+              "id": "cdf8ded4acac:left:1",
+              "confidence": 0.5947595238685608,
+              "iou": 0.6496389817385235
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "cdf8ded4acac:left:1",
+                "confidence": 0.5947595238685608,
+                "iou": 0.6496389817385235
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-757881124",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-749421085",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-764208733",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-762142850",
+            "match": {
+              "label": "Spider",
+              "id": "cdf8ded4acac:left:1",
+              "confidence": 0.7532494068145752,
+              "iou": 0.8180605101089815
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "cdf8ded4acac:left:1",
+                "confidence": 0.7532494068145752,
+                "iou": 0.8180605101089815
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-760705478",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-748502223",
+            "match": {
+              "label": "Spider",
+              "id": "cdf8ded4acac:left:1",
+              "confidence": 0.8871071934700012,
+              "iou": 0.9170023058513955
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "cdf8ded4acac:left:1",
+                "confidence": 0.8871071934700012,
+                "iou": 0.9170023058513955
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-745024311",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-743699597",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-763382991",
+            "match": {
+              "label": "Spider",
+              "id": "cdf8ded4acac:left:1",
+              "confidence": 0.7530388832092285,
+              "iou": 0.8120437423694452
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "cdf8ded4acac:left:1",
+                "confidence": 0.7530388832092285,
+                "iou": 0.8120437423694452
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-762951698",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-762659061",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-729995394",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-729685407",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-724152811",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-754143299",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-735345271",
+            "match": null,
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "cdf8ded4acac:left:1",
+                "confidence": 0.6608449220657349,
+                "iou": 0.8546045978213418
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-756077480",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-752738216",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-566059493",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-535648156",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 5
+          },
+          "Spider": {
+            "tp": 4,
+            "fp": 1,
+            "fn": 8
+          }
+        },
+        "negative_hits": 0
+      }
+    },
+    "independent": {
+      "before": {
+        "frames": 17,
+        "expected_class": "Spider",
+        "hits": 3,
+        "unmatched_boxes": 4,
+        "wrong_class_frames": 1,
+        "width_range_px": [
+          58,
+          487
+        ],
+        "small_truths": 2,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 34.07,
+        "raw_class_counts": {
+          "Spider": 7,
+          "Cockroach": 2
+        },
+        "observed": [
+          {
+            "key": "inat-photo-757716647",
+            "match": null,
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "0fdbd67347e4:left:1",
+                "confidence": 0.5412487983703613,
+                "iou": 0.3164242707575687
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-763461901",
+            "match": null,
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "0fdbd67347e4:left:1",
+                "confidence": 0.5437982082366943,
+                "iou": 0.1283899319800075
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-756063321",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-733925555",
+            "match": {
+              "label": "Spider",
+              "id": "0fdbd67347e4:left:4",
+              "confidence": 0.8256450295448303,
+              "iou": 0.8739547081600969
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "0fdbd67347e4:left:4",
+                "confidence": 0.8256450295448303,
+                "iou": 0.8739547081600969
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-701476963",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-763861554",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-758942322",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-717426325",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-716156084",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-658236526",
+            "match": {
+              "label": "Cockroach",
+              "id": "0fdbd67347e4:left:17",
+              "confidence": 0.5849716663360596,
+              "iou": 0.5269616695702414
+            },
+            "proposals": [
+              {
+                "label": "Cockroach",
+                "id": "0fdbd67347e4:left:17",
+                "confidence": 0.5849716663360596,
+                "iou": 0.5269616695702414
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-653893184",
+            "match": null,
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "0fdbd67347e4:left:4",
+                "confidence": 0.6050170660018921,
+                "iou": 0.6590747354192971
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-754130567",
+            "match": {
+              "label": "Cockroach",
+              "id": "0fdbd67347e4:left:21",
+              "confidence": 0.9211251139640808,
+              "iou": 0.6614359153677074
+            },
+            "proposals": [
+              {
+                "label": "Cockroach",
+                "id": "0fdbd67347e4:left:21",
+                "confidence": 0.9211251139640808,
+                "iou": 0.6614359153677074
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-753078708",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-752258700",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-748833013",
+            "match": null,
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "0fdbd67347e4:left:27",
+                "confidence": 0.6191876530647278,
+                "iou": null
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-678892502",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-663894895",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 4
+          },
+          "Spider": {
+            "tp": 1,
+            "fp": 4,
+            "fn": 6
+          }
+        },
+        "negative_hits": 1
+      },
+      "candidate": {
+        "frames": 17,
+        "expected_class": "Spider",
+        "hits": 2,
+        "unmatched_boxes": 0,
+        "wrong_class_frames": 0,
+        "width_range_px": [
+          58,
+          487
+        ],
+        "small_truths": 2,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 32.7,
+        "raw_class_counts": {
+          "Spider": 1,
+          "Cockroach": 2
+        },
+        "observed": [
+          {
+            "key": "inat-photo-757716647",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-763461901",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-756063321",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-733925555",
+            "match": {
+              "label": "Spider",
+              "id": "d33ba099e8ed:left:1",
+              "confidence": 0.8748691082000732,
+              "iou": 0.8689401859802897
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "d33ba099e8ed:left:1",
+                "confidence": 0.8748691082000732,
+                "iou": 0.8689401859802897
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-701476963",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-763861554",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-758942322",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-717426325",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-716156084",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-658236526",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-653893184",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-754130567",
+            "match": {
+              "label": "Cockroach",
+              "id": "d33ba099e8ed:left:3",
+              "confidence": 0.9064673185348511,
+              "iou": 0.6865121402615114
+            },
+            "proposals": [
+              {
+                "label": "Cockroach",
+                "id": "d33ba099e8ed:left:3",
+                "confidence": 0.9064673185348511,
+                "iou": 0.6865121402615114
+              }
+            ]
+          },
+          {
+            "key": "inat-photo-753078708",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-752258700",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-748833013",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-678892502",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "inat-photo-663894895",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 5
+          },
+          "Spider": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 6
+          }
+        },
+        "negative_hits": 0
+      }
+    },
+    "roach-fast": {
+      "before": {
+        "frames": 13,
+        "expected_class": "Cockroach",
+        "hits": 0,
+        "unmatched_boxes": 0,
+        "wrong_class_frames": 0,
+        "longest_wrong_class_frames": 0,
+        "longest_same_id_frames": 0,
+        "recoveries": [],
+        "width_range_px": [
+          96,
+          144
+        ],
+        "small_truths": 0,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 34.7,
+        "raw_class_counts": {},
+        "observed": [
+          {
+            "key": "roach-fast-0002",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0004",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0006",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0008",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0010",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0012",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0014",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0016",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0018",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0020",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0022",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0024",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0026",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 13
+          },
+          "Spider": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "negative_hits": 0,
+        "longest_false_id_frames": 0
+      },
+      "candidate": {
+        "frames": 13,
+        "expected_class": "Cockroach",
+        "hits": 0,
+        "unmatched_boxes": 0,
+        "wrong_class_frames": 0,
+        "longest_wrong_class_frames": 0,
+        "longest_same_id_frames": 0,
+        "recoveries": [],
+        "width_range_px": [
+          96,
+          144
+        ],
+        "small_truths": 0,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 31.95,
+        "raw_class_counts": {},
+        "observed": [
+          {
+            "key": "roach-fast-0002",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0004",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0006",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0008",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0010",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0012",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0014",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0016",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0018",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0020",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0022",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0024",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-fast-0026",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 13
+          },
+          "Spider": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "negative_hits": 0,
+        "longest_false_id_frames": 0
+      }
+    },
+    "roach-slow": {
+      "before": {
+        "frames": 13,
+        "expected_class": "Cockroach",
+        "hits": 0,
+        "unmatched_boxes": 0,
+        "wrong_class_frames": 0,
+        "longest_wrong_class_frames": 0,
+        "longest_same_id_frames": 0,
+        "recoveries": [],
+        "width_range_px": [
+          105,
+          157
+        ],
+        "small_truths": 0,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 37.09,
+        "raw_class_counts": {},
+        "observed": [
+          {
+            "key": "roach-slow-0253",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0258",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0263",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0268",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0273",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0278",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0283",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0288",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0293",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0298",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0303",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0308",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0313",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 13
+          },
+          "Spider": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "negative_hits": 0,
+        "longest_false_id_frames": 0
+      },
+      "candidate": {
+        "frames": 13,
+        "expected_class": "Cockroach",
+        "hits": 0,
+        "unmatched_boxes": 0,
+        "wrong_class_frames": 0,
+        "longest_wrong_class_frames": 0,
+        "longest_same_id_frames": 0,
+        "recoveries": [],
+        "width_range_px": [
+          105,
+          157
+        ],
+        "small_truths": 0,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 31.46,
+        "raw_class_counts": {},
+        "observed": [
+          {
+            "key": "roach-slow-0253",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0258",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0263",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0268",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0273",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0278",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0283",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0288",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0293",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0298",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0303",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0308",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-0313",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 13
+          },
+          "Spider": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "negative_hits": 0,
+        "longest_false_id_frames": 0
+      }
+    },
+    "spider-jump": {
+      "before": {
+        "frames": 13,
+        "expected_class": "Spider",
+        "hits": 0,
+        "unmatched_boxes": 0,
+        "wrong_class_frames": 0,
+        "longest_wrong_class_frames": 0,
+        "longest_same_id_frames": 0,
+        "recoveries": [],
+        "width_range_px": [
+          147,
+          205
+        ],
+        "small_truths": 0,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 33.2,
+        "raw_class_counts": {},
+        "observed": [
+          {
+            "key": "spider-jump-0982",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-0988",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-0994",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1000",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1006",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1012",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1018",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1024",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1030",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1036",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1042",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1048",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1054",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "Spider": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 13
+          }
+        },
+        "negative_hits": 0,
+        "longest_false_id_frames": 0
+      },
+      "candidate": {
+        "frames": 13,
+        "expected_class": "Spider",
+        "hits": 0,
+        "unmatched_boxes": 0,
+        "wrong_class_frames": 0,
+        "longest_wrong_class_frames": 0,
+        "longest_same_id_frames": 0,
+        "recoveries": [],
+        "width_range_px": [
+          147,
+          205
+        ],
+        "small_truths": 0,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 31.98,
+        "raw_class_counts": {},
+        "observed": [
+          {
+            "key": "spider-jump-0982",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-0988",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-0994",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1000",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1006",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1012",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1018",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1024",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1030",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1036",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1042",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1048",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-1054",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "Spider": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 13
+          }
+        },
+        "negative_hits": 0,
+        "longest_false_id_frames": 0
+      }
+    },
+    "spider-rise": {
+      "before": {
+        "frames": 13,
+        "expected_class": "Spider",
+        "hits": 3,
+        "unmatched_boxes": 0,
+        "wrong_class_frames": 0,
+        "longest_wrong_class_frames": 0,
+        "longest_same_id_frames": 3,
+        "recoveries": [],
+        "width_range_px": [
+          163,
+          163
+        ],
+        "small_truths": 0,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 33.91,
+        "raw_class_counts": {
+          "Spider": 6
+        },
+        "observed": [
+          {
+            "key": "spider-rise-0564",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0571",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0578",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0585",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0592",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0599",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0606",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0613",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0620",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0627",
+            "match": {
+              "label": "Spider",
+              "id": "8edff694c5b6:left:1",
+              "confidence": 0.5521581768989563,
+              "iou": 0.7455825516458454
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "8edff694c5b6:left:1",
+                "confidence": 0.5521581768989563,
+                "iou": 0.7455825516458454
+              }
+            ]
+          },
+          {
+            "key": "spider-rise-0634",
+            "match": {
+              "label": "Spider",
+              "id": "8edff694c5b6:left:1",
+              "confidence": 0.5078797936439514,
+              "iou": 0.7404203423950484
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "8edff694c5b6:left:1",
+                "confidence": 0.5078797936439514,
+                "iou": 0.7404203423950484
+              }
+            ]
+          },
+          {
+            "key": "spider-rise-0641",
+            "match": {
+              "label": "Spider",
+              "id": "8edff694c5b6:left:1",
+              "confidence": 0.5616621375083923,
+              "iou": 0.7390502067323717
+            },
+            "proposals": [
+              {
+                "label": "Spider",
+                "id": "8edff694c5b6:left:1",
+                "confidence": 0.5616621375083923,
+                "iou": 0.7390502067323717
+              }
+            ]
+          },
+          {
+            "key": "spider-rise-0648",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "Spider": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 10
+          }
+        },
+        "negative_hits": 0,
+        "longest_false_id_frames": 0
+      },
+      "candidate": {
+        "frames": 13,
+        "expected_class": "Spider",
+        "hits": 0,
+        "unmatched_boxes": 0,
+        "wrong_class_frames": 0,
+        "longest_wrong_class_frames": 0,
+        "longest_same_id_frames": 0,
+        "recoveries": [],
+        "width_range_px": [
+          163,
+          163
+        ],
+        "small_truths": 0,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 34.27,
+        "raw_class_counts": {},
+        "observed": [
+          {
+            "key": "spider-rise-0564",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0571",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0578",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0585",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0592",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0599",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0606",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0613",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0620",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0627",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0634",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0641",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-rise-0648",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "Spider": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 13
+          }
+        },
+        "negative_hits": 0,
+        "longest_false_id_frames": 0
+      }
+    },
+    "robot-negative": {
+      "before": {
+        "frames": 9,
+        "expected_class": null,
+        "hits": 0,
+        "unmatched_boxes": 0,
+        "wrong_class_frames": 0,
+        "longest_wrong_class_frames": 0,
+        "longest_same_id_frames": 0,
+        "recoveries": [],
+        "width_range_px": null,
+        "small_truths": 0,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 33.3,
+        "raw_class_counts": {},
+        "observed": [
+          {
+            "key": "robot-negative-0112",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0118",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0124",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0130",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0136",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0142",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0148",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0154",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0160",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "Spider": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "negative_hits": 0,
+        "longest_false_id_frames": 0
+      },
+      "candidate": {
+        "frames": 9,
+        "expected_class": null,
+        "hits": 0,
+        "unmatched_boxes": 0,
+        "wrong_class_frames": 0,
+        "longest_wrong_class_frames": 0,
+        "longest_same_id_frames": 0,
+        "recoveries": [],
+        "width_range_px": null,
+        "small_truths": 0,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 33.71,
+        "raw_class_counts": {},
+        "observed": [
+          {
+            "key": "robot-negative-0112",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0118",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0124",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0130",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0136",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0142",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0148",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0154",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0160",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "Spider": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "negative_hits": 0,
+        "longest_false_id_frames": 0
+      },
+      "v16_reference": {
+        "frames": 9,
+        "expected_class": null,
+        "hits": 0,
+        "unmatched_boxes": 4,
+        "wrong_class_frames": 0,
+        "longest_wrong_class_frames": 0,
+        "longest_same_id_frames": 0,
+        "recoveries": [],
+        "width_range_px": null,
+        "small_truths": 0,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 210.72,
+        "raw_class_counts": {
+          "Cockroach": 4
+        },
+        "observed": [
+          {
+            "key": "robot-negative-0112",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0118",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0124",
+            "match": null,
+            "proposals": [
+              {
+                "label": "Cockroach",
+                "id": "56bce5b8cf27:left:1",
+                "confidence": 0.8944739103317261,
+                "iou": null
+              }
+            ]
+          },
+          {
+            "key": "robot-negative-0130",
+            "match": null,
+            "proposals": [
+              {
+                "label": "Cockroach",
+                "id": "56bce5b8cf27:left:1",
+                "confidence": 0.9433398246765137,
+                "iou": null
+              }
+            ]
+          },
+          {
+            "key": "robot-negative-0136",
+            "match": null,
+            "proposals": [
+              {
+                "label": "Cockroach",
+                "id": "56bce5b8cf27:left:1",
+                "confidence": 0.9056602120399475,
+                "iou": null
+              }
+            ]
+          },
+          {
+            "key": "robot-negative-0142",
+            "match": null,
+            "proposals": [
+              {
+                "label": "Cockroach",
+                "id": "56bce5b8cf27:left:1",
+                "confidence": 0.7569320797920227,
+                "iou": null
+              }
+            ]
+          },
+          {
+            "key": "robot-negative-0148",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0154",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "robot-negative-0160",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 4,
+            "fn": 0
+          },
+          "Spider": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "negative_hits": 4,
+        "longest_false_id_frames": 4
+      }
+    },
+    "roach-slow-half-scale": {
+      "before": {
+        "frames": 13,
+        "expected_class": "Cockroach",
+        "hits": 0,
+        "unmatched_boxes": 0,
+        "wrong_class_frames": 0,
+        "longest_wrong_class_frames": 0,
+        "longest_same_id_frames": 0,
+        "recoveries": [],
+        "width_range_px": [
+          53,
+          79
+        ],
+        "small_truths": 4,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 33.72,
+        "raw_class_counts": {},
+        "observed": [
+          {
+            "key": "roach-slow-half-scale-0253",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0258",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0263",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0268",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0273",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0278",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0283",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0288",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0293",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0298",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0303",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0308",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0313",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 13
+          },
+          "Spider": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "negative_hits": 0,
+        "longest_false_id_frames": 0
+      },
+      "candidate": {
+        "frames": 13,
+        "expected_class": "Cockroach",
+        "hits": 0,
+        "unmatched_boxes": 0,
+        "wrong_class_frames": 0,
+        "longest_wrong_class_frames": 0,
+        "longest_same_id_frames": 0,
+        "recoveries": [],
+        "width_range_px": [
+          53,
+          79
+        ],
+        "small_truths": 4,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 34.61,
+        "raw_class_counts": {},
+        "observed": [
+          {
+            "key": "roach-slow-half-scale-0253",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0258",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0263",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0268",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0273",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0278",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0283",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0288",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0293",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0298",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0303",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0308",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "roach-slow-half-scale-0313",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 13
+          },
+          "Spider": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        },
+        "negative_hits": 0,
+        "longest_false_id_frames": 0
+      }
+    },
+    "spider-jump-half-scale": {
+      "before": {
+        "frames": 13,
+        "expected_class": "Spider",
+        "hits": 0,
+        "unmatched_boxes": 0,
+        "wrong_class_frames": 0,
+        "longest_wrong_class_frames": 0,
+        "longest_same_id_frames": 0,
+        "recoveries": [],
+        "width_range_px": [
+          73,
+          102
+        ],
+        "small_truths": 0,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 32.79,
+        "raw_class_counts": {},
+        "observed": [
+          {
+            "key": "spider-jump-half-scale-0982",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-0988",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-0994",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1000",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1006",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1012",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1018",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1024",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1030",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1036",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1042",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1048",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1054",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "Spider": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 13
+          }
+        },
+        "negative_hits": 0,
+        "longest_false_id_frames": 0
+      },
+      "candidate": {
+        "frames": 13,
+        "expected_class": "Spider",
+        "hits": 0,
+        "unmatched_boxes": 0,
+        "wrong_class_frames": 0,
+        "longest_wrong_class_frames": 0,
+        "longest_same_id_frames": 0,
+        "recoveries": [],
+        "width_range_px": [
+          73,
+          102
+        ],
+        "small_truths": 0,
+        "small_hits": 0,
+        "median_reply_ms_excluding_first": 30.84,
+        "raw_class_counts": {},
+        "observed": [
+          {
+            "key": "spider-jump-half-scale-0982",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-0988",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-0994",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1000",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1006",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1012",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1018",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1024",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1030",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1036",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1042",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1048",
+            "match": null,
+            "proposals": []
+          },
+          {
+            "key": "spider-jump-half-scale-1054",
+            "match": null,
+            "proposals": []
+          }
+        ],
+        "by_class": {
+          "Cockroach": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "Spider": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 13
+          }
+        },
+        "negative_hits": 0,
+        "longest_false_id_frames": 0
+      }
+    }
+  },
+  "scope": "CPU PC PICF whole frames; protected snapshots and separately marked motion diagnostics."
+}
