@@ -1,0 +1,407 @@
+{
+  "baseline_sha256": "563ce6d555051ab341f82645fcfe375cede67de7b57282493e358803178d5310",
+  "variants": {
+    "20-60": {
+      "source": {
+        "commit": "db206893259022be18d734cf528cb3a2e5504bdb",
+        "files_sha256": {
+          "Assets/Scripts/MagicMR/TabletopHandSample.cs": "583c4f9f8bd4fbf4d6426b0bc3830c67f2ad7d91e9705f38265008bc30925865",
+          "Assets/Scripts/MagicMR/TabletopGestureRules.cs": "7b92346ba81fe3143e4ce4a8ffc4b51df44f475fb9d01c6d8fca1a082f953516",
+          "Assets/Scripts/MagicMR/StudySpec.cs": "8b1b9496d8f2bd73fd75b66a75fcdbcb2912ccd4844b96612eebd9d6cc0e3100",
+          "Assets/Scripts/MagicMR/RealityEditor.cs": "0f718af8de4500c3fa287482a11479a2d9d7b6cf3abaa80615670c550229d14b"
+        },
+        "harness_sha256": "17a95246201d6316572bb992e55578604e1a8d11285e41a9740f59e9126520aa",
+        "engine_sha256": "3b9e6c0e88a6d0c52c61fe7ee02d6244c114370e1379e0899cab9ad8067a945d",
+        "worker_sha256": "09e549f2c1c3382ace4d4626fff68cd3af9424552aebb02be9ff0b153ce7f3e5",
+        "candidate_rules_sha256": "54fd37c48980abc2893831af5aec75b68d57e8102b74c41df1f66c7cd56571fd"
+      },
+      "aggregate": {
+        "sequences": 144,
+        "annotation_windows": 576,
+        "frames": 83170,
+        "invalid_frames": 14,
+        "median_delta_ms": 50.832,
+        "gaps_over_150ms": 92,
+        "gap_max_ms": 333.336,
+        "counts_by_annotation": {
+          "CIRCLE": {
+            "annotations": 36,
+            "exact_match_windows": 13,
+            "match_with_tolerance_windows": 13,
+            "actions_with_tolerance": {
+              "Agency": 13
+            },
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 0,
+            "windows_with_pointing": 36
+          },
+          "CROSS": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {
+              "Agency": 1,
+              "Rule": 1
+            },
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 1,
+            "windows_with_pointing": 36
+          },
+          "DENY": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 0,
+            "windows_with_pointing": 36
+          },
+          "FOUR": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 36,
+            "windows_with_pointing": 0
+          },
+          "GRAB": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {
+              "Deconstruction": 4
+            },
+            "windows_with_fist": 15,
+            "windows_with_open_hand": 36,
+            "windows_with_pointing": 11
+          },
+          "KNOB": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 36,
+            "windows_with_pointing": 1
+          },
+          "LEFT": {
+            "annotations": 36,
+            "exact_match_windows": 1,
+            "match_with_tolerance_windows": 1,
+            "actions_with_tolerance": {
+              "Rule": 1
+            },
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 36,
+            "windows_with_pointing": 0
+          },
+          "MENU": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 36,
+            "windows_with_pointing": 0
+          },
+          "OK": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 36,
+            "windows_with_pointing": 0
+          },
+          "ONE": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 36,
+            "windows_with_open_hand": 0,
+            "windows_with_pointing": 1
+          },
+          "PINCH": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 5,
+            "windows_with_pointing": 33
+          },
+          "RIGHT": {
+            "annotations": 36,
+            "exact_match_windows": 2,
+            "match_with_tolerance_windows": 2,
+            "actions_with_tolerance": {
+              "Rule": 2
+            },
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 36,
+            "windows_with_pointing": 0
+          },
+          "THREE": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 32,
+            "windows_with_pointing": 6
+          },
+          "TWO": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 33,
+            "windows_with_pointing": 3
+          },
+          "V": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 0,
+            "windows_with_pointing": 36
+          },
+          "WAVE": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {
+              "Deconstruction": 1,
+              "Rule": 1
+            },
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 36,
+            "windows_with_pointing": 0
+          }
+        },
+        "events": {
+          "Deconstruction": 39,
+          "Agency": 14,
+          "Appearance": 46,
+          "Rule": 8
+        },
+        "events_outside_annotation_windows": {
+          "Deconstruction": 34,
+          "Appearance": 46,
+          "Rule": 3
+        },
+        "d_gesture_has_no_verified_annotation": true
+      },
+      "frame_trace_sha256": "1b9394e0de238d3456361c97b478ab7b2a92d269a229a3b0c88037a30c63e7db",
+      "events_sha256": "ef85c3879003ef6a0e3f069d1eff59a434269b881b797a99e6590d55c3d7ab88",
+      "matched_pinch_sequences": []
+    },
+    "20-45": {
+      "source": {
+        "commit": "db206893259022be18d734cf528cb3a2e5504bdb",
+        "files_sha256": {
+          "Assets/Scripts/MagicMR/TabletopHandSample.cs": "583c4f9f8bd4fbf4d6426b0bc3830c67f2ad7d91e9705f38265008bc30925865",
+          "Assets/Scripts/MagicMR/TabletopGestureRules.cs": "7b92346ba81fe3143e4ce4a8ffc4b51df44f475fb9d01c6d8fca1a082f953516",
+          "Assets/Scripts/MagicMR/StudySpec.cs": "8b1b9496d8f2bd73fd75b66a75fcdbcb2912ccd4844b96612eebd9d6cc0e3100",
+          "Assets/Scripts/MagicMR/RealityEditor.cs": "0f718af8de4500c3fa287482a11479a2d9d7b6cf3abaa80615670c550229d14b"
+        },
+        "harness_sha256": "17a95246201d6316572bb992e55578604e1a8d11285e41a9740f59e9126520aa",
+        "engine_sha256": "3b9e6c0e88a6d0c52c61fe7ee02d6244c114370e1379e0899cab9ad8067a945d",
+        "worker_sha256": "09e549f2c1c3382ace4d4626fff68cd3af9424552aebb02be9ff0b153ce7f3e5",
+        "candidate_rules_sha256": "42bb6040f8e90a3e039e2369f93396e27e456779ba9b826bfc0fca6911731765"
+      },
+      "aggregate": {
+        "sequences": 144,
+        "annotation_windows": 576,
+        "frames": 83170,
+        "invalid_frames": 14,
+        "median_delta_ms": 50.832,
+        "gaps_over_150ms": 92,
+        "gap_max_ms": 333.336,
+        "counts_by_annotation": {
+          "CIRCLE": {
+            "annotations": 36,
+            "exact_match_windows": 13,
+            "match_with_tolerance_windows": 13,
+            "actions_with_tolerance": {
+              "Agency": 13
+            },
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 0,
+            "windows_with_pointing": 36
+          },
+          "CROSS": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {
+              "Agency": 1,
+              "Rule": 1
+            },
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 1,
+            "windows_with_pointing": 36
+          },
+          "DENY": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 0,
+            "windows_with_pointing": 36
+          },
+          "FOUR": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 36,
+            "windows_with_pointing": 0
+          },
+          "GRAB": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {
+              "Appearance": 2,
+              "Deconstruction": 4
+            },
+            "windows_with_fist": 15,
+            "windows_with_open_hand": 36,
+            "windows_with_pointing": 11
+          },
+          "KNOB": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 36,
+            "windows_with_pointing": 1
+          },
+          "LEFT": {
+            "annotations": 36,
+            "exact_match_windows": 1,
+            "match_with_tolerance_windows": 1,
+            "actions_with_tolerance": {
+              "Rule": 1
+            },
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 36,
+            "windows_with_pointing": 0
+          },
+          "MENU": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 36,
+            "windows_with_pointing": 0
+          },
+          "OK": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {
+              "Appearance": 1
+            },
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 36,
+            "windows_with_pointing": 0
+          },
+          "ONE": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 36,
+            "windows_with_open_hand": 0,
+            "windows_with_pointing": 1
+          },
+          "PINCH": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 5,
+            "windows_with_pointing": 33
+          },
+          "RIGHT": {
+            "annotations": 36,
+            "exact_match_windows": 2,
+            "match_with_tolerance_windows": 2,
+            "actions_with_tolerance": {
+              "Rule": 2
+            },
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 36,
+            "windows_with_pointing": 0
+          },
+          "THREE": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 32,
+            "windows_with_pointing": 6
+          },
+          "TWO": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 33,
+            "windows_with_pointing": 3
+          },
+          "V": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {},
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 0,
+            "windows_with_pointing": 36
+          },
+          "WAVE": {
+            "annotations": 36,
+            "exact_match_windows": 0,
+            "match_with_tolerance_windows": 0,
+            "actions_with_tolerance": {
+              "Deconstruction": 1,
+              "Rule": 1
+            },
+            "windows_with_fist": 0,
+            "windows_with_open_hand": 36,
+            "windows_with_pointing": 0
+          }
+        },
+        "events": {
+          "Deconstruction": 39,
+          "Appearance": 55,
+          "Agency": 14,
+          "Rule": 8
+        },
+        "events_outside_annotation_windows": {
+          "Deconstruction": 34,
+          "Appearance": 52,
+          "Rule": 3
+        },
+        "d_gesture_has_no_verified_annotation": true
+      },
+      "frame_trace_sha256": "2f829d164fc8254567ec1a3a436a0ba741366a715a91508646cb9e6f49c0d9a5",
+      "events_sha256": "b200f6cbffab033070836576a28f160f043c540f74956b02346c1c9679b08829",
+      "matched_pinch_sequences": []
+    }
+  },
+  "scope": "Same-corpus diagnostic after baseline inspection. No production threshold changed."
+}

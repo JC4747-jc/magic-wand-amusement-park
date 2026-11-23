@@ -1,0 +1,233 @@
+{
+  "source": {
+    "commit": "db206893259022be18d734cf528cb3a2e5504bdb",
+    "files_sha256": {
+      "Assets/Scripts/MagicMR/TabletopHandSample.cs": "583c4f9f8bd4fbf4d6426b0bc3830c67f2ad7d91e9705f38265008bc30925865",
+      "Assets/Scripts/MagicMR/TabletopGestureRules.cs": "7b92346ba81fe3143e4ce4a8ffc4b51df44f475fb9d01c6d8fca1a082f953516",
+      "Assets/Scripts/MagicMR/StudySpec.cs": "8b1b9496d8f2bd73fd75b66a75fcdbcb2912ccd4844b96612eebd9d6cc0e3100",
+      "Assets/Scripts/MagicMR/RealityEditor.cs": "0f718af8de4500c3fa287482a11479a2d9d7b6cf3abaa80615670c550229d14b"
+    },
+    "harness_sha256": "17a95246201d6316572bb992e55578604e1a8d11285e41a9740f59e9126520aa",
+    "engine_sha256": "3b9e6c0e88a6d0c52c61fe7ee02d6244c114370e1379e0899cab9ad8067a945d",
+    "worker_sha256": "276e986ae1089ffd4f8444cba28c924aeb56c872db1a374ea5acdf147fa38fdf"
+  },
+  "downloads": {
+    "test_set.zip": [
+      30532405,
+      "7681657ee2095ae1a6175f37090de5450048ea6a001f011635b9bd98f36c0dc3"
+    ],
+    "test_annotations_fixed.txt": [
+      8060,
+      "8514c61fec5f1ea258bd1f6a89c979b65599afd04b9a382f66b88140cc9f6143"
+    ]
+  },
+  "dataset": "SHREC 2022 HoloLens 2 test set",
+  "source_url": "https://univr-vips.github.io/Shrec22/",
+  "scope": "Production sample creation and gesture rules. World +X as swipe axis. No target, headset alignment or dispatch.",
+  "matches": {
+    "mapping": {
+      "PINCH": "Appearance",
+      "CIRCLE": "Agency",
+      "LEFT": "Rule",
+      "RIGHT": "Rule"
+    },
+    "early_seconds": 0.1,
+    "late_seconds": 0.3
+  },
+  "aggregate": {
+    "sequences": 144,
+    "annotation_windows": 576,
+    "frames": 83170,
+    "invalid_frames": 14,
+    "median_delta_ms": 50.832,
+    "gaps_over_150ms": 92,
+    "gap_max_ms": 333.336,
+    "counts_by_annotation": {
+      "CIRCLE": {
+        "annotations": 36,
+        "exact_match_windows": 15,
+        "match_with_tolerance_windows": 15,
+        "actions_with_tolerance": {
+          "Agency": 15,
+          "Appearance": 1
+        },
+        "windows_with_fist": 0,
+        "windows_with_open_hand": 0,
+        "windows_with_pointing": 36
+      },
+      "CROSS": {
+        "annotations": 36,
+        "exact_match_windows": 0,
+        "match_with_tolerance_windows": 0,
+        "actions_with_tolerance": {
+          "Agency": 1,
+          "Rule": 1
+        },
+        "windows_with_fist": 0,
+        "windows_with_open_hand": 1,
+        "windows_with_pointing": 36
+      },
+      "DENY": {
+        "annotations": 36,
+        "exact_match_windows": 0,
+        "match_with_tolerance_windows": 0,
+        "actions_with_tolerance": {
+          "Appearance": 2
+        },
+        "windows_with_fist": 0,
+        "windows_with_open_hand": 0,
+        "windows_with_pointing": 36
+      },
+      "FOUR": {
+        "annotations": 36,
+        "exact_match_windows": 0,
+        "match_with_tolerance_windows": 0,
+        "actions_with_tolerance": {},
+        "windows_with_fist": 0,
+        "windows_with_open_hand": 36,
+        "windows_with_pointing": 0
+      },
+      "GRAB": {
+        "annotations": 36,
+        "exact_match_windows": 0,
+        "match_with_tolerance_windows": 0,
+        "actions_with_tolerance": {
+          "Appearance": 2,
+          "Deconstruction": 4
+        },
+        "windows_with_fist": 15,
+        "windows_with_open_hand": 36,
+        "windows_with_pointing": 11
+      },
+      "KNOB": {
+        "annotations": 36,
+        "exact_match_windows": 0,
+        "match_with_tolerance_windows": 0,
+        "actions_with_tolerance": {
+          "Appearance": 2
+        },
+        "windows_with_fist": 0,
+        "windows_with_open_hand": 36,
+        "windows_with_pointing": 1
+      },
+      "LEFT": {
+        "annotations": 36,
+        "exact_match_windows": 1,
+        "match_with_tolerance_windows": 1,
+        "actions_with_tolerance": {
+          "Rule": 1
+        },
+        "windows_with_fist": 0,
+        "windows_with_open_hand": 36,
+        "windows_with_pointing": 0
+      },
+      "MENU": {
+        "annotations": 36,
+        "exact_match_windows": 0,
+        "match_with_tolerance_windows": 0,
+        "actions_with_tolerance": {},
+        "windows_with_fist": 0,
+        "windows_with_open_hand": 36,
+        "windows_with_pointing": 0
+      },
+      "OK": {
+        "annotations": 36,
+        "exact_match_windows": 0,
+        "match_with_tolerance_windows": 0,
+        "actions_with_tolerance": {},
+        "windows_with_fist": 0,
+        "windows_with_open_hand": 36,
+        "windows_with_pointing": 0
+      },
+      "ONE": {
+        "annotations": 36,
+        "exact_match_windows": 0,
+        "match_with_tolerance_windows": 0,
+        "actions_with_tolerance": {},
+        "windows_with_fist": 36,
+        "windows_with_open_hand": 0,
+        "windows_with_pointing": 1
+      },
+      "PINCH": {
+        "annotations": 36,
+        "exact_match_windows": 0,
+        "match_with_tolerance_windows": 1,
+        "actions_with_tolerance": {
+          "Appearance": 1
+        },
+        "windows_with_fist": 0,
+        "windows_with_open_hand": 5,
+        "windows_with_pointing": 33
+      },
+      "RIGHT": {
+        "annotations": 36,
+        "exact_match_windows": 2,
+        "match_with_tolerance_windows": 2,
+        "actions_with_tolerance": {
+          "Rule": 2
+        },
+        "windows_with_fist": 0,
+        "windows_with_open_hand": 36,
+        "windows_with_pointing": 0
+      },
+      "THREE": {
+        "annotations": 36,
+        "exact_match_windows": 0,
+        "match_with_tolerance_windows": 0,
+        "actions_with_tolerance": {
+          "Appearance": 1
+        },
+        "windows_with_fist": 0,
+        "windows_with_open_hand": 32,
+        "windows_with_pointing": 6
+      },
+      "TWO": {
+        "annotations": 36,
+        "exact_match_windows": 0,
+        "match_with_tolerance_windows": 0,
+        "actions_with_tolerance": {
+          "Appearance": 2
+        },
+        "windows_with_fist": 0,
+        "windows_with_open_hand": 33,
+        "windows_with_pointing": 3
+      },
+      "V": {
+        "annotations": 36,
+        "exact_match_windows": 0,
+        "match_with_tolerance_windows": 0,
+        "actions_with_tolerance": {},
+        "windows_with_fist": 0,
+        "windows_with_open_hand": 0,
+        "windows_with_pointing": 36
+      },
+      "WAVE": {
+        "annotations": 36,
+        "exact_match_windows": 0,
+        "match_with_tolerance_windows": 0,
+        "actions_with_tolerance": {
+          "Deconstruction": 1,
+          "Rule": 1
+        },
+        "windows_with_fist": 0,
+        "windows_with_open_hand": 36,
+        "windows_with_pointing": 0
+      }
+    },
+    "events": {
+      "Deconstruction": 39,
+      "Appearance": 298,
+      "Agency": 16,
+      "Rule": 7
+    },
+    "events_outside_annotation_windows": {
+      "Deconstruction": 34,
+      "Appearance": 287,
+      "Rule": 2
+    },
+    "d_gesture_has_no_verified_annotation": true
+  },
+  "frame_trace_sha256": "a1bc2ad09cfc415122c8681e1c942db45487531a56bfc2a6bca873b9f2bb9fad",
+  "window_sha256": "636a3704a42f6422dac5632f8fcd02067465c9e153939a37c76737932e371f5c",
+  "events_sha256": "603d7dfdbd7de854031d4d8ed17dc2719684d3cd35625e1a31dab2e4acce06f1"
+}
