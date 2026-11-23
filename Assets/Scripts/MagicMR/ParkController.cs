@@ -615,13 +615,51 @@ namespace MagicMR
 #if XR_HANDS_1_1_OR_NEWER
         void OnUpdatedHands(XRHandSubsystem subsystem,XRHandSubsystem.UpdateSuccessFlags flags,XRHandSubsystem.UpdateType type) {
             if(type!=XRHandSubsystem.UpdateType.Dynamic)return;
-            if((flags&XRHandSubsystem.UpdateSuccessFlags.RightHandJoints)==0) {
-                ResetHandInteraction();lastHandSampleAt=-1;return;
+            var recorder=ParkHandEvidence.Active;
+            bool recording=!simulation&&recorder!=null;
+            bool fresh=(flags&XRHandSubsystem.UpdateSuccessFlags.RightHandJoints)!=0;
+            ParkHandEvidence.Row observation=recording?CaptureHandContext(fresh):default;
+            TabletopHandSample frame=default;
+            bool valid=false;
+            EditDimension recognized=EditDimension.None;
+            if(!fresh) {
+                ResetHandInteraction();lastHandSampleAt=-1;
+            } else {
+                var camera=Camera.main;
+                valid=TabletopHandSample.TryRead(subsystem.rightHand,camera?camera.transform.parent:null,
+                    camera?camera.transform.right:Vector3.right,Time.unscaledTime,out frame);
+                recognized=ProcessHandSample(frame,valid);
             }
-            var camera=Camera.main;
-            bool valid=TabletopHandSample.TryRead(subsystem.rightHand,camera?camera.transform.parent:null,
-                camera?camera.transform.right:Vector3.right,Time.unscaledTime,out var frame);
-            ProcessHandSample(frame,valid);
+            if(recording)RecordHandOutcome(recorder,observation,frame,valid,recognized);
+        }
+        ParkHandEvidence.Row CaptureHandContext(bool fresh) {
+            return new ParkHandEvidence.Row {
+                scene=Profile,target_before=selected?selected.instanceId:null,target_tracked_before=selected&&selected.tracked,
+                joints_fresh=fresh,sample_seconds=Time.unscaledTime,target_distance_m=-1,
+                ui_capture_before=rightHandUiCapture,fit_pending_before=FitConfirmationPending,
+                plane_pending_before=PlaneConfirmationPending,release_pending_before=requireGestureRelease
+            };
+        }
+        void RecordHandOutcome(ParkHandEvidence recorder,ParkHandEvidence.Row row,TabletopHandSample frame,
+            bool valid,EditDimension recognized) {
+            row.sample_valid=valid;
+            if(valid) {
+                var hand=frame.gesture;
+                row.sample_seconds=hand.time;row.pinch_m=hand.pinch;
+                row.palm=hand.palm;row.index_tip=hand.index;row.thumb_tip=frame.thumb;row.index_base=frame.indexBase;
+                row.swipe_axis=hand.swipeAxis;row.extension=frame.extension;
+                row.fist=hand.fist;row.open=hand.open;row.pointing=hand.pointing;
+                if(selected) {
+                    var center=selected.InteractionCenter;
+                    var metres=Vector3.Distance(frame.ClosestTo(center),center);
+                    if(float.IsFinite(metres))row.target_distance_m=metres;
+                }
+            }
+            row.target_after=selected?selected.instanceId:null;
+            row.in_reach_after=gestureReach.Allowed;
+            row.recognized=recognized;
+            row.spell_accepted=recognized!=EditDimension.None&&LastMagicAccepted;
+            recorder.Append(row,Time.unscaledTime);
         }
 #endif
         void OnDisable() {

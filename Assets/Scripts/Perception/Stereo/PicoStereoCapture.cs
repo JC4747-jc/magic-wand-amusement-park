@@ -46,6 +46,7 @@ public sealed class PicoStereoCapture : MonoBehaviour
     byte[] pendingLeftGray,pendingRightGray,pendingLeftRgba;
     long lastRecordedFrame=-1;
     long pendingReplyCaptureNs;
+    MagicMR.ParkHandEvidence parkHandEvidence;
     public void RecordAcceptedPose(long frameId,long ns,Pose head,Pose camera,long sentTimestampMs,byte sceneId) {
         if(!recordStereo || recordDirectory==null || pendingRecord==null || pendingRecord.left_ns!=ns ||
             recordedPairs>=RecordingPairLimit || Time.unscaledTime<nextRecord || frameId==lastRecordedFrame)return;
@@ -80,9 +81,10 @@ public sealed class PicoStereoCapture : MonoBehaviour
         try
         {
             string destination=Path.Combine(recordDirectory,captureNs.ToString(invariant)+"-reply.json");
-            using var stream=new FileStream(destination,FileMode.CreateNew,FileAccess.Write);
             byte[] bytes=Encoding.UTF8.GetBytes(json);
-            stream.Write(bytes,0,bytes.Length);
+            using(var stream=new FileStream(destination,FileMode.CreateNew,FileAccess.Write))
+                stream.Write(bytes,0,bytes.Length);
+            parkHandEvidence?.NoteRecordedReply(frameId,captureNs,Time.unscaledTime);
         }
         catch(Exception error)
         {
@@ -143,6 +145,7 @@ public sealed class PicoStereoCapture : MonoBehaviour
 
             string id = DateTime.UtcNow.ToString("yyyyMMdd-HHmmss", invariant);
             pendingReplyCaptureNs=0;
+            recordDirectory=null;
             recordStereo |= File.Exists(Path.Combine(Application.persistentDataPath,"record-stereo.enabled"));
             if(recordStereo) { recordDirectory=Path.Combine(Application.persistentDataPath,"stereo-replay-"+id); Directory.CreateDirectory(recordDirectory); }
             journal?.Dispose();
@@ -163,6 +166,8 @@ public sealed class PicoStereoCapture : MonoBehaviour
             leftCapturing = true;
             Require(PXR_CameraImage.BeginCameraCapture(Right), "Begin right capture");
             rightCapturing = true;
+            if(parkReceiver)
+                parkHandEvidence=MagicMR.ParkHandEvidence.TryOpen(recordDirectory,Application.persistentDataPath,Time.unscaledTime);
             phase = "SEARCHING_DEPTH";
             detail = "Aim the yellow crosshair at a textured object 0.4-3 m away.";
             Trace("CAPTURE_BEGIN center=" + Math.Round(leftK.principalPoint.X) + "," +
@@ -222,6 +227,8 @@ public sealed class PicoStereoCapture : MonoBehaviour
         }
         finally
         {
+            parkHandEvidence?.Dispose();
+            parkHandEvidence=null;
             StopAndDestroyCameras();
             running = false;
         }
@@ -231,6 +238,8 @@ public sealed class PicoStereoCapture : MonoBehaviour
     {
         if (paused)
         {
+            parkHandEvidence?.Dispose();
+            parkHandEvidence=null;
             // Permission dialogs before capture must not cancel camera setup.
             if (leftCapturing || rightCapturing) stopping = true;
             locator?.Invalidate("PAUSED");
@@ -476,6 +485,8 @@ public sealed class PicoStereoCapture : MonoBehaviour
         if(Active==this)Active=null;
         destroyed = true;
         stopping = true;
+        parkHandEvidence?.Dispose();
+        parkHandEvidence=null;
         StopAndDestroyCameras();
         Trace("APP_DESTROY pairs=" + pairCount);
         journal?.Dispose();
