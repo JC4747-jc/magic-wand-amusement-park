@@ -46,7 +46,7 @@ import numpy as np
 import torch
 from ultralytics import YOLO
 from pose_availability import PoseAvailability
-from detector_config import WEIGHTS_PATH, DEFAULT_CONF, DEFAULT_IMGSZ, DEFAULT_IOU, load_detector
+from detector_config import WEIGHTS_PATH, DEFAULT_IMGSZ, DEFAULT_IOU, load_detector
 
 POSE_AVAILABILITY = PoseAvailability()
 
@@ -55,6 +55,11 @@ PORT = 5005
 MAGIC = b"PICF"
 VERSION = 1
 ACTIVE_MODEL_LABEL = WEIGHTS_PATH.stem
+
+# Send plausible candidates to Unity; acquisition and existing-target association
+# have separate quality gates there. Keep the shared pose detector defaults intact.
+DEFAULT_CANDIDATE_CONF = 0.28
+DEFAULT_MAX_DETECTIONS = 5
 
 
 UNITY_CLASS_ALIASES = {
@@ -657,8 +662,8 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument(
     "--conf",
     type=float,
-    default=DEFAULT_CONF,
-    help="Minimum detection confidence (default: 0.399)",
+    default=DEFAULT_CANDIDATE_CONF,
+    help="Candidate confidence floor; Unity gates target acquisition/tracking (default: 0.28)",
   )
   parser.add_argument(
     "--iou",
@@ -669,8 +674,8 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument(
     "--max-det",
     type=int,
-    default=1,
-    help="Maximum detections returned per frame (default: 1)",
+    default=DEFAULT_MAX_DETECTIONS,
+    help="Maximum candidate detections returned per frame (default: 5)",
   )
   return parser.parse_args()
 

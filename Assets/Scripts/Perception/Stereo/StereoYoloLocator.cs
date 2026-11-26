@@ -18,6 +18,8 @@ namespace Perception
         public Transform trackedCamera;
         public Transform lighter;
         public Text debugText;
+        public bool showDetectionOverlay = true;
+        LighterDetectionOverlay detectionOverlay;
         public float maxResultAgeSeconds = 1.5f;
         [Tooltip("Bounded local evidence: at most 60 detected pairs and 6 empty pairs per launch. No pose server.")]
         public bool recordStereoDiagnostics;
@@ -29,6 +31,45 @@ namespace Perception
         [Tooltip("VisualAverage follows only YOLO + stereo measurements. HybridGrip enables left-hand continuation.")]
         public LighterFollowMode followMode = LighterFollowMode.VisualAverage;
         public bool UsesVisualAverage => followMode == LighterFollowMode.VisualAverage;
+        public const float VisualAcquireConfidence = .5f;
+        public const float VisualTrackingConfidence = .28f;
+        ObjectDetectionEvent verifiedDetection;
+        Vector3 verifiedPosition;
+        float verifiedCaptureAt = float.NegativeInfinity;
+
+        // Only stereo-verified observations can authorize a low-score continuation.
+        // Image coordinates alone cannot establish or revive a lost physical target.
+        public bool CanContinueVisualDetection(ObjectDetectionEvent detection)
+        {
+            float dt = capturedAt - verifiedCaptureAt;
+            if (!UsesVisualAverage || !tabletopLock.IsLocked || !tracking || paused ||
+                !float.IsFinite(dt) || dt <= 0 || dt > .5f ||
+                Time.realtimeSinceStartup - capturedAt < 0 || Time.realtimeSinceStartup - capturedAt > maxResultAgeSeconds ||
+                !float.IsFinite(detection.confidence) || detection.confidence < VisualTrackingConfidence ||
+                !string.Equals(detection.className, "Lighter", StringComparison.OrdinalIgnoreCase)) return false;
+            float width = detection.x2 - detection.x1, height = detection.y2 - detection.y1;
+            float oldWidth = verifiedDetection.x2 - verifiedDetection.x1;
+            float oldHeight = verifiedDetection.y2 - verifiedDetection.y1;
+            if (!(width > oldWidth * .6f && width < oldWidth * 1.5f &&
+                height > oldHeight * .65f && height < oldHeight * 1.35f)) return false;
+            var delta = new Vector2((detection.x1 + detection.x2 - verifiedDetection.x1 - verifiedDetection.x2) * .5f,
+                (detection.y1 + detection.y2 - verifiedDetection.y1 - verifiedDetection.y2) * .5f);
+            return float.IsFinite(delta.sqrMagnitude) && delta.magnitude <=
+                1.5f * new Vector2(Mathf.Max(width, oldWidth), Mathf.Max(height, oldHeight)).magnitude;
+        }
+
+        void RememberVerifiedDetection(ObjectDetectionEvent detection, Vector3 position)
+        {
+            verifiedDetection = detection;
+            verifiedPosition = position;
+            verifiedCaptureAt = capturedAt;
+        }
+
+        public bool IsCurrentVisualDetectionVerified(ObjectDetectionEvent detection)
+            => UsesVisualAverage && float.IsFinite(verifiedCaptureAt) && verifiedCaptureAt == capturedAt &&
+                detection.x1 == verifiedDetection.x1 && detection.x2 == verifiedDetection.x2 &&
+                detection.y1 == verifiedDetection.y1 && detection.y2 == verifiedDetection.y2 &&
+                detection.confidence == verifiedDetection.confidence && detection.className == verifiedDetection.className;
         bool ProtectVision => !UsesVisualAverage && gestureRecognizer != null && gestureRecognizer.HoldVisualFollowing;
         LighterFollowMode appliedFollowMode = LighterFollowMode.VisualAverage;
         struct TimedPose { public long time; public Pose pose; }
@@ -120,6 +161,7 @@ namespace Perception
             holdFollowing = false;
             registeredHeight = registeredBottomOffset = registeredWidth = 0;
             positionGuard.Reset();
+            verifiedCaptureAt = float.NegativeInfinity;
             waiting = false; left = null; validAt = -100;
             lighter.GetComponent<MagicMR.RealityEditor>()?.ResetTarget();
             if (lighter.parent != null && lighter.parent.name == "Anchor_Lighter")
@@ -181,6 +223,13 @@ namespace Perception
         }
         void Update()
         {
+            if (showDetectionOverlay && detectionOverlay == null)
+                detectionOverlay = gameObject.AddComponent<LighterDetectionOverlay>();
+            if (detectionOverlay != null)
+            {
+                detectionOverlay.enabled = showDetectionOverlay && tracking && !paused;
+                detectionOverlay.Placement(InteractionPosition, showDetectionOverlay && TargetLocated);
+            }
             UpdateFollowingHold();
             var head = InputDevices.GetDeviceAtXRNode(XRNode.CenterEye);
             tracking = !paused && head.TryGetFeatureValue(CommonUsages.isTracked, out bool tracked) && tracked;
@@ -213,11 +262,11 @@ namespace Perception
             var gesture = FindFirstObjectByType<MagicMR.TabletopGestureRecognizer>();
             RecordTrackingDiagnostics();
             if (debugText != null) debugText.text = (recordStereoDiagnostics ? "POSITION REPAIR 1.10.1 / POSE OFF\n" :
-                UsesVisualAverage ? "VISUAL FOLLOW 1.10.0 (3 frames)\n" : "HYBRID GRIP 1.10.0\n") +
+                UsesVisualAverage ? "VISUAL FOLLOW / BOX DEBUG\n" : "HYBRID GRIP 1.10.0\n") +
                 (TargetLocated && !summoned ? (CanSummon ? "READY - thumbs-up to summon" : "WAIT TO SUMMON - " + state) :
                 InteractionReady ? (IsHeld ? (grip.UsingPalmFallback ? "FOLLOW - brief palm fallback" : !ObjectRecent ? "FOLLOW LEFT GRIP - vision pending" : "FOLLOW LEFT GRIP + vision") : grip.IsHolding ? "VERIFY PICKUP - keep lighter visible" : holdFollowing ? "HOLD - right hand casting" :
                     Time.realtimeSinceStartup - validAt < 1f ? "FOLLOW - right hand to cast" : "HOLD - " + state) : state) +
-                "\nPC: " + (transport != null && transport.IsConnected ? "connected" : "disconnected") +
+                (showDetectionOverlay ? "\nGreen: stereo box / Cyan: applied point\nYellow: NO DEPTH (1m reference only)\nState: " + state : "") + "\nPC: " + (transport != null && transport.IsConnected ? "connected" : "disconnected") +
                 "\nFrame: " + pendingId + (waiting ? " (waiting)" : "") +
                 (recordStereoDiagnostics ? "\nYOLO: " + detectionStatus + "\nDepth: " + depthStatus + "\nReply: " + replyStatus : "") +
                 "\nDistance: " + (fresh ? distance.ToString("F3") + " m" : "--") +
@@ -286,6 +335,7 @@ namespace Perception
         void OnDetection(DetectionFrame frame)
         {
             if (frame.frameId != pendingId) return;
+            DrawDetectionOverlay(frame);
             lastReplyAt=Time.realtimeSinceStartup;lastReplyAgeMs=(lastReplyAt-capturedAt)*1000;
             replyStatus = $"{lastReplyAgeMs:F0} ms capture age";
             waiting = false;
@@ -300,6 +350,28 @@ namespace Perception
             }
             else if (Time.realtimeSinceStartup - validAt > .6f) state = "CONFIRMING_LIGHTER";
         }
+        void DrawDetectionOverlay(DetectionFrame frame)
+        {
+            if (!showDetectionOverlay || detectionOverlay == null || left == null || right == null) return;
+            detectionOverlay.BeginFrame();
+            int shown = 0;
+            foreach (var d in frame.detections)
+            {
+                if (!string.Equals(d.className, "Lighter", StringComparison.OrdinalIgnoreCase) || !d.HasBBox) continue;
+                float y1 = sender.FlipVerticallyBeforeEncode ? d.y1 : 480-d.y2;
+                float y2 = sender.FlipVerticallyBeforeEncode ? d.y2 : 480-d.y1;
+                if (!float.IsFinite(d.x1+d.x2+y1+y2) || d.x1<0 || d.x2>640 || y1<0 || y2>480 || d.x2<=d.x1 || y2<=y1) continue;
+                var rect = Rect.MinMaxRect(d.x1,y1,d.x2,y2);
+                int sx = Mathf.Min(24,Mathf.FloorToInt(rect.width*.3f)-5);
+                int sy = Mathf.Min(16,Mathf.FloorToInt(rect.height*.3f)-4);
+                var estimate = sx>=2 && sy>=2 ? StereoPatchMatcher.EstimateDepth(left,right,640,480,
+                    Mathf.RoundToInt(rect.center.x),Mathf.RoundToInt(rect.center.y),intrinsics.x,baseline,sx,sy) : default;
+                detectionOverlay.Box(rect,estimate.valid ? estimate.depthMeters : 1f,estimate.valid,
+                    intrinsics,cameraPose,capturePose);
+                if (++shown >= 5) break;
+            }
+        }
+
         public bool TryLocate(ObjectDetectionEvent detection, out Vector3 position, out string reason)
         {
             UpdateFollowingHold();
@@ -314,10 +386,21 @@ namespace Perception
                 sender.LastSentWidth != 640 || sender.LastSentHeight != 480)
             { reason = "StereoFrameSizeMismatch"; Invalidate(reason); return false; }
             if (!detection.HasBBox) return false;
+            bool lowScoreContinuation = false;
+            if (UsesVisualAverage)
+            {
+                lowScoreContinuation = detection.confidence < VisualAcquireConfidence && CanContinueVisualDetection(detection);
+                if (!float.IsFinite(detection.confidence) ||
+                    (detection.confidence < VisualAcquireConfidence && !lowScoreContinuation))
+                { reason = tabletopLock.IsLocked ? "VISUAL_QUALITY_GATE" : "ACQUIRE_CONFIDENCE_GATE"; Invalidate(reason); return false; }
+                if (tabletopLock.IsLocked && capturedAt <= verifiedCaptureAt)
+                { reason = "DUPLICATE_VISUAL_FRAME"; return false; }
+            }
             // EncodeToJPG exports top row first; Texture2D row zero is bottom.
             float x1 = detection.x1, x2 = detection.x2;
-            float y1 = sender.FlipVerticallyBeforeEncode ? detection.y1 : 479 - detection.y2;
-            float y2 = sender.FlipVerticallyBeforeEncode ? detection.y2 : 479 - detection.y1;
+            // Boxes are continuous edges in [0,height], not pixel indices [0,height-1].
+            float y1 = sender.FlipVerticallyBeforeEncode ? detection.y1 : 480 - detection.y2;
+            float y2 = sender.FlipVerticallyBeforeEncode ? detection.y2 : 480 - detection.y1;
             if (!float.IsFinite(x1) || !float.IsFinite(x2) || !float.IsFinite(y1) || !float.IsFinite(y2) ||
                 x1 < 0 || x2 > 640 || y1 < 0 || y2 > 480) return false;
             var box=Rect.MinMaxRect(x1,y1,x2,y2);
@@ -354,7 +437,7 @@ namespace Perception
             position = capturePose.position + capturePose.rotation * StereoFusionGeometry.OpticalToHead(optical, cameraPose);
             float measuredWidth=(x2-x1)*depth/intrinsics.x;
             float objectHeight=(y2-y1)*depth/intrinsics.y;
-            bool objectReliable=detection.confidence>=.5f && quality>=.04f && estimate.acceptedSamples>=5 &&
+            bool objectReliable=(detection.confidence>=VisualAcquireConfidence || lowScoreContinuation) && quality>=.04f && estimate.acceptedSamples>=5 &&
                 measuredWidth>registeredWidth*.6f && measuredWidth<registeredWidth*1.5f &&
                 objectHeight>registeredHeight*.65f && objectHeight<registeredHeight*1.35f &&
                 x1>4 && x2<636 && y1>4 && y2<476;
@@ -392,10 +475,15 @@ namespace Perception
             }
             if (tabletopLock.IsLocked)
             {
-                if (Time.realtimeSinceStartup - capturedAt > (UsesVisualAverage ? .3f : .6f) || captureTimeInvalid())
+                if (Time.realtimeSinceStartup - capturedAt > (UsesVisualAverage ? maxResultAgeSeconds : .6f) || captureTimeInvalid())
                 { reason = "WAITING_FOR_FRESH_POSITION"; Invalidate(reason); return false; }
-                if (UsesVisualAverage && !objectReliable)
+                // Visual following uses valid stereo directly; size/quality gates remain hybrid-only.
+                if (UsesVisualAverage && !(x1>4 && x2<636 && y1>4 && y2<476))
                 { reason = "VISUAL_QUALITY_GATE"; Invalidate(reason); return false; }
+                if (lowScoreContinuation && Vector3.Distance(position, verifiedPosition) >
+                    Mathf.Min(.12f, .015f + 1.2f * (capturedAt - verifiedCaptureAt)))
+                { reason = "VISUAL_ASSOCIATION_GATE"; Invalidate(reason); return false; }
+                if (UsesVisualAverage) RememberVerifiedDetection(detection, position);
                 // Track the detected center in all three axes; keep initial model size and rotation.
                 if (!(UsesVisualAverage ? follow.Observe(position, capturedAt, Time.realtimeSinceStartup) :
                     follow.Observe(position, Time.realtimeSinceStartup)))
@@ -427,6 +515,7 @@ namespace Perception
             { reason = "STABILIZING - keep lighter still"; state = reason; return false; }
             position = tabletopLock.Position;
             appearance.Capture(left,box);objectSeenAt=Time.realtimeSinceStartup;
+            RememberVerifiedDetection(detection, position);
             follow.Reset(position);
             RegistrationRevision++;
             distance = Vector3.Distance(position, capturePose.position);
@@ -513,6 +602,7 @@ namespace Perception
                 waiting = false; left = null;
                 resumeCaptureAfter = Time.realtimeSinceStartup;
                 follow.Reset(InteractionPosition, TargetLocated);
+                verifiedCaptureAt = float.NegativeInfinity;
                 appliedFollowMode = followMode;
             }
             follow.AverageMeasurements = UsesVisualAverage;
@@ -560,3 +650,5 @@ namespace Perception
         void OnDestroy() { Destroy(texture); clock?.Dispose(); }
     }
 }
+
+

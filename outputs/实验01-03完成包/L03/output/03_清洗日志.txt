@@ -1,0 +1,6 @@
+﻿依据02_字段与规则.txt：原件只读；19→18条，6名虚拟学习者。
+R006：完全重复副本1条被排除，保留首条，未按学习者/科目去重。
+R008：duration_value=1.5、duration_unit=小时均保留；新增duration_minutes=90.0。
+R011：duration_value和duration_minutes均空白，duration_missing=是；task_done=否保留。
+其他有效时长以分钟保存，duration_missing=否。共17个有效时长。
+按科目统计：均值=已知时长总和/有效时长数；完成率=完成数/该科去重后全部记录数。平均值与百分比显示四舍五入至2位小数。

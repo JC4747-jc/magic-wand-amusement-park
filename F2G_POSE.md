@@ -1,5 +1,19 @@
 # 双目位置 + F2G-Pose 旋转实验版
 
+## 离线诊断基础（2026-11-27）
+
+姿态回复新增 `reason_code` 和 `diagnostics`，记录最后执行阶段及校正、双目深度、检测与分割、前景深度检查、F2G 和旋转校验的墙钟耗时。失败帧也保留已经运行阶段的数据。耗时包含主机开销及隐式 GPU 等待，未强制 CUDA 同步，不能视为独立 GPU 算子耗时。
+
+Unity 的 `[PoseResult]` 日志新增 `decision`、`angle_deg` 和 `interval_ms`，用于区分过期、旧帧、未来时间戳、中断重获、旋转跳变和候选确认。现有滤波阈值、接受条件及 UI 状态继续由原逻辑控制。源码已通过离线 Unity 检查，新诊断日志需后续打包才会出现在头显上。
+
+无需 PICO、服务或 GPU，即可分析旧回放报告：
+
+```powershell
+python Tools/analyze_pose_diagnostics.py .codex-tmp/dual-detector-20261108-aligned-replay.json --output .codex-tmp/pose-diagnostics-summary.json
+```
+
+可追加 `--unity-log LOG_PATH` 汇总新客户端决策。旧报告缺少阶段耗时会显示样本数 0；未提供 Unity 日志时决策为 null。工具分别统计全部回复及有效姿态的 PC 往返时间。新服务回复被 `Tools/check_detector_routes.py` 回放工具原样保存后，可用同一命令分析。
+
 ## 两通路 YOLO 配置同步（2026-11-08）
 
 定位服务与姿态服务共用 `object-detection-demo/detector_config.py`，默认权重为 `best_yolo26n_assgn2_v6_50e.pt`，conf=0.399、imgsz=640、iou=0.7。以后更换默认权重后需要重启两个服务。加载时检查文件和 `lighter` 类别，并输出实际文件 SHA-256。缺失文件会报错退出。

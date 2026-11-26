@@ -4,6 +4,50 @@ using UnityEngine;
 
 public static class StereoIntegrationChecks
 {
+    static void CheckCameraRowOrientation()
+    {
+        var flags = System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static;
+        var repack = typeof(PicoStereoCapture).GetMethod("RepackRows", flags);
+        // A physical red upper half / blue lower half in PICO's bottom-up buffer.
+        foreach (int stride in new[] { 640 * 4, 640 * 4 + 32 })
+        {
+            byte[] raw = new byte[stride * 480];
+            for (int row = 0; row < 480; row++)
+                for (int x = 0; x < 640; x++)
+                {
+                    int p = row * stride + x * 4;
+                    raw[p + (row < 240 ? 2 : 0)] = 255;
+                    raw[p + 3] = 255;
+                }
+            var normalized = (byte[])repack.Invoke(null, new object[] { raw, stride });
+            if (normalized.Length != 640 * 480 * 4 || normalized[0] != 255 ||
+                normalized[(479 * 640) * 4 + 2] != 255)
+                throw new Exception("Camera rows were not normalized before stereo/YOLO");
+            var go = new GameObject("JPEG orientation regression");
+            go.SetActive(false);
+            var texture = new Texture2D(640, 480, TextureFormat.RGBA32, false);
+            try
+            {
+                texture.LoadRawTextureData(normalized); texture.Apply();
+                var sender = go.AddComponent<Perception.PicoYoloFrameSender>();
+                var instance = System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance;
+                typeof(Perception.PicoYoloFrameSender).GetField("m_FlipVerticallyBeforeEncode", instance).SetValue(sender, true);
+                object[] args = { texture, 0, 0 };
+                var encoded = (Texture2D)typeof(Perception.PicoYoloFrameSender)
+                    .GetMethod("PrepareEncodeTexture", instance).Invoke(sender, args);
+                Directory.CreateDirectory(".codex-tmp");
+                File.WriteAllBytes($".codex-tmp/camera-orientation-{stride}.jpg", encoded.EncodeToJPG(95));
+            }
+            finally { UnityEngine.Object.DestroyImmediate(texture); UnityEngine.Object.DestroyImmediate(go); }
+        }
+        // Below-center pixels must point BELOW the headset, not above the curtain.
+        var pose = new Pose(Vector3.zero, Quaternion.Euler(180, 0, 0));
+        Vector3 below = StereoFusionGeometry.OpticalToHead(new Vector3(0, .2f, .5f), pose);
+        Vector3 above = StereoFusionGeometry.OpticalToHead(new Vector3(0, -.2f, .5f), pose);
+        if (below.y >= 0 || above.y <= 0 || below.z <= 0)
+            throw new Exception("Image vertical coordinates project to the wrong side of the headset");
+        Debug.Log("CAMERA_ROW_ORIENTATION_CHECKS_PASS");
+    }
     static void CheckHandheldFollowing()
     {
         var grip = new Perception.LeftGripFollow();
@@ -42,10 +86,12 @@ public static class StereoIntegrationChecks
     }
     public static void Run()
     {
+        CheckCameraRowOrientation();
         TabletopGestureChecks.Run();
         PinchFollowChecks.Run();
         FollowOptimizationChecks.Run();
         VisualAverageChecks.Run();
+        VisualCandidateChecks.Run();
         ObjectTrackingChecks.Run();
         CheckHandheldFollowing();
         var eligibilityObject = new GameObject("Summon eligibility regression");

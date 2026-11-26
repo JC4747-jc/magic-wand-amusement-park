@@ -32,7 +32,7 @@ namespace Perception
             if (AverageMeasurements)
             {
                 if (!float.IsFinite(capturedAt) || !float.IsFinite(now) || capturedAt <= lastObserved ||
-                    now < capturedAt || now - capturedAt > WindowSeconds) return false;
+                    now < capturedAt) return false;
                 lastObserved = capturedAt;
                 if (float.IsFinite(lastAccepted) && capturedAt - lastAccepted > WindowSeconds)
                 { reacquiring = true; sampleCount = 0; }
@@ -87,3 +87,4 @@ namespace Perception
         }
     }
 }
+

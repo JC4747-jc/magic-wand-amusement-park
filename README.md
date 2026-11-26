@@ -59,7 +59,7 @@ python -m venv .venv
 
 无需预览窗口时，可给最后一条命令加 `--headless`。服务接收的是 **PICO 相机图像**，不是电脑摄像头。
 
-当前定位与姿态服务共用 `object-detection-demo/detector_config.py`，默认 conf=0.399、imgsz=640、iou=0.7，加载的权重为：
+当前定位与姿态服务共用 `object-detection-demo/detector_config.py` 中的权重、imgsz=640、iou=0.7。定位 TCP 服务现默认保留 conf≥0.28 的最多 5 个候选；Unity 首次锁定要求 ≥0.5，低分框仅用于有近期可靠双目证据的同一目标接续。姿态服务仍默认 conf=0.399，联调姿态实验时请给定位服务显式添加 `--conf 0.399`，保持服务身份匹配。加载的权重为：
 
 ```text
 object-detection-demo/weights/best_yolo26n_assgn2_v6_50e.pt

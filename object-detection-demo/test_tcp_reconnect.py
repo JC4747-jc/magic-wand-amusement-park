@@ -13,6 +13,31 @@ import tcp_server as server
 
 
 class ReconnectTests(unittest.TestCase):
+  def test_multiple_candidates_preserve_low_score_and_pixel_coordinates_on_wire(self):
+    config=server.InferenceConfig('cpu',False,640,.28,.7,5)
+    boxes=[SimpleNamespace(cls=np.array([0]),conf=np.array([score]),
+      xyxy=np.array([coords],dtype=float)) for score,coords in
+      [(0.9,(3,4,13,24)), (0.3,(30,10,38,34)), (0.6,(45,12,53,30))]]
+    result=SimpleNamespace(names={0:'lighter'},boxes=boxes,speed={})
+    client,connection=socket.socketpair()
+    client.settimeout(3)
+    with patch.object(server,'run_yolo_predict',return_value=[result]):
+      worker=threading.Thread(target=server.serve_client,args=(connection,None,'cpu',config,True),daemon=True)
+      worker.start()
+      try:
+        self.send_frame(client,17)
+        with client.makefile('rb') as response:
+          payload=json.loads(response.readline())
+        self.assertEqual((payload['frame_id'],payload['timestamp'],payload['width'],payload['height']),
+          (17,1000,64,48))
+        self.assertEqual(len(payload['detections']),3)
+        self.assertEqual(payload['detections'][1],dict(
+          **{'class':'Lighter'}, confidence=.3,centerX=34,centerY=22,x1=30,y1=10,x2=38,y2=34))
+      finally:
+        client.close()
+        worker.join(3)
+      self.assertFalse(worker.is_alive(),'Candidate response left session blocked')
+
   def test_newest_frame_is_processed_without_waiting_for_a_third(self):
     config=server.InferenceConfig('cpu',False,640,.4,.7,1)
     result=SimpleNamespace(names={0:'lighter'},boxes=[],speed={})

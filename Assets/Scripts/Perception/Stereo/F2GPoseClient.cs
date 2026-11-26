@@ -193,7 +193,7 @@ namespace Perception
                         !F2GPoseGeometry.TryWorldRotation(reply.rotation,result.head,result.camera,out var world))
                     { Status = "POSE_GEOMETRY_REJECTED"; continue; }
                     bool accepted = filter.Observe(reply.frame_id,world,result.capturedAt,Time.realtimeSinceStartup,maxResultAge);
-                    Debug.Log($"[PoseResult] frame={reply.frame_id} age_ms={(Time.realtimeSinceStartup-result.capturedAt)*1000:F0} processing_ms={reply.processing_ms:F0} accepted={accepted} stable={filter.StableSamples}");
+                    Debug.Log($"[PoseResult] frame={reply.frame_id} age_ms={(Time.realtimeSinceStartup-result.capturedAt)*1000:F0} processing_ms={reply.processing_ms:F0} accepted={accepted} stable={filter.StableSamples} decision={filter.LastDecision} angle_deg={filter.LastAngleDegrees:F1} interval_ms={filter.LastIntervalSeconds*1000:F0}");
                     if (!accepted)
                     { Status = "POSE_STALE_OR_CONFIRMING"; continue; }
                     Status = calibrated ? "ROTATION_TRACKING" : locator.InteractionReady ?

@@ -1,0 +1,33 @@
+{
+  "environment": "Codex + Python; not WorkBuddy; not human peer review",
+  "date": "2026-11-23",
+  "checks": {
+    "T01": "PASS: 19 -> 18 records, 6 learners; R006 deduplicated",
+    "T02": "PASS: R008 = 90 minutes; original columns retained",
+    "T03": "PASS: R011 blank, not zero",
+    "T04": "PASS: all summaries independently recomputed; high math 260/5 and 4/6",
+    "T05": "PASS: conclusion <=100 characters; chart generated and visually inspected"
+  },
+  "unchanged_input_copies": [
+    {
+      "file": "00_课堂提示词.txt",
+      "sha256": "ccb89717b8acedc5a51111397f32ea767850e4ce02272125e7660b152df982d1"
+    },
+    {
+      "file": "01_学习记录_教学模拟.csv",
+      "sha256": "c8fc12f78f9de1d0fbc284785ed812b37d6a2ba2092b45916bff25f5a68f4fd4"
+    },
+    {
+      "file": "02_字段与规则.txt",
+      "sha256": "3ac2d2b2543493308034d048961c5f7efc1043c7371f6f399ce8fc89e421a1be"
+    },
+    {
+      "file": "03_待核验结论.txt",
+      "sha256": "33203647f52e1bc423659f4dff034594fb1ef4d3cfe1dd4cf351000196b33860"
+    },
+    {
+      "file": "README.txt",
+      "sha256": "cc03bd0e2f2b07e0e544196326dbb62c8554ce0b56989ffd3b5e6eeca037c124"
+    }
+  ]
+}

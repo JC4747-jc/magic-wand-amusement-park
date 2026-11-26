@@ -14,6 +14,7 @@ import time
 import zlib
 import threading
 from pose_availability import serve_health
+from pose_diagnostics import measure_stage, rejection_code
 from detector_config import WEIGHTS_PATH, DEFAULT_CONF, DEFAULT_IMGSZ, DEFAULT_IOU, load_detector
 from pathlib import Path
 
@@ -262,32 +263,44 @@ def save_capture(folder, header, rgb, right):
     cv2.imwrite(str(folder / "right.png"), right)
 
 
-def process(header, rgb, right, stereo, models, output=None, manual_mask=None):
+def process(header, rgb, right, stereo, models, output=None, manual_mask=None, diagnostics=None):
+    diagnostics = {} if diagnostics is None else diagnostics
     started = time.perf_counter()
-    rect_rgb, rect_right = stereo.rectify(header, rgb, right)
-    depth = stereo.compute(rect_rgb, rect_right)
+    with measure_stage(diagnostics, 'rectify'):
+        rect_rgb, rect_right = stereo.rectify(header, rgb, right)
+    with measure_stage(diagnostics, 'stereo_depth'):
+        depth = stereo.compute(rect_rgb, rect_right)
     if output:
+        diagnostics['last_stage'] = 'save_rectified_capture'
         output.mkdir(parents=True, exist_ok=True)
         cv2.imwrite(str(output / "rectified_rgb.png"), cv2.cvtColor(rect_rgb, cv2.COLOR_RGB2BGR))
         cv2.imwrite(str(output / "rectified_right.png"), rect_right)
         np.save(output / "depth_m.npy", depth)
         np.savetxt(output / "K.txt", stereo.k)
     if models is None:
-        return {"valid": False, "reason": "RECORD_ONLY: no pose inference"}
+        return {"valid": False, "reason": "RECORD_ONLY: no pose inference",
+                "reason_code": "RECORD_ONLY", "diagnostics": diagnostics}
     if manual_mask is not None:
+        diagnostics['last_stage'] = 'load_manual_mask'
         mask = cv2.imread(str(manual_mask), cv2.IMREAD_GRAYSCALE)
         if mask is None or mask.shape != depth.shape:
             raise ValueError("Manual mask must match rectified_rgb.png")
         mask = mask > 0
     else:
-        mask = models.segment(rect_rgb)
-    depth, count, ratio = foreground_depth(depth, mask)
-    result = models.estimate(rect_rgb, depth, stereo.k, mask)
-    rotation = check_rotation(stereo.r1.T @ check_rotation(result["rotation"]))
+        with measure_stage(diagnostics, 'detection_and_segmentation'):
+            mask = models.segment(rect_rgb)
+    with measure_stage(diagnostics, 'foreground_depth'):
+        depth, count, ratio = foreground_depth(depth, mask)
+    with measure_stage(diagnostics, 'f2g'):
+        result = models.estimate(rect_rgb, depth, stereo.k, mask)
+    with measure_stage(diagnostics, 'rotation_check'):
+        rotation = check_rotation(stereo.r1.T @ check_rotation(result["rotation"]))
     reply = {"valid": True, "reason": "OK", "rotation": rotation.reshape(-1).tolist(),
              "valid_depth_points": count, "valid_depth_ratio": ratio,
-             "processing_ms": (time.perf_counter() - started) * 1000}
+             "processing_ms": (time.perf_counter() - started) * 1000,
+             "reason_code": "OK", "diagnostics": diagnostics}
     if output:
+        diagnostics['last_stage'] = 'save_pose_capture'
         cv2.imwrite(str(output / "mask.png"), mask.astype(np.uint8) * 255)
         (output / "pose.json").write_text(json.dumps(reply, indent=2), encoding="utf-8")
     return reply
@@ -325,20 +338,24 @@ def serve(args):
                         # A cancelled GPU request may still be running. Never queue another inference behind it.
                         acquired = processing.acquire(blocking=False)
                         started = time.perf_counter()
+                        diagnostics = {}
                         try:
                             if not acquired:
                                 reply.update(valid=False, reason="POSE_BUSY: previous inference still running")
                             else:
                                 output = None
                                 if args.record_dir and recorded < getattr(args, "record_limit", 60):
+                                    diagnostics['last_stage'] = 'save_native_capture'
                                     output = args.record_dir / run_id / str(time.time_ns())
                                     save_capture(output, header, rgb, right)
                                     recorded += 1
-                                reply.update(process(header, rgb, right, stereo, models, output))
+                                reply.update(process(header, rgb, right, stereo, models, output, diagnostics=diagnostics))
                         except Exception as exc:
                             reply.update(valid=False, reason=f"{type(exc).__name__}: {exc}"[:500])
                         finally:
                             if acquired: processing.release()
+                        reply.setdefault('reason_code', rejection_code(reply['reason']))
+                        reply.setdefault('diagnostics', diagnostics)
                         send_json(client, reply)
                         print(f"frame={reply['frame_id']} processing_ms={(time.perf_counter()-started)*1000:.1f} {reply['reason']}", flush=True)
                 except (EOFError, OSError, ValueError, KeyError, zlib.error) as exc:

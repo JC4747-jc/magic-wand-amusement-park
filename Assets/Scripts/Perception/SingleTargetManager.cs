@@ -14,6 +14,9 @@ namespace Perception
         [SerializeField]
         DetectionManager m_DetectionManager;
 
+        StereoYoloLocator m_StereoLocator;
+        bool UsesVisualCandidates => m_StereoLocator != null && m_StereoLocator.UsesVisualAverage;
+
         [Header("Class filter")]
         [SerializeField]
         string m_TargetClassName = "Lighter";
@@ -99,6 +102,7 @@ namespace Perception
         {
             if (m_DetectionManager == null)
                 m_DetectionManager = FindFirstObjectByType<DetectionManager>();
+            m_StereoLocator = FindFirstObjectByType<StereoYoloLocator>();
             RebuildStrategies();
         }
 
@@ -223,9 +227,12 @@ namespace Perception
             }
 
             // Critical: update tracked detection from MATCH, never from highest-confidence reselection.
-            m_LockedDetection = m_Scratch[idx];
+            if (!EmitMatchedUpdate(m_Scratch[idx], timestamp, score))
+            {
+                SetState(TargetLockState.TARGET_LOST);
+                return;
+            }
             m_LostElapsed = 0f;
-            EmitLockedUpdate(timestamp, score, 0f);
         }
 
         void HandleLost(long timestamp)
@@ -237,11 +244,14 @@ namespace Perception
 
             if (idx >= 0)
             {
-                m_LockedDetection = m_Scratch[idx];
-                m_LostElapsed = 0f;
                 SetState(TargetLockState.TARGET_LOCKED);
+                if (!EmitMatchedUpdate(m_Scratch[idx], timestamp, score))
+                {
+                    SetState(TargetLockState.TARGET_LOST);
+                    return;
+                }
+                m_LostElapsed = 0f;
                 Debug.Log($"[SingleTarget] LOST → LOCKED (reamatch score={score:F2})");
-                EmitLockedUpdate(timestamp, score, 0f);
                 return;
             }
 
@@ -284,6 +294,22 @@ namespace Perception
             m_AcquireCandidate = default;
         }
 
+        bool EmitMatchedUpdate(ObjectDetectionEvent detection, long timestamp, float score)
+        {
+            ObjectDetectionEvent previous = m_LockedDetection;
+            m_LockedDetection = detection;
+            // Anchor projection is synchronous. A weak detection may update identity only
+            // after the locator has checked this exact frame's stereo depth and geometry.
+            EmitLockedUpdate(timestamp, score, 0f);
+            if (UsesVisualCandidates && detection.confidence < StereoYoloLocator.VisualAcquireConfidence &&
+                !m_StereoLocator.IsCurrentVisualDetectionVerified(detection))
+            {
+                m_LockedDetection = previous;
+                return false;
+            }
+            return true;
+        }
+
         void EmitLockedUpdate(long timestamp, float matchScore, float lostSeconds)
         {
             LockedTargetUpdated?.Invoke(new LockedTargetEvent(
@@ -310,6 +336,14 @@ namespace Perception
                     continue;
                 if (!string.Equals(e.className, m_TargetClassName, StringComparison.OrdinalIgnoreCase))
                     continue;
+                if (UsesVisualCandidates)
+                {
+                    if (!float.IsFinite(e.confidence)) continue;
+                    if (e.confidence < StereoYoloLocator.VisualAcquireConfidence &&
+                        ((m_State != TargetLockState.TARGET_LOCKED && m_State != TargetLockState.TARGET_LOST) ||
+                         !m_StereoLocator.CanContinueVisualDetection(e)))
+                        continue;
+                }
                 dst.Add(e);
             }
         }

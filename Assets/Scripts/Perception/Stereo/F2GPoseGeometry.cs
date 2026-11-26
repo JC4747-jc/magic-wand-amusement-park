@@ -41,6 +41,9 @@ namespace Perception
         public Quaternion Accepted { get; private set; } = Quaternion.identity;
         public int StableSamples { get; private set; }
         public float LastAcceptedTime { get; private set; } = -100;
+        public string LastDecision { get; private set; } = "RESET";
+        public float LastAngleDegrees { get; private set; }
+        public float LastIntervalSeconds { get; private set; }
         Quaternion candidate;
         int candidates;
         float lastObserved = -100;
@@ -51,12 +54,18 @@ namespace Perception
         {
             hasSample = false; lastId = 0; StableSamples = candidates = 0;
             lastObserved = LastAcceptedTime = -100;
+            LastDecision = "RESET";
+            LastAngleDegrees = LastIntervalSeconds = 0;
         }
 
         public bool Observe(long frameId, Quaternion rotation, float capturedAt, float now, float maxAge)
         {
-            if (frameId <= lastId || capturedAt > now || now-capturedAt > maxAge) return false;
+            LastAngleDegrees = LastIntervalSeconds = 0;
+            if (frameId <= lastId) { LastDecision = "DUPLICATE_OR_OLD_FRAME"; return false; }
+            if (capturedAt > now) { LastDecision = "FUTURE_TIMESTAMP"; return false; }
+            if (now-capturedAt > maxAge) { LastDecision = "STALE_RESULT"; return false; }
             lastId = frameId;
+            LastIntervalSeconds = hasSample ? capturedAt-lastObserved : 0;
             // A single-flight GPU request can make the actual interval exceed the
             // nominal 0.5 s at 2 Hz. Do not restart confirmation on every such frame.
             bool gap = capturedAt-lastObserved > Mathf.Max(.6f, maxAge * 1.5f);
@@ -64,20 +73,27 @@ namespace Perception
             if (!hasSample)
             {
                 Accepted = rotation; hasSample = true; StableSamples = 1;
+                LastDecision = "FIRST_SAMPLE";
                 LastAcceptedTime = capturedAt; return true;
             }
             float angle = Quaternion.Angle(Accepted,rotation);
+            LastAngleDegrees = angle;
             if (gap) { candidates = 0; StableSamples = 0; }
             if (gap || angle > 35 || candidates > 0)
             {
                 if (candidates == 0 || Quaternion.Angle(candidate,rotation) > 12) candidates = 1;
                 else candidates++;
                 candidate = rotation;
-                if (candidates < 3) return false;
+                if (candidates < 3)
+                {
+                    LastDecision = gap ? "GAP_CONFIRMING" : angle > 35 ? "JUMP_CONFIRMING" : "CANDIDATE_CONFIRMING";
+                    return false;
+                }
                 candidates = 0;
             }
             StableSamples = angle < 8 && !gap ? StableSamples+1 : 1;
             Accepted = rotation; LastAcceptedTime = capturedAt;
+            LastDecision = "ACCEPTED";
             return true;
         }
     }

@@ -22,7 +22,10 @@ public static class VisualAverageChecks
         Near(follow.Position, Vector3.one * .023f, "Three-axis weighted average incorrect");
         Require(!follow.Observe(Vector3.zero, 1.2f, 1.23f), "Duplicate capture changed average");
         Require(!follow.Observe(Vector3.zero, 1.19f, 1.23f), "Out-of-order capture changed average");
-        Require(!follow.Observe(Vector3.zero, 1.3f, 1.7f), "Stale reply accepted");
+        var delayed = new TabletopVisualFollow { AverageMeasurements = true };
+        delayed.Reset(Vector3.zero);
+        Require(delayed.Observe(Vector3.right*.02f, 1.3f, 1.9f), "Delayed valid measurement rejected");
+        Near(delayed.Position, Vector3.right*.02f, "Delayed measurement did not move target");
         Near(follow.Position, Vector3.one * .023f, "Rejected frames moved the target");
         Require(!follow.Observe(Vector3.one, 1.3f, 1.32f), "Single outlier entered average");
         Require(follow.Observe(Vector3.one * .04f, 1.4f, 1.42f), "Normal trajectory failed to recover");
@@ -68,7 +71,8 @@ public static class VisualAverageChecks
             Set(locator.sender, "<LastSentHeight>k__BackingField", 480);
             Set(locator.detections, "<LastFrameWidth>k__BackingField", 640);
             Set(locator.detections, "<LastFrameHeight>k__BackingField", 480);
-            Set(locator, "registeredWidth", .04f); Set(locator, "registeredHeight", .09f);
+            // Deliberately incompatible registration sizes must not block visual following.
+            Set(locator, "registeredWidth", .4f); Set(locator, "registeredHeight", .9f);
             Set(locator, "intrinsics", new Vector4(400, 400, 320, 240));
             Set(locator, "baseline", .036f);
             Set(locator, "cameraPose", new Pose(Vector3.zero, Quaternion.Euler(180,0,0)));
@@ -88,13 +92,36 @@ public static class VisualAverageChecks
             {
                 Set(locator, "pendingId", (long)i+1);
                 Set(locator.detections, "<LastFrameId>k__BackingField", (long)i+1);
-                Set(locator, "capturedAt", start-.2f+i*.05f);
+                Set(locator, "capturedAt", start-.6f+i*.05f);
                 Set(locator, "capturePose", new Pose(Vector3.right * ((i+1)*.01f), Quaternion.identity));
                 Require(locator.TryLocate(det, out var p, out string reason), "Visual projection rejected with right hand nearby: "+reason);
                 Set(anchor, "m_TargetPosition", p); Invoke(anchor, "Update");
                 Near(displayed.transform.position, p, "Anchor added extra smoothing to averaged vision");
             }
             Require(Mathf.Abs(displayed.transform.position.x-.023f)<.001f, "Stereo measurements did not reach displayed averaged position");
+            // A low-score continuation still traverses real stereo and rendered-anchor gates.
+            var weak = new ObjectDetectionEvent("Lighter", .35f, 320, 240, 4, 306, 210, 334, 270);
+            Set(locator, "capturedAt", start-.45f);
+            Set(locator, "capturePose", new Pose(Vector3.right*.04f, Quaternion.identity));
+            Require(locator.CanContinueVisualDetection(weak), "Recent matching low-score box could not continue");
+            Require(locator.TryLocate(weak, out var continued, out var why), "Reliable low-score stereo rejected: "+why);
+            Set(anchor, "m_TargetPosition", continued); Invoke(anchor, "Update");
+            Require(Mathf.Abs(continued.x-.033f)<.001f, "Low-score continuation bypassed three-frame average");
+            Require(!locator.TryLocate(det, out _, out why) && why=="DUPLICATE_VISUAL_FRAME", "Duplicate replaced verified association");
+            Set(locator, "capturedAt", start-.425f);
+            var unrelated = new ObjectDetectionEvent("Lighter", .35f, 560, 240, 5, 546, 210, 574, 270);
+            Require(!locator.CanContinueVisualDetection(unrelated), "Unrelated low-score object matched");
+            Set(locator, "capturePose", new Pose(Vector3.right*.3f, Quaternion.identity));
+            Require(!locator.TryLocate(weak, out _, out why) && why=="VISUAL_ASSOCIATION_GATE", "Low-score 3D teleport accepted");
+            Set(locator, "capturePose", new Pose(Vector3.right*.045f, Quaternion.identity));
+            Set(locator, "right", new byte[left.Length]);
+            Require(!locator.TryLocate(weak, out _, out why) && why=="NoReliableLighterDepth", "Low-score box bypassed depth reliability");
+            Set(locator, "right", right);
+            Set(locator, "verifiedCaptureAt", start-1f);
+            Require(!locator.CanContinueVisualDetection(weak), "Old association revived from a weak detection");
+            Require(!locator.TryLocate(weak, out _, out why) && why=="VISUAL_QUALITY_GATE", "Weak detection revived stale target");
+            // Restore recent identity for the remainder of the existing lifecycle checks.
+            Set(locator, "verifiedCaptureAt", start-.45f);
             Vector3 before = displayed.transform.position;
             for(int i=0;i<40;i++)
             {
@@ -113,8 +140,13 @@ public static class VisualAverageChecks
             Require(!locator.TryLocate(det,out _,out rejected)&&rejected=="RIGHT_HAND_PROTECTION","Hybrid protection lost after switching modes");
             locator.followMode=LighterFollowMode.VisualAverage; Invoke(locator,"UpdateFollowingHold");
             Near(displayed.transform.position,before,"Switching follow mode moved the displayed anchor");
+            acquired.Reset();
+            Require(!locator.CanContinueVisualDetection(weak), "Reset kept low-score continuation alive");
+            Set(locator, "left", left);
+            Require(!locator.TryLocate(weak, out _, out rejected) && rejected=="ACQUIRE_CONFIDENCE_GATE", "Weak detection acquired a new registration");
             Debug.Log("VISUAL_AVERAGE_RENDERED_ANCHOR_CHECK_PASS");
         }
         finally { UnityEngine.Object.DestroyImmediate(host); UnityEngine.Object.DestroyImmediate(displayed); }
     }
 }
+

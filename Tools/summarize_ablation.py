@@ -1,0 +1,60 @@
+"""Summarize actual Unity frame intervals; never substitute detection throughput."""
+import csv
+import statistics
+import sys
+from collections import defaultdict
+from pathlib import Path
+
+source = Path(sys.argv[1])
+groups = defaultdict(list)
+for row in csv.DictReader(source.open(encoding='utf-8-sig')):
+    if any(row.get(key) is None or row.get(key) == '' for key in ('mode', 'repeat', 'frame_ms', 'visible_model_renderers')):
+        continue  # A live pull may end in a buffered, incomplete final row.
+    groups[(row['mode'], row['repeat'])].append(row)
+lines = ['PICO 3D 模型消融实验实测报告（2026-11-27）', '',
+         '指标：FPS=帧数/累计帧间隔；P95 为帧间隔第95百分位；1% low=最慢1%帧的平均耗时倒数。',
+         '以下为 Unity LateUpdate 实测循环帧率，不是 YOLO 检测率，也不是显示合成器刷新率。', '',
+         '模式,轮次,帧数,累计秒数,FPS,P95毫秒,1%low FPS,模型可见帧占比']
+for (mode, repeat), rows in groups.items():
+    ms = sorted(float(row['frame_ms']) for row in rows)
+    slow = ms[-max(1, len(ms)//100):]
+    visible = sum(int(row['visible_model_renderers']) > 0 for row in rows)/len(rows)
+    lines.append(f'{mode},{repeat},{len(ms)},{sum(ms)/1000:.2f},{1000/statistics.mean(ms):.2f},'
+                 f'{ms[min(len(ms)-1,int(len(ms)*.95))]:.2f},{1000/statistics.mean(slow):.2f},{visible:.1%}')
+lines.extend(['', '实验边界：',
+    '1. 当前工作区 BridgeStereoFusion 场景，独立 Development APK；没有覆盖原应用。',
+    '2. baseline/no_model 交替三轮，随后 model_only 三轮；每次预热10秒、测量60秒。',
+    '3. no_model 通过 forceRenderingOff 隐藏 Lighter 子树，保留脚本计算。',
+    '4. model_only 停止双目采集、禁用 Perception/MagicMR 业务脚本与协程、Canvas 和其他 Renderer；保留 XR/VST 基础设施。',
+    '5. model_only 并非空白引擎：后台传输线程、XR手追踪及SDK开销可能仍在。',
+    '6. 未采集GPU耗时、Draw Calls及三角形计数，无法仅凭帧率进一步区分CPU/GPU瓶颈。',
+    '7. 模式顺序未完全随机化，温度、跟踪状态、视角变化和逐帧记录均可能影响结果。',
+    '8. 可见占比是 Renderer.isVisible（相机裁剪判断），不是图像证据；基准模型不可见时比较无效。'])
+summary = []
+for mode in ('baseline', 'no_model', 'model_only'):
+    rows = [r for (m, _), rs in groups.items() if m == mode for r in rs]
+    if not rows:
+        continue
+    ms = sorted(float(r['frame_ms']) for r in rows)
+    summary.append(f'{mode}: {len(ms)}帧 / {sum(ms)/1000:.2f}秒，'
+                   f'FPS={1000/statistics.mean(ms):.2f}，P95={ms[int(len(ms)*.95)]:.2f}ms')
+lines.extend(['', '三轮合并统计：', *summary,
+    '', '结论与下一步：',
+    '本次静态打火机模型测试中，关闭模型绘制几乎不改变帧率；不支持“3D模型绘制是主要瓶颈”的假设。',
+    '保留模型并关闭采集、业务和其他显示后接近90 FPS，周期慢帧明显减少。问题范围更偏向被关闭的处理链路。',
+    '不能由本实验断言YOLO推理、JPEG编码或双目匹配中的某一项就是根因；仅模型组同时改变了多项因素。',
+    '下一步建议分别隔离双目采集/拷贝/灰度转换、JPEG编码发送、双目定位匹配、UI与诊断日志，并记录CPU Profiler样本。',
+    '代码线索：PicoStereoCapture.TryAcquire/RepackRows/ToGray 在采集循环中执行数组分配与像素处理；这是待测候选，不是耗时测量结论。',
+    '本结果不外推到变花、爆炸特效或更复杂模型；测试期间没有主动触发这些效果。',
+    '', '执行与复现：',
+    'Unity 6000.0.26f1；PICO A9210；场景 Assets/Scenes/BridgeStereoFusion.unity。',
+    '独立包名 com.yn.picmagicmr.ablation；APK Builds/Android/MagicMR-Ablation.apk。',
+    '使用同一APK连续切换，分辨率、画质、帧率相关项目设置未由实验代码修改。',
+    '运行编辑器方法 PerformanceAblationBuild.Run 构建；进入应用正常召唤模型后自动采样。',
+    '采样总时长约540秒；每次启动覆盖该实验应用的 ablation.csv。',
+    '原始文件：ablation.csv；构建日志：build.log；结束日志：device-final.log（环形日志末段，不是完整运行日志）。',
+    '观测到的电池温度两次均为27°C；未记录SoC温度，不能据此证明无降频。',
+    '统计命令：python Tools/summarize_ablation.py outputs/ablation-20261127/ablation.csv'])
+report = source.with_name('report.txt')
+report.write_text('\n'.join(lines), encoding='utf-8-sig')
+print('\n'.join(lines))

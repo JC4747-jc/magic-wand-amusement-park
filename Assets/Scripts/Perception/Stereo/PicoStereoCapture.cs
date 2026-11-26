@@ -89,7 +89,7 @@ public sealed class PicoStereoCapture : MonoBehaviour
             rightCapturing = true;
             phase = "SEARCHING_DEPTH";
             detail = "Aim the yellow crosshair at a textured object 0.4-3 m away.";
-            Trace("CAPTURE_BEGIN center=" + Math.Round(leftK.principalPoint.X) + "," +
+            Trace("CAPTURE_BEGIN rows=top_down_from_bottom_up_raw center=" + Math.Round(leftK.principalPoint.X) + "," +
                   Math.Round(leftK.principalPoint.Y));
 
             while (!stopping)
@@ -289,12 +289,14 @@ public sealed class PicoStereoCapture : MonoBehaviour
     {
         int rowBytes = Width * 4;
         int expected = rowBytes * Height;
-        if (stride == rowBytes && source.Length == expected) return source;
         if (stride < rowBytes || source.Length < stride * Height)
             throw new InvalidDataException("Unexpected RGBA stride " + stride);
         var packed = new byte[expected];
+        // PICO RGBA buffers are bottom-up (verified against saved camera pairs).
+        // Normalize BOTH eyes before grayscale, JPEG and pose transport. Intrinsics
+        // and OpticalToHead use top-down image coordinates, not buffer row indices.
         for (int row = 0; row < Height; row++)
-            Buffer.BlockCopy(source, row * stride, packed, row * rowBytes, rowBytes);
+            Buffer.BlockCopy(source, (Height - 1 - row) * stride, packed, row * rowBytes, rowBytes);
         return packed;
     }
 
